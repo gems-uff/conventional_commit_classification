@@ -1,0 +1,123 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v22.4",
+    "previous_release": "v22.3",
+    "cycle_days": 20.778368055555557,
+    "commits": 22,
+    "commits_in_advance": 0,
+    "start_delay": 0.0,
+    "duration": 20.778368055555557,
+    "commits_info": [
+        {
+            "hash": "40e1daca18708c21c7edf07c489a688355bd297b",
+            "message": "Updating version.json and repo version numbers to: 22.4\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1cd98b9a6cfb67eb9e9cbbd226a0cdd5647e2c4a",
+            "message": "Merge pull request #12648 from deannagarcia/22.x\n\nUpdate UPB dep for 22.4 release",
+            "tag_name": null
+        },
+        {
+            "hash": "4683ec756c97e73c99219faade016cff68025cb9",
+            "message": "Update UPB dep\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2399885f33479f1e8c92fe789107569388432ae6",
+            "message": "Fix merge\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c4152a7f3f4d72d790458de220568e9c4e65f5c",
+            "message": "Update abseil dependency and reorder dependencies to ensure we use the version specified in protobuf_deps.\n\nPiperOrigin-RevId: 528838071\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b81deb3b50d268fdbf2979bc0f7c906e128f38f",
+            "message": "Fix bug in _internal_copy_files where the rule would fail in downstream repositories.\n\nTaken from https://github.com/protocolbuffers/upb/blob/main/bazel/protobuf.patch#L42\n\nFixes https://github.com/protocolbuffers/protobuf/issues/12620.\n\nPiperOrigin-RevId: 528586464\n",
+            "tag_name": null
+        },
+        {
+            "hash": "860fbf10c7347a2ccca2ca27cb1cc80acacc929c",
+            "message": "fix(libprotoc): export useful symbols from .so\n",
+            "tag_name": null
+        },
+        {
+            "hash": "238d2507a866547a028772939fb6574dcff182ca",
+            "message": "Add -ex switch to all docker bash commands. (#12602)\n\nWithout this, certain failures will be silently ignored.\r\n\r\nPiperOrigin-RevId: 527718574",
+            "tag_name": null
+        },
+        {
+            "hash": "b05ee4f0102e60dbf63c55ff79839879a6ca2a03",
+            "message": "Bump utf8_range to version with working pkg-config (#12584)\n\n* Mark update script executable\r\n\r\n* Squashed 'third_party/utf8_range/' changes from 72c943dea..cd1507d14\r\n\r\ncd1507d14 Fix typo in pkg-config file to properly link the utf8_range libraries\r\n3f179d134 Add pkg-config file declaring Abseil dependency of utf8_range\r\n\r\ngit-subtree-dir: third_party/utf8_range\r\ngit-subtree-split: cd1507d1479815fbcd8ff24dc05a978a62098bae",
+            "tag_name": null
+        },
+        {
+            "hash": "2d48c603b046ae5ee080cfaeb55aeb583bd4f264",
+            "message": "Merge pull request #12553 from protocolbuffers/btree-22\n\nFix btree issues in map tests",
+            "tag_name": null
+        },
+        {
+            "hash": "94c33e39af9d68a1de68944c56ee02b9d7617f1f",
+            "message": "Switch to protobuf-ci for new test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d379c083cb54ad3d908d7adbc46202b9e8a6f8e3",
+            "message": "Fix btree issue in map tests.\n\nWithout any weak ordering, btree_map fails to compile on windows 2022.\n\nCloses #12289\n\nPiperOrigin-RevId: 527019995\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09a8d6137825dfde6155fce565b29d44000f484c",
+            "message": "Merge pull request #12542 from protocolbuffers/pkgconfig-22\n\nFix declared dependencies for pkg-config",
+            "tag_name": null
+        },
+        {
+            "hash": "2c55945fc55eddef4f38f5f43b2a7b0c9a45accf",
+            "message": "Fix declared dependencies for pkg-config\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2496b98697bfe87480127c9e15599bd284cdbe55",
+            "message": "Merge pull request #12487 from protocolbuffers/test_kfm\n\nEnsure the ObjC runtime builds for Apple Silicon.",
+            "tag_name": null
+        },
+        {
+            "hash": "1f1bd79d33dd9b1de06612e2d40efaaee6f0c275",
+            "message": "Ensure the ObjC runtime builds for Apple Silicon.\n\nGithub doesn't currently have Apple Silicon runners, but we can build for\nthe target to atleast ensure things are building.\n\nPiperOrigin-RevId: 524929865\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8cfd30fd66f40659c150fd77c43c125d95e83f98",
+            "message": "Merge pull request #12459 from protocolbuffers/22.x-202304122338\n\nUpdate version numbers for 22.3 release",
+            "tag_name": null
+        },
+        {
+            "hash": "5bc5cd29c98f3229db23ca6ce449b887662ed50d",
+            "message": "Updating version.json to: 22.4-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "585583316e42a255202d8d567692a6c46d077a57",
+            "message": "Merge pull request #12633 from deannagarcia/22.x\n\nCherrypick changes for 22.4",
+            "tag_name": null
+        },
+        {
+            "hash": "177411a88cc20f0663af5911e0575aaa4c2f820c",
+            "message": "Merge pull request #12634 from acozzette/cherrypick-musttail-22\n\nTurn off `clang::musttail` on i386",
+            "tag_name": null
+        },
+        {
+            "hash": "5381f405067b28920c7a8dd37b892ce55c654e29",
+            "message": "Turn off `clang::musttail` on i386\n\nWe found last week that Clang's support for `musttail` on 32-bit Linux does not\nseem to work reliably, so let's disable it for now.\n\nPiperOrigin-RevId: 528817403\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91d1bcbe40402269d240d0d90c128b65be6a80fa",
+            "message": "Merge pull request #12622 from deannagarcia/22.x\n\nfix(libprotoc): export useful symbols from .so",
+            "tag_name": null
+        }
+    ]
+}

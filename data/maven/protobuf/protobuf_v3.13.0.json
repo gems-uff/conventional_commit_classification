@@ -1,0 +1,648 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.13.0",
+    "previous_release": "v3.12.0",
+    "cycle_days": 91.00657407407408,
+    "commits": 127,
+    "commits_in_advance": 2,
+    "start_delay": -22.74883101851852,
+    "duration": 113.7554050925926,
+    "commits_info": [
+        {
+            "hash": "fde7cf7358ec7cd69e8db9be4f1fa6a5c431386a",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "07105350894bf9376129f11e0d5f879e4c6ce9cf",
+            "message": "Fix segment fault for proto3 optional (#7805)\n\n* Fix segment fault for proto3 optional\r\n\r\n Fixes #7801\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2ad43bfd3d5bfd09fd9fa6b8448138495daef219",
+            "message": "Fixed tests for Python 2 in python/release.sh\n\nSetuptools 45.0 removed support for Python 2, so to keep these tests\nworking for Python 2 I updated the script to install an older setuptools\nversion.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "14982862f5853d76f670d672a2127ca2932937f2",
+            "message": "Removed conflicting C# version line\n\nSomehow we ended up with two conflicting versions listed for C#, so this\ncommit removes the incorrect one (the correct one is 3.13.0-rc3).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "98c2e69f8c708314632cee07c4d0231443491f03",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ce6232605c358a05c5f924af5c40758aa2aaa67",
+            "message": "No need to generate addtional has method for proto2 (#7802)\n\n* No need to generate addtional has method for proto2\r\n\r\n* Also remove has property",
+            "tag_name": null
+        },
+        {
+            "hash": "d4ca92962c40637abbce61d14a8675f43bafb6a9",
+            "message": "Port php c extension to php8 (#7793)\n\n* Only ported c extension to php8.\r\n* Didn't fixed the issue of throwing warnings for missing arginfo in bundled files.\r\n* Tests not fixed, because syntax of phpunit (<7 vs >9.3) are not compatible.\r\n* In next release, needs to drop php5 and php7.0 support (in order to use phpunit > 7)",
+            "tag_name": null
+        },
+        {
+            "hash": "008c72146f73d784f7fd2428eaaf9de102b92ea9",
+            "message": "Add docker file for php8.0 (#7790)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8947701be5e82eed76b19af8c1b1e409314156d5",
+            "message": "Add docker file for php8.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "610bbd0b95906962bdb574eacc9f63a2d35664e8",
+            "message": "Fixed compile_extension.sh --release to actually enable optimization. (#7766)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09295965758bd92764dbad18fa26d5458ece878f",
+            "message": "Check realoneof in json parsing (#7763)\n\n* Check realoneof in json parsing\r\n\r\n* Fix whichoneof to also work for synthetic oneof",
+            "tag_name": null
+        },
+        {
+            "hash": "02ade8bc3203a1c3701a58f2721ff4c8fa94e6e4",
+            "message": "Adding forgotten duration.proto to the lite library\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c587a80599d3bfb8a9e26ac1281d86dc15a5431",
+            "message": "Updated version to 3.13.0-rc2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69c4bc5674cd7e9a177f8d25c37fbbf257d4bcc3",
+            "message": "Updated upb to pick up several bugfixes (#7740)\n\n* Updated upb to pick up several bugfixes. This fixes most conformance failures.\n\n* Updated golden file, now that we are serializing as packed by default.\n\n* Set \"packed\" properly: it is on by default for packable fields in proto3.\n\n* Updated failure list for PHP now that we properly respect \"packed\".\n\n* Temporarily disable encode_decode_test\n\nCo-authored-by: Joshua Haberman <jhaberman@gmail.com>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a28af654fa9c459ff3f28ec002158b07b8806c7e",
+            "message": "Removed obsolete TSRMLS_* usage. (#7731)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5f32d484c1f6372354e567504c3fea5b57f40d41",
+            "message": "Updated minimum required version for C extension to 7.0. (#7730)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad5a2153592a44dc1f7d12b3ddddf5e18829b297",
+            "message": "Added proto3 presence support for PHP (#7724)\n\n* WIP.\r\n\r\n* Added proto3 presence support for PHP.\r\n\r\n* Added compatibility code for old generated code.",
+            "tag_name": null
+        },
+        {
+            "hash": "0d90ff3d72e6868df4c852c6e9770e3f3acce055",
+            "message": "Fix C# optional field reflection when there are regular fields too\n\nPrevious tests didn't spot this as each message was either \"all\noptional\" or \"all non-optional\", at which point there isn't a problem.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff92cee10bcae7533b573368f448e782fbd43f39",
+            "message": "Fixed release.sh and setup.py for Python\n\nNewer versions of virtualenv lack the --no-site-packages option, so I\nhad to remove it to keep the release.sh script working. I read that this\noption has already been the default for a long time, so removing it\nshouldn't chany any behavior.\n\nFor the setup.py script, I was getting some errors about the bdist_wheel\nargument to setup.py, but I was able to fix that by adding 'wheel' to\nsetup_requires.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b3a834f33530c87da3a926488f50ab22132ddee",
+            "message": "Temporarily disabled ExtensionRegistryFactoryTest\n\nThis test has started failing, and I believe the cause is a change in\nclass loading behavior in Java 11. As far as I know, that breaks the\ntest logic but there is nothing wrong with the non-test code. This\nchange temporarily disables the test so that we can unblock the 4.0\nrelease while I work on a more permanent fix.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a5b9697337f1286e48924290921500459078b42",
+            "message": "Updated CHANGES.txt to reference the new version 3.13.0-rc1.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "79b118235d70314926b0a08e8c1d12675d8a8703",
+            "message": "Update CHANGES.txt with the C# parsing / serialization overhaul (#7710)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0f9ae07fe00d936e1ae6288d9a8b8b793fa8ff04",
+            "message": "Override pip and virtualenv installation for macOS. (#7704)\n\nThis commit cleans up our environment setup for macOS builds.\r\n\r\n-  Always use `python -m {pip | virtualenv}` form of commands.\r\n-  Only upgrade in-place, and never use `--ignore-installed`.\r\n-  Use latest tox on macos, and test 3.6 on macos presubmit.\r\n\r\nThese changes ensure that multibuilder won't break the system-installed Python on the Kokoro macOS builder, and thus won't resolve the ancient system version. For Tox, make sure we test with Python 3.6 (the version of Python in current macOS).",
+            "tag_name": null
+        },
+        {
+            "hash": "894015070688f90284eb108c981fea7a6c7e5549",
+            "message": "Updated version to 3.13.0-rc1.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ffb2b538347d3a1e1f63bf85db8260dc4d514aa9",
+            "message": "Remove old PHP extension (#7695)\n\n* Removed references to legacy class names from generated code.\r\n\r\n* Removed old PHP extension in favor of new extension. This drops PHP5 compat.\r\n\r\n* Updated failure lists for things fixed by the new extension.\r\n\r\n* Updated Makefile.am for new file list.\r\n\r\n* Fix distcheck.",
+            "tag_name": null
+        },
+        {
+            "hash": "c02ded7a57ae0be10d24e58a6e917b019fe46781",
+            "message": "Fix GPBUtil::getFullClassName() argument order (#7629)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "96a62f7cc7d5f82c1a70f10654fa1ed1815c4de8",
+            "message": "Merge pull request #7644 from JamesNK/jamesnk/parsestring-multisegment\n\nOptimize reading strings across segments",
+            "tag_name": null
+        },
+        {
+            "hash": "e36163deed57683ac8bd507f76a0f5aaf2b7813b",
+            "message": "PR feedback\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4abad8731f9b49ee13e3c2fae32b73a000591ce",
+            "message": "Optimize reading strings across segments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62cf7c609623a9ffe7fb0d5eebdeca61ef41457b",
+            "message": "Merge pull request #7658 from jtattermusch/csharp_benchmark_improvements\n\nC# write benchmark improvements",
+            "tag_name": null
+        },
+        {
+            "hash": "45c8850389025a28213bc5a8cdd536138693feba",
+            "message": "use BinaryPrimitives.WriteUInt64LittleEndian\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1cf4df00cff60e6c7752ea62ad89bcbf01f823b4",
+            "message": "C# benchmark improvements\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93b38972fb4bea5f6779e08cd0b82ac901f48a71",
+            "message": "Merge pull request #7669 from jtattermusch/csharp_sdk_31\n\nupgrade dotnet SDK in the CI to 3.1",
+            "tag_name": null
+        },
+        {
+            "hash": "fed7e181932abd54f0060cdc47a674250d764ae0",
+            "message": "upgrade dotnet SDK in the CI to 3.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4c5992352aae1ed18f44c1a40d2149006bf8704",
+            "message": "Merge pull request #7666 from jskeet/fix-csharp-build\n\nFix C# build by regenerating test protos",
+            "tag_name": null
+        },
+        {
+            "hash": "13d712533e8864be6966c6a78c139abdb5c0d234",
+            "message": "Fix C# build by regenerating test protos\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aaf84cb10f3da539943bc44267ffd17b8058ce7e",
+            "message": "Bugfix for when message constructor has no argument. (#7660)\n\nThis fixes the user issue: https://github.com/protocolbuffers/protobuf/issues/7611#issuecomment-647025031",
+            "tag_name": null
+        },
+        {
+            "hash": "2c1a46101bf49349f2725c2eaa264afab405fb0d",
+            "message": "Add tests for NullValue not appearing in a oneof at all\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0dd5fffba3600cc96b011319cf566dd501152f41",
+            "message": "Fix JSON parsing and formatting of NullValue in C#\n\nThe NullValue enum is typically used as part of the Value well-known type, but can be used elsewhere. In previous code, a NullValue field (other than in Value) would result in a JSON value of the string \"NULL_VALUE\"; it should instead be the null literal.\nWhen parsing, we still accept \"NULL_VALUE\" as a valid value for NullValue - this new code being unable to parse old data, and comes for free anyway.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "206b973afd0f90272c5889e0008bc530540f4563",
+            "message": "Merge pull request #7576 from jtattermusch/protobuf_buffer_serialization\n\nNew Span-based serialization logic (followup for #7351)",
+            "tag_name": null
+        },
+        {
+            "hash": "4f0afc78528416b00ef2b7007a520f668ceea343",
+            "message": "optimize WriteRawTag\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f169816389df3de23fd021b05f5e31befd85cb7",
+            "message": "optimize WriteVarint64\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d53fadcac83f79b24f47b49a5a1489f917d556d",
+            "message": "optimize WriteVarint32\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ca0877db1b873c14666709ebf844abf13eb8243",
+            "message": "optimize WriteRawBytes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "80780bdffa484d82dfd55378bd18d8eb30bc78a6",
+            "message": "optimize WriteRawByte\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6afd469fe0b566784c70b0e94c6f4d0d3ff04a57",
+            "message": "optimize WriteFixed32 and WriteFixed64\n",
+            "tag_name": null
+        },
+        {
+            "hash": "17a4b181a0fc8b22de5aac960591abb9372bdbcd",
+            "message": "optimize WriteString\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3557cab21942de66bcb9bc60123be80dfe5b0b2",
+            "message": "WriteFloat improvements\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f56e5e2a4a3bacea521702b05e717bd2b494ed4",
+            "message": "remove AggressiveInlining attribute from WritingPrimitives.cs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "468c3ba8c6b99882bb4bbd1a8d2af72693888fac",
+            "message": "Speed up writing of messages with many fields\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d6969bec4f5ace6e1746098be3253b40ecb389b",
+            "message": "Merge remote-tracking branch 'upstream/master' into protobuf_buffer_serialization\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1dae8fdd6271d091bbf43c0fd5855603ba533c1d",
+            "message": "Add support for proto2 JSON parsing in C# conformance tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff70af6cfc19d77f845981dfee755e1490ed70bb",
+            "message": "Changes how JSON formatting works for fields supporting presence\n\nFixes #7486.\n\nNote that this changes the behavior for message fields where\n\"WithFormatDefaultValues(true)\" has been specified. This is\neffectively fixing a bug, but will need to be noted in the release\nnotes.\n\nBasically, FormatDefaultValues only affects fields that don't\nsupport presence - most commonly, singular primitive non-optional\nfields in proto3.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1ce8663ac88df54cf212d29ce5123b69203b135",
+            "message": "De-duplicated code to generate PHP protos and install phpunit. (#7605)\n\n* De-duplicated code to generate PHP protos and install phpunit.\r\n\r\n* Removed all references to generate_php_test_proto.\r\n\r\n* Replaced with internal_build_cpp.\r\n\r\n* Make Timestamp::__construct() static to avoid conflicts with MongoDB.\r\n\r\n* Replicated PHPUnit versions and added new script to Makefile.am.\r\n\r\n* Fixed filename in Makefile.am.\r\n\r\n* Disabled test that SEGV's on macOS.\r\n\r\n* Removed extraneous \"set -e\".\r\n\r\n* Make sure generate_protos.sh happens on every test path.\r\n\r\n* Removed stray '$' chars.\r\n\r\n* Added proper support for aggregate_metadata tests. But now I get a stack overflow.\r\n\r\nStack overflow:\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n/Users/haberman/code/protobuf/php/tests/generated/GPBMetadata/Proto/TestDescriptors.php:16\r\n\r\nnamespace GPBMetadata\\Proto;\r\n\r\nclass TestDescriptors\r\n{\r\n    public static $is_initialized = false;\r\n\r\n    public static function initOnce() {\r\n        $pool = \\Google\\Protobuf\\Internal\\DescriptorPool::getGeneratedPool();\r\n        if (static::$is_initialized == true) {\r\n          return;\r\n        }\r\n        \\GPBMetadata\\Proto\\TestDescriptors::initOnce();\r\n        $pool->internalAddGeneratedFile(hex2bin(\r\n            \"\"\r\n        ), true);\r\n        static::$is_initialized = true;\r\n    }\r\n}\r\n\r\n* Fixed and verified metadata aggregation testing.",
+            "tag_name": null
+        },
+        {
+            "hash": "9f546ba61ba23213dfc0d8b603e49ead210fe7d2",
+            "message": "ObjC Support a runtime import override.\n\nOption to add a prefix to generated #imports incase ObjC Protos are\nused in a build system where one wants to avoid adding a header\nsearch path and have more complete imports.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce8b7af46b82567c077611bae2e1285e04cfa7f2",
+            "message": "Update the brew workflow\n\n- Remove the `brew install`; the kokoro image already has it, just\n  update/upgrade instead.\n- Remove `prune`, logs had:\n    \"\"\"\n    Error: Unknown command: prune\n    \"\"\"\n- Remove `uninstall`, logs had:\n    \"\"\"\n    Error: Refusing to uninstall /usr/local/Cellar/cmake/3.16.4 and /usr/local/Cellar/icu4c/64.2\n    because they are required by ceres-solver, ffmpeg, harfbuzz, libass and opencv, which are currently installed.\n    You can override this and force removal with:\n      brew uninstall --ignore-dependencies node icu4c cmake wget\n    \"\"\"\n- Skip installing some things since they are already in the base image, logs\n  had:\n    \"\"\"\n    Warning: gflags 2.2.2 is already installed and up-to-date\n    To reinstall 2.2.2, run `brew reinstall gflags`\n    Warning: openssl@1.1 1.1.1g is already installed and up-to-date\n    To reinstall 1.1.1g, run `brew reinstall openssl@1.1`\n    Warning: pcre 8.44 is already installed and up-to-date\n    To reinstall 8.44, run `brew reinstall pcre`\n    \"\"\"\n- Don't install gpg gpg2 as gnupg is already installed, also use gpg instead of\n  gpg2 for commands (and update the commands), logs had:\n    \"\"\"\n    kokoro/macos/prepare_build_macos_rc: line 44: gpg2: command not found\n    kokoro/macos/prepare_build_macos_rc: line 45: gpg2: command not found\n    \"\"\"\n- Add env guards to control all the option installs and only request them be\n  installed in the cases that need it.  This avoids having to install/update\n  the things like ruby when some other tool only needed in some configs is\n  install differently and could have conflicts.\n- Switch to brew for cocoapods to avoid compat issues on the supporting\n  libraries.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2655a0aa0f3a8984a80c886642f9969450aeccb2",
+            "message": "Added Embedded Proto to third_party.md.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "daada7023345768d61b19b762f91a2edf9b12c2a",
+            "message": "Merge pull request #7596 from jtattermusch/safe_span_accessors\n\nannotate ByteString.Span and ByteString.Memory as SecuritySafeCritical",
+            "tag_name": null
+        },
+        {
+            "hash": "a6d1ed1712bc77ccdd5074256945778474c4e0b5",
+            "message": "annotate ByteString.Span and ByteString.Memory as SecuritySafeCritical\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5f5efe50c5bef20042645b51a697f58b0704ac89",
+            "message": "Added changelog entries for all changes already merged from google3. (#7585)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "efbadb6c738ea81f55ed76195c05e62c0db281ba",
+            "message": "Merge pull request #7412 from JamesNK/jamesnk/repeated-fixed-parsing\n\nImprove performance of parsing repeated fixed sized types",
+            "tag_name": null
+        },
+        {
+            "hash": "921bdaaa61b8b62437a3cd999c1962c453ff937b",
+            "message": "Improve repeated fixed parsing performance\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d6712e73995e0c64eb5f208e7388f824175b3b8",
+            "message": "Enable experimental presence detection in JS. (#7592)\n\nCo-authored-by: David L. Jones <dlj@google.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "c6c8bab9e221ee268ad48494c00e64de88aa925a",
+            "message": "Move runtime import writing into a helper.\n\nFile and ImportWriter duplicated the logic, so move it to a helper (on\nImportWriter), and share the impl instead of duplicating it since it\nincludes some conditional logic around Framework based import support.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57be643a36ee4745de9da1503a418c193c929e8a",
+            "message": "Now that the paths are the same, use one ivar to track the values.\n\nThis changes when we moved the WKTs to the root of the runtime package.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e967fac23a17a2804b4ab675fcc65d9353fa47ae",
+            "message": "update Makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a696904648985b879f6d03a45d17020b50a2bcc",
+            "message": "basic version of WriteMessagesBenchmark\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2350e90a857cb6e3ae7bfda2f3063e9c885060d0",
+            "message": "add new C# files to Makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "549dc9a41267a410e9783760fd899bdd1779698e",
+            "message": "optimize writing fixed32 and fixed64, fix benchmark\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5eec497d3b40c970def917c4238eb9f54e1d7449",
+            "message": "fix C# CompatibilityTests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e346fde63bc3989d3278855b1fc0c7a5d67ebe2a",
+            "message": "remove commented out code\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c06812b0b2e9f8a3e019033991fe7ea7a2056bfc",
+            "message": "address a few TODOs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "19c0d73fb9b2dfec9561762b6a593255930d2f4a",
+            "message": "test WriteContext writing with multiple flushes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "53708e2f1536bda500ca109ad82869122b776f25",
+            "message": "test writing to a stackalloc buffer\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e14a5c8fe67719315694ee0b8d355734fe587ef0",
+            "message": "address a few TODOs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "43dcee2fa93edaca9cf52ca280e089b2b8b1d26b",
+            "message": "remove some todos\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3375e251f93c7f68d6675ecaf74bd139e1e10239",
+            "message": "optimize writing non-ascii strings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3dad1877076389f074b8ba081fd49d5a1d3f3203",
+            "message": "add benchmark for writing of NonAsciiStrings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a2d5884bfc2509c65b29bd3f8ce1eb72e18dbbc",
+            "message": "address review comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a296413b5abdcd86c219d4589b6e825a157706fb",
+            "message": "optimize WriteFloat\n",
+            "tag_name": null
+        },
+        {
+            "hash": "886c263a3c2b937ac5f85aa849e3c1f10fe62ba4",
+            "message": "initial version of write benchmarks\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b2c94974b2efc9213d315f7436ab26b49ceb2d72",
+            "message": "remove a TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56372898cf61ccff8a47fde9c1d4577b314a17d5",
+            "message": "test writing with different blocksizes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9f92a6dd200e0f7c5bdbe4a5f43d54430f94fa9",
+            "message": "increase test coverage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "94e64f2c0b1027dd1a6beb9c67d72fab878e8acc",
+            "message": "a bit more cleanup\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ba61d76e5218f2a1c7240b2ac6a9fc98c9ae9ba2",
+            "message": "simplify serialization to single span\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3cdba1cfd09a011d6e375b40988208cc3eff436",
+            "message": "increase test coverage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7bfaaba534377ad0b67432d0df5f0b7a7b4167c9",
+            "message": "cleanup coded output stream\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9039103637cfeba1aca82c8eead94b1479a6612d",
+            "message": "message extensions + refactor\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8dbf707aa0fcf3f5554d6141bf9c84399832ad81",
+            "message": "add more tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1e1d4554233adb75cca359198801094422c02eeb",
+            "message": "add WriteFloat TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2bce090f325b4caa3cbba4e1bf1614a7399aa6f8",
+            "message": "add more tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ecbb29d3548f93b2cb34e381ec8dbd7727c5680e",
+            "message": "add WriteContext.Flush() method\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3cdc107bda15200530a4cc0cad2cc34b91eaf884",
+            "message": "fix bug in RefreshBuffer\n",
+            "tag_name": null
+        },
+        {
+            "hash": "90d4969bd1059c2613fbc84e77b488afb23a71ce",
+            "message": "LegacyGeneratedCodeTest now passing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "361c933a588c0d419b3ce39f90c0dd074c4d6228",
+            "message": "annotate ByteString.Span and ByteString.Memory as SecuritySafeCritical\n",
+            "tag_name": null
+        },
+        {
+            "hash": "907038951681e0a10a226a7fa3ed17c4bc94f7cc",
+            "message": "regenerate code\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2b9a73e94875f99282d90002ae9d4f9127542fec",
+            "message": "fix codegen\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea1d55927d5c779ad3d5d3c3085df67111f5018e",
+            "message": "test are almost passing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "125e4ad267997de7954b1bfe6b7f1c5b9c4a397c",
+            "message": "regenerate C# protos\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3eddf7e2d51624f03fbee65b285ae2fa086217e",
+            "message": "make everything build, with some TODOs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dda621749c4310c4cc3995c44b4b24de482d5ef2",
+            "message": "codegen for WriteContext based serialization\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca7bc464a985fe4edfab11ac032971552bfd7496",
+            "message": "make all writing use WriteContext\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c17af44172ecb17e6024e33da4f79745bed9ba91",
+            "message": "apply SecuritySafeCritical attribute\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5742a64eea411db8fe18207bbe6e0b373f1df0b3",
+            "message": "fix WriteString bug\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5fc49bdd5a9d9b749d38c843e50e2595ca0b1581",
+            "message": "fix a bunch of bugs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d0e08f546d4e863fe6d3854fbc22ef50c1d0cdab",
+            "message": "entire solution builds now\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee6b20afbee1badc992c5585f5419783b85586c1",
+            "message": "CodedOutputStream adjustments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9d9019e272990eaeda68bb4cb079b6d15d191bd",
+            "message": "more progress\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe147994c83a4b50dd26c17036e3409d20f19322",
+            "message": "progress: stuff almost builds now\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a329764603f27a1cb1a277861689ff71982d2000",
+            "message": "fix typo in ParserInternalState\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c855561c549a358f49e5e4559de67b8da8b0137f",
+            "message": "initial implementation of buffer encoding\n",
+            "tag_name": null
+        },
+        {
+            "hash": "093faebcdb007f5dfaf11a98d61149f89e8bac23",
+            "message": "New PHP C Extension based on upb_msg (#7614)\n\n* Added code for the new PHP extension.\r\n\r\n* Removed a bunch of unused variables shown by compiler warnings.\r\n\r\n* Test protobuf2 in the tests.\r\n\r\n* Updated upb version to fix a goldenfile test.\r\n\r\n* Added pure-PHP changes. Extension now passes all tests.\r\n\r\n* Enabled protobuf2 for all C extension tests.\r\n\r\n* Fixed pure=PHP lib: full names no longer start with '.'.\r\n\r\n* Added files for new extension to Makefile.am.\r\n\r\n* Downgraded make-preload.py to python 2, since python3 isn't available in the php_all Kokoro image.\r\n\r\n* Disable tests of new C extension with PHP 5.x.\r\n\r\n* Also do not compile the extension for PHP5.\r\n\r\n* Accept version 5.*.*, and use /usr/bin/python.\r\n\r\n* Addressed PR comments.\r\n\r\n* Addressed PR comments.\r\n\r\n* Added \"const\" to a parameter and fixed a memory leak seen in Valgrind.\r\n\r\n* Stop testing the C extension for PHP5.\r\n\r\nThe next release of protobuf will deprecate the C extension\r\nfor PHP5, see:\r\nhttps://github.com/protocolbuffers/protobuf/issues/7525\r\n\r\n* Made the PHP5.6 Mac test only exercise pure-PHP.\r\n\r\n* Build protoc for PHP 5.6 test.\r\n\r\n* Rewrote bundling script in PHP to avoid dependency on Python.\r\n\r\n* A few more fixes.\r\n\r\n* Fixed int32/int64 behavior for 32-bit builds.\r\n\r\n* Match more PHP versions in testing script.\r\n\r\n* Use phpize --clean before building extension.\r\n\r\n* Force-delete configure.in to avoid phpize problems cross-version.\r\n\r\n* Delete both configure.ac and configure.in.",
+            "tag_name": null
+        },
+        {
+            "hash": "2b7b7f7f72e3617191972fbafb298cf7ec31e95e",
+            "message": "Only disallow directories as input files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "727e6e4e60f73da625e837b36621c484b207dc31",
+            "message": "correct the way of testing file mode on Windows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9f94f7bf563083983e4b0a5126e6324c2601724",
+            "message": "Fix #5858\n\nprovide clear message when specifying a directory as an input file\n",
+            "tag_name": null
+        },
+        {
+            "hash": "582558a58923b51c7226bb176faaf220bc6840ab",
+            "message": "Add imenu index support\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2676f4dcc51ad5efe4602ec08495353067bff568",
+            "message": "Add third-party Elixir library",
+            "tag_name": null
+        },
+        {
+            "hash": "a076adc20f5079a0095801187132b2552636a63a",
+            "message": "documentation: fix path for fetching submodules",
+            "tag_name": null
+        },
+        {
+            "hash": "367f3d831ee3186035a14f871cbcbc1b028b6b9a",
+            "message": "Merge pull request #7630 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "435952c53742ac750ff167f2a28b71f59c14ea86",
+            "message": "Added changelog entry for FieldMaskUtil.java.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c7da7e937c57b2eafdda69339033c23b8adda9a7",
+            "message": "CHANGES.txt entries for the Piper sync.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f47e9345a9ded12f79e3149c74869e5321486020",
+            "message": "Merge branch 'sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f77065d4eb4a1a266d0ea6f3df544d0cce86281b",
+            "message": "Sync from Piper @316511779\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c535d54da3f46c77675b86934c2f6d6c4fa09008",
+            "message": "Do not use ADL when transforming string to lowercase\n",
+            "tag_name": null
+        },
+        {
+            "hash": "86b3ccf28ca437330cc42a2b3a75a1314977fcfd",
+            "message": "change go's runtime \n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cdc7fe8f054c5732d05d24a7559776fa11b5a659",
+            "message": "[bazel] Use proto_library targets to exclude WKPs from code-gen\n\nThis prepares protobuf for a future release of Bazel which will make\r\n`ProtoInfo` mandatory for `proto_lang_toolchain.blacklisted_protos`.",
+            "tag_name": null
+        }
+    ]
+}

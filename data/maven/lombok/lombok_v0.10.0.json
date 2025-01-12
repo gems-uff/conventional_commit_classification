@@ -1,0 +1,1623 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.10.0",
+    "previous_release": "v0.9.0",
+    "cycle_days": 655.0852893518519,
+    "commits": 322,
+    "commits_in_advance": 0,
+    "start_delay": 265.05090277777776,
+    "duration": 390.03438657407406,
+    "commits_info": [
+        {
+            "hash": "006a0e708981f69c497a8a5c8278b418e45f355b",
+            "message": "Fixed buildscript (onX is gone, that had to be reflected in the buildscript).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c3fa3565d5649c35b6fa94bdf1a585e321143493",
+            "message": "Preparing for release of 0.10.0-final; updated version and cleaned up changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b94911431f60e7c02707dc0160dffcbdb28fce47",
+            "message": "Make Extract Method work without affecting the rendering of the java file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "14efdb09ad5ab153d2c1a1019d5f5a97c25f8249",
+            "message": "Improve Extract method refactoring: you can extract method for code that also contains @SneakyThrows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "85c90ca606869d42be64d513b2a6f829712dbe27",
+            "message": "Removed some leftovers from #164 debugging sessions\n",
+            "tag_name": null
+        },
+        {
+            "hash": "19e6b008856748bc6a9322b1b542e8a2e7f99017",
+            "message": "Trivial\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e89f1bd33b68ac062a2e313ec05688e4cc6d8727",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "844b36b47c9fec02473b5d27c74c10f10d5c5fc2",
+            "message": "Renamed Javac.getCTCint to getCtcInt\nMade delombok work with multiple JavaCompiler's on the classpath\nMade @Getter(lazy=true) work on javac7 (fixes issue#223)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b64016cd901985911df3a8f1e3bbf8d55b922a26",
+            "message": "Fixed typo\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af9ac60c6ff42c53b21f09b029383fdcd545dedf",
+            "message": "Merge branch 'delombok_java7'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "82b14a30893d509e055ed06d1576c5e16d397995",
+            "message": "The only new JCTree node in java7, JCTypeUnion, is now supported by delombok.",
+            "tag_name": null
+        },
+        {
+            "hash": "a85023b919928e2a57343639be1d69d15fd0c1d0",
+            "message": "Optimized the 'val' search; previously a fairly lengthy import list check was done for _every_ local declaration _anywhere_ in _any_ eclipse source file to see if it needed 'val' treatment. Now as a shortcut there's a check if the typeRef's last part is equal to 'val', and if not, no check is performed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f4cce859657d191b705617155f4a7547c8ece21c",
+            "message": "fixed a warning during the ant compile process",
+            "tag_name": null
+        },
+        {
+            "hash": "d8d47c687d7ec22e481cf10782f1f889485c39fa",
+            "message": "Integrated Philipp's proof-of-concept delombok in javac7 fix, and used some\ncreative stubbing to ensure both the javac7 and the javac6 source file can be loaded in the same project in eclipse without dependency warnings.",
+            "tag_name": null
+        },
+        {
+            "hash": "7773bd4e60784b9018e9eed82a5a41e0b51c3024",
+            "message": "Changed dep name of 'javac' into 'javac6' and added 'javac7', mostly for contrib purposes (we still compile against javac6, but having javac7 around for testing and such is nice).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7ec1e33ed4db5f31d288dd7d2c909b83b2d418f",
+            "message": "Got delombok to work with JDK 1.7.\nFor now PrettyCommentsPrinter is not able to print new features like JCTypeUnion,\nbut first tests indicate that besides this it works just fine.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c996e8749db4cf049401e961dba1b72ea5d1b85d",
+            "message": "Made delomboks processor 'work' on java6 and java7 without any warnings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bf3b5b5ece4321b0f9c4573a2863d4cc427e476",
+            "message": "Made the annotation processor 'work' on java6 and java7 without any warnings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8697f96af44ad3daf2d380179fe8671101797ee",
+            "message": "changelog update for issue #249\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d00576e30774eac3d93bd14a7ef1600b0a7cbbfa",
+            "message": "Delombok with -d used wrong output folder on Posix. Solves issue #249\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7ccdf0b75fbdad4a923eb1b18889827cb3e66d19",
+            "message": "trivial\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e23117126fddfaa08a9d5b8e1bd482d453475f8",
+            "message": "fixed Issue 248:\nTo support the new numeric literal syntax of Java 7, the constructor of IntLiteral got replaced by a factory-method. So we updated the affected handlers to work in both worlds.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "87fd16807317d7a3e0f9131a9342b620a9b1a5f0",
+            "message": "Fixed a typo in the ivy <dependency> example.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ff39e57705ec16d35a403d85014fc92f8fa7733",
+            "message": "Added some forgotten copyright headers",
+            "tag_name": null
+        },
+        {
+            "hash": "87c93c6e340b72e4df2ff7c0520e453b782a783d",
+            "message": "About to release 0.10.0-RC3\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9663401a5e6dfb3322798df9a7b3d935a3ce7137",
+            "message": "Updated changelog to reflect fixing 164.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a648f60a254c4f5b8c6ca3cfc7519829920f96ae",
+            "message": "Updated download page with a link to the old versions.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "deece277342d7186b32df4630036faa4b950d4f6",
+            "message": "Fixed issue 164. Oh yes. Party time!\n\nskipPrintAst was a singleton global, so, yes, thread race issues all over the place.",
+            "tag_name": null
+        },
+        {
+            "hash": "3be2152a0e8c8c30d23634aa97c38c1c3b4cd2e7",
+            "message": "Updates to the DebugSnapshot system (stack-free logs, global disable switch, print once only)",
+            "tag_name": null
+        },
+        {
+            "hash": "ced7a8d5549af733bd0463daf533d08fe21a65ab",
+            "message": "Added the state of the HasAllMethodBodies flag in the issue 164 analyser. Looks like eclipse sometimes sets this flag even though\nall method bodies are not in fact parsed yet, as a shortcut to try and force future eclipse parse runs to simply skip doing it\nas a timesaver. D'oh.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6f8e8adf4c0c31aa17573da89938bc50894f0a52",
+            "message": "fixed Issue 243:\n\"canEqual(java.lang.Object)\" was not in the blacklist of HandleDelegate\n(only javac, for eclipse it was already present)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "72cb022231a6c43c97b36377a85f2d4de875b1d9",
+            "message": "fixed Issue 244:\nBetween javac 1.6 and 1.7 the type of the field JCClassDecl.extending has changed from JCTree to JCExpression, but the method getExtendsClause() still returns a JCTree. So we use this for now.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b504cf4d06c00f41f3e7bf472843568e618b83d",
+            "message": "Preparing to release 0.10.0-RC2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dfca0e4cbdf761bcb119dc2b5bd1598e455d6d09",
+            "message": "Works around issue 217. it's not a proper fix but better than 0.10.0-RC1.",
+            "tag_name": null
+        },
+        {
+            "hash": "403f515aa28b94f223903c9d400bee3d4fa9b12e",
+            "message": "Delombok with a relative path and in 'output to directory' mode would NPE. Fixes issue #241.",
+            "tag_name": null
+        },
+        {
+            "hash": "b325214e82e7d65dde32e197ab932ba5cd0b43c6",
+            "message": "The previous commit to fix Issue 233 accidentally broke delombok for emtpy method bodies. This is now fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05d4168e3a64eb510e2793c219fe20d2555f7a47",
+            "message": "Fixes issue 176 more thoroughly; even if both javac6 and javac7 are on the classpath, the 'right' BaseFileObject wrapper is now used.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "92eb7033fa16ef14c05cb4461dc005a752399180",
+            "message": "Merge branch 'i164diag'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a24daba66ce4705429b266972319ad15b1db0d70",
+            "message": "Upgraded the issue 164 reporter to replace what we had. I think we'll roll this out in 0.10.0-RC2.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "23754573c1221c70596b6287a68b05580f7c39e9",
+            "message": "Dump the debug snapshots for issue 164 to a file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57f7576170dd832b269d0001eb1393f1fe3f9713",
+            "message": "Heh, these weren't included due to .gitignore. Fixed that, so now I can add them.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "43b3f2c0f0b3c519e84d221d4d6a5f41b74e2ec0",
+            "message": "back-in-time debugging added. Of course now 164 isn't triggering anymore :/\n",
+            "tag_name": null
+        },
+        {
+            "hash": "43d938a895323e3bae807ea534de10a13b66ad24",
+            "message": "Updated .gitignore to ignore only the things we meant, i.e. with 'debug' we meant the top-level debug dir, not any file named debug.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7eef1fb7e1e5a4a3fd972974a5bfe13c24d7cd6f",
+            "message": "UPdated changelog for the equals/hashCode/canEqual fix (issue #240)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4dfa3b7004295da1637e6a7e328ccb84babb76d3",
+            "message": "There's now 1 test suite that runs all tests, and 'ant eclipse' will make a launch config that adds the appropriate -javaagent VM param to ensure the runWithEclipse tests work.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83e2fb5e00e1868f0b4f0fe38b1ea1383119f8ee",
+            "message": "Now either all or none of equals/hashCode/canEqual is generated. Fixes issue 240.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa1a0e7ac87f5e96a39d0bad670aa8c7b7df85d4",
+            "message": "The site's lombok v. vanilla java examples included lombok annotations on the vanilla java side. Fabrizio Guidici found this one.",
+            "tag_name": null
+        },
+        {
+            "hash": "68b079d3129c8201fcffb898bf6155efdc393d0a",
+            "message": "fixed Issue 233:\nJavac parser handles \";\" (empty statements) as empty blocks with an invalid position. Thats why delomok replaces \";\" with \"{}\". This gets an issue when you use this in an interface, since interfaces are not allowed to have initializer blocks.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b9a8142d0638d0098ec0e76cc791b65592f66c0",
+            "message": "Another trivial website typo.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "789f358c095a0dd26e6f4dd52ad9d63ca66d1151",
+            "message": "Updated documentation of SneakyThrows to remove remark about needing lombok.jar at runtime.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c985950989482af485b0a16b479942770bfdcf57",
+            "message": "Added a note about serialVersionUID and @Synchronized to the feature docs.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d5d7922801c86dccea547016a66538432b97afe2",
+            "message": "A 'final' was missing in the vanilla version of the 'val' usecase.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eec0b6ff347ac2d864a63d762b320120b14b74aa",
+            "message": "Whoops, the titles on 3 feature pages were '@Data' instead of something more appropriate.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "917518bbeafc73232955d67fdbfce533e8a69f75",
+            "message": "fixed type mismatch in lazy getter example (issue 223)\n\nnote: this example shows how lazy getter would work once issue 160 is no more\n",
+            "tag_name": null
+        },
+        {
+            "hash": "865b7dbc6a8be1c2415d55fa40b30ddc3227d9f5",
+            "message": "changelog fix number 3 of the day.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b427ca92fa48a4ff0f6fb84abb0673d107436858",
+            "message": "And another typo in the changelog fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3478ba2bfb6318eca8aa4f6f31c3d53042efc69a",
+            "message": "Typoed it's. git blame says I did it. I conclude I'm an idiot.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "620125c266f3cbc173d0170594242387e176cd2a",
+            "message": "whoops, a very minor nit in synchronized which also caused a test to fail fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3798d9426365826598b42e00969314a3ae1f8c78",
+            "message": "Minor tweaks to documentation updates (javadocs, website).",
+            "tag_name": null
+        },
+        {
+            "hash": "f5303a32dceeab72b1ded678f2b2a92a2e7e180b",
+            "message": "forgot a few things in the changelog.",
+            "tag_name": null
+        },
+        {
+            "hash": "1bafafa6d850f00b75d7c4c2141ece0c2137e01e",
+            "message": "Version bump to 0.10.0RC1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3303e4c94a5e45d45113e5b42742031dc87ec989",
+            "message": "Updated changelog\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1816ffdebc75a097c9751578e2628b2d52d55b72",
+            "message": "fixed @Synchronized.",
+            "tag_name": null
+        },
+        {
+            "hash": "f923671763424e872dc6dee7c67f73783935baaf",
+            "message": "Added ability for annotation handlers to be invoked in the diet parse phase even if its a post-diet handler.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0fb0c59d5aa9f18c34eac36e65dcf3c2fdf6808c",
+            "message": "Javac/EclipseAnnotationHandler are now abstract classes instead of interfaces; there were too many 'option' methods (methods where you return either true or false), so we really needed the ability to pick a default.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bdcbd1bac40ddbfeda22a99285976e2a92fd59df",
+            "message": "SpiLoadUtil's findAnnotationClass didn't work with extends Foo<T>, only with implements Foo<T>. Fixed this.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c883cb13f1c1595c0aaefe1b3ff1fb9c734ed5b",
+            "message": "as lombok never runs as AP anymore in ecj, the 'show some more info for bug 164' escape to not do that in ecj was no longer relevant.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47f58c922cd8aa7ee6fa25d84cdf3ed35fe67ecf",
+            "message": "mentioned Anthony Whitford's delombok maven plugin on delombok feature page.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ac8aae9b42fd6d337b24c9773da35b633e5cbed9",
+            "message": "Updated to ivyplusplus 1.7 and used ivy:cachedunjar to shave a second off build times.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e9205a5706f1caba39402a62318693ebff2426a",
+            "message": "Updated the download page for the website, which now includes a list with instructions for many platforms.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cea08d77998acce659c6ffc712045b9772ad9c65",
+            "message": "Fixed PrintAST, and separately SneakyThrows/Synchronized which failed because the 'isFullParse' boolean was erronously set on a full rebuild, forced by HandleDelegate.\n\nHandleDelegate has also been updated to not do so much work if there's no @Delegate in a source file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "274d5de571f76b04aa140ea9c04dfc23353dd9f6",
+            "message": "Decided to improve the windows regexp detector from 'windows' to win|win32|win64|windows, on a word break.",
+            "tag_name": null
+        },
+        {
+            "hash": "deb6b061ceb08608414ec1bec53eda999f9c69ea",
+            "message": "Detector regexp for windows had a pointless grouping in it.",
+            "tag_name": null
+        },
+        {
+            "hash": "612431bbbb3b02eb3d84735d86bf080143cd12d9",
+            "message": "Updated to ASM 4.0RC1 so that we can deal with java7,\nespecially class files built with java7.\n\nFixes issue #188",
+            "tag_name": null
+        },
+        {
+            "hash": "ef220339b69f151812c0adc87522069c540a2b84",
+            "message": "Issue 188: add class file pool constants for methodhandles and invokedynamic (java7)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3171afd5bcacf48125ac3dff071ee7e420c6d2ad",
+            "message": "ecj is now downloaded into lib/ecj. We don't currently use it for anything anymore, but could be handy for automated testing and definitely handy for manual experimenting / testing.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eac3971390c1b2cb7636ce289af470dd7668dfe8",
+            "message": "-javaagent:lombok.jar=ECJ should now work to enable lombok in any ecj-based tool including ecj itself.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05465b66a8ca6d6691585906bc21a32a9e6d0949",
+            "message": "Minor update to include a timestamp on the edge release download page.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "476b198f168223f1e30a5a4fa97e27cc2b9ea008",
+            "message": "Allow \"before\" to be used as a source-package for eclipse tests (see LoggerSlf4jWithPackage).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "964b82124dd92e91652925a450ab9208e41df601",
+            "message": "Eclipse handlers can now opt out of being run in diet-parse mode. Fixes Synchronized and SneakyThrows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cd6eee36cfc10e2dcb1dc12cbaa27db7c0b384a5",
+            "message": "the new eclipse dietparse test suite written by philipp requires junit to be fired up with lombok as agent. Fixed that in the build script.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c92d18927e6375cc18d8f97ecdd1909d000ad30",
+            "message": "ecj and jdt.core contain mostly the same classes. Its possible to get these mixed up and that would be bad (SecurityExceptions as signatures don't match, and in general mixing and matching classes from different releases). Just ditching ecj should do the job.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee40c8542d77ea2337706e5ace9de43fafd1b85f",
+            "message": "Trivial fixes.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "850c3eaf07cd4beb2276b5e10296132b6ed3d7a6",
+            "message": "Added a test infrastructure that simulates eclipse with diet-parse, type-binding and so forth. Similar to eclipse, the test needs to be executed with lombok as vm-agent. @Delegate runs with this setup, sadly val does not, at least for now.\nAnd as expected the tests shows that @Synchronized and @SneakyThrows are currently broken for eclipse but not for ecj.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa96fcbc7724ccd0306b6df0b1aaa9f86aa1d507",
+            "message": "Whoops, ecj was broken due to half work on a previous commit to take ecj annotation processing offline.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b512546508a1efbe414b7e11cf9f13b0ed29cbcf",
+            "message": "The EclipseAST was incomplete when it came to ConstructorCalls. This lead to a severe error in PatchDelegate(issue #211) where classes that didn't use lombok at all could not be build due to a NullPointerException.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "88f4e2d2e3e7e79c5a39ffb73028a330a27f0765",
+            "message": "Some small typofixes for the website feature docs.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "339b4a6ab18a5dc7a39ca68314fb906fc1dcf6c8",
+            "message": "Whoops, we broke @Delegate with the last update. Now the CAS check on handled is only done if we are -actually- going to call a handler.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa8a627349bb68f376b98847b6f73c2c89e989fd",
+            "message": "tracking if an annotation has been handled or not is now no longer done\nvia the LombokAST object. Instead its tracked more directly in an attempt\nto avoid having to write all handlers as idempotent, and just in case\nissue #164 is a race condition (the handled-or-not is a synchronized CAS check).\n\nThis does break API for other plugins, but the fix is trivial: Just make your\n'handle' method return void. That 'we won't call you again' business in the decks\nnever quite worked right anyway.\n\nAlso, you might want to call Javac.(recursive)setHandledBy when you generate nodes, now.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "daf84dd00ed5059710acf9f40b4663ba7fed06e0",
+            "message": "HandleDelegate did not remove the annotation @Delegate from javac's AST, so HandleDelegate was called multiple times for the same field resulting in an error saying the delegate method was already defined.\n\nAlso added a test for @Delegate that uncovered this issue.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1e7c6b98caec18a1f3747a7e0303df88b42ffac2",
+            "message": "Updating website with a shiny new download page listing all the various frameworks and tools lombok now works under.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d9195a2296e36ce904719b63ff0e5c0321b2a74",
+            "message": "Removed the ability of lombok to run as ecj annotation processor, because\nit won't actually work right; method-level generics would break.\n\nThe new way is to use -javaagent:lombok.jar=ECJ in addition to -cp lombok.jar\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21cfb45696126c185ab0fcb2fd863eaf711ab6d9",
+            "message": "delombok would put copyright headers in between the 'package' keyword and the actual package.\nSee discussion at https://groups.google.com/d/topic/project-lombok/64zuUlLnVMc/discussion\n",
+            "tag_name": null
+        },
+        {
+            "hash": "489f506ba1f9ec99892797a912867322ea7d6478",
+            "message": "Added a layer of indirection between the patched calls for delegate to guard against situations in which lombok can't possibly work, since there is not enough of eclipse on the classpath. Major example of this is when we are called through jsps in the eclipse help. \n\nAlso added an extra check before the patchval is performed by checking if previous patch calls failed in TransformEclipseAST.\n\nThis fixes Issue #207.",
+            "tag_name": null
+        },
+        {
+            "hash": "85f7122ab5841460f5a39dacd47543c0c7bc535c",
+            "message": "Whoops - previous commit has a grievous error in it. My bad. Fixed now.",
+            "tag_name": null
+        },
+        {
+            "hash": "9360936435f53431d07f08ddc4d65522a1db3043",
+            "message": "Robbert Jan excluded com/sun from the pack a while ago, but this by accident also excluded jna which broke ecj apt support.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "75e81604f390b7d9d14b50a86d9f991de30eb1b3",
+            "message": "Split up PatchVal into the ecj and eclipse bits; in ecj you'd just get NoSuchClassErrors.",
+            "tag_name": null
+        },
+        {
+            "hash": "8b2ee73cc46a8629d61abd0dde70ecb0748e2b0e",
+            "message": "EclipseLocationProvider now checks the current directory if it matches the eclipse-like executable patterns. Probably fixes issue #196\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12b0753336e25aab11476234553b9058dc592eb2",
+            "message": "Fixes issue 205: NullPointerException in javac's Check$Validator with val\n",
+            "tag_name": null
+        },
+        {
+            "hash": "52e710006028a7014a7b654d78c7bb3c2ff4f1c6",
+            "message": "updated changelog for issue #210\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05d3e9c9840da08c97c1026b45f3505726e412bf",
+            "message": "Generalized fix for Issue #210, now the installer looks recursively for all platforms\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2fe4f169f47b51829ce9e31edf8f1dc25ef028e",
+            "message": "Updated copyright on javac HandleDelegate\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8830e883fc522ab2bf7c3e16e03a23b9fd1b3f49",
+            "message": "@Delegate in javac on the new types/excludes model without autoexclusion now works.",
+            "tag_name": null
+        },
+        {
+            "hash": "045bc9a60d7d97985791ec80b8b423a49e5c1a7a",
+            "message": "Updated Delegate docs now that we've changed how it works (it no longer detects that you've implemented a few to-be delegated methods yourself).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "66f8ec612f917f90c019b357c93f82397791cc53",
+            "message": "Added Issue 210 the the changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "99b4fac271f77951c3f1c376f31a925ef84f5651",
+            "message": "Recurse directories while eclipse or sts is part of the directory name. Solves issue 210.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "201d9216929fc9fe0a910c4a34765582712cd409",
+            "message": "Updated buildscript to new server\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c61bb0990a861ef481e2b9034b4c36df09e1061",
+            "message": "Changed how @Delegate works in ecj - methods already present do NOT\npreclude them from being generated, which means you get duplicate method errors.\nexcludes=Types has been added to counteract this. Once we figure out how to\nresolve method sigs out of order we can go back to the original plan.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b93a58298556aedaeef9e3d5fa4e53bc9b0ebe59",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12e4f36a2f5aae5b17266fb15376c82d74b7bf95",
+            "message": "Yet another eclipse mirror went down or deleted an older version. We're now hosting this dependency ourselves; it was the last one we weren't already hosting. Also upped version from 3.6.0 to 3.6.2.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a589ca221a172845a108a6c759018c6e25d5cdd",
+            "message": "Now logging a warning with diagnostic info so that the next time\na user runs into issue #164, we can get a more useful stracktrace from them.",
+            "tag_name": null
+        },
+        {
+            "hash": "7ebf05aaec0c4ed0e70a3a2a8a0f56afd029bd46",
+            "message": "Added ability to log warnings in eclipse error log.",
+            "tag_name": null
+        },
+        {
+            "hash": "ab1d938ca85870639dc912fdfc46955cb3b4764f",
+            "message": "Now delegating classes defined in the same project works.\n\nAt this revision, you can easily and reliably reproduce issue #164 by\ncreating a loop (A delegates B and B delegates A).",
+            "tag_name": null
+        },
+        {
+            "hash": "816c0b99e7f0395b26f8a8c26e52110107f0b1e1",
+            "message": "Updated documentation of XArgsConstructor to highlight that we won't/can't remove\nsuppressConstructorProperties until GWT and Android get the CP annotation.\n\nSee issue #202",
+            "tag_name": null
+        },
+        {
+            "hash": "ead7ff428c14cbfd3a84723f8abae13d5ea79330",
+            "message": "jarjar now used to make sure asm is no longer on the bootclasspath when using lombok.",
+            "tag_name": null
+        },
+        {
+            "hash": "04e9397971d3689e0710df026f673f8b0a6cb685",
+            "message": "Rewritten @Cleanup's new null analysis prevention to not use\nLombok.preventNullAnalysis but go with Collections.singletonList(expr).get(0)\ninstead; while this does create a pointless object, it doesn't cause a clash\nwhen eclipse has lombok 0.10 installed but the project uses 0.9, which doesn't\nhave preventNullAnalysis. Eventually, once 0.9 is long forgotten, this can be reverted.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38b4128f899e81d8a5d19dca8b6cd1357ca3bd1a",
+            "message": "previous attempt to use more maven central repos failed, so reverted most of it.\n\nsee commit 1a28ccb3471c1309357547e72a3997e1ec4c91de.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d0131d9c9bf8fb2dcc87c8dbec430c58bf926880",
+            "message": "Updated instructions for publishing a new version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4afc7e5c2344fc5edbd55e815ce62fa1ac8fb357",
+            "message": "Added printing oss.sonatype.org usernamepass to build script when publishing maven\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ab599d01cb0c00d5baa5092649be58b8a99701d",
+            "message": "Updated maven pom and deploy process; now lombok is linked in mavencentral so we no longer need our own repository. Also updated publish process to new server (escudo is in, libertad is out).",
+            "tag_name": null
+        },
+        {
+            "hash": "8d433449f84ddc996340be29823b672cf81d8703",
+            "message": "Maven insists on having javadoc jars, so buh, I guess we'll comply with that.",
+            "tag_name": null
+        },
+        {
+            "hash": "2f60ceabc689c60196d3918d3492141be51d2862",
+            "message": "Added our issue tracker to our pom",
+            "tag_name": null
+        },
+        {
+            "hash": "1a28ccb3471c1309357547e72a3997e1ec4c91de",
+            "message": "Replaced a bunch of deps to entries in maven central instead of self-written URLs.",
+            "tag_name": null
+        },
+        {
+            "hash": "1c3ed9ac5d321a2c6c33659e9c97a557f99227a8",
+            "message": "added developers and contributors to maven pom.",
+            "tag_name": null
+        },
+        {
+            "hash": "0fa03d313263991f6f7f55e68097e5e9794e4a7b",
+            "message": "Updates examples to use Guice and hibernate validators.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e0cfacd3b307b1ec9f0b62b2f953f0a0e85d9d1e",
+            "message": "Issue 192:\tAdd documentation for onMethod=, onParam, onConstructor\nstill have to make a minor edit in the pre/post files \n",
+            "tag_name": null
+        },
+        {
+            "hash": "35e18b9332a909aac013697c90d8240826953caf",
+            "message": "Issue 194: Javac gives and error when lombok.jar is on the classpath\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a79ca059e93b3f32e285e1c9655159c6868e0db2",
+            "message": "Delomboking multiple files still wasn't working right and would result in an IllegalStateException. Fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c3b34704a4491c837d4385e3b3f7a4117de3d39",
+            "message": "Updated changelog to represent fix for issue #177.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a56e7d7db8cc494818d3404f4800e79a467f9e75",
+            "message": "Added .markdown.html to gitignore. I wrote a tool that produces these from .markdown files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2bacfa62a330e1274ee89c76fa22a36116f8fa3d",
+            "message": "Should be a fix for issue #177: NoClassDefFoundErrors for JavacProcessingEnvironment would occur when using the m2eclipse plugin, for example when removing an entry from the build path.\n\nThe actual change is small but this took quite some searching. m2eclipse uses plexus, and plexus uses a custom classloader, which means lombok can't find the JavacProcessingEnvironment loaded by that classloader.\n\nWe fix it here by adding lombok to that custom classloader. Perhaps more die-hard m2eclipse users find a problem with this approach, but assuming these plexus compile runs are stand-alone, this should work great.\n\nfixed by Roel and Reinier.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ed4068d84289390c74ca2e45149c9a22f96ce764",
+            "message": "Added a number of test for AllArgsConstuctor, RequiredArgsConstructor, NoArgsConstructor annotations and added a test for issue: 172\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a6615234d40cf7e300dfc52c9a212e7b65eed8b",
+            "message": "Added annotation for handleconstructor: issue 172\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b15bcb09e9e05b584e73c999dd9c29b6cfb94a44",
+            "message": "Added test to confirm behaviour of @RequiredArgsConstructor, @ToString, and @Getter on enums.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "492c6f3da86fd5deb4c842bdaadc6396dc831237",
+            "message": "Updated changelog for @Delegate and 'val'",
+            "tag_name": null
+        },
+        {
+            "hash": "7b3968fe401c1db299a34feaba8f862069723e36",
+            "message": "Added documentation for @Delegate. This fixes issue 189\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2741ac3c4b53e29259243b069582ed456e9b6609",
+            "message": "trivial change: Removed bug 181 from the changelog. It's too trivial to put on there.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7cf86025a4459a2aaea8e4049f7a62169a18d132",
+            "message": "Removed a debug print.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dcbe3b9b8d6fed4740b98de6214b517bca9d20df",
+            "message": "Updated changelog to reflect fix of issue #148 (getter/setter with booleans wasn't up to spec)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "30b63deaff82128ca8c3e7b59884b4fc2caf929c",
+            "message": "Testcases updated with new behaviour of @Getter/@Setter on booleans.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c98cec7d2ddceddcc0f127185912be4f826a6caa",
+            "message": "Presence of isFoo(), hasFoo(), and getFoo(), as well as properties named 'isFoo', 'hasFoo', or 'getFoo' would trigger specialized handling for @Getter/@Setter. However, this special handling broke the bean spec, and has been simplified: Only fields named 'isFoo', and only if that field's type is 'boolean', results in both 'isFoo' and 'foo' being considered as possible property names for this property, with 'foo' preferred, so that @Getter boolean isFoo will generate setFoo and isFoo methods, not setIsFoo and isIsFoo.\n\nFixes issue #148\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aab3faa3cb43b4a854b5d094f1ef80eb39543bfb",
+            "message": "Removed planned extension 'make @SneakyThrows not runtime dependent on lombok.jar' as we've fixed that by now. Also documented the preferred git workflow for working on lombok.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "95f73048ceb8ecd5ca2ae59d152d8c9101fff596",
+            "message": "Issue 182:\tCleanup documentation should include null-check\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cfbfa178765b6eba85d4360943930e1e73c71cef",
+            "message": "Calling setCharset with null will use the system default charset (issue 181)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38f0e7a49e2c6a3bf59b0207469edd5e054addbf",
+            "message": "Changed internal call for resolution to method support in javac7\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3fcdcf65ce8c4140f1a3f4e6be18b87a053861b",
+            "message": "NPE fix\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1bfe6ee1a54f225876afa7fb479a4f34ac338ade",
+            "message": "In javac, @XArgsConstructor on enums was not forcing the generated constructor to be private (as all enum constructors have to be).\n\nFixes issue #186\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c305e2c86f39f4cd0d80c39d0cc8ea9894eb6716",
+            "message": "trivial update to the build script to get rid of a warning while building tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41a85d2814a979cb2c1c31b5a95dd96cd8a23f87",
+            "message": "Some of the tests weren't succeeding (and haven't for a while now) since fixing the bug where lombok will call equals(SomeSpecificType) instead of equals(Object) from data. This commit rectifies this by updating the tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47037e2830057143d1597b8d6b6725143ea09f0d",
+            "message": "updated the eclipse ecj mirrors as the belgium mirror was discontinued\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5af37e2134013eadaaff1b3b239c1523918abb9c",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6d8cee3757d48ec83ff8fb0b6673053b9e5dae31",
+            "message": "Making delombok compatible with post-resolution transformers meant delombok would fail with a 'duplicate context value' error.\n\nFixes issue #178\n\nThanks to Neildo for using the 0.10.0 beta and spotting the problem - the tests don't run 1 delombok with multiple files. Maybe we should change that.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1d83020a0c9f68b4175044cb937dc13b27ec0986",
+            "message": "Should fix issue #175, where annotations mysteriously appear to be copied to the methods generated by them.",
+            "tag_name": null
+        },
+        {
+            "hash": "6da38688de8eafb7b53ca8be0add444ddc116b46",
+            "message": "Added debug feature (disabled in this commit) to print types of nodes printed by EclipseASTVisitor.Printer\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9b13f8fcc9412874fcd068629bf36bc9a15cb7b",
+            "message": "Using annotation processors with lombok sometimes results in a 'Not Supported: DummyRound0' error. This fixes it.\n\nFixes issue #176",
+            "tag_name": null
+        },
+        {
+            "hash": "983d487b59d3fc30c19fa9bd1ab472468c0958d1",
+            "message": "Starting eclipse with an open file containing an enum with @Getter on it would cause 1 error log entry to show up. No other effects other than that, but thats ugly and so thats been fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fb1d6c0f0dfafcd889cac8906246803349c353f2",
+            "message": "Resolve-phase transformers in eclipse need to force a rebuild of the EclipseAST object.\n\nFixes issue #171",
+            "tag_name": null
+        },
+        {
+            "hash": "59e2a0ff1d347bb1a7d02b7ac37b1f9d38647e60",
+            "message": "Presence of i.e. getABC() stops lombok from generating getAbc, but lombok will still attempt to call this nonexistent getAbc instead of getABC. Fixed.\n\nFixes issue #173.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49100b43c084f6774d43d93eee98440253965047",
+            "message": "calls to canEqual and equals are now fored to go to the version that has 1 Object as parameter (creating new equals methods by giving them non-object parameterized is a _really_ bad idea, but if someone did do that, obviously lombok shouldn't call those!)\n\nFixes #165.",
+            "tag_name": null
+        },
+        {
+            "hash": "52582dc10ea1b5ea4a1dbb71831a442056354990",
+            "message": "@ToString, @Getter, and @XArgsConstructor now work on, and are legal on, enums. Docs have been updated.\n\nBehaviour of @XArgsConstructor when its placement makes no sense (i.e. when annotating an interface with them) is no longer 'throw weird errors', but has been brought in line with the others: A nice error message is generated.\n\nFixes issue #175",
+            "tag_name": null
+        },
+        {
+            "hash": "d80139fa8f21b1e6c7fad0a0607986d7b246a06f",
+            "message": "Second time's the charm - fix for generating LombokizedEclipse.launch in windows.",
+            "tag_name": null
+        },
+        {
+            "hash": "b56924dcd71e216fa27120f7f86c26dfc853661f",
+            "message": "Using @Delegate to add a varargs method now works in eclipse (the varargs nature of the method is preserved).",
+            "tag_name": null
+        },
+        {
+            "hash": "2f99cb62a1dce67b663314382e3d49e9b99f87ab",
+            "message": "Added detection of type var naming conflicts to eclipse's @Delegate support.",
+            "tag_name": null
+        },
+        {
+            "hash": "cbaaedf32c028adbf1e050930428d732ea7be0b3",
+            "message": "val x = foo; is now desugared into \"@val type x = foo;\" (the @val is added), for javac. Of course, this is NOT done in delombok mode.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b260648065724a73ef4ec84f8e4b17d771576822",
+            "message": "Generating LombokizedEclipse.launch was broken on non-macs.\nIt was also essentially broken on macs, as in, the generated launch only worked on 32-bit eclipses, but the default download these days is a 64-bit cocoa version. Fixed this too.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "161bcbaf8876e41e9ec6a6478d4444e144df5a92",
+            "message": "After 2 weeks of debugging, finally figured out val in eclipse using lombok.val without breaking 'fix imports'. Eesh. Using \"lombok.val\" only half-works; auto-complete on the variable doesn't work, but it compiles fine and no errors are reported.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e15de71fd410351cd6323a469b30300ccf4bba55",
+            "message": "@Delegate in eclipse works when delegating parameterized types now, and will use the parameter names if the delegated element is a source (vs. class) dependency.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "953b6c114051ad7926fea57bde5958345cb87f76",
+            "message": "Moved all the Compile time constants from the Javac handlers and supporting classes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bac11b43dd73d0e92cac4a14c32e301adb009b10",
+            "message": "Parameter names are now 'arg0', 'arg1', etc, unless the delegated type is source, then the name is copied over. Compared to javac, this means eclipse's @Delegate does NOT use debug symbols, which we'll have to fix later (We checked out how to do it, and it seems virtually impossible).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ed1ea0dca2f7179cb146cf65969ba89b54a6578d",
+            "message": "@Deprecated is now copied across for eclipse's @Delegate\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e308909def27a6940792cb04c1a9ec618c5df3cc",
+            "message": "@Delegate in eclipse now uses more of the standard infrastructure to inject methods.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b0072a17eba21cdc6f8ba51693bb39d1c9aba319",
+            "message": "lombok.val import now gets removed. Only adding lombok.val flags the compilation unit as changed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dd0fded2bfbd5c318913209e93d74a2bb06f3d14",
+            "message": "some more work on why delombok isn't tracking changes due to val alone.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a8e92af7b7bea0240825666520e74cc6550a4750",
+            "message": "Use includeantruntime=\"false\" for safety and to avoid warnings under Ant 1.8.0+.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9523364898061cf4163c51f9f70befb19d1d64a6",
+            "message": "Make compilable under JDK 7's javac (thus also removing an error mark in NetBeans' editor).\nsrc/core/lombok/core/LombokNode.java:260: gatherAndRemoveChildren(Map<N,L>) has private access in LombokNode\n\t\tfor (L child : children) child.gatherAndRemoveChildren(map);\n\t\t                              ^\n  where N,L,A are type-variables:\n    N extends Object declared in class LombokNode\n    L extends LombokNode<A,L,N> declared in class LombokNode\n    A extends AST<A,L,N> declared in class LombokNode\n",
+            "tag_name": null
+        },
+        {
+            "hash": "84a74bf63884e70fbd25b2e54eb8e60de66ccda9",
+            "message": "@ToString usage example had a typo in it (used 'excludes' instead of the correct 'exclude'). Thanks to Francois Marot for spotting this problem.\n\nFixes issue #168.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ac23f853a1170c3350b26519398f7072df16a19",
+            "message": "'val' now only works if its a reference to lombok.val on javac.",
+            "tag_name": null
+        },
+        {
+            "hash": "7dba9c850c675cc8066fa3e7c79e836bb7ad8203",
+            "message": "Added 'val' as a type which the 'val' fake keyword must resolve to before val works,\nas a gesture to make val less 'magical'. It even works, in eclipse. Next up: javac.",
+            "tag_name": null
+        },
+        {
+            "hash": "5e9b99bec80fe488f3fcd173f81adb623b30254c",
+            "message": "The somewhat rare conflict in typevar names problem has now been solved in javac.",
+            "tag_name": null
+        },
+        {
+            "hash": "63664a310fb7ae7048a0d58b6fa2fb7affdf147a",
+            "message": "bugfixes for typeToJCTree. HandleDelegate (javac) is working better.",
+            "tag_name": null
+        },
+        {
+            "hash": "07cfed749e8aa4269fb5060cc3e466c7edb910a4",
+            "message": "Want to code lombok in intellij? Run 'ant intellij', possible from this patch on, to do so. This involved switching to ivyplusplus 1.4 and includes a hack to make sure 1.3 users get upgraded.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a6971710ac347c7574ee003e5354fb876d5d5e87",
+            "message": "Fixed @PrintAST, which wouldn't do anything at all in javac mode since resolution support was added.",
+            "tag_name": null
+        },
+        {
+            "hash": "3c092da93ada3bd99b04b37633fb844a14b8c132",
+            "message": "Documented @Delegate with javadoc.",
+            "tag_name": null
+        },
+        {
+            "hash": "c340c9c24f45b7007ed04fb5ce9e1f1819e8e0ba",
+            "message": "@Delegate, at least without value=, seems to work great in javac now!\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ded143defebd49610e74443e2d6d813d57fd11b",
+            "message": "Updated version name - should have done that after pushing 0.10.0-BETA2.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d76c50e9d5250c86a8ecc89e98379386c6ce23c4",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ba4a371b5741fd8ba77969da3704725e97fdeed",
+            "message": "Cleaned up the patch fixes in eclipse for finding end of identifier and start of catch block. Maaartin-1 reported issues that sound like these were at fault they we were not able to reproduce them.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e151d491388a6a159e339509e4582e56ab4df02b",
+            "message": "Clarified the need to run ant eclipse in README.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8eb05b357d37b8e58cfb4ecb331371c88f1a856b",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7dede9a6647ded762701d70d6e71066557196fb5",
+            "message": "Added storing instanceof JavacTypes in JavacAST, and renamed JavacResolution's methods.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "16a24525bf8c40549ded60678a4c4ec25fce35c5",
+            "message": "Fix for reported NPEs by Stephen Haberman.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ffedb71cb52e32657d0426ef667f701a88f3fb9a",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "67668f8e98d74568092d3e36fc51425a4ff1fae8",
+            "message": "Added extra javadoc links\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3a9eeeffbc78681b3efb0b59d70565541ccfed4",
+            "message": "Fixed reference to java6 core javadoc package list, which we accidentally removed a long long time ago in commit e693672cd44ab0e648643f4b5c24b1c177ab6c84\n",
+            "tag_name": null
+        },
+        {
+            "hash": "415bc490dcaaa46cac4c6958e3058049ec100a9a",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c2556b1f7b26ea0b70d356d9eeefb638560a46f",
+            "message": "In javac, use ListBuffer to append\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d44421dada3d35750c08163ef76514018f89b055",
+            "message": "eclipse: @Delegate now no longer generates methods that you already wrote.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa0a027853d02fd6e53246ca223e2985f99d8d34",
+            "message": "Removed the brainfart where final methods aren't delegated.",
+            "tag_name": null
+        },
+        {
+            "hash": "9921778f972fbe8ab37870abddf1bd5457c60a2c",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "339efa00c62267f8fb6643d8883d5130c9fdd05a",
+            "message": "Added meta-annotations\n",
+            "tag_name": null
+        },
+        {
+            "hash": "936a3e9edbf4bc8514f509641912281066b17d35",
+            "message": "Make @AnyAnnotation illegal to use\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d11e6e3115d783650a6f49984d496e0ae157b955",
+            "message": "Moved patch code specific to val and delegate to their own class.\n\n@Delegate in eclipse works pretty much exactly as designed at this point!",
+            "tag_name": null
+        },
+        {
+            "hash": "2ae0341a3f3656ec29094a16d9c9bbfc6f4ba1d3",
+            "message": "Jiggered the hook point a bit for eclipse 'delegate' support and it looks like this might just work.",
+            "tag_name": null
+        },
+        {
+            "hash": "b30f8e351b241f8976c6b00ff402df39eedde2bc",
+            "message": "Merge branch 'master' into delegate\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3f00e7c90548cc00fca75ad1975a2ecc05521871",
+            "message": "@Getter(lazy=true) now also works in Eclipse\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9113718ae2adc2d837f9e5a1adf885a4b1aa844",
+            "message": "Set generated on all created ASTNodes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ddf54dcfaea71e50ae32b45785b8624b9137843b",
+            "message": "Merge branch 'master' into lazyinit\n\nConflicts:\n\tsrc/core/lombok/javac/handlers/HandleGetter.java\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eae3e45ae7dd965cc642d7f03b833574e974fc1b",
+            "message": "trivial - removed some unused imports\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a0847b4c380026bb3599e8ae37a5157521fbd9e6",
+            "message": "Tests were failing due to a bug in the compare error output part of the test runner.",
+            "tag_name": null
+        },
+        {
+            "hash": "40b76b50462ac2a3d25b29eb4a8d28298a474efa",
+            "message": "Merge branch 'fixDelombok'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "632027249b813bfabd457c07ebc89c4456e8175d",
+            "message": "All tests pass! - The test framework has been updated a bit to fit with the new way delombok works.",
+            "tag_name": null
+        },
+        {
+            "hash": "249566813149f8e6984561d9d2ba4e348974dc1a",
+            "message": "Delombok has been fixed to work more like a true javac run now. As a result, its now compatible with resolution again (i.e. resolution based transformers are applied correctly when delomboking).",
+            "tag_name": null
+        },
+        {
+            "hash": "5b5a3713e2436706f80e782ed26479b066205ab4",
+            "message": "Fix for javac: 'val x = null;' is now valid, and results in x being of type Object.",
+            "tag_name": null
+        },
+        {
+            "hash": "2bc8ad4dfd6e34e15f2bd7a661d62bc26cc13379",
+            "message": "'val' now fully works on javac, even when referring to lombok-generated code, by (ab)using the annotation processor's round system. This breaks delombok though. That'll have to be fixed next.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d02a0f823fb5922ddc2e29e62cc0359be3fce0a8",
+            "message": "deleted netbeans agent. With the new resolution features it'll never work, and netbeans has supported lombok as a plain annotation processor for quite a while now.",
+            "tag_name": null
+        },
+        {
+            "hash": "63519f9ae601e00430c5fd542bedf79beb688db3",
+            "message": "Undone something that'll never work anyway\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cbbb54a1333e8d40ae04ee0fd0e09e0997482c8c",
+            "message": "Merge branch 'master' into javaChickenAndEgg\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57de0c3f6636181541a7712e8d506828420c13d1",
+            "message": "EqualsAndHashCode no longer worked right when working on a class with 0 fileds. Fixed. Thanks to Philipp Eichhorn for spotting this problem!\n",
+            "tag_name": null
+        },
+        {
+            "hash": "16f992c5adea8ed8ad183d27c247901d61b0635d",
+            "message": "Due to an evident screwup at github.com about their https certs, downloads from there no longer work. Moved the ivy target for cmdreader to a file hosted on projectlombok.org To fix it. Thanks to Stephen Haberman for spotting the problem.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a94243e06202a274a9499d1c0e79aeccb1aef5cd",
+            "message": "Added lombok.Lombok.preventNullAnalysis to the null test in @Cleanup to suppress\nwarnings about variables that cannot be null\n",
+            "tag_name": null
+        },
+        {
+            "hash": "98d8a9f63b3183005174abb7691a1692347b9a2e",
+            "message": "'val' didn't work on ecj/eclipse when referring to types in the default package. fixed.",
+            "tag_name": null
+        },
+        {
+            "hash": "956165cc8a25ef66dac19010cca32f065a8679f7",
+            "message": "reverted the deletion of SneakyThrowsDependencyInfo. It's still a runtime dependency for delombok users.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "844414768c49677f344704328905f1ab3f7b67a8",
+            "message": "Ran into a one-off, non-repeatable problem involving arguments not binding correctly. Just in case its our fault, added some extra code to not even attempt any 'val' shenanigans in method arguments (which are LocalDeclaration subclasses).",
+            "tag_name": null
+        },
+        {
+            "hash": "93e38f9024216b25856b80d0b56d802c16408b16",
+            "message": "Updated to lombok.patcher, which basically only means that the \"PATCHING: ...\" prints to system.out are gone.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc60afa1eb4b14998e72c4fd5adf9def32e0e0f8",
+            "message": "'val' now also works in foreach loops, on both javac and ecj / eclipse.",
+            "tag_name": null
+        },
+        {
+            "hash": "dee834a39780f61a0357c42f61592cd3c3598bd3",
+            "message": "Added support for canEqual in ecj\n",
+            "tag_name": null
+        },
+        {
+            "hash": "616ef8581f4ce1cb8593c0281ef8ac43f92ad8cd",
+            "message": "Add diverse logging frameworks for the tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c318bb7a0ab6b28fef262ea89bf2b7cdc7ac610f",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e5acaca49bff5af2b174078fb18b9015ae1bb71",
+            "message": "Added support for canEquals in javac\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4ae32fd798dcb45c439869e990ff296f3f96036",
+            "message": "Little cleanup\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f202525afae8d43b54d2160a6ef924c3d1d5d91",
+            "message": "Merge branch 'eclipseReso'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b58e1a11539a6da05fa25f51e2acd91d2d9f7d7",
+            "message": "'val' support for eclipse.",
+            "tag_name": null
+        },
+        {
+            "hash": "fcf39d88b489d03bc93cecf0e98e7ffbb7a162aa",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "17bcfda43b9e939ac22d5247ef98905741650432",
+            "message": "Issue 154: Add null-check to @Cleanup\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5897d9685e4f606319a9707ae22efe4740b3f630",
+            "message": "Removed trailing tab\n",
+            "tag_name": null
+        },
+        {
+            "hash": "29e07a48755066f6a1bbaf6de12c3af3a9970d95",
+            "message": "Added after-delombok test files for Logger\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fc6670e1c4c31fbeaf658369c2771a2a93a0a9ba",
+            "message": "The previous commit (fix for ZIP closed errors) actually breaks lombok on systems with a javac that _does not_ close the annotation processor's jar. Fixed that, too.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a24e6f9f2caaa154ce862ec51ffc1b56ab4d9d3",
+            "message": "Fix for \"ZIP file closed\" errors caused by the postprocessor trying to load more lombok classes to do its job, after javac has already closed the classloader via a hack. We hack the hack to stop javac from closing only _our_ (that is, lombok.jar's) classloader.\n\nCo-Author: Roel",
+            "tag_name": null
+        },
+        {
+            "hash": "05c97e8bfa25dd577a21b680760b2736fc541849",
+            "message": "bugfix for the sneakyThrows remover: In rare cases would erroneously delete an ATHROW opcode.",
+            "tag_name": null
+        },
+        {
+            "hash": "c10b91309ecb6fe4b38e0097cd93cc124c78436c",
+            "message": "trivial: javadoc fixes, renamed 'className' to 'fileName'for postprocessor",
+            "tag_name": null
+        },
+        {
+            "hash": "bcdd5226cec974df0518415d1ca4d21aef79a239",
+            "message": "Documented the addition of the post-process stuff, which fixes issue 144.",
+            "tag_name": null
+        },
+        {
+            "hash": "431543afcd5b5982c1a8cd749495b95d2143747d",
+            "message": "Documented the ClassFileMetaData utility.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "240473a6c214679362bb3544ea414716f4c2062a",
+            "message": "Merge branch 'postProcess'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4c23804837e854c4f4ebb0008b10241467550d3f",
+            "message": "Update to force reading of test sources as UTF-8, which they are.",
+            "tag_name": null
+        },
+        {
+            "hash": "1f1fd17350bd61169e2aa01e5c3377801fb18a08",
+            "message": "Added name of compilation unit to error/warnings generated by postProcess.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e4845802a7d66415e330325dd434c0df4315c895",
+            "message": "Updated buildscript to include tests and eclipse .project generation for the new bytecode tests in test/bytecode/src\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b0ec7d5389e7b2e7b1ddf7c743f0ff093d55c1f1",
+            "message": "Added error/warning to the printed messages.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4247f2e8b048d6cae83d5f93d59c7591309e65c",
+            "message": "Post-compilation works in both Eclipse and ecj\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2683c24ee96fd7228198512f5cfcb2fd0b0cfabd",
+            "message": "Fixed some bugs in reading the constant pool and added tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b14eef7eed8703824773467606f3be0c03a04b33",
+            "message": "Created utility class to casually inspect class files on the usage of classes, fields and methods\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d41a282e50a8348b904951893d98239095a7ccab",
+            "message": "Moved wrapOutputStream to PostCompiler\n",
+            "tag_name": null
+        },
+        {
+            "hash": "53650295f04edfbb7a48d4bdf3c790b11a5beeca",
+            "message": "Remove the double-athrow\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57bb88a7691dd89029517a79393a62e6cdedc3ce",
+            "message": "Post Compiler now works, including the sneaky throws remover. Also added a lombok app for it. Not yet in eclipse, though\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40466c3e2d7d26a43b58f008986fd0b84c986b27",
+            "message": "Hey, the sneaky throws remover works, at least when run separately.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "11fcdbee725a3b900ed7d6b7d09ea18f6af6b961",
+            "message": "Added initial support for post-compilation byte code transformations\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fd8e08cb784db38d527c684681a88fc59931f713",
+            "message": "typofixed the link to issue 133 in the changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "735b2cf1029baa985c61ecbc5aba0b081575aa70",
+            "message": "trivial: minor stylistic update\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7c7c1b2f68c540f9905919f9dc4bc311192049df",
+            "message": "Updated changelog to note issue 136 has been fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "357fd954e535943a79224c851784e22b6e3b4c90",
+            "message": "Fix for issue #136: @Getter and @Setter now work on static fields again.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83b4dd86136cad95026f1f2543732e0e39ed6676",
+            "message": "Added test case for issue #136: @Getter or @Setter on a static field fails to compile.",
+            "tag_name": null
+        },
+        {
+            "hash": "ec24fe37ddc7b8230b45f62c11bb4a047e9824e8",
+            "message": "post release version increase.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "81cfc844b90d347c01ec9e68dcd7554a75caa733",
+            "message": "Changelog for fix to issue 140\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2043399d3916cf5c1b34b9552394f25d58068008",
+            "message": "delombok added type parameters to constructors that mirror the type's own type parameters. This resulted in delombok turning any generated constructor that takes at least 1 parameter of type 'T' into something that didn't compile, and to boot, a confusing error message. This is now fixed.\n\nFixes issue #140.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d012f6734146fcd22a7d69f7389dc9de1897c2d",
+            "message": "The \"// Generated by delombok at ....\" line at the top of delombok-produced source files now uses the system's local line-ending just like the rest of the source file, instead of posix/unix style LF.\n\nReported by Anthony Whitfield, fixes issue #142.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1cf083890c223bf7245190264438740ee724bc9",
+            "message": "val in java, including tests and javac resolution utilities.",
+            "tag_name": null
+        },
+        {
+            "hash": "d9ba2a191ac71e7d8689f1ad0e99160b1c8dae3d",
+            "message": "big changes to delombok to prep for resolution, when sourcepath and classpath are relevant, and the flow needs to be parse all, then enter all, then transform all, instead of parse->enter->transform sequentially for each file in isolation.",
+            "tag_name": null
+        },
+        {
+            "hash": "6e2924bcf2ceb390c0f8c712e8ee9c4428173ded",
+            "message": "Some small framework updates to accomodate resolution.",
+            "tag_name": null
+        },
+        {
+            "hash": "75e8c4f6a03b14102705f92b45a02c01f8bf8946",
+            "message": "Updated changelog\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2097dd87310026733a4f48c47bb31a59996f5d83",
+            "message": "Solved issue 155: \"Eclipse constructor generation not in class body\" http://code.google.com/p/projectlombok/issues/detail?id=155\nNow all lombok generated methods are located before any other method.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "378b939108ef2216da00724a8efd9521b7a10b8f",
+            "message": "Now generated nodes can also be detected in ecj\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f0db1191a7fcc35aaeab1481a806201a450d797",
+            "message": "Use the actual annotation value to process the @Log annotations instead of their String representations.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "50524f338ef1f29a1848a2f2d542d6b7317c5eff",
+            "message": "Provide access to the actual annotation values\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2e88614a840bd9cb91521bd2d7498670b5626054",
+            "message": "Updated changelog\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8e7334a50535ef33189c3e71fcab0d9e625c6534",
+            "message": "Updated documentation on @Log and moved them all to lombok.extern.*\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1addc14d5c2430c2b9fbea3081884d4f9d62a4c",
+            "message": "Updated website documentation to include @Log\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3cbd92e1b29b23ca543c6cced4f96d1cc68d7d0f",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "59150328992339ec64ae015e2d1d73c109c4d322",
+            "message": "Have j.u.l. be invoked with TargetType.class.getName() instead of \"TargetType\"\n",
+            "tag_name": null
+        },
+        {
+            "hash": "529a480ca998f7eab16ff9745e8fb08aa28072e5",
+            "message": "Use a ClassLiteralAccess instead of a NameReference\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c7b29f8e7009d1433e2386f710c78801f119ebb",
+            "message": "Create Clinit if you create a static field and it doesn't yet exist\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a48c335c7d8f1b361b134110219af8b0d3610101",
+            "message": "Code cleanup\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a3a656213605482bfa11f2efddf96dc1f47d16e",
+            "message": "Add support for multiple logging frameworks in Eclipse\n",
+            "tag_name": null
+        },
+        {
+            "hash": "66661b63c8becd7a9c1813815fdb09efefbf334a",
+            "message": "Reorder parameters\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f6bbebfbd200fab85a637e3b7939a9c1444332a3",
+            "message": "Use an annotation instead of implementations of interfaces\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1346a830c11999c9ccf83831f27f163cb7537dab",
+            "message": "Fixed typo\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c3eddf66cfb16d5d27c7a9562ea539344bfcb2d6",
+            "message": "Added support for Log4J, Commons and JUL in the javac handler\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7219b78b4d201cba116b101a25a91006767a4c7f",
+            "message": "Fixed typo in unit test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f6b60b0cae7f8af2e4598f2bbbd72839e193a36b",
+            "message": "Intial support for @Log, for now only slf4j\n",
+            "tag_name": null
+        },
+        {
+            "hash": "384bff18c9ff93f001aa8a938ba721914e101c0d",
+            "message": "implicit flags in interfaces (all methods become public abstract, etc) are now no longer printed in delombok\n",
+            "tag_name": null
+        },
+        {
+            "hash": "46feeaab85916c8b6de5edee1c67a995331ae97f",
+            "message": "'val' with an array on the initializer didn't work in eclipse.",
+            "tag_name": null
+        },
+        {
+            "hash": "3855a2171bbcb1c256f67ddd815526797364219c",
+            "message": "Delombok on files with only 'val' in them, without --force, didn't do anything. Fixed.",
+            "tag_name": null
+        },
+        {
+            "hash": "09cebbdc59c118bb31f7e2fdf328ed60a03385c7",
+            "message": "'val' in javac now errors out with an appropriate message on val x = { .. }, and arrays no longer cause \"Symbol not found: Array\" errors.",
+            "tag_name": null
+        },
+        {
+            "hash": "186b16c28cf461f88a3b5eecd2fa4523af2949d9",
+            "message": "EqualsAndHashCode no longer worked right when working on a class with 0 fileds. Fixed. Thanks to Philipp Eichhorn for spotting this problem!\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c88ae3af7432513987eafaf13c178baa77cb0667",
+            "message": "Merge branch 'master' into javaChickenAndEgg\n\nConflicts:\n\tsrc/core/lombok/javac/handlers/HandleCleanup.java\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0951ea38fe11189cdc4c2778fdad9e9e3ad6a6ae",
+            "message": "Experiment to try and make java 'self referential' by deleting the Enter and MemberEnter state. So far it doesn't work yet.",
+            "tag_name": null
+        },
+        {
+            "hash": "04d041a7dcb4f57c5b5bf460cf78cddfaba4853b",
+            "message": "Delegate annotation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8774389e7cb73e494267af3a87f70c7497b220a",
+            "message": "Made AnyAnnotation deprecated\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3d4b27d6d288ecb418a2a1a09ed43cae90ec548e",
+            "message": "Merge branch 'master' into annoGetSet\n\nConflicts:\n\tsrc/core/lombok/eclipse/handlers/EclipseHandlerUtil.java\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe7f0db2fce7b4c80853b9aed100908ff1f55f40",
+            "message": "From now on it is possible to specify annotations to be placed on the method\nor the parameter of the generated getter/setter methods.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "46d471e9c3dc32b03c34804df1819739a4dffc50",
+            "message": "Merge branch 'master' into annoGetSet\n",
+            "tag_name": null
+        },
+        {
+            "hash": "92b7efac48c18f22b81098cf1d844a891bb71648",
+            "message": "Setter now supports 'onMethod=@Annotations' and 'onParam=@Annotations' for javac, though for javac v1.6 you get false errors during compilation printed to stderr :(",
+            "tag_name": null
+        },
+        {
+            "hash": "1c323332493148f0aaa936e668e1b0da5d09c8be",
+            "message": "@Getter(lazy=true) support for javac\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6c6f4c4642ee2fc9c92e8990d876a96e1cf51840",
+            "message": "Mostly fruitless work on making delegate work in eclipse.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a3765dd30aa75e835984c40f39ef7a8d193a8034",
+            "message": "eclipse: methods with their own type variables can now be delegated.\neclipse: local classes can now be delegated.\neclipse: source position of delegated methods are now set properly.\ncleaned out a bunch of debug helpers.",
+            "tag_name": null
+        },
+        {
+            "hash": "80982cc9d6f22de35d9db23d547d580800976794",
+            "message": "Added copyright notices to PatchVal and PatchDelegate [trivial]",
+            "tag_name": null
+        },
+        {
+            "hash": "ee560cc7fa52be3202055e03767bd90b46431052",
+            "message": "eclipse @Delegate: Whoops; earlier fixes meant methods that existed explicitly in multiple supertypes got added that many times, resulting in duplicate method errors. Fixed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49b9d073baa0039325065fa76747fa7384fa89be",
+            "message": "Pre-beta-release\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca24a4c3ec6c328463a07ce171c413f96be14d95",
+            "message": "Fixed @AllArgsConstructor screwing up with final fields that have been initialized.",
+            "tag_name": null
+        },
+        {
+            "hash": "c86d0fcc37cee701d9781e255e5fc22dc9e2fa41",
+            "message": "Added link to SpoonVennersOdersky paper about equality.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5595943f06055279099dce1b504de224b7eaa458",
+            "message": "Merge remote branch 'origin/master'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c47eb1299467f052f25581430d20bc3b2b83f4d",
+            "message": "Added documentation for val and @Getter(lazy=true) and updated docs for Log and EqualsAndHashCode to reflect new lombok 0.10 features.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "36f9a5aabc393738af1587907e324ea44661ed4d",
+            "message": "Fixed reference to java6 core javadoc package list, which we accidentally removed a long long time ago in commit e693672cd44ab0e648643f4b5c24b1c177ab6c84\n",
+            "tag_name": null
+        },
+        {
+            "hash": "423a9610a84aa98c6369f0c9d8a5016c30debfd8",
+            "message": "In javac, use ListBuffer to append\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a89cbe7e7610c649c45e3647d766fdb027f068d",
+            "message": "Ivy cache is now local to prevent cache conflict with other ivy using projects.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f258229b88a797694320b1794a4084998411a94b",
+            "message": "- Renamed the diverse @Log annotations to give them distinct names\n- Removed the option to specify a different class to log on\n- Updated tests and documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9e0da7aa877afb5863b1b5c517d540e5b33a2d7c",
+            "message": "In javac7 the BaseFileObject and JavacFileManager have been moved from\ncom/sun/tools/javac/util to com/sun/tools/javac/file\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e5e35213780a87c813b892d5efc1288125980baf",
+            "message": "Eclipse 3.7 updated some internal AST classes, causing:\nNoSuchMethodError: CastExpression.<init>\n\nThis commit fixes this (now lombok works both <3.7 and 3.7).\n\nfixes issue #206\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4b4a92302af4d52a2a1d07524cb506bdecadf14",
+            "message": "Changes to the lombok annotations processor, forcing the java processing environment into doing multiple rounds and disabling certain reparses in netbeans. Thanks to Jan Lahoda for researching this issue and supplying us with a patch.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "931959c89addb8213594033ed43da734c426f3a4",
+            "message": "Fixes issue 232, now we also patch dom.SingleVariableDecls. Fixes val import disappearing when organizing imports in Eclipse, when using val in a foreach.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41e58cde0f9760d9b687e6d24ac717210e3e20ac",
+            "message": "Added NetBeans installation instructions\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a284600987065aa78bc41b2099421f864cfcec20",
+            "message": "Removed support for onMethod, onParam and onConstructor due to javac7 type incapabilities. Issue #251\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55cb9f8dac271fe0facd2ce2ad365f8084942181",
+            "message": "Make extract method work with @Cleanup and @Synchronized\n",
+            "tag_name": null
+        },
+        {
+            "hash": "39d447d6ff70064a9957ee790b36bb63aeefdbe5",
+            "message": "This fixes 'val' not working in javac7. The LogDisabler used to simply suppress writes to standard out, but javac7 has a redesigned error system where errors are cached. Now the LogDisabler also wipes out any cached errors added in between a 'disable' and 'enable' session. Ironically we actually whined to Joe Darcy about javac6 emitting errors 'too early' and this caching system is the result. Heh.\n\nThis was already the case, but a disableLoggers() call HAS to be paired with an enableLoggers() call, so use try/finally.\n\nFixes issue #259.\n",
+            "tag_name": null
+        }
+    ]
+}

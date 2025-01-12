@@ -1,0 +1,48 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v27.4",
+    "previous_release": "v27.3",
+    "cycle_days": 27.23090277777778,
+    "commits": 7,
+    "commits_in_advance": 0,
+    "start_delay": 2.3148148148148147e-05,
+    "duration": 27.23087962962963,
+    "commits_info": [
+        {
+            "hash": "80d48ae92d3007caac5eab0a8f8ee4e57f3a921e",
+            "message": "Updating version.json and repo version numbers to: 27.4\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1efed95440d9d61aa3baadf24c849be3bf0199db",
+            "message": "Revert \"Move -Werror to our test/dev bazelrc files. (#17939)\" (#17974)\n\nThis reverts commit 99fd54a6ad884565218ad2290bae611940e8108a.\r\n\r\nThe addition of `-Werror` in `.bazelrc` appears to cause errors in our\r\nrelease process, so let's roll this back for now.",
+            "tag_name": null
+        },
+        {
+            "hash": "99fd54a6ad884565218ad2290bae611940e8108a",
+            "message": "Move -Werror to our test/dev bazelrc files. (#17939)\n\n* Move -Werror to our test/dev bazelrc files.\r\n\r\nPutting it into BUILD files unintentionally forces it on all our downstream users.  Instead, we just want to enable this during testing and let them choose for themselves in their builds.\r\n\r\nNote, that this expands the scope of -Werror to our entire repo for CI, so a bunch of fixes and opt-outs had to be applied to get this change passing.\r\n\r\nClosed #14714\r\n\r\nPiperOrigin-RevId: 666903224\r\n\r\n* Fix extra warnings on 27.x\r\n\r\n* Fix zlib issues on macos\r\n\r\n* Fix spurious upb warnings in 27.x\r\n\r\n* Second try at zlib/macos issues\r\n\r\n* Only disable deprecated-non-prototype on macos-14",
+            "tag_name": null
+        },
+        {
+            "hash": "9aaa1d13f3402ca3e0b52616d3270e8c66b73fe0",
+            "message": "Merge pull request #17934 from protocolbuffers/cp-27-compat-upgrade\n\nBinary compatibility shims for GeneratedMessageV3, SingleFieldBuilder…",
+            "tag_name": null
+        },
+        {
+            "hash": "8dd83da71cf7054470b68c71550a5a97d46121c0",
+            "message": "Binary compatibility shims for GeneratedMessageV3, SingleFieldBuilderV3, RepeatedFieldBuilderV3, and their nested classes to restore binary compatibility with <=v3.x.x generated code built against v3.x.x prior to v4.26.0 breaking release.\n\n3.x.x descriptor.proto generated code is *not* supported with 4.x.x runtime, since this results in an ODR violation with the descriptor.proto built into the 4.x.x runtime. This is expected to result in undefined behavior / failures.\n\nTested against //java/core:v25_generated_message_test_jar (binary compatibility) and //java/core:v25_generated_message_test_srcjar (source compatibility)\n\nPiperOrigin-RevId: 664819152\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c96e55eac2216dfdfffb2701dcc318d7057089f",
+            "message": "Updating version.json and repo version numbers to: 27.4-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7622aa43c72dff05fff33289ed37a946aa61c976",
+            "message": "Merge pull request #17674 from protocolbuffers/27.x-202407311327\n\nMerge release commits to 27.x",
+            "tag_name": null
+        }
+    ]
+}

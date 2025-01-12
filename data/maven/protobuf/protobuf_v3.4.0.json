@@ -1,0 +1,1578 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.4.0",
+    "previous_release": "v3.3.0",
+    "cycle_days": 111.00475694444444,
+    "commits": 313,
+    "commits_in_advance": 37,
+    "start_delay": -136.87653935185185,
+    "duration": 247.88129629629628,
+    "commits_info": [
+        {
+            "hash": "80a37e0782d2d702d52234b62dd4b9ec74fd2c95",
+            "message": "Merge pull request #3495 from pherl/c++11\n\nAdd std::forward and std::move autoconf check",
+            "tag_name": null
+        },
+        {
+            "hash": "4a4c67b6a2aa7d2c5051a53c25a96008956b587f",
+            "message": "Add std::forward and std::move autoconf check\n\nProtobuf now uses these two features, which are not available on some\nplatforms.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eaeca0d42b1fc4a8023a7f90d889631eda9360a3",
+            "message": "Merge pull request #3485 from pherl/mingw\n\nFix build on MinGW32",
+            "tag_name": null
+        },
+        {
+            "hash": "651429b709cd83ca1c780a7c40c3953e638954a4",
+            "message": "Fix comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4c0cfe3a4cbc17148c0d1d728666d70136b7e93",
+            "message": "Add malloc cast\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fd31899f01a5e486c0f457318a5f9b4fe0915271",
+            "message": "implement remove strdup usage and implement our own\n\nstrdup is not part C or C++ standard but POXIS function. Several\ncompilers failed to compile strdup or generate warnings.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34ebca0ca8c925a58e70d204a06e3b69b078769b",
+            "message": "Adding missing imports for strdup\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40d1855fe9107af8bee87c5e0cdf5bd6c434c8ff",
+            "message": "Fix mkdir\n",
+            "tag_name": null
+        },
+        {
+            "hash": "564f02c91ec0e983806762de4b842a762e21bb47",
+            "message": "Make win32_io only for MSVC\n\nThis excludes cygwin and mingw from using the self implemented\nfunctions.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7afa796bb914c911cc3d40aeeba1ce63b2f83f99",
+            "message": "Fix the declaration order in ming32\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db125b8d3a3ceb8d2ed0938f6121858393078097",
+            "message": "Fixing io_win32 for MinGW32\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2f3adb3b30c8d032f7bda0137593e932975306c",
+            "message": "Merge pull request #3481 from pherl/nowarning\n\nMake no warning test stricter.",
+            "tag_name": null
+        },
+        {
+            "hash": "e8fc0661db2d6eaf2e2aff13efe8cda659e35024",
+            "message": "Make no warning test stricter.\n\n- Now it includes -Wextra except for unused-parameter.\n- Removed gtest dependency\n",
+            "tag_name": null
+        },
+        {
+            "hash": "97d50e306e576dadf2184e643b7c934da45730c8",
+            "message": "Make code free of missing-field-initializers warnings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3afcded28a6aa9c44adf801ca5bff2133fcf3030",
+            "message": "Merge pull request #3461 from TeBoring/3.4.x\n\nMerge master into 3.4.x",
+            "tag_name": null
+        },
+        {
+            "hash": "8f4b8e430a0cf087af423be434cf8d837027c651",
+            "message": "Merge branch 'master' into 3.4.x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f14703c933d04a4aac285c482bf828269bd0a151",
+            "message": "Update commit id in Dockerfile to reflect change in #3391 (#3459)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49b44bff2b6257a119f9c6a342d6151c736586b8",
+            "message": "Fix the bug in php c extension that setting one field can change another field's value. (#3455)\n\n* Fix the bug in php c extension that setting one field can change another\r\nfield's value.\r\n\r\nThe reason is that previously, in c extension, it was assumed that the\r\norder that fields were declared in php is the same as the order of\r\nfields in upb. This is not true. Now, for every field in upb, we will\r\nlook up the actual property that is corresponding to the upb field.\r\n\r\n* Cleanup pull request\r\n\r\n* Fix indentation\r\n\r\n* Port to php5\r\n\r\n* Port with php7.1\r\n\r\n* Port to zts\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21b0e5587c01948927ede9be789671ff116b7ad4",
+            "message": "Update PHP descriptors (#3391)\n\n* Add descriptors test\r\n\r\n* Update descriptors tests\r\n\r\n* Add public descriptors\r\n\r\n* Add test_desriptors.proto to test script\r\n\r\n* Update composer files\r\n\r\n* Remove references to GPBType, update tests to be compatible with c\r\n\r\n* Update for c extension compatibility\r\n\r\n* Remove nested enums for descriptor, update tests\r\n\r\n* Strip leading '.' from descriptor name\r\n\r\n* Update tests with test for getClass, fix OneofDescriptor\r\n\r\n* Add new files to Makefile.am\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1ab5adbdec4d6487c8e6f230138092d27d6a0818",
+            "message": "Merge pull request #3456 from giorgioazzinnaro/patch-1\n\nUpdate third party addons with ProfaneDB",
+            "tag_name": null
+        },
+        {
+            "hash": "a3e17523b4d7c0a4b73f8a17ddae7bf6c101d167",
+            "message": "Update third party addons with ProfaneDB\n\nI added my project ProfaneDB, it is a database for Protocol Buffers objects. Written in C++, it uses gRPC as an interface for other languages.\r\nIt is still work in progress, but I'd love to get some feedback on it while I progress!",
+            "tag_name": null
+        },
+        {
+            "hash": "25672c175792f707c71c9aa9fcd29cab31c757fa",
+            "message": "Add getClass for php Descriptor in c extension (#3443)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9df89ccabcf8ad7d634009a00faf0e9ba153bdb7",
+            "message": "Fixing HHVM Compatibility (#3437)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c15a3269f9dea81db5a45b527cd8699f11b03f0b",
+            "message": "Expose descriptor API in php c extension (#3422)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "be73938d72c91ff0075b1ed683f07922ad5801b0",
+            "message": "Change divideInt64ToInt32 to static (#3436)\n\ndivideInt64ToInt32 is called statically from protobuf/php/src/Google/Protobuf/Internal/CodedOutputStream.php\r\n(the only reference)\r\nThis causes fatal error in PHP 7.1 (32-bit only because 64-bit doesn't use this function)",
+            "tag_name": null
+        },
+        {
+            "hash": "d32f5b4de3501e1bf3c0bc98d8e74219d47ebe69",
+            "message": "Removes unnecessary pass-by-references in PHP internal classes (#3433)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "072431452a365450c607e9503f51786be44ecf7f",
+            "message": "Merge pull request #3429 from king6cong/master\n\nAdd classpath for java example Makefile",
+            "tag_name": null
+        },
+        {
+            "hash": "547d76ed8e23275d1acadb92d0ea891562bf55e0",
+            "message": "Add classpath for java example Makefile\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b505a92bf6b3163ff9fb234a28dfef9c0330197",
+            "message": "Merge pull request #3421 from thomasvl/update_comment\n\nUpdate the comment on the message_type to cover what it should be.",
+            "tag_name": null
+        },
+        {
+            "hash": "9a4692d8af01697571c0fa33b17223df79423992",
+            "message": "Update the comment on the message_type to cover what it should be.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5eb95efa81ed10774bae151c7c1809f5d9dfa491",
+            "message": "Merge pull request #3420 from thomasvl/objc_proto2_conformance\n\nObjc proto2 conformance test support",
+            "tag_name": null
+        },
+        {
+            "hash": "3caf9fd00a84d71c63c9fb873eb9befd70400153",
+            "message": "Review feedback.\n\n- Better error message for unknown messageType.\n- Remove unneeded if.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2831a346c02678c751cdb8fb98387c773dc08a4",
+            "message": "Add the proto2 message conformance support for ObjC.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9fd5e59c97db498afd34e7a12dabed2915fb2205",
+            "message": "Generate the proto2 test file and link it in for ObjC.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21800ff84ff0b68833e321e02c3c50f83047fd92",
+            "message": "Add a objc_class_prefix to test_messages_proto3.proto.\n\nBoth test_messages_proto3.proto & test_messages_proto2.proto define\nmessage ForeignMessage {...} and enum ForeignEnum {...} but since\nobjc doesn't use the proto package in the naming, these end up\nconflicting.\n\nAdding the objc_class_prefix option to the proto3 file ensure the generated\nobjc types are all unique.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d5f2c57e81af62d414f00204dff3a1e4885c761",
+            "message": "Merge pull request #3410 from adam-26/1745\n\nFix issue #1745 - javascript allow dot in filename",
+            "tag_name": null
+        },
+        {
+            "hash": "2b6db00de1276a1d71722e69b1f8b9ecb65abc96",
+            "message": "Fix quotation marks\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a3a65b320d6bde3bae6c367ae83c265006cbf46b",
+            "message": "Fix issue #1745 - javascript allow dot in filename\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f15185d370a5789c65105f77ba806c9faa563325",
+            "message": "Merge pull request #2969 from laszlocsomor/master\n\nWindows: support long paths in open/mkdir/access",
+            "tag_name": null
+        },
+        {
+            "hash": "e05e777d468c2486cea53764f1ac70859b5e98c4",
+            "message": "Windows: support long paths\n\nAdd implementations of open(2), mkdir(2), stat(2),\netc. that support long paths under Windows (paths\nlonger than MAX_PATH in <windows.h>, which is 260\ncharacters).\n\nThe implementations are in a separate namespace\n(google::protobuf::internal::win32), so they won't\ncollide with the standard implementations in\n<io.h>, but after importing them with `using` they\ncan be drop-in replacements.\n\nFixes https://github.com/bazelbuild/bazel/issues/2634\nFixes https://github.com/google/protobuf/issues/2891\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ab7c73f7c989afa777a40ff2a7c5f0f138be22c",
+            "message": "Fix missing std::tr1::hash on GCC 4.1 (#2907)\n\nRather than crashing on use (doh!) better to just declare this platform\r\nis missing a proper hash_map/hash_set implementation and use\r\nthe std::map/std::set emulation.\r\n\r\nFixes regression introduced by #1913",
+            "tag_name": null
+        },
+        {
+            "hash": "126082c371d2320255ac8ff7d68bef25a919572d",
+            "message": "Add std:: namespace prefix to set and map (#3332)\n\n* Remove using std::{set,map}",
+            "tag_name": null
+        },
+        {
+            "hash": "b9c4daadf7e27c0a533f86d567a89b691aa0ad9f",
+            "message": "Uncomment php tests (#3301)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bd5ab154dad4b4e2bf673a44aa32f7264a208e18",
+            "message": "Merge pull request #2482 from andreaseger/fix_ruby_timestamp_accuracy\n\n[Ruby] fix floating point accuracy problem in Timestamp#to_f",
+            "tag_name": null
+        },
+        {
+            "hash": "78cb804063716767966cdcd86c66500df342ad33",
+            "message": "change test for nanosecond accurate timestamps\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad203bcb2be17e06909ab6d67ab2475673673bbc",
+            "message": "fix floating point accuracy problem in Timestamp#to_f\n\n`.quo` return the most exact devision which fixes accuracy problems for the\ntimestamp coercion\n",
+            "tag_name": null
+        },
+        {
+            "hash": "455b61c6b0f39ac269b26969877dd3c6f3e32270",
+            "message": "Merge pull request #3062 from Oppen/master\n\nWorkaround gcc < 4.5.0 bug",
+            "tag_name": null
+        },
+        {
+            "hash": "cd0efc0024482be745e1671461518bac07335ca1",
+            "message": "Workaround gcc < 4.5.0 bug\n\nSee https://gcc.gnu.org/bugzilla/show_bug.cgi?id=189\n\nSigned-off-by: Mario J. Rugiero <mrugiero@gmail.com>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "483396068d7788efca4d51584d160dc4da28c99d",
+            "message": "Merge pull request #3043 from acozzette/javascript\n\nRemoved mention of Buffer in byteSourceToUint8Array",
+            "tag_name": null
+        },
+        {
+            "hash": "f00e06c95bc117fb2ed0ca56c96041c93039f1fe",
+            "message": "Removed mention of Buffer in byteSourceToUint8Array\n\nThe Closure compiler complains about Buffer since that class exists only\nin Node. That logic does not seem to be needed (unit tests and conformance\ntests pass without it), so let's just remove it to solve the problem.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a64497c709aa8a08f146334afdadf430a1a5c114",
+            "message": "Merge pull request #2873 from myitcv/fix_1562\n\nJavascript: use goog.crypt.byteArrayToString instead of String.fromCharCode.apply",
+            "tag_name": null
+        },
+        {
+            "hash": "bcb35066411e46bde936bc4c83405b7bd280fb71",
+            "message": "Fix #1562 by using goog.crypt.byteArrayToString instead of String.fromCharCode.apply\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f4489a3e504e0a4aaffee69b551c6acc9e08374",
+            "message": "Merge pull request #3024 from acozzette/merge-3.3-to-master\n\nMerged 3.3.x branch to master",
+            "tag_name": null
+        },
+        {
+            "hash": "9053033a5076f82cf18b823c31f352e95e5bfd8d",
+            "message": "Merge remote-tracking branch 'remotes/google/3.3.x' into merge-3.3-to-master\n",
+            "tag_name": null
+        },
+        {
+            "hash": "067b1eec3bf852abaad0844999461baff8a5fdc8",
+            "message": "Merge pull request #3023 from acozzette/min\n\nFully qualify min as std::min in wire_format_lite.cc",
+            "tag_name": null
+        },
+        {
+            "hash": "07c284f86c28825115e81435227473da426240c0",
+            "message": "Fully qualify min as std::min in wire_format_lite.cc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cbd08cb7d11fabbdf471d49ed13e5082033bd2b5",
+            "message": "Merge pull request #3018 from acozzette/using-namespace-std\n\nRemove \"using namespace std\" from stubs/common.h",
+            "tag_name": null
+        },
+        {
+            "hash": "7c76ac1735a3b8f4523856bbd67588b6ccc7f850",
+            "message": "Remove \"using namespace std\" from stubs/common.h\n\nThis prevents the contents of the std namespace from being effectively\npulled into the top-level namespace in all translation units that\ninclude common.h. I left in individual using statements for a few common\nthings like std::set and std::map, because it did not seem worth going\nthrough the churn of updating the whole codebase to fix those right now.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4920e27a488976c9993cef686d868a846868eb56",
+            "message": "Merge pull request #3008 from postmasters/patch-1\n\nAdd a link to dart-lang/protobuf",
+            "tag_name": null
+        },
+        {
+            "hash": "4777574a6c058e4c63ae4ba2dcbdbb807f100e63",
+            "message": "Add a link to dart-lang/protobuf",
+            "tag_name": null
+        },
+        {
+            "hash": "14afc3fd416e82b5168cd294aff58d430229c8b8",
+            "message": "Merge pull request #2992 from xiaogaozi/patch-1\n\nAdd gogoprotobuf to third-party add-ons list",
+            "tag_name": null
+        },
+        {
+            "hash": "f85eecb5853f29470832a0019189df82449b9d3f",
+            "message": "Add gogoprotobuf to third-party add-ons list",
+            "tag_name": null
+        },
+        {
+            "hash": "357afc39de0b9a7760888b5945ae5f9f15cec337",
+            "message": "Merge pull request #2508 from yliu120/pass_default_env_to_protoc\n\nadd a key to ctx.action dict to prevent protoc losing the default env",
+            "tag_name": null
+        },
+        {
+            "hash": "ef61a9d313d88b2f9d253e42ba0d8ae82940eb3d",
+            "message": "add a key to ctx.action dict to prevent protoc losing the default env\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a93f6705553954c2afa67f3b52f7ee87618b457",
+            "message": "Merge pull request #2987 from konsumer/patch-1\n\nAdd node-protoc-plugin to \"Other Utilities\"",
+            "tag_name": null
+        },
+        {
+            "hash": "3055a021258783966119f144055fd04364d4d539",
+            "message": "Add node-protoc-plugin to \"Other Utilities\"",
+            "tag_name": null
+        },
+        {
+            "hash": "a3873cafaee326f30fcfeb7b61ae77719d35daf8",
+            "message": "Merge pull request #2985 from thomasvl/class_check_tweaks\n\nTighten up class usage/checks.",
+            "tag_name": null
+        },
+        {
+            "hash": "f5a01d1bbdb003e02fb32e1d4f5dffffdcae6bdf",
+            "message": "Tighten up class usage/checks.\n\n- Ensure extensions resolution/wiring is happening directly on the\n  messageClass (incase someone is doing odd things our out classes).\n- Make the extension message check match the other class checks in\n  for mergeFrom/isEqual/etc.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8aa927f08f6b92808976b0c22fa4a45850279987",
+            "message": "Merge pull request #2950 from anuraaga/dev_rag\n\nAllow unknown values for Map put*Value methods just like every other …",
+            "tag_name": null
+        },
+        {
+            "hash": "bf483dfb99a5b7c57ee0a222bd041275cda9cf98",
+            "message": "Allow unknown values for Map put*Value methods just like every other enum mutation method.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "efec7571047c680e11354bd30bf8bd3dfda15ff0",
+            "message": "Merge pull request #2937 from anuraaga/dev_rag2\n\nFix duplicate fields test and Any test. The repeated version is passing because nu…",
+            "tag_name": null
+        },
+        {
+            "hash": "09328db1ff546e5c535ee0c3fbbe2b1f3ec07b63",
+            "message": "Fix test for unexpected type url when parsing Any. Currently, the test fails since TestAllTypes doesn't have field '@type', which is the same test as testUnknownFields.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "662f97841e838802987e5d208c1d898226c06ef1",
+            "message": "Fix duplicate fields test. The repeated version is passing because null values in a repeated field are rejected and not testing what it wanted to. Also adds a oneof version that verifies the case of oneof fields of different names (currently only same name check seems to be tested).\n\nAlso fix spelling of a test.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69bfde22b6eb9effd84f7d554b565285e62c0824",
+            "message": "Merge pull request #2922 from anandolee/master\n\nUse PyUnicode_AsEncodedString() instead of PyUnicode_AsEncodedObject()",
+            "tag_name": null
+        },
+        {
+            "hash": "c348d46a9bd2b264bf4155f8a26c3715ca9ea584",
+            "message": "Use PyUnicode_AsEncodedString() instead of PyUnicode_AsEncodedObject()\n",
+            "tag_name": null
+        },
+        {
+            "hash": "139fd0a1c59cdf1f9167e9d3c13428bea7aca85e",
+            "message": "Merge pull request #2933 from mharrend/patch-1\n\nAdding default shell env to allow non-default compilers",
+            "tag_name": null
+        },
+        {
+            "hash": "dd04ffb923d2048a9ba054f2099d450bea4fae68",
+            "message": "Adding default shell env\n\nI am adding default shell environment, so that protobuf compilation makes use of set\r\nLD_LIBRARY_PATH and so on.\r\nIn this way, also non-default gcc installations (e.g. not in /usr/lib) can be used to compile protobuf.\r\nThis would fix the following issue:\r\nhttps://github.com/bazelbuild/bazel/issues/2515",
+            "tag_name": null
+        },
+        {
+            "hash": "37c7b766b39b5d86e6bb920d1664d91dcf8399e7",
+            "message": "Merge pull request #2930 from anuraaga/dev_rag\n\nFix error message for int64 parse failure.",
+            "tag_name": null
+        },
+        {
+            "hash": "58373fa160368d825255b0103235b1b769520f14",
+            "message": "Fix error message for int64 parse error.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "11c902ea2ef0a481f607693b35b6cc765e9f4caa",
+            "message": "Add IntelliJ project to gitignore for java project.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc3fa2ec80d196e045ae05797799f079188106f3",
+            "message": "Merge pull request #2676 from acozzette/js-compatibility-tests\n\nJS compatibility tests",
+            "tag_name": null
+        },
+        {
+            "hash": "10ea25133df29e70f2541f8ec34be091d447f5ae",
+            "message": "Added compatibility tests for version 3.0.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7e5f980508fd8f44eae7806dc4d942e526659403",
+            "message": "Split test protos into two groups\n",
+            "tag_name": null
+        },
+        {
+            "hash": "594f810081623c87cc894820089c6a73f91d9252",
+            "message": "Merge pull request #2982 from mda000/issue2972\n\nSimplify the Element dtor invocation when freeing elements in InternalDeallocate",
+            "tag_name": null
+        },
+        {
+            "hash": "2240a785f961721854bb10d68991764b7059de7e",
+            "message": "Simplify the Element dtor invocation when freeing elements in\nInternalDeallocate to avoid confusing the compiler when there's\na class named Element already defined in the global namespace.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "54d1701f6cd1df167db6b73320e5fe6361907d2c",
+            "message": "Merge pull request #3015 from buchgr/unused-consts\n\nRemove unused constants.",
+            "tag_name": null
+        },
+        {
+            "hash": "b1c75bc742aed980c7a2fe89f8abaa8ba02a0387",
+            "message": "Remove unused constants.\n\nWhen compiling with -Werror, -Wunused-const-variable the build fails due\nto those two constants not being used.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "286f0598422a70639e587b5329bd3037f5ee76b0",
+            "message": "added \"objectivec\" build target (#3033)\n\nThis target will be used by gRPC iOS bazel build system.",
+            "tag_name": null
+        },
+        {
+            "hash": "25abd7b7e7a6e7f3dfabe6b3a762e2346b2ae185",
+            "message": "Add compatibility test for php. (#3041)\n\n* Add compatibility test for php.\r\n\r\n* Revert API incompatible change.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6bd51a59df41b99058ec8c2b03a177a218267ce5",
+            "message": "add Grpc Protobuf validation (#3311)\n\n* add Grpc Protobuf validation",
+            "tag_name": null
+        },
+        {
+            "hash": "e264b20e699d2f29a89217f70b90b336f923dbe1",
+            "message": "Merge pull request #3315 from thomasvl/mutate_unknowns\n\nExpose the initializer for unknown fields.",
+            "tag_name": null
+        },
+        {
+            "hash": "b30dee3ea684e95f941bcbaa0a15382d51d92a21",
+            "message": "Expose the initializer for unknown fields.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cdd524a0bdfc16853271cca7b8fa95577b75085d",
+            "message": "Ensure leaveOpen is true when writing to a buffer\n\nNote that the compatibility tests have had to cahnge as well, to\ncope with internal changes. (The test project has access to\ninternals in the main project.)\n\nFixes #3209.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62d7fe569717b6da39401a94b22adf73466e1f2d",
+            "message": "Make Any easier to work with in C#\n\n- Add a TryUnpack method which doesn't throw if the type is wrong\n- Make GetTypeName public for easier determination of the message type\n\nFixes #3294.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ecca6ea95d56a6f70ff7b223ec3f904758acc8b1",
+            "message": "Add json encode/decode for php. (#3226)\n\n* Add json encode/decode for php.\r\n\r\n* Fix php conformance test on 32-bit machines.\r\n\r\n* Fix conformance test for c extension.\r\n\r\n* Fix comments\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a52b3588d35d2fa0b9ce4eda5630546966a26b4",
+            "message": "Merge pull request #3287 from sergiocampama/initialized\n\nAdd initialized as a reserved keyword as that's the actual property name",
+            "tag_name": null
+        },
+        {
+            "hash": "e55782fa950b4dbdbefff8faaa22da1effd2368b",
+            "message": "Add initialized as a reserved keyword as that's the actual property name\n",
+            "tag_name": null
+        },
+        {
+            "hash": "176bac6dac03f8dc728fd9c7a0fbc96aedfed7d1",
+            "message": "Add scripts to build python wheel for linux. (#2693)\n\n* Add scripts to build python wheel for linux.\r\nFollowed PEP513.\r\n\r\n* Fix dist check for new added files.\r\n\r\n* Update README for usage example.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12acbc2678073c3439b427be0b713b97e2074bfb",
+            "message": "adds PHPDoc @return and @param for getters and setters respectively (#3131)\n\n* adds PHPDoc @return and @param for getters and setters respectively\r\n\r\n* addresses changes in PR review\r\n\r\n* adds documentation tests\r\n\r\n* Update php_generator:\r\n\r\n- Prepend \\ to names where required\r\n- Remove <pre> tags\r\n- Update protobuf field comments\r\n\r\n* Updates class files with the protobuf changes\r\n\r\n* Addresses review comments\r\n\r\n* removes Protobuf Type line from PHP generated classes\r\n\r\n* fixes phpdoc test\r\n\r\n* adds array types to phpdoc\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "097bfb53d1a9e448751d1241693935c3dad3c0bd",
+            "message": "Merge pull request #3084 from lukaszx0/patch-1\n\nWorkaround the docker bug when compiling artifacts",
+            "tag_name": null
+        },
+        {
+            "hash": "82e50ba5c311f26786bb1dffa64c3e9ff6e957d7",
+            "message": "Workaround the docker bug when compiling artifacts\n\nThis is a workaround (https://github.com/moby/moby/issues/10180#issuecomment-190429512) the docker issue (https://github.com/moby/moby/issues/10180) which breaks protoc-artifacts build process with following error\r\n\r\n```Rpmdb checksum is invalid: dCDPT(pkg checksums): devtoolset-1.1-elfutils.x86_64 0:0.154-6.el6 - u\r\n\r\nThe command '/bin/sh -c yum clean all && yum install -y devtoolset-1.1                    devtoolset-1.1-libstdc++-devel                    devtoolset-1.1-libstdc++-devel.i686' returned a non-zero code: 1```\r\n\r\nhttps://github.com/moby/moby/issues/10180#issuecomment-190429512",
+            "tag_name": null
+        },
+        {
+            "hash": "dd7265e1a2cf78fd0333f62d8e74d40a0781f83b",
+            "message": "Merge pull request #3264 from TeBoring/php-bug\n\nEnusre public header and generated code have no implicit converion.",
+            "tag_name": null
+        },
+        {
+            "hash": "e3c807d4e752b477b707f5d021264faf9b127304",
+            "message": "Fix more implicit type conversions in public headers and generated code.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c0b35cf620c4904a18e25733f50c9c0474fefa6",
+            "message": "Enusre public header and generated code have no implicit converion.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f752d816b780fff2a6af80f330a808874e63621f",
+            "message": "Merge pull request #3266 from mbrickn/patch-1\n\nUpdated links to use https",
+            "tag_name": null
+        },
+        {
+            "hash": "d07efbad91fa38c19d3ea8edc4f277fdac333192",
+            "message": "Updated links to use https\n\nHowdy!\r\n\r\nI just updated some links to use https instead of http.\r\n\r\nThanks! ^ _ ^",
+            "tag_name": null
+        },
+        {
+            "hash": "eca0f4ee919480a4f516b825cf6809c6a7df4f50",
+            "message": "Merge pull request #3261 from thomasvl/super_oddcase\n\nIf we fail to get a descriptor just super the method resolving.",
+            "tag_name": null
+        },
+        {
+            "hash": "db45687a389dcf62db287862d774bdffd689c6a2",
+            "message": "If we fail to get a descriptor just super the method resolving.\n\nThis should never happen, but if someone is swizzling or do other\nhooking of methods, anything is possible, so this seems slighty\nsafer than they returning NO.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "703cd8e11c8d34283d4c8bf869c61866e8211c9d",
+            "message": "Switch to addEnumType to fix fatal error (#3225)\n\n* Switch to addEnumType to fix fatal error\r\n\r\n* Fixing more cases of HHVM incompatibility\r\n\r\n* Updating tests to be hhvm compatible\r\n\r\n* Fixing tests\r\n\r\n* Fixing merge\r\n\r\n* Don't use call_user_func, should hopefully fix tests\r\n\r\n* Fixing spelling\r\n\r\n* Fixing another misspelling in a test\r\n\r\n* Fixing placement of append and kvUpdate functions\r\n\r\n* Actually fix function helpers\r\n\r\n* Remove double addEnumType. How did this ever work?\r\n\r\n* Fixing a couple more tests\r\n\r\n* Only use the setter if the return value isn't an object\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13255889820dbd56f1574d9730465ca834c22bd2",
+            "message": "Updated upb to fix JSON conformance issues. (#3206)\n\n* Fixed a bunch of Ruby conformance errors.\r\n\r\n* Fixed some more Ruby conformance errors in JSON.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2fdef05cf9236984744060ace4a16fe1036fd99",
+            "message": "Merge pull request #3243 from yjjnls/master\n\nreplenish missed header files in install step",
+            "tag_name": null
+        },
+        {
+            "hash": "8f367c0b2df941d494c2bbea76b3a461321fb11b",
+            "message": "replenish missed header files in install step\n\ninstall 'generated_message_table_driven.h' and 'metadata_lite.h', they are included when compiling the files generated using protoc.exe 3.3.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5729cf77f60b917ad813de9a0f68199aa2ebd388",
+            "message": "Remove inclusion of ext/json/php_json.h. (#3241)\n\nThat implementation of json is not being used - this extension is using\r\na json encoder/decoder provided by 'upb'.",
+            "tag_name": null
+        },
+        {
+            "hash": "710543d915ec69a7aff98301fad27dc27ef67253",
+            "message": "Merge pull request #3237 from calder/patch-1\n\nQualify string in java_options.h",
+            "tag_name": null
+        },
+        {
+            "hash": "4b36d4006b55375e6bfb9902b49b9bcf43c96f4c",
+            "message": "Qualify string in java_options.h\n\nBuilding the protobuf compiler with Bazel fails to resolve the unqualifed \"string\"s in java_options.h:\r\n\r\n```\r\nERROR: .../external/com_google_protobuf/BUILD:248:1: C++ compilation of rule '@com_google_protobuf//:protoc_lib' failed: Process exited with status 1 [sandboxed].\r\nIn file included from external/com_google_protobuf/src/google/protobuf/compiler/java/java_context.h:41:0,\r\n                 from external/com_google_protobuf/src/google/protobuf/compiler/java/java_enum_field_lite.cc:38:\r\nexternal/com_google_protobuf/src/google/protobuf/compiler/java/java_options.h:59:3: error: 'string' does not name a type\r\n   string annotation_list_file;\r\n   ^\r\nexternal/com_google_protobuf/src/google/protobuf/compiler/java/java_options.h:62:3: error: 'string' does not name a type\r\n   string output_list_file;\r\n   ^\r\nUse --strategy=CppCompile=standalone to disable sandboxing for the failing actions.\r\nINFO: Elapsed time: 41.487s, Critical Path: 6.20s\r\n//interpreter:eval_test                                               NO STATUS\r\n\r\nExecuted 0 out of 1 test: 1 was skipped.\r\n```",
+            "tag_name": null
+        },
+        {
+            "hash": "91bf623aa145cd1576451ed3764a64a089384ac4",
+            "message": "Fix php jenkins test (#3233)\n\nUpdate commit id to upload latest composer.\r\nCompile php with bc-math for future json support.",
+            "tag_name": null
+        },
+        {
+            "hash": "8d97b3d8b5a33650e822460b3b561802c969e86e",
+            "message": "Fix incorrect function call (#3232)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9b34e9b1167d89c4df8f0abffe31262aebe7a39",
+            "message": "Follows proper autoloading standards (#3123)\n\n* Follows proper autoloading standards\r\n - Splits PHP classes in descriptor.php into separate files\r\n - Splits MapFieldIter and RepeatedFieldIter into separate files\r\n - Moves descriptor.php to Internal/functions.php\r\n - Moves all namespaced functions into Iternal/functions.php\r\n\r\n* fixes Makefile.am for added php files\r\n\r\n* [PHP] moves all functions to GPBUtil\r\n\r\n* removes description.php from the makefile\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09d2994b1f68160508d9188f9bdb1a2a3b527e1e",
+            "message": "Merge pull request #3228 from thomasvl/add_tvos_to_podspec\n\nAdd tvOS to the podspec.",
+            "tag_name": null
+        },
+        {
+            "hash": "6ecf38f427f739cf2d153eb3a7407d6a8d1a9a98",
+            "message": "Add tvOS to the podspec.\n\nFixes https://github.com/google/protobuf/issues/3217\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c722c3d29440de4b33bed3e4d908cabe38a1196f",
+            "message": "Merge pull request #3216 from traversaro/patch-1\n\nExport symbols used in inline functions",
+            "tag_name": null
+        },
+        {
+            "hash": "9094bf0f7e638f68cae72581ae8416e7c2721b41",
+            "message": "Export symbols used in inline functions\n\nfixed_address_empty_string symbol is used in an inline function.\r\nWe have to export it to avoid undefined reference link errors.",
+            "tag_name": null
+        },
+        {
+            "hash": "96095f3a8577cd61ded2191d267cca70f221a9c9",
+            "message": "Merge pull request #3176 from acozzette/fix-3114\n\nEnsure that for Java, imports of .proto files with empty packages works",
+            "tag_name": null
+        },
+        {
+            "hash": "e9c15d601e1f424d4e2c2b004b00cd6efd394d3e",
+            "message": "Ensure that for Java, imports of .proto files with empty packages works\n\nThis fixes a compiler bug that caused a Java syntax error when one .proto file\nwould import another one with an empty package and java_package. This fixes\nissue #3114.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d6470abef1ca76c40e6da3b4445b7c32f1d0e2e3",
+            "message": "not to use std::random_device for map.Seed(). (#3133)\n\n* not to use std::random_device for map.Seed().\r\n\r\n* remove include random\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e222997c5bb136b4f079d5fdb1c9852bfadb2b3a",
+            "message": "Merge pull request #3149 from KarrokDC/master\n\nAdd headers as part of cmake project generation",
+            "tag_name": null
+        },
+        {
+            "hash": "4eb02fe31edf655f736c68ac91acdbdfd24b550f",
+            "message": "Add headers as part of cmake project\ntested only on windows with visual studio 2015 as generator\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4674cc7c073f1b8d5efd2a42ffcf3ca30a907bfe",
+            "message": "Merge pull request #3113 from phst/master\n\nImprove fix for https://github.com/google/protobuf/issues/295",
+            "tag_name": null
+        },
+        {
+            "hash": "979107ec7a257cbb6a0fa221956a9b2ada03b7ad",
+            "message": "Improve fix for https://github.com/google/protobuf/issues/295\n\nRequiring the legacy ‘cl’ library unconditionally pollutes the namespace.\nInstead, require it only when compiling and in known-broken versions.\n\nThis is almost the same patch that opoplawski suggested, except that I removed\nthe test for ‘emacs-repository-version’, which isn’t defined in Emacs 24.3.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "85466206109ee4cffc32bf7d55b02ca78d7a16fa",
+            "message": "Merge pull request #3104 from thomasvl/ext_registry_copy\n\nFix ExtensionRegistry copying and add tests.",
+            "tag_name": null
+        },
+        {
+            "hash": "49e4ba6098ae4c01f4af35183f9b6f5e6739fb52",
+            "message": "Fix ExtensionRegistry copying and add tests.\n\n- Fix up -copyWithZone: to not leave the two registries sharing\n  some of the storage by using -addExtensions:.\n- Improve -addExtensions: to clone the sub dict when there is\n  nothing to merge into.\n- A ExtensionRegistry unittests.\n- Update project schemes to not have extra things in perf scheme.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b28617b813b4ba4845164a1f5190f762f5b91832",
+            "message": "Merge pull request #2815 from devwout/ruby_json_emit_defaults\n\nRuby version optionally emits default values in JSON encoding.",
+            "tag_name": null
+        },
+        {
+            "hash": "aec07110750924790a939826f8ac3444f22f00bf",
+            "message": "Ruby tests compare parsed JSON instead of raw JSON\n",
+            "tag_name": null
+        },
+        {
+            "hash": "008dc92c9d32abcf608883ae44d5a78f59a4e3c2",
+            "message": "Ruby version optionally emits default values in JSON encoding.\n\nUsage: Message.encode_json(m, emit_defaults: true)\nMessage fields that are nil will still not appear in the encoded JSON.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "95749d5af626cfb1925c932d23f5080fc609e11e",
+            "message": "update csharp README and fix .NET 3.5 build error\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0b07d7eb9e15d897bfd3f3d569e0a66b2bb48d18",
+            "message": "Add IncludeSource in csproj as per review comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f26e8c2ae0a490399f7e77d96193f2851b185b56",
+            "message": "Convert C# projects to MSBuild (csproj) format\n\nThis has one important packaging change: the netstandard version now\ndepends (implicitly) on netstandard1.6.1 rather than on individual\npackages. This is the preferred style of dependency, and shouldn't\naffect any users - see http://stackoverflow.com/questions/42946951\nfor details.\n\nThe tests are still NUnit, but NUnit doesn't support \"dotnet test\"\nyet; the test project is now an executable using NUnitLite. (When\nNUnit supports dotnet test, we can adapt to it.)\n\nNote that the project will now only work in Visual Studio 2017 (and\nVisual Studio Code, and from the command line with the .NET Core\n1.0.0 SDK); Visual Studio 2015 does *not* support this project file\nformat.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40da1ed572d60e9c7cc2fe1ca4175e30682f5a9d",
+            "message": "Removing undefined behavior and compiler warnings (#1315)\n\n* Comment out unused arguments.\r\n\r\nThese last few are all that's needed to compile with -Wunused-arguments.\r\n\r\n* Fix missing struct field initializer.\r\n\r\nWith this fix, everything compiles with -Wmissing-field-initializers.\r\n\r\n* Add support for disabling unaligned memory accesses on x86 too.\r\n\r\nubsan doesn't like these because they are technically undefined\r\nbehavior, so -DGOOGLE_PROTOBUF_DONT_USE_UNALIGNED will disable them easily.\r\n\r\n* Avoid undefined integer overflow.\r\n\r\nubsan catches all of these.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ba987a7e2d039107d304aa945fee662399461d58",
+            "message": "Merge pull request #3126 from mbrukman/fix-readme-formatting\n\nFix Markdown formatting in README.",
+            "tag_name": null
+        },
+        {
+            "hash": "677557009ca500291bb67b144c5492e6d2ce5cac",
+            "message": "Fix Markdown formatting in README.\n\nFix indentation to enable code formatting for sample command lines to set them\nvisually apart from the surrounding text, and make it easy to copy-paste.\n\nAdd code formatting for env vars, paths, binary and library names for\nreadability.\n\nHide URLs behind text for readability and conciseness.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c5125f371d3335e62f0270b0fad50d7eaaf8563b",
+            "message": "Merge pull request #3117 from KarrokDC/master\n\nShow help if protoc is called without any arguments",
+            "tag_name": null
+        },
+        {
+            "hash": "3b227611d5c5b216fd323908b0c6c4af19777a52",
+            "message": "show help if protoc is called without any arguments, pre-empts -h and --help to show a useful message instead of just 'Missing input file.'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2c18653743746b5d583f295b084a7fa0ef74e84",
+            "message": "Merge pull request #3103 from sergiocampama/perf\n\nAdds serial and parallel parsing tests.",
+            "tag_name": null
+        },
+        {
+            "hash": "2465ae7e23771109e5710d32e2cf548ba0d1c083",
+            "message": "Adds serial and parallel parsing tests to check if parallel parsing is faster than serial parsing, which it should\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1e86ef4e9f0b9c9e8bd8d62a61e141f139366920",
+            "message": "Oneof field should be serialized even it's equal to default. (#3153)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "282fb9e68ec101b7b7616a45279427944afc3e6b",
+            "message": "Add ARRAY for reserved name (#3150)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d5daf4ef97918176b892dbedce17b1d854ffe8e",
+            "message": "Adds fluent setters for PHP (#3130)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c202b06de9501509171de58d90019a86f2aa5311",
+            "message": "Merge pull request #3196 from matt-kwong/kokoro\n\nAdd continuous testing config files for Kokoro",
+            "tag_name": null
+        },
+        {
+            "hash": "0871e6a8088602f901e87f4ef65807186883b22b",
+            "message": "Add continuous testing config files for Kokoro\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6156af10e8f9f7f3d69df9adef232a77b27d6fb2",
+            "message": "Add MacOS and Linux tests to Kokoro\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63a97289dc2bd6115f51a0e6e5bfa9bb79f56c6f",
+            "message": "Merge pull request #3170 from thomasvl/int64_map_issue\n\nFix some cases of reading of 64bit map values.",
+            "tag_name": null
+        },
+        {
+            "hash": "46f36d79a21474dcb9212252cec2c59ca245ac17",
+            "message": "Fix some cases of reading of 64bit map values.\n\nFixes https://github.com/google/protobuf/issues/3164.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4d41af19be67de82e5066743cbd78f045de950d",
+            "message": "Merge pull request #3191 from matt-kwong/kokoro\n\nAdd MacOS and Linux tests to Kokoro",
+            "tag_name": null
+        },
+        {
+            "hash": "d555775836d334f2ba7280de7c98c59c030eb46a",
+            "message": "Merge pull request #3189 from thomasvl/objc_proto3_unknown_fields\n\nObjC: Preserve unknown fields in proto3 syntax files.",
+            "tag_name": null
+        },
+        {
+            "hash": "1d0988b8efcb9eae937eb8438f6dd6b1ef66b6df",
+            "message": "ObjC: Preserve unknown fields in proto3 syntax files.\n\nAs announced: https://groups.google.com/forum/#!topic/protobuf/VX5qEmTW3y0\n\nThe ObjC side of https://github.com/google/protobuf/issues/272\n",
+            "tag_name": null
+        },
+        {
+            "hash": "516a81a4244d11f0fa6c40f87386a7bc35c37c6a",
+            "message": "Merge pull request #3190 from thomasvl/objc_IllegalZeroFieldNum\n\nProperly error on a tag with field number zero.",
+            "tag_name": null
+        },
+        {
+            "hash": "ecc0f5412702e7f69b4578c92a120c56bdd79287",
+            "message": "Properly error on a tag with field number zero.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "656dedbf07ed88489bf60ddae4c583a0437d82cc",
+            "message": "Merge pull request #3157 from yeswalrus/fix-version-check\n\nFix CMake version check",
+            "tag_name": null
+        },
+        {
+            "hash": "df3f8cf6dd920c3b6abbfaeb4ce79c22480057cd",
+            "message": "fix check_and_save_build_option not correctly exporting build options\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a183a0df61d1b505356c2befa9c2fb9d0fddd770",
+            "message": "Fix the check_and_save_build_option macro never evaluating to true\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae85cb8ef3c763eb506c945fe68f8bf0f95f3728",
+            "message": "Fix find module not working when no version number was given\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6f325805c0bc956f927b0e2dbfb4dd8133b4ed69",
+            "message": "Add new file option php_namespace. (#3162)\n\n* Add new file option php_namespace.\r\n\r\nUse this option to change the namespace of php generated classes.\r\nDefault is empty. When this option is empty, the package name will be\r\nused for determining the namespace.\r\n\r\n* Uncomment commented tests\r\n\r\n* Revert gdb test change\r\n\r\n* Update csharp descriptor.\r\n\r\n* Add test for empty php_namespace.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fbaad3617fbfadafbcc653a621620a5081df64eb",
+            "message": "Merge pull request #3169 from dmaclach/master\n\nOptimize GPBDictionary.m codegen to reduce size of library",
+            "tag_name": null
+        },
+        {
+            "hash": "ea43e0c5e867870b1b4038eec92727d0dd31a534",
+            "message": "Optimize GPBDictionary.m codegen to reduce size of overall library by 46K per architecture.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2aeb4ab9c732325ccefbe3f346d29b5ef80e110f",
+            "message": "Merge pull request #3160 from meteorcloudy/winbuild\n\nRefactor cc options in BUILD file for Windows",
+            "tag_name": null
+        },
+        {
+            "hash": "0b059a3d8a8f8aa40dde7bea55edca4ec5dfea66",
+            "message": "Refactor cc options in BUILD file for Windows\n\nDon't put gcc warnings options in copts, so that protobuf is able to\nbuild by MSVC toolchain without python wrappers.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ddbe36003e26e6404ff2992b02c0ece9ddb68607",
+            "message": "Merge pull request #3159 from yeswalrus/new-generate\n\nCMake: Add modern protobuf_generate",
+            "tag_name": null
+        },
+        {
+            "hash": "0336770801c53543f4b1f3ebfd28dfc65e331c5c",
+            "message": "add protobuf_generate function, allows use of target_sources where available\n",
+            "tag_name": null
+        },
+        {
+            "hash": "faa53989cb430b5c67ab35a29255a16881d4fb4a",
+            "message": "fix check_and_save_build_option not correctly exporting build options\n",
+            "tag_name": null
+        },
+        {
+            "hash": "491b32041d2c097d2604e350fee3e23c6df901bc",
+            "message": "Merge pull request #3236 from buchgr/bazel-links\n\nbazel: add bazel symlinks to .gitignore",
+            "tag_name": null
+        },
+        {
+            "hash": "d0e6f3b9ab16279537c5c9531e87c4353574269e",
+            "message": "bazel: add bazel symlinks to .gitignore\n",
+            "tag_name": null
+        },
+        {
+            "hash": "888e287e3b5335e16b1c29b8c24e62a11093bebf",
+            "message": "Merge pull request #3235 from buchgr/java-target\n\nbazel: Make compiled jars java 6 binary compatible.",
+            "tag_name": null
+        },
+        {
+            "hash": "36e63da6323a3a6b0652de33faf37f83ed45892a",
+            "message": "bazel: Make compiled jars java 6 binary compatible.\n\nSee: https://github.com/bazelbuild/bazel/issues/3198\n",
+            "tag_name": null
+        },
+        {
+            "hash": "73b7cc0007c17d8b3ff9d6bca6c7e7e49092871d",
+            "message": "Merge pull request #3244 from thomasvl/complete_docs\n\nObjC: Document the exceptions on some of the writing apis.",
+            "tag_name": null
+        },
+        {
+            "hash": "5fd71ce6312e6d7620f1f443d4181629695733a4",
+            "message": "ObjC: Document the exceptions on some of the writing apis.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "72e293a28f4be911b9dd7c79836e32a9b2b6e09d",
+            "message": "Merge pull request #3240 from thomasvl/float_fun\n\nRaise the number of digits used for floats.",
+            "tag_name": null
+        },
+        {
+            "hash": "dd19b876d4c9a604946f6c4e39cc4eac5f12cfb9",
+            "message": "Raise the number of digits used for floats.\n\nAbout 1.5% of all IEEE754 single-precision numbers require nine\ndecimal digits to represent accurately.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a7e49d46208b0844cb6dc2f971620b3af7a2781",
+            "message": "Merge pull request #2968 from ngg/cpp-proper-fwd\n\nC++: Do not forward-declare dependencies in generated .h files",
+            "tag_name": null
+        },
+        {
+            "hash": "9ba7d1c03810b47e535018d0362a8affef6f7f56",
+            "message": "C++: Do not forward-declare dependencies in generated .h files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eef2edcb8432dea32fe9d62e3f8f5d82677d71fd",
+            "message": "Merge pull request #3403 from ax3l/topic-cmake-pkgconfig\n\nCMake: Install .pc Files",
+            "tag_name": null
+        },
+        {
+            "hash": "74dcf447af2ce8550cd175ca18d98005980a9120",
+            "message": "Travis: Exclude CMake .pc files\n\nExclude the unconfigured .pc input files of the CMake\nbased install: they shall not be packed/distributed,\nonly their outputs are\n",
+            "tag_name": null
+        },
+        {
+            "hash": "668712c58fe518fdc997cc2103b848b043adceb6",
+            "message": "CMake: Install .pc Files\n\nAdds pkg-config (`.pc`) files for CMake based installs.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e8a32d07ffc665695b7532b97f96970cdeff977e",
+            "message": "Merge pull request #3401 from aschrijver/patch-2\n\nUpdated outdated hyperlink",
+            "tag_name": null
+        },
+        {
+            "hash": "d640cddf1984e2724656b37a40fe94a5483a44db",
+            "message": "Updated outdated hyperlink\n\nGithub repo had moved, pointing to correct location.",
+            "tag_name": null
+        },
+        {
+            "hash": "062df3d0724d9ae5e3c65d481dc1d3aca811152e",
+            "message": "Merge pull request #3179 from bjwatson/fix-duration-typo\n\nFix typos in comment",
+            "tag_name": null
+        },
+        {
+            "hash": "5555d3b0785d7a73299fa95203073c4bab2af97a",
+            "message": "Fix typos in comment\n",
+            "tag_name": null
+        },
+        {
+            "hash": "040f56e61b379e92dfdf107b12244a7580f60823",
+            "message": "Merge pull request #3397 from acozzette/initialization\n\nFixed default instance initialization for C++ lite",
+            "tag_name": null
+        },
+        {
+            "hash": "417aae615489f6b6a0aa750a4c3b4affe597d923",
+            "message": "Fixed dynamic initialization for C++ lite\n\nAn ifdef condition seems to have been inverted by mistake, causing the\ndynamic initialization to occur for lite if and only if the\n_NO_STATIC_INITIALIZER macro is set. This problem manifested itself as\nsegfaults due to uninitialized empty strings:\nhttps://github.com/google/protobuf/issues/2839\n\nSince no one complained about initialization not happening, it would\nappear that we can just disable this initialization for lite\nunconditionally, so that is what this change does. Instead of the\ndefault instance initialization happening pre-main, it now always\nhappens lazily when needed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa61bb0d3cee089c37da32584d03132177dd847c",
+            "message": "compiles removal of newline (#3333) (#3370)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "50aa4febaffa6a6f168ec3f9afc6fbdd40e4d31f",
+            "message": "Merge pull request #3375 from TeBoring/3.3.x\n\nMerge 3.3.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "6ec0b7e4d1fb606c6572a946e4eae97273367e67",
+            "message": "Merge 3.3.x into master\n",
+            "tag_name": null
+        },
+        {
+            "hash": "324b20a49170cb38d15ef243bc044026adb54ae1",
+            "message": "remove pass by reference for php setters (#3344)\n\n* remove pass by reference for php setters\r\n\r\n* comments out memory leak test\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "29ff49f5345693bd04aa37654aa002054d1b9780",
+            "message": "Fix Implicit Return Types (#3363)\n\nBoth native_slot_merge and native_slot_merge_by_array have no return\r\ntype declared. GCC implicitly uses int as return type in such cases,\r\nhowever, these functions are actually void.",
+            "tag_name": null
+        },
+        {
+            "hash": "c78dbd7c895b8c80cd2f2401d73acf890edf82c6",
+            "message": "Initial value in generated code cannot be used by c extension. (#3367)\n\nIn the generated code of previous versions, each php field is given an\r\ninitial value. In c extension, it was assumed that the field order in\r\nthe generated code is consistent with upb fields order, so that the\r\ncorrect initial value can be bound to the correct upb field. However,\r\nthis may not be true. The order of fields in generated code is decided\r\nby proto compiler, while the order of upb fields is decided by the hash\r\nfunction used in c extension.\r\nThis PR fixes the issue by reset the initial value at runtime.",
+            "tag_name": null
+        },
+        {
+            "hash": "ec3f5dcc725c415cf6bbc8325adf731370a3507d",
+            "message": "removes an accidental newline in printing for the php generator (#3333)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a0382e9076bdbb7c764080c92f3c2324d852be7",
+            "message": "Add map iterator for c extension (#3350)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3bbf1c8a98fe01c115f525c516e575d87c11a47",
+            "message": "Add space between arrow and casted type (#3353)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6aa4b20fc7db7e18a37d02db9c4fefe70e07c2d0",
+            "message": "Merge pull request #3327 from htuch/fix-3322\n\nUse consistent hash across NDEBUG/!NDEBUG builds.",
+            "tag_name": null
+        },
+        {
+            "hash": "f6ff32cd79f5de0da18b7c44b3908a520d9e93b2",
+            "message": "Use consistent hash across NDEBUG/!NDEBUG builds.\n\nFixes #3322.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "71f2f0d76ced8a47d72b31df0407ace65f000ac8",
+            "message": "Fix repository URL in C# project file\n",
+            "tag_name": null
+        },
+        {
+            "hash": "727c0dc1fae6c7b72f59fb29f47a52f133618461",
+            "message": "C#: Implement IReadOnlyDictionary<K,V> in MapField<K,V>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "942a29cecd36f2a4b22fdd2179635cd548e6bd27",
+            "message": "Merge pull request #3390 from danielgtaylor-isp/patch-1\n\nAdd note about includes to README",
+            "tag_name": null
+        },
+        {
+            "hash": "4b5b1e6e3e545b394911f40a824f21b6b6ac45bf",
+            "message": "Add note about includes to README\n\nRan into an issue today where a machine had the `protoc` compiler but not the include files. Took a while to sort out, and this added note to the README included in every zip should help.",
+            "tag_name": null
+        },
+        {
+            "hash": "9e745f771b2a0cde271b8283753c19014124ac95",
+            "message": "Support PHP generic services (#3269)\n\n* Add php_generic_services option\r\n\r\n* Generate PHP generic services\r\n\r\n* Respect namespaces for generated PHP services\r\n\r\n* Test PHP generated services\r\n\r\n* Rename PHP generator service method doc comment function\r\n\r\n* Correct phpdoc service method case\r\n\r\n* Test namespaced PHP generic services\r\n\r\n* Always use the FQCN for PHP generic service input/output\r\n\r\n* Add generated_service_test to php test.sh\r\n\r\n* Add php service test protos to CI\r\n\r\n* Add php service files to php_EXTRA_DIST\r\n\r\n* Use Interface suffix for php generic services\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "33545583286a31940b6a732b1888e639cdf2e3c4",
+            "message": "Merge pull request #3348 from matthauck/fix-gcc41-again\n\nFix map_field_inl.h for gcc 4.1",
+            "tag_name": null
+        },
+        {
+            "hash": "2130feadcfdbe0268b1afe6b050e000c83120aba",
+            "message": "Fix map_field_inl.h for gcc 4.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dd6e420dc41c7c55bfeac6a87e91903e883112f9",
+            "message": "Merge pull request #3357 from bklarson/master\n\nFix build when using -Werror=undef",
+            "tag_name": null
+        },
+        {
+            "hash": "81142e162b7eea2c3f3483a11ce13a7fb5c20b88",
+            "message": "Fix build when using -Werror=undef\n\nCorrect a couple places where macros were being checked when they\nmight not exist in some cases.\n\nFixes #3356.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb8e3d3220f066cde610c48af9287cadb36a5779",
+            "message": "Merge pull request #3134 from lundefugl/javabug1\n\nIssue 3112: Object class with fully qualified name",
+            "tag_name": null
+        },
+        {
+            "hash": "aea4374393e34da4147965323319468a47c7f4a8",
+            "message": "Issue 3112: Object class with fully qualified name\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aaa2550f7b0b24c65d0830fee66e12a9424c1966",
+            "message": "Merge pull request #3372 from dylanetaft/master\n\nExpand documentation in Readme.md",
+            "tag_name": null
+        },
+        {
+            "hash": "36fcc2a5d862742a83ee5c01c05c6be620d294b0",
+            "message": "Expand documentation in Readme.md\n\nAdd some supporting documentation regarding Closure for those unfamiliar., Also substantiate details for \"files in this directory\" - including them all will result in a project that does not compile as some are used for test cases and aren't part of the core library.",
+            "tag_name": null
+        },
+        {
+            "hash": "337029983c4958ea4f509e4c110b092ed716aa41",
+            "message": "Merge pull request #3385 from anandolee/master\n\nSet PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION for pure python comformance",
+            "tag_name": null
+        },
+        {
+            "hash": "b764e67812133adffd983257a0ee6aa6ac9170eb",
+            "message": "Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION for pure python comformance test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bba4c4ae51b0c02bb72de98d7953a47c16146161",
+            "message": "Merge pull request #3262 from snnn/master\n\nMake it compatible with python 3.6.1",
+            "tag_name": null
+        },
+        {
+            "hash": "4987ddac75e650a9f659394f7161ab91e0e5a144",
+            "message": "Fix a bazel build error on Windows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bb8664419b7d0dd4a94cc1242a2d77bf5e8f567b",
+            "message": "need for php math functions. used in mergeFromJsonString (#3409)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e9f4e8e4f5eecbb0737a96029f469e3381d5b39a",
+            "message": "Merge pull request #3407 from bklarson/master\n\nAdd declaration for AddDescriptorsImpl()",
+            "tag_name": null
+        },
+        {
+            "hash": "b6da2262e811d5c8d4b65d62756e9901a8dff48d",
+            "message": "Put AddDescriptorsImpl() in anonymous namespace\n\nAddDescriptorsImpl() is a private static implementation detail,\nand needs to be declared but won't be used from outside the\nsource file.  Place it inside an anonymous namespace to fix a\nprevious build error that would result in more restrictive\nbuild enviornments that use -Werror=missing-declarations or\nsimilar compiler flags.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0d9a34c7b2c66ba324cdbe620a6013b037be3b5d",
+            "message": "Add -Werror=missing-declarations to test builds\n\nTreat missing declarations as an error for test builds, to prevent\nfuture updates which add functions without properly declaring them.\nThis will prevent broken builds in more restrictive build environments.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "451d061141a14021ff95a093967827cd548720ba",
+            "message": "Fix cycle dependency for repeated field not collected by gc (#3399)\n\n\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a713b73076f1d90bdc39ea8805b50421a59d7986",
+            "message": "Merge pull request #3281 from BSBandme/ConformanceTestYilunChong\n\nProto2 test message support to conformance test",
+            "tag_name": null
+        },
+        {
+            "hash": "bceb830c396e3370d4cc15e0d4f96ed1819dcca9",
+            "message": "add comments in makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32c8ed3b44cdb26316de3400e2eaab3e8b4670ce",
+            "message": "change csharp failure list\n",
+            "tag_name": null
+        },
+        {
+            "hash": "30b4194488d37019aaf88f199aa447cd55c74c60",
+            "message": "Merge branch 'ConformanceTestYilunChong' of github.com:BSBandme/protobuf into ConformanceTestYilunChong\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e82ba0b8026eb16c40ceba861f02c643c36e8232",
+            "message": "Merge branch 'master' into ConformanceTestYilunChong",
+            "tag_name": null
+        },
+        {
+            "hash": "726ba33d98cd06c268f88b7dedf2a9a7916d978d",
+            "message": "changed php's failing list\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5085102d96ce1e0b50c0c8a906217fdb5ec4a387",
+            "message": "remove backup files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3adb054bbfa83530ca5a5fd54a856755fd72af83",
+            "message": "add some test proto2 supported, add js proto2 supported, fixed some error\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a7d5be6a910caabc4b26d73bc5c369dbc638c4c3",
+            "message": "change php objc nodejs csharp ruby\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fcb926825537c214ef7ce40f742aca905345f958",
+            "message": "change java to uniform message, revert TestValidDataForType's parameters\n",
+            "tag_name": null
+        },
+        {
+            "hash": "020a24dfdc2de06678f3f7f3547ba748fb5e5d42",
+            "message": "change cpp and python to uniform message\n",
+            "tag_name": null
+        },
+        {
+            "hash": "467c1ccd25023d19cd25680081ed0e4c95d0cb41",
+            "message": "fix csharp conformance test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db379e6e69196993f1c1e54512afe06b39cb97eb",
+            "message": "fix csharp conformance test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff773c1aaf8a9cb8617f894f0d179329ba56f146",
+            "message": "fix csharp\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cd1dc3f0dfb853d7b72d8494efb5919901f2589b",
+            "message": "add csharp support\n",
+            "tag_name": null
+        },
+        {
+            "hash": "364502102afe62bc0a9068032a177d1827aa4774",
+            "message": "add message set test case\n",
+            "tag_name": null
+        },
+        {
+            "hash": "06c9057cc32f0155f277dd0842f83b5ac362c386",
+            "message": "add objec support\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5e7e2d3bb8435e4ea20649a9baf9f7420f5f0cce",
+            "message": "revert ruby proto built files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf7b6a46b25048e9d3e193c7809f9e881dc36bc4",
+            "message": "delete backup files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6c59c257351060b49096140df3571f07a0ffd814",
+            "message": "delete binary\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91da852c50b5b5ec6a26a2ce7c8590e9af7fb4ba",
+            "message": "update .gitignore\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0255431ca7f03e4b77cd2fee38d9ff78a751e562",
+            "message": "revert .gitignore\n",
+            "tag_name": null
+        },
+        {
+            "hash": "696cf779d457c89184ea1d4aa18702f7cca63fd1",
+            "message": "add java supported\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0fa4e58525445b0b735aae048575f33cfd41aa83",
+            "message": "change ignore\n",
+            "tag_name": null
+        },
+        {
+            "hash": "18a0c2c4d2894e820f96494f33d8ca3ea33dec3a",
+            "message": "add proto2 supported for cpp,python,nodejs,ruby,php\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2ad74e1606728564cc777aa4917d7e2299317eda",
+            "message": "add support for proto2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4e67590e1b42897b674d6bfdae3b7c8f1d4cf5e5",
+            "message": "fix readme.md\n",
+            "tag_name": null
+        },
+        {
+            "hash": "58a3c74df04af9ed7d531e3f247677a4661a98b6",
+            "message": "add test_proto2_message.proto and change conformnace/makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7339c25d120246d711486f458cd098a94f8b2455",
+            "message": "delete backup files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cbf7dfb3233925639de99c2e3aea4c4676e886ad",
+            "message": "fix php failing list and csharp generated proto\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2f69d6fa23a815948368fae0b8c1e56e50715c9",
+            "message": "Merge pull request #3450 from pherl/invalidoffset\n\nFix invalid offsetof warning.",
+            "tag_name": null
+        },
+        {
+            "hash": "4cbbf33b773fb95aa339ee50517fd375f5120ffe",
+            "message": "Fix invalid offsetof warning.\n\nUse composition instead of inheritance for oneof default.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "778178479626b0e5b4de0701103a1bb0a067702d",
+            "message": "Add destructors for default instances to the shutdown code.\nVerified test succeed under draconian heap checker\n",
+            "tag_name": null
+        },
+        {
+            "hash": "53ae6de18b51509e67ec84bd6363985d14750bd7",
+            "message": "Merge pull request #3442 from pherl/csharpversion\n\nBump csharp version",
+            "tag_name": null
+        },
+        {
+            "hash": "6c64f1177857a4a99b5336916431abc07a070f56",
+            "message": "Bump csharp version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a5208fd3733af80906245901700f200d4e8f24e",
+            "message": "Update change log\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d77c8c5e44b429c2fb0d199e5e5962d7e6efb852",
+            "message": "remove the duplication\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bcf17332bd8d111177135547698cc8209635b7c4",
+            "message": "Adding the missing header\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ebeb472c1ec969a887b7fb6d7c1b516471938e1b",
+            "message": "Export functions in io_win32.h in win DLL build\n\nPrevious code duplicates io_win32.cc in sources of all the libraries\nthat include io_win32.h header.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "19b8c8bfd38d2764693a3b2450198d873c3de804",
+            "message": "Update conformance tests again.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12c186f7c6117e23644f0778f671fbbada199782",
+            "message": "Fix makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de6debcf2b07a7aa12658c3235c3d7d31f74ad98",
+            "message": "Fix conformance tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e177739fa2b201d4e4953218dd67084ef1005b03",
+            "message": "Fix build files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b8f6589f2eb54aa8f4c8edde55cf18baa92c69a",
+            "message": "Remove dependency on guava 20\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d974cc2e9a862c7a6949e5240067ed981e06b36b",
+            "message": "Update conformance tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f39d4de94f5c8a5cd60b5663bd25f4d10614f028",
+            "message": "Merge remote-tracking branch 'origin/master' into merge\n",
+            "tag_name": null
+        },
+        {
+            "hash": "759245a49a00315a41b28da8fe52a2894d4f57ea",
+            "message": "Merge from master\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4bff88e0fb2338657a781eeee0c5362a57b57bf3",
+            "message": "Merge pull request #3413 from pherl/3.4.x\n\nUpdate version number for 3.4.0",
+            "tag_name": null
+        },
+        {
+            "hash": "ce4416705b0f7e0dc7352618722d98ea268e4d4a",
+            "message": "Merge remote-tracking branch 'origin/3.4.x' into vb\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ae94d69ffd450dcf4b108c9367aa91e1f55dc7d",
+            "message": "Merge pull request #3414 from pherl/fixzip\n\nOmit the zip test if tools are not available",
+            "tag_name": null
+        },
+        {
+            "hash": "02250a7ff439cdc6ba7b209c3e8d20950340b102",
+            "message": "Omit the zip test if tools are not available\n",
+            "tag_name": null
+        },
+        {
+            "hash": "72cc5a6eb3975bbe3bc8454f053835d9e46dbcb5",
+            "message": "Merge pull request #3393 from pherl/3.4.x\n\nCreate 3.4.x branch",
+            "tag_name": null
+        },
+        {
+            "hash": "dd091aad48423f3a047977e6662f0201194b9bfc",
+            "message": "Fix code to use values() instead\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1876a27e661ac0378675fbfebc59b8e6620b8286",
+            "message": "Update filelist again\n",
+            "tag_name": null
+        },
+        {
+            "hash": "66c1dace00abf8e70f73b0dcccf929f3c1253642",
+            "message": "Add lite and python extra_dist files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf658c28d0eea18b44be19d36c4a86a311c83777",
+            "message": "Add java and JS dist files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "988376c95b707832c23878a121d8b981188c12ba",
+            "message": "remove broken imports in JS\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b07cdb6e8eb63bbca5a80a821f4d6a6a730305b0",
+            "message": "Use itmes() instead of itervalues() to be python3 compatbile.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e45214e312ed617cfd935955a792badd7137f688",
+            "message": "Fix distcheck\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8084e03c3376ec41e839bf7598de4f05a63d02f7",
+            "message": "remove profile\n",
+            "tag_name": null
+        },
+        {
+            "hash": "11b6661e6633b0e7b925577dd4582b71c4ddfa52",
+            "message": "update build file list\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7986ca7e532b4ee1514e5f153a523ce9423f0d08",
+            "message": "Update conformance tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3af881c7e2db0553207876acbdb91c6e77974e44",
+            "message": "Merge master into 3.4.x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "86975301f1876ce1934612777b8ca6c76520f5cc",
+            "message": "Update csharp and php descriptor\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09354db1434859a31a3c81abebcc4018d42f2715",
+            "message": "Merge from Google internal for 3.4 release\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb6b3320a52cfe5cd88437e3346cb83a1f1f928f",
+            "message": "Merge pull request #3412 from anandolee/3.4.x\n\nUse keys() instead of iterkeys() to be python3 compatbile.",
+            "tag_name": null
+        },
+        {
+            "hash": "9c012ed07d9bea4ac7012a9e697488ccde00c398",
+            "message": "Add __bool__ as well as __nonzero__ for python3",
+            "tag_name": null
+        },
+        {
+            "hash": "a484794820e3e83caa7ca7e78270c84b75cde21a",
+            "message": "Use keys() instead of iterkeys() to be python3 compatbile.",
+            "tag_name": null
+        },
+        {
+            "hash": "11b4d5ec73ca5667fdd0927a7c9ed47707defa11",
+            "message": "Update required version on pre-generated files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b24feb6ad82875ad9673185798e586420419637",
+            "message": "Update pre generated files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7bb39bef1a32f4e7d0eceb66220320213d9746ff",
+            "message": "Update version number for 3.4.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e0288e7ec0caf59d376f12ee324deeaceadb06c7",
+            "message": "Merge pull request #3438 from pherl/changelog\n\nUpdate change log",
+            "tag_name": null
+        },
+        {
+            "hash": "502624ff8b30e75305cb86e7fc5b736bd9567ef1",
+            "message": "Merge pull request #3419 from pherl/3.4.x\n\nMerge master into 3.4.x",
+            "tag_name": null
+        },
+        {
+            "hash": "d6bd95976101e97f4e5a472c60e6b57f450f76b7",
+            "message": "Merge pull request #3406 from ax3l/bg-3.4-cmake-pkgconfig\n\nCMake: Install .pc Files (Backport: 3.4)",
+            "tag_name": null
+        },
+        {
+            "hash": "ebe659dced2d5947a4f538826225f0787797722a",
+            "message": "Travis: Exclude CMake .pc files\n\nExclude the unconfigured .pc input files of the CMake\nbased install: they shall not be packed/distributed,\nonly their outputs are\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f3cf527224369318fedd88013d6a8e464d1aa3d",
+            "message": "CMake: Install .pc Files\n\nAdds pkg-config (`.pc`) files for CMake based installs.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e243fd8ab7bf19401aa32f1991d86800bde54161",
+            "message": "Merge pull request #3451 from pherl/fixtypo\n\nFix typo.",
+            "tag_name": null
+        },
+        {
+            "hash": "39a91d376aff0fae4110d711f02f50865e211a4a",
+            "message": "Fix typo.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "176713d6fbbf72056b009f76e7625f267273bd75",
+            "message": "Merge pull request #3468 from vladmos/3.4.x\n\nMake .bzl files compatible with future versions of Bazel",
+            "tag_name": null
+        },
+        {
+            "hash": "06a825c170cdb09f96683bb401dce35b7bd4d159",
+            "message": "Make .bzl files compatible with future versions of Bazel\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9adb4e8c2d2c77cea7e92f221f3b22f1692f4e16",
+            "message": "Merge pull request #3478 from pherl/warning\n\nMake code free of missing-field-initializers warnings",
+            "tag_name": null
+        },
+        {
+            "hash": "1bd2d1fc756dc36b38a35c7f5dad028052892d2c",
+            "message": "Merge pull request #3484 from pherl/qualifier\n\nMake compilers without ref-qualifier support happy.",
+            "tag_name": null
+        },
+        {
+            "hash": "31b3bd9811ad0035367bbdde12a42c6e9403f153",
+            "message": "Make compilers without ref-qualifier support happy.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3d2f72bf01782ee83c8a2cde082bddb47931443b",
+            "message": "Merge pull request #3496 from pherl/mingw64\n\nStatic link pthread for mingw64 protoc and enable cross compile",
+            "tag_name": null
+        },
+        {
+            "hash": "6654c8dd5014c83d73c0301911f989fb9be439c1",
+            "message": "Update readme\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d909834ec604998069c6bef5239563880aa125b7",
+            "message": "static link for 32 bit build as well.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7b3dd4329145403b7de78451523700a84e33291",
+            "message": "Update comments that cross compile is feasible now\n\nNeed to install mingw-w64 on linux to cross compile\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa086c8a85f27b8b522478bce4a0e132372109a8",
+            "message": "First try static linking pthread\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f6196219f79063686f86458274f6d9615b913a22",
+            "message": "Merge pull request #3493 from pherl/cmath\n\nFix cmath/math.h include with non C++11 libstdc++",
+            "tag_name": null
+        },
+        {
+            "hash": "3908b4e40de8a9af1ba06ef01abdf8c5d9162623",
+            "message": "Fix cmath/math.h include with non C++11 libstdc++\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1cc4ecde1c324c85ebcb9ed7607f38954c9e3f27",
+            "message": "Merge pull request #3488 from pherl/changelog\n\nUpdate changelog for 3.4.x",
+            "tag_name": null
+        },
+        {
+            "hash": "3ae8c4c7da19b1894fa7dc7abebdef21865632dc",
+            "message": "Update changelog for 3.4.x\n",
+            "tag_name": null
+        }
+    ]
+}

@@ -1,0 +1,1643 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.2.0",
+    "previous_release": "v3.1.0",
+    "cycle_days": 125.86869212962964,
+    "commits": 326,
+    "commits_in_advance": 55,
+    "start_delay": -52.45854166666667,
+    "duration": 178.3272337962963,
+    "commits_info": [
+        {
+            "hash": "593e917c176b5bc5aafa57bf9f6030d749d91cd5",
+            "message": "Bump version number to 3.2.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c8346a259791ccb176da80e31e59f1df479bd6d",
+            "message": "Fix typo that breaks builds on big-endian (#2632)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1f0939a42ae8a6b6bca95a4b9048d7416e72865",
+            "message": "Reverting deployment target to 7.0 (#2618)\n\nThe Protobuf library doesn’t require the 7.1 deployment target so\r\nreverting it back to 7.0",
+            "tag_name": null
+        },
+        {
+            "hash": "d9668797a2e6bb41f20bad47cd2494e5aa1a156b",
+            "message": "Update upb, fixes some bugs (including a hash table problem). (#2611)\n\n* Update upb, fixes some bugs (including a hash table problem).\r\n\r\n* Ruby: added a test for the previous hash table corruption.\r\n\r\nVerified that this triggers the bug in the currently released\r\nversion.\r\n\r\n* Ruby: bugfix for SEGV.\r\n\r\n* Ruby: removed old code for dup'ing defs.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "be83f46b67f1392a99511a36b687ce7db06efed8",
+            "message": "Update php README\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b22c6b090fd46702a4f1788382ef9e0bbcecaee6",
+            "message": "Update change logs for 3.2.0 release.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6eeb5c7d0fc84c9c5d562ae54b3bdc088ec62129",
+            "message": "Update version number to 3.2.0rc2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3e51b3d4b6a3dd068daabb32d95c9f30381aae58",
+            "message": "Change protoc-artifacts version to 3.2.0-rc.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5750146bd69064efe7d19e12797b8429e948513c",
+            "message": "Update version number to 3.2.0-rc.1 (#2578)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4447637bf73494efff79596f5911d9af8871e620",
+            "message": "Remove redundent embed.cc from src/Makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "790fc9387c3f4b0d08953f740d4d561af95ce3a6",
+            "message": "Fixed \"make distcheck\" for the Autotools build\n\nTo make the test pass I needed to fix out-of-tree builds and update\nEXTRA_DIST and CLEANFILES.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "531ebd9b94364f32a2df6d932a429c18752b75c7",
+            "message": "Add embed.cc in src/Makefile.am to fix dist check.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "60d4f8af483e0234ee5b7f7544bcd578a34412ad",
+            "message": "Decoding unknown field should succeed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e259b515a5baae2d7d7623af62ea87079a5e91a0",
+            "message": "Fix generated code when there is no namespace but there is enum definition.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83fb8c7d29a221851817fd889a716654f6bfb96c",
+            "message": "Fix generation of extending nested messages in JavaScript (#2439)\n\n* Fix generation of extending nested messages in JavaScript\r\n\r\n* Added missing test8.proto to build\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "64cbfab937d3b9a176dfdf7d32c2ac8b29e30fca",
+            "message": "Minor fix for autocreated object repeated fields and maps.\n\n- If setting/clearing a repeated field/map that was objects, check the class\n  before checking the autocreator.\n- Just to be paranoid, don’t mutate within copy/mutableCopy for the autocreated\n  classes to ensure there is less chance of issues if someone does something\n  really crazy threading wise.\n- Some more tests for the internal AutocreatedArray/AutocreatedDictionary\n  classes to ensure things are working as expected.\n- Add Xcode 8.2 to the full_mac_build.sh supported list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "77e434de36cf549bfba97782bfa6a58206b89e75",
+            "message": "Fixed cross compilations with the Autotools build\n\nPull request #2517 caused cross compilations to start failing, because\nthe js_embed binary was being built to run on the target platform\ninstead of on the build machine. This change updates the Autotools build\nto use the AX_PROG_CXX_FOR_BUILD macro to find a suitable compiler for\nthe build machine and always use that when building js_embed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "46dee43e25767201bdcb61012a7d16e4a456ee2c",
+            "message": "Fix include in auto-generated well_known_types_embed.cc\n\nRestore include style fix (e3da722) that has been trampled by\nauto-generation of well_known_types_embed.cc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a24ddc570f4357fc474384d0b84a2656a9a028a5",
+            "message": "Fix warning in compiler/js/embed.cc\n\nembed.cc: In function ‘std::string CEscape(const string&)’:\nembed.cc:51:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]\n   for (int i = 0; i < str.size(); ++i) {\n                                ^\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1fde361a738aa86625bfd7fa7442ef28a6b3011",
+            "message": "Fix int64 decoding on 32-bit machines.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c871ce6e7b3987636ec4927e221a179729bddd11",
+            "message": "PHP fix int64 decoding (#2516)\n\n* fix int64 decoding\r\n\r\n* fix int64 decoding + tests\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "911e84e70622f1f0c5194d04a35078ef1965d8ad",
+            "message": "Merge pull request #2550 from TeBoring/3.2.x\n\nBump version number to 3.2.0",
+            "tag_name": null
+        },
+        {
+            "hash": "f5cc1a54c5b663e8f88e18419471363d68453b9f",
+            "message": "Bump version number to 3.2.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e230283f75da104b78a9c34be719adaac80d9428",
+            "message": "Add new js file in extra dist.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "117f7716414bb0826ad4b78d9b27f30e6f8e2e24",
+            "message": "Update _GNUC_VER to use the correct implementation of atomic operation on Mac.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f38ce1f989366181e6677bbfbad07f4a074c7fb",
+            "message": "Added Bazel genrule for generating well_known_types_embed.cc\n\nIn pull request #2517 I made this change for the CMake and autotools\nbuilds but forgot to do it for the Bazel build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d8a54477fe2d20008a7649599e3bd99419e78d7",
+            "message": "Updated Makefile.am to fix out-of-tree builds\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f424c715e1c0a26b79bd8c659d0bd8ef214a9980",
+            "message": "Added well_known_types_embed.cc to CLEANFILES so that it gets cleaned up\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c7cbf5fc373efb6c054906391f98892e955a60b1",
+            "message": "maps_test.js: check whether Symbol is defined before using it (#2524)\n\nSymbol is not yet available on older versions of Node.js and so this\r\ntest fails with them. This change just directly checks whether Symbol is\r\navailable before we try to use it.",
+            "tag_name": null
+        },
+        {
+            "hash": "e02ff1a1943f3a9040619cb472a8e82128b690e9",
+            "message": "Update _GNUC_VER to use the correct implementation of atomic operation\non Mac.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf502405fced99ce4c43382c538bc1e005694244",
+            "message": "Explicitly import used class in nano test to avoid random test fail.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9cdd803d6189fc022efaee3e3f156aa9b8069fb",
+            "message": "Update conformance test failure list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9cb253f46e5282ecbc20483e1609dd82dfa7f95a",
+            "message": "Down-integrate internal changes to github.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "199d82fde1734ab5bc931cd0de93309e50cd7ab9",
+            "message": "Down-integrate internal changes to github.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "607b92149948393311d66329b9851f5971662f19",
+            "message": "Merge pull request #2437 from xfxyjwf/plugin\n\nAdd version number to plugin protocol.",
+            "tag_name": null
+        },
+        {
+            "hash": "ced8f73ffc89880af353b2e0d8b5dd0c5f75267d",
+            "message": "Add version number to plugin protocol.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4280c2740300f414d95a5f282426f25f5b13e05d",
+            "message": "Merge pull request #2436 from cgrushko/patch-1\n\nAdd a proto_lang_toolchain() for cc_proto_library",
+            "tag_name": null
+        },
+        {
+            "hash": "45d92aea27585cadcb9ddf52913f66996948f33e",
+            "message": "Add a proto_lang_toolchain() for cc_proto_library\n\nBazel's built-in cc_proto_library rule uses a proto_lang_toolchain to learn how to invoke proto-compiler.\r\nTo use Bazel's cc_proto_library, add the following to your project's WORKSPACE file:\r\n\r\nlocal_repository(\r\n  name = \"com_google_protobuf_cc\",\r\n  path = \"/path/to/protobuf-distribution/\"\r\n)",
+            "tag_name": null
+        },
+        {
+            "hash": "6b60dddb88276a4254bf91b6155264733935941f",
+            "message": "Merge pull request #2431 from saintstack/2228v2\n\nChange CodedInputStream#DEFAULT_SIZE_LIMIT from 64MB to",
+            "tag_name": null
+        },
+        {
+            "hash": "7550bcd89f5a9f0a94b4e3ad93da02f3d98529f1",
+            "message": "Change CodedInputStream#DEFAULT_SIZE_LIMIT from 64MB to\nInteger.MAX_SIZE (0x7FFFFFF) #2228\n\nM java/core/src/main/java/com/google/protobuf/CodedInputStream.java\n Set DEFAULT_SIZE_LIMIT to Integer.MAX_SIZE (Was 64MB). This is how it was\n in pre-2.7.0 pb. Changed size check to an overflow-conscious test (as it\n is later in tryRefillBuffer (making sizeLimit a long was to disruptive).\n\nM java/core/src/test/java/com/google/protobuf/CodedInputStreamTest.java\n Add two tests that echo tests recently added over in c++ to test parse\n of message sizes that are approach and are beyond the size limit.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f8ca3acd2924421dc18f685c629a6e54875ac113",
+            "message": "Generate phpdoc in php generated files. (#2406)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "851cb81ddd9365ce6973b56ea102ab4d3296b349",
+            "message": "Merge pull request #2429 from thomasvl/issue1833_swift_prefix\n\nAdd a swift_prefix file option.",
+            "tag_name": null
+        },
+        {
+            "hash": "f813bd9f8f79c44600fe0da4aba788f35e287027",
+            "message": "Add a swift_prefix file option.\n\nSwift generators should default to CamelCasing the proto package and prefixing\nsymbols with that, but this option allows developers to override that behavior\nwith something custom if they desire.\n\nFixes https://github.com/google/protobuf/issues/1833\n",
+            "tag_name": null
+        },
+        {
+            "hash": "39f9b43219bc5718b659ed72a2130a7b2ce66108",
+            "message": "Merge pull request #2403 from google/down-integrate-with-msvc-fix\n\nIntegrated internal changes from Google",
+            "tag_name": null
+        },
+        {
+            "hash": "65479cb7b1f99ab957da68abce17feb68a9e1cf0",
+            "message": "Fixed Ruby tests for JRuby 1.7\n\nThis makes a couple of changes to fix the tests for JRuby 1.7:\n- Avoid using assert_false since that assertion seems not to exist in\n  older versions\n- Disable a test related to respond_to? for JRuby. It's hard to tell\n  what is going wrong here but it looks like probably a JRuby bug that\n  has been fixed in more recent versions.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "259dd7e842dd3a848a1094a42c05610e8a31dcbb",
+            "message": "Updated descriptor_pool.py to be compatible with Python 3\n\nIn Python 3 the values() method on a dictionary returns a view instead\nof a list, so we need to explicitly convert that to a list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db35fe735a6522089250a0a0804fb1fd18340666",
+            "message": "Add a \"u\" suffix to tag numbers in generated code\n\nThis seems to be necessary to prevent warnings in some compiler\nconfigurations, particularly for tag numbers that are too large to fit\nin a signed 32-bit int.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a7f300d6ffe2fbc6bdd10495efedbe6c86a29f49",
+            "message": "Fixed descriptor_pool_test.py for Python 2.6\n\nThe curly brace syntax for sets was introduced in Python 2.7, and so for\ncompatibility with 2.6 we need to avoid using it for now.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a41090ee6b4efd0f2960acf91782a8fb8e547a76",
+            "message": "Updated failure_list_java.txt for Java conformance test\n\nA new test is now passing and so we can remove it from the failure\nwhitelist.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "72002d8898b39e8ba71c04a13e08cd227542b8e4",
+            "message": "Merge pull request #2400 from acozzette/jspb-test-fixes\n\nFixed JSPB test failures",
+            "tag_name": null
+        },
+        {
+            "hash": "fda876a1492fcd7120c66abac1b47a9361f928df",
+            "message": "Added back in binary serialization round-trip in message_test.js\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40f3586412c2efa7a81ccb685e6f96e817996e36",
+            "message": "Fixed remaining JSPB test failures\n",
+            "tag_name": null
+        },
+        {
+            "hash": "315350b2fa37201851ac298627e5547cfca64798",
+            "message": "Updated message_test.js so that it does not depend on fromObject\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4dd686ab484c7e8ab31b8624c4a70ae355fc614",
+            "message": "Updated enum names in test.proto to avoid conflicting with testbinary.proto\n",
+            "tag_name": null
+        },
+        {
+            "hash": "599613e4c481781ad91cc8fba47e795ef15d7e5a",
+            "message": "Update EXTRA_DIST lists.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f077a01831c3f4c54a114fc8ca47db4d5f1aec9",
+            "message": "Update conformance failure lists.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "530ae302bdb8ac28fd4939b9893a6446d3fbd991",
+            "message": "Add back missing LIBPROTOBUF_EXPORT.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1673389ef1993eb1fa2b7ab0829744280f54ea47",
+            "message": "Updated libprotoc.cmake\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5d63097fc2b7f405f53d6ca4ad3c1ebd98d80ddd",
+            "message": "Merge branch 'master' into down-integrate-with-msvc-fix\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cd315dcbadc02569e145bde16e3f66c2fbb08e31",
+            "message": "Merge pull request #2383 from snapsam/patch-1\n\nUpdate README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "d571d39923e8d304286c37bfb4b7545e832c6288",
+            "message": "Update README.md\n\nneeded a grave here, not an apostrophy",
+            "tag_name": null
+        },
+        {
+            "hash": "99564c3347223b92e49bd40f37b8c0d6fc6a3971",
+            "message": "Rename Empty to GPBEmpty in php generated file.\n\nIn php, class name cannot be \"Empty\". Modified code generator to (#2375) generate GPBEmpty instead (for google.protobuf.Empty only). Also change\r\nruntime code to work with the new generated code accordingly.",
+            "tag_name": null
+        },
+        {
+            "hash": "fc27ead10719f768eb990accac434f48efe10d16",
+            "message": "Merge pull request #2362 from wujingchao/patch-1\n\nClass is final but declares protected field",
+            "tag_name": null
+        },
+        {
+            "hash": "abeff7b4fd6a909bd32723d90dc0e0535c84bd0a",
+            "message": "Class is final but declares protected field\n\nThis class is declared to be final, but declares fields to be protected. Since the class is final, it can not be derived from, and the use of protected is confusing.",
+            "tag_name": null
+        },
+        {
+            "hash": "a30e5af2043c805abcbebd07db4c8cbe2779a430",
+            "message": "Merge pull request #2358 from ckennelly/master\n\nResolve old TODO for StringTypeHandler.",
+            "tag_name": null
+        },
+        {
+            "hash": "e02cb2bb8369f2a97461c5d300ffaca247792183",
+            "message": "Resolve old TODO for StringTypeHandler.\n\nStringSpaceUsedExcludingSelf has been part of the lite library since\nb913cbd.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a4b2c573a8f452cdb4e8e04841bfa5f21738e12",
+            "message": "Merge pull request #2353 from guptasu/master\n\nMessageOptions should handle both proto2 and google.protobuf package names.",
+            "tag_name": null
+        },
+        {
+            "hash": "fce8b6b9245ee597a689d6985cd2f41e3bc7b0c1",
+            "message": "Made helper code also consider package name 'proto2' when dealing with MessageOptions.\n\nThis is done so that the same library can be used irrespective of whether MessageOptions belong to package name 'proto2' or 'google.protobuf'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce5160b83b03c29fd27fc9f58370092b321bf2bc",
+            "message": "Merge pull request #2332 from Kwizatz/master\n\nAdded explicit cast to avoid size warning on Win64.",
+            "tag_name": null
+        },
+        {
+            "hash": "975d577a2b3b4d5a76e97bf93bb614bb4e3a52bb",
+            "message": "Added explicit cast to avoid size warning on Win64.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0d7199edc802299bdba39400c04f119c7db82667",
+            "message": "Merge pull request #2329 from acozzette/unused-parameter\n\nFix unused parameter warnings in arena_free",
+            "tag_name": null
+        },
+        {
+            "hash": "8785004c80a67ca85ff1eb876e08ac64c9eba394",
+            "message": "Fix unused parameter warnings in arena_free\n\nThe size parameter is only used in cases where the compiler supports\nsized delete, so when that's not available we need to specifically cast\nit to void to prevent a warning.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7bd11fcb59872b4448b13a1bdfc173428fdfb8f6",
+            "message": "Merge pull request #2301 from jbrianceau/arm-atomic-kuser-helpers-fix-v2\n\n[arm/gcc] Don't rely on KUSER_HELPERS feature for atomics",
+            "tag_name": null
+        },
+        {
+            "hash": "4587a3fd074861412201755926bb8da5e6752f0d",
+            "message": "[arm/gcc] Don't rely on KUSER_HELPERS feature for atomics\n\nARM specific CONFIG_KUSER_HELPERS feature can be disabled in Linux kernel,\nand in this case, we shouldn't crash. Use gcc built-in functions instead\nof arm specific code if they are available.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d58b92ae5169ba888e6b5ca91c0ec9814668fa2c",
+            "message": "Adds pushLimit: and popLimit: into GPBCodedInputStream (#2297)\n\nAdds pushLimit: and popLimit: into GPBCodedInputStream\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "795976ecf536957719403b72a449e0b250d1b4e1",
+            "message": "Trigger update of docker for new changes in #2282. (#2288)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e9d9e56a6bfa93be5b97d40fd70382807e526d2d",
+            "message": "Merge pull request #2290 from ramrunner/OpenBSDsupport\n\ndefine no_threadlocal on OpenBSD",
+            "tag_name": null
+        },
+        {
+            "hash": "bfc1299a091abdd4b3e89889d405db9371fc8f77",
+            "message": "define no_threadlocal on OpenBSD\n",
+            "tag_name": null
+        },
+        {
+            "hash": "734930f9197b7bc97c3c794c7a949fee2a08c280",
+            "message": "Merge pull request #2284 from pherl/plugin_opt\n\nSupport extra parameters for plugins.",
+            "tag_name": null
+        },
+        {
+            "hash": "2e314a697a2270f316f503ad7f71dd355c656267",
+            "message": "Add comments about converting directives into PluginName\n",
+            "tag_name": null
+        },
+        {
+            "hash": "59cd5d0e26c180117d9d5fe16be536e63d29e332",
+            "message": "Support extra parameters for plugins.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "58580da37357941d502805be3ae520441be77728",
+            "message": "Merge pull request #2274 from nmittler/gae\n\nHacking ByteBufferWriter to work with GAE",
+            "tag_name": null
+        },
+        {
+            "hash": "c0f95c6f942a8d269c9d432956ad9babb900df7e",
+            "message": "Hacking ByteBufferWriter to work with GAE\n\nFixes #2269\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c6940f3bb4d7893b4d453870acd374c1ae43a58",
+            "message": "Merge pull request #2264 from rshin/master\n\nPlace Python extensions correctly in Bazel build.",
+            "tag_name": null
+        },
+        {
+            "hash": "7c913d821e5e8469a84d11f4f6509c37037b1779",
+            "message": "Use -DPROTOBUF_PYTHON_ALLOW_OVERSIZE_PROTOS\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df5841f0b2a523abeb2fc304e024cd623f13d2f1",
+            "message": "Place Python extensions correctly in Bazel build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "008b5a228b37c054f46ba478ccafa5e855cb16db",
+            "message": "Merge pull request #2254 from JasonLunn/patch-1\n\nUse git clean before installing via bundler",
+            "tag_name": null
+        },
+        {
+            "hash": "9ec7a47ee85813a852e0063d15f54f3f89fe9114",
+            "message": "Use git clean before installing via bundler",
+            "tag_name": null
+        },
+        {
+            "hash": "993d60403015392b5897c1ed36f8feafc51f8186",
+            "message": "Merge pull request #1959 from abergmeier-dsfishlabs/feature/cpp\n\nNeed to expose generated protobuf C++ headers",
+            "tag_name": null
+        },
+        {
+            "hash": "bbeb983bac166392c787ae7130abac474faaae10",
+            "message": "Need to expose generated protobuf C++ headers so they can actually be accessed from other libraries.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad88f905ae33a4c8824441c53f54736e2ae357dd",
+            "message": "Merge pull request #2251 from TeBoring/master\n\nMerge 3.1.x branch into master.",
+            "tag_name": null
+        },
+        {
+            "hash": "686a19c9b792e44f3e90467d404a9865de0aa330",
+            "message": "Merge 3.1.x into master.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "60d95f36c0081a03b947c2b625c10841bb19736c",
+            "message": "Fix the bug that message without namespace is not found in the descriptor pool. (#2240)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0321baf9e855a2b664436605c7067f348e1d7284",
+            "message": "Merge pull request #2203 from mrry/msvc_fix\n\nFix MSVC build when HAVE_LONG_LONG is defined.",
+            "tag_name": null
+        },
+        {
+            "hash": "1d2c7b6c7376f396c8c7dd9b6afd2d4f83f3cb05",
+            "message": "Fix MSVC build when HAVE_LONG_LONG is defined.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9bad65bf32cebc6210b4da9251919503d479dbd",
+            "message": "Add script to build Google.Protobuf.Tools for csharp.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b88a4ae87ecca878744f084aad89deea298c5a1",
+            "message": "Merge pull request #2196 from haberman/nodefix\n\nAdded alias getFieldProto3 as used by older generated code.",
+            "tag_name": null
+        },
+        {
+            "hash": "8b54280395fe9236428c7a50c9b6c0e57c3131e5",
+            "message": "Added alias getFieldProto3 as used by older generated code.\n\nUn-breaks users who have old generated code and upgrade\nto the 3.1.0 release.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "787f3fb16380a403c99716a23ed09cd7b9ea5b67",
+            "message": "Fixing inconsistent php version number.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c531b49d3894765089b20c62eb4cedc3e1e08926",
+            "message": "Merge pull request #2181 from google/jtattermusch-patch-2\n\nUpdate README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "530eede12b8e6c8d8612f7280da738a274ea5797",
+            "message": "Update README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "4d3e4cfa4a1bf01e8a19515967f127ddd4b5cdf3",
+            "message": "Fix MSVC stack overflow issue.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc3bff165fac28f7ad967d70dcf572ccb062c481",
+            "message": "Fix python_cpp test on Mac. Link staticly when building extension, so that the extension doesn't require installing protobuf library. (#2232)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b0d62dd71388813658222172a42383eca2e37c06",
+            "message": "Add csharp/build_tools.sh for dist check.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "96e2d76491f7ea8aa33b524e7b0a2194b05c473a",
+            "message": "Fix compile error for php on Mac.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "75b69887aa446aeb7f1b6325ec826f2b5ddfa972",
+            "message": "Fix segmentation fault when ZTS is defined.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "52ab3b07ac9a6889ed0ac9bf21afd8dab8ef0014",
+            "message": "PHP: fix ZTS tsrm_ls errors (#2189)\n\n* PHP: fix ZTS tsrm_ls errors\r\n\r\n* Fix a few more macros\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "71e5994b1a0a254c20486fd16cdb33f35e0c0953",
+            "message": "Merge pull request #2193 from acozzette/common-js-fix\n\nFixed references to foreign nested messages with CommonJS-style imports",
+            "tag_name": null
+        },
+        {
+            "hash": "c4d70123ac99ff1a0886fc7dfa492010b027210a",
+            "message": "Fixed references to foreign nested messages with CommonJS-style imports\n\nA bug was causing generated JSPB code with CommonJS-style imports to\nrefer incorrectly to nested messages from other .proto files. The\ngenerated code would have things like \"test_pb.InnerMessage\" instead of\n\"test_pb.OuterMessage.InnerMessage\". This commit fixes the problem by\ncorrectly taking into account any message nesting.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d897c8fa2cbe21683263e3eeddd1ab8e0d89091",
+            "message": "Add test for php zts build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a055be9257b7ff9fe102243a744107b2712d583",
+            "message": "Prepare jenkins for testing php zts build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "640c947458963ee3e2a7e44cc8ef8a304fa87a6d",
+            "message": "Merge pull request #2204 from acozzette/enum-names\n\nDo strict enum name checking only for proto3",
+            "tag_name": null
+        },
+        {
+            "hash": "149659b72a61ea6f1c537ef8741be50b6826cb91",
+            "message": "Do strict enum name checking only for proto3\n\nThere seem to already be .proto files out there that have conflicting\nenum names, which will not be able to build successfully for some\nlanguages (like C#). To prevent this problem from spreading, let's make\nit an error for proto3 but just issue a warning for proto2. This fixes\nissue #2179.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "858db7a202a36c57aeed998ef088a03cae48e582",
+            "message": "Add travis test on Mac for php.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bcb32c0b8692774634cb9de10be921d11d7fbf8a",
+            "message": "Test php5.5_c test on jenkins\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dae50dc56a48d86fdce3bb52151a2a4652e5c33b",
+            "message": "Trigger automated tests for php.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f17528a1fa51e1a81af94aa0a2a445265d6b7e83",
+            "message": "Set up environment for php automated tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1baaedfb3d3d716e32d4ff72079c0324da1bccac",
+            "message": "Add php test script for automated tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e28286fa05d8327fd6c5aa70cfb3be558f0932b8",
+            "message": "Add 32-bit machine test on jenkins. (#2245)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "afaa827860cb72b2d5298547d3e2ad4c9ca52a1c",
+            "message": "Merge pull request #2246 from fweikert/patch-1\n\nDeclare all inputs of protoc action",
+            "tag_name": null
+        },
+        {
+            "hash": "c2b3e70efd2038a54ef8973771ac58192885125e",
+            "message": "Declare all inputs of protoc action\n\nctx.executable.plugin must be in the inputs of protoc's action when using a plugin, otherwise the action will fail.\r\n\r\nThis bug has been hidden by a bug in Bazel: for every ctx.action, Bazel used to automatically add the runfiles of all executable inputs of the RULE instead of using the inputs of the specific ACTION. Consequently, we could get away with underspecifying the inputs of the action.",
+            "tag_name": null
+        },
+        {
+            "hash": "fd046f6263fb17383cafdbb25c361e3451c31105",
+            "message": "Merge pull request #2234 from TeBoring/master\n\nMerge 3.1.x branch into master.",
+            "tag_name": null
+        },
+        {
+            "hash": "daba6653f1289b58873c2ae993afcdb82035d2fb",
+            "message": "Fix python_cpp test on Mac. Link staticly when building extension, so that the extension doesn't require installing protobuf library. (#2232)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5be6325c1f000f7b7d6655cb5b6ecbf4f0e52017",
+            "message": "Add csharp/build_tools.sh for dist check.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63448e6059ee5e7b123e0d185e70c1df1d294bd8",
+            "message": "Fix compile error for php on Mac.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f3d20a500e75ef47004986fece3db20ddeee43f",
+            "message": "Fix segmentation fault when ZTS is defined.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1e5d4ba9387362ece026e78148f4ac5881537e64",
+            "message": "PHP: fix ZTS tsrm_ls errors (#2189)\n\n* PHP: fix ZTS tsrm_ls errors\r\n\r\n* Fix a few more macros\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c96dd669a9da2b2c44c9c54313c61ee06791aa79",
+            "message": "Add test for php zts build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "447dee19a85c3852ac1f637cb745c620c63198aa",
+            "message": "Prepare jenkins for testing php zts build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "70477613b975e45a2d3bec2d18bae11b8c3a1751",
+            "message": "Do strict enum name checking only for proto3\n\nThere seem to already be .proto files out there that have conflicting\nenum names, which will not be able to build successfully for some\nlanguages (like C#). To prevent this problem from spreading, let's make\nit an error for proto3 but just issue a warning for proto2. This fixes\nissue #2179.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34cdaf4c36cee85765d48a8b857be75014f3a8d0",
+            "message": "Add travis test on Mac for php.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8bd36e5b91fa7cc3ca56abfd33db13da8ce3077",
+            "message": "Test php5.5_c test on jenkins\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0719f062c1e8b140fa90ce6e8af8ad32ee61583",
+            "message": "Trigger automated tests for php.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91bbff217e2e6c0bc98dd5d90cd4d390194d4e3a",
+            "message": "Set up environment for php automated tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fd332d146d345a04c8d7c6874b8fb654d2621902",
+            "message": "Add php test script for automated tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89db7ce02bd57e8de55b1e0bf40256be312eb8d2",
+            "message": "Add script to build Google.Protobuf.Tools for csharp.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f2eeaf7110b0f9b60c7b31bda7e0b20d6b7fb029",
+            "message": "Added alias getFieldProto3 as used by older generated code.\n\nUn-breaks users who have old generated code and upgrade\nto the 3.1.0 release.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4a4a1627c158d976ee80f278024a49ced8b12712",
+            "message": "Fixed references to foreign nested messages with CommonJS-style imports\n\nA bug was causing generated JSPB code with CommonJS-style imports to\nrefer incorrectly to nested messages from other .proto files. The\ngenerated code would have things like \"test_pb.InnerMessage\" instead of\n\"test_pb.OuterMessage.InnerMessage\". This commit fixes the problem by\ncorrectly taking into account any message nesting.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0bf5482712e849f67d7fe98217608f95ba60c776",
+            "message": "Fixing inconsistent php version number.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae9455c2749584968b0583b1b8499903a1049875",
+            "message": "Fix MSVC stack overflow issue.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e0a6e52023797c605fff2df108dedc4b34ef34b8",
+            "message": "Add php files for make dist.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "17cc42a45aeab0f78a137fa6be6c36095db32e58",
+            "message": "Update change log for 3.1.0 (#2173)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8db25a2975378ccd00f336d2f4eaec299d047f70",
+            "message": "Force a rebuild of Jenkins docker image.\n\nNeeded to pick up a Java dependency change and re-populate the offline\nrepo.\n\n[skip ci]\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a41349dd68eec941f76b309e1797027320432d9d",
+            "message": "php: support 5.5.9 for pecl extension (#2174)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "39685f67d7223ce608240d75fd2c9d95e079a576",
+            "message": "Fix VS test failures.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2937c67429377e6c004387ec7abf8480ce668c0e",
+            "message": "Use \"appveyor DownloadFile\"\n\n\"ps: StartFileDownload\" is broken by a recent appveyor image update:\nhttp://help.appveyor.com/discussions/problems/5308-ci-frequently-hangs-with-recent-image-update\n\nChange-Id: Ia73aa8b12f77eb9bbec556a4c05310153aad97bf\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b155958859fb02c8e431ea1377877e6e3f422687",
+            "message": "Update php supported version.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9e260a323bf516e0ac5b6b0e757173c264775a23",
+            "message": "Reduce test length to avoid stack overflow on VS.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c4cf0eeb52dd22bdd1ec3136b4f9b977e6edf07",
+            "message": "Fix python cpp.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "460e7dd7c47b5a3fc290008317c044fac741916a",
+            "message": "Fix Visual Studio compile issues.\n\nChange-Id: I6a5078b6bcdf4637e11c1cb9da1f74298e6fc26e\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4cf072248fc39d1c63dcb1600ff9e73df8757779",
+            "message": "Fix default instance destructor\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9f3c35eb36b208d99a85a21c05767dfd36f2968",
+            "message": "Update version number.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c7852526b97081261b97dfa4ca8099781b67de3",
+            "message": "Bump library version to 11\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e62d1f13f26306b0294dade74aed76b5836d6c8d",
+            "message": "Add back removed descriptor field.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fac876dc7b51d6a64d45c7ddd13a72f00707902f",
+            "message": "Modify php api version and minimum supported php version.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9372292b2940bba4e69904744eee358f0bcfc436",
+            "message": "PHP: support 7.0 on PHP implementation (#2162)\n\n* PHP: support 7.0\r\n\r\n* Also fix in test_util.php\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f933d10fbe701df5166ca18764e4ef0922559b66",
+            "message": "Update version number.\n\n[skip ci]\n\nChange-Id: I1ba6f6372a08b5796570851336e1a548602f60da\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04d72c2997ce8d84c7eee54c6084ef161d7979e6",
+            "message": "Fix java compatibilty tests.\n\nChange-Id: I3ff47358e66965cab34736eed2a477ae29f02f61\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d4657a9e270bdc352b01604cc8ed03a4af25f8c",
+            "message": "update files to include php generators\n",
+            "tag_name": null
+        },
+        {
+            "hash": "633fdfb510e222d52a6ad0669035135cde3cf74f",
+            "message": "Update minimum support php version to 5.5\n",
+            "tag_name": null
+        },
+        {
+            "hash": "952638549b7a899273a973b77819e81ad39ca7fc",
+            "message": "Fix bugs for internal integration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89d8e434284f2f7066677e91ef6872a23c96fc6a",
+            "message": "Fix travis, jenkins environment issues.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7fecfdbaa83295d819088c67f834a69f824be6e9",
+            "message": "Added new has_bits.h file to cmake/extract_includes.bat.in (#2152)\n\nThis is necessary so that the CMake build knows to include this header\r\nfile in the installation include/ directory.",
+            "tag_name": null
+        },
+        {
+            "hash": "f7bb8477a8e925090a2209097f5fbb62b1f7f919",
+            "message": "Fixed quadratic behavior in JSPB deserialization of repeated fields (#2117) (#2146)\n\nCurrently deserialization of a non-packed binary repeated field is quadratic in\r\nthe number of elements, because each time we parse a new element we copy over\r\nall elements we have parsed so far. This CL fixes the performance problem by\r\nhaving the generated deserialization code just call addX() instead of using\r\ngetX() and setX().",
+            "tag_name": null
+        },
+        {
+            "hash": "31dd4998df27898f61c3f3b32b08cfbbd1fc881f",
+            "message": "Fix bugs for csharp and ruby for internal integration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "23d4688cce12e562655a7743a2489f42e2f17462",
+            "message": "Fix python bugs for internal integration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93007e15ff5bba2f738ff5f5d7c9eb1b707d18f5",
+            "message": "Bump library veriosn to 3.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe1aaad7fe27311b9259525f391d50e9d68b19ba",
+            "message": "Fix bugs for internal integration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "15f4db6cb177fc6fdd3743aae54a8ad30fc55c0b",
+            "message": "Bump version number to 3.1.0-alpha-1.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af62fde5e88a2cc348dfacefd1db321e5481d22c",
+            "message": "Fix for maps_test.js in JavaScript. (#2145)\n\nHad to strip out some JSPB-format test code,\r\nbut also added some .proto test messages that\r\nhad been improperly stripped out.",
+            "tag_name": null
+        },
+        {
+            "hash": "e3f0689d05ca05273f57a314e03e60a35b687883",
+            "message": "Fix bugs for internal integration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc8ca5b6a5478b40546d4206392eb1471454460d",
+            "message": "Integrate internal changes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "337a028bb65ccca4dda768695950b5aba53ae2c9",
+            "message": "Merge pull request #2236 from hochhaus/master\n\nSilence compile warnings in bazel",
+            "tag_name": null
+        },
+        {
+            "hash": "b2b65842ea9ba7c994385dfc82cf14d209713909",
+            "message": "Silence compile warnings in bazel\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0c3aee6b9ae3f4f2fc30370365002babc5d106b",
+            "message": "Merge pull request #2229 from xfxyjwf/fixbuild\n\nRemove missing files from build.",
+            "tag_name": null
+        },
+        {
+            "hash": "431cee60e62ea4d7c37990db9bc0f54e3e90ac9d",
+            "message": "Remove inexist files from build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d947308aa1cd86acbdabd8e29125b41dcdb06607",
+            "message": "update files to include php generators (#2165)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "60bc203346e73d0b4b7472af3e660977cfc3485a",
+            "message": "Merge pull request #2199 from JasonLunn/patch-1\n\nSet platform to \"java\" under JRuby",
+            "tag_name": null
+        },
+        {
+            "hash": "6005648c2ce9eb76435f3b2881e2fc1a118b7625",
+            "message": "Add development dependency requirements\n\nUses values from the removed `Gemfile.lock` as a baseline for version requirements, though it has been observed to work with the latest versions of all the referenced gems - see https://travis-ci.org/google/protobuf/builds/163625616 for details",
+            "tag_name": null
+        },
+        {
+            "hash": "ee19a7c346515d7acbef684c42f1343896e7b4e7",
+            "message": "Remove hanging reference to Gemfile.lock",
+            "tag_name": null
+        },
+        {
+            "hash": "d94ff4142ad4776507d3def32d17fe03280dbc01",
+            "message": "Delete Gemfile.lock\n\nAvoid [failures in travis](https://travis-ci.org/google/protobuf/jobs/163611664) under jruby",
+            "tag_name": null
+        },
+        {
+            "hash": "07f3cab3dd40dd91df47604ab3dc53fd311d7a60",
+            "message": "Set platform to \"java\" under JRuby\n\nProposed fix for #1594",
+            "tag_name": null
+        },
+        {
+            "hash": "3d598eeceef7b1162cbbf3024db2939027a3d08a",
+            "message": "Merge pull request #2197 from thomasvl/swift_docs\n\nDrop the swift docs directory (and content).",
+            "tag_name": null
+        },
+        {
+            "hash": "fb85b4316b9d726db7041e5d3a67292bfd057e16",
+            "message": "Drop the swift docs directory (and content).\n\nSince the official home is looking like it will be in another repo, it makes\nmore sense for the relevant docs to live there instead.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3f59452448f2dc555178941c702fbfea6dbc0aa8",
+            "message": "Merge pull request #2192 from google/3.0.x\n\nMerge 3.0.x into master.",
+            "tag_name": null
+        },
+        {
+            "hash": "ca21b28287871660057a2b8bada2c044b6b3075d",
+            "message": "Merge pull request #2157 from google/csharp_remove_beta_notice\n\nUpdate README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "ca8120cfcc93f5547a1b1ea254163d093bbb4ab1",
+            "message": "Update README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "37e0e1ff8682699fdc518ca8de0eb1c949d9d80a",
+            "message": "Merge pull request #2111 from pherl/3.0.x\n\nFix the version number for 3.0.2",
+            "tag_name": null
+        },
+        {
+            "hash": "683412b23f82cb58f412a2886d7c44439ee1d7ad",
+            "message": "Update generated files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13d6d1726236e302aeae27033b4065bdcea88f82",
+            "message": "Fix the version number for 3.0.2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a289d43608cbfdd27a04807882580afd83d5b048",
+            "message": "Added C++ benchmark. (#1525)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d9ff3ef8592ba4b6a9db003de40672e44daaecc3",
+            "message": "Merge pull request #2153 from haberman/generatechangelog\n\nAdded convenient script for generating changelog draft.",
+            "tag_name": null
+        },
+        {
+            "hash": "a2e73644be95aad24693441e14644981e68f4d60",
+            "message": "Added convenient script for generating changelog draft.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e25c56a86182502b642342635eebf736be8af02f",
+            "message": "Merge pull request #2149 from khingblue/remove-obsoleted-project\n\nRemove obsoleted project of j2me",
+            "tag_name": null
+        },
+        {
+            "hash": "741aa87942dc2abefb05f8ffbd16e1fe4d4caa33",
+            "message": "Remove obsoleted project of j2me\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f379f81cef4dd8e005fd0bcc9199bf842fc35d4",
+            "message": "Merge pull request #2144 from abscondment/fix-jruby-hash\n\nFix hash computation for JRuby's RubyMessage",
+            "tag_name": null
+        },
+        {
+            "hash": "05aa0df532b263bdfca1ac3f8493db7022950239",
+            "message": "Fix hash computation for JRuby's RubyMessage\n\n`System.identityHashCode` returns a hash that does not consider a\nMessage's values. This means two Messages with identical values will not\nhave identical hashCodes.\n\nThis patch uses the pattern from RubyMap to combine the hashCodes from\nall values in a given message and produce a unique, consistent,\nvalue-based hash.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7b00595ddf8622ae429ef37de8ea2f44b6333ad0",
+            "message": "Merge pull request #2137 from thomasvl/objc_extensions_tweak\n\nObjc extensions tweaks",
+            "tag_name": null
+        },
+        {
+            "hash": "6ab51a0ebdddd10dc78c8fc30c06878b96356416",
+            "message": "Use a custom dictionary to avoid NSNumber operations.\n\nFor the secondary dictionary, use a custom CFDictionary with integer keys to\navoid the NSNumber conversions.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5904279ebde364d8fce42f1a3dd60313643518ad",
+            "message": "Remove the custom key functions and just use the system provided defaults.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1bf97d87f53d04eafaf7bbe8fceb9014e227e16b",
+            "message": "Merge pull request #2159 from google/jtattermusch-patch-1\n\nUpdate README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "da7c026ce180d8c102f2019162296fe12331f201",
+            "message": "Update README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "b28ab73d2257155981e8baa3e10baf70bdd9c7c5",
+            "message": "Fix gson dependency.\ngson 2.3 has internal bug that it doesn't work with some versions of maven.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "142e2fa45e127e0625e179a07efbae4b15365306",
+            "message": "Merge pull request #2035 from sergiocampama/cpp\n\nFixes static analyzer issues from xcode.",
+            "tag_name": null
+        },
+        {
+            "hash": "1af7c4cb08defd2521d8552fd148932da08b2c46",
+            "message": "Fixes static analyzer issues from xcode.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d8752780715582aec3011e40a45778959acbe24",
+            "message": "Merge pull request #2218 from thomasvl/xcode8_updates\n\nUpdate the ObjC projects for Xcode 8",
+            "tag_name": null
+        },
+        {
+            "hash": "297449aaf4b3fabb29a75ba3912af12e27fdefd9",
+            "message": "Update the ObjC projects for Xcode 8\n\n- Let Xcode 8 update settings on the projects/schemes.\n- Migrate Swift tests to Swift 3 syntax.\n- Update the build/test script:\n  - Require Xcode 8 (because of the Swift 3 requirement for tests)\n  - Update the devices to what Xcode 8 has (8.x simulator seem to fail even\n    though they can be downloaded in Xcode 8)\n- Update the travis images to ones with Xcode 8.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "350d49449bcabb491f1fb05e3ac2a91717c9ef04",
+            "message": "Merge pull request #2206 from acozzette/gitignore\n\nUpdated .gitignore with Java and JavaScript build artifacts",
+            "tag_name": null
+        },
+        {
+            "hash": "25dbc8b1eaec252b896361ec3d9cc215b379d09b",
+            "message": "Updated .gitignore with Java and JavaScript build artifacts\n",
+            "tag_name": null
+        },
+        {
+            "hash": "51c5ff889ccd3836c25f40baafb350f92c9ee103",
+            "message": "Fix pure php implementation for 32-bit machine. (#2282)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4c310d78a2754b6659d98a6b3111f52e361f30ae",
+            "message": "Update conformance test failure list\n",
+            "tag_name": null
+        },
+        {
+            "hash": "50a37e0135c8dea723244b97b2fb76e56a5aece0",
+            "message": "Change JSON field name formatting\n\nThis affects cases with leading capital letters.\n\nThis breaks compatibility with previous C# releases, but\nfixes compatibility with other implementations.\n\nSee #2278 for details.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93a4fa23d0e6d5c04d4c03aa0002fb483d7a77ee",
+            "message": "Merge pull request #2302 from jbrianceau/generic-gcc-atomics-strong-cmpxchg\n\ngeneric atomicops: Use strong compare_exchange",
+            "tag_name": null
+        },
+        {
+            "hash": "a5a2c1d78fb2c1b92a7299cfee4214f4c2d212dd",
+            "message": "generic atomicops: Use strong compare_exchange\n\nWeak compare-and-exchange are allowed to fail spuriously, so we have\nto use the strong variation here.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "750b9e24287317858a666efa7b971c757e6c8236",
+            "message": "Merge pull request #2318 from mavrukin/patch-1\n\nFix compiler warnings when running :protobuf_test",
+            "tag_name": null
+        },
+        {
+            "hash": "4d813de095f777ed1aed7eee18c2d5fee11f7185",
+            "message": "Fix compiler warnings when running :protobuf_test\n\nWhen running >bazel test :protobuf_test a few compiler warnings came up.  They were centered around the usage of \"int\" as the loop counter where the value should have been a size_t.",
+            "tag_name": null
+        },
+        {
+            "hash": "8fcd24b8dbba46748a9d880a2372736a8b1a6852",
+            "message": "Merge pull request #2307 from sinzianag/swift_protobuf\n\nDocs: Link to Apple's Swift plugin and runtime for protobufs",
+            "tag_name": null
+        },
+        {
+            "hash": "9819b72d4915f9a13a5524409b84764a6d8ea422",
+            "message": "Adding Apple's Swift Protobuf\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea928a1811b7de2290036b6557bf1998653e75de",
+            "message": "Merge pull request #2309 from thomasvl/note_about_coding_support\n\nAdd note about extension use and Coding support.",
+            "tag_name": null
+        },
+        {
+            "hash": "98c01858f2db05a9eea000b407d63cde7f86d79a",
+            "message": "Add note about extension use and Coding support.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca800ea823a380fb3f0ddb490962b9021cd0c1eb",
+            "message": "Merge pull request #2330 from manupsunny/master\n\nFix message for InvalidProtocolBufferException",
+            "tag_name": null
+        },
+        {
+            "hash": "089aaa996a378276f7c4e37a230836bf786cddf6",
+            "message": "Fix message for InvalidProtocolBufferException\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d584321fb4a9b4deb4a7d054cf4f3eaa2f4a009f",
+            "message": "Merge pull request #2327 from ctubbsii/fix-maven-compiler-plugin\n\nUse latest maven-compiler-plugin (2.6.0)",
+            "tag_name": null
+        },
+        {
+            "hash": "eb7f3a3ad1e89ab5de0846c354bbc682e63bd837",
+            "message": "Use latest maven-compiler-plugin (2.6.0)\n\n* Uses build-helper-maven-plugin to add generated sources to the classpath\n* Fixes an issue building with newer versions of the maven-compiler-plugin\n  (See https://issues.apache.org/jira/browse/MCOMPILER-240)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f2dbc899b634f3236e1923a90683eebed283d52",
+            "message": "Implement RepeatedFieldIter for c extension. (#2333)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df56736db9b00a6539d19724b89467b167003cb0",
+            "message": "Merge pull request #2357 from D3Hunter/master\n\n#2356 : fix ExceptionInInitializerError on IBM J9",
+            "tag_name": null
+        },
+        {
+            "hash": "ed0834123490d259ede8d52c34629be588dcd3f2",
+            "message": "#2356 : fix ExceptionInInitializerError on IBM J9",
+            "tag_name": null
+        },
+        {
+            "hash": "df8390790aae6025e95687a37eea81a4757966d0",
+            "message": "Fix php c extension on 32-bit machines. (#2348)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f75c5aa851cd877fb0d93ccc31b8567a6706546",
+            "message": "Merge pull request #2337 from sergiocampama/deprecation\n\nFixes deprecation warnings/errors on Xcode",
+            "tag_name": null
+        },
+        {
+            "hash": "e75cf40e8f040068fba3c87f0d980ed475c5979b",
+            "message": "Fixing references to the removed atomicops_internals_pnacl.h file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ecc460ab1bf37d18f10511533bdf6ce6f746ab4d",
+            "message": "Renamed the pnacl version of atomicops.h into C11 atomic, and flagged the mac version to that if atomic is enabled\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a3dfbe6e52dd86098044f359bfe419216944ba17",
+            "message": "Merge pull request #2378 from ianfhunter/patch-1\n\ntypo in readme",
+            "tag_name": null
+        },
+        {
+            "hash": "130bb0739a229a478d292e903b1b3ce6b1fb2494",
+            "message": "typo",
+            "tag_name": null
+        },
+        {
+            "hash": "83d6411bf3c13f8f7fa884180830ee179bd37849",
+            "message": "Fix jenkins tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf379715c93b581eeb078cec1f0dd8a7d79df431",
+            "message": "Merge pull request #2323 from marcinwyszynski/master\n\nMore Ruby-eqsue interface",
+            "tag_name": null
+        },
+        {
+            "hash": "74a636a7a29132ff89b4d8a487618d9a411fdaa4",
+            "message": "Move variable declarations before actual code",
+            "tag_name": null
+        },
+        {
+            "hash": "cb81314b1bb1610c80607a2750eda546f9fa6fa2",
+            "message": "Fix copy pasta in test",
+            "tag_name": null
+        },
+        {
+            "hash": "3bdaaa5ddaf4aa7fafe0cd262801fa52a302d0a9",
+            "message": "More Ruby-eqsue interface\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c6f3d700b90cd51328c8b5f6c144789ca237e771",
+            "message": "Merge pull request #1907 from evokly/js-utf8-fix\n\nJS: Fix for high utf-8 codepoints.",
+            "tag_name": null
+        },
+        {
+            "hash": "bd850a25f51dfb662a761473c151c016c815bcb5",
+            "message": "JS: Well, this is the right place for surrogates.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "292c2c91cfc16eda5dc8f835ef6073febef118e5",
+            "message": "JS: Re-added comment, moved surrogates code to the right place\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7332ffb1f08c9414119aa0a59ec8334c7599bfd8",
+            "message": "JS: Replaced fromCodePoint/codePointAt with fromCharCode/charCodeAt because of functions limited availability, fixed typo in tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe1d0a1f5a32fe144ee125eb0058927d7a359926",
+            "message": "JS: Added string encoding/decoding tests for UTF-8\n",
+            "tag_name": null
+        },
+        {
+            "hash": "23f108d471ec6488efbef1a5b96d7a2abbf785c2",
+            "message": "JS: Fixed UTF-8 string encoder/decoder for high codepoints.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e93fa41c4f8666ee7ccd65026c9b7078bf0309a",
+            "message": "Merge pull request #2366 from jbrianceau/reland-fix-include-js-generator\n\nFix #include in js_generator.cc",
+            "tag_name": null
+        },
+        {
+            "hash": "3316062e985758e22e8f30053d86195e7785394b",
+            "message": "Fix #include in js_generator.cc\n\nReland commit f2885f6 that has been trampled by commit d64a2d99.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c0f7e2aa8816d64e9994361ff89783b0ec23f48",
+            "message": "Merge pull request #2364 from haberman/jslicense\n\nFixed JavaScript license declaration.",
+            "tag_name": null
+        },
+        {
+            "hash": "5d9dbe3ecc7553017b036bbabdc8d4dda7b1c0a2",
+            "message": "Fixed JavaScript license declaration.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a95d052bdb5ef9c6a70b7f56fa6beb132638cafc",
+            "message": "Merge pull request #2368 from jbrianceau/fix-json-style-in-project-json\n\nFix csharp/src/Google.Protobuf.Test/project.json",
+            "tag_name": null
+        },
+        {
+            "hash": "3c0e0ce2b0647130d3ae510a34bec6682e051a48",
+            "message": "Fix csharp/src/Google.Protobuf.Test/project.json\n\nThis change fixes the following Chromium presubmit error:\n\n  third_party/protobuf/csharp/src/Google.Protobuf.Test/project.json could\n  not be parsed: Expecting property name: line 25 column 3 (char 482)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "01d321c2d6118f55897012df0db84d71bae6796f",
+            "message": "Merge pull request #2367 from jbrianceau/add-missing-include-in-message-lite-cc\n\nAdd missing include in message_lite.cc",
+            "tag_name": null
+        },
+        {
+            "hash": "aac9ed8e39d17869396a47d55d69217167101e57",
+            "message": "Add missing include in message_lite.cc\n\nThis changes fixes \"use of undeclared identifier 'INT_MAX'\"\ncompilation error.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "44edefaef6e70a34cccc2959271fe7bc0ac5642c",
+            "message": "Merge pull request #2382 from zhsyourai/master\n\nAdd LL to large constant",
+            "tag_name": null
+        },
+        {
+            "hash": "14c147ea799df197f24ff609575e964a07d63c99",
+            "message": "Add LL to large constant\n\nSome compiler will report: 'error: integer constant is too large for long type'",
+            "tag_name": null
+        },
+        {
+            "hash": "5a76e633ea9b5adb215e93fdc11e1c0c08b3fc74",
+            "message": "Integrated internal changes from Google\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04bd6147113f2ef2784aa800b5f7788dd5ef34a5",
+            "message": "Merge pull request #2392 from xfxyjwf/fixdown\n\nRestore jenkins files.",
+            "tag_name": null
+        },
+        {
+            "hash": "780793255d34bb0c5ac5b2b6a09f523c2453db42",
+            "message": "Restore jenkins files.\n\nThe last up-integration from github to google3 was made at commit\ne28286fa05d8327fd6c5aa70cfb3be558f0932b8 but somehow the change in\nthat commit is not actually in the up-integration CL and as a result\nthat change was reverted by the down-integration. Restoring them\nshould make the jenkins tests running again.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c9504715634948c9f8f306330449f296d926b74e",
+            "message": "Merge pull request #2404 from wiktortomczak/master\n\nSupport grpc plugin in py_proto_library",
+            "tag_name": null
+        },
+        {
+            "hash": "0fa31b2bfae069b764c4fa7c702c5627c5c6f9e1",
+            "message": "Support grpc plugin in py_proto_library\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b7632464b4efd2f8a8285bd4bfd0fa5157fdeb2d",
+            "message": "Merge pull request #2398 from jbrianceau/no-static-init-define-fix\n\nC++: Fix use with GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER",
+            "tag_name": null
+        },
+        {
+            "hash": "a5c30ce6239822a02d34f2b2f24eb0ce4157ff3a",
+            "message": "C++: Fix use with GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER\n\nBehavior of define GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER has been\naltered between 337a028 and cc8ca5b for C++.\n\nSee github issue #2385 for further details.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05090726144b6e632c50f47720ff51049bfcbef6",
+            "message": "Merge pull request #2445 from ramrunner/master\n\nOpenBSD correct endianess handling",
+            "tag_name": null
+        },
+        {
+            "hash": "4cc160e1961a7abcd236b37c804774f7ef743eaa",
+            "message": "when on OpenBSD we include the correct headers for endianess and check the apropriate defines\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c664b66808bd42b64eba193ecb38199934b85c85",
+            "message": "Merge pull request #2442 from pherl/fix-bazel\n\nAdd missing files.",
+            "tag_name": null
+        },
+        {
+            "hash": "f92b455aa6c0e13ae82a46996757b506171b6f4d",
+            "message": "Add missing files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1ce60e7b45c16affa4c8a92a9a129755c5fcfd5",
+            "message": "Factored Conformance and Benchmark test messages into shared test schema. (#1971)\n\n* Factored Conformance test messages into shared test schema.\r\n\r\n* Updated benchmarks to use new proto3 message locations.\r\n\r\n* Fixed include path.\r\n\r\n* Conformance: fixed include of Python test messages.\r\n\r\n* Make maven in Rakefile use --batch-mode.\r\n\r\n* Revert changes to benchmarks.\r\n\r\nOn second thought I think a separate schema for\r\nCPU benchmarking makes sense.\r\n\r\n* Try regenerating C# protos for new test protos.\r\n\r\n* Removed benchmark messages from test proto.\r\n\r\n* Added Jon Skeet's fixes for C#.\r\n\r\n* Removed duplicate/old test messages C# file.\r\n\r\n* C# fixes for test schema move.\r\n\r\n* Fixed C# to use the correct TestAllTypes message.\r\n\r\n* Fixes for Objective C test schema move.\r\n\r\n* Added missing EXTRA_DIST file.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fb15862baccbde38a3924f89922a86df2c9a20e0",
+            "message": "Merge pull request #2517 from acozzette/js-embed\n\nAuto-generate well_known_types_embed.cc",
+            "tag_name": null
+        },
+        {
+            "hash": "98d89d427708af776eba79850060dccca7882a5a",
+            "message": "Fixed \"make check\" for cmake build\n\nThe check target did not depend on the test_plugin binary, so this would\ncause \"make check\" to fail at times because of the absence of\ntest_plugin. This change adds a dependency on test_plugin so that it\nwill always get built before the tests are executed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b3a0c16e6ac133e59d818f7b4556caf3c11b165",
+            "message": "Auto-generate well_known_types_embed.cc\n\nUntil now this file was just checked into the repo, but actually it\nshould be generated from any.js, struct.js, and timestamp.js. This\nchange updates the build system to make this happen. To make it work I\nalso had to remove some C++11 features from embed.cc.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f39cf88a347767d25572f7344eab44359d872925",
+            "message": "Merge pull request #2227 from KindDragon/3.1.x\n\nMissed LIBPROTOC_EXPORT for GRPC added",
+            "tag_name": null
+        },
+        {
+            "hash": "34dc96ba7f141db39c3c4bed8a19811a3e2caa16",
+            "message": "LIBPROTOC_EXPORT added to others functions in csharp_names.h and objectivec_helpers.h\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b790da5a0b33e55bbd0921edfd83bb436d48fb49",
+            "message": "Missed LIBPROTOC_EXPORT for GRPC added\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b18bc9b9448d8c97b289f03a3cbad57191f30fad",
+            "message": "Give C# ByteString a sensible GetHashCode implementation.\n\nFixes #2511.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a95e38ce8dec20d327692f4f5c2b0d37d6776696",
+            "message": "Merge pull request #2499 from ckennelly/master\n\nDefine LANG_CXX11 for port.h and use this to guard C++11 features.",
+            "tag_name": null
+        },
+        {
+            "hash": "a902e2588d3917c867632e120906019cfca409fa",
+            "message": "Define LANG_CXX11 for port.h and use this to guard C++11 features.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83d681ee2caef1feb009656417830f846382d8ba",
+            "message": "Merge pull request #2495 from acozzette/android-hash\n\nRemoved Android-specific code from stubs/hash.h",
+            "tag_name": null
+        },
+        {
+            "hash": "5587562a70cc115bf9ef921cf2080c12a241ad2c",
+            "message": "Removed Android-specific code from stubs/hash.h\n\nThis #ifdef in hash.h causes us to give up on finding a hash function on\nAndroid, when there do seem to be hash functions available in practice.\nI also had to tweak a macro in map.h that was disabling on Android an\nallocator construct() method that we need.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d709f446f18b672edff81ee2d3f9d6516465d8c",
+            "message": "Merge pull request #2487 from jtattermusch/csharp_leading_whitespace\n\nremove leading whitespace in C# xml comments",
+            "tag_name": null
+        },
+        {
+            "hash": "fda9049eadc9cede812fbe0a43293450f9d10833",
+            "message": "remove leading whitespace in C# xml comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "277a8b65805aceeefc1764947616430994e05bdf",
+            "message": "generate_changelog.py: flush output so piping works correctly.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "84948462a470c5433addc0494e6854be47ab5e4f",
+            "message": "Merge pull request #2476 from acozzette/generated-message-reflection-fix\n\nUse uint32 in GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET macro",
+            "tag_name": null
+        },
+        {
+            "hash": "e19f3b5e3a32642073cd075e6b9ddabd7c0eedf5",
+            "message": "Use uint32 in GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET macro\n\nThere have been some reports that this necessary to prevent build\nfailures in some environments. It makes sense to do this anyway since\nthe result of this macro is ultimately assigned to uint32 in the\ngenerated code.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e43f73e09906004a0ccd2644984dbbae07c595da",
+            "message": "Merge pull request #2473 from thomasvl/update_xcodes\n\nUpdate xcode version support and travis usage",
+            "tag_name": null
+        },
+        {
+            "hash": "70e21d7cf9bce62ccae8ab89088873598b14238e",
+            "message": "Mark objectivec_cocoapods_integration as failing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc9d0774f374ffa5128e2d5c6c62db556a6a4968",
+            "message": "Skip benchmark test if cmake isn't installed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2754586fa4e4fb75b13cb1915dce566e30b7db2c",
+            "message": "Xcode 8.1 support\n\n- Add entries to objectivec/DevTools/full_mac_build.sh\n- Support `-quiet` via an option on full_mac_build.sh. NOTE: we don't use\n  this on travis because the lack of output for a long time could cause travis\n  to kill the build (when we get a slow VM).\n- Update travis config to use newer images.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "631f4618a7b84cdc91949229a11a8abe5dfc4a34",
+            "message": "Merge pull request #2466 from thomasvl/deprecation_followup\n\nImprove ObjC deprecated annotation support.",
+            "tag_name": null
+        },
+        {
+            "hash": "dad775b79895df5167cfbc2c78549b8417af1c01",
+            "message": "Improve ObjC deprecated annotation support.\n\n- Check the parent file options for deprecation when deciding to tag Messages\n  and Enums as deprecated.\n- Within the generated source push/pop the warning for implementing deprecated\n  things around a deprecated class implementation.\n- Annotate the methods generated for extension fields as deprecated.\n- Add a testing .proto file that covers deprecated fields, messages, enums,\n  enum values and compile it into the unittests to confirm things compile\n  cleanly.\n- Add a testing .proto file that uses the file level option to make everything\n  deprecated and compile it into the unittests to confirm things compile\n  cleanly.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c836ad4dc7db4adf4b42a30474037f712d4f6875",
+            "message": "Merge pull request #2459 from acozzette/android-logging\n\nSend all protobuf logging to logcat by default on Android",
+            "tag_name": null
+        },
+        {
+            "hash": "2f29f0ae090ca8633ba1b81e8b22333ef091411c",
+            "message": "Send all protobuf logging to logcat by default on Android\n\nCurrently the default for protobuf on Android is to silently drop all log\nmessages. This makes debugging difficult because things like GOOGLE_LOG(FATAL)\nwill crash the process without actually logging a useful error.\n\nThis CL changes the logging so that by default we send messages for all log\nlevels to logcat (and stderr). Users can override this by setting\nGOOGLE_PROTOBUF_MIN_LOG_LEVEL. Also, that option was not being respected for\nnon-Android platforms so I went ahead and fixed that to make things consistent.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "057389cae36b0fedab240a2c05885f860efe6c37",
+            "message": "Ruby: removed redundant RepeatedField#slice. (#2449)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "850d573aca37d2dde442185e6ed865d25e78d40b",
+            "message": "Merge pull request #2407 from jbrianceau/fix-comp-builds\n\nExport symbols used in inline functions",
+            "tag_name": null
+        },
+        {
+            "hash": "788d14a46bee9472edbcab007289d23e1ba9720c",
+            "message": "Export symbols used in inline functions\n\nfixed_address_empty_string symbol is used in an inline function.\nWe have to export it to avoid undefined reference link errors.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4c84b474d199d82f611570adb8b8fa3ace80a491",
+            "message": "Merge pull request #2460 from sergiocampama/c11\n\nInclude -std=c++11 when compiling protobuf if available.",
+            "tag_name": null
+        },
+        {
+            "hash": "1d91c2588c425761bc1f1824cdc55c43ea0b34f3",
+            "message": "Include -std=c++11 when compiling protobuf if available.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "243ebec887a2095cdba6773cb9151b3509a3fc5e",
+            "message": "Merge pull request #2468 from sergei-ivanov/patch-1\n\nUpdate third_party.md",
+            "tag_name": null
+        },
+        {
+            "hash": "09dc9339328e105378f96cd9cbc6c9128b305842",
+            "message": "Update third_party.md\n\nUpdated the location for `protobuf-maven-plugin`",
+            "tag_name": null
+        },
+        {
+            "hash": "e3e38b81cc2eb3b31896342a2511cdc390bed280",
+            "message": "Update commit id in Dockerfile to trigger update. (#2467)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4474c042c07fe208ab8bf0bd177c65dfd19d8a17",
+            "message": "Merge pull request #2462 from jbrianceau/fix-comp-builds-part2\n\nC++: export _xxx_default_instance_ symbols",
+            "tag_name": null
+        },
+        {
+            "hash": "e219be7440ec0569925a52d0ef1d99ae68e9ef02",
+            "message": "Regenerate descriptor proto\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b1295eeffbf2ae7da8a5c7d8601c3ace0663fa09",
+            "message": "C++: export _xxx_default_instance_ symbols\n\n_xxx_default_instance_ symbols are used in inline functions. We have\nto export them to avoid undefined reference link errors.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b4eee408bdb28b6ae4050177db6ec247ec1268e",
+            "message": "Merge pull request #2461 from jbrianceau/add-missing-include-in-embed-cc\n\nAdd missing include in embed.cc",
+            "tag_name": null
+        },
+        {
+            "hash": "867dbac820da8a9f524e58297503a6c64313dfd8",
+            "message": "Add missing include in embed.cc\n\nThis changes fixes \"use of undeclared identifier 'assert'\"\ncompilation error.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34a1b6e6b8c0d477504d09df4df4b86770e47872",
+            "message": "Merge pull request #2394 from cwelton/formatting\n\noneOf fix for JsonFormat includingDefaultValueFields",
+            "tag_name": null
+        },
+        {
+            "hash": "1a56251a3582d8b060ca65db6ef1d178c744f81f",
+            "message": "oneOf fix for JsonFormat includingDefaultValueFields\n",
+            "tag_name": null
+        },
+        {
+            "hash": "46ae90dc5e145b12fffa7e053a908a9f3e066286",
+            "message": "Make php generated code conform to PSR-4. (#2435)\n\n1. Generate single file for each message.\r\n2. Lazily initiate metadata.",
+            "tag_name": null
+        },
+        {
+            "hash": "d8f54c4206de4a09e4b70494d5f7e44d9015bb7b",
+            "message": "Disable jruby test. (#2469)\n\nMissed in #2467.",
+            "tag_name": null
+        },
+        {
+            "hash": "dc119405683c578fd38129cbef3a66e1fd60938c",
+            "message": "Merge pull request #2475 from sergiocampama/rvm2\n\nReenable cocoapods objc test and remove unnecessary workaround for rvm",
+            "tag_name": null
+        },
+        {
+            "hash": "1ac8944294217b48413987bdf7b3eafea3cc3130",
+            "message": "Reenable cocoapods objc test and remove unnecessary workaround for rvm\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb455ce1c92e9fc217ece0cfc58f9a698fd0f635",
+            "message": "Merge pull request #2471 from jbrianceau/fix-include-style\n\nFix #include in cc files",
+            "tag_name": null
+        },
+        {
+            "hash": "e3da722b665fad1cfe374f9396fa23764eac8313",
+            "message": "Fix #include in cc files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b86a8922b3a13a7a446cb8d75bdf2d536379344",
+            "message": "Merge pull request #2490 from xfxyjwf/icon2\n\nAdd a badge for bazel build status.",
+            "tag_name": null
+        },
+        {
+            "hash": "4c252dd80b5dcc6daa2238e852baf695f5f45eaf",
+            "message": "Add a badge for bazel build status.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "29fb87e1d554a739e47b647a7e8a1a20be8851c9",
+            "message": "Merge pull request #2454 from pongad/go_package\n\nupdate descriptor.proto's go_package",
+            "tag_name": null
+        },
+        {
+            "hash": "bb77cbf05a3453b6e96829558c679a47d075912f",
+            "message": "update descriptor.proto's go_package\n\nThis change has already been made in google's repo.\nReplicating the change here to unblock work on genproto.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1c1dad047cf2436415ea71701692db230b8d803",
+            "message": "Merge pull request #2498 from sergiocampama/enum\n\nFixes and expands comments on how to use GPB_ENUM_FWD_DECLARE",
+            "tag_name": null
+        },
+        {
+            "hash": "c68fc589a90214ddcddc552add18406ec749d38d",
+            "message": "Fixes and expands comments on how to use GPB_ENUM_FWD_DECLARE\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2ff42dcf2c99105e7b550bfaccb0a42b9721138c",
+            "message": "Added conformance testing for binary primitive types. (#2491)\n\nThis is basic and more tests will be added over time.",
+            "tag_name": null
+        },
+        {
+            "hash": "f983302ca7051bd1364a6ea9218e21040e4a851b",
+            "message": "Merge pull request #2496 from xyzzyz/fix-overflow\n\nFix integer overflow in FastUInt32ToBufferLeft",
+            "tag_name": null
+        },
+        {
+            "hash": "4c5d3eddf99fea6ba652a487d6e7690b51e8aa23",
+            "message": "Fix integer overflow in FastUInt32ToBufferLeft\n\nIf digits > 2, and int is 32 bit, line 999 overflows. It has been fixed\ninternally in CL 41203823.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "837fd6b6a09d35440959222d2797bc7dd626c1e4",
+            "message": "Merge pull request #2493 from jbrianceau/add-missing-climits-include\n\nAdd missing includes",
+            "tag_name": null
+        },
+        {
+            "hash": "7b220f3db55c3b7bd38059aa1a2dcf7f6a8f7402",
+            "message": "Add missing include in embed.cc\n\nThis changes fixes \"error C2039: 'getline': is not a member of 'std'\"\ncompilation error.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83c728a9402fe6a78af53ed471619eda3523d8f5",
+            "message": "Add missing includes\n\nThis changes fixes \"use of undeclared identifier 'INT_MAX'\"\ncompilation error.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f77b7d9ee381b3df61f0ebdbd12a159a131e28a1",
+            "message": "Merge pull request #2484 from ngg/uwp_build\n\nAdd support for Windows ARM builds",
+            "tag_name": null
+        },
+        {
+            "hash": "ec021f5429d458467e9fd8dcdd452f886b5bf324",
+            "message": "Add support for Windows ARM builds\n",
+            "tag_name": null
+        },
+        {
+            "hash": "da9fea1d206b3ff2a06adef6d9bc0e96e05586a6",
+            "message": "Fixed issue with autoloading - Invalid paths (#2538)\n\n",
+            "tag_name": null
+        }
+    ]
+}

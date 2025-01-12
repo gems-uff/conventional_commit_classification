@@ -1,0 +1,103 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.0",
+    "previous_release": "v2.1.0",
+    "cycle_days": 5.625358796296296,
+    "commits": 18,
+    "commits_in_advance": 1,
+    "start_delay": -0.7281944444444445,
+    "duration": 6.353553240740741,
+    "commits_info": [
+        {
+            "hash": "37b2b2dfde26a8acabc6e5aa697912336c1d8674",
+            "message": "\"Update release notes by Travis CI build 1606\"\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d57139ff701adcde45991376116455dbdfb5f397",
+            "message": "Merge pull request #683 from mockito/issue-681\n\nUpdated release process so that Mockito can continuously deliver high quality features",
+            "tag_name": null
+        },
+        {
+            "hash": "6fc572a132aef0c7a901773076270507f0d1dd9c",
+            "message": "Changed javadoc to trigger different publications\n\nWorkaround to issue #684\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4752e4fb0772630c9a465b46ea54ecb9fd81cc31",
+            "message": "Fixed the release process\n\nI had that change before, must have been reset during rolling back of the release steps.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db8a3f3ff2e4b448dff366f9f6bd1947c6ff02dd",
+            "message": "Enabled releasing from Travis\n\nRelease process is so hard to work with and test. I'll fix this.\n\nHere's the log from './gradlew release -PdryRun':\n\nDry-running the release! Although 'bintrayUpload' is executed, it won't upload any binaries ('bintrayUpload.dryRun' property is set).\n:release\nDry-running the release\nPerforming 9 release steps\nStep 1: ensure good chunk of recent commits is pulled for release notes automation\n--- Executing: git pull --depth 1000 origin issue-681\nFrom github.com:mockito/mockito\n * branch            issue-681  -> FETCH_HEAD\nAlready up-to-date.\n--- Completed!\nStep 2: configure generic git user\nStep 3: commit updated javadoc into gh-pages branch\n--- Executing: git fetch origin +gh-pages:gh-pages\nFrom github.com:mockito/mockito\n + db331f2...99af480 gh-pages   -> gh-pages  (forced update)\n--- Completed!\n--- Executing: git checkout gh-pages\nChecking out files: 100% (126836/126836), done.ing out files:   4% (5074/126836)\nSwitched to branch 'gh-pages'\n--- Completed!\n--- Executing: git rm -r docs/current -q\n--- Completed!\n--- Executing: git add docs\n--- Completed!\n--- Executing: git commit -m \"Refresh javadoc by Travis CI build null\" -q\n--- Completed!\nStep 4: start operating on issue-681\n--- Executing: git checkout issue-681\nChecking out files: 100% (127210/127210), done.king out files:  12% (15266/127210)\nSwitched to branch 'issue-681'\n--- Completed!\nStep 5: update release notes\nBuilding new release notes based on /Users/sfaber/mockito/src/doc/release-notes/official.md\nBuilding notes for revisions: v2.1.0 -> HEAD\nSuccessfully updated release notes!\nStep 6: commit release notes\n--- Executing: git add /Users/sfaber/mockito/src/doc/release-notes/official.md\n--- Completed!\n--- Executing: git commit -m \"Update release notes by Travis CI build null\" /Users/sfaber/mockito/src/doc/release-notes/official.md\n[issue-681 3794199] \"Update release notes by Travis CI build null\"\n 1 file changed, 18 insertions(+)\n--- Completed!\nStep 7: create new version tag\n--- Executing: git tag -a v2.2.0 -m Create tag v2.2.0 by Travis CI build null\n--- Completed!\nStep 8: commit incremented version on issue-681\n--- Executing: git commit -m Increment version '2.2.0' -> '2.2.1' by Travis CI build null version.properties\n[issue-681 7c82a60] Increment version '2.2.0' -> '2.2.1' by Travis CI build null\n 1 file changed, 1 insertion(+), 1 deletion(-)\n--- Completed!\nStep 9: push changes to all involved branches\n--- Executing: git push <masked> issue-681 gh-pages v2.2.0 -q --dry-run\n--- Completed!\nNo cleanup found for step 'push changes to all involved branches'\nNo cleanup found for step 'commit incremented version on issue-681'\nNo cleanup found for step 'create new version tag'\nNo cleanup found for step 'commit release notes'\nNo cleanup found for step 'update release notes'\nNo cleanup found for step 'start operating on issue-681'\nNo cleanup found for step 'commit updated javadoc into gh-pages branch'\nCleaning up after step 'configure generic git user'\nNo cleanup found for step 'ensure good chunk of recent commits is pulled for release notes automation'\n:rollbackRelease\nRelease failed. Rolling back 9 release steps.\nAttempting to roll back step 9 (push changes to all involved branches)\nNo rollback or cleanup operation found for step 'push changes to all involved branches'\nAttempting to roll back step 8 (commit incremented version on issue-681)\n--- Executing: git reset --hard HEAD^\nHEAD is now at 3794199 \"Update release notes by Travis CI build null\"\n--- Completed!\nAttempting to roll back step 7 (create new version tag)\n--- Executing: git tag -d v2.2.0\nDeleted tag 'v2.2.0' (was 37c7a19)\n--- Completed!\nAttempting to roll back step 6 (commit release notes)\n--- Executing: git reset --hard HEAD^\nHEAD is now at ac9cffa Fixed release step\n--- Completed!\nAttempting to roll back step 5 (update release notes)\nNo rollback or cleanup operation found for step 'update release notes'\nAttempting to roll back step 4 (start operating on issue-681)\nNo rollback or cleanup operation found for step 'start operating on issue-681'\nAttempting to roll back step 3 (commit updated javadoc into gh-pages branch)\nNo rollback or cleanup operation found for step 'commit updated javadoc into gh-pages branch'\nAttempting to roll back step 2 (configure generic git user)\nAttempting to roll back step 1 (ensure good chunk of recent commits is pulled for release notes automation)\nNo rollback or cleanup operation found for step 'ensure good chunk of recent commits is pulled for release notes automation'\n\nBUILD SUCCESSFUL\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ac9cffadc25235384b08cfc7b71525b299372a80",
+            "message": "Fixed release step\n",
+            "tag_name": null
+        },
+        {
+            "hash": "97d8a91ce1838d0b1d604e71be6a81c91645567e",
+            "message": "Added some documentation\n\nRemoved conditional check, instead I'm supplying env variable for testing.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df250ab0d1b712c2d79aae8c512aaf7a2b8576f4",
+            "message": "Easier to test the release\n\nTweaked 1st release step so that the entire release procedure is easier to test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "854c366fced6fbf046a2fb7259614a65443fbf41",
+            "message": "Tidied up the release logic\n\n- reworked the conditional complexity to avoid accidental releases\n- removed custom release version logic because it does not work (not opposed to this feature, just cleaned up the code)\n- for the time being, custom version can be achieved by using Gradle env variable: ORG_GRADLE_PROJECT_version=2.3.0 (it looks like magic but it is a real feature from the Gradle book ;)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5af287dc00138dc8351cd5d92b87c165b17725a3",
+            "message": "Temporarily disabled automatic maven central sync\n\nWill reenable once the release procedure is smooth\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e939fb7df5c09d4e78a1df2efce922da4a1e1677",
+            "message": "Updated version so that we stop producing betas\n\nMockito continuously delivers high quality enhancements with every change\n",
+            "tag_name": null
+        },
+        {
+            "hash": "852d42aae145d2cebf2d45e2a9c105c872ca55c9",
+            "message": "Made release procedure easier to test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "615f7b4e7813485e74dc3e6007f8e597fc7ec9dc",
+            "message": "Fixes #678 #679 : Correct OSGI version specification syntax for bytebuddy\n\nProposed fix for #678:\nUse double quotes around version specification for Byte Buddy dependencies.\nThe version for Objenesis dependencies is already specified correctly.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93dfa0c23eba9ab260d89bd86ec283fdac91eeb4",
+            "message": "Fix typo in README (#674)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ebd78aa5a602691636f014fe823847492bb949e0",
+            "message": "Merge pull request #670 from mockito/issue-669\n\nArtifacts are now published to 'mockito' org in Bintray",
+            "tag_name": null
+        },
+        {
+            "hash": "068b8a1218be2011c06400670c7feab079577cdf",
+            "message": "Artifacts are now published to 'mockito' org in Bintray\n\nTweaked the publication process to make it easier to test.\n\nFixes #669\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d49ffb35b7683ce87937fa34194ce6e2630f7f1a",
+            "message": "Change stackoverflow link to questions tagged with Mockito (#671)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f470af1e9967dee7937c615a94a8fe66820b6ea",
+            "message": "Updates bintray links\n\n[skip ci]",
+            "tag_name": null
+        }
+    ]
+}

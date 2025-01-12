@@ -1,0 +1,63 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v4.8.0",
+    "previous_release": "v4.7.0",
+    "cycle_days": 27.848055555555554,
+    "commits": 10,
+    "commits_in_advance": 0,
+    "start_delay": 2.805486111111111,
+    "duration": 25.042569444444446,
+    "commits_info": [
+        {
+            "hash": "3e910ea990e61b29ec76d8b47a6d1b1607d9da3f",
+            "message": "Fixes #2626 : Introduce MockSettings.mockMaker (#2701)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0753d48161bc6376108f38146c01c80274a712e3",
+            "message": "Explicitly add permissions to GitHub actions (#2744)\n\nSigned-off-by: sashashura <93376818+sashashura@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "530558ae3c721cb310f3410a66ff4061414cf836",
+            "message": "Assign GlobalConfiguration initializer to unused variable (#2742)\n\n(This silences some errorprone static analysis about calling constructors w/o using the new object.)",
+            "tag_name": null
+        },
+        {
+            "hash": "4b8042e24e4d2009eb46c5319673fd9755c86e45",
+            "message": "Bump com.diffplug.spotless from 6.9.1 to 6.10.0 (#2738)\n\nBumps com.diffplug.spotless from 6.9.1 to 6.10.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.diffplug.spotless\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "9b93df72c9aad120057ff82d25d0fd5dc3af2317",
+            "message": "Merge pull request #2736 from mockito/static-varargs-call\n\nDrop varargs collector before invoking a user method.",
+            "tag_name": null
+        },
+        {
+            "hash": "160e3daf446e508eb17c6fc21a0932246848206b",
+            "message": "Drop varargs collector before invoking a user method.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e123c2cdf7e4688bae7e4ecc145eb960626894db",
+            "message": "Bump versions.bytebuddy from 1.12.13 to 1.12.14 (#2734)\n\nBumps `versions.bytebuddy` from 1.12.13 to 1.12.14.\r\n\r\nUpdates `byte-buddy` from 1.12.13 to 1.12.14\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.12.13...byte-buddy-1.12.14)\r\n\r\nUpdates `byte-buddy-agent` from 1.12.13 to 1.12.14\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.12.13...byte-buddy-1.12.14)\r\n\r\nUpdates `byte-buddy-android` from 1.12.13 to 1.12.14\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.12.13...byte-buddy-1.12.14)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: net.bytebuddy:byte-buddy\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-agent\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-android\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "2ded10ec704f2c93648d976031c2520a5a9b84aa",
+            "message": "Remove useless thrown exception from constructor (#2732)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "73a861f778e117ad0ccd7388b8d7a614e65c1623",
+            "message": "Fixes #2720: Use StackWalker on Java 9+ to create Locations (#2723)\n\nIn terms of memory allocations, this reduces the overall memory\r\nallocations of creating a location by an order of magnitude in\r\nJava 9, and as compared to Java 8.\r\n\r\nThe implementation is somewhat involved due to these desires:\r\n\r\n- Minimize the amount of work done if the Location is never used. This\r\n  is done by not converting the StackFrame into a StackTraceElement,\r\n  instead wrapping in an intermediate state. The StackTraceElement conversion\r\n  will only occur (internally) if the .getFileName() method is called.\r\n- Ensure the implementation is still Serializable. This is ensured with\r\n  a .writeReplace method.\r\n- Minimize the number of allocations, which is basically an exercise in\r\n  lambda caching.\r\n- Ensuring the old mechanism still works on Java 8.\r\n\r\nPresently on Java 9+, on a stack depth of 1000 the old mechanism will allocate\r\n40kB of RAM per call. The new one will allocate 1.5kB of RAM per call,\r\nwhich is a huge improvement.\r\n\r\nThis is still sadly not the 'close-to-no-overhead' solution I was\r\nlooking for. I therefore also added a system property that can be used\r\nto fully disable Location creation. I'm aware that this is likely not\r\nthe right approach given Mockito has plugins and settings - mostly\r\nlooking for guidance here given I'm not sure what would be idiomatic\r\nhere.",
+            "tag_name": null
+        },
+        {
+            "hash": "89698baaebdf6954324d5bb252e49da2f7bf860a",
+            "message": "Optimize `TypeSafeMatching` iteration over class methods (#2729)\n\n`Class.getMethods` is an inefficient method call which is being called on\r\neach mock invocation. It ends up constructing new `Method` objects for\r\neach method on the class, and this can dominate the overall performance\r\nof Mockito mocks. This commit caches the result of the computation.\r\n\r\nOnce concern is that this change uses some static state. I considered:\r\n\r\n- Instance state - based on where this type is constructed it seemed\r\n  like it'd be a big imposition on code readability elsewhere.\r\n- Weakly referenced map. Mockito has a type for this, but the\r\n  constructor of that type produces a Thread with which to clean up.\r\n\r\nBoth of these seemed like overkill compared to the overhead expected\r\nin the real world (which should be on the order of a few kilobytes of\r\nRAM at most).\r\n\r\nFixes #2723",
+            "tag_name": null
+        }
+    ]
+}

@@ -1,0 +1,2748 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v28.0",
+    "previous_release": "v27.4",
+    "cycle_days": 0.9299768518518519,
+    "commits": 547,
+    "commits_in_advance": 545,
+    "start_delay": -131.60949074074074,
+    "duration": 132.5394675925926,
+    "commits_info": [
+        {
+            "hash": "439c42c735ae1efed57ab7771986f2a3c0b99319",
+            "message": "Updating version.json and repo version numbers to: 28.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c9454f40e91bef6187e618f4856ebea240985c81",
+            "message": "Remove `--copt=\"-Werror\"` from `.bazelrc` (#18005)\n\nThis appears to be causing a bunch of errors during our release process,\r\nbut I don't think it's critical to have this flag in `.bazelrc`. We\r\nshould still be able to get about the same test coverage since we also\r\nset `-Werror` in the `bazelrc` files in the `ci/` directory.",
+            "tag_name": null
+        },
+        {
+            "hash": "f5a1b178ad52c3e64da40caceaa4ca9e51045cb4",
+            "message": "Move -Werror to our test/dev bazelrc files. (#17938)\n\n* Move -Werror to our test/dev bazelrc files.\r\n\r\nPutting it into BUILD files unintentionally forces it on all our downstream users.  Instead, we just want to enable this during testing and let them choose for themselves in their builds.\r\n\r\nNote, that this expands the scope of -Werror to our entire repo for CI, so a bunch of fixes and opt-outs had to be applied to get this change passing.\r\n\r\nClosed #14714\r\n\r\nPiperOrigin-RevId: 666903224\r\n\r\n* Fix extra warnings on 28.x\r\n\r\n* Fix zlib issues on macos\r\n\r\n* Second try at zlib/macos issues\r\n\r\n* Only disable deprecated-non-prototype on macos-14",
+            "tag_name": null
+        },
+        {
+            "hash": "0c9e14a9eb880747c94dc5eef31be73db7cf2526",
+            "message": "Merge pull request #17917 from thomasvl/patch_objc_to_28\n\n[ObjC] Issue stderr warnings for deprecated generation options.",
+            "tag_name": null
+        },
+        {
+            "hash": "b2764205e943d9bc912c4504d95117179e9b38e1",
+            "message": "[ObjC] Issue stderr warnings for deprecated generation options.\n\nThis should get use feedback so we know if usage, the intent is to\nbe able to remove the different generation code in the future if\nfolks don't need these.\n\nPiperOrigin-RevId: 666318474\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13f850d92a522b330ef9a665d38bc5b6647ea8f3",
+            "message": "Merge pull request #17913 from protocolbuffers/cp-compat-upgrade\n\nBinary compatibility shims for GeneratedMessageV3, SingleFieldBuilder…",
+            "tag_name": null
+        },
+        {
+            "hash": "6bf01c51a0b92278958f0169d330d64a08dbb4ec",
+            "message": "Binary compatibility shims for GeneratedMessageV3, SingleFieldBuilderV3, RepeatedFieldBuilderV3, and their nested classes to restore binary compatibility with <=v3.x.x generated code built against v3.x.x prior to v4.26.0 breaking release.\n\n3.x.x descriptor.proto generated code is *not* supported with 4.x.x runtime, since this results in an ODR violation with the descriptor.proto built into the 4.x.x runtime. This is expected to result in undefined behavior / failures.\n\nTested against //java/core:v25_generated_message_test_jar (binary compatibility) and //java/core:v25_generated_message_test_srcjar (source compatibility)\n\nPiperOrigin-RevId: 664819152\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bb6ecb96835af88737606a8dfe2492d2d20f13bc",
+            "message": "Merge pull request #17840 from thomasvl/patch_objc_to_28\n\nCherryPick the lastest work for Objective-C over the the 28 branch",
+            "tag_name": null
+        },
+        {
+            "hash": "0790ab4d7a771d4ca79fa795cc96febfbb43ebb6",
+            "message": "[ObjC] Add api to add a field to another collection of unknown fields.\n\nPiperOrigin-RevId: 663424215\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3b988885d91f31c9cdc058fd5249efc18a91d11",
+            "message": "[ObjC] Fix GPBUnknownField/GPBUnknownFields copy.\n\nSince a group GPBUnknownField uses a GPBUnknownFields and that is mutable, it needs to be copied so two instances aren't linked.\n\nPiperOrigin-RevId: 663323972\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35bd2be8286c736303083d7c2230d11ab3648672",
+            "message": "[ObjC] Raise an exception for a nil message.\n\nThe api is annotated that it isn't valid, but incase someone calling code isn't\nannotated correct and someone returns nil for another nonnull api, it could happen,\nso make it an explicit failure just to be safe.\n\nPiperOrigin-RevId: 662935009\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c6964f65567b48700ea513ff3941c38f02782671",
+            "message": "Merge pull request #17806 from anandolee/28.x\n\nRaise warnings for deprecated python cpp extension GetDebugString().",
+            "tag_name": null
+        },
+        {
+            "hash": "5fc5558f6e2a213a1e4160585d762bfe749d63ea",
+            "message": "Raise warnings for deprecated python cpp extension GetDebugString().\n\nPure python and upb do not support it and filtered out the test. This API does\nnot exists in any other language(except protobuf c++).\nGetDebugString() for cpp extension will be removed in Jan 2025\n\nPiperOrigin-RevId: 662640110\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40b5bdad323ad894329506480c06a4381e765614",
+            "message": "Merge pull request #17789 from protocolbuffers/cp-string-type\n\nIntroduce FieldDescriptor::cpp_string_type() API to replace direct ct…",
+            "tag_name": null
+        },
+        {
+            "hash": "72b0b7afbabce7494c2605aa240b0f0ca98aa6e5",
+            "message": "Introduce FieldDescriptor::cpp_string_type() API to replace direct ctype inspection which will be removed in the next breaking change\n\nThis should provide the roughly same result as ctype, except that it reflects actual behavior rather than the specification in the proto file.  VIEW will now be visible, and some subtleties around CORD and PIECE will change.\n\nPiperOrigin-RevId: 653677655\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49dc63ba43ca14af8e4e078244610061978a3497",
+            "message": "Merge pull request #17774 from protocolbuffers/cp-rust-visibility\n\nCherry-pick rust visibility fix and removal of rust from BCR presubmit to 28.x",
+            "tag_name": null
+        },
+        {
+            "hash": "92552d37b733e0721ad35ec5ab552e2caa623ab2",
+            "message": "Remove protobuf rust from BCR presubmits for now.\n\nRust protobuf is in development and not intended for use / released yet. We should add this back at some point when rust is ready for release, after adding equivalent GHA presubmit tests.\n\nPiperOrigin-RevId: 653252995\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2cee1424616bd5c2a4fdc792722edb91e5bfea21",
+            "message": "Add visibility for rust public aliases for '@protobuf//:protobuf_rust'\n\nPiperOrigin-RevId: 652511009\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1c9cfbb3ba94aad1ea28dfd9afd777db00b092a",
+            "message": "Merge pull request #17768 from protocolbuffers/28.x-202408082011\n\nMerge release commits to 28.x",
+            "tag_name": null
+        },
+        {
+            "hash": "53f78b42784be3d8990013b03e393974840a3f25",
+            "message": "Updating version.json and repo version numbers to: 28.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4afaa64c95b420c093078ca72a51d77098d32fad",
+            "message": "Updating version.json and repo version numbers to: 28.0-rc2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83c0b480e57100317aac39cc58f553a7d02dd0aa",
+            "message": "Merge pull request #17728 from protocolbuffers/cp-pom\n\nCherry pick changes to drop Java pom.xml files unused for release.",
+            "tag_name": null
+        },
+        {
+            "hash": "aaf5f798c0c40787e82dacc80df47dd96519dbd5",
+            "message": "Remove unused pom.xml files.\n\nWe mostly use generated pom files in our release currently, so we can delete all the files that aren't used and the tools to update them.\n\nNote, java/bom/pom.xml java/pom.xml and java/protoc/pom.xml are all still used at release and java/kotlin/pom.xml is used for documentation so all of those need to stay for now.\n\nPiperOrigin-RevId: 659664012\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a7e2154a25b49074880c1b25bf886ad654d2286",
+            "message": "Set -ex in test_java.yml\n\nThis will cause the script to fail if any command fails, which will make it easier to debug failures.\n\nPiperOrigin-RevId: 658878371\n",
+            "tag_name": null
+        },
+        {
+            "hash": "671ef8b8526fd8ba2d910c517a7d77b3d9d7c5c4",
+            "message": "Refactor java maven GHA test to use our generated jars.\n\nThis allows us to test our maven setup without relying on static `pom.xml` files and clears the way to remove them in a subsequent CL.\n\nPiperOrigin-RevId: 658057911\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1869419410b2716c15ea946cff30a17efb608af8",
+            "message": "Merge pull request #17702 from thomasvl/patch_objc_to_28\n\nCherryPick the lastest work for Objective-C over the the 28 branch",
+            "tag_name": null
+        },
+        {
+            "hash": "c46340eb36e7b8a2477b99062f0dc6816c9a0bcc",
+            "message": "[ObjC] Support errors when merging unknown fields to a message.\n\nPiperOrigin-RevId: 658782615\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c5c9c89441e6d04bc1246aa78f44a33f2a407251",
+            "message": "[ObjC] Add apis for removing things from `GPBUnknownFields`.\n\nPiperOrigin-RevId: 658538490\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ed6dcd7182142082dc828772e07e9dab5f0ea994",
+            "message": "Merge pull request #17618 from protocolbuffers/cp-utf8-ascii-28.x\n\nRemove `/utf-8` flag added in #14197",
+            "tag_name": null
+        },
+        {
+            "hash": "440dc8306decf9ec898b1cbac8b67b16bf204888",
+            "message": "Remove `/utf-8` flag added in #14197\n\nWe have received several reports in #17036 that the addition of this flag\nactually broke the use of command argument files with non-ASCII characters in\ntheir names. It looks like #14253 ended up fixing the original issue with a\ndifferent solution anyway. Hopefully this change fixes the issue with non-ASCII\ncharacters.\n\nPiperOrigin-RevId: 655660885\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b045935521d88872411f54735cbcc0de17a16818",
+            "message": "Merge pull request #17587 from thomasvl/patch_objc_to_28\n\nCherryPick the newer work for Objective-C over the the 28 branch.",
+            "tag_name": null
+        },
+        {
+            "hash": "a6b353582c7e8a5855f8075b131f2f81c191230a",
+            "message": "[ObjC] Collect unknown fields as data\n\nDefault to collecting unknown fields as data and then create the\n`GPBUnknownFieldSet` on demand when requested.\n\nThis should reduce the as the extra objects are created until requested\nand clears the way to eventually deprecated `GPBUnknownFieldSet` in the\nfuture.\n\nThis also fixes the failing conformance test related to keeping the ordering.\n\nPiperOrigin-RevId: 655929316\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf2d4e707c139fa4d58bae68efbf232ed445c6f3",
+            "message": "[ObjC] Internal helper for getting the unknown field data from a message\n\nPiperOrigin-RevId: 655202619\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0832b52355c4ae4cde993cf8a09387d8c757525f",
+            "message": "[ObjC] Update tests to use both unknown fields apis.\n\nAlso fixes edge case where merging into an autocreated message for a field\nwasn't marking the field as set in the parent.\n\nPiperOrigin-RevId: 655196339\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1b6f8c8eb1e4a354fe7463828e53315936454c8",
+            "message": "[ObjC] Deprecate GPBTextFormatForUnknownFieldSet().\n\n`GPBTextFormatForMessage()` will contain any information for unknown fields.\nAnd it clears the way for `GPBUnknownFieldSet` to eventually be deprecated\nalso.\n\nPiperOrigin-RevId: 655184316\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b16ee477ba88dc8d495c3a7b455cd6078977b1f",
+            "message": "[ObjC] Parsing helper and tests around unknown fields.\n\nMake a new internal api for collecting up the unknown group fields\nthat will be used in a future change.\n\nAdd testing for the new api and for unknown field parsing of groups in\ngeneral.\n\nPiperOrigin-RevId: 654875605\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fad7b78e1a09e90f5387ff414fa8cf3d6844772e",
+            "message": "[ObjC] Add test around enum unknown values.\n\nPiperOrigin-RevId: 654858735\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf7abf6c6bbb2a578901e312e3ec08d69049b274",
+            "message": "[ObjC] Expose a helper for stream error.\n\nAlso mark the helper as not inline able to avoid the code being over duplicated\nwithin the file with some compiler optimizations turned on.\n\nPiperOrigin-RevId: 654826102\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ddf9b767041f3843e6348c12c715def215f5e9af",
+            "message": "[ObjC] Support MessageSet with `GPBUnknownFields`.\n\nUpdate the initialization from a message to deal with the current differences.\n\nUpdate some tests to cover the usage.\n\nPiperOrigin-RevId: 652892603\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5fa8cd95746f9ff10d0914fb1efbde2154df5660",
+            "message": "[ObjC] Update MessageSet Parsing.\n\n- Follow upb and only accept the first value for `type_id` and `message`\n- Reflow some of the logic to hopefully make things a little easier to follow/clear.\n- Validate some more assertion about things the extensions for a MessageSet.\n\nPiperOrigin-RevId: 652545240\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3aa491cf8f689e17d8320c489b6c15266e5e301d",
+            "message": "[ObjC] Validate MessageSet expectations.\n\n- Make the generator error if things are violated.\n- Have the runtime assert in debug about the things also.\n\nPiperOrigin-RevId: 651810474\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef4898fc5e8be4fe43ca9a51709a4097ff028c8d",
+            "message": "[ObjC] Improve parsing validations\n\nPass through the expected end marker and validate it so calling code can't\nforget to do the validations.\n\nPiperOrigin-RevId: 651809006\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7699dd04388f25a99eaae53c7e700934730333fc",
+            "message": "Merge pull request #17512 from anandolee/28.x\n\nCherrypick python deprecated warnings for reflection.py and service.py to 28.x",
+            "tag_name": null
+        },
+        {
+            "hash": "902a68a1591d7e46312cbb2b9ca4b6f9249e4d7e",
+            "message": "-Remove service.py usages in builder\n-Raise warnings for deprecated google/protobuf/service.py APIs.\n\nservice.py APIs are marked as deprecated since 2010. These APIs will be\nremoved in Jan 2025\n\nPiperOrigin-RevId: 653280370\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38140ac5443f74a6248d259c30a6a885a358b301",
+            "message": "Raise warnings for deprecated google/protobuf/reflection.py APIs.\nreflection.py APIs are marked as deprecated since 2018. These APIs will be\nremoved in Jan 2025\n\nPiperOrigin-RevId: 653263213\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca75771fe73de0c2a69e21f777d7cda1d65e8d78",
+            "message": "Merge pull request #17475 from protocolbuffers/cp-downgrade-cmake\n\nDowngrade CMake to 3.29 to workaround Abseil issue.",
+            "tag_name": null
+        },
+        {
+            "hash": "cd75dd59824c5c60afb8ba894dc1db3a92bbc582",
+            "message": "Downgrade CMake to 3.29 to workaround Abseil issue.\n\nThis was fixed in https://github.com/abseil/abseil-cpp/commit/cd7f66cab520e99531979b3fd727a25616a1ccbb, but older versions of Abseil break in CMake 3.30, which github runners now use by default.\n\nPiperOrigin-RevId: 651854867\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e3e43446f2d847a26fb11a7e2b03d75c1a98ba65",
+            "message": "Updating version.json and repo version numbers to: 28.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e70d04d915b83d644a7a525b6ed6df22fb27e96e",
+            "message": "Updating version.json and repo version numbers to: 28.0-rc1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ccb23625f87e977b78c508d0dd163e0c515d536c",
+            "message": "Remove -fsjlj-exceptions from win32-config\n\nThis seems to be missing using i686-w64-mingw32/10-posix after updating release images to Debian 11.\n\nIt is not clear why this flag was added in the first place for win32 but not win64.\n\nContext: https://stackoverflow.com/questions/61206449/how-to-compile-with-clang-and-mingw-w64\nPiperOrigin-RevId: 651545252\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5f366b3b7d583f349cb9c6746cd5d74ae96ac869",
+            "message": "update .proto namespace for hpb_generator/tests\n\nPiperOrigin-RevId: 651523466\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b8cb34d744c1eedaf3d1c23407cc827453e7a439",
+            "message": "Prepare the code for migrating return types from `const std::string&` to\n`absl::string_view`.\n\nPiperOrigin-RevId: 651520812\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34136b37944c4baba486005067c81093552a8418",
+            "message": "Comment-only change: update and clarify code comments for io::Printer.\n\nPiperOrigin-RevId: 651499037\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f70ba6482e71dc2e914aa13b6dae4245ab2e048c",
+            "message": "Change reflection based accessors to not modify the instance unless it is\nnecessary.\nThis is necessary for moving default message instances to rodata.\n\nPiperOrigin-RevId: 651493772\n",
+            "tag_name": null
+        },
+        {
+            "hash": "03729f631b2f6f33c3de6e7dc371c8e72f66ec97",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 651493393\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7fa87184670fd65c49b3931a4eefc8a76785bef6",
+            "message": "In RepeatedField, rename members and use member accessors.\n\nMotivation: refactoring in preparation for small object optimization in RepeatedField.\nPiperOrigin-RevId: 651446582\n",
+            "tag_name": null
+        },
+        {
+            "hash": "77047d9cda0bd5478489d4b5a85f1907cfe7f4fa",
+            "message": "Auto-generate files after cl/651119789\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89cd4cfc35ab7643b1fbac9c4197f333fd2ff699",
+            "message": "Auto-generate files after cl/651113583\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c97a042116d804288a6c728f10e223832c9464cd",
+            "message": "In the custom vtable mode invert how the static/non-static overloads versions work for ByteSizeLong and _InternalSerialize. That way the public entry point and the function pointer both end up being the same. Currently, the static function is a separate function than the one called externally, forcing two functions to exist.\nIt has no effect in normal mode.\n\nPiperOrigin-RevId: 651119789\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5025dcd9c0ca75d0e4abd31cb3e72a335683eb4f",
+            "message": "Automated rollback of commit d3d86d2bee1101650b30cfe2c972d9273b8d973f.\n\nPiperOrigin-RevId: 651114051\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9dd9ce66e05d034378b4b37b82307f41fc3395c",
+            "message": "UPB text encoder without using reflection for Rust (used for a message's Debug trait) that will print out field number to value entries instead of field name to value entries of a message like how it's expected for the usual text format using reflection.\n\nGeneral test for it is done in Rust, and then extensions are tested in UPB as they're not currently supported in Rust-upb.\n\nPiperOrigin-RevId: 651113583\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32bcf0bead7c7d281220867463810fddcc9dc084",
+            "message": "Prepare the code for migrating protobuf string accessors to\n`absl::string_view`.\n\nPiperOrigin-RevId: 651113544\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ab78e2fc1d2d14e1581f9bce16ab609e14d371c6",
+            "message": "protos -> hpb namespace transition :: minimal slice\n\nPiperOrigin-RevId: 651111836\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21c545c8c5cec0b052dc7715b778f0353d37d02c",
+            "message": "Delete dead code\n\nPiperOrigin-RevId: 650892555\n",
+            "tag_name": null
+        },
+        {
+            "hash": "759b25ed3e280128384798def630086da7f64edf",
+            "message": "Update old comment to reflect that Java lite bit encodes enum closedness rather than just map fields with closed proto2 enum values pre-editions.\n\nPiperOrigin-RevId: 650824123\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a18882a5d233be28d9104e5be96b6f9d7f60fb6",
+            "message": "Avoid iterator allocation in FieldSet.isInitialized\n\nPiperOrigin-RevId: 650814506\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08a0994f4b11912f7dd81ad668a5649e83d9680e",
+            "message": "Avoid allocations in FieldSet.Builder.mergeFromField\n\n- Pre-size ArrayList\n- Avoid iterator allocation\n\nPiperOrigin-RevId: 650811055\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f3b4603a1e36779ac9196610fe28a5e30f41c56",
+            "message": "Avoid an iterator allocation in FieldSet.Builder.setField\n\nFix some rawtypes warnings too.\n\nPiperOrigin-RevId: 650804398\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc5eccfb2866f6bbcac047a107e75a5175bd1460",
+            "message": "Avoid iterator allocations in FieldSet.computeFieldSize\n\nPiperOrigin-RevId: 650803788\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8daad6ddd4bf83e294080aece013bfc0ed034a3e",
+            "message": "Avoid iterator allocations in FieldSet.writeField\n\nThis is a performance optimisation.\n\nPiperOrigin-RevId: 650799480\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7a2b37f77de879f99cfc0f946e9d9f04b021b082",
+            "message": "Update hpb generator plugin namespace protos -> hpb\n\nPiperOrigin-RevId: 650780819\n",
+            "tag_name": null
+        },
+        {
+            "hash": "94f172de827ed0d3aabdc06e2d64a19d18dd552b",
+            "message": "internal changes to plugin\n\nPiperOrigin-RevId: 650770447\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b54a6aa9d35982a77a741eeea6503c52f8b7bd36",
+            "message": "Remove unused static field.\n\nPiperOrigin-RevId: 650770379\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3d86d2bee1101650b30cfe2c972d9273b8d973f",
+            "message": "Bump Google.Protobuf dependency on System.Memory to version >=4.5.5\n\nPiperOrigin-RevId: 650736637\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9306e8446f9ba45b99349585bfdbf44dbb35ecd3",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 650726743\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f46e776b1f020bd6eea9916a0e7ad8502f69824c",
+            "message": "Upgrade sanitizer tests back to ubuntu 22\n\nOur test images now have sanitizers that support githubs kernel update.\n\nPiperOrigin-RevId: 650723051\n",
+            "tag_name": null
+        },
+        {
+            "hash": "543b404920eae983ce319c786d68182d1f412eba",
+            "message": "[ObjC] Complete the tests for `GPBUnknownFields`/`GPBUnknownField`\n\nEnsure all apis are called directly in tests.\n\nCorrect `GPBUnknownField` `-copy` to not have to make a new instance\nsince it is immutable in the new form.\n\nPiperOrigin-RevId: 650690942\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d05c3feb39c784a836463d41e446143748f09361",
+            "message": "[ObjC] Bring over more unknown fields tests.\n\nPort of the interesting `GPBUnknownFieldsSet` tests to `GPBUnknownFields`\nas they provide coverage of general handing of unknown fields during parsing.\n\nAlso tweak the `Set` tests to actually use a registry to confirm behaviors around\nextensions where the test previously wasn't as complete.\n\nPiperOrigin-RevId: 650660181\n",
+            "tag_name": null
+        },
+        {
+            "hash": "36dc83f0663df38ad9e3696abe4471bd1a46f896",
+            "message": "superficial file rename protos_* -> hpb_*\n\nPiperOrigin-RevId: 650640353\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7f798cd8b9b345e2a4f692fa08c4f5edfe18ad38",
+            "message": "Simplify a confusing test method in `MapLiteTest`.\n\nLooking at the code history, this test used to try two different ways to construct a proto containing map fields, and check that the resulting protos were the same. One of the ways was to obtain mutable `Map` objects for the fields, and modify those. When that possibility was removed from the proto API, the test code that used it was changed to use the other way,\nmap-modifying methods directly on the proto class. But the end result is that the test method here was just doing the same thing twice and checking that it got the same result.\n\nPiperOrigin-RevId: 650639933\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55a5f0c4dbab942c7e8374630fe728175339d604",
+            "message": "Remove TODO that we won't do and leave a comment explaining in its place\n\nPiperOrigin-RevId: 650635842\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e759a39d51d1e4800beadabd41ae5dc1b71c4f78",
+            "message": "[ObjC] Keep `GPBUnknownField` simpler.\n\nMove some of the new logic out of `GPBUnknownField` so it will end up as a much\nsimpler \"container\", with all the serialization logic inside `GPBUnknownFields`\ninstead.\n\nAlso move some of the internal logic needed into static C functions to reduce the\nObjC class overhead of `GPBUnknownFields`.\n\nThis was all inspired by realizing during serialization related apis the `type` of\neach field was being examined multiple times and reduces that in addition to reducing\nthe number of methods being invoked.\n\nPiperOrigin-RevId: 650631975\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08da921314f7abf154c7b1d3d49df000e3e253dd",
+            "message": "Remove the defensive copy on singular string setter\n\nCalling into_proxied() already does a copy and before this change we were doing a second one.\n\nI am not using set_allocated_<field(std::string* s) because the method is not generated when [features.(pb.cpp).string_type = VIEW] is specified.\n\nPiperOrigin-RevId: 650612909\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0d6e9794d1091e622ae96c586e1b33632feb5841",
+            "message": "Migrate Repeated::{push, set} and Map::insert to use the IntoProxied trait.\n\n  * The public Repeated::{push, set} and Map::insert methods now accept any value that implements IntoProxied<T>, allowing us to move owned values instead of copying them.\n  * This change also updates the FFI layer for strings/bytes in the repeated and maps thunks to accept a std::string* that can be moved rather than a PtrAndLen type that needs to be copied.\n  * Tests are updated to no longer .as_view() when setting a message / string on a repeated / map field. The IntoProxied trait makes calling .as_view() obsolete.\n\nPiperOrigin-RevId: 650580788\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2c4d0f27e5e622c83b4dd3581f53515f277f5cd",
+            "message": "Automated Code Change\n\nPiperOrigin-RevId: 650549584\n",
+            "tag_name": null
+        },
+        {
+            "hash": "770090e901872f860c8c75b55b9df3253ab2de6f",
+            "message": "Removed specific MSVC settings when installing (#17285)\n\nWhen installing protobuf, it creates a different directory for CMake's config files when compiling with MSVC.\n\n![protobuf-on-windows](https://github.com/protocolbuffers/protobuf/assets/50274155/b0f5e1fa-dcb8-4c01-8118-7c6c651cda37)\n_gRPC build on Windows_\n\n![protobuf-on-linux](https://github.com/protocolbuffers/protobuf/assets/50274155/1370b476-89e7-42a0-857d-73cdcbae4f23)\n_gRPC build on Linux and macOS_\n\nThis is problematic because it requires conditionally setting its `protobuf_DIR` for different platforms:\n\n```cmake\nif(MSVC)\n    set(Protobuf_DIR \"${PROTOBUF_PREFIX}/cmake\")\nelse()\n    set(Protobuf_DIR \"${PROTOBUF_PREFIX}/lib/cmake/protobuf\")\nendif()\n```\n\n[The original commit that made this](https://github.com/protocolbuffers/protobuf/commit/7d79458fc5d4392f68a08b9f9bef39fc8dcec861) based its choice on CMake's version 3.4, which not only is deprecated but is also based on a CMake version [less than the one defined in the master file](https://github.com/protocolbuffers/protobuf/blob/main/CMakeLists.txt#L3). Since then, CMake changed its behaviour, making this distinction unnecessary.\n\nCloses #17285\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17285 from EduMenges:main a6f2e375cedd40c8a14378a190e319e8dc0e8682\nPiperOrigin-RevId: 650455064\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fba8024963b8884cfa0d3903b3b0cbed27587f02",
+            "message": "Mark obsolete UnknownFieldParseException as deprecated\n\nThis exception is unused and will be removed in the next breaking release (v5.x.x).\n\nPiperOrigin-RevId: 650399456\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e530d40bfcb9f8ee1d2df1ce53d7173ddd93fb8d",
+            "message": "Improve failure message for unexpected descriptor.proto contents.\n\nPiperOrigin-RevId: 650390094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2299860fdd8df55c2790d6c803e9d13d7f7669f",
+            "message": "[ObjC] Add initializing a `GPBUnknownFields` from a message.\n\nPiperOrigin-RevId: 650388684\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fba399ad356bd2bcdac2a1c7589240971e256c09",
+            "message": "Remove protos/requires.h\n\nPiperOrigin-RevId: 650374125\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1638dc8232315678416e62b24b67084f6d93256",
+            "message": "Use explicit names of our large runners\n\nPiperOrigin-RevId: 650360525\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee96b56e467375a8db2bb8c3b74cd5a37825ceb6",
+            "message": "Fix rawtypes warning suppression in FieldSet\n\nPiperOrigin-RevId: 650106954\n",
+            "tag_name": null
+        },
+        {
+            "hash": "761d49a27067f74c56818e979b979bd3942a27cc",
+            "message": "Add overload for LazyStringArrayList.add(String): boolean\n\nThis is a performance optimisation that avoids us going through from\nAbstractList.add(E) to LazyStringArrayList.add(int index, String) and then\nhaving to call the index-based add in ArrayList, which has more bookkeeping\naround moving elements across if necessary.\n\nWe can avoid that bookkeeping by adding this overload.\n\nAlso, group together overloads to squash a style warning.\n\nPiperOrigin-RevId: 650089286\n",
+            "tag_name": null
+        },
+        {
+            "hash": "229c958a5c9417129942959c9819f7f4ffa4c8a3",
+            "message": "Hoist SmallSortedMap.getNumArrayEntries() outside loops over array entries\n\nThis should slightly speed things up.\n\nShould be safe: these operations don't change the number of entries inside the loop.\n\nPiperOrigin-RevId: 650087172\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cbb3abfc4bf342e3f7cff1b657b46db0e1ef1537",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 649459935\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e9319054caacf9ba708d0497b8f869f6a0264052",
+            "message": "Auto-generate files after cl/649160060\n",
+            "tag_name": null
+        },
+        {
+            "hash": "79c55cb30f79b227029fbe4cc62a14354c18096d",
+            "message": "Omit the `_raw_default_instance_` declaration when using DLL linkage.\nIn that mode we might not be able to make a `constexpr` pointer to the default\ninstance. Omitting the declaration will only turn off an optimization, but the\ncode will still be correct.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/17303\n\nPiperOrigin-RevId: 649160060\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e5a867f3d787dbf9445ab6a90f0a8ca9260d09e",
+            "message": "[ObjC] Start of the internal api for `GPBUnknownFields`\n\nAdd in the support for pushing the data back onto a `GPBMessage`.\n\nPiperOrigin-RevId: 649125923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "096b139192b3fa95a7a626b273ec1a80845f7c87",
+            "message": "move upb/hpb_generator -> protobuf/compiler/hpb\n\nPiperOrigin-RevId: 649112245\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c3d0ffe4cf2d89d6d21bef8188ad52be2f79f3f2",
+            "message": "[ObjC] Add comment on import for future reference.\n\nPiperOrigin-RevId: 649106953\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f810cc5b668d78cb982f44b34f188160d55c27d6",
+            "message": "Enable MessageLite::DebugString to use Message::DebugString where possible.\n\nThis will mean that calling DebugString on a MessageLite* which is actually a full Message will get the debug info instead of the minimal output.\n\nPiperOrigin-RevId: 649103508\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6750ed8cd8eb9f109847cebdea86189e4fe64638",
+            "message": "[ObjC] Add Swift helpers for `GPBUnknownFields`/`GPBUnknownField`.\n\n`GPBUnknownFields` additions:\n- Provide `Optional` based apis for the `getFirst*` apis.\n- Map the `NSFastEnumeration` over as a `Sequence` to support looping over the fields.\n\n`GPBUnknownField` addition:\n- Add an `enum` with associated values to provide a more type-safe way for inspection.\n\nPiperOrigin-RevId: 649090744\n",
+            "tag_name": null
+        },
+        {
+            "hash": "73db2551686d444336bc7092b22b8fd6770cc085",
+            "message": "Require all Proxied types to be Sized.\n\nThis is currently true and required by the IntoProxied trait. In Rust all type parameters are explicitly marked `Sized`, except for `Self` [1]. By marking `Proxied` as `Sized` we can write `IntoProxied<Self>` in generic code without having to add 'where Self: Sized` clauses.\n\nAn implication of this change is that Proxied can no longer be used from a trait object i.e. `let x: dyn &Proxied = &foo` will not compile. We are not anticipating such use cases at this point.\n\n[1] https://doc.rust-lang.org/std/marker/trait.Sized.html\n\nPiperOrigin-RevId: 649010900\n",
+            "tag_name": null
+        },
+        {
+            "hash": "64912c50cbbe0f2cfe886fe3349b05eb088fbf9a",
+            "message": "Use a std::string as the backing string & bytes type in the C++ kernel. This will allow us to move a ProtoString/Bytes to a message accessor without copying. This change only touches the C++ kernel, as the UPB kernel already uses the native arena-allocated UPB string type for ProtoString/Bytes.\n\nPiperOrigin-RevId: 649004435\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0aa74497527c6656e073f2635019ebc2a946268c",
+            "message": "[Ruby] Fix mismatched pointer type (#17240)\n\nThis PR fixes the following error on windows ruby 3.4 (head):\n\n```\ncurrent directory:\nD:/a/sass-embedded-host-ruby/sass-embedded-host-ruby/vendor/bundle/ruby/3.4.0+0/gems/google-protobuf-4.27.1/ext/google/protobuf_c\nmake.exe DESTDIR\\= sitearchdir\\=./.gem.20240623-6612-4umz58\nsitelibdir\\=./.gem.20240623-6612-4umz58\ngenerating protobuf_c-x64-mingw-ucrt.def\ncompiling protobuf.c\ncompiling convert.c\ncompiling defs.c\ndefs.c: In function 'MethodDescriptor_initialize':\ndefs.c:1513:19: error: assignment to 'const upb_MethodDef *' from incompatible\npointer type 'const upb_ServiceDef *' [-Wincompatible-pointer-types]\n 1513 |   self->methoddef = (const upb_ServiceDef*)NUM2ULL(ptr);\n      |                   ^\nmake: *** [Makefile:250: defs.o] Error 1\n\nmake failed, exit code 2\n```\n\n- Closes #17266\n\nCloses #17240\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17240 from ntkme:fix-ruby-upb-pointer-type 22e9859c5758bdc5efc2ddc720555c615dce428d\nPiperOrigin-RevId: 648923147\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6d0c9d511adfc22b38de9ff545a2bd913704b795",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 648861628\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f0d1814d0c6975122763fb8b342eb0ec287fcbd4",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 648826676\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de099bb912b30025f52939f08221acea8b329378",
+            "message": "Auto-generate files after cl/648806976\n",
+            "tag_name": null
+        },
+        {
+            "hash": "550e4282398081e0f2ae6abe6d7a60c2be14b2e6",
+            "message": "Cleanup map entry code generation to use a simple Emit.\nAlso, fix public/private sections. It has no visible effect because these types are internal, though.\n\nPiperOrigin-RevId: 648806976\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d1efddeb6b9948bd23985bd8c7de6cfc6072ef2",
+            "message": "Revert workaround for std::mutex issues on github windows runners.\n\nPiperOrigin-RevId: 648802955\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c07de7c9dfa72d5b0169d1e4319449577576c02d",
+            "message": "Change to proto2_rust C prefix and proto2::rust C++ namespace\n\nPiperOrigin-RevId: 648791688\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ddeb6c4c808c617f8b2e89e7eb105aa630d64da",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 648760123\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f1e142a8358d5e53fd054d0f35f9a9d7701e996",
+            "message": "Remove clear thunk from repeated fields.\n\nThis thunk is unused, the preferred spelling for clearing repeated fields is `msg.somefield_mut().clear();`\n\nPiperOrigin-RevId: 648756314\n",
+            "tag_name": null
+        },
+        {
+            "hash": "27d8304aa8410cde4a8e1d9ab9134cd3cd2bcc77",
+            "message": "Add a warning for gencode that is one major version older than runtime\n\nPiperOrigin-RevId: 648750618\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bb8c51f3f0d0078ca2b99851cc01d7373941a14",
+            "message": "Add C++ protobuf runtime to Rust proto deps and add specific #includes in the Rust .cc codegen.\n\nPiperOrigin-RevId: 648729688\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9bc366522b09bb7a8b3dabbf76fe7fd4dfc8a7f",
+            "message": "Stop using double underscores for our C function names and standardize on the 'rust_proto_' prefix.\n\nBesides unnecessary inconsistency on our C symbols, double underscores anywhere in the name are reserved for stdlib use.  In practice its unlikely these symbols would ever hit a collision problem (maybe the prior name 'utf8_debug_string' with no prefix as having some risk), but safer to just standardize on this and have no concerns going forward.\n\nPiperOrigin-RevId: 648709299\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dba1aa1c810e2fd3a9aed48871529b2285eaff02",
+            "message": "Upgrade macos-11 tests to macos-12\n\nGithub dropped macos-11 on their runners on June 28th.  This causes all our jobs to stall looking for a suitable runner.\n\nPiperOrigin-RevId: 648527302\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91dfd8698a230d5d2d33b04f46fa20af0686d4f1",
+            "message": "add .. operator to proto! for merge_from. This mimics Rust's struct update syntax.\nhttps://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html#creating-instances-from-other-instances-with-struct-update-syntax\n\nPiperOrigin-RevId: 648464577\n",
+            "tag_name": null
+        },
+        {
+            "hash": "894fd31530bda1be2d03e1a74fdd59851428ee49",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 648463615\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04182f05c6e0175c060f25c649b39757d3c890ed",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 648439686\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db27d5f9fa820b7c2a3aff86f016ab3a196bb294",
+            "message": "Directly do the work that was in the deprecated method.\n\nPiperOrigin-RevId: 648418934\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ccf1687b2924f46dd28c49d9d51fd67b49bf656",
+            "message": "Auto-generate files after cl/648412330\n",
+            "tag_name": null
+        },
+        {
+            "hash": "685df5d4dbfd9a6e8bd75a2ab64ec070c657b280",
+            "message": "Add DebugCounter utility for measuring internal behavior of the\nruntime that does not change observable behavior of the APIs. For example, fast-vs-slow path decisions.\nHas to be turned on at compile time, and otherwise it is a noop.\n\nPiperOrigin-RevId: 648412330\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a3a49d062080fb02d868b37e5fe63c6113cbbe94",
+            "message": "Auto-generate files after cl/648377537\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff5b0b4f0f23b3e802a155c39f812fac967ada7c",
+            "message": "Minor refactor the ClassData/TcParseTable. Put the prototype in ClassData and\nmake the TcParseTable point to the ClassData.\nThis will allow the parser to use more information from the class in the\nfuture.\n\nPiperOrigin-RevId: 648377537\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47f633eae687939fbb68af4661503685a8efd239",
+            "message": "[ObjC] Introduce the new `GPBUnknownFields` type.\n\n`GPBUnknownFields` will be the eventually replacement for `GPBUnknownFieldSet`. This\nintroduces the type and the changes to `GPBUnknownField`.\n\nThe new api will preserve the wire ordering of unknown fields. This is now checked\nin conformance tests.\n\nWhile this adds the type changes and tests them, it does not yet wire the changes\nin to the rest of the Runtime, so the conformance tests still done pass.\n`GPBUnknownFieldSet` also hasn't been deprecated yet, that will come in later with\nthe wiring in to the runtime.\n\nPiperOrigin-RevId: 648361455\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a4f9ddd8fc2ff1afa6697059d494a9bf0c09c680",
+            "message": "Auto-generate files after cl/647802280\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3172f5d7368a2b47baa5e996545f3de44009dac",
+            "message": "Add a maximum block size for arena growth.\n\nThis should significantly reduce the size of large arenas. Previously, a large arena would nearly double in size if the most recent block filled up.  This could end up wasting large amounts of memory.  After this CL, we will waste at most the max block size, which defaults to 32k.\n\nThis more or less matches the behavior of the C++ arena.\n\nPiperOrigin-RevId: 647802280\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e08414ca109a013d7eb15f1908ada280a6329138",
+            "message": "Remove obsolete javadoc in SmallSortedMap: parameter arraySize has been deleted\n\nPiperOrigin-RevId: 647796308\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c1763b64c07f47524cc440b4e9eb5bd1d7387ecb",
+            "message": "Auto-generate files after cl/647789835\n",
+            "tag_name": null
+        },
+        {
+            "hash": "988a03ab831178d4e38a781057e360ee101e6768",
+            "message": "Export PrivacyInfo.xcprivacy (#17054)\n\nExport `PrivacyInfo.xcprivacy` file to allow users of protobuf to access the file from Bazel, e.g. to bundle it with an iOS application.\n\nCloses #17054\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17054 from mjburghard:export-privacy-manifest 4869cabc3d6f987c3ba2652e268c984285ad06d1\nPiperOrigin-RevId: 647791805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62e07e367a995947a244f443190ecf9566894788",
+            "message": "Fixed a fuzz bug when a negative oneof_index is provided.\n\nPiperOrigin-RevId: 647789835\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32bedd9b8a794231ca43d6457bb6b8cd3503fca7",
+            "message": "Automated rollback of commit 10c00b82af551f7b1ec7ffd5fbbec48eac08d858.\n\nPiperOrigin-RevId: 647702009\n",
+            "tag_name": null
+        },
+        {
+            "hash": "647ee98c655975b2742a7bb93b61e703fcabb73b",
+            "message": "Add #include \"third_party/protobuf/port_undef.inc\" a bunch of many .cc files\n\nPiperOrigin-RevId: 647700575\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de29e3c9aeff8b85913f6bd1a2395e303f932ab4",
+            "message": "[ObjC] Add `-[GPBMessage clearUnknownFields]`.\n\nThis is in preparation for revising the Unknown Fields related apis.\n\nPiperOrigin-RevId: 647693027\n",
+            "tag_name": null
+        },
+        {
+            "hash": "10c00b82af551f7b1ec7ffd5fbbec48eac08d858",
+            "message": "Migrate `const std::string&` to alternatives:\n - In most cases, migrate to `absl::string_view`.\n - When capturing a temporary string in a variable, use `const std::string` without the ref.\n\nWe avoid changing virtual function parameters in this CL, since that is a breaking change.\n\nPiperOrigin-RevId: 647686085\n",
+            "tag_name": null
+        },
+        {
+            "hash": "99a335e79fc74376065061d70394c0eca6b8f1a9",
+            "message": "Update third_party.md with Philips Rpc implementation (#17035)\n\nCloses #17035\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17035 from oguzcanoguz:main 2b9d55b485924bce223ea856cfa28f612387af21\nPiperOrigin-RevId: 647681986\n",
+            "tag_name": null
+        },
+        {
+            "hash": "419760f873057d6ec7f9cb29e4ad67ab7afd4bb8",
+            "message": "Split up cpp_api.h/.cc into smaller units.\n\nPiperOrigin-RevId: 647663342\n",
+            "tag_name": null
+        },
+        {
+            "hash": "219e8ead2f9fa03ecd67da9dc2fc82d1d4dbc56c",
+            "message": "Add license headers\n\nPiperOrigin-RevId: 647649755\n",
+            "tag_name": null
+        },
+        {
+            "hash": "643b0a625f36faed26ccca3e92a57b6b74d7e91b",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 647549552\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c96ad4ffa38091f8348f5181fa920eec0abee62f",
+            "message": "Minor refactor of how messages are created in the parser.\nThis will make it simpler to replace the creation technique later on.\n\nPiperOrigin-RevId: 647471321\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b39a0438aab08edda674463574867e171c0ed7bc",
+            "message": "Provide an option for DescriptorPoolDatabase to preserve source code info.\n\nPiperOrigin-RevId: 647452898\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a39c17bec4d348a5eb869a0f51652d52a2a14595",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 647421818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0e503b6b5872eaed1295788aecd8615142d5f49",
+            "message": "Upgrade our C++ release tests to large runners.\n\nPiperOrigin-RevId: 647405381\n",
+            "tag_name": null
+        },
+        {
+            "hash": "689594986a80ae5887309d1dd1ae062f5e6b6586",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 647396669\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d7087fc90110b8484b4768c28711d838588fecc9",
+            "message": "Move over upb/protos -> hpb (note that hpb is now a sibling of upb, not a child)\n\nPiperOrigin-RevId: 647378884\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dfe3300c2fa10a95f3f4d7cc5887eef5677f0865",
+            "message": "Indicate if a message is a DynamicMessage in the class data and improve the\nerror message from Dynamic/DownCastMessage when trying to downcast a\nDynamicMessage to a generated type.\nPreviously the error message would say \"can't down cast Foo to Foo\", which is\nconfusing.\n\nPiperOrigin-RevId: 647363909\n",
+            "tag_name": null
+        },
+        {
+            "hash": "237332ef92daf83a53e76decd6ac43c3fcee782b",
+            "message": "Add merge_from to Msg and MsgMut codegen. Cpp Kernel uses new thunk to typed MergeFrom() and Upb Kernel uses new upb_Message_MergeFrom() function\n\nPiperOrigin-RevId: 646961954\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3836fd347493e75681c19c0241713eff26046715",
+            "message": "Enable Unity(Jumbo) builds (#16454)\n\n**Description**\nAdded a cmake option to enable Unity builds for libprotobuf-lite.\nAdded missing symmetric include for port_def.inc\nAdded preproc guards for PROTOBUF_PRAGMA_INIT_SEG so it does not get included multiple times in unity build.\n\n**Motivation and Context**\nFor large code base, especially in the game dev industry, Unity builds (https://en.wikipedia.org/wiki/Unity_build) are used to speed up the compilations.\nSpecial care must be taken to enable Unity builds for a project, since many translation units will be merged togheter.\n\nCloses #16454\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16454 from jslap-ubi:enable-unity-build a387ffd86208a456d31fdbf0e98d009ed5d7932f\nPiperOrigin-RevId: 646581094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f4b57b98b08aec8bc52e6a7b762edb7a1b9e8883",
+            "message": "Auto-generate files after cl/646470242\n",
+            "tag_name": null
+        },
+        {
+            "hash": "290df684f951a3c486957fca6bc8d44bd9c50230",
+            "message": "expose upb_Message_MergeFrom in rust upb bindings\n\nPiperOrigin-RevId: 646471315\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2ab51b7992a092d6b1842a1bb81fba02b131d5f",
+            "message": "Add upb_Message_MergeFrom to upb\n\nPiperOrigin-RevId: 646470242\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69a1888fd587410cc6a4d857d2ad7815e5aad93e",
+            "message": "Bugfix: do not tree shake map entry messages.\n\nSince maps have a different in-memory representation than repeated messages, it is not safe to tree shake map entry messages.\n\nSpecifically, map fields use `kUpb_FieldMode_Map` instead of `kUpb_FieldMode_Array`, and there is no easy way to get the linker to rewrite this when the map entry is dropped.\n\nHowever it is safe to tree shake message typed map values, since these use `kUpb_FieldMode_Scalar`, which remains valid even after the type is tree shaken.\n\nPiperOrigin-RevId: 646199050\n",
+            "tag_name": null
+        },
+        {
+            "hash": "642988515696bf7adac2339ce05c5ddf4066ecaa",
+            "message": "Emit all string fields on Rust-upb regardless of ctype set.\n\nAs ctype only affects cpp implementation, these fields necessarily already work the same as any other string field.\n\nPiperOrigin-RevId: 646156640\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d8db9cea8eb442a57286f33ec1e802c5d6c3149",
+            "message": "update hpb_generator emitted comment protos_generator -> hpb_generator\n\nPiperOrigin-RevId: 646110222\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e17821cac1f84989ab280cd92063ba86c4e6770b",
+            "message": "Nextgen Proto Pythonic API: Struct/ListValue assignment and creation\n\nPython dict is now able to be assigned (by create and copy, not reference) and compared with the Protobuf Struct field.\nPython list is now able to be assigned (by create and copy, not reference) and compared with the Protobuf ListValue field.\n\nexample usage:\n  dictionary = {'key1': 5.0, 'key2': {'subkey': 11.0, 'k': False},}\n  list_value = [6, 'seven', True, False, None, dictionary]\n  msg = more_messages_pb2.WKTMessage(\n      optional_struct=dictionary, optional_list_value=list_value\n  )\n  self.assertEqual(msg.optional_struct, dictionary)\n  self.assertEqual(msg.optional_list_value, list_value)\n\nPiperOrigin-RevId: 646099987\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0302c4c43821ac893e8f1071576f80edef5c6398",
+            "message": "Fix typos in parse_context.h.\n\nPiperOrigin-RevId: 645498562\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7d395b89734c9a54695e23778f8e8a67544ed26b",
+            "message": "Auto-generate files after cl/645480157\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dfbe98781c5ac2c427aa4406705f8201c7364fcf",
+            "message": "Fix a bug in which proto code uses ctype instead of string_type internally.\n\nWe change InferLegacyProtoFeatures to set ctype based on string_type when string_type is set. We need to update CppGenerator::ValidateFeatures to allow both ctype and string_type to be set because it runs after InferLegacyProtoFeatures.\n\nPiperOrigin-RevId: 645480157\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4e52b5922e1a5ed3ef3441034bc3124863bdee1",
+            "message": "Auto-generate files after cl/645444695\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a81c234bf5decac225ee25b7f3374e2f83e62f11",
+            "message": "Enable dev tracing for production builds.\nCode still guarded by UPB_TRACING_ENABLED\n\nPiperOrigin-RevId: 645444695\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dd6e4adc199236221d3f53c55faf91fc42032fca",
+            "message": "Auto-generate files after PR #17201\n",
+            "tag_name": null
+        },
+        {
+            "hash": "217b66558ce5533338b266cbab04cf016309fe90",
+            "message": "Internal change\n\nPiperOrigin-RevId: 645427569\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c008a86038d9a7aa93515b6b2df03a75b4c80242",
+            "message": "Use UPB_LONGJMP macro instead of longjmp (#17201)\n\nWhen compiling the upb codebase, I randomly noticed there was one usage of directly calling `longjmp` though it seems the convention is to use the `UPB_LONGJMP` macro. AFAICT, the macro is mostly a wrapper to improve behavior on MacOS, so this may improve behavior there, otherwise it should be just making the code more consistent.\n\nCloses #17201\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17201 from anuraaga:patch-1 14cc027ef2d1e7fd2acb28489dc259ce3da8a2f0\nPiperOrigin-RevId: 645420330\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7ab844de523c4487d4d9894c014338f019198329",
+            "message": "Workaround `ERROR_RETRY` and `ERROR_TIMEOUT` macros on WIN32\n\nPiperOrigin-RevId: 645233944\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c826a69107e6773aeab1effbb758b57814a1b65d",
+            "message": "Introduce `TypeId` as a replacement for `typeid` for protobuf message types.\nThis class is preferred over using `typeid` for a few reasons:\n - It works with RTTI disabled.\n - It works for `DynamicMessage` types.\n - It works in custom vtable mode.\n\nPiperOrigin-RevId: 645145751\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6fb2049cfda505103968c4e5375f01102274513e",
+            "message": "Mark LazyField as zero initializable.\n\nPiperOrigin-RevId: 645141554\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dcde39e12f2fa5122c867205c352868e7308f822",
+            "message": "Use preserve_none calling convention for protocol buffer parsing functions.\n\nPiperOrigin-RevId: 645136265\n",
+            "tag_name": null
+        },
+        {
+            "hash": "594a71f48515715d37a797252e0dd2d97e635826",
+            "message": "Add an optimization that prevents an exponential number of comparisons on deeply\nnested repeated fields when using AS_SET or AS_SMART_SET.\n\nPiperOrigin-RevId: 645123131\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aca4cfcf7e7bb48d48fd337fa2e5a54d4878a35a",
+            "message": "Clean up test case to set features using custom descriptor directly instead of via reparse.\n\nPiperOrigin-RevId: 645116300\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7122ba1d0a93532324ab29cf05bd3fa4fd99e45e",
+            "message": "Java: Deprecate newExtensionWriter.\n\nNew usages should use newExtensionSerializer, which can avoid allocations for\nempty field sets.\n\nPiperOrigin-RevId: 645044533\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b7e81434735f9987a435943b5894d3c830df545",
+            "message": "Add ProtoString/Bytes owned types\n\nPiperOrigin-RevId: 644999527\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8ed10a9a464c4fdb9d77fbbd082763d7c29c26a2",
+            "message": "Automated Code Change\n\nPiperOrigin-RevId: 644893037\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b7d866b09abf948499c0043c47f924767d92fcb",
+            "message": "Automated Code Change\n\nPiperOrigin-RevId: 644698319\n",
+            "tag_name": null
+        },
+        {
+            "hash": "84e75a5940909cc0e881f65e62e539ede33c6ebe",
+            "message": "Auto-generate files after cl/644472463\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4ca493e300c709a3658a9f377354817edb23b36",
+            "message": "Avoid mangling of comments of namespaces in conformance/conformance.proto for Github. See cl/638713610\n\nPiperOrigin-RevId: 644472463\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ccbed29c678be6e69d3e784da9e95ed7d2a6dc64",
+            "message": "Rust protobuf: make `serialize()` method return `Vec<u8>`\n\n`Vec<u8>` is a more idiomatic Rust type to return for serialization.\n\nFor the C++ kernel, we are able to return this type with no extra copying. We\nstill use `SerializedData` type for FFI, but convert the result into a\n`Vec<u8>` using a new `into_vec` method.\n\nThe upb kernel serializes onto an arena, so for upb we do need to copy the data\nto get it into a `Vec<u8>`.\n\nPiperOrigin-RevId: 644444571\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2088bc6e66850aa02cceaaae6096f39d20f1c677",
+            "message": "Disable upload artifacts action (#17160)\n\nAddress [test flakes](https://github.com/protocolbuffers/protobuf/actions/runs/9527280868/job/26263735005) introduced by failure of the `upload-artifacts` GHA\n\nCloses #17160\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17160 from protocolbuffers:disable-upload-artifacts-action 87c458388d10d15b7090bcce1b17491cf4f47fba\nPiperOrigin-RevId: 644228044\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f6a8bd1fa12bfd4e5bc276677b3a69fa4709a3e",
+            "message": "Removes msvc warning in map (#17013)\n\nHi,\nWe get a compiler warning in MSVC that a signed/unsigned comparison is executed.\n\nThe warning is at around line 1073 in src/google/protobuf/map.h\n```cpp\nABSL_DCHECK_GE(new_num_buckets, kMinTableSize); // <-- signed/unsigned comparison\nconst auto old_table = table_;\nconst map_index_t old_table_size = num_buckets_;\nnum_buckets_ = new_num_buckets;\n```\n\nThis is due to `kMinTableSize` is a enum value. Probably a C++98 way to enforce constexpr.\n\nThis PR changes `kMinTableSize` to be a constexpr unsigned `map_index_t` and removes the casts instead of fixing the warning with a cast at ne 1073.\nIt seems like `kMinTableSize` is correlated with the `TableSize` of this class, which is map_index_t. Therefore the min value can at maximum the max value of map_index_t. And the min value of `kMinTableSize` can also not be negative, as this makes no sense.\n\nIt is also nicer to have fewer casts.\n\nCloses #17013\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17013 from TinyTinni:removes-msvc-warning-map 4f954e8c9bf99a550134345a0086e07fe1c9707c\nPiperOrigin-RevId: 644207177\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41514865ebe792ef0f1bfcebdbb2598fd398236d",
+            "message": "Immutable java: Use new lower-allocation extension serialization APIs from gencode\n\nThis requires the new methods to be present in the runtime.\n\nPiperOrigin-RevId: 644182132\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0812bbfcf520ec325227c0d91f2decf4bd20be1c",
+            "message": "Add new runtime API that serializes empty extensions without allocating\n\nI've made a new name for the interface, ExtensionSerializer, so we can keep ExtensionWriter in the same place for backwards-compatibility for a little while.\n\nPiperOrigin-RevId: 644172922\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32b94fef51cf6c76a21f8d1c321ef123ea26c94e",
+            "message": "Cleanup imports and comments in V3 stubs.\n\nPiperOrigin-RevId: 644154501\n",
+            "tag_name": null
+        },
+        {
+            "hash": "44c80977b053514ccc7fd8750d977a1703a7eb19",
+            "message": "Silence warning on upb/rust/wire.rs DecodeOption\n\nPiperOrigin-RevId: 644144635\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d8be99f2bef888921fee52e400a27e72593e1b2",
+            "message": "Add stubs for GeneratedMessageV3, RepeatedFieldBuilderV3, SingleFieldBuilderV3 for compatibility with older <4.26.x gencode.\n\nThese classes are deprecated and will be removed in the next breaking change. Users should update gencode to >= 4.26.x which uses GeneratedMessage instead of GeneratedMessageV3.\n\nTested with //compatibility:java_conformance_v3.25.0 which builds the runtime against 3.25.0 gencode.\n\nPiperOrigin-RevId: 644136172\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3d36855bd26bece56c71a2701f34dd47e616782b",
+            "message": "chore: upgrade zlib to 1.3.1 (#17029)\n\n`zlib` cannot be complied in macos (https://github.com/madler/zlib/pull/895).\nThis PR wants to upgrade zlib to 1.3.1 to avoid this issue.\n\nCloses #17029\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17029 from HerrCai0907:update/zlib fd6c66ba1c2c6b8007a65c7ee9d23ee82aafc28f\nPiperOrigin-RevId: 644108726\n",
+            "tag_name": null
+        },
+        {
+            "hash": "115b4c4f831d4e62892ce868ad08972d2b300783",
+            "message": "In the Kotlin DSL, access `oneof` discriminators as properties not methods.\n\nIf we have a `oneof Foo` in a message `Bar`, we should access the discriminator as `Bar.Builder.fooCase` rather than `Bar.Builder.getFooCase()`.\n\nPiperOrigin-RevId: 644107242\n",
+            "tag_name": null
+        },
+        {
+            "hash": "299bb044d53270ca8c7b615398ca4f4369c75cc2",
+            "message": "Reserve 1090 for Wire enumMode (#17158)\n\nrelease notes: no\n\nCloses #17158\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17158 from oldergod:patch-1 ad5e6bce8382949b06b7341c15d931af5748088d\nPiperOrigin-RevId: 644040665\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e844510ee30e25017e94f9f43751abab159208c8",
+            "message": "Fix segmentation faults with enabled keep_descriptor_pool_after_request (#16993)\n\nFixes #16894\n\nIt is tested on command execution only, where it fixes the issues of reported memory leaks, heap corruption and segmentation fault.\n\nI could not run tests on my Mac because of #16944\n\nCloses #16993\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16993 from simonberger:bugfix/php-ext-persistent-global-corruption 62b5529b6aadf914c708e031e29517869ce2cb15\nPiperOrigin-RevId: 644034181\n",
+            "tag_name": null
+        },
+        {
+            "hash": "415a147189fff5417b18ecc515b8197a085a0d2c",
+            "message": "Reserialize all unresolved features using java features from the generated pool in case of descriptors from the custom pool.\n\nThis extends previous workaround for java features in unknown fields, to include features extensions that are known but use a mismatched descriptor.\n\nThis can happen when users bring their own descriptors via buildFrom.\n\nPiperOrigin-RevId: 644013578\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40ffd46cec1291e1320e46a134c47dd23a74ff43",
+            "message": "Automated rollback of commit a30b25578a0435c9c692f9a54b7b060a234dc6b3.\n\nPiperOrigin-RevId: 643407401\n",
+            "tag_name": null
+        },
+        {
+            "hash": "071d5351eb4f8ef9d87624a04b87c738ca80ec57",
+            "message": "Fix data race in crosslink.\n\nThis was introduced by the previous fix for delimited inheritance, and was never released.  This fix removes all getType() calls from crosslink, where it's not safe to inspect the message type, which is still a placeholder, until after crosslinking.  Using the inferred type is not necessary since we treat messages and groups the same during crosslink.\n\nPiperOrigin-RevId: 643394981\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a30b25578a0435c9c692f9a54b7b060a234dc6b3",
+            "message": "Automated rollback of commit 901b2e548c0c7b52ce824423fd92fef870ba6e2e.\n\nPiperOrigin-RevId: 643173753\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d879311cac9aa81f02644bf445313c2b022c1c9c",
+            "message": "Add type name info for upb python parse error message in MergeFromStrig(). To  keep same with cpp extension.\n\nPiperOrigin-RevId: 643138099\n",
+            "tag_name": null
+        },
+        {
+            "hash": "901b2e548c0c7b52ce824423fd92fef870ba6e2e",
+            "message": "Reorganize our bootstrapped feature gencode.\n\nPiperOrigin-RevId: 643082031\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce7446a2c489dc7582d760195e2c2ab2186e5b46",
+            "message": "Auto-generate files after cl/643051561\n",
+            "tag_name": null
+        },
+        {
+            "hash": "091492ede1fc65a89299045eda72d4614fc4ca6d",
+            "message": "Change MapEntry instances to also generate a TDP table.\n\nPiperOrigin-RevId: 643051561\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8ef32176e34cf585a635b894c5b6363375963d9e",
+            "message": "Expose upb_Message_IsEqual to Rust upb.\n\nPiperOrigin-RevId: 643044309\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c6d319e69a9fc9f73e957bdbd732f61a4a7d593",
+            "message": "Auto-generate files after cl/643036818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56da5eecf62e748959d0ade4b0106718ae4936e1",
+            "message": "Auto-generate files after cl/643036543\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d5bd5b90daeb502540cd1bb6c17b3d5362655587",
+            "message": "Fixed a bug with tree shaking: use a separate MiniTable for statically tree shaken messages.\n\nSince statically tree shaken messages can never later become linked, we should not need to use any of the special code in the decoder.  By using a distinct \"empty\" message type, we avoid triggering any of this special behavior. This avoids bugs around hazzers and other presence checks.\n\nAlso fixed a bug in the cmake staleness test that was causing test failures.\n\nPiperOrigin-RevId: 643036818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf306b3bea5b3d11af56c77ac8f85c2feae88c52",
+            "message": "Update the comment for ctype to note that it's deprecated.\n\nNew code should prefer `features.(pb.cpp).string_type`. We can't use the `deprecated=true` option for now due to failing tests.\n\nPiperOrigin-RevId: 643036543\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d471c874e35b380cf3d576540503b0ac8de102d2",
+            "message": "Turn on 'CheckRequired' option on upb decode\n\nPiperOrigin-RevId: 643028693\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2eb4d69ed51c475a77ecd62742ef5064557b531f",
+            "message": "Add minimal Python support to MODULE.bazel\n\nPiperOrigin-RevId: 642857334\n",
+            "tag_name": null
+        },
+        {
+            "hash": "505d8d3c5b35aa7ac25028ce1b1a4fc7ece2ad47",
+            "message": "Auto-generate files after cl/642792988\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8beb9705e495c57d55f6547c523d5817336ac35f",
+            "message": "Fix delimited inheritance in all languages.\n\nThis was previously fixed in C++ (https://github.com/protocolbuffers/protobuf/issues/16549), but not ported to other languages.  Delimited field encoding can be inherited by fields where it's invalid, such as non-messages and maps.  In these cases, the encoding should be ignored and length-prefixed should be used.\n\nPiperOrigin-RevId: 642792988\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8dd81075f402923f7460cc34d769b01bdce73aa8",
+            "message": "Auto-generate files after cl/642691974\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4dffa939d269cdf76a8a29307bd0073d36b51057",
+            "message": "When not in custom vtable mode, strip the initializer code via preprocessor.\nThe noop code was causing big .proto files to time out even though it had no\neffect in the compilation after optimizing.\n\nWe tried avoiding the extra complexity of preprocessor checks on each use, but\nit seems necessary for now.\n\nPiperOrigin-RevId: 642691974\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f984453e81084f408898ffac5aa1bbc2a3f07ef",
+            "message": "Fix forward for Python bytearray.\n\nWe need to use the stable functions instead of the unsafe macros, as the latter are not part of the stable ABI.\n\nPiperOrigin-RevId: 642679733\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0d1e0676409a0c54631188c2b177660121ea7b7f",
+            "message": "Remove bad dep imported_proto\n\nPiperOrigin-RevId: 642661970\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49e03415fde4712d337c8bcc896d488b18e11ef9",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 642628067\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb67a91cacd7345f02b432d51e581ee31fd2ca54",
+            "message": "make bytearray work (again) (#16691)\n\nfix is pretty simple, just check if the type is bytearray and get the bytes if it is\n\naddresses issue: https://github.com/protocolbuffers/protobuf/issues/15911\n\nCloses #16691\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16691 from jensbjorgensen:main 6249e629d7db2f8ee900917798c97fb704abf4a2\nPiperOrigin-RevId: 642623917\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41315fd37f9c512e9a4a40a49b80aec5ccda8841",
+            "message": "Poison builds that accidentally use both the Upb and Cpp kernel. This should only be possible for targets defined within the protobuf codebase.\n\nPiperOrigin-RevId: 642622844\n",
+            "tag_name": null
+        },
+        {
+            "hash": "94d5f1236986103d03582b0e53e4daef0760bf93",
+            "message": "Adding DLL export/import tags to generated public upb API (redux) (#17079)\n\nPicking up #14981 from @dawidcha after several months of radio silence.\n\nQuoting the OP of that PR:\n> I have been collaborating with the grpc developers to make it possible to build that library as a Windows DLL - a couple of PRs were already merged, more like [grpc/grpc#34345](https://github.com/grpc/grpc/pull/34345) are pending.\n>\n> The grpc library incorporates some upb-generated, and upbdefs-generated code into grpc.dll, which is referenced by other code that consumes the library. Since this is now a DLL, that code doesn't know how to link to these generated symbols because they are not annotated with __declspec(dllimport).\n>\n> This PR aims to fix that by introducing a parameter 'dllexport_tag' to the upb and upbdefs plugins. That parameter should be a string e.g. MYAPP_DLL and when set, the extern symbols are annotated with a macro with that name. This can either be set externally to __declspec(dllimport) or, as is usual practice, when compiling code into a DLL, the macro <dllexport_tag>_EXPORT (i.e. MYAPP_DLL_EXPORT) is defined, and when consuming the DLL <dllexport_tag>_IMPORT is defined if neither are defined then the MYAPP_DLL macro becomes empty string which is what you want for building a static library.\n>\n> This is a continuation of #14230\n>\n> Fixes: #14255\n\nTowards #13726\nCloses #14981\n\nCloses #17079\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17079 from h-vetinari:add_dll_tags 34927b1ddeff6bac1a36dfa7eefb414894f1a538\nPiperOrigin-RevId: 642622258\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9387b50163788388cf79c440153f00a942449bb",
+            "message": "Auto-generate files after cl/642616862\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db06125563d5d22284b6436d4fed4446cab220ed",
+            "message": "split protobuf rust benchmark into separate binaries for upb/cpp\n\nPiperOrigin-RevId: 642617950\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b451603f6e98ea79e3568a5360621a3033df9c7",
+            "message": "Enable tree shaking unused sub-messages for C generated MiniTables.\n\nPiperOrigin-RevId: 642616862\n",
+            "tag_name": null
+        },
+        {
+            "hash": "968087eb61e18394a1e2e3e6bd3ab6eaf8ecb36e",
+            "message": "protos abrogation stage 1 - rename :: hpb for protos_generator\n\nIn this first stage, we rename the directory from protos_generator to hpb_generator, updating all necessary BUILD files and #includes.\n\nPiperOrigin-RevId: 642600953\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe6963970c8c4ac582dbefe3b7ee4ebb251dd803",
+            "message": "Rename IntoProxied::into -> IntoProxied::into_proxied\n\n`into` is also used by `Into::into`, and these two often clash.\n\nPiperOrigin-RevId: 642584408\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3784ba195954ef899f361761e692c9c80deffb9f",
+            "message": "Fix stack overflow on self-recursive messages with pybind11\n\nThere is a special case where message factories can be confused: if a module\nwritten in C++ with pybind11 links against a self-recursive message, and that\nmessage is part of another message loaded from Python, then the confusion\nwill happen.\n\nExample:\n# This one is also linked into the C++ module.\nmessage SelfRecursive {\n  optional SelfRecursive self_recursive = 1;\n}\n\n# This one is used only in Python and not linked.\nmessage OnlyUsedInPython {\n  optional SelfRecursive self_recursive = 2;\n}\n\nThe caching through message_factory::RegisterMessageClass then happens on one\ninstance of the factory, but traversal with the lookup in another.\n\nThis occurs in the pure Python and upb implementations that have their own\ndefault descriptor pools (and thus message factory).\n\nFix this by using the already passed message factory to registering the\nmessage class to cache.\n\nA test accounts for this case to avoid regressions.\n\nPiperOrigin-RevId: 642551744\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bbf52275dbad317bad3421f3c69b5f3759eb2b23",
+            "message": "Auto-generate files after cl/642420355\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1227db3dbe713cc3b109655e9bd6e5cca84ea01b",
+            "message": "Fix UPB_LINKARR_DECLARE section name\n\nThe section name was missing a double underscore, which is the convention.\n\nhttps://github.com/aidansteele/osx-abi-macho-file-format-reference#:~:text=Segments%20and%20sections%20are,tools%20to%20operate%20correctly.\n\nPiperOrigin-RevId: 642420355\n",
+            "tag_name": null
+        },
+        {
+            "hash": "435c182ae66906891d4345159577a11ae5addbf7",
+            "message": "Update linker version script globs to include `*pb::*` instead of just `pb::*`\n\nFor some reason it seems that `pb::*` does not match the type info symbol for\n`pb::CppFeatures`. Ordinarily this does not seem to cause problems, but we\nreceived a report about it causing issues with sanitizers:\nhttps://groups.google.com/g/protobuf/c/ytkvjXXdG2g/m/hk7a5JnCAwAJ\n\nFor clarity I made the same change for `upb::`, though I don't think this is\nstrictly necessary since it is covered by the `*pb::*` glob.\n\nPiperOrigin-RevId: 642390692\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a6d482748271f36fff5afe1abea3889789d0e3b5",
+            "message": "Fix build rule dependency for serialization_cpp_test\n\nPiperOrigin-RevId: 642343958\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bffd01c649a9486628c0e7e071f417b6f30bcb47",
+            "message": "Fixed a couple of compiler warnings.\n\nPiperOrigin-RevId: 642339381\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e4970aac30ad4e65d10c446108a35ba7b3ad8ca7",
+            "message": "Disallow initializing `Messages` (as well as `Maps` and `RepeatedFields`) with nil `Arena`.\n\nFixes a test flake.\n\nPiperOrigin-RevId: 642334064\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f2893a554ddd67a46e678307b001fbb7abe8d10",
+            "message": "Auto-generate files after cl/642327960\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bcde8d4b5435543396e3bef0cbb40c295849f0c0",
+            "message": "Generate one source file per message/enum/extension on Android/iOS.\n\nThe functionality is enabled when the proto_one_output_per_message option used by C++ Lite is enabled.\n\nThis mirrors the behavior of C++ lite protos.\n\nPiperOrigin-RevId: 642327960\n",
+            "tag_name": null
+        },
+        {
+            "hash": "61a2df3129e37a3d3fa6626065e2cf93dfcd929f",
+            "message": "Allow non-repeated StringPiece accessors to be generated.\n\nAdd tests for this case as well as repeated and non-repeated Editions string_view typed fields.\n\nPiperOrigin-RevId: 642264883\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8434c12d160fcf2f6adc572f4e94947fb57c82c3",
+            "message": "fix(bazel/python): incompatible_enable_proto_toolchain_resolution (#17078)\n\nThis was originally landed in https://github.com/bazelbuild/rules_python/pull/1577 However the fork of py_proto_library brought to the protobuf repo was from an earlier commit: https://github.com/protocolbuffers/protobuf/commit/8257c4469d065eac17b2e310e8e2086cc93f4505 (cl/623401031 for googlers)\nThus the fix was lost. This PR simply cherry-picks that change.\n\nCloses #17078\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17078 from alexeagle:py_proto_toolchain 226540ef3a1f1344bade0d50a4dba9d0196d0e7a\nPiperOrigin-RevId: 642123868\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4a5660c889ef9eb4161dded5c2e91c46f0c30924",
+            "message": "Automated rollback of commit 4dc164884ca80a546df6005d80ad6bb147f97382.\n\nPiperOrigin-RevId: 642058565\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ba8a9744f2e00fea2e95e808bb608557f5c1abad",
+            "message": "Upb C++ generator editions support.\n\nPiperOrigin-RevId: 642002041\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1cb534f3c0f8eab21d97ed8a5c58040918943ada",
+            "message": "Remove obsolete lint directive.\n\nPiperOrigin-RevId: 641979671\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c7b1ecd23aea88939d0e87efe7f2fd889ac40ce",
+            "message": "Replace FindHelper() with BucketNumber() when only the bucket number is required.\n\nPiperOrigin-RevId: 641931119\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1aae78549afb0b6e3d0e532e1c8895335b60eec3",
+            "message": "upb_cc_proto_library.bzl: replace body of _filter_none with list comprehension\n\nPiperOrigin-RevId: 641927931\n",
+            "tag_name": null
+        },
+        {
+            "hash": "54d8f03974c108ef8fd0f26568cd9eb086165568",
+            "message": "LSC: Move expensive variables on their last use to avoid copies.\n\nPiperOrigin-RevId: 641336948\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08a6c36f5ace9c5d41eaa3df6d718e3f7acdcf47",
+            "message": "Auto-generate files after cl/641170174\n",
+            "tag_name": null
+        },
+        {
+            "hash": "31ead248b8b469194d18d0027978872a4fcdee07",
+            "message": "Use a template to collapse the 5 different set_ and add_ methods for repeated string fields into one for each overload set.\n\nIn translation units relying heavily on protobufs, this leads to a reduction of around 1% of the number of nodes in the AST.\n\nPiperOrigin-RevId: 641170174\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3bcbd92da2dbdcc8a17b3e0827c997f476c5105",
+            "message": "Automated rollback of commit e207f27a35eafe3fb4ad2cb64db316f583d79a38.\n\nPiperOrigin-RevId: 641118810\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7dcae81096e7543890d92978f2263664bd0e9ade",
+            "message": "Add serialization test and parameterize tests to verify behavior in multiple versions of the protocol buffer language.\n\nNew serialization test will verify the amount of bytes it takes to serialize a message with a field of type INT32 set to different values.\n\nPiperOrigin-RevId: 641044189\n",
+            "tag_name": null
+        },
+        {
+            "hash": "851ca21f59a43257ef45836cc550bcef8a4eda0c",
+            "message": "Make sure the generated pool is initialized before building any other pools.\n\nBecause we parse options into the generated pool for *all* descriptor pool builds, it's important that it's properly initialized.  Notably, if the C++ feature extensions haven't been registered we can end up with crashes from files that specify them.\n\nPiperOrigin-RevId: 641043996\n",
+            "tag_name": null
+        },
+        {
+            "hash": "81c0ec381a34891c4e25dade6d3ad06448313546",
+            "message": "Avoid calling absl::InitializeLog in protoc with MSVC\n\nThe recent github runner image update changes the MSVC version, and InitializeLog now crashes in optimized builds.  Until Abseil works with MSVC, we can just log to stderr in protoc.\n\nPiperOrigin-RevId: 641024759\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3fe3459973a311677349906a013c461044b61f88",
+            "message": "Internal change\n\nPiperOrigin-RevId: 640943875\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3c140f96c9a7cb59f02289261c70c91bb9c009f",
+            "message": "Add Rust support to MODULE.bazel\n\nPiperOrigin-RevId: 640804047\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b2a6cdb910c00484931e3a7b21f77a4762f27b7d",
+            "message": "Auto-generate files after cl/640749918\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3dd89a457eb5c54b0cd8ae37ade9fc9337b91acd",
+            "message": "Automated rollback of commit 638ee8f6545eae9a7e65c48c6b60a83c88db605a.\n\nPiperOrigin-RevId: 640749918\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4dc164884ca80a546df6005d80ad6bb147f97382",
+            "message": "Automated rollback of commit e1bf1f048e783578bcbdaa4572ce3c93908b6494.\n\nPiperOrigin-RevId: 640697358\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f182da9a4fabdabde43b96bcccd9a88a16315d3",
+            "message": "Internal change\n\nPiperOrigin-RevId: 640649818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b690e729eb86d9f505d1c14692100bfc39809603",
+            "message": "Nextgen Proto Pythonic API: Timestamp/Duration assignment, creation and calculation\n\nTimestamp and Duration are now have more support with datetime and timedelta:\n- Allows assign python datetime to protobuf DateTime field in addition to current FromDatetime/ToDatetime (Note: will throw exceptions for the differences in supported ranges)\n- Allows assign python timedelta to protobuf Duration field in addition to current FromTimedelta/ToTimedelta\n- Calculation between Timestamp, Duration, datetime and timedelta will also be supported.\n\nexample usage:\n\nfrom datetime import datetime, timedelta\nfrom event_pb2 import Event\ne = Event(start_time=datetime(year=2112, month=2, day=3),\n          duration=timedelta(hours=10))\nduration = timedelta(hours=10))\nend_time = e.start_time + timedelta(hours=4)\ne.duration = end_time - e.start_time\nPiperOrigin-RevId: 640639168\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a450c9cad090e3e607099cb379c62050bf15eb5f",
+            "message": "Add rules_fuzzing dependency to MODULE.bazel.\n\nPiperOrigin-RevId: 640636275\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1bf1f048e783578bcbdaa4572ce3c93908b6494",
+            "message": "Update rules_python to 0.28.0\n\nCloses #15849\n\nPiperOrigin-RevId: 640633756\n",
+            "tag_name": null
+        },
+        {
+            "hash": "569184774e7975df726751777537aa24de102e02",
+            "message": "Auto-generate files after cl/640592937\n",
+            "tag_name": null
+        },
+        {
+            "hash": "638ee8f6545eae9a7e65c48c6b60a83c88db605a",
+            "message": "Generate one source file per message/enum/extension on Android/iOS.\n\nThe functionality is enabled when the `proto_one_output_per_message` option used by C++ Lite is enabled.\n\nThis mirrors the behavior of C++ lite protos.\n\nPiperOrigin-RevId: 640592937\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ec61d65a2322f4882a6039fbc2a1d17a4808970c",
+            "message": "Fix debug_test to work with C++ lite\n\nThis change adds a cfg attribute 'cpp_lite' to the C++ kernel of Protobuf Rust. If C++ lite is selected on the command line, the cfg attribute 'cpp_lite' is set. The root cause of the test failure was that the Debug implementation for full C++ protos uses  text proto which is not available in C++ lite. The fix uses the 'cpp_lite' cfg attribute to select a different Debug implementation that doesn't rely on text proto\n\nPiperOrigin-RevId: 640552701\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e207f27a35eafe3fb4ad2cb64db316f583d79a38",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 640527247\n",
+            "tag_name": null
+        },
+        {
+            "hash": "532f0c2ed52b60bc33492a2ee4cbf9c4ca960450",
+            "message": "Auto-generate files after cl/640369522\n",
+            "tag_name": null
+        },
+        {
+            "hash": "85c7cc24e0084a3beda37b848e7037f8f09c6850",
+            "message": "Add an indirection to sub-messages pointers to allow for static tree shaking.\n\nPiperOrigin-RevId: 640369522\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a1e78a52e610db390f30897bb635146f8e801aaa",
+            "message": "Deprecate Java ShortDebugString API in favor of emittingSingleLine printer option.\n\nPiperOrigin-RevId: 640293284\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d0081b352e1c457671ad5f84df8e7ecc704df2e",
+            "message": "Auto-generate files after cl/640267061\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3c0c5995c01550bdcc5278996c72323cb3af992",
+            "message": "Fix a bug in edition defaults calculation.\n\nSince the fixed/overridable split can occur whenever a feature is introduced or removed, we need to include those editions in the resulting compiled defaults.  This does bug only affects edition 2024 and later, where features may be removed or introduced in isolation.\n\nPiperOrigin-RevId: 640267061\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf7ac9f2f11e15c1a8f4b41428a75ad1c039a8fe",
+            "message": "Auto-generate files after cl/640196225\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b57c37414631f467b353926f1b54bd6ead16052f",
+            "message": "protos: Collapse ClearMessage template\n\nWe introduce Ptr removal so that our helper functions can be agnostically passed in a Ptr<T> or a T*.\n\nWe utilize SFINAE to determine if PtrOrRaw. If the target is const, or not in {T, T*, Ptr<T>}, the template will not match and be discarded (but still compile successfully).\n\nPiperOrigin-RevId: 640198851\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a1c99afd98e473781197a177c963778b4fb98455",
+            "message": "Introduced a generated extension registry using linker arrays.\n\nPiperOrigin-RevId: 640196225\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e595749c9c15a50d3f402cb66b2e7630f4f13ec6",
+            "message": "Reenable FFI tests on CRuby.\n\nPiperOrigin-RevId: 640188804\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3a0f59af1715686925af3acb3cc8266eaa3b969",
+            "message": "Remove temporary opt-in for extension support of weak descriptor messages.\n\nPiperOrigin-RevId: 640168936\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a70bcf575e37e024ef9cd62b2291a3cd7bfadd6",
+            "message": "Make real_containing_oneof friendly to the optimizer when we only care about\nnullness.\nIt can determine nullness by checking a single bit instead of several reads+conditionals+indirections.\n\nPiperOrigin-RevId: 640148444\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93d517e19940f3b39022c75eaab2289362dc6dfa",
+            "message": "Only generate the immediate forward declarations when generating one file per\nmessage.\nGenerating declarartions for all nested types is wasteful, and incorrect when\nsome nested type happens to refer to the parent type. The latter would create\ntwo declrations for the same symbol in the .pb.cc file.\n\nPiperOrigin-RevId: 640142695\n",
+            "tag_name": null
+        },
+        {
+            "hash": "85d6d513d894c6fa2b05b998e0fc30ac81eb5fd4",
+            "message": "Use SerializeWithCachedSizesToArray on Rust-cpp serialization path.\n\nPiperOrigin-RevId: 640137258\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c9978d4bda9ae43316a83e6a72a01acb2695720",
+            "message": "Mark owned Repeated & Map types as Send & Sync.\n\nPiperOrigin-RevId: 640063798\n",
+            "tag_name": null
+        },
+        {
+            "hash": "986ef8d80bb9432ec7c3a83f0988e2cc589d5cee",
+            "message": "Always report plugin support errors from protoc.\n\nIf a plugin doesn't support a feature used by a proto file, we can't trust any errors reported by that plugin.  We should always report these types of errors first.  There could be cases where the plugin doesn't correctly specify its support when it hits an error though, so we should *also* report any plugin errors to avoid masking them.\n\nPiperOrigin-RevId: 639984803\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1194440c2489fc58051a245b5db74c0fd1bbf4b0",
+            "message": "Remove `Arena_pin` in favor of adopting the UPB freezing API.\n\nPiperOrigin-RevId: 639960700\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5d40c4f43409bbcdf7ab2d24cbb4b1c363cfa7a0",
+            "message": "Avoid ODR violations from bootstrapped protos\n\nPiperOrigin-RevId: 639892103\n",
+            "tag_name": null
+        },
+        {
+            "hash": "475158ef6138612fdae0dbcb7608753d89196d1d",
+            "message": "Internal change\n\nPiperOrigin-RevId: 639885959\n",
+            "tag_name": null
+        },
+        {
+            "hash": "849396736c60b41999207473a80c9f14d11225f2",
+            "message": "Internal Change.\n\nPiperOrigin-RevId: 639779768\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2124e2687d7c7cced2f4d9e759701204aa113b4b",
+            "message": "Removed obsolete compatibility code from Bazel rules.\n\nPiperOrigin-RevId: 639040724\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5619d0cd3afde23242c09dce345c898913168d55",
+            "message": "Auto-generate files after cl/639033776\n",
+            "tag_name": null
+        },
+        {
+            "hash": "806be9de4df8d1081ad7a66d968670ac291942d4",
+            "message": "Initial working version of messages with a custom vtable, disabled by default.\n\nWhen enabled, all message instances inject their `ClassData` object into `MessageLite` to be stored there instead of the system generated vtable pointer. It replaces all virtual functions and destructor with alternatives using the custom vtable instead.\n\nWhen disabled, this CL has no effect. The ClassData class is unchanged, and all existing virtual functions remain as they currently are.\n\nUsing a custom vtable will allow us to control the ABI of the type, opening the door to more efficient operations.\n\nPiperOrigin-RevId: 639033776\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d0e79cf761bc1c8805ee978b45e6c41af708b05b",
+            "message": "Actually make Serialize fallible on Rust-cpp.\n\nPiperOrigin-RevId: 638998643\n",
+            "tag_name": null
+        },
+        {
+            "hash": "68da9337b4a77f12d1e1e68ebff78c30581ca598",
+            "message": "Remove 'assert_c_type_sizes' test\n\nThe test I am removing fails on 32-bit ARM, as pointers are 4-byte aligned. `upb_MessageValue` is a union. The alignment of a union is the max. alignment of any of its fields. Among the fields are 8-byte types like u64 and thus `upb_MessageValue` is 8-byte aligned even on 32-bit ARM. 4 != 8 and it fails.\n\nI am split on the usefulness of the test, as I find it somewhat unlikely to catch any divergence between the FFI and C types in the future. I can't imagine a practical scenario where upb_MessageValue would change in C code and this test would fail. IMO our actual unit & integration tests plus the IFTT lints are much better guards.\n\nWe could fix the test by testing the alignment of u64 instead of *const c_void, which is always 8 bytes on the hw platforms we care about.\n\nPiperOrigin-RevId: 638976482\n",
+            "tag_name": null
+        },
+        {
+            "hash": "efaaeba6a8bf5a5d822bf9820f649394aa815d52",
+            "message": "csharp: use span-based ToBase64 in ByteString (#16976)\n\nWith .NET 5+, a copy can be avoided when the memory is not an array.\n\nCloses #16976\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16976 from verdie-g:main fd4f5aeee43b50dc69a653b4cceaaaa09055f753\nPiperOrigin-RevId: 638968774\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c12c73212d40d212957db4893c4c2bf2a0e012b9",
+            "message": "Auto-generate files after cl/638902499\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35b34252c79d661fb1e9ceecdc6457295f28b9b1",
+            "message": "Stop supporting EDITION_PROTO2 as an alias for EDITION_LEGACY.\n\nPiperOrigin-RevId: 638902499\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fac847c5c5d85524fb27e8fb4a4205286bb7c44c",
+            "message": "Full java runtime: Avoid allocating ArrayList iterators when serializing UnknownFieldSet\n\nUse old-style for loop instead.\n\nThis should speed up processes that serialize many unknown fields, and reduce some GC pressure.\n\nPiperOrigin-RevId: 638889708\n",
+            "tag_name": null
+        },
+        {
+            "hash": "094565b9959c34a26bf8657294c80b99b9338b74",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 638888365\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae95fa330e42bb3d9fdd9ff597ec7a0d17dd9674",
+            "message": "Replace boxed boolean with primitive boolean\n\nAvoids having to call Boolean.booleanValue when passing to method.\n\nPiperOrigin-RevId: 638837295\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bd7078debcd40823ed29a0ab197435c82b248043",
+            "message": "Move back deprecation of java utf8 feature to 2024.\n\nThis doesn't change the support window of the feature, but will make edition 2023 slightly less noisy.\n\nPiperOrigin-RevId: 638750805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b126f9283d4284fde72089d80709bcff9345f8d",
+            "message": "Auto-generate files after cl/638713610\n",
+            "tag_name": null
+        },
+        {
+            "hash": "68d908768fc19a14ea2db39a24a8c04a23e29541",
+            "message": "Reparse unknown features using extension registry containing Java features.\n\nThis should not be needed for generated code, but may be needed for user calls to the public buildFrom method. FileDescriptorProto should really be parsed with java features in the extension registry (like other extensions), but we can handle this in Java runtime to ease editions adoption.\n\nPiperOrigin-RevId: 638715579\n",
+            "tag_name": null
+        },
+        {
+            "hash": "023e69d6ccf07cfa8ce6afa695f26008be08e476",
+            "message": "Update comment for message_type\n\nPiperOrigin-RevId: 638713610\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c1c275cc7d4c057a71e8d36f18004a116fadc5c6",
+            "message": "Auto-generate files after cl/638676816\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9e83842ce070afd2ac0b71974063292144b80cca",
+            "message": "Miscelaneous refactoring to prepare the code for the custom vtables changes.\nThis change has no effect in behavior, but makes future changes smaller.\n\n - Make `Message` and `MessageLite` constructors protected.\n - Make ClassData objects namespace scope globals instead of function scope. This will allow taking their address without calling a function.\n - Replace direct calls to `~MessageLite()` with a helper function.\n\nPiperOrigin-RevId: 638676816\n",
+            "tag_name": null
+        },
+        {
+            "hash": "092cc15f9d615850e7580a744deb316ad2175870",
+            "message": "Handle groups in C# JsonParser (#16970)\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16968\n\nCloses #16970\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16970 from CommonGuy:main b008e189348ea42659b52874a5aaad8857d696ab\nPiperOrigin-RevId: 638578696\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89c27bf011432b6f6d9c6ef9f75556c1b8080c7a",
+            "message": "Remove unused constructor argument GeneratedMessage.RealOneofAccessor.oneOfIndex\n\nPiperOrigin-RevId: 638505565\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4814bda38cd83d08beea3bf809d8c97b4a8e6219",
+            "message": "Automated rollback of commit 05e5107d98452f3c1db2737a3c72c8e54f7a4ba0.\n\nPiperOrigin-RevId: 638409590\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a9f0743ea8d82f489a65f7d087fa01d26ac5f56",
+            "message": "Nextgen Proto Pythonic API:  “Add-on” proto for length prefixed serialize/parse\n\nAdded the following methods:\nserialize_length_prefixed(message: Message, output: io.BytesIO) -> None\nparse_length_prefixed(message_class: Type[Message], input_bytes: io.BytesIO) -> Message\n\nThe output of serialize_length_prefixed should be BytesIO or custom buffered IO that data should be written to. The output stream must be buffered, e.g. using\n  https://docs.python.org/3/library/io.html#buffered-streams.\n\nPiperOrigin-RevId: 638375900\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fdc7f65849e6d3db46e0769958d9390538c12473",
+            "message": "Make serialization correctly be fallible in the Rust Protobuf API.\n\nThis doesn't _actually_ make the C++ Kernel path ever fail yet, but now that the API is a Result<SerializedData, SerializeError> it can be fixed as an implementation detail.\n\nPiperOrigin-RevId: 638329136\n",
+            "tag_name": null
+        },
+        {
+            "hash": "18da465815e609732b902d8cbc79d2d12e90686d",
+            "message": "Rename `DynamicCastToGenerated`/`DownCastToGenerated` to\n`DynamicCastMessage`/`DownCastMessage`.\nThe target does not necessarily need to be a generated type. For example, it\nalso supports `Message` itself. This makes the API friendlier to generic code and less verbose.\n\nReplace all uses of dynamic_cast/down_cast/**ToGenerated with the new names.\nAlso, remove checks for RTTI in tests where we only need the casts to work. They don't need RTTI anymore.\n\nPiperOrigin-RevId: 638278948\n",
+            "tag_name": null
+        },
+        {
+            "hash": "01ec3fab1f8293721830c8f4b73db31ad71b789a",
+            "message": "Accept MessageLite type instead of the Message type in SerializeMsg\n\nWe don't need any of the functionality provided by Message. This is a step towards building Rust protos with C++ lite.\n\nPiperOrigin-RevId: 638216968\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05e5107d98452f3c1db2737a3c72c8e54f7a4ba0",
+            "message": "Avoid allocating new ExtensionWriters when serializing messages with no extensions\n\nThis should speed up serializing Extendable Messages (messages with extension ranges declared in their schema) if those message instances have no extensions set inside them at runtime.\n\nPiperOrigin-RevId: 638087120\n",
+            "tag_name": null
+        },
+        {
+            "hash": "81041edfaea0f9ff7f724a0079542abd544f62e4",
+            "message": "Fix latent bug disallowing certain MessageSet extensions\n\nPiperOrigin-RevId: 638025707\n",
+            "tag_name": null
+        },
+        {
+            "hash": "666e347cd4e50ae2e00dab1270627bd5c6bc8cd0",
+            "message": "Auto-generate files after cl/637993561\n",
+            "tag_name": null
+        },
+        {
+            "hash": "433ca3e6a1252725894f941581814d282c7ad575",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 637993561\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2a07c57aa96967c86925b9706a9d1d6d887e8460",
+            "message": "Internal change\n\nPiperOrigin-RevId: 637965827\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6cce6221d4dd051179b1327760c96d3492274413",
+            "message": "Auto-generate files after cl/637932147\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0730adb1c1559ff595eff3c25008f3f606d89bd2",
+            "message": "rename upb_Message_WhichOneof to upb_Message_WhichOneofByDef\nand introduce upb_Message_WhichOneof that returns a minitable field without needing reflection\n\nPiperOrigin-RevId: 637932147\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ccadeac6ee527b8eef8d42a686ee5c732c44ebce",
+            "message": "Internal change\n\nPiperOrigin-RevId: 637931548\n",
+            "tag_name": null
+        },
+        {
+            "hash": "58c48fd66e173bdccfd263207ebcb993a9c50d5b",
+            "message": "Auto-generate files after cl/637127851\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f65108072bbedad2e590f038eb23b8ef2235c329",
+            "message": "Fixed printing of nan floats/doubles in Python.\n\nThe second assert in _upb_EncodeRoundTripFloat is raised if val is a nan. This fix just returns the output of first spnprintf.\n\nI am not sure how changes to this repo are made so feel free to ignore this CL.\n\nTo test this, you could\n1. Define a proto with a float field\nmessage Test {\n  float val = 1;\n}\n2. In a python script, import the library and then set the val to nan and try to print it.\nproto = Test(val=float('nan'))\nprint(proto)\n\nThis will cause a coredump due to assertion error:\n\nassert.h assertion failed at third_party/upb/upb/lex/round_trip.c:46 in void _upb_EncodeRoundTripFloat(float, char *, size_t): strtof(buf, NULL) == val\n\nAdded the corresponding change to double too\n\nPiperOrigin-RevId: 637127851\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee98ba2c18486938952a7748765f2e8e119e7fc4",
+            "message": "Remove unused constructor argument \"descriptor\" from GeneratedMessage.SingularFieldAccessor.ReflectionInvoker\n\nPiperOrigin-RevId: 636724038\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f16c59c5a86150dc511cb484574eb409b222475c",
+            "message": "Remove unused constructor argument \"descriptor\" from GeneratedMessage.RepeatedFieldAccessor.ReflectionInvoker\n\nPiperOrigin-RevId: 636723040\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5fa9c35315101336c8b9613527751f607d7e756f",
+            "message": "Auto-generate files after cl/636584465\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dffec0c7d66a6b67aa090338df2c78993fb63d6d",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 636584465\n",
+            "tag_name": null
+        },
+        {
+            "hash": "046a07eeade392bef3045deec77116b86ed1a322",
+            "message": "Fix a rare crash from feature lifetime validation.\n\nThis is only reproducible for protos that trigger the lazy build of another proto in the pool that needs feature lifetimes validated.  If an error is encountered, we'll end up throwing the lazy build's descriptors into the deferred validation map, but then rolling it back with the original proto.  This results in a use-after-free crash.\n\nPiperOrigin-RevId: 636324975\n",
+            "tag_name": null
+        },
+        {
+            "hash": "911fa984bceed97525362f2b1ccea4363f4be1ab",
+            "message": "Add benchmarks for Protobuf Rust that demonstrate the overhead of the Rust implementations.\n\nPiperOrigin-RevId: 636190227\n",
+            "tag_name": null
+        },
+        {
+            "hash": "16e0a63077bbfe889b7150543c5f176e0f637682",
+            "message": "Remove field SmallSortedMap.maxArraySize\n\nIt's always set to 16 in production code.\n\nExcept for when it's set to 0 for the immutable empty SmallSortedMap, but the number doesn't change anything for that immutable empty map (it's always empty, it will never hit the max).\n\nThis should save 4 bytes of memory per SmallSortedMap.\n\nPiperOrigin-RevId: 636035193\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c05be324da89b9fbdf3ef7adc26fb541a7352e98",
+            "message": "Delete unused method SmallSortedSet.getOverflowEntriesDescending\n\nPiperOrigin-RevId: 636034500\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3ba72807a675424ccee05648f6baaf43c2bc339b",
+            "message": "Avoid allocating FieldSet iterator if FieldSet is empty\n\nThis saves some allocations during writing out messages with extensions declared in the common case of empty FieldSet.\n\nPiperOrigin-RevId: 636031501\n",
+            "tag_name": null
+        },
+        {
+            "hash": "590e5aafee7db40c6d60197f5c18166dd70d4b54",
+            "message": "internal changes to plugin\n\nPiperOrigin-RevId: 635990609\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2e9c0a7eceaed7c428f72fbd7ccf0307737ea343",
+            "message": "Auto-generate files after cl/635956805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e237f72bc4a10d8694de62580c27780fdefe13c5",
+            "message": "Future-proof edition 2023 against feature value support windows.\n\nThis \"feature\" hasn't been implemented yet, but this puts a placeholder down to prevent compatibility issues in future editions.  Once we provide versioning support on individual feature values, we don't want them becoming usable from edition 2023 protos\n\nPiperOrigin-RevId: 635956805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b94e117faab7e0feb5c5e92b2bb7c9d1e16f2c5a",
+            "message": "Port C++20 Requires to it's C++17 equivalent for reuse across protos\n\nPiperOrigin-RevId: 635894605\n",
+            "tag_name": null
+        },
+        {
+            "hash": "696b5a35548f5897b0365d0d5f17f042662d626b",
+            "message": "Use lower_with_under for Python nextgen tests\n\nPiperOrigin-RevId: 635661121\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2bc285b5ec059d4271c28f3b459636b32e5c9ce",
+            "message": "Auto-generate files after cl/635615643\n",
+            "tag_name": null
+        },
+        {
+            "hash": "44c409d211900f153a4bbafbaca474401ddec4e9",
+            "message": "Mark deleted fields in descriptor.proto reserved\n\nCLOSES #16885\n\nPiperOrigin-RevId: 635615643\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8203e2f8940412cd29341af1465c635446c3f769",
+            "message": "Auto-generate files after cl/635530952\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5fb5b871dc9e9d9119374121b7cb4576a057470b",
+            "message": "Remove spurious 'return' in a void function of another void.\n\nPiperOrigin-RevId: 635530952\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa4bab26e48f2384844d328abe49f70ab5d85a36",
+            "message": "Internal changes/optimizations\n\nPiperOrigin-RevId: 635516715\n",
+            "tag_name": null
+        },
+        {
+            "hash": "858a2ab52f34c32ba82b65488874528cdd3a7f8f",
+            "message": "Fix warning about a bool==uint64 check.\n\nPiperOrigin-RevId: 635512395\n",
+            "tag_name": null
+        },
+        {
+            "hash": "01b0b8e06e18be3d2f0166ee818c723c27901b18",
+            "message": "Added a new public API `bytesUntilLimit` to GPBCodedInputStream.\n\nThis simply exposes preexisting logic. This read-only API is for convenience and doesn't reveal any information that was not already available. `[GPBCodedInputStream position]` is already a public API. The `limit` is known to the user because it's specified by them.\n\nPiperOrigin-RevId: 635502694\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47f4bc958bc719b905942738470718f03ca70b33",
+            "message": "Fix Ruby FFI to pass `MiniTable` to `upb_Message_New()` aka `new_message_from_def()`.\n\nPiperOrigin-RevId: 635226405\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f8208031a07ec384dd9f86e41a92fd715e88e37",
+            "message": "Test if a tag with unknown wire type (0x6 or 0x7) causes parsing failures.\n\nPiperOrigin-RevId: 634878920\n",
+            "tag_name": null
+        },
+        {
+            "hash": "11c27dfa4b4dd2f79b722897bc04a297c2a35c26",
+            "message": "Lazily resolve features for proto2 and proto3 for compatibility with old open source gencode that does not invoke feature resolution from gencode static init.\n\nPiperOrigin-RevId: 634804242\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5dfdd85d34493dcade706fc8ca39ddd83444d665",
+            "message": "Auto-generate files after cl/634787159\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5b8e90f4041e7e643aae47b8d1c1fb98e7250c6a",
+            "message": "Refactor the way we turn on the optimization in StrongPointer.\nSome versions of gcc seem to advertise __cpp_nontype_template_args but not\nsupport the argument in some cases.\nOnly attempt the template parameter if we are using the optimized .reloc\napproach.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16868\n\nPiperOrigin-RevId: 634787159\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f3242c576504459621fd7d78bbccf39bfaa49c5",
+            "message": "Fix ClangTidy warnings\n\n- Call std::string::insert to insert a character.\n- Use assignment instead of CopyFrom.\n\nPiperOrigin-RevId: 634610391\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a521e6e1524d94a392c2503140ad2f071edebba9",
+            "message": "Internal chanegs\n\nPiperOrigin-RevId: 634600978\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34c843d6718cbf3fbbb7294e71ae520e1f51b0c6",
+            "message": "[7392] [cpp] Remove dead code path for map key of type enum in JSON parsing (#16567)\n\n# Changes\n\nRemove dead code path -- we don't allow enums to be map keys ([proto2 spec](https://protobuf.dev/programming-guides/proto2/#maps), [proto3 spec](https://protobuf.dev/programming-guides/proto3/#maps)). In other words the case block `case FieldDescriptor::TYPE_ENUM` is dead code. Potential enum type keys will be caught in `default: return lex.Invalid(\"unsupported map key type\");` block below similar to other unsupported map key types like double.\n\n# Motivation\n\nWhile working on fixing `IgnoreUnknownEnumStringValueInMap` conformance tests for cpp ([related issue](https://github.com/protocolbuffers/protobuf/issues/7392)) I stumbled upon a bug where we pass the wrong `field` parameter to the enum parsing function.\n\nIn this scope:\n* the variable `field` is a map field of the message that holds the map. This field is not of enum type, it's a repeated message of map entires.\n* the variable `key_field` is the key field of the map message entry. This field is the enum type that we need to parse here.\n\nThe function is long, so I clarified it here:\n\n```cpp\ntemplate <typename Traits>\nabsl::Status ParseMap(JsonLexer& lex, Field<Traits> field, Msg<Traits>& msg) {\n  (..)\n  return lex.VisitObject(\n      [&](LocationWith<MaybeOwnedString>& key) -> absl::Status {\n          (..)\n          return Traits::NewMsg(\n            field, msg,\n            [&](const Desc<Traits>& type, Msg<Traits>& entry) -> absl::Status {\n              auto key_field = Traits::KeyField(type);\n              switch (Traits::FieldType(key_field)) {\n                (..)\n                case FieldDescriptor::TYPE_ENUM: {\n                  MaybeOwnedString key_str = key.value;\n                  auto e = ParseEnumFromStr<Traits>(lex, key_str, /** bug here **/ field);\n```\n\nThe correct reference should be `key_field`.\n\nInstead of fixing the bug and leaving the dead code, it's better to remove the dead block alltogether.\n\nCloses #16567\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16567 from noom:anton--7392--fix-map-key-nit d992b8a2a6c999cdf1559ede9fbf723e15644b30\nPiperOrigin-RevId: 634516984\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24b91a7fec2fae2ee633c6bd2600ec2ebbe72f3f",
+            "message": "Prohibit using features in the same file they're defined in.\n\nThis is an edge case we can't handle properly today.  Rather than allowing poorly defined behavior, we'll make this an error condition until we can actually support it.  In the future, it may be necessary to upgrade feature files to newer editions.\n\nCloses #16756\n\nPiperOrigin-RevId: 634512378\n",
+            "tag_name": null
+        },
+        {
+            "hash": "baeab50df02ce0c7b5926f0263ea8857871e91de",
+            "message": "Automated rollback of commit ec126a5069fbb81a857e41c8b2cfbe71ace35993.\n\nPiperOrigin-RevId: 634496540\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eca477a0f134727e251ba00f6359d1cf00a8615d",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 634495582\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6c91de9de94e02f7b7e69bad1245f62035574429",
+            "message": "Nextgen Proto Pythonic API:  “Add-on” proto for JSON serialize/parse\n- add google.protobuf.proto_json module\n- wrap json_format's MessageToDict/ParseDict to the new module:\n\ndef serialize(\n    message: Message,\n    always_print_fields_with_no_presence: bool=False,\n    preserving_proto_field_name: bool=False,\n    use_integers_for_enums: bool=False,\n    descriptor_pool: Optional[DescriptorPool]=None,\n    float_precision: int=None,\n) -> dict\n\ndef parse(\n    message_class: Type[Message],\n    js_dict: dict,\n    ignore_unknown_fields: bool=False,\n    descriptor_pool: Optional[DescriptorPool]=None,\n    max_recursion_depth: int=100\n) -> Message\n\nPiperOrigin-RevId: 634490919\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69a26b217d16fddba7458aabec35d552582440f8",
+            "message": "Use the name of the rust_proto_library as the crate name\n\nPiperOrigin-RevId: 634414403\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c6cbaaeeee843edc382dae4c642484ed3ac9f9b7",
+            "message": "Devirtualize CheckTypeAndMergeFrom and use the existing function from\nClassData.\nThis removes a virtual function and reduces binary size.\n\nPiperOrigin-RevId: 634413330\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0645439efa3abea494521f23b42bdb5d23deb752",
+            "message": "Introduce upb_EncodeStatus_String and upb_DecodeStatus_String\n\nWrapper languages can now use these helpers to get human-friendly\nerror codes as opposed to manually re-mapping.\n\nPiperOrigin-RevId: 634112262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e71c811a3a6c6229fa87cd56aa5b71b4e185c654",
+            "message": "Extract crate name mangling function\n\nPiperOrigin-RevId: 634055637\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24751b405a34786b89bd2cb4cec65e3b803043aa",
+            "message": "Add legacy Java TextFormat APIs\n\nPiperOrigin-RevId: 634047851\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca995da26337a44e409484591b770d9a1e32e759",
+            "message": "Reduce the cost of CheckTypeAndMergeFrom in LITE_RUNTIME objects when icf is\nenabled.\nDownCastToGenerated injects the strong reference to T, which makes all instances of CheckTypeAndMergeFrom unique and not candidates for identical code folding.\nThe strong reference is not needed here in the member function.\n\nPiperOrigin-RevId: 634033477\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a2e4be010a54166e4150c38a489616de8e87e11",
+            "message": "Added C# unit tests verifying current UTF-8 behavior.\n\nPiperOrigin-RevId: 634029739\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a8cb5833aa7c4d3e9824f1c2b398dcb4b0bea6ee",
+            "message": "Verify rust_proto_library name\n\nPiperOrigin-RevId: 634006714\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3574af23979374fb50ebc39e89458033dca69d67",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 634000296\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cfea7596c14e44f97f6c4ca3a78e2981b629981f",
+            "message": "Remove dead VTableName function.\n\nPiperOrigin-RevId: 633999639\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5fdef5bfce20e036f54d4871ef204887e9ef17bf",
+            "message": "Remove obsolete msgmut::or_default()\n\nPiperOrigin-RevId: 633997832\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05781615a13d521279823c7eb2b5799c8765c7c9",
+            "message": "Internal changes/optimizations\n\nPiperOrigin-RevId: 633982805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f40411caf070c2848281a507529e4f5506dc22d",
+            "message": "fix unneeded mut in enum gencode\n\nPiperOrigin-RevId: 633955047\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b9a81a0429276e24195064d8733117a25a87148",
+            "message": "Add extension declarations for known features.\n\nThis will prevent users from accidentally overriding these with different types (e.g. https://github.com/protocolbuffers/protobuf/issues/16757 and https://github.com/protocolbuffers/protobuf/issues/16756).\n\nPiperOrigin-RevId: 633760581\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df630fa6f15c4b6581d6e8c24b76be420c8367ef",
+            "message": "MODULE.bazel fixes for protobuf BCR release.\n\n- Specifies bazel version for presubmits\n- Set C++14 version (default is c++11 otherwise, which is unsupported)\n- Update MODULE.bazel version + updater since publish-to-bcr can't handle constants and adds a duplicate version number\n\nPiperOrigin-RevId: 633729225\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b463ac0483881d508a199d9853657e01c98c424",
+            "message": "Make the underlying type of the enum by 8-bits instead of using bitfields for\nit.\nIt silences a warning in gcc 8/9.\n\nPiperOrigin-RevId: 633719795\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dde03553c92867184ff5d351b7f087c052f39459",
+            "message": "Internal change\n\nPiperOrigin-RevId: 633679764\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bb68eb22dde9fbefc0413b7c3f836b03d062df4c",
+            "message": "Implement new Debug API with redaction.\nImplement emittingSingleLine TextFormat printer option.\n\nPiperOrigin-RevId: 633672722\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a9170701e874b69245dabbd428200cfa4e6f458",
+            "message": "internal change\n\nPiperOrigin-RevId: 633669104\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c6e2778f9173ed925746197310f4d11e5f46df96",
+            "message": "Replace SmallSortedMap.EmptySet with equivalent Collections.emptySet()\n\nThis reduces our code weight by a little (3 classes).\n\nCollections.emptySet also has a singleton empty iterator, so it doesn't allocate.\n\nPiperOrigin-RevId: 633667264\n",
+            "tag_name": null
+        },
+        {
+            "hash": "396d6617674622bf9be4b73088f2f17e9f6eb374",
+            "message": "Add support for setting extensions with Ptr<Extension> in Upb C++ protos.\n\nPiperOrigin-RevId: 633646216\n",
+            "tag_name": null
+        },
+        {
+            "hash": "448e326200a69afd83ae86e44dcddb612f007763",
+            "message": "Use bool HasHasbits(const FieldDescriptor*) instead of manual checks.\n\nIt is not sufficient to check schema_.HasHasbits() followed by naively skipping\nrepeated and oneof fields as that can miss proto3 messages with message fields\nand other scalar fields without \"optional\" keyword.\n\nUse internal::cpp::HasHasbits(const FieldDescriptor*) instead.\n\nPiperOrigin-RevId: 633633184\n",
+            "tag_name": null
+        },
+        {
+            "hash": "30a40eefe5955c1f108376b7b97ba79be9fa6aa8",
+            "message": "Fixed broken link in upb README.md (#16717)\n\nI noticed this link was broken.  I'm not familiar with the project, but the code in https://github.com/protocolbuffers/protobuf/tree/main/upb/python does appear to import upb headers, so I think it's the right URL.\n\nCloses #16717\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16717 from pbatg:patch-1 c9e654308dac1cf29958ebfc5d50cb5e5260d520\nPiperOrigin-RevId: 633589882\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2238cdc091ed7e8a5079d480611fdf37d8bfb22c",
+            "message": "Add impl Clone for Rust proto owned messages.\n\nPiperOrigin-RevId: 633265290\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7f23b700fe301df7f12b5aa5b111dab010d56d07",
+            "message": "Introduce new API DownCastToMessage/DynamicCastToMessage as a replacement for down_cast/dynamic_cast from MessageLite to Message.\nThe new functions work even when RTTI is not present.\n\nAlso, add an assertion in DownCast to make sure we don't use it for message types. Message types have dedicated cast functions that should be used instead.\n\nPiperOrigin-RevId: 633236522\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fad47367859a9d9b6b9548a43f221b1e0db52fea",
+            "message": "Auto-generate files after cl/633224191\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce026abf92d0862c645c449fa91c2138058d3e21",
+            "message": "Work around windows path length limitations by moving immutable -> full in open source (new generator paths) and shortening long file names.\n\nRe-enable windows bazel test.\n\nPiperOrigin-RevId: 633224191\n",
+            "tag_name": null
+        },
+        {
+            "hash": "904266db57c146c165f4907f4ecf4c6f9a2cf696",
+            "message": "inline repeated field methods\n\nPiperOrigin-RevId: 633199701\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f2d8c2bdd86f34b953c7bae9075daa7648025d3c",
+            "message": "Add a reserve method on ProxiedInRepeated\n\nPiperOrigin-RevId: 633179853\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7a866a9ead95176fa5022fe3d00ff2a69b8b993",
+            "message": "Make IntArrayList consistent with other primitive array lists, using code generator\n\nPiperOrigin-RevId: 633042614\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ddc70b0ebfedca40f5ff8f287074ce9a8db27c72",
+            "message": "Auto-generate files after cl/632663127\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2aa5fb483c53c18c00501a0e960ed4d14a90e44",
+            "message": "Prevent find_package failure if multiple versions are installed (#16654)\n\nThe generated `protobuf-config-version.cmake` sets the `Protobuf_WITH_ZLIB`, `Protobuf_MSVC_STATIC_RUNTIME` and `Protobuf_BUILD_SHARED_LIBS` unconditionally while executing the `_check_and_save_build_option(...)` macro.\n\nIf there are several **Protobuf** installations available the original code may lead to failure. An example with two installations:\n+ A system deployed installation with version `3.12.4`.\n+ A repo's thirdparty with version `3.19.4`\nThe user wants it's project to use the thirdparty one by doing:\n```cmake\n        find_package(Protobuf 3.19.4 CONFIG REQUIRED PATHS path/to/thirdparty)\n```\nThe user is not setting the `Protobuf_XXX` variables in its `CMakeLitsts.txt`.\nIf the first config processed is the system deployed it sets the variables to its desired variables, for example, `Protobuf_WITH_ZLIB=OFF` but is discarded due to the non-matched version.\nThen the thirdparty's config is processed but is discarded because requires `Protobuf_WITH_ZLIB=ON` which is not a real requirement and makes the find operation fail (despite of matching version).\n\nCloses #16654\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16654 from MiguelBarro:fix/cmake-config 119dd25ecb09946afbdb33519b22d2454e196251\nPiperOrigin-RevId: 632664341\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f93565c20cefead85c782f3ad8c51dd0bfc482a3",
+            "message": "upb: publish and start using the new non-universal setters out in the wild\n\nPiperOrigin-RevId: 632663127\n",
+            "tag_name": null
+        },
+        {
+            "hash": "be99767a69e3754c38852a19b611715dac28f85b",
+            "message": "Clear repository cache between bazel runs\n\nPiperOrigin-RevId: 632621361\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e7fdab4a2c822481c04d470593f0bf193f701649",
+            "message": "Add Nextgen python proto_test to github\n\nPiperOrigin-RevId: 632595087\n",
+            "tag_name": null
+        },
+        {
+            "hash": "39986c099b2b28da9f407bdb70e76f24bb07c97b",
+            "message": "Auto-generate files after cl/632535021\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24d42eacec4088319c9261e58fb1e7b04b5d0634",
+            "message": "Add a BUILD file under rust/accessors and rename helpers.h to default_value.h\n\nPiperOrigin-RevId: 632535021\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c99cf4bbfaf71f735cd0dea7d6fc0b2c1a589ed2",
+            "message": "Add `java` to reserved names to escape extensions to `java_`. This may break existing references to gencode for extensions named `java`.\n\nThis prevents shadowing of `java.lang` package commonly used in protobuf gencode. Existing extensions named `java` may or may not previously fail to compile depending on if the contents of their .proto result in gencode using `java.lang`. This is needed to fix `java_features.proto` lite gencode since enum gencode uses `java.lang`. Fields named `java` should already be escaped.\n\n*Warning: This may break user code for existing protos with extensions named `java`. References to the extension should be renamed to use `java_` e.g. registry.add(GeneratedClassName.java_)*\n\nPiperOrigin-RevId: 632508249\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91b7cf3325d6832409f17be86bb2ce282af95293",
+            "message": "Fix indention formatter for google.protobuf.Any (#16785)\n\n`google.protobuf.Any` formatting with indentation was somewhat off.\n\nFormatting an `Any` as root object:\n```json\n{\"@type\": \"type.googleapis.com/protobuf_unittest3.ForeignMessage\",\n\"c\": 1\n}\n```\nchanges to\n```json\n{\n  \"@type\": \"type.googleapis.com/protobuf_unittest3.ForeignMessage\",\n  \"c\": 1\n}\n```\n\nFor messages were `Any` is in a nested field the change makes more of a visual impact.\nThe `c` field seems to be at the same level as the `anyField`, but it's nested so it should be indented:\n```json\n{\n  \"anyField\": {\"@type\": \"type.googleapis.com/protobuf_unittest3.ForeignMessage\",\n  \"c\": 1\n  }\n}\n```\nchanges to:\n```json\n{\n  \"anyField\": {\n    \"@type\": \"type.googleapis.com/protobuf_unittest3.ForeignMessage\",\n    \"c\": 1\n  }\n}\n```\n\nCloses #16785\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16785 from q42jaap:main 72deed6ed774c3206b5a4e925d7c58c114cb2537\nPiperOrigin-RevId: 632506226\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b7c2d43818a71e0c6975fcf3a1f1e0f1533ce3c",
+            "message": "Avoid allocating TreeMap in UnknownFieldSet.Builder.asMap\n\nIf UnknownFieldSet is empty\n\nPiperOrigin-RevId: 632504647\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c6e5b79636673435c9a8afe51dd2ffe4a2c7f4b",
+            "message": "Avoid allocating iterator in TextFormat printing UnknownFieldSet\n\nPiperOrigin-RevId: 632503842\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc80135f10ca2ad6f307d4a2165cdaa112d68555",
+            "message": "Auto-generate files after cl/632314763\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d071c608780d3fa890b191aafb8aa2d4f8634973",
+            "message": "Break out idx in upb_MiniTableSub computation for clarity\n\nPiperOrigin-RevId: 632314763\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fefec687536234a46f96d0c6e209dabceaf18466",
+            "message": "Internal changes/optimizations\n\nPiperOrigin-RevId: 632294209\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af1ecc03531461900c1c9b8499aa64f5900bca27",
+            "message": "Add a check to ensure that the byte limit is not negative.\n\nPiperOrigin-RevId: 632284538\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb31de309782c94ac887aa7325630b6d5da1a623",
+            "message": "Auto-generate files after cl/632277936\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b5fc2735e956be3dfb03de55fd25cd98b398ba51",
+            "message": "In `upb_MiniTableExtension_GetSubMessage`, return NULL for non-messages.\n\nThis parallels the logic in `upb_MiniTable_SubMessage`.\n\nPiperOrigin-RevId: 632277936\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a91d6fe5e3fbe667eed9b27ed4d8293efb0cf56",
+            "message": "[php] Added a unit test that bad UTF-8 is rejected in the parser.\n\nPiperOrigin-RevId: 632274113\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b51dc1b438485e6b147c6b874d1859f1e9ea7da3",
+            "message": "Auto-generate files after cl/632267379\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62457336552669c6a4f1403112f4d58c45998cb3",
+            "message": "upb: remove the unused (upb_MiniTable*) arg from upb_Message_SetMessage()\n\nPiperOrigin-RevId: 632267379\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f68350225f52b81a0511e7ed114894c8dd31e9a5",
+            "message": "Move system_python.bzl to the correct open source folder\n\nPiperOrigin-RevId: 632265705\n",
+            "tag_name": null
+        },
+        {
+            "hash": "495ba7bcdbd806306f0dfab128b2081c17fd66fd",
+            "message": "Nextgen Proto Pythonic API:  “Add-on” proto for serialize/parse\n- add google.protobuf.proto module\n- wrap generated SerializeToString and ParseFromString to the new module:\n\ndef serialize(message: Message, deterministic: bool=None) -> bytes:\n        \"\"\"Return the serialized proto.\"\"\"\ndef parse(message_class: typing.Type[Message], payload: bytes) -> Message:\n        \"\"\"Given a serialized proto, deserialize it into a Message.\"\"\"\n\nPiperOrigin-RevId: 632223409\n",
+            "tag_name": null
+        },
+        {
+            "hash": "82e83ddc95330bbd988ba874ea5aa37d343d4490",
+            "message": "wire_format.cc: Refactor Message and Group handling into a helper func\n\nPiperOrigin-RevId: 632191495\n",
+            "tag_name": null
+        },
+        {
+            "hash": "510c1434ed16dadeeb64a3b841c9ada96e273573",
+            "message": "Add `null` to the list of reserved words.\n\nThe previous change claimed to do this in addition to `true` and `false`, but it was not actually in the code.\n\nTo reiterate the text from the earlier change, now actually reflected entirely in the code:\n\n> The identifiers `true`, `false`, and `null` are effectively reserved words in Java, although for some reason they are listed separately from the \"keywords\" in the Java Language Specification.\n>\n> This doesn't matter for regular fields, because a proto field called `true` will be accessed with `getTrue` and `setTrue`. But for extensions, the generated Java code will have a public static field whose name is the same as the name of the extension field, with `_` appended if the name is a reserved word. Previously there was no `_` for `true` etc, so the generated code would not compile.\n\nThis change should not affect any existing client code in Java. If someone had tried to use an extension called `true` (etc), they would have found that the generated proto code did not compile. Now it is possible to reference such an extension as `true_`.\n\nPiperOrigin-RevId: 632174190\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbc2baf5bdba18854fe2dacd63fcfe519c169b9b",
+            "message": "Generate extension and k[FieldName]FieldNumber as constexpr int(s).\n\nPiperOrigin-RevId: 632173946\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13caa08692d522df8812b1c6f6a88c70105d3941",
+            "message": "Enable textproto conformance tests for \"-0\" and \"-0F\".\n\n-0 should be treated as distinct from 0 when deciding it is default valued for implicit presence fields.\n\nPiperOrigin-RevId: 632162352\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b06cefe337f73ca8c78c855c02f15caf6210c9b",
+            "message": "Move casting functions to MessageLite and use ClassData as the uniqueness\ninstead of Reflection. This allows using these functions instead of\n`dynamic_cast` for all generated types including LITE.\n\nPiperOrigin-RevId: 632135009\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7febb4c48ff4c22e0b78b84706bf325f4e92838b",
+            "message": "Move upb/bazel/system_python.bzl (new alias file) to correct open source directory.\n\nPiperOrigin-RevId: 631958564\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b694cfa4414c817ab12b7e593044ff92572c2e63",
+            "message": "Clarify that the input to proto2::DynamicMessageFactory::GetPrototype should be non-null\n\nPiperOrigin-RevId: 631938646\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ec126a5069fbb81a857e41c8b2cfbe71ace35993",
+            "message": "Replace the single user of `PROTOBUF_ALIGNAS` with `alignas` and remove the now\ndead macro.\nThis reduces the compile time cost of port_def.inc\n\nPiperOrigin-RevId: 631886181\n",
+            "tag_name": null
+        },
+        {
+            "hash": "64580b29c1dfdd580052a01a5ccd3fb1c0a22f5c",
+            "message": "Expose JavaPackageDirectory and FileClassName in java/names.h\n\nPiperOrigin-RevId: 631870244\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d5b7d7a87f55b18f1d5d3117bdc1aefc2526508b",
+            "message": "Remove dead feature macro.\nThe opt-out code was removed some time ago.\n\nPiperOrigin-RevId: 631826723\n",
+            "tag_name": null
+        },
+        {
+            "hash": "01744cccae57ca934ab925e13d2eaaf93761b1f4",
+            "message": "chore(php): conformance testing for edition (#16712)\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16712 from bshaffer:php-editions a1c41add7d7cc6ea716af5f4e83f30cd78b80e22\nPiperOrigin-RevId: 631824623\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b77343aa2c6e81d81d5c8c627ab8ef8856fac2f5",
+            "message": "Add temporary alias for system_python.bzl at previous location .\n\nThis was added to protobuf_deps.bzl in cl/629786458 and no longer needs to be specified directly in WORKSPACE. However, an alias is needed to prevent users from breaking when upgrading from 26.x -> 27.x due to the obsolete load pointing to the wrong path.\n\nThis alias will be removed in a future release, tentatively 4.30.x.\n\nPiperOrigin-RevId: 631821637\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d8329b68e457f5c2227cbcd05a13aed9f69a1c85",
+            "message": "Add .to_owned(&self)->Msg functions to MsgMut and MsgView\n\nPiperOrigin-RevId: 631686314\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6afb130dca7e4f26d584c8f17f5b3e99a40f5d7f",
+            "message": "Auto-generate files after cl/631620526\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d9238962999a66655ea73cd11b7cd4025c051932",
+            "message": "upb: implement most of the non-universal setters\n\nPiperOrigin-RevId: 631620526\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4d3a98c27ec327cdc94861c52aeea7fa41d1547c",
+            "message": "Auto-generate files after cl/631612923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "65821a67d60c62ea8ec69a5d76d68da3d775b2da",
+            "message": "upb: finish cleaning up message/accessors.h and message/internal/accessors.h\n\nPiperOrigin-RevId: 631612923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "98d5bdd1117c0bc1541cf6d5de7b28d00a333c4f",
+            "message": "Add \"reserved literals\" to the list of reserved names for Java.\n\nThe identifiers `true`, `false`, and `null` are effectively reserved words in Java, although for some reason they are listed separately from the \"keywords\" in the Java Language Specification.\n\nThis doesn't matter for regular fields, because a proto field called `true` will be accessed with `getTrue` and `setTrue`. But for extensions, the generated Java code will have a public static field whose name is the same as the name of the extension field, with `_` appended if the name is a reserved word. Previously there was no `_` for `true` etc, so the generated code would not compile.\n\nPiperOrigin-RevId: 631599695\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5632d8e616bb96cb783868136e3f5f6e352ce8f0",
+            "message": "Replace macro with constexpr function to reduce compile time cost of\nport_def.inc usage.\n\nPiperOrigin-RevId: 631545753\n",
+            "tag_name": null
+        },
+        {
+            "hash": "94cf1e9446d265453c8b72a352c6c926a1eea25f",
+            "message": "Add 27.x to staleness check\n\nPiperOrigin-RevId: 631532649\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12af9ade1d166683acdb5a07740122564d3a69f6",
+            "message": "Add simple conformance test that builds the old gencode against the current runtime.\n\nPiperOrigin-RevId: 631486123\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae17e81e42b77f9f6757361c3309a41448577fca",
+            "message": "Auto-generate files after cl/631454136\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ccda4d2b536f9dfa0fa746954bc152f28c29a1a",
+            "message": "Add upb_Message_ClearOneof (and retain upb_Message_WhichOneofFieldNumber)\n\nupb users currently need to manually fetch a oneof field in order to clear it.\nIn this CL, we add a convenience method to do that in one fell swoop.\n\nPiperOrigin-RevId: 631454136\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d45016a93fcfad975abeefbc457888a60c113d15",
+            "message": "Internal changes to versions\n\nPiperOrigin-RevId: 631435235\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5584c934bf6ea873d8d96ce462896a3573401d2a",
+            "message": "Update AbstractMessageLite.addAll so that it won't throw when input is a LazyStringArrayList with byte[] elements.\n\nAccidentally run into an error when I'm doing protoA.addAllFieldA(protoB.getMutableFieldAList())\n\nPiperOrigin-RevId: 631257710\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c56bddd7074d3c62c94ca494e2e9983dbc98da6d",
+            "message": "Add UnknownFieldSet.isEmpty\n\nAllows callers to check if field set is empty without cloning the map\n\nPiperOrigin-RevId: 631237925\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9de810acdc6e7e2bcac03d207632c0b9443596ea",
+            "message": "use struct instead of ctype. allows the protobuf python library to work on cpython 3.11's new wasm target [1]\nFor https://github.com/protocolbuffers/protobuf/pull/12212\n\nPiperOrigin-RevId: 631237602\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d0b016fcfcd00a0e48d006f06868b8fb9876974a",
+            "message": "Java full runtime: Avoid allocating when calling asMap on empty UnknownFieldSet\n\nPiperOrigin-RevId: 631235442\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f5979918571af01751afa40d9c41cb6070f56f99",
+            "message": "Return the default instance when parsing from an empty byte[].\n\nPiperOrigin-RevId: 631213831\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55592a28e74e0eeabf89c3fd056ec0d81068a9a2",
+            "message": "Fix #10007: Propagate msvc-style link flags to clang-cl with Bazel\n\nThe idea here is to set the existing config \"config_msvc\" not only\nwhen \"msvc-cl\" is specified but also when \"clang-cl\" is specified.\n\nKeep in mind that clang-cl support in protobuf remains to be only\nbest-effort and untested for now.\n\nPiperOrigin-RevId: 631195504\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4c8da99c4865bc7e07ec629c2d1ad32ac576554b",
+            "message": "Deprecate building from source with Maven to be removed in 4.28.x.\n\nMost users should use the *pre-built* artifacts, or should build from source with Bazel instead.\n\nPiperOrigin-RevId: 631187695\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f70d90b4743dd9eed05e5bf33ef7196a99894e29",
+            "message": "Put arena cleanup nodes on a separate chunked list instead of at the ends of arena blocks.\n\nThe motivation is (a) better data locality during SerialArena::CleanupList and (b) simplification of arena layout.\n\nPiperOrigin-RevId: 631173641\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24f27c3b88708a735968688d34aa02a28f403866",
+            "message": "Nextgen Proto Pythonic API: Add 'in' operator\n(Second attempt. The first attempt missed ListValue)\n\nThe “in” operator will be consistent with HasField but a little different with Proto Plus.\n\nThe detail behavior of “in” operator in Nextgen\n\n* For WKT Struct (to be consist with old Struct behavior):\n    -Raise TypeError if not pass a string\n    -Check if the key is in the struct.fields\n\n* For WKT ListValue (to be consist with old behavior):\n    -Check if the key is in the list_value.values\n\n* For other messages:\n    -Raise ValueError if not pass a string\n    -Raise ValueError if the string is not a field\n    -For Oneof: Check any field under the oneof is set\n    -For has-presence field: check if set\n    -For non-has-presence field (include repeated fields): raise ValueError\n\nPiperOrigin-RevId: 631143378\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e949bba22a3b9fe4280ec924d61e98a65c884c94",
+            "message": "Clean up port_def.inc by inlining BSWAP macros that are only used once.\n\nPiperOrigin-RevId: 631130592\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e03c1ce3493318565b376999391fee4259846f03",
+            "message": "In SerialArenaChunk, (a) avoid recomputing offset of ids/arenas on each element access in constructor, (b) add a no-arg Layout() function for convenience, (c) fix an incorrect construction type in `new (&arena(i)) std::atomic<void*>`, where std::atomic<void*> should be std::atomic<SerialArena*>.\n\nPiperOrigin-RevId: 631125248\n",
+            "tag_name": null
+        },
+        {
+            "hash": "51cba7ce170cf5ed88cc408ff7aa4b35aa0dd3b5",
+            "message": "Auto-generate files after cl/631023575\n",
+            "tag_name": null
+        },
+        {
+            "hash": "18306666b902274dfad3cca47e69c4bddbead9e3",
+            "message": "upb: clean up the UPB_TRACING_ENABLED code\n\nPiperOrigin-RevId: 631023575\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b6e0a48b02ecc8ad3240009502886fbf8d1c5279",
+            "message": "Implement `IntoProxied` for repeated field setters\n\nWe modify set_<repeated_field> to accept the IntoProxied type as the value and move the value (avoid copying) whenever possible.\n\nFor UPB:\n - We fuse the arena of Repeated<T> with the parent message arena.\n - We use upb_Message_SetBaseField to set the upb_Array contained in the Repeated<T>.\n\nFor C++:\n - We generate an additional setter thunk that moves the value.\n - The move assignment operator of RepeatedField/RepeatedPtrField is specialized. In order to adhere to the layering check we need to add '#include' statements for all .proto imports to the generated thunks.pb.cc.\n\nPiperOrigin-RevId: 631010333\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2f6e7055952eeff2fef2f29edb092c97e7949793",
+            "message": "Auto-generate files after cl/630517509\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a2e6625e2d43296a39f5a992503b402a6da8211",
+            "message": "Add copyright notice to test protos\n\nPiperOrigin-RevId: 630517509\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7646fbfebd39b403f3c45540a510f15d1d6d05ef",
+            "message": "Auto-generate files after cl/630466865\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa70a3576b579d5481f9bb996b86ee6bbb8847b4",
+            "message": "upb: clean up message/accessors.h and message/internal/accessors.h\n\nPiperOrigin-RevId: 630466865\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a91d76bb8a0d07c479f1dc8dd3e032c632755149",
+            "message": "Internal changes to extension declarations.\n\nPiperOrigin-RevId: 630448683\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ae3d81052a11abc4f164ec488250ca18f1f5640",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 630431165\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7b3682fcf24e825b3eddbed309c3ace5ddfcaa2e",
+            "message": "Pin the rev of googletest to the GitHub main branch\n\nPiperOrigin-RevId: 630417312\n",
+            "tag_name": null
+        },
+        {
+            "hash": "353b4e003183d88e1e95776046c463461d59f6db",
+            "message": "Ensure overflow values for float/double map to inf/-inf.\n\nPiperOrigin-RevId: 630393984\n",
+            "tag_name": null
+        },
+        {
+            "hash": "733b9c54e9ce720bb2ba77e980778616da45479d",
+            "message": "Implement `is_known` method on the `Enum` trait\n\nThis is equivalent to C++'s `_IsValid` functions. Since proto3 enums are open,\n`is_known` seems to be a better name than the misleading `is_valid`.\n\nC++-specific Protocol Buffers documentation already uses \"known fields\" and\n\"unknown enum values\" expressions.\n\nPiperOrigin-RevId: 630344180\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d9ff109888b60a37de1c4f69cea023f89886e86b",
+            "message": "internal change\n\nPiperOrigin-RevId: 630273635\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f12891b87a99ecabdc1e1039d0587094e9b57cd",
+            "message": "Java full runtime: Avoid allocating iterator if UnknownFieldSet's TreeMap is empty\n\nI also considered using Collections.emptyNavigableMap(), which I thought might\nuse a specialized allocation free empty iterator, but it allocates, and its\nclone() method isn't nicely exposed.\n\nPiperOrigin-RevId: 630234849\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc79f776dcb09164e7a0b6c11951679244a7828b",
+            "message": "Proto java full runtime: avoid allocating Integers accessing enum lists\n\nPreviously, we would allocate a boxed Integer when accessing repeated enums, because we used ArrayList<Integer>, which must box the int.\n\nUse IntArrayList and the primitive \"int getInt()\" method instead.\n\nPiperOrigin-RevId: 630229119\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d6c283321e7b2e159a6b300522b3d9f850e7de40",
+            "message": "Fix validation checks of implicit presence.\n\nInstead of checking the resolved features, we should really be checking the has_presence helper.  Repeated fields, oneofs, and extensions can trigger these conditions when they inherit IMPLICIT, even though it's ignored.\n\nCloses #16664\n\nPiperOrigin-RevId: 630206208\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0dbd99a41db54a1adcfdc0946e9b8b724739a6e5",
+            "message": "Clarify map behaviors in editions.\n\nMap fields should remain length-prefixed for now, even if DELIMITED is inherited.  Field presence will remain unchanged, but unit-tests are added to make sure proto2/proto3 behaviors stay consistent.\n\nCloses #16549\n\nPiperOrigin-RevId: 630191163\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9340eec4224a8ea050f3b75060e961996c1aba5b",
+            "message": "Auto-generate files after cl/630099889\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2257232676e60f1d06f8c9545c88d1a73a3a8f54",
+            "message": "Split bootstrapped java_features.proto to keep it from leaking out.\n\nThis can cause ODR violations in downstream users who link against both the bootstrapped proto and transitive C++ gencode of java_features.proto.  Once protoc is split up, we can turn the bootstrapped proto into a real cc_proto_library target and avoid this problem altogether.\n\nPiperOrigin-RevId: 630099889\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3b2fc52a4aec2dc9711c8235cbcdb71d4c10295",
+            "message": "Auto-generate files after cl/630090538\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c9eeb1c8a73f64fbdd7189c2aeaff6272f423e5d",
+            "message": "Internal changes.\n\nPiperOrigin-RevId: 630090538\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05afdc2f0afbc7f1412ef3384f898f45e419d21a",
+            "message": "Auto-generate files after cl/629808114\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4f4f8ef650c5934f6ed3bdaf996973c953aeef3",
+            "message": "Automated rollback of commit 7a09c4569bec008504bca3eb0201f0e75863a1fc.\n\nPiperOrigin-RevId: 629808114\n",
+            "tag_name": null
+        },
+        {
+            "hash": "39a1c6a46e6921577cab24440fb16e7a1e903f63",
+            "message": "In the Kotlin DSL, reference builder methods with property syntax.\n\nInstead of _builder.getFoo() and _builder.setFoo(value), the generated code now uses _builder.foo and _builder.foo = value. When compiling against the Java Proto API, this makes no difference, since the Kotlin compiler treats Java methods getFoo/setFoo as defining a Kotlin property foo. But if a compatible proto API is implemented in Kotlin then there is no such equivalence. Such an implementation would have to define either both forms or just the one that the DSL uses. For a Kotlin API it is more natural to use properties.\n\nSimilarly, the generated Java methods getFoosList(), getFoosCount(), getFoosMap(), and getEnumValue() are accessed via property names (foosList, foosCount, foosMap, enumValue).\n\n(This is the second application of this change. The first had to be rolled back because it didn't handle conflict-resolution names correctly.)\n\nPiperOrigin-RevId: 629807104\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f23cafa0209c0f0048002b7c0c18ff2b928a327",
+            "message": "Cancel in-progress workflow runs for pull requests and dispatches (#16601)\n\nThis will reduce unnecessary resource consumption by cancelling running workflows when new commits are pushed to a PR or workflow dispatch. It does not cancel pushes to main or branches.\n\nCloses #16601\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16601 from sethvargo:sethvargo/actions-concurrency 82fd070dbad88920501f0f4452f93b687adc3120\nPiperOrigin-RevId: 629805311\n",
+            "tag_name": null
+        },
+        {
+            "hash": "990380bc553a43ffe264f3ee7ee7048a983d8909",
+            "message": "Auto-generate files after cl/629782904\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a11178606ce85d9e561729328795471fe8a6de5",
+            "message": "Add system_python to protobuf_deps.bzl.\n\nThese are needed to get python headers for Python C++ and Python UPB from local system python\n\nPiperOrigin-RevId: 629786458\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7a09c4569bec008504bca3eb0201f0e75863a1fc",
+            "message": "Add upb_Message_ClearOneof\n\nupb users currently need to manually fetch a oneof field in order to clear it.\nIn this CL, we add a convenience method to do that in one fell swoop.\n\nPiperOrigin-RevId: 629782904\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4bf83b534e9736fe31e1f8ad6f640e316836ba5",
+            "message": "Automated rollback of commit f799af8bf5c1ff24fa4b6aedfeaef99ef09dd16e.\n\nPiperOrigin-RevId: 629760811\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c8e0e6b925aa58c58ba0e71a6f596224afa7c74",
+            "message": "generated_message_tctable_impl typo fix: registeer -> register\n\nPiperOrigin-RevId: 629745603\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7c37b2d2a19e0599949588b992e4bbdaba9b29c0",
+            "message": "Add text format conformance tests for field separators.\n\nPiperOrigin-RevId: 629727312\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a45e0d83abe1b9620c91c8044535236774af3556",
+            "message": "Change `FieldDescriptor::type()` to not have the call_once behavior.\nThe field is always set while building the descriptor, even for lazy descriptors.\nThe `type()` function is called extensively in reflection based code and\nremoving the call_once has significant performance impact.\n\nPiperOrigin-RevId: 629723749\n",
+            "tag_name": null
+        },
+        {
+            "hash": "26cf1cb94caeacfe0e4d0852307d8ca6d3a31ee3",
+            "message": "Add more floating point cases to the validations.\n\nUsing https://protobuf.dev/reference/protobuf/textformat-spec\nas a guide; add valid suffixes, more cases for special values,\nconfirm some invalid things do fail.\n\nAlso resort the files since some weren't and sorting seems to be required for the\nupdate helper.\n\nPiperOrigin-RevId: 629720194\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4cbb7b8540eec77dbe6360d6b70c822f01bed815",
+            "message": "Duplicate the integer tests using octal and hex.\n\nPiperOrigin-RevId: 629715987\n",
+            "tag_name": null
+        },
+        {
+            "hash": "15c07711d0165b9012b397ffe411bd7bcac65d89",
+            "message": "Auto-generate files after cl/629701038\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12a828c7005e1225eaf32afb7f9236e03dcbcc44",
+            "message": "Add UPB_ASSUME(!IsExtension) on GetMutableMessage.\n\nThis function is UB to call on an extension field.\n\nPiperOrigin-RevId: 629701038\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fb054c8e4141b0fe50c33d237a6650d98a412de8",
+            "message": "Java Proto lite: avoid boxing Integers accessing enum lists\n\nProvide a specialization for ListAdapter that avoids boxing ints into Integers.\n\nUse this for repeated enum accessors.\n\nIn practice, the ints for most enums will fit into the JDK's \"boxed int cache\", avoiding extra allocations. For large enum numbers, they won't fit, and would allocate. Removing the boxing should also slightly speed up code.\n\nPiperOrigin-RevId: 629583247\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1559c8efdcfc2d66edfd10b02022ecd737534b9",
+            "message": "Fix typo `s/a the/the/`.\n\nPiperOrigin-RevId: 629522997\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf1d7664fbe5a84dd15cf857416f40cb5188995b",
+            "message": "Refactor ThreadSafeArena Reset/destructor to avoid overhead of tracking space allocated in the destructor.\n\nPiperOrigin-RevId: 629442152\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c246484d3809c5aa0c637992ea710b7071d98b4",
+            "message": "Add editions-specific required fields to the required fields allow-list.\n\nPiperOrigin-RevId: 629433997\n",
+            "tag_name": null
+        },
+        {
+            "hash": "54e2553abe6cefae9158f7e3f590b60a858bfd71",
+            "message": "Auto-generate files after cl/629424223\n",
+            "tag_name": null
+        },
+        {
+            "hash": "52c12a6f92d743fcf0b212e84dc60dff91152c2d",
+            "message": "Automated rollback of commit 208cae7fd7fdfc7fef6eddded07c2c7431bf0d8f.\n\nPiperOrigin-RevId: 629424223\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d56d69a40a4a13e1132be0ced546d0eed6ad2ad",
+            "message": "Add ascopes/protobuf-maven-plugin to third_party.md (#16656)\n\nThis PR adds my project at https://github.com/ascopes/protobuf-maven-plugin to the thirdparty README.\n\nCLA signed in previous contributions to other Google projects on GitHub.\n\nCloses #16656\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16656 from ascopes:patch-1 6f8b43aa0dd4da5a7bbf93460acd4094499aed2d\nPiperOrigin-RevId: 629411565\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c24e7529eb7a709285a5e61d8d05a347576de7c6",
+            "message": "Automated rollback of commit e9c9970eb4ac488d9fb94e8dea6945d3881c405d.\n\nPiperOrigin-RevId: 629405086\n",
+            "tag_name": null
+        },
+        {
+            "hash": "959903d1991a3989b03bdca9502472af30afe905",
+            "message": "Remove the now unused vtable types. In particular,\n * SettableValue\n * ProxiedWithPresence\n * FieldEntry\n\nPiperOrigin-RevId: 629363417\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e181855abef398e61b4c65a37658d3a7527d0de0",
+            "message": "Implement flat setters for map and repeated fields.\n\nThis doesn't yet use the new IntoProxied trait, but is functionaly equivalent with MutProxy::set() and always copies.\n\nPiperOrigin-RevId: 629358666\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6d33efeefe5232a4f598c3f8223c56743912a21c",
+            "message": "Auto-generate files after cl/629226391\n",
+            "tag_name": null
+        },
+        {
+            "hash": "208cae7fd7fdfc7fef6eddded07c2c7431bf0d8f",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 629226391\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e9c9970eb4ac488d9fb94e8dea6945d3881c405d",
+            "message": "In the Kotlin DSL, reference builder methods with property syntax.\n\nInstead of `_builder.getFoo()` and `_builder.setFoo(value)`, the generated code now uses `_builder.foo` and `_builder.foo = value`. When compiling against the Java Proto API, this makes no difference, since the Kotlin compiler treats Java methods `getFoo`/`setFoo` as defining a Kotlin property `foo`. But if a compatible proto API is implemented in Kotlin then there is no such equivalence. Such an implementation would have to define either both forms or just the one that the DSL uses. For a Kotlin API it is more natural to use properties.\n\nSimilarly, the generated Java methods `getFoosList()`, `getFoosCount()`, `getFoosMap()`, and `getEnumValue()` are accessed via property names (`foosList`, `foosCount`, `foosMap`, `enumValue`).\n\nPiperOrigin-RevId: 629220383\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f2e1ad315212eccb9cb457a8ff75c7579dcf964c",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 629161453\n",
+            "tag_name": null
+        },
+        {
+            "hash": "501067aa8095022bb69c9cafbcffc433caad09ba",
+            "message": "Expose `MiniDescriptorEncode` for `FieldDefPtr`.\n\nWe already expose equivalent methods for `MessageDefPtr` and `EnumDefPtr`.\n\nPiperOrigin-RevId: 629150393\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b7a145df95315e5a83098c662b79eeea8a5fb9d3",
+            "message": "Implement _mut() accessors for messages without FieldEntry\n\nPiperOrigin-RevId: 629041337\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9ed22055e42c8d5c7ca013e0217ff38e428c117",
+            "message": "Remove MutProxied for bytes/string fields.\n\nThis change then also makes the BytesMut/ProtoStrMut types unused. It removes them and related code.\n\nPiperOrigin-RevId: 629023886\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1980e025eb315ed6c8d1c0ba2c5653022d889189",
+            "message": "Remove PrimitiveMut and related vtable types\n\nThe last callside that used PrimitiveMut was in our enums code. This change makes it so that enums nolonger implement MutProxied and thus no longer need the PrimitiveMut type.\n\nPiperOrigin-RevId: 629017282\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a84c9c0374c912e21fecdaa298bb2cd29b19741",
+            "message": "Remove gencode that uses vtables for string/bytes field accessors\n\nIt's now unused.\n\nPiperOrigin-RevId: 629000604\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d76fdc56bb2e9eb6005d09e5adb5518e2d67f2d7",
+            "message": "Implement IntoProxied for messages\n\nPiperOrigin-RevId: 628992357\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1d0028dddad380489fe1c93c8dd25cf25dbc5688",
+            "message": "Fix unused warnings in Rust Proto\n\nPiperOrigin-RevId: 628973552\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de6aba9f639ced3dce03310121aa69c914eb7b0e",
+            "message": "Java Proto Lite: Serialize repeated enums without allocating\n\nSerialize repeated enums without allocating\n\nPiperOrigin-RevId: 628915124\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3e7a0077418cd9cb9b820c0197c3b8edb7007dd",
+            "message": "Add unit test enum showing allocation in repeated enum lists\n\nTestPackedTypes' field is unused, it's just there to make the messages symmetric between packed and unpacked versions.\n\nPiperOrigin-RevId: 628913968\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea4c77ca48711d5583796ca1f0efc2917c19b29f",
+            "message": "upb: implement .mergeFromBuffer() on GeneratedMessage in Dart\n\nPiperOrigin-RevId: 628455567\n",
+            "tag_name": null
+        },
+        {
+            "hash": "93bd4bb0122688aa7da8727bd61154e5cc730c38",
+            "message": "Ensure that the rust_proto_library is in the same package as proto_library\n\nPiperOrigin-RevId: 628308230\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62f2b143d529c3d899bda4c91fce12da0fdeabd7",
+            "message": "Change the arena.hpp ::Fuse return type to bool to surface whether the fuse failed.\n\nPiperOrigin-RevId: 628161481\n",
+            "tag_name": null
+        },
+        {
+            "hash": "419824d26bb7a579b672aeb107770626bc883d13",
+            "message": "Remove obsolete logic related to cc_proto_library\n\nPiperOrigin-RevId: 628151973\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08c7b1ca92df7f56e2296eb3dcedc742636173f2",
+            "message": "Auto-generate files after cl/628095780\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e0fc56659694cefa1cd96e8b867db7520fc5eaa0",
+            "message": "Ensure the appropriate upb functions taking non-const pointers assert that the message is not frozen.\n\nFixes message/promote.c and internal/extension.c.\n\nPiperOrigin-RevId: 628095780\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7a1c926ef38b040fff86f4fb80d066c28ffea0c3",
+            "message": "upb: begin to delete the old Dart v2 plugin code\n\nPiperOrigin-RevId: 628090572\n",
+            "tag_name": null
+        },
+        {
+            "hash": "047fc7673eb2a7373f7ad8f5b094de201d737b36",
+            "message": "Introduce `MessageDescriptor.IsMapType` in C# reflection to make it easier to tell whether a given message was generated by protoc for a map field.\n\nPiperOrigin-RevId: 628087118\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ea682d1eea5489717588341a126d368da5fbe17",
+            "message": "Add a TODO to use Layout::WithStaticSizes in SerialArenaChunk when we update the abseil release.\n\nPiperOrigin-RevId: 628073678\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dcc5db4c567a7cca31c3797e2644443e9921ba5d",
+            "message": "Implement Arena::fuse()\n\nPiperOrigin-RevId: 627983487\n",
+            "tag_name": null
+        },
+        {
+            "hash": "59d8afde6b580d3824e8d52a8bdfbbf45949552b",
+            "message": "Use the main/proper proto_common\n\nPiperOrigin-RevId: 627833411\n",
+            "tag_name": null
+        },
+        {
+            "hash": "734729afc2ace9dc33e41b91a34fd16bb53594d9",
+            "message": "Create the concept of 'owned data' in upb/rust as a generalization of the upb.rs SerializedData (which is a arena + data for arbitrary types, both thin and wide ref types), use that for the wire parse/serialize path.\n\nPiperOrigin-RevId: 627814154\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef020875349635ba2bdefe4ef294dcee54500766",
+            "message": "Auto-generate files after cl/627794151\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9cc5be12edd35ed51949427316fe4dbae2709852",
+            "message": "Catch all the exceptions in python JSON ParseDict and raise\njson_format.ParseError\n\nPiperOrigin-RevId: 627794381\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8be1312b3c1da1960d2ec7181a253b1819b3e842",
+            "message": "upb: fix Dart empty imports\n\nPiperOrigin-RevId: 627794151\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55875598f734797804da23c499ba79ca242ef59d",
+            "message": "Add a collision-avoidance behavior to the Rust Proto codegen.\n\nThe intent is to avoid codegen issues for simple cases where a message of the shape:\nmessage M {\n   int32 x = 3\n   string set_x = 8;\n}\n\nWhich would otherwise break due to the first field having a setter whose name collides with the second field's getter.\n\nBy seeing that 'set_x' matches another field with a common accessor prefixed, it will generate all accessors for that field as though it was named `set_x_8`.\n\nThis does not avoid all possible collisions, but should mitigate the vast majority of situations of an accidental collision.\n\nPiperOrigin-RevId: 627776907\n",
+            "tag_name": null
+        },
+        {
+            "hash": "849b975e5fce3d181aea692b412826f48c38e087",
+            "message": "Temporarily use AsRef<{ProtoStr, [u8]}> for string/bytes accessors\n\nThis change removes the only remaining instance of SettableValue in a generated accessor. The principled fix is to implement IntoProxied for ProtoStr/[u8], but this will have to wait until we have agreed on & implemented the 1.0 string types. So we'll use AsRef in the meantime in order to not break any user code while allowing us to make progress on IntoProxied and Proxied changes.\n\nPiperOrigin-RevId: 627735404\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a7ce6106115d0ff1c2b82a1a9a10d6603a2c2a1",
+            "message": "Split Proxied into Proxied and MutProxied traits.\n\nProxied is not marked as Sized yet, because ProtoStr is still dynamically sized. We will wait for clarity for the string types before marking Proxied Sized.\n\nPiperOrigin-RevId: 627707544\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c16decbcee58f0ad3c9ca4ac722e02ac22b4bf7",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 627582199\n",
+            "tag_name": null
+        },
+        {
+            "hash": "322d4d44588f25df15ddd0782c463e195c2a577a",
+            "message": "Auto-generate files after cl/627531912\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5b5db6666e79198bea8915300c40a90d27795b48",
+            "message": "Check IsFrozen for internal/message.c and reflection/message.c\n\nPiperOrigin-RevId: 627531912\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0e223312edcc61592e8bc9cebf536fe8211e7445",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 627518025\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bd9f211f9712c97a442735b5709a795ed2bab662",
+            "message": "Remove IsFrozen checks from upb/conformance\n\nPiperOrigin-RevId: 627492449\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ad2ccb058575df47e918b8cb7b7a6cc9ded6aba",
+            "message": "Auto-generate files after cl/627468915\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bceb7f597ffd45a7c8c7c19205d24c58b6690930",
+            "message": "Check IsFrozen for message/copy.c, experimental_jspb/decode.c, and json/decode.c\n\nPiperOrigin-RevId: 627468915\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0e3650c29c562864243b616535a24d57b7a1ddb7",
+            "message": "Add IsFrozen checks to conformance_upb and upb_js\n\nPiperOrigin-RevId: 627419894\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c03e9351c57081d0dffae120ed37497017f105c",
+            "message": "protoc: support inf, -inf, nan, and -nan in option values (#15017)\n\nThe parser already supports these values for the special \"default\" field option. But, inconsistently, does not support them for other options whose type is float or double. This addresses that inconsistency.\n\nFixes #15010.\n\nCloses #15017\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/15017 from jhump:jh/inf-and-nan-in-option-values 1f8217c4bd0706b145a716c3db4a026b04f5a7ba\nPiperOrigin-RevId: 627399259\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f2da7817cb115de05da7fa108375fde2970de49",
+            "message": "Auto-generate files after cl/627393634\n",
+            "tag_name": null
+        },
+        {
+            "hash": "335edb909f2f0922843b112fec229d3684e0c435",
+            "message": "update decode_fast.c to assert that non-const messages are not frozen\n\nPiperOrigin-RevId: 627393634\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b50ff60967b595765244d22945aed184cafee68a",
+            "message": "C#: Fix discovery of oneof declarations in descriptor protos.\n\nPiperOrigin-RevId: 627384633\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b618f6750aed641a23d5f26fbbaf654668846d24",
+            "message": "Auto-generate files after cl/627204923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9e0480768ee011180412a391010823474667ded",
+            "message": "Use Emit for ByteSizeLong\n\nPiperOrigin-RevId: 627204923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a7aa2c4e8b896cedb649b001cba333d60b3ed00",
+            "message": "Internal changes.\n\nPiperOrigin-RevId: 627188953\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eaee04d89719ed8e0fde96b6d37cf741d866f511",
+            "message": "Avoid boxing when serializing primitive lists in CodedOutputStreamWriter\n\nPreviously, these List.get methods returned Object, forcing boxing, and (if not in the primitive's box cache) allocation, with all the cost that entails.\n\nI've taken the approach of duplicating methods to specialise for primitives, like BinaryWriter does for non-lite protos.\n\nI initially considered checking the class of the list on every iteration of the\nloop, but that feels wasteful, when we can\ncheck it once at the start of the loop. This also means we have the same\nbehaviour as serverside protos. At the cost of a few more methods, but\nhopefully they're trivially inlineable, so hopefully leading to a small dex increase without really increasing the method count.\n\nGiven this is a public API, I don't think we can remove the List<Long> overloads either.\n\nPiperOrigin-RevId: 627183583\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1cf09abcff7636101fd27e94ea5aa7b9f603f5e",
+            "message": "Auto-generate files after cl/626485595\n",
+            "tag_name": null
+        },
+        {
+            "hash": "37e484a0aa89b2d54b182c093adff9a2b8358c81",
+            "message": "Replace direct access to MiniTable subs with calls to the encapsulated functions.\n\nPiperOrigin-RevId: 626485595\n",
+            "tag_name": null
+        },
+        {
+            "hash": "971f88aa636b5f996775cc37394bc717f17ca0b3",
+            "message": "Improve C++, Python, Java runtime version representations to avoid merge conflicts during release.\n\nPiperOrigin-RevId: 626480269\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c413b1231c679fa16dcbe6d14b648ebb63f627d1",
+            "message": "Change upb::Arena to be Send (but still not Sync)\n\nPiperOrigin-RevId: 626409752\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e98423c4032a42d4e6effce85d070bf27d64ff0e",
+            "message": "Auto-generate files after cl/626402666\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eeeb985a1bad97631acb547d857333e8fe89a42a",
+            "message": "Use absl::bit_cast to implicitly check presence of float and double.\n\nPiperOrigin-RevId: 626402666\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b28d9d41446ee25540f3767c002437a23beb0a9e",
+            "message": "Migrate bazel tests to protobuf-ci.\n\nThis will allow them to reuse our bazelrc and remote caching setup.  This also silences the non-bzlmod windows test that's hitting the windows path length.\n\nPiperOrigin-RevId: 626390416\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0cda26d48db0241f6aca0e931ff0a31acea1a6c2",
+            "message": "Move the windows path length workarounds out of protobuf-ci\n\nPiperOrigin-RevId: 626148009\n",
+            "tag_name": null
+        },
+        {
+            "hash": "97022a9c836351df485d12b586005641ae2c508c",
+            "message": "Move xcode setup out of protobuf-ci\n\nPiperOrigin-RevId: 626140997\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8bace9999894c0cea4f80b813694a0d7b890f3e8",
+            "message": "Publishes \"Editions: Group Migration Issues\" to GitHub.\n\nPiperOrigin-RevId: 626131189\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2be4364e4c6804a0891e603058d95bf811adf843",
+            "message": "C#: Remove TODO, replacing it with an explanation.\n\nPiperOrigin-RevId: 626125905\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ffd5c1b92bb73faafc17fe611f728fca3b013560",
+            "message": "Fix CMake shared library build using utf8_range and utf8_valid (#14867)\n\nInstead of hardcoding static libraries, allow using the BUILD_SHARED_LIBS behaviour to allow the build of shared utf8 libraries.\n\nCloses #14867\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/14867 from Chekov2k:main 971562ba471443b93685ab9fa21a3c25ea2e2672\nPiperOrigin-RevId: 626125210\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4bd664b07cbc821906069203b633335eaae2b6d",
+            "message": "Rust: fix proto! msgtype matcher to look for :: separated idents instead of a ty to avoid syntax errors during parse\n\nPiperOrigin-RevId: 626093074\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a2d4a4af2c9727f39aba0d0f4051a487e79f440e",
+            "message": "proto! doc comment and copyright\n\nPiperOrigin-RevId: 626092060\n",
+            "tag_name": null
+        },
+        {
+            "hash": "95877d85691e30fab092a8b070548286aa64da7e",
+            "message": "Updating version.json and repo version numbers to: 28-dev (#16555)\n\nCloses #16555\n\nPiperOrigin-RevId: 626081638\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca9877c59977f93aa35693fe554c6ab5b964ba79",
+            "message": "Auto-generate files after cl/626057584\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8e3e09937e1514323cad74b000450c6bd65c04e7",
+            "message": "Refactored the Java generator into separate packages and targets.\n\nPiperOrigin-RevId: 626057584\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1d6fdc1342bcfa3d1a13fb066ec43d56e17699b9",
+            "message": "Infer string type feature from ctype pre-editions.\n\nThis will allow internal code to simply check the feature value instead of checking both ctype and string_type.\n\nPiperOrigin-RevId: 625897380\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89118ba9d4ffb1359ea162e87bbfea50e383fff5",
+            "message": "Fix bazel cache issues in 7.0.0\n\nWe're seeing a high flake rate due to remote cache-misses only on Bazel 7 builds.  The key change here seems to be adding the remote_download_output flag, but this also upgrades us to 7.1.1 and adds some retry behavior to caching issues.\n\nPiperOrigin-RevId: 625892332\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa8dbaec865508e85a24e71aa652dd9a30ada657",
+            "message": "Merge pull request #17510 from protocolbuffers/cherrypick-ruby-utf8\n\n[Ruby] Warn if assigning a \"UTF-8\" string with invalid UTF-8. (#17253)",
+            "tag_name": null
+        },
+        {
+            "hash": "fe9a53cb5184772f4160103233b65bd17e817d53",
+            "message": "[Ruby] Warn if assigning a \"UTF-8\" string with invalid UTF-8. (#17253)\n\nThis is a warning now, but will be an error in the next version.\n\nPiperOrigin-RevId: 653236128\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d5c7293de96551cbd898c27361bee6fefa0952c",
+            "message": "Merge pull request #17787 from thomasvl/patch_objc_to_28\n\nCherryPick the lastest work for Objective-C over the the 28 branch",
+            "tag_name": null
+        },
+        {
+            "hash": "9f6ee72443312821874e1e0ed532014ddbf91f4f",
+            "message": "[ObjC] Deprecate GPBUnknownFieldSet and related apis.\n\nGPBUnknownFields will be going away in the next major release of the ObjC\nProtobuf runtime. Code should be updated to make use of GPBUnknownFields\ninstead.\n\nPiperOrigin-RevId: 659963056\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e822dce56d2ee8caee08897520aaae5d48bb1fea",
+            "message": "[ObjC] More tests around unknown to known failure cases.\n\nPiperOrigin-RevId: 659715244\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a6ebe4b1c50c5ab1b32f8e55c0a98797a565ecc",
+            "message": "Merge pull request #17919 from protocolbuffers/28.x-202408221734\n\nMerge release commits to 28.x",
+            "tag_name": null
+        },
+        {
+            "hash": "09ba2bb826c9fafa0f0f49af9cc52d6ce1a5fcdb",
+            "message": "Updating version.json and repo version numbers to: 28.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e340f52e461bf2726acb9fd1e0c88a88762aaf87",
+            "message": "Updating version.json and repo version numbers to: 28.0-rc3\n",
+            "tag_name": null
+        }
+    ]
+}

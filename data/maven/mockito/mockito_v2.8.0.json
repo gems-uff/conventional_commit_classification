@@ -1,0 +1,138 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.0",
+    "previous_release": "v2.6.0",
+    "cycle_days": 89.70695601851853,
+    "commits": 25,
+    "commits_in_advance": 0,
+    "start_delay": 78.71401620370371,
+    "duration": 10.992939814814815,
+    "commits_info": [
+        {
+            "hash": "76cd29eb7cf361a53a912b7aea42c56fb1603db3",
+            "message": "Bumped version and updated release notes by Travis CI build 2538 [ci skip]\n",
+            "tag_name": null
+        },
+        {
+            "hash": "672633fab2ee2d954845da62bcc2ff7ee86a18b6",
+            "message": "Merge pull request #1030 from mockito/sf\n\nFixed notable version",
+            "tag_name": null
+        },
+        {
+            "hash": "1418d337c32a323bc34fbc506ca544f369c36acd",
+            "message": "Fixed notable version\n\n2.7.0 does not exist :)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7fdcd5e45c5b65d8288a2261b65ed6d349d1c225",
+            "message": "Merge pull request #1018 from mockito/sf\n\nEnabled continuous delivery via robust mockito-release-tools project",
+            "tag_name": null
+        },
+        {
+            "hash": "674caedca4db3a9afa53ce0960a9eadbb8d18e5f",
+            "message": "Merge branch 'release/2.x' into sf",
+            "tag_name": null
+        },
+        {
+            "hash": "6438ed18e7a618060414b3a31e6fc73c8d374088",
+            "message": "Merge pull request #1025 from mureinik/SmartPrinterTest-toString\n\nSmartPrinterTest toString() calls",
+            "tag_name": null
+        },
+        {
+            "hash": "f1cdf70b3cd956ef8b47546cdaa010e9d6400567",
+            "message": "SmartPrinterTest toString() calls\n\nCalling toString() on a String object just returns the same object,\nmaking such calls useless in most cases.\n\nThis patch removes such calls from SmartPrinterTest, making the code\na cleaner and easier to read.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a003bba77ed49c0bdbeb7b45bc0361452603bb9b",
+            "message": "Increment version '2.7.22' -> '2.7.23' by Travis CI build 2523 [ci skip]\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ca220647886d046d4f75cc4963b64db3735ad239",
+            "message": "Added a TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad155873780af4edf655cd317ba2e49ea9ed3942",
+            "message": "Avoided releasing from master\n\nFor the time being, we don't need this and it may prevent accidental publication.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6324123b08335ce0bc3a9e7d8c1b55da608498a5",
+            "message": "Updated package names\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aec4ef7a1ff476b81c22cf06e4a4a904e67a8a69",
+            "message": "Tweaked the Bintray configuration\n\n- Also picked up new version of release tools that require changing how we configure the bintray plugin.\n- Depends on https://github.com/mockito/mockito-release-tools/pull/68\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c36ed4036368a6e8d1cbe34babb0e7dc3f34d349",
+            "message": "Added documentation about the release process\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e5473c6c7f021da4f6c0ea3bb45c9d5f0448b275",
+            "message": "Fixed issue with task dependencies\n\nWe also need to declare dependency from 'ideaModule' task to make sure the CI build works well (we ran idea task on CI to flesh out IDE related issues).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a2c4816e1c9408ffa34956cbaf946522e86c8cd4",
+            "message": "Bumped version\n\nNeeded to track down Travis CI issue. I suspect it is a problem with caching previous version.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "80084124e754e6d8edf16575a3ec734943f7aff0",
+            "message": "Removed unused Java6 workaround\n\nWe stopped building on Java6 in Travis CI environment\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4cd446623cc1c1591043c410e87452610589821f",
+            "message": "Updated the workaround for Java6 issue\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55e269e15c6a645215fc6434aca584d473dbf342",
+            "message": "Fixed release tools issues\n\n1. Added workaround for Java6 for now, for testing only\n2. Fixed the names of archives\n3. Bumped to new version of release tools to pick up https://github.com/mockito/mockito-release-tools/pull/59\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b97dadcd276b8c9b1cd033536e53012bea5d957",
+            "message": "Updated versions\n\nThis way I can test generation of notable release notes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c134067991578fe1e90395722e41f0af5d3df47e",
+            "message": "Added temporary hacks to avoid bad publications\n\nUntil the publication is rock solid, let's avoid automated publication\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b8761890231da79778acc1299567339b7dbbaf98",
+            "message": "Fixed typo\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f31b2f9efcb02e0c7a7e8c3721d55d5c292ec32",
+            "message": "Updated travis config\n\nThis way we accommodate new mockito release tools plugins\n",
+            "tag_name": null
+        },
+        {
+            "hash": "143cd3449d1f9b77040f89c515c6f4de27a7f408",
+            "message": "Fixes and removal of unnecessary configuration\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fdc9f59644e6e148a0198063ffc400e3bd1576a6",
+            "message": "Updated read-only GitHub token\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2485b3ae6c2ecb181e94b38cb822a4057bd00cb",
+            "message": "Picked up new version of release tools\n\n- Removed tons of release logic complexity, now all that is a part of general purpose 'mockito release tools' project.\n- Steps towards implementing Continuous Delivery Pipeline 2.0\n",
+            "tag_name": null
+        }
+    ]
+}

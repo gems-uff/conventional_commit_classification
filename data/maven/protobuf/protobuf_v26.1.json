@@ -1,0 +1,123 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v26.1",
+    "previous_release": "v26.0",
+    "cycle_days": 14.97949074074074,
+    "commits": 22,
+    "commits_in_advance": 0,
+    "start_delay": 2.3148148148148147e-05,
+    "duration": 14.979467592592593,
+    "commits_info": [
+        {
+            "hash": "2434ef2adf0c74149b9d547ac5fb545a1ff8b6b5",
+            "message": "Updating version.json and repo version numbers to: 26.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49253b118b40719b938c2b74a53d70f5450d87b0",
+            "message": "Merge pull request #16308 from protocolbuffers/cp-26x-3\n\nSet label to REQUIRED for descriptors with LEGACY_REQUIRED feature.",
+            "tag_name": null
+        },
+        {
+            "hash": "9bf69ecc833757839421b89e92ddb4dc09b2af0d",
+            "message": "Fix validateFeatures to be called after resolved features are actually set to this.features\n\nPiperOrigin-RevId: 619261163\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2e51ff6de3e8c594d965b2ad8952b911383cf0bf",
+            "message": "Cherry-pick required label handling in JRuby field descriptor from https://github.com/protocolbuffers/protobuf/commit/bca8fb6117cf24785edb238d96bffe2c3a6d7164\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4886a9cd8ffe81caf4c4b5b9ef7ce0de426a7b08",
+            "message": "Set label to REQUIRED for descriptors with LEGACY_REQUIRED feature.\n\nEnsures isOptional() does not return true for LEGACY_REQUIRED fields which would otherwise get the optional label applied by default (non-optional fields still get the optional label).\n\nAdds validation to feature resolution instead of cross link, which is too early to have FieldPresence.LEGACY_REQUIRED resolved.\n\nPiperOrigin-RevId: 618857590\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4e18708070a75d80965fb16ced60661e531bd9a",
+            "message": "Fix Android platforms constraint (#16246) (#16271)\n\nWhen using bazel platforms and new rules_android_ndk, crosstool_top is actually still `//external:android/crosstool`. The right way to detect Android is to use `constraint_value`.\r\n\r\nCloses #16246\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16246 from sifmelcara:fix-platforms dbf3fd58dbfb3aca17831121c9e0681addc9aa21\r\nPiperOrigin-RevId: 618198820\r\n\r\nCo-authored-by: Ming-Chuan <10496191+sifmelcara@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "a97c927b51a140bb4b47726a0f61afaef44f0f6e",
+            "message": "Add back android config_setting that looks for //external:android/crosstool (#16127) (#16264)\n\nIn https://github.com/protocolbuffers/protobuf/pull/15298 `\"crosstool_top\": \"//external:android/crosstool\"` was replaced with `\"crosstool_top\": \"@platforms//os:android\"`. This breaks users who have not migrated to https://bazel.build/concepts/platforms yet.\r\n\r\nCloses #16127\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16127 from sifmelcara:add-back-legacy-crosstool-top c643235a3d4ff1fc0deaa9b440c288de1b099bcc\r\nPiperOrigin-RevId: 615449874\r\n\r\nCo-authored-by: Ming-Chuan <wtvwtvwtv2008@gmail.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "1ffebb2e37e324a6cec342a4d85b75ddcbaa7f01",
+            "message": "Merge pull request #16237 from protocolbuffers/windows-getenv-fix\n\nFix windows-only issue in our compiler unittests.",
+            "tag_name": null
+        },
+        {
+            "hash": "a4d2448d48670bc76747f6333fcaaf7118459265",
+            "message": "Merge pull request #16236 from mkruskal-google/windows-genenv-fix\n\nFix windows-only issue in our compiler unittests.",
+            "tag_name": null
+        },
+        {
+            "hash": "ff4f9a3a808c706d249426a25698f5d2a65210d1",
+            "message": "Downgrade our sanitized builds to ubuntu-20.\n\nThe latest github runner image of ubuntu-22 includes a kernel update that breaks the sanitizers we use in our docker images.  Long-term, we'll likely need to upgrade the images to new sanitizers and clang.\n\nPiperOrigin-RevId: 616319042\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f24c09d22be5747f1d831e32ee22d88f6450888",
+            "message": "Fix windows-only issue in our compiler unittests.\n\nCloses https://github.com/protocolbuffers/protobuf/issues/16026\n\nPiperOrigin-RevId: 617333656\n",
+            "tag_name": null
+        },
+        {
+            "hash": "03342cee5c8b2db7963a404b2d703b63a4d35b37",
+            "message": "Merge pull request #16131 from protocolbuffers/26.x-202403122011\n\n26.x 202403122011",
+            "tag_name": null
+        },
+        {
+            "hash": "86c18e2687e42c801ba5f99bbf30cbdddedf6a16",
+            "message": "Updating version.json and repo version numbers to: 26.1-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b752bc2b93ea16b1ec19c9a7421f77a028d7ecdf",
+            "message": "Merge pull request #16307 from protocolbuffers/cp-26x-2\n\nUpdate protoc release to include editions language features protos fo…",
+            "tag_name": null
+        },
+        {
+            "hash": "2d3d8ba410550082ee20777653a2a1d515ff8036",
+            "message": "Expand cpp_features_proto_srcs visibility\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7f457737f37373c181b649d4eb01e23bd198bcb4",
+            "message": "Update protoc release to include editions language features protos for Java and C++\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16211\n\nPiperOrigin-RevId: 618954029\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7d23268df8a9e1ac4a9ac3a9178bba68e66e088",
+            "message": "Merge pull request #16309 from protocolbuffers/cp-26x-4\n\nMove java_features.proto to java/core/srce/main/resources",
+            "tag_name": null
+        },
+        {
+            "hash": "a2f5303916d00725cbd63ee92445b330f70d71a6",
+            "message": "Update cmake stalenes\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a177d2cf6d6eb0f4dc87426947252c9f5e7df2b",
+            "message": "Merge branch '26.x' into cp-26x-4",
+            "tag_name": null
+        },
+        {
+            "hash": "e1092ee6e0b7328d5d506d65322f0b15c5b08b21",
+            "message": "Merge pull request #16294 from protocolbuffers/cp-26x\n\nCherry-pick changes 26.x",
+            "tag_name": null
+        },
+        {
+            "hash": "0e4abf965ca48568457824ddb7944a4e70674411",
+            "message": "Add java_features.proto to kotlin_mvn release\n\nPiperOrigin-RevId: 618295219\n",
+            "tag_name": null
+        },
+        {
+            "hash": "22f11700bc7b352308a3f49ba99639f9de8aaffa",
+            "message": "Move java_features.proto to java/core/srce/main/resources\n\nThis also fixes maven to package this correctly as google/protobuf/java_features.proto (same dir as WKT/descriptor.proto) instead of com/google/protobuf/java_features.proto.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16155\n\nPiperOrigin-RevId: 617307475\n",
+            "tag_name": null
+        }
+    ]
+}

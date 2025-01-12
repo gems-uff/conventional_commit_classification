@@ -1,0 +1,93 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v25.1",
+    "previous_release": "v25.0",
+    "cycle_days": 13.950844907407408,
+    "commits": 16,
+    "commits_in_advance": 2,
+    "start_delay": -11.14318287037037,
+    "duration": 25.09402777777778,
+    "commits_info": [
+        {
+            "hash": "7f94235e552599141950d7a4a3eaf93bc87d1b22",
+            "message": "Updating version.json and repo version numbers to: 25.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e4b00c75ecbc40389615ddf5482dbabc3a354eea",
+            "message": "Add support for extensions in CRuby, JRuby, and FFI Ruby (#14703) (#14756)\n\nFollow up to #14594, which added support for custom options, this PR implements extensions support, which should fully resolve #1198.\r\n\r\nCloses #14703\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/14703 from protocolbuffers:add-support-for-extensions-in-ruby 601aca4121212c1633e9c7cd8abc65aebe9da9df\r\nPiperOrigin-RevId: 582460674\r\n\r\nCo-authored-by: Jason Lunn <jason.lunn@gmail.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "2495d4f96bf4edcc4f770ceb27ae98c71a56fcdb",
+            "message": "Add support for options in CRuby, JRuby and FFI (#14594) (#14739)\n\nRewrrte and extension of #12828, with additional work for JRuby. Partially fixes #1198 by adding support for custom options. Handling of extensions will be handled in a follow up.\r\n\r\nAlso includes these unrelated fixes:\r\n* Removes code echo between `google/protobuf/repeated_field.rb` and `google/protobuf/ffi/repeated_field.rb` by `require`'ing the former in the latter.\r\n* Adds missing calles to `testFrozen()` from methods of `RepeatedField` under JRuby that mutate.\r\n* Various typos in comments.\r\n\r\nCloses #14594\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/14594 from protocolbuffers:add-support-for-options-in-ruby 16cc9e35b8635989af28962f4a54444a176a0559\r\nPiperOrigin-RevId: 580848874",
+            "tag_name": null
+        },
+        {
+            "hash": "a29f47df0ffb54ec96714ba2d041eee2902b608c",
+            "message": "Bump mac PHP version to 8.2 to fix non-hermetic breakages. (#14741)\n\nThis was likely either a change in macos or the github runners\r\n\r\nPiperOrigin-RevId: 580245853\r\n\r\nThis is a backport of 62f4888",
+            "tag_name": null
+        },
+        {
+            "hash": "f36432a6d11948f0fbb826d51460f3f568802d5c",
+            "message": "Merge pull request #14674 from anandolee/25.x\n\nCherry pick to 25.x: Raise warnings for python syntax usages",
+            "tag_name": null
+        },
+        {
+            "hash": "74f5cf4106d7bcdd4612caed9f85af5096f4a390",
+            "message": "Raise warnings for python syntax usages\n\nPiperOrigin-RevId: 579344748\n",
+            "tag_name": null
+        },
+        {
+            "hash": "edb1afd0490d202d78eb0e8a275fef72077a3eae",
+            "message": "Move python/BUILD to python/BUILD.bazel (#14658)\n\nThis should address the issue in #14600 by avoiding a conflict on with the\r\n`build` directory created by setup.py on a case-insensitive filesystem.\r\n\r\nCloses #14600.\r\n\r\nPiperOrigin-RevId: 579859556",
+            "tag_name": null
+        },
+        {
+            "hash": "666689e0f7ce71fa01d7641ac39ae5e2cd2e72a9",
+            "message": "Merge pull request #14620 from protocolbuffers/win2019-25.x\n\nBackport CI fixes to 25.x",
+            "tag_name": null
+        },
+        {
+            "hash": "1577c305cf0928b4b29433812a4dfcb26d37249d",
+            "message": "Error on staleness failure\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1155c804efe5457071b813ca9cc17c7535e7ba09",
+            "message": "Update `cc_file_list_aspect` to handle targets with missing `hdrs/textual_hdrs`\n\nOur stale file regeneration logic broke with Bazel 6.4.0, and I suspect it was\ncaused by this change: https://github.com/bazelbuild/bazel/pull/19534 Our logic\nassumed that any target with a `CcInfo` provider must have `hdrs` and\n`textual_hdrs` attributes, but it seems that this is no longer true for\n`cc_proto_library` starting with Bazel 6.4.0. The fix is just to use `getattr`\nand treat the item as an empty list if it's missing.\n\nPiperOrigin-RevId: 575473886\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3105b8d57eebb74867daadf1ca32dfa6a55040df",
+            "message": "Pin python at 3.11.\n\nGithub changed their mac runners to use 3.12 by default, which removed setuptools and is causing breakages in some of our tests.\n\nPiperOrigin-RevId: 578917538\n",
+            "tag_name": null
+        },
+        {
+            "hash": "70042e26075b7535ff2fafbfc4bb21f37804b4ab",
+            "message": "Enable caching of pip dependencies\n\nPiperOrigin-RevId: 578740011\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5415d957a6a48f598da41413f2842fc45983f6b9",
+            "message": "Fix windows 2019 build.\n\nsetup-gcloud doesn't honor the environment variables set by setup-python, so we need to manually set CLOUDSDK_PYTHON before running it.\n\nPiperOrigin-RevId: 578674246\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce169aaa3fdf183e7e620fd6b80bf599ba8b4c53",
+            "message": "Migrate tests to windows 2022 by default.\n\nFor the windows 2019 test, we need to upgrade python for the latest gcloud to work.\n\nPiperOrigin-RevId: 578600130\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cfd4223b1e21346f6f12633693f049641d6c437f",
+            "message": "Merge pull request #14596 from protocolbuffers/25.x-202311012212\n\n25.x 202311012212",
+            "tag_name": null
+        },
+        {
+            "hash": "7203caaae76f7a0fef892ece10aeae90959794db",
+            "message": "Updating version.json to: 25.1-dev\n",
+            "tag_name": null
+        }
+    ]
+}

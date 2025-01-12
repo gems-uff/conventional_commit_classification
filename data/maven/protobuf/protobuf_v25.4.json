@@ -1,0 +1,153 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v25.4",
+    "previous_release": "v25.3",
+    "cycle_days": 159.8473263888889,
+    "commits": 28,
+    "commits_in_advance": 2,
+    "start_delay": -101.44057870370371,
+    "duration": 261.2879050925926,
+    "commits_info": [
+        {
+            "hash": "e915ce24b3d43c0fffcbf847354288c07dda1de0",
+            "message": "Updating version.json and repo version numbers to: 25.4\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6eb8b00091826ad683d87bb47f628564b2fc488d",
+            "message": "Merge pull request #17525 from protocolbuffers/fix-25.x-staleness\n\nbackport staleness changes to 25.x",
+            "tag_name": null
+        },
+        {
+            "hash": "d491c4cd63964571642d3d71fa4163121ab4e93d",
+            "message": "Merge branch '25.x' into fix-25.x-staleness\n",
+            "tag_name": null
+        },
+        {
+            "hash": "314fc8b134c3769efa99651d5daebf57578a01cc",
+            "message": "drop 2.7 in linux test (#17524)\n\n* drop 2.7 in linux test\r\n\r\n* update jruby 9.4.6.0\r\n\r\n* macos 11 to 12",
+            "tag_name": null
+        },
+        {
+            "hash": "fb0520ebb2f75b60456526e0a18daa2155ba6187",
+            "message": "Merge pull request #17514 from protocolbuffers/cp-25\n\nCheck that size is non-negative when reading string or bytes in Strea…",
+            "tag_name": null
+        },
+        {
+            "hash": "bdb1f75fdb0224960972d59faac0ee889cfcf053",
+            "message": "Downgrade CMake to 3.29 to workaround Abseil issue.\n\nThis was fixed in https://github.com/abseil/abseil-cpp/commit/cd7f66cab520e99531979b3fd727a25616a1ccbb, but older versions of Abseil break in CMake 3.30, which github runners now use by default.\n\nPiperOrigin-RevId: 651854867\n",
+            "tag_name": null
+        },
+        {
+            "hash": "165cf123c13df4fc6a38a9324c85309c4d571348",
+            "message": "Check that size is non-negative when reading string or bytes in StreamDecoder.\n\nThis ensures that StreamDecoder throws a InvalidProtocolBufferException instead of an IllegalStateException on some invalid input.\n\nAll other implementations of CodedInputStream already do this check.\n\nPiperOrigin-RevId: 623383287\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5b514a95b817833437a95eb1f2cc2a9e0b52d7a9",
+            "message": "Merge pull request #17374 from protocolbuffers/cp-25.x-runners\n\nCherry-pick fixes needed for Github runner changes",
+            "tag_name": null
+        },
+        {
+            "hash": "27041afb837fc48b01889ea3efea2b98b99cccb7",
+            "message": "Upgrade macos-11 tests to macos-12\n\nGithub dropped macos-11 on their runners on June 28th.  This causes all our jobs to stall looking for a suitable runner.\n\nPiperOrigin-RevId: 648527302\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c73d6c8d2e4f8c0068fde63b2077dcd9a64a1e02",
+            "message": "Use explicit names of our large runners\n\nPiperOrigin-RevId: 650360525\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8ec9a435bf648093dc0900bd7612b2dca80e1d25",
+            "message": "Upgrade our C++ release tests to large runners.\n\nPiperOrigin-RevId: 647405381\n",
+            "tag_name": null
+        },
+        {
+            "hash": "892a2ce89a26a1194d28bc4eb288314d1c878bb7",
+            "message": "Downgrade our sanitized builds to ubuntu-20.\n\nThe latest github runner image of ubuntu-22 includes a kernel update that breaks the sanitizers we use in our docker images.  Long-term, we'll likely need to upgrade the images to new sanitizers and clang.\n\nPiperOrigin-RevId: 616319042\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aa32865ff14613f48c9128c736b3dd3ee66a3684",
+            "message": "Disable TSAN tests due to what appears to be a sanitizer bug\n\nPiperOrigin-RevId: 616138585\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a0fb46544555bc42ed018fe93bc0fe0cffb2f3a7",
+            "message": "Merge pull request #16388 from protocolbuffers/cp-manifest-jpms\n\nCherry-Pick Add Automatic-Module-Name (#14562)",
+            "tag_name": null
+        },
+        {
+            "hash": "6b1c2535dcc3be1c514ad400756c5a7aca7645f0",
+            "message": "Disable MacOS C++ Cmake test for now.\n\nPiperOrigin-RevId: 594102279\n",
+            "tag_name": null
+        },
+        {
+            "hash": "220a74b6e2114c3b9bf8f2550e627d4ea65436b6",
+            "message": "Update setup-php to 2.30.0 and re-enable macOS PHP 8.2 tests.\n\nsetup-php 2.30.0 should fix https://github.com/shivammathur/setup-php/issues/823\n\nPiperOrigin-RevId: 612882408\n",
+            "tag_name": null
+        },
+        {
+            "hash": "552ad3124bc538e6d34b29b5673c69ca93dfb985",
+            "message": "Add Automatic-Module-Name (#14562)\n\nAdds Automatic-Module-Name after it was lost during the maven-bazel migration (and subsequent re-addition of osgi bundle support).\n\nUpdates OsgiWrapper to support adding the Automatic-Module-Name header to the list of properties supported by the `osgi_java_library` rule.\n\nFixes #12639\n\nCloses #14562\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/14562 from Sineaggi:add-automatic-module-name a27b3e6695acb4f1f253422fd2d324bb1b3f6669\nPiperOrigin-RevId: 579748655\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a857c8e1f411db66fb34d6dc3c76e3f7c952d526",
+            "message": "Merge pull request #15985 from protocolbuffers/staleness-fix-25\n\nFix staleness tests",
+            "tag_name": null
+        },
+        {
+            "hash": "f60c624178a739c7fbe0ef033724f2298c59b394",
+            "message": "Add back error message unconditionally\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b72455389a60ceaf52f0d76935ba66c38f714ed",
+            "message": "Pin bazel 6 for 25.x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "489aba5b55bb994bcd130a43e20cc9be3be04adf",
+            "message": "Merge pull request #15984 from mkruskal-google/staleness-fix-25\n\nActually fail if staleness fail",
+            "tag_name": null
+        },
+        {
+            "hash": "367c7bea8dd5505f817f41e052e50caa694fb0e6",
+            "message": "Regen stale files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "868882552dcd872b984a33153c227fddef1ab206",
+            "message": "Actually fail if staleness fail\n\nPiperOrigin-RevId: 610833812\n",
+            "tag_name": null
+        },
+        {
+            "hash": "982aac091620867ee1d9668ef3715f1bdaaddcc6",
+            "message": "Merge pull request #15858 from protocolbuffers/25.x-202402152111\n\n25.3 202402152111",
+            "tag_name": null
+        },
+        {
+            "hash": "bbbd2dea0e508289d45b48612e4659a230708209",
+            "message": "Updating version.json and repo version numbers to: 25.4-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb1fdd39b44817f63d14c3e3321128e04350d220",
+            "message": "fix targets\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a5dadc3eeedd3e35d9cb02ac5c9a5670994c1abe",
+            "message": "update bazel to 6.3.2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c3b9b4fb21ae324694c7e8ba53ee1ac3155adae9",
+            "message": "backport staleness changes to 25.x\n",
+            "tag_name": null
+        }
+    ]
+}

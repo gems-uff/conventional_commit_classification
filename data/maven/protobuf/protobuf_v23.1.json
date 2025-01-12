@@ -1,0 +1,78 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v23.1",
+    "previous_release": "v23.0",
+    "cycle_days": 8.267465277777777,
+    "commits": 13,
+    "commits_in_advance": 0,
+    "start_delay": 0.0,
+    "duration": 8.267465277777777,
+    "commits_info": [
+        {
+            "hash": "2dca62f7296e5b49d729f7384f975cecb38382a0",
+            "message": "Updating version.json and repo version numbers to: 23.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aee33a56892d1657651aa6ac72e40877d6033c60",
+            "message": "Updated upb dependency. (#12836)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "71fca0ca15ca6f0cfe12c6593e7fc840f7ae0809",
+            "message": "Merge pull request #12825 from protocolbuffers/fixes-23\n\nBackport fixes for 23.x",
+            "tag_name": null
+        },
+        {
+            "hash": "67ecdde4f257094c4019ebfda62b2ae60facb6fa",
+            "message": "Add a workaround for GCC constexpr bug\n\nThis turns the constexpr constructors into templates to silence errors when constexpr isn't valid.  We are also switching to 12.2 for GCC/cmake tests to prevent regressions (9.5 and 13.1 are already tested by GCC/bazel tests).\n\nFixes #12807\n\nPiperOrigin-RevId: 532258101\n",
+            "tag_name": null
+        },
+        {
+            "hash": "521c04efecff672a0dbea25f3c522a26471a6975",
+            "message": "Add a check for minimum supported Abseil version.\n\nPiperOrigin-RevId: 532235063\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ced986277be52dcb666e802a4602081df4e7264",
+            "message": "[C#] Replace regex that validates descriptor names (#12174)\n\nThis PR replaces the descriptor name validation regex with a validation method. This change allows the `System.Text.RegularExpressions` engine to be trimmed away in published apps that do standard protobuf serialization.\n\nThere are some other usages of `Regex` in Google.Protobuf, but they in `JsonParser`. They are only included in a published app if `JsonParser` is used.\n\nAnother benefit is a slightly faster app startup time. The removed regex was compiled, which has a high-ish fixed cost.\n\ncc @jskeet @jtattermusch\n\nCloses #12174\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12174 from JamesNK:jamesnk/remove-regex 9d065a3a717bed180a2a3c91e72826f5fe405cff\nPiperOrigin-RevId: 532210203\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b0e0c599c4d9f0d19bd33492b4a478e6834b81aa",
+            "message": "Merge pull request #12775 from fowles/23.x\n\nfix: avoid warnings with MSVC (#12762)",
+            "tag_name": null
+        },
+        {
+            "hash": "e034aadea33d8c83a3df965e9c218fd9e9a242da",
+            "message": "fix: avoid warnings with MSVC (#12762)\n\nIn both cases a `size_t` was being converted to a `uint32_t`. These headers are used from application code, or at least from generated code, and the application may be compiling with more warnings enabled than normal.\n\nCloses #12762\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12762 from coryan:fix-avoid-warnings-with-MSVC 5ba6b5db1e889289273a1614730559e96749b73e\nPiperOrigin-RevId: 531506224\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ce78c68673e562c12db15909d123e6f5ce9568d",
+            "message": "Merge pull request #12743 from protocolbuffers/gcc-23\n\nBackport GCC tests+fixes",
+            "tag_name": null
+        },
+        {
+            "hash": "ae7ec4ef97e09089eca99b3ffda300f166f6c161",
+            "message": "Fix C++17 gcc issues.\n\nThis also adds tests for C++17 and C++20 to prevent further regressions.\n\nPiperOrigin-RevId: 530693318\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21b02b235393666be2f0f00928849fd986407e1c",
+            "message": "Fix crash in #12104 (#12726)\n\nThis crash was due to the fact that we were passing `nullptr` as a `const\r\nchar*` parameter and relying on that implicitly converting into an empty\r\n`absl::string_view`. `absl::string_view` supports that functionality, but\r\nstarting with C++17 its behavior changes since it's just a type alias for\r\n`std::string_view`. `std::string_view` does not have any special conversion for\r\nnullptr and so we were just getting crashes.\r\n\r\nPiperOrigin-RevId: 530431663",
+            "tag_name": null
+        },
+        {
+            "hash": "bf117b2076b0965d72d906beb476b6e4f01d2bca",
+            "message": "Merge pull request #12717 from protocolbuffers/23.x-202305081751\n\nUpdate version numbers for 23.0 release",
+            "tag_name": null
+        },
+        {
+            "hash": "2e9835442d0d8ccebcc356d6f01bb78dc1475fe5",
+            "message": "Updating version.json to: 23.1-dev\n",
+            "tag_name": null
+        }
+    ]
+}

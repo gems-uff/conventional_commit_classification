@@ -1,0 +1,118 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v22.5",
+    "previous_release": "v22.4",
+    "cycle_days": 6.173078703703704,
+    "commits": 21,
+    "commits_in_advance": 1,
+    "start_delay": -13.717291666666666,
+    "duration": 19.89037037037037,
+    "commits_info": [
+        {
+            "hash": "121b66d987da133cbee63bac08fb7469354256ab",
+            "message": "Updating version.json and repo version numbers to: 22.5\n",
+            "tag_name": null
+        },
+        {
+            "hash": "74b12eb85896adf8bdcf2f8c3ae7d72d8510aeb6",
+            "message": "Merge pull request #12725 from acozzette/cherrypick-12104-fix\n\nFix crash in #12104 (cherry-pick)",
+            "tag_name": null
+        },
+        {
+            "hash": "afa997d343b52365665705b80f6878b85a90044d",
+            "message": "Fix crash in #12104\n\nThis crash was due to the fact that we were passing `nullptr` as a `const\nchar*` parameter and relying on that implicitly converting into an empty\n`absl::string_view`. `absl::string_view` supports that functionality, but\nstarting with C++17 its behavior changes since it's just a type alias for\n`std::string_view`. `std::string_view` does not have any special conversion for\nnullptr and so we were just getting crashes.\n\nPiperOrigin-RevId: 530431663\n",
+            "tag_name": null
+        },
+        {
+            "hash": "040a7cf6cc169f50d65c8549b31e4b60fafe16a1",
+            "message": "Merge pull request #12703 from fowles/22.x\n\nCherry pick various portability fixes from mainline",
+            "tag_name": null
+        },
+        {
+            "hash": "4483f10a1d7a553b17301d8fce477a12a6777c00",
+            "message": "fix: avoid warnings on MSVC (#12697)\n\nWarnings in header files can be a problem for consumers that enable `/WX` (or `-Werror`).  In this case, using `... & -align` produces a warning (C4146) with MSVC. The fix is to use equivalent expression `...  & ~(align - 1)`, which was already used in the same file.\n\nFixes #12675\n\nCloses #12697\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12697 from coryan:fix-msvc-warnings-in-arena-align 835f3b489a85e1b50281ac2943bd74d159eb3ead\nPiperOrigin-RevId: 530137165\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a1435ade2aad3ce1171d7bdfcc051df3c97ec71c",
+            "message": "fix: avoid warnings on Windows (#12701)\n\nOn Wndows, `size_t` is 64-bits, and `int` is 32-bits. That makes conversions from `size_t` to `int` potentially lossy, and they generate warnings.  In this case an `int` variable was assigned to `size_t` and then passed to functions consuming `int`. Seems simpler to use `auto` and avoid these problems altogether.\n\nCloses #12701\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12701 from coryan:fix-warnings-repeated-field-warnings-in-msvc b1ec34de77cbd31c914b810c87cbe16f1ce51a7d\nPiperOrigin-RevId: 530134611\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24301836251de1cbb7ebdded2eb8481b26c752c6",
+            "message": "fix: typo in `string(JOIN)` workaround (#12698)\n\nMy sketch to fix #12672 was wrong.  This works for realsies.\n\nCloses #12698\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12698 from coryan:fix-cmake-typo-in-string-join-workaround 182d2e248ee10403541c5ddd07857846a66ae57d\nPiperOrigin-RevId: 530116824\n",
+            "tag_name": null
+        },
+        {
+            "hash": "18fae1c15112efad2080c2b2f726d904fea48b35",
+            "message": "fix: missing -DPROTOBUF_USE_DLLS in pkg-config (#12700)\n\nWhen the protobuf libraries have been compiled as shared libraries the users of the library need to add `-DPROTOBUF_USE_DLLS` to their build line. Otherwise some symbols are missing.\n\nFixes #12699\n\nFWIW, I am not sure this is an ideal fix.  It may be better to fix the headers such that no macros change the ABI.\n\nCloses #12700\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12700 from coryan:fix-define-protobuf-use-dlls-in-pkg-config-file 13c792eebd3d070fa25eff68cfca6ae1493e9503\nPiperOrigin-RevId: 530116678\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d6dfdcae1a2b1ed5ba471c42100e1ad83a17b24",
+            "message": "Merge pull request #12694 from protocolbuffers/cpp-fixes-22\n\nBackport increased C++ test coverage + fixes",
+            "tag_name": null
+        },
+        {
+            "hash": "9d53a691516a36525e9ac5736847ac3784a5d636",
+            "message": "Add tests for GCC support window.\n\nNote: gcc only supports docker images down to 9.5, and the 7.3 image is very old and problematic.  A follow-up change might enable testing for GCC 7.3, which is our minimal supported version\nPiperOrigin-RevId: 529885733\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9daf5fb6ca8c8309548059c8f3c3574875036354",
+            "message": "Add missing cstdint header\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ce610ef46ce8937306778105a881cd7c28657ec",
+            "message": "Avoid using string(JOIN..., which requires cmake 3.12\n\nThis also downgrades our tests to use cmake 3.10, compatible with our support window.\n\nCloses #12672\n\nPiperOrigin-RevId: 529840763\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbb9f9b5fc8cdf143cd14aa27013328dcd027d6b",
+            "message": "Merge pull request #12668 from protocolbuffers/cmake-fixes-22\n\nCherrypick cmake fixes to 22.x",
+            "tag_name": null
+        },
+        {
+            "hash": "23fa10eee174a07583d433d23a97b2f981cbdb9f",
+            "message": "Fix reference to protoc binary in protobuf-generate.cmake\n\nThis should fix #12374, #12375, and #12450. The `protobuf_PROTOC_EXEC` variable\nis not defined, and I think `protobuf::protoc` is what we should be using\ninstead.\n\nPiperOrigin-RevId: 525591320\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5191c3b26435dd852cd57e9ab5c73f4ea8753183",
+            "message": "Explicitly include GTest package in examples\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8046eed6a1f55d54764148562d8461e3b9c03b92",
+            "message": "Define a new set of cmake tests.\n\nThese more closely follow the standard practices of our users, where dependencies are pre-installed instead of using our provided sub-modules.  This will prevent issues such as #12201 from reoccuring.\n\nAdditionally, this cl bumps our Abseil dependency to the latest release, and fixes a GTest issue that went previously unnoticed.\n\nPiperOrigin-RevId: 529490402\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2880a20b01af3c955a76f2a1a58342fea8b5f741",
+            "message": "Bump Abseil submodule to 20230125.3 (#12660)\n\nThis partially addresses https://github.com/protocolbuffers/protobuf/issues/12201\n\nCloses #12660\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12660 from mkruskal-google:absl-update ce07c45a1027b9736f8c111c8aae864ac242108f\nPiperOrigin-RevId: 529456996\n",
+            "tag_name": null
+        },
+        {
+            "hash": "572966988cacf7e6aa541a348f87d859de22a0d2",
+            "message": "Internal change\n\nPiperOrigin-RevId: 529429609\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b918d635bd280fbe2e025daa7aeb31ec55fb3f1",
+            "message": "Bump Abseil submodule to 20230125.3 (#12660)\n\n* Bump Abseil submodule to 20230125.3\r\n\r\n* Fix gtest installation setup with submodules",
+            "tag_name": null
+        },
+        {
+            "hash": "2c94c8de84a5bb75bee9b77203bad7010578047a",
+            "message": "Merge pull request #12664 from protocolbuffers/22.x-202305041802\n\n22.x 202305041802",
+            "tag_name": null
+        },
+        {
+            "hash": "149c8529f34a67cf9058889d57a8b55c28ad6bc3",
+            "message": "Updating version.json to: 22.5-dev\n",
+            "tag_name": null
+        }
+    ]
+}

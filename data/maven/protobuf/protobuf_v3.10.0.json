@@ -1,0 +1,883 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.10.0",
+    "previous_release": "v3.9.0",
+    "cycle_days": 83.39261574074074,
+    "commits": 174,
+    "commits_in_advance": 43,
+    "start_delay": -331.03519675925924,
+    "duration": 414.4278125,
+    "commits_info": [
+        {
+            "hash": "6d4e7fd7966c989e38024a8ea693db83758944f1",
+            "message": "Merge pull request #6721 from protocolbuffers/rafi-kamal-patch-1\n\nUpdate CHANGES.txt with changes since 3.10.0-RC1",
+            "tag_name": null
+        },
+        {
+            "hash": "1a57c13086d16cc2a76f2dd6a16138b2be4713a8",
+            "message": "Update CHANGES.txt with changes since 3.10.0-RC1",
+            "tag_name": null
+        },
+        {
+            "hash": "f50204dab41650a8673996c9dec06b0f0fde2495",
+            "message": "Initialize well known type values (#6713) (#6714)\n\n* Initialize well known type values\r\n\r\nAlso fixes #6667\r\n\r\n* Revert unwanted change",
+            "tag_name": null
+        },
+        {
+            "hash": "3f323c5b99256a3bb708578339df6043761f6837",
+            "message": "Fix incorrect leap day for Timestamp in php (#6696)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "61b6670a2ac5f5ca9e34113ef784ee1ce7e226fe",
+            "message": "Fixed leap year handling by reworking upb_mktime() -> upb_timegm(). (#6695)\n\nThe new function name also better reflects the semantics of the\r\nfunction.  Like timegm(), this function always converts to/from\r\nUTC, not local time.",
+            "tag_name": null
+        },
+        {
+            "hash": "3a0be889c202f61fe9884f331c6e8be0f8fb0689",
+            "message": "Merge pull request #6681 from thomasvl/objc_fix2\n\nPull the ObjC fixes from #6679 to the 3.10.x branch",
+            "tag_name": null
+        },
+        {
+            "hash": "397e017c8024cef060cfcdf870f264424c189791",
+            "message": "Remove OSReadLittle* due to alignment requirements (#6678)\n\nThe OSReadLittleInt64 function as defined by Apple reduces down to:\r\n\r\n`return *(volatile uint64_t *)((uintptr_t)base + byteOffset);`\r\n\r\nwhich means we are type-punning using a cast. On ARMv7 and other aligned architectures this can cause crashes. \r\nMinimal example: https://gist.github.com/dmaclach/b10b0a71ae614d304c067cb9bd264336\r\n\r\nFixes #6679 \r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "33da4715ea4ffc723223eb223baa726e15462e5a",
+            "message": "[ObjC] Don't use unions and instead use memcpy for the type swaps. (#6672)\n\nThe code in question hasn't change in a long time so the cause of\r\nhttps://github.com/firebase/firebase-ios-sdk/issues/3851 still appears to be\r\nan Xcode 11 clang change/bug; but this does appear to be slightly better\r\ncode for the work being done.\r\n\r\nCleanup along the way for #6679 \r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "33151f2c871985691b2b547f7648fed774ec9a5a",
+            "message": "Merge pull request #6647 from rafi-kamal/3.10.x-201909121347\n\nUpdate protobuf version to 3.10.0 stable",
+            "tag_name": null
+        },
+        {
+            "hash": "5021cd3419b75e4483c6686298aebf847dac4fcb",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "90ea89749292f0c9e9813e174bafb3e38d79921e",
+            "message": "Merge pull request #6643 from rafi-kamal/3.10.x\n\nFix update_version.py, so that PROTOBUF_VERSION is always a 9 digit number",
+            "tag_name": null
+        },
+        {
+            "hash": "c9af9a553984555ff540536c5426a0f492bff296",
+            "message": "Fix update_version.py, so that PROTOBUF_VERSION is always a 9 digit number.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae1bcaad6ffcd04ca5d40f21dc3fab4f965e49cb",
+            "message": "Merge pull request #6621 from rafi-kamal/3.10.x-201909051012\n\nUpdate protobuf version for Java and PHP",
+            "tag_name": null
+        },
+        {
+            "hash": "63fc2810460a8c3c35360afa50d3a11ec8201df6",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4e07b6347da7d0eb49fbb987ebc2c51e9a0e47ef",
+            "message": "Merge pull request #6618 from TeBoring/3.10.x-cherrypick\n\nCherry Pick (#6614)",
+            "tag_name": null
+        },
+        {
+            "hash": "398d37f95f56b4c285436dc8c62fcdd2f64a914a",
+            "message": "Sync upb (#6614)\n\n* Sync upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/209\r\n\r\n* Update upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/210\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c0d61c33351aff69db8d6acc72fc257ae9a86d0",
+            "message": "Update CHANGES.txt for version 3.10.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3b7af24f67a763dcb64b448ffb56e4ff8dac184",
+            "message": "Change update_version to update the generated code\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc1773c42c9c3c522145a3119e989e0dff2a8d54",
+            "message": "Merge pull request #6568 from ennerf/add-jigsaw-module-name\n\nJava: Add Automatic-Module-Name entries to the Manifest",
+            "tag_name": null
+        },
+        {
+            "hash": "405b618a2cb747239407af0a84eb3c82cc0c22c5",
+            "message": "added manifest entries to set jigsaw module names\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1be79eefd5d94db7bada646a293b3fa42546763e",
+            "message": "Merge pull request #6557 from elharo/patch-3\n\nUpdate versions to 3.9.1",
+            "tag_name": null
+        },
+        {
+            "hash": "2048a6f44227177dce06cd760ee9565fce404396",
+            "message": "Update versions to 3.9.1",
+            "tag_name": null
+        },
+        {
+            "hash": "893a7d31e14c82418ace9033f3141153169a2c23",
+            "message": "No need to have a separate ruby conformance test on Mac (#6555)\n\nThe previous issue of mktime doesn't work on Mac has been fixed.",
+            "tag_name": null
+        },
+        {
+            "hash": "780b05097525532cf9721aea2382c8180b6a2789",
+            "message": "Fix for GC of Ruby map frames. (#6533)\n\nWe were creating a map decoding frame when starting the *map*,\r\nbut clearing the GC slot when finishing each *map entry*.  This\r\nmeans that the decoding frame could be collected in the meantime.",
+            "tag_name": null
+        },
+        {
+            "hash": "8c3a2ce19823564424959f53c3182a15c8cd14ba",
+            "message": "Add source code URI to the Ruby gemspec file (#6466)\n\n* Add source code URI to the Ruby gemspec file\r\n\r\nAs a developer, I would like to easily find the source code origin for this gem when browsing through https://rubygems.org/gems/google-protobuf.\r\nIn order to solve this, I've followed instructions at https://guides.rubygems.org/specification-reference/#metadata by adding the source_code_uri metadata key pair.\r\n\r\n* Use git tag instead of fixed \"master\" string\r\n\r\n* Substitute the string, not the Gem::Version\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d79d368ff123c7b0d141745dbd62657846ee38cc",
+            "message": "Remove stale comment (#6552)\n\nProto2 has been tested for invalid cases. Check implementation of\r\nExpectParseFailureForProto (https://github.com/protocolbuffers/protobuf/blob/master/conformance/binary_json_conformance_suite.cc#L322)",
+            "tag_name": null
+        },
+        {
+            "hash": "63e4a3ecc956cbab6714b25e8b868765ea7e6fe5",
+            "message": "Merge pull request #6541 from haberman/ruby_race_fix\n\nFix for race in lazy initialization of handlers.",
+            "tag_name": null
+        },
+        {
+            "hash": "b245551a61ce02a2d1b629de0351ee106321aeac",
+            "message": "Fix for race in lazy initialization of handlers.\n\nThis fixes https://github.com/protocolbuffers/protobuf/issues/6532.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee4f2492ea4e7ff120f68a792af870ee30435aa5",
+            "message": "Fixed some lint errors seen in google3. (#6520)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c60aaf79e63b911b2c04c04e1eacb4f3c36ef790",
+            "message": "Remove duplicate six http_archive definition\n\nArchive is declared in the protobuf_deps() call above\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8199a01ff471d2aafe1af89d27050af04a853d48",
+            "message": "Move six.BUILD to third_party and update paths\n",
+            "tag_name": null
+        },
+        {
+            "hash": "23e520e7fc54d8f38c184e0da6da2cfea553cc4f",
+            "message": "Update six version to 1.12.0 and fix legacy_create_init issue\n\nWhen the @six//:six library is used on a target without the\n`legacy_create_init` flag disabled, the library will not be\nusable due to __init__.py being empty and the six code will\nbe in six.py. This change forces six to occupy the __init__\nname, preventing this file getting created regardless of\nthe `legacy_create_init` setting.\n\nSee comments on a74c43bbd906a42b6bf70668c5d515c6f1d8d2cb for\ncontext:\nhttps://github.com/protocolbuffers/protobuf/commit/a74c43bbd906a42b6bf70668c5d515c6f1d8d2cb\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c46be03280a12aa7de6280c596b371cbb691b65",
+            "message": "add Map forward declaration in arena.h\n\nSigned-off-by: DNKpp <dnkpp2011@gmail.com>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63f324a9937b2fb562ea551f93d1d38740032bc3",
+            "message": "Roll forward Ruby upb changes now that protobuf Ruby build is fixed (#5866)\n\n* Rolled forward again with \"Updated upb from defcleanup branch...\"\r\n\r\nRevert \"Revert \"Updated upb from defcleanup branch and modified Ruby to use it (#5539)\" (#5848)\"\r\n\r\nThis reverts commit 1568deab40db055a79fa415d21547eaffbd56d57.\r\n\r\n* A few more merge fixes.\r\n\r\n* Updated for defcleanup2 branch.\r\n\r\n* Fixed upb to define upb_decode().\r\n\r\n* Fixed names of nested messages.\r\n\r\n* Revert submodule.\r\n\r\n* Set -std=gnu90 and fixed warnings/errors.\r\n\r\nSome of our Kokoro tests seem to run with this level of warnings,\r\nand the source strives to be gnu90 compatible.  Enforcing it for\r\nevery build removes the possibility of some errors showing up in\r\nKokoro/Travis tests only.\r\n\r\n* Fixed remaining warnings with gnu90 mode.\r\n\r\nI tried to match warning flags with what Ruby appears to do\r\nin our Kokoro tests.\r\n\r\n* Initialize values registered by rb_gc_register_address().\r\n\r\n* Fixed subtle GC bug.\r\n\r\nWe need to initialize this marked value before creating the instance.\r\n\r\n* Truly fix the GC bug.\r\n\r\n* Updated upb for mktime() fix.\r\n\r\n* Removed XOPEN_SOURCE as we are not using strptime().\r\n\r\n* Removed fixed tests from the conformance failure list for Ruby.\r\n\r\n* Fixed memory error related to oneof def names.\r\n\r\n* Picked up new upb changes re: JSON printing.\r\n\r\n* Uncomment concurrent decoding test.\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "402c28a321fce010ad0b9f99010a78890cae7f34",
+            "message": "Merge pull request #6502 from haberman/rubygcfix\n\nOptimized away the creation of empty string objects.",
+            "tag_name": null
+        },
+        {
+            "hash": "1e37a94bb5efcdd6d8adc3d0aeb907b4f85c52ad",
+            "message": "Optimized away the creation of empty string objects.\n\nPrior to this CL, creating an empty message object would create\ntwo empty string objects for every declared field.  First we\ncreated a unique string object for the field's default.  Then\nwe created yet another string object when we assigned the\ndefault value into the message: we called #encode to ensure\nthat the string would have the correct encoding and be frozen.\n\nI optimized these unnecessary objects away with two fixes:\n\n1. Memoize the empty string so that we don't create a new empty\n   string for every field's default.\n2. If we are assigning a string to a message object, avoid creating\n   a new string if the assigned string has the correct encoding and\n   is already frozen.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c132a4aa165d8ce2b65af62d4bde4a7ce08d07c3",
+            "message": "replace 'const std::string&' with 'std::string'(by value)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e4c7ead20c971d23f5b8596a871bfd1ed45d301b",
+            "message": "use move method for SetString\n",
+            "tag_name": null
+        },
+        {
+            "hash": "218df038ccfb8ac8d0ca564778950316d514717b",
+            "message": "add movable String interface Reflection\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e0a6d1cbd0bdfb9d6a963f606e5bf4bc11757d7",
+            "message": "Add move constructor for Reflection's SetString\n",
+            "tag_name": null
+        },
+        {
+            "hash": "43156775be8227014df1ca86c75a8547770f6039",
+            "message": "Merge 3.9.x 201908071359 to master (#6484)\n\n* Add changelog for 3.9.x\r\n\r\n* Revert \"Make php message class final to avoid mocking (#6277)\" (#6324)\r\n\r\nThis reverts commit 7f84a943667358a53bd5d255ee9769ca83e75cd9.\r\nThis is just temporary. Eventually, we still want to roll forward this\r\nchange. Some users are complaining they need more time to clean up their\r\ncode.\r\n\r\n* Update extract_includes.bat.in\r\n\r\nFile io_win32.h is not in directory google\\protobuf\\stubs under directory google\\protobuf\\io\r\n\r\n* Set oneof case in array constructor (#6351)\r\n\r\nForgot to set it previously.\r\n\r\n* Update protobuf version (#6366)\r\n\r\n* Drop building wheel for python 3.4 (#6406)\r\n\r\nhttps://github.com/matthew-brett/multibuild/pull/240\r\n\r\n* Fix binary compatibility in FieldCodec factory methods (#6380) (#6424)\r\n\r\n* Fix binary compatibility in FieldCodec factory messages\r\n\r\n* Make default value parameter for current factories required\r\n\r\n* Route old methods through default value overloads\r\n\r\n* Remove ExtensionRegistry.Add(params) overload\r\n\r\n* Rename ExtensionRegistry.Add(IEnumerable<Extension>) overload to AddRange\r\n\r\n* Edit naming of parameters in Extension classes\r\n\r\n* * Fix add API warnings to docs for extension APIs\r\n* Rename internal ExtensionSet.GetValue to TryGetValue\r\n\r\n* Disable javadoc error (#6371)\r\n\r\n* Disable javadoc error\r\n\r\nActual fixes of the javadoc will be followed up\r\n\r\n* Remove duplicated configuration\r\n\r\n* Update javadoc plugin version\r\n\r\n* Updated Bazel test script to use most recent Bazel version (#6413) (#6433)\r\n\r\nI'm not exactly sure why, but this fixes the failing Bazel presubmit\r\ntest. Using the most recent version seems like a good idea anyway so\r\nthat we can make sure we're compatible with any new Bazel changes.\r\n\r\n* [bazel] Add fixes for --incompatible_load_{cc,java,proto}_rules_from_bzl\r\n\r\n* No need to update version in generated code (#6471)\r\n\r\ngenerate_descriptor will handle that\r\n\r\n* Update protobuf version (#6472)\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56988bee343dbcfe1cc4ea3f20a790f808ac4407",
+            "message": "No free when construct was not done (#6483)\n\n* No free when construct was not done\r\n\r\nThis fix the segfault when some other error happens\r\n\r\n* Add more tests\r\n\r\n* Use Sub to avoid printing too much\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2d6ff51a8fb67391c44223c6b0b523110ad8d21",
+            "message": "[bazel] Load python rules from @rules_python\n",
+            "tag_name": null
+        },
+        {
+            "hash": "479ba8226bed9c0986693f240c4d6f72dc2d0368",
+            "message": "Override CocoaPods module to lowercase (#6464)\n\nFix #3218",
+            "tag_name": null
+        },
+        {
+            "hash": "a450e13a9516febcc110560a14535e649e1c5ef9",
+            "message": "Revert \"Fixed JS parsing of default map values (#6394)\" (#6468)\n\nThis reverts commit dcc8ffd9c6fab3c82d3d6642a35a584aa0a3f64b.",
+            "tag_name": null
+        },
+        {
+            "hash": "0c4b607e98349bea40e6d1a22843b5a82118f312",
+            "message": "Conformance packed (#6447)\n\n* Add conformance tests for explicit packed/unpacked fields\r\n\r\n* Fix typo\r\n\r\n* Update failure lists\r\n\r\n* Update failure list\r\n\r\n* Use enum class to make enum scoped\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d1eeb852fcbe46b29a3bc47001e997d79358d9f8",
+            "message": "compatibility test between last released and current for java python php (#6441)\n\n\r\n* compatibility tests between last released and the current version\r\n\r\n\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5db5c26ae4dffc7bae21c38d89b6c005d48474f9",
+            "message": "Fix a Python extension crash in the descriptor's nested types container code (#6455)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f38b6ed041107330b7453def5139438b0b3e5978",
+            "message": "add test case in cpp_bootstrap_unittest.cc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf0c69e1302fe9568fbe310cc54b37d20a9d16a3",
+            "message": "[bazel] Add fixes for --incompatible_load_{cc,java,proto}_rules_from_bzl (Part 2)\n\nThis change adds the required loads to examples and zlib.\nFor full compatibility with --incompatible_load_{cc,java,proto}_rules_from_bzl,\nwe will need to roll gtest to a newer version.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5b6238e48622f89c5c9a902f361e9cf7cdc6602f",
+            "message": "Merge pull request #5044 from laszlocsomor/expand-wildcards\n\nWindows: expand path names on command line",
+            "tag_name": null
+        },
+        {
+            "hash": "bee5538fda2a5e35e8b7bf164d899eded57c26e3",
+            "message": "\"enum class\" instead of \"enum\"\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea61636cbc81f5dcb42414fe0eade8e76caaa2d4",
+            "message": "Merge branch 'master' into expand-wildcards\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1024cbea3472a35cdaf11fe4867bbb180141aa31",
+            "message": "Fix ruby proto3 extension support (#6369)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a9bb65643b6b65f702e825c55f49a34745b67f2d",
+            "message": "Add binary conformance test for default repeated fields (#6440)\n\n* Add binary conformance test for default repeated fields\r\n\r\n1) Both packed and unpacked encoding should be accepted for parsing.\r\n2) Encode should follow the default way for the syntax.\r\n\r\n* Uncomment test\r\n\r\n* Remove is_primitive\r\n\r\n* Add failed tests to failure lists.\r\n\r\n* Add failed test to failure list\r\n\r\n* Use binary format to specify expected value\r\n\r\nText format cannot distinguish whether repeated field is packed or not.\r\n\r\n* Change method name from ToHexString to ToOctString\r\n\r\n* Add failed test to failure list\r\n\r\n* Add failed test to php's failure list\r\n\r\n* Fix comments\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e399308ef0739d76230b3e3affb735da1f896027",
+            "message": "Add csharp compatibility tests between last released and the current version (#6407)\n\n* Add csharp compatibility tests for 3.7.0\r\n\r\n* Add compatibility test between last major version with current for C#\r\n\r\n* Update last version number\r\n\r\n* compatibility tests between last released and the current version\r\n\r\n* fix typo\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41e12344a19a1bce3e51a6ca16c52dac65ea0f1f",
+            "message": "Support hashes for struct initializers (#5716)\n\n* support hashes for struct initalizers\r\n\r\n* convert hash keys to string\r\n\r\n* update tests\r\n\r\n* add extra asserts\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dcc8ffd9c6fab3c82d3d6642a35a584aa0a3f64b",
+            "message": "Fixed JS parsing of default map values (#6394)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cb58738de229f335a6232097870fb15cfde54567",
+            "message": "add test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f68b251f75220900cde3036e12c50ab7546adcee",
+            "message": "don't emit location for label unless label is present\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2849a79990916739aab1eb93b5730a33b09f782d",
+            "message": "Add binary conformance test for message type. (#6435)\n\n* Add binary conformance test for message type.\r\n\r\n* Add test case for merge repeated scalar message field\r\n\r\n* Add failed tests to failure list\r\n\r\n* Add failed test to php's failure list\r\n\r\n* Remove successful tests from php c's failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff21d0f8777b9cce3864e424f1355cdcfe888eeb",
+            "message": "Copy files to temp-dir for testing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "edbc27fb8159bd81d55958fd2e18fc80ec269975",
+            "message": "Print logs of failing tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "27e85ab55d356668fdcf457ed674ae73bf2d585c",
+            "message": "Address review comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4979489451a4067108b07bed8a243ebd6d45c2ca",
+            "message": "Add test to verify BUILD- and cmake-files are in sync with src/Makefile.am\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e8991981a5b13cbaa1ad1d0b2014ed069ab332d",
+            "message": "[bazel] Add fixes for --incompatible_load_{cc,java,proto}_rules_from_bzl\n",
+            "tag_name": null
+        },
+        {
+            "hash": "455440fc47c2ff232a9ee796343a637c1c7f5f52",
+            "message": "Add binary conformance test for enum fields. (#6434)\n\n* Add binary conformance test for enum fields.\r\n\r\n* Add failed conformance test to js failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c76c2c413876c9dc5ac80a487f11fc5575f2198",
+            "message": "Add podspec for C++ (#6404)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "29e4fadbfb55b7c5e96a032053635451bf969ffa",
+            "message": "Add binary conformance test case for bytes field (#6428)\n\n* Add binary conformance test case for bytes field\r\n\r\n* Add failed conformance test to php's failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "180d3e3287bc236de67e92bed95c67c5dd78da18",
+            "message": "fix null terminated string (#6370)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "33af06edbb2940be7e9ddd6816e56884e7ecf8ad",
+            "message": "Drop building wheel for python 3.4 (#6406) (#6426)\n\nhttps://github.com/matthew-brett/multibuild/pull/240",
+            "tag_name": null
+        },
+        {
+            "hash": "d28cf02ee00f970cc9a1b0fd9be826d841e19924",
+            "message": "Drop building wheel for python 3.4 (#6406)\n\nhttps://github.com/matthew-brett/multibuild/pull/240",
+            "tag_name": null
+        },
+        {
+            "hash": "1bbae02cffd2ee3942de32a88d4c19099a1a21ce",
+            "message": "fix typo in io/printer.h\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9857d636fd7814ab432669bf94d5aac7a1d1ffb2",
+            "message": "Fix binary compatibility in FieldCodec factory methods (#6380)\n\n* Fix binary compatibility in FieldCodec factory messages\r\n\r\n* Make default value parameter for current factories required\r\n\r\n* Route old methods through default value overloads\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de5d071f44cbce8520303b9b5344c3c67d2ae431",
+            "message": "Fix assignment between Python protobuf Structs (#6377)\n\nCurrently, if you access a ListValue from a Struct and attempted to\r\nassign it to another Struct, you would get an exception:\r\n\r\n   > s1 = spb.Struct()\r\n   > s1['a'] = [1]\r\n   > s2 = spb.Struct()\r\n   > s2['a'] = s1['a']\r\n   ValueError: Unexpected type\r\n\r\nThis fixes that case.",
+            "tag_name": null
+        },
+        {
+            "hash": "7bff8393cab939bfbb9b5c69b3fe76b4d83c41ee",
+            "message": "Down Integrate to GitHub (#6414)\n\n* Down integrate to GitHub\r\n\r\n* Fix broken tests\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63d9c1fb95d95158493a119579d5c537a7cfdef1",
+            "message": "Updated Bazel test script to use most recent Bazel version (#6413)\n\nI'm not exactly sure why, but this fixes the failing Bazel presubmit\r\ntest. Using the most recent version seems like a good idea anyway so\r\nthat we can make sure we're compatible with any new Bazel changes.",
+            "tag_name": null
+        },
+        {
+            "hash": "400d3888b9422f2fbdecb6aaaf4b39eba574a3c9",
+            "message": "Revert bad change to objc conformance test in #6199\n\nSince true for objc is external, changes should always start on the github\nside, so the fact that something got pushed out is a sign something was\nbroken in the process.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a03d332aca5d33c5d4b2cd25037c9e37d57eff02",
+            "message": "[bazel] Use strip_import_prefix for wkp instead of copying them\n",
+            "tag_name": null
+        },
+        {
+            "hash": "582640ef317dc3d9163f7e931aee72b6b613aadd",
+            "message": "Updated cmake path to io_win32.h (#6397)\n\nFixes #6382.",
+            "tag_name": null
+        },
+        {
+            "hash": "19ca196e4dcc8ff03136c950cf1bc298d5e1ce1e",
+            "message": "Remove zlib copts flags when on Windows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "640b932cf80a29bd7475d805712b42e458772a98",
+            "message": "Fix test on FreeBSD\n\ngoogle/protobuf/testing/zcgzip.cc:61:25: error: unknown type name 'STDOUT_FILENO'\n  FileOutputStream fout(STDOUT_FILENO);\n                        ^\ngoogle/protobuf/testing/zcgzip.cc:61:24: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]\n  FileOutputStream fout(STDOUT_FILENO);\n                       ^~~~~~~~~~~~~~~\ngoogle/protobuf/testing/zcgzip.cc:61:25: note: add a pair of parentheses to declare a variable\n  FileOutputStream fout(STDOUT_FILENO);\n                        ^\n                        (\ngoogle/protobuf/testing/zcgzip.cc:75:20: error: use of undeclared identifier 'STDIN_FILENO'\n    readlen = read(STDIN_FILENO, outptr, outlen);\n                   ^\n1 warning and 2 errors generated.\ngmake[3]: *** [Makefile:4009: google/protobuf/testing/zcgzip.o] Error 1\n\ngoogle/protobuf/testing/zcgunzip.cc:62:23: error: unknown type name 'STDIN_FILENO'\n  FileInputStream fin(STDIN_FILENO);\n                      ^\ngoogle/protobuf/testing/zcgunzip.cc:62:22: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]\n  FileInputStream fin(STDIN_FILENO);\n                     ^~~~~~~~~~~~~~\ngoogle/protobuf/testing/zcgunzip.cc:62:23: note: add a pair of parentheses to declare a variable\n  FileInputStream fin(STDIN_FILENO);\n                      ^\n                      (\ngoogle/protobuf/testing/zcgunzip.cc:74:23: error: use of undeclared identifier 'STDOUT_FILENO'\n      int err = write(STDOUT_FILENO, inptr, inlen);\n                      ^\n1 warning and 2 errors generated.\ngmake[3]: *** [Makefile:4009: google/protobuf/testing/zcgunzip.o] Error 1\n\nReference:\thttps://bugs.FreeBSD.org/bugzilla/show_bug.cgi?id=215346\n\t\thttps://svnweb.FreeBSD.org/changeset/ports/428734\n",
+            "tag_name": null
+        },
+        {
+            "hash": "744e799bdaad748a6069a1f3fe8a25c708317c25",
+            "message": "Change \"python\" to \"python_headers\" in comment (#6046)\n\nFollowing the instructions as is does not work, the new_local_repository rule needs to be called \"python_headers\"",
+            "tag_name": null
+        },
+        {
+            "hash": "a74c43bbd906a42b6bf70668c5d515c6f1d8d2cb",
+            "message": "Fix usage of six in //:protobuf_python rule and add import (#6310)\n\n* Fix reference to six in //:protobuf_python rule\r\n\r\n* Add six to protobuf_deps.bzl\r\n\r\n* Use six archive directly as repo @six\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f2cfe2c834a522ec553891451f7725c79bb57b09",
+            "message": "Merge pull request #6363 from toasttab/master\n\nRequesting extension id 1072",
+            "tag_name": null
+        },
+        {
+            "hash": "f5362e11fd25f88ea0fb044485b8a815996b17db",
+            "message": "Requesting extension id 1072\n\nThis library supports an idiomatic proto3 protobuf generator for kotlin.\r\nThe library will be open sourced by Toast Inc under the Apache2 license, and is currently used in production at Toast.\r\nThe following is the readme.md that will be released with the code by the end of Q4 2019.\r\n\r\nSupports only the Protocol Buffers language version 3.\r\n\r\n#### Features\r\n- Clean data class generation\r\n- Oneof types handled as sealed classes\r\n- JavaDoc comments on generated code\r\n- Deprecation option pass-through to Kotlin's `@Deprecated` annotation\r\n- Protokt-specific options: non-null types, wrapper types, interface implementation,\r\nand more\r\n- Tight integration with Protobuf's Java library: compatibility with its well-known\r\ntypes and usage of CodedInputStream and CodedOutputStream for best performance\r\n\r\n#### Not yet implemented\r\n- Kotlin native support\r\n- Kotlin JS support\r\n- Support for gRPC service generation\r\n- Protobuf JSON support\r\n\r\nSee examples in [protokt-testing](https://github.com/toasttab/protokt/tree/master/protokt-testing).\r\n\r\n### Generated Code\r\nGenerated code is placed in `<buildDir>/generated-sources/main/protokt`.\r\n\r\nA simple example:\r\n```proto\r\nsyntax = \"proto3\";\r\n\r\npackage com.protokt.sample;\r\n\r\nmessage Sample {\r\n  string sample_field = 1;\r\n}\r\n```\r\n\r\nwill produce:\r\n```kotlin\r\n/*\r\n * Generated by protokt. Do not modify.\r\n */\r\npackage com.protokt.sample\r\n\r\nimport com.toasttab.protokt.rt.*\r\n\r\ndata class Sample(\r\n    val sampleField: String,\r\n    val unknown: Map<Int, Unknown> = emptyMap()\r\n) : KtMessage {\r\n    @Suppress(\"UNUSED\")\r\n    constructor(\r\n        sampleField: String = \"\"\r\n    ) : this(\r\n        sampleField,\r\n        emptyMap()\r\n    )\r\n\r\n    override val messageSize by lazy { sizeof() }\r\n\r\n    override fun serialize(serializer: KtMessageSerializer) {\r\n        if (sampleField.isNotEmpty()) {\r\n            serializer.write(Tag(10)).write(sampleField)\r\n        }\r\n        if (unknown.isNotEmpty()) {\r\n            serializer.writeUnknown(unknown)\r\n        }\r\n    }\r\n\r\n    private fun sizeof(): Int {\r\n        var res = 0\r\n        if (sampleField.isNotEmpty()) {\r\n            res += sizeof(Tag(1)) + sizeof(sampleField)\r\n        }\r\n        res += unknown.entries.sumBy { it.value.sizeof() }\r\n        return res\r\n    }\r\n\r\n    companion object Deserializer : KtDeserializer<Sample> {\r\n        override fun deserialize(deserializer: KtMessageDeserializer): Sample {\r\n            var sampleField = \"\"\r\n            val unknown = mutableMapOf<Int, Unknown>()\r\n            while (true) {\r\n                when (deserializer.readTag()) {\r\n                    0 ->\r\n                        return Sample(\r\n                            sampleField,\r\n                            unknown\r\n                        )\r\n                    10 -> sampleField = deserializer.readString()\r\n                    else -> {\r\n                        val unk = deserializer.readUnknown()\r\n                        unknown[unk.fieldNum] = unknown[unk.fieldNum].let {\r\n                            when (it) {\r\n                                null -> unk\r\n                                else ->\r\n                                    when (val v = it.value) {\r\n                                        is ListVal ->\r\n                                            Unknown(unk.fieldNum, ListVal(v.value + unk.value))\r\n                                        else ->\r\n                                            Unknown(unk.fieldNum, ListVal(listOf(v, unk.value)))\r\n                                    }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n#### Runtime Notes\r\n##### Package\r\nThe Kotlin package of a generated file can be overridden from protobuf package with the `(protokt).package` option:\r\n```proto\r\nsyntax = \"proto3\";\r\n\r\nimport \"protokt.proto\";\r\n\r\npackage com.example;\r\n\r\noption (protokt).package = \"com.package\";\r\n```\r\n\r\n##### Message\r\nEach protokt message implements the `KtMessage` interface. `KtMessage` defines the `serialize()`\r\nmethod and its overloads which can serialize to a byte array, a `KtMessageSerializer`, or on the JVM,\r\nan `OutputStream`.\r\n\r\nEach protokt message has a companion object `Deserializer` that implements the `KtDeserializer`\r\ninterface, which provides the `deserialize()` method and its overloads to construct an\r\ninstance of the message from a byte array, a Java InputStream, or others.\r\n\r\nIn order to enjoy the full benefits of Kotlin data classes, byte arrays are wrapped in the\r\nprotokt `Bytes` class, which provides appropriate `equals()` and `hashCode()` implementations.\r\n\r\n##### Enums\r\nEnum fields are generated as data classes with a single integer field. Kotlin enum classes are\r\nclosed and cannot retain unknown values, and protobuf requires that unknown enum values are\r\npreserved for reserialization. This compromise exposes a constructor taking an integer, but the\r\n`from(value: Int)` on an enum's `Deserializer` should be preferred as it avoids instantiation\r\nwhen possible.\r\n\r\n\r\nOther notes:\r\n- `optimize_for` is ignored.\r\n- `repeated` fields are deserialized to Lists.\r\n- `map` fields are deserialized to Maps.\r\n- `oneof` fields are represented as data class subtypes of a sealed base class with a single property.\r\n\r\n### Extensions\r\nSee examples of each option in the [protokt-options](https://github.com/toasttab/protokt/tree/master/protokt-testing/protokt-options/src/main/proto)\r\nmodule. All protokt-specific options require importing `protokt.proto` in the protocol file.\r\n#### Wrapper Types\r\nSometimes a field on a protobuf message corresponds to a concrete nonprimitive type. In\r\nstandard protobuf the user would be responsible for this extra transformation, but the\r\nprotokt wrapper type option allows specification of a converter that will automatically\r\nencode and decode custom types to protobuf primitives and well-known types. Some standard\r\ntypes are implemented in\r\n[protokt-extensions](https://github.com/toasttab/protokt/tree/master/protokt-extensions/src/main/kotlin/com/toasttab/protokt/ext).\r\n\r\nWrap a field by invoking the `(protokt_property).wrap` option:\r\n```proto\r\nmessage DateWrapperMessage {\r\n  int64 date = 1 [\r\n    (protokt_property).wrap = \"java.util.Date\"\r\n  ];\r\n}\r\n```\r\n\r\nConverters implement the `Converter` interface:\r\n```kotlin\r\ninterface Converter<S: Any, T: Any> {\r\n    val wrapper: KClass<S>\r\n\r\n    fun wrap(unwrapped: T): S\r\n\r\n    fun unwrap(wrapped: S): T\r\n}\r\n```\r\n\r\nand protokt will reference the converter's methods to wrap and unwrap from protobuf primitives:\r\n```kotlin\r\nobject DateConverter : Converter<Date, Long> {\r\n    override val wrapper = Date::class\r\n\r\n    override fun wrap(unwrapped: Long) =\r\n        Date(unwrapped)\r\n\r\n    override fun unwrap(wrapped: Date) =\r\n        wrapped.time\r\n}\r\n```\r\n\r\n```kotlin\r\ndata class WrapperModel(\r\n    val date: java.util.Date,\r\n    ...\r\n) : KtMessage {\r\n    ...\r\n    override fun serialize(serializer: KtMessageSerializer) {\r\n        serializer.write(Tag(10)).write(Int64(DateConverter.unwrap(date)))\r\n        ...\r\n    }\r\n\r\n    override fun deserialize(deserializer: KtMessageDeserializer): WrapperModel {\r\n        var date = 0L\r\n\r\n        while (true) {\r\n            when (deserializer.readTag()) {\r\n                0 ->\r\n                    return WrapperModel(\r\n                        DateConverter.wrap(date),\r\n                        ...\r\n                    )\r\n                ...\r\n            }\r\n        }\r\n    }\r\n}\r\n```\r\n\r\nConverters can also implement the `OptimizedSizeofConverter` interface adding `sizeof()`,\r\nwhich allows them to optimize the calculation of the wrapper's size rather than unwrap\r\nthe object twice. For example, a UUID is always 16 bytes:\r\n\r\n```kotlin\r\nobject UuidConverter : OptimizedSizeofConverter<UUID, ByteArray> {\r\n    override val wrapper = UUID::class\r\n\r\n    private val sizeofProxy = ByteArray(16)\r\n\r\n    override fun sizeof(wrapped: UUID) =\r\n        sizeof(sizeofProxy)\r\n\r\n    override fun wrap(unwrapped: ByteArray): UUID {\r\n        require(unwrapped.size == 16) {\r\n            \"input must have size 16; had ${unwrapped.size}\"\r\n        }\r\n\r\n        return ByteBuffer.wrap(unwrapped)\r\n            .run { UUID(long, long) }\r\n    }\r\n\r\n    override fun unwrap(wrapped: UUID) =\r\n        ByteBuffer.allocate(16)\r\n            .putLong(wrapped.mostSignificantBits)\r\n            .putLong(wrapped.leastSignificantBits)\r\n            .array()\r\n}\r\n```\r\n\r\nRather than convert a UUID to a byte array both for size calculation and for serialization\r\n(which is what a naïve implementation would do), UuidConverter always returns the size of a\r\nconstant 16-byte array.\r\n\r\nIf the wrapper type is in the same package as the generated protobuf message, then it\r\ndoes not need a fully-qualified name. Custom wrapper type converters can be in the same module as\r\nprotobuf types that reference them. In order to use any wrapper type defined in\r\n`protokt-extensions`, the module must be included as a dependency:\r\n\r\n```groovy\r\ndependencies {\r\n    implementation 'com.toasttab.protokt:protokt-extensions:0.0.3'\r\n}\r\n```\r\n\r\n#### Interface implementation\r\nTo avoid the need to create domain-specific objects from protobuf messages you can declare\r\nthat a protobuf message implements a custom interface with properties and default methods.\r\n\r\n```kotlin\r\npackage com.protokt.sample\r\n\r\ninterface Model {\r\n    val id: String\r\n}\r\n```\r\n\r\n```proto\r\npackage com.protokt.sample;\r\n\r\nmessage ImplementsSampleMessage {\r\n  option (protokt_class).implements = \"Model\";\r\n\r\n  string id = 1;\r\n}\r\n```\r\n\r\nIf the wrapper interface is in the same package as the generated protobuf message, then it\r\ndoes not need a fully-qualified name. Wrapper interfaces cannot be used by protobuf messages\r\nin the same module that defines them; the dependency must be declared with`protoktExtensions`\r\nin `build.gradle`:\r\n\r\n```groovy\r\ndependencies {\r\n    protoktExtensions project(':api-module')\r\n}\r\n```\r\n\r\n#### Nonnull fields\r\nIf there is a message that has no meaning whatsoever when a particular field is missing, you\r\ncan emulate proto2's `required` key word by using the `(protokt_oneof).non_null` option:\r\n\r\n```proto\r\nmessage Sample {\r\n}\r\n\r\nmessage NonNullSampleMessage {\r\n  Sample non_null_sample = 1 [\r\n    (protokt_property).non_null = true\r\n  ];\r\n}\r\n```\r\n\r\nGenerated code will not have a nullable type so the field can be referenced without using\r\nKotlin's `!!`.\r\n\r\nOneof fields can also be declared non-null:\r\n\r\n```proto\r\nmessage NonNullSampleMessage {\r\n  oneof non_null_oneof {\r\n    option (protokt_oneof).non_null = true;\r\n\r\n    string message = 2;\r\n  }\r\n}\r\n```\r\n\r\nNote that deserialization of a message with a non-nullable field will fail if the\r\nmessage being decoded does not contain an instance of the required field.\r\n\r\n#### BytesSlice\r\nWhen reading messages that contain other serialized messages as `bytes` fields, protokt can\r\nkeep a reference to the originating byte array to prevent a large copy operation on\r\ndeserialization. This can be desirable when the wrapping message is a thin metadata shim and\r\ndoesn't include much memory overhead:\r\n\r\n```proto\r\nmessage SliceModel {\r\n  int64 version = 1;\r\n\r\n  bytes encoded_message = 2 [\r\n    (protokt_property).bytes_slice = true\r\n  ];\r\n}\r\n```\r\n\r\n### Usage\r\n\r\n#### Gradle\r\n\r\n```groovy\r\nbuildscript {\r\n    dependencies {\r\n        classpath \"com.toasttab.protokt:protokt-gradle-plugin:0.0.3\"\r\n    }\r\n}\r\n\r\napply plugin: 'com.toasttab.protokt'\r\n```\r\n\r\nThis will automatically download and install protokt, apply the Google protobuf plugin,\r\nand configure all the necessary boilerplate. By default it will also add `protokt-runtime`\r\nto the api scope of the project, and `protobuf-java` to the implementation scope.\r\n\r\nIf your project is pure Kotlin you may run into the following error:\r\n\r\n```\r\nExecution failed for task ':compileJava'.\r\n> error: no source files\r\n```\r\n\r\nTo work around it, disable all `JavaCompile` tasks in the project:\r\n\r\n```groovy\r\ntasks.withType(JavaCompile) {\r\n    enabled = false\r\n}\r\n```\r\n\r\nor:\r\n```groovy\r\ncompileJava.enabled = false\r\n```\r\n\r\n#### Command line code generation\r\n\r\n```bash\r\nprotokt-codegen$ ./gradlew assemble [OR ./gradlew installDist]\r\n\r\nprotokt-codegen$ ./run-protokt.sh -h\r\n\r\nprotokt-codegen$ ./run-protokt.sh \\\r\n  -out=../kotlin \\\r\n  -pkg=com.toasttab.protokt.conformance \\\r\n  -file=conformance.proto \\\r\n  -cp=../build/libs/protokt-codegen-0.0.3-SNAPSHOT-all.jar \\\r\n  -plugin=../bin/protokt.sh\r\n```\r\n\r\n### Contribution\r\nTo enable rapid development of the code generator, the protobuf conformance tests have been \r\ncompiled and included in the protokt-testing project. They run on Mac OS 10.14+ and Ubuntu\r\n16.04 x86-64.\r\n\r\nPublish the plugin to the integration repository:\r\n```bash\r\nprotokt$ ./gradlew publishToIntegrationRepository\r\n```\r\n\r\nThen run the tests from `protokt-testing`:\r\n```bash\r\nprotokt-testing$ ./gradlew protokt-conformance-tests:test\r\n```\r\n\r\nAll integration tests can be run with:\r\n```\r\nprotokt-testing$ ./gradlew test\r\n```",
+            "tag_name": null
+        },
+        {
+            "hash": "de57caa1fd813e131f1ef52e04fe9722249ed988",
+            "message": "Fix unused-parameter clang warnings in arena.h and map_type_handler.h\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56e7bdf27832b45f389e8a5af958f772d90d02d8",
+            "message": "Fix builtin_atomics check in CMakeLists.txt\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2d61b9edd95a688a720132cde6af536fd5b5dc7a",
+            "message": "Merge pull request #6346 from phanirithvij/patch-1\n\nfix dart example readme typo",
+            "tag_name": null
+        },
+        {
+            "hash": "39c6b58a9b77b5a39100a84350eee172b5b21911",
+            "message": "fix dart example readme typo",
+            "tag_name": null
+        },
+        {
+            "hash": "55ed1d427ccc0d200927746329ac9b811dee77b9",
+            "message": "link libatomic on systems without adequate builtin atomics\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de3e728c6969ae386b2d2f02029e5577b77c5a77",
+            "message": "fix ubsan warning\n\nSigned-off-by: Asra Ali <asraa@google.com>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b0968625331457e79ba2e7eef5b35af3a95129e",
+            "message": "Added linkage monitor badge (#6327)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2b857d0078d0ae796063545dd1b5de2f05445790",
+            "message": "Format with buildifier\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bedef1ede210b61e906c9e8d48f0525cde5c82ce",
+            "message": "Kokoro: run Linkage Monitor on presubmit (#6318)\n\n* adding mvn install with snapshot version\r\n\r\n* Added linkage monitor\r\n\r\n* comment\r\n\r\n* space\r\n\r\n* Added comment\r\n\r\n* Maven to use $HOME/.m2\r\n\r\n* setting MVN\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee5f29f46e1bdd2e235224b0a1d8cf22e028a44d",
+            "message": "Merge pull request #6306 from suztomo/linkage-monitor\n\nSetting up JDK8 for Kokoro jobs",
+            "tag_name": null
+        },
+        {
+            "hash": "c9212beed20efdd8827a0f36fba2c9ac04457063",
+            "message": "continuous.cfg\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3507314d67faf677b34af418316dd5d1b9d4c603",
+            "message": "build.sh to use linux/dockerfile/test/java_stretch\n",
+            "tag_name": null
+        },
+        {
+            "hash": "89fbae62f4bb0de5bba2e6e477e86d5babea0441",
+            "message": "java_stretch\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8886454fc0aa4d4753e96266c2decd1d42c7d741",
+            "message": "uncomented jdk7\n",
+            "tag_name": null
+        },
+        {
+            "hash": "699bab2e2db38bd8f8f6b56af74a0498c61646be",
+            "message": "reverted 64-bit/Dockerfile\n",
+            "tag_name": null
+        },
+        {
+            "hash": "30673ff200bdc5a24e4ed7c3ff9523d870de5296",
+            "message": "backslash at the end of the comment\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7051725941781f1f26bc03cb8f10d2060080f5ee",
+            "message": "To setup JDK8\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bc250b084b88b6ec98046054f5836b6b60132ef",
+            "message": "Merge pull request #5878 from Parad0X/fix-ns\n\nFix scope resolution for Google namespace",
+            "tag_name": null
+        },
+        {
+            "hash": "c4e84ae833c554f286e6f44d58fce9a352f9a5de",
+            "message": "Fix scope resolution for Google namespace\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7e276a329353180757c63037b05859b9b49b60a9",
+            "message": "Merge pull request #6300 from protocolbuffers/3.9.x\n\nMerge 3.9.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "f30c68b79250839bb0172daed2f2e10a88fdde18",
+            "message": "Merge pull request #6231 from ST-DDT/fix-javadoc-warnings\n\nFix javadoc warnings in generated files",
+            "tag_name": null
+        },
+        {
+            "hash": "351a7cdf7353d1dddac9a0fc18a87153dc8ad041",
+            "message": "Follow line length guidelines\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5af81a442b1687fb5ad14921dc4a0c16fd9fef09",
+            "message": "Use parameter name comment\n",
+            "tag_name": null
+        },
+        {
+            "hash": "73e0d748b9acdc40b693f2879ce82ecb1a849b81",
+            "message": "Switch to using enum based methods\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ee16a9c60e734104aeb738503fe3f411c97bd88",
+            "message": "Draft: Fix javadoc warnings in generated files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de5a1fababcc41934c7f7407ef44391113828bff",
+            "message": "Merge pull request #6308 from haon4/201906261101\n\nDown integrate to GitHub",
+            "tag_name": null
+        },
+        {
+            "hash": "e1d8b31ba468ec37ebc40348b66ede8852828cc7",
+            "message": "Remove map_test.util.cc from BUILD\n",
+            "tag_name": null
+        },
+        {
+            "hash": "51026d922970e06475f005b39287963594134b96",
+            "message": "Down integrate to GitHub\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a10cf15578618e33522e08c357d86ed90ee5b73",
+            "message": "Merge pull request #6343 from johndpope/patch-1\n\nallow copy and paste from readme",
+            "tag_name": null
+        },
+        {
+            "hash": "c5fb586fc9441aa91396cc9c50849d8fdf2a70ad",
+            "message": "allow copy and paste from readme\n\nspare people the time deleting $ from text.",
+            "tag_name": null
+        },
+        {
+            "hash": "a96f3af2bc5d7c0b5990412d78ce8456599b8414",
+            "message": "Merge pull request #6323 from cushon/toolchain\n\nUse proto_library in proto_lang_toolchain.blacklisted_protos",
+            "tag_name": null
+        },
+        {
+            "hash": "7b28278c7d4f4175e70aef2f89d304696eb85ae3",
+            "message": "Use proto_library in proto_lang_toolchain.blacklisted_protos\n\nSupport for using proto_library in this attribute was added in:\nhttps://github.com/bazelbuild/bazel/commit/a5ee2c4d979441e663cf53b2ace4daa05e5033d8\n\nLegacy support for using .proto files will be removed in a future\nversion of Bazel.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fc9fd4d437f78dfa270ab801420ae768678e4d40",
+            "message": "Merge pull request #6331 from elharo/patch-2\n\nUpdate guava",
+            "tag_name": null
+        },
+        {
+            "hash": "17eca427343bca022e171501b41921c0aab15a08",
+            "message": "Update guava",
+            "tag_name": null
+        },
+        {
+            "hash": "a387c1025e0806b17587784d138ac82b5cfb1184",
+            "message": "Merge pull request #6330 from elharo/patch-1\n\nUpdate gson",
+            "tag_name": null
+        },
+        {
+            "hash": "6ae7391b1f6679e8f9536274b6fc4bc8ba8d8e7d",
+            "message": "Update gson",
+            "tag_name": null
+        },
+        {
+            "hash": "90bb99c872df2d473d4cfe72213abb488ef79aa9",
+            "message": "Merge pull request #6348 from elharo/patch-4\n\nUpdate version in README",
+            "tag_name": null
+        },
+        {
+            "hash": "4b21abdef3690067a63f4b4f63374722df104bd9",
+            "message": "Update version in README\n\nto 3.8.0",
+            "tag_name": null
+        },
+        {
+            "hash": "7da7bec4411853a3dc5e5faab60868f090d3dbcc",
+            "message": "ruby: Improve performance of Google::Protobuf::Timestamp#to_time (#6360)\n\nThis changes to_time to use Ruby's built in Time.at with nanos support\r\nrather than calculating a float and passing it to Time.at. The new\r\nversion runs about 3 times faster than the original version and\r\nallocates fewer objects.\r\n\r\nWarming up --------------------------------------\r\n    protobuf#to_time    57.296k i/100ms\r\n      faster#to_time   133.229k i/100ms\r\nCalculating -------------------------------------\r\n    protobuf#to_time    635.361k (± 2.1%) i/s -      3.209M in   5.052169s\r\n      faster#to_time      1.873M (± 3.3%) i/s -      9.459M in   5.055169s\r\n\r\nComparison:\r\n      faster#to_time:  1873368.8 i/s\r\n    protobuf#to_time:   635361.4 i/s - 2.95x  slower\r\n\r\nCalculating -------------------------------------\r\n    protobuf#to_time   326.000  memsize (   126.000  retained)\r\n                         7.000  objects (     2.000  retained)\r\n                         0.000  strings (     0.000  retained)\r\n      faster#to_time    86.000  memsize (     0.000  retained)\r\n                         1.000  objects (     0.000  retained)\r\n                         0.000  strings (     0.000  retained)\r\n\r\nComparison:\r\n      faster#to_time:         86 allocated\r\n    protobuf#to_time:        326 allocated - 3.79x more",
+            "tag_name": null
+        },
+        {
+            "hash": "eef87dd13850e4c6771e7de6dff27f3b3727c08f",
+            "message": "Add conformance test for binary string (#6415)\n\n* Add conformance test for binary string\r\n\r\n* Add failing tests to php failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5e026abd05122aad4854f6a40bd902c13b572bd2",
+            "message": "Merge branch 'master' into expand-wildcards\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a700fc7aebee4e35dfcc76b245df66cc32bea516",
+            "message": "Remove shortpath-related code from ExpandWildcards\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef3df0e807fe77c39fc0031b740bcba320521c60",
+            "message": "Use C++11 enum class\n",
+            "tag_name": null
+        },
+        {
+            "hash": "416872ef2c1b0d350e8b57cbdf292ebf86468157",
+            "message": "Merge branch 'master' into expand-wildcards\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce180aa3098088a435839a87f0304ceec57aa1f9",
+            "message": "Rename expand_wildcards to correct style\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc813c372ea3308bcd0d0f41839c5f0fa54afb69",
+            "message": "Address reviewer comments.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a118acc476b839b160ac3601c1feaf0abd32599d",
+            "message": "Merge branch 'master' into HEAD\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c928f67be24b4c0fe4847dcd11b23b19ed21e91",
+            "message": "Delete vim scratch files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "414a625a790ba87469291d4b3c0a2f6a49b3a467",
+            "message": "Windows: expand path names on command line\n\nFixes https://github.com/google/protobuf/issues/3957\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa8f155dcf48ef452a201dc5fb7978c1f4140c8e",
+            "message": "Reinstall wget on mac (#6505)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35b0a879c6fbc6bcf055a634fbbe73aaa0e3c0cd",
+            "message": "Merge pull request #6521 from haberman/layout_mark\n\nOptimized layout_mark() for Ruby",
+            "tag_name": null
+        },
+        {
+            "hash": "c02a6fbf2c2af8e82d917af6afc7ac4e4f73d9e2",
+            "message": "Bugfix for GC mark of oneof fields.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "013a0ea8822a1de95b4076a90dc71f2be8bf31db",
+            "message": "Optimized layout_mark to not iterate over the msgdef.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0088a75ce5e18905807f0e19a3ae27d80b7dbd1d",
+            "message": "Merge branch 'master' into layout_mark\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0f76f8a83bd12c2395bc27c4b3931727a8eef2ba",
+            "message": "Put oneof case offset in separate oneof table.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6b3024f6935eb000431e477dcb41642c2faaef56",
+            "message": "Accept string for int64 wrappers (#6491)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "06d26df704b1e0ab95634695f0def55c25ef941b",
+            "message": "Merge pull request #6559 from haberman/notypedef\n\nRemoved ByteCountInt64.  This is a transitional typedef that should n…",
+            "tag_name": null
+        },
+        {
+            "hash": "6b2fc3c2c91dd1f39d081f205bf2bccb91df7076",
+            "message": "Removed ByteCountInt64.  This is a transitional typedef that should not be released.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f8a2deafd5382be75ce4a9b5461da5864604982c",
+            "message": "Add ovrride keyword for overriden functions\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db5b2bd13ad1c033f56b33b51742dcdb026aa776",
+            "message": "clang-cl requires fully qualified name for friend class declarations\n",
+            "tag_name": null
+        },
+        {
+            "hash": "402b5772d50203898b386e4c37759e34f78bb8e1",
+            "message": "Fix order of export and capability macros on WrappedMutex\n\nclang-cl requires the order to be the opposite of what it currently is.\nIt should not affect other compilers since this is the only compiler\nthat has both macros defined.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2228af689f5ff4d929c85079025c49f6945b136a",
+            "message": "Merge pull request #6556 from rafi-kamal/201908221610\n\nDown integrate internal changes to GitHub",
+            "tag_name": null
+        },
+        {
+            "hash": "4f02f056b5cea99052bfdfb6698afe47a3cf2964",
+            "message": "Down integrate to GitHub\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2cc432fcfd06816faec50636f5afbbef06cbe8d4",
+            "message": "Merge pull request #6542 from elharo/patch-2\n\nUpdate to Truth 1.0",
+            "tag_name": null
+        },
+        {
+            "hash": "e971944bfc30d22fad110f87164a2391341f2acf",
+            "message": "Update to Truth 1.0",
+            "tag_name": null
+        },
+        {
+            "hash": "6c9d7ecfa46554799f1514645823dc469d611d4b",
+            "message": "Test singular fields are encoded in canonical way (#6553)\n\n* Test singular fields are encoded in canonical way\r\n\r\n* Defautl values in proto3 should not be encoded.\r\n* Values should be converted to the canonical representation (e.g.,\r\nlong int64 value may be truncated for int32 field)\r\n\r\n* Update failure list\r\n\r\n* Update failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7ba4a99e0039b879b31f34af1676448d1a7d0619",
+            "message": "adding protoc support for s390x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "36bdcb5a7a79aff977617bd1a83a7b25055e38bb",
+            "message": "Updated issue templates to remove question form (#6576)\n\nThis commit removes the question template. It also updates the bug report and feature request templates to direct questions to the mailing list.",
+            "tag_name": null
+        },
+        {
+            "hash": "e9d4e4acbc037dc580eec06fb4c2670d0b74a172",
+            "message": "Fix the issue for parsing zero length message (#6592)\n\n* When length is zero, substr returns null instead of emptry string, which breaks the invariable for message.\r\n* Tested in https://github.com/protocolbuffers/protobuf/pull/6560",
+            "tag_name": null
+        },
+        {
+            "hash": "14b55eb1280d7b63e6d14ad6ee3e952018c0db77",
+            "message": "Merge pull request #6597 from elharo/patch-3\n\nUpdate version number",
+            "tag_name": null
+        },
+        {
+            "hash": "22f054ac0083b754ba7c0dce151e22a2dfad9311",
+            "message": "Update version number",
+            "tag_name": null
+        },
+        {
+            "hash": "829bb1d7912a976e597a807e5cff0cfe6472770a",
+            "message": "fix no check for null pointer in encode_decode.c (#6578)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "342ae0ebc39221203cb44de4122c28d45d3a6eb8",
+            "message": "Fix issues for php map when parsing missing key/value (#6588)\n\n* For missing message value, map should create a default message\r\ninstance in order to keep its invariable.\r\n* On 32-bit platform, int64 map key should be string",
+            "tag_name": null
+        },
+        {
+            "hash": "516f8b15603b7f7613e2fb957c55bc56a36b64a6",
+            "message": "bazel: Change zlib URL to GitHub\n\nWe've notice significant issues downloading from zlib.net. Since there\nare already other archives coming from GitHub, this shouldn't negatively\naffect reliability.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2d49bf56a5bbb0f7788361c3d4a0619673f99b1",
+            "message": "Merge pull request #6547 from haberman/layout_clear\n\nOptimization for layout_init()",
+            "tag_name": null
+        },
+        {
+            "hash": "671c2459fc8e8d1ce33f5b81b1991d82b921e8e1",
+            "message": "Fixed crash bug and moved initialization into init method.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3e3407af4946adcaca34990dde6c30305d178fc7",
+            "message": "Re-add memset() that seemed redundant but is necessary in case of GC.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9131f0aabb6df6c9db410bcebb9f1d651d8e31e",
+            "message": "Removed commented-out code.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf07d3c1b20f25debe57439c1511d891492f3d19",
+            "message": "layout_init() optimization works!\n",
+            "tag_name": null
+        },
+        {
+            "hash": "78378dab223e822aad6e9deda1192be99a72f068",
+            "message": "Merge branch 'master' into layout_clear\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c9fb9d45bd7a1a7dbee80dbfa6e06461e4c1e40",
+            "message": "WIP.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "84241c6154aaada7a9c3acd041dac43a9f518690",
+            "message": "Add missing files under benchmarks/ to the dist (#6580)\n\n* Add missing files under benchmarks/ to the dist\r\n\r\n* fix typo\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "659e799fb81ac9691aff49008a015578210e90c1",
+            "message": "Sync upb (#6577)\n\n* Sync upb\r\n\r\n* https://github.com/protocolbuffers/upb/pull/208\r\n\r\n* Fix php c extension compiling\r\n\r\nDon't use macros defined by upb\r\n\r\n* Update ruby conformance failure list\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b273cba192801cf8c0b70cd099295805c4a78b21",
+            "message": "Fix enum writing.\n\nEnums use varint, so if the value is negative it should end up being longer.\n\nThis was caught my new conformance test cases.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "030a38b954c227f28ca51f97d940aa374921b9ed",
+            "message": "Fix typo that snuck in with last commit.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ec27f0d0847ef4531c9ab4ee5174591d9a391b0",
+            "message": "Add an explicit test using secure coding for added safety.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56bf637221dfbc1dd6db64d8231f7bbf600e1bdd",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2610eb6675f36062a70a105fccd436468169393c",
+            "message": "Add license (#6651)\n\n",
+            "tag_name": null
+        }
+    ]
+}

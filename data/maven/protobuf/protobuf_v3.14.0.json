@@ -1,0 +1,878 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.14.0",
+    "previous_release": "v3.13.0.1",
+    "cycle_days": 36.1084375,
+    "commits": 173,
+    "commits_in_advance": 96,
+    "start_delay": -214.28087962962962,
+    "duration": 250.38931712962963,
+    "commits_info": [
+        {
+            "hash": "2514f0bd7da7e2af1bed4c5d1b84f031c4d12c10",
+            "message": "Removed protoc-artifacts/target directory\n\nI committed this directory by mistake and these build artifacts should\nnot be checked in.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3192d612852d4073378c1c5a0d55ed3f179987d",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8630972cedc12b51eb7ff0dbf39bd8c5f8a8141d",
+            "message": "Updated CHANGES.txt to add #8035\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e91922a4e7c420376f0b8f8a37fe41336de78ddd",
+            "message": "Additional test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e57f761e7bb4a3e95a9cff0ff244a16432f29f91",
+            "message": "Fix parsing negative Int32Value that crosses segment boundary\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b851b3fe638a6cef5986f8b9c78df420e319e5d",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "129a5edb28907b1e3f27b23354375e06e7ecb3ec",
+            "message": "Updated CHANGES.txt to include #7928\n",
+            "tag_name": null
+        },
+        {
+            "hash": "99149badc02c5dff7461c8811c891a32bc4893a8",
+            "message": "Fix PyUnknownFields memory leak (#7928)\n\nProperly release internal data structure on deallocation.\r\nFix #7301",
+            "tag_name": null
+        },
+        {
+            "hash": "492858351c998dae27c28dc92d87d9d4f1c00e11",
+            "message": "Updated CHANGES.txt for the 3.14.0 release\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fbbe11ae493e1e1bab6cc396dfbb7b4de9fd8bd0",
+            "message": "Reintroduced definitions for PHP GeneratedClassName() functions\n\nWe no longer use these functions, but it turns out that we need to keep\nthem around for gRPC to use.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "31f719618c4ee4b1e44b076dd7f06c1dd5029749",
+            "message": "Added back in notes field in package.xml\n\nThis field turns out to be required and cannot be empty, so this commit\nadds some placeholder text.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a8ab1fade9bf69d7fa630c0f7568e0e3b51df0e4",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "42d0c53f5bc261bb7d38f0a07efc8ae2a59fab60",
+            "message": "Fixed PHP version and release notes\n\nThis commit updates protobuf.c to refer to the PHP version macro so that\nit stays up to date. I also deleted the notes element near the top of\npackage.xml. This seems to be a global notes field rather than a\nper-release field, so it was showing up on new releases where it doesn't\nmake sense.\n\nFixes #8017.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b45ce5eee53e459f6b2f399f3d908d5ceb41ba9d",
+            "message": "Updated python/release.sh to use Python 3 for setup.py\n\nThis fixed an error I was getting about bdist_wheel not being found.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ee15d6135fb77202cba0662a4ad63499353b581",
+            "message": "Update the pod tests to match the new min iOS version.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "55ac3382490874a2c2acf30cecc569ed6629777c",
+            "message": "Bump the podspec iOS min to 9.0\n\nXcode 12+ issue a warning when targeting older iOS versions, so avoid\nthe issue. #7980 updated the Xcode projects already.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ef18e357a01404258e3a002e13d9a52221b81fa",
+            "message": "[PHP] Fixes for package.xml: added/removed source files. (#8022)\n\nThese files should have been added/removed in\r\nhttps://github.com/protocolbuffers/protobuf/pull/7944, but\r\nthis was missed and Kokoro does not test \"pear package\".",
+            "tag_name": null
+        },
+        {
+            "hash": "27100b40fd45b384b690020d9306d7e501a65d16",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea513d71e042315bfd689c602502cd9d14fc8a66",
+            "message": "Merge pull request #8006 from haberman/php-internaladd\n\n[PHP] Optimized away hex2bin() call in generated code",
+            "tag_name": null
+        },
+        {
+            "hash": "e8a442f97c6f31c08160d01c97392d67d6710c62",
+            "message": "Merge branch 'master' into php-internaladd\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7b56ea3ac362e508b124d9a9677c92208ca464ab",
+            "message": "Merge pull request #8005 from haberman/php-filefix\n\nMoved HasOneof test into GeneratedClassTest.php, to avoid the extra file.",
+            "tag_name": null
+        },
+        {
+            "hash": "a8a1493f35f5c3d8e25ccde4a9e206c31a855563",
+            "message": "Moved HasOneof test into GeneratedClassTest.php, to avoid the extra file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "957a0bf08c353b76d254ff2bd8cac8cd4faeab92",
+            "message": "Merge pull request #8003 from anight/php_extension_add_has_oneof_field_method\n\nadd missing hasOneof method to check presence of oneof fields",
+            "tag_name": null
+        },
+        {
+            "hash": "52d3be327632d2e2c7c489ee44c917b2f795eff5",
+            "message": "added tests for hasOneof<Field>() php methods\n",
+            "tag_name": null
+        },
+        {
+            "hash": "913e1ede12b7bfb86e48eab1f3fcc6668ab23a02",
+            "message": "add missing has<Field>() method for oneof fields\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c5f7b4b0b32baab4396d6c023dd4d74d593a0e2f",
+            "message": "Merge pull request #7944 from haberman/php-wkt\n\n[PHP] Native C well-known types",
+            "tag_name": null
+        },
+        {
+            "hash": "e0151addd363a72dd13dc8fc6b16a38f24c6a1c2",
+            "message": "Added missing files to Makefile.am.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a29f792bae7bd8571026f3ced00728e5ad849b26",
+            "message": "Updated Makefile.am for changed files.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a1486fc89da472b3706a4db11fcd489dea413b50",
+            "message": "Merge branch 'master' into php-wkt\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fdc35840b95f56c3aef44a3fc6ae5991f21620a5",
+            "message": "Merge pull request #7925 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "709775b67e1994796a86dc356e35b1414d8696d6",
+            "message": "Added missing semicolon.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69b245e63a826fd402667ca7c0f98e70b31add99",
+            "message": "Added Python 2.7-specific failure list for Python/C++ also.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee68c9b29c7ceaa5ab824c16c33411faae132dc8",
+            "message": "Added text format failure list for Python 2.7.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "036865fa7f5a5026d6b44fdc877741b5888abab7",
+            "message": "Add C++ text format failure list, and a Python 2.7 text format failure list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "356d59ab57f8a7807e0c0648ff2b508a1c594081",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "56ae807dbd10d6bfaec61e8a004149f0ad3c6190",
+            "message": "Sync from Piper @338744130\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4cd56bdef81527df885d7fd408f40cdc71149c36",
+            "message": "Sync from Piper @338718276\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b70695dd68488e0a9bc847de69dadc6b47e251e9",
+            "message": "Sync from Piper @338707351\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de371235c9f50eadad7a3562572b79a9422cd754",
+            "message": "Sync from Piper @338284531\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38d6de1eef8163342084fe76194d251a5359a575",
+            "message": "Sync from Piper @334206209\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "70b02861f8e8ba711efd187188dfb930db7bcaba",
+            "message": "Merge pull request #7845 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "5c26cae18c47ada3a4990c4bce33964c71ebed02",
+            "message": "Re-add change that was somehow lost.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1ee430d1619fcee4828ef4a14d7c03cebe95d23",
+            "message": "Re-add fix that somehow was lost pushing back to Piper.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "28d6aa04f6d1950b91b6f5d87367e4b16d6bebd5",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3cf99c0fb1e955002a2fc297fec88bd41ec5f96",
+            "message": "Sync from Piper @328224070\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "214c77e1b76e63e512bd675d1c300c80438642b6",
+            "message": "Merge pull request #7698 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "59d3966b1fb4dedbfe8af5bdecd303bbac7319bf",
+            "message": "Updated failure list for the PHP C implementation.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "492d0b543e259e5c5b6765ef657a4d13a0f82a0a",
+            "message": "Added new failing conformance tests to failure list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3cdd40ef03e7b0c393675b36e53f69b46b1d3e5",
+            "message": "Added new map.cc file to Bazel BUILD file.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "82bad2e1ebfc3db34a839fb1a681974996d16741",
+            "message": "Fixed uninitialized variable warning.\n\nUnfortunately there's not an easy way to annotate that the\n\"unexpected mode\" case is unreachable (even GOOGLE_LOG(FATAL)\nin a default: case doesn't do it).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2b3a79735b243f19f4fa90a267ec856db7c60c73",
+            "message": "Added changelog entries for the sync.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32a94ce35311a493d3310256c610196304a875f9",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tcsharp/src/Google.Protobuf.Test/testprotos.pb\n",
+            "tag_name": null
+        },
+        {
+            "hash": "95e6c5b4746dd7474d540ce4fb375e3f79a086f8",
+            "message": "Sync from Piper @327110949\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ba52411d08233c2d7cc8f56cfbe426195768315",
+            "message": "Sync from Piper @320514613\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "25755efc4f4a4e9d6efb34a100df0a4860dca695",
+            "message": "Sync from Piper @319848517\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dfab275eca9481b5de31122db6fc91b31db3382a",
+            "message": "Sync from Piper @317197168\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1b6076ea20e61a49d9dc25c9e5a7396f7381e26",
+            "message": "Merge pull request #7821 from acozzette/3.13.x-202008171106\n\nMerged 3.13.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "cddcbb93f0887e2716b7b3b24be0ecf6037efdd4",
+            "message": "Fixed spelling (reenable -> re-enable)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "58f4260e8e7fb44f2e99179df7a3830e8eea05f6",
+            "message": "Merged 3.13.x into master\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a71927d74a4ce34efe2d8769fda198f52d20d12",
+            "message": "Fix segment fault for proto3 optional (#7805)\n\n* Fix segment fault for proto3 optional\r\n\r\n Fixes #7801\r\n",
+            "tag_name": null
+        },
+        {
+            "hash": "389bd06d0a637d3fd1aded7de59a12ed8f83baad",
+            "message": "//:protobuf_java_util: discontinue JDK 7 compatibility support.\n\n6bbd56dfd9600adc9b084028d99a0aed880d7622 removed the -source 7 -target\n7 javacopts from the //java:{core,lite} targets in order to improve\ncompatibility with more recent versions of javac. (see that commit for\nmore discussion of motivation.) but the commit left -source 7 -target\n7 javacopts on the related //java/util target. i've confirmed with the\ncommit author that this was just an oversight, so remove these flags\nas well.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e56cbaf1d3b62d5338b79e41232ecf492bfb499b",
+            "message": "Add a Codespell action (#7752)\n\n* Fix a typo\r\n\r\n* Add codespell action\r\n\r\n* Fix lots of spelling errors\r\n\r\n* Fix a few more spelling mistakes\r\n\r\n* Add an ignore words list\r\n\r\n* s/parsable/parseable/\r\n\r\n* Don't touch the third party files\r\n\r\n* Cloneable is the preferred C# term\r\n\r\n* Copyable is the preferred C++ term\r\n\r\n* Exclude some more words and folders\r\n\r\n* Revert \"s/parsable/parseable/\"\r\n\r\nThis reverts commit 534ecf7675222f39d98928c7e1489b56b004b774.\r\n\r\n* Revert unparseable->unparsable corrections\r\n\r\n* Skip more locations and add some ignore words that haven't been merged yet",
+            "tag_name": null
+        },
+        {
+            "hash": "e2cc2de304f8bc33b91ab18fa0b7cef8aaf26c8b",
+            "message": "Fix lots of spelling errors (#7751)\n\n* Fix a typo\r\n\r\n* Fix lots of spelling errors\r\n\r\n* Fix a few more spelling mistakes\r\n\r\n* s/parsable/parseable/\r\n\r\n* Don't touch the third party files\r\n\r\n* Cloneable is the preferred C# term\r\n\r\n* Copyable is the preferred C++ term\r\n\r\n* Revert \"s/parsable/parseable/\"\r\n\r\nThis reverts commit 534ecf7675222f39d98928c7e1489b56b004b774.\r\n\r\n* Revert unparseable->unparsable corrections",
+            "tag_name": null
+        },
+        {
+            "hash": "8d74659c7aee7b595b1a304e7c64eb8a9747f11f",
+            "message": "Reserve 1087 for Wire wire_package\n\nrelease notes: no",
+            "tag_name": null
+        },
+        {
+            "hash": "6b73371e7d1c12637ff767281f46a7e8a3a38696",
+            "message": "Update third_party.md\n\nAdd a library that helps develop protoc plugins in Node.js, and an example plugin that can serve as a template for alternative generators.",
+            "tag_name": null
+        },
+        {
+            "hash": "963ead3e372768a20757f5177c343ac63cc762e7",
+            "message": "[docs] Update IntelliJ plugin link\n\nThe previously-linked project hasn't been updated for years.",
+            "tag_name": null
+        },
+        {
+            "hash": "bd7d87269f8fa0459cdf7b1877d6e21eb8d5a2cf",
+            "message": "Change some SplitStringUsing calls to Split.\n\nThis is done to match an internal Google change necessary to deprecate an old internal API.  Nothing needs to change here, however making the change allows the internal code to continue to match the Github code, which is desirable.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "36d39a0266238f73fdc6e088dee8de31dc682d90",
+            "message": "Add parser and linter libraries to third party docs (#6474)\n\n* Add Protobuf parser and linter\r\n\r\n* chore: Add some third-party tools",
+            "tag_name": null
+        },
+        {
+            "hash": "92e3d3e02a886839c75aca74dab4d0ea4cef8eb8",
+            "message": "Disable ESLint and TypeScript on JS protobuf file\n\nI was getting TypeScript errors on the generated protobuf file.\r\n\r\nThese directives to turn off ESLint and TypeScript are just comments. They shouldn't affect anyone who is not using ESLint or TypeScript.\r\n\r\nA similar change was made in the grpc/grpc-web project: https://github.com/grpc/grpc-web/pull/752",
+            "tag_name": null
+        },
+        {
+            "hash": "8e09396ba1433d894d49548ac431debc93962e87",
+            "message": "Update third_party.md\n\n Common Lisp: \r\nhttp://github.com/ndantam/s-protobuf  hasn't been updated in 5 years, and hasn't had a real update in 8.\r\nhttp://github.com/qitab/cl-protobuf is the one used internally and maintained by Googlers (third_party/lisp/cl-protobufs) though I don't know\r\nhow to or if I should express that.",
+            "tag_name": null
+        },
+        {
+            "hash": "6b1d0f11493ef2317ea74aa00804835a10ebaf19",
+            "message": "Add objectivec/BUILD to objectivec_EXTRA_DIST files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b93b8eae55516a5389c93a81579ba85d85776ff",
+            "message": "[bazel] Move Objective-C runtime into //objectivec\n\nRemoving language-specific targets from the top-level BUILD file\nwill allow users to keep their workspaces smaller and easier to\nmaintain by not depending on language rules they don't need.\n\nSimilar work was done for Java in #7190.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "711db1d76425f2bfc5283dd73baec24e8cee41bd",
+            "message": "Qualify uses of std::string within protobuf/compiler/ruby/...\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c91d71f69ee887e894b7e6da3ccfbef54a0bd65",
+            "message": "Adding forgotten duration.proto to the lite library\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fc8e2e871dc92cf63cef23478e830449fce4bb70",
+            "message": "Fix a typo",
+            "tag_name": null
+        },
+        {
+            "hash": "d4ec70fdd3380e7113e9e3c23cef2bea50dbf2e7",
+            "message": "Fix C# optional field reflection when there are regular fields too\n\nPrevious tests didn't spot this as each message was either \"all\noptional\" or \"all non-optional\", at which point there isn't a problem.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b18833f4f2a2f681f4e4a25cdf3b0a43115ec26",
+            "message": "Tweaked update_version.py to leave PHP notes blank\n\nUntil now update_version.py has copied the notes from the previous PHP\nrelease, which is not very useful.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6da79e94b0af7a82cffe8f65bc53911fbc44b5b6",
+            "message": "Fixed VERSION_SUFFIX logic in update_version.py\n\nThis commit makes a couple of fixes:\n- Make sure we always update the suffix, since even for a non-RC release\n  we need to clear the suffix.\n- Make sure the suffix is properly quoted and begins with -rc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b93993ac714342e57aa3c47dfc07c9fb0e4c181",
+            "message": "Update Gradle dependency reference format\n\nSee https://docs.gradle.org/current/userguide/java_library_plugin.html\r\n> The compile, testCompile, runtime and testRuntime configurations inherited from the Java plugin are still available but are deprecated. You should avoid using them, as they are only kept for backwards compatibility.",
+            "tag_name": null
+        },
+        {
+            "hash": "090d28e8f75ff3c6f8d2996081e84b672fcfe808",
+            "message": "Null Check in UnknownField::AddAll() (#7328)\n\nUnknownField::AddAll() is called (multiple times) from UnknownField::MergeFrom(). The `extras` parameter is one of: `varintList`, `fixed32List`, `fixed64List`, `lengthDelimitedList`, or `groupList`. All of these members can be null, and are appropriately checked in other usage. If attempting to parse a proto with unknown extensions, and exception is thrown (NRE).\r\nThis adds the appropriate null check inside UnknownField::AddAll().",
+            "tag_name": null
+        },
+        {
+            "hash": "223e89157a8b8b4f9e57ee4a3cf2165c61372f5d",
+            "message": "Removed test files from pypi distribution generation code.\n\nFixes #7493\n\nBy removing all test files from the distribution, we've reduced the .whl\nfile size from 1259808B (1.2MB) to 996042B (973K), which is 21% reduction,\nAnd reduced the unpacked size from 5317178B (5.1MB) to 3251811B (3.2MB),\nwhich is 39% reduction.\n\nSize was measured for the protobuf-3.11.3-cp35-cp35m-manylinux1_x86_64.whl release.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a446e6472b87e2c06056773ba28cbf6e8bd117c1",
+            "message": "Previously, I had incorrectly used some newer features of CMake(version 3.14). But Now I have updated this code to work with older versions of CMake too.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "88f3ef7d1dd3557d22782094b9ed4bf8a5010dbe",
+            "message": "[bazel] Add default shell env to gen_well_known_protos_java\n\nWe may need the shell environment (potentially augmented with\n`--action_env`) to invoke protoc on Windows. If protoc was built with\nmingw, it probably needs .dll files in non-default locations that must be\nin PATH. Previously with `--compiler=mingw-gcc`,\n`bazel build //:gen_well_known_protos_java` would fail on Windows. This\nCL fixes the issue.\n\nAlso we have `default_shell_env` set to True for `ProtoCompile`, this makes\nthe behavior consistent.\n\nSee #2933, and\nhttps://github.com/bazelbuild/rules_go/blob/585a27ad0ab5bdd185aa3bd5b0877a778d4777ad/proto/compiler.bzl#L130\n",
+            "tag_name": null
+        },
+        {
+            "hash": "543817295e05bcf226628ec26706e575741a0722",
+            "message": "Add R8 rule to documentation\n\nUsing default production Android build and protobuf-lite leads to RuntimeExceptions. The workarounds are documented in issues and I took those discussions and summarized them in the lite.md file.",
+            "tag_name": null
+        },
+        {
+            "hash": "7db720e07524f96be558f194ae1ffee4a9d49972",
+            "message": "Modify update_version.py to update the version suffix as well.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b970be43ffb4f6e9c7248c5972d984551ed59fff",
+            "message": "Display beta version in \"protoc --version\"\n\nDisplay the beta version when \"protoc --version\" is executed. Use\nPROTOBUF_VERSION_SUFFIX for this purpose.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7e787e091e1e600b5dc3523269b988b952a0e9db",
+            "message": "Made the Codespell check skip protobuf generated code\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e5fe9b8cbdfe7d25852ff2e34e3250e2c0c98860",
+            "message": "Updated CHANGES.txt\n\nNow that 3.13.0 has been released, this commit updates CHANGES.txt to\nmention 3.13.0 instead of 3.13.0-rc1 and to include the recent PHP\nchanges. I also added a short explanation of the 3.12.4 release.\n\nFixes #7820.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d69c754a861c08d7e5238eade87eadbfc233e36",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "981be5be209d00674cd7359b2015050d67091264",
+            "message": "Python/C++ text_format conformance test fix.\n\nPass the Python/C++ text_format failure list to the conformance runner.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "90021b813f3024537d1becb6927cd956ec87ed71",
+            "message": "Updated changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "73ac11febea7bb87e6f2c3ba15359d211e374bb5",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3fff95e1bd59209a17cd6e3f7e0218eacb35cd88",
+            "message": "Updated changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "820d1ca5af30a1a150668b578ac42f736f8ec1be",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d90f3b8b171ed7887a28e1ebb9fce04b9941797b",
+            "message": "Fixed build failure in conformance tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a633ad452d81e5f207692c23eefba3960238bfcc",
+            "message": "Ran update_file_lists.sh to pick up arenastring.cc.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2181e8cb3fdb9a903edf7157202e2b8f7278530f",
+            "message": "Fixed undeclared variable errors.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0eb317c36d673bf417e95e567179b09a3d02519c",
+            "message": "Updated Changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aefc1e767064fb0bbcb912aca28750aed4702fa1",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tconformance/failure_list_js.txt\n#\tsrc/google/protobuf/generated_message_reflection.h\n",
+            "tag_name": null
+        },
+        {
+            "hash": "40f5b0b30ff48644c9bc98e9d9b58be72acacbcf",
+            "message": "Fix undef warning when building w/ clang or gcc on Windows\n",
+            "tag_name": null
+        },
+        {
+            "hash": "300dfcc5bf46d0fae35146db2195891df4959e4b",
+            "message": "Reserve 1088 for Confluent Schema Registry\n",
+            "tag_name": null
+        },
+        {
+            "hash": "02955622cce1e4cbd8337a76269e2b81f39bee09",
+            "message": "[bazel/py] Omit google/__init__.py from the Protobuf runtime. (#7908)\n\nSince `google` is a Python namespace package, the google/__init__.py\r\nfile should be omitted to avoid collisions. For example, its presence\r\nmay cause other Pip packages in the google namespace not to be found.\r\n\r\nThis change narrows which __init__.py files are included in the\r\n`//:protobuf_runtime` target to include only those under\r\n`google/protobuf`. It also moves their canonical inclusion to the\r\ninternal `//:python_srcs` rule, eliminating the dual specification in\r\n`python_protobuf.extra_srcs`.\r\n\r\nThis is the difference in files, lexicographically ordered:\r\n\r\n```\r\n$ bazel cquery 'labels(srcs, kind(py_library, deps(:protobuf_python)))' | sort > /tmp/deps-{before,after}.txt\r\n$ diff /tmp/deps-{before,after}.txt\r\n1,5d0\r\n< //:python/compatibility_tests/v2.5.0/tests/__init__.py (null)\r\n< //:python/compatibility_tests/v2.5.0/tests/google/__init__.py (null)\r\n< //:python/compatibility_tests/v2.5.0/tests/google/protobuf/__init__.py (null)\r\n< //:python/compatibility_tests/v2.5.0/tests/google/protobuf/internal/__init__.py (null)\r\n< //:python/google/__init__.py (null)\r\n51d45\r\n< //:python/protobuf_distutils/protobuf_distutils/__init__.py (null)\r\n```\r\n\r\nThis seems like a desirable change, since it avoids polluting other\r\npackages, too.\r\n\r\nThis change is conceptually similar to #7877, but for Bazel.",
+            "tag_name": null
+        },
+        {
+            "hash": "66e3562aafce093d30473555248f22b3fdc88aad",
+            "message": "Remove uses of pkg_resources in non-namespace packages. (#7902)\n\nIn #713 and #1296, the `google` package in protobuf sources was found\r\nto cause conflicts with other Google projects, because it was not\r\nproperly configured as a namespace package [1]. The initial fix in\r\n786f80f addressed part of the issue, and #1298 fixed the rest.\r\n\r\nHowever, 786f80f (the initial fix) also made `google.protobuf` and\r\n`google.protobuf.pyext` into namespace packages. This was not correct:\r\nthey are both regular, non-namespace, sub-subpackages.\r\n\r\nHowever (still), the follow-up #1298 did not nominate them as\r\nnamespace packages, so the namespace registration behavior has\r\nremained, but without benefit.\r\n\r\nThis change removes the unnecessary namespace registration, which has\r\nsubstantial overhead, thus reducing startup time substantially when\r\nusing protobufs.\r\n\r\nBecause this change affects the import internals, quantifying the\r\noverhead requires a full tear-down/start-up of the Python interpreter.\r\nSo, to capture the full cost for every run, I measured the time to\r\nlaunching a _fresh_ Python instance in a subprocess, varying the\r\nimports and code under test. In other words, I used `timeit` to\r\nmeasure the time to launch a _fresh_ Python subprocess which actually\r\nperforms the imports.\r\n\r\n* Reference: normal Python startup (i.e., don't import protobuf at all).\r\n  ```\r\n   % python3 -m timeit -s 'import subprocess' -r 3 -n 10 'subprocess.call([\"python3\", \"-c\", \"pass\"])'\r\n  10 loops, best of 3: 27.1 msec per loop\r\n  ```\r\n\r\n* Baseline: cost to import `google.protobuf.descriptor`, with\r\n  extraneous namespace packages.\r\n  ```\r\n  % python3 -m timeit -s 'import subprocess' -r 3 -n 10 'subprocess.call([\"python3\", \"-c\", \"import google.protobuf.descriptor\"])'\r\n  10 loops, best of 3: 133 msec per loop\r\n  ```\r\n\r\n* This change: cost to import `google.protobuf.descriptor`, without\r\n  extraneous namespace packages.\r\n  ```\r\n  % python3 -m timeit -s 'import subprocess' -r 3 -n 10 'subprocess.call([\"python3\", \"-c\", \"import google.protobuf.descriptor\"])'\r\n  10 loops, best of 3: 43.1 msec per loop\r\n  ```\r\n\r\n[1]:  https://packaging.python.org/guides/packaging-namespace-packages/",
+            "tag_name": null
+        },
+        {
+            "hash": "cae85a9f116478caea0b8b1920240b3ef8c07ae8",
+            "message": "PHP: Added `==` operators for Map and Array. (#7900)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3abbbd8870054a89c7c3d1005f49eead83c87ded",
+            "message": "python/setup.py: remove unneeded wheel dependency\n\nwheel is required since version 3.13.0 and\nhttps://github.com/protocolbuffers/protobuf/commit/ff92cee10bcae7533b573368f448e782fbd43f39\n\nThis will result in the following build failure when cross-compiling:\n\nDownload error on https://pypi.org/simple/wheel/: unknown url type: https -- Some packages may not be found!\nCouldn't find index page for 'wheel' (maybe misspelled?)\nDownload error on https://pypi.org/simple/: unknown url type: https -- Some packages may not be found!\nNo local packages or working download links found for wheel\n\nRemove wheel requirement from setup.py as it is only needed by\nrelease.sh, not by setup.py\n\nFixes:\n - http://autobuild.buildroot.org/results/371c686a10d6870933011b46d36b1879d29046b9\n\nSigned-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c2d089e4134a67daadf38fc9f3609f0f918201fd",
+            "message": "Add Purescript protobuf to third-party list",
+            "tag_name": null
+        },
+        {
+            "hash": "f4aa17b28af168cb3168f029de796d5994c321f6",
+            "message": "Update documentation for protobuf_distutils Python package.\n\nThis updates README.md to use an example with pip instead of setup.py.\nThe README.md is then used as the long_description argument to setup(),\nso that the doc shows up on pypi.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f0942fb0a21e984a535c9ade53dd4642425c3aca",
+            "message": "Equals passes tests in both pure-PHP and the C extension. (#7883)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2361b1960f259cc4ec6236fce52ce3ee5c59d3c3",
+            "message": "Fix more -Wunused-parameter warnings\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ecb4ab4cdaeb5d09649aa747e7971e0ce1bc51d",
+            "message": "remove GetArena in _InternalParse\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cdf5022ada7159f0c82888bebee026cbbf4ac697",
+            "message": "Use {}\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f2ae3a0fc5d65265a57188c7a6239151e84317d",
+            "message": "Fix -Wmissing-field-initializers warning\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0110ff565951ea52af37d6f155197048c378abe3",
+            "message": "Update rules_proto\n\nThis was pretty behind https://github.com/bazelbuild/rules_proto/compare/97d8af4dc474595af3900dd85cb3a29ad28cc313...40298556293ae502c66579620a7ce867d5f57311\n",
+            "tag_name": null
+        },
+        {
+            "hash": "76f9074c1c947c6f6773c5095e977572de514821",
+            "message": "Fix some -Wunused-parameter warnings which appeared in release 3.13.0.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f5bdd7cd56aa86612e166706ed8ef139db06edf2",
+            "message": "JS: parse (un)packed fields conditionally (#7379)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff06e23d239bd851504e936114ecc54e8997f7e3",
+            "message": "Add a setuptools extension for generating Python protobufs (#7783)\n\nThis extension allows Python code to be generated from setup.py files, so they\r\nare created as part of a normal Python build. The extension uses an already-existing\r\nprotoc binary, which can be explicitly specified if needed.",
+            "tag_name": null
+        },
+        {
+            "hash": "3cff48db79bd903b2382492e166079fe708be6b1",
+            "message": "Spell check only comments and strings in vim",
+            "tag_name": null
+        },
+        {
+            "hash": "9d9c67058908f7bc02117930df93412cb017e5c7",
+            "message": "Merge pull request #7701 from basvdlinden/safe_bytestring_copyfrom_span\n\nannotate ByteString.CopyFrom(ReadOnlySpan<byte>) as SecuritySafeCritical",
+            "tag_name": null
+        },
+        {
+            "hash": "4c1bb4d07bc8f5d1aa03136eda6adcd8c92e07dd",
+            "message": "Remove newline\n",
+            "tag_name": null
+        },
+        {
+            "hash": "12d7976055fc36b8f3aed1a881b79f784e5fd040",
+            "message": "Added test for ByteString.CopyFrom(ReadOnlySpan<byte> bytes)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ead45182aac1103a98dbbd068b89ee883cc7eb28",
+            "message": "annotate ByteString.CopyFrom(ReadOnlySpan<byte> bytes) as SecuritySafeCritical\n",
+            "tag_name": null
+        },
+        {
+            "hash": "022078d3ee642816688228e9434775f2a137536d",
+            "message": "Fix a CMake module for support RelWithDebInfo and MinSizeRel install\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2123ed5df70b043cc14f74231cfeabd26e02176a",
+            "message": "Switch to atomic for setting autocreated objects.\n\n- Update semaphore comment to new scope.\n- Use an atomic swap to avoid needing to use the semaphore.\n\nThis means the semaphore is create only when extension are auto created (less\nmemory usage).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de5d1b98c27428450b9a38ab5c2de479f59025af",
+            "message": "Updated compiler code to fully qualify std::string\n\nThis is one step toward removing the \"using std::string\" statement from\nstubs/common.h.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "74de188815ad93dd0a0aa61b5fd45fb67330fd8e",
+            "message": "Bump junit from 4.13 to 4.13.1 in /java\n\nBumps [junit](https://github.com/junit-team/junit4) from 4.13 to 4.13.1.\n- [Release notes](https://github.com/junit-team/junit4/releases)\n- [Changelog](https://github.com/junit-team/junit4/blob/main/doc/ReleaseNotes4.13.1.md)\n- [Commits](https://github.com/junit-team/junit4/compare/r4.13...r4.13.1)\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "2558c5deefffa3f01c206d5b132b999a18da7573",
+            "message": "Fix finding google/protobuf/descriptor.proto on FreeBSD (#7954)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "151d49436aafcb232aee54ab588776f9712ba4e7",
+            "message": "upgrade System.Memory dependency to 4.5.3\n",
+            "tag_name": null
+        },
+        {
+            "hash": "666b592e36fbebeaaccbee8714f50ed81e801fee",
+            "message": "Remove some extra newlines to warning/note output.\n\nShould make output a little more compact, easier to see common things in one\nblock when generating multiple files at once.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a645d7176bffb79dfe552e829f061262abe64e07",
+            "message": "Update the iOS project for Xcode 12.\n\n- Move the min up to iOS 9.  Things should still work with 8, just can't have\n  the project set to that and be able to run the tests, so moving it up to\n  support running the tests.\n- Remove the bitcode setting from the unittest bundle, was causing an error\n  with Xcode 12.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "676ea9890228f04a9e3fd78df275fcb15778aeed",
+            "message": "Update the build/testing script for Xcode 12.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c27f6a47972cd17dede15754d4f0d1f726ce4f7",
+            "message": "Add cast to avoid warning on Xcode 12.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ce66f6047db44df3234bccd6fcf468bccc14a760",
+            "message": "Update libprotobuf.cmake",
+            "tag_name": null
+        },
+        {
+            "hash": "6aaa40f2a9519115a5cdbc6113f56f194a82a60e",
+            "message": "Update libprotobuf.cmake\n\nlink log library on Android",
+            "tag_name": null
+        },
+        {
+            "hash": "6eedd1a519d1f588211c2694954498dff2a9e291",
+            "message": "Update libprotobuf-lite.cmake\n\nlink log library on Android",
+            "tag_name": null
+        },
+        {
+            "hash": "7daf0aa7b00261bc8e0a433c58e74083cd58ea43",
+            "message": "Removed the unnecessary setuptools package dependency for Python package.\n\nThe setuptools package was added to allow definition of namespaces using\nthe now outdated (and discouraged from use) pkg_resources-style.\n\nThe code here, for a long while now, uses a try/except (`ImportError`)\nprotection around the setuptools code, and falls back to the more\nencoraged pkgutil-style.\n\nRemoving this library won't affect any current workflow, and in the case\nof setuptools not found, it'll actually use a more modern (and\nencouraged) flow.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8f76331abf682c289fa79f05b2ee39cc7bf5a48",
+            "message": "Adds a CMake option to build `libprotoc` separately (#7949)\n\nThis exposes the variable `protobuf_BUILD_LIBPROTOC` as CMake option to be able to build libprotoc without building the protoc binary.",
+            "tag_name": null
+        },
+        {
+            "hash": "4eea2b00a32ff96124125e224da6a7820b015d2f",
+            "message": "Remove php 5 tests on mac (#7956)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ccde30967bcffc90d0cf6ed825546d89f8a296b",
+            "message": "Add cmake and protoc to mergeable config (#7955)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a648daaca37de71e2a7ca85f5858647de333a17",
+            "message": "Use the https address for git clone (#7951)\n\nThe previous git address failed for no access",
+            "tag_name": null
+        },
+        {
+            "hash": "7ab0be202de1ffae2232b31e50375aec8464068b",
+            "message": "Merge pull request #7952 from TeBoring/3.13.x-merge\n\nMerge 3.13.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "37e69bcddf7ac3f47227059452ddfa1efc973a7e",
+            "message": "Merge branch '3.13.x'\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f5a3b92cf7b379f2b8c33e8b30ca029a368be512",
+            "message": "Update default dependency for gtest. (#7907)\n\nThe gtest source was changed in #7237 on an opt-in basis, and has been\r\nreleased since 3.12.0. The comments state that the default should change\r\nin 3.13.0, but that didn't quite happen.\r\n\r\nThis change does flip the default, and updates comments to say 3.14.0.",
+            "tag_name": null
+        },
+        {
+            "hash": "ad29d402c45092e00ef6f2de52e5884cb68c87fe",
+            "message": "Enhance documentation for `generate_py_protobufs`. (#7937)\n\nThis change updates the README.md to describe the order of resolution\r\nbetween `options['generate_py_protobufs']`, `--protoc`, and the `PROTOC`\r\nenv var.\r\n\r\nSince the `setup.py` script is not the main way to find docs, this change\r\ndeletes the parts of the docstring that are redundant with `README.md`.",
+            "tag_name": null
+        },
+        {
+            "hash": "344f28d4a24524e107a6ce3a2077283b08e603b9",
+            "message": "Allow `generate_py_protobufs` to find a custom protoc (#7936)\n\nCurrently, the logic in `generate_py_protobufs` cannot find a custom `protoc` (even though it's supposed to be possible). Fixes:\r\n\r\n1. Mark the `--protoc` flag as accepting an argument.\r\n2. If the `--protoc` flag was not passed, try finding `PROTOC` in the environment.\r\n3. (Existing behavior) Otherwise, fall back to `spawn.find_executable`.\r\n\r\nHat tip to @bobhancock for uncovering the problem(s).",
+            "tag_name": null
+        },
+        {
+            "hash": "54bfa174e76e16e946c04cd6155fe27526a84511",
+            "message": "Mark some Bazel targets as \"manual.\" (#7932)\n\nThe Python C++ extension targets are not used unless\r\n`--@:use_fast_cpp_protos=true`, and may not even be able to build\r\nif the Python headers are missing (note that\r\n`//util/python:python_headers`, bound to `@python_headers//` in\r\n`//:WORKSPACE`, is not currently sufficient). This change adds the\r\n`\"manual\"` tag to these targets, so that they do not cause\r\n`bazel test ...` to fail when Python headers are missing. Without\r\nthe manual tag, the targets are always selected, even if\r\n`--@:use_fast_cpp_protos=false`.\r\n\r\nThe `:cc_proto_blacklist_test` target is metastable, depending on\r\nwhether the `--proto_toolchain_for_cc=` flag names a target with\r\nor without the `@com_google_protobuf//` prefix. We use the correct\r\nprefix for Bazel's default in `kokoro/linux/bazel/build.sh`, but\r\nthe `bazel test :cc_proto_blacklist_test` (with or without `//`)\r\nfails consistently. Hopefully, this will be fixed when\r\nbazelbuild/bazel#10590 is addressed.",
+            "tag_name": null
+        },
+        {
+            "hash": "b774da0d4255e56b957e78115cde7d4e3112af03",
+            "message": "Change Python kokoro configs to test only their specified version. (#7927)\n\nUsing non-versioned scripts for `build_file` means every Python version is\r\ntested (under Tox), and this is multiplied by each Python version running Tox.\r\n\r\nFor example, when the `python38` config is used to run Tox, the\r\nTox layer runs on Python 3.8. This then tests all of the Python versions\r\nindividually, including, for example, python27 tests.\r\n\r\nThis change fixes the `build_file` paths to point to the same-pathed build\r\nscript. For example, `kokoro/linux/python27/presubmit.cfg` now uses\r\n`kokoro/linux/python27/build.sh`.\r\n\r\nSome additional fixes:\r\n\r\n*  Use `python -m tox` in tests.sh instead of just `tox`. This helps non-site\r\n   installations of tox, where the `tox` script may not be on `$PATH`.\r\n*  Ensure tox (and other Python build-related packages) are available in\r\n   Python testing images. (New images have been pushed.)\r\n*  Disable `--warnings_as_errors` due to deprecated function.\r\n*  Remove apt lists per [Docker best practices][1].\r\n\r\n[1]: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+            "tag_name": null
+        },
+        {
+            "hash": "d16bf914bc5ba569d2b70376051d15f68ce4322d",
+            "message": "Fix: gcc 9 -Warray-bounds warnings about memset() in generated code\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3d8943fea997ca18e022bbd6c074cb6aa6610fbe",
+            "message": "Work around Codespell false positive (#7924)\n\nThe Codespell checker is saying we should replace \"files'\" with\r\n\"file's\", but this is not a real issue since the single-quote on the end\r\nis being used as a quote and not an apostrophe. Let's tell Codespell to\r\nignore this.",
+            "tag_name": null
+        },
+        {
+            "hash": "510cdff1f0ea7f6f23d977071acc9d7e65eeda99",
+            "message": "Merge branch 'master' into php-wkt\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8308aa0c311fd148a62b1b3db64b4c5656a3e121",
+            "message": "Properly terminate method array.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a98ff98d756e8b47c846924c8469a4abe608e6e",
+            "message": "Create a separate InternalDescriptorPool method to see if that fixes preloading.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e62cf76b943d99957e03f72a52ded5398a21a99c",
+            "message": "Added missing base classes.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "05644f03137ddeaf511beee1364af3a3bfc5940d",
+            "message": "Revert upb changes to minimize changes as we evaluate performance.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ec4b19460896164cfe3a980de1a0d6ed200f7904",
+            "message": "Regenerated protos with new script.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cfc0c2b5e0be120302d4ded615c80c70240ed584",
+            "message": "Passes all tests.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a93d840881945603c6bcc41a71e5cfaee7876034",
+            "message": "WIP.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1256df893dfcfa4a30371d038f2398012ba1857",
+            "message": "Created Options struct for PHP codegen options.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4140770418f43b007268a8315d0030d970c4dc3",
+            "message": "Added an anonymous namespace and removed unused code.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a0eef68bbdeca5e7f9afa1701ad3ca83e0020611",
+            "message": "Regenerated well-known types and moved hand-written messages into base classes.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1dd483444c19a9b1fa2c782156db8e7eefe3ad38",
+            "message": "Merge pull request #8000 from haberman/php-upb-update\n\n[PHP] New version of upb, and a new hash function wyhash in third_party.",
+            "tag_name": null
+        },
+        {
+            "hash": "579aa89014c40f17770d9bae39ca52ed8cfd523d",
+            "message": "Updated wyhash.h to pick up fix for spelling mistake.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "314ce3c8a020b337ef942ed6a74ea8fd8d0fedeb",
+            "message": "PHP: Fix in upb for 32-bit platforms.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f5ab3b166cbbe4dac8025bda22d7e2c92a4ecceb",
+            "message": "PHP: Removed 32-bit-specific PHP failure list.\n\n32 and 64-bit PHP should have the same set of failures now.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e1952652554f7237868a1b9c17495077153d63f",
+            "message": "PHP: Removed previously failing tests from the failure list.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "78f56b84b55657a31dcf5f4068fdb66d588fec00",
+            "message": "Set -std=gnu99 for PHP extension compile.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f65bcca31dd5a8bb850248f4cdc8c5245ce1af9f",
+            "message": "Added extra files to Makefile.am and fixed spelling errors.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a6985e598cebf3568678c55bc9cb0bce00453fb4",
+            "message": "New version of upb, and a new hash function wyhash in third_party.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b5d2cc08f1f8b0dfe7100246932c92a38024d654",
+            "message": "Update scalapb URL and fix typo in name",
+            "tag_name": null
+        },
+        {
+            "hash": "8ea38263ec1ea18e850ed55124167c2f60875751",
+            "message": "Put NDEBUG in upb, not in CFLAGS.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1b42ab9469856113a297fcc4d0771ee99874440",
+            "message": "Disable assertions for release build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4936abe813d05b6cc78db408155d09ca9ad201de",
+            "message": "Fixed bug with oneofs in JSON decoding.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d140b1cdce9d00abd8a0c36b0d6e3e25c019d606",
+            "message": "Optimizations for loading of descriptors in PHP:\n\n1. Eliminate hex2bin() call by putting binary data directly into PHP\n   strings.\n2. upb optimizations, including a new hash function.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2187eb0448fc101490b0fc9964e4e0b6f7b66213",
+            "message": "Updated PHP generator to output raw binary strings instead of requiring hex2bin() at runtime.\n",
+            "tag_name": null
+        }
+    ]
+}

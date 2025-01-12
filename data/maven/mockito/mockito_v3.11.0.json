@@ -1,0 +1,103 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.11.0",
+    "previous_release": "v3.10.0",
+    "cycle_days": 22.753321759259258,
+    "commits": 18,
+    "commits_in_advance": 0,
+    "start_delay": 0.9022685185185185,
+    "duration": 21.85105324074074,
+    "commits_info": [
+        {
+            "hash": "92cbac227d930f9b306527e8292a89bdb0cde348",
+            "message": "Undo parent for MultipleParentsClassLoader (#2312)\n\n66998ea7f81c6adf49983cea081586e19760b7a0 inadvertently undid a change from 9bc9be6d0fb1809346dcd02b22ced477816e0fc1, which breaks behavior under some classloaders that special case mockito classes. Use of an explicit parent with `MultipleParentsClassLoader` appears to be discouraged in the documentation also.\r\n\r\nCo-authored-by: Charles Munger <clm@google.com>\r\nCo-authored-by: Tim van der Lippe <tvanderlippe@google.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "67c56326daac74ac9f2a147f760f84635c2b8044",
+            "message": "Bump versions.bytebuddy from 1.11.0 to 1.11.1 (#2313)\n\nBumps `versions.bytebuddy` from 1.11.0 to 1.11.1.\r\n\r\nUpdates `byte-buddy` from 1.11.0 to 1.11.1\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.11.0...byte-buddy-1.11.1)\r\n\r\nUpdates `byte-buddy-agent` from 1.11.0 to 1.11.1\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.11.0...byte-buddy-1.11.1)\r\n\r\nUpdates `byte-buddy-android` from 1.11.0 to 1.11.1\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.11.0...byte-buddy-1.11.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: net.bytebuddy:byte-buddy\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-agent\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-android\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nFixes #2082\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "d4753548bc3e9be3f95395c52ce856b5cf518b13",
+            "message": "Bump gradle/wrapper-validation-action from 1.0.3 to 1.0.4 (#2309)\n\nBumps [gradle/wrapper-validation-action](https://github.com/gradle/wrapper-validation-action) from 1.0.3 to 1.0.4.\r\n- [Release notes](https://github.com/gradle/wrapper-validation-action/releases)\r\n- [Commits](https://github.com/gradle/wrapper-validation-action/compare/v1.0.3...v1.0.4)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "7ceabaf529aeb227f20b1eecbd4e7be95924290c",
+            "message": "Bump shipkit-auto-version from 1.1.14 to 1.1.16 (#2310)\n\nBumps shipkit-auto-version from 1.1.14 to 1.1.16.\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "5c775ee9a8bc65b3c9118d02788f65e803b24e69",
+            "message": "Bump com.github.ben-manes.versions from 0.38.0 to 0.39.0 (#2308)\n\nBumps com.github.ben-manes.versions from 0.38.0 to 0.39.0.\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "66998ea7f81c6adf49983cea081586e19760b7a0",
+            "message": "Use the parent classloader if the context classloader is a child of it (#2306)\n\nThis should only affect cases that previously would have thrown an\r\nexception.\r\n\r\nFixes #2303\r\n\r\nCo-authored-by: Charles Munger <clm@google.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "ae6dd4efbd0aa4a58558fb689bbed8be474cfe68",
+            "message": "Bump shipkit-auto-version from 1.1.11 to 1.1.14 (#2307)\n\nBumps shipkit-auto-version from 1.1.11 to 1.1.14.\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "c2715ea34a4f32325aad9f00221a24ce6c95bc86",
+            "message": "Bump kotlin-stdlib from 1.5.0 to 1.5.10 (#2305)\n\nBumps [kotlin-stdlib](https://github.com/JetBrains/kotlin) from 1.5.0 to 1.5.10.\r\n- [Release notes](https://github.com/JetBrains/kotlin/releases)\r\n- [Changelog](https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md)\r\n- [Commits](https://github.com/JetBrains/kotlin/compare/v1.5.0...v1.5.10)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "c6054cd3822b8d2c37b439ce508049b4cbe563c6",
+            "message": "Merge pull request #2301 from mockito/ci\n\nEnabled automated changelog",
+            "tag_name": null
+        },
+        {
+            "hash": "75a765959c6c20f8d2b92bf9264b0b7d7e66f007",
+            "message": "Enabled automated changelog\n\n- replaced axion Gradle plugin with Shipkit plugin. The plugin controls the version and provides information about 'previous' version which is needed for correct generation of the backlog\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de59c1260458a707374982c6d311b1f21caeb5b0",
+            "message": "Bump versions.junitJupiter from 5.7.1 to 5.7.2 (#2296)\n\nBumps `versions.junitJupiter` from 5.7.1 to 5.7.2.\r\n\r\nUpdates `junit-jupiter-api` from 5.7.1 to 5.7.2\r\n- [Release notes](https://github.com/junit-team/junit5/releases)\r\n- [Commits](https://github.com/junit-team/junit5/compare/r5.7.1...r5.7.2)\r\n\r\nUpdates `junit-jupiter-engine` from 5.7.1 to 5.7.2\r\n- [Release notes](https://github.com/junit-team/junit5/releases)\r\n- [Commits](https://github.com/junit-team/junit5/compare/r5.7.1...r5.7.2)\r\n\r\nUpdates `junit-vintage-engine` from 5.7.1 to 5.7.2\r\n- [Release notes](https://github.com/junit-team/junit5/releases)\r\n- [Commits](https://github.com/junit-team/junit5/compare/r5.7.1...r5.7.2)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "8ecb801b20865c733022dc2d90130cc9c9e1ded2",
+            "message": "Bump junit-platform-launcher from 1.7.1 to 1.7.2 (#2297)\n\nBumps [junit-platform-launcher](https://github.com/junit-team/junit5) from 1.7.1 to 1.7.2.\r\n- [Release notes](https://github.com/junit-team/junit5/releases)\r\n- [Commits](https://github.com/junit-team/junit5/commits)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "75795bb25a887d927eb6b77177776f1c1717b5a5",
+            "message": "Bump kotlinx-coroutines-core from 1.4.3-native-mt to 1.5.0-native-mt (#2299)\n\nBumps [kotlinx-coroutines-core](https://github.com/Kotlin/kotlinx.coroutines) from 1.4.3-native-mt to 1.5.0-native-mt.\r\n- [Release notes](https://github.com/Kotlin/kotlinx.coroutines/releases)\r\n- [Changelog](https://github.com/Kotlin/kotlinx.coroutines/blob/master/CHANGES.md)\r\n- [Commits](https://github.com/Kotlin/kotlinx.coroutines/commits)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "6f9108b833323345bd926f10914224d3e0a11b80",
+            "message": "Merge pull request #2295 from mockito/ci\n\nRenamed main dev branch",
+            "tag_name": null
+        },
+        {
+            "hash": "833352143c9be03ec372ee0023463b0c67861fe5",
+            "message": "Renamed main dev branch\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3dc7b7cb0752641596c25320d704205d643e9276",
+            "message": "Bump actions/checkout from 2 to 2.3.4 (#2293)\n\nBumps [actions/checkout](https://github.com/actions/checkout) from 2 to 2.3.4.\r\n- [Release notes](https://github.com/actions/checkout/releases)\r\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\r\n- [Commits](https://github.com/actions/checkout/compare/v2...v2.3.4)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "625bd33fc15710e2a1419183c2a30feb590e6d5c",
+            "message": "Bump gradle/wrapper-validation-action from 1 to 1.0.3 (#2294)\n\nBumps [gradle/wrapper-validation-action](https://github.com/gradle/wrapper-validation-action) from 1 to 1.0.3.\r\n- [Release notes](https://github.com/gradle/wrapper-validation-action/releases)\r\n- [Commits](https://github.com/gradle/wrapper-validation-action/compare/v1...v1.0.3)\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "45bf88726bbb17a82f501a02b02ca26dba019d98",
+            "message": "Bump versions.errorprone from 2.6.0 to 2.7.1 (#2298)\n\n",
+            "tag_name": null
+        }
+    ]
+}

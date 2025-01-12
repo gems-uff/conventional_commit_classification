@@ -1,0 +1,103 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v23.3",
+    "previous_release": "v23.2",
+    "cycle_days": 19.730381944444446,
+    "commits": 18,
+    "commits_in_advance": 0,
+    "start_delay": 0.0,
+    "duration": 19.730381944444446,
+    "commits_info": [
+        {
+            "hash": "4dd15db6eb3955745f379d28fb4a2fcfb6753de3",
+            "message": "Updating version.json and repo version numbers to: 23.3\n",
+            "tag_name": null
+        },
+        {
+            "hash": "58b6ddb03ef8f186c9225d0107213f74750a82f3",
+            "message": "Regenerate stale files (#13046)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bea53aa6935e33d5801fa523a23ca1119fd59815",
+            "message": "Updated upb dep to the latest 23.x commit. (#13043)\n\n* Updated upb dep to the latest 23.x commit.\r\n\r\n* Updated upb dep to the latest 23.x commit.",
+            "tag_name": null
+        },
+        {
+            "hash": "f5efaf9c318309e6e72261cb38f9ec1f54196d95",
+            "message": "Merge pull request #13017 from protocolbuffers/force-refresh-23\n\nBackport GHA cleanup",
+            "tag_name": null
+        },
+        {
+            "hash": "821c51e0a1291f17014123db5edfd1ef9ab4f772",
+            "message": "Disable non-hermetic breakage due to github runner update\n\nSee https://github.com/actions/runner-images/issues/7662\n\nPiperOrigin-RevId: 537946689\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4bbdcf62259a13ea3b1d47df1a7228fff2ad2b7",
+            "message": "Fix staleness test branching logic\n\nPiperOrigin-RevId: 538812352\n",
+            "tag_name": null
+        },
+        {
+            "hash": "901cfbebb8a4dfff183c58e854dec96c4f28f694",
+            "message": "Cleanup scheduled staleness tests.\n\n- Do some minimal sanity testing on every PR\n- Only run the staleness tests on a daily schedule or explicit runs.\n- Add 23.x to the checks\n\nPiperOrigin-RevId: 537952151\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9980541f1d865eaf298856111a385ac293da390c",
+            "message": "Force push auto-commits to bypass branch protection status checks\n\nPiperOrigin-RevId: 539109983\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cd78beedc17f7b8a1896c11776458ae76d619b08",
+            "message": "deps: Update Guava to 32.0.0 (#13002)\n\nProtobuf is likely not in scope for the fixed CVE, but updating out of an abundance of caution.",
+            "tag_name": null
+        },
+        {
+            "hash": "647052aad943f1d2cf4e5df773ac73cf53dab514",
+            "message": "Merge pull request #12997 from fowles/23.x\n\nCherry-pick portability fixes to 23.x line",
+            "tag_name": null
+        },
+        {
+            "hash": "adf892293a5d7bdc6a2a130650d70ecf035f4869",
+            "message": "Sync up the min os versions between the C++ and ObjC CocoaPods support.\n\nFixes #12944\n\nPiperOrigin-RevId: 537907016\n",
+            "tag_name": null
+        },
+        {
+            "hash": "efa1ec75cf152991a64cedf9c4a1ec5cb826ee34",
+            "message": "Use the same ABI for static and shared libraries on non-Windows platforms (#12983)\n\nHi,\n\nIt seems that until last year, the logic behind `PROTOBUF_USE_DLLS` was for Windows (MSCV) only. It was changed to all platforms here in https://github.com/protocolbuffers/protobuf/commit/5a0887fc6529596eff5c0f72febc602a9d494cc2\n\nLast month, the generated pkg config files were updated to reflect the protobuf build-time value of `PROTOBUF_USE_DLLS` as it was indeed noted that it changes the ABI. This was done in https://github.com/protocolbuffers/protobuf/pull/12700 In the commit message it is mentionned that most likely we shall rather have a stable ABI.\n\nFinally in https://github.com/protocolbuffers/protobuf/issues/12746 which at some point mentions https://issuetracker.google.com/issues/283987730#comment7 where a Google employee hits the linker issue:\n```\nundefined reference to `google::protobuf::internal::ThreadSafeArena::thread_cache_'\n```\nwhich denotes a mix of some .o or libs built `PROTOBUF_USE_DLLS` defined and some others build with `PROTOBUF_USE_DLLS` undefined, resulting in ABI incompatibilities.\n\nI also hit this issue while trying to include protobuf in a corporate environment using it's own proprietary build system in which it is expected that .a and .so use a compatible ABI.\n\nFrom my own understanding, ideally we should always use `thread_local` variables, but experience has shown that:\n - old iOS (iOS < 9) didn't seem to accept `thread_local`, leading to the `GOOGLE_PROTOBUF_NO_THREADLOCAL` macro later renamed `PROTOBUF_NO_THREADLOCAL` which allowed to disable this, but it is not set anywhere in the protobuf code base. Also I doubt you still want to support such old iOS now, so maybe you should consider removing all `PROTOBUF_NO_THREADLOCAL` related code paths (this pull request doesn't do this).\n  - MSVC's DLL interface doesn't seem to accept exporting thread local variables (at least from what I understood, I know absolutely nothing about the Windows ecosystem), yet we can \"hide\" a thread local variable in a static function using a thread local variable. However in that case the access to TLS variable is not inlined, leading to worse performances, this hack shall be done only for Windows (actually when using MSVC) *AND* we build a shared library.\n  - In all other cases, a classical `thread_local` shall be used, no matter if we build a static or a shared library. In particular on Linux which I guess is the target Google cares the more about for its own production. This pull request achieves this.\n\nAm I right in my conclusion ?\n\nCloses #12983\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12983 from Romain-Geissler-1A:stable-abi-use-dll-non-windows dc23ff50f67cf0c8e45900a78700d1fc3e8bec39\nPiperOrigin-RevId: 538230923\n",
+            "tag_name": null
+        },
+        {
+            "hash": "727ece53520d721b874572c92ea70ed8deaedef3",
+            "message": "Merge pull request #12987 from h-vetinari/backports_23.x\n\n[23.x] Backport some changes necessary for google-cloud-cpp resp. conda-forge",
+            "tag_name": null
+        },
+        {
+            "hash": "cdb535a74fe48c37f547718205c654a875c2b49b",
+            "message": "fix: missing `PROTOBUF_EXPORT` for public symbols\n\nPiperOrigin-RevId: 537042088\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b1e59e363ce02b59b8e68d05e2c8560a6c934469",
+            "message": "CMake: Fix abseil_dll target name when using find_package(absl) (#12978)\n\nThis additional if  is necessary as of abseil 20230125.3 when abseil is consumed via add_subdirectory,\nthe abseil_dll target  is named abseil_dll, while if abseil is consumed via find_package, the target is called `absl::abseil_dll` .\n\nOnce https://github.com/abseil/abseil-cpp/pull/1466 is merged and released in the minimum version of  abseil required by protobuf, it is possible to always link `absl::abseil_dll` and `absl::abseil_test_dll` and remove the if.\n\nYou may wonder how linking worked at all before when `protobuf_ABSL_PROVIDER STREQUAL \"package\"`, as `abseil_dll` was not an imported target defined by `find_package(absl)`. The reason behind this is that if a name that is not an imported target is passed to `target_link_libraries`, it is just regarded as a C++ library name. So, in the end the `abseil_dll` library was correctly linked, simply all the transitive usage requirements defined by the `absl::abseil_dll` target were not propagated, that could lead to compilation errors if abseil was compiled with the `ABSL_PROPAGATE_CXX_STD` CMake option enabled.\n\nCloses #12978\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12978 from traversaro:patch-1 39dd074281161fa0c4be69035d33b41a50e048c2\nPiperOrigin-RevId: 537990391\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f536bee2f6263ecf4e1b45898265c4020a1c369",
+            "message": "feat: workaround for `DOMAIN` macro (#12903)\n\nThis is a macro on some (older) versions of GCC, and macOS, and Windows. Sigh. I moved the `#undef` block to a common section. I also took the opportunity to add a regression test for all these macros that need to be `#undef`'d.\n\nPart of the work for googleapis/google-cloud-cpp#8125\n\nCloses #12903\n\nPiperOrigin-RevId: 535649278\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d36448d4f165b41a53ce787939d8bf27b4a7512f",
+            "message": "Merge pull request #12910 from protocolbuffers/23.x-202305251532\n\n23.x 202305251532",
+            "tag_name": null
+        },
+        {
+            "hash": "5df2778bb7353cf0574b70ec3275c942ed83da69",
+            "message": "Updating version.json to: 23.3-dev\n",
+            "tag_name": null
+        }
+    ]
+}

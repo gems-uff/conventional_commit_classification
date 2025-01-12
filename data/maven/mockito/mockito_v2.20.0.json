@@ -1,0 +1,293 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.20.0",
+    "previous_release": "v2.19.0",
+    "cycle_days": 38.652569444444445,
+    "commits": 56,
+    "commits_in_advance": 39,
+    "start_delay": -186.53041666666667,
+    "duration": 225.18298611111112,
+    "commits_info": [
+        {
+            "hash": "101c588e06f44a81a6bd600234cb4907ff2ada20",
+            "message": "2.20.0 release (previous 2.19.6) + release notes updated by CI build 3500\n\n[ci skip-release]\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2145ddba7cee0d3f19f01ebce6ca68f03206779",
+            "message": "Merge pull request #1272 from mockito/fine-strictness\n\nStrictness configurable per mock / stubbing\r\n[ci maven-central-release]",
+            "tag_name": null
+        },
+        {
+            "hash": "0fcc2a309372056e15646c9792baa733133df804",
+            "message": "Made documentation consistent.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e51245a7cec47f9d0a548a0f580404a499f23761",
+            "message": "Bumped version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf62c73422a14641ddcaad9c4a8f581daf899049",
+            "message": "Finalized the documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c",
+            "message": "Rename job for consistency\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bef4d861da694e39ed4040152bcd94d184476a41",
+            "message": "Fixed problem with the stubbings order\n",
+            "tag_name": null
+        },
+        {
+            "hash": "27876964df6738e616c28980590aff8b8e93982b",
+            "message": "Performance tweak\n\nAvoided unnecessary call to 'mockingDetails' to avoid reflective calls. Added new argument to the listener - it's ok because we're planning to make the listener public - doing so requires to move all parameters to an 'event' object.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cf434ab368bbb081ccb5b8c224a12567c33728ac",
+            "message": "Documented feature in the main manual in Mockito Javadoc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a837411b8409f3e084c82ef58c426037f04c3475",
+            "message": "Updated MockitoRule documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bebc8f697b9da68525e5eeedde09ca6a2e03ec0",
+            "message": "Updated since tags and documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f44b3be4fad8573ec9a7e8faf7f7aeba2f147b5",
+            "message": "Documented new Mockito.lenient() method\n",
+            "tag_name": null
+        },
+        {
+            "hash": "99f6610ccf6043c99fd1684e338e8fb496848ccf",
+            "message": "Updated strictness documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d60108d72bc396c8b5a9a78e9cc4a22d2bfa7d19",
+            "message": "Added Javadoc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d77765088bdc747f25b30cf34fa9cbb4544ae35a",
+            "message": "Reduced conditional duplication\n\nBased on code review feedback.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "da0481fd74a2f49bfe364d420ceecce774be6a4d",
+            "message": "Added TODOs to help organization\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7bcc5486d86002274775b7bba05db2929534784d",
+            "message": "Checkstyle\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08a9b9cdb42033f1fcc1fba9dabc9c3f024960c5",
+            "message": "Simplified public API for now\n\nWe don't need Strictness per mock just yet. Let's offer our users simple 'lenient()' setting on the mock.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8e237472e1b912b2c683281d088dc8b871c68d61",
+            "message": "Added more coverage for edge cases\n",
+            "tag_name": null
+        },
+        {
+            "hash": "81508672b727bfd979d7debf4e067d3a3d20614e",
+            "message": "Refactoring: placed stubbing evaluation code in the same spot\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4d12abca4e376cc92f20b970ccd7461cbe58286",
+            "message": "Added more sanity coverage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2edf0ce97f25aa879a00b3fc360779a8cbbef3d0",
+            "message": "Added a TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "61403ea3c0db46b1775e31ca55bc5153726a195b",
+            "message": "Removed a TODO after verification, added documentation\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9bf63ec9c509d42c485a648c7008a2bc269947d",
+            "message": "Refactoring and tidy up\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ec24ce1ae5f9ce148ac1d1a2c45e23dbd9cfe202",
+            "message": "Added coverage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d7cf98ea0ec2e1f2936aa186ba14208d3ef8d1a1",
+            "message": "Added TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "88092d8c138e6a3df35a1823f3b9a00c88b284c1",
+            "message": "Improved coverage.\n\nThe mock needs to be created after we start the session. This way, we guarantee that the session does not update mock's strictness.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fd42e6e27df7f40537df67ffbeea855c510b9100",
+            "message": "Removed cleared TODOs.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7434568a5f0ad11d4bb72e58c3196ef0774a16b1",
+            "message": "Added coverage for using lenient() with JUnit Rules\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a2f598bd5ce6b3dd70e1dbab4039fe78140e2549",
+            "message": "Implemented lenient() support for JUnitRunner\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b2ba655db15347826c13b909d7ee171b8119ea63",
+            "message": "Implemented doThrow instance varag syntax for lenient() mode\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e3d77c7cb21eb5e3cc8f240f2e9cab3273a3a515",
+            "message": "Implemented doThrow varag syntax for lenient() mode\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc8271b0109f3242a4c1610632db920354b18888",
+            "message": "Implemented doThrow syntax for lenient() mode\n",
+            "tag_name": null
+        },
+        {
+            "hash": "471bf33b2898a3d8ed1843abd49efaf00bfd5938",
+            "message": "Fixed Serializable problem\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fdd055f77e1607b78b6db36c8354f1254759ad8f",
+            "message": "Added license headers\n",
+            "tag_name": null
+        },
+        {
+            "hash": "70a385d0f2f5c064f7bbbc5b311940fa1867bb9c",
+            "message": "Implemented lenient 'doAnswer' stubbing\n\nAlso fixed an existing tests, they were not correct\n",
+            "tag_name": null
+        },
+        {
+            "hash": "449757a80302f88d3fa623b87a945129bf680857",
+            "message": "Implemented lenient 'doNothing' stubbing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8102ebf4e2e7b5e6a86fc52b6a459e20163b1331",
+            "message": "Implemented lenient 'doCallRealMethod' stubbing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4eeed70a402bab6e07fccf97004400204caea1ac",
+            "message": "Implemented 'lenient' for 'doAnswer' varargs style stubbing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db4912e338a991a31429acfa7c64b4cefd3f0240",
+            "message": "Implemented 'lenient' for 'doAnswer' style stubbing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d8855431f9c59ee082ebe3427a0b263a7cdae51d",
+            "message": "Updated Javadoc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fc4b6074ea094b072586de649047c082f58feaa9",
+            "message": "Updated Javadoc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4566d5dc482316bb478c42d3111e0aa875564a5",
+            "message": "Updated TODO\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e5dd9d74eb09efe0e5ab2ef36399aaea3bfe331e",
+            "message": "Updated the test case\n\nRemoved the ignored flag.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a10d22dbf2ab44d52ed85012706c59c11b31166d",
+            "message": "Updated TODOs\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7e13b4de3423c868fec6ab0c0983df61f34a8346",
+            "message": "Support for strictness per stubbing\n",
+            "tag_name": null
+        },
+        {
+            "hash": "480a9ec903ff69b37c52d9f2f0c38d0608792fae",
+            "message": "Reworked the tests for clarity\n",
+            "tag_name": null
+        },
+        {
+            "hash": "218296a596e299cb6a9b004b55dcec0ca1567550",
+            "message": "Added handy test utility\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f00f140f61be83cab2a12683de688da91240682a",
+            "message": "Improved the test case\n",
+            "tag_name": null
+        },
+        {
+            "hash": "876d4584867de847ad1022ad74c22c4120a672c7",
+            "message": "Reduced duplication in test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ab2e7eb1a62fb9360aa3c8ade41bde564a17cc05",
+            "message": "Progress on strictness per mock/stubbing\n\nImplemented basic support for setting strictness per stubbing. Refactorings and more test coverage is pending. Some features not supported yet.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "18456b70c4c97dd75322f749eb7eb2fe2c0e9ec0",
+            "message": "Experimenting with Strictness per mock\n",
+            "tag_name": null
+        },
+        {
+            "hash": "940e9ac8eec868aa3b9ea9e73d77225dd1d30356",
+            "message": "Merge pull request #1435 from epeee/gradle_4_9\n\nUpdate gradle (v4.9) and shipkit (v2.0.28)",
+            "tag_name": null
+        },
+        {
+            "hash": "6c99d93ad2dd9c9b57d7378e9ea7433d01ba1e73",
+            "message": "Make buildscripts work with gradle 4.9\n",
+            "tag_name": null
+        },
+        {
+            "hash": "03ee7ff69d084d592b327ae91fe4a0d4c4ab7fa6",
+            "message": "add enableFeaturePreview('STABLE_PUBLISHING')\n",
+            "tag_name": null
+        },
+        {
+            "hash": "48be07bc533f62e77c63b2d12ec40e60182cc34c",
+            "message": "Update gradle (v4.9) and shipkit plugin (v2.0.28)\n",
+            "tag_name": null
+        }
+    ]
+}

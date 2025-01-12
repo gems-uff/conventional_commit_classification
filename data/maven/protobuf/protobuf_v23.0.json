@@ -1,0 +1,2438 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v23.0",
+    "previous_release": "v22.4",
+    "cycle_days": 4.975601851851851,
+    "commits": 485,
+    "commits_in_advance": 460,
+    "start_delay": -82.8008912037037,
+    "duration": 87.77649305555556,
+    "commits_info": [
+        {
+            "hash": "6e511679de8ab0feefc1cdac1505b2fac5548e42",
+            "message": "Updating version.json and repo version numbers to: 23.0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "abb293dee2079092000d0c7cf3049c645444a894",
+            "message": "Merge pull request #12702 from fowles/23.x\n\nCherry pick various portability fixes from mainline",
+            "tag_name": null
+        },
+        {
+            "hash": "b880933ed39a3218176aa36a0fa109093b3b8e96",
+            "message": "fix: avoid warnings on MSVC (#12697)\n\nWarnings in header files can be a problem for consumers that enable `/WX` (or `-Werror`).  In this case, using `... & -align` produces a warning (C4146) with MSVC. The fix is to use equivalent expression `...  & ~(align - 1)`, which was already used in the same file.\n\nFixes #12675\n\nCloses #12697\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12697 from coryan:fix-msvc-warnings-in-arena-align 835f3b489a85e1b50281ac2943bd74d159eb3ead\nPiperOrigin-RevId: 530137165\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe1277f9a835d50285cc8e82df5a77daaee42d77",
+            "message": "fix: avoid warnings on Windows (#12701)\n\nOn Wndows, `size_t` is 64-bits, and `int` is 32-bits. That makes conversions from `size_t` to `int` potentially lossy, and they generate warnings.  In this case an `int` variable was assigned to `size_t` and then passed to functions consuming `int`. Seems simpler to use `auto` and avoid these problems altogether.\n\nCloses #12701\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12701 from coryan:fix-warnings-repeated-field-warnings-in-msvc b1ec34de77cbd31c914b810c87cbe16f1ce51a7d\nPiperOrigin-RevId: 530134611\n",
+            "tag_name": null
+        },
+        {
+            "hash": "28c990508f398e6af9c26263dad600025cacb332",
+            "message": "fix: typo in `string(JOIN)` workaround (#12698)\n\nMy sketch to fix #12672 was wrong.  This works for realsies.\n\nCloses #12698\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12698 from coryan:fix-cmake-typo-in-string-join-workaround 182d2e248ee10403541c5ddd07857846a66ae57d\nPiperOrigin-RevId: 530116824\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1ca4e9c4859a23112684138c78608ddc0b8f1770",
+            "message": "fix: missing -DPROTOBUF_USE_DLLS in pkg-config (#12700)\n\nWhen the protobuf libraries have been compiled as shared libraries the users of the library need to add `-DPROTOBUF_USE_DLLS` to their build line. Otherwise some symbols are missing.\n\nFixes #12699\n\nFWIW, I am not sure this is an ideal fix.  It may be better to fix the headers such that no macros change the ABI.\n\nCloses #12700\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12700 from coryan:fix-define-protobuf-use-dlls-in-pkg-config-file 13c792eebd3d070fa25eff68cfca6ae1493e9503\nPiperOrigin-RevId: 530116678\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d5a1b09eefba55bb8c5ef0252344527a1f6c98ea",
+            "message": "Merge pull request #12695 from protocolbuffers/cpp-fixes-23\n\nBackport increased C++ test coverage + fixes",
+            "tag_name": null
+        },
+        {
+            "hash": "bc9a1d219e9b0043036c6af612ae0e0de3369e0c",
+            "message": "Add tests for GCC support window.\n\nNote: gcc only supports docker images down to 9.5, and the 7.3 image is very old and problematic.  A follow-up change might enable testing for GCC 7.3, which is our minimal supported version\nPiperOrigin-RevId: 529885733\n",
+            "tag_name": null
+        },
+        {
+            "hash": "54caf40312b3e7fd7794e267ef17e3be202de83d",
+            "message": "Avoid using string(JOIN..., which requires cmake 3.12\n\nThis also downgrades our tests to use cmake 3.10, compatible with our support window.\n\nCloses #12672\n\nPiperOrigin-RevId: 529840763\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3dc68d257a40785c4b9e9f34628a44168f00996d",
+            "message": "Merge pull request #12680 from protocolbuffers/23.x-202305051714\n\nUpdate version numbers for 23.0-rc3",
+            "tag_name": null
+        },
+        {
+            "hash": "289eeaae58975bc6bbfcecebc0f0cd10c2e44f2c",
+            "message": "Updating version.json to: 23.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d8f44cc2fb69e3d74943b922b0a5d34ab4b9cc31",
+            "message": "Updating version.json and repo version numbers to: 23.0-rc3\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09ef9a29b80017d1967060aa96b79e24baddc23e",
+            "message": "Merge pull request #12659 from deannagarcia/23.x\n\nUpdate UPB dep",
+            "tag_name": null
+        },
+        {
+            "hash": "6354914e86a7c2d0a616c888c7afb0e56ef6ba49",
+            "message": "Merge branch 'protocolbuffers:23.x' into 23.x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21417bf17f0b7edd206e7a7a269f1152ab2c4493",
+            "message": "Merge pull request #12667 from protocolbuffers/cmake-fixes-23\n\nCherrypick cmake fixes to 23.x",
+            "tag_name": null
+        },
+        {
+            "hash": "5f97a7f494c1294619d4b34db4a13c0f443f03b7",
+            "message": "Define a new set of cmake tests.\n\nThese more closely follow the standard practices of our users, where dependencies are pre-installed instead of using our provided sub-modules.  This will prevent issues such as #12201 from reoccuring.\n\nAdditionally, this cl bumps our Abseil dependency to the latest release, and fixes a GTest issue that went previously unnoticed.\n\nPiperOrigin-RevId: 529490402\n",
+            "tag_name": null
+        },
+        {
+            "hash": "24d3e74ac95737ac8642bfcdef3fa464e7d15d10",
+            "message": "Remove --remote argument in cmake tests.\n\nThis will prevent non-hermetic breakages from changes to the Abseil release branch we're pinned to.\n\nPiperOrigin-RevId: 529459765\n",
+            "tag_name": null
+        },
+        {
+            "hash": "750a6e7d7cbd8c022e18834f0a57fcd76d2c3c58",
+            "message": "Bump Abseil submodule to 20230125.3 (#12660)\n\nThis partially addresses https://github.com/protocolbuffers/protobuf/issues/12201\n\nCloses #12660\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12660 from mkruskal-google:absl-update ce07c45a1027b9736f8c111c8aae864ac242108f\nPiperOrigin-RevId: 529456996\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6f3c80b1a0f98865a4c7281bde51ffb34e6f30df",
+            "message": "Internal change\n\nPiperOrigin-RevId: 529429609\n",
+            "tag_name": null
+        },
+        {
+            "hash": "edbee27994ee9349728d03f6eeb1de47edc6f06c",
+            "message": "Bump Abseil submodule to 20230125.3 (#12660)\n\n* Bump Abseil submodule to 20230125.3\r\n\r\n* Fix gtest installation setup with submodules",
+            "tag_name": null
+        },
+        {
+            "hash": "12c835107e44172e4e95817f36159911cdfd805d",
+            "message": "Merge pull request #12652 from deannagarcia/23.x\n\nAutomated rollback of commit a2c5ea614cd5330de4b56a9937377f65309a31f8.",
+            "tag_name": null
+        },
+        {
+            "hash": "5ded06d9abd36a5a1f38e76a804608f5baf8e1ae",
+            "message": "Automated rollback of commit a2c5ea614cd5330de4b56a9937377f65309a31f8.\n\nPiperOrigin-RevId: 529185812\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df32e78d45a466404a1b8424be4b013043d98a8d",
+            "message": "Update UPB dep\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4731cdfdd2451dd88901a9645e2db0878fdc62e",
+            "message": "Update abseil dependency and reorder dependencies to ensure we use the version specified in protobuf_deps.\n\nPiperOrigin-RevId: 528838071\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fb18db76adaf2830ec7f1f54cc0497abfb40ad09",
+            "message": "Merge pull request #12635 from acozzette/cherrypick-musttail-23\n\nTurn off `clang::musttail` on i386",
+            "tag_name": null
+        },
+        {
+            "hash": "b40633ff0bf9b34bf3bec9f3d35eec2d951a98b8",
+            "message": "Turn off `clang::musttail` on i386\n\nWe found last week that Clang's support for `musttail` on 32-bit Linux does not\nseem to work reliably, so let's disable it for now.\n\nPiperOrigin-RevId: 528817403\n",
+            "tag_name": null
+        },
+        {
+            "hash": "28003bb6e0936a47ff53335db5c0954b1ea0b9d5",
+            "message": "Merge pull request #12623 from deannagarcia/23.x\n\nfix(libprotoc): export useful symbols from .so",
+            "tag_name": null
+        },
+        {
+            "hash": "46fb4aa8d2ade5e0067fce271fcb5293c5c70500",
+            "message": "fix(libprotoc): export useful symbols from .so\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb96482b3ab926ca5493310f66abb3badd7b49ec",
+            "message": "Update UPB dep\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d19c7997ab658a0a69bb1b61c73c3f36d2d21259",
+            "message": "Fix bom tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "99c9491f7cf586ec470b24b66a77c32b449c8e48",
+            "message": "Fix maven pom test\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e67e58a8e9bf9826608a2ae3c92bda027cab7911",
+            "message": "Silence deprecation warnings on FileDescriptor::SyntaxName\n\nPiperOrigin-RevId: 527600194\n",
+            "tag_name": null
+        },
+        {
+            "hash": "433c35dbcb70248f1627d83ad7c88487e600bb55",
+            "message": "Remove osgi dependency from main java libraries.\n\n//java:core, //java:lite, and //java:util shouldn't have this extra dependency. For now, we just add a separate version but we will look into using the java_library in protobuf_versioned_java_library in the future.\n\nPiperOrigin-RevId: 527643325\n",
+            "tag_name": null
+        },
+        {
+            "hash": "112a9021bef147387dbf6ea0cac9b506debafdd6",
+            "message": "Squashed 'third_party/utf8_range/' changes from 72c943dea..cd1507d14 (#12583)\n\ncd1507d14 Fix typo in pkg-config file to properly link the utf8_range libraries\r\n3f179d134 Add pkg-config file declaring Abseil dependency of utf8_range\r\n\r\ngit-subtree-dir: third_party/utf8_range\r\ngit-subtree-split: cd1507d1479815fbcd8ff24dc05a978a62098bae",
+            "tag_name": null
+        },
+        {
+            "hash": "db1d3f8b5160d7f70cc8deeb565d040b0834412d",
+            "message": "Replace previous breaking changes with deprecation warnings.\n\nThese changes hid public APIs that are deprecated in advance of protobuf editions.  They will be fully removed in a future release.  Any uses of them should be migrated to the future-facing feature helpers we provide on descriptor classes.\n\nPiperOrigin-RevId: 527422059\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2230d0e7482e3a51e96b6f83fa2e63b0ea66c1ba",
+            "message": "Fix homebrew issue on Mac runners causing PHP CI failures\n\nPiperOrigin-RevId: 527419345\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04a1a52892d74e053546e9b07d56c4815bb27ea1",
+            "message": "Updating version.json to: 23.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b21d6be78bb2586c7882c67ba975cc3a3e785862",
+            "message": "Updating version.json and repo version numbers to: 23.0-rc1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b26afb5a86cd9f764e35795c41c0f94a012db19e",
+            "message": "Update protobuf's UPB dep in preparation for the 23.0-rc1 release.\n\nPiperOrigin-RevId: 527061210\n",
+            "tag_name": null
+        },
+        {
+            "hash": "132c67c2c75cafb349515cd51bdf0bad07ee1510",
+            "message": "Auto-generate files after cl/527051764\n",
+            "tag_name": null
+        },
+        {
+            "hash": "182d564a3fd5db95b36188a3c195b177e23c1c9f",
+            "message": "Move all the reflection related data of MapField into a separate structure.\nThis saves 24 bytes on each `map` field when reflection is not used.\nIt also delays constructing a Mutex until reflection is needed. This means we do\nnot have to register the mutex for destruction in the arena for normal\noperation.\n\nPiperOrigin-RevId: 527051764\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9898418bd9188b22e9db7f94529df638e65b14f7",
+            "message": "Fix btree issue in map tests.\n\nWithout any weak ordering, btree_map fails to compile on windows 2022.\n\nCloses #12289\n\nPiperOrigin-RevId: 527019995\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5233990ad79b4dc4a484bbb3fafaa7c8a715dfac",
+            "message": "Fix protoc_nowkt linking on MacOS (#12320)\n\nDepending on how the local cc toolchain is setup on macos, the core\nfoundation framework might not be available while linking protoc_nowkt.\n\nThis results in a few _CF symbols being interpreted as dynamic load and\nis set to the binary's flat-namespace, causing runtime errors during\nsusequent actions such as gen_wkt_cc_sources.\n\n```bash\n> otool -dyld_info bazel-out/darwin_arm64-opt-exec-2B5CBBC6/bin/external/com_google_protobuf/src/google/protobuf/compiler/protoc_nowkt | grep '_CF'\n__DATA_CONST __got         0x10035C038 0x8010000000000007 bind   0x0      flat-namespace _CFRelease\n__DATA_CONST __got         0x10035C040 0x8010000000000008 bind   0x0      flat-namespace _CFStringGetCString\n__DATA_CONST __got         0x10035C048 0x8010000000000009 bind   0x0      flat-namespace _CFStringGetLength\n__DATA_CONST __got         0x10035C050 0x801000000000000A bind   0x0      flat-namespace _CFStringGetMaximumSizeForEncoding\n__DATA_CONST __got         0x10035C058 0x801000000000000B bind   0x0      flat-namespace _CFTimeZoneCopyDefault\n__DATA_CONST __got         0x10035C060 0x801000000000000C bind   0x0      flat-namespace _CFTimeZoneGetName\n```\n\nTell the linker to use CoreFoundation framework explicitly fixes this\nissue.\n\n```bash\n> otool -dyld_info bazel-out/darwin_arm64-opt-exec-2B5CBBC6/bin/external/com_google_protobuf/src/google/protobuf/compiler/protoc_nowkt | grep '_CF'\n__DATA_CONST __got         0x10035C038 0x8010000000000007 bind   0x0      CoreFoundation _CFRelease\n__DATA_CONST __got         0x10035C040 0x8010000000000008 bind   0x0      CoreFoundation _CFStringGetCString\n__DATA_CONST __got         0x10035C048 0x8010000000000009 bind   0x0      CoreFoundation _CFStringGetLength\n__DATA_CONST __got         0x10035C050 0x801000000000000A bind   0x0      CoreFoundation _CFStringGetMaximumSizeForEncoding\n__DATA_CONST __got         0x10035C058 0x801000000000000B bind   0x0      CoreFoundation _CFTimeZoneCopyDefault\n__DATA_CONST __got         0x10035C060 0x801000000000000C bind   0x0      CoreFoundation _CFTimeZoneGetName\n```\n\ncloses #12173\n\nCloses #12320\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12320 from sluongng:main 1416168f128b05d72692a3b451dd96c2b3c1cc49\nPiperOrigin-RevId: 526830008\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d692223887d001983f4f96764e1da8c8b67860f7",
+            "message": "[WIP] Java BOM check with generated pom.xml files (#12502)\n\nThis check aims to address issues like https://github.com/protocolbuffers/protobuf/issues/12170 \"Java 3.22.1: broken pom.xml\".\n\nCloses #12502\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12502 from suztomo:bom_check c69e2af597b1098c4e34b85e6940dcf03da631b8\nPiperOrigin-RevId: 526776900\n",
+            "tag_name": null
+        },
+        {
+            "hash": "07b1491895582179a309ad68fca0bfa0411d9730",
+            "message": "Add better fallback behavior for retention stripping with invalid descriptors\n\nPiperOrigin-RevId: 526758886\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f79e35c821a50c6a37ffe365511b892f5409ac44",
+            "message": "Fix declared dependencies for pkg-config (#12518)\n\nCloses #12439\n\nCloses #12518\n\nPiperOrigin-RevId: 526689125\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ecb72990657f5e5ce79c8673348f2d3a656df0b",
+            "message": "Implement 'bytes' accessors for UPB :)\n\nMove the 'accessors_test.rs' to shared/ as both kernels now support the same accessor types.\n\nPiperOrigin-RevId: 526591987\n",
+            "tag_name": null
+        },
+        {
+            "hash": "37c8f8195ba036aacbf22276cca3ddb095735b43",
+            "message": "Auto-generate files after cl/526587271\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e6b4f0e2d6b21fa0ca9aeb44d7bdf6fc2df64f4a",
+            "message": "Delete the UPB kernel.\n\nIt's been made obsolete by cl/524903073.\n\nPiperOrigin-RevId: 526587271\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc127f2b5605e5454d1c15d3325ecdd5ceaad6cf",
+            "message": "Auto-generate files after cl/526184056\n",
+            "tag_name": null
+        },
+        {
+            "hash": "469f0277b8f01da754e612c532016ec954d9b59e",
+            "message": "Add a field to ExtensionRangeOptions to mark an extension range is verified or not.\n\nAn extension range is either of verification state \"UNVERIFIED\" or \"DECLARATION\". If \"DECLARATION\", all extension fields of the range must be declared, or build error otherwise. The current default is \"UNVERIFIED\", but we will flip the default later.\n\nDeprecate `is_repeated` in favor of `repeated`.\n\nPiperOrigin-RevId: 526184056\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f71dc953c77f164523c23e7c2485ccc49ada3c2e",
+            "message": "Add GitHub actions workflow for testing CMake build of examples directory\n\nI confirmed that this test would catch the problem from #12450.\n\nPiperOrigin-RevId: 526165526\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5c59290022dcbbea71099bc40097a149a2446f21",
+            "message": "Remove PROTOBUF_DEPRECATED in favor of [[deprecated]].\n\nThis appears to have been already broken for enum values on MSVC, and is completely unnecessary now that we required C++14.\n\nPiperOrigin-RevId: 526163229\n",
+            "tag_name": null
+        },
+        {
+            "hash": "295f1125ceff5e07dfb8bfd2d7bada6c28918c0c",
+            "message": "Adds `Timestamps.now()`.\n\nPiperOrigin-RevId: 526160914\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a010e265052b450898020e0caaa6a4dfb105c154",
+            "message": "Auto-generate files after cl/526143586\n",
+            "tag_name": null
+        },
+        {
+            "hash": "908de8d74aedf92bf1dc28713678ab6d81207558",
+            "message": "Automated rollback of commit 1e67de4ed5a52b52b0fd0aba22db531ac0edfb8e.\n\nPiperOrigin-RevId: 526143586\n",
+            "tag_name": null
+        },
+        {
+            "hash": "81106b10dc6b224a79ca2bc27768c1348e8776b6",
+            "message": "Automated rollback of commit 57d5ede3ec807851ed9293f96aff8651b64f1e4d.\n\nPiperOrigin-RevId: 526130253\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d6ecec884c687b04de6ab2d45fca3d115892a732",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 526046192\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cc7116ceeb90de0af207d3a376e7a2524f97b914",
+            "message": "Remove unused proto3 field from UnknownFieldSetSchema.\n\nThis should reduce some unnecessary branching off of syntax for ManifestSchemaFactory for CODE_SIZE optimization for full using schemas.\n\nPiperOrigin-RevId: 526039969\n",
+            "tag_name": null
+        },
+        {
+            "hash": "408afe1eb4f54124de1350487af11c78ca4b233a",
+            "message": "Fix typo for newlib macro (#12521)\n\nShould use \\_\\_NEWLIB__\n\nCloses #12521\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12521 from RiversideSC:main 3c793225db0cd0ae5d685226c3600e7908e7ff23\nPiperOrigin-RevId: 526020495\n",
+            "tag_name": null
+        },
+        {
+            "hash": "983dac24c34f07a278d45fdfd30348775d95d12a",
+            "message": "Change `PrintFreeFieldNumbers` to not assume that groups occupy the same field range as their containing messages.\n\nPiperOrigin-RevId: 525876198\n",
+            "tag_name": null
+        },
+        {
+            "hash": "699093915da8661a0a4ea5b8c64d82b0d8ccefc5",
+            "message": "Auto-generate files after cl/525862155\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b2bd9dcb367f23254f61fcbe071e2a2239af7547",
+            "message": "Refactor RepeatedMessageFieldGenerator code to use \"_internal_$name$()\" and \"_internal_mutable_$name$()\" rather than \"$field$\" to access fields in preparation for split repeated fields.\n\nMotivation: we are planning to store split repeated fields in the split struct as pointers to repeated fields, which requires not accessing \"$field$\" directly.\n\nWe avoid using \"_internal_$name$()\" and \"_internal_mutable_$name$()\" in the implicit weak field case so that we can avoid linking in the message (as tested in implicit_weak_fields_test).\n\nPiperOrigin-RevId: 525862155\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1123be756287f9d56cffd0e75ff8991b5d2b493c",
+            "message": "Auto-generate files after cl/525833833\n",
+            "tag_name": null
+        },
+        {
+            "hash": "725d7d9fc56cc2744d3dfd64025c658b9325b048",
+            "message": "Partially convert message_field.cc to use Emit().\n\nThis CL does not change the formatting of any of the string templates;\nit \"only\" reorganizes the file and updates the names of everything to match\nother migrated files. Followup CLs will update the string templates.\n\nPiperOrigin-RevId: 525833833\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a56e5ded7bec78c46082cef79dbc877541c81b94",
+            "message": "Reserve 1180 for Wire use_array (#12491)\n\nrelease notes: no\n\nSupports https://github.com/square/wire/pull/2433\n\nCloses #12491\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12491 from JGulbronson:jgulbronson.claim-1180-for-wire f577336c0b7455930de8b7fbb727ac2003f8c359\nPiperOrigin-RevId: 525793344\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bd6a0cf15b564bc8b743baa95cdd566caa033cc0",
+            "message": "Delete old numpy_test.py file and replace references with the new one.\n\nThis is the final step to make numpy/pip_deps a test-only dependency.\n\nPiperOrigin-RevId: 525785717\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0b180ad11a12be86dd99e4e1857682e14f11078b",
+            "message": "Auto-generate files after cl/525778274\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1e67de4ed5a52b52b0fd0aba22db531ac0edfb8e",
+            "message": "Add a new enum validation format. The format is compact for sequential and almost sequential enums. Uses Eytzinger layout for a fallback binary search.\n\nPiperOrigin-RevId: 525778274\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8e53046d94aada48866b855742d60d4944803303",
+            "message": "Make protobuf_upb::Arena into a proper Rust RAII type.\n\nPiperOrigin-RevId: 525775419\n",
+            "tag_name": null
+        },
+        {
+            "hash": "44ac12471381a0331735c253b2d954fad3f8207c",
+            "message": "Test nested messages support for UPB.\n\nPiperOrigin-RevId: 525733570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "945bf3c48de64eb3c8a96f5dd36c19670c3dbcdd",
+            "message": "Fix build for newlib (#12501)\n\nFix includes for newlib\n\nCloses #12501\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12501 from RiversideSC:main cfcc72912d652731dd49a51a72d7de2925c3eedc\nPiperOrigin-RevId: 525623814\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a75c1a2761e49d8afb7838c03b923b909420f7fd",
+            "message": "Add `assert` to the list of keywords for C++.\n\nCloses #12010\n\nPiperOrigin-RevId: 525607232\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b30259722de17626b64fc46d3eae6af003858729",
+            "message": "Fix reference to protoc binary in protobuf-generate.cmake\n\nThis should fix #12374, #12375, and #12450. The `protobuf_PROTOC_EXEC` variable\nis not defined, and I think `protobuf::protoc` is what we should be using\ninstead.\n\nPiperOrigin-RevId: 525591320\n",
+            "tag_name": null
+        },
+        {
+            "hash": "866dfe6a6892270af82c892b562da2519bdaf333",
+            "message": "protoc java: add missing annotation to clearField() for messages\n\nPiperOrigin-RevId: 525547339\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb8d57aa6d0e2272bae7027c4208997469d8edc9",
+            "message": "Auto-generate files after cl/525538377\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a675ebb44eb6b870f8ee12e7a193a8c3eec1ad4",
+            "message": "Internal change\n\nPiperOrigin-RevId: 525538377\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eeb98513979e132481d37506fdad7f15e9d7ed2f",
+            "message": "Auto-generate files after cl/525522437\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cebf9fe37d83334aecf5b67561c7dea6d568632e",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 525522437\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eecb4cef1da2b576e62cfa93abe98e8eea4b5065",
+            "message": "Disable extension declarations validations in open source.\n\nPiperOrigin-RevId: 525518049\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13833b1df01b811c6b0a3a2c83864579d740050f",
+            "message": "Add numpy test to python_test_srcs target so that the python test wheel will have access to it.\n\nPiperOrigin-RevId: 525498162\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e5679c01e8f47e8a5e7172444676bda1c2ada875",
+            "message": "Implement nested messages for v0 API for cpp kernel\n\nPiperOrigin-RevId: 525372222\n",
+            "tag_name": null
+        },
+        {
+            "hash": "22d0a354a05a5e8d6f43edaf5ea4f4dbd9dfb8a7",
+            "message": "Merge 22.x to main (#12494)\n\nCloses #12494\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12494 from protocolbuffers:main-202304181855 4e23571384090b867152cd2233220afde01f3b70\nPiperOrigin-RevId: 525263110\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0603373e44917bd9fdf434db983c5ffea03c9527",
+            "message": "Merge pull request #12494 from protocolbuffers/main-202304181855\n\nMerge 22.x to main",
+            "tag_name": null
+        },
+        {
+            "hash": "4e23571384090b867152cd2233220afde01f3b70",
+            "message": "Merge remote-tracking branch 'upstream/22.x' into main-202304181855\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d18492ece14858f777664fd5635c46a50ecf513f",
+            "message": "Give upb pb_unit_tests visibility to the new numpy_test target.\n\nPiperOrigin-RevId: 525197302\n",
+            "tag_name": null
+        },
+        {
+            "hash": "80f0f7463d77186885762080c93d6cc99062e045",
+            "message": "Expose __builtin_mul_overflow via port_def.inc/port_undef.inc\n\nFollow up to commit b9e056f779f1c6cbf07a7a11be6f5ee6a4d433b8\n\nNot all supported compilers support __has_builtin, so define a protobuf flag\nand check that it is defined before trying to use it.\n\nFound on: https://github.com/apple/swift-protobuf/actions/runs/4733817439/jobs/8401873649\n\nPiperOrigin-RevId: 525179304\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c32f8e3c8823e0eff183e2e1b7446e0ffa6a339d",
+            "message": "Make retention stripping code tolerant of parsing/serialization errors\n\nPiperOrigin-RevId: 525168179\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2fdec2a0dfefd3b42ed3516f6ad5b86b57f264ce",
+            "message": "Set up C++ macOS bazel coverage for Apple Silicon\n\nThis is inspired by https://github.com/protocolbuffers/protobuf/issues/12306,\nbut does not show those failures, so clearly it doesn't catch everything, but\nfigured some coverage is better than none.\n\nPiperOrigin-RevId: 525134469\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d21163731b0c320c57a5664633ce2c25d8f8e72a",
+            "message": "Add init file to new google/protobuf/internal/numpy package to have it recognized as a python module\n\nPiperOrigin-RevId: 524981114\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8539ef4974bba8255f020166c715ae30001ae0e0",
+            "message": "Ensure the ObjC runtime builds for Apple Silicon.\n\nGithub doesn't currently have Apple Silicon runners, but we can build for\nthe target to atleast ensure things are building.\n\nPiperOrigin-RevId: 524929865\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe038fc9d2e6a469c3cd2f1a84a6560c0a123481",
+            "message": "Make numpy/pip_deps a test-only dependency.\n\nCreate an isolated build file for the numpy test to separate from runtime.\n\nPiperOrigin-RevId: 524913924\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0339e176cfea4cd25bf29915b8eeca08dce5530e",
+            "message": "Auto-generate files after cl/524903073\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6678619d100eea48ca1794b40687ba0365934117",
+            "message": "Factor out different codegen parts of the Rust backend.\n\nThe intent of this change is to take the best ideas from the C++ backend, such as having generator objects that can cache pre-computed state, while minimizing duplication.\n\nWhere possible, we take the approach of making the C++ and UPB kernel-specific code as similar as possible, since this reduces the number of templates we need to keep in sync.\n\nPiperOrigin-RevId: 524903073\n",
+            "tag_name": null
+        },
+        {
+            "hash": "01aca3e606aac0327b47e10c90439c7904c33d60",
+            "message": "Internal change\n\nPiperOrigin-RevId: 524894117\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5091c9fd10e2ef4965faaa15eb1c3c5123bcad50",
+            "message": "Enable sanitized CI builds\n\nPiperOrigin-RevId: 524773049\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c7d979dbf47c80a179dd8dbb115c5694c7c0c461",
+            "message": "Update UPB dependency\n\nPiperOrigin-RevId: 524423191\n",
+            "tag_name": null
+        },
+        {
+            "hash": "84a3b594c7a0fe41e34fd3d9924e252cd2b031b6",
+            "message": "Auto-generate files after cl/524383969\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b8e7192a731a8ece54b11f2caf87c32209559525",
+            "message": "Update usage disclaimer on FieldOptions.ctype\n\nFieldOptions.ctype is public and CORD support is implemented for [ctype=CORD] on \"bytes\" fields. Include a public comment for CORD about use and supported types.\n\nPiperOrigin-RevId: 524383969\n",
+            "tag_name": null
+        },
+        {
+            "hash": "faf9e8dee396bbd216e292f7d877de1c96193a29",
+            "message": "Auto-generate files after cl/524366974\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7143844db0055a8c760e6574f4a7b3693e2be6dd",
+            "message": "Factor out common helpers in the Rust backend.\n\nThis CL introduces two new files, names.h and context.h.\n\nThe former is intended to hold functions that generate the stringified names of things to splat into text templates. The latter holds per-invocation options, and a Context struct that makes it easy to thread extra information throughout the codegen backend.\n\nPiperOrigin-RevId: 524366974\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a05c57d43c914eccbebf1cbcc74aa8abba76aa93",
+            "message": "Mark sequence containers as Py_TPFLAGS_SEQUENCE, enabling pattern matching\n\nPEP634 introduces structural pattern matching. This works out of the box for most parts of protobuf messages, but fails for sequence matching (defined in https://peps.python.org/pep-0634/#sequence-patterns). This is caused by the underlying containers missing the newly introduced Py_TPFLAGS_SEQUENCE flag (see https://github.com/python/cpython/commit/069e81ab3da46c441335ca762c4333b7bd91861d).\n\nThis simply adds the flag, making the following fall into the first case:\n```\n  message = test_pb2.TestMessage(int_sequence=(1, 2, 3))\n  match message:\n    case test_pb2.TestMessage(int_sequence=(1, *rest)):\n      print(f\"message.int_sequence is a seq starting with 1, ending in {rest}\")\n    case _:\n      print(f\"No case on 'int_sequence' matched! Value: {message.int_sequence}\")\n```\n\nPiperOrigin-RevId: 524326722\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a1ba8d238a356491272c928b76a78a9b1142c98b",
+            "message": "Generate bindings under the correct package.\n\nBefore this CL all messages were generated in the top-level crate module. With\nthis change we generate messages under the module specified by the package\ndeclaration in the .proto file.\n\nDots are interpreted as submodule separator in consistency with how C++\nnamespaces are handled.\n\nNote that name of the proto_library target still remains to be used as the crate name. This CL only adds crate submodules dependeing on the specified package.\n\nPiperOrigin-RevId: 524235162\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bd52d0483987f1a5186fc3daa261d1d76a787bcf",
+            "message": "Change the Ruby code generator to emit a serialized proto instead of the DSL (#12319)\n\nThis PR removes the DSL from the code generator, in anticipation of splitting the DSL out into a separate package.\n\nGiven a .proto file like:\n\n```proto\nsyntax = \"proto3\";\n\npackage pkg;\n\nmessage TestMessage {\n  optional int32 i32 = 1;\n  optional TestMessage msg = 2;\n}\n```\n\nGenerated code before:\n\n```ruby\n# Generated by the protocol buffer compiler.  DO NOT EDIT!\n# source: protoc_explorer/main.proto\n\nrequire 'google/protobuf'\n\nGoogle::Protobuf::DescriptorPool.generated_pool.build do\n  add_file(\"test.proto\", :syntax => :proto3) do\n    add_message \"pkg.TestMessage\" do\n      proto3_optional :i32, :int32, 1\n      proto3_optional :msg, :message, 2, \"pkg.TestMessage\"\n    end\n  end\nend\n\nmodule Pkg\n  TestMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup(\"pkg.TestMessage\").msgclass\nend\n```\n\nGenerated code after:\n\n```ruby\n# frozen_string_literal: true\n# Generated by the protocol buffer compiler.  DO NOT EDIT!\n# source: test.proto\n\nrequire 'google/protobuf'\n\ndescriptor_data = \"\\n\\ntest.proto\\x12\\x03pkg\\\"S\\n\\x0bTestMessage\\x12\\x10\\n\\x03i32\\x18\\x01 \\x01(\\x05H\\x00\\x88\\x01\\x01\\x12\\\"\\n\\x03msg\\x18\\x02 \\x01(\\x0b\\x32\\x10.pkg.TestMessageH\\x01\\x88\\x01\\x01\\x42\\x06\\n\\x04_i32B\\x06\\n\\x04_msgb\\x06proto3\"\nbegin\n  Google::Protobuf::DescriptorPool.generated_pool.add_serialized_file(descriptor_data)\nrescue TypeError => e\n  # <compatibility code, see below>\nend\n\nmodule Pkg\n  TestMessage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup(\"pkg.TestMessage\").msgclass\nend\n```\n\nThis change fixes nearly all remaining conformance problems that existed previously. This is a side effect of moving from the DSL (which is lossy) to a serialized descriptor (which preserves all information).\n\n## Backward Compatibility\n\nThis change should be 100% compatible with Ruby Protobuf >= 3.18.0, released in Sept 2021. Additionally, it should be compatible with all existing users and deployments. However there is some special compatibility code I inserted to achieve this level of backward compatibility.\n\nWithout the compatibility code, there is an edge case that could break backward compatibility. The existing code is lax in a way that the new code would be more strict.\n\nWhen we use a full serialized descriptor, it will contain a list of all `.proto` files imported by this file (whereas the DSL never added dependencies properly): https://github.com/protocolbuffers/protobuf/blob/dfb71558a2226718dc3bcf5df27cbc11c1f72382/src/google/protobuf/descriptor.proto#L65-L66\n\n`add_serialized_file` will verify that all dependencies listed in the descriptor were previously added with `add_serialized_file`.  Generally that should be fine, because the generated code will contain Ruby `require` statements for all dependencies, and the descriptor will fail to load anyway if the types we depend on were not previously defined in the DescriptorPool.\n\nBut there is a potential for problems if there are ambiguities around file paths. For example, consider the following scenario:\n\n```proto\n// foo/bar.proto\n\nsyntax = \"proto2\";\n\nmessage Bar {}\n```\n\n```proto\n// foo/baz.proto\n\nsyntax = \"proto2\";\n\nimport \"bar.proto\";\n\nmessage Baz {\n  optional Bar bar = 1;\n}\n```\n\nIf you invoke `protoc` like so, it will work correctly:\n\n```\n$ protoc --ruby_out=. -Ifoo foo/bar.proto foo/baz.proto\n$ RUBYLIB=. ruby baz_pb.rb\n```\n\nHowever if you invoke `protoc` like so, and didn't have any compatibility code, it would fail to load:\n\n```\n$ protoc --ruby_out=. -I. -Ifoo foo/baz.proto\n$ protoc --ruby_out=. -I. -Ifoo foo/bar.proto\n$ RUBYLIB=foo ruby foo/baz_pb.rb\nfoo/baz_pb.rb:10:in `add_serialized_file': Unable to build file to DescriptorPool: Depends on file 'bar.proto', but it has not been loaded (Google::Protobuf::TypeError)\n\tfrom foo/baz_pb.rb:10:in `<main>'\n```\n\nThe problem is that `bar.proto` is being referred to by two different canonical names: `bar.proto` and `foo/bar.proto`. This is a user error: each import should always be referred to by a consistent full path. Hopefully user errors of this sort are rare, but it is hard to know without trying.\n\nThe code in this PR prints a warning using `warn` if we detect that this edge case has occurred. We will plan to remove this compatibility code in the next major version.\n\nCloses #12319\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12319 from haberman:ruby-gencode-binary 5c0e8f20b10ef8cee4c885138a31e6054bfaf6e6\nPiperOrigin-RevId: 524129023\n",
+            "tag_name": null
+        },
+        {
+            "hash": "21256b86a99c5254873fa150183dceebefce2f8f",
+            "message": "Makes extension declaration field name and type optional if `reserved: true` is present. Revert the support of declaration with only number is set; this used to indicate that a number is already in use by multiple extensions.\n\nPiperOrigin-RevId: 524115436\n",
+            "tag_name": null
+        },
+        {
+            "hash": "02380874f70d8783a0c555116b0c2bad1c92f001",
+            "message": "Internal change\n\nPiperOrigin-RevId: 524093505\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a05e2f334e9532b2b063d0f73188a0ef4897d33",
+            "message": "Implement bytes field accessors for v0 Rust API\n\nPiperOrigin-RevId: 524089369\n",
+            "tag_name": null
+        },
+        {
+            "hash": "69a4876d69eeee37aab121f6f4908bec7b35b271",
+            "message": "restore pypy support broken when adding 3.11 support (from GH)\n\nThis is a copy of https://github.com/protocolbuffers/protobuf/pull/12431\nbut with the ifdef logic reversed. The original PR could not kick off our\nCI tests because it wasn't branched directly from repo main.\n\nThanks to Tom Gillespie for the original PR.\n\nPiperOrigin-RevId: 524041105\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0f3f1e826d249e6d405bb85984a8a71c81578252",
+            "message": "Enable code generation of custom options in C++ lite\n\nPiperOrigin-RevId: 524037847\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b9e056f779f1c6cbf07a7a11be6f5ee6a4d433b8",
+            "message": "Use builtin multiplication for intentional overflow\nClang's unsigned integer overflow sanitizer is flagging BucketNumber as having\nan overflow. This is intentional behavior, so we should mark it as such.\nRather than disabling the sanitizer, this uses __builtin_mul_overflow to\nindicate the overflow is intentional.\n\nPiperOrigin-RevId: 524018233\n",
+            "tag_name": null
+        },
+        {
+            "hash": "31f649fb188c3ab2c845caeb4fd6be2498cb9f8a",
+            "message": "Remove macro based guard for the table-driven parser.\n\nPiperOrigin-RevId: 524003062\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41b7500aee9ca3627f62000203cfc625dc3c3dc6",
+            "message": "Fix abseil gitmodule date and add a step in tests to update the subrepo to catch errors like this in the future.\n\nPiperOrigin-RevId: 523826559\n",
+            "tag_name": null
+        },
+        {
+            "hash": "777f84f5595adae76cfdac1759af3612c75c9393",
+            "message": "Implement bool and int64 field accessors for v0 Rust API\n\nPiperOrigin-RevId: 523671732\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0bb76d70f7d5a152916f8a5ab602a08865bf05f7",
+            "message": "Implement 'optional int64' accessors per v0 API spec.\n\nPiperOrigin-RevId: 523667647\n",
+            "tag_name": null
+        },
+        {
+            "hash": "390b7f3e6f72d298e95c5c041d5e4803edcfdb19",
+            "message": "Implement Msg::parse(&mut self) for V0 API.\n\nPiperOrigin-RevId: 523665442\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1abe2ead1c828055b06d9276367d00e7d462eef6",
+            "message": "Auto-generate files after cl/523650122\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c575758ad97b331885f0ac376d58956c85781cfa",
+            "message": "Implement accessors for 'optional bool' per v0 API spec\n\nSee 'accessors_test.rs' for the generated Rust API.\n\nPiperOrigin-RevId: 523650122\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38de65f9c1d383b3292b5d39872eca00ee4180fb",
+            "message": "Update the error message when a duplicate enum number is used to provide the\nnext available enum number in addition to mentioning the option to allow\naliasing.\n\nFor enums that are large but are not sorted numerically it can be difficult to\nfind the correct enum number to use.\n\nWe use \"next available\" as the next number larger than the number that was\nduplicatively used which is not assigned a value. For sparse enums, there may\nbe other enums past the suggested number.\n\nPiperOrigin-RevId: 523487238\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5814f6c977266bfcf33c57cebee20e37d2d89fac",
+            "message": "Generate C++ thunks for Rust protos\n\nIn this CL I'd like to call existing C++ Protobuf API from the V0 Rust API. Since parts of the C++ API are defined inline and using (obviously) C++ name mangling, we need to create a \"thunks.cc\" file that:\n\n1) Generates code for C++ API function we use from Rust\n2) Exposes these functions without any name mangling (meaning using `extern \"C\"`)\n\nIn this CL we add Bazel logic to generate \"thunks\" file, compile it, and propagate its object to linking. We also add logic to protoc to generate this \"thunks\" file.\n\nThe protoc logic is rather rudimentary still. I hope to focus on protoc code quality in my followup work on V0 Rust API using C++ kernel.\n\nPiperOrigin-RevId: 523479839\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c23f226585373a936660e0e63ffea118a7987241",
+            "message": "Fix reserializing of nodes for `map<uint32, Enum>` when the enum value is\nunknown and the key has the high bit on.\nIt was being serialized as signed, which caused it to be sign extended. The\nvalue is equivalent after parsing as 32-bit, but it is inconsistent with other forms of\nserialization.\n\nPiperOrigin-RevId: 523428645\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f11079b01f075bc7c5b3286d85a8feca798c09e9",
+            "message": "Auto-generate files after cl/523269837\n",
+            "tag_name": null
+        },
+        {
+            "hash": "41287bd5d5373e91277b849e93c7ae2a0238b5c3",
+            "message": "Implement \"reserved\" for extension declaration.\n\nThis can be useful when an extension field/declaration is deleted in schema to avoid data corruption.\n\nIt also adds a check for duplicate numbers in the declarations.\n\nPiperOrigin-RevId: 523269837\n",
+            "tag_name": null
+        },
+        {
+            "hash": "11d9cd97cf82c4e852bc2a7721341efdbe67f442",
+            "message": "Auto-generate files after cl/523228262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1028bde1ddf32f91b37e35c217cc8fd235d21844",
+            "message": "internal change\n\nPiperOrigin-RevId: 523228262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f94950e2064372901f3ca20b83c5f36be24906d",
+            "message": "Automated rollback of changelist 520827894.\n\nPiperOrigin-RevId: 523213865\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09f094c81178caf3169e83e989b5d8e0c3c2ffa2",
+            "message": "[dotnet, csharp] Run tests for supported platforms .NET 6, .NET Framework 4.6.2 (#12378)\n\n What's changed?\n- Update some nuget packages (for test projects)\n- Run unit tests for supported platforms: .NET 6 + .NET Framework 4.6.2\n\nNotes:\n.NET Framework 4.6.1 is out of support, .NET Framework 4.6.2 is the older version that is still supported\nhttps://devblogs.microsoft.com/dotnet/net-framework-4-5-2-4-6-4-6-1-will-reach-end-of-support-on-april-26-2022/\n\n.NET 5 is out of support\nhttps://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/\n\n.NET Core 3.1 is out of support\nhttps://devblogs.microsoft.com/dotnet/net-core-3-1-will-reach-end-of-support-on-december-13-2022/\n\nVisual studio 2012 is out of support\nhttps://devblogs.microsoft.com/visualstudio/support-ends-for-older-versions-of-visual-studio-feb2022\n\nCloses #12378\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12378 from Romfos:main 227661e02cc47673295a5d0e03763f8e2bf0f124\nPiperOrigin-RevId: 523196896\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a679dfb29af5762b613651f6e1c6d570e0488a6",
+            "message": "Refactor ARM-optimized varint parsing.\n\nThis change improves deserialization performance by in two ways:\n\n1) VarintParseSlowArm32 and VarintParseSlowArm64 return a pair for the updated buffer pointer and parsing result instead of storing the result and returning just the pointer. This allows the parsed result to be returned to higher level code in x1 rather than via the stack.\n\n2) Remove prohibition on inlining VarintParseSlowArm32 and VarintParseSlowArm64. This prohibition was originally included to avoid bloating non-TDP code. Now that TDP is enabled the impact on code size is small.\n\nPiperOrigin-RevId: 523142512\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7458e32f0d1f5501f2528a7ecfac096f9a313555",
+            "message": "internal change\n\nPiperOrigin-RevId: 523138685\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a84914cfd3c366b3be53835648037035c87ff28",
+            "message": "Update port.h to include <typeinfo> unconditionally\n\nThis should fix #12412 by ensuring that we don't refer to `PROTOBUF_RTTI`\nbefore it is defined.\n\nPiperOrigin-RevId: 522657207\n",
+            "tag_name": null
+        },
+        {
+            "hash": "defff5c2b18dafb789b2182401fe9d537eee7dca",
+            "message": "Internal change\n\nPiperOrigin-RevId: 522634054\n",
+            "tag_name": null
+        },
+        {
+            "hash": "435a698b2407c8324c074b102366c9c7047640a1",
+            "message": "Auto-generate files after cl/522473964\n",
+            "tag_name": null
+        },
+        {
+            "hash": "163f849d316b13b9d1014fa172db09799699fe25",
+            "message": "Automated rollback of commit defe92a03c99b4265f44e3d8cb4efed8e37e5275.\n\nPiperOrigin-RevId: 522473964\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f51923041d46f204b78855c3c1544abf2e116d34",
+            "message": "Remove ODR violation from WKT codegen (#12406)\n\nCloses #12406\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12406 from mkruskal-google:wkt 1c6748e6aabf55da929558c56b1314c52932153b\nPiperOrigin-RevId: 522418175\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6038e9b9fe1162813191e25193bd8ca38264a6ce",
+            "message": "Internal change\n\nPiperOrigin-RevId: 522386061\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9413e0e9a19ae8f396e5ac8fdddd9961ccdb756a",
+            "message": "Adjust API and use lambdas to reduce stack space usage.\n\nPiperOrigin-RevId: 522258513\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c9829875d6510b37f04c21c1458296121419b32",
+            "message": "Automated rollback of commit e664fff44ea5e966a85aa077f786bb03976e8a77.\n\nPiperOrigin-RevId: 522189510\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e664fff44ea5e966a85aa077f786bb03976e8a77",
+            "message": "Internal change\n\nPiperOrigin-RevId: 522181404\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7a2f4acea7c981108f75210185ecdee8c13ea82",
+            "message": "Add initial end-to-end test directory structure.\n\nThis turns out to be quite of a yak shave to be able to perfectly test both kernels without having to pass extra Blaze flags.\n\nPiperOrigin-RevId: 521850709\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db7c7349ea9bcb74c0000429d9e86954fff9f7d0",
+            "message": "Refactor MapField arena destruction to avoid destroying the Map unnecessarily and make sure to destroy the mutex in MapFieldBase.\n\nPiperOrigin-RevId: 521838091\n",
+            "tag_name": null
+        },
+        {
+            "hash": "083830d84904192dd8b72bbb5e1d9ee7c3c5469b",
+            "message": "Update copyright year\n\nPiperOrigin-RevId: 521800787\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8894d03baea3bd05d5d94e9a70f30beacf316470",
+            "message": "Switch to docker image for protoc build in java linkage test\n\nThis will prevent non-hermetic outages and better unify our test infrastructure.\n\nPiperOrigin-RevId: 521779648\n",
+            "tag_name": null
+        },
+        {
+            "hash": "084d9702d69ab5039af515ab005fcc65cae18da4",
+            "message": "Internal change\n\nPiperOrigin-RevId: 521532900\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef299f7af43b790789ac2b09973ad816467de1c2",
+            "message": "Disable some tests under msan\n\nPiperOrigin-RevId: 521505590\n",
+            "tag_name": null
+        },
+        {
+            "hash": "02cdbd72021dbe883fb28991187151c3820579f5",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 521028876\n",
+            "tag_name": null
+        },
+        {
+            "hash": "585a98cb66f843c7a87eb8c7c052973826b6dff3",
+            "message": "Automated rollback of commit 580678eacd52d5d1d092f5073306f1bf6269996a.\n\nPiperOrigin-RevId: 521009823\n",
+            "tag_name": null
+        },
+        {
+            "hash": "580678eacd52d5d1d092f5073306f1bf6269996a",
+            "message": "Refactor ARM-optimized varint parsing.\n\nThis change improves deserialization performance by in two ways:\n\n1) VarintParseSlowArm32 and VarintParseSlowArm64 return a pair for the updated buffer pointer and parsing result instead of storing the result and returning just the pointer. This allows the parsed result to be returned to higher level code in x1 rather than via the stack.\n\n2) Remove prohibition on inlining VarintParseSlowArm32 and VarintParseSlowArm64. This prohibition was originally included to avoid bloating non-TDP code. Now that TDP is enabled the impact on code size is small.\n\nPiperOrigin-RevId: 520985945\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3f8625b306baf6fcacb734231678506d1f5d8e69",
+            "message": "Edit READMEs to include new cmake instructions and remove references to language specific source distributions.\n\nPiperOrigin-RevId: 520980524\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b3844e59698c7ec859ad05f83f9251f45f176e5",
+            "message": "Delete unused bazel distribution rules.\n\nWe intended to use these for our release page, but we instead removed language-specific source files and use github commands to generate the full zip/tar file we release.\n\nPiperOrigin-RevId: 520979818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "defe92a03c99b4265f44e3d8cb4efed8e37e5275",
+            "message": "Clang's unsigned integer overflow sanitizer is flagging BucketNumber as having an overflow. This seems to be intentional, and we should disable the sanitizer for this function.\n\nPiperOrigin-RevId: 520968947\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2a798b07ff800e92478db98d5bf74bcddc8cf254",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 520962747\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47861d28926205f4d04d369301fba024404fb2e7",
+            "message": "Add wire format cord support for singular bytes\n\nPiperOrigin-RevId: 520690714\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0032f200e9a318b4b17d1663289d3bf03ee67fc3",
+            "message": "Fix IsEagerSerializeSafe() and kParseError behavior\n\nPiperOrigin-RevId: 520664827\n",
+            "tag_name": null
+        },
+        {
+            "hash": "648060bbcb3d632acd6fc11c78b4d6b048fda12f",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 520627020\n",
+            "tag_name": null
+        },
+        {
+            "hash": "515175db66695b63d605f6d3eb216703a30debe9",
+            "message": "Build & test Rust compiler on GHA\n\nPiperOrigin-RevId: 520578368\n",
+            "tag_name": null
+        },
+        {
+            "hash": "52d3dc688c0a88673caecf7a758960ecc0dff7b9",
+            "message": "Refactor Rust UPB codegen to prepare for field accessors\n\nThe idea is that after this refactoring we implement the codegen for field accessors by adding another template variable, like\n\np.Emit(\n  ...\n  $ImplMessageFunctions$;\n  $ImplFieldAccessors$;\n  ...\n)\n\nPiperOrigin-RevId: 520571021\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ebbb2d656f7411497bb640e5e6a75be1d3d55f10",
+            "message": "Visibility restrict targets generated by rust_proto_library macro\n\nPiperOrigin-RevId: 520561115\n",
+            "tag_name": null
+        },
+        {
+            "hash": "83507c7f4e8a53cc6e800efac5ce157cd960f657",
+            "message": "Implement a retain_options flag in protoc.\n\nThis will allow users to force the retention of RETENTION_SOURCE options, which get stripped out by default.\n\nPiperOrigin-RevId: 520555632\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4ee65df9f240415e607b93bd619388af36256b82",
+            "message": "Auto-generate files after cl/520526112\n",
+            "tag_name": null
+        },
+        {
+            "hash": "676018e3520d7d10fdf52c2e8b073c0dc90dd819",
+            "message": "Expand retention stripping API, and improve test coverage\n\nPiperOrigin-RevId: 520526112\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c8b2be3a830755014d338d023c8b60779f70b8b",
+            "message": "Breaking change: Lock down visibility for FileDescriptor.getSyntax().\n\nSyntax will become meaningless once we migrate to editions.  In the meantime, we've implemented APIs to expose the differences between proto2 and proto3 in terms of the features we plan to release in edition 2023.\n\nPiperOrigin-RevId: 520433607\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5dc171f71eca66579b06d4400ee5c94bfa68947a",
+            "message": "Extension declaration: Enforce that if the extension range has a declaration then all extensions in that range must be declared. This should prevent non-declared extensions from being added.\n\nPiperOrigin-RevId: 520415909\n",
+            "tag_name": null
+        },
+        {
+            "hash": "db126ca6536778fb9c48ea91f7e1a03a3f5e2a32",
+            "message": "Fix exhaustive switch issue in Rust generator\n\nPiperOrigin-RevId: 520398035\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2eda0cc44c62066b2382939a05c87a005e162d45",
+            "message": "Add optimizations to extension declaration validation.\n\nPiperOrigin-RevId: 520386119\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9fa1f4873b8a05e105b001ab5bd079dc2617719",
+            "message": "Automated rollback of commit b72eb3f2337599b0e91cadbeeec4e17bdcfcb4b6.\n\nPiperOrigin-RevId: 520363442\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d9a8622facfa4cbbe2997a139b2e97ac210405d3",
+            "message": "Enable bzl visibility for Protobuf Rust rules\n\nPiperOrigin-RevId: 520319698\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbf97258bd487e684081b9922d09a62018b55c6f",
+            "message": "Enable support for rust_upb_proto_library and rust_cc_proto_library within the same build\n\nPiperOrigin-RevId: 520314976\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b72eb3f2337599b0e91cadbeeec4e17bdcfcb4b6",
+            "message": "Add optimizations to extension declaration validation.\n\nPiperOrigin-RevId: 520159132\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bf843b3d5f558767547ebb835245acca1efc96f",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 520120295\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f128ced675364ec4b57c4db776c4615fe5aeb1d6",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 520076528\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8aff59e1c48dc2ed7e53cff40b21515a4d562e67",
+            "message": "Suppress -Wunused-parameter warning for GCC and clang.\n\nCloses https://github.com/protocolbuffers/protobuf/issues/12313\n\nPiperOrigin-RevId: 520066451\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ae84761bf09db1b9da6c7fed4d708468017b79f",
+            "message": "Auto-generate files after cl/520049946\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3f4af6661ab60894093dd351a012f3e0e4dded34",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 520049946\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4745f526d44f74e6b2957ea48248e5af981d3fc8",
+            "message": "Small style guide, naming and formatting fixes\n\nPiperOrigin-RevId: 519993508\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c92452c99ba44a27f3311caed85a8f23b808e5b",
+            "message": "Split UPB and C++ kernel codegen into their own functions\n\nPiperOrigin-RevId: 519977094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2f3d647424553ff955a378b34fddb434980d3d4",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 519859619\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dff36c7d02f5c6e1ca4b5bdea3a8426b47c75868",
+            "message": "Update source code info when stripping source-retention options\n\nWhen we invoke protoc with `--include_source_info --descriptor_set_out`, we\ncurrently strip out source-retention options but without doing the\ncorresponding stripping of the source code info. This CL fixes that problem by\nmaking sure to strip the same entities from source code info that we stripped\nfrom the main part of the descriptors.\n\nPiperOrigin-RevId: 519831383\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0549e521889341305efb6cc59cacbb5b13d16dc7",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 519775744\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d60af33f09295ee34a920730d0613a9cb644ccf0",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 519771456\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5b59a02b912ee19adf444b4f8a036389ef9d10fd",
+            "message": "Auto-generate files after cl/519752053\n",
+            "tag_name": null
+        },
+        {
+            "hash": "145900f06c732974af996a28a3e2c211ae104888",
+            "message": "Open-source extension declaration definition.\n\nPiperOrigin-RevId: 519752053\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3a871acca05ca4cdf79fc14ea9b701be6fe745f1",
+            "message": "Fix internal build breakage\n\nPiperOrigin-RevId: 519277200\n",
+            "tag_name": null
+        },
+        {
+            "hash": "42c2b7ec60fe166cd08a4ee22f9bb9724c6b3fe2",
+            "message": "Internal change\n\nPiperOrigin-RevId: 519260063\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ecb5d097e8d9bfafeb5ec8d251827f0d444f2ce",
+            "message": "Added Reflection::GetCord() method in C++\n\nPiperOrigin-RevId: 519246549\n",
+            "tag_name": null
+        },
+        {
+            "hash": "477e35f4c2dd5a8eb9f829cd6671e1b5e38f2535",
+            "message": "Add missing cstdint include to port.h (#12331)\n\nFixes compile errors with GCC 13.\n\nport.h:186:67: error: ‘uint32_t’ was not declared in this scope\nport.h:187:67: error: ‘uint64_t’ was not declared in this scope\n\nCloses #12331\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12331 from jonaski:cstdint 9bef4494786edc2b214342f20137a28b457fcaee\nPiperOrigin-RevId: 519208789\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3e188b7c04cfdaec134cb59831f009c1ce1d7f12",
+            "message": "Automated rollback of commit 1d7bda4a78e1f9f7001df3378e38827666f6cdd8.\n\nPiperOrigin-RevId: 519177322\n",
+            "tag_name": null
+        },
+        {
+            "hash": "620eebecdef7364b74a081022c232f93e1bb0c77",
+            "message": "Add Cybozu to options.md (#12324)\n\nHello.\n\nWe want to make our protobuf repository public which contains a custom extension.\nOur code is already available at https://github.com/cybozu/protobuf.\n\nPlease let us use extension number 1179.\n\nRegards,\n\nCloses #12324\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12324 from ymmt2005:patch-1 b0a5171211d1785b7df1d0ccdc725b2a9db9eecd\nPiperOrigin-RevId: 519022489\n",
+            "tag_name": null
+        },
+        {
+            "hash": "53f3cf8e158431d11b01dcdd44b31e19544fc3d9",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 519008855\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbbe317b4fbcf16c3c0b63b6799abcb28b6d6ea5",
+            "message": "Small optimization: move TcParser::Error() out of line\n\nPiperOrigin-RevId: 518943474\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef53613b42ad24a75d7757b0070e630876ea3664",
+            "message": "Add GHA workflow for Rust\n\nPiperOrigin-RevId: 518933228\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4562c1c235a84eb719084987d4ae29458a3c77c9",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 518884627\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34517b6456e8015584ba0b54237adc3d8479c38d",
+            "message": "Internal changes to extensions.\n\nPiperOrigin-RevId: 518691032\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dfb71558a2226718dc3bcf5df27cbc11c1f72382",
+            "message": "sync to current upb and enable new unit test on upb\n\nPiperOrigin-RevId: 518643876\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7802b934428a8a27b06bfb179955029ac27feee7",
+            "message": "Fix build errors in Protobuf Rust\n\nPiperOrigin-RevId: 518619271\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9a76b96cc4c659d9b677cfe476a027556a28638c",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 518582206\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2b663464eac37f8202c61df0f45e569ea3584ecf",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 518574031\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a7087a037636f26f8312771294a21e79b67b5114",
+            "message": "Automated rollback of commit f7e6c46824510e12dbaa49bcd7dada5b3c6e0420.\n\nPiperOrigin-RevId: 518572689\n",
+            "tag_name": null
+        },
+        {
+            "hash": "579f4ab70dc5c37f075a0b3f186fe80dcdf8165d",
+            "message": "fix Python bug with required fields\n\nhttps://github.com/protocolbuffers/upb/issues/1220\n\nThere were two bugs here: Python was incorrectly mandating that a required\nfield be set during assignment, and it was also incorrectly assuming a non-NULL\nreturn from an internal function call.\n\nPiperOrigin-RevId: 518561818\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbc918c6d0adeb7dfe1fc515c01ac0d4d88c88ed",
+            "message": "Delete cmake/CMakeLists.txt in favor of CMakeLists.txt (#12295)\n\nThis fixes https://github.com/protocolbuffers/protobuf/issues/12263, but we will not cherrypick to 22.x since it could be breaking.\n\nCloses #12295\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12295 from deannagarcia:deleteExtraCmakeFile 8fe901aee2d7992ee06b9fa2827c76ecc725f39d\nPiperOrigin-RevId: 518456432\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e56cf5d8d41ca339d94c8941141a9fcfcae1743b",
+            "message": "Auto-generate files after cl/518395462\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2456753603ee2ae3250dd3f03c226d0e63320d33",
+            "message": "Mark singular `target` field option deprecated.\n\nThis was always designed to be repeated, and the singular one should never be used.\n\nPiperOrigin-RevId: 518395462\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f73c7cb74a53a39f7473dee168770f3e5782e15f",
+            "message": "Add license rules\n\nPiperOrigin-RevId: 518370510\n",
+            "tag_name": null
+        },
+        {
+            "hash": "10327708f807770d2843cd16ed61b49ea020009c",
+            "message": "Create a helper for converting ErrorLocation to a string\n\nPiperOrigin-RevId: 518369193\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1f11d71181d75bd1e1bd064d29f99b31c78094de",
+            "message": "Only include utf8_range if it hasn't been included already\n\nPiperOrigin-RevId: 518361290\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7e6c46824510e12dbaa49bcd7dada5b3c6e0420",
+            "message": "Reduce stack usage of MessageDifferencer in two ways:\n - Replace uses of stack-based FixedArray instances with a heap-based stack.\nThis new stack amortizes memory allocations.\n - Remove local variables of SpecificField. These are quite large and we only\nuse them temporarily to push into the vector. Better to push early and use the\nvalue from the vector directly.\n\nPiperOrigin-RevId: 518320703\n",
+            "tag_name": null
+        },
+        {
+            "hash": "714f97502662ae75ed64f8456b43d5536740b022",
+            "message": "Support C++ protobuf ctype=CORD for bytes field (generated code).\nReflection::SetString() can take CORD as input.\n\nPiperOrigin-RevId: 518313997\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b5652b030eda12fa1c7ea3e1ddd8d0404bd4ac5",
+            "message": "Re-attach OSGI headers to lite,core, and util. This information was dropped in the move from maven to bazel.\n\nPiperOrigin-RevId: 518267412\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf1ae222c9fab276f630f511fb385adada51d568",
+            "message": "Update proto parsing to keep track of parsed fields that have no presence and were parsed to their default value, hence had no effect on the result proto.\nUpdate the Partially proto matcher to cause proto parsing to check fail if the above condition was triggered.\nThis is to address a known issue where test are silently passing when proto3 protos are the arguments to Partially(EqualsProto) and have some of the fields ignored by the EqualsProto matcher since they were set to their default value in the expected proto.\n\nPiperOrigin-RevId: 518262030\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35ffb665e2f3828853333713e1e4c9f59aedcff8",
+            "message": "Auto-generate files after PR #12262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4326e0f852a3cf47c30bf99db66c3e3e77658dfb",
+            "message": "Make json_name take priority over name (fully) in C# parsing (#12262)\n\nFixes #11987\n\n(testprotos.pb and UnittestIssues.pb.cs are both generated; no need to review.)\n\nCloses #12262\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12262 from jskeet:json-mapping 95785247b7e242c8ab6f9079ff9881b99b3be486\nPiperOrigin-RevId: 518186721\n",
+            "tag_name": null
+        },
+        {
+            "hash": "38ab8574725411b02437b5d157e01c606cf99cf5",
+            "message": "Make warning message type more specific (#12272)\n\nThe minimum required CMake version is 3.5. Thus, this message type is supported.\n\nRef.:\nhttps://cmake.org/cmake/help/v3.5/command/message.html\n\nCloses #12272\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12272 from joclement:patch-1 c7528889a61efe8bd8225a6611945731ffd6c4ee\nPiperOrigin-RevId: 518185074\n",
+            "tag_name": null
+        },
+        {
+            "hash": "decc1b570880709a84e3c7200e637fee832098c5",
+            "message": "Update deprecated aliases for Python 3.12 compatibility. (#12254)\n\nhttps://docs.python.org/3.12/whatsnew/3.12.html#removed . `assertRaisesRegexp` was removed in favor of `assertRaisesRegex`\n\nCloses #12254\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12254 from tirkarthi:fix-assert 922f3ceccc607f0c8b56519fd13e01d20c04909c\nPiperOrigin-RevId: 518181080\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0dda953e06a130c2a51d9bdbbfbef67e6cacd8ce",
+            "message": "Fix compile-time error for Google.Protobuf in C# 11 (#12261)\n\nNote that the error only affects users trying to build Google.Protobuf directly using C# 11. It doesn't affect users who are compiling code against the pre-built library (which is likely to be basically everyone).\n\nFixes #11004.\n\n(This is code I'm less familiar with than most of the library, and I'd be nervous of making any more wide-ranging changes. This seems pretty safe though.)\n\ncc @JamesNK who first noticed this.\n\nCloses #12261\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12261 from jskeet:csharp-11 6bf22b892bead9d84264e0513d905dc3a683882f\nPiperOrigin-RevId: 518178901\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5d3d9aa372de7a83f3916d8336c75d8a8653255e",
+            "message": "Auto-generate files after cl/518088680\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d480470dfc005a41e7bdc56f863cee86ca0380ba",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 518088680\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e91bcb7df25f3dd8227b2f1e07f65a33cff6e77f",
+            "message": "Remove ABSL_DCHECK header and dep now that port_def.inc is fixed\n\nPiperOrigin-RevId: 518086625\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af34fc6a761e3733ade14d57a05638b468af44af",
+            "message": "[PHP] Run tests on PHP 8.2 too , check for startup warnings (#10596)\n\nPHP 8.2 is around the corner, and they've just published 8.2.0RC2.\nSo, what about testing protobuf with it?\n\nAlso: even if everything compiles and the PHP extension can be used, we may have that PHP throws some warnings at startup.\nFor example, if we install protobuf 3.18.3 with PHP 8.1, we have these warnings:\n\n```\n$ php -r 'echo \"This is just a test.\\n\";'\n\nDeprecated: Return type of Google\\Protobuf\\Internal\\RepeatedField::offsetExists($index) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in Unknown on line 0\n\n[...omissis... ]\n\nDeprecated: Return type of Google\\Protobuf\\Internal\\MapFieldIter::rewind() should either be compatible with Iterator::rewind(): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in Unknown on line 0\n\nThis is just a test.\n```\n\nSo: what about letting the `php-ext.yml` GitHub Action fail in case we have such startup errors?\n\nCloses #10596\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/10596 from mlocati:php-8.2-warnings 6383242b149b8804a6f17d38751b0a7fbaa4d934\nPiperOrigin-RevId: 518050302\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c639334cca3d6d8de838e2215efa96b8f283009",
+            "message": "Introduce a legacy utility for Descriptors.java to hide FileDescriptor.getSyntax().\n\nThis will be used to make the method and enum to package-private and later to visibility-restrict other deprecated APIs for editions to prevent backslide.\n\nPiperOrigin-RevId: 518028723\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6c9f9553e1c793e1fcafc987fbc7392b86f28bf1",
+            "message": "Auto-generate files after cl/518025056\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f60cbe585fb33ad1ed1d5063c52f189a953068c8",
+            "message": "Fix absl log and check headers and deps for port_def.inc\n\nPiperOrigin-RevId: 518025056\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c63316fad152007c1aa0208ebbc7b110beb5fa7f",
+            "message": "Add @deprecated tag for doc block for service, method and message (#12265)\n\nAt the moment, `protoc` ignores `option deprecated = true` for these entities.\n\nIt seems good to add the tag `@deprecated` to highlight the deprecation in the client code. It works for fields bot not for messages/service/method.\n\nI wanted to add the test for this change, but I couldn't find any test for the generator. I will be happy if you can guide me in the right direction\n\nCloses #12265\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12265 from negram:add-message-deprecate fa52e15366859508d8f8aac269a20409fc856220\nPiperOrigin-RevId: 518007790\n",
+            "tag_name": null
+        },
+        {
+            "hash": "540e64febb606cc8287c1089c357ad34c8bf22b7",
+            "message": "Remove erroneous dependencies @com_google_googletest//:gtest and @com_google_googletest//:gtest_main from //src/google/protobuf/json:parser (#12267)\n\nDownstream bazel projects that depend on protoc would need to provide googletest dependencies when it should not be necessary to do so.\n\nFixes #11409\n\nCloses #12267\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12267 from prestonvanloon:remove-erroneous-googletest-dep 09fd163094b5138ad4512a19bf0331bf2cf6db2b\nPiperOrigin-RevId: 517974450\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0c79b27918a1f0196713315875e482520ae1d16",
+            "message": "Bump upb version\n\nPiperOrigin-RevId: 517972179\n",
+            "tag_name": null
+        },
+        {
+            "hash": "71d421142abf93f9ce3e3820ef5f21fc17744861",
+            "message": "Create a real_oneof_decl helper for limiting queries to only non-synthetic oneofs.\n\nPiperOrigin-RevId: 517959602\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b4a3ed9e46b2542185ce6f6e21656955708808f",
+            "message": "Auto-generate files after cl/517595570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c121398936f813060c533aaf38e670cc6bb94c2",
+            "message": "Automated rollback of commit 9e8435ac40054899f24536584844130ea222bbe8.\n\nPiperOrigin-RevId: 517595570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c71bf997655012f0fbd1d093b317a7315e9dd9dd",
+            "message": "internal change to extensions\n\nPiperOrigin-RevId: 517523404\n",
+            "tag_name": null
+        },
+        {
+            "hash": "22a34042402fb840c1c00b5da86b4d31358070b2",
+            "message": "Auto-generate files after cl/517494787\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9e8435ac40054899f24536584844130ea222bbe8",
+            "message": "Automated rollback of commit 1c23a17f091a0dd7ad44ddc4b0509d39773578e8.\n\nPiperOrigin-RevId: 517494787\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e6d5c407cb87d405beca97dd5370e7142543fb1f",
+            "message": "Auto-generate files after cl/517483241\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f1237863dedb9491be05be155d1082861f2d7805",
+            "message": "Introduce ShiftMixParseVarint Shuffle function\n\nPiperOrigin-RevId: 517483241\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a7846178eff2d094c28300d4cf59f858a5a6a160",
+            "message": "Auto-generate files after cl/517453262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1c23a17f091a0dd7ad44ddc4b0509d39773578e8",
+            "message": "Switch option target to a repeated field\n\nPiperOrigin-RevId: 517453262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8b1be51f08f2945e709813ca09c260049b540f9f",
+            "message": "Breaking change: lock down visibility for FileDescriptor syntax APIs.\n\nThese will become meaningless once we migrate to editions.  In the meantime, we've implemented APIs to expose the differences between proto2 and proto3 in terms of the features we plan to release in edition 2023.\n\nPiperOrigin-RevId: 517433756\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aaa338b285a82a11e0fd7e95722a3b790c89dc69",
+            "message": "Configure build for the C++ backend\n\nPiperOrigin-RevId: 517429571\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1b1aa9ba77ad4932a0d205cb234d42894e14587",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 517429225\n",
+            "tag_name": null
+        },
+        {
+            "hash": "244b245002270ee699dce8d80b8984844d7fc97f",
+            "message": "Update dependency on com_google_googletest to use the newly added googletest_deps to install transitive dependencies.\n\nPiperOrigin-RevId: 517217973\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fd6fc8c7ccdc065f42a1df731065f8e3297b8806",
+            "message": "Auto-generate files after cl/517211904\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b81c127e94d953aa9be5c9f00a1ad323552bae0e",
+            "message": "Undo the external contributions we have accepted to the well-known types\n\nFor legal reasons we unfortunately cannot accept any external contributions to\nthe well-known type protos, so this change reverts the small number of changes\nwe have received so far.\n\nPiperOrigin-RevId: 517211904\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8eac9a031ed0482721974dea65dcf4a67fe3803b",
+            "message": "Remove loop when skipping string field values.\n\nNo need for a loop that that calls tryConsumeString or tryConsumeByteString repeatedly, since ConsumeByteString already loops itself.\n\nPiperOrigin-RevId: 517202228\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5d669c5cfb117958cc74cd4e0b7fa6a197fddfe0",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 517141880\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ab9f1ab58a4cab6e9bbdcd2f0ca6e38ea60566aa",
+            "message": "Configure the build for the Rust UPB backend\n\nIn this CL we're adding the barebones infrastructure to generate Rust proto messages using UPB as a backend. The API is what we call a V0, not yet production-quality, not yet rigorously designed, just something to enable parallel work.\n\nThe interesting part of switching backend between UPB and C++ will come in a followup.\n\nPiperOrigin-RevId: 517089760\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe758fa12f3eeecda26fc9284a3991bbe877b524",
+            "message": "Automated rollback of commit c8572b1de4f829e85a486150fa4604edc7ed2e18.\n\nPiperOrigin-RevId: 517022726\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8572b1de4f829e85a486150fa4604edc7ed2e18",
+            "message": "Fix absl log and check headers and deps for port_def.inc\n\nPiperOrigin-RevId: 517013387\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ed3b558d24281030ee08354fd48b0ed3201f591",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 516893867\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d70ddf20d3763d706ade2210a0507c7ce621dbf7",
+            "message": "Fix lint warnings for protobuf GeneratedMessage.java\n\nPiperOrigin-RevId: 516731120\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f257fd2eed26d9e48dce2272deafe6a5c81fb54a",
+            "message": "Auto-generate files after cl/516687577\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1d7bda4a78e1f9f7001df3378e38827666f6cdd8",
+            "message": "Add hasbit to proto3 fields even when 'optional' is missing.\n\nPiperOrigin-RevId: 516687577\n",
+            "tag_name": null
+        },
+        {
+            "hash": "309c50e8f399b20e8dd89f6925d02ecf38271284",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 516665926\n",
+            "tag_name": null
+        },
+        {
+            "hash": "44bd03c609425ea29f7c52ad8b251563e4f70698",
+            "message": "Fix `FieldSet#writeMessageSetTo` to delegate to LazyFields when appropriate.\n\nThis fixes the following issue:\n- In `FieldSet#getMessageSetSerializedSize` we delegate to `LazyField` for getting its size.\n- Before this change, in `FieldSet#writeMessageTo` we do not delegate to LazyField's `byteString` method. Instead, we call `getValue` on the `FieldSet`.\n- It's not guaranteed that `fieldSet.getSerializedSize() == fieldSet.getValue().getSerializedSize()`.\n\nIn particular, this can lead us to run into the message \"Serializing com.google.protobuf.DynamicMessage to a byte array threw an IOException (should never happen)\" because of mispredicted output size.\n\nWe fix the issue by following similar logic to `MessageSetSchema`- if \"getSerializedSize\" delegates to the LazyField, then the serializer should as well.\n\nPiperOrigin-RevId: 516658372\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d30f9ee435113b4182641c4101cd34a3cdcff6bb",
+            "message": "Auto-generate files after cl/516655054\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bdeacc7fb8aecfbd93aefa77ad3308ff96048538",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 516655054\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5d97d43863aa5b447509055718eb626f9dec4999",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 516635646\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e6d0bce4a04fd13d50485c22ecc7e96d9a16000",
+            "message": "Add Java FileDescriptor.copyHeadingTo() which copies file-level settings (e.g. syntax, package, file options) to FileDescriptorProto.Builder\n\nPiperOrigin-RevId: 516635134\n",
+            "tag_name": null
+        },
+        {
+            "hash": "330e10d53fe1c12757f1cdd7293d0881eac4d01e",
+            "message": "Add config option to print 64-bit integers in JSON as unquoted ints if they can be losslessly converted into a 64-bit float.\n\nPiperOrigin-RevId: 516625978\n",
+            "tag_name": null
+        },
+        {
+            "hash": "626c7e7734662b7017402a0be137e2409c828b00",
+            "message": "Auto-generate files after cl/516537048\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b2eadf3cdbe2ae82f8fbbb2c8903d7423a99dce",
+            "message": "Pull after committing regenerated files\n\nPiperOrigin-RevId: 516537048\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a85eda664716f0f549b0c71fbae262c019d3aae6",
+            "message": "Provide proto3 optional APIs in visibility-scoped wrapper.\n\nThese will be made private in a later change.\n\nPiperOrigin-RevId: 516402763\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9af05b9fc2b69d6a8814d73ecce66ef9e323de0",
+            "message": "Move the empty package allowlist into the new allowlists directory.\n\nPiperOrigin-RevId: 516352673\n",
+            "tag_name": null
+        },
+        {
+            "hash": "70dfcb5dc40b67d6562a0e4a1862385c48320344",
+            "message": "Introduce a legacy wrapper around descriptor to begin hiding APIs for editions.\n\nFor now, we'll just be hiding syntax getters on FileDescriptor.  Later on this will likely grow to include other APIs that distinguish between proto2/proto3.\n\nPiperOrigin-RevId: 516334230\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57e4b64410ab20f80feaa971ede96e79c813688d",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 516207118\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ba8730342ff34f348b0f3cbe8b9a638117c5e7f",
+            "message": "Fix syntax error in enum docs\n\nPiperOrigin-RevId: 516195446\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe0a809d5ef4f2fdacee91d69dc20780b7cb4f31",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 515868884\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b15bf628e52623ee62905e5a7044caac04beb2ef",
+            "message": "Merge 22.x back to main (#12200)\n\nCloses #12200\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12200 from protocolbuffers:main-202303101853 1efa2e72058337991ff346d7636f91e86c049e07\nPiperOrigin-RevId: 515722578\n",
+            "tag_name": null
+        },
+        {
+            "hash": "25dfc39b11461a081121978b9f28ee4295fe3994",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 515648197\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b6777d29cca742396636910241d9b91a0f45995a",
+            "message": "Merge pull request #12200 from protocolbuffers/main-202303101853\n\nMerge 22.x back to main",
+            "tag_name": null
+        },
+        {
+            "hash": "1efa2e72058337991ff346d7636f91e86c049e07",
+            "message": "Merge release branch 22.x into main\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5252bc8ec8efebb2db54bf5f1b1ae6875b16c8da",
+            "message": "Rename a test\n\nPiperOrigin-RevId: 515628124\n",
+            "tag_name": null
+        },
+        {
+            "hash": "988dd9653745ca27297e8f1b61ce1416d0ddf812",
+            "message": "Migrate syntax reflection to new feature-based system.\n\nAs part of go/protobuf-editions, we will be abandoning `syntax` in place of the new editions framework.  The first edition will turn each difference between proto2 and proto3 into a more targeted *feature* placed on proto descriptors.  In preparation for this, we want to migrate everyone off direct inspection of `syntax`.\n\nPiperOrigin-RevId: 515457103\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5ea6cd9afa0dd593c00be72a21b4bd1858dc186e",
+            "message": "Automated rollback of commit cfea0399181b2b213aa65cf3d28d3ac523a6c5ed.\n\nPiperOrigin-RevId: 515425578\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2dd03a570a385dbee141c657e5be0ac33061dfc7",
+            "message": "Internal change\n\nPiperOrigin-RevId: 515369480\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6545c67a083903c7c0d34df115a899448fca552d",
+            "message": "Fix lint warnings for protobuf GeneratedMessage.java\n\nPiperOrigin-RevId: 515240930\n",
+            "tag_name": null
+        },
+        {
+            "hash": "15bd2c21cfa471b5d66c734a86600fd5ec85bb9e",
+            "message": "Merge 22.x back to main (#12169)\n\nCloses #12169\n\nPiperOrigin-RevId: 515161008\n",
+            "tag_name": null
+        },
+        {
+            "hash": "972609b6790ef182c908a657bef7ca4a81135ccd",
+            "message": "Rollback: Migrate syntax reflection to new feature-based system.\n\nPiperOrigin-RevId: 515146548\n",
+            "tag_name": null
+        },
+        {
+            "hash": "055a6c669fd1ee67803f71dcc55a3b746376934f",
+            "message": "Add ParseFromCord to TextFormat\n\nPiperOrigin-RevId: 515128212\n",
+            "tag_name": null
+        },
+        {
+            "hash": "03c7692bfb8c24348530b96eeee18471821e4b39",
+            "message": "Pin codespell to v1.0 to prevent non-hermetic issues.\n\nAlso exempt generated code\n\nPiperOrigin-RevId: 515114853\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee68c78d024feaadd8c03d2bc4cdd901d0bce8fd",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 515074226\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de5ee4f7d6e15b0ec4a44ad1bdabea3cf0b31c68",
+            "message": "Internal changes to extensions.\n\nPiperOrigin-RevId: 515063881\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8aa2b177f156393ce607b4ffea8c1ac28560c746",
+            "message": "feat(6178): emit ruby enum as integer (#11673)\n\nFixes #6178\n\n- Add a new option `enums_as_integers` to emit enum as integer value.\n\nCloses #11673\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11673 from MQuy:feat/6178-ruby-enum-as-integer 90f986a5fd2f5e8bda3f338c67304ef96feee446\nPiperOrigin-RevId: 514789180\n",
+            "tag_name": null
+        },
+        {
+            "hash": "818129adff9f77becc20992270b48f09d83129b5",
+            "message": "Auto-generate files after cl/514783686\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4a2f566ff0293b456f18de0f55ada46dc1491e1a",
+            "message": "Expand google.protobuf.Type handling to cover editions.\n\nPiperOrigin-RevId: 514783686\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff5007f92931584ac1588bf2a3f48c7032e074f9",
+            "message": "Add example in ruby (#11717)\n\nexamples directory was missing an example in ruby, this PR aims to fix this.\n\nCloses #11717\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11717 from mlitwiniuk:ruby_example 14a5d1a34a2981e88353424d51f1f6ba2b36108c\nPiperOrigin-RevId: 514756892\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c440da9e1389db520b79acb19cb55e5b3266dfba",
+            "message": "Remove unnecessary has bits from proto2 Java.\n\nMessage fields in oneofs generate has bits in their parent message, but these are never used.\n\nPiperOrigin-RevId: 514754886\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7e2ccc3e2f25769dd3ec68ace84acbf72f1b8d97",
+            "message": "Internal change\n\nPiperOrigin-RevId: 514732984\n",
+            "tag_name": null
+        },
+        {
+            "hash": "26af540a7ac4caba41d98395b88ea375e8a66f79",
+            "message": "Add support for proto dependencies to rust_proto_library\n\nPiperOrigin-RevId: 514719215\n",
+            "tag_name": null
+        },
+        {
+            "hash": "edb4da6eaa97066520072304ceb83a5d480e0b16",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 514640775\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0b9134bb4eb281c3ed1446e8acf1aa354e0fe67e",
+            "message": "Deprecate SupportsUnknownEnumValues on Message reflection.  Use FieldDescriptor or EnumDescriptor instead.\n\nPiperOrigin-RevId: 514618684\n",
+            "tag_name": null
+        },
+        {
+            "hash": "51f22eb3340f4a5c67aa85d243fc7f379d6ec558",
+            "message": "Auto-generate files after cl/514587333\n",
+            "tag_name": null
+        },
+        {
+            "hash": "affadac847370221e2ec0e405d5715b4a22e518f",
+            "message": "Add C# presence methods to proto3 oneof fields.\n\nPiperOrigin-RevId: 514587333\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f17490894653481338523f3aa7b82bca6b133dc5",
+            "message": "Fix released protoc path\n\nPiperOrigin-RevId: 514551233\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3d4b5abd3e68930e56d921f64e99879de230f13",
+            "message": "Internal change\n\nPiperOrigin-RevId: 514547224\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3dc546daff7ac1311602e2864b6409a9c879eebc",
+            "message": "Implement a minimal, internal, experimental rust_proto_library rule.\n\nThe internal design is consistent with other <lang>_proto_library rules. rust_proto_library attaches rust_proto_library_aspect on its `deps` attribute. The aspect traverses the dependency, and when it visits proto_library (detected by ProtoInfo provider) it registers 2 actions:\n\n1) to run protoc with Rust backend to emit gencode\n2) to compile the gencode using Rustc\n\nAction (2) gets the Rust proto runtime as an input as well.\n\nComing in a followup is support and test coverage for proto_library.deps.\n\nPiperOrigin-RevId: 514521285\n",
+            "tag_name": null
+        },
+        {
+            "hash": "77e3f2c38d8a1ec65c7eaee160b198962bdd0fde",
+            "message": "Rename protoc_static for release\n\nPiperOrigin-RevId: 514500346\n",
+            "tag_name": null
+        },
+        {
+            "hash": "133e43a9746b7d2bfb15d37427ff5b2278c76103",
+            "message": "Auto-generate files after cl/514495606\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6c514f8d16320a346f01b32b3f1ec4714ed8aa89",
+            "message": "Automated rollback of commit 116cf4a41d42c1d8f0f31ecb950202ca051d6ec2.\n\nPiperOrigin-RevId: 514495606\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9f959583da525ba006a6dc6b8b8b733e4d8c619a",
+            "message": "Mark proto2::Arena::GetArena as deprecated.\n\nPiperOrigin-RevId: 514489808\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b21c6b2b0d4d6d2eb03205c4f8b7e70cd0979ce9",
+            "message": "Use PROTOBUF_DEPRECATED instead of PROTOBUF_DEPRECATED_ENUM (#12026)\n\nAt the time the way of marking some stuff `deprecated` is overcomplicated taken into account that protobuf mandates C++11 to be built.\n\nParticularly, PROTOBUF_DEPRECATED_ENUM references gcc-6 release notes and the compiler is almost 4.5 years old as of today.\nI believe it should be possible to simplify the definitions.\n\nCloses #12026\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12026 from georgthegreat:deprecated 536c3c9ff70c5c4bbd845820fc6cd8a5e4e7a2bf\nPiperOrigin-RevId: 514480030\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8c3fac39131d97fd9f648155de5498af1b2bf316",
+            "message": "Auto-generate files after cl/514449399\n",
+            "tag_name": null
+        },
+        {
+            "hash": "804ec94a1634d04019dbf368ea6ffbfc24bbb2a5",
+            "message": "Add release tests for statically linked binaries\n\nFor now, this only covers linux on the two architectures we have testing support for.  However, it serves as a good sanity check and can be expanded in the future.\n\nPiperOrigin-RevId: 514449399\n",
+            "tag_name": null
+        },
+        {
+            "hash": "116cf4a41d42c1d8f0f31ecb950202ca051d6ec2",
+            "message": "Automated rollback of commit 8f3ae17b3d248456691334de7a3901003acae387.\n\nPiperOrigin-RevId: 514449010\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f3fba625c67250b5d5f6dc0721c96f303f08e43e",
+            "message": "Auto-generate files after cl/514424955\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91d77ae291d1f381ba09eff0b6b8f659d1170311",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 514424955\n",
+            "tag_name": null
+        },
+        {
+            "hash": "02bbd4e4924a493e46d18f30922bcd7a8bcca193",
+            "message": "Auto-generate files after cl/513973094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f3ae17b3d248456691334de7a3901003acae387",
+            "message": "Automated rollback of commit 208f0ad4556bbf32249b6b9b367750f9f31903f8.\n\nPiperOrigin-RevId: 513973094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04a0204bf3916e84f88d324cf5876fbb37ae90bf",
+            "message": "Internal changes to extensions.\n\nPiperOrigin-RevId: 513971799\n",
+            "tag_name": null
+        },
+        {
+            "hash": "208f0ad4556bbf32249b6b9b367750f9f31903f8",
+            "message": "add hasbit to proto3 fields even when 'optional' is missing\n\nPiperOrigin-RevId: 513956259\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63895855d7b1298bee97591cbafced49f23902da",
+            "message": "Internal Code Change\n\nPiperOrigin-RevId: 513928860\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cb405967c3b9939c853c71951990bd186e5ad7b6",
+            "message": "Add compiler/cpp/field_generators/cord_field.cc\n\nPiperOrigin-RevId: 513926076\n",
+            "tag_name": null
+        },
+        {
+            "hash": "72eb4652b77cc74fa3536b6b4f9a0177764f2a95",
+            "message": "Parallelize the build of the PHP extension\n\nPiperOrigin-RevId: 513922943\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b6132da7a89e84d17f785efffa3d2368ce4b7e1c",
+            "message": "Create a new, central, OSS-sync-friendly place for our allowlists to live.\n\nThis will create some mysteriously empty lists in open source; that means they only contain Google-private names.\n\nPiperOrigin-RevId: 513915452\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad77e1ab2f6b14550ff990542dcfbc013394d47a",
+            "message": "Migrate syntax reflection to new feature-based system.\n\nPiperOrigin-RevId: 513904931\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ae2531dcc2492c51554ea36d15540ff816ca6abd",
+            "message": "Make protoc --descriptor_set_out respect option retention\n\nPiperOrigin-RevId: 513891493\n",
+            "tag_name": null
+        },
+        {
+            "hash": "797b470fe8f0b77301aeac7e4d09c81edd853844",
+            "message": "Automated rollback of commit bf0d8e238480bdbe5d0136bd3a6186b2569f8f2f.\n\nPiperOrigin-RevId: 513889737\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e83848f09288693d0fe9a71824908bb8f621bd63",
+            "message": "Auto-generate files after cl/513853367\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fab7f928b5375a20fd8d33556632128e936ad436",
+            "message": "Expand LazySerializerEmitter to cover proto3 cases.\n\nThis should provide some performance wins for proto3, similar to the ones added years ago for proto2.\n\nPiperOrigin-RevId: 513853367\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eaa8f24aa626bf0432f8d137eed8e070850a6d98",
+            "message": "Updated obsolete Python README.md\n\nPiperOrigin-RevId: 513840426\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a54ae5ea9a272cd9acd838de072209f0e2e08a3e",
+            "message": "Internal Change\n\nPiperOrigin-RevId: 513821856\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dcb21556cc20417a7bc6d1577f3c4065d28ec69b",
+            "message": "Migrate PHP Extension tests to shared CI infrastructure.\n\nThis will reduce most of the flakes we've seen from these tests.\n\nPiperOrigin-RevId: 513662586\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ac8725ce21141f4bcfccf9ee49389c2cc8dae36c",
+            "message": "Fix false negative in the verifier where it was accepting a non-canonical zero\nfield number.\n\nPiperOrigin-RevId: 513652171\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a9282b82b675ffad2566aceed1db8fdf96db734",
+            "message": "Reduce stack frame size of `TextFormat::Printer::PrintUnknownFields` by offloading `std::string` temporaries into a separate function.\n\nPiperOrigin-RevId: 513627351\n",
+            "tag_name": null
+        },
+        {
+            "hash": "34b7d583bdaa4ef9f8fd76906fb80cc8a0eb3847",
+            "message": "Internal change\n\nPiperOrigin-RevId: 513584095\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a66f75dfeb25c9f9917a318f5f6a541ecb7e0336",
+            "message": "Migrate syntax reflection to new feature-based system.\n\nPiperOrigin-RevId: 513358980\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af791f28a8217d84c6ba14ee2063f7b3f5230171",
+            "message": "Add libm linkage to toolchains\n\nPiperOrigin-RevId: 513350744\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5888882691665bf701ccc4e9d463d1a41d15ec3e",
+            "message": "Internal change\n\nPiperOrigin-RevId: 513329841\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5abab0f47e81ac085f0b2d17ec3b3a3b252a11f1",
+            "message": "Roll-forward of change to add Python support for retention attribute\n\nPiperOrigin-RevId: 513318052\n",
+            "tag_name": null
+        },
+        {
+            "hash": "14d8ecfed2de3f0a07436d41c01036161a19d103",
+            "message": "Internal change\n\nPiperOrigin-RevId: 513293094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5eabb720dd1654aedc53427730958876ea9932ad",
+            "message": "Auto-generate files after cl/513268016\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dd8a3cf2b54a06ef0558c004f9fca570278ad4a1",
+            "message": "Unconditionally generate unknown field accessors.\n\nThis moves us closer to unifying proto2 and proto3 into editions.\n\nPiperOrigin-RevId: 513268016\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7fc47e2e60305d1ea560738fe23959a4bd07a557",
+            "message": "Auto-generate files after cl/513255347\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dc4b09e13879d06618c6a66096e0c6819ff28d28",
+            "message": "Add mini-parse support for map fields to table-driven parser.\n\nPiperOrigin-RevId: 513255347\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a6a238065e61b197b1ac69d61049dff3a7ea4448",
+            "message": "Fix parsing/serialization of packed proto3 custom options\n\nWe have an obscure bug where packed-by-default repeated custom options defined\nin proto3 files are not correctly treated as packed when dynamic extensions are\nused. This CL introduces a simple fix and adds a test verifying the correct\nbehavior.\n\nThe bug was not a major problem in most cases, since parsers will accept both\nthe packed and unpacked encodings. It is useful to fix this to ensure that\ndescriptors are serialized in a consistent way, though.\n\nPiperOrigin-RevId: 513249881\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8a33295b8ec2111197908d9980cf1e60f9823cd4",
+            "message": "Internal change\n\nPiperOrigin-RevId: 513133876\n",
+            "tag_name": null
+        },
+        {
+            "hash": "33958a70b0d4d969a9055bd9dc3f20b1b52aed9c",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 513074072\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e67136d289e6cf4265e2763dd77216940c400ac9",
+            "message": "Version protoc according to the compiler version number.\n\nPreviously we were using the C++ runtime version, which includes an extra major version number.  See #12064\n\nPiperOrigin-RevId: 513049588\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2b462ae58ddc5b97c62fd78cc76ca2be62aeed0e",
+            "message": "Fix trailing comment attribution when file has no final newline (#12082)\n\nFixes #12081.\n\nThe issue was the call to `MaybeDetachComment`: the conditional assumed that there was a next token, which was on the same line as the previous one, making attribution unclear. However, if there is no next token, we should not detach.\n\nThe actual fix is a one-liner. The rest of this PR is updates to the tests to verify this behavior under a handful of scenarios.\n\nCloses #12082\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12082 from jhump:jh/fix-trailing-comment-attribution 767e41cb05ba6e176977e86fe33e9aad090f83f6\nPiperOrigin-RevId: 513046172\n",
+            "tag_name": null
+        },
+        {
+            "hash": "723bd4c3c1a51ccf7e9726453f0b710223c4b583",
+            "message": "Modify release artifacts for protoc to statically link system libraries.\n\nCloses #12063\n\nPiperOrigin-RevId: 513034570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ab6c42bc61ecd6e387441e891d10ed8f4895de14",
+            "message": "Internal change only\n\nPiperOrigin-RevId: 513034361\n",
+            "tag_name": null
+        },
+        {
+            "hash": "10cb45654555198731399811f6de744f43099305",
+            "message": "Removing dependency of command_line_interface from cpp_internal.\n\nPiperOrigin-RevId: 513025937\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7cc46f50de7bdf6fff20e47afa6dc9964f7c6411",
+            "message": "Internal change\n\nPiperOrigin-RevId: 513015917\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d27df9288474981259aae320dbd3650028b04755",
+            "message": "Internal change\n\nPiperOrigin-RevId: 512993970\n",
+            "tag_name": null
+        },
+        {
+            "hash": "09677a63e9e460745f3f40a34f305bb72c9641a9",
+            "message": "Avoid running release branch staleness tests on forked repos\n\nPiperOrigin-RevId: 512971099\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7b6e8282157f0280ecb3fd9fd4c6519a7cd5afbc",
+            "message": "Remove errorprone dependency from kotlin protos.\n\nPiperOrigin-RevId: 512960332\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2dc5338ea222e1f4e0357e46b702ed6a0e82aaeb",
+            "message": "Introduce proto filter for inject_field_listener_events.\n\nBy default all protos are included in proto instrumentation when inject_field_listener_events option is set. Adding proto instrumentation callbacks for every proto in the binary adds codesize and runtime performance penalties. This cl introduces 'protos_for_field_listener_events' option where a list of proto files can be provided (seperated by ':') for which field listener events will be injected.\n\nFor example :-\n\nprotos_for_field_listener_events=foo/bar/foo.proto:foo/bar.proto\n\nThe field listener event will only be sent for 'foo/bar/foo.proto' and 'foo/bar.proto'.\n\nPiperOrigin-RevId: 512905094\n",
+            "tag_name": null
+        },
+        {
+            "hash": "462964ed322503af52638d54c00a0a67d7133349",
+            "message": "Fix shared object ABI exports (#5144) (#11032)\n\nOn some linkers, the ABI definitions in src/libprotoc.map and friends do not match all symbols that need to be exported. This causes a linker error when trying to use the resulting shared object library: `undefined reference to 'scc_info_FileDescriptorProto_google_2fprotobuf_2fdescriptor_2eproto'`\n\nQuite a few people seem to be affected by this, see #5144 for discussion. It seems that yocto now applies this patch itself, but that doesn't help people building in other places (I encountered this on some HPC machines), so it would probably be good to apply it upstream as well.\n\nCloses #11032\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11032 from LourensVeen:issue-5144-linker-maps 3039f932aaf212bcf2f14a3f2fd00dbfb881e46b\nPiperOrigin-RevId: 512810858\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dd9dd86fbca3ab5c1c7f0aa2534dc5da61530711",
+            "message": "Raise warnings for MessageFactory class usages\n\nPiperOrigin-RevId: 512779287\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0a480ad51a78bc1640b7b337c1c8004c63b172f2",
+            "message": "Use pwd instead of realpath for macos\n\nCloses https://github.com/protocolbuffers/protobuf/issues/10567\n\nPiperOrigin-RevId: 512750155\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b82232fbcbbce14aa5959755ae4791a8e45771a0",
+            "message": "Add dll export tags to Rust protoc generator\n\nPiperOrigin-RevId: 512742225\n",
+            "tag_name": null
+        },
+        {
+            "hash": "97c1e2968ae9ea08ea13ce98b7fef96e14a0ae5d",
+            "message": "Make public FieldDescriptor.legacyEnumFieldTreatedAsClosed()\n\nPiperOrigin-RevId: 512708108\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bf0d8e238480bdbe5d0136bd3a6186b2569f8f2f",
+            "message": "Internal change to extensions.\n\nPiperOrigin-RevId: 512684685\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d97f0c223405e9a23198ee556021aad6658c104b",
+            "message": "Auto-generate files after cl/512644570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "77b1db01c9b300359795b301d925da28bc2b0295",
+            "message": "Add the Rust codegen to protoc\n\nAfter this change, the Rust codegen can be enabled via the protoc flag '--rust_out'. Due to its experimental nature we require a magic value to be provided '--rust_out=experimental-codegen=enabled:<out>'.\n\nMake the 'RustGenerator' create an empty *.pb.rs file.\n\nPiperOrigin-RevId: 512644570\n",
+            "tag_name": null
+        },
+        {
+            "hash": "10d185f7bddf263b69182930279dd03ee4b2ec4f",
+            "message": "[ObjC] Add ModuleForFile helper method in ImportWriter (#12012)\n\nCustom `protoc` plugins may use this method to look up the framework name for a given file if they want to generate code not related to `import`s.\n\nCloses #12012\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12012 from dnkoutso:import_writer_module_for_file 57844831d57eef876798689911cc67e87fe8127e\nPiperOrigin-RevId: 512629671\n",
+            "tag_name": null
+        },
+        {
+            "hash": "343cef1bd940380ae1bf23a53f565ca93ffe6c3e",
+            "message": "Replace FileDescriptor.supportsUnknownEnumValues() with FieldDescriptor.legacyEnumFieldTreatedAsClosed() to support legacy enum field behavior.\n\nThis documents Java's non-conformant behavior where closedness is determined by the field rather than the enum definition.\n\nPiperOrigin-RevId: 512627297\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0bd3dd984399d3302a8f7cf69e7c9330b362ac4",
+            "message": "Implement helper function FieldDescriptor::legacy_enum_field_treated_as_closed to support legacy enum field behavior.\n\nProto2 fields with types corresponding to proto3 enums are treated as closed today, despite the EnumDescriptor reporting that they're open.  This will allow syntax users to depend on this non-conformant behavior which will be getting it's own feature in Edition zero.\n\nPiperOrigin-RevId: 512218773\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1b1ca24ae096ab96b90637da69bd70df68b2121c",
+            "message": "Call setUp on super, and fix import order\n\nPiperOrigin-RevId: 512200880\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df2aac3b0fecd4e0339fd04e6e1576ba0022ce53",
+            "message": "Use X MACRO for generated_message_reflection.cc lookup, and pass FieldInfo\n\nThis allows swapping the \"name\" for the enum value, which means we can make a cheap indexed table instead.\n\nPiperOrigin-RevId: 512151658\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b3d1e99242f104c7ef1aee1bff05bf187bd84378",
+            "message": "Auto-generate files after cl/512140469\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de4ce2e2de502e98c6ce64f3f7552f51703b1cd6",
+            "message": "Change the C++ parsers to be consistent on how they handle unknown enum values.\nThey now consistently parse the varint and then push the int32 representation into the unknown field set. Previously the behavior was sometimes pushing the original varint, sometimes pushing a uint32_t truncated value, and sometimes an int32_t truncated value.\n\nPiperOrigin-RevId: 512140469\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8ee8d3522b2ba35f487bcd78b23d522291602e18",
+            "message": "Internal change\n\nPiperOrigin-RevId: 512128206\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef8ebe6c19008801ae49ae37db4ec5963e952483",
+            "message": "Migrate our shared github actions to a separate repository.\n\nThis will make PRs from forked repositories significantly less painful, since they'll agree on which version of each action to use.  OTOH, we'll have a separate repo that needs to be maintained, and changes to it will need to be coordinated and versioned carefully.  This will likely need to be done less often though now that our infrastructure is stable.\n\nPiperOrigin-RevId: 512117705\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ef627938aa9dde6eab91dd83b4fac1ebe84d82e",
+            "message": "Internal change\n\nPiperOrigin-RevId: 512105133\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4bffbfa04acd9d9de21fadc0b0fc7977b3a854df",
+            "message": "Internal change\n\nPiperOrigin-RevId: 512095262\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6a5467ada755244e8566b82e993c434d3b275280",
+            "message": "Auto-generate files after cl/512093266\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d6dc0dc2609488bec08bd5266816c57af4f396bc",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 512093266\n",
+            "tag_name": null
+        },
+        {
+            "hash": "094511c858e75c5881a0c6d468efb28cf6afa84c",
+            "message": "Auto-generate files after cl/512087869\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3942e5307203c10bac2b8ea12b2cfcb65fcf2492",
+            "message": "Automated rollback of commit 63389c027f474954e8178e77ac624e8ef952626d.\n\nPiperOrigin-RevId: 512087869\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0e48352e6df58da8653c48e09dfe3d843cef07f8",
+            "message": "Expand lifetime of repository cache.\n\nThese are not growing fast at all, but are taking a long time to asymptotically fill out.\n\nPiperOrigin-RevId: 512086597\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d32332dd81bbb8aef5fa142653f733d886d5d973",
+            "message": "Auto-generate files after cl/512076306\n",
+            "tag_name": null
+        },
+        {
+            "hash": "086367f2c87512a6a916a62d8109cc614503a16d",
+            "message": "Internal changes\n\nPiperOrigin-RevId: 512076306\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ece9236f54075410c1ac7b933f3f6abb3ee5c4c",
+            "message": "Auto-generate files after cl/512073294\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c29c404bfd8c9d10dfab406f45edbf445b493c7",
+            "message": "[ObjC] Small cleanups to package level headers\n\n- Reduce what headers the runtime import needs.\n- Remove stale function prototype.\n- Move one function to be full scoped to a single file.\n\nPiperOrigin-RevId: 512073294\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1501afeb23c698263eb3969c98c114597c14bb3b",
+            "message": "Auto-generate files after cl/512017807\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c71dd852623352957d5b94a167199074d0c75f5",
+            "message": "nit: remove extra whitespace in NullValue comment\n\nPiperOrigin-RevId: 512017807\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2ce56399e30db62e45869c6fd2d2bbacbb81a7ed",
+            "message": "Ensure VarintParseSlowArm{32,64} are exported with PROTOBUF_EXPORT\n\nThis should fix issue #11996.\n\nPiperOrigin-RevId: 511917449\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63389c027f474954e8178e77ac624e8ef952626d",
+            "message": "Add Python support for retention attribute\n\nPiperOrigin-RevId: 511914565\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bcb20bbdfa0cba15c869d413edaaeb8507526a2e",
+            "message": "Update the min required CMake version to 3.10\n\nThis change also removes policy settings that are now already set to\n`NEW` by default. There are still two remaining policies that were\nintroduced in CMake > 3.10, so I left those, and documented the CMake\nversion they were introduced in so we know when we can later remove them\n(when our min version advances beyond that).\n\nThe min CMake version supported by Protobuf is documented here:\nhttps://github.com/google/oss-policies-info/blob/main/foundational-cxx-support-matrix.md\n\nPiperOrigin-RevId: 511897379\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d82d8a48f6c50ae6c811dbd6b7383e36a691c6b3",
+            "message": "Ruby: Implement Write Barriers (#11793)\n\nWrite barrier protected objects are allowed to be promoted to the old generation, which means they only get marked on major GC.\n\nThe downside is that the `RB_BJ_WRITE` macro MUST be used to set references, otherwise the referenced object may be garbaged collected.\n\nBut the `*Descriptor` classes and `Arena` have very few references and are only set in a few places, so it's relatively easy to implement.\n\ncc @peterzhu2118\n\nCloses #11793\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11793 from casperisfine:descriptor-write-barrier 215e8fad4cc5a5c9d0501e9d6c3114ab7db9f167\nPiperOrigin-RevId: 511875342\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08c555755adbc50555fac8b726476f31e867627a",
+            "message": "[ObjC] Ensure objects aren't leaked on extension parsing failures.\n\nFor PODs, parse the data before making the NSNumber used for extension\nfields.\n\nFor messages/groups, create the message first, add it to the object graph,\nand balance the retain count before doing the parsing. This ensure if an\nerror is hit (and a throw happens), the object(s) won't be leaked.\n\nParsing will always mutates the graph, so yes this includes more mutations\nin failure cases, but other fields could always be modified before the\nbad data is encountered. But even then, that edge case *only* apples to api\nusers that are explicitly *merge* (-mergeFrom...), the majority of the calls\nare to +parseFromData:error:, so the entire graph is released on failure.\n\nPiperOrigin-RevId: 511871398\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f79cae2a8e1ab2da84fcdc3aacea43e2438d9cab",
+            "message": "Add TcParseFunction enumeration\n\nPiperOrigin-RevId: 511859491\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cfea0399181b2b213aa65cf3d28d3ac523a6c5ed",
+            "message": "Automated rollback of commit 47b5f81c7f944b23a59b6ee9b0f0d2e9a517e10b.\n\nPiperOrigin-RevId: 511834418\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d40aadf823cf7e1e62b65561656f689da8969463",
+            "message": "Add casts to make protobuf compatible with Java 1.8 runtime.\nFix for: https://github.com/protocolbuffers/protobuf/issues/11393\n\nPiperOrigin-RevId: 511807920\n",
+            "tag_name": null
+        },
+        {
+            "hash": "541914157e7e3cd5baf47d1304e78727975a6cf0",
+            "message": "Migrate away from examining the syntax of a proto file via reflection.\n\nPiperOrigin-RevId: 511806036\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2a55706f9d36afd1742c97fd0d611ea8af0ac3f8",
+            "message": "Migrate away from examining the syntax of a proto file via reflection.\n\nPiperOrigin-RevId: 511796130\n",
+            "tag_name": null
+        },
+        {
+            "hash": "684a3dedf66d3c0979e1a99b4880d228e6569b51",
+            "message": "Migrate away from examining the syntax of a proto file via reflection.\n\nPiperOrigin-RevId: 511792205\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa82155c653776304bf6d03c33bea744db1b5eff",
+            "message": "Fix mutability bug in Java proto lite: sub-messages inside of oneofs were not\nbeing set as immutable. This would allow code to get a builder for a\nsub-message and modify the original (supposedly immutable) copy.\n\nPiperOrigin-RevId: 511598810\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dbd5ae859343a89cb1fc5b2af9929511fbc747f9",
+            "message": "Allow AbstractProtoList to be created in an immutable state rather than using static blocks to call makeImmutable.\n\nPiperOrigin-RevId: 511587750\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d3ceff3def7b8ed88fe118cfb4766462bfeb811f",
+            "message": "Add OSGi headers to pom files.\n\nThis addresses https://github.com/protocolbuffers/protobuf/issues/12017.\n\nPiperOrigin-RevId: 511587640\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f5e43261531ceffb7f93b46bf134b75a55a28bb",
+            "message": "Add regression test for invalid inline string code generation.\nA bug was found during code review that didn't trigger any test failure\nThe fast TDP entry did not have the index in the aux_idx field.\n\nPiperOrigin-RevId: 511570831\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e6d01b2edcb04fdfb0f3cf79bf9d427f57fa2eac",
+            "message": "[ObjC] Enforce the max message size when serializing to binary form.\n\nThe validation is done at the highest point so if a sub message is what\ngoes over the limit it is caught at the outer message, thus reducing the\nimpact on the serialization code.\n\nPiperOrigin-RevId: 511473008\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c8e005db3a73c26d6597dcc42b3060e277a442b6",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 511387968\n",
+            "tag_name": null
+        },
+        {
+            "hash": "57d5ede3ec807851ed9293f96aff8651b64f1e4d",
+            "message": "Rollback\n\nPiperOrigin-RevId: 511351345\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5995ad26a564379b44ab2ba08c89de62cf7c5942",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 511341281\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7958aa90ce7aeee2c578c763b40908477cd4cc79",
+            "message": "Check for invalid escaping when parsing the default value of a bytes field.\n\nThe code that loads descriptors calls absl::CUnescape() to parse the escape sequences.  Prior to this CL, we were not checking the return value of this call, effectively allowing the invalid data to be loaded.\n\nIf a user is compiling a .proto file, invalid escapes will be caught earlier in the compiler pipeline, and this check will be unnecessary.  The only time this is an issue is when a descriptor has been constructed manually and is loaded into the runtime.\n\nThis bug manifested as an MSAN failure in a fuzz test, because in the error case absl::CUnescape() will return a string where some of the characters are uninitialized.\n\nPiperOrigin-RevId: 511319279\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b51858aa1180a62257dae069a3a6ee21cd1b411c",
+            "message": "Document that hasField is only semantically meaningful when hasPresence == True.\n\nNote that this is already documented in hasPresence as well.\n\nPiperOrigin-RevId: 511316345\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e3b00511099838e22f59827bfb7c72e27fcc22fa",
+            "message": "[ObjC] mark mergeFromData:extensionRegistry: as deprecated.\n\nSince it really isn't safe in Swift, point folks at the new api that uses errors.\n\nPiperOrigin-RevId: 511262228\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cffde99fc6195ca108f320c16a6ded41c42a3317",
+            "message": "[ObjC] Enforcement of the 2GB limit when parsing messages.\n\nAdd a helper to put the logic in one place in the file.\n\nEnsure all places that read messages also do the 2GB check for message size.\n\nPiperOrigin-RevId: 511260874\n",
+            "tag_name": null
+        },
+        {
+            "hash": "68b8b43d42612336d093645d8cc0e9cc581e7ca2",
+            "message": "Allow empty commits for update_php_repo\n\nFix exit code on git commit which was preventing force-push and tagging from running even though these should work without a new commit. An empty commit is probably clearer anyways to show that sync has happened.\n\nPiperOrigin-RevId: 511255365\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b5a2c6f6fc76da3c93f6793550fa488ae62abaf",
+            "message": "Fix pom_template dependencies. All pom files need a dependency section and kotlin + util need to depend on protobuf-java and kotlin-lite should depend on protobuf-javalite.\n\nThis fixes https://github.com/protocolbuffers/protobuf/issues/11976\n\nPiperOrigin-RevId: 511252224\n",
+            "tag_name": null
+        },
+        {
+            "hash": "47b5f81c7f944b23a59b6ee9b0f0d2e9a517e10b",
+            "message": "Internal change.\n\nPiperOrigin-RevId: 511247805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b4370b2e762b9f384b61a0a0a6e607349e92aa1a",
+            "message": "[ObjC] Add -[GPBMessage mergeFromData:extensionRegistry:error:]\n\nThis adds a merge method that doesn't throw, making it generally more usable and allowing usage directly from Swift.\n\nPiperOrigin-RevId: 510490798\n",
+            "tag_name": null
+        },
+        {
+            "hash": "df455a33fd61629fd87f8faa17e22ab42bd16ea1",
+            "message": "Use correct wireformat type for repeated group fields.\n\nPiperOrigin-RevId: 510456181\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1e30cebba851c2401b1bc9a456a5975c66ac3af",
+            "message": "Emplace StringBlock entries on the arena block as long as there is space available.\n\nPiperOrigin-RevId: 510456100\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dc952c0193ff5aec778e7cc6e325580ad70c62b5",
+            "message": "Auto-generate files after cl/510453613\n",
+            "tag_name": null
+        },
+        {
+            "hash": "15d250507061338987e05b4778e9f61e96458312",
+            "message": "Fix staleness flakes from race condition.\n\nIf a change is committed while we're regenerating stale files, we should just bail and let the next job handle the refresh.\n\nPiperOrigin-RevId: 510453613\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b7e0f842e9176efb297c1cd7ff74a6bd70004732",
+            "message": "Remove recursive checkout for purely Bazel tests\n\nThis will prevent unnecessary network access.\n\nPiperOrigin-RevId: 510444213\n",
+            "tag_name": null
+        },
+        {
+            "hash": "32aaf9eeb53f6afb146da2acac360fb5eb3d6db3",
+            "message": "[ObjC] Ensure objects aren't leaked on parsing failures.\n\nAdd the objects to the object graph and balance the retain count before\ndoing the parsing. This ensure if an error is hit (and a throw happens),\nthe object(s) won't be leaked.\n\nParsing will always mutate the graph, so yes this includes more mutations\nin failure cases, but other fields could always be modified before the\nbad data is encountered. But even then, that edge case *only* apples to api\nusers that are explicitly *merge* (-mergeFrom...), the majority of the calls\nare to +parseFromData:error:, so the entire graph is released on failure.\n\nPiperOrigin-RevId: 510417377\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bab55c25531ee407ddd6c065927f96b34c337ae6",
+            "message": "[ObjC] Inline the logic of parseDelimited...\n\nThe last attempted (rolled back) resulted in changes in visible behavior:\n- It consumed a recursion depth on the input stream (wrong)\n- It resulted in different error codes for some malformed/truncated data.\n\nPiperOrigin-RevId: 510415215\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f6ef7e4d88a74dfcd82b36ef46844b22b9e54b1",
+            "message": "internal change\n\nPiperOrigin-RevId: 510398988\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6d776dfed52e36a58f318c0ba3acc93445ed710e",
+            "message": "protobuf: fix a data race in AbstractProtobufList\n\nUnconditional update of isMutable causes data races for\nLazyStringArrayList::EMPTY_LIST that is used as the default value\nfor protobuf fields.\n\nNot writing to it unconditionally may also improve performance\nby reducing contention for the presumably widely shared EMPTY_LIST object.\n\nPiperOrigin-RevId: 510366298\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d41deb9dc6602701b157739a314ad6405f9b89ed",
+            "message": "Internal change that helps identify the origin of reflection calls.\n\nPiperOrigin-RevId: 510255963\n",
+            "tag_name": null
+        },
+        {
+            "hash": "649cc30872f56da00f18d20ca8f85859423a6fb3",
+            "message": "Open-source some of our string_view tests.\n\nThis support was added in 22.x, but we don't have any tests locking it down.\n\nCloses https://github.com/protocolbuffers/protobuf/issues/8096\n\nPiperOrigin-RevId: 510242380\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2c45deb8774a4ae876322020cbed6e2414824ec5",
+            "message": "Merge pull request #11975 from protocolbuffers/main-202302161846\n\nMerge 22.x back to main after 22.0 release",
+            "tag_name": null
+        },
+        {
+            "hash": "7f6b36ce0cea86d60ba70c51723870397d88a246",
+            "message": "Revert UPB dep update\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ee8bbc3c62b57252a225d23c952f277da32ec04b",
+            "message": "Restore codeowners and version.json\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fa3e0c79403e869454ba3cddae201f4314ba3e5e",
+            "message": "Merge release branch 22.x into main\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4481302f031a83baa7678650f1e29e8d7252cbd",
+            "message": "Pull any new changes before pushing staleness updates.\n\nThis fixes some relatively harmless flakiness in our post-submit.  If two commits are made within ~5 minutes of each other, the `git push` command will fail because the git workspace isn't up to date.\n\nPiperOrigin-RevId: 510165977\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff91b25494e353e61d6ad37aafb70f45c328b1ce",
+            "message": "Use generated Conformance proto for Bazel targets.\n\nPiperOrigin-RevId: 510158778\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2fb35fcf56ec8502538256334d0207ef1555b560",
+            "message": "Automated rollback of commit 0c013ec412468e21ea68b234935e7490eb28f8ce.\n\nPiperOrigin-RevId: 510136389\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4ed9483146ac633a9f725f307f9ac60074d0f4d",
+            "message": "Fix lint warnings for protobuf GeneratedMessage.java\n\nPiperOrigin-RevId: 509989425\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1a90e67ff267eae2fb7cf94c85bb41956d4a7d59",
+            "message": "[ObjC] Remove unused internal method.\n\nPiperOrigin-RevId: 509946709\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d8527b77236a8df30ea99bd7061e32f78b85c86",
+            "message": "Remove the exception for multiple extension ranges for TDP.\nIt is unnecessary since the regular extension parser can handle unknown fields\ndirectly.\n\nPiperOrigin-RevId: 509946221\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9ced4cb36596bc69df063c36677583b2901aa4e0",
+            "message": "Implement a workaround for macOS/Bazel flakes.\n\nBazel has a 2 minute timeout for their internal `xcrun` call, which can be exceeded on our github runners about 5% of the time.  This leads to flakes and opaque errors, but is a one-time cost.  Subsequent xcruns finish in seconds, so we can just do an initial call w/o a timeout before running Bazel.\n\nWith this change our total flake rate drops from ~30% to nearly 0% for our full suite of tests\n\nSee https://github.com/bazelbuild/bazel/issues/17437 for background.\n\nPiperOrigin-RevId: 509944178\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fc272edc0a687e2344752e9c023cece292ffa836",
+            "message": "Automated rollback of commit 1cf2901a1d428fb5101e35b7ac3a44be57226108.\n\nPiperOrigin-RevId: 509929075\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b1cd0dbe38d6288e939a511b7fca232960bcad0",
+            "message": "[ObjC] Update comments about common failure causes.\n\nPiperOrigin-RevId: 509914968\n",
+            "tag_name": null
+        },
+        {
+            "hash": "335a0c58b756711d390092f124f4a8ff3bb6627b",
+            "message": "Internal changes to extensions\n\nPiperOrigin-RevId: 509903560\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c013ec412468e21ea68b234935e7490eb28f8ce",
+            "message": "[ObjC] Avoid data copy within parseDelimitedFromCodedInputStream:...\n\nPiperOrigin-RevId: 509893038\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f5f5a1faf1dcc276a06d98ea51ed69c9c480dca8",
+            "message": "Annotate remaining field semantics.\n\nPiperOrigin-RevId: 509872256\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f89e0d8db648bc7d530c82afc0d794c1faaf134",
+            "message": "[ObjC] Enforce bytes and string field size limits.\n\nPiperOrigin-RevId: 509863774\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0c21b63cb7903460696080d0d4fbdfd42525db5e",
+            "message": "Only run code-spell on our main branches\n\nPiperOrigin-RevId: 509616839\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1de344fcd1c1b2c6ec937151d69634171463370d",
+            "message": "Document known quirks of EnumDescriptor::is_closed() when importing across files with different syntaxes.\n\nPiperOrigin-RevId: 509581394\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3219a0b0d9bdacf67426a6c5afc95875fa7a38fe",
+            "message": "Auto-generate files after cl/509546035\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a20a537f1e003c0426a2f31b9491b81d3b5f2496",
+            "message": "Fixing broken rust package\n\nPiperOrigin-RevId: 509546035\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7ee157bc356ecb4a528692d735c2e73aaad21b43",
+            "message": "Generate C# conformance test in script (#11880)\n\nThis is already generated code, but wasn't included in our generation script. This change makes sure it will be up-to-date, and uses the now-conventional .pb.cs file extension.\n\nThis does *not* affect the conformance tests run from Bazel, as they generate the file separately and build the conformance tests using only Program.cs and the freshly-generated code. However, the csharp/src/Google.Protobuf.Conformance/BUILD.bazel still needs to be kept up-to-date with the filename change.\n\nCloses #11880\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11880 from jskeet:generate-conformance 34bb22cc46cb67b58c302ca77541b45035815229\nPiperOrigin-RevId: 509542860\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e327701e9f3e6b7fb03d86e6dbe7531442eb292",
+            "message": "Automated rollback of commit 3493da38781eecfd08676a7a29d7294ad480179a.\n\nPiperOrigin-RevId: 509537125\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d447b2924f695ffa55f6bdfc3537b97bc12d9504",
+            "message": "Run continuous tests hourly to boost statistics for analysis\n\nPiperOrigin-RevId: 509409873\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35e89279bc699401d6b6ecec529b912118e18792",
+            "message": "Work around errornous warning in gcc <= 12.2\n\ngcc 12.[12] emits a -Wrestrict warning if compiled\nwith -O2/-O3 and -std=c++20 enabled when assigning\na string with a single character to a std::string.\n\nhttps://gcc.gnu.org/bugzilla/show_bug.cgi?id=105329\n\nThis is benign; disable this broken warning for up to 12.4.\n\nPiperOrigin-RevId: 509358966\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e84ac2d3beb36ed8a951e94c808aafb6c0baa13e",
+            "message": "[ObjC] Run clang-format.\n\nFix clang-format directive and reform file.\n\nNo other changes.\n\nPiperOrigin-RevId: 509338775\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8cfd02f590cf9455c22a5812a41dce0663e2e48a",
+            "message": "Add tracing for limit push/pop in sanitizer mode to make sure we never read an\nuninitialized one, and we never fail to pop one.\nFix a couple of cases where invalid input lead to undefined behavior.\n\nPiperOrigin-RevId: 509319815\n",
+            "tag_name": null
+        },
+        {
+            "hash": "853a55ebbbbc4424fb1d56a31fe07e1ec961c9cd",
+            "message": "Cleanup FastTV32S1() and FastTV64S1() functions.\n\n- replaces the existing FastV32S1() and FastV64S1() implementations with the FastTV32S1() and FastTV64S1() functions, removing the latter names, and moves the internal template helpers from the header into the .cc file.\n\n- defines PROTOBUF_TC_PARAM_NO_DATA_DECL and PROTOBUF_TC_PARAM_NO_DATA_PASS macros to declare functions not using `data`, and to use in call sites calling these functions.\nEND_PUBLIC\n\n- adds MUSTTAIL to ToParseLoop() and Error(). The current code was inconsistent on this, and if it doesn't help, it doesn't hurt either and minimizes any possible polition from the call sites.\n\nPiperOrigin-RevId: 509317845\n",
+            "tag_name": null
+        },
+        {
+            "hash": "08bedfdbe4390aa62aafb6f1d784348b8fce2ef8",
+            "message": "Disable std::string specialization\n\nPiperOrigin-RevId: 509289178\n",
+            "tag_name": null
+        },
+        {
+            "hash": "28c0a48b5ec73188a3ddbde784776980de339c73",
+            "message": "[ObjC] full_mac_builds.sh has been update\n\n- The support for CI has been removed (no longer needed)\n- Update some of the testing targets\n- Removed some lesser used options (to simplify)\n\nPiperOrigin-RevId: 509268013\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a2c5ea614cd5330de4b56a9937377f65309a31f8",
+            "message": "[ObjC] make the bazel build always use generated WKTs.\n\nThis is done in basically the same way the C++ does this.\n\nIt was tested locally be putting `#error` directives in the pre-generated\nsources and running the bazel build (it worked).\n\nPiperOrigin-RevId: 509261352\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e45e66b5f421b65f2aa032c50d0506dbc129e27c",
+            "message": "[ObjC] CI dbg & opt macOS bazel builds.\n\nPiperOrigin-RevId: 509260795\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4e76952c76c186b80343d91ff5bf662404025aa1",
+            "message": "Stop using 'push' event to determine privileged post-submit runs.\n\nBoth 'schedule' and 'workflow_dispatch' are valid alternatives today.  What we really want here is anything *except* pull request events.\n\nPiperOrigin-RevId: 509123777\n",
+            "tag_name": null
+        },
+        {
+            "hash": "50861195140be676fb46ddacba635a78640f4e10",
+            "message": "Move GHA documentation into workflows directory.\n\nPlacing it in the .github directory unexpectedly replaced our top-level documentation on the main page.\n\nPiperOrigin-RevId: 509104326\n",
+            "tag_name": null
+        },
+        {
+            "hash": "364328858e2694f4f85613cf168a96053eb434d6",
+            "message": "Tweak GHA names to make failures clearer in dashboard\n\nPiperOrigin-RevId: 508944353\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9c2211be08af10dd5964cf8b65364afaef001fdf",
+            "message": "Switch to Ninja generator for windows cmake builds.\n\nThese will still use MSVC as the compiler, but will no longer generate Visual Studio projects for the builds.  Visual Studio is particularly bad at parallelizing builds, and is hostile to ccache.\n\nThis change also tweaks the ccache setup to prevent unbounded the growth observed in our github caches.  Windows builds have had debug symbols stripped to reduce ccache size by a factor of 2x, and ccache maximum have been tweaked so that we persist fewer older builds.\n\nBefore this change, each CMake build took 12 minutes on every run (plus some constant overhead from staleness/gcloud), even with caching or on large multi-core runners.  No amount of caching or parallelization made any noticeable difference above noise.  With this change, we see the following improvements:\n- 12 minutes to build from scratch on normal runners (unchanged)\n- 4 minutes on 32-core runners from scratch\n- 1 minute with optimal caches available on normal runners.\n- 30 seconds on 32-core runners with optimal caches\n\nPiperOrigin-RevId: 508799909\n",
+            "tag_name": null
+        },
+        {
+            "hash": "79a4f9476ffb27a5bace8b923cc9bded4ac27f1c",
+            "message": "[ObjC] Move the Xcode CI off full_mac_build.sh\n\nUse the bash GHA to ensure WKTs are current, and then just directly invoke\nXcode. This means the script full_mac_build.sh can go back to just being\na simpler helper for folks doing local builds and we can remove all the extra\nsupport that was needed for CI.\n\nPiperOrigin-RevId: 508762464\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f239739a71c8fc5a58a1b19d81728e2e74595a95",
+            "message": "Have the CocoaPods CI update the WKTs before testing.\n\nPiperOrigin-RevId: 508756680\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2aa06eaa833d988a288ff82139c3d7ab1a9cd07",
+            "message": "[ObjC] Set up a stateless test for the WKTs.\n\nAlso wire it into the regeneration script.\n\nPiperOrigin-RevId: 508751290\n",
+            "tag_name": null
+        },
+        {
+            "hash": "31a7fb462d8b0b996b2341ab397263670930d485",
+            "message": "Internal change\n\nPiperOrigin-RevId: 508746384\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9b7f163431a24b7d369e8ae8c77c50c8783ba6b9",
+            "message": "Fix forked PR check\n\nPiperOrigin-RevId: 508720169\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3493da38781eecfd08676a7a29d7294ad480179a",
+            "message": "Automated rollback of commit 0b72758dacf68a051e894400950cc2b37b8148eb.\n\nPiperOrigin-RevId: 508713070\n",
+            "tag_name": null
+        },
+        {
+            "hash": "1cf2901a1d428fb5101e35b7ac3a44be57226108",
+            "message": "Use is_closed() in more places in the runtime.\n\nPiperOrigin-RevId: 508709514\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d5ec124bb92b82aff6dbe589a14694924b984575",
+            "message": "Explicitly ban changes to workflow files from forked PRs\n\nChanges to these files *can't* be tested in forked PRs, so we should explicitly block them with an error message to explain why.\n\nPiperOrigin-RevId: 508701535\n",
+            "tag_name": null
+        },
+        {
+            "hash": "205972b1f75341a65e0cfe0d698e0cfc5260967b",
+            "message": "Fix remove label action\n\nPiperOrigin-RevId: 508701071\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6e00b6b2f57ec0d0c8686afc2b5ed5e78a0ec03d",
+            "message": "Skip bazel build in objectivec/generate_well_known_types.sh.\n\nEvery where the script is invoked from protoc is already built, and this more\nfollows the model used by similar scripts for other languages.\n\nPiperOrigin-RevId: 508694936\n",
+            "tag_name": null
+        },
+        {
+            "hash": "363fa89b1f02d4c51028f8c8bcd506f08eaa6b49",
+            "message": "RepeatedField: unset by index (#11425)\n\nInstead of using `array_pop()` to remove last element use `unset()` to remove by index\n\nCloses #11425\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11425 from Leprechaunz:unset-by-index a47fba57e43228c92791aa75e1bc04169491bf41\nPiperOrigin-RevId: 508691545\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6aefc477d74babfc093a5721510af9a0ec12a790",
+            "message": "Add documentation for our new GHA infrastructure\n\nPiperOrigin-RevId: 508680514\n",
+            "tag_name": null
+        },
+        {
+            "hash": "76573bfef5c4c2a25bc1ecd2bb139e6b70a2ebf6",
+            "message": "Remove data_offset + hasbit_idx template vars\n\nPiperOrigin-RevId: 508675626\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a50e49530f4e837f63fdbb2cb58208fcb4d67936",
+            "message": "Always enable eagerly verified lazy fields.\n\nPiperOrigin-RevId: 508671173\n",
+            "tag_name": null
+        },
+        {
+            "hash": "2ef1b7a9fad4c02c7e85aeac4819fb44406b2a17",
+            "message": "fix(ruby): Fixed include paths for Ruby Windows builds (#11882)\n\nThis fixes a v22 regression for Ruby.\n\nWindows builds of the Ruby package are broken in 3.22.0.rc.2. The reason is, `ruby-upb.h` no longer provides the full path when `#include`ing `utf8_range.h`. See https://github.com/protocolbuffers/protobuf/blob/v22.0-rc2/ruby/ext/google/protobuf_c/ruby-upb.h#L10479 (22.0-rc-2), cf. https://github.com/protocolbuffers/protobuf/blob/v21.12/ruby/ext/google/protobuf_c/ruby-upb.h#L5365 (21.12). The `extconf.rb` build configuration tries to compensate by adding `third_party/utf8_range` to the include path, but does not do so on Windows (i.e. `mingw`) platforms. See https://github.com/protocolbuffers/protobuf/blob/v22.0-rc2/ruby/ext/google/protobuf_c/extconf.rb#L9-L10 (22.0-rc-2), cf. https://github.com/protocolbuffers/protobuf/blob/v21.12/ruby/ext/google/protobuf_c/extconf.rb#L9-L10 (21.12).\n\nWe could have fixed this by adding another clause to the if statement for the case `RUBY_PLATFORM =~ /mingw/` and adding the appropriate `-I` flag to `CFLAGS`. However, that `CFLAGS` hack is present in the first place due to a related problem: the usage of `$INCFLAGS` is incorrect.\n\nThe `$INCFLAGS` constant in Ruby's `mkmf` is a string in a similar format to `CFLAGS`. It's simply appended to compiler invocations. So when you append new flags to it, you have to (1) provide the flag itself, and (2) precede it with a space to delimit it from the previous entry. In 22.0-rc-2 (and indeed in all earlier versions) the usage is incorrect: it's appending a path to the string without the `-I` and without a space. See https://github.com/protocolbuffers/protobuf/blob/v22.0-rc2/ruby/ext/google/protobuf_c/extconf.rb#L22. Hence, not only does the intended include path not get appended correctly, it also clobbers the previous path in the string. Luckily, the previous path is only `-I$(srcdir)` which happens not to matter for our library. But it does mean that the apparent intent of that line, adding `$(srcdir)/third_party/utf8_range` to the include path, isn't working; hence the code that adds it to `CFLAGS` instead.\n\n(Note that the previous line, adding the path to `$VPATH`, _is_ correct as is, because `$VPATH` is an array.)\n\nSo what this PR actually does is fix the `$INCFLAGS` usage so `$(srcdir)/third_party/utf8_range` gets added properly to compiler include paths, for all platforms including Windows. Since that should now be working as intended, we also remove the extra `-I` from CFLAGS. Builds for all platforms should now be able to handle the change to `ruby-upb.h`. This has been tested by running the prototype Ruby build Kokoro job against a patched 22.0-rc-2.\n\nThis also needs to be backported to the 22.x branch.\n\n/attn @deannagarcia\n\nCloses #11882\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/11882 from dazuma:pr/ruby-builds-fix ebb18e000479694ad423165378ddcb2df3c6001c\nPiperOrigin-RevId: 508550039\n",
+            "tag_name": null
+        },
+        {
+            "hash": "23d8aacc551bb10694e6b32a74c885b64d9e1501",
+            "message": "Updates links to use the new protobuf.dev site, and adds a link to the new version support page.\n\nPiperOrigin-RevId: 508485038\n",
+            "tag_name": null
+        },
+        {
+            "hash": "26dae8d94a2cd959e407bf3258b0a81c6e1331d2",
+            "message": "[ObjC] Test pddm expansion\n\nTesting both the support and the sources expanded.\n\nPiperOrigin-RevId: 508471876\n",
+            "tag_name": null
+        },
+        {
+            "hash": "911847efc45abc90fea849ece545b2cda63e858c",
+            "message": "Cache our ccache download to avoid network flakes from choco.\n\nChocolatey doesn't support any caching, so we're moving back to downloading the exe directly.  This issue is responsible for a 5-10% flake rate in our windows cmake builds\n\nPiperOrigin-RevId: 510202223\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eaf4e268fa7c08fb6c3fc0050b2bfd7466caad04",
+            "message": "Discard remaining tag but check against non canonical encoding.\n\nPiperOrigin-RevId: 510197783\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8bdca948db0c6ab172f54ed7f56a98d1fc19a976",
+            "message": "Update version.json to 23-dev\n\nPiperOrigin-RevId: 525257136\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35b9813f85305b2ea976b8add8fbdc2288c3da15",
+            "message": "Actually run destructors of C++ messages.\n\nPiperOrigin-RevId: 525244271\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6ad1a6d674806ce16c8e2ca4e578957f9e76d49b",
+            "message": "Internal change\n\nPiperOrigin-RevId: 525235311\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5e8510cfe550321cfd6ccd974085956f2d9df95e",
+            "message": "Merge pull request #12496 from protocolbuffers/zhangskz-patch-2\n\nUpdate version.json to 23-dev",
+            "tag_name": null
+        },
+        {
+            "hash": "cf71bbca9a8a57e466e5174e36d72b0ff64ad186",
+            "message": "Update version.json to 23-dev\n\nThis commit should have been auto-generated as in https://github.com/protocolbuffers/protobuf/commit/96ecd25b9c88d59113cb629505e61ebf4130f3ad, but we missed the step merging this to main from CSR when 22.x was cut.",
+            "tag_name": null
+        },
+        {
+            "hash": "d4ce533dcb0887bfaba70e705e43160d94f8140e",
+            "message": "Merge pull request #12608 from protocolbuffers/23.x-202304281840\n\nUpdate version numbers for 23.0-rc2",
+            "tag_name": null
+        },
+        {
+            "hash": "29b8dc0eef0fc6daaf7948dc4820855966f45945",
+            "message": "Updating version.json to: 23.0-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "51f51ac4efc3a1146e10416d31d24e0052cd9d86",
+            "message": "Updating version.json and repo version numbers to: 23.0-rc2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e2bb23712ad6b280cdd8a7e4264654917487db67",
+            "message": "Merge pull request #12607 from deannagarcia/23.x\n\nUpdate UPB Dependency",
+            "tag_name": null
+        },
+        {
+            "hash": "0b73dd44a3257c788f930bbb068ffdcb98679456",
+            "message": "Add -ex switch to all docker bash commands. (#12601)\n\nWithout this, certain failures will be silently ignored.\r\n\r\nPiperOrigin-RevId: 527718574",
+            "tag_name": null
+        },
+        {
+            "hash": "49bb3f20647b914fc52909eec19f260fb9a945f3",
+            "message": "Fixes Clang 6 linker bug (#12600)\n\nPiperOrigin-RevId: 527711840",
+            "tag_name": null
+        },
+        {
+            "hash": "aa4a1928849d8a6143a7d5dbc91a75a3c92f78b1",
+            "message": "Merge pull request #12593 from protocolbuffers/23.0-rc2-patch\n\nCherrypick fixes for 23.0-rc2 into 23.x",
+            "tag_name": null
+        },
+        {
+            "hash": "9e2941faa4d1c946bbc779074faab9371bef9bda",
+            "message": "Merge pull request #12632 from deannagarcia/23.x\n\nCherrypick fixes for 23.0-rc3",
+            "tag_name": null
+        },
+        {
+            "hash": "b36c39236e43f4ab9c1472064b6161d00aef21c5",
+            "message": "Fix bug in _internal_copy_files where the rule would fail in downstream repositories.\n\nTaken from https://github.com/protocolbuffers/upb/blob/main/bazel/protobuf.patch#L42\n\nFixes https://github.com/protocolbuffers/protobuf/issues/12620.\n\nPiperOrigin-RevId: 528586464\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ad2dd26ffc6858b7a0e991d75df55897cc24b2e5",
+            "message": "Mark internal rule manual\n",
+            "tag_name": null
+        },
+        {
+            "hash": "04d31b306cc0831b3028359c758434a7653c5e26",
+            "message": "Merge pull request #12647 from deannagarcia/23.x\n\nUpdate UPB dep for 23.0-rc3",
+            "tag_name": null
+        },
+        {
+            "hash": "e01953476c583a9bea34ab24bbcb6e6028a77f1f",
+            "message": "Merge pull request #12638 from deannagarcia/23.x\n\nUpdate abseil dependency and reorder dependencies to ensure we use th…",
+            "tag_name": null
+        },
+        {
+            "hash": "74cea3dda5bfcc310e2facef9df7084951116190",
+            "message": "Revert \"Fix tests\"\n\nThis reverts commit 645336fb8a37916bd4abf206e38f04f3a4a95c1a.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "645336fb8a37916bd4abf206e38f04f3a4a95c1a",
+            "message": "Fix tests\n",
+            "tag_name": null
+        },
+        {
+            "hash": "000755a8a7701df3615bd12c90802a8fd26e7809",
+            "message": "Update UPB dep\n",
+            "tag_name": null
+        }
+    ]
+}

@@ -1,0 +1,128 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v21.10",
+    "previous_release": "v21.9",
+    "cycle_days": 34.151053240740744,
+    "commits": 23,
+    "commits_in_advance": 2,
+    "start_delay": -39.99670138888889,
+    "duration": 74.14775462962963,
+    "commits_info": [
+        {
+            "hash": "11bc195441adfbc87ff0349f1c4be7a239d1daad",
+            "message": "Updating version.json and repo version numbers to: 21.10\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f6ff28bfcb110cc2b3c39f9e2cfe618934218c75",
+            "message": "Merge pull request #11075 from protocolbuffers/21.x-202211281808\n\n21.x 202211281808",
+            "tag_name": null
+        },
+        {
+            "hash": "7cd953703a8949996fa431b112e35336d4423c26",
+            "message": "kokoro trigger change\n",
+            "tag_name": null
+        },
+        {
+            "hash": "073b81a94d960910ea5e6350dc45aca9f05b3cd5",
+            "message": "kokoro trigger change\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0d7f85ca05eed10a3ef1694a0db7e393f4d1c966",
+            "message": "Updating changelog\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ed63a2c7e4ad732a5a14bf9cbbf48554749f8ba9",
+            "message": "Updating version.json and repo version numbers to: 21.10-rc0\n",
+            "tag_name": null
+        },
+        {
+            "hash": "7268e2fe6a02faec6394f51e9ac45c2db1f21120",
+            "message": "Merge pull request #11068 from deannagarcia/21.x\n\nAdd public modifiers to kotlin code",
+            "tag_name": null
+        },
+        {
+            "hash": "7845696b1a73c27ac608812392158e1d2e519fe2",
+            "message": "Add more public modifiers\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6edfc8042884a78d4eb63771b3a711f3637a20b0",
+            "message": "Cherrypick public modifier\n",
+            "tag_name": null
+        },
+        {
+            "hash": "eb06d1fdcbbf9ca997db83d65b54ac385248040b",
+            "message": "update protobuf_deps to point to the current upb 21.x (#11028)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3c3e66ade15dd972287de070e4d4f949010358a8",
+            "message": "Merge pull request #10984 from protocolbuffers/googleberg-patch-nested-builder-fix\n\nFix stale cached submessages by marking nested builder as clean after clear is called",
+            "tag_name": null
+        },
+        {
+            "hash": "736e9b8f7c995b807c726ebe5188870d07c8d340",
+            "message": "Fix misplacement of TimingBelt in the nested_builders_test.proto\nhierarchy.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d38060c89987c2a3150ff69227803664273100d",
+            "message": "Add test to verify nested builder fix.\n\nVerify fix for https://github.com/protocolbuffers/protobuf/issues/10624",
+            "tag_name": null
+        },
+        {
+            "hash": "f616e70a9a97e321078399ea9c9f909b43d42b20",
+            "message": "Add timing belt to nested_builders_test protos\n\nThis will be used in verfication of https://github.com/protocolbuffers/protobuf/issues/10624",
+            "tag_name": null
+        },
+        {
+            "hash": "8e6afeff499eb43f2f7d0495c0df49586561a101",
+            "message": "Mark nested builder as clean after clear is called\n\nOmitting this step was leading to stale cached versions of nested messages.\r\nSee https://github.com/protocolbuffers/protobuf/issues/10624",
+            "tag_name": null
+        },
+        {
+            "hash": "4f393bd5152a4867345fa49f7545be4cf2347006",
+            "message": "Merge pull request #10960 from protocolbuffers/gberg-ads-performance\n\nUse bit-field int values in buildPartial to skip work on unset groups of fields.",
+            "tag_name": null
+        },
+        {
+            "hash": "b0f7bff40cb7748d16defabf36489a8f2e6ddc0b",
+            "message": "Use bit-field int values in buildPartial to skip work on unset groups of fields.\n\nChanges to make this improvement:\n1) All non-repeated builder fields (including maps) now have a presence bit regardless of syntax.\n2) The buildPartial method is split into one method per 32-field block (aligned with bit-mask ints)\n3) If a presence bit-mask int is set to 0, no fields are present, so we can skip the logic for all of those fields in the buildPartial step.\n\nFor messages with a lot of fields (> 100) that are sparsely populated this can result in a significant improvement. Not only does it potentially skip a lot of field copying logic, but also breaks the buildPartial method into chunks that should be more easily digested by the JIT compiler as discussed in this issue: https://github.com/protocolbuffers/protobuf/issues/10247.\n\nPiperOrigin-RevId: 485952448\n",
+            "tag_name": null
+        },
+        {
+            "hash": "accd49b95a70b522fee863cc6dd731ceb1004d65",
+            "message": "Add bazel php:release target for PECL tgz using generated package.xml (#10845)\n\n* Add bazel php:release target for PECL tgz using generated package.xml\r\n\r\n* move targets from php/ext/google/protobuf to php packages since this breaks dist_files and add utf8 license file\r\n\r\n* Remove package.xml form Makefile.am\r\n\r\n* add files to Makefile.am",
+            "tag_name": null
+        },
+        {
+            "hash": "ba017798606635f46bc0dd7b8a99197098e33dd5",
+            "message": "Merge pull request #10825 from protocolbuffers/21.x-202210261725\n\nUpdate version.json to: 21.10-dev",
+            "tag_name": null
+        },
+        {
+            "hash": "e4a4de98907d3c3fd82d7f9473249710d82b3e49",
+            "message": "Update version.json to: 21.10-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d96db0e9d8ef9e9c754ee1ffac58654969f3b662",
+            "message": "Merge pull request #10823 from protocolbuffers/21.x-202210261725\n\nUpdate changelog and versions for 21.9 release",
+            "tag_name": null
+        },
+        {
+            "hash": "d03c11cce98c5dc0caa01eefa3d9d9701d3c254d",
+            "message": "Merge pull request #11083 from protocolbuffers/deannagarcia-patch-10\n\nDisable CocoaPods watchOS validation",
+            "tag_name": null
+        },
+        {
+            "hash": "9933339c4893875d5c58b82435f15c3311ec62d6",
+            "message": "Disable CocoaPods watchOS validation \n\nhttps://github.com/CocoaPods/CocoaPods/issues/11558 is causing this GHA to fail. It has been resolved in main, but this will continue to fail until a release is out and we migrate to it.",
+            "tag_name": null
+        }
+    ]
+}

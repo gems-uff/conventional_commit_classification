@@ -1,0 +1,668 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.16.0",
+    "previous_release": "v3.15.0",
+    "cycle_days": 76.99995370370371,
+    "commits": 131,
+    "commits_in_advance": 35,
+    "start_delay": -1088.8941550925927,
+    "duration": 1165.8941087962962,
+    "commits_info": [
+        {
+            "hash": "2dc747c574b68a808ea4699d26942c8132fe2b09",
+            "message": "Update PHP release notes and update version to 3.16.0 (#8573)\n\n* Updated PHP release notes in packages.xml\r\n\r\n* Update protobuf version to 3.16.0",
+            "tag_name": null
+        },
+        {
+            "hash": "debc03dfc5d71d7d642dd1c8f7d1c04b36e8a065",
+            "message": "Update protobuf version to 3.16.0-rc2 (#8556)\n\n* Update CHANGES.txt\r\n\r\n* Update protobuf version",
+            "tag_name": null
+        },
+        {
+            "hash": "17b0fb9149109e22d56cfa27f1f17b04508ea726",
+            "message": "Make update_version.py compatible with Python 3 (#8555)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4aa425c6c5eb7914582ebd67ab8ecac464bdf271",
+            "message": "Cherry-pick #8356 into 3.16.x (#8518)\n\n* Ruby: Add support for proto3 json_name in compiler and field definitions\r\n\r\n* Address review feedback\r\n\r\n* Add test for json_name functionality\r\n\r\nCo-authored-by: Lukas Fittl <lukas@fittl.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "e8b78f8208971a28e566198d38e43ad5f49a9009",
+            "message": "Fixed memory leak of Ruby arena objects. (#8465)\n\nIn our free() method, we were freeing the memory from the\r\nupb arena but we were failing to free the memory for the\r\nRuby arena object. This was causing every Ruby arena object\r\nto leak: even though the objects were getting GC'd, the\r\nunderlying memory was not getting released.\r\n\r\nCo-authored-by: Joshua Haberman <jhaberman@gmail.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "7689f00ba8d1e818f2a8e7a4bf24577d9ccd5d84",
+            "message": "Update protobuf version (#8448)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6099c6505d73681bf98a5c5d8908cb5c3fd1bab9",
+            "message": "Updated CHANGES.txt for 3.16.0 (#8456)\n\n* Updated CHANGES.txt for 3.16.0\r\n\r\n* Fix spelling errors",
+            "tag_name": null
+        },
+        {
+            "hash": "c9343864a2c101d7152ef98dafe6c9f5a07b1d04",
+            "message": "Merge pull request #8447 from acozzette/merge-3-15-x\n\nMerge 3.15.x into the master branch",
+            "tag_name": null
+        },
+        {
+            "hash": "87aa9adb86aa36e89535324932f0b5c705504369",
+            "message": "Merge branch 'master' into 3.15.x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "97cb3a862f132c6ab98e240be11990b89f7d5467",
+            "message": "Merge pull request #8444 from perezd/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "361308c4f2e60f27065d55096aab7b504e702a9e",
+            "message": "fix wrapping of line in CHANGES.txt\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91471098544d91ce3aede61dbd8eed04149d0a28",
+            "message": "editing CHANGES.txt\n",
+            "tag_name": null
+        },
+        {
+            "hash": "49ed194e88aa4f3ae85fe1e131cd52041eac9b7b",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4008d229aa7505775486d6a86705efd2800599b3",
+            "message": "Sync from Piper @366297034\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4a6dc34d3a532e54b4b4117d0d25eb111df46d8a",
+            "message": "Sync from Piper @365872496\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5941bd11989180dcc1bbf03532ac851f3dc47119",
+            "message": "Merge pull request #8422 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "9daba367f4b5a545fb0ae8781c04df33131ea58f",
+            "message": "Updated changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "77334e39a79c88fe3a451eccb76217923ef8cfc1",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "96307d28f69662eb04edcaeb9d1d1ed25e692d88",
+            "message": "Sync from Piper @364389596\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9df42757f97da9f748a464deeda96427a8f7ade0",
+            "message": "Sync from Piper @359788468\n\nPROTOBUF_SYNC_PIPER\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a6c28fb20754604be208150984cfef8036b14285",
+            "message": "Merge pull request #8338 from acozzette/3.15.x-202102231541\n\nMerge 3.15.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "d8254a67ceaf1c1252878923d466d3d484f0bcc8",
+            "message": "Merge branch '3.15.x' into 3.15.x-202102231541\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a43ddfbd564f246bc31c8a9a08e8502a5aa8390c",
+            "message": "Merge pull request #8323 from georgthegreat/patch-1\n\nFix PROTOBUF_CONSTINIT macro redefinition",
+            "tag_name": null
+        },
+        {
+            "hash": "2e47e3bc6476bbf40ee2834f493d58b2a729c195",
+            "message": "Fix PROTOBUF_CONSTINIT macro redifinition\n\nThe #ifdef block is duplicated with the above (which was fixed in 3.15.1).\r\n\r\nIt would be great to have this fix backported to 3.15.1 (and released as 3.15.2).",
+            "tag_name": null
+        },
+        {
+            "hash": "133e5e75263be696c06599ab97614a1e1e6d9c66",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de701c660b78b307f0bbab7b71e61a04e4bcad79",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ea2412e6edce2233acb3e95b4c32dad990c52d6c",
+            "message": "Updated collect_all_artifacts.sh for Ubuntu Xenial\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0533d042b33258c0c62a6752d95d0e8cf132eeff",
+            "message": "Delete root-owned files in Kokoro builds\n\nSome of our Kokoro builds have been failing because Kokoro is unable to\ncopy root-owned files when the build is complete. This commit fixes the\nproblem by deleting these files at the end.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "37229350548659bb0d25c2a2ed439426c3ad6ee1",
+            "message": "Added to the changelog entries for Ruby & PHP.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8aa0063befd9c380a4660f0f9ed464125b270ad1",
+            "message": "Updated collect_all_artifacts.sh to avoid installing apt-transport-https\n\nThe installation of apt-transport-https is failing and causing this\nscript to exit early. I suspect the package is no longer needed since\nrecent versions have moved it into the apt package, so this change\nupdates the script to stop trying to install apt-transport-https.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a94870872c29861c2330a15645c187b046e7aa86",
+            "message": "Added more information to \"file already loaded\" warning.\n\nAlso changed it to zend_error() so it is more easily suppressed.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "76bfd890904943e5f73fd9126562d3381fb4e73e",
+            "message": "Added PHP changes for 3.15.0 into package.xml\n",
+            "tag_name": null
+        },
+        {
+            "hash": "983ea052cedc6fd1f253932f60b8553a46ea4924",
+            "message": "Updated CHANGES.txt for the 3.15.0 release\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ac9218c5d9fc5c1e877dcbd0b93f13c3fd0ba51c",
+            "message": "Update protobuf version\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c908fdbd0ce66585d49fcf94ed2aef59b8d55285",
+            "message": "Some doc on AOT compilation and protobuf (#8294)\n\n* Create jvm_native_images.md\r\n\r\nSome initial text pertaining to the use of protobuf with AOT compilation tools such as the one provided by GraalVM native-image.\r\n\r\n* Update jvm_native_images.md\r\n\r\nFixed spelling\r\n\r\n* Update and rename jvm_native_images.md to jvm_aot.md",
+            "tag_name": null
+        },
+        {
+            "hash": "2653fc807a3c1bf6ad256370e5ef463612e3169f",
+            "message": "Merge pull request #7613 from landsem/patch-1\n\n[PHP] Changed parameter type from long to integer",
+            "tag_name": null
+        },
+        {
+            "hash": "dd8f748c3d7a8e97e03884958d6147d0970bcb62",
+            "message": "Changed parameter type from long to integer\n\nPHP does not have a long type, and IDEs don't necessarily understand that long is the same as integer. \r\nE.g. PhpStorm will give an error like this: `Expected parameter of type '\\Google\\Protobuf\\Internal\\long', 'int' provided`",
+            "tag_name": null
+        },
+        {
+            "hash": "8a39e13de9653e3be63877ae5a60c39372af5878",
+            "message": "Resovled issue in the .pb.cc files\n",
+            "tag_name": null
+        },
+        {
+            "hash": "893e2d7fd8513f3b7b30d863b05416bd6cf5f432",
+            "message": "Resolved an issue where NO_DESTROY and CONSTINIT were in incorrect order\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5e79c737d8ae102356f6793bc9abf7f6fd7625af",
+            "message": "Merge pull request #8236 from bshaffer/patch-3\n\nfix: README supported PHP version for C extension",
+            "tag_name": null
+        },
+        {
+            "hash": "e75f5525872c04ee2e76e3b810990aa14909ee35",
+            "message": "Update README.md",
+            "tag_name": null
+        },
+        {
+            "hash": "bd08f755862ae7f827829f37c38a2fd77525cd34",
+            "message": "fix: README supported PHP version for C extension",
+            "tag_name": null
+        },
+        {
+            "hash": "a1f96fffc7d062037c52bcb83e9e841d325eeaf8",
+            "message": "Merge pull request #8147 from JamesNK/jamesnk/writestring\n\nAdd .NET 5 target and improve WriteString performance with SIMD",
+            "tag_name": null
+        },
+        {
+            "hash": "e4cd821f21e63358551c734bbd81474f2885f2ad",
+            "message": "Add comments\n",
+            "tag_name": null
+        },
+        {
+            "hash": "818c2ba077f515e080f3c3245a83c0a5528ee22d",
+            "message": "add libicu63 to C# dockerfile\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d9889a4a1579c348105986426306792247a36288",
+            "message": "Fix 5.0 SDK Linux restore issue\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8932446d9e2033bad04088446926fb7a10d89066",
+            "message": "Improve WriteString perf with SIMD\n",
+            "tag_name": null
+        },
+        {
+            "hash": "aee143afe8c17a3d2c7e88b70ffa6e08a73e2683",
+            "message": "Update port_def.inc\n\nFix for Windows build with MinGW-w64 compiler which has __has_attribute but has issues with __attribute__((weak)).",
+            "tag_name": null
+        },
+        {
+            "hash": "fe6339389609d9f1a4c1fe547dd5dc9a17ae7d20",
+            "message": "Update coded_stream.h\n\nFix for Windows build with MinGW-w64 compiler. Windows is assumed to always be little endian.",
+            "tag_name": null
+        },
+        {
+            "hash": "a25474ed45f86c9bfa3e4fcc4c16a205e09bc8a0",
+            "message": "Remove the (unused) Python all-versions Kokoro config. (#8288)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "0ef575beff5a627a4a1e8e15e462039d3aed2ad3",
+            "message": "Fix compiler warnings issue found in conformance_test_runner#8189 (#8190)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e1b26fe4a12c37ce4e17a4587eabd8f4251e9890",
+            "message": "deps: update to Guava 30.1 (#8209)\n\nThis release includes a minor security fix.",
+            "tag_name": null
+        },
+        {
+            "hash": "01dcb9484636f1178bf709aaa16bbcef66641189",
+            "message": "Expand reserved IDs for protoc-gen-psql and protoc-gen-sanititize (#8270)\n\nFix for 59b3d97.",
+            "tag_name": null
+        },
+        {
+            "hash": "326ea555ba6677b82c5ec072aab16c7c685dd51c",
+            "message": "Merge pull request #8329 from acozzette/merge-3-15-x\n\nMerge 3.15.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "6e84adc9ffd677b9f60662be65517cc11ab40fa2",
+            "message": "Merge branch '3.15.x' into merge-3-15-x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5911099659dc1d15dd6b1967a6b5afbdc8563db8",
+            "message": "Move the class map to a CFDictionary.\n\nSince the keys are `Class`-s, there's no need to hash/copy/etc. them. This\navoids causing `+initialize` on the classes just when building up a registry.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "617e2556171d5db4f0c13bed56a5010d08fc3b4c",
+            "message": "Merge pull request #8409 from srago/protoc-fix\n\nadd error returns missing from protoc to prevent it from exiting with…",
+            "tag_name": null
+        },
+        {
+            "hash": "57e09ad84867f88792489b459caddb6482476b0d",
+            "message": "add error returns missing from protoc to prevent it from exiting with a successful return value when writing the zip file fails\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4c5465e5fe220ab804e2ae1d74ddc900af0baa32",
+            "message": "Merge pull request #8402 from acozzette/merge-3-15-x\n\nMerge 3.15.x into master branch",
+            "tag_name": null
+        },
+        {
+            "hash": "9db84d08fbeae1344908c61489793a8aa6c047ac",
+            "message": "Merge branch '3.15.x' into merge-3-15-x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f154323fa6824b3476b63293bcb595c994163605",
+            "message": "Merge pull request #8287 from dlj-NaN/mergeable-autotools\n\nAdd autotools to release notes languages.",
+            "tag_name": null
+        },
+        {
+            "hash": "0894247c2197f0924af1a0a61c195b8423022f41",
+            "message": "Add autotools to release languages.",
+            "tag_name": null
+        },
+        {
+            "hash": "9ad97629be72eeecf8bc9fe8145e55ceaeab6b78",
+            "message": "Merge pull request #8354 from Yannic/refactor_status\n\n[C++] Refactor util::Status",
+            "tag_name": null
+        },
+        {
+            "hash": "aa5cb98712222e05594dc40a8009de024991c01d",
+            "message": "Fix conformance_cpp\n",
+            "tag_name": null
+        },
+        {
+            "hash": "baef01b7566075cf91e437b6322fbf582ec713dc",
+            "message": "Fix build error\n",
+            "tag_name": null
+        },
+        {
+            "hash": "de53e1afff299ea67eab77ba33bff304b6007ca7",
+            "message": "Revert moving status.cc\n",
+            "tag_name": null
+        },
+        {
+            "hash": "59ea5c8f19de47dc15cbce2e2e97d9de01d50fb9",
+            "message": "[C++] Refactor util::Status\n\nThis change refactors util::Status to have a similar shape as the\nrecently open-sourced absl::Status. This will allow Protobuf to\neventually use absl::Status and reduce the codesize.\n\nNote that there is more work required before absl::Status can be used.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8d1d530c511dcfa502fba0ef9a58e8971d2b62a4",
+            "message": "Fix typo in docs/implementing_proto3_presence.md\n",
+            "tag_name": null
+        },
+        {
+            "hash": "35bdcabdd6a05ce9ee738ad7df8c1299d9c7fc4b",
+            "message": "Merge pull request #8383 from protocolbuffers/3.15.x\n\nMerge 3.15.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "673971834c9602067b88fe66acc4e2e2f329e6ee",
+            "message": "Merge branch 'master' into 3.15.x",
+            "tag_name": null
+        },
+        {
+            "hash": "87dd07b4367b7676af42105d0d102f4e536c248b",
+            "message": "Switch on \"new\" buffer API (#8339)\n\n\"Old\" buffer API will removed in Python 3.10. This is also fix #7930.",
+            "tag_name": null
+        },
+        {
+            "hash": "b6facc69ea0f1515b9bf522634bb6ab19031729d",
+            "message": "docs: update version",
+            "tag_name": null
+        },
+        {
+            "hash": "c4a77dad715e0130786241f6dd54d45cc1e27f29",
+            "message": "Merge pull request #8370 from acozzette/3.15.x-202103031418\n\nMerge 3.15.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "541b1735a89e829b44dc21f1ea11fc36e158c49c",
+            "message": "Merge branch 'master' into 3.15.x-202103031418",
+            "tag_name": null
+        },
+        {
+            "hash": "27f4e8b5d93cc5ded69f3a9e7c11b04b68b284d4",
+            "message": "Merge pull request #8350 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "33905ec87bd49e257cba21888e99ea0278705d10",
+            "message": "Fixed the Java Lite build.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f645c7ed07d2d82c8b2356245957d681cd7adbd2",
+            "message": "Fixed spelling errors surfaced by CodeSpell.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d6f0c9b18727809ca6fe2bf22a34fe2a4786e6c8",
+            "message": "Updated changelog.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "899c276248cc21c47c4b1e904a5f712e759cbed7",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8080bebf1f2ff87ef96a24135afe7f82d2eb3d2a",
+            "message": "Merge pull request #8348 from acozzette/3.15.x-202102251545\n\nMerge 3.15.x into master",
+            "tag_name": null
+        },
+        {
+            "hash": "e54403190bcbbb6cdf9b85735843aac2c44ac71e",
+            "message": "Merge branch '3.15.x' into 3.15.x-202102251545\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4baed791f514fec3a82417ae50acfabf841004eb",
+            "message": "Merge pull request #8362 from tony2001/read_property_crash_fixed\n\nread_property() handler is not supposed to return NULL",
+            "tag_name": null
+        },
+        {
+            "hash": "2e7771d7a05a9416c530332f0ebd2c0522c4e6e6",
+            "message": "read_property() handler is not supposed to return NULL\n\nNULL is never expected as a result of read_property() handler,\nit should return &EG(uninitialized_zval) if there is no such property in\nthe object\n",
+            "tag_name": null
+        },
+        {
+            "hash": "85e5204517779bbb6b3523ab516359f581bf0bab",
+            "message": "[bazel] Flip --incompatible_use_com_google_googletest",
+            "tag_name": null
+        },
+        {
+            "hash": "3172ab8ff97aab005d7734627409faa166174232",
+            "message": "Fix endian.h location on FreeBSD\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a4e7b97bd609acf2b8b0eb7c936d37f2eda367ff",
+            "message": "Create a CMake option to control whether or not RTTI is enabled\n\nThis is useful for Conan recipes that build Protobuf, in which\nwhatever we want to enable has to be enabled in the initial command line.\nWithout this, the people maintaining the recipe have to patch the CMake\nsetup of Protobuf before building the binaries.\n\nCloses #5541\n",
+            "tag_name": null
+        },
+        {
+            "hash": "630028a4c6442cfcfabf9c770870a441b3096da8",
+            "message": "Fix cmake install on iOS\n\nFixes:\nINSTALL TARGETS given no BUNDLE DESTINATION for MACOSX_BUNDLE executable\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9d203953a9950a2f2054b9029490940859ba153f",
+            "message": "Fix gcc error: comparison of unsigned expression in '>= 0' is always true [-Werror=type-limits]\n\nThis fixes the following build error:\nIn file included from no_warning_test.cc:7:\n../../src/google/protobuf/parse_context.h: In instantiation of 'const char* google::protobuf::internal::EpsCopyInputStream::AppendUntilEnd(const char*, const A&) [with A = google::protobuf::internal::EpsCopyInputStream::AppendString(const char*, std::string*)::<lambda(const char*, ptrdiff_t)>]':\n../../src/google/protobuf/parse_context.h:366:70:   required from here\n../../src/google/protobuf/stubs/logging.h:161:48: error: comparison of unsigned expression in '>= 0' is always true [-Werror=type-limits]\n  161 | #define GOOGLE_CHECK_GE(A, B) GOOGLE_CHECK((A) >= (B))\n      |                                                ^\n../../src/google/protobuf/stubs/logging.h:151:5: note: in definition of macro 'GOOGLE_LOG_IF'\n  151 |   !(CONDITION) ? (void)0 : GOOGLE_LOG(LEVEL)\n      |     ^~~~~~~~~\n../../src/google/protobuf/stubs/logging.h:161:31: note: in expansion of macro 'GOOGLE_CHECK'\n  161 | #define GOOGLE_CHECK_GE(A, B) GOOGLE_CHECK((A) >= (B))\n      |                               ^~~~~~~~~~~~\n../../src/google/protobuf/stubs/logging.h:201:26: note: in expansion of macro 'GOOGLE_CHECK_GE'\n  201 | #define GOOGLE_DCHECK_GE GOOGLE_CHECK_GE\n      |                          ^~~~~~~~~~~~~~~\n../../src/google/protobuf/parse_context.h:351:7: note: in expansion of macro 'GOOGLE_DCHECK_GE'\n  351 |       GOOGLE_DCHECK_GE(chunk_size, static_cast<size_t>(0));\n      |       ^~~~~~~~~~~~~~~~\ncc1plus: all warnings being treated as errors\n",
+            "tag_name": null
+        },
+        {
+            "hash": "88367afa1ff1c178e33ce9e1214050638a05f4d4",
+            "message": "[C++] Delete StringPiecePod (#8353)\n\nProtobuf no longer supports C++ < 11, so this type is no longer\r\nrequired.",
+            "tag_name": null
+        },
+        {
+            "hash": "e9091e6d8c0adaa83bcb260aa47c316024f1c97a",
+            "message": "Fix some constness / char literal issues being found by MSVC standard conforming mode (#8344)\n\n* Fix some constness / char literal issues being found by MSVC standard conforming mode\r\n\r\n* Switch to const_cast from C-style casts",
+            "tag_name": null
+        },
+        {
+            "hash": "069f989b483e63005f87ab309de130677718bbec",
+            "message": "Merge pull request #8364 from haberman/ruby-memory-footprint\n\n[Ruby] Fixed quadratic memory usage when appending to arrays.",
+            "tag_name": null
+        },
+        {
+            "hash": "88243e45fc3300e7f0c50b1a1c70834249ad974d",
+            "message": "[Ruby] Fixed quadratic memory usage when appending to arrays.\n\nThe code mistakenly called realloc() instead of resize() on every\narray append, causing quadratic memory usage.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "13fa25013a09cbd2cc385363207feedd1a40c858",
+            "message": "Merge branch '3.15.x' into 3.15.x-202103031418\n",
+            "tag_name": null
+        },
+        {
+            "hash": "82f5ecd955391bf6fe35ed08214dd7287764a60d",
+            "message": "Revert \"[bazel] Flip --incompatible_use_com_google_googletest\"\n\nThis reverts commit 85e5204517779bbb6b3523ab516359f581bf0bab.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "50dd5b903c21ccba022bed189be39a5423612219",
+            "message": "Merge pull request #8396 from Yannic/del-flag\n\n[bazel] Remove deprecated way to depend on googletest",
+            "tag_name": null
+        },
+        {
+            "hash": "a3aecacc24f0ce0b05106fb7f7ae3ce9a5e5cd91",
+            "message": "[bazel] Remove deprecated way to depend on googletest\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c6bce8c10f31ddc30e089ac5fb483dffbfa9bd7f",
+            "message": "Remove link to unmaintained TypeScript library\n\ny3llowcake/protoc-gen-ts is no longer maintained:  \r\nhttps://github.com/y3llowcake/protoc-gen-ts/issues/2#issuecomment-758215154\r\n\r\nFWIW, neither is this one w/ a similar name: thesayyn/protoc-gen-ts:  \r\nhttps://github.com/thesayyn/protoc-gen-ts/issues/31#issuecomment-781681955",
+            "tag_name": null
+        },
+        {
+            "hash": "c7a6160a87eea71ac002aefad54c116a108ba010",
+            "message": "Fixes to make the --fatal_warnings flag work with current master\n",
+            "tag_name": null
+        },
+        {
+            "hash": "dedbd63306e4c464b5a58ee9452b388347bd2e06",
+            "message": "Add --fatal_warnings flag to treat warnings as errors\n\nAdd a --fatal_warnings flag that requests that protoc exit with a\nfailing status code if any warnings are generated during compilation.\n\nPartially address #3980.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "6f4573afbd3f01958d5c2898d8b75c17f323ad11",
+            "message": "docs: register Coach Client Connect extension number (1107)\n",
+            "tag_name": null
+        },
+        {
+            "hash": "80fe990b6aef57dd92a3fa2864649cc5643cc0ec",
+            "message": "Merge pull request #6073 from tenderlove/compaction-friendly\n\nRegister mark objects so Protobuf is compaction friendly",
+            "tag_name": null
+        },
+        {
+            "hash": "addd0615bfbc956ca0b9b7328955d0198218e2e7",
+            "message": "Register mark objects so Protobuf is compaction friendly\n\nThis commit removes an unused reference and registers globals with the\nGC so that they will never die.  Ruby is getting a compacting GC, and it\nmeans that these references can move.  Registering them with\n`rb_gc_register_mark_object` will ensure the constants don't move and\nwill not be collected.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "43aca5761385db72e1e8d04997195a262314378a",
+            "message": "Allocate extension 1108 to Kratos API Errors\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a4694f9b66698a3cd197cbab7932bffeb0ea2ab1",
+            "message": "correcting arch name for s390x\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f9c7b5a2845d866a254857a838cbe37ab330cd5f",
+            "message": "Merge pull request #8407 from reznikmm/patch-1\n\nAdd protobuf for Ada",
+            "tag_name": null
+        },
+        {
+            "hash": "b4cddb71d604e52bddd6bf7d2d8311ef11a78dd4",
+            "message": "Add protobuf for Ada",
+            "tag_name": null
+        },
+        {
+            "hash": "3a127ae4fbc9c13645bbcd512090bd493fd5d6ca",
+            "message": "Merge pull request #7744 from Yannic/bazel_bench\n\n[bazel] Add BUILD files for benchmark protos",
+            "tag_name": null
+        },
+        {
+            "hash": "ef70abad8acfc70983585c0d0bb4049bf38dc62e",
+            "message": "Restrict visibility and add target for C++ benchmark\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c5abd97e365d6a99216dbd0ca7c120ad85a6053e",
+            "message": "[bazel] Add BUILD files for benchmark protos\n\nThis change adds BUILD files to //benchmarks that allow\nusers to consume the .proto files in that directory\nto run benchmarks (e.g. for custom generators).\n",
+            "tag_name": null
+        },
+        {
+            "hash": "146d579738acf7c990611365abf09e1f71d8bfc1",
+            "message": "Merge pull request #8405 from Yannic/status-del-error\n\nMake util::Status more similar to absl::Status",
+            "tag_name": null
+        },
+        {
+            "hash": "3a7bd9c236fda465c16b90567f6b8706915da6cb",
+            "message": "Make util::Status more similar to absl::Status\n\nProgress on #3688\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4f8fef0a86c84258c349680beed189dd3309fb35",
+            "message": "Merge pull request #8319 from elharo/patch-4\n\ndeps: update JUnit and Truth",
+            "tag_name": null
+        },
+        {
+            "hash": "947e2e189a9948fee8a624a7ff12802dc3d12e28",
+            "message": "deps: update JUnit and Truth",
+            "tag_name": null
+        },
+        {
+            "hash": "ee35b2da4b6d633eadcc105e5232319b47b494a7",
+            "message": "Merge pull request #8374 from igor-sirotin/feature/cmake-protoc-options\n\n[CMake] Abilty to pass options to protoc executable from cmake",
+            "tag_name": null
+        },
+        {
+            "hash": "5d0c30934bb6a6c1d387b549f5af3a4efcebe2ef",
+            "message": "Added abilty to pass options to protoc executable from cmake\n",
+            "tag_name": null
+        },
+        {
+            "hash": "28dbe3b09bec89706ea7a53c5dc540c42f82abb1",
+            "message": "Merge pull request #8285 from s1341/master\n\nFix missing -llog when compiling for android",
+            "tag_name": null
+        },
+        {
+            "hash": "ee05cc11db9dca7a97e53f27ec206d4edad0ab62",
+            "message": "Fix missing -llog when compiling for android\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f57940391ce9b17eb577d7a1b5a20912276507c0",
+            "message": "Merge pull request #8408 from PatriosTheGreat/master\n\nFix -Wsuggest-destructor-override for generated C++ proto classes.",
+            "tag_name": null
+        },
+        {
+            "hash": "53b0cce27b0d0b3b894bf7a599cf0c9133c7ddd8",
+            "message": "Fix -Wsuggest-destructor-override for generated C++ proto classes.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c3f4b108b3b150bc877d1eb4417955752aa5fbfb",
+            "message": "Changing codespell and mergeable ymls to prepare for opensourcing kotlin protos (#8442)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c47ebfd82be3d07be4f003e2c34c7c86b5d4fced",
+            "message": "Fix maven URL (#8440)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "62c402ae37d86bf0d62ae8f6fbb1df31b6bd7e7e",
+            "message": "Add 'java/lite/target' to .gitignore (#8439)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "e9360dfa53f151e64c996823785e0eb6c8118620",
+            "message": "Merge pull request #8437 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
+            "tag_name": null
+        },
+        {
+            "hash": "7224406161042ad77e066a5c28dac43654fbe5e8",
+            "message": "Updated CHANGES.txt for sync.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c0c6cad1846b1bf429fb02313852c17d80be4d38",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tsrc/google/protobuf/stubs/statusor.h\n",
+            "tag_name": null
+        },
+        {
+            "hash": "b604419d269887e0f34ff4d5fa0d14342a7e680d",
+            "message": "[C++] Refactor uint128 (#8416)\n\n* [C++] Refactor uint128\r\n\r\nThis makes it compatible with absl::uint128\r\n\r\n* Remove use of absl\r\n\r\n* Add header to test\r\n\r\n* Exclude typetraits tests from gcc < 5",
+            "tag_name": null
+        },
+        {
+            "hash": "0ebbd7d7c31c0e0c5bee617cf191c5c53bbd93dd",
+            "message": "Enable crosscompiling aarch64 python wheels under dockcross manylinux docker image (#8280)\n\nThis uses the dockcross manylinux docker image to enable crosscompiling aarch64 python wheels. The wheels built for aarch64 linux are excluded from the release for now, pending testing (pending, in PR#8392).",
+            "tag_name": null
+        },
+        {
+            "hash": "aedb8d726c8d2a371d999354d44ca7e1bdbb1e73",
+            "message": "Added UnsafeByteOperations to protobuf-lite (#8426)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4b770cabd7ff042283280bd76b6635650a04aa8a",
+            "message": "[C++] Refactor StatusOr and StringPiece (#8406)\n\n* [C++] Refactor StatusOr and StringPiece\r\n\r\nThis change makes `StatusOr` and `StringPiece` more like\r\n`absl::StatusOr` and `{absl,std}::string_view`.\r\n\r\nNote that there is more work required before the Abseil types can be\r\nused as drop-in replacement.\r\n\r\nProgress on #3688\r\n\r\n* Fix more errors\r\n\r\n* Fix test\r\n\r\n* Remove some asserts\r\n\r\n* Delete outdate example",
+            "tag_name": null
+        },
+        {
+            "hash": "f82e268ed7fc6b34b092349e473d38020cf55928",
+            "message": "Remove references to stale benchmark data sources.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "600799912a714535f94acb9585e8b77618127053",
+            "message": "Revert \"[C++] Refactor uint128 (#8416)\"\n\nThis reverts commit b604419d269887e0f34ff4d5fa0d14342a7e680d.\n",
+            "tag_name": null
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v27.1",
+    "previous_release": "v27.0",
+    "cycle_days": 13.8703125,
+    "commits": 12,
+    "commits_in_advance": 0,
+    "start_delay": 1.1574074074074073e-05,
+    "duration": 13.870300925925926,
+    "commits_info": [
+        {
+            "hash": "3d9f7c430a5ae1385512908801492d4421c3cdb7",
+            "message": "Updating version.json and repo version numbers to: 27.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "368b9b2492849b818ec903d891909e4cae5a41f7",
+            "message": "Merge pull request #17019 from protocolbuffers/cp-27\n\nCherrypick editions fixes to 27.x",
+            "tag_name": null
+        },
+        {
+            "hash": "2717ae77f6d38f5bb685bec05678a487815d1e0d",
+            "message": "Internal change\n\nPiperOrigin-RevId: 639885959\n",
+            "tag_name": null
+        },
+        {
+            "hash": "9a37881bc8520d0dfdd33bb96fbd3139c56ec7ee",
+            "message": "Always report plugin support errors from protoc.\n\nIf a plugin doesn't support a feature used by a proto file, we can't trust any errors reported by that plugin.  We should always report these types of errors first.  There could be cases where the plugin doesn't correctly specify its support when it hits an error though, so we should *also* report any plugin errors to avoid masking them.\n\nPiperOrigin-RevId: 639984803\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f61d89cf9ec051450cf9cb54182da40706fd1753",
+            "message": "Avoid ODR violations from bootstrapped protos\n\nPiperOrigin-RevId: 639892103\n",
+            "tag_name": null
+        },
+        {
+            "hash": "887e95dade3b93daf6cc14e1ac7ccbccc66053a9",
+            "message": "Fix a bug in edition defaults calculation.\n\nSince the fixed/overridable split can occur whenever a feature is introduced or removed, we need to include those editions in the resulting compiled defaults.  This does bug only affects edition 2024 and later, where features may be removed or introduced in isolation.\n\nPiperOrigin-RevId: 638903990\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d2edc4924f4be6ff9afb18a30905f6e39e5c206a",
+            "message": "Merge pull request #17002 from protocolbuffers/cp-csharp\n\nHandle groups in C# JsonParser (#16970)",
+            "tag_name": null
+        },
+        {
+            "hash": "0e9dd4ca09cdd386ea0c86396aa542dad7238c1e",
+            "message": "Handle groups in C# JsonParser (#16970)\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16968\n\nCloses #16970\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/16970 from CommonGuy:main b008e189348ea42659b52874a5aaad8857d696ab\nPiperOrigin-RevId: 638578696\n",
+            "tag_name": null
+        },
+        {
+            "hash": "838626d594077c3ab4b93bc6d0a4b7872e63bcc1",
+            "message": "Merge pull request #16989 from protocolbuffers/cp-27\n\nMove back deprecation of java utf8 feature to 2024.",
+            "tag_name": null
+        },
+        {
+            "hash": "8ffc1d003071df0fbdf470c38e181c61cc178fa8",
+            "message": "Move back deprecation of java utf8 feature to 2024.\n\nThis doesn't change the support window of the feature, but will make edition 2023 slightly less noisy.\n\nPiperOrigin-RevId: 638750805\n",
+            "tag_name": null
+        },
+        {
+            "hash": "af2ffbbbcee7c3800f19727131ea6c4553287226",
+            "message": "Merge pull request #16928 from protocolbuffers/27.x-202405222140\n\nMerge release commits to 27.x",
+            "tag_name": null
+        },
+        {
+            "hash": "3d2ef52e2a95d5f58e1d67ced14ff51481c2edbf",
+            "message": "Updating version.json and repo version numbers to: 27.1-dev\n",
+            "tag_name": null
+        }
+    ]
+}

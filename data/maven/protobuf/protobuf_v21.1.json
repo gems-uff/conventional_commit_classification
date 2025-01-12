@@ -1,0 +1,58 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v21.1",
+    "previous_release": "v21.0",
+    "cycle_days": 1.807060185185185,
+    "commits": 9,
+    "commits_in_advance": 0,
+    "start_delay": 0.02445601851851852,
+    "duration": 1.7826041666666668,
+    "commits_info": [
+        {
+            "hash": "e73ed1630fdec85d7fb513c166629ed49cd4eb18",
+            "message": "Updating version.json and repo version numbers to: 21.1\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5bbb8f7b2c1e5170068a4ce8cc74860707d3cc20",
+            "message": "Update upb commit to include fix for segmentation fault when instantiating field via repeated field assignment (#10066)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "d4e1c668adcf6feecd6ff0f803edf414d4e92ccf",
+            "message": "Merge pull request #10047 from protocolbuffers/temp\n\nUpdate version.json to: 21.1-dev",
+            "tag_name": null
+        },
+        {
+            "hash": "698d760f8d9579c610f8968aac352291ee3bf91f",
+            "message": "Update version.json to: 21.1-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3b029b1f4f169bd6548f2ddc099debd3619fab8b",
+            "message": "Revert \"Fix cmake install targets (#9822)\" (#10060)\n\nThis reverts commit c80808ce1defa4a6f02ceba8e1415b0bcdd068fd.\r\n\r\nThix fixes #10045. Somehow the change caused these four .cmake files to\r\nstop being installed:\r\n\r\nprotobuf-config.cmake\r\nprotobuf-config-version.cmake\r\nprotobuf-module.cmake\r\nprotobuf-options.cmake\r\n\r\nAfter reverting the change, I confirmed that the files are being\r\ninstalled again.",
+            "tag_name": null
+        },
+        {
+            "hash": "16a86804c08b1101406f655e6b09b6c56effd034",
+            "message": "Update upb commit/sha256 to include updated python wheel (#10058)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f7e2e0b301f52df1f2fdab32dd9bf5567d970d92",
+            "message": "Remove Abseil dependency from CMake build (#10056)\n\n* Revert \"Added cmake abseil include guard\"\r\n\r\nThis reverts commit b6ee841d7cf1792ff6d21a349c4f838255c4fd7f.\r\n\r\n* Revert \"Update CMake configuration to add a dependency on Abseil (#9793)\"\r\n\r\nThis reverts commit e9246cd789d250727cbc03884795d92ed1f09a88.",
+            "tag_name": null
+        },
+        {
+            "hash": "30f446820dd6185b9be4c6b256943bb2ca1268f1",
+            "message": "Add endian.h to includes list (#10057)\n\nClient code is breaking due to missing include.  (endian.h was added in 9e09343 but didn't make it into this list, so it wasn't getting installed)\r\n\r\nCo-authored-by: boscosiu <boscosiu@users.noreply.github.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "e7e8f04a4ff0df9c7233ac0fcb3c41b9b84e174c",
+            "message": "Merge pull request #10044 from protocolbuffers/21.x-202205252102\n\nUpdate versions and changelog for 21.x",
+            "tag_name": null
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v28.3",
+    "previous_release": "v28.2",
+    "cycle_days": 34.00912037037037,
+    "commits": 14,
+    "commits_in_advance": 0,
+    "start_delay": 1.1574074074074073e-05,
+    "duration": 34.009108796296296,
+    "commits_info": [
+        {
+            "hash": "5fda5abda3dee5f7a102c85860594bff8d8610bd",
+            "message": "Updating version.json and repo version numbers to: 28.3\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe30f9a1d14e8f2b85987d4eed5c5594e6cf801f",
+            "message": "Mute the minor version warning https://github.com/protocolbuffers/protobuf/issues/18096 (#18923)\n\nPiperOrigin-RevId: 676977787\r\n\r\nCo-authored-by: Protobuf Team Bot <protobuf-github-bot@google.com>",
+            "tag_name": null
+        },
+        {
+            "hash": "d82fb4710c08b763064c27dee3849af499641ffa",
+            "message": "Populate Kotlin Manifest Files (#18859)\n\n* Give Kotlin jars an OSGi Manifest (#18812)\r\n\r\nExtend our Java OSGi library to have a version that works for Kotlin. Add a `protobuf_versioned_kt_jvm_library` that creates a bundle with the OSGi manifest and call that instead of `kt_jvm_library` for all our kotlin maven release targets.\r\n\r\nCloses #18812\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/18812 from deannagarcia:kotlinOSGi 81bab06f61983c6aff6d3d009faf76c99371a358\r\nPiperOrigin-RevId: 686220820\r\n\r\n* Use old name of rules_kotlin",
+            "tag_name": null
+        },
+        {
+            "hash": "ce5174aa57e448ff6ca253fb9a56f3cfe502d2c9",
+            "message": "Merge pull request #18798 from protocolbuffers/gberg-cp-28\n\nFix compatibility issues with 3.22 gencode",
+            "tag_name": null
+        },
+        {
+            "hash": "3b62d78dc70d2b43af5998d427452246279363c7",
+            "message": "Re-export includingDefaultValueFields in deprecated state for important Cloud customer.\n\nPiperOrigin-RevId: 684555053\n",
+            "tag_name": null
+        },
+        {
+            "hash": "3ea568a9b6107ebf0d617c476f53a31490fd3182",
+            "message": "cherrypick restoration of mutableCopy helpers\n",
+            "tag_name": null
+        },
+        {
+            "hash": "fe3bb07da84f50234f5d7fe2b5e3eed46712ea4c",
+            "message": "Merge pull request #18616 from deannagarcia/28.x\n\nRemove javaopts requiring java8 in non-release builds.",
+            "tag_name": null
+        },
+        {
+            "hash": "664a7e1cd37b6743126411d0af16990b92cde055",
+            "message": "Fix merge conflicts\n",
+            "tag_name": null
+        },
+        {
+            "hash": "63076f55e0af71b0488878f295b395a464ad21e3",
+            "message": "Merge pull request #18561 from protocolbuffers/28.x_no_vision_tests\n\n[ObjC] Disabling visionOS on CI",
+            "tag_name": null
+        },
+        {
+            "hash": "22cd8ba0507488a6d73bea728c3fdf0e2594732f",
+            "message": "[ObjC] Disabling visionOS on CI.\n\nGithub dropped support for the current image:\nhttps://github.com/actions/runner-images/issues/10559\n\nThere is a new image that has visionOS, but it is listed as\n\"beta\", so it might make sense to wait and revisit when\ngenerally updating the macOS images/tools.\n\nPiperOrigin-RevId: 679264196\n\n[ObjC] Disabling visionOS on CI.\n\nGithub dropped support for the current image:\nhttps://github.com/actions/runner-images/issues/10559\n\nThere is a new image that has visionOS, but it is listed as\n\"beta\", so it might make sense to wait and revisit when\ngenerally updating the macOS images/tools.\n\nPiperOrigin-RevId: 679264196\n\n[ObjC] Disabling visionOS on CI.\n\nGithub dropped support for the current image:\nhttps://github.com/actions/runner-images/issues/10559\n\nThere is a new image that has visionOS, but it is listed as\n\"beta\", so it might make sense to wait and revisit when\ngenerally updating the macOS images/tools.\n\nPiperOrigin-RevId: 679264196\n",
+            "tag_name": null
+        },
+        {
+            "hash": "c4124f9ec9185c6e9a9fdca4e41a00a1223ddca5",
+            "message": "Fix packed reflection handling bug in edition 2023. (#18405)\n\nThis is a very narrow edge case where touching a packed extension via generated APIs first, and then doing so reflectively will trigger a DCHECK.  Otherwise, reflective APIs will work but not use packed encoding for the extension.  This was likely a pre-existing bug dating back to proto3, where it would only be visible on custom options (the only extensions allowed in proto3).\r\n\r\nTo help qualify this and uncover similar issues, unittest.proto was migrated to editions.  This turned up some other minor issues in DebugString and python.\r\n\r\nPiperOrigin-RevId: 675785611",
+            "tag_name": null
+        },
+        {
+            "hash": "586e564b8072bc78ef5dc29fe2f0af7ad8929793",
+            "message": "Merge pull request #18401 from protocolbuffers/28.x-202409182056\n\nMerge release commits to 28.x",
+            "tag_name": null
+        },
+        {
+            "hash": "061326b00b072a6985b515fa6e305809777e08eb",
+            "message": "Updating version.json and repo version numbers to: 28.3-dev\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8e94b1493c5095c00bb7f4232558c3a4a7618228",
+            "message": "Update staleness tests to only run over release branch (#18398)\n\n",
+            "tag_name": null
+        }
+    ]
+}

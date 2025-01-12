@@ -1,0 +1,53 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v23.2",
+    "previous_release": "v23.1",
+    "cycle_days": 8.904467592592592,
+    "commits": 8,
+    "commits_in_advance": 1,
+    "start_delay": -19.114745370370372,
+    "duration": 28.019212962962964,
+    "commits_info": [
+        {
+            "hash": "a74f54b724bdc2fe0bfc271f4dc0ceb159805625",
+            "message": "Updating version.json and repo version numbers to: 23.2\n",
+            "tag_name": null
+        },
+        {
+            "hash": "45ddc11b507d2ed19edfd4ce0695326398a15bda",
+            "message": "Update upb dependency (#12907)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "91e5e6e76d724b8a459d6c87079e76b3f174db32",
+            "message": "Merge pull request #12906 from mkruskal-google/java-fix-23\n\nAutomated rollback of commit 4d76f12a82bc53cc2d846e65dd8c4bce6c1d4645.",
+            "tag_name": null
+        },
+        {
+            "hash": "b556b8871cd07971b09df7b73ff6a461d78560fb",
+            "message": "Automated rollback of commit 4d76f12a82bc53cc2d846e65dd8c4bce6c1d4645.\n\nPiperOrigin-RevId: 535306235\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ab367ad73d27fd6da9f352038e4a5d618fa6e47a",
+            "message": "Merge pull request #12852 from fowles/23.x\n\nfix missing int32_t (#12554)",
+            "tag_name": null
+        },
+        {
+            "hash": "5bc7e020363a5f2bc98f310a2cbdc1214f94889c",
+            "message": "fix missing int32_t (#12554)\n\nFix for unknown type `int32_t` in `src/google/protobuf/compiler/objectivec/text_format_decode_data.h`\n\nIssue encountered when building with GCC 13 (MinGW-w64 on Windows 64-bit).\n\nError:\n```\nIn file included from R:/winlibs-gcc13-64/protobuf-22.3/src/google/protobuf/compiler/objectivec/text_format_decode_data.cc:31:\nR:/winlibs-gcc13-64/protobuf-22.3/src/google/protobuf/compiler/objectivec/text_format_decode_data.h:59:18: error: 'int32_t' has not been declared\n   59 |   void AddString(int32_t key, const std::string& input_for_decode,\n      |                  ^~~~~~~\nR:/winlibs-gcc13-64/protobuf-22.3/src/google/protobuf/compiler/objectivec/text_format_decode_data.h:68:21: error: 'int32_t' was not declared in this scope\n   68 |   typedef std::pair<int32_t, std::string> DataEntry;\n      |                     ^~~~~~~\nR:/winlibs-gcc13-64/protobuf-22.3/src/google/protobuf/compiler/objectivec/text_format_decode_data.h:40:1: note: 'int32_t' is defined in header '<cstdint>'; did you forget to '#include <cstdint>'?\n   39 | #include \"google/protobuf/port_def.inc\"\n  +++ |+#include <cstdint>\n   40 |\n```\n\nCloses #12554\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/12554 from brechtsanders:patch-1 0ab04b43b6c0172fee9e15669fe1aea7e351129f\nPiperOrigin-RevId: 527667592\n",
+            "tag_name": null
+        },
+        {
+            "hash": "a171d20df326b554497963c3bf7719e4e38061c3",
+            "message": "Merge pull request #12845 from protocolbuffers/23.x-202305171614\n\n23.x 202305171614",
+            "tag_name": null
+        },
+        {
+            "hash": "3cda141b4d6212f73baade23ef5b975342d7a60b",
+            "message": "Updating version.json to: 23.2-dev\n",
+            "tag_name": null
+        }
+    ]
+}

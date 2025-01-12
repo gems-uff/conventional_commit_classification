@@ -1,0 +1,93 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.10.0",
+    "previous_release": "v3.9.0",
+    "cycle_days": 34.06638888888889,
+    "commits": 16,
+    "commits_in_advance": 2,
+    "start_delay": -11.923414351851852,
+    "duration": 45.98980324074074,
+    "commits_info": [
+        {
+            "hash": "544cc758bbf6c8b14e5d18ec395b98e11375d8e5",
+            "message": "Merge pull request #2292 from mockito/fix-stackoverflow\n\nFix stackoverflow in ArgumentsAreDifferent reporting",
+            "tag_name": null
+        },
+        {
+            "hash": "a53876d6b18a37fc741a0f7f716112aeee9cb814",
+            "message": "Fix stackoverflow in ArgumentsAreDifferent reporting\n\nWhen using Mockito without opentest4j, reporting an\nArgumentsAreDifferent exception would throw a StackOverflowError when\nattempting to obtain the message from the exception.\n\nThe root problem was that super.toString() would call its own\ngetMessage(). Instead, we should obtain the message from the super, to\navoid the circular call.\n",
+            "tag_name": null
+        },
+        {
+            "hash": "067ff2446ad08d49a634374d04dd0e6913e1259c",
+            "message": "Bump biz.aQute.bnd.gradle from 5.2.0 to 5.3.0 (#2291)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ff29c0bf84125b8c08f5808c311997dc4edefd48",
+            "message": "Merge pull request #2243 from mockito/ci\n\nCI overhaul, migrated from Bintray",
+            "tag_name": null
+        },
+        {
+            "hash": "1e20c6966d0fbb642b98f23eb2fc53bf6134b023",
+            "message": "Fixed CI triggers\n",
+            "tag_name": null
+        },
+        {
+            "hash": "f25e46602955c5ade1dcf441b50eed0bbc7db959",
+            "message": "Fixed issue in iml",
+            "tag_name": null
+        },
+        {
+            "hash": "78b821c933ed429e5572d4c4f5d0f58736aecf17",
+            "message": "Fixed bug in yml\n",
+            "tag_name": null
+        },
+        {
+            "hash": "cef375d00cf895f1f9fcf7d5f0df6811a7ed3cfd",
+            "message": "Minor fixes, locked versions\n",
+            "tag_name": null
+        },
+        {
+            "hash": "17239aec26a22d8c895ac6b8de1e11dd00c00acd",
+            "message": "Updated readme\n",
+            "tag_name": null
+        },
+        {
+            "hash": "4392c42dc16004135a6acff08159cfbe1cc3a929",
+            "message": "Added release summary\n",
+            "tag_name": null
+        },
+        {
+            "hash": "ef9ada45b4146ce37ad173efd16b0fac822ee9e0",
+            "message": "CI overhaul\n",
+            "tag_name": null
+        },
+        {
+            "hash": "587b78e60d8e381d631fc8e3e19837a9516879d5",
+            "message": "Progress on CI overhaul\n",
+            "tag_name": null
+        },
+        {
+            "hash": "bc93f4116c63959b1a6a149aaa0d45b04dfae3a2",
+            "message": "CI overhaul\n\nWe need to remove the dependency on Bintray/JCenter\n",
+            "tag_name": null
+        },
+        {
+            "hash": "8f95dcaa68e7bb76b597353739046274929da418",
+            "message": "Support mocking of function with Kotlin inline classes (#2280)\n\nDespite functions with inline class parameters being already supported,\r\nthere were not tests for it. Thus, add them.\r\n\r\nThe other part is functions, returning inline classes. There can be several\r\nkinds of inline classes - with primitive underlying type (nullable or not-null)\r\nand reference types (nullable or not-null). Also, a function can return either\r\nnullable of not-null inline class. If a function returns nullable inline class,\r\nwe do not do anything special - the function's signature contains inline class.\r\nHowever, if the function returns not-null inline class, its signature contains\r\nunderlying type, thus, we need to unbox the inline class (i.e. get underlying\r\ntype's value) to mock the return value.\r\n\r\nFor example, if we have the following inline class\r\n\r\n  inline class IC(val i: Int)\r\n\r\nand we want to mock return value of a function, returning the inline class\r\n\r\n  fun returnsIC(): IC\r\n\r\nlike\r\n\r\n  `when`(mock.returnsIC()).thenReturn(IC(1))\r\n\r\nthen if we do not unbox the argument of `thenReturn` function, we get error\r\nabout incompatible types.\r\n\r\nThe only issue, however, is that we cannot check, whether the function indeed\r\nreturns `IC`, unless we use kotlin.reflect. So, the following code will work.\r\n\r\n  fun returnsInt(): Int\r\n\r\n  `when`(mock.returnsInt()).thenReturn(IC(1))\r\n\r\nFixes issue #1930",
+            "tag_name": null
+        },
+        {
+            "hash": "ff55022c57efaa16c80d32234825aae502c75dad",
+            "message": "Improve error messages in case of missing dependency on Byte Buddy and avoid hard dependency on Byte Buddy in member accessor. (#2283)\n\n",
+            "tag_name": null
+        },
+        {
+            "hash": "5a0cb27b7064588ae33536f0d997945c3246892c",
+            "message": "Bump shipkit-auto-version from 1.1.8 to 1.1.9 (#2284)\n\n",
+            "tag_name": null
+        }
+    ]
+}
