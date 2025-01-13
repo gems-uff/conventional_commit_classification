@@ -45,7 +45,11 @@ def mine_project_data(project_data: dict) -> dict:
         # Recupera o caminho do repositório e o nome do projeto
         platform = project_data['platform']
         repo_url = project_data['repo_url']
-        repo_name = repo_url.split("/")[-1]
+        try:
+            owner, repo_name = repo_url.split("/")[-2], repo_url.split("/")[-1]
+        except IndexError:
+            logger.error(f"URL mal formatada: {repo_url}")
+            return {}
 
         # O caminho do repositório de mineração
         repo_path = os.path.join(REPO_PATH, platform, repo_name)
@@ -64,10 +68,10 @@ def mine_project_data(project_data: dict) -> dict:
         elapsed_seconds = (end_time - start_time).total_seconds()
         logger.info(f"Mineração concluída em {elapsed_seconds} segundos para o projeto {project_data.get('name')}")
 
-        # Inclui a plataforma no dicionário de dados do projeto
         return {
             'platform': platform,
             'project': project.name,
+            'owner': owner,  # Inclui o owner
             'prefixes': len(project.releases.prefixes()),
             'prefixes_names': " ".join(project.releases.prefixes()),
             'main_releases': len(project.main_releases),
@@ -75,6 +79,7 @@ def mine_project_data(project_data: dict) -> dict:
             'releases': len(project.releases),
             'time': elapsed_seconds,
         }
+
 
     except Exception as err:
         logger.error(f"Erro ao processar o projeto '{project_data['name']}': {err}")

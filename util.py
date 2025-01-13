@@ -10,6 +10,7 @@ def project_root() -> Path:
 # Define os caminhos dos diretórios de interesse
 DATA_PATH: Path = project_root() / 'data'
 CORPUS_PATH: Path = project_root() / 'corpus'
+ISSUE_PATH: Path = project_root() / 'issues'
 BASE_DIR = Path(__file__).resolve().parent
 ROOT_DIR = BASE_DIR.parent
 REPO_PATH = os.path.expanduser("~/Documents/repos")

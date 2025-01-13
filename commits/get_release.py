@@ -6,17 +6,65 @@ import traceback
 from multiprocessing import Pool
 import sys
 import os
+import re
 from pathlib import Path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from util import DATA_PATH, REPO_PATH, CPU, delta2days, get_cycle, get_duration, get_start_delay, get_commits_in_advance
+from util import DATA_PATH, REPO_PATH, ISSUE_PATH, CPU, delta2days, get_cycle, get_duration, get_start_delay, get_commits_in_advance
 
 DATA_PATH = Path(DATA_PATH)
 REPO_PATH = Path(REPO_PATH)
+ISSUE_PATH = Path(ISSUE_PATH)
+
+def process_issues_association(project: dict) -> None:
+    """
+    Realiza a associação entre commits e issues.
+    """
+    platform = project['platform']
+    repo_name = project['project']
+
+    project_dir = DATA_PATH / platform / repo_name
+    issues_file = ISSUE_PATH / platform / repo_name / f"{repo_name}.json"
+
+    # Carregar issues, se existirem
+    if issues_file.exists():
+        with open(issues_file, 'r', encoding='utf-8') as f:
+            issues_data = json.load(f)
+    else:
+        print(f"Arquivo de issues não encontrado para {repo_name}. Pulando associação.")
+        return
+
+    # Criar um mapa de issues para busca rápida
+    issues_map = {str(issue['number']): issue['title'] for issue in issues_data}
+
+    # Processar arquivos de saída
+    for output_file in project_dir.glob(f"{repo_name}_*.json"):
+        with open(output_file, 'r', encoding='utf-8') as f:
+            release_data = json.load(f)
+
+        for commit in release_data.get('commits_info', []):
+            commit_message = commit['message']
+            # Buscar referências a issues no formato #número ou gh-número
+            referenced_issues = re.findall(r'#(\d+)|gh-(\d+)', commit_message)
+
+            associated_issues = []
+            for match in referenced_issues:
+                issue_number = match[0] or match[1]  # Pega o número detectado
+                if issue_number in issues_map:
+                    associated_issues.append({
+                        'number': issue_number,
+                        'title': issues_map[issue_number]
+                    })
+
+            # Adiciona as issues associadas ao commit
+            commit['issues'] = associated_issues
+
+        # Salva novamente o arquivo com as associações
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(release_data, f, indent=4, ensure_ascii=False)
 
 def mine(project: dict) -> tuple:
     elapsed_time = datetime.datetime.now()
     project_data = {}
-    release_data = []
 
     try:
         platform = project['platform']
@@ -51,11 +99,12 @@ def mine(project: dict) -> tuple:
             commits_info = []
             for commit in release.commits:
                 commit_obj = repo.get(commit.id)
-                commit_message = commit_obj.message
+                commit_message = commit_obj.message.strip()
 
                 commits_info.append({
                     'hash': commit.id,
                     'message': commit_message,
+                    'issues': []  # Campo vazio, preenchido posteriormente
                 })
 
             release_data = {
@@ -88,7 +137,6 @@ def mine(project: dict) -> tuple:
 
     return project_data
 
-
 # Processamento por plataforma
 platforms = ['maven']  # Adicione as plataformas necessárias
 results = []
@@ -103,6 +151,12 @@ for platform in platforms:
         platform_results = pool.map(mine, projects)
         results.extend(platform_results)
 
-output_data = []
-for project_result in results:
-    output_data.append(project_result)
+# Após processar todos os projetos, realizar associação com issues
+for platform in platforms:
+    input_file = DATA_PATH / f"{platform}_projects_selected.json"
+
+    with open(input_file, mode='r') as file:
+        projects = json.load(file)
+
+    for project in projects:
+        process_issues_association(project)
