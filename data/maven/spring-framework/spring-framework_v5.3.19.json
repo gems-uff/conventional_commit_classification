@@ -1,0 +1,158 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.19",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 25,
+    "start_delay": 0.0,
+    "duration": 43.51991898148148,
+    "commits_info": [
+        {
+            "hash": "cedb5874b72c3311c8c6e2f03a53537590f2e0dc",
+            "message": "Release v5.3.19"
+        },
+        {
+            "hash": "a7cf19cec5ebd270f97a194d749e2d5701ad2ab7",
+            "message": "Improve documentation and matching algorithm in data binders"
+        },
+        {
+            "hash": "0cf7f7bd890504061883c48e382dc23e0c5d4df0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "949c3d450c35b676b82a4a56ada997cf9a552f1d",
+            "message": "Align plain accessor check"
+        },
+        {
+            "hash": "3b4ae7b028799e6b9f33e44ead1d9038d0d55b47",
+            "message": "TomcatHttpHandlerAdapter continues after 0 bytes\n\nThis commit makes sure that TomcatServerHttpRequest::readFromInputStream\nfollows the same contract as the method it overrides, and returns\nAbstractListenerReadPublisher.EMPTY_BUFFER when 0 bytes are read.\n\nSee gh-28241"
+        },
+        {
+            "hash": "8b396985534268c59509f60a1f7d50c47a7d2bbd",
+            "message": "Upgrade to Reactor 2020.0.18\n\nCloses gh-28329"
+        },
+        {
+            "hash": "6fad00ed222c48f9d845bcea9d5a50dcf7c2a169",
+            "message": "Ensure dynamic proxy with AOP introduction includes lambda interfaces\n\nCloses gh-28209"
+        },
+        {
+            "hash": "5f6d8df34b00811cbd6723b51815923b80b7a4c6",
+            "message": "Introduce isLambdaClass() as a public utility in ClassUtils\n\nThis commit extracts isLambda() from AopProxyUtils and makes it\npublicly available as ClassUtils.isLambdaClass().\n\nThis is a prerequisite for gh-28209."
+        },
+        {
+            "hash": "35de7e19ee2874d53b9078f6fed14c08c634f1ff",
+            "message": "Introduce initializer callback for Bean Validation Configuration\n\nCloses gh-27956"
+        },
+        {
+            "hash": "10e979e58b66ace7241c013e1684251d3d325d81",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4143b445d6328040e3697208ed3ac4a3a15cb2cb",
+            "message": "Polishing"
+        },
+        {
+            "hash": "eefdd2c768cbacdc97839ede2209a630cf1f0d3e",
+            "message": "Avoid return value reference in potentially cached MethodParameter instance\n\nCloses gh-28232"
+        },
+        {
+            "hash": "9f9116839681909388fd87bf481a3d5cd353c9aa",
+            "message": "Restore ability to configure setClassLoader methods\n\nCloses gh-28269"
+        },
+        {
+            "hash": "7aed6279a284283f079290f44c5d0eee7bef7cda",
+            "message": "Consistent fallback in case of fast-class generation failure\n\nCloses gh-28138"
+        },
+        {
+            "hash": "c3fe112fd7517cc350a868d3af9995d189cbdfb6",
+            "message": "Consistent use of getLocalAddr() without DNS lookups in request adapters\n\nCloses gh-28280"
+        },
+        {
+            "hash": "90103b0ae99361a21a21c5306fa85b1614a4e2fb",
+            "message": "Consistent support for direct column matches in DataClassRowMapper\n\nCloses gh-28243"
+        },
+        {
+            "hash": "0cf15c0fdd54a894e518928809600fdf5d87f0dd",
+            "message": "Upgrade to Tomcat 9.0.62, Jetty 9.4.46, Jetty Reactive HttpClient 1.1.11, Undertow 2.2.17, R2DBC Arabba-SR13, RSocket 1.1.2, OpenPDF 1.3.27, HtmlUnit 2.60, Checkstyle 10.1"
+        },
+        {
+            "hash": "4e9af3e277e64ff6bacb9a925c9058b7d17d3400",
+            "message": "Upgrade Java 18 in CI image"
+        },
+        {
+            "hash": "01fd489b47f8f2a3e1fdb5a3779c930c29e9ee57",
+            "message": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "hash": "270b167e083a6b8461d2d865c794e922180fc567",
+            "message": "Upgrade registry-image-resource in CI pipeline to 1.5.0\n\nSee spring-projects/spring-boot#30408"
+        },
+        {
+            "hash": "b158110801db32b50243be538165274551a49512",
+            "message": "Fix debug log for no matching acceptableTypes"
+        },
+        {
+            "hash": "17f7a241184a7955d92ff04456400fb367755f62",
+            "message": "Add application/graphql+json mime and media types\n\nCloses gh-28271"
+        },
+        {
+            "hash": "d518a7d8c81e2cf7484942c37836219b3669240d",
+            "message": "AbstractListenerReadPublisher continues after 0 bytes\n\nIf we read 0 bytes, e.g. chunked encoding markup read but not the\nactual data within it, don't stop reading since the server may or\nmay not consider it necessary to call onDataAvailable again.\nInstead, we keep on reading, and although isReady likely returns\nfalse on the next iteration, it eliminates ambiguity and ensures\nthe server will call onDataAvailable when more data arrives.\n\nCloses gh-28241"
+        },
+        {
+            "hash": "24cd3c1f4cfe34c17b79da1dd383112981f99de4",
+            "message": "Revert \"Disable flaky integration tests for now\"\n\nThis reverts commit 1627f57f1f77abe17dd607c75476b9e4cb22ffbb in\npreparation for fixing the root cause"
+        },
+        {
+            "hash": "2a8c369cffd4614e7c06b7ee5387f135dd29d38d",
+            "message": "Next development version (v5.3.19-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28241",
+            "title": "AbstractListenerReadPublisher does not call `ServletOutputStream::isReady()` when reading chunked data across network packets"
+        },
+        {
+            "number": "28329",
+            "title": "Upgrade to Reactor 2020.0.18"
+        },
+        {
+            "number": "28209",
+            "title": "Lambda proxy generation fix causes BeanNotOfRequiredTypeException"
+        },
+        {
+            "number": "27956",
+            "title": "Provide support for post-processing a LocalValidatorFactoryBean's validator Configuration without requiring sub-classing"
+        },
+        {
+            "number": "28232",
+            "title": "ResponseEntity objects are accumulated in ConcurrentReferenceHashMap"
+        },
+        {
+            "number": "28269",
+            "title": "NotWritablePropertyException when attempting to declaratively configure ClassLoader properties"
+        },
+        {
+            "number": "28138",
+            "title": "CodeGenerationException thrown when using AnnotationMBeanExporter on JDK 17"
+        },
+        {
+            "number": "28280",
+            "title": "Remove DNS lookups during websocket connection initiation"
+        },
+        {
+            "number": "28243",
+            "title": "BeanPropertyRowMapper's support for direct column name matches is missing in DataClassRowMapper"
+        },
+        {
+            "number": "30408",
+            "title": "Documentation: ServletUriComponentsBuilder returns encoded UCBs"
+        },
+        {
+            "number": "28271",
+            "title": "Add application/graphql+json Media type and MIME type constants"
+        }
+    ]
+}

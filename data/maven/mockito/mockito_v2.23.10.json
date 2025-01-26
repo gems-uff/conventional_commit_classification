@@ -1,0 +1,65 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 15.696701388888888,
+    "commits_info": [
+        {
+            "hash": "7a3569e987c16bc74e21329e95f9954e40b38cfb",
+            "message": "2.23.10 release (previous 2.23.9) + release notes updated by CI build 3714\n\n[ci skip-release]"
+        },
+        {
+            "hash": "17817131f5210cb7fec95072b21d98099f517674",
+            "message": "Prevent StackOverflowError when processing reversed generics (#1565)\n\nWhen processing the reverse method, the type parameters are actually\r\nreversed compared to the type parameters in the class. This subsequently\r\nconfuses GenericMetadataSupport, as it creates a cycle in\r\n`contextualActualTypeParameters`. In that case A resolves to B, while B\r\nresolves to A.\r\n\r\nThe root cause is that we are processing type parameters of methods,\r\nwhile we already processed them in the class declaration. Therefore,\r\nignore any type parameters if we already derived the appropriate\r\ncontextual type parameter."
+        },
+        {
+            "hash": "18990118a96da215a28feccf709d86025d04a06b",
+            "message": "Simplify travis.yml (openjdk10 and openjdk11) (#1560)\n\n* Simplify travis.yml (openjdk10 and openjdk11)\r\n\r\n* Remove no longer needed wget of install-jdk.sh\r\n\r\n* Remove allow_failures in travis.yml"
+        },
+        {
+            "hash": "fdabb9bf3273b51f09ea9f287d4d48b9a23fca1c",
+            "message": "Use errorprone gradle plugin v0.6 and extract errorprone config (#1558)"
+        },
+        {
+            "hash": "08b639d3d9fd6ecd04204ae0eba6e54c57bc2580",
+            "message": "Use jacoco 0.8.2 (#1559)\n\nsee https://github.com/jacoco/jacoco/releases/tag/v0.8.2 for details"
+        },
+        {
+            "hash": "51a77d3228bd6dc83e3ae36bb168eb5098602809",
+            "message": "Merge pull request #1546 from epeee/build-cache\n\nEnable gradle build cache"
+        },
+        {
+            "hash": "19d04f89d4b6e6ad7aff27ec99f44df88d563409",
+            "message": "Rely on build cache defaults"
+        },
+        {
+            "hash": "bbffd5a58e61e3514270e248799926e2693c9740",
+            "message": "Disable local build cache if we are in CI"
+        },
+        {
+            "hash": "abedaf62d975ed18b7ea9d1c57795c6a8af8919f",
+            "message": "Enable gradle build cache"
+        },
+        {
+            "hash": "445d92ac89fa131b62c6133b78c832cc5e4ceebf",
+            "message": "Merge pull request #1555 from mockito/next-jacoco\n\nFixed JaCoCo build cache issue"
+        },
+        {
+            "hash": "08cca64d76a3a4a9071dafe9ae7c63de5aba5322",
+            "message": "Added comment/TODO about Gradle 5"
+        },
+        {
+            "hash": "a5d45a0e224d3a80b2293b52a6d3102a99267b22",
+            "message": "Added build scan to coverage command"
+        },
+        {
+            "hash": "6ad1135eb4b93e5aa2866f27bb933b28edc0da2a",
+            "message": "Fixed JaCoCo build cache issue\n\nJacoco Gradle plugin breaks cacheability, hence we only configure the plugin on demand.\n\nBumped Build Scans plugin so that it is easier to debug build cache issues.\n\nThis PR is needed for #1546"
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,578 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.22",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 125,
+    "start_delay": 0.0,
+    "duration": 1512.1563194444445,
+    "commits_info": [
+        {
+            "hash": "effa4e9474faf7e2faae89f55f8b3288bb92c69c",
+            "message": "[release] pre-release version bump"
+        },
+        {
+            "hash": "d07ffaa17dfc2442caf8879a8025bef5e5d33c40",
+            "message": "[trivial] small update to changelog"
+        },
+        {
+            "hash": "2c9c2fefdb346b6dd13a4525395d5a7fb004b299",
+            "message": "Upgraded lombok.patcher dep to 0.26. (Which updates ASM to be Java10/11 compatible)."
+        },
+        {
+            "hash": "c91753fcec84dc3f94b935ef9c95eea0630f3888",
+            "message": "[authors] Added Pascal Bihler to author list and restored alphabetical order"
+        },
+        {
+            "hash": "d4388781271a3b0ae1ab42a0250e6b6f0c8219b0",
+            "message": "Update docs."
+        },
+        {
+            "hash": "6045c1b8f524064a492b0dae9fbfbe89a1dca232",
+            "message": "Generate default no-args constructor"
+        },
+        {
+            "hash": "4fb9c6f7f82d020a9ebcae9816e911ecd4c047a4",
+            "message": "[documentation] documenting the new-style include/exclude of ToString and EqualsAndHashCode"
+        },
+        {
+            "hash": "649a7b72bf8119e286e991bce29fb63bdb26c09d",
+            "message": "[new-style include/exclude] added new-style include/exclude support to EqualsAndHashCode."
+        },
+        {
+            "hash": "323cc5267e5c86277c0e3edfb16755202cec04ba",
+            "message": "fixes #1580 - documenting Pascal Bihler's contribution to making lombok run better with gradle"
+        },
+        {
+            "hash": "366d18c8614d00e17447781796c65ee693251d5c",
+            "message": "Merge pull request #1680 from pbi-qfs/gradleIncremental\n\nAllow gradle incremental compiling with lombok"
+        },
+        {
+            "hash": "a2623f1965848cb941374f70ae008f56d7738736",
+            "message": "Allow gradle incremental compiling with lombok in annotation processor path\n\nFixes issue #1580"
+        },
+        {
+            "hash": "a9aafe2d794b7c0aacb37c7b4e6ba1ec359dc2a9",
+            "message": "docker bazel: use local lombok.jar file"
+        },
+        {
+            "hash": "1230d449b4e0db48463ce379a1656be3cf499261",
+            "message": "docker: use openjdk for java9"
+        },
+        {
+            "hash": "7d581273601cba888e0bb4ec53de5af05eb72c93",
+            "message": "docker: add bazel"
+        },
+        {
+            "hash": "87ad2f6f5973c355131927d7c4250236c04f7eab",
+            "message": "update docker files and documentation"
+        },
+        {
+            "hash": "3ea12bdeba0936b4022e731282fd33c9c077e2d7",
+            "message": "jdk10: update download for the jdk"
+        },
+        {
+            "hash": "90b699ef1002d3600ecc291058bd05b1dec813fd",
+            "message": "document fix in edge release"
+        },
+        {
+            "hash": "b081e6c968817fe5df57b359ad04fc3f4580d38c",
+            "message": "Allow onMethod and onParam in @Getter and @Setter if it is put on a type"
+        },
+        {
+            "hash": "a27826b268c28a7aa1596bb07461ab1cfb113d82",
+            "message": "[bugfix] generics on inner classes whose outer type has generics, when the outer type is an interface, caused bugs in ecj."
+        },
+        {
+            "hash": "472d602693bdccde135ff084c44bfebd285a2101",
+            "message": "[bugfix] onMethod_ in javac was broken; javac would throw an IllegalArgumentException."
+        },
+        {
+            "hash": "44abd07764d2bd94e89a22d4569f6f97e343553d",
+            "message": "move javadoc to public method"
+        },
+        {
+            "hash": "c0a3ad3d18f1028b0bce598f0be275713249accf",
+            "message": "Merge pull request #1670 from kdaemonv/hotfix-1\n\nRevert some changes from f540335 which break the build"
+        },
+        {
+            "hash": "e6532bbe94f9b5f0452e97bc9462e084b25f7aa2",
+            "message": "move ClassLiteral and FieldSelect from core/lombok/core/AnnotationValues.java to utils/lombok/core/"
+        },
+        {
+            "hash": "f540335ef972d84f02efba6dcaf608aec0e19129",
+            "message": "[Fixes #1656] Lombok would silently do the wrong thing when using references to `public static final String` fields, instead of actual string literals, there where you can specify strings in lombok annotation parameters, such as `@ToString(of = MyClass.CONSTANT_FIELD)`. We can’t really fix it, but at least now lombok will error when you do that and describe in detail what’s going wrong."
+        },
+        {
+            "hash": "7e81ac623831c3147e8fba4ca4ebfa021f4f5bd5",
+            "message": "[build] Trying to build lombok on JDK1.8 or less is not gonna work. Now we generate an error during build to make that more clear. Addresses issue 1659."
+        },
+        {
+            "hash": "3a8c8cad0a38e767284864f9591e42d84be7643c",
+            "message": "Merge pull request #1660 from tmurakam/feature/fix-1657-fileobject-uri\n\nfix #1657: EmptyLombokFileObject: file:// URI must not contain author…"
+        },
+        {
+            "hash": "23a13c452782d32aebc02971f71c392efeee30d5",
+            "message": "Merge branch 'master' into feature/fix-1657-fileobject-uri"
+        },
+        {
+            "hash": "e90064cf1d1f5802e4fed5a59f3a2b05776e9bc1",
+            "message": "Create valid uri, fixes #1657"
+        },
+        {
+            "hash": "de01d1eae16a61e1d3b4cafedd32e59f98396000",
+            "message": "[delombok] Added an option to emit only changed files."
+        },
+        {
+            "hash": "f4bc0323dca86fb5559e753ef9f05af5672d27ef",
+            "message": "Potential fix for #1604"
+        },
+        {
+            "hash": "8614edfd85ad6fc65598d1d13a370d7562ad57db",
+            "message": "Merge pull request #886 from balta3/annotationarrays\n\nimplemented support for annotation arrays as annotation attributes in javac"
+        },
+        {
+            "hash": "e9b71f015628c181a625b62472b6354696d39700",
+            "message": "implemented support for annotation arrays as annotation attributes in javac"
+        },
+        {
+            "hash": "22e9c25db63426c542ae0a655f29b69180bd92f7",
+            "message": "[website] Added a section on contributing to lombok, with documentation on how lombok’s execution path works. See pull request #71"
+        },
+        {
+            "hash": "57fb2b9773d96777ba343e28e5e2ae4d6fa96f42",
+            "message": "[website] Whoops we had 2 copies of usage_examples. Fixed that by deleting the one that was NOT being used for the website."
+        },
+        {
+            "hash": "4dce9a351d2e459fb2d03bdb9c99b62a2b29f8d0",
+            "message": "update changelog"
+        },
+        {
+            "hash": "bcd83687e321c6d4e29a27cbc3686e1a4d83a17d",
+            "message": "Update delombok cmd example. Fixes #1643"
+        },
+        {
+            "hash": "675699fccb27c664c8ef9d3ddad65e6935b36787",
+            "message": "Merge branch 'cheelio-FieldNameConstants'"
+        },
+        {
+            "hash": "b6fb3c03fa35db3423ea4274f35d2c77859a3286",
+            "message": "[fieldNameConstants] code review, docs, tests, fixup."
+        },
+        {
+            "hash": "2c93d336c1d694a286b53710cbeaa01339ba3f1c",
+            "message": "Merge branch 'FieldNameConstants' of https://github.com/cheelio/lombok into cheelio-FieldNameConstants"
+        },
+        {
+            "hash": "f4998b57753257d485ccc76f569e439721c30dbf",
+            "message": "Added copyright header"
+        },
+        {
+            "hash": "dbb41c2954769366484521a946e8b982ef566b3f",
+            "message": "Moved FieldNameConstants to experimental\nAdded Copyright headers"
+        },
+        {
+            "hash": "deac7023f712b2d16ec6e730627d1c848450efef",
+            "message": "fix javac modifiers in src/core/lombok/javac/handlers/HandleFieldConstants.java"
+        },
+        {
+            "hash": "acc2464d662b144bd0e505a490d3bc74a6dc60c0",
+            "message": "Added Michiel Verheul as author"
+        },
+        {
+            "hash": "73844e37eaeda1a36b024fd2672cb64937230f43",
+            "message": "New Annotation: FieldNameConstants."
+        },
+        {
+            "hash": "b7a732a50f7d78b5a450bf80372999f716c15497",
+            "message": "Merge pull request #1627 from nuessgens/master\n\nPartially fix for \"A save participant caused problems\" with Eclipse"
+        },
+        {
+            "hash": "ea7d6727bcae74d24664da3760d4a2b730f809e9",
+            "message": "add self to authors [Issue #879]"
+        },
+        {
+            "hash": "ba928d194bf42d7c7a761363ce13a63e8c24d298",
+            "message": "add self to authors"
+        },
+        {
+            "hash": "96cd4f5010d30aa08835f592403e6a7aceb23e46",
+            "message": "Merge remote-tracking branch 'remotes/upstream/master'"
+        },
+        {
+            "hash": "af9861ad9f7151c6d12f56ecf11d7ce10826201a",
+            "message": "add subresource integrity to external resources on webpage"
+        },
+        {
+            "hash": "327def3adad63510e9b9202efa3108acd505c4b7",
+            "message": "Previous add to the build system to verify checksums is not really workable in ant without a page worth of tasks so reverted that and went with a renamed file instead to solve the problem of having served the wrong rt.jar for a while."
+        },
+        {
+            "hash": "c709f8b949c83a50e734372b1acea697839f7c9e",
+            "message": "[trivial] eclipse patches are loaded from Class50 even if you override the shadowloader classpath, but only if you have lombok.jar in there. This solves exotic problems if you try to add some features to lombok in a separate jar, and addresses issue #1523"
+        },
+        {
+            "hash": "92aa6854fa54e11607ff4c1c7fe18a4aa1607494",
+            "message": "fix javadoc warnings"
+        },
+        {
+            "hash": "113d1eb86190d73ab6d99225555c2ba2b07b9dd0",
+            "message": "Fixes #1608: give pages a title"
+        },
+        {
+            "hash": "f69b93d08b119b40ba94ebb4929316b253d2da46",
+            "message": "Merge branch 'adding-java10-provision' of https://github.com/krzyk/lombok into krzyk-adding-java10-provision"
+        },
+        {
+            "hash": "16b77c03bf19378e103fbf58ca30e270005d9488",
+            "message": "removed inet4 enforcement"
+        },
+        {
+            "hash": "6fa43957d70a2de2bb31e6a0e4f6978bf4a78d47",
+            "message": "using GA java 10"
+        },
+        {
+            "hash": "3b46a241604496d716a57f078e27a254b03757c4",
+            "message": "updated java 10 download"
+        },
+        {
+            "hash": "859ad45231d0a331671047b015d68c4e27a2ab80",
+            "message": "adding java10 download script"
+        },
+        {
+            "hash": "760a4ec0d35f80bb7aa7089753643ba4c298d62b",
+            "message": "Parsing for source level broken under JDK9 due to change in 1.X->X versioning by oracle."
+        },
+        {
+            "hash": "1853b71c05ea083b5e103611a617a4d4b7d1c074",
+            "message": "[bugfix] builder.default with the old lombok.experimental.Builder annotation only worked in javac, not eclipse."
+        },
+        {
+            "hash": "45967c522eca156bf0eeae14ebd9f466d23bd470",
+            "message": "[trivial] updated comment and slight tweak to website text."
+        },
+        {
+            "hash": "42961e8921cd98f688252eedc68cbe0baa0496ea",
+            "message": "[trivial] copyright header year bump to 2018"
+        },
+        {
+            "hash": "fada93e90fbb47873de1e02704ad756f836f41a8",
+            "message": "documented in changelog work on supporting JDK10."
+        },
+        {
+            "hash": "9ecfe2302f3cd1d654196e072cce0b334f21ffd9",
+            "message": "Fix version parsing for jdk10."
+        },
+        {
+            "hash": "2f1069e48c4641928ab3151a13a52b49062a29af",
+            "message": "Keep indentations in javadoc. Fixes #1571"
+        },
+        {
+            "hash": "e6ecbe4f3ab2c16332c0209033dbb58aa2e28c2a",
+            "message": "As we’re preparing to release v2, we want to delete the experimental editions of the Builder and Value annotations… but in case you install lombok v2 into eclipse but use an older lombok as dep in your project, we still do want to process the old annotations. Had to stringly-type a few things to make that happen, but, works now."
+        },
+        {
+            "hash": "6484537e2e87ff990b3de574876490f0bdd7e0ec",
+            "message": "URLs to the ‘experimental’ feature page of features that have been promoted will now redirect (permanently) to the (non-experimental) feature page equivalent."
+        },
+        {
+            "hash": "66469e04fe35e5ceb3723cb563379a03e4883101",
+            "message": "[var] various upgrades to var:\n* var is promoted to the main package.\n* It is no longer an opt-in thing.\n* bug: var (unlike val) is allowed in old-style for loops, but if you multi-init: for (var i = 0, j=\"Foo\";;), you now get an error that you can't do that.\n* tests both for the multi-for situation and the new main package variant."
+        },
+        {
+            "hash": "55bcc142d08ac8a4de0c3965333e3816c496799f",
+            "message": "[jdk9] forcing new rounds when compiling multiple modules didn’t work. (FilerException on creating the new round)."
+        },
+        {
+            "hash": "bb95ad218d29a9f5b1011b7c7b919ed41337a00b",
+            "message": "[website] Updated docs for JDK9 module-info support."
+        },
+        {
+            "hash": "b6f17ef81acdff9896a8e2b2eced40223491ed4e",
+            "message": "[jdk9] added a best-effort attempt to claim away lombok annotations when lombok is deployed in JDK9-module mode. Due to a bug or oversight in jigsaw it is no longer possible to supply 2 providers for the Processor service, which was the common and as far as I know only way to deal with the situation that you want to claim a subset of annotations but look at all of them (which is what lombok wants to do)."
+        },
+        {
+            "hash": "116a9dbb75200223664e26093b0e238b57d4255e",
+            "message": "[compiling] running the ant compile job now no longer emits any warnings. Each warning that was emitted has been addressed, or analysed and suppressed."
+        },
+        {
+            "hash": "e9d86650ffae683d86e59cff96c74a7c9931b6d0",
+            "message": "[jdk9] [opinionated] The java9 warning when using lombok about ‘inaccessible API’ is now suppressed."
+        },
+        {
+            "hash": "fee0ad33abceb0219076dde05c9d5d9ba950000f",
+            "message": "[jdk9] add support for using lombok with JDK9 code when compiling using the new module syntax, and having module-info.java files in your source."
+        },
+        {
+            "hash": "0b2cca0eb9de873998535af15c0066a71e2e363f",
+            "message": "[website] added the German JUG week to the main page."
+        },
+        {
+            "hash": "01754d914056b3baa0a6bfe3b20bf5c40f6a5199",
+            "message": "Merge branch '2is10-npe-warning'"
+        },
+        {
+            "hash": "5a2fe6e61caf9024be29568b0b053f163c6f899e",
+            "message": "use T instead of RuntimeException"
+        },
+        {
+            "hash": "371b9712df6688dd6447f4f829a347ee776e63ec",
+            "message": "Merge branch 'npe-warning' of https://github.com/2is10/lombok into 2is10-npe-warning"
+        },
+        {
+            "hash": "9fb31973757a3ad4509c024ea50e77295c61cf89",
+            "message": "Avoid \"possible NPE\" warnings for throw Lombok.sneakyThrow(e)\n\nCurrently, the following code triggers a warning in IntelliJ.\n(I'm using the current version, 2016.3.4.)\n\n    throw Lombok.sneakyThrow(e);\n\n> Dereference of 'Lombok.sneakyThrow(e)' may produce 'java.lang.NullPointerException'.\n\nThis change eliminates the warning.\n\nAll tests pass. I ran:\n\n    ant setupJavaOpenJDK6TestEnvironment\n    ant test\n    ant setupJavaOpenJDK7TestEnvironment\n    ant test\n    ant setupJavaOracle7TestEnvironment\n    ant test\n    ant setupJavaOracle8TestEnvironment\n    ant test"
+        },
+        {
+            "hash": "aaa876d3326f9ba1b411bbd9b341ff8a729e58ae",
+            "message": "Wrong documentation variables fix.\n\nI've fixed documentation for Cleanup annotation. Doc provided before wrong variable information (you closed String instead of Closeable)."
+        },
+        {
+            "hash": "4ac941acca350b889ae6ccd6f455c992a5e49dce",
+            "message": "Potential fix for #1555"
+        },
+        {
+            "hash": "87a946f7ee3963feccb9f084e74a08c9eda65ff0",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "01bbd212e943c726049ad3d837d7a876f02e08d3",
+            "message": "[trivial] some memoryload improvements by not making a new instance but using a cached one instead. Fixes issue #1579"
+        },
+        {
+            "hash": "3deb393911583aee8fcdd790bdb51b72737fe410",
+            "message": "Merge pull request #1583 from jramosf/master\n\n#1579: recycle handlers to avoid excessive garbage collection"
+        },
+        {
+            "hash": "ab19f72400a9482015e117d9d0c9e60277a24a26",
+            "message": "#1579: recycle handlers to avoid excessive garbage collection"
+        },
+        {
+            "hash": "e4a9bd288b184b1012dfe0daad3ebc57733d53ff",
+            "message": "Merge pull request #1622 from danieltaub96/master\n\nfixed ExtensionMethod example to return T (generic type)"
+        },
+        {
+            "hash": "57b66fd5767354ec611a2e2d96d8cf3968513118",
+            "message": "fixed ExtensionMethod example to return T (generic type) , seem to remove or forgot for some reason..."
+        },
+        {
+            "hash": "5a5d75a931e66b03212081e35bdfdc7b6be98783",
+            "message": "tests updated; a few tests were failing because we removed a few things recently, such as value and builder from experimental."
+        },
+        {
+            "hash": "c08559b0168e41de14e0640262e4bcbec8de22db",
+            "message": "[issue #1615] fixes a bug where equals and hashcode would mess up if both the outer and the inner class have generics, the inner is non-static, and you generate equals/hashcode on the inner.\n\nNote that in general this is just broken; do not put non-static inner classes in generics-carrying classes in the first place!"
+        },
+        {
+            "hash": "ae611e168718bc226d5ca530484b9a92c2836b30",
+            "message": "[website] Added instruction page about VS Code support in lombok. Updated upcoming talks section."
+        },
+        {
+            "hash": "3cfd7a80eddab24b868fb5cfcec4d5cf2b55604c",
+            "message": "Fresh builds wouldn’t work anymore due to a weird addition in ecj9."
+        },
+        {
+            "hash": "aa8ce194f50be2e521c11bb1a3f5171a8d92f2d5",
+            "message": "[website] Some minor updates and fixes to the website order page."
+        },
+        {
+            "hash": "0c48f41aef81d2f3b66a96e8e7751ee63f4d7d17",
+            "message": "Added test case for issue #1615: non-static inner classes where both inner and outer have generics fails if inner is annotated with @Data"
+        },
+        {
+            "hash": "9b4bf8334b21393bb0a587ac0a4f0dc342d22bb2",
+            "message": "last minute bugfixes to license order form mechanics."
+        },
+        {
+            "hash": "2f1a26b6069d6d75729a971be20d45f0fc5fefcc",
+            "message": "[website] added supporters infrastructure."
+        },
+        {
+            "hash": "cc55391a7544b0ce0cc37b8aa628dc8f9a46db49",
+            "message": "Website updated to list supporters on the website."
+        },
+        {
+            "hash": "757ddee80765600a542f2470c9487d0ba793f62c",
+            "message": "[website] Added JUG details and updated links for german JUG week."
+        },
+        {
+            "hash": "0ba1f8c62e699c0ce6d1b76afc9ea55322c73c3e",
+            "message": "Merge pull request #1589 from tmurakam/feature/1572-jdk10\n\nAdd jdk-10.sh and update jdk-9.sh for docker"
+        },
+        {
+            "hash": "cde38e51544544b5466181237a99483834c33b1f",
+            "message": "fix permissions of docker provision scripts"
+        },
+        {
+            "hash": "72d22582bbb5ed7a33c3cee196248fcdaa65d541",
+            "message": "add jdk-10.sh for openjdk10, update jdk-9 version (#1572)\n\nadd jdk10.sh to download openjdk10+44 EA.\nupdate jdk 9.0.1 -> 9.0.4"
+        },
+        {
+            "hash": "6a94e55e127b671a814d4df6211ec57f40e0c39f",
+            "message": "Merge pull request #1620 from tmurakam/feautre/1572-intellij-jdk10\n\n[fix] Fix intellij build with jdk10 (#1572)"
+        },
+        {
+            "hash": "3e0cdf5dc2119dcf860fb9effabc89523dee3975",
+            "message": "improve compiler detection for jdk9 later."
+        },
+        {
+            "hash": "595a3041a01602d9a28aefe71bad021353900253",
+            "message": "[fix] Fix intellij build with jdk10 (#1572)\n\nAdd a JavaFileManager class name to KNOWN_JAVA9_FILE_MANAGERS."
+        },
+        {
+            "hash": "2a55bfa0bd0949dfc1ee6f46c27052f669234053",
+            "message": "[JDK10] Building lombok on JDK10 now works fine."
+        },
+        {
+            "hash": "54ad28b71e5c40d532c92fc4e863cb342883da4a",
+            "message": "Fixes #1613: add support for STS4"
+        },
+        {
+            "hash": "44fb322c8501ca44faaddbbdb9743a38ec1e2d52",
+            "message": "rt-openjdk6 is downloaded from the lombok site, we had a weird version up there for a while that broke the build, we fixed it, but you won’t know until you do some fairly fancy cleaning (a complete re-clone or a distclean). Updated build script to scan for anything that isn’t the right version and re-download."
+        },
+        {
+            "hash": "06da0854e93df222603fcc2e51c9594c16899087",
+            "message": "Merge remote-tracking branch 'remotes/upstream/master'"
+        },
+        {
+            "hash": "1b6de01bf187def687cb0e757da4295b0790f0ac",
+            "message": "Merge remote-tracking branch 'remotes/upstream/master'"
+        },
+        {
+            "hash": "cdee2996514723dfbcf6ac177d82446acef260f3",
+            "message": "remove issue-suffix from version-string"
+        },
+        {
+            "hash": "c025ef0695a3678463bfa1487372427b00e3e887",
+            "message": "Try fix \"A save participant caused problems.\" \n\nThe bugfix was originally created by mateusz-matela"
+        },
+        {
+            "hash": "98f08c245528ffd72c341d43ace131a4691927c0",
+            "message": "revert initial fix-trial"
+        },
+        {
+            "hash": "f8a6ba556ca21eb83bda6117d25b860398505714",
+            "message": "Revert \"Revert \"Initial test\"\"\n\nThis reverts commit c489b49c3684e0d8cc52c5180207375d1313dbc5."
+        },
+        {
+            "hash": "251870cf65ad1de01e7d304cef68689ff4606960",
+            "message": "Revert \"Initial test\"\n\nThis reverts commit 43d91281d0a298df72b38c43d87769c3a33e950b."
+        },
+        {
+            "hash": "f2cdfd1f8a445f881627606c6c7dcd98c9eedfb5",
+            "message": "Initial test"
+        },
+        {
+            "hash": "4f63174693eea114c9beea4ae5f3fdf38279194c",
+            "message": "Merge pull request #1639 from tmurakam/feature/1632-jdk11\n\nfix #1632: JavacAST: use new Log method for jdk11"
+        },
+        {
+            "hash": "1bc85b6ba91954e0a9ede3797db5911eedae7be1",
+            "message": "fix #1632: JavacAST: use new Log method for jdk11\n\nSome methods of AbstractLog are removed in jdk11.\nFix JavacAST.Jdk9Plus to use new log methods added from jdk9."
+        },
+        {
+            "hash": "174ad394d6e7e7b24294214b5dbcc8797fe75cbf",
+            "message": "[build] Clean checkouts wouldnt build correctly."
+        },
+        {
+            "hash": "7422b28e525127c445af93fbd5e32aff338ea362",
+            "message": "[trivial] build script fix for website-only: It was adding an &amp; to the full version string every call."
+        },
+        {
+            "hash": "c2f0736c5e6aa8153bd84062ee03f155babc2288",
+            "message": "Merge pull request #1626 from victorwss/master\n\nFix for #1617."
+        },
+        {
+            "hash": "0b549468272fdf48b8ca17e5d88a4e13d5b7d3ef",
+            "message": "Adding my name to the AUTHORS file.\n\nSigned-off-by: Victor Williams Stafusa da Silva <victorwssilva@gmail.com>"
+        },
+        {
+            "hash": "a132d7794ea4668f0bfd113036063a7852d23217",
+            "message": "Fix for #1617.\n\nSigned-off-by: Victor Williams Stafusa da Silva <victorwssilva@gmail.com>"
+        },
+        {
+            "hash": "888546fd9ff80a812022bd9e8738b7bb9b5ce284",
+            "message": "fix #1657: EmptyLombokFileObject: file:// URI must not contain authority part.\n\nfix degrade of #1617, the file URI must starts with 'file:///', not 'file://'."
+        },
+        {
+            "hash": "6d6e3dc6a97fa39b5b03f02285744bb37931ecaa",
+            "message": "fix typo in EclipseProductLocationProvider.java\n\nchange NotAnIdeLocationException to CorruptedIdeLocationException in javadoc for private method create0(String path)"
+        },
+        {
+            "hash": "ad21a1573bab57c63ffd5b9867f8e19ac7f0c94b",
+            "message": "[annotation based ToString] hey.. we have annotation based ToString now, where you can include/exclude fields by annotating the fields."
+        },
+        {
+            "hash": "82a7354a848a26021afd3a889cefd65db7693eb9",
+            "message": "[website] bugfix; supporters weren’t being shown."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1580",
+            "title": "Lombok disables incremental compilation in gradle"
+        },
+        {
+            "number": "1656",
+            "title": "Constant(static final) doesn't work on annotation "
+        },
+        {
+            "number": "1657",
+            "title": "Edge version (1.16.21) does not work on Linux/Mac."
+        },
+        {
+            "number": "1604",
+            "title": "Lombok installation failed on IBM Rational Application Developer"
+        },
+        {
+            "number": "1643",
+            "title": "Delombok \"Could not find or load main class lombok.core.Main\""
+        },
+        {
+            "number": "879",
+            "title": "Working with lombok and eclipse cleanup fails: \"A save participant caused problems.\""
+        },
+        {
+            "number": "1523",
+            "title": "\"shadow.override.lombok\" property and Java8"
+        },
+        {
+            "number": "1608",
+            "title": "Website feature pages should have the feature name in the page title"
+        },
+        {
+            "number": "1571",
+            "title": "Javadoc comments are effectively \"trimmed\""
+        },
+        {
+            "number": "1555",
+            "title": "[Regression] 1.16.20 does not work with Netbeans < 9"
+        },
+        {
+            "number": "1579",
+            "title": "Eclipse plugin performance degradation with large projects"
+        },
+        {
+            "number": "1615",
+            "title": "Generics on non-final inner classes when outer also has generics fails."
+        },
+        {
+            "number": "1572",
+            "title": "Lombok fails with JDK 10"
+        },
+        {
+            "number": "1613",
+            "title": "Compatibility with STS4"
+        },
+        {
+            "number": "1632",
+            "title": "Build broken on Java 11-ea+5 when lombok tries to log a warning"
+        },
+        {
+            "number": "1617",
+            "title": "Lombok in Java 9 makes Netbeans 9.0 go crazy"
+        }
+    ]
+}

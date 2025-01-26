@@ -11,68 +11,65 @@
     "commits_info": [
         {
             "hash": "2c5fa078d8e86e5f4bd34e6f4c9ea9e8d7d4d44a",
-            "message": "Updating version.json and repo version numbers to: 23.4\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 23.4"
         },
         {
             "hash": "da85a3a96fb18e5e06536b9c15af7e31d9f22c76",
-            "message": "Update upb dep to the latest 23.x commit (#13215)\n\n* Update upb dep to the latest 23.x commit\r\n\r\n* Fix objectivec test failure in Bazel 6+.\r\n\r\nThis fix works in Bazel 5 and 6, but the original `import pddm` only works in Bazel 5.  This is preventing our upgrade to Bazel 6 that will reduce our mac flakes in CI.\r\n\r\nPiperOrigin-RevId: 543565397\r\n\r\n* Bump heap size for linkage monitor tests",
-            "tag_name": null
+            "message": "Update upb dep to the latest 23.x commit (#13215)\n\n* Update upb dep to the latest 23.x commit\r\n\r\n* Fix objectivec test failure in Bazel 6+.\r\n\r\nThis fix works in Bazel 5 and 6, but the original `import pddm` only works in Bazel 5.  This is preventing our upgrade to Bazel 6 that will reduce our mac flakes in CI.\r\n\r\nPiperOrigin-RevId: 543565397\r\n\r\n* Bump heap size for linkage monitor tests"
         },
         {
             "hash": "571fae48b0370722e26abb267da5699694ca46e8",
-            "message": "Merge pull request #13106 from chadlwilson/backport-bump-guava-3201\n\n[23.x] Backport deps: Update Guava 32.0.1",
-            "tag_name": null
+            "message": "Merge pull request #13106 from chadlwilson/backport-bump-guava-3201\n\n[23.x] Backport deps: Update Guava 32.0.1"
         },
         {
             "hash": "40d577782b75aa4f3d9149a1eb6b01b2349f13af",
-            "message": "deps: Update Guava to 32.0.1\n\nFollow-up from #12953 to update to `32.0.1` to fix an issue on windows:\n\nhttps://github.com/google/guava/releases/tag/v32.0.1\n\nThe underlying issue likely does not affect protobuf as it does not appear to (directly) use the affected `Files.createTempDir` or `FileBackedOutputStream` code which was apparently broken on Windows in `32.0.0`.\n\nSeems best to update anyway.\n\n(cherry picked from commit c95ebb7bd8b460956a80bdcb416624c1d5f7eca0)\n",
-            "tag_name": null
+            "message": "deps: Update Guava to 32.0.1\n\nFollow-up from #12953 to update to `32.0.1` to fix an issue on windows:\n\nhttps://github.com/google/guava/releases/tag/v32.0.1\n\nThe underlying issue likely does not affect protobuf as it does not appear to (directly) use the affected `Files.createTempDir` or `FileBackedOutputStream` code which was apparently broken on Windows in `32.0.0`.\n\nSeems best to update anyway.\n\n(cherry picked from commit c95ebb7bd8b460956a80bdcb416624c1d5f7eca0)"
         },
         {
             "hash": "62d7b37a42e1d3323e841484b02d21527a5e92ee",
-            "message": "Merge pull request #13090 from fowles/23.x\n\nAdd dllexport_decl for generated default instance. (#13085)",
-            "tag_name": null
+            "message": "Merge pull request #13090 from fowles/23.x\n\nAdd dllexport_decl for generated default instance. (#13085)"
         },
         {
             "hash": "3312fc23c71f35595da19e9a7c5c48b6bd3797a7",
-            "message": "update stale files\n",
-            "tag_name": null
+            "message": "update stale files"
         },
         {
             "hash": "0c70d9514090a2e5e5b35eba7e4d23d97592ec49",
-            "message": "Add dllexport_decl for generated default instance. (#13085)\n\nFixes #13084\n\nCloses #13085\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13085 from owent:add_dllexport_decl_for_generated_default_instance a46d4e81c206785510c61c1ce7638a11e0d6dc6d\nPiperOrigin-RevId: 540938351\n",
-            "tag_name": null
+            "message": "Add dllexport_decl for generated default instance. (#13085)\n\nFixes #13084\n\nCloses #13085\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13085 from owent:add_dllexport_decl_for_generated_default_instance a46d4e81c206785510c61c1ce7638a11e0d6dc6d\nPiperOrigin-RevId: 540938351"
         },
         {
             "hash": "528e673fcc3cfda2f5d52878422698c9b117d57e",
-            "message": "Merge pull request #13088 from fowles/23.x\n\nModify port_def.inc to ignore -Wshadow warning (#13059)",
-            "tag_name": null
+            "message": "Merge pull request #13088 from fowles/23.x\n\nModify port_def.inc to ignore -Wshadow warning (#13059)"
         },
         {
             "hash": "129125361852122d40d90ee7a3c96a08061365b9",
-            "message": "Fix a typo\n\nPiperOrigin-RevId: 540349262\n",
-            "tag_name": null
+            "message": "Fix a typo\n\nPiperOrigin-RevId: 540349262"
         },
         {
             "hash": "6241d42a2a18ee5bb07060a0a216a4eb333ef4a5",
-            "message": "Modify port_def.inc to ignore -Wshadow warning (#13059)\n\nCloses #13037\n\nCloses #13059\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13059 from 4kangjc:main 71b2fc5ada3abf1250c69568dddc23bfecd1427f\nPiperOrigin-RevId: 540886449\n",
-            "tag_name": null
+            "message": "Modify port_def.inc to ignore -Wshadow warning (#13059)\n\nCloses #13037\n\nCloses #13059\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13059 from 4kangjc:main 71b2fc5ada3abf1250c69568dddc23bfecd1427f\nPiperOrigin-RevId: 540886449"
         },
         {
             "hash": "0daa1b1cba15f22b0d79f587c60b768bd949e75e",
-            "message": "Clean up staleness tests. (#13049)\n\nOur automation can't currently update release branches, so we need to enable staleness tests as presubmits to force manual regeneration.\r\n\r\nPiperOrigin-RevId: 540094169",
-            "tag_name": null
+            "message": "Clean up staleness tests. (#13049)\n\nOur automation can't currently update release branches, so we need to enable staleness tests as presubmits to force manual regeneration.\r\n\r\nPiperOrigin-RevId: 540094169"
         },
         {
             "hash": "689f9c10e3ff4c5d719768459a72e0e0f0c59072",
-            "message": "Merge pull request #13058 from protocolbuffers/23.x-202306140951\n\n23.x 202306140951",
-            "tag_name": null
+            "message": "Merge pull request #13058 from protocolbuffers/23.x-202306140951\n\n23.x 202306140951"
         },
         {
             "hash": "107c36e586bfe1a32b2569bf41cff16c4607ac49",
-            "message": "Updating version.json to: 23.4-dev\n",
-            "tag_name": null
+            "message": "Updating version.json to: 23.4-dev"
+        }
+    ],
+    "issues": [
+        {
+            "number": "13084",
+            "title": "`$dllexport_decl$` is missing in generated `.pb.cc`"
+        },
+        {
+            "number": "13037",
+            "title": "Rename shadowed variables"
         }
     ]
 }

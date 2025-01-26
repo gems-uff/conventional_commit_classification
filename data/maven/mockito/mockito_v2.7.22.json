@@ -1,0 +1,58 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.22",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 10,
+    "start_delay": 0.0,
+    "duration": 6.151215277777778,
+    "commits_info": [
+        {
+            "hash": "8bfb29eee89601cecb1e720c68d5de70ccece9db",
+            "message": "Update release notes by Travis CI build 2523 [ci skip]"
+        },
+        {
+            "hash": "9f82f1671e57c706a9d7d785e6533aa78592c247",
+            "message": "Merge pull request #1023 from mureinik/javadoc\n\nFix broken link in Mockito javadoc"
+        },
+        {
+            "hash": "dbccbfac40f383b1788535570dfd5977851748f1",
+            "message": "Fix broken link in Mockito javadoc\n\nCommit 6a82c0 (included in Mockito 2.7.14) changed\nMockSetting#useConstructor's signature to accept an Object...\nargument. While this change is backwards compatible (as calls can\ncontinue passing an empty argument list), it broke the javadoc\nreference to useConstructor() in Mockito's javadoc.\n\nThis patch fixes that broken link."
+        },
+        {
+            "hash": "314832df6c07cb3d18e6b6f08b0b5f444bf2c8ff",
+            "message": "Merge pull request #1021 from mockito/tech/1020-animalSniffer\n\nChange release build to JDK 7 with binary compatibility for Java 6"
+        },
+        {
+            "hash": "5930596ab7e3d4a89a9f7a7c2f45e56201fc8856",
+            "message": "Java8 -> Java6 in compatibility mode"
+        },
+        {
+            "hash": "1692915d88e26ec33863b224121987ce91668502",
+            "message": "Travis configuration update\n\nAvoid sniffing when skipping release. This way we avoid duplicate errors and also make builds tiny bit faster."
+        },
+        {
+            "hash": "5f5e67a8a09c78a30b966f867ec68411d254d626",
+            "message": "Moved animal sniffer to separate Gradle file\n\nThis way it will be easier to get rid of it when we drop Java 6 support. It will also make it easier to install latest version of mockito release tools."
+        },
+        {
+            "hash": "6f9fac7566df6facf0c494befed79d9916a63d94",
+            "message": "[#1020] Java 6 compatibility verification with AnimalSniffer"
+        },
+        {
+            "hash": "e018a87b914a6fe209824429aca2d3512a98ca92",
+            "message": "Increment version '2.7.21' -> '2.7.22' by Travis CI build 2498 [ci skip]"
+        },
+        {
+            "hash": "5f3bfa100e7dcc26d291905fc2c2bf58630e3025",
+            "message": "MatchersTest numeric literals (#1022)\n\nUse numeric literals, which are more elegant, instead of casting int\r\nliterals to other primitive types."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1020",
+            "title": "Use JDK 7 with Java 6 compatibility for building release artifacts"
+        }
+    ]
+}

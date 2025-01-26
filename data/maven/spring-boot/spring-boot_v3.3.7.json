@@ -1,0 +1,746 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.3.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 125,
+    "start_delay": 0.0,
+    "duration": 26.90627314814815,
+    "commits_info": [
+        {
+            "hash": "7657d61cf3769e077ca58f2094d30383bb2e2721",
+            "message": "Release v3.3.7"
+        },
+        {
+            "hash": "a085a0111d1d12d09851bf4c951d03ffe52c6184",
+            "message": "Upgrade to Spring Batch 5.1.3\n\nCloses gh-43474"
+        },
+        {
+            "hash": "ba916cb66e8f6879a4cf8a3c162a03183042c6f7",
+            "message": "Allow KafkaProperties to build properties with empty bundle name\n\nUpdate `KafkaProperties` so that properties can still be built when\nthe bundle name has no text.\n\nFixes gh-43561"
+        },
+        {
+            "hash": "a5c2f0fc74f2968e670ad18d61c7ae6e7c61940e",
+            "message": "Improve diagnostics when config prop value conversion fails\n\nCloses gh-43378\n\nCo-Authored-By: Phillip Webb <phil.webb@broadcom.com>"
+        },
+        {
+            "hash": "88fad3ceb84addcf8386869f6cda4170656f3c9d",
+            "message": "Merge pull request #43557 from quaff\n\n* pr/43557:\n  Fix typo\n\nCloses gh-43557"
+        },
+        {
+            "hash": "6366511b59978160f6152207bd7956239a5a330f",
+            "message": "Fix typo\n\nSee gh-43557"
+        },
+        {
+            "hash": "38d96aabef94debe6ae5647802e61b9510d88a67",
+            "message": "Drop {*-javadoc} attribute prefixes when possible\n\nUpdate javadoc references to use package name lookups rather than\n`{*-javadoc}` attributes. MongoDB and Testcontainers cannot be\nmigrated since they have split packages.\n\nCloses gh-43223"
+        },
+        {
+            "hash": "229137d2cd2d0a9558910d6c3707e96d2242be54",
+            "message": "Document certain server.ssl.properties are ignored when using a bundle\n\nCloses gh-43353"
+        },
+        {
+            "hash": "aa374bf406b792c7662237736830bbff4e2ca8ed",
+            "message": "Correct links used in upgrade issues\n\nUpdate BOMR so that the `Upgrade` type now contains a copy of the\nlibrary we're upgrading to complete with an updated version number.\n\nThis allows the correct links to be generated.\n\nCloses gh-43545"
+        },
+        {
+            "hash": "cbb8d124c030068ca119706b3c363daf1bb0a2c7",
+            "message": "Upgrade to Spring Session 3.3.5\n\nCloses gh-43397"
+        },
+        {
+            "hash": "a967a2fec052f34c5519960098112e50dfc30005",
+            "message": "Upgrade to Spring Pulsar 1.1.7\n\nCloses gh-43396"
+        },
+        {
+            "hash": "7b9701a47713ea921fe87d2c4829975b33cdcde5",
+            "message": "Upgrade to Spring Integration 6.3.7\n\nCloses gh-43476"
+        },
+        {
+            "hash": "db93202534b44c345ef44b449c5f1e83034add8c",
+            "message": "Upgrade to Spring Authorization Server 1.3.4\n\nCloses gh-43391"
+        },
+        {
+            "hash": "320f02a2c2914fa1662c521c076b4d4af6e74e98",
+            "message": "Upgrade to Netty 4.1.116.Final\n\nCloses gh-43549"
+        },
+        {
+            "hash": "495665aec0cd5cbf27d1c0fdb3563669312122c2",
+            "message": "Use reverse order for shutdown hooks\n\nRefine `SpringApplicationShutdownHook` so that shutdown happens in\nreverse order to registration.\n\nSee gh-43430"
+        },
+        {
+            "hash": "4763123932435d463e99e9375e5c2f47e0e0ae16",
+            "message": "Recommend using Maven's <annotationProcessorPaths>\n\nCloses gh-43329"
+        },
+        {
+            "hash": "13c9f68b452c49e9d4bf2a75e2fcf764f6ae578f",
+            "message": "Upgrade to Dependency Management Plugin 1.1.7\n\nCloses gh-43542"
+        },
+        {
+            "hash": "7cf434589fb7151576bd90f01b0308c4b8bfd595",
+            "message": "Merge pull request #43531 from dependabot[bot]\n\n* pr/43531:\n  Polish \"Bump jfrog/setup-jfrog-cli from 4.5.0 to 4.5.2\"\n  Bump jfrog/setup-jfrog-cli from 4.5.0 to 4.5.2\n\nCloses gh-43531"
+        },
+        {
+            "hash": "b27f90880958b0073a0935bdb3cd111bded864e9",
+            "message": "Polish \"Bump jfrog/setup-jfrog-cli from 4.5.0 to 4.5.2\"\n\nSee gh-43531"
+        },
+        {
+            "hash": "b7214812524a912dceba14fc2965ec70505708a2",
+            "message": "Bump jfrog/setup-jfrog-cli from 4.5.0 to 4.5.2\n\nBumps [jfrog/setup-jfrog-cli](https://github.com/jfrog/setup-jfrog-cli) from 4.5.0 to 4.5.2.\n- [Release notes](https://github.com/jfrog/setup-jfrog-cli/releases)\n- [Commits](https://github.com/jfrog/setup-jfrog-cli/compare/040913fd7ac2a2bcb29a7e963ea99e7c309d63e5...dff217c085c17666e8849ebdbf29c8fe5e3995e6)\n\n---\nupdated-dependencies:\n- dependency-name: jfrog/setup-jfrog-cli\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-43531"
+        },
+        {
+            "hash": "17901065cab3b9a366687fb5f8cf7833e2d39303",
+            "message": "Upgrade to Pulsar Reactive 0.5.10\n\nCloses gh-43539"
+        },
+        {
+            "hash": "21203f06ecb863bc174a4da2c7a86a5326c3e500",
+            "message": "Use deterministic ordering for inserted shutdown hooks\n\nUpdate `SpringApplicationShutdownHook` so the underlying set of\n`Runnable` instances are stored in a `LinkedHashSet` rather than\na `Collections.newSetFromMap(new IdentityHashMap<>())`. This insures\nthat shutdown hooks are run in the order that they are added.\n\nFixes gh-43430"
+        },
+        {
+            "hash": "e6e1274bf706f2fe5249c1081c2d4d459f8aa9d6",
+            "message": "Upgrade to Spring Security 6.3.6\n\nCloses gh-43527"
+        },
+        {
+            "hash": "843a4d5658461407663f22bb0a58431a370bc76f",
+            "message": "Upgrade to Spring Kafka 3.2.6\n\nCloses gh-43394"
+        },
+        {
+            "hash": "239fa0356f931c70731a78b72ff3afbbd01ee7f3",
+            "message": "Remove trailing slashes from all link URLs\n\nCloses gh-43518"
+        },
+        {
+            "hash": "aead737b4321eda20a72090aec49b5c5a1725a95",
+            "message": "Merge pull request #43512 from ngocnhan-tran1996\n\n* pr/43512:\n  Fix typo\n\nCloses gh-43512"
+        },
+        {
+            "hash": "7832d3be73c147bcde786b31d2242353de045c8e",
+            "message": "Fix typo\n\nSee gh-43512"
+        },
+        {
+            "hash": "0ac3f8dd1f414c1c066d5ff9dce10a9d53cd07a5",
+            "message": "Switch spring-retry javadoc links back to docs.spring.io\n\nCloses gh-43231"
+        },
+        {
+            "hash": "11cb3290705b79ddbf567b83c3c3fdd6f6d77265",
+            "message": "Upgrade to Spring Retry 2.0.11\n\nCloses gh-43485"
+        },
+        {
+            "hash": "0c090b728a8a84a78d9a525a46fd988c1fd4b2bb",
+            "message": "Upgrade to Hibernate Validator 8.0.2.Final\n\nCloses gh-43509"
+        },
+        {
+            "hash": "45da43c6b475fb0cde6ceb3aa87e9b440266e63b",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "6d09459cfce484cb9835489186a93ac6f4058b3f",
+            "message": "Improve error message when unable to find `@SpringBootConfiguration`\n\nCloses gh-43357"
+        },
+        {
+            "hash": "fbf981ca0a0c867d96ed616beb91f620bf634e6f",
+            "message": "Run PaketoBuilderTests on all JDK versions\n\nCloses gh-43505"
+        },
+        {
+            "hash": "4d32fb09ee8c5be46b063562d8cabca113e9a5f1",
+            "message": "Upgrade to Spring LDAP 3.2.10\n\nCloses gh-43395"
+        },
+        {
+            "hash": "487d8d58224073fe88d5156e1e3ca38a9f88f632",
+            "message": "Upgrade to Spring Data Bom 2024.0.7\n\nCloses gh-43392"
+        },
+        {
+            "hash": "b283e1d915e33fcfa6958f5c5d54ff691f520097",
+            "message": "Upgrade to Kafka 3.7.2\n\nCloses gh-43502"
+        },
+        {
+            "hash": "c509457746eda176791728c25e4834a969b684d5",
+            "message": "Merge pull request #43494 from nosan\n\n* pr/43494:\n  Multiple WebFlux ResourceHandlerRegistrationCustomizer should be invoked\n\nCloses gh-43494"
+        },
+        {
+            "hash": "1234409fbe8e6d9d41460effb4ec66cf061ce112",
+            "message": "Multiple WebFlux ResourceHandlerRegistrationCustomizer should be invoked\n\nBefore this commit, only a single ResourceHandlerRegistrationCustomizer\nwas invoked. This commit adds functionality to have more\nthan one ResourceHandlerRegistrationCustomizers\n\nSee gh-43494"
+        },
+        {
+            "hash": "8572d9e177ce67d108210e318f97f13512630458",
+            "message": "Restore previous Main-Class configuration\n\nThis partially reverts commit\nd924e4d9998945933a4a9947a6ca776e303db1ea.\n\nSee gh-43284"
+        },
+        {
+            "hash": "92e241798e700d058529bc3ccd2eb76206c66ef5",
+            "message": "Upgrade to Spring HATEOAS 2.3.4\n\nCloses gh-43475"
+        },
+        {
+            "hash": "98f2b239d9e8e0c9499068a5a151ce1494885c1b",
+            "message": "Upgrade to Spring Framework 6.1.16\n\nCloses gh-43393"
+        },
+        {
+            "hash": "64015df798303b631c0a9e1cb6cece621b3d37d5",
+            "message": "Upgrade to Jetty 12.0.16\n\nCloses gh-43487"
+        },
+        {
+            "hash": "dc00342384521a5728c454a8ef02157b115e170f",
+            "message": "Improve handling of environment variables in failure analysis\n\nPrior to this change, the failure analysis for an invalid\nconfiguration property value filtered out the configuration property\nsources property source. This property source contains a \"duplicate\"\nof all of the environment's other property sources but with\nconfiguration property support (such as relaxed/fuzzy matching of\nenvironment variables). This was done to prevent the reporting of\nduplicates when a property was found in both the configuration\nproperty sources property source and the \"normal\" property sources.\nAn unwanted side-effect of this was that fuzzy matching of\nenvironment variables was lost so the origin of\ncom.example.some-property would be found in the environment variable\nwas COM_EXAMPLE_SOME_PROPERTY but would not be found if it was\nCOM_EXAMPLE_SOMEPROPERTY.\n\nThis commit addresses this side-effect by no longer filtering out\nthe configuration property sources property source. To then\nprevent duplicates from being reported in the analysis, it instead\ndeduplicates things based on the origin of each property that's\nfound in the environment's property sources.\n\nFixes gh-43380"
+        },
+        {
+            "hash": "42821f30bb35ece2d944177745c763af9e55083e",
+            "message": "Start building against Spring Retry 2.0.11 snapshots\n\nSee gh-43485"
+        },
+        {
+            "hash": "3968a49c1cbde9f3828d470b5175e9fe9b7e0769",
+            "message": "Merge pull request #43483 from quaff\n\n* pr/43483:\n  Polish variable name for consistency\n\nCloses gh-43483"
+        },
+        {
+            "hash": "a964bbd8cb128575ecae1b38f901e356094dc23d",
+            "message": "Polish variable name for consistency\n\nSee gh-43483"
+        },
+        {
+            "hash": "709b9bb149721652fd82a6c56fa049190d3bdd19",
+            "message": "Allow Jackson to escape new line chars when BOMR adds issues\n\nRemove the escaping logic when building the issue body so that Jackson\ncan perform the actual escaping. Prior to this commit, the message\nbody was double escaped.\n\nCloses gh-43479"
+        },
+        {
+            "hash": "5ea9c741c80a039d19e646d33d5518937fb16450",
+            "message": "Don't duplicate lines when issue has release notes link"
+        },
+        {
+            "hash": "6344c4767f8f6c000f85b5cc5c4b751aec33dcad",
+            "message": "Start building against Spring Session 3.3.5 snapshots\n\nSee gh-43397"
+        },
+        {
+            "hash": "8ab03e0495f91856e344375d69e2fe00391d713b",
+            "message": "Start building against Spring Integration 6.3.7 snapshots\n\nSee gh-43476"
+        },
+        {
+            "hash": "60217e0894523eb284516b70bfce2fd23bc43711",
+            "message": "Start building against Spring HATEOAS 2.3.4 snapshots\n\nSee gh-43475"
+        },
+        {
+            "hash": "8dfde8625cf3ce9d9b7412252d49d292e2a9506e",
+            "message": "Start building against Spring Batch 5.1.3 snapshots\n\nSee gh-43474"
+        },
+        {
+            "hash": "6d74fc325336944b7a92aa9d5feca389c0116546",
+            "message": "Upgrade to Tomcat 10.1.34\n\nCloses gh-43466"
+        },
+        {
+            "hash": "df94a86924227448ef8c7ac476f34f04996c281d",
+            "message": "Upgrade to Thymeleaf Extras SpringSecurity 3.1.3.RELEASE\n\nCloses gh-43465"
+        },
+        {
+            "hash": "65cedf6bc576e045fe8a0a8e75949da3e6994039",
+            "message": "Upgrade to Thymeleaf 3.1.3.RELEASE\n\nCloses gh-43464"
+        },
+        {
+            "hash": "6a68faaf9c1832f11a9bdbf978f1807514f014c1",
+            "message": "Upgrade to Reactor Bom 2023.0.13\n\nCloses gh-43390"
+        },
+        {
+            "hash": "8a473a40987b644e8df59b6d9a25c931788b639d",
+            "message": "Upgrade to Micrometer Tracing 1.3.7\n\nCloses gh-43389"
+        },
+        {
+            "hash": "dcf8b31eda2ff48340124f8e676331a0d5b7d57e",
+            "message": "Upgrade to Micrometer 1.13.9\n\nCloses gh-43388"
+        },
+        {
+            "hash": "7486c27cdd59e542d631b9897acaf7c60f01fe7b",
+            "message": "Upgrade to jOOQ 3.19.16\n\nCloses gh-43463"
+        },
+        {
+            "hash": "bed68daa130edd65ae74d7b2079cc6b4eae88e5b",
+            "message": "Upgrade to Zipkin Reporter 3.4.3\n\nCloses gh-43462"
+        },
+        {
+            "hash": "e2cf9e105c69f35ac6e38c994ecd526dee1b7883",
+            "message": "Respect profiles when listing running Docker Compose containers\n\nCloses gh-40139"
+        },
+        {
+            "hash": "68b5b956d1e3e46fb89492b3d39c061eedd9c3d6",
+            "message": "Merge pull request #43439 from ngocnhan-tran1996\n\n* pr/43439:\n  Fix logback javadoc\n\nCloses gh-43439"
+        },
+        {
+            "hash": "a96b91fa3eabd2db3741d366618d9bed7c304831",
+            "message": "Fix logback javadoc\n\nSee gh-43439"
+        },
+        {
+            "hash": "4ffb1857ef785e0f3254767683f27dd6f5eb4fc2",
+            "message": "Merge pull request #43451 from dependabot[bot]\n\n* pr/43451:\n  Polish \"Bump jfrog/setup-jfrog-cli from 4.4.3 to 4.5.0\"\n  Bump jfrog/setup-jfrog-cli from 4.4.3 to 4.5.0\n\nCloses gh-43451"
+        },
+        {
+            "hash": "8171f041130ad2c452d46b86c7c158f249cf702a",
+            "message": "Polish \"Bump jfrog/setup-jfrog-cli from 4.4.3 to 4.5.0\"\n\nSee gh-43451"
+        },
+        {
+            "hash": "fe9c9358cdec852d4eea2f65821ff10e85fb85d1",
+            "message": "Bump jfrog/setup-jfrog-cli from 4.4.3 to 4.5.0\n\nBumps [jfrog/setup-jfrog-cli](https://github.com/jfrog/setup-jfrog-cli) from 4.4.3 to 4.5.0.\n- [Release notes](https://github.com/jfrog/setup-jfrog-cli/releases)\n- [Commits](https://github.com/jfrog/setup-jfrog-cli/compare/e7cc33a01bc1b1df406bac8a1c4a409a34bdca0a...040913fd7ac2a2bcb29a7e963ea99e7c309d63e5)\n\n---\nupdated-dependencies:\n- dependency-name: jfrog/setup-jfrog-cli\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-43451"
+        },
+        {
+            "hash": "5db3fee822807002d4e21290c264d8b27867477c",
+            "message": "Merge pull request #43450 from sobychacko\n\n* pr/43450:\n  Add dependency management for kafka-server\n\nCloses gh-43450"
+        },
+        {
+            "hash": "55ffed4ee49eff0ad803e848c17b407974ffd29a",
+            "message": "Add dependency management for kafka-server\n\nApache Kafka now ships a new module, kafka-server, since the 3.7.0\nrelease. The `3.9.0` kafka-client introduced some breaking changes that\nrequire this dependecy for the `EmbeddedKafka` support in Spring for\nApache Kafka.\n\nThis commit adds this dependecny for Spring Boot based Spring Kafka\nprojects.\n\nSee gh-43450"
+        },
+        {
+            "hash": "3338c22372e8558e3d04e9be7a2321673e6aef5d",
+            "message": "Restore `build...` methods that don't need an SSL bundle\n\nRestore `buildConsumerProperties()` and `buildProducerProperties()`\nmethods in `KafkaProperties` to make it more convenient to use them\nwithout an SSL bundle.\n\nFixes gh-43300"
+        },
+        {
+            "hash": "f21402d4c37d1326c37859bbb8dab3e44d8232c1",
+            "message": "Consistently return non-zero exit codes for jarmode failures\n\nUpdate jar mode launchers to catch all exceptions and return a non-zero\nexit code. This refinement also allows us to consolidate the existing\nerror reporting logic to a central locations. Modes that wish to report\na simple error rather than a full stacktrace can throw the newly\nintroduced `JarModeErrorException`.\n\nFixes gh-43435"
+        },
+        {
+            "hash": "589697a01119eb9a966d1f3ee53331fcbfbc7fcd",
+            "message": "Merge pull request #43383 from ngocnhan-tran1996\n\n* pr/43383:\n  Fix Junit javadoc links\n\nCloses gh-43383"
+        },
+        {
+            "hash": "dbe7ecd168fdd52488599bb162f1bd1ce4ce7375",
+            "message": "Fix Junit javadoc links\n\nSee gh-43383"
+        },
+        {
+            "hash": "9e7972a9b4be9035f91609ea72299512c0daec09",
+            "message": "Polish code with code cleanup rules"
+        },
+        {
+            "hash": "1edc9974408856a23e75e309bed41099b9f5a125",
+            "message": "Start building against Spring Session 3.3.4 snapshots\n\nSee gh-43397"
+        },
+        {
+            "hash": "210c1465a2b3d7866eaa7217fba0b3fcda52267c",
+            "message": "Start building against Spring Pulsar 1.1.7 snapshots\n\nSee gh-43396"
+        },
+        {
+            "hash": "f0fd24800ac1e3d6fc4ffdfc7790857b8f0e7533",
+            "message": "Start building against Spring LDAP 3.2.9 snapshots\n\nSee gh-43395"
+        },
+        {
+            "hash": "87612855577529597517b3f4cbd461491071d8c3",
+            "message": "Start building against Spring Kafka 3.2.6 snapshots\n\nSee gh-43394"
+        },
+        {
+            "hash": "d8804579fea8495665d7300d1baa42e16f8d84aa",
+            "message": "Start building against Spring Framework 6.1.16 snapshots\n\nSee gh-43393"
+        },
+        {
+            "hash": "6cd3ee5347dbe011cfcc46ff276d1dbc71bf6968",
+            "message": "Start building against Spring Data Bom 2024.0.7 snapshots\n\nSee gh-43392"
+        },
+        {
+            "hash": "cd3fd0e6daa11f688d2b46d4d13344671a9127e2",
+            "message": "Start building against Spring Authorization Server 1.3.4 snapshots\n\nSee gh-43391"
+        },
+        {
+            "hash": "740862a39b5ab998f2fc0738e64181793595435e",
+            "message": "Start building against Reactor Bom 2023.0.13 snapshots\n\nSee gh-43390"
+        },
+        {
+            "hash": "53824c860aff2b932502adf46066436f00f3f67c",
+            "message": "Start building against Micrometer Tracing 1.3.7 snapshots\n\nSee gh-43389"
+        },
+        {
+            "hash": "c09f7c9944709c86139b8c327538dc87921c2423",
+            "message": "Start building against Micrometer 1.13.9 snapshots\n\nSee gh-43388"
+        },
+        {
+            "hash": "4c00c376a10aa8556d553f5a3016243f31a3b1d0",
+            "message": "Upgrade to Undertow 2.3.18.Final\n\nCloses gh-43387"
+        },
+        {
+            "hash": "0ebee1604399a8984b058ad916355a9502c4035c",
+            "message": "Upgrade to RxJava3 3.1.10\n\nCloses gh-43386"
+        },
+        {
+            "hash": "a696f29bbaebc4fa378720d29a27763cf447f929",
+            "message": "Upgrade to Native Build Tools Plugin 0.10.4\n\nCloses gh-43385"
+        },
+        {
+            "hash": "3f346d46a2c568ddaff11e82e09a914019efa6f6",
+            "message": "Merge pull request #43322 from quaff\n\n* pr/43322:\n  Polish \"Polish formatting of log configuration file\"\n  Polish formatting of log configuration file\n\nCloses gh-43322"
+        },
+        {
+            "hash": "cc274ccdcab4700c765b0bcb19a14be634a50598",
+            "message": "Polish \"Polish formatting of log configuration file\"\n\nSee gh-43322"
+        },
+        {
+            "hash": "3f17e42b38fba573cd3569e4213911d59ffe7c5c",
+            "message": "Polish formatting of log configuration file\n\n1. Remove space before `/>` to keep consistency.\n2. Capitalize `filters` for Log4j2.\n3. Uppercase log level to keep consistency.\n\nSee gh-43322"
+        },
+        {
+            "hash": "f13cf4d90993bba60d5c47062795a85b71efff4e",
+            "message": "Merge pull request #43355 from dependabot[bot]\n\n* pr/43355:\n  Polish \"Bump jfrog/setup-jfrog-cli from 4.4.2 to 4.4.3\"\n  Bump jfrog/setup-jfrog-cli from 4.4.2 to 4.4.3\n\nCloses gh-43355"
+        },
+        {
+            "hash": "a0e36c38da53540d38be8a683830ea550d582112",
+            "message": "Polish \"Bump jfrog/setup-jfrog-cli from 4.4.2 to 4.4.3\"\n\nSee gh-43355"
+        },
+        {
+            "hash": "47b6f5a37cf0547d7db86e4760c89fba7d103118",
+            "message": "Bump jfrog/setup-jfrog-cli from 4.4.2 to 4.4.3\n\nBumps [jfrog/setup-jfrog-cli](https://github.com/jfrog/setup-jfrog-cli) from 4.4.2 to 4.4.3.\n- [Release notes](https://github.com/jfrog/setup-jfrog-cli/releases)\n- [Commits](https://github.com/jfrog/setup-jfrog-cli/compare/18e785fb220d332edbf01964f853ff0fcaa22220...e7cc33a01bc1b1df406bac8a1c4a409a34bdca0a)\n\n---\nupdated-dependencies:\n- dependency-name: jfrog/setup-jfrog-cli\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-43355"
+        },
+        {
+            "hash": "3dcea98f000a9104c95b31dc1e694660d88976cb",
+            "message": "Polish `redirect.adoc` by sorting contents alphabetically"
+        },
+        {
+            "hash": "6172a4e6634ccae9518d001b4ca1897588d7b867",
+            "message": "Add legacy anchor redirects\n\nCloses gh-43367"
+        },
+        {
+            "hash": "709cd91b3e7f54cf4243cd0835c41c090bf1539a",
+            "message": "Add legacy anchor redirects\n\nAdd anchor redirects previously covered by the\n`anchor-rewrite.properties` file.\n\nSee gh-43367"
+        },
+        {
+            "hash": "75a3722ee4f407caafac2dd0fcb2750dc27a0e92",
+            "message": "Add more anchor redirects\n\nSee gh-43367"
+        },
+        {
+            "hash": "4265a0bcc2a71d14443126bb285555c038aae15e",
+            "message": "Reset `Startables` COUNTER when testing parallel startup\n\nCloses gh-43369"
+        },
+        {
+            "hash": "b340c855c031ec25b3db37bc74ad4cc47f11a549",
+            "message": "Prevent H2 console from causing early DataSource initialization\n\nUpdate `H2ConsoleAutoConfiguration` so that DataSource connection\nlogging occurs outside of the `ServletRegistrationBean`.\n\nFixes gh-43337"
+        },
+        {
+            "hash": "5a8e3d53ff4f79e4c68c5140510192c7d6230649",
+            "message": "Merge pull request #43328 from kgb-financial-com\n\n* pr/43328:\n  Polish 'Accept Docker progress on numbers >2GB'\n  Accept Docker progress on numbers >2GB\n\nCloses gh-43328"
+        },
+        {
+            "hash": "0afbc0b23cc330e22bc58257ef2f9c2e11e66a94",
+            "message": "Polish 'Accept Docker progress on numbers >2GB'\n\nRestore `int` returns for existing methods and deprecate them in\nfavor of a new `asPercentage()` method.\n\nSee gh-43328"
+        },
+        {
+            "hash": "d8565185e81ab11cd25c583809b871c7662862cb",
+            "message": "Accept Docker progress on numbers >2GB\n\nUpdate `ProgressUpdateEvent` to support images of a file size\n>2GB without provoking build failures.\n\nSee gh-43328"
+        },
+        {
+            "hash": "86b7fe44d903e2d766e1b70bbaa66f0d90734620",
+            "message": "Merge pull request #43341 from quaff\n\n* pr/43341:\n  Restore System property in Logging section of the reference documentation\n\nCloses gh-43341"
+        },
+        {
+            "hash": "d81678016e2a08ac0cade7e89e27c4bb6ba0852c",
+            "message": "Restore System property in Logging section of the reference documentation\n\nBefore this commit, it is rendered as an unexpected link with simple class\nname, it should be full qualified class name.\n\nSee gh-43341"
+        },
+        {
+            "hash": "2f0593f115b6993257170bc4e537f0442d35f738",
+            "message": "Merge pull request #43333 from BenchmarkingBuffalo\n\n* pr/43333:\n  Remove prohibited undertow upgrade restriction\n\nCloses gh-43333"
+        },
+        {
+            "hash": "b86b81da35961a86ed5373344e95bf0069c1d6ff",
+            "message": "Remove prohibited undertow upgrade restriction\n\nSee gh-43333"
+        },
+        {
+            "hash": "beb507fc55c7ba6666584f4e3dc3bf6ec8fc3e64",
+            "message": "Merge pull request #43323 from scordio\n\n* gh-43323:\n  Fix link to proxyBeanMethods in @AutoConfiguration javadoc\n\nCloses gh-43323"
+        },
+        {
+            "hash": "26b1d7447028b684010c58c4620f224cb63742df",
+            "message": "Fix link to proxyBeanMethods in @AutoConfiguration javadoc\n\nSee gh-43323"
+        },
+        {
+            "hash": "5dcf37b0295ad878b315c059bdc7a68f27eaf486",
+            "message": "Merge pull request #43320 from ngocnhan-tran1996\n\n* gh-43320:\n  Fix Servlet and JPA javadoc links\n\nCloses gh-43320"
+        },
+        {
+            "hash": "82652aba499a6c579d7c26adf829e8ce38a16806",
+            "message": "Fix Servlet and JPA javadoc links\n\nSee gh-43320"
+        },
+        {
+            "hash": "5cff43ddff85868defac1dac8e47ae1b31b5cf40",
+            "message": "Link to EnableMethodSecurity instead of EnableGlobalMethodSecurity\n\nCloses gh-43308"
+        },
+        {
+            "hash": "fcfbe50dc135b491d5f06c02a8b2e3494eafcbf0",
+            "message": "Merge pull request #43305 from ngocnhan-tran1996\n\n* pr/43305:\n  Fix Javadoc link for Hikari\n\nCloses gh-43305"
+        },
+        {
+            "hash": "57a5fa0555b961812af523f5db0ecb9906a25a51",
+            "message": "Fix Javadoc link for Hikari\n\nSee gh-43305"
+        },
+        {
+            "hash": "7bc709c32fdbf2ba02e2dca63597567c4bcacecc",
+            "message": "Fix subName from adapted name with value processor\n\nPreviously, when a configuration property name was created by\nadapting a source with a value processor, creating sub names from\nthat property name did not work correctly. This broke binding of\nprefixed environment variables to a map as the ancestor checking\ndid not work.\n\nFixes gh-43304"
+        },
+        {
+            "hash": "b22cc2e505bc04787d97582c806c447f0200be7d",
+            "message": "Merge pull request #43271 from ngocnhan-tran1996\n\n* pr/43271:\n  Fix syntax in reference guide\n\nCloses gh-43271"
+        },
+        {
+            "hash": "16838a9b58c1f940498ec513ecb78a7a54dbc642",
+            "message": "Fix syntax in reference guide\n\nSee gh-43271"
+        },
+        {
+            "hash": "f061bb8a1d118740c5642c94ef3cbd35bc71ff2c",
+            "message": "Merge pull request #43285 from dependabot[bot]\n\n* gh-43285:\n  Bump spring-io/artifactory-deploy-action from 0.0.1 to 0.0.2\n\nCloses gh-43285"
+        },
+        {
+            "hash": "1c64a40b921b8ab54161e4e1167e17481fe4f5c7",
+            "message": "Bump spring-io/artifactory-deploy-action from 0.0.1 to 0.0.2\n\nBumps [spring-io/artifactory-deploy-action](https://github.com/spring-io/artifactory-deploy-action) from 0.0.1 to 0.0.2.\n- [Release notes](https://github.com/spring-io/artifactory-deploy-action/releases)\n- [Commits](https://github.com/spring-io/artifactory-deploy-action/compare/26bbe925a75f4f863e1e529e85be2d0093cac116...dc1913008c0599f0c4b1fdafb6ff3c502b3565ea)\n\n---\nupdated-dependencies:\n- dependency-name: spring-io/artifactory-deploy-action\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-43285"
+        },
+        {
+            "hash": "d924e4d9998945933a4a9947a6ca776e303db1ea",
+            "message": "Mark shaded application's jar as multi-release by default\n\nSpring Framework now uses a multi-release jar for its virtual thread\nsupport. If the shaded jar is not marked as being a multi-release jar\nand virtual threads are enabled, the application will fail to start as\nthe Java 21+ virtual threads delegate will be unavailable.\n\nThis commit updates the starter parent's default configuration for the\nMaven Shade plugin to set Multi-Release: true in the application's\nmanifest.\n\nCloses gh-43284"
+        },
+        {
+            "hash": "bb3651b7d1c4334d5c350a9b127729aac2bfbf10",
+            "message": "Reduce warnings reported by Eclipse\n\nCloses gh-43269"
+        },
+        {
+            "hash": "cf1dadf2e7381f3fa831692a5dab6baab5fbd202",
+            "message": "Stop publishing CLI's Homebrew formula in commercial builds\n\nCloses gh-43247"
+        },
+        {
+            "hash": "c36d307f6a38b5d31c7b65cab831ffb1eb84a4c9",
+            "message": "Correct snapshot repository name for publishing commercial builds\n\nCloses gh-43250"
+        },
+        {
+            "hash": "69100b7dd73ce0ea5e929cca02678a05c3406b44",
+            "message": "Set 3.3.x CLI release to no longer be the default on SDKMAN\n\nCloses gh-43246"
+        },
+        {
+            "hash": "46f59c7ad01a4f23b818169caeb132bf873c1ff7",
+            "message": "Upgrade to release verification tests 0.0.7\n\nCloses gh-43251"
+        },
+        {
+            "hash": "31cca9b5ad97d8f36efe2078936c37b16bcd4d35",
+            "message": "Upgrade Java version in .sdkmanrc to 17.0.13\n\nCloses gh-43262"
+        },
+        {
+            "hash": "333762fd0e17a7f79ac4c9536b6242557b21a86d",
+            "message": "Upgrade to Gradle 8.11.1\n\nCloses gh-43261"
+        }
+    ],
+    "issues": [
+        {
+            "number": "43474",
+            "title": "Upgrade to Spring Batch 5.1.3"
+        },
+        {
+            "number": "43561",
+            "title": "KafkaProperties fail to build SSL properties when the bundle name is an empty string"
+        },
+        {
+            "number": "43378",
+            "title": "Diagnostics are poor when property resolution throws a ConversionFailedException"
+        },
+        {
+            "number": "43223",
+            "title": "Replace javadoc attributes in adoc files"
+        },
+        {
+            "number": "43353",
+            "title": "Document that server.ssl.cipher and server.ssl.enabled-protocols are not fallbacks used with SSL bundles"
+        },
+        {
+            "number": "43545",
+            "title": "Correct upgrade issues so that they link to the right version and fix BOMR"
+        },
+        {
+            "number": "43397",
+            "title": "Upgrade to Spring Session 3.3.5"
+        },
+        {
+            "number": "43396",
+            "title": "Upgrade to Spring Pulsar 1.1.7"
+        },
+        {
+            "number": "43476",
+            "title": "Upgrade to Spring Integration 6.3.7"
+        },
+        {
+            "number": "43391",
+            "title": "Upgrade to Spring Authorization Server 1.3.4"
+        },
+        {
+            "number": "43549",
+            "title": "Upgrade to Netty 4.1.116.Final"
+        },
+        {
+            "number": "43430",
+            "title": "SpringApplicationShutdownHandlers do not run in deterministic order"
+        },
+        {
+            "number": "43329",
+            "title": "Use <annotationProcessorPaths> in Maven examples for configuring an annotation processor"
+        },
+        {
+            "number": "43542",
+            "title": "Upgrade to Dependency Management Plugin 1.1.7"
+        },
+        {
+            "number": "43539",
+            "title": "Upgrade to Pulsar Reactive 0.5.10"
+        },
+        {
+            "number": "43527",
+            "title": "Upgrade to Spring Security 6.3.6"
+        },
+        {
+            "number": "43394",
+            "title": "Upgrade to Spring Kafka 3.2.6"
+        },
+        {
+            "number": "43518",
+            "title": "Inconsistent double slashes in generated Javadoc URLs"
+        },
+        {
+            "number": "43231",
+            "title": "Switch spring-retry javadoc links back to docs.spring.io"
+        },
+        {
+            "number": "43485",
+            "title": "Upgrade to Spring Retry 2.0.11"
+        },
+        {
+            "number": "43509",
+            "title": "Upgrade to Hibernate Validator 8.0.2.Final"
+        },
+        {
+            "number": "43357",
+            "title": "Unable to find a @SpringBootConfiguration results in misleading error message"
+        },
+        {
+            "number": "43505",
+            "title": "Run PaketoBuilderTests on all JDK versions"
+        },
+        {
+            "number": "43395",
+            "title": "Upgrade to Spring LDAP 3.2.10"
+        },
+        {
+            "number": "43392",
+            "title": "Upgrade to Spring Data Bom 2024.0.7"
+        },
+        {
+            "number": "43502",
+            "title": "Upgrade to Kafka 3.7.2"
+        },
+        {
+            "number": "43284",
+            "title": "UnsupportedOperationException when starting a Maven shaded application on Java 21 with virtual threads enabled"
+        },
+        {
+            "number": "43475",
+            "title": "Upgrade to Spring HATEOAS 2.3.4"
+        },
+        {
+            "number": "43393",
+            "title": "Upgrade to Spring Framework 6.1.16"
+        },
+        {
+            "number": "43487",
+            "title": "Upgrade to Jetty 12.0.16"
+        },
+        {
+            "number": "43380",
+            "title": "Failure analysis for InvalidConfigurationPropertyValueException doesn't correctly handle fuzzy matching of environment variables"
+        },
+        {
+            "number": "43479",
+            "title": "BOMR should not add new lines escape chars"
+        },
+        {
+            "number": "43466",
+            "title": "Upgrade to Tomcat 10.1.34"
+        },
+        {
+            "number": "43465",
+            "title": "Upgrade to Thymeleaf Extras SpringSecurity 3.1.3.RELEASE"
+        },
+        {
+            "number": "43464",
+            "title": "Upgrade to Thymeleaf 3.1.3.RELEASE"
+        },
+        {
+            "number": "43390",
+            "title": "Upgrade to Reactor Bom 2023.0.13"
+        },
+        {
+            "number": "43389",
+            "title": "Upgrade to Micrometer Tracing 1.3.7"
+        },
+        {
+            "number": "43388",
+            "title": "Upgrade to Micrometer 1.13.9"
+        },
+        {
+            "number": "43463",
+            "title": "Upgrade to jOOQ 3.19.16"
+        },
+        {
+            "number": "43462",
+            "title": "Upgrade to Zipkin Reporter 3.4.3"
+        },
+        {
+            "number": "40139",
+            "title": "Unable to use Docker Compose support when mixing dedicated and shared services"
+        },
+        {
+            "number": "43300",
+            "title": "Methods to build producer / consumer properties from KafkaProperties are inconvienenent to use without an SSL bundle"
+        },
+        {
+            "number": "43435",
+            "title": " Failures in -Djarmode=tools do not consistently return a non-zero exit"
+        },
+        {
+            "number": "43387",
+            "title": "Upgrade to Undertow 2.3.18.Final"
+        },
+        {
+            "number": "43386",
+            "title": "Upgrade to RxJava3 3.1.10"
+        },
+        {
+            "number": "43385",
+            "title": "Upgrade to Native Build Tools Plugin 0.10.4"
+        },
+        {
+            "number": "43367",
+            "title": "Add antora redirects for legacy anchors"
+        },
+        {
+            "number": "43369",
+            "title": "TestContainersParallelStartupWithImportTestcontainersIntegrationTests fails when running in the IDE"
+        },
+        {
+            "number": "43337",
+            "title": "H2ConsoleAutoConfiguration causes early initialization of DataSource beans"
+        },
+        {
+            "number": "43308",
+            "title": "Link to @EnableMethodSecurity instead of the deprecated @EnableGlobalMethodSecurity"
+        },
+        {
+            "number": "43304",
+            "title": "Overriding log level with an environment variable does not work when using an environment prefix"
+        },
+        {
+            "number": "43269",
+            "title": "Reduce warnings reported by Eclipse"
+        },
+        {
+            "number": "43247",
+            "title": "Hombrew formula should not be a published artifact in commercial builds"
+        },
+        {
+            "number": "43250",
+            "title": "Correct the name of the snapshot repository used when publishing commercial builds"
+        },
+        {
+            "number": "43246",
+            "title": "Flip make default to false so that 3.4.x releases of the CLI are now the default"
+        },
+        {
+            "number": "43251",
+            "title": "Upgrade to release verification tests 0.0.7"
+        },
+        {
+            "number": "43262",
+            "title": "Upgrade Java version in .sdkmanrc to 17.0.13"
+        },
+        {
+            "number": "43261",
+            "title": "Upgrade to Gradle 8.11.1"
+        }
+    ]
+}

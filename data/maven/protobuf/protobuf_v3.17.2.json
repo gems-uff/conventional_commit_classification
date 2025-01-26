@@ -1,0 +1,109 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.17.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 24,
+    "start_delay": 0.0,
+    "duration": 18.738020833333334,
+    "commits_info": [
+        {
+            "hash": "70db61a91bae270dca5db2f9837deea11118b148",
+            "message": "Merge pull request #8686 from protocolbuffers/addToChanges\n\nAdding PHP fix to changes for 3.17.2"
+        },
+        {
+            "hash": "c26e452e9e008bc18094cca9ecff1efd37f963be",
+            "message": "Adding PHP fix to changes for 3.17.2"
+        },
+        {
+            "hash": "b42f2376e49dddcd2fb9e3e35a56ad9bfd419a3f",
+            "message": "Merge pull request #8670 from haberman/php-wkt-submsg\n\nFixed SEGV in sub-message getters for well-known types when message is unset."
+        },
+        {
+            "hash": "75de6aa21a1039251eb7f747f5b84164a90a8e5f",
+            "message": "Fixed sub-message getters for well-known types when message is unset.\n\nThe well-known types generate C code into wkt.inc, and this C code was\nnot testing isset($msg->submsg_field) like the generated code does:\n\n```php\n// PHP generated getter: checks isset().\npublic function getOptions()\n{\n    return isset($this->options) ? $this->options : null;\n}\n```\n\n```c\n// C generated getter, does not check upb_msg_has()\nstatic PHP_METHOD(google_protobuf_Value, getListValue) {\n  Message* intern = (Message*)Z_OBJ_P(getThis());\n  const upb_fielddef *f = upb_msgdef_ntofz(intern->desc->msgdef,\n                                           \"list_value\");\n  zval ret;\n  Message_get(intern, f, &ret);\n  RETURN_COPY_VALUE(&ret);\n}\n```\n\nThis led to an error where we wnuld try to get a sub-message field from upb\nwhen it `upb_msg_has(msg, field) == false`, which is an error according to upb.\n\nThere are two possible fixes for this bug. A guiding principle is that we want\nthe generated C code in wkt.inc to have the same behavior as PHP generated\ncode. Following this principle, the two possible fixes are:\n\n1. Change the code generator for wkt.inc to check upb_msg_has(f) before\n   calling Message_get(). This would match the isset() check that the\n   The PHP generated code does, and we would leave the PHP code unchanged.\n\n2. Change Message_get() to itself perform the upb_msg_has(f) check for\n   sub-message fields. This means that generated code would no longer need\n   to perform an isset() check, so we would want to remove this check from\n   the PHP generated code also to avoid a redundant check.\n\nBoth of these are reasonable fixes, and it is not immediately obvious which is\nbetter. (1) has the benefit of resolving this case when we are in more\nspecialized code (a getter function that already knows this is a sub-message\nfield), and therefore avoids performing the check later in more generic code\nthat would have to test the type again. On the other hand, the isset() check is\nnot needed for the pure PHP implementation, as an unset PHP variable will\nreturn `null` anyway. And for the C extension, we'd rather check upb_msg_has()\nat the C level instead of PHP.\n\nSo this change implements (2). The generated code in wkt.inc remains unchanged,\nand the PHP generated code for sub-message fields is changed to remove the\nisset() check."
+        },
+        {
+            "hash": "769826e338075ac4e13c4571f2f3f2b2f15e0353",
+            "message": "Merge pull request #8658 from deannagarcia/update-change-notes\n\nUpdating change logs for 3.17.2"
+        },
+        {
+            "hash": "a693d723d4552a49bb2d180996a26e40c750334e",
+            "message": "Add PR number for kotlin fix"
+        },
+        {
+            "hash": "d303bba1bb542e499bf39c7bec86a6c0c8e7da90",
+            "message": "Updating change logs"
+        },
+        {
+            "hash": "d3b71f21bb909e21bcdc8635d8b752a621fe73bc",
+            "message": "Merge pull request #8657 from deannagarcia/3.17.x-202105251932\n\nUpdate version to 3.17.2"
+        },
+        {
+            "hash": "5b8208eceadb53ab53bdf7f4ee1ce7591501d0c2",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "b87d3648311ac573d1308169a28cd55328a3102f",
+            "message": "Merge pull request #8653 from deannagarcia/fixDuplicateClassErrors\n\nRemove maven-bundle-plugin to fix duplicate class errors"
+        },
+        {
+            "hash": "5fac12fff0358dd944c855d67250bacdb6c92e57",
+            "message": "Reverting the Makefile spacing changes"
+        },
+        {
+            "hash": "3f8f6e925d63b1e938987281e3607de136526ee2",
+            "message": "Removing more files that were added during rebasing"
+        },
+        {
+            "hash": "713f2d0008c97b52f69c6164b750ee9b4b85a643",
+            "message": "Removing files that were added during rebasing"
+        },
+        {
+            "hash": "021329b7e79a387c7b2cc5d483dd36a55c4c5014",
+            "message": "resolving conflicts"
+        },
+        {
+            "hash": "2f8d310048f38ea90cad5e78cbd23f27d09f61c9",
+            "message": "Fixing objc tests"
+        },
+        {
+            "hash": "eb57ffe807e0db2c181af620ce919bf2887676a7",
+            "message": "Reverting last change since tests are still failing"
+        },
+        {
+            "hash": "6319a23bff3c38123a637e7e955444cb50f19e67",
+            "message": "Run update_file_lists.sh"
+        },
+        {
+            "hash": "f44755496fd859785db0830b4940666c829c0c62",
+            "message": "Updating makefile to pass the tests"
+        },
+        {
+            "hash": "76bd17ca5b75486072acf36467b8b0e34555f11e",
+            "message": "Add another file to Makefile"
+        },
+        {
+            "hash": "f9a60fc8ae0646377fd30d2490d7a8f6045b6754",
+            "message": "Add another header to Makefile"
+        },
+        {
+            "hash": "eb3ab8c59eaf4d2b652e2c2cb50ef9679feee93a",
+            "message": "Add headerfiles to Makefile"
+        },
+        {
+            "hash": "e6356050037e35f5e1bbcfecd99e51c2c29fa65e",
+            "message": "Added missing release notes for 3.17.1. (#8649)"
+        },
+        {
+            "hash": "09cf1839e1351d0d21717ba19df29494148b5785",
+            "message": "Merge pull request #8685 from protocolbuffers/addDokka\n\nAdding dokka to main pom"
+        },
+        {
+            "hash": "7090f7ab55f34abea66d6ba090c28c52e6eb73dc",
+            "message": "Adding dokka to main pom"
+        }
+    ],
+    "issues": []
+}

@@ -11,223 +11,180 @@
     "commits_info": [
         {
             "hash": "e72ab866d68d80a6d4c8136dcbf5d0e5d9617cd0",
-            "message": "bumped version\n",
-            "tag_name": null
+            "message": "bumped version"
         },
         {
             "hash": "7af9add9996f2efab6cccc50c5503b3457534930",
-            "message": "* Fixed issues with @FieldDefaults and @Value (you can NOT override\n@Value's final-by-default and private-by-default with it; now\nappropriate warnings are emitted)\n* Builder now errors out on presence of most lombok annotations on an\nexplicit builder class.\n* Builder now takes @FieldDefaults/@Value into account.\n* Builder on type now generates the constructor as package private\ninstead of private to avoid synthetic accessor constructors.\n* added a bunch of test cases.\n* added a test case feature: If the expected file is omitted entirely\nbut there are expected messages, the differences in the output itself\nare ignored.\n* streamlined checking for boolean-ness (removed some duplicate code)\n* added 'fluent' and 'chain' to @Builder.\n",
-            "tag_name": null
+            "message": "* Fixed issues with @FieldDefaults and @Value (you can NOT override\n@Value's final-by-default and private-by-default with it; now\nappropriate warnings are emitted)\n* Builder now errors out on presence of most lombok annotations on an\nexplicit builder class.\n* Builder now takes @FieldDefaults/@Value into account.\n* Builder on type now generates the constructor as package private\ninstead of private to avoid synthetic accessor constructors.\n* added a bunch of test cases.\n* added a test case feature: If the expected file is omitted entirely\nbut there are expected messages, the differences in the output itself\nare ignored.\n* streamlined checking for boolean-ness (removed some duplicate code)\n* added 'fluent' and 'chain' to @Builder."
         },
         {
             "hash": "ec0cc4348cf71d872b796d0733fb64fc576ef5df",
-            "message": "Renamed ImmutableList to LombokImmutableList, to reduce our ImmutableList coming up in autocomplete dialogs when guava's was intended.",
-            "tag_name": null
+            "message": "Renamed ImmutableList to LombokImmutableList, to reduce our ImmutableList coming up in autocomplete dialogs when guava's was intended."
         },
         {
             "hash": "1037e8322560be0721d70c2c5bfeca9d42157d85",
-            "message": "possible fix for a deadlock issue 531.\n",
-            "tag_name": null
+            "message": "possible fix for a deadlock issue 531."
         },
         {
             "hash": "e7ff097fec867714b8a064b559dfc9e5162a489c",
-            "message": "Fixed value's snippet integration (it hadn't been updated yet now that Value has moved from experimental into core).\n",
-            "tag_name": null
+            "message": "Fixed value's snippet integration (it hadn't been updated yet now that Value has moved from experimental into core)."
         },
         {
             "hash": "bf8e2afed07b4062ac3d3fee8b2f8981d1213f7e",
-            "message": "gave up on adding support for moving javadoc to getter/setter in eclipse. Eclipse breaks the javadoc out of the raw source and we can't modify that without breaking a billion things. To solve this issue we'd have to write some very complicated patches to intercept this process and somehow propagate the node that the javadoc is attached to AND translate from the ast model to dom or whatever is being used there. Not gonna happen for this low priority feature.\n",
-            "tag_name": null
+            "message": "gave up on adding support for moving javadoc to getter/setter in eclipse. Eclipse breaks the javadoc out of the raw source and we can't modify that without breaking a billion things. To solve this issue we'd have to write some very complicated patches to intercept this process and somehow propagate the node that the javadoc is attached to AND translate from the ast model to dom or whatever is being used there. Not gonna happen for this low priority feature."
         },
         {
             "hash": "867929c79f344e2fa63aa280cf452d39eb7aabf7",
-            "message": "added tests for new javadoc behaviour, javac implementation of copying javadoc for getters/setters, and fixed pretty printer to no longer inject an extra newline at the top of javadoc.\n",
-            "tag_name": null
+            "message": "added tests for new javadoc behaviour, javac implementation of copying javadoc for getters/setters, and fixed pretty printer to no longer inject an extra newline at the top of javadoc."
         },
         {
             "hash": "0d5fea94da2bfb72ea886a7379ad35e124489692",
-            "message": "Support for javadoc copying in Getter/Setter generation for javac, as well as updates to all relevant documentation\n",
-            "tag_name": null
+            "message": "Support for javadoc copying in Getter/Setter generation for javac, as well as updates to all relevant documentation"
         },
         {
             "hash": "a6c1be550fd1911084faaf7f54ae7bbbd5673642",
-            "message": "A lot of refactoring on how javadoc is handled, to prepare for copying javadoc from field to setter/getter in javac.",
-            "tag_name": null
+            "message": "A lot of refactoring on how javadoc is handled, to prepare for copying javadoc from field to setter/getter in javac."
         },
         {
             "hash": "4923506d737718cec49e35aa9a273b3a999eefc6",
-            "message": "more work on the tricky Context hack to make 'ant compile' not emit warnings.",
-            "tag_name": null
+            "message": "more work on the tricky Context hack to make 'ant compile' not emit warnings."
         },
         {
             "hash": "91bfd390e05ed3d04dff6438ffd1bc9e01eb1fff",
-            "message": "updated docs for new desugaring for getter(lazy=true)\n",
-            "tag_name": null
+            "message": "updated docs for new desugaring for getter(lazy=true)"
         },
         {
             "hash": "85fec0dffa5df13c0cafc86ca762774ba2c4d951",
-            "message": "eclipse support for the new @Getter(lazy=true) desugaring.\n",
-            "tag_name": null
+            "message": "eclipse support for the new @Getter(lazy=true) desugaring."
         },
         {
             "hash": "b6a23a7d94ee4f01b38a0e6d7db120fb05be0d6c",
-            "message": "@Getter(lazy=true) now uses a different, more efficient desugaring. Implementing in javac, ecj still has to be done.\n",
-            "tag_name": null
+            "message": "@Getter(lazy=true) now uses a different, more efficient desugaring. Implementing in javac, ecj still has to be done."
         },
         {
             "hash": "dfc682a0010ff1ba77496dd7644a6dcbe93017e5",
-            "message": "lombok's compile target is 1.6, but, eclipse project was generated as 1.7. This caused a bunch of weirdness because eclipse changes a bunch of warnings and quickfixes based on this (such as complaining about lack of @SafeVarargs, a 1.7-only feature).\n",
-            "tag_name": null
+            "message": "lombok's compile target is 1.6, but, eclipse project was generated as 1.7. This caused a bunch of weirdness because eclipse changes a bunch of warnings and quickfixes based on this (such as complaining about lack of @SafeVarargs, a 1.7-only feature)."
         },
         {
             "hash": "446a8e33e00cb9effe1d1e181cac192a70648412",
-            "message": "FINALLY! Found the cause of a really weird eclipse bug,\nwhere _ANY_ mention of com.sun.tools.javac.tree.TreeMaker,\nanywhere in a source file, would disable pretty much every\nintelligent part of what makes the 'I' in IDE in eclipse:\nNo auto-complete, no 'go to declaration', etcetera, but only\nsince Eclipse Juno (not fixed in Kepler either). It's the\npresence of src/stubs/com/sun/tools/javac/util/Context.java.\n\nI've moved Context to a special stubs directory that's only used\nfor javac (so that we still get the benefit of getting some\nwarnings and such when making command line builds), and removed\nthe @Override annotations for where the stubbing is relevant\n(for methods that exist in javac7 but not in javac6 on interfaces\nwe create implementations of). Furthermore, I did some extremely\ntricky work in making our version actuall compatible with the\nexact class signatures of both javac6- and javac7+'s versions;\ngeneration of synthetic methods for reified type parameters was\ncausing havoc.\n\nA big stack of 'here be voodoo' comments unfortunately added to\nexplain it all; necessary evil.\n",
-            "tag_name": null
+            "message": "FINALLY! Found the cause of a really weird eclipse bug,\nwhere _ANY_ mention of com.sun.tools.javac.tree.TreeMaker,\nanywhere in a source file, would disable pretty much every\nintelligent part of what makes the 'I' in IDE in eclipse:\nNo auto-complete, no 'go to declaration', etcetera, but only\nsince Eclipse Juno (not fixed in Kepler either). It's the\npresence of src/stubs/com/sun/tools/javac/util/Context.java.\n\nI've moved Context to a special stubs directory that's only used\nfor javac (so that we still get the benefit of getting some\nwarnings and such when making command line builds), and removed\nthe @Override annotations for where the stubbing is relevant\n(for methods that exist in javac7 but not in javac6 on interfaces\nwe create implementations of). Furthermore, I did some extremely\ntricky work in making our version actuall compatible with the\nexact class signatures of both javac6- and javac7+'s versions;\ngeneration of synthetic methods for reified type parameters was\ncausing havoc.\n\nA big stack of 'here be voodoo' comments unfortunately added to\nexplain it all; necessary evil."
         },
         {
             "hash": "5326cfa8e80a55c056f497894288924022c9bbd7",
-            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n",
-            "tag_name": null
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok"
         },
         {
             "hash": "e531b1f49948dc075586151608c01c80863af67e",
-            "message": "Merge pull request #37 from maddingo/master\n\nThe installer creates proper \"full paths\" on Windows",
-            "tag_name": null
+            "message": "Merge pull request #37 from maddingo/master\n\nThe installer creates proper \"full paths\" on Windows"
         },
         {
             "hash": "a8fe76af4df9f17257e3923f895bc06ec68efe4d",
-            "message": "allow installer to be started with lombok.installer.fullpath, that creates proper paths on Windows\n",
-            "tag_name": null
+            "message": "allow installer to be started with lombok.installer.fullpath, that creates proper paths on Windows"
         },
         {
             "hash": "fb32de51afaef2e2a3135b7230f47add005bae69",
-            "message": "And now the changelogs are also updated to reflect that Value has been promoted. Racking up the commits here...\n",
-            "tag_name": null
+            "message": "And now the changelogs are also updated to reflect that Value has been promoted. Racking up the commits here..."
         },
         {
             "hash": "c3e4eb4f745b9f11b07f4a2c48273e7dfdeb7f69",
-            "message": "and added some more javadoc to point at the new main package variant\n",
-            "tag_name": null
+            "message": "and added some more javadoc to point at the new main package variant"
         },
         {
             "hash": "54ef2d08523abf09d8be127e59bcf61106479ca6",
-            "message": "... and now that @Value has been promoted to the main package, the old experimental one is now deprecated.",
-            "tag_name": null
+            "message": "... and now that @Value has been promoted to the main package, the old experimental one is now deprecated."
         },
         {
             "hash": "b5747963c022f680168ff66ebdc7860adb954882",
-            "message": "Value has been promoted to the main package.",
-            "tag_name": null
+            "message": "Value has been promoted to the main package."
         },
         {
             "hash": "e1c39bbc601408decb0ae147d181708a5af41307",
-            "message": "javac builder implementation. Passes all tests.\nAdded toString() impl for builders in both eclipse and javac.\nAdded all documentation, though it'll need some reviewing.\n",
-            "tag_name": null
+            "message": "javac builder implementation. Passes all tests.\nAdded toString() impl for builders in both eclipse and javac.\nAdded all documentation, though it'll need some reviewing."
         },
         {
             "hash": "eb3d32c718d9ef46fd30bc677147cda85318fb9c",
-            "message": "finished tests for builder (added after-delombok versions).",
-            "tag_name": null
+            "message": "finished tests for builder (added after-delombok versions)."
         },
         {
             "hash": "e047d2b94e1206bbf304725c20ee20afbd1681fb",
-            "message": "Added a ClassDef wrapper, because its signature changed between javac1.6 and javac1.7. (The wrapper uses reflection). Need for: javac @Builder impl.\n\nAlso added some utilities to JavacHandlerUtil.\n",
-            "tag_name": null
+            "message": "Added a ClassDef wrapper, because its signature changed between javac1.6 and javac1.7. (The wrapper uses reflection). Need for: javac @Builder impl.\n\nAlso added some utilities to JavacHandlerUtil."
         },
         {
             "hash": "359b7845f21ac7ad023ce1a13af8f6b5d1833068",
-            "message": "Most of the javac implementation for HandleBuilder, plus\nsome minor updates and refactoring in the eclipse HandleBuilder.\n",
-            "tag_name": null
+            "message": "Most of the javac implementation for HandleBuilder, plus\nsome minor updates and refactoring in the eclipse HandleBuilder."
         },
         {
             "hash": "9066d57ed9073cd99d664b2676d6fde54af1a7b6",
-            "message": "improved and added to test cases for @Builder.\nEclipse's implementation continues to pass them all.\n",
-            "tag_name": null
+            "message": "improved and added to test cases for @Builder.\nEclipse's implementation continues to pass them all."
         },
         {
             "hash": "648c3eeee69bede925f794b16b1f3d184359761f",
-            "message": "Eclipse Builder implementation finished. Tests need fleshing out though.\n",
-            "tag_name": null
+            "message": "Eclipse Builder implementation finished. Tests need fleshing out though."
         },
         {
             "hash": "2d76b1d22dea1e78326ebafdb48967512183cede",
-            "message": "First steps Builder support\n",
-            "tag_name": null
+            "message": "First steps Builder support"
         },
         {
             "hash": "4e521c558ed7355244dd1cb9c8d94bd5a9cb462d",
-            "message": "Added injectType methods to Eclipse/JavacHandlerUtil, which we'll need to inject the created $Builder type.\n\nInspired by Philipp Eichhorn's work in lombok-pg.\n",
-            "tag_name": null
+            "message": "Added injectType methods to Eclipse/JavacHandlerUtil, which we'll need to inject the created $Builder type.\n\nInspired by Philipp Eichhorn's work in lombok-pg."
         },
         {
             "hash": "bf43dc747791f9bbf953cfea8200fac478f62d80",
-            "message": "Removed a SuppressWarnings which old eclipse doesn't care about for some reason... now I'm just confused. Do we need it or not?\n",
-            "tag_name": null
+            "message": "Removed a SuppressWarnings which old eclipse doesn't care about for some reason... now I'm just confused. Do we need it or not?"
         },
         {
             "hash": "b3dac7722e699b3f18169265fd77f1731a82d960",
-            "message": "issue 536: annotationprocessor now always returns false.",
-            "tag_name": null
+            "message": "issue 536: annotationprocessor now always returns false."
         },
         {
             "hash": "5fd82596f6e80c71da1012e423419eed5c293ac2",
-            "message": "Added some very limited reporting when OutOfMemorErrors occur during\nparse tree builder under javac. Let's hope our users reporting these\nissues can use this to figure out which files are triggering the issue.\n",
-            "tag_name": null
+            "message": "Added some very limited reporting when OutOfMemorErrors occur during\nparse tree builder under javac. Let's hope our users reporting these\nissues can use this to figure out which files are triggering the issue."
         },
         {
             "hash": "5a3e9bd8049469169410107011ad0e26b3b629e3",
-            "message": "Added @NonNull on parameters feature (issue 514),\nincluding docs and changelog.",
-            "tag_name": null
+            "message": "Added @NonNull on parameters feature (issue 514),\nincluding docs and changelog."
         },
         {
             "hash": "7bbb7cf3ca25cb8727a6ec226de1ed1fc5bf47e9",
-            "message": "Fixes for issue 470: VerifyErrors when using @SneakyThrows.\n",
-            "tag_name": null
+            "message": "Fixes for issue 470: VerifyErrors when using @SneakyThrows."
         },
         {
             "hash": "b3b91a0ddd1770f8646d27e421e2cfef96940f8f",
-            "message": "added test case and delombok result for issue 520 (val in try-with-resources). WARNING: I havent added ecj test output yet because so far there is no ecj7 available for testing with our buildscripts. I should fix that first and then Ill sort this out.\n",
-            "tag_name": null
+            "message": "added test case and delombok result for issue 520 (val in try-with-resources). WARNING: I havent added ecj test output yet because so far there is no ecj7 available for testing with our buildscripts. I should fix that first and then Ill sort this out."
         },
         {
             "hash": "2c53dc7a6567be0d9e3f9aaeb298befe194f80c7",
-            "message": "whoops, didnt update version number to 0.11.9 yet\n",
-            "tag_name": null
+            "message": "whoops, didnt update version number to 0.11.9 yet"
         },
         {
             "hash": "5d6f82d799178f8a15f635f0cac6f733ed310d17",
-            "message": "added previous fix of issue 520 to the changelog\n",
-            "tag_name": null
+            "message": "added previous fix of issue 520 to the changelog"
         },
         {
             "hash": "6b5a0e2cb349a4fb7d8bb5f943e57a0b65596ca0",
-            "message": "Fixed more issues related to java7's try-with-resources,\nand updated ECJ version detection.",
-            "tag_name": null
+            "message": "Fixed more issues related to java7's try-with-resources,\nand updated ECJ version detection."
         },
         {
             "hash": "9c1e29842e65bf20895db9e19336b2ca948236ad",
-            "message": "Added methods to obtain JLS support-level version information from AST/LombokNode. Tests updates to honour these with //version X at the top\nof any test file (now also in eclipse, which until now always said it was v6)",
-            "tag_name": null
+            "message": "Added methods to obtain JLS support-level version information from AST/LombokNode. Tests updates to honour these with //version X at the top\nof any test file (now also in eclipse, which until now always said it was v6)"
         },
         {
             "hash": "4152eee126bcb6a0403d3e7a79fe336944031268",
-            "message": "Added a method to obtain latest java language spec supported by host\nplatform and implemented it for javac BUT NOT FOR ECJ!\n",
-            "tag_name": null
+            "message": "Added a method to obtain latest java language spec supported by host\nplatform and implemented it for javac BUT NOT FOR ECJ!"
         },
         {
             "hash": "ffb3527daa05c966f40cccb3bbd93133b5775c7b",
-            "message": "Updated website; the footer of the video was too long and caused wonky formatting, and the download page now points to the IntelliJ plugin page instead of saying that IntelliJ doesn't support lombok.\n",
-            "tag_name": null
+            "message": "Updated website; the footer of the video was too long and caused wonky formatting, and the download page now points to the IntelliJ plugin page instead of saying that IntelliJ doesn't support lombok."
         },
         {
             "hash": "f98bf919cc6701e98087d39fefb7bbfc85688834",
-            "message": "Fixed issue 513: If equals is present but hashCode isn't, @Data now generates a warning to explain this strange situation.",
-            "tag_name": null
+            "message": "Fixed issue 513: If equals is present but hashCode isn't, @Data now generates a warning to explain this strange situation."
         },
         {
             "hash": "420e0dcb53654f41d0f79b004d6c750414e6ba7a",
-            "message": "deprecating the old Value annotation also added deprecation warnings to where we still support it as an alias. fixed.\n",
-            "tag_name": null
+            "message": "deprecating the old Value annotation also added deprecation warnings to where we still support it as an alias. fixed."
         }
-    ]
+    ],
+    "issues": []
 }

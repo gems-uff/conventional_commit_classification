@@ -1,0 +1,538 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.22",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 102,
+    "start_delay": 0.0,
+    "duration": 29.01505787037037,
+    "commits_info": [
+        {
+            "hash": "508cc346e098266a84d64281635344f8c6231281",
+            "message": "Release v5.3.22"
+        },
+        {
+            "hash": "e50131d454248b9eca26edb4765aaeae3f204107",
+            "message": "Add Consumer methods to configure Jackson modules\n\nCloses gh-28633"
+        },
+        {
+            "hash": "cdd4e8cd7f1fb5bfd1927d6023ef6d51b0539737",
+            "message": "Improve regex support for URL path matching\n\nCloses gh-28815"
+        },
+        {
+            "hash": "02b7ddbc7027dc49a6c899724ab3922d996bd81c",
+            "message": "Upgrade to Log4J 2.18, H2 2.1.214, OpenPDF 1.3.29, XStream 1.4.19, HtmlUnit 2.63, Jetty Reactive HttpClient 1.1.12"
+        },
+        {
+            "hash": "8e5c4903d4eb4294a92f15fbf88b4255f59e44a2",
+            "message": "Avoid synchronization in AbstractAspectJAdvice#calculateArgumentBindings\n\nAligned with the early calculateArgumentBindings call in ReflectiveAspectJAdvisorFactory.\n\nCloses gh-26377"
+        },
+        {
+            "hash": "bd3499671c7067c176898a02f70b9cdd78628911",
+            "message": "Fix typos in test code\n\nThis commit fixes typos in test class names, test method names, and\ntest variable names.\n\nCloses gh-28807"
+        },
+        {
+            "hash": "2e4d7e4ef986d79448c7b2790cd584e2c1f7adbf",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c6be3b33c9748578a22eda37424deceb55e1c695",
+            "message": "Fix and improve Javadoc in spring-aop\n\nCloses gh-28803"
+        },
+        {
+            "hash": "c112bb0ae191623cfcf64e5d0ed52d38920ca1fd",
+            "message": "Fix and improve Javadoc in spring-beans\n\nSee gh-28803"
+        },
+        {
+            "hash": "165fba868c0a316ec7ba6fa983a8e2364706a31f",
+            "message": "Fix typos in reference docs\n\nCloses gh-28805"
+        },
+        {
+            "hash": "2ca64ad88a3d770f59c0bf12c570d3eb80ccac77",
+            "message": "Fix minor typos in project README\n\nSee gh-28805"
+        },
+        {
+            "hash": "ea27206a32e32642074a64589c16ed6b66c840c2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c48c5e76912d31ca0b0aadd3dffa265b6702abd8",
+            "message": "Fix and improve Javadoc in spring-context\n\nCloses gh-28802"
+        },
+        {
+            "hash": "bc15f839cdb330d890a2078f27bfe167b8c2f4ca",
+            "message": "Fix and improve Javadoc in spring-core\n\nSee gh-28802"
+        },
+        {
+            "hash": "46db372951e6dd17c2c25d54c6ba06e444689025",
+            "message": "Polishing"
+        },
+        {
+            "hash": "91258271e41ed7e998d475fb1a807a61c48508f1",
+            "message": "Fix and improve Javadoc in spring-expression\n\nCloses gh-28800"
+        },
+        {
+            "hash": "e76fbcb29089930715d0321910ab4f9a47c67472",
+            "message": "Fix and improve Javadoc in spring-jms\n\nSee gh-28800"
+        },
+        {
+            "hash": "82ca27e46f28267a2778d93291fe32a5acd32ce5",
+            "message": "Fix and improve Javadoc in spring-messaging\n\nSee gh-28800"
+        },
+        {
+            "hash": "bca104798b3113767332b9e48306943172ee2e16",
+            "message": "Fix and improve Javadoc in spring-jdbc\n\nCloses gh-28796"
+        },
+        {
+            "hash": "b30eb6837c69b9a3d01796ff17b5e15325957dc4",
+            "message": "Fix and improve Javadoc in spring-oxm\n\nSee gh-28796"
+        },
+        {
+            "hash": "ac06d1dfa957f350e6e7a7be3b984cadd73adc04",
+            "message": "Fix and improve Javadoc in spring-orm\n\nSee gh-28796"
+        },
+        {
+            "hash": "cfb39acc973f0eab3d8cb6ce29dee6604482e84d",
+            "message": "Fix and improve Javadoc in spring-r2dbc\n\nSee gh-28796"
+        },
+        {
+            "hash": "222dbf837702ac01b04c42432f4995dd7d2f1b08",
+            "message": "Update copyright date"
+        },
+        {
+            "hash": "10838a636fbbd4a95ac3652bc7209e98c6a11f6c",
+            "message": "Correctly identify MaxUploadSizeExceededException in StandardMultipartHttpServletRequest\n\nThis commit correctly identifies MaxUploadSizeExceededException in\nStandardMultipartHttpServletRequest by converting keywords in the\nexception message to lowercase before checking for their presence, for\ncompatibility with Jetty 9.4.x.\n\nCloses gh-28759"
+        },
+        {
+            "hash": "3c3ae32f0793931ce32614c8ff3508238f07632c",
+            "message": "Upgrade to Netty 4.1.79, Jetty 9.4.48, Undertow 2.2.18, Checkstyle 10.3.1"
+        },
+        {
+            "hash": "a3e46a2db7473f8e2f0fb6a29fd9e7bf4f631b5b",
+            "message": "ResolvableType.forInstance returns NONE for null instance\n\nCloses gh-28776"
+        },
+        {
+            "hash": "de1b938e2ed95104c532afc708e4accca7461e76",
+            "message": "Improve diagnostics for CGLIB ClassLoader mismatch with --add-opens hint\n\nCloses gh-28747"
+        },
+        {
+            "hash": "d72aeac319e1f98018acf41f2c1c185e9e0652b8",
+            "message": "Create well-known non-interface types without using reflection\n\nCloses gh-28718"
+        },
+        {
+            "hash": "5247eeba84a879fe48e18de4f38490dd8d5afba5",
+            "message": "Support LocalDate/Time for SQL type mappings\n\nCloses gh-28778"
+        },
+        {
+            "hash": "ae70e3c81c83b7420e54d53d85904d95d33abfd5",
+            "message": "Apply read-only enforcement after R2DBC transaction begin\n\nIncludes prepareTransactionalConnection variant aligned with JDBC DataSourceTransactionManager.\n\nCloses gh-28610"
+        },
+        {
+            "hash": "c942c8d2cf510b1fac6c4e79224ddf7cdcf358e1",
+            "message": "Fix expectations in MockMvc Kotlin documentation\n\nCloses gh-28301"
+        },
+        {
+            "hash": "1201af20e4f15144a9289c443c80642011fddb07",
+            "message": "Improve consistency of Kotlin injection code samples\n\nCloses gh-28596"
+        },
+        {
+            "hash": "d1df4d37395be786bea0141a9d90775ebe63102b",
+            "message": "Fix Kotlin code snippets language\n\nCloses gh-28810"
+        },
+        {
+            "hash": "1ef8800c6c6b5c1d7f4a90ddc7853786127840e9",
+            "message": "Fix Kotlin example for custom @Production\n\nCloses gh-28680"
+        },
+        {
+            "hash": "4d7e4e0c5885dbf28bd2fbc7f91696842e1d4718",
+            "message": "Fix a typo\n\nSee gh-28630"
+        },
+        {
+            "hash": "c7067269b3acb4321accf15d02fcbe9b15f1ac1b",
+            "message": "Upgrade to Reactor 2020.0.21\n\nCloses gh-28765"
+        },
+        {
+            "hash": "3af6a22b9f728d1029be41c06b064170f2f6b016",
+            "message": "Temporarily disable Javadoc links to Apache HttpClient 5.1 APIs"
+        },
+        {
+            "hash": "31a9694fc88e0a5b9343d2cca1cf008aef26830d",
+            "message": "Improve Javadoc for ContextCache#clearStatistics()\n\nSee gh-28795"
+        },
+        {
+            "hash": "92b8e99cbc3af42133f69da7e0d52b949ca8ddf2",
+            "message": "Fix and improve Javadoc in spring-test\n\nCloses gh-28795"
+        },
+        {
+            "hash": "3b68e97710cfd5e03d7c44366574e18e146e5c3c",
+            "message": "Fix and improve Javadoc in spring-tx\n\nCloses gh-28794"
+        },
+        {
+            "hash": "6f494ef4389c394b3cd9a22d33a39f9a905cad1a",
+            "message": "Fix and improve Javadoc in spring-web\n\nCloses gh-28791"
+        },
+        {
+            "hash": "19704805fdab54f0fce637ea91ab977776de8612",
+            "message": "Polish contribution\n\nSee gh-28790"
+        },
+        {
+            "hash": "31c6965c7fef6469b71e0814c4a3892813c98ce7",
+            "message": "Fix and improve Javadoc in spring-webflux\n\nCloses gh-28790"
+        },
+        {
+            "hash": "5b1a84e39515d728b53edd84e49c59cb10225bd9",
+            "message": "Polish contribution\n\nSee gh-28789"
+        },
+        {
+            "hash": "6985fa8057ca3a5e27e09d7cd75ad293ff95a7c3",
+            "message": "Fix and improve Javadoc in spring-webmvc\n\nCloses gh-28789"
+        },
+        {
+            "hash": "03f0c577048c086c303f20d433a20e575a6aa66e",
+            "message": "Fix and improve Javadoc in spring-websocket\n\nCloses gh-28788"
+        },
+        {
+            "hash": "d274e893a668459fd0c427c0c64136c624a6e24b",
+            "message": "Remove superfluous static declaration for enum, annotation, & interface"
+        },
+        {
+            "hash": "aa8b06b62268d1dfa196716d5f057960d3b399fb",
+            "message": "Delete file on multipart cancel\n\nThis commit makes sure that the temporary file used for multipart\nstorage is deleted when the source stream is malformed or cancelled.\n\nCloses gh-28740"
+        },
+        {
+            "hash": "323dbb912ef2edf147328d0da7f9f11b8690d954",
+            "message": "Move convention-based attribute override tests to @Nested class"
+        },
+        {
+            "hash": "63d7e81a480f1172f70f53d818e1cf841337fabf",
+            "message": "Switch to Reactor 2020-0.21 snapshots\n\nSee gh-28765"
+        },
+        {
+            "hash": "07960d49187fa447226c749ebd14e234666f1ee4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "07cfcbc3a936c2e92d1f64941c79faee48649764",
+            "message": "Move convention-based attribute override tests to @Nested class"
+        },
+        {
+            "hash": "2af27d899fd9e52ca2c6c7ad28cae2c039f75149",
+            "message": "Trim string input in Converters where whitespace is irrelevant\n\nCloses gh-28756"
+        },
+        {
+            "hash": "0621a8eff15206ad92cd77f8ea3e7b7c72563a12",
+            "message": "Fix concurrency issues in FreeMarkerMacroTests\n\nPrior to this commit, tests in these two classes intermittently failed\nwith errors similar to the following, due to concurrent modification\nof shared files.\n\nexpected:\n  \"<input type=\"text\" id=\"name\" name=\"name\" value=\"Darren\"     >\"\n but was:\n  \"<input type=\"text\" id=\"name\" name=\"name\" value=\"Darren\"     >\n\n  \"hidden\"/>\"\n\nThis commit fixes this by creating a new temporary folder for each test\nmethod invocation."
+        },
+        {
+            "hash": "7ac646bc96bcc402bec67e45b57146daa6f31f77",
+            "message": "Upgrade to TestNG Engine 1.0.4"
+        },
+        {
+            "hash": "2c3243c93ce1d68151e17b6ee0aee64646cd38fd",
+            "message": "Trim string input in PropertyEditors where whitespace is irrelevant\n\nCloses gh-28755"
+        },
+        {
+            "hash": "2bf5f7a6b326e321c8d0922fdf0882108d12a650",
+            "message": "Introduce lenient parsing in DataSize regarding whitespace\n\nPrior to this commit, a DataSize input string could not be parsed if it\ncontained any whitespace.\n\nWith this commit, a DataSize input string can contain leading, trailing,\nor 'in between' whitespace. For example, the following will be parsed\nto the same DataSize value.\n\n- \"1024B\"\n- \"1024 B\"\n- \" 1024B \"\n- \" 1024 B \"\n\nCloses gh-28643"
+        },
+        {
+            "hash": "bf39492c34b20435a354864e535a53af2730c5fb",
+            "message": "Introduce StringUtils.trimAllWhitespace(CharSequence)\n\nCloses gh-28757"
+        },
+        {
+            "hash": "007bdede4693332eb9fb857085fd87c389c3ebfa",
+            "message": "Add missing check to avoid re-initialization\n\nNoticed during review of #28736 that a check protecting against\nre-initialization was accidentally removed in commit\n3d6e38bb43fe86cc58bc816eff13b968c1e0884f."
+        },
+        {
+            "hash": "22cc6c5918576de3eee624022b4fb0923b56cf05",
+            "message": "Polishing contribution\n\nCloses gh-28736"
+        },
+        {
+            "hash": "461ba53b39d25a88ae6ab298c642c9cee546551f",
+            "message": "Qualify channelExecutor and taskScheduler in WebSocket config\n\nSee gh-28736"
+        },
+        {
+            "hash": "d1d6eb095e5af75ac80bd5050bf2c50f9ce97077",
+            "message": "Fix GenericApplicationContextTests on Microsoft Windows (round 2)\n\nThe previous change to the tests resulted in a failure on Windows when\nusing the DefaultResourceLoader by expecting an exception when no\nexception is thrown.\n\nThis commit narrows the scope of the if-clause to expect an exception\nonly when using the FileSystemResourceLoader on Windows.\n\nSee gh-28703, gh-28746"
+        },
+        {
+            "hash": "f732fab8206f83e012fa0f6f6b05089ef3f4d0c8",
+            "message": "Delete unused imports and dead code in CGLIB fork"
+        },
+        {
+            "hash": "fda3f8201a64e12f01321ac95e7595de31caeccc",
+            "message": "Switch warning level for forbidden reference to INFO in Eclipse IDE"
+        },
+        {
+            "hash": "e608b367135fe232d359bd878085e609d2465a17",
+            "message": "Improve GenericApplicationContextTests.getResource*() tests\n\nThis commit updates the tests so that they test something meaningful on\nMS Windows as well as on Linux/Mac.\n\nSee gh-28703, gh-28746"
+        },
+        {
+            "hash": "59180e76a7b35f060c056c2f44edc59d6e63a6ca",
+            "message": "Fix GenericApplicationContextTests on Microsoft Windows\n\nThe tests introduced in commit 9868c28c73 pass on Mac OS and Linux but\nfail on Microsoft Windows.\n\nThis commit updates the tests so that they pass on MS Windows as well.\n\nSee gh-28703\nCloses gh-28746"
+        },
+        {
+            "hash": "c5987d7c3754e53ae52f3db55dc6d3ab8a3e84c7",
+            "message": "Fix typo in test"
+        },
+        {
+            "hash": "5650e20edde0e3c3df305975404face0f1d1fe2b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2885177f5b139819dc6a821152ab9cc0cdb6ac0f",
+            "message": "Add @since tag for new CannotGetJdbcConnectionException constructor\n\nSee gh-28669\nCloses gh-28738"
+        },
+        {
+            "hash": "058ce36402049c121ef7a61ce0a5848997753b66",
+            "message": "Improve ExtendedWebExchangeDataBinder implementation\n\nClose gh-28646"
+        },
+        {
+            "hash": "2afe560e41c52c51a36314de3884416a9b1ed432",
+            "message": "Replace forEach with putAll\n\nSee gh-28646"
+        },
+        {
+            "hash": "b95362a3fd170a5ee16b90b74d4939efde06db02",
+            "message": "Avoid request params access for form data in logRequest\n\nClose gh-28587"
+        },
+        {
+            "hash": "9ea45697ac5f99bd8f62a8391bdec4bbe35efab1",
+            "message": "Support cookie comments in MockHttpServletResponse and MockCookie\n\nPrior to this commit, if a cookie was added to MockHttpServletResponse,\nthe comment attribute was not included in the generated Set-Cookie\nheader. In addition, MockCookie.parse(String) did not support the\nComment attribute.\n\nThis commit addresses both of these issues.\n\nCloses gh-28730"
+        },
+        {
+            "hash": "fe2b8580a0a428116f99515246d1af222ecc4329",
+            "message": "Upgrade to Gradle Enterprise Conventions 0.0.10"
+        },
+        {
+            "hash": "622fc3edf7d5f3939204fd7ef8c38c7cfc614ad6",
+            "message": "Fix merged annotation attributes regression\n\nCommit d6768ccc18 introduced a regression in the support for merging\nannotation attributes in a multi-level annotation hierarchy.\n\nThis commit addresses that issue by ensuring that a merged annotation\nis once again synthesized if a meta-annotation in the annotation\nhierarchy declares attributes that override attributes in the target\nannotation.\n\nCloses gh-28716"
+        },
+        {
+            "hash": "9868c28c737cfadc50f029887e029155b2b2085d",
+            "message": "Honor ProtocolResolvers in GenericApplicationContext\n\nWhen the ProtocolResolver SPI was introduced in Spring Framework 4.3,\nsupport for protocol resolvers was added in DefaultResourceLoader's\ngetResource() implementation; however, GenericApplicationContext's\noverridden getResource() implementation was not updated accordingly.\n\nPrior to this commit, if a GenericApplicationContext was configured\nwith a custom ResourceLoader, registered protocol resolvers were\nignored.\n\nThis commit ensures that protocol resolvers are honored in\nGenericApplicationContext even if a custom ResourceLoader is used.\n\nCloses gh-28703"
+        },
+        {
+            "hash": "a970516080c78f6670a7012a760acca597aefaa6",
+            "message": "Polish GenericApplicationContextTests"
+        },
+        {
+            "hash": "0c9def89deed17c9961403913f980b55a5c81f3a",
+            "message": "Ignore build artifacts from the main branch for nohttp"
+        },
+        {
+            "hash": "8892a05868b74b85a1f526aa9d47f02018e8d92b",
+            "message": "Ignore /spring-core/graalvm/build artifacts from the main branch\n\nThis commit eases switching between the `main` and `5.3.x` branches."
+        },
+        {
+            "hash": "d6768ccc1852f4720781d490e13529e0283d9d63",
+            "message": "Ensure meta-annotations are not unnecessarily synthesized\n\nPrior to this commit, meta-annotations were unnecessarily synthesized\nwhen attempting to synthesize a MergedAnnotation retrieved via the\nMergedAnnotations.from(AnnotatedElement, ...).get(<annotationType>) API.\n\nThis is a regression in our merged annotation support that was\nintroduced when the MergedAnnotations API replaced our previous support.\n\nThis commit fixes this by revising the logic in TypeMappedAnnotation's\ncreateSynthesizedAnnotation() method so that a meta-annotation is\nreturned unmodified if it is not synthesizable.\n\nThis commit also updates BootstrapUtilsTests, since @BootstrapWith\nshould never have been synthesized, and Class#getCanonicalName() is\nonly used in the toString() implementation of an annotation synthesized\nby Spring or normal annotations on Java 19+ (see\nhttps://bugs.openjdk.org/browse/JDK-8281462).\n\nCloses gh-28704"
+        },
+        {
+            "hash": "faf20b7a5a496c6381e9a90552ca3ed08fbce230",
+            "message": "Polish MergedAnnotations Javadoc and internals"
+        },
+        {
+            "hash": "661996471e6c7e07c9409d8579f1bfcff18f095e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5639ff093959da06be863795b0df9bd04192ced9",
+            "message": "Merge pull request #28669 from kevin0x90\n\n* pr/28669:\n  Polish \"Fix DataSourceUtils inconsistent exception handling\"\n  Fix DataSourceUtils inconsistent exception handling\n\nCloses gh-28669"
+        },
+        {
+            "hash": "e98b602d4fd121097ebc8f74ec2dcbcb9c3afd1f",
+            "message": "Polish \"Fix DataSourceUtils inconsistent exception handling\"\n\nSee gh-28669"
+        },
+        {
+            "hash": "edfe5d2f18c7a746bedff350d9cdbc4ec13f7222",
+            "message": "Fix DataSourceUtils inconsistent exception handling\n\nAlign IllegalStateException with SQLException handling and propagate\nthe original exception.\n\nSee gh-28669\n\nCo-authored-by: Christoph Mies <chr.mi@web.de>"
+        },
+        {
+            "hash": "26df4580b3bf8ea91dad13f85bfb2652a8bc5118",
+            "message": "Revise internals of LoggingCacheErrorHandler\n\nSince LoggingCacheErrorHandler was only recently introduced in 5.3.16,\nwe have decided to completely revise its internals (protected API) in\n5.3.x while retaining the current public API.\n\nSpecifically, this commit:\n\n- introduces protected getLogger() and isLogStackTraces() methods to\n  improve extensibility\n\n- revises logCacheError() to accept a Supplier<String> for lazy\n  resolution of error messages\n\nCloses gh-28672\nSee gh-28670, gh-28648"
+        },
+        {
+            "hash": "57208bf47a1ea6064ff88a006e98562eafeac697",
+            "message": "Simplify LoggingCacheErrorHandlerTests\n\nSee gh-28648"
+        },
+        {
+            "hash": "8b345582842629ecfe91d70886acb8c8b0de506b",
+            "message": "Polish LoggingCacheErrorHandler"
+        },
+        {
+            "hash": "dbe8f200a919635f44dcd2917eabb5e6b216ed77",
+            "message": "Simplify creation of LoggingCacheErrorHandler with logged stacktrace\n\nAt present, creating a LoggingCacheErrorHandler that logs stack traces\nalso requires supplying the logger to be used. This might be\ninconvenient for some users, as it requires usage of the Commons\nLogging API.\n\nThis commit simplifies creation of such as LoggingCacheErrorHandler\ninstance by adding a constructor that only accepts a boolean flag\nindicating whether to log stack traces.\n\nCloses gh-28670"
+        },
+        {
+            "hash": "ea4d9a20acc51729d22e8187998ee4e93156226d",
+            "message": "Upgrade to Hamcrest 2.2"
+        },
+        {
+            "hash": "e19e9757d408bc256df7942884c124abbf1620bd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2473e956ffcc61b781a36a90c13be8a6116595c0",
+            "message": "Update Gradle Enterprise plugin\n\nCloses gh-28661"
+        },
+        {
+            "hash": "854307d8d8e77e24ec7ab2a8045d19de4bc76ee6",
+            "message": "Document that Kotlin inline classes are not supported\n\nCloses gh-28642"
+        },
+        {
+            "hash": "3401359bdf892b7da509a2d364f6d91a2248d8aa",
+            "message": "Refine @Required Kotlin documentation\n\nRefine @Required Kotlin documentation to use\nannotation use site targets.\n\nCloses gh-28630"
+        },
+        {
+            "hash": "f1c00dd8a615ba436f8df7685d5cc593f36bdacb",
+            "message": "Fix a typo in ResponseEntity documentation\n\nCloses gh-28647"
+        },
+        {
+            "hash": "bdf91ac435a419b431ad67417d3e63ac5b5c2466",
+            "message": "Set default encoding for Eclipse projects to UTF-8\n\nThis change aligns with Java 18 support in recent versions of Eclipse."
+        },
+        {
+            "hash": "181023c0c3b8503d82422a6c1ade96b82ccf49a2",
+            "message": "Update to Bouncycastle 1.71\n\nCloses gh-28636"
+        },
+        {
+            "hash": "fb1fa073a65e32a18ba534cae49a832336490105",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e9806a96dccc99d29b27aa5c19ad315cc2535426",
+            "message": "Polish contribution and introduce test\n\nSee gh-28631"
+        },
+        {
+            "hash": "9b93508374ff3f99e4cd5fa1e21bc08bb3ae8db7",
+            "message": "Add MockMvcRequestBuilders.multipart(HttpMethod, String, Object...)\n\nSee gh-28545\nCloses gh-28631"
+        },
+        {
+            "hash": "8b4750e7059fdb7d99e3b524243e6bf2e4bd7094",
+            "message": "Fix Kotlin example for @ComponentScan basePackages attribute\n\nCloses gh-28628"
+        },
+        {
+            "hash": "2e033339d1ead4dd7dde4b7206ce54babd28355b",
+            "message": "Next development version (v5.3.22-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28633",
+            "title": "Support adding rather than replacing modules in Jackson2ObjectMapperBuilder"
+        },
+        {
+            "number": "28815",
+            "title": "Improve regex \".\" matching for URL paths"
+        },
+        {
+            "number": "26377",
+            "title": "Avoid synchronization in AbstractAspectJAdvice#calculateArgumentBindings"
+        },
+        {
+            "number": "28776",
+            "title": "ResolvableType.forInstance should return NONE for null instance"
+        },
+        {
+            "number": "28747",
+            "title": "Improve diagnostics for CGLIB ClassLoader issues on Java 9+"
+        },
+        {
+            "number": "28718",
+            "title": "Create well-known non-interface types in CollectionFactory without using reflection"
+        },
+        {
+            "number": "28778",
+            "title": "Spring JDBC does not recognize LocalDate and LocalDateTime in javaType to sqlType Mapping"
+        },
+        {
+            "number": "28610",
+            "title": "R2DBC: @Transactional(readOnly) is applied to the connection before the transaction has begun"
+        },
+        {
+            "number": "28301",
+            "title": "Fix expectations in MockMvc Kotlin documentation"
+        },
+        {
+            "number": "28596",
+            "title": "Kotlin examples for setter injection incorrectly use field injection"
+        },
+        {
+            "number": "28810",
+            "title": "Fix Kotlin code snippets language"
+        },
+        {
+            "number": "28680",
+            "title": "Fix Kotlin example for defines a custom @Production"
+        },
+        {
+            "number": "28630",
+            "title": "Refine @Required Kotlin documentation to use annotation use site targets"
+        },
+        {
+            "number": "28765",
+            "title": "Upgrade to Reactor 2020.0.21"
+        },
+        {
+            "number": "28740",
+            "title": "WebFlux multipart temporary file not deleted when the client disconnects early"
+        },
+        {
+            "number": "28756",
+            "title": " Trim string input in Converters where whitespace is irrelevant"
+        },
+        {
+            "number": "28755",
+            "title": "Trim string input in PropertyEditors where whitespace is irrelevant"
+        },
+        {
+            "number": "28643",
+            "title": "Introduce lenient parsing in DataSize regarding whitespace"
+        },
+        {
+            "number": "28757",
+            "title": "Introduce StringUtils.trimAllWhitespace(CharSequence)"
+        },
+        {
+            "number": "28703",
+            "title": "`GenericApplicationContext` does not honor `ProtocolResolver` when a resource loader is set via `setResourceLoader()`"
+        },
+        {
+            "number": "28587",
+            "title": "Avoid parsing request body in DispatcherServlet for \"parameters={masked}\" log message"
+        },
+        {
+            "number": "28730",
+            "title": "MockHttpServletResponse addHeader does not allow Comment part with Set-Cookie header"
+        },
+        {
+            "number": "28716",
+            "title": "Regression in resolving merged annotation attributes in multi-level annotation hierarchy"
+        },
+        {
+            "number": "28704",
+            "title": "Meta-annotations are unnecessarily synthesized in MergedAnotations"
+        },
+        {
+            "number": "28672",
+            "title": "Revise internals of LoggingCacheErrorHandler"
+        },
+        {
+            "number": "28642",
+            "title": "Document that Kotlin inline classes are not supported yet"
+        },
+        {
+            "number": "28647",
+            "title": "Fix a typo in ResponseEntity documentation"
+        },
+        {
+            "number": "28545",
+            "title": "MockMvcWebTestClient forces HTTP POST for multipart requests"
+        },
+        {
+            "number": "28628",
+            "title": "Fix Kotlin example for @ComponentScan basePackages attribute"
+        }
+    ]
+}

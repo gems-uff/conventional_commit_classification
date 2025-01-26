@@ -1,0 +1,218 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.18",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 35,
+    "start_delay": 0.0,
+    "duration": 27.8640625,
+    "commits_info": [
+        {
+            "hash": "14fa75c98a248751b952622c3f0a8b96a8e0a354",
+            "message": "Release v6.0.18"
+        },
+        {
+            "hash": "f2fd2f12269c6a781c5b2c20b3c24141055a3d68",
+            "message": "Extract reusable checkSchemeAndPort method\n\nCloses gh-32440"
+        },
+        {
+            "hash": "072ebb6ffc061f34f8223a065aba28cc65354793",
+            "message": "Additional unit tests for operations on empty UriTemplate\n\nSee gh-32432\n\n(cherry picked from commit 54a6d89da78075b09e6cd5c0e55d4a67885fe24a)"
+        },
+        {
+            "hash": "08e7f7efa474659a6934d39293d283398327f320",
+            "message": "Allow UriTemplate to be built with an empty template\n\nCloses gh-32437"
+        },
+        {
+            "hash": "b1fafbf7e19f1905c4c66db76af116ed554aeb53",
+            "message": "Upgrade to Reactor 2022.0.17\n\nIncludes Groovy 4.0.19, OpenPDF 1.3.42, Mockito 5.11\n\nCloses gh-32421"
+        },
+        {
+            "hash": "a3647a8c5eb6a6dd41a84e50e32158c25bf1b4f5",
+            "message": "Polishing\n\n(cherry picked from commit 723c94e5ac270188674fb6697bac942d962f4cae)"
+        },
+        {
+            "hash": "5c8d9cd0b243fea26cf432fcc032e549f497d189",
+            "message": "Fix order of sections in Validation chapter of reference manual\n\nCloses gh-32408"
+        },
+        {
+            "hash": "40d5196243685f82ab284293d09189ee0e0ece72",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ec2c9b5d0e210d62c7a8166a3af7dcd2adaa4115",
+            "message": "Set error on observation in WebClient instrumentation\n\nPrior to this commit, error signals flowing from the client response\npublisher in `WebClient` would be set on the `Observation.Context`. This\nis enough for the observation convention to collect data about the error\nbut observation handlers are not notified of this error.\n\nThis commit sets the error instead on the observation directly to fix\nthis issue.\n\nFixes gh-32399"
+        },
+        {
+            "hash": "36539bdaa93ec8a84874bd6f87dd56d83943fd9c",
+            "message": "Use wrapped response in HandlerFunctionAdapter\n\nwebmvc.fn now also uses the StandardServletAsyncWebRequest wrapped response\nto enforce lifecycle rules from Servlet spec (section 2.3.3.4).\n\nSee gh-32341"
+        },
+        {
+            "hash": "67ba7dd1da88a27bc484a779c21f705df9832793",
+            "message": "DisconnectedClientHelper recognizes AsyncRequestNotUsableException\n\nSee gh-32341"
+        },
+        {
+            "hash": "7b3fcf2647ee49653be31ac967deb62e2838298f",
+            "message": "Fix Javadoc error"
+        },
+        {
+            "hash": "fd76c3358932cac36e8435eb45f5874b1ce91022",
+            "message": "Fix Javadoc error"
+        },
+        {
+            "hash": "1a7a6f421fee4b2c53fc86d39b748c363ba80e0c",
+            "message": "Backport tests for wrapping of response for async requests\n\nThis is a backport of commits 4b96cd and ef0717.\n\nCloses gh-32341"
+        },
+        {
+            "hash": "9ac1feceb559280dd8bf9a1e633a489d53fe6ba0",
+            "message": "Restore ability to return original method for proxy-derived method\n\nCloses gh-32365"
+        },
+        {
+            "hash": "7029042e44096475fef5de1ea4aa4e0c2bcece4e",
+            "message": "Polishing\n\n(cherry picked from commit e9110c072980461f17b59456dcb3bcc1fa2bf9a3)"
+        },
+        {
+            "hash": "1a5661d4263c1e0ab23cff7532faaa6dc33e42b3",
+            "message": "Improve concurrent handling of result in WebAsyncManager\n\n1. Use state transitions\n2. Increase synchronized scope in setConcurrentResultAndDispatch\n\nSee gh-32341"
+        },
+        {
+            "hash": "b208c63414fe554f6523bf470aaa1cb161f9e7c7",
+            "message": "Add state and response wrapping to StandardServletAsyncWebRequest\n\nThe wrapped response prevents use after AsyncListener onError or completion\nto ensure compliance with Servlet Spec 2.3.3.4.\n\nThe wrapped response is applied in RequestMappingHandlerAdapter.\n\nThe wrapped response raises AsyncRequestNotUsableException that is now\nhandled in DefaultHandlerExceptionResolver.\n\nSee gh-32341"
+        },
+        {
+            "hash": "814c003b43f9577dce79702a95f20157bd81fc09",
+            "message": "Align 5.3.x with 6.1.x\n\nIn preparation for a larger update, start by aligning with\n6.1.x, which includes changes for gh-32042 and gh-30232.\n\nSee gh-32341"
+        },
+        {
+            "hash": "5c34e1d11a130b856cba8df68bad816756498b02",
+            "message": "Upgrade to Undertow 2.3.12, OpenPDF 1.3.41, JRuby 9.4.6"
+        },
+        {
+            "hash": "d57775bbb2d7b1cbad0eaf3897075f20b25132ec",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b598ad3f331a8a6868c4ee8628e25588d2f35cb1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b44ef70bc3fb11a6aa51762f63f898b3ed07dfcb",
+            "message": "Direct reference to PushBuilder API on Servlet 5.0 baseline\n\nSee gh-29435"
+        },
+        {
+            "hash": "d1b3107398a2a4aa85bccf4a2df7efe07808732a",
+            "message": "Do not cache Content-Type in ContentCachingResponseWrapper\n\nBased on feedback from several members of the community, we have\ndecided to revert the caching of the Content-Type header that was\nintroduced in ContentCachingResponseWrapper in 375e0e6827.\n\nThis commit therefore completely removes Content-Type caching in\nContentCachingResponseWrapper and updates the existing tests\naccordingly.\n\nTo provide guards against future regressions in this area, this commit\nalso introduces explicit tests for the 6 ways to set the content length\nin ContentCachingResponseWrapper and modifies a test in\nShallowEtagHeaderFilterTests to ensure that a Content-Type header set\ndirectly on ContentCachingResponseWrapper is propagated to the\nunderlying response even if content caching is disabled for the\nShallowEtagHeaderFilter.\n\nSee gh-32039\nSee gh-32317\nCloses gh-32321"
+        },
+        {
+            "hash": "629c56031659798876a868c2a6fcc47b27ee46fb",
+            "message": "Polish ShallowEtagHeaderFilterTests"
+        },
+        {
+            "hash": "7bf07ef393ea0e31c20e2fe19c680a18925e8aa8",
+            "message": "Refine *HttpMessageConverter#getContentLength null safety\n\nCloses gh-32333"
+        },
+        {
+            "hash": "ca602ef8743168f4db49488c3778b3d897d780ce",
+            "message": "Honor Content-[Type|Length] headers from wrapped response again\n\nCommit 375e0e6827 introduced a regression in\nContentCachingResponseWrapper (CCRW). Specifically, CCRW no longer\nhonors Content-Type and Content-Length headers that have been set in\nthe wrapped response and now incorrectly returns null for those header\nvalues if they have not been set directly in the CCRW.\n\nThis commit fixes this regression as follows.\n\n- The Content-Type and Content-Length headers set in the wrapped\n  response are honored in getContentType(), containsHeader(),\n  getHeader(), and getHeaders() unless those headers have been set\n  directly in the CCRW.\n\n- In copyBodyToResponse(), the Content-Type in the wrapped response is\n  only overridden if the Content-Type has been set directly in the CCRW.\n\nFurthermore, prior to this commit, getHeaderNames() returned duplicates\nfor the Content-Type and Content-Length headers if they were set in the\nwrapped response as well as in CCRW.\n\nThis commit fixes that by returning a unique set from getHeaderNames().\n\nThis commit also updates ContentCachingResponseWrapperTests to verify\nthe expected behavior for Content-Type and Content-Length headers that\nare set in the wrapped response as well as in CCRW.\n\nSee gh-32039\nSee gh-32317\nCloses gh-32321"
+        },
+        {
+            "hash": "e9bf5f55694b1eadbad8caf5221d689de85ab2fc",
+            "message": "Polish ContentCachingResponseWrapper[Tests]"
+        },
+        {
+            "hash": "9a6f636e17dc67512debc132eaed29acb721af41",
+            "message": "Consistent nullability for internal field access"
+        },
+        {
+            "hash": "7686f5467e5b4b6ef27e9fa97990f2962b9bcc90",
+            "message": "Adapt Hibernate native support for HHH-17643\n\nThis commit adapts Hibernate native support to handle\nthe changes performed as part of HHH-17643 which impacts\nHibernate versions 6.4.3+ and 6.2.21+.\n\nIt ignores the BytecodeProvider services loaded by the\nservice loader feature in order to default to the\n\"no-op\" provider with native.\n\ngh-32314 is expected to remove the need for such\nsubstitutions which are not great for maintainability\nby design.\n\nCloses gh-32312"
+        },
+        {
+            "hash": "429c477f6a8df557dcb925cece95864edce5e5a3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5187281b50067bd663285f75fc993da915245edc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "24a44870501d41a5b8587003081e3bb91c1ca7b7",
+            "message": "Add test for cleanup after configuration class creation failure\n\nSee gh-23343"
+        },
+        {
+            "hash": "8fba4a448a217f5a749fe01d46816c05f1c140e4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8f286de773c657103189ffedded3c40bb5d00eb3",
+            "message": "Next development version (v6.0.18-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32440",
+            "title": "Extract reusable method for URI validations"
+        },
+        {
+            "number": "32437",
+            "title": " Allow UriTemplate to be built with an empty template"
+        },
+        {
+            "number": "32421",
+            "title": "Upgrade to Reactor 2022.0.17"
+        },
+        {
+            "number": "32399",
+            "title": "WebClient Observations are missing error"
+        },
+        {
+            "number": "32341",
+            "title": "Better protect against concurrent error handling for async requests"
+        },
+        {
+            "number": "32365",
+            "title": "AopUtils.getMostSpecificMethod does not return original method for proxy-derived method anymore"
+        },
+        {
+            "number": "32042",
+            "title": "ClientAbortException from StreamingResponseBody can cause infinite loop of dispatches"
+        },
+        {
+            "number": "30232",
+            "title": "The task in AsyncTaskExecutor throws an exception before execution, and ControllerAdvice will be called twice."
+        },
+        {
+            "number": "29435",
+            "title": "Revisit Servlet API baseline: Servlet 6.0 in the build, Servlet 5.0 compatibility at runtime  "
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32317",
+            "title": "ContentCachingResponseWrapper no longer honors Content-Type and Content-Length"
+        },
+        {
+            "number": "32321",
+            "title": "ContentCachingResponseWrapper no longer honors Content-Type and Content-Length"
+        },
+        {
+            "number": "32333",
+            "title": "Refine `*HttpMessageConverter#getContentLength` return value null safety"
+        },
+        {
+            "number": "32314",
+            "title": "Remove Hibernate substitutions and deprecated properties usage"
+        },
+        {
+            "number": "32312",
+            "title": "Hibernate native image support broken by `HHH-17643`"
+        },
+        {
+            "number": "23343",
+            "title": "Incomplete cleanup after configuration class creation failure"
+        }
+    ]
+}

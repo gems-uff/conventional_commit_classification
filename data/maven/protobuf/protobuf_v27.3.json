@@ -11,103 +11,93 @@
     "commits_info": [
         {
             "hash": "7cc670c1809e704ebeba90fb430d50e009f36727",
-            "message": "Updating version.json and repo version numbers to: 27.3\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.3"
         },
         {
             "hash": "67d7298f22d124da7463915aa15fca3c13d8dc65",
-            "message": "Merge pull request #17617 from protocolbuffers/cp-utf8-ascii\n\nRemove `/utf-8` flag added in #14197",
-            "tag_name": null
+            "message": "Merge pull request #17617 from protocolbuffers/cp-utf8-ascii\n\nRemove `/utf-8` flag added in #14197"
         },
         {
             "hash": "e20cb7aaf7e6fde6b09fbb3452fffa9fa2c656d1",
-            "message": "Remove `/utf-8` flag added in #14197\n\nWe have received several reports in #17036 that the addition of this flag\nactually broke the use of command argument files with non-ASCII characters in\ntheir names. It looks like #14253 ended up fixing the original issue with a\ndifferent solution anyway. Hopefully this change fixes the issue with non-ASCII\ncharacters.\n\nPiperOrigin-RevId: 655660885\n",
-            "tag_name": null
+            "message": "Remove `/utf-8` flag added in #14197\n\nWe have received several reports in #17036 that the addition of this flag\nactually broke the use of command argument files with non-ASCII characters in\ntheir names. It looks like #14253 ended up fixing the original issue with a\ndifferent solution anyway. Hopefully this change fixes the issue with non-ASCII\ncharacters.\n\nPiperOrigin-RevId: 655660885"
         },
         {
             "hash": "c9839cb01c88cc47068590209f7020022e5ceb48",
-            "message": "Merge pull request #17473 from protocolbuffers/cp-revert-hack\n\nCherry-pick \"Revert workaround for std::mutex issues on github windows runners\" and \"Downgrade CMake to 3.29 to workaround Abseil issue.\"",
-            "tag_name": null
+            "message": "Merge pull request #17473 from protocolbuffers/cp-revert-hack\n\nCherry-pick \"Revert workaround for std::mutex issues on github windows runners\" and \"Downgrade CMake to 3.29 to workaround Abseil issue.\""
         },
         {
             "hash": "8a579c1af579c55bdf4fe6da81084ece3597f712",
-            "message": "Downgrade CMake to 3.29 to workaround Abseil issue.\n\nThis was fixed in https://github.com/abseil/abseil-cpp/commit/cd7f66cab520e99531979b3fd727a25616a1ccbb, but older versions of Abseil break in CMake 3.30, which github runners now use by default.\n\nPiperOrigin-RevId: 651854867\n",
-            "tag_name": null
+            "message": "Downgrade CMake to 3.29 to workaround Abseil issue.\n\nThis was fixed in https://github.com/abseil/abseil-cpp/commit/cd7f66cab520e99531979b3fd727a25616a1ccbb, but older versions of Abseil break in CMake 3.30, which github runners now use by default.\n\nPiperOrigin-RevId: 651854867"
         },
         {
             "hash": "ba3e7d7a8aea8a9eafebe3407d94b877cf16e362",
-            "message": "Revert workaround for std::mutex issues on github windows runners.\n\nPiperOrigin-RevId: 648802955\n",
-            "tag_name": null
+            "message": "Revert workaround for std::mutex issues on github windows runners.\n\nPiperOrigin-RevId: 648802955"
         },
         {
             "hash": "861be784603c699eb0a016d5c5a79a1058278879",
-            "message": "Merge pull request #17331 from protocolbuffers/cp-cp\n\nOmit the `_raw_default_instance_` declaration when using DLL linkage.",
-            "tag_name": null
+            "message": "Merge pull request #17331 from protocolbuffers/cp-cp\n\nOmit the `_raw_default_instance_` declaration when using DLL linkage."
         },
         {
             "hash": "aec8a7604d74a0e8aa14b45b1295984c0acd51f2",
-            "message": "Upgrade macos-11 tests to macos-12\n\nGithub dropped macos-11 on their runners on June 28th.  This causes all our jobs to stall looking for a suitable runner.\n\nPiperOrigin-RevId: 648527302\n",
-            "tag_name": null
+            "message": "Upgrade macos-11 tests to macos-12\n\nGithub dropped macos-11 on their runners on June 28th.  This causes all our jobs to stall looking for a suitable runner.\n\nPiperOrigin-RevId: 648527302"
         },
         {
             "hash": "4e3b4f0819a7187f0c369ba1a7cd1cbca012e28a",
-            "message": "Use explicit names of our large runners\n\nPiperOrigin-RevId: 650360525\n",
-            "tag_name": null
+            "message": "Use explicit names of our large runners\n\nPiperOrigin-RevId: 650360525"
         },
         {
             "hash": "fa2b2d61ea86ec5904105fcab97f50bdb4b93ac6",
-            "message": "Upgrade our C++ release tests to large runners.\n\nPiperOrigin-RevId: 647405381\n",
-            "tag_name": null
+            "message": "Upgrade our C++ release tests to large runners.\n\nPiperOrigin-RevId: 647405381"
         },
         {
             "hash": "b7ef2ca3c068f088752d03e5f6550ead365f497d",
-            "message": "Update staleness\n",
-            "tag_name": null
+            "message": "Update staleness"
         },
         {
             "hash": "22d9a030569292e5abd3e256ae512a135047c6de",
-            "message": "Omit the `_raw_default_instance_` declaration when using DLL linkage.\nIn that mode we might not be able to make a `constexpr` pointer to the default\ninstance. Omitting the declaration will only turn off an optimization, but the\ncode will still be correct.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/17303\n\nPiperOrigin-RevId: 649160060\n",
-            "tag_name": null
+            "message": "Omit the `_raw_default_instance_` declaration when using DLL linkage.\nIn that mode we might not be able to make a `constexpr` pointer to the default\ninstance. Omitting the declaration will only turn off an optimization, but the\ncode will still be correct.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/17303\n\nPiperOrigin-RevId: 649160060"
         },
         {
             "hash": "7592817d04c3a4cc74d84d16171557c308fea07b",
-            "message": "Merge pull request #17326 from protocolbuffers/cp-ruby\n\n[Ruby] Fix mismatched pointer type (#17240)",
-            "tag_name": null
+            "message": "Merge pull request #17326 from protocolbuffers/cp-ruby\n\n[Ruby] Fix mismatched pointer type (#17240)"
         },
         {
             "hash": "a1d47773a2deede19536660805c494b77ec46f89",
-            "message": "[Ruby] Fix mismatched pointer type (#17240)\n\nThis PR fixes the following error on windows ruby 3.4 (head):\n\n```\ncurrent directory:\nD:/a/sass-embedded-host-ruby/sass-embedded-host-ruby/vendor/bundle/ruby/3.4.0+0/gems/google-protobuf-4.27.1/ext/google/protobuf_c\nmake.exe DESTDIR\\= sitearchdir\\=./.gem.20240623-6612-4umz58\nsitelibdir\\=./.gem.20240623-6612-4umz58\ngenerating protobuf_c-x64-mingw-ucrt.def\ncompiling protobuf.c\ncompiling convert.c\ncompiling defs.c\ndefs.c: In function 'MethodDescriptor_initialize':\ndefs.c:1513:19: error: assignment to 'const upb_MethodDef *' from incompatible\npointer type 'const upb_ServiceDef *' [-Wincompatible-pointer-types]\n 1513 |   self->methoddef = (const upb_ServiceDef*)NUM2ULL(ptr);\n      |                   ^\nmake: *** [Makefile:250: defs.o] Error 1\n\nmake failed, exit code 2\n```\n\n- Closes #17266\n\nCloses #17240\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17240 from ntkme:fix-ruby-upb-pointer-type 22e9859c5758bdc5efc2ddc720555c615dce428d\nPiperOrigin-RevId: 648923147\n",
-            "tag_name": null
+            "message": "[Ruby] Fix mismatched pointer type (#17240)\n\nThis PR fixes the following error on windows ruby 3.4 (head):\n\n```\ncurrent directory:\nD:/a/sass-embedded-host-ruby/sass-embedded-host-ruby/vendor/bundle/ruby/3.4.0+0/gems/google-protobuf-4.27.1/ext/google/protobuf_c\nmake.exe DESTDIR\\= sitearchdir\\=./.gem.20240623-6612-4umz58\nsitelibdir\\=./.gem.20240623-6612-4umz58\ngenerating protobuf_c-x64-mingw-ucrt.def\ncompiling protobuf.c\ncompiling convert.c\ncompiling defs.c\ndefs.c: In function 'MethodDescriptor_initialize':\ndefs.c:1513:19: error: assignment to 'const upb_MethodDef *' from incompatible\npointer type 'const upb_ServiceDef *' [-Wincompatible-pointer-types]\n 1513 |   self->methoddef = (const upb_ServiceDef*)NUM2ULL(ptr);\n      |                   ^\nmake: *** [Makefile:250: defs.o] Error 1\n\nmake failed, exit code 2\n```\n\n- Closes #17266\n\nCloses #17240\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/17240 from ntkme:fix-ruby-upb-pointer-type 22e9859c5758bdc5efc2ddc720555c615dce428d\nPiperOrigin-RevId: 648923147"
         },
         {
             "hash": "2440498d837e651178823d5275106b4182308790",
-            "message": "Merge pull request #17295 from protocolbuffers/cp-strongpointer\n\nRefactor the way we turn on the optimization in StrongPointer.",
-            "tag_name": null
+            "message": "Merge pull request #17295 from protocolbuffers/cp-strongpointer\n\nRefactor the way we turn on the optimization in StrongPointer."
         },
         {
             "hash": "a15c9c5dee34db5b0535206d938a9f2cf045d8ba",
-            "message": "Refactor the way we turn on the optimization in StrongPointer.\nSome versions of gcc seem to advertise __cpp_nontype_template_args but not\nsupport the argument in some cases.\nOnly attempt the template parameter if we are using the optimized .reloc\napproach.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16868\n\nPiperOrigin-RevId: 634787159\n",
-            "tag_name": null
+            "message": "Refactor the way we turn on the optimization in StrongPointer.\nSome versions of gcc seem to advertise __cpp_nontype_template_args but not\nsupport the argument in some cases.\nOnly attempt the template parameter if we are using the optimized .reloc\napproach.\n\nFixes https://github.com/protocolbuffers/protobuf/issues/16868\n\nPiperOrigin-RevId: 634787159"
         },
         {
             "hash": "11307ca72574db357c2c011baa2f2bd859ba4177",
-            "message": "Merge pull request #17236 from protocolbuffers/27.x-202406251914\n\nMerge release commits to 27.x",
-            "tag_name": null
+            "message": "Merge pull request #17236 from protocolbuffers/27.x-202406251914\n\nMerge release commits to 27.x"
         },
         {
             "hash": "71b29404954f7907042844cb0470a005b7fc4d67",
-            "message": "Updating version.json and repo version numbers to: 27.3-dev\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.3-dev"
         },
         {
             "hash": "c1ec82fe381c196a3930ff620e6aed5ea1e26e1e",
-            "message": "Merge pull request #17232 from simonberger/bugfix/php-ext-persistent-global-corruption-27.x\n\nBackported Fix segmentation faults with enabled keep_descriptor_pool_after_request",
-            "tag_name": null
+            "message": "Merge pull request #17232 from simonberger/bugfix/php-ext-persistent-global-corruption-27.x\n\nBackported Fix segmentation faults with enabled keep_descriptor_pool_after_request"
         },
         {
             "hash": "ca3b7320f3e846fdd5786abcde3e1e23f507c170",
-            "message": "Fix segmentation faults with enabled keep_descriptor_pool_after_request (#16993)\n\n(cherry picked from commit e844510ee30e25017e94f9f43751abab159208c8)\n",
-            "tag_name": null
+            "message": "Fix segmentation faults with enabled keep_descriptor_pool_after_request (#16993)\n\n(cherry picked from commit e844510ee30e25017e94f9f43751abab159208c8)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "17036",
+            "title": "Handling of UTF8 command argument files regressed in v26.1 breaking Grpc.Tools"
+        },
+        {
+            "number": "17266",
+            "title": "ruby gem for v27.2 fails to build with gcc 14"
         }
     ]
 }

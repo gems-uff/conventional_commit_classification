@@ -1,0 +1,218 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.27",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 29,
+    "start_delay": 0.0,
+    "duration": 23.94351851851852,
+    "commits_info": [
+        {
+            "hash": "08bc1a050ec87cdaad6b05170c27e34d3f90cafa",
+            "message": "Release v5.3.27"
+        },
+        {
+            "hash": "6bfb94a563800313745ddc2c8eca0de6e17f2cb5",
+            "message": "Disable variable assignment in SimpleEvaluationContext\n\nThis commit introduces infrastructure to differentiate between\nprogrammatic setting of a variable in an EvaluationContext versus the\nassignment of a variable within a SpEL expression using the assignment\noperator (=). In addition, this commit disables variable assignment\nwithin expressions when using the SimpleEvaluationContext.\n\nCloses gh-30327"
+        },
+        {
+            "hash": "ebc82654282bda547fbc20a9749ab1bda886a46f",
+            "message": "Limit SpEL expression length\n\nThis commit enforces a limit of the maximum size of a single SpEL\nexpression.\n\nCloses gh-30329"
+        },
+        {
+            "hash": "86457464d767284a7c588292a39d6accf1f65bfe",
+            "message": "Limit string concatenation in SpEL expressions\n\nThis commit introduces support for limiting the maximum length of a\nstring resulting from the concatenation operator (+) in SpEL\nexpressions.\n\nCloses gh-30331"
+        },
+        {
+            "hash": "be129dc17160c82da9e56b88321da13199cda2af",
+            "message": "Change max regex length in SpEL expressions to 1000\n\nThis commit changes the max regex length in SpEL expressions from 1024\nto 1000 in order to consistently use \"round\" numbers for recently\nintroduced limits.\n\nSee gh-30265"
+        },
+        {
+            "hash": "8bb1b3eb443ec8c0e497cc1bf4f232d61097adaa",
+            "message": "Upgrade to Netty 4.1.91 and Checkstyle 10.9.3"
+        },
+        {
+            "hash": "6abd822e77722e6c92853f9abd470fb36e68a1e7",
+            "message": "Upgrade to Reactor 2020.0.31\n\nCloses gh-30315"
+        },
+        {
+            "hash": "1c43a4c7ab46e7e5ac871b0fb1c04830c6299bc4",
+            "message": "Fix regression in ReactorServerHttpRequest\n\nInstead of a backport for cef916, this change simply undoes the\noptimization that led to the regression.\n\nCloses gh-30314"
+        },
+        {
+            "hash": "423f2215c2c542426afa6682b8240e668bb133ed",
+            "message": "Remove flaky assertion to fix build on JDK 17\n\nSometime between JDK 8 and JDK 17, the behavior for List::toArray()\nchanged. Specifically, the type returned for List<String> changed from\nString[] to Object[].\n\nThis commit therefore removes an assertion against this particular\nJDK-specific behavior. The affected test method retains additional\nassertions along the same lines but which are not flaky."
+        },
+        {
+            "hash": "0bad69d5fbab74cd1afded96fbf5ed287ece7f18",
+            "message": "Fix SSE with indenting serializer in WebMvc.fn\n\nThis commit ensures that HTTP headers like \"text/event-stream\"\nare correctly forwarded to the converter used in\nSseServerResponse for proper pretty print handling.\n\nClose gh-30302"
+        },
+        {
+            "hash": "6b19642256c33f0ba55c9275b883609933953318",
+            "message": "Increase max regex length in SpEL expressions\n\nThis commit increases the max regex length in SpEL expressions from 256\nto 1024 in order to support use cases where a regex may be rather long\nwithout necessarily increasing the complexity of the regex.\n\nCloses gh-30298"
+        },
+        {
+            "hash": "19bb4e96f2012360538f7b3e0540730f519e0dc5",
+            "message": "Improve Javadoc for ObjectUtils.nullSafeConciseToString()"
+        },
+        {
+            "hash": "7a2594acdadf42646bd474956539bd4e071c917c",
+            "message": "Add tests for corner cases\n\nSee gh-30290\nSee gh-30286"
+        },
+        {
+            "hash": "91c58af7af27d22d116ac5ad64380277022f210a",
+            "message": "Introduce ObjectUtils.nullSafeConciseToString()\n\nObjectUtils.nullSafeToString(Object) exists for generating a string\nrepresentation of various objects in a \"null-safe\" manner, including\nsupport for object graphs, collections, etc.\n\nHowever, there are times when we would like to generate a \"concise\",\nnull-safe string representation that does not include an entire object\ngraph (or potentially a collection of object graphs).\n\nThis commit introduces ObjectUtils.nullSafeConciseToString(Object) to\naddress this need and makes use of the new feature in FieldError and\nConversionFailedException.\n\nCloses gh-30286"
+        },
+        {
+            "hash": "0a1aeafe08e186573ce93e8c6855f9ee006876b2",
+            "message": "Introduce StringUtils.truncate()\n\nStringUtils.truncate() serves as central, consistent way for truncating\nstrings used in log messages and exception failure messages, for\nimmediate use in LogFormatUtils and ObjectUtils.\n\nSee gh-30286\nCloses gh-30290"
+        },
+        {
+            "hash": "0e69bac7b0b02a3db3ae81212175b85a2584f061",
+            "message": "Polish 0cfbf60: fix a test for Java 8 compatibility"
+        },
+        {
+            "hash": "0cfbf6036c485d8520c70f79f3896d0fc9ada164",
+            "message": "Rename MockMVC matcher methods to prevent regression in user tests\n\nThis commit changes the name of two recently introduced methods in the\n`MockRestRequestMatchers` class for header and queryParam. These have\nbeen found to cause false negatives in user tests, due to the new\noverload taking precedence in some cases.\n\nNamely, using a `Matcher` factory method which can apply to both `List`\nand `String` will cause the compiler to select the newest list overload,\nby instantiating a `Matcher<Object>`.\n\nThis can cause false negatives in user tests, failing tests that used\nto pass because the Matcher previously applied to the first String in\nthe header or queryParam value list. For instance, `equalsTo(\"a\")`.\n\nThe new overloads are recent enough and this has enough potential to\ncause an arbitrary number of user tests to fail that we break the API\nto eliminate the ambiguity, by renaming the methods with a `*List`\nsuffix.\n\nSee gh-30220\nSee gh-30238\nCloses gh-30235"
+        },
+        {
+            "hash": "e931fdc5c258e66d06c8dd19abe516b6730d85b3",
+            "message": "Make HttpComponentsHeadersAdapter#getFirst nullable\n\nBackport of gh-30267\n\nCloses gh-30269"
+        },
+        {
+            "hash": "3a1681357cf77017fb8be7cfc17ca3119394681c",
+            "message": "Fix PathVariable reference documentation code snippets\n\nCloses gh-30258"
+        },
+        {
+            "hash": "a93382dbbfea9bbd2246f0b87a1f602b3a02b128",
+            "message": "Propagate HttpStreamResetException itself if cause is null\n\nCloses gh-30245\n\n(cherry picked from commit 8fca258207538f9f1f2b66c493d73c2185147e0c)"
+        },
+        {
+            "hash": "79c5ef88f54d025088e55c67f06479324a577a00",
+            "message": "Refine generic type management in AbstractMessageWriterResultHandler\n\nThis commit updates AbstractMessageWriterResultHandler#writeBody in\norder to use the declared bodyParameter instead of\nResolvableType.forInstance(body) when the former has unresolvable\ngenerics.\n\nCloses gh-30215"
+        },
+        {
+            "hash": "0c80e5f9e6afeca3447caac1449a45fa1fa03ea0",
+            "message": "Use JdkDynamicAopProxy class loader instead of JDK bootstrap/platform loader\n\nCloses gh-30115\n\n(cherry picked from commit 7e905e3e00d2efc6b1f525519180e89ff03a65a2)"
+        },
+        {
+            "hash": "7ad01a94d6c9a6ffb84b2bdd7a2606f81f00d1cc",
+            "message": "Use MethodInvocationInfo class loader in case of JDK platform loader as well\n\nCloses gh-30210\n\n(cherry picked from commit 491ae1e3beaf623c88c158b4ef8f3aa5a44a434a)"
+        },
+        {
+            "hash": "5d6d653cbd40c146287aa58ddeb28de7f1a9d254",
+            "message": "Use MethodInvocationInfo class loader in case of core JDK interface type\n\nCloses gh-30210\n\n(cherry picked from commit ce2689eead26c73603455d33a30fb1822bc93d25)"
+        },
+        {
+            "hash": "9868e888a59deef04cf2019de1a636d136d99493",
+            "message": "Update versions in Javadoc\n\nCloses gh-30191"
+        },
+        {
+            "hash": "6f6eb3d9963f4cbe46249efc0dccb99ddd465b3b",
+            "message": "Fix example in Javadoc for @EnableWebSocket\n\nThe `echoWebSocketHandler()` method is not defined in the\n`WebSocketConfigurer` interface and should therefore be annotated with\n`@Bean` instead of `@Override`.\n\nCloses gh-30187"
+        },
+        {
+            "hash": "a94c50e2946257aeda539c6a1082df13c9ee7970",
+            "message": "Handle all exceptions for stored proc out param retrieval in SharedEntityManagerCreator\n\nPrior to this commit, the EntityManager was not closed in\nSharedEntityManagerCreator.DeferredQueryInvocationHandler's\ninvoke(Object, Method, Object[]) method if an invocation of\ngetOutputParameterValue(*) threw an exception other than\nIllegalArgumentException, which could lead to a connection leak.\n\nThis commit addresses this by catching RuntimeException instead of\nIllegalArgumentException.\n\nCloses gh-30164"
+        },
+        {
+            "hash": "b8c1255ee0d663e976ad9af754ee66084d219fb5",
+            "message": "Fix anchor in link to \"Web on Reactive Stack\" chapter\n\nCloses gh-30163"
+        },
+        {
+            "hash": "129062034b3740440636c39db80b12fc508cd66e",
+            "message": "Next development version (v5.3.27-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30327",
+            "title": "Disable variable assignment in SimpleEvaluationContext"
+        },
+        {
+            "number": "30329",
+            "title": "Limit SpEL expression length"
+        },
+        {
+            "number": "30331",
+            "title": "Limit string concatenation in SpEL expressions"
+        },
+        {
+            "number": "30265",
+            "title": "Increase max regex length in SpEL expressions"
+        },
+        {
+            "number": "30315",
+            "title": "Upgrade to Reactor 2020.0.31"
+        },
+        {
+            "number": "30314",
+            "title": "Fix regression  in ReactorServerHttpRequest related to IPV6 Zone id with \"%\""
+        },
+        {
+            "number": "30302",
+            "title": "SSE breaks with indenting serializer in WebMvc.fn"
+        },
+        {
+            "number": "30298",
+            "title": "Increase max regex length in SpEL expressions"
+        },
+        {
+            "number": "30290",
+            "title": "Introduce `StringUtils.truncate()`"
+        },
+        {
+            "number": "30286",
+            "title": "Introduce `ObjectUtils.nullSafeConciseToString()`"
+        },
+        {
+            "number": "30220",
+            "title": "Wrong MockRestRequestMatchers.header() method in spring-test being invoked (JDK issue?)"
+        },
+        {
+            "number": "30235",
+            "title": "Wrong MockRestRequestMatchers.header() method in spring-test being invoked (JDK issue?)"
+        },
+        {
+            "number": "30269",
+            "title": "Make `HttpComponentsHeadersAdapter#getFirst` nullable"
+        },
+        {
+            "number": "30258",
+            "title": "Fix `@PathVariable` reference documentation code snippets"
+        },
+        {
+            "number": "30245",
+            "title": "NullPointerException on timeout in HttpComponentsClientHttpConnector when using Apache HttpComponents"
+        },
+        {
+            "number": "30215",
+            "title": "Refine generic type management in `AbstractMessageWriterResultHandler`"
+        },
+        {
+            "number": "30115",
+            "title": "TypeNotPresentException: org/springframework/cglib/proxy/NoOp not present on Java 17"
+        },
+        {
+            "number": "30210",
+            "title": "MvcUriComponentsBuilder.fromMethodCall breaks for controller with CharSequence return type"
+        },
+        {
+            "number": "30191",
+            "title": "Update versions in Javadoc"
+        },
+        {
+            "number": "30187",
+            "title": " Fix example in Javadoc for `@EnableWebSocket`"
+        },
+        {
+            "number": "30164",
+            "title": "Handle all exceptions for stored proc output param retrieval in `SharedEntityManagerCreator`"
+        },
+        {
+            "number": "30163",
+            "title": "Fix anchor in link to \"Web on Reactive Stack\" chapter"
+        }
+    ]
+}

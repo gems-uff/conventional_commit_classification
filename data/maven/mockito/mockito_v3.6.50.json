@@ -1,0 +1,25 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.6.50",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.14010416666666667,
+    "commits_info": [
+        {
+            "hash": "47d901e218aa268f7545b0b77f610b886d2ce005",
+            "message": "Merge pull request #2163 from shestee/release/3.x\n\nApply new Shipkit Changelog plugin properties"
+        },
+        {
+            "hash": "6ade10a7963976d0440de8a738f0e947d6577937",
+            "message": "Bumped version of Shipkit plugins"
+        },
+        {
+            "hash": "5f05808bc5f62391ecf1a541747c3a10d91c588b",
+            "message": "Apply new Shipkit Changelog plugin properties\n\nTwo new properties has been recently added to Shipkit Changelog plugin:\n1. 'newTagRevision' eliminates problem with wrong tagging, when release is tagged with revision reference that the release doesn't come from, but is the latest one on master branch. To get the commit SHA that triggered the workflow 'GITHUB_SHA' env var is used.\n2. 'githubToken' is used to both to fetch and post, instead of 'readOnlyToken' and 'writeToken'. As the token grants write access to the repository to keep things safe it should be supplied by the env variable. Using this property simplifies configuration. Deprecated properties should be replaced with the new one."
+        }
+    ],
+    "issues": []
+}

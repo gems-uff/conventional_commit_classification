@@ -1,0 +1,266 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.15",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 50,
+    "start_delay": 0.0,
+    "duration": 124.22811342592593,
+    "commits_info": [
+        {
+            "hash": "4343423f1ca72067954cc4d2a2daf4873d364a3a",
+            "message": "Release v5.3.15"
+        },
+        {
+            "hash": "cfefcee788272d04b811849be626afed5c3e21ac",
+            "message": "Polishing\n\nSee gh-27926"
+        },
+        {
+            "hash": "5fb58e51e5d58da884499197928b2a4447b47033",
+            "message": "Infer UTF-8 encoding for JSON response with MockMvc's andDo(print(...))\n\nPrior to this commit, the PrintingResultHandler in MockMvc -- typically\ninvoked via .andDo(print()) -- printed an `application/json` response\nbody using the default encoding (ISO-8859-1), which resulted in UTF-8\ncharacters being garbled.\n\nSince an `application/json` response is implicitly encoded using UTF-8,\nthe PrintingResultHandler now infers UTF-8 encoding for such response\nbodies.\n\nCloses gh-27926"
+        },
+        {
+            "hash": "67c4b4182f787a821a9ff9013b4dddac541e6547",
+            "message": "Upgrade to Hibernate ORM 5.4.33, Hibernate Validator 6.2.1, Mockito 4.2, AssertJ 3.22, HtmlUnit 2.56, XMLUnit 2.8.4"
+        },
+        {
+            "hash": "6b3052200a2a476a3fdbc41dc4f3cbf2080dfc14",
+            "message": "Skip \"data:\" lines without content\n\nCloses gh-27923"
+        },
+        {
+            "hash": "cf5b86369d91dcba00cbd8e796b7bace2aeb5c75",
+            "message": "Explicitly close InputStream after resolution in RequestPartMethodArgumentResolver\n\nCloses gh-27773"
+        },
+        {
+            "hash": "7067461d711f9b830386761494fa0fdee02a025d",
+            "message": "Fix exception in Jetty10RequestUpgradeStrategy\n\nCloses gh-27899"
+        },
+        {
+            "hash": "34cb5df8599f72401fc30e8d0b05ca0ac10a0840",
+            "message": "Consistent id for ReactorServerHttpRequest\n\nCloses gh-27885"
+        },
+        {
+            "hash": "01231fe923659cfef2cb1e91b8b15ae6caf0da01",
+            "message": "Minor refactoring in STOMP documentation\n\nCloses gh-27906"
+        },
+        {
+            "hash": "7665424ea83034456af87324edc5db9b29a1a948",
+            "message": "Polishing contribution\n\nCloses gh-27888"
+        },
+        {
+            "hash": "f63a106c85f3135d82c5ceca375e8f9e6c8a5535",
+            "message": "clear() method also clears argument resolver cache\n\nSee gh-27888"
+        },
+        {
+            "hash": "caaf48d4ec8dc660387f7ed05db6956c20a547a8",
+            "message": "Add missing overrides to ServerHttpResponseDecorator\n\nCloses gh-27889"
+        },
+        {
+            "hash": "e52fc2176d4faf11a9a32d1b89df68ad50477dd2",
+            "message": "Upgrade to Reactor 2020.0.15\n\nCloses gh-27897"
+        },
+        {
+            "hash": "e8e7fbba94165df1572d48e62fbbc5b637a616ed",
+            "message": "Polishing contribution and fix failing test\n\nThe failing test is for Apache HttpComponents where we cannot apply the\nContent-Length together with other headers, and must pass it instead\nexplicitly to ReactiveEntityProducer when writing at which point it gets\nset in the native headers.\n\nCloses gh-27768"
+        },
+        {
+            "hash": "bd1f34e17403dd26f3cb7473bd3d49b2c5f6705f",
+            "message": "Apply adapters to client request headers after committed\n\nSee gh-27768"
+        },
+        {
+            "hash": "a490723f02f61d450b4556965db1f328e0ab8306",
+            "message": "NettyHeadersAdapter::putAll does not overwrite headers\n\nSimilar to 4078b73cec8eb8baad10a7593b1c917b9c7b26d8, but for the\nclient-side NettyHeadersAdapter::putAll.\n\nSee gh-27887"
+        },
+        {
+            "hash": "df263d01b9518977aced32582b58c198694fbcc9",
+            "message": "Use idiomatic AssertJ assertions for true, false, and null"
+        },
+        {
+            "hash": "2a80b64d405815d3b612d2fc844e7beffa713160",
+            "message": "Add tests for StringUtils matchesCharacter() method\n\nCloses gh-27909"
+        },
+        {
+            "hash": "e24043ab90235cad636fd81d17f388adf76cbde0",
+            "message": "Simplify HashMap declaration in test fixture"
+        },
+        {
+            "hash": "4078b73cec8eb8baad10a7593b1c917b9c7b26d8",
+            "message": "NettyHeadersAdapter::putAll does not overwrite headers\n\nNettyHeadersAdapter::putAll uses HttpHeaders::add, which does not\noverwrite existing headers. putAll should use HttpHeaders::set instead,\njust like NettyHeadersAdapter::put does.\n\nCloses gh-27887"
+        },
+        {
+            "hash": "dca155e4381406fe43d7c02f137816cf09a3d501",
+            "message": "Reintroduce references to JBoss AS Javadoc\n\nCloses gh-27860"
+        },
+        {
+            "hash": "edabde8a11fbf8987787b3d4a8ab2408a889e79c",
+            "message": "Fix syntax in WebFlux Validation example\n\nCloses gh-27907"
+        },
+        {
+            "hash": "8087eb69bfc2782bd8c5b81c57d63c849b87ed8c",
+            "message": "Improve error message in ResolvableType.forClassWithGenerics()\n\nPrior to this commit, the error message generated for a mismatched\nnumber of generics did not include the information about the class in\nquestion.\n\nThis commit improves the error message by providing more context,\nspecifically the result of invoking toGenericString() on the class.\n\nFor example, instead of throwing an IllegalArgumentException with the\nerror message \"Mismatched number of generics specified\", the error\nmessage would now be \"Mismatched number of generics specified for\npublic abstract interface java.util.Map<K,V>\".\n\nCloses gh-27847"
+        },
+        {
+            "hash": "e41d8651938a88be16743a7dc0fbd9f8b8ac0be9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d68bb4eecd2f576e90a79d86e0c73af5ed6602ca",
+            "message": "Simplify StreamConverterTests"
+        },
+        {
+            "hash": "730ad4436f04bf89252fb40e658895918ae4180d",
+            "message": "Polish contribution"
+        },
+        {
+            "hash": "23ab9ca8ca385d0253cf959ab2849f36d0c19edb",
+            "message": "Refactor tests to use lambda expressions & method references\n\nCloses gh-27386"
+        },
+        {
+            "hash": "51d263bd0606b31db0d792cbfdb25ccf5560e883",
+            "message": "Simplify H2SequenceMaxValueIncrementerTests\n\n@hpoettker made me aware of the ModeEnum in H2 that allows the\nparameterized test to be simplified, which was the primary impetus for\nthis commit.\n\nSee gh-27870"
+        },
+        {
+            "hash": "518dc6df65bc21ea952844e4ab65bffd77929d3f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "59c6b7e44543d3fdadfb78ae3c6a7c76de2fce91",
+            "message": "Fix SpEL withTypedRootObject() test"
+        },
+        {
+            "hash": "3e75ec73ab7177f8006187ee19195d089e8475f6",
+            "message": "Fix SpEL withRootObject test\n\nThe test case is intended to be for the method 'withRootObject()', but\nactually it's copied from the previous test method that does not use\n'withRootObject()'.\n\nThis commit fixes the propertyReadWriteWithRootObject() test method in\nPropertyAccessTests.\n\nCloses gh-27905"
+        },
+        {
+            "hash": "709a41fd437b7619156a7b74163ea9c5ebde1284",
+            "message": "Fix broken links to WebSocket support in Spring Security & Spring Session"
+        },
+        {
+            "hash": "90072d06fbbeb4e92813f3c9222a37f9ee6cadba",
+            "message": "Test H2SequenceMaxValueIncrementer against all H2 2.0.x compatibility modes\n\nSee gh-27870"
+        },
+        {
+            "hash": "54bdab4553138a5617da34296a48d07b97434a34",
+            "message": "Partially upgrade to H2 database 2.0.206\n\nCommit ed4e2289cd introduced support for H2 2.0.x but did not upgrade\nthe H2 dependency.\n\nThis commit upgrades the H2 dependency to version 2.0.206 but also\nadds an explicit test dependency on version 1.4.200 in spring-r2dbc,\nsince r2dbc-h2 does not yet support H2 2.0.x.\n\nOnce https://github.com/r2dbc/r2dbc-h2/pull/204 has been included in a\nreleased version of r2dbc-h2 we will be able to upgrade spring-r2dbc's\ntest dependency on the H2 database to 2.0.x as well.\n\nSee gh-27870\nSee gh-27902"
+        },
+        {
+            "hash": "75e18114700b8e8cc0b95a3732ffaa2ceedf0a48",
+            "message": "Ensure H2SequenceMaxValueIncrementer works with all H2 compatibility modes\n\nSee gh-27870"
+        },
+        {
+            "hash": "18781e58ac8ece4e2d0b8511f047307d5b2677a7",
+            "message": "Polish contribution\n\nSee gh-27870"
+        },
+        {
+            "hash": "ed4e2289cdcc72e9bc8e061f208c4dde721d4d1b",
+            "message": "Support H2 1.4 & 2.0 in H2SequenceMaxValueIncrementer\n\nPrior to this commit, H2SequenceMaxValueIncrementer only supported H2\ndatabase 1.4.\n\nThis commit updates H2SequenceMaxValueIncrementer's getSequenceQuery()\nmethod so that the syntax used supports version 1.4 and 2.0 of the H2\ndatabase.\n\nThis commit also updates several test schemas so that they work with H2\n1.4 and 2.0 as well as HSQL.\n\nCloses gh-27870"
+        },
+        {
+            "hash": "ccf95413ed41c7016bc57f92676716fc5c44e286",
+            "message": "Start building against Reactor 2020.0.15 snapshots\n\nSee gh-27897"
+        },
+        {
+            "hash": "fdd6e50721dd7b9655792134719960f05b75cf97",
+            "message": "Correct not compiling example code in Data Access docs\n\nThe EntityManager interface does not implement AutoCloseable until\nJPA 3.1.\n\nThis commit therefore partially reverts 189e1afc6ee6bd40b so that the\nexample code compiles with the supported JPA version.\n\nSee gh-22269\nCloses gh-27886"
+        },
+        {
+            "hash": "c04fa858fc3344b8d8a9b01b3b07ce0d00d51676",
+            "message": "Partially revert e1200f34e735769fcc9bac86059d56312460e132\n\nSyntax for this try-with-resources use case only permitted on Java 9+."
+        },
+        {
+            "hash": "c3ce4f0f90a0793bf4aa758a929b794d002a1428",
+            "message": "Polish contribution\n\nSee gh-27823"
+        },
+        {
+            "hash": "e1200f34e735769fcc9bac86059d56312460e132",
+            "message": "Use try-with-resources for AutoClosables where feasible\n\nWhere unfeasible, this commit adds inline comments to explain why\ntry-with-resources must not be used in certain scenarios. The purpose\nof the comments is to avoid accidental conversion to try-with-resources\nat a later date.\n\nCloses gh-27823"
+        },
+        {
+            "hash": "999376f9f94c866c15fa31c8217c7eabeab6bf28",
+            "message": "Temporarily remove references to JBoss AS Javadoc\n\nSee gh-27860"
+        },
+        {
+            "hash": "c942d789c38c6a934fd38d2f6ab8d89a045b41f2",
+            "message": "Ignore unsupported @SuppressWarnings tokens in Eclipse IDE\n\nThis helps to reduce noise in the \"Problems\" view by not displaying\nwarnings resulting from @SuppressWarnings tokens that Eclipse does not\nunderstand -- for example, tokens supported by IntelliJ IDEA or other\ntools."
+        },
+        {
+            "hash": "03668f9c103e40ec2dab222eec7ace44b9e63d07",
+            "message": "Replace remaining use of StringBuffer with StringBuilder\n\nAlthough this commit only applies to test classes, it serves to reduce\nthe noise when searching for undesirable usage of StringBuffer in\nproduction code."
+        },
+        {
+            "hash": "3e14cdbc6983d026dece705f2915e353cab12ae1",
+            "message": "Polish tests"
+        },
+        {
+            "hash": "f04e9a83662b2ce25e97a11d9a7cb16bed8edf71",
+            "message": "Deprecate getBeanFactory() method in AbstractBeanDefinitionReader\n\nThe getBeanFactory() method has been obsolete for more than 13 years\nsince it was superseded by the getRegistry() method in the\nBeanDefinitionReader interface.\n\nCloses gh-27875"
+        },
+        {
+            "hash": "c1606c5a5e46c2f60e747413fe57758fa6c8a7ac",
+            "message": "Polishing"
+        },
+        {
+            "hash": "95fac2589fc465a8b1d7187f55487ffdd92091b5",
+            "message": "Upgrade to Log4j2 2.17.1"
+        },
+        {
+            "hash": "41c8bb4fe1b76d5d33e4a09be767829c99e80ccc",
+            "message": "Next development version (v5.3.15-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27926",
+            "title": "PrintingResultHandler in MockMvc should infer UTF-8 encoding for JSON response"
+        },
+        {
+            "number": "27923",
+            "title": "Cannot read server-sent events without data (a.k.a. heartbeats)"
+        },
+        {
+            "number": "27773",
+            "title": "Use of RequestPart with String leads to a file descriptor leak"
+        },
+        {
+            "number": "27899",
+            "title": "ArrayIndexOutOfBoundsException with STOMP and Jetty 10"
+        },
+        {
+            "number": "27885",
+            "title": "WebFlux request id should not contain internal IPs"
+        },
+        {
+            "number": "27906",
+            "title": "Add Section on Authorization to STOMP WebSocket documentation"
+        },
+        {
+            "number": "27897",
+            "title": "Upgrade to Reactor 2020.0.15"
+        },
+        {
+            "number": "27887",
+            "title": "Duplicated content-type response header on error response"
+        },
+        {
+            "number": "27860",
+            "title": "Fix reference to JBoss AS Javadoc"
+        },
+        {
+            "number": "27847",
+            "title": "Improve error message in ResolvableType.forClassWithGenerics()"
+        },
+        {
+            "number": "27902",
+            "title": "Upgrade spring-r2dbc's test dependency on the H2 database to 2.0.x"
+        },
+        {
+            "number": "22269",
+            "title": "Use try-with-resources in Spring 5 documentations"
+        },
+        {
+            "number": "27875",
+            "title": "Deprecate inappropriate getBeanFactory() method in AbstractBeanDefinitionReader"
+        }
+    ]
+}

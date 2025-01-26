@@ -1,0 +1,66 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.24.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 10,
+    "start_delay": 0.0,
+    "duration": 12.857395833333333,
+    "commits_info": [
+        {
+            "hash": "0cf38225c58fcf7dfe49780c987516ff53048c6e",
+            "message": "2.24.9 release (previous 2.24.7) + release notes updated by CI build 3944\n\n[ci skip-release]"
+        },
+        {
+            "hash": "3701597af7fcf306684c5e86d18e613f618b5d77",
+            "message": "Merge pull request #1647 from epeee/shipkit_2_1_6\n\nUpdate shipkit plugin (v2.1.6)"
+        },
+        {
+            "hash": "f377d0e27ffe189554367c53dd5f00a09452d2b6",
+            "message": "Update shipkit plugin (v2.1.6)\nand increase the version since we already have a tag for 2.24.8"
+        },
+        {
+            "hash": "19adbf3dea958acbbdcb078b550a6797e3e7557d",
+            "message": "Merge pull request #1624 from bric3/handle_terminal_type_var_with_bounds\n\nHandle terminal type var with bounds"
+        },
+        {
+            "hash": "3f84cbfc1434b17fb84c1ae7579c3b03749a2454",
+            "message": "Reintroduces the guard that returns null instead of a mock of Object\n\nWhile the generics metadata extractor has been improved, not every\npossible scenarios are covered even Javac in version 8 do not follow\nthrough, in order to avoid a stealth return of the bugs spot in #357\nthis change improves the guard by making sure extracted generic data\ndoes not have extra-interfaces as well."
+        },
+        {
+            "hash": "aab36909e20fc05660fbf49f706011698f135b1a",
+            "message": "Fixes #1621 Now retrieves actual bounds for interfaces too\n\nIt improves the fix in 0cf45e2157e86a06dfd280a7d6e7fce63b4d764b by\nlooking in early inference phase the bounds of the TypeVariable that\nserves as a type argument of a ParameterizedType."
+        },
+        {
+            "hash": "c8bc6bc04e087b54a5fe3a8f8805ba5df26fd4e9",
+            "message": "Cleanup, removes non needed `throws exception`"
+        },
+        {
+            "hash": "0cf45e2157e86a06dfd280a7d6e7fce63b4d764b",
+            "message": "Fixes #1621: Partly reverting #1612 cbedbe567d5bf902b13e8cebc4a2a2ccfef7758f\n\n`ReturnsDeepStubs` was returning null instead of MockitoMock to avoid a\n`ClassCastException` on the call site, this change seems not necessary\nafter the change done in df9b85eebb06106a6d2a629cf55eb9de5c3bf923.\n\nBut keep the MockitoCast check in errorprone disabled as this PR\nimproves what was done in #1612 by making the generics support cover\nadditional generics scenarios.\n\nhttp://errorprone.info/bugpattern/MockitoCast"
+        },
+        {
+            "hash": "3722958ba4db09b6ea45b613317b5f888d39a3f1",
+            "message": "Fixes #1621: Deep stubs didn't extract bounds from terminal TypeVariable\n\nThis case was not handled correctly by the GenericMetadataSupport, the\nissue was that in this case it didn't extracted the bounds from the\nterminal variable which happen to be a type variable _argument_.\n\nThis likely fixes a whole area of generics issues with deep stubs."
+        },
+        {
+            "hash": "73f1d17e5b0ec1410e54a72334639da077e984f4",
+            "message": "VerificationCollector to handle non-matching args and other assertions (#1644)\n\n* Rename assertAtLeastOneFailure() to assertExactlyOneFailure()\r\n\r\nNew method name is a more accurate description of what it does.\r\n\r\n* Change Assert.fail() to AssertJ's assertBecauseExceptionWasNotThrown()\r\n\r\nGives better diagnositics in the event of a test failure.\r\n\r\n* Enhance VerificationCollectorImpl to collect argument-matching failures\r\n\r\nFixes #1642."
+        }
+    ],
+    "issues": [
+        {
+            "number": "357",
+            "title": "ClassCastExceptions with JDK9 javac"
+        },
+        {
+            "number": "1621",
+            "title": "RETURNS_DEEP_STUBS causes \"Raw extraction not supported for : 'null'\" in some cases"
+        },
+        {
+            "number": "1642",
+            "title": "VerificationCollector doesn't work for invocations with non-matching args"
+        }
+    ]
+}

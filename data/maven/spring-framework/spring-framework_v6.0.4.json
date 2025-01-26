@@ -1,0 +1,314 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 61,
+    "start_delay": 0.0,
+    "duration": 27.123680555555556,
+    "commits_info": [
+        {
+            "hash": "38206d0856d55a7c4814a3330321a6e5aa1e4aa7",
+            "message": "Release v6.0.4"
+        },
+        {
+            "hash": "3d571e8ab504598088746711dfe78316be4bd7f2",
+            "message": "Upgrade to Micrometer 1.10.3\n\nCloses gh-29802"
+        },
+        {
+            "hash": "c7cfdfc26c35be1b5f7e051ff162f8c8be2e43b0",
+            "message": "Downgrade to Mockito 4.9 for spring-beans tests\n\nIncludes upgrade to HtmlUnit 2.69"
+        },
+        {
+            "hash": "4d27aee7cf27e264ae42f6e54518b3a5290d628e",
+            "message": "Upgrade to Checkstyle 10.6"
+        },
+        {
+            "hash": "63f0beb209ded20f464fb13cbba332ee2d8132eb",
+            "message": "Upgrade to Reactor 2022.0.2\n\nIncludes Mockito 4.11 and AssertJ 3.24.1\n\nCloses gh-29797"
+        },
+        {
+            "hash": "8dbdfb0449f5223e102c090591d38ed956722147",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d5fb5d029bdc32fa00fa45660d07438a41b57206",
+            "message": "Polish contribution"
+        },
+        {
+            "hash": "3738a45658426d7caa976021f01f94c125d9e4ef",
+            "message": "Avoid wasted memory on empty maps and sets\n\nThis commit avoids wasted memory on empty hash maps in\nMergedAnnotationReadingVisitor and empty sets in InjectionMetadata.\n\nCloses gh-29742"
+        },
+        {
+            "hash": "fd3e99c7eef34ef4f333284b32c3bf41122013d7",
+            "message": "Upgrade to JUnit 5.9.2"
+        },
+        {
+            "hash": "4396801933a3882daa9f40729ec98f7e5502d9e7",
+            "message": "Add reflection hints for Kotlin reflection on functions\n\nKotlin reflection API invocation on a specific function\nmay require iterating on all Java methods to find the right\nKotlin function. As a consequence, this commit adds introspection\nhints on the class declared methods for all Kotlin beans since\nthe impact on the footprint is low.\n\nCloses gh-29663"
+        },
+        {
+            "hash": "a516ed873952dee48a43a5ad8062e1231e495f1a",
+            "message": "Upgrade Gradle Enterprise & Conventions plugins"
+        },
+        {
+            "hash": "88cac6a4a3a84ff9891d226d7ad47d2707af6d96",
+            "message": "Reduce creation of composite interfaces to actual method references in current pointcut\n\nCloses gh-29519"
+        },
+        {
+            "hash": "11df955d88fc2e301749a5482f4f08f0c15fb504",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "77832a6da905f63b75ffa5ee450b914f9b933230",
+            "message": "Apply \"instanceof pattern matching\" in HttpHeaders"
+        },
+        {
+            "hash": "ce1f6cf0bff59eb6fac27588dc28f0175e45267a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c702cd418ed8336366a85f83785e01b7e307108f",
+            "message": "Polishing\n\nSee gh-29721"
+        },
+        {
+            "hash": "4bcc24372afd12f6f3268b84e1da5aa1e9d82967",
+            "message": "Add ExecutingResponseCreator\n\nThis commit adds a new `ResponseCreator` implementation that uses a\n`ClientHttpRequestFactory` to perform an actual request.\n\nCloses gh-29721"
+        },
+        {
+            "hash": "ae7cff35dcdc85cef1662ef7698dd988d35bc9e6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8282be682c511dd7c78594dbf9671127596d19bf",
+            "message": "Fix typo in core-aot.adoc\n\nCloses gh-29788"
+        },
+        {
+            "hash": "b81a291c8548d6cf6285ef18b6e38abeb7189025",
+            "message": "Add reflection hints for @RequestPart\n\nCloses gh-29749"
+        },
+        {
+            "hash": "3348e74ab80eb707f0bae955202358cd6719b23b",
+            "message": "Add native support for @Convert on JPA entities\n\nThis commit infers the reflection hints required for converters\nwhen they are specified with the @Convert annotation at class or\nfield level.\n\nIt also refines the hints generated for @Converter in order\nto just generate the construct hint, not the public method one\nwhich should be not needed.\n\nCloses gh-29771"
+        },
+        {
+            "hash": "e2832ea596908322d35f2ed3aceb300368373d8a",
+            "message": "Polish #29727: Mention Kotlin andExpectAll in reference manual (#29766)\n\nThis just adds a Kotlin snippet alongside the Java snippet in the\r\nreference manual.\r\n\r\nRelates to gh-29727\r\nCloses gh-27317"
+        },
+        {
+            "hash": "74f58198fd689408973363d00a730b5c2bf4ed14",
+            "message": "Add Kotlin DSL support for MockMVC andExpectAll (#29727)\n\nAs the DSL internally calls `ResultActions.andExpect`, this is done with\r\na trick where a synthetic `ResultActions` is provided at top level which\r\nstores each `ResultMatcher` in a mutable list.\r\n\r\nOnce the DSL usage is done, the top level DSL `andExpectAll` turns that\r\nlist into a `vararg` passed down to the actual `actions.andExpectAll`.\r\n\r\nCloses gh-27317"
+        },
+        {
+            "hash": "42b16591ec9978f9e317035bad998e617e79bb7e",
+            "message": "SpringPersistenceUnitInfo leniently ignores transformer if no LoadTimeWeaver is present\n\nCloses gh-29736"
+        },
+        {
+            "hash": "62cf2f0a4f6de789a3acec7778cce7eeea6c849e",
+            "message": "Fix wrong asserted code in SQLExceptionSubclassTranslatorTests (#29748)\n\nThere was a typo in the test, covering the wrong SQLState code.\r\n\r\nPolishes a644245.\r\nRelates to gh-29699."
+        },
+        {
+            "hash": "32e1a6452a44d9584fd7d969455f943cf13f5b44",
+            "message": "Upgrade to Undertow 2.3.2, Apache HttpClient 5.2.1, Selenium HtmlUnit Driver 2.67"
+        },
+        {
+            "hash": "55295faff0746a00557ec5abcd66557bc1ae7f02",
+            "message": "Upgrade to Tomcat 10.1.4, Jetty 11.0.13, Netty 4.1.86, Protobuf 3.21.12, SLF4J 2.0.6"
+        },
+        {
+            "hash": "254c3725e21d140e5eda38cead0f1a621c59b7bd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d5ff2322463c021bb252d9b1889f6f67cfed56b5",
+            "message": "Defensive check for null returned from createConnection()\n\nCloses gh-29706"
+        },
+        {
+            "hash": "a644245e0e3de3c07d57a1c6604f3ffa26b58425",
+            "message": "Check well-known database error codes in case of generic SQL state 23000\n\nCloses gh-29699"
+        },
+        {
+            "hash": "697292ba0ca5aa69454e7a184197be90c75de3ab",
+            "message": "Apply update_copyright_headers.sh"
+        },
+        {
+            "hash": "5366ac84e6ec043fd7100a182968bc151193c382",
+            "message": "Fix path within mapping when pattern contains \".*\"\n\nPrior to this commit, extracting the path within handler mapping would\nresult in \"\" if the matching path element would be a Regex and contain\n\".*\". This could cause issues with resource handling if the handler\nmapping pattern was similar to `\"/folder/file.*.extension\"`.\n\nThis commit introduces a new `isLiteral()` method in the `PathElement`\nabstract class that expresses whether the path element can be compared\nas a String for path matching or if it requires a more elaborate\nmatching process.\n\nUsing this method for extracting the path within handler mapping avoids\nrelying on wildcard count or other properties.\n\nFixes gh-29712"
+        },
+        {
+            "hash": "b71db12c43a1a09fa2fb49bf88ce8f00e017511b",
+            "message": "Apply \"instanceof pattern matching\" in spring-aop"
+        },
+        {
+            "hash": "ab571e3562b0f389a8b61a8deb5e75459f6a09f2",
+            "message": "Revert incorrect change to ParamAware Javadoc"
+        },
+        {
+            "hash": "5e42a6eb0a70460246678ac2aa22a412bc96328d",
+            "message": "Update Trigger & TriggerContext reference documentation\n\nCloses gh-29702"
+        },
+        {
+            "hash": "0bfddbc9cb982790af7695ff1fb40c933411d719",
+            "message": "Polishing"
+        },
+        {
+            "hash": "511dab1ade9c8b45d35e3bca005b631f0c40af89",
+            "message": "Apply \"instanceof pattern matching\" (#29710)"
+        },
+        {
+            "hash": "d4623a393b5a8a4922a817898fc502e8ba6dedae",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "c2c3be4ee33e7d06a73f5241bc306cff965d3495",
+            "message": "Polishing"
+        },
+        {
+            "hash": "270f8526d1282e46f8a57c6c834b12c8ed45b5c6",
+            "message": "Fix typos in anchors"
+        },
+        {
+            "hash": "4171e355469173453995aa5bc1b7cca4bd3aef4f",
+            "message": "Fix formatting in examples"
+        },
+        {
+            "hash": "bea505d32eed1c2d5b1ad5d937e402e844a9f333",
+            "message": "Fix typos in reference manual"
+        },
+        {
+            "hash": "5c28b568233b0f74f06f698bcc5dc93ecff77b2f",
+            "message": "Remove duplicated words in Javadoc"
+        },
+        {
+            "hash": "d2b54e26118b3a0e008ae0c3ef1807cfb84c3e4c",
+            "message": "Remove duplicate words in reference manual\n\nFound using regular expression: \\b(\\w+)\\s+\\1\\b"
+        },
+        {
+            "hash": "f8a58f2bc4bdec121a3fce5c5012e9a370a678fb",
+            "message": "Update Jakarta Mail info in ref docs\n\nCloses gh-29707"
+        },
+        {
+            "hash": "f6e1fb3150b4693aee50e0bda688fe1a3bcdd824",
+            "message": "Cross reference WebTestClient section"
+        },
+        {
+            "hash": "14c7b9bd08a2ef19c7e25164d3ecdfe4f59490e5",
+            "message": "Change plain 'WebMVC' links to 'See equivalent in the Servlet stack'\n\nCloses gh-29694"
+        },
+        {
+            "hash": "11f3edc352bbc182418a45e1b7b0c7827d359228",
+            "message": "Change plain 'WebFlux' links to 'See equivalent in the Reactive stack'\n\nCloses gh-29694"
+        },
+        {
+            "hash": "fbd4463f2097601ecafa0ed926d9640ab818ca40",
+            "message": "Fix subsection style in WebFlux Concurrency Model\n\nThe block title style previously used was not rendered in HTML and the\ntitle couldn't be differentiated from the text. Though, it was in the\nPDF, as italics.\n\nIntroducing delimited blocks in the open (`--`) style did introduce\nstyling, but the vertical alignment isn't great.\n\nThis commit turns these block titles to actual (deep) section titles.\nIn the final HTML, at this depth there is no numbering but bold styling\nis there. The PDF rendering has also been verified to have relevant\nstyle.\n\nCloses gh-29694"
+        },
+        {
+            "hash": "a3a94950f61e2dfd1078a4b9e57628889b06d07a",
+            "message": "Rework linking to Spring MVC Async support vs WebFlux section\n\nThe link was previously named \"Compared to WebFlux\", which is easy to\nmix up with the various links to equivalent sections in the WebFlux\nchapter. Here the links point to a small section comparing the Servlet\nAsync API to the WebFlux stack from a high perspective.\n\nIn this commit we eliminate most of these links, except at the\nbeginning of the Asynchronous section. We also add a small mention of\nthe Servlet configuration in the comparison paragraphs, since the\nConfiguring section is the one furthest from the comparison paragraphs\nthat used to have a link to it.\n\nCloses gh-29694"
+        },
+        {
+            "hash": "b51a14ff92ac1a8053b57f4fe53dcab9e04f1241",
+            "message": "Remove statement that users could be on Java < 5\n\nCloses gh-29694"
+        },
+        {
+            "hash": "929d5567b811c0bae8b49908b606aa0f5464b4dd",
+            "message": "Remove ref to JOTM, inactive since 2009\n\nCloses gh-29694"
+        },
+        {
+            "hash": "beaa7ba0e3c1e2fa22b518b4a39f88ee807272dd",
+            "message": "Fix link to Jakarta Mail\n\nCloses gh-29694"
+        },
+        {
+            "hash": "1a839f51031cd794922c7fcf412a2ef17986f03a",
+            "message": "Fix typos in reference manual\n\nCloses gh-29694"
+        },
+        {
+            "hash": "8df4f927fd5d584ae1c9306cb2cd47c2e5bf6d2c",
+            "message": "Polish contribution\n\nSee gh-29697"
+        },
+        {
+            "hash": "5965917d1655819379236bba0d3098b70bc6eb80",
+            "message": "Extract ResourceEntityResolver HTTPS schema resolution fallback\n\nThis commit extracts the DTD/XSD remote lookup fallback from the\nresolveEntity() method into a protected method.\n\nA WARN-level logging statement is added to the extracted fallback in\norder to make it clear that remote lookup happened.\n\nOverriding the protected method would allow users to avoid this\nfallback entirely if it isn't desirable, without the need to duplicate\nthe local resolution code.\n\nCloses gh-29697"
+        },
+        {
+            "hash": "57cfb94f1f75bc774fa1f09ba0b3052bf1a8f240",
+            "message": "Improve documentation for literals in SpEL expressions\n\nCloses gh-29700"
+        },
+        {
+            "hash": "b5b80d0a07bff28a14e22c9482e4d9335668dc97",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e5cfbae3fdfc5cccb71833ec658006d928a226cc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5d2ca11315eb5f308dee0db774de893be916832c",
+            "message": "Fix manipulating property sources example in Javadoc for ConfigurableEnvironment\n\nThe \"manipulating property sources\" example in the Javadoc for\r\n`ConfigurableEnvironment` states that `MutablePropertySources`\r\nexpect a `Map<String,String>`; whereas it expects a\r\n`Map<String,Object>`.\r\n\r\nCloses gh-29693"
+        },
+        {
+            "hash": "858394b72055018e315599f4292201f9a70c7ec4",
+            "message": "Next development version (v6.0.4-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29802",
+            "title": "Upgrade to Micrometer 1.10.3"
+        },
+        {
+            "number": "29797",
+            "title": "Upgrade to Reactor 2022.0.2"
+        },
+        {
+            "number": "29663",
+            "title": "@Configuration classes with Kotlin in native-image are broken"
+        },
+        {
+            "number": "29519",
+            "title": "`AspectJExpressionPointcut#getTargetShadowMatch` tentatively creates proxies for every bean"
+        },
+        {
+            "number": "29749",
+            "title": "@RequestPart dto not configured for reflection in aot"
+        },
+        {
+            "number": "29771",
+            "title": "Add native support for `@Convert` on JPA entities"
+        },
+        {
+            "number": "27317",
+            "title": "Introduce Kotlin DSL for `ResultActions.andExpectAll()`"
+        },
+        {
+            "number": "29736",
+            "title": "Compatibility with Hibernate ORM 6.2"
+        },
+        {
+            "number": "29699",
+            "title": "Conflict on insert gets translated to DataIntegrityViolationException instead of DuplicateKeyException in Spring 6"
+        },
+        {
+            "number": "29706",
+            "title": "JmsTemplate.convertAndSend throws NullPointerException during shutdown"
+        },
+        {
+            "number": "29712",
+            "title": "ResourceHandlers cannot resolve static resources with certain wildcard patterns"
+        },
+        {
+            "number": "29702",
+            "title": "Trigger/TriggerContext reference documentation outdated"
+        },
+        {
+            "number": "29707",
+            "title": "Update Jakarta Mail info in ref docs"
+        },
+        {
+            "number": "29700",
+            "title": "Improve documentation for literals in SpEL expressions"
+        }
+    ]
+}

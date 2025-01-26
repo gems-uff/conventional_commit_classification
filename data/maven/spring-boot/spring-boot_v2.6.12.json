@@ -1,0 +1,506 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.6.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 79,
+    "start_delay": 0.0,
+    "duration": 35.166550925925925,
+    "commits_info": [
+        {
+            "hash": "e3ee8d3aa1b7416f5c989bef978052f6bae090c6",
+            "message": "Release v2.6.12"
+        },
+        {
+            "hash": "82763deb935d368a8d0e2c21ea8a92716e6e0192",
+            "message": "Upgrade to Spring Batch 4.3.7\n\nCloses gh-32271"
+        },
+        {
+            "hash": "856bd84df91b38da4a1d00a680829638b01add5d",
+            "message": "Remove JDK 18 CI\n\nCloses gh-32290"
+        },
+        {
+            "hash": "5affcecd24125d412872f20bbe159f5f627d9dc1",
+            "message": "Update Java 19 CI to use Bellsoft Liberica\n\nCloses gh-32289"
+        },
+        {
+            "hash": "9d30a0a5b609d24af09f0efe6355def1f0fea272",
+            "message": "Upgrade to Dependency Management Plugin 1.0.14.RELEASE\n\nCloses gh-32458"
+        },
+        {
+            "hash": "4e18da99a341ec0ad6e0aee760d5a48931b1e9c1",
+            "message": "Upgrade to Spring Integration 5.5.15\n\nCloses gh-32452"
+        },
+        {
+            "hash": "c7254cfe254cb3bd5748ed9fa99f5c2275d325a4",
+            "message": "Upgrade to Jetty 9.4.49.v20220914\n\nCloses gh-32441"
+        },
+        {
+            "hash": "634799f8877e22b4456f184e80f29217963585e8",
+            "message": "Upgrade to Groovy 3.0.13\n\nCloses gh-32440"
+        },
+        {
+            "hash": "6c37838f31e53f55beda5cafdd012d1fa29b1b45",
+            "message": "Upgrade to Spring Kafka 2.8.9\n\nCloses gh-32270"
+        },
+        {
+            "hash": "033b6b5dbec19d7f36abae907006f7de6384dcb9",
+            "message": "Upgrade to Spring AMQP 2.4.7\n\nCloses gh-32269"
+        },
+        {
+            "hash": "d72e0b39fcb4cab17508692868f1ae64e1c65d9d",
+            "message": "Upgrade to Spring Data 2021.1.7\n\nCloses gh-32268"
+        },
+        {
+            "hash": "d2ad0b7f9156c315d21e68caa072d1a22eb95d89",
+            "message": "Merge pull request #32405 from jprinet\n\n* pr/32405:\n  Upgrade to Gradle Enterprise plugin 3.11.1\n\nCloses gh-32405"
+        },
+        {
+            "hash": "173b70c377b1c9f93d368e2b639f8bb322a9da82",
+            "message": "Upgrade to Gradle Enterprise plugin 3.11.1\n\nSee gh-32405"
+        },
+        {
+            "hash": "057ad72945f947a06ee7e83cc6c52e063d620424",
+            "message": "Enable Paketo builder system tests on Java 18\n\nCloses gh-32296"
+        },
+        {
+            "hash": "61e11cd361cbdbb731a15daab4bf17c21afe6743",
+            "message": "Ensure that TCCL is clean when DataSource is accessed\n\nPreviously, when using Tomcat, its web app class loader was the thread\ncontext class loader when H2ConsoleAutoConfiguration triggered\ninitialization of Hikari's pool. This was the case because it's done\nin the bean method of a ServletRegistrationBean. Such Servlet-related\nbeans are intentionally created with Tomcat's web app classloader as\nthe TCCL. This arrangement results in the pool's threads using\nTomcat's web app class loader as their TCCL which is not desirable.\nOne consequence of this was that Tomcat could log a warning at\nshutdown about the thread being left running when it will, in fact,\nbe stopped as part of the context being closed.\n\nThis commit updates H2ConsoleAutoConfiguration to set the TCCL to its\nown ClassLoader while the DataSource information is being logged.\n\nCloses gh-32382"
+        },
+        {
+            "hash": "ab26050fe702a2287cca2662fd3a585fad347eef",
+            "message": "Document support for Java 19\n\nCloses gh-32259"
+        },
+        {
+            "hash": "998396dd8a2fabe712b36a7fd16cb03eb070e767",
+            "message": "Upgrade to Spring HATEOAS 1.4.5\n\nCloses gh-32400"
+        },
+        {
+            "hash": "77f428498fb6d17f36eb1a956ac5e25ddebf1804",
+            "message": "Compile against SnakeYAML 1.32 and test against older versions\n\nCloses gh-32392"
+        },
+        {
+            "hash": "78fb7381178fbc95828c02f83566868c6d57d1d6",
+            "message": "Upgrade to Spring Framework 5.3.23\n\nCloses gh-32267"
+        },
+        {
+            "hash": "3a55c3a530335fea95ef9d2a5b44da8a1234562f",
+            "message": "Upgrade CI to Docker 20.10.18\n\nCloses gh-32377"
+        },
+        {
+            "hash": "9b122924c8b32b382c8034e0c1c804098717d2b0",
+            "message": "Upgrade to RSocket 1.1.3\n\nCloses gh-32379"
+        },
+        {
+            "hash": "c216e1e4a45d3f5b0541f71689f32592ace27d04",
+            "message": "Upgrade to Netty 4.1.82.Final\n\nCloses gh-32312"
+        },
+        {
+            "hash": "a3465ced28d3363ec8c73f07fd5ea3abd926cb3f",
+            "message": "Upgrade to Kafka 3.0.2\n\nCloses gh-32311"
+        },
+        {
+            "hash": "3d21fcb3815382c833fc0d6c778159ff9c9373ae",
+            "message": "Upgrade to Johnzon 1.2.19\n\nCloses gh-32310"
+        },
+        {
+            "hash": "4848f8db5b615b3d3503f146510c57b9187406dc",
+            "message": "Upgrade to Janino 3.1.8\n\nCloses gh-32309"
+        },
+        {
+            "hash": "b4475e13872f5ede9ca6364ee6765fa354bddc52",
+            "message": "Upgrade to Jackson Bom 2.13.4\n\nCloses gh-32308"
+        },
+        {
+            "hash": "1775fc148c61613feaf71087dcdd116f089b8e8b",
+            "message": "Upgrade to Hibernate Validator 6.2.5.Final\n\nCloses gh-32307"
+        },
+        {
+            "hash": "7de6d72346a2a05d7dd6dceb844f65c0082ca2c0",
+            "message": "Upgrade to Hibernate 5.6.11.Final\n\nCloses gh-32306"
+        },
+        {
+            "hash": "2fa419532662a60110d2154439ed0a09234c7c96",
+            "message": "Upgrade to Dropwizard Metrics 4.2.12\n\nCloses gh-32305"
+        },
+        {
+            "hash": "dc4d850b16248467077be002597ea26a1333ebb4",
+            "message": "Upgrade to Rector 2020.0.23\n\nCloses gh-32266"
+        },
+        {
+            "hash": "72ad69d696c33a0a2f2b01c3277464e1b79ce3b1",
+            "message": "Upgrade to Micrometer 1.8.10\n\nCloses gh-32265"
+        },
+        {
+            "hash": "9fe9f31af18b3233eb71cf7899741848f0748ef2",
+            "message": "Polish"
+        },
+        {
+            "hash": "a262520f0892613cb38811e15fd8bdd1eec3270a",
+            "message": "Disable LoaderIntegrationTests on Java 19 till it GAs\n\nSee gh-32280"
+        },
+        {
+            "hash": "c3416ac97acdef3e2f0053b7a7d5537805a9ee83",
+            "message": "Disable LoaderIntegrationTests with Java 19\n\nSee gh-32295"
+        },
+        {
+            "hash": "42db66cc9256e3b12ab0560a2e32d09dba4f99d5",
+            "message": "Merge pull request #32224 from obfischer\n\n* pr/32224:\n  Make the path of the config directory better understandable\n\nCloses gh-32224"
+        },
+        {
+            "hash": "6e4e76597a03fcdb372578da4e1db9b874169b41",
+            "message": "Make the path of the config directory better understandable\n\nCurrently, the documentation relates to the subdirectory for external\nconfigurations as `/config`. Read as UNIX path, the leading slash\ncould be read as reference to the root directory `/`.\n\nThis commit updates the documentation to use 'config/' instead.\n\nSee gh-32224"
+        },
+        {
+            "hash": "5cb23aeb857e62272c950815d1a05bf7b798aaf6",
+            "message": "Only disable test tasks when a project isn't compatible with toolchain\n\nDisabling compilation means that any downstream project will break.\nFor example, disabling our Gradle plugin's compileJava task means\nthat the launch script test app fails to build as it uses our\nGradle plugin and its classes are missing.\n\nSee gh-gh-32280"
+        },
+        {
+            "hash": "4523f010925f5cb805b2d83445dcf713534a3b11",
+            "message": "Set up CI on JDK 19\n\nCloses gh-32258"
+        },
+        {
+            "hash": "23c2f73b3f6701e4b13fe71fc0abdd0aaf2aca3f",
+            "message": "Update tests to allow them to run on Java 19\n\nCloses gh-32280"
+        },
+        {
+            "hash": "78f4242e46aeddef73c92e9360b9b5f66d64d23f",
+            "message": "Build with Gradle 7.5 while still supporting Gradle 6.8+\n\nCloses gh-32281"
+        },
+        {
+            "hash": "6d0a5042835cca1fd715e91e107fcb5fccfcca31",
+            "message": "Start building against Spring Batch 4.3.7 snapshots\n\nSee gh-32271"
+        },
+        {
+            "hash": "bb6307a5067fa3f3969656073c602b12d452c6e0",
+            "message": "Start building against Spring Kafka 2.8.9 snapshots\n\nSee gh-32270"
+        },
+        {
+            "hash": "91fb8b8b68288c014f2e96f4266e7f12e8b42dd7",
+            "message": "Start building against Spring AMQP 2.4.7 snapshots\n\nSee gh-32269"
+        },
+        {
+            "hash": "b4e97b73a6d481fd2404b2aae85aaaede74920c8",
+            "message": "Start building against Spring Data 2021.1.7 snapshots\n\nSee gh-32268"
+        },
+        {
+            "hash": "0c5d5c331a2ab68f7e7f382141e5355d41e2fae2",
+            "message": "Start building against Spring Framework 5.3.23 snapshots\n\nSee gh-32267"
+        },
+        {
+            "hash": "126c3cf0d80069dd2e4db1892a1babc3b33cbd4e",
+            "message": "Start building against Rector 2020.0.23 snapshots\n\nSee gh-32266"
+        },
+        {
+            "hash": "33b3a5f8bfd1305cc7dda484a3fefa5361b7a0ab",
+            "message": "Start building against Micrometer 1.8.10 snapshots\n\nSee gh-32265"
+        },
+        {
+            "hash": "85697ac482c567654462312782831a097388804c",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "280ce6390a81ea9ca5ef9455ad8b619bf766480b",
+            "message": "Add NINETEEN to JavaVersion enum\n\nCloses gh-32226"
+        },
+        {
+            "hash": "3852cf4c44df594848048c83c77777bbf1523950",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-32252"
+        },
+        {
+            "hash": "1f535a6c556859b5ccd1e6ff3246b9410191444e",
+            "message": "Merge pull request #32142 from neilstevenson\n\n* pr/32142:\n  Polish \"Add support for detecting .yml Hazelcast config files\"\n  Add support for detecting .yml Hazelcast config files\n\nCloses gh-32142"
+        },
+        {
+            "hash": "19c69ff743e43730bbca881648e943177162a1ef",
+            "message": "Polish \"Add support for detecting .yml Hazelcast config files\"\n\nSee gh-32142"
+        },
+        {
+            "hash": "5eaafdee9a40fe555139ea440f7fdf3b38438a18",
+            "message": "Add support for detecting .yml Hazelcast config files\n\nSee gh-32142"
+        },
+        {
+            "hash": "cd61d69a2f6e71c12c8ed1abd349ef792cbd6ece",
+            "message": "Merge pull request #32235 from valentine-dev\n\n* pr/32235:\n  Support lower-case input in PeriodStyle\n\nCloses gh-32235"
+        },
+        {
+            "hash": "89e19ddab9c3d94d3fb59d742d680dddb259d2a3",
+            "message": "Support lower-case input in PeriodStyle\n\nSee gh-32235"
+        },
+        {
+            "hash": "7688444704f8fb63b73fb2a86c4078ad21402188",
+            "message": "Upgrade to Postgresql 42.3.7\n\nCloses gh-32242"
+        },
+        {
+            "hash": "f9e836163556726a7136aa2db22d9a5981b0f310",
+            "message": "Update eclipse project setup file\n\nAttempt to fix buildSrc import and JDK version."
+        },
+        {
+            "hash": "b47eb1abfc43e99db6ca7a0e204f6962db14b732",
+            "message": "Merge pull request #32223 from valentine-dev\n\n* gh-32223:\n  Polish \"Support lower-case input in DurationStyle\"\n  Support lower-case input in DurationStyle\n\nCloses gh-32223"
+        },
+        {
+            "hash": "bc23e700245596ae33324fe84d9dfa19038f2236",
+            "message": "Polish \"Support lower-case input in DurationStyle\"\n\nSee gh-32223"
+        },
+        {
+            "hash": "c579c9378b674e5579db3233770fd3c7886460cb",
+            "message": "Support lower-case input in DurationStyle\n\nSee gh-32223"
+        },
+        {
+            "hash": "724f9ebf7107d99ac9bae4204b4f7c6444a49e03",
+            "message": "Support SnakeYaml 1.31\n\nThis commit keeps the managed dependency for SnakeYaml at 1.29 but\nenables forward compatibility for SnakeYaml 1.31.\n\nCloses gh-32228"
+        },
+        {
+            "hash": "d9265f0a92e9b17a3dfc31bdbc1ad6774ebb8fd3",
+            "message": "Build against SnakeYAML 1.31 but still use 1.29 in dep mgmt and starter"
+        },
+        {
+            "hash": "7b12926d8c8b8be9e6b5250e577fd3e56b05b9ca",
+            "message": "Upgrade Java 18 CI to 18.0.2.1+1\n\nCloses gh-32207"
+        },
+        {
+            "hash": "01aeb550b6845ed839e8069fcaf2dd7407f1a648",
+            "message": "Upgrade to Test Retry Gradle Plugin 1.4.1\n\nCloses gh-32200"
+        },
+        {
+            "hash": "7d983be769826c0d141129a419d56d9a765d7fc2",
+            "message": "Clarify docs on disabling HTTP client request metrics\n\nCloses gh-32136"
+        },
+        {
+            "hash": "adc4e05effa7c4a4e15a16b5c1470332dc9d8be5",
+            "message": "Polish"
+        },
+        {
+            "hash": "ccc80f39c72b5c6940c3b5ed5ac8cce37529ae9d",
+            "message": "Upgrade to Java 17.0.4.1+1\n\nCloses gh-32163"
+        },
+        {
+            "hash": "a7e2c0c8af0159bcf69c26bc4a5278afad38a4de",
+            "message": "Polish"
+        },
+        {
+            "hash": "dda44f1ca2878bb3d49bac4fdd1f955e515a40e9",
+            "message": "Upgrade to Java 11.0.16.1+1\n\nCloses gh-32164"
+        },
+        {
+            "hash": "24c2daa99d29e42c375fa5355d96884a24063ad4",
+            "message": "Improve javadoc regarding use on @Bean methods\n\nCloses gh-32166"
+        },
+        {
+            "hash": "ec65b293bf35f5f29e5f39f7462dc2ca1371caf1",
+            "message": "Merge pull request #32123 from dsyer\n\n* pr/32123:\n  Polish 'Add JVM options to prevent warnings with asciidoctor'\n  Add JVM options to prevent warnings with asciidoctor\n\nCloses gh-32123"
+        },
+        {
+            "hash": "546d7b41e99feb44136ec648182596c6fc5d0b87",
+            "message": "Polish 'Add JVM options to prevent warnings with asciidoctor'\n\nSee gh-32123"
+        },
+        {
+            "hash": "7b4db4cafcfcd020103291b26011d1d158cbe19d",
+            "message": "Add JVM options to prevent warnings with asciidoctor\n\nSee gh-32123"
+        },
+        {
+            "hash": "50c099334bd86680da46260b1a14af7e0e277645",
+            "message": "Adapt deprecated getIpAddress call with getHost in Redis Tests\n\nCloses gh-32147"
+        },
+        {
+            "hash": "463766fd44d435b91a2fd615fa831fe7850b4505",
+            "message": "Merge pull request #32144 from russellyou\n\n* pr/32144:\n  Polish \"Allow Netty default leak detection to be overidden\"\n  Allow Netty default leak detection to be overidden\n\nCloses gh-32144"
+        },
+        {
+            "hash": "7f2d4fceec77920d63546f9ca7e6dc47dd83eba8",
+            "message": "Polish \"Allow Netty default leak detection to be overidden\"\n\nSee gh-32144"
+        },
+        {
+            "hash": "51f2e40c6986aed6b533cc4ff0fdacb632c03867",
+            "message": "Allow Netty default leak detection to be overidden\n\nSee gh-32144"
+        },
+        {
+            "hash": "6d80b601b69f02059bcda618049039a0cbea550c",
+            "message": "Upgrade to Testcontainers 1.17.3\n\nCloses gh-32127"
+        },
+        {
+            "hash": "a9c71a7b867a26e674d4bb89f165f23d66bdc185",
+            "message": "Next development version (v2.6.12-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32271",
+            "title": "Upgrade to Spring Batch 4.3.7"
+        },
+        {
+            "number": "32290",
+            "title": "Remove JDK 18 CI"
+        },
+        {
+            "number": "32289",
+            "title": "Switch JDK 19 CI to Bellsoft Liberica"
+        },
+        {
+            "number": "32458",
+            "title": "Upgrade to Dependency Management Plugin 1.0.14.RELEASE"
+        },
+        {
+            "number": "32452",
+            "title": "Upgrade to Spring Integration 5.5.15"
+        },
+        {
+            "number": "32441",
+            "title": "Upgrade to Jetty 9.4.49.v20220914"
+        },
+        {
+            "number": "32440",
+            "title": "Upgrade to Groovy 3.0.13"
+        },
+        {
+            "number": "32270",
+            "title": "Upgrade to Spring Kafka 2.8.9"
+        },
+        {
+            "number": "32269",
+            "title": "Upgrade to Spring AMQP 2.4.7"
+        },
+        {
+            "number": "32268",
+            "title": "Upgrade to Spring Data 2021.1.7"
+        },
+        {
+            "number": "32296",
+            "title": "Enable PaketoBuilderTests on Java 18"
+        },
+        {
+            "number": "32382",
+            "title": "DataSource logging in H2 console auto-configuration causes Hikari's threads to have the wrong thread context class loader"
+        },
+        {
+            "number": "32259",
+            "title": "Document support for JDK 19"
+        },
+        {
+            "number": "32400",
+            "title": "Upgrade to Spring HATEOAS 1.4.5"
+        },
+        {
+            "number": "32392",
+            "title": "Test compatibility with range of SnakeYAML versions"
+        },
+        {
+            "number": "32267",
+            "title": "Upgrade to Spring Framework 5.3.23"
+        },
+        {
+            "number": "32377",
+            "title": "Upgrade CI to Docker 20.10.18"
+        },
+        {
+            "number": "32379",
+            "title": "Upgrade to RSocket 1.1.3"
+        },
+        {
+            "number": "32312",
+            "title": "Upgrade to Netty 4.1.82.Final"
+        },
+        {
+            "number": "32311",
+            "title": "Upgrade to Kafka 3.0.2"
+        },
+        {
+            "number": "32310",
+            "title": "Upgrade to Johnzon 1.2.19"
+        },
+        {
+            "number": "32309",
+            "title": "Upgrade to Janino 3.1.8"
+        },
+        {
+            "number": "32308",
+            "title": "Upgrade to Jackson Bom 2.13.4"
+        },
+        {
+            "number": "32307",
+            "title": "Upgrade to Hibernate Validator 6.2.5.Final"
+        },
+        {
+            "number": "32306",
+            "title": "Upgrade to Hibernate 5.6.11.Final"
+        },
+        {
+            "number": "32305",
+            "title": "Upgrade to Dropwizard Metrics 4.2.12"
+        },
+        {
+            "number": "32266",
+            "title": "Upgrade to Rector 2020.0.23"
+        },
+        {
+            "number": "32265",
+            "title": "Upgrade to Micrometer 1.8.10"
+        },
+        {
+            "number": "32280",
+            "title": "Update tests to make them compatible with Java 19"
+        },
+        {
+            "number": "32295",
+            "title": "Enable LoaderIntegrationTests with Java 19 once a liberica docker image is available"
+        },
+        {
+            "number": "32258",
+            "title": "Set up CI with JDK 19"
+        },
+        {
+            "number": "32281",
+            "title": "Build with Gradle 7.5 while retaining support for Gradle 6.8+"
+        },
+        {
+            "number": "32226",
+            "title": "Add NINETEEN to JavaVersion enum"
+        },
+        {
+            "number": "32252",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "32242",
+            "title": "Upgrade to Postgresql 42.3.7"
+        },
+        {
+            "number": "32228",
+            "title": "YAML timestamps not handled properly with SnakeYaml 1.31"
+        },
+        {
+            "number": "32207",
+            "title": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "number": "32200",
+            "title": "Upgrade to Test Retry Gradle Plugin 1.4.1"
+        },
+        {
+            "number": "32136",
+            "title": "Clarify documentation on disabling web client request metrics"
+        },
+        {
+            "number": "32163",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "32164",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "32166",
+            "title": "Improve @ConditionalOnClass javadoc regarding use on @Bean methods"
+        },
+        {
+            "number": "32147",
+            "title": "Adapt deprecated getIpAddress call with getHost in Redis Tests"
+        },
+        {
+            "number": "32127",
+            "title": "Upgrade to Testcontainers 1.17.3"
+        }
+    ]
+}

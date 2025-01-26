@@ -1,0 +1,49 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.9.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 7.913657407407407,
+    "commits_info": [
+        {
+            "hash": "5a0fe44c3212031659384806a32e60e26b147627",
+            "message": "Prep for v0.9.1 release"
+        },
+        {
+            "hash": "936b3d8bf292f7168d0eca2edbd986d5710b9ee8",
+            "message": "Added -d32 to the mac version of the eclipse debug target as that tends to be better than not doing that.\n\nFixes issue #66"
+        },
+        {
+            "hash": "f07948d4959cfdb81bb0c540ebcbe879df0109fb",
+            "message": "The installer is now waaay smarter on linuxes, and should support, out of the box and automatically, debian and debianesques like ubuntu."
+        },
+        {
+            "hash": "9830a2ba02bbed18f773216888bc21c1ceb15995",
+            "message": "Added a findbugs ant target, along with an installDeps job to automatically fetch and unpack findbugs from its sourceforge repository. Still need to figure out how to maintain a list of findbugs warnings that findbugs should be ignoring."
+        },
+        {
+            "hash": "56602322d9c44b69017b345aaca5b3807fd5d427",
+            "message": "Minor bug fixes and style edits. All these were found after running findbugs on the lombok sources."
+        },
+        {
+            "hash": "e14e8c3df3d7baa700a048b83e430db5c76ca410",
+            "message": "Added more detail to the 'install successful' message for the benefit of people who start eclipse with custom -vm parameters. Doing this ignores eclipse.ini which means lombok never gets loaded."
+        },
+        {
+            "hash": "3c3dcec1de856b6bab4c2df7aafc6257f900b45c",
+            "message": "When the installer can't work because the eclipse dir is not writable, you used to get the\nwrong error message; this has been fixed. The error message now gives much more detail on how\nto proceed, and the installer no longer hangs after displaying this message."
+        },
+        {
+            "hash": "b6cd2fbc9edbc10b8652777628e7da2b2df4f674",
+            "message": "Added 'clean' to all the publish targets. Occassionally dirty build dirs cause mistakes, which isn't worth massively slowing down builds normally, but it is, when publishing.\n\nDone on suggestion by Ray vanderborght via http://groups.google.com/group/project-lombok/browse_thread/thread/b0e48417fc4c0e9"
+        },
+        {
+            "hash": "083435ddf87d6fa46f8e9f49d76a7b7b58dad38b",
+            "message": "Post v0.9.0 release work."
+        }
+    ],
+    "issues": []
+}

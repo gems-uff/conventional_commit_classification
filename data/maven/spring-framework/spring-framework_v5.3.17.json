@@ -1,0 +1,306 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.17",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 52,
+    "start_delay": 0.0,
+    "duration": 28.11983796296296,
+    "commits_info": [
+        {
+            "hash": "03e695ad5ff998d8da9b89d163ec4f04747bd570",
+            "message": "Release v5.3.17"
+        },
+        {
+            "hash": "29d98285bea8be459d0bdcaad655c84338c3d0e5",
+            "message": "Add warning to \"enclosing classes\" search strategy for MergedAnnotations\n\nThis commit adds a warning to the Javadoc for the\nTYPE_HIERARCHY_AND_ENCLOSING_CLASSES search strategy in\nMergedAnnotations with regard to the scope of the search\nalgorithm.\n\nSee gh-28079"
+        },
+        {
+            "hash": "ad708780ed76196d02030a70b69e6805d5083805",
+            "message": "Polish Javadoc for MergedAnnotations"
+        },
+        {
+            "hash": "8789b34ef8a20e51f0985284ef3242fac1515caf",
+            "message": "Upgrade to Tomcat 9.0.60"
+        },
+        {
+            "hash": "c9cd53f469a7b3a79284542fe0222b0f9fd05785",
+            "message": "Revert \"Deprecate \"enclosing classes\" search strategy for MergedAnnotations\"\n\nThis reverts commit 5689395678f57fe967a3b21ed7d9087cfec7b622.\n\nSee gh-28079"
+        },
+        {
+            "hash": "c462fe30ede2ee7e8d41c1a19596aaec19b3750a",
+            "message": "Use Named arguments in parameterized tests"
+        },
+        {
+            "hash": "8a0c4caff6d6c2aa0920a74f256d818d88cef7cc",
+            "message": "Polish Javadoc"
+        },
+        {
+            "hash": "46363c337bda05c2098a13e1cf038bbf758a7081",
+            "message": "Avoid confusing debug log entries with DataClassRowMapper\n\nCloses gh-28179"
+        },
+        {
+            "hash": "c1261f2860176bf3091e51b772fa35bf558d38bb",
+            "message": "Fix accidental exclusion of BeanMapEmitter class\n\nCloses gh-28110"
+        },
+        {
+            "hash": "c4c124b16d6752a89c7f588f1ec5daebbcd3c765",
+            "message": "Upgrade to Log4J 2.17.2, SLF4J 1.7.36, Netty 4.1.75, SmallRye Mutiny 1.4, Hibernate Validator 6.2.3, Mockito 4.4, HtmlUnit 2.59"
+        },
+        {
+            "hash": "ee7f60000e918e13f04480bbbe79e4f0ca002c7e",
+            "message": "Polishing contribution\n\nCloses gh-28105"
+        },
+        {
+            "hash": "f1fdc11fabf74ff028f1a23e90d912f8a883e614",
+            "message": "Support custom HTTP status in MockClientHttpResponse\n\nSee gh-28105"
+        },
+        {
+            "hash": "21d61316bef7568069d63b3c41625d6a262bb542",
+            "message": "Unwrap MappingJacksonValue before selecting ObjectMapper\n\nSee gh-28045"
+        },
+        {
+            "hash": "cb39b070882cb765b3c64e7a037ca651cd665300",
+            "message": "Polishing Jackson encoder tests"
+        },
+        {
+            "hash": "50771237cc87e1a3f8c7404c7be7a55584723c1f",
+            "message": "Fix ListableBeanFactory#findAnnotationOnBean extension return type\n\nCloses gh-26908"
+        },
+        {
+            "hash": "9fbf5dc945688f879c6b3d112b631f54447eae03",
+            "message": "Use String#lastIndexOf(int) where possible"
+        },
+        {
+            "hash": "a683e9e81ba9624863507f0e1fe9bedd008817cc",
+            "message": "Upgrade to Reactor 2020.0.17\n\nCloses gh-28064"
+        },
+        {
+            "hash": "6e2e45d18f7b016fba15d73db08a05fe530813a2",
+            "message": "Apply @SafeVarargs to ManagedMap.ofEntries(...)"
+        },
+        {
+            "hash": "887389d3413c4a1036095cff6f9cdebb34af87fe",
+            "message": "Clarify behavior for generics support in BeanUtils.copyProperties()\n\nSince Spring Framework 5.3, BeanUtils.copyProperties() honors generics\nin the source and target property types (see gh-24187); however, this\nrefinement of the contract was not properly documented prior to this\ncommit. In addition, the refinement can be a breaking change for users\nwho were relying on the previous unreliable behavior.\n\nThis commit therefore clarifies the behavior for generics support in\nBeanUtils.copyProperties() and introduces a table of example matches\nand mismatches when generics are involved.\n\nCloses gh-27259"
+        },
+        {
+            "hash": "d9c22e657fe86e999cbb4de1d1e0096435a828bf",
+            "message": "Document the effect of @DirtiesContext on test execution events\n\nSee gh-27757"
+        },
+        {
+            "hash": "8a510db00d400d1e863a0177fb23ece671fe05ae",
+            "message": "Polish Javadoc for Environment\n\nCloses gh-28170"
+        },
+        {
+            "hash": "9eec6d0834780dacb3cc97605be97ef68587f26e",
+            "message": "Start building against Reactor 2020.0.17 snapshots\n\nSee gh-28064"
+        },
+        {
+            "hash": "a3e23cd5fc7733b0ef89b3d0550f3d86bd2d3bd6",
+            "message": "Fix unwrapping logic for ResponseEntity<Flux>\n\nThis commit makes sure that the response returned by coroutine handler\nmethods that return ResponseEntity<Flux> is unwrapped correctly.\n\nCloses gh-27809"
+        },
+        {
+            "hash": "af977c08919afbf31b9bd9942167bcb75ec8680e",
+            "message": "Improve documentation for @EnabledIf and @DisabledIf test support\n\nCloses gh-28157"
+        },
+        {
+            "hash": "1bbcd706befde60676a220f5040b725ec0da40c2",
+            "message": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "hash": "83ac65915871067c39a4fb255e0d484c785c0c11",
+            "message": "Improve diagnostics in SpEL for large array creation\n\nAttempting to create a large array in a SpEL expression can result in\nan OutOfMemoryError. Although the JVM recovers from that, the error\nmessage is not very helpful to the user.\n\nThis commit improves the diagnostics in SpEL for large array creation\nby throwing a SpelEvaluationException with a meaningful error message\nin order to improve diagnostics for the user.\n\nCloses gh-28145"
+        },
+        {
+            "hash": "a2f02dbfc04d5d7463612848067bdde26c84b743",
+            "message": "Improve documentation for TestContext events\n\nThis commit improves the documentation for test execution events,\nespecially with regard to the fact that, by default, a\nBeforeTestClassEvent is not published for the first test class using a\nparticular ApplicationContext.\n\nThis commit also introduces tests that verify the default behavior and\nthe ability to change the default behavior with a custom\nTestExecutionListener that eagerly loads the context.\n\nCloses gh-27757"
+        },
+        {
+            "hash": "8cbb188455caf2b62a77c1dc9e75a74813222e95",
+            "message": "Fix links to Spring Security in the reference guide\n\nCloses gh-28135"
+        },
+        {
+            "hash": "bc973d70016602e62ce9d8b9f8c712b05e67d69d",
+            "message": "Fix broken link to \"CORS WebFilter\" in ref docs"
+        },
+        {
+            "hash": "fa3130d71631f6de36a34d0a5cdf1a37bece3102",
+            "message": "Document that TX rollback rules may result in unintentional matches\n\nCloses gh-28125"
+        },
+        {
+            "hash": "b3e5f86277e73c91990a85d23779509225085d63",
+            "message": "Polish rollback rule support"
+        },
+        {
+            "hash": "340f41af6d52b8a780ffc813727333ad10247382",
+            "message": "Suppress warnings in Gradle build"
+        },
+        {
+            "hash": "25aa295c2c78e5d4047bf2f4fa1229c2ad0862d8",
+            "message": "Rename test class to adhere to conventions"
+        },
+        {
+            "hash": "67b91b239091afe169045cf0dafa800aaa5884aa",
+            "message": "Polish RollbackRuleTests\n\nSee gh-28098"
+        },
+        {
+            "hash": "d67034f99b5dad82e2daecc1e31ce99b1c551593",
+            "message": "Document semantics for externally managed init/destroy methods\n\nThis commit introduces Javadoc to explain the difference between\ninit/destroy method names when such methods are private, namely that a\nprivate method is registered via its qualified method name; whereas, a\nnon-private method is registered via its simple name.\n\nSee gh-28083"
+        },
+        {
+            "hash": "dcdea986f6316344705aa0b70d79a4c60ab96121",
+            "message": "Polish init/destroy lifecycle method tests\n\nSee gh-28083"
+        },
+        {
+            "hash": "a524857bd548dbb3245771a374e9ef609dfae7c0",
+            "message": "Fix init/destroy lifecycle method tests\n\nSee gh-28083"
+        },
+        {
+            "hash": "af14eea1ef76576acd07ba90cd0a656bd6b31969",
+            "message": "Introduce tests for gh-28083"
+        },
+        {
+            "hash": "f96872404d9ab495a2821955b649fec9a28f92ed",
+            "message": "Ensure private init/destroy method is invoked only once\n\nCloses gh-28083"
+        },
+        {
+            "hash": "a7d5fbfbea1b1c4948a8f8cc5541f90bd2a1d972",
+            "message": "Fix log messages for init/destroy method registration"
+        },
+        {
+            "hash": "84de100fc64cbb96719d7ac18e977e7aa668074a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "beab8ab4e752fa7da27a1df3904fe4f628236e06",
+            "message": "Test claims regarding SpEL support for T(Character)\n\nSee gh-28112"
+        },
+        {
+            "hash": "6f41180cc5e2f96b11950d483a41454d384defc9",
+            "message": "Align AsyncRestTemplate error logging with RestTemplate\n\nPrior to this commit, `AsyncRestTemplate` would log errors (including\nsimple 404s) with WARN level. Such errors are quite common and should\nnot clutter logs.\n\nThis commit aligns the logging strategy with RestTemplate, using the\nDEBUG level for such cases.\n\nFixes gh-28049"
+        },
+        {
+            "hash": "7e2106b850ea65866dc97d24d108c7fe1ea64c8c",
+            "message": "Refactor roll forward in CronField\n\nBefore this commit, CronField.Type::rollForward added temporal units\nto reach the higher order field. This caused issues with DST, where\nthe added amount of hours was either too small or too large.\n\nThis commit refactors the implementation so that it now adds one to the\nhigher order field, and reset the current field to the minimum value.\n\nCloses gh-28095"
+        },
+        {
+            "hash": "453c6d41f71acc54bb3928f9c7b9787d29e84a43",
+            "message": "Fix Objenesis version\n\nSee gh-28100"
+        },
+        {
+            "hash": "84b4cebb3913ddd4a803939fdc8dde1b0401ff35",
+            "message": "Fix (@)since tag in SpelMessage\n\nSee gh-28043"
+        },
+        {
+            "hash": "5689395678f57fe967a3b21ed7d9087cfec7b622",
+            "message": "Deprecate \"enclosing classes\" search strategy for MergedAnnotations\n\nThe TYPE_HIERARCHY_AND_ENCLOSING_CLASSES search strategy for\nMergedAnnotations was originally introduced to support @Nested test\nclasses in JUnit Jupiter (see #23378).\n\nHowever, while implementing #19930, we determined that the\nTYPE_HIERARCHY_AND_ENCLOSING_CLASSES search strategy unfortunately\ncould not be used since it does not allow the user to control when to\nrecurse up the enclosing class hierarchy. For example, this search\nstrategy will automatically search on enclosing classes for static\nnested classes as well as for inner classes, when the user probably\nonly wants one such category of \"enclosing class\" to be searched.\nConsequently, TestContextAnnotationUtils was introduced in the Spring\nTestContext Framework to address the shortcomings of the\nTYPE_HIERARCHY_AND_ENCLOSING_CLASSES search strategy.\n\nSince this search strategy is unlikely to be useful to general users,\nthe team has decided to deprecate this search strategy in Spring\nFramework 5.3.x and remove it in 6.0.\n\nCloses gh-28079"
+        },
+        {
+            "hash": "071c2988d55b1ad823b79fd4be8908666fc466a8",
+            "message": "Suppress deprecation warnings in tests in build"
+        },
+        {
+            "hash": "94af2ca06bf711de03286999b1c64a703d6de552",
+            "message": "Recover from error during SpEL MIXED mode compilation\n\nPrior to this commit, SpEL was able to recover from an error that\noccurred while running a CompiledExpression; however, SpEL was not able\nto recover from an error that occurred while compiling the expression\n(such as a java.lang.VerifyError). The latter can occur when multiple\nthreads concurrently change types involved in the expression, such as\nthe concrete type of a custom variable registered via\nEvaluationContext.setVariable(...), which can result in SpEL generating\ninvalid bytecode.\n\nThis commit addresses this issue by catching exceptions thrown while\ncompiling an expression and updating the `failedAttempts` and\n`interpretedCount` counters accordingly. If an exception is caught\nwhile operating in SpelCompilerMode.IMMEDIATE mode, the exception will\nbe propagated via a SpelEvaluationException with a new\nSpelMessage.EXCEPTION_COMPILING_EXPRESSION error category.\n\nCloses gh-28043"
+        },
+        {
+            "hash": "ff20a06876209e6dafd519e732801f292230f9d9",
+            "message": "Added .sdkmanrc file\n\nThis commit adds a .sdkmanrc file, so that we can automatically switch\nto JDK 8 when building the 5.3. branch."
+        },
+        {
+            "hash": "2ffefbb21116dda66973b920218c79ffe13cbac8",
+            "message": "Downgrade to concourse-release-scripts 0.3.2\n\nThis commit reverts partially \"0ab054c7b943d65bb9034d1d7987f556e9d54d05\"\nas 0.3.3 is breaking promition."
+        },
+        {
+            "hash": "4571626839a00c924d7e38b8d0b02cb2518345b5",
+            "message": "Next development version (v5.3.17-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28079",
+            "title": "Deprecate \"enclosing classes\" search strategy for MergedAnnotations"
+        },
+        {
+            "number": "28179",
+            "title": "Using DataClassRowMapper causes \"No property found for column\" debug messages in logs "
+        },
+        {
+            "number": "28110",
+            "title": "java.lang.NoClassDefFoundError: org/springframework/cglib/beans/BeanMapEmitter"
+        },
+        {
+            "number": "28045",
+            "title": "MappingJacksonValue and Jackson2CodecSupport#registerObjectMappersForType do not work together"
+        },
+        {
+            "number": "28064",
+            "title": "Upgrade to Reactor 2020.0.17"
+        },
+        {
+            "number": "24187",
+            "title": "Honor generic type information when copying properties with BeanUtils"
+        },
+        {
+            "number": "27259",
+            "title": "Clarify behavior for generics support in BeanUtils.copyProperties"
+        },
+        {
+            "number": "27757",
+            "title": "Improve documentation for TestContext events"
+        },
+        {
+            "number": "27809",
+            "title": "When returning a ResponseEntity with a Flux while the function is suspended, it fails to encode the body"
+        },
+        {
+            "number": "28157",
+            "title": "Improve documentation for @EnabledIf and @DisabledIf test support"
+        },
+        {
+            "number": "28145",
+            "title": "Improve diagnostics in SpEL for large array creation"
+        },
+        {
+            "number": "28135",
+            "title": "Links to Spring Security are broken in the reference guide"
+        },
+        {
+            "number": "28125",
+            "title": "Document that transaction rollback rules may result in unintentional matches"
+        },
+        {
+            "number": "28098",
+            "title": "Support type-safe transaction rollback rules"
+        },
+        {
+            "number": "28083",
+            "title": "Private init/destroy method may be invoked twice"
+        },
+        {
+            "number": "28112",
+            "title": "java.lang.* no longer imported by default in SpEL contexts"
+        },
+        {
+            "number": "28049",
+            "title": "AsyncRestTemplate logging too verbose"
+        },
+        {
+            "number": "28095",
+            "title": " CronExpression fails to calculate properly next execution when running on the day of winter daylight saving time"
+        },
+        {
+            "number": "28043",
+            "title": "SpEL fails to recover from error during MIXED mode compilation"
+        },
+        {
+            "number": "23378",
+            "title": "Search for annotations on enclosing classes with MergedAnnotations API"
+        },
+        {
+            "number": "19930",
+            "title": "Discover test configuration on enclosing class for nested test class [SPR-15366]"
+        }
+    ]
+}

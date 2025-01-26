@@ -1,0 +1,218 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 43,
+    "start_delay": 0.0,
+    "duration": 27.89636574074074,
+    "commits_info": [
+        {
+            "hash": "e0f56e7d80a4e1248198e40be99157dbd8f594af",
+            "message": "Release v5.3.20"
+        },
+        {
+            "hash": "83186b689f11f5e6efe7ccc08fdeb92f66fcd583",
+            "message": "Refine CachedIntrospectionResults property introspection\n\nCloses gh-28445"
+        },
+        {
+            "hash": "dc2947c52df18d5e99cad03383f7d6ba13d031fd",
+            "message": "Ignore invalid connect frame\n\nCloses gh-28443"
+        },
+        {
+            "hash": "e4ec376075b617c70edcaa409540698f588f4af9",
+            "message": "Disabling Undertow server in CoroutinesIntegrationTests"
+        },
+        {
+            "hash": "c81e11d537f396b9bf56bea30354ded2204861b8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "de6180b093a61ad852f537d49203740fc04207ed",
+            "message": "Upgrade to Reactor 2020.0.19\n\nIncludes Netty 4.1.77 and RxJava 3.1.4.\n\nCloses gh-28437"
+        },
+        {
+            "hash": "1c10cdd1e87f133c082771587a730bbf2255a920",
+            "message": "Update copyright dates\n\nSee gh-28433"
+        },
+        {
+            "hash": "941b92cbede8536e384d766091d625c89f1980d0",
+            "message": "Make inner classes static when feasible\n\nA static nested class does not keep an implicit reference to its\nenclosing instance.\n\nThis prevents a common cause of memory leaks and uses less memory per\ninstance of the class.\n\nCloses gh-28433"
+        },
+        {
+            "hash": "e26d8839b3823fb664e9762e10c94c5989c8bc44",
+            "message": "Stop referring to features as Java 6/7 features where unnecessary"
+        },
+        {
+            "hash": "a1c73803980835bdafd95929098ea943c5a355dc",
+            "message": "Add test for `value` attribute in @ModelAttribute in WebFlux\n\nThis complements the previous commit which tested only the `name`\nattribute.\n\nSee gh-28423"
+        },
+        {
+            "hash": "7dd622bdb28436f859b05956b78ed573fb5bd881",
+            "message": "Support name attribute in @ModelAttribute in WebFlux\n\nPrior to this commit, the `name` attribute in @ModelAttribute was not\nsupported when using WebFlux. This is because MethodParameter was used\ninstead of SynthesizingMethodParameter when retrieving the\n@ModelAttribute annotation. In other words, @AliasFor was not honored\nbecause the annotation was not synthesized. Consequently, only the\n`value` attribute was supported in WebFlux when specifying a custom name\nvia @ModelAttribute.\n\nThis commit fixes this by using SynthesizingMethodParameter to retrieve\nthe @ModelAttribute annotation.\n\nCloses gh-28423"
+        },
+        {
+            "hash": "64c96c579df7a2a9153732881632f9f4bfb856b7",
+            "message": "Polish contribution\n\nSee gh-28422"
+        },
+        {
+            "hash": "39e38763019a2b919988b3d6e8eefb266a7f75c6",
+            "message": "Fix BindingResult error when ModelAttribute has custom name in WebFlux\n\nCloses gh-28422"
+        },
+        {
+            "hash": "f77160378965040d46ce4a0dd81b09bcda23feaf",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e441832e99f060c65f99b98af3c6c82235817db6",
+            "message": "Accept WritableResource as required dependency type as well\n\nCloses gh-15284"
+        },
+        {
+            "hash": "f963fc5f98f7c08788d35d6a3e2a75b78ae4e1be",
+            "message": "Check that nullable annotations are from org.springframework.lang\n\nCloses gh-28410"
+        },
+        {
+            "hash": "b55eee1b0d9e08ab65174b1a3511cb49bf5bbcea",
+            "message": "Upgrade to ASM 9.3\n\nCloses gh-28390"
+        },
+        {
+            "hash": "28742171fd9d8e1abe2f0a9c005a8882364c6a71",
+            "message": "Upgrade to Netty 4.1.76, Mockito 4.5.1, HtmlUnit 2.61"
+        },
+        {
+            "hash": "7a75b945565261f85e059abc74cba1e115bc1e20",
+            "message": "Fix typo in reference docs regarding RequestMappingHandlerAdapter\n\nCloses gh-28370"
+        },
+        {
+            "hash": "ab71ff93bbd343693eee13cd7fc7ced15d0d29c1",
+            "message": "Polish package-info for org.springframework.util\n\nSee gh-28411"
+        },
+        {
+            "hash": "cf30327740aae7700ad26c80bc8d73d667eeb6d4",
+            "message": "Remove Log4J configurer from package-info.java in spring-core\n\nCloses gh-28411"
+        },
+        {
+            "hash": "e22a038725f27bf63654147cd61edbe5f904b1fa",
+            "message": "Remove Log4J initialization from package-info.java\n\nCloses gh-28420"
+        },
+        {
+            "hash": "7aedb9ee33764056f874e6f8a191af89ce5f8903",
+            "message": "Build CI image using oci-build-task resource"
+        },
+        {
+            "hash": "5b1719cd7762dd6756028433ac75326448ed01e0",
+            "message": "Upgrade CI to concourse-release-scripts 0.3.4"
+        },
+        {
+            "hash": "c056b8175344dc06ce1cbebf07d7f9d122053e7c",
+            "message": "Upgrade JDK and Ubuntu versions in CI image"
+        },
+        {
+            "hash": "dbdd67ec62c0314c90512f23278caca4bdd0b0a5",
+            "message": "Remove outdated docker-image resource from CI\n\nThe docker-image resource is now replaced by the registry-image\nresource."
+        },
+        {
+            "hash": "4fcfa5b9916ddc06a84ed4d6705bd1e68b3eb6b5",
+            "message": "Update and simplify ArrayConstructorTests"
+        },
+        {
+            "hash": "ed06a6de26f60adf36f448450e9325958e516951",
+            "message": "Convert SimpleFormController example to @Controller in reference manual\n\nThis change is necessary since the SimpleFormController class no longer\nexists."
+        },
+        {
+            "hash": "afa799b4f0c48275089cdba2aac16b9ee589e422",
+            "message": "Suppress warning in test"
+        },
+        {
+            "hash": "f0d149b33066759e21a4c39ee3ce90cb23320fc3",
+            "message": "Polishing contribution\n\nCloses gh-27830"
+        },
+        {
+            "hash": "caaf83b8e6534b8c9a3806661022ac8185985876",
+            "message": "Add tests for binding to a Part field\n\nSee gh-27830"
+        },
+        {
+            "hash": "b30f4d7bb770be1d13171ffd4a394635f8dbecdd",
+            "message": "Exposes all root causes to ExceptionHandler methods\n\nCloses gh-28155"
+        },
+        {
+            "hash": "b6b03f38d7d767ded06b2f9387df3c868b675c54",
+            "message": "Updated .sdkmanrc"
+        },
+        {
+            "hash": "46b0d7dc035152fbc3984d653951ccfa355412c9",
+            "message": "Merge pull request #28369 from izeye\n\n* pr/28369:\n  Add Javadoc since for GraphQL constants\n\nCloses gh-28369"
+        },
+        {
+            "hash": "fcf64798b518149736983aa2ad1308d474a04664",
+            "message": "Add Javadoc since for GraphQL constants\n\nSee gh-28369"
+        },
+        {
+            "hash": "94ed07d9cb3292cde9de9c7ba12552a28d846ddc",
+            "message": "Merge pull request #28372 from zhangmingqi09\n\n* pr/28372:\n  Update copyright year of changed file\n  Fix github issue reference in RequestMappingHandlerMapping\n\nCloses gh-28372"
+        },
+        {
+            "hash": "b81c62d064f7b78fcca5deb973b10f6e49dc9af4",
+            "message": "Update copyright year of changed file\n\nSee gh-28372"
+        },
+        {
+            "hash": "ca1a11acacd85a3f049b32299991cb08c30557ce",
+            "message": "Fix github issue reference in RequestMappingHandlerMapping\n\nSee gh-28372"
+        },
+        {
+            "hash": "c261d40610507924eb400746d5ddbe7508eade8d",
+            "message": "Merge pull request #28340 from koenpunt\n\n* pr/28340:\n  Update copyright year of changed file\n  Fix method reference in Kotlin documentation\n\nCloses gh-28340"
+        },
+        {
+            "hash": "3017955eff827facc3e680422ba4f0103a545cb6",
+            "message": "Update copyright year of changed file\n\nSee gh-28340"
+        },
+        {
+            "hash": "22c82ff206b417074e9657cac3b557fe3a2dbb24",
+            "message": "Fix method reference in Kotlin documentation\n\nSee gh-28340"
+        },
+        {
+            "hash": "f54952481b8d6388d6edb222254a0f8dfc43e578",
+            "message": "Update Gradle Enterprise plugin to 3.9\n\nCloses gh-28338"
+        },
+        {
+            "hash": "9e733b09e2c167c873da66a334a8ca0e23c8f33b",
+            "message": "Next development version (v5.3.20-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28445",
+            "title": "Refine CachedIntrospectionResults property introspection"
+        },
+        {
+            "number": "28443",
+            "title": "Ignore invalid STOMP frame"
+        },
+        {
+            "number": "28437",
+            "title": "Upgrade to Reactor 2020.0.19"
+        },
+        {
+            "number": "28423",
+            "title": "@ModelAttribute name attribute is not supported in WebFlux"
+        },
+        {
+            "number": "15284",
+            "title": "WritableResource doesn't have parity with Resource in @Value etc. [SPR-10656]"
+        },
+        {
+            "number": "28410",
+            "title": "Check that nullable annotations are from org.springframework.lang"
+        },
+        {
+            "number": "28390",
+            "title": "Upgrade to ASM 9.3"
+        },
+        {
+            "number": "28155",
+            "title": "Request body deserialization failures are not captured by exception handlers in WebFlux"
+        }
+    ]
+}

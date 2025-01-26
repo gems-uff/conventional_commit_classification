@@ -1,0 +1,346 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 69,
+    "start_delay": 0.0,
+    "duration": 12.85039351851852,
+    "commits_info": [
+        {
+            "hash": "9d37de186ce38a24bff1132c02a4007335639c1b",
+            "message": "Release v6.0.1"
+        },
+        {
+            "hash": "fe5bd6751f461532d6817610c47254e0400d25f9",
+            "message": "Retain default LocalVariableTableParameterNameDiscoverer with warn log entries\n\nFor a transition period, LocalVariableTableParameterNameDiscoverer logs a warning for each successful resolution attempt now, suggesting that -parameters was missed.\n\nSee gh-29531\nSee gh-29559"
+        },
+        {
+            "hash": "ed5ab77397e773cfce3b17d00ceb8e84b0581aab",
+            "message": "Fix javadoc link in AOP extensibility documentation\n\nCloses gh-29554"
+        },
+        {
+            "hash": "98c514ecbe74853660b8ea594852f084162ed4c6",
+            "message": "Increase logging for spring-messaging tests\n\nSee gh-29287"
+        },
+        {
+            "hash": "beb9fa2b8b1b540e538ce40a315e734bfedfd2fd",
+            "message": "Add since attribute to Deprecated annotation\n\nAlso retaining standard Java parameter names for Spring's AspectJ sources now.\n\nSee gh-29531"
+        },
+        {
+            "hash": "459e8a1ea5929e05aa4ab3495b58997ed6a31b07",
+            "message": "Deprecate LocalVariableTableParameterNameDiscoverer completely\n\nLocalVariableTableParameterNameDiscoverer is not registered by default anymore now.\nJava sources should be compiled with `-parameters` instead (available since Java 8).\nAlso retaining standard Java parameter names for all of Spring's Kotlin sources now.\n\nCloses gh-29531"
+        },
+        {
+            "hash": "7e52b803be07e89fea34d754cfd1728d4b60dc42",
+            "message": "Temporarily re-enable ReactorNetty2StompBrokerRelayIntegrationTests\n\nTo see if it still fails on the CI server as it doesn't fail locally\nfor me, and if it does to get details to investigate.\n\nSee gh-29287"
+        },
+        {
+            "hash": "7fcd1de8e301dc939ad7bec8814e3f98bc901bd1",
+            "message": "Use AssertJ's isEmpty() instead of hasSize(0)\n\nAchieved via global search-and-replace."
+        },
+        {
+            "hash": "d5b0b2b1a1fbebb46d112c48ff94baf8f2bdf9a1",
+            "message": "User AssertJ's hasSize() for arrays\n\nAchieved via global search-and-replace."
+        },
+        {
+            "hash": "36f7597f25c4924fc3a3ff2fc01d502524d14977",
+            "message": "Use AssertJ's hasSize() for collections and maps\n\nAchieved via a global search-and-replace."
+        },
+        {
+            "hash": "f9f8f2d89e260e53911a6681ecb94f193c69b314",
+            "message": "Polishing"
+        },
+        {
+            "hash": "43f8d9e084716ccce46c11c36fa4a8fd6373ba3f",
+            "message": "Apply 'instanceof pattern matching'"
+        },
+        {
+            "hash": "7816c9e411578493407533315030c476daf160c3",
+            "message": "Exclude LocalVariableTableParameterNameDiscoverer based on native image check\n\nSee gh-29531"
+        },
+        {
+            "hash": "d32027df92479c0e2fbf4502afe71b4e80a2ac41",
+            "message": "Apply 'instanceof pattern matching'"
+        },
+        {
+            "hash": "a832c98cedc56690ad606b53f497814370792d12",
+            "message": "Polish contribution\n\nSee gh-29460"
+        },
+        {
+            "hash": "c12d93c5d1696fc030b7b2fc0fb999b99795c59c",
+            "message": "Polish ServletWebRequest and DefaultServerWebExchange\n\n- The return values of ServletWebRequest.validateIfUnmodifiedSince and\n  DefaultServerWebExchange.validateIfUnmodifiedSince are not used. So I\n  think that it is better to remove the return statements.\n\n- Add missing @Nullable declarations to eTag method parameters.\n\n- Simplify if statements\n\nCloses gh-29460"
+        },
+        {
+            "hash": "ca6acfee308efd658c82f0f7175fa438cf1367a9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b130ff36d96d8d8ce03ef739ab5b2c034fbd7342",
+            "message": "Fix Javadoc link text in BindingResult\n\nCloses gh-29551"
+        },
+        {
+            "hash": "0b8000eeaa519d11d0cdd8a3f0997c5f0b9b06fb",
+            "message": "Refine LogAdapter#isPresent\n\nAlign LogAdapter#isPresent with ClassUtils#isPresent in order\nto catch NoClassDefFoundError and other errors.\n\nCloses gh-29506"
+        },
+        {
+            "hash": "835073892942cf03dc38242bf026f1b50878a849",
+            "message": "Upgrade to Kotlin 1.7.21\n\nCloses gh-29543"
+        },
+        {
+            "hash": "b695687e13f4cf8f5e43d4d355b03dd64dc090bd",
+            "message": "Fix some typos in Kotlin WebClient example code\n\nCloses gh-29538"
+        },
+        {
+            "hash": "2ba7a553b31b7ba2514bef2751add0f603c29403",
+            "message": "Upgrade to Jackson 2.14.1\n\nFix an important memory consumption regression, see\nhttps://github.com/FasterXML/jackson-databind/issues/3665\nfor more details.\n\nCloses gh-29539"
+        },
+        {
+            "hash": "1e98fb607a274fc3cc49c24902d7c269f2946514",
+            "message": "Make SourceHttpMessageConverter optional\n\nAs a follow-up to gh-29277, and since the JAXB support is now\ntriggered by the classpath presence of a JAXB implementation,\nit makes sense to make SourceHttpMessageConverter, previously\nconfigured unconditionally, optional.\n\nThat makes a big difference on native (1M of RSS reduction\nwith current typical Spring Boot 3 arrangement, 3.4M when\nother usages of XML are not reachable).\n\nIt also brings more consistency between Spring MVC\nand Spring WebFlux, and means that XML support for\nSpring web applications now needs to be enabled explicitly.\n\nAs a consequence, Spring web applications using\njavax.xml.transform.Source now needs to configure\nSourceHttpMessageConverter explicitly in RestTemplate or\nSpring MVC.\n\nCloses gh-29535"
+        },
+        {
+            "hash": "c1dfde5ba49df313ee2d203a07468bcdd2bcc7b7",
+            "message": "Fix link to Bean Utils Light Library in BeanUtils Javadoc\n\nThe URL for the BULL library has changed (not sure when, probably way back).\r\n\r\nThis updates it to the correct location.\r\n\r\nCloses gh-29534"
+        },
+        {
+            "hash": "917c41fd52f655fc4a7c4448e1164afd7e77d21a",
+            "message": "Use Set.of() for constant sets where appropriate"
+        },
+        {
+            "hash": "0c878d2d06dff2a2c1ef0fda61faca88f8b215ba",
+            "message": "Apply additional 'instanceof pattern matching' in spring-web\n\nSee gh-29530"
+        },
+        {
+            "hash": "50109dd86dd94fc4be39169b917e3e91b7335019",
+            "message": "Polish contribution\n\nSee gh-29530"
+        },
+        {
+            "hash": "99ae209c250683f48d14b76daaedcfea092d7d8a",
+            "message": "Apply 'instanceof pattern matching' in spring-web\n\nCloses gh-29530"
+        },
+        {
+            "hash": "64c6a97130b60e700e863790a190b14b1329a5d6",
+            "message": "Make GeneratorStrategy.generate unreachable on native\n\nThis change provides also more information to the user\nabout the missing generated class when that happens.\n\nCloses gh-29521"
+        },
+        {
+            "hash": "2112e86795b7fa6b2fc9089ebff6b6f3ed8f2c0a",
+            "message": "Revert \"Ensure source code in framework-docs is compiled in the build\"\n\nThis reverts commit c45f8b7072ab0846af9bbe0080d807d38b1a40ef."
+        },
+        {
+            "hash": "f4e23fe204588a744b111b8c7f6bbd1dbeda97b0",
+            "message": "Do not use LocalVariableTableParameterNameDiscoverer in AOT mode\n\nCloses gh-29531"
+        },
+        {
+            "hash": "04366f4129b12eb923423e34ff78b269c46b5b94",
+            "message": "Update LogAdapter to allow build-time code removal\n\nAllow for example to remove those classes and 90 related methods when Logback is used:\n- org.apache.commons.logging.LogAdapter$JavaUtilAdapter\n- org.apache.commons.logging.LogAdapter$JavaUtilLog\n- org.apache.commons.logging.LogAdapter$LocationResolvingLogRecord\n- org.apache.commons.logging.LogAdapter$Log4jAdapter\n- org.apache.commons.logging.LogAdapter$Log4jLog\n- org.apache.commons.logging.LogAdapter$LogApi\n- org.apache.logging.log4j.message.ObjectMessage\n- org.apache.logging.log4j.message.ReusableObjectMessage\n- org.apache.logging.log4j.simple.SimpleLoggerContext\n- org.apache.logging.log4j.simple.SimpleLoggerContextFactory\n\nCloses gh-29506"
+        },
+        {
+            "hash": "2a2c679f668e72d95dae12f189faab78b741037f",
+            "message": "Fix a syntax error in an XML listing by adding a missing double-quote\n\nCloses gh-29456"
+        },
+        {
+            "hash": "32a583054357b5280f59c61372e4edc3f2958944",
+            "message": "Ensure code listing callouts are displayed incorrectly in core-beans.adoc\n\nCloses gh-29457"
+        },
+        {
+            "hash": "9378493d833152b15129185b56a4a2e830900b9c",
+            "message": "Polish ref docs"
+        },
+        {
+            "hash": "da12481ef1716b0dd27f1e6f5122eb10cb4dd581",
+            "message": "Polish ref docs\n\n- stop referring to Java Config as new\n- stop referring to Struts 2.x as if it were new\n- polish AOT documentation\n- etc."
+        },
+        {
+            "hash": "c45f8b7072ab0846af9bbe0080d807d38b1a40ef",
+            "message": "Ensure source code in framework-docs is compiled in the build\n\nThis also ensures that the source code can be properly imported into an\nIDE."
+        },
+        {
+            "hash": "60243dbbacbdc90563a9a9d5a8b41ec2b81adaaf",
+            "message": "Polish asciidoc attributes"
+        },
+        {
+            "hash": "fb1f0eccfb872c045ce3ed00a5c15c8e6fbbd832",
+            "message": "Reinstate `chapter` asciidoc attribute for Web MVC"
+        },
+        {
+            "hash": "c0602fd0710a2b3c419a2f388bf2b2979b37da04",
+            "message": "Introduce appendix in Testing chapter in the reference manual\n\nThis commit moves the Annotations and Further Resources sections to the\nnew Appendix.\n\nSee gh-29522"
+        },
+        {
+            "hash": "870e85655447e99d4c7a20d180519d6ec9dc0950",
+            "message": "Fix link to WebFlux section in reference manual\n\nCloses gh-29525"
+        },
+        {
+            "hash": "b9656ac6c03d2b69a6ccfa289f450608483331b5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "de441b47512e5da53b2ae48f14043e900ea57635",
+            "message": "Remove TODOs in WebFlux ref docs"
+        },
+        {
+            "hash": "9c3efdec3271a2c429671b6eaa91c1ea62742549",
+            "message": "Fix broken link to Web MVC Testing section"
+        },
+        {
+            "hash": "af40a124bb4407d3615105725b8f3eda4474863d",
+            "message": "Disable checkstyle for reference docs code snippets"
+        },
+        {
+            "hash": "44c583392e792f47deb2cb7c6be88f704d5f19f7",
+            "message": "Document RuntimeHints testing strategies\n\nCloses gh-29523"
+        },
+        {
+            "hash": "9249dc3d3703f84942b8b9d032b5040b937e137a",
+            "message": "Reorganize and modularize the Testing chapter in the reference manual\n\nCloses gh-29522"
+        },
+        {
+            "hash": "3458f293d46f0c71ddbedb2e730f65bbc7881743",
+            "message": "Polish asciidoc attributes"
+        },
+        {
+            "hash": "796b8c1278244e86b71308be4d5dca7e8164cade",
+            "message": "Polishing"
+        },
+        {
+            "hash": "cefd74555ada1285ecd8dc174f6dfc68115807f8",
+            "message": "Polish contribution"
+        },
+        {
+            "hash": "e9555d482554c3f4c7b33fbf1f38591002a94857",
+            "message": "Polish AbstractAutowireCapableBeanFactory and use instanceof pattern matching\n\nCloses gh-29499"
+        },
+        {
+            "hash": "1960666765a6bf93500f3bf8f2eeb29e428b68e9",
+            "message": "Set error status in Observation Servlet filter\n\nPrior to this commit, the Observation Servlet filter would record\nunhandled exceptions on the observation context but would leave the\ndefault HTTP response status as is.\nServlet containers do set the response status in that case to 500 by\ndefault. Not doing that at the Servlet filter level results in invalid\nobservations, stating that the HTTP response status is 200 (because the\nerror status hasn't been set yet by the container) and as a result, the\noutcome is SUCCESS.\n\nThis commit ensures that the error status is set in those cases,\naligning the behavior with Servlet containers.\n\nFixes gh-29512"
+        },
+        {
+            "hash": "45dc1d2602318e3500f6b4aa83354caf9efbfed3",
+            "message": "Fix link to WebFlux section\n\nCloses gh-29513"
+        },
+        {
+            "hash": "ef5796c3a9ed759db0d112742d4986689470c847",
+            "message": "Update documentation to mention Java 17+ baseline\n\nCloses gh-29514"
+        },
+        {
+            "hash": "b52300eab87cb84b260d29b163e0898899d3fb8f",
+            "message": "Document GraalVM substitutions upcoming removal"
+        },
+        {
+            "hash": "031adfb8ec4bca2e1fd12fab4cfa8d36bbd9e80c",
+            "message": "Use lambda expression for Callable example in ref docs"
+        },
+        {
+            "hash": "792371ac1ff9ecd544ca4ab50c5b145ed16161be",
+            "message": "Generalize Jackson version numbers\n\nThis commit removes specific version info from Jackson codecs and\nconverters, in favor of generic info or removing the version information\nall together.\n\nSee gh-29508"
+        },
+        {
+            "hash": "62bbebd4f4b72cfb837c11cd38d6ada8aaafb629",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ac7d428a627e6dabbde500266eaeed4670e37bfb",
+            "message": "Work around code example callout bug\n\nThis commit adds callouts to two sets of Java/Kotlin code examples in\nthe @ModelAttribute section for Web MVC in order to work around the\n\"Code example has callout from a different code example\" bug.\n\nThis also aligns the Web MVC examples with the WebFlux examples.\n\nAs a side note, the bug can also be seen in the WebFlux documentation\nif the callouts are removed from the first Java/Kotlin examples in the\n@ModelAttribute section for WebFlux. Thus it appears to be a general\nissue related to examples within a given section of the documentation\nwhen some examples have callouts and others do not, likely due to a bug\nin the Javascript that provides this feature.\n\nSee gh-29505"
+        },
+        {
+            "hash": "f6eaa8e63c4eeb1ac4211fe5b134bfbd10b09ef3",
+            "message": "Add missing callouts"
+        },
+        {
+            "hash": "cd27fbe55062d8da8b7a4634af4a42a0c20bf881",
+            "message": "Add callouts to Kotlin examples for parity"
+        },
+        {
+            "hash": "bbfc39efc937b9cd9fb6192364349f4a120cdfc2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1a8a69d289814e11fc6427157fe768609e762e3a",
+            "message": "Refactor Asciidoctor attributes in reference docs\n\nThis commit reorganizes the asciidoctor attributes for the reference\ndocumentation. Instead of being contributed partially by the build and\nindividual documents, attributes are now shared in common files that are\nincluded in top sections."
+        },
+        {
+            "hash": "e16cdfede0b912762a049b8771ea3854aeab6da1",
+            "message": "Merge pull request #29508 from wilkinsona\n\n* pr/29508:\n  Update Jackson-based decoders to reflect 2.14 baseline\n\nCloses gh-29508"
+        },
+        {
+            "hash": "26df6fbada4a3f8d47bcc8293662d585808f8b0a",
+            "message": "Update Jackson-based decoders to reflect 2.14 baseline\n\nSee gh-29508"
+        },
+        {
+            "hash": "508d2c7a77e004afc7eb2f028a2345244c62939b",
+            "message": "Fix Javadoc formatting issues for headings\n\nHeadings in method-level Javadoc must be h4 or higher in recent versions\nof Java."
+        },
+        {
+            "hash": "428539f30d98e2b37f2e8e861a673444ddab44f7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d0d5730f7f341c84feb068aa255a170aea3202b4",
+            "message": "Suppress \"removal\" warnings in CronSequenceGeneratorTests"
+        },
+        {
+            "hash": "befa4b14cd425cc75a30e194cce24910c92a7859",
+            "message": "Next development version (v6.0.1-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29559",
+            "title": "Remove LocalVariableTableParameterNameDiscoverer"
+        },
+        {
+            "number": "29554",
+            "title": "Broken link in documentation section 6.10"
+        },
+        {
+            "number": "29287",
+            "title": "Fix and reenable flaky ReactorNetty2StompBrokerRelayIntegrationTests"
+        },
+        {
+            "number": "29543",
+            "title": "Upgrade to Kotlin 1.7.21"
+        },
+        {
+            "number": "29539",
+            "title": "Upgrade to Jackson 2.14.1"
+        },
+        {
+            "number": "29277",
+            "title": "Remove `spring.spel.ignore` and `spring.xml.ignore` flags"
+        },
+        {
+            "number": "29535",
+            "title": "Make `SourceHttpMessageConverter` optional"
+        },
+        {
+            "number": "29457",
+            "title": "Code listing callouts are displayed incorrectly in core-beans.adoc"
+        },
+        {
+            "number": "29522",
+            "title": "Reorganize and modularize the Testing chapter in the reference manual"
+        },
+        {
+            "number": "29523",
+            "title": "Document RuntimeHints testing strategies"
+        },
+        {
+            "number": "29512",
+            "title": "Unhandled exceptions should mark Servlet observation outcome as error"
+        },
+        {
+            "number": "29513",
+            "title": "Link to Spring WebFlux section is broken"
+        },
+        {
+            "number": "29514",
+            "title": "Update documentation to mention Java 17+ baseline"
+        },
+        {
+            "number": "29505",
+            "title": "Code example has callout from a different code example"
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.35",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 20,
+    "start_delay": 0.0,
+    "duration": 34.9865162037037,
+    "commits_info": [
+        {
+            "hash": "f0088831a994c3156baa60d3a7bc5aefcf4a57ce",
+            "message": "Release v5.3.35"
+        },
+        {
+            "hash": "7da43a80e4327bf788d24ce2a3a573766928382d",
+            "message": "Upgrade to Reactor 2020.0.44 and Netty 4.1.109\n\nCloses gh-32788"
+        },
+        {
+            "hash": "8323c87ea2d964dc19538c04e2d4765a58a83bae",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0c65a5e04a19ecbf67265ea7be5010ef2fbd45f0",
+            "message": "Accept ajc-compiled @Aspect classes for Spring AOP proxy usage\n\nAspectJExpressionPointcut leniently ignores unsupported expression.\n\nCloses gh-32793"
+        },
+        {
+            "hash": "ca9eb57c9485bce02fd68710cd83aaad5aa2cf66",
+            "message": "Update MockMvc section on Streaming in the docs\n\nCloses gh-32687"
+        },
+        {
+            "hash": "df8374693bb7a1d39960e4153c161d49fa02182a",
+            "message": "Adapt docs deployment properties\n\nThis commit fixes the artifact properties we set for \"framework-docs\"\nartifacts. These have a different name as of 6.1.x and were backported\nas is.\n\nCloses gh-32781"
+        },
+        {
+            "hash": "9f35debdc6d595bca46256eaa902c2435d8020aa",
+            "message": "Unwrap raw target Query instance in case of proxy mismatch\n\nCloses gh-32766\n\n(cherry picked from commit 59a125d06f89ec4f0efe0628fe3a70ab143a5360)"
+        },
+        {
+            "hash": "8fe545edcd91c115b3758b0d78b7d3247e2e18a0",
+            "message": "Fix compilation error in test"
+        },
+        {
+            "hash": "f5baa329f7561ef4733c421c9ff7c17379b2496f",
+            "message": "Include repeatable annotation container in MergedAnnotations results\n\nA bug has existed in Spring's MergedAnnotations support since it was\nintroduced in Spring Framework 5.2. Specifically, if the\nMergedAnnotations API is used to search for annotations with \"standard\nrepeatable annotation\" support enabled (which is the default), it's\npossible to search for a repeatable annotation but not for the\nrepeatable annotation's container annotation.\n\nThe reason is that MergedAnnotationFinder.process(Object, int, Object,\nAnnotation) does not process the container annotation and instead only\nprocesses the \"contained\" annotations, which prevents a container\nannotation from being included in search results.\n\nIn #29685, we fixed a bug that prevented the MergedAnnotations support\nfrom recognizing an annotation as a container if the container\nannotation declares attributes other than the required `value`\nattribute. As a consequence of that bug fix, since Spring Framework\n5.3.25, the MergedAnnotations infrastructure considers such an\nannotation a container, and due to the aforementioned bug the container\nis no longer processed, which results in a regression in behavior for\nannotation searches for such a container annotation.\n\nThis commit addresses the original bug as well as the regression by\nprocessing container annotations in addition to the contained\nrepeatable annotations.\n\nSee gh-29685\nCloses gh-32731\n\n(cherry picked from commit 4baad16437524f6f16f61fcfb3dc0458f7aaff47)"
+        },
+        {
+            "hash": "924b6843450c019ace78cb98a289860b3aa0ac1b",
+            "message": "Consistently propagate ApplicationStartup to BeanFactory\n\nCloses gh-32747\n\n(cherry picked from commit 25cedcfb9959bad9441c45029d62b5df07cc1b11)"
+        },
+        {
+            "hash": "a48e2f31a396039e848c007e0a0f03f69e83b4f7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1833aafc3f7e22a4e418eb2776a6722335e617cb",
+            "message": "Ignore non-String keys in PropertiesPropertySource.getPropertyNames()\n\nCloses gh-32742\n\n(cherry picked from commit 610626aec69dd8a932dcc2cbee5642d2dcccc3bc)"
+        },
+        {
+            "hash": "b8bc7803656d67b5bd4490a35b6e8ed20784aebf",
+            "message": "Fix build warnings\n\nSee gh-32725"
+        },
+        {
+            "hash": "b3724ebf84a426b4e268c8ccc2ad4e63f4fc8855",
+            "message": "Fix guard against multiple subscriptions\n\nThis commit changes the guard against multiple subscriptions, as the\npreviously used doOnSubscribe hook could not function as guard in\ncertain scenarios.\n\nSee gh-32727\nCloses gh-32728"
+        },
+        {
+            "hash": "2e74a4d878d091df0242914046cb50697cfd6a10",
+            "message": "Upgrade to gradle-enterprise-conventions 0.0.17\n\nCloses gh-32725"
+        },
+        {
+            "hash": "0c307b513e69d941b9494b7b77a1a20dbae2a91b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6b6beec4eee93f7c28131f3b03c490b77f5d900c",
+            "message": "Skip close lock if acquired by other thread already\n\nCloses gh-32445\n\n(cherry picked from commit d151931f8649adf39e781c6ee4228b31c1fcc13b)"
+        },
+        {
+            "hash": "520a1130b85bc0f7d5ed3aceaf583c0049074754",
+            "message": "Polishing (aligned with 6.1.x)"
+        },
+        {
+            "hash": "ceeb55291aaa78c7b2654e026524fe3931e57c72",
+            "message": "Update links to HttpOnly documentation at OWASP in ResponseCookie\n\nSee gh-32663\nCloses gh-32668\n\n(cherry picked from commit 7f27ba3902713e6e6051c81b404dc4b0f41321ca)"
+        },
+        {
+            "hash": "cbc2ab6ab9b63d6dc5de5c5db29ddb5ef0e69944",
+            "message": "Next development version (v5.3.35-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32788",
+            "title": "Upgrade to Reactor 2020.0.44"
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        },
+        {
+            "number": "32687",
+            "title": "Correct documentation on streaming with MockMvcWebTestClient"
+        },
+        {
+            "number": "32781",
+            "title": "Javadoc snapshots no longer published since the move to GitHub Actions"
+        },
+        {
+            "number": "32766",
+            "title": "DeferredQueryInvocationHandler fails to unwrap QuerySqmImpl class outside of transaction"
+        },
+        {
+            "number": "29685",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist in container annotation"
+        },
+        {
+            "number": "32731",
+            "title": "`MergedAnnotations` search does not find container for repeatable annotation"
+        },
+        {
+            "number": "32747",
+            "title": "`AnnotationConfigWebApplicationContext` should propagate `ApplicationStartup` to `BeanFactory`"
+        },
+        {
+            "number": "32742",
+            "title": "Ignore non-String keys in `PropertiesPropertySource.getPropertyNames()`"
+        },
+        {
+            "number": "32725",
+            "title": "Upgrade to gradle-enterprise-conventions 0.0.17"
+        },
+        {
+            "number": "32727",
+            "title": "\"multiple subscribers not supported\" when using WebClient exchange"
+        },
+        {
+            "number": "32728",
+            "title": "\"multiple subscribers not supported\" when using WebClient exchange"
+        },
+        {
+            "number": "32445",
+            "title": "Deadlock/Stall in ConcurrentWebSocketSessionDecorator with Undertow 2.3.10"
+        },
+        {
+            "number": "32668",
+            "title": "Update links to HttpOnly documentation at OWASP in `ResponseCookie`"
+        }
+    ]
+}

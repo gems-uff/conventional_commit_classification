@@ -1,0 +1,66 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.10.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 24.50931712962963,
+    "commits_info": [
+        {
+            "hash": "2fcfc4c3dc0b7058fda8aadd9253c3011e967e28",
+            "message": "Fixed unit tests to take into account work on issue 289 and 287."
+        },
+        {
+            "hash": "58f0117d207d3c915f063b3f87a5c9bee5bb6dca",
+            "message": "Added fixing of delombok sourcepath issue to changelog and preparing for 0.10.2 release."
+        },
+        {
+            "hash": "a9f334fde93a0b07820962bff0b602ef0be731cf",
+            "message": "Fixed issue 284 now also for java7, introduced more stubbing"
+        },
+        {
+            "hash": "70f778daa560a899abe91a4908cd37c70ff1f3b4",
+            "message": "Fixed delombok making a mess of comments (issue 284) for javac 6. delombok in java7 is now completely broken but we'll fix that next."
+        },
+        {
+            "hash": "ed177bb7822f460bf7e3b07a1f5754f127842a63",
+            "message": "Add src/utils to the source paths"
+        },
+        {
+            "hash": "16661be2d99359c94569620e1daf2362d5356341",
+            "message": "Fixed issue 289: non-static inner classes whose outer class has generics can't be @EqualsAndHashCode marked."
+        },
+        {
+            "hash": "7f7d1eed36f605cc7ca0e7af81ea9caf895e7b73",
+            "message": "Updated changelog with fix for 287"
+        },
+        {
+            "hash": "782daa49979c35cd93139b3cfbc98eafe346f790",
+            "message": "Again made @NotNull have no special meaning.\nSee issues 43, 271, and 287."
+        },
+        {
+            "hash": "c402dd86379e532895f73ee209c432f84bb5f421",
+            "message": "pretty big refactor; introduced a new source package which should be (and is) separately compilable, i.e. has no deps on any of the others.\n\nThis is preparation work for being able to access some of these from lombok.ast without creating a cyclic dependency nightmare."
+        },
+        {
+            "hash": "335d6e64c66f85110cc8cafbe1155917e821db68",
+            "message": "Added missing copyright header and bumped version number to xHEAD."
+        },
+        {
+            "hash": "2d3947046990e330f6402390291910c2c36fb4b0",
+            "message": "[Issue 281] added test"
+        },
+        {
+            "hash": "64ff254b654dc0506025797b083826433ca6646d",
+            "message": "Accept JCCatch as 'statement' (issue #281)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "281",
+            "title": "Generate object comparison implementation (implement Comparable<T>)"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 119.36762731481481,
+    "commits_info": [
+        {
+            "hash": "16271ee313350e47855dc4a225e1edcb048a9a91",
+            "message": "2.23.7 release (previous 2.23.6) + release notes updated by CI build 3666\n\n[ci skip-release]"
+        },
+        {
+            "hash": "55e34279524c0470128309d2a18d1611f0bbe20c",
+            "message": "Merge pull request #1463 from marchpig/assert-verifiable\n\nPrevent stubOnly() from being verified (#1460)"
+        },
+        {
+            "hash": "4f50b559f19fa3db46faa5f7b90a23b4fc7465e2",
+            "message": "Tweaked the tests\n\n- To improve coverage (safety), we want at least one test to verify the whole exception message\n- To keep tests clean we avoid copying implementation in tests (e.g. explicitly calling 'MockUtil.getMockName')"
+        },
+        {
+            "hash": "aebe2cae8f68cbe21270f5249041f134c707defe",
+            "message": "Attempted to make the exception message clearer\n\nThere is no concept of \"full blown mock\" in Mockito, let's avoid adding new vocabulary."
+        },
+        {
+            "hash": "8dcc349fc5ece1199d9372790366a47173e26c54",
+            "message": "Made method name more specific\n\nThis way I don't have to write javadoc ;)"
+        },
+        {
+            "hash": "16b50d3d65953674f91508a526991844490075fe",
+            "message": "Inlined method because it was not useful"
+        },
+        {
+            "hash": "137278d265e8ddc3566cfd7e0faec129d6f3835e",
+            "message": "Prevent stubOnly() from being verified (#1460)\n\n - Added assertion to verification methods\n   verify(), verifyNoMoreInteractions(), inOrder()"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1460",
+            "title": "verifyZeroInteractions(stub-only-mock) does not throw exception"
+        }
+    ]
+}

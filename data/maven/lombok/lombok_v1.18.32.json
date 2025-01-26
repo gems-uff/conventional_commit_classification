@@ -1,0 +1,482 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.32",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 104,
+    "start_delay": 0.0,
+    "duration": 1026.5720601851851,
+    "commits_info": [
+        {
+            "hash": "2618848385de2ec4b79677e01eb8045714de1110",
+            "message": "[release] pre-release version bump"
+        },
+        {
+            "hash": "5719fde58e1faf04d436e85c86ae50acf8ede272",
+            "message": "Update changelog in preparation for the upcoming release"
+        },
+        {
+            "hash": "1b713add959430ee22145050a638f01102d158c5",
+            "message": "Add eclipse 2024-03 as test target"
+        },
+        {
+            "hash": "521be03be45887ea738e005b5f317e04ca6196d2",
+            "message": "Remove unused string literal code\n\nThis code was never used because StringLiteralConcatenation and\nExtendedStringLiteral extend StringLiterals and get handled a few lines\nabove. We might need to add it back and fix it if we want to copy\nannotations like @Annotation(\"a\" + \"b\") without transforming them to\n@Annotation(\"ab\")"
+        },
+        {
+            "hash": "3b20b70363fe85f354934fcfb47fdcfd0701a31e",
+            "message": "Support @Delegate in eclipse 2024-03"
+        },
+        {
+            "hash": "98cdf67ed6846580e8e4e77391fd48f3293603f6",
+            "message": "Javadoc support for eclipse 2024-03"
+        },
+        {
+            "hash": "e4824cbe1405fd665f289f7178d6149a8fcdd7b5",
+            "message": "Fix Javadoc in Eclipse"
+        },
+        {
+            "hash": "c93400d9f44b1e06aa3763c4a2818e43b70f3630",
+            "message": "[fixes #2917] Use $value instead of value in lazy getter"
+        },
+        {
+            "hash": "23307eb8d137d7e4a3f645552135ab7354ca1e6e",
+            "message": "[jdk22] Adds support for unnamed variables (JEP 456)"
+        },
+        {
+            "hash": "a54ec7005ed253d480621f042d923f3353e6a1d0",
+            "message": "Document using jdk22 GA"
+        },
+        {
+            "hash": "e9c8c37566815de813f656adf763319e339a4e7c",
+            "message": "[website] Fix typo on GetterSetter page"
+        },
+        {
+            "hash": "03201f2431705f8964f8b219df9405e486dd0997",
+            "message": "Always use maven to download ecj"
+        },
+        {
+            "hash": "566ef729491977adfd091bea3b59c8e1d8cc3189",
+            "message": "[fixes #3225] Handle ambiguous extension methods"
+        },
+        {
+            "hash": "fc1c0186755fbc0d7d356ff697681feb7b2a18e7",
+            "message": "Use jdk22 GA instead of EA"
+        },
+        {
+            "hash": "a5bb414ac5f040cdebe46660fc2e3e7b0de5e8d0",
+            "message": "Merge pull request #3608 from jyoo980/master\n\nUpdate JSpecify annotation fully-qualified names"
+        },
+        {
+            "hash": "e78d1ac3c2108d850a33fb11a72a697b29aaf6b7",
+            "message": "Update email for `@msridhar`"
+        },
+        {
+            "hash": "7904d5ae987e39ed99eed9593ae92d7901e6e346",
+            "message": "Update AUTHORS"
+        },
+        {
+            "hash": "4f9bff1fb1b6426c24ccabf3fd324df10fac2f09",
+            "message": "Merge in `@msridhar`'s changes"
+        },
+        {
+            "hash": "fee263fb8d631d01c3327b3c617e33fe36ae5b7b",
+            "message": "Update JSpecify annotation names"
+        },
+        {
+            "hash": "8bea25107de8177596546574c02ed204366e1281",
+            "message": "Merge pull request #3602 from oleludwig/fix_sneak_throws_and_prevent_null_analysis_remover\n\nFix removal of SneakyThrows and PreventNullAnalysis from bytecode"
+        },
+        {
+            "hash": "04795298c182366f8716d0e79a44d995afccee24",
+            "message": "Update authors file"
+        },
+        {
+            "hash": "496acffd7d451a73564b7cd993944cf30c454665",
+            "message": "Fix removal of SneakyThrows and PreventNullAnalysis from bytecode\n\nThe SneakyThrowsRemover and PreventNullAnalysisRemover were leaving traces of the calls to lombok.Lombok.sneakyThrow and lombok.Lombok.preventNullAnalysis behind because they were using a constructor of ClassWriter which reuses the constant pool of the original class for performance optimizations.\nSo although the calls to sneakyThrows and preventNullAnalysis get removed from the methods there were still entries in the constant pool for them.\nThe constant pool will be regenerated with this change so that the entries for sneakyThrows and preventNullAnalysis gets removed."
+        },
+        {
+            "hash": "f3a4b1b4151a9dd1646f1b170c17f5f29903f45a",
+            "message": "Merge pull request #3600 from Rawi01/eclipse-dependency-download-with-version-support\n\nFix broken eclipse-I tasks"
+        },
+        {
+            "hash": "de4f6023bede61b446cc98f48538feb5f79374cb",
+            "message": "Update deprecated tasks"
+        },
+        {
+            "hash": "dd95627811e0883f31991087552e080cd5119009",
+            "message": "Remove equals and now final hashCode method from test compilation unit\n\nhashCode is now final in the parent class, so we cannot override it. To\navoid an NPE in the base implementation, we need to set the owner field.\nThe PRIMARY working copy owner seems to be sufficient."
+        },
+        {
+            "hash": "cad428ea74d9c922f40e1933d6d5a48efeee10d1",
+            "message": "Use version numbers in eclipse dependency downloader"
+        },
+        {
+            "hash": "2773ed5943f3ca3055c915dda325b0503944e9b0",
+            "message": "[changelog] [#3529] Record this bug fixed in previous commit in the changelog"
+        },
+        {
+            "hash": "946c60ab9b38961ce64b86489d35f522e4ab13be",
+            "message": "Merge pull request #3587 from Rawi01/eclipse_fieldInitializer\n\nSet real field initializer source in eclipse"
+        },
+        {
+            "hash": "2db9ca7ea4bbd140a65fc9a6b1df547638ed46c8",
+            "message": "Add license headers"
+        },
+        {
+            "hash": "f277791cf0ecaf7297bb7a7313b2dac38b40597e",
+            "message": "[fixes #3529] Set real field initializer source\n\nEclipse copies the field initializer source code if it is a constant.\nFor generated nodes we have to read it from the ast node and not from\nthe source file."
+        },
+        {
+            "hash": "fd55c7aa93f3afc08c8694d3f9e59032cf42aedf",
+            "message": "[ci] Use variables and add eclipse I build tests"
+        },
+        {
+            "hash": "1342aa83db05e133e304e5d32ea81837b9fb3fb7",
+            "message": "Exclude Gradle on 22\n\nThanks @msamoylych for the solution"
+        },
+        {
+            "hash": "b669c7d6a983403c03bc218a3a0832fe29b4d74e",
+            "message": "[build] Add gradle 8.5 to integration test docker setup"
+        },
+        {
+            "hash": "ddf8778db523dbc844fe9605d5a7b2e91270e808",
+            "message": "Oof, git tracks executable flag. It wasn't set which broke java-22.sh"
+        },
+        {
+            "hash": "64e6d50118379b940d0e8cbe145d5a083957ed7a",
+            "message": "[build] Ensure build knows where lombok.patcher v0.50 lives"
+        },
+        {
+            "hash": "4625adc6f760c56a9c9ac642a3a2eec3c9b93629",
+            "message": "[integration-tests] Add java 22"
+        },
+        {
+            "hash": "5a214701dbbf4cb3afc06677b47e1415d05dcb46",
+            "message": "[changelog] It's aliiiiiiiiiiiiiiive!"
+        },
+        {
+            "hash": "b1f9370e11a9ab7d008185c1998e5e93015438b8",
+            "message": "Merge branch 'eclipse-npe-initializer' of https://github.com/Rawi01/lombok into Rawi01-eclipse-npe-initializer"
+        },
+        {
+            "hash": "a31ff3bf68dca15949899c3981965a6d20dc0323",
+            "message": "Fix test class compilation error"
+        },
+        {
+            "hash": "b6dd48a0422e09e297604ecca3f1bbb9497337ac",
+            "message": "[fixes #1443] Handle field initializer in diet mode"
+        },
+        {
+            "hash": "00893744eb56d0e44fa7f59ea28dd3e0da8ff0e8",
+            "message": "Merge pull request #3568 from Postremus/jasperreport\n\nExclude the classloader for jasperreports-plugin"
+        },
+        {
+            "hash": "8634048c6073001f37b3d7be2000b079424a34d3",
+            "message": "Exclude the classloader for jasperreports-plugin due to a classloader conflict with ECJ"
+        },
+        {
+            "hash": "664a2296b44d62bee8fbf2c49d3478f042b7bc2f",
+            "message": "[fixes #1758] Remove generated nodes in search results\n\nLombok can now handle generated methods in nested classes."
+        },
+        {
+            "hash": "d6ee06c534e6f51c0c7a4ebed8636eff5dd91893",
+            "message": "[fixes #3440] Prepend jdt.core classloader to the parser classloader"
+        },
+        {
+            "hash": "f8191d5baee1079a186375583a0b0eca35e9fce8",
+            "message": "Insert correct parameter if there is more than one"
+        },
+        {
+            "hash": "3c80b44d9bb6b9ad3c7be769c0c2924c2ea91b58",
+            "message": "[fixes #562] Support inlining in eclipse"
+        },
+        {
+            "hash": "6fbe057fb9842c424b47370efd249e42935e64e3",
+            "message": "Add new eclipse tests in pipeline, improve dependency caching"
+        },
+        {
+            "hash": "10e0cba8eef1444ab8d80adc28ef5f8765166545",
+            "message": "Hide implicit constructors in eclipse tests\n\nThe output varies in newer eclipse versions. To address this, lombok now\ndisables the printing of implicit constructors for eclipse."
+        },
+        {
+            "hash": "3d149ba7edcee050d27264d5a281976b425aef62",
+            "message": "[fixes #3536] Prevent inlining for OperatorId constants"
+        },
+        {
+            "hash": "de60978ac6877307e9083ce925a18f43aad7d250",
+            "message": "Add eclipse 2023-09 for tests"
+        },
+        {
+            "hash": "214665bd440ed0c611258ddc2cd610bce56e0fcb",
+            "message": "[fixes #3540] Store transformation state in CompilationUnit"
+        },
+        {
+            "hash": "d328ec35c18df71fdeb087d4dd9e19c1ac96387d",
+            "message": "[trivial] [website] Add a link to Locked from Synchronized."
+        },
+        {
+            "hash": "ca58ce07571c7274c338316bc0f2a41d73ff347d",
+            "message": "[changelog] Add Pim's accepted PR with `@Locked` to the changelog."
+        },
+        {
+            "hash": "be0ca58fc350a848e166f9cbaff0d6b14e6ff268",
+            "message": "Merge branch 'locked'"
+        },
+        {
+            "hash": "566f01be47a3c67fb8b91c720180694d389d3bb5",
+            "message": "[review] [#3506] PR reviewed; passes review and passes tests."
+        },
+        {
+            "hash": "567b098e997010ba6adc4eea90c482311e273d03",
+            "message": "Fix tests"
+        },
+        {
+            "hash": "d9740f5bbbce76b5e5db887e5bac2958be4b515e",
+            "message": "Fix incorrect javac recursiveSetGeneratedBy usage\n\n- The javac handler for the Locked annotations applied recursiveSetGeneratedBy to too many things, which could cause issues in certain situations. Reducing the scope on which it is used and using setGeneratedBy for the rest resolved the problems."
+        },
+        {
+            "hash": "58b38dcaa516435746a4513d76a32508e714c380",
+            "message": "Apply feedback\n\n- Applied the feedback received on the first version:\n + Using the handleExperimentalFlagUsage to reflect the fact this is an experimental feature.\n + Replace the 1-len boolean[] with 1) A regular boolean for javac (no need for mutability), and 2) An AtomicBoolean for ecj (more fitting for mutable boolean).\n + Replace the typeReferenceNameEquals method with a much cleaner Arrays.deepEquals call."
+        },
+        {
+            "hash": "dfddf8f52c60551588aa4dde5a77df60ffb578a9",
+            "message": "Update style to better resemble rest of the project"
+        },
+        {
+            "hash": "0129a0d18b1bbc126e1125c9053cfe9741c0ea5c",
+            "message": "Add website documentation for Locked annotations"
+        },
+        {
+            "hash": "cb25fce7aaa3013dfffd760f9904d990469b2dcb",
+            "message": "Add tests for Locked annotations"
+        },
+        {
+            "hash": "5e31bb253c09a5462ee2308001f2554aa54df218",
+            "message": "Add Eclipse implementation for Locked annotations"
+        },
+        {
+            "hash": "21375449db051852ec76824845e6a6af88395d9e",
+            "message": "Add Locked, Locked.Read, and Locked.Write annotations\n\n- Added Locked[.Read/Write] annotations which can be applied to method to lock the method body using a Reentrant[ReadWrite]Lock."
+        },
+        {
+            "hash": "1dfa9b67c439a960a36fedda3d4f52d3480c6f92",
+            "message": "Update README.md\n\nExplain that projectlombok.org is where to look for those who find lombok via the github page."
+        },
+        {
+            "hash": "a6e3138c00636bb607af774c73f32b88ba00c414",
+            "message": "[integration tests] from now on also use jdk21"
+        },
+        {
+            "hash": "29c1943cc978443331d2ba2dda67a30418811d33",
+            "message": "[docker] start experimenting with jdk22"
+        },
+        {
+            "hash": "cb0072ecbdf48dc25707ef8e258276182d52339a",
+            "message": "[docker] change default jdk to 21"
+        },
+        {
+            "hash": "bb32d1f0fd47f2a66895c271534bde25f81cc7c1",
+            "message": "[integration] use the root lombok.jar"
+        },
+        {
+            "hash": "b4ca468ec9ddac098e15db6c26bd51a35f6f8e0b",
+            "message": "[release] post-release version bump"
+        },
+        {
+            "hash": "0686059d05d967ea306348ad4553db35d80f1e85",
+            "message": "[build] p2 publish ran in-process which meant the `System.exit` shut down ant, whoops"
+        },
+        {
+            "hash": "22a39a336bbd55e8470d94da0c7903326307193d",
+            "message": "[changelog] [#3571] [#3497] Reflect fix of nested records in the changelog."
+        },
+        {
+            "hash": "9191f4b411077dbeedbccf8d64338f5a6b2adcfe",
+            "message": "Merge branch 'nested-record-builder' of https://github.com/Rawi01/lombok into Rawi01-nested-record-builder"
+        },
+        {
+            "hash": "27cd3e53aae4d3364eb089abfb1d5e1739e785fc",
+            "message": "Rework test to avoid diverging eclipse output\n\nIf a record is part of a class some eclipse/ecj versions add the\nimplicit static modifier to the output and some doesn't. If the record\nis nested in another record this doesn't happen."
+        },
+        {
+            "hash": "fb09a99fae385cc6a83d03debc2264975e816278",
+            "message": "[fixes #3559[fixes #3497] Treat nested records as static"
+        },
+        {
+            "hash": "55f3a02909957f97c2496ef25135857bf27cdd36",
+            "message": "[review] Split off POJOs modelling XML tags into its own package"
+        },
+        {
+            "hash": "9caa9cc9e8975735ffe9f9b1c1c8654d17fdc87f",
+            "message": "Merge branch 'eclipse-2023-12-tests' of https://github.com/Rawi01/lombok into Rawi01-eclipse-2023-12-tests"
+        },
+        {
+            "hash": "0d53abc62964359993e6dcf0d9136409f408aefa",
+            "message": "Add protection against XXE"
+        },
+        {
+            "hash": "ebb166cd521207fe98c05fa3ab6b3dd8fee4c7fe",
+            "message": "Add ambiguous javax.el-api dependency"
+        },
+        {
+            "hash": "59c91fd2a290b87118533a59f357bca308b23b86",
+            "message": "Add handling for JRE dependencies"
+        },
+        {
+            "hash": "6befa63ac631e957724967a95fc5746bd92630dc",
+            "message": "Add eclipse 2023-12 tests to actions"
+        },
+        {
+            "hash": "513604491919d61c0685ffde2c77c4b52c7af2e2",
+            "message": "Add tests for eclipse 2023-12 and integration builds"
+        },
+        {
+            "hash": "c95bd619c720a91a5537a3d2ca61344eaf79e135",
+            "message": "Merge branch 'robstryker-issue3564'"
+        },
+        {
+            "hash": "e5e2e38f45f38773ecf61130b59b0e4c20836703",
+            "message": "[changelog] [#3564] Update changelog to reflect eclipse StringBuffer/StringBuilder fix"
+        },
+        {
+            "hash": "f704aba40d7a18edbd21c71f220bcc88f12b2809",
+            "message": "[trivial] style"
+        },
+        {
+            "hash": "3d9018a4789d2903f389e164545ffc8adbca0e2d",
+            "message": "Update authors file\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "9d55da8e6d9cdbec1f00c15c739c6654ec1c6946",
+            "message": "Simplify, move and fix patches"
+        },
+        {
+            "hash": "c64c5a93110b17662641a5071b5efffe1d41c348",
+            "message": "Get patch to compile\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "c784c7bb7ab80bbc5f78abae60e4f203742d74f3",
+            "message": "One compilation error left\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "bd03b512ba45bc0d6b99e118787b8b0f4b706d9e",
+            "message": "Copy the indentation code instead of requiring dep on jdt internal\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "75116df7f560c4e13c10c2f6685813113c73fd1b",
+            "message": "Add TODO with where to add reflection\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "bd1f2adad7382cc976a38dcfc4043099e8df9141",
+            "message": "Fix some compilation errors\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "7830c738224b96833907cdfd5db4017bad0613f3",
+            "message": "Fixes #3564 - Duplicate StringBuffer calls to StringBuilder calls\n\nSigned-off-by: Rob Stryker <rob@oxbeef.net>"
+        },
+        {
+            "hash": "3114049cd3737a3ab81ec3659750731156f68474",
+            "message": "[build] Update IvyPlusPlus req to minimum 1.42"
+        },
+        {
+            "hash": "84cb36d25cdd837e368b8654d5465e360537d131",
+            "message": "[website] Further clarified the interaction between `@Builder` and `@NoArgsConstructor` in the builder docs, as an update to previous commit"
+        },
+        {
+            "hash": "9d9df38e0c1b58a2116c81582220bdc476a99d13",
+            "message": "Merge pull request #3560 from mjaggard/patch-2\n\nExplain builder default gotchas"
+        },
+        {
+            "hash": "1b66450566b04567c6c6dfd7a68585ebd427fe49",
+            "message": "Explain builder default gotchas"
+        },
+        {
+            "hash": "1eae01f3c2a596e1c5abb65b9a9969147f33caba",
+            "message": "Merge pull request #3599 from eruizc-dev/master\n\nAllow builds from intel MacBook"
+        },
+        {
+            "hash": "3c59b40f1c300f20bbdfafb5411a7dc87dd46589",
+            "message": "Add arch x86_64"
+        },
+        {
+            "hash": "58f0249926e696419a34512d359dc749e6b0a88a",
+            "message": "Merge pull request #3594 from janrieke/superBuilder-fix-type-annotation-in-extends\n\nSuperBuilder: handle annotated types in extends clause for javac"
+        },
+        {
+            "hash": "603d512f93dab073b164661a408ecc6ec5313a68",
+            "message": "only run test for java >= 8"
+        },
+        {
+            "hash": "2aaae4e9be616c444c84527a30ad536373bbcbaf",
+            "message": "only run test for java >= 8"
+        },
+        {
+            "hash": "11322138e508b0e05dcd00fa463e56ba242c4da1",
+            "message": "SuperBuilder: handle annotated types in extends clause for javac"
+        },
+        {
+            "hash": "4a7c07df490e11737a59f60b4f553c2122ca5072",
+            "message": "Update AUTHORS"
+        },
+        {
+            "hash": "c2e31dd8f702fb4f111ab44589de5fb4667b0d3c",
+            "message": "Add jspecify `@NonNull` annotation"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2917",
+            "title": "[BUG] \"value\" field in init expression of @Getter(lazy=true) not working"
+        },
+        {
+            "number": "3225",
+            "title": "[BUG] Endless loop while compile"
+        },
+        {
+            "number": "3529",
+            "title": "[BUG] UI Error when a generated Field is used on annotation"
+        },
+        {
+            "number": "1443",
+            "title": "NullPointerException in Eclipse Oxygen"
+        },
+        {
+            "number": "1758",
+            "title": "Renaming fields in Eclipse Photon also renames lombok annotations"
+        },
+        {
+            "number": "3440",
+            "title": "[BUG] Autocomplete for `val` variables stops working \"randomly\" in Eclipse"
+        },
+        {
+            "number": "562",
+            "title": "Inlining generated getter gives @Getter instead of fieldname"
+        },
+        {
+            "number": "3536",
+            "title": "[BUG] Annotations generate incorrect operators in Eclipse"
+        },
+        {
+            "number": "3540",
+            "title": "[BUG] Eclipse freezes code completing large enum (out of memory) caused by lombok ShadowClassLoader->EclipseAST"
+        },
+        {
+            "number": "3506",
+            "title": "[FEATURE] Proposal: Introduction of @Lock Annotation for Better JDK 21 Virtual Thread Support"
+        },
+        {
+            "number": "3497",
+            "title": "[BUG] @With requires inner records to be explicitly static"
+        },
+        {
+            "number": "3559",
+            "title": "[BUG] @Builder requires nested record to be explicitly static when enclosing class is parametrized"
+        },
+        {
+            "number": "3564",
+            "title": "[BUG] Internal package changes in ECJ will break Lombok."
+        }
+    ]
+}

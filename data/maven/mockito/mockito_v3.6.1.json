@@ -1,0 +1,58 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.6.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 10,
+    "start_delay": 0.0,
+    "duration": 12.098425925925927,
+    "commits_info": [
+        {
+            "hash": "05eef835ce7a3c7708d2627434c1dd90adcd16e1",
+            "message": "Merge pull request #2069 from mockito/shipkit\n\nMigrated to new Shipkit libraries"
+        },
+        {
+            "hash": "c1a7956a9fb3685ad3d59ffe5d41b55dbb6025e9",
+            "message": "Fixed the version number"
+        },
+        {
+            "hash": "31957a91ae4ba1ff48943b5a8b35e9af85ab7d0e",
+            "message": "Reordered the release steps\n\nBased the past experience let's try the approach to perform \"bintrayUpload\" *before* tagging the release in GitHub.\n\nOriginally we thought that tagging *before* artifact publishing is a good idea. Bad tag is easier to revert than reverting binary artifacts publish. In fact, we cannot unpublish artifacts from some repositories, such as  Maven Central. In practice though, tagging almost never fails. Therefore, let's run the task that *may* fail before tagging. This way, in case of a failure, there is less manual fixing (removing tags/release notes from GH) and less confusion to our end users (no more releases on GH that don't have any artifacts)."
+        },
+        {
+            "hash": "616f5eb982a34e95a10e43e39db0d24443b5a889",
+            "message": "Fixed Travis configuration"
+        },
+        {
+            "hash": "5d1e2a47a2c275d13338a5ed30e9e4ae349940fd",
+            "message": "Fixed Maven Central publications"
+        },
+        {
+            "hash": "278ed01f7c043d38560f7bdeebc3d010691fa264",
+            "message": "Enabled Bintray releases"
+        },
+        {
+            "hash": "b79989415a5884d716f6708a237fdd7ecf156af3",
+            "message": "Fixed problem with license and empty artifacts"
+        },
+        {
+            "hash": "0b2dfdcd441f3edc35d5ee2598dd0fde0161ae57",
+            "message": "Ensured that mockito-core pom file is equivalent.\n\nThere is one deviation: Gradle's pom builder does not write the packaging 'jar' to the pom file. This is OK because it's Maven's default."
+        },
+        {
+            "hash": "7c512975310fbc54372b2cb16bfde9af39358e08",
+            "message": "Migration to future Shipkit\n\nStarted migrating existing Shipkit configuration to the new model (small, decoupled, specialized Gradle plugins)."
+        },
+        {
+            "hash": "5570aba3efde807d2c9af4fc8cdc0a1e004a8469",
+            "message": "Fixes #2083 : Modify casing of Bundle-Version manifest header (#2084)\n\nOSGi specification may accept case insensitive headers but this is\r\ncausing problems for Eclipse PDE development with version constraints.\r\n\r\nSwitch to match casing of other headers and agree with name provided\r\nat: https://www.osgi.org/bundle-headers-reference/"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2083",
+            "title": "Issue with Bundle-Version manifest header when used in Eclipse PDE development"
+        }
+    ]
+}

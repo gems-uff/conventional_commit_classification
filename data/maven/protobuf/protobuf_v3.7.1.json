@@ -1,0 +1,126 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.7.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 24,
+    "start_delay": 0.0,
+    "duration": 53.739953703703705,
+    "commits_info": [
+        {
+            "hash": "6973c3a5041636c1d8dc5f7f6c8c1f3c15bc63d6",
+            "message": "Update version number to 3.7.1 (#5947)\n\n* Update version number to 3.7.1\r\n\r\n* Update version number in port_def.inc"
+        },
+        {
+            "hash": "077079573f7777198e58676442978b9a8340b8a7",
+            "message": "Fixed CI failures with Ruby 2.3 on OSX (#5948)\n\nOSX has deprecated OpenSSL, so we need to install it via Homebrew and\r\nbuild against that version when we build Ruby."
+        },
+        {
+            "hash": "34b64995ac24620c88333b84228adfe694921300",
+            "message": "Avoid linking against libatomic when building protoc (#5922)\n\nWe ran into problems with precompiled protoc binaries not working on\r\nsome systems because of the dependence on a dynamically linked\r\nlibatomic. However, I found that linking against libatomic is not\r\nactually necessary in our protoc build environment. Inside configure.ac\r\nthere's a test which figures out if we need to pass -latomic, and it\r\ndoes this by attempting to build a test binary. That binary was failing\r\nto build, but it turns out this was because we need to pass -std=c++11,\r\nnot -latomic.\r\n\r\nThis fixes #5875."
+        },
+        {
+            "hash": "ba42cb53d92a19f87a65061af15b10432ee7fc67",
+            "message": "Allow bytes field to be longer than 16000 bytes (#5924)\n\n* Allow bytes field to be longer than 16000 bytes\r\n\r\n* Remove empty line"
+        },
+        {
+            "hash": "02cf61a7da14a055480542ccf1484581ec4ea319",
+            "message": "Updated NPM version to 3.7.1"
+        },
+        {
+            "hash": "ec0d47e4d2534328687c7e515ab4ab7f8a24ad34",
+            "message": "No define strtoll/strtoull for VS2013 and above"
+        },
+        {
+            "hash": "b3c132f6f33a58c7f3333c72e5d217bd3f6c9f11",
+            "message": "Avoid marking generated C++ messages as final for now (#5928)\n\nWe need to mark messages as final soon, but before we do that we need to\r\nprovide a temporary opt-out mechanism to accommodate existing code that\r\ninherits from generated messages. For 3.7.1 let's stop marking messages\r\nfinal but in 3.8 we can reintroduce \"final\" with an opt-out option."
+        },
+        {
+            "hash": "059851fe59d2ac3123f79e0638cb209265e24130",
+            "message": "Remove unused import from message."
+        },
+        {
+            "hash": "e2461b5f5976bc8de0b9722578e9bcf5194efa64",
+            "message": "Revert \"Remove unused f expression from jscode gen. (#5573)\"\n\nThe removed variable here is actually used breaking downstream bazel\nbuilds."
+        },
+        {
+            "hash": "e6779e9b2afd5d363dfa568243a3c06ec27cdbcc",
+            "message": "Added io_win32.h to header list in CMake config\n\nThis should fix #5717 and ensure that this header gets installed\nproperly on Windows."
+        },
+        {
+            "hash": "57b6597f467c2b614a458051f60ba467c5d697ae",
+            "message": "Replace strptime with custom implementation (#5906)\n\n* Replace strptime with custom implementation\r\n\r\n* Fix ruby strptime\r\n\r\n* Fix test\r\n\r\n* Fix ruby conformance test\r\n\r\n* Use mktime\r\n\r\n* Remove EmptyFieldMask from failed conformance test list"
+        },
+        {
+            "hash": "032a179e47f8dbab3b7c3a083ad797150b554f6e",
+            "message": "Fix macros in header of generated code (#5881)\n\n* Fix macros in header of generated code\r\n\r\n* Define PROTOBUF_MIN_PROTOC_VERSION in port_def.inc\r\n* Remove duplicated GOOGLE_PROTOBUF_MIN_LIBRARY_VERSION from common.h\r\n\r\n* Send error if the error has been defined\r\n\r\n* Undef the new macro"
+        },
+        {
+            "hash": "4fd0579e477e0ce6f67735805a18c53a0b13c23b",
+            "message": "Merge pull request #5896 from jbolinger/error-to-3.7.x\n\nRuby error messages in 3.7.x"
+        },
+        {
+            "hash": "580826cd97831e1b5b6fb766af373fe920e699ba",
+            "message": "cherry-pick test fix from #5853"
+        },
+        {
+            "hash": "604121aaa4aa0780fb36ae945610df793ccb8e63",
+            "message": "fix tests for older rubies"
+        },
+        {
+            "hash": "1cf730cb226b69e8688518c5019152b069841165",
+            "message": "add type errors test to Makefile.am"
+        },
+        {
+            "hash": "0114727cc634971c86696b02f17c594b9ab9db76",
+            "message": "add more descriptive error messages to init methods"
+        },
+        {
+            "hash": "d65b8647f286b7ab1f872558e3870ed8171b9969",
+            "message": "Add terminating character to zend_lookup_class call (#5871) (#5885)\n\n* add terminating character\r\n\r\n* adjust name length input\r\n\r\n* add test cases\r\n\r\n* correct script name\r\n\r\n* Misc fixes\r\n\r\n* add new script to EXTRA_DIST list"
+        },
+        {
+            "hash": "207d01daa170306370308eb27a5da38d5822a21a",
+            "message": "Remove GPBWrapperUtil from generated code (#5880)\n\n* Remove GPBWrapperUtil from generated code\r\n\r\n* Add newline"
+        },
+        {
+            "hash": "4b145b1c7f836a904b1c8f29bca74bf791c3744f",
+            "message": "Parse nested listvalue in json for ruby (#5867)\n\n* Add conformance test for nested listvalue\r\n\r\n* Fix upb for parsing repeated Value/ListValue\r\n\r\n* Add failed repeated ListValue conformance test into php failure list"
+        },
+        {
+            "hash": "45aba801edfd8454f2e3748a817272e212d5cb4e",
+            "message": "Avoid passing -Og flag to C++ compiler\n\nIt appears that some versions of Clang do not support this flag, and\nthis came up as a problem for Homebrew builds in issue #5815."
+        },
+        {
+            "hash": "a18680890bd70407f889ccd652282f8092927397",
+            "message": "Encode empty ListValue (#5857)\n\n* Encode empty ListValue\r\n\r\n* Update mac ruby conformance failure list"
+        },
+        {
+            "hash": "4b9a5df4e8ba2066794da56598ad2905dc42051e",
+            "message": "Bazel: Add dependency to error_prone_annotations\n\nRecently dependency to error_prone_annotations was added to the code,\nbut only Maven build tool chain was updated.\n\nCloses #5795."
+        },
+        {
+            "hash": "0b5111dbab6125141c3c86b390900e74cddb33d3",
+            "message": "Raise error for JSON overflow encoding in Ruby (#5752) (#5861)\n\n* add check for overflow\r\n\r\n* de-nestify\r\n\r\n* break long lines"
+        }
+    ],
+    "issues": [
+        {
+            "number": "5875",
+            "title": "Released protoc 3.7.0 require libatomic1 (not statically linked?)"
+        },
+        {
+            "number": "5717",
+            "title": "io_win32.h missing from installation"
+        },
+        {
+            "number": "5815",
+            "title": "3.7.0: make check fails  on OSX: invalid integral value 'g' in '-Og'"
+        },
+        {
+            "number": "5795",
+            "title": "3.7.0 release fails to build with bazel due to missing error prone dependency"
+        }
+    ]
+}

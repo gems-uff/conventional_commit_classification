@@ -1,0 +1,25 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.7882175925925926,
+    "commits_info": [
+        {
+            "hash": "5f0635ac45227e19d9dde68f4965fde87d32aa8a",
+            "message": "Update release notes by Travis CI build 2347 [ci skip]"
+        },
+        {
+            "hash": "e9516f42b1182ae675022c101954e721e20b2c72",
+            "message": "Fix whitespace issues throughout the code (#928)\n\n* Add missing newlines at the end of source files\n\nAt the time this patch was authored, 252 (~31%) source files in the\nproject did not end with a newline, while 555 (~69%) did.\n\nThis patch takes the de-facto standard of having a newline at the end\nof a file and applies it to all the source files in the project.\n\nBesides improving standardization, another contributing consideration\nis the fact that many editors/IDEs add newlines at the end of files.\nUsing such an IDE will add a newline to the edited file, adding\n\"noise\" to the patch and confusing potential reviewers. By explicitly\nadding all the missing newlines in a single patch, this problem can be\navoided.\n\nThese changes were done automatically by applying the following shell\ncommand:\n\n$ find . -name \"*.java\" -exec sed -i -e '$a\\' {} \\;\n\n* Remove whitespaces at the end of source lines\n\nThis patch takes the de-facto standard of not having any whitespaces\nat the end of source lines and applies it to all the source files in\nthe project.\n\nBesides improving standardization, another contributing consideration\nis the fact that many editors/IDEs remove such whitespaces at end of\nlines. Using such an IDE will remove these whitespaces in the edited\nfile, adding \"noise\" to the patch and confusing potential reviewers.\nBy explicitly removing all of them in a single patch, this problem can\nbe avoided.\n\nThese changes were done automatically by applying the following shell\ncommand:\n\n$ find . -name \"*.java\" -exec sed -i 's/[ \\t]*$//' {} \\;"
+        },
+        {
+            "hash": "c73c7a01c08b1aba189aba4e43f5c1080e5b4b8b",
+            "message": "Increment version '2.7.3' -> '2.7.4' by Travis CI build 2339 [ci skip]"
+        }
+    ],
+    "issues": []
+}

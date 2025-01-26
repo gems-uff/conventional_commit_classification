@@ -1,0 +1,65 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.18.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 12.352361111111112,
+    "commits_info": [
+        {
+            "hash": "0dab03ba7bc438d7ba3eac2b2c1eb39ed520f928",
+            "message": "Update protobuf version to 3.18.1 (#9051)\n\n* Update protobuf version\r\n\r\n* Update PHP release notes in package.xml"
+        },
+        {
+            "hash": "40f6669c46d725db78533642b8058f0ad2c0a556",
+            "message": "Update changelog for 3.18.1 (#9050)"
+        },
+        {
+            "hash": "aeb624d3b4028fb6ec2f6d76b0d9a43dc2e7e87b",
+            "message": "Avoid installing anything from Homebrew in test runs (#9043)\n\nInstalling and upgrading Homebrew packages is taking quite a lot of time\r\n(around 20-30 minutes) for each run. This commit removes all Homebrew\r\nusage from the test runs. Homebrew may have been necessary at some point\r\nin the past, but now it appears that everything works without it. The\r\npreinstalled build tools seem to be sufficient for building protoc, and\r\nRuby is something we already get from rvm."
+        },
+        {
+            "hash": "bfc4c3472d892bf4477da973b2646db76f443535",
+            "message": "Merge pull request #9021 from acozzette/cherry-pick-fixes\n\nCherry-pick fixes for 3.18.1"
+        },
+        {
+            "hash": "5378c9a7105d8d2a69b9e587797e1223bb0986d0",
+            "message": "Use the stable version of rvm\n\nI am hoping this will fix the error we are getting as described here:\nhttps://github.com/rvm/rvm/issues/5014"
+        },
+        {
+            "hash": "55b0e11f528e41dc96ad5902fb5abc5b153486c9",
+            "message": "Fix Ruby tests on Mac\n\nIt appears that this extra conditional in travis-test.sh is no longer\nnecessary, and in fact we need to avoid using a custom version of\nOpenSSL since that is causing its own error."
+        },
+        {
+            "hash": "0333cb77de63e255eb6f07bb496ad03c90ed7d5e",
+            "message": "Update ruby/travis-test.sh to print commands"
+        },
+        {
+            "hash": "0e7a35f24bb3eef02bd657aae867ed58ca5a74e3",
+            "message": "Update dist_install test to work around Python issue\n\ngoogletest uses a Python script in its build which is not compatible\nwith Python 3. Unfortunately we can't easily upgrade googletest right\nnow, so this commit works around the problem by putting a python symlink\npointing to Python 2 in the $PATH."
+        },
+        {
+            "hash": "151e632bac75f6179043655ae54aa6f835508e72",
+            "message": "Fix dist install test by ensuring that we use Python 3 (#9011)\n\n* Fix dist install test by ensuring that we use Python 3\r\n\r\nNow that we have dropped Python 2 support, we need to make sure this\r\ninstall test uses Python 3.\r\n\r\n* Update Docker image to install Python 3 version of setuptools\r\n\r\n* Run pip3 instead of pip"
+        },
+        {
+            "hash": "2fffff8320a7afd0979300b2a9baadc72ca82f53",
+            "message": "Add python-requires in setup.py (#8989)\n\n* Add python-requires in setup.py\r\n\r\n* Update setup.py"
+        },
+        {
+            "hash": "740c4b082dcaabec0c70f8433dc4d022973268c8",
+            "message": "Update ruby_generator.cc to allow proto2 imports in proto3 (#9003)\n\n* Update ruby_generator.cc to allow proto2 imports in proto3, with updated unit tests\r\n\r\n* Update Makefile.am with new ruby_generated_code_proto2_import.proto\r\n\r\n* Fix ruby_generator unit test to use temporary test directory for imported protos\r\n\r\n* Add test for imported proto2 to ruby/tests\r\n\r\n* Fix proto_path, restore to ../src/protoc, and fix/cleanup unit test.\r\n\r\n* Rename Proto2TestMessage to TestImportedMessage for consistency, for ruby compiler tests"
+        },
+        {
+            "hash": "bf8d7f0b72da73479960240eb21b6cd171da81e2",
+            "message": "Merge pull request #9023 from haberman/dyn-msg-perf-fix\n\nPerformance fix for DynamicMessage: force GetRaw() to be inlined."
+        },
+        {
+            "hash": "5e8396fd2743702b9efdca1841c91987f28581f4",
+            "message": "Performance fix for DynamicMessage: force GetRaw() to be inlined."
+        }
+    ],
+    "issues": []
+}

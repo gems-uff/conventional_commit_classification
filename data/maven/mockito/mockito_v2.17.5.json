@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.17.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.003726851851851852,
+    "commits_info": [
+        {
+            "hash": "7d926aa078ee16b17104c114c1e81f52905158bc",
+            "message": "2.17.5 release (previous 2.17.4) + release notes updated by CI build 3318\n\n[ci skip-release]"
+        },
+        {
+            "hash": "5df98d936327cf4795a466ce7b17a48f6d7699cb",
+            "message": "Enable errorprone build (#1339)\n\n* Enable errorprone build\r\n\r\n- fix up issues found\r\n- placate error prone warning where we know we do something funky\r\n- Ignore two tests as it is not immediately clear what is broken\r\n  - org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest#shouldNotAllowUsingAnyObjectForVarArgs\r\n  - org.mockito.internal.util.PrimitivesTest#should_check_that_value_type_is_assignable_to_wrapper_reference\r\n\r\n* Fix #1337 Fix #1338\r\n\r\n* Remove unused imports\r\n\r\n* Use assertThatThrownBy to check for exceptions.\r\n\r\n* Preserved current functionality"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1337",
+            "title": "org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest#shouldNotAllowUsingAnyObjectForVarArgs reaches fail"
+        },
+        {
+            "number": "1338",
+            "title": "Statements in org.mockito.internal.util.PrimitivesTest#should_check_that_value_type_is_assignable_to_wrapper_reference are not true"
+        }
+    ]
+}

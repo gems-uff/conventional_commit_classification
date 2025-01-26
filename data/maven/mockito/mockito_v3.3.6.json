@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.3.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 1.176238425925926,
+    "commits_info": [
+        {
+            "hash": "b2de4cce9d26470145135dde2cd51ac60f999fce",
+            "message": "3.3.6 release (previous 3.3.5) + release notes updated by CI build 4416\n\n[ci skip-release]"
+        },
+        {
+            "hash": "62879b9531b1dc15af4255fa3906957affa92943",
+            "message": "Fixes #1885: Add java.time.{Duration,Period} to ReturnsEmptyValues (#1896)"
+        },
+        {
+            "hash": "4e1ae5155f5e67f5afb1934f95bc8af9283da76b",
+            "message": "Fixes #1894: Use relative path in CheckStyle config to fix Windows build (#1895)"
+        },
+        {
+            "hash": "ab4bd0c533977497697ac4ab629f301c66596ffc",
+            "message": "Fixes #1891: Instruct Gradle to build JARs deterministically (#1892)\n\nThis makes the build reproducible, if there are no other sources of non-determinism with the JAR's content such as the manifest.\r\n\r\nIt strips the \"Bnd-LastModified\" header from OSGi content in JARs. it copies the jar and removes the offending header from the Manifest file. Due to a known issue in Gradle with the (now-deprecated) OSGi plugin, this is one of the only ways to remove this header.\r\n\r\nAdditionally, we verify the reproducibility in CI build via a new Gradle task. This new task, `checkReproducibility`, runs two builds, collects the sha256 checksums of the output archives, and compares them.\r\n\r\nCo-authored-by: Tim van der Lippe <tvanderlippe@google.com>"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1885",
+            "title": "Add java.time types to ReturnsEmptyValues"
+        },
+        {
+            "number": "1894",
+            "title": "Checkstyle error on windows"
+        },
+        {
+            "number": "1891",
+            "title": "Build is not reproducible"
+        }
+    ]
+}

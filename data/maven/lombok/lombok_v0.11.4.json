@@ -1,0 +1,178 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.11.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 39,
+    "start_delay": 0.0,
+    "duration": 41.11806712962963,
+    "commits_info": [
+        {
+            "hash": "767d9f7cadded7c2254bb3f6af1c09bccf467d98",
+            "message": "prerelease version bump"
+        },
+        {
+            "hash": "afcb211e47f387c5c9b42a0d954e247aec84e781",
+            "message": "Fix for issue 401: test(), Object.test(), and super.test() were all allowed in eclipse for @ExtensionMethod, resulting in VerifyErrors in the emitted class files."
+        },
+        {
+            "hash": "d1539a3ec2e49297d358b0690d84e6319c27f93c",
+            "message": "prettying up the pre/post examples for FieldDefaults and ExtensionMethod"
+        },
+        {
+            "hash": "5f511da0916450edfef1a1254907e5c29ce55dcd",
+            "message": "FieldDefaults (and Value) did not call .rebuild() after changing modifiers. This also meant delombok would not emit the changed code if that's all that changed, because it thought nothing changed."
+        },
+        {
+            "hash": "6e25b00acec26c770236d347a879a899c5c930db",
+            "message": "test for using 'val' on an expression that involved lombok-generated code."
+        },
+        {
+            "hash": "8850798a04e7f44925ed16b3450623b02f5b6295",
+            "message": "Documentation for @Value, @FieldDefaults, @Wither"
+        },
+        {
+            "hash": "42f5a55d69850603d951a65929f48a3b462b54ea",
+            "message": "Added tests for @FieldDefaults and @Value."
+        },
+        {
+            "hash": "0dbc68a5cc2df113c22a72c78c39dedd1e1cb714",
+            "message": "Added an optimization to javac: Don't force new resolution rounds if none of the handlers in the next priority level need it."
+        },
+        {
+            "hash": "b31ca9606b25839701194c5fca71c12c1a165565",
+            "message": "bugfix: Detecting javac6 didn't work on soylatte; now it does."
+        },
+        {
+            "hash": "1be7da76012b246af24d0515d192bca85d65c823",
+            "message": "* Added priorities to handlers, along with implementation of the priority system for javac and ecj.\n* @Value now makes the class itself final by default."
+        },
+        {
+            "hash": "70317c73841d3e83b4b8008b68bea95753a5275f",
+            "message": "Added @Value and @FieldDefaults implementations for javac and ecj, the annotations including @NonFinal and @PackagePrivate, and some refactors. No tests yet."
+        },
+        {
+            "hash": "d1b0242dc5e38cddd0e1ecc2a089c13e744d75d4",
+            "message": "Fixed outdated javadoc text in @Data annotation."
+        },
+        {
+            "hash": "8ca3ddaa530ca287caff32c2b0dbcff8c17e74c2",
+            "message": "fully tested the HandleWither impl for eclipse."
+        },
+        {
+            "hash": "87f763a94c87b03da269d110c44e7e750ddf5211",
+            "message": "Merge branch 'master' into wither\n\nConflicts:\n\tsrc/core/lombok/javac/handlers/JavacHandlerUtil.java"
+        },
+        {
+            "hash": "34055fcdff786c9b809ce1a08c1c9218968ebc7d",
+            "message": "A potential fix for issue #394; Memory leaks in eclipse introduced in lombok 0.11.2 due to a fix involving WeakHashMaps for lazy getters of type boolean."
+        },
+        {
+            "hash": "98c704c7cb4b21d0d6e11f55c52da89cb7c22502",
+            "message": "Lombok not longer removes the feature annotations and the import declarations of said annotations when running in Netbeans. This solves another batch of usability issues in Netbeans."
+        },
+        {
+            "hash": "555bdfd52ffddcf01b444fb2802cdf9f486e0f87",
+            "message": "Updated changelog with fixes for 396 and 399."
+        },
+        {
+            "hash": "dd18f63ee539a362fac2525c48d83ccff7a06dc9",
+            "message": "Fix for issue 396: Static constructors generated for classes with type parameters did not work in javac."
+        },
+        {
+            "hash": "a382c21d464c22658e8c2eea7d7d75c2a6747527",
+            "message": "fixed issue 391: Using 'staticConstructor' on @Data whilst an @XxxArgsConstructor is present means it gets ignored, but until now lombok didn't warn you about this."
+        },
+        {
+            "hash": "fe4985e2127e5fc54a0a1ae3c2c4fef17789f8bd",
+            "message": "Added setting position of generated nodes in javac's @Synchronized as a 'pilot' to see if we cause any problems with this approach. It does generate nicer error messages!\n\nExample: Using @Synchronized with named lock on a static method, naming a non-existent or instance lock. That used to error on line -1."
+        },
+        {
+            "hash": "b1877a77be41695259108d2c755c87051b3f0d07",
+            "message": "fixed tests since Robbert Jan's fix for issue 377."
+        },
+        {
+            "hash": "bd2d76bb546cf60ff8f36318fca4c2d0498d1d43",
+            "message": "Added feature to test suite to dump actual result of running ecj / delombok on things to a directory (use -Dlombok.tests.dump_actual_files=/path/to/dir).\n\nUseful if you KNOW lombok is working but something changed in output, i.e. order of generated methods."
+        },
+        {
+            "hash": "e6421509987c01e06b7c79ef406cc01ff174ae81",
+            "message": "Updated tests to reflect changes to delombok (delombok now kills super(), because attrib adds them even in places where that's wrong).\n\nAlso split up the SynchronizedName test into separate cases for each expected failure mode."
+        },
+        {
+            "hash": "2502862f896d11b9e386df34f6891918ed443409",
+            "message": "Delombok now also runs attrib on more files; this will reveal more errors which is particularly important for tests.\nThis does mean delombok really does need your entire source/classpath to work right but there's unfortunately no real avoiding this anyway,\ngiven that we're doing more and more with resolution."
+        },
+        {
+            "hash": "c09481eb8e1475c9495c6d5a59df7234803b2a95",
+            "message": "Added tests for @ExtensionMethod"
+        },
+        {
+            "hash": "06826342f3be58cfb422f291f89e29be2cfde7f0",
+            "message": "Fixed issue 399: @ExtensionMethod broken for javac in nearly all cases"
+        },
+        {
+            "hash": "02446794b09682fc5e07bbaa298c9908772cbf42",
+            "message": "Fixed issue 397: Rare java.lang.StackOverflowError in JavacResolution."
+        },
+        {
+            "hash": "1865bd7309b9d1dc743f83ccdbd7204fb0939ecd",
+            "message": "expanded on something in the changelog."
+        },
+        {
+            "hash": "288ea10ec7f89fc610223d53cb45dbf098d6bc3d",
+            "message": "fixed some markdown errors in the changelog."
+        },
+        {
+            "hash": "d2d9687a5c195ee2bf3a2f340ec89c626fe951fa",
+            "message": "Fielding a request to make some stuff public. The things made public are already part of things we'll change even if public (because, not part of lombok.X or lombok.experimental.X or lombok.experimental.**), nor is it particularly volatile.\n\nSee issue #389."
+        },
+        {
+            "hash": "71e0d53bc3365f8db79097f3c6741acf58788532",
+            "message": "Fixed an issue where the installer tool would erroneously complain about needing root access to install/uninstall lombok."
+        },
+        {
+            "hash": "6bf2b9299d2f1bcc00b8a0f253aae8fd4fcb6baa",
+            "message": "Made lombok more stable in netbeans based on some smart observations by Jan Lahoda of team Netbeans."
+        },
+        {
+            "hash": "0befce2072c811fe6cc4177d43c581f00bc2d578",
+            "message": "Very slight change to the helptext of lombok the executable"
+        },
+        {
+            "hash": "3166a83dbc625d4b467fc4b5b8cfa304c1c33eac",
+            "message": "Version bump to 0.11.3"
+        },
+        {
+            "hash": "f31357e7a51d3321195af2480e9498923fd1282f",
+            "message": "Updated changelog"
+        },
+        {
+            "hash": "5f8aa2e9b0f58e9f0436275ab0feb44a70fdf622",
+            "message": "fixed stupid memleak in PatchExtensionMethod.. sorry my bad.."
+        },
+        {
+            "hash": "39a76386b6a3c0c30f6597c473ba7dd6f32c9a88",
+            "message": "version bump in preparation of release"
+        },
+        {
+            "hash": "eb4cbcd8bbd7bf7784aa229e9b6c5fe0670fa7a5",
+            "message": "Untested implementation of HandleWither for eclipse along with minor refactors to HandleSetter"
+        },
+        {
+            "hash": "3cf9ffed29cfe56734570b1c3c57d924ac7416df",
+            "message": "Wither support + tests (javac only; ecj tests are currently set to ignore)."
+        }
+    ],
+    "issues": [
+        {
+            "number": "394",
+            "title": "PropertyChangeListener"
+        },
+        {
+            "number": "389",
+            "title": "Rename is still badly broken with @Data"
+        }
+    ]
+}

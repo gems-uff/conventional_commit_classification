@@ -1,0 +1,862 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 152,
+    "start_delay": 0.0,
+    "duration": 61.70815972222222,
+    "commits_info": [
+        {
+            "hash": "d9a9686b453e9813d9d50b0298957beeed7be119",
+            "message": "Release v5.3.4"
+        },
+        {
+            "hash": "efc335e19894bda8aa149840bb8dec053dbede4c",
+            "message": "Remove remaining Kotlin \"translations\" of Java APIs in the reference manual"
+        },
+        {
+            "hash": "1e57e572dd1b9d8cac358ec810439f502741f27a",
+            "message": "Link to all built-in `Resource` implementations\n\nSee gh-26447"
+        },
+        {
+            "hash": "829000d5115de45cfc5dadebe509676ad37d2d14",
+            "message": "Remove Kotlin \"translations\" of Java APIs in the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "a315abfd328e8a607686a38d6b78d4279d0d3a1a",
+            "message": "Polish ResourcePatternResolver docuementation in the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "36d133ce53c89832e3894673b1a813b9741e2d22",
+            "message": "Escape URLs in literals in reference manual\n\nThis prevents the URLs from being rendered as clickable links in the\ngenerated HTML."
+        },
+        {
+            "hash": "9417975f66f28de514f4909bc25f037934ac23e6",
+            "message": "Nullability refinements\n\nSee gh-26462"
+        },
+        {
+            "hash": "ed9ec58caa100bb313d87cd72209c72bd25d0242",
+            "message": "Document ASM version as 9.1 in license file"
+        },
+        {
+            "hash": "f48c3d9b67f52bfcefa85e5e454582bbc1f1a06b",
+            "message": "Document ASM version as 9.x (effectively 9.1 at present)"
+        },
+        {
+            "hash": "6b705443a689f274c1ad9897a56b281b7fc4a8bc",
+            "message": "Document ResourcePatternResolver in the reference manual\n\nCloses gh-26447"
+        },
+        {
+            "hash": "c26087e848be749e493b2e29a1a99689a835c716",
+            "message": "Document PathResource as a built-in Resource in the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "7225238ad56254bb9b580682ddacba381e92e936",
+            "message": "Update Resource interface in the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "ff437313479e03c932ff2363a880a2725f8eca43",
+            "message": "Polish Resources section of the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "29fb3f27bebc6e26c1854ce13ee60087f1739189",
+            "message": "Fix typo in @Configurable example in reference manual\n\nCloses gh-26551"
+        },
+        {
+            "hash": "63db250ebe23e7e3339311414946f5af2e0db43b",
+            "message": "Upgrade to Reactor 2020.0.4\n\nCloses gh-26548"
+        },
+        {
+            "hash": "b00c7075a5e00dce706647054ffa5f0529622e34",
+            "message": "Introduce WebClient.ResponseSpec.awaitBodilessEntity()\n\nThis commit also allows awaitBody<Unit>() to be used.\n\nCloses gh-26504"
+        },
+        {
+            "hash": "3718c8d0e06a380476fcfa1cd25a75f267f81d88",
+            "message": "Upgrade to Hibernate ORM 5.4.28 and OpenPDF 1.3.25"
+        },
+        {
+            "hash": "ca8261cbf87f3882d177f2ef82aa3e53f9c3e809",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8de10e91991629b414a32fb176513d822c2465b9",
+            "message": "Accept nullable values in MapSqlParameterSource set operators\n\nCloses gh-26288"
+        },
+        {
+            "hash": "7536b7f42a13db00a6ae3c83a95646d0bfd798b9",
+            "message": "Upgrade to Gradle 6.8.2\n\nCloses gh-26552"
+        },
+        {
+            "hash": "bc71cc1a765ab33b0c70487959cc1976fedde0c2",
+            "message": "Merge branch 'gh-26462'\n\nCloses gh-26462"
+        },
+        {
+            "hash": "582559dd9e61e809fd2801f03d0beed10f8c452f",
+            "message": "Polish \"Allow customer resolver and property sources\"\n\nSee gh-26462"
+        },
+        {
+            "hash": "d4c609f2f0a0df41b3f8c3e37485397cda864671",
+            "message": "Allow customer resolver and property sources\n\nAdd factory methods to `AbstractEnvironment` that allow a custom\n`ConfigurablePropertyResolver` and `MutablePropertySources` instance\nto be used.\n\nSee gh-26462"
+        },
+        {
+            "hash": "3524401bf1654af20b5b77913cb4ebc0ee036a20",
+            "message": "Introduce a NativeDetector utility class\n\nWith the introduction of the -H:+InlineBeforeAnalysis native image\ncompiler flag in GraalVM 21.0.0, it is now possible to use an utility method and get code\nremoval at build time.\n\nThis flag will be enabled as of Spring Native 0.9.0.\n\ncloses gh-25795"
+        },
+        {
+            "hash": "86423c91f750580e81e6daed4caf8e40c9cff379",
+            "message": "Merge branch 'gh-26461'\n\nCloses gh-26461"
+        },
+        {
+            "hash": "8807f94ad858d581f3158b29b8e5e6e0969b8be6",
+            "message": "Polish \"Allow bypass of active/default properties\"\n\nSee gh-26461"
+        },
+        {
+            "hash": "da3ff29e88f4f7041714deb10e91f4ca68bac12c",
+            "message": "Allow bypass of active/default properties\n\nIntroduce protected methods that can be used to bypass or change the\nway that active and default property values are read.\n\nSee gh-26461"
+        },
+        {
+            "hash": "9c6b1b645dd3b11c8161dcbd2f8946185bcd74f9",
+            "message": "Prevent kotlinx.serialization usage on collection of interfaces\n\nCloses gh-26371"
+        },
+        {
+            "hash": "0fc8bf654b6a8a287119ca7f21aa60b391417939",
+            "message": "Expose DispatcherHandler as PreFlightRequestHandler\n\nCloses gh-26257"
+        },
+        {
+            "hash": "729535d36cd98f5ea50ec0a32bd3d828c5d37303",
+            "message": "Ensure presence of cached lookupPath\n\nCloses gh-26546"
+        },
+        {
+            "hash": "634c7710f9517d02971b7b3e6beb593be061e391",
+            "message": "Remove trailing whitespace (Checkstyle)\n\nSee gh-26471"
+        },
+        {
+            "hash": "2fbfd8a5dbb32f74fee9c0a22dc4a402d3c6680f",
+            "message": "Avoid unnecessary wrapping for SqlParameterValue\n\nFix https://github.com/spring-projects/spring-framework/issues/26467"
+        },
+        {
+            "hash": "42c15be8d3a545ce31f1ee48873b015803dd38ba",
+            "message": "Upgrade to Kotlin 1.4.30\n\nCloses gh-26545"
+        },
+        {
+            "hash": "3baa44c5ef76da4f9f816497d09b8416365e66fa",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4b86a1a755bafae67499dec14ffa87453182e046",
+            "message": "Upgrade to Netty 4.1.59, Tomcat 9.0.43, Undertow 2.2.4, Mockito 3.7.7, HtmlUnit 2.47.1, Joda-Time 2.10.10, RxJava 2.2.21 and 3.0.10"
+        },
+        {
+            "hash": "df977a2fd2d77ae6a07edd833ad4eeb3b173e064",
+            "message": "Nullability refinements and related polishing"
+        },
+        {
+            "hash": "99a1388bbd1de489e538b3bf309b7ccc13902ae5",
+            "message": "Re-resolve cached arguments in case of NoSuchBeanDefinitionException\n\nCloses gh-26517"
+        },
+        {
+            "hash": "809813dd5248a1036c49858db42dfcc23127719b",
+            "message": "Preserve resolved destroy method name in RootBeanDefinition\n\nCloses gh-26498"
+        },
+        {
+            "hash": "d5e5dcb7e1df31c2e82563713338c89cbe176f21",
+            "message": "Consider non-initialized holders as equal to empty holders\n\nCloses gh-26433"
+        },
+        {
+            "hash": "defc2466b077fec9fdf4f5563aad8b23ae7bf69e",
+            "message": "Fail early FactoryBean instantiation for LinkageError\n\nCloses gh-26425"
+        },
+        {
+            "hash": "a991c23db5e85f5c5f16ae45901d1f558f6b3f4a",
+            "message": "Close mapping streams after the ValidatorFactory has been built"
+        },
+        {
+            "hash": "b928ed8f3751f76ce5ab476550b27b3b0d9bb1a5",
+            "message": "Upgrade to JUnit 4.13.2\n\nCloses gh-26543"
+        },
+        {
+            "hash": "5d70aaacef55185e92b0e465ffc7fbee5818bfaf",
+            "message": "Improve diagnostics for flaky ParallelApplicationEventsIntegrationTests"
+        },
+        {
+            "hash": "566ff5478297c0782189bec06f09585c62fdbeeb",
+            "message": "Polishing\n\nSee gh-26540"
+        },
+        {
+            "hash": "77b7e49fb2531a405e3d098d3573348fc3706906",
+            "message": "Update ref docs for Inner class names\n\nThis commit updates the reference manual to point out that one may use\n`.` instead of `$` as the nested class separator when providing a fully\nqualified class name for a nested class in XML configuration.\n\nThis commit also updates the test for ClassUtils#forName to assert\nsupport for `.` instead of `$`.\n\nCloses gh-26540"
+        },
+        {
+            "hash": "1c6bab23ea0c5d8fa90b594f962d703575da93dd",
+            "message": "Polishing\n\nSee gh-26434"
+        },
+        {
+            "hash": "3e502d4739869b363a6fccf74e054c954aa24b46",
+            "message": "Document removal of duplicate slashes in UriComponentsBuilder\n\nCloses gh-26457"
+        },
+        {
+            "hash": "667256adf97fd08ae70d1eec87216eba2d441416",
+            "message": "Ignore generics when Proxy is supplied to BeanUtils.copyProperties()\n\ngh-24281 introduced support to honor generic type information in\nBeanUtils.copyProperties(), but that introduced a regression.\nSpecifically, if the supplied source or target object lacked generic\ntype information for the return type of the read-method or the\nparameter type of the write-method for a given property, respectively,\nthe two properties would be considered a mismatch and ignored. This can\noccur if the source or target object is a java.lang.reflect.Proxy since\nthe dynamically generated class for the proxy loses the generic type\ninformation from interfaces that the proxy implements.\n\nThis commit fixes this regression by ignoring generic type information\nif either the source or target property is lacking generic type\ninformation.\n\nCloses gh-26531"
+        },
+        {
+            "hash": "8791928f61964c67543a0bdff5b273f5e7bff604",
+            "message": "Update variable detection in UriComponentsBuilder#encode\n\nThis commit better aligns how URI variable placeholders are detected\nin UriComponentsBuilder#encode (i.e. the pre-encoding of the literal\nparts of a URI template) and how they are expanded later on.\nThe latter relies on a pattern that stops at the first closing '}'\nwhich excludes the possibility for well-formed, nested placeholders\nother than variables with regex syntax, e.g. \"{year:\\d{1,4}}\".\n\nUriComponentsBuilder#encode now also stops at the first closing '}' and\nfurther ensures the placeholder is not empty and that it has '{' before\ndeciding to treat it as a URI variable.\n\nCloses gh-26466"
+        },
+        {
+            "hash": "c9147c42819654955ba97a167f2d31388fc78e5e",
+            "message": "Add RSocket to \"Web Reactive\" subtext\n\nCloses gh-26534"
+        },
+        {
+            "hash": "d6f363c634342f3e3748acf0aac21f3b1c7eaebf",
+            "message": "Merge pull request #26538 from izeye\n\n* pr/26538:\n  Update copyright of change file\n  Polish\n\nCloses gh-26538"
+        },
+        {
+            "hash": "87c0e9b48a3e2219de75fb517a700d360acc3b32",
+            "message": "Update copyright of change file\n\nSee gh-26538"
+        },
+        {
+            "hash": "9a4164c4a8bded9a25d57dba0fb4b63e001b3dd0",
+            "message": "Polish\n\nSee gh-26538"
+        },
+        {
+            "hash": "c36b80bd752d62acbe0913111ab9471a482ca2f4",
+            "message": "Update copyright date in reference manual"
+        },
+        {
+            "hash": "bc90512309e8ac5bfb5a9570cff092d3eba52b00",
+            "message": "Fix Checkstyle violation"
+        },
+        {
+            "hash": "edd15646af23f7d80785840cd77222151fc1486e",
+            "message": "Check available processors in ParallelApplicationEventsIntegrationTests\n\nThis commit changes the condition in the if-block to check the number of\navailable processors instead of currently active threads with the hope\nthat doing so will prove more reliable on the CI server."
+        },
+        {
+            "hash": "53cafe728cf0fe1f333dc77e93f2674e54e597a2",
+            "message": "Support to customize rather than replace default codecs\n\nSee gh-26212"
+        },
+        {
+            "hash": "58e9b187fedf03da21c4e2270bb5335b941ccf61",
+            "message": "Enforce standard Java types in YamlProcessor\n\n`spring-beans` ships a `YamlProcessor` that's used as a base class by\n`YamlMapFactoryBean` and `YamlPropertiesFactoryBean`. These\nimplementations have a clear use case: mapping application-internal Yaml\ndocuments for configuration or infrastructure purposes.\n\nSince this use case rarely requires extended types support from the\nunderlying library, and since we're offering ways to list custom types\n(since #25152), we'll restrict to java standard types only by default.\nThis simplifies the setup and focuses the abstract class on the core\nuse cases.\n\nCloses gh-26530"
+        },
+        {
+            "hash": "9b0c2cca9562400f43e002e4ec86366696aeeb99",
+            "message": "Ensure StringDecoder supports multiline delimiters\n\nThis commit makes sure the StringDecoder supports stripping off\nmulti-line delimiters, such as \\r\\n. Specifically, we ensure that the\ndelimiter is stripped from the joined buffer.\n\nCloses gh-26511"
+        },
+        {
+            "hash": "26000ee29f22f3969e7f6ad60cf58e0bf5af1193",
+            "message": "Polishing contribution\n\nCloses gh-26502"
+        },
+        {
+            "hash": "0c2c66b38b14a250dcec75c0b3f45629ff1bc661",
+            "message": "Add HttpHandlerDecoratorFactory\n\nSee gh-26502"
+        },
+        {
+            "hash": "bd8e682c51a6a383df559717d5352188032afb1b",
+            "message": "Simplify BeanUtils.findPrimaryConstructor()\n\nCloses gh-26519"
+        },
+        {
+            "hash": "f7c952cb3e182ae193c7459b833e3fc4f1bd8dfe",
+            "message": "Polishing contribution\n\nCloses gh-26512"
+        },
+        {
+            "hash": "6bc7e12bcd317cabdc5ec818976da6d98cddeacc",
+            "message": "Fix typos in ResponseEntity Javadoc\n\nSee gh-26512"
+        },
+        {
+            "hash": "ab94c7c016dbba6a6990294770dd4dd4eba961f9",
+            "message": "Update WebMvcConfigurer Javadoc for message converters\n\nCloses gh-26388"
+        },
+        {
+            "hash": "8fb9796d1d48eb909b3384b4dcf5968d308ab343",
+            "message": "Polishing contribution\n\nCloses gh-26463"
+        },
+        {
+            "hash": "a264013d7acaf3afee9493ec71cb1d007bf4b400",
+            "message": "Content-Disposition can parse BASE64 encoded filename\n\nSee gh-26463"
+        },
+        {
+            "hash": "cd80b6b4ac9394ee321cf1db8b3d9067616ea542",
+            "message": "Message broker skips messages with user destination\n\nWhen a broker message handler is not configured with any prefixes, it will\nprocess all messages by default, but user destination messages should be\npre-processed by the userDestinationMessageHandler first. This change\nprotects against that.\n\nCloses gh-26474"
+        },
+        {
+            "hash": "164b48e25f658b21242a2e8ae4414022bf594712",
+            "message": "Polishing STOMP/WebSocket config"
+        },
+        {
+            "hash": "eb7b206142aa486fa49c609305e59190247ecb09",
+            "message": "Expose ChannelId from ReactorNettyWebSocketSession\n\nCloses gh-26485"
+        },
+        {
+            "hash": "42061d27bdac076079a3b153b6d73dd10f82db5e",
+            "message": "Upgrade to JUnit 5.7.1\n\nCloses gh-26510"
+        },
+        {
+            "hash": "0d16c9100afc492a6f2258dfc2dfc9c9515438c2",
+            "message": "MIME types by Class for Encoder, Decoder, HttpMessageReader|Writer\n\nCloses gh-26212"
+        },
+        {
+            "hash": "7cdaaa22bd3f3dc49390604932fb8fb7875f24fa",
+            "message": "Extra ObjectMapper registrations in Jackson2CodecSupport\n\nSee gh-26212"
+        },
+        {
+            "hash": "f4c9f6b860d51342899cde0b84b997b8948a40f8",
+            "message": "Media types by Class for HttpMessageConverter\n\nSee gh-26212"
+        },
+        {
+            "hash": "1721b0b8d7c5938c7cf4f01e698c092969a628d4",
+            "message": "Extra ObjectMapper registrations in HttpMessageConverter\n\nSee gh-26212"
+        },
+        {
+            "hash": "836976d7328464bbe5939dd68c58b48678413207",
+            "message": "Increase fudge factor"
+        },
+        {
+            "hash": "59818ceca9c13e7181a11f6985746c946d5ce34b",
+            "message": "Fix StoredProcedure documentation in reference manual\n\nThis commit aligns the documentation in the reference manual with the\nactual source code for StoredProcedure with regard to public execute()\nmethods.\n\nCloses gh-26505"
+        },
+        {
+            "hash": "08ce6baedfa982ed7e9283617e945d5f164fa36f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c52526ad42a6e29ef8353e5da6fa713bd38dbaba",
+            "message": "Fix in MockMultipartHttpServletRequest#getMultipartHeaders\n\nPreviously this method returned headers only when a Content-Type part header\nwas present. Now it is guaranteed to return headers (possibly empty) as long\nas there is a MultipartFile or Part with the given name.\n\nCloses gh-26501"
+        },
+        {
+            "hash": "7a329eba5b274d807ccb39d46c318d69864ac8a1",
+            "message": "Do not retain partial column metadata in SimpleJdbcInsert\n\nPrior to this commit, if an SQLException was thrown while retrieving\ncolumn metadata from the database, SimpleJdbcInsert would generate an\nINSERT statement that was syntactically valid but missing columns,\nwhich could lead to data silently missing in the database (for nullable\ncolumns).\n\nThis commit fixes this by clearing all collected column metadata if an\nSQLException is thrown while processing the metadata. The result is\nthat an InvalidDataAccessApiUsageException will be thrown later while\ngenerating the INSERT statement. The exception message now contains an\nadditional hint to make use of SimpleJdbcInsert#usingColumns() in order\nto ensure that all required columns are included in the generated\nINSERT statement.\n\nSimpleJdbcCall can also encounter an SQLException while retrieving\ncolumn metadata for a stored procedure/function, but an exception is\nnot thrown since a later invocation of the stored procedure/function\nwill likely fail anyway due to missing arguments. Consequently, this\ncommit only improves the warning level log message by including a hint\nto make use of SimpleJdbcCall#addDeclaredParameter().\n\nCloses gh-26486"
+        },
+        {
+            "hash": "91d542e406922379bb2b579b7cb23a26affe92e6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6fde28be98bde1cf46d3635e720ff8c4a79fc038",
+            "message": "Fix checkstyle violations"
+        },
+        {
+            "hash": "1e481cd14c555f62bc0da3261be9a7912dbd8610",
+            "message": "Fix checkstyle violation"
+        },
+        {
+            "hash": "df4ba742cbc7f64a58390624d806e935b3c092af",
+            "message": "Apply global CORS settings to static resources in WebFlux\n\nCloses gh-26495"
+        },
+        {
+            "hash": "996c86f448fcdb20473fbedeeb5b1ba39e44cf5c",
+            "message": "Suppress PREFLIGHT_AMBIGUOUS_MATCH if matches have no CORS config\n\nCloses gh-26490"
+        },
+        {
+            "hash": "0575e6637c0eeac46a9260e7f4144c9a9a93f5f8",
+            "message": "Protobuf Codec supports application/vnd.google.protobuf"
+        },
+        {
+            "hash": "ad8775ef953641f1af3315e2291b3dd9fdca3dd3",
+            "message": "Link to Objenesis property name constant in SpringProperties"
+        },
+        {
+            "hash": "8589804012efda8db2d70094e8efbd8f74d06dc5",
+            "message": "Link to known property name constants in SpringProperties"
+        },
+        {
+            "hash": "c649b74235d4662e2edf005e6abfb89fcc097be1",
+            "message": "Use api-spring-framework attribute for links to SpringProperties\n\nSee gh-26492"
+        },
+        {
+            "hash": "bef5d59e43243416bbf2acd654ee09f6452159c9",
+            "message": "Link to SpringProperties Javadoc from the Testing chapter\n\nCloses gh-26492"
+        },
+        {
+            "hash": "99bd8115dd304d6a8b2c4b487f2073218815d0e3",
+            "message": "Clean up deprecation warnings in Gradle build output"
+        },
+        {
+            "hash": "1a3ff83157d12755c967d5a8162212f0aa4922e1",
+            "message": "Remove obsolete code in HeaderValueHolder"
+        },
+        {
+            "hash": "c19b2851f190d192b97ce1131e2db49636811578",
+            "message": "Ignore null Locale in MockHttpServletResponse\n\nPrior to this commit, calls to setLocale() MockHttpServletResponse\nwould result in a NullPointerException if the supplied Locale was null.\n\nAlthough the Javadoc for setLocale(Locale) and addHeader(String, String)\nin javax.servlet.ServletResponse does not specify how a null\nLocale should be handled, both Tomcat and Jetty simply ignore a null\nvalue.\n\nThis commit therefore updates MockHttpServletResponse to silently\nignore a null Locale passed to setLocale().\n\nCloses gh-26493"
+        },
+        {
+            "hash": "3b4a3431d4cda6049f70a5f7e95a4b994bb59c7e",
+            "message": "Ignore null header value in MockHttpServletResponse\n\nPrior to this commit, calls to setHeader() and addHeader() in\nMockHttpServletResponse would result in an IllegalArgumentException or\nNullPointerException if the supplied header value was null.\n\nAlthough the Javadoc for setHeader(String, String) and\naddHeader(String, String) in javax.servlet.http.HttpServletResponse\ndoes not specify how a null header value should be handled, both Tomcat\nand Jetty simply ignore a null value. Furthermore,\norg.springframework.http.HttpHeaders.add(String, String) declares the\nheaderValue parameter as @Nullable.\n\nThis commit therefore updates MockHttpServletResponse to silently\nignore null header values passed to setHeader() and addHeader().\n\nCloses gh-26488"
+        },
+        {
+            "hash": "c82a4450949287c7d426aa53fe198de2968be312",
+            "message": "Fix Javadoc in StandardServletAsyncWebRequest"
+        },
+        {
+            "hash": "95752ef1c924e38eab5c370b8cee81898c7e83e3",
+            "message": "Improve handling for pre-flight requests\n\n1. Update the HandlerMapping contract to state that CORS checks are expected\nto be applied before returning a handler.\n\n2. DispatcherHandler checks explicitly for pre-flight requests or CORS failed\nrequests and skips handling for both. Technically no change since\nAbstractHandlerMapping already returns a NO_OP_HANDLER for those cases.\nThe purpose however is for the DispatcherHandler to also guarantee more\nexplicitly that no such handling can take place for such cases.\n\nAs one consequence, this makes it possible to invoke the DispatcherHandler from\nanywhere in the WebFilter chain in order to \"handle\" a pre-flight request, and\nthen skip the rest of the WebFilter chain.\n\nSee gh-26257"
+        },
+        {
+            "hash": "0ff50d6d9e8857063d36d590cf67bb9ccf69d5ec",
+            "message": "Improve Javadoc of ServerHttpRequest#getPath\n\nCloses gh-26469"
+        },
+        {
+            "hash": "30cdeb23fe1319bceafde2eef54251a65c54dbb1",
+            "message": "Fix order of headers in DefaultHandlerExceptionResolver\n\nCloses gh-26470"
+        },
+        {
+            "hash": "ecf5113e0e4e22ca57165f1ab6482d47df6d5c0c",
+            "message": "Handle forwarded header parse issues\n\nCloses gh-26459"
+        },
+        {
+            "hash": "80c4e6bb956bc27e577c779bb3d673a88e7f6419",
+            "message": "Fix ContentCachingResponseWrapper comment typo"
+        },
+        {
+            "hash": "5e5d8e4a2314b06e7318865016758774f36f2a1d",
+            "message": "Handle flushingFailed() for Servlet containers\n\nCloses gh-26434"
+        },
+        {
+            "hash": "d7e05aa48f449af4bf0a34623a68e117f2c8cbc9",
+            "message": "Upgrade CI images to ubuntu:focal-20210119"
+        },
+        {
+            "hash": "cf522463192cebb60569fec618cf49b1a0b45b2e",
+            "message": "WebSocketExtension#equals matches sub-classes too\n\nCloses gh-26449"
+        },
+        {
+            "hash": "c5284009a11e87f7001f4c137b7d5313ec1c842c",
+            "message": "Fix UriComponentsBuilder examples in ref docs\n\nCloses gh-26453"
+        },
+        {
+            "hash": "2d29fcd0bbd645e2ab5c91fe41567da86677f656",
+            "message": "Polish Javadoc for TransactionSynchronizationUtils"
+        },
+        {
+            "hash": "5e561623944665f282f5549e3c21b5c1261d7359",
+            "message": "Fix Checkstyle violation\n\nThe @since tag must come before @see tags.\n\nSee gh-26450"
+        },
+        {
+            "hash": "45650f2b276542d666a8f207075286d3f8da5228",
+            "message": "Add @since tag to TransactionSynchronizationUtils.unwrapResourceIfNecessary()\n\nCloses gh-26450"
+        },
+        {
+            "hash": "3e1b1638ef51a19976b03532554b641355e5b470",
+            "message": "Update link for reporting security issues"
+        },
+        {
+            "hash": "e80a23d6ad93eaab11a1869ef1407e729138e672",
+            "message": "Fix CheckStyle violations"
+        },
+        {
+            "hash": "8aeae49f40575d9933a9110d18fb7019ff4e46b4",
+            "message": "Support for servletPath prefix in ServletRequestPathUtils\n\nCloses gh-26445"
+        },
+        {
+            "hash": "f22e2ac578f6db8f988cbbee0af5f381a86fdd04",
+            "message": "Add HttpServletMapping support to MockHttpServletRequest\n\nSee gh-26428"
+        },
+        {
+            "hash": "355aca7665cb524d2e8760194ef6c98620acbbe5",
+            "message": "Fix DelegatingWebMvcConfigurationTests.configurePathPatternParser()"
+        },
+        {
+            "hash": "ec5f99f981b33e28cbc96f78b1fb560166fd9c1a",
+            "message": "Add mutate() to RequestMappingInfo\n\nCloses gh-26428"
+        },
+        {
+            "hash": "03f1b65084d2ca747e882429776be273c67ec508",
+            "message": "Polish Javadoc for ResourceLoader APIs"
+        },
+        {
+            "hash": "0de2833894c24c1e70bde991bad171435c6ecac2",
+            "message": "Upgrade to Jetty 9.4.36, EclipseLink 2.7.8, XStream 1.4.15, Apache Johnzon 1.2.10"
+        },
+        {
+            "hash": "cd9d562129c6bc965e1e4042628d66cd188b7ad3",
+            "message": "Check thread count in ParallelApplicationEventsIntegrationTests"
+        },
+        {
+            "hash": "080ba5d4484eaa7b430a0352b355feef0f7eade5",
+            "message": "Upgrade JDK versions in CI pipeline"
+        },
+        {
+            "hash": "d96448fde94a98a1e59f24e7afa86a6a737292a6",
+            "message": "Fix typo in URI Encoding section of reference docs\n\nCloses gh-26436"
+        },
+        {
+            "hash": "84eed00260460a69c95332ba813b31e063d820c1",
+            "message": "Upgrade to Gradle 6.8.1"
+        },
+        {
+            "hash": "cee51b248aeb132caa1fcf686acaed7dd1cf0317",
+            "message": "Upgrade to AssertJ 3.19.0"
+        },
+        {
+            "hash": "5a640bb635b1056873b6191db30ebf0d7a0ea561",
+            "message": "Expose mvcPatternParser bean in WebMvcConfigurationSupport\n\nSee gh-26427"
+        },
+        {
+            "hash": "5c1cbb769ca4f98fe075b4e1f329aca119e3058f",
+            "message": "Check that PathPatternParser is not set too late\n\nThis commit ensures the PathPatternParser cannot be set after request mappings\nhave been initialized when it is too late.\n\nSee gh-26427"
+        },
+        {
+            "hash": "4a7a2258f9ad8771e9a8225f5a18db156372162a",
+            "message": "Unwrap proxied DataSources in SqlScriptsTestExecutionListener\n\nPrior to this commit, if the DataSource in the\nDataSourceFromTransactionManager was wrapped in a proxy implementing\nInfrastructureProxy, SqlScriptsTestExecutionListener would throw an\nexception stating that the DataSource in the ApplicationContext and the\nDataSource in the DataSourceFromTransactionManager were not the same.\n\nThis commit unwraps both data sources and compares the underlying\ntarget instances to check for equality.\n\nIn addition, this commit makes the unwrapResourceIfNecessary() method in\nTransactionSynchronizationUtils public.\n\nCloses gh-26422"
+        },
+        {
+            "hash": "bad8954e65b5c27d40d19fe98a0e12f8986114d6",
+            "message": "Append unique number to log prefix for Undertow\n\nCloses gh-26430"
+        },
+        {
+            "hash": "e4566c11b8fb3fa5d755339d022dbbc95e910f9c",
+            "message": "Apply PathPatternParser also to BeanNameUrlHandlerMapping\n\nCloses gh-26414"
+        },
+        {
+            "hash": "9d8910d869282195bcaf027ab55d523b7ea44189",
+            "message": "Improve inline documentation for PostProcessorRegistrationDelegate\n\nThis commit introduces warnings in invokeBeanFactoryPostProcessors()\nand registerBeanPostProcessors() to deter people from submitting PRs\nthat result in breaking changes.\n\nCloses gh-26401"
+        },
+        {
+            "hash": "aa7584d2522face93a387d24c3fde24c23da3a77",
+            "message": "Support for Jetty 10\n\nCloses gh-26123"
+        },
+        {
+            "hash": "e537844a093d313595e20cc440506fe8b04bc7db",
+            "message": "Copy headers from part in MultipartBodyBuilder\n\nThis commit makes sure that Part.headers() is copied over when adding a\npart in the MultipartBodyBuilder.\n\nCloses gh-26410"
+        },
+        {
+            "hash": "daa5465003030e0e4b3b5f7829825fb32ec6ae26",
+            "message": "Checkstyle fix"
+        },
+        {
+            "hash": "5a4a677fbd05373d4a63c9b161128cb61cbc9feb",
+            "message": "Fix contextPath request matching with PathPatterns\n\nPrior to this commit, `SimpleUrlHandlerMapping` and other\nimplementations of `AbstractUrlHandlerMapping` would not strip the\nServlet context path from the request path before performing path\nmatching with PathPattern instances.\n\nThis resulted in requests not matching as expected if the application\nwas configured with a Servlet context path.\n\nThis commit ensures that the `RequestPath` \"path whithin the\napplication\" is used for matching against path patterns.\n\nFixes gh-26411"
+        },
+        {
+            "hash": "584dabbb3980dbed5272f79a61aa996d390e528c",
+            "message": "Add all non-file parts as request parameters\n\nCloses gh-26400"
+        },
+        {
+            "hash": "4779323d33e8a365d40a87275b3a635018b5d098",
+            "message": "Clarify behaviour of condition attribute of CachePut\n\nCloses gh-26186"
+        },
+        {
+            "hash": "67112b211ab86a03dc9a18dd1072ae4fb58573dd",
+            "message": "Rollback to midnight in quartz expressions\n\nThis commit makes sure that the CronExpression rolls back the time to\nmidnight when dealing with Quartz expression fields (such as \"L\", \"LW\",\netc.).\n\nCloses gh-26390"
+        },
+        {
+            "hash": "799885fd6de154d375b4817668e0d3822946b470",
+            "message": "Introduce public defineClass variant for SmartClassLoader implementations\n\nCloses gh-26403"
+        },
+        {
+            "hash": "3c959d3515ded1d021954b6b4ab1aba4e25077c3",
+            "message": "Fix grammar in Javadoc"
+        },
+        {
+            "hash": "cfae40afb456c98b2a11be600096da89b8aacafd",
+            "message": "Return 415 for form data with @RequestBody in WebFlux\n\nCloses gh-26386"
+        },
+        {
+            "hash": "1b1ae33efe8dac4c3d890b47193bd2a03ffb1525",
+            "message": "Upgrade to Netty 4.1.58, Jackson 2.12.1, Apache Johnzon 1.2.9"
+        },
+        {
+            "hash": "d80b08084e0babfb24883baf9c55dabb5f234d5b",
+            "message": "Document ordering of RouterFunction beans\n\nCloses gh-26283"
+        },
+        {
+            "hash": "d1a7fed16caab93396103b055bb1b80d6f19cbd4",
+            "message": "Clean up content type in ContentNegotiatingViewResolver\n\nThis commit removes the quality value of the selected media type before\nsetting it in the request attribute.\n\nCloses gh-26315"
+        },
+        {
+            "hash": "469eb8146e3ac278b396a43c1b7cd8432e6f64e4",
+            "message": "Add a missing space in exception message\n\nCloses gh-26385"
+        },
+        {
+            "hash": "35225e5794d9a144eae544b64ebad58120766815",
+            "message": "Add verify(Duration) to MockRestServiceServer\n\nCloses gh-22618"
+        },
+        {
+            "hash": "a7413ea76bf41319d5a9eb24650addb78950900d",
+            "message": "Add recommendation for original multipart filename\n\nSee gh-26299"
+        },
+        {
+            "hash": "c3c36ab498688772269ff85642a501d3d2088f71",
+            "message": "Document choices for async ResponseEntity return values\n\nCloses gh-22614"
+        },
+        {
+            "hash": "ea4fe7eaf7bd76afadabc0317a36edb767168ce0",
+            "message": "Update Gradle Enterprise Plugin versions\n\nCloses gh-26374"
+        },
+        {
+            "hash": "3112dc5f81d3c5fba3964a17cb73d2190a9db806",
+            "message": "Improve JMH Jar configuration"
+        },
+        {
+            "hash": "b07a6b32830b33763299a17a9e8f0f74e2e34ab3",
+            "message": "Upgrade Shadow plugin to version 6.1.0"
+        },
+        {
+            "hash": "6b9d5698cea4538617d79c8db2c1b21fb50bc4cd",
+            "message": "Upgrade to JMH 1.25"
+        },
+        {
+            "hash": "72a9d0ff4bc68f91495a6524fa7ec15cab8e9e48",
+            "message": "Upgrade JMH plugin to 0.5.2"
+        },
+        {
+            "hash": "872255a591e648f2340f6b523031c9718955b7ff",
+            "message": "Fix ConcurrentBeanFactoryBenchmark"
+        },
+        {
+            "hash": "671270dae2b4940ef13f4ad0f36810873b3bac54",
+            "message": "Fix optional deployments regex in release CI pipeline\n\nThis commit fixes the \"optional-deployments\" regex for \".zip\" artifacts;\n\"\\\" do not need to be escaped in YML single-quoted strings."
+        },
+        {
+            "hash": "6ea39fd12250e40e8b69da9dfea3d6599ea3fa27",
+            "message": "Upgrade to Gradle 6.8\n\nCloses gh-26368"
+        },
+        {
+            "hash": "dadef9f5bcc9d252ca83db761809025b5cff2826",
+            "message": "Next development version (v5.3.4-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "26447",
+            "title": "Improve reference documentation on Resources"
+        },
+        {
+            "number": "26462",
+            "title": "Allow AbstractEnvironment subclasses to use custom ConfigurablePropertyResolver and MutablePropertySources"
+        },
+        {
+            "number": "26548",
+            "title": "Upgrade to Reactor 2020.0.4"
+        },
+        {
+            "number": "26552",
+            "title": "Upgrade to Gradle 6.8.2"
+        },
+        {
+            "number": "25795",
+            "title": "Introduce a NativeDetector utility class"
+        },
+        {
+            "number": "26461",
+            "title": "Allow AbstractEnvironment to bypass active/default properties"
+        },
+        {
+            "number": "26371",
+            "title": "Prevent kotlinx.serialization usage on collection of interfaces"
+        },
+        {
+            "number": "26257",
+            "title": "Provide API to Expose the Handling of PreFlight Requests in WebFlux"
+        },
+        {
+            "number": "26546",
+            "title": "IllegalArgumentException due to lack of a cached lookupPath"
+        },
+        {
+            "number": "26545",
+            "title": "Upgrade to Kotlin 1.4.30"
+        },
+        {
+            "number": "26517",
+            "title": "Autowiring shortcut fails with NoSuchBeanDefinitionException after removeBeanDefinition call"
+        },
+        {
+            "number": "26498",
+            "title": "Inefficient reflection operations for destroy method determination"
+        },
+        {
+            "number": "26433",
+            "title": "AbstractBeanDefinition#equals handles propertyValues incorrectly"
+        },
+        {
+            "number": "26543",
+            "title": "Upgrade to JUnit 4.13.2"
+        },
+        {
+            "number": "26434",
+            "title": "Response writing fails to complete with WebFlux on Tomcat"
+        },
+        {
+            "number": "26457",
+            "title": "Document UriComponentsBuilder.pathSegment doesn't allow segments \"without text\""
+        },
+        {
+            "number": "26531",
+            "title": "BeanUtils does not copy properties with generics from a Proxy since 5.3.0"
+        },
+        {
+            "number": "26466",
+            "title": "UriComponentsBuilder '{' '}' may not be encoded although invalid characters"
+        },
+        {
+            "number": "26534",
+            "title": "RSocket support not linked from user guide index"
+        },
+        {
+            "number": "26212",
+            "title": "Configure the ObjectMappers to Use for a Class by MediaType"
+        },
+        {
+            "number": "25152",
+            "title": "Make use of custom types configurable in YamlProcessor"
+        },
+        {
+            "number": "26530",
+            "title": "Enforce standard Java types in YamlProcessor"
+        },
+        {
+            "number": "26511",
+            "title": "StringDecoder fails to strip windows newlines across source buffers"
+        },
+        {
+            "number": "26388",
+            "title": "Update documentation with details on content negotiation and the order of converter registrations"
+        },
+        {
+            "number": "26474",
+            "title": "Exclude User Destination Messages in Broker Message Handler"
+        },
+        {
+            "number": "26485",
+            "title": "Expose ChannelId in ReactorNettyWebsocketSession"
+        },
+        {
+            "number": "26510",
+            "title": "Upgrade to JUnit 5.7.1"
+        },
+        {
+            "number": "26505",
+            "title": "Inconsistency between source code and reference manual for StoredProcedure"
+        },
+        {
+            "number": "26501",
+            "title": "MockPart in request is not recieved in RequestPart in controller"
+        },
+        {
+            "number": "26486",
+            "title": "SimpleJdbcInsert (sporadically) does not insert all columns"
+        },
+        {
+            "number": "26495",
+            "title": "Missing CORS Headers for Static Resources in WebFlux"
+        },
+        {
+            "number": "26490",
+            "title": "CORS Headers Added to Pre-Flight Request on Ambiguous Match Even Without @CrossOrigin"
+        },
+        {
+            "number": "26492",
+            "title": "Document the \"SpringProperties mechanism\" mentioned in the testing chapter"
+        },
+        {
+            "number": "26493",
+            "title": "Ignore null Locale in MockHttpServletResponse"
+        },
+        {
+            "number": "26488",
+            "title": "Ignore null header value in MockHttpServletResponse"
+        },
+        {
+            "number": "26469",
+            "title": "Improve Javadoc of ServerHttpRequest.getPath() to mention query is not included"
+        },
+        {
+            "number": "26470",
+            "title": "DefaultHandlerExceptionResolver handling of media type exception on Tomcat 7+"
+        },
+        {
+            "number": "26459",
+            "title": "No way to affect response when unhandled exceptions thrown from ForwardedHeaderTransformer"
+        },
+        {
+            "number": "26449",
+            "title": "Websocket extensions not working"
+        },
+        {
+            "number": "26453",
+            "title": "UriComponentsBuilder documentation error for HTTP request encoding"
+        },
+        {
+            "number": "26445",
+            "title": "Support for servletPath prefix with PathPatternParser in Spring MVC "
+        },
+        {
+            "number": "26428",
+            "title": "Provide a way to modify RequestMappingInfo conditions"
+        },
+        {
+            "number": "26427",
+            "title": "Provide better lifecyle for WebMvcConfigurer.configurePathMatch"
+        },
+        {
+            "number": "26422",
+            "title": "Unwrap DataSource hidden behind InfrastructureProxy in SqlScriptsTestExecutionListener"
+        },
+        {
+            "number": "26430",
+            "title": "Add unique number to WebFlux log prefix for Undertow server"
+        },
+        {
+            "number": "26414",
+            "title": "WebMvcConfigurationSupport.beanNameHandlerMapping does not set PathPatternParser"
+        },
+        {
+            "number": "26123",
+            "title": "Jetty 10 Support"
+        },
+        {
+            "number": "26410",
+            "title": "BodyInserters.fromMultipartData swallows content type in certain cases"
+        },
+        {
+            "number": "26411",
+            "title": "Simple URL Mapping not working with PathPatternParser when Servlet context path is used"
+        },
+        {
+            "number": "26400",
+            "title": "MockPart is not added to parameter list anymore for Content-Type application/json"
+        },
+        {
+            "number": "26186",
+            "title": "Wrong documentation for CachePut"
+        },
+        {
+            "number": "26390",
+            "title": "CronExpression skips a temporal when last day of the month and `*` expression is used"
+        },
+        {
+            "number": "26403",
+            "title": "Introduce public defineClass variant for SmartClassLoader implementations"
+        },
+        {
+            "number": "26386",
+            "title": "Return 415 for form data via @RequestBody in WebFlux"
+        },
+        {
+            "number": "26283",
+            "title": "Functional Endpoints, unexpected path pattern matching with pathVariable"
+        },
+        {
+            "number": "26315",
+            "title": "Malformed Content-Type Header in Response"
+        },
+        {
+            "number": "22618",
+            "title": "Add overload for MockRestServiceServer.verify with a timeout"
+        },
+        {
+            "number": "26299",
+            "title": "MultipartFile.getOriginalFilename() documentation should warn user not to use it as destination file name"
+        },
+        {
+            "number": "22614",
+            "title": "Document choices for async ResponseEntity return values"
+        },
+        {
+            "number": "26368",
+            "title": "Upgrade to Gradle 6.8"
+        }
+    ]
+}

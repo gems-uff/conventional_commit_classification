@@ -1,0 +1,458 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.4.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 68,
+    "start_delay": 0.0,
+    "duration": 35.575578703703705,
+    "commits_info": [
+        {
+            "hash": "ebf79bdcf15994be8d05b3cbd6f37a7ecaaaa868",
+            "message": "Release v2.4.11"
+        },
+        {
+            "hash": "7a04966d5ce7ac8e940ef5e8fe34c243a573f04a",
+            "message": "Upgrade to jOOQ 3.14.15\n\nCloses gh-28087"
+        },
+        {
+            "hash": "4674f07c5b3816f486bfcfd5de983e4abdecd21e",
+            "message": "Merge pull request #28071 from cdalexndr\n\n* pr/28071:\n  Document that devtools restart doesn't work with AspectJ weaving\n\nCloses gh-28071"
+        },
+        {
+            "hash": "798b282e5889a5afcb8c2175b70759899b3fd9e5",
+            "message": "Document that devtools restart doesn't work with AspectJ weaving\n\nSee gh-28071"
+        },
+        {
+            "hash": "bbb4ac1542f39890690ecacc8349d122bdfea6ac",
+            "message": "Sanitize SPRING_APPLICATION_JSON by default\n\nUpdate `Sanitizer` default keys to include `SPRING_APPLICATION_JSON`.\n\nFixes gh-28045"
+        },
+        {
+            "hash": "ec12d51f30910cae0e5bc28fe13eed87034b11f3",
+            "message": "Polish"
+        },
+        {
+            "hash": "7ebf71ab661f759ebf02ab86f84590f03685b570",
+            "message": "Upgrade to Spring Integration 5.4.11\n\nCloses gh-27948"
+        },
+        {
+            "hash": "dfd36673f7b70aaaca124603b501e5bb187d1412",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "cfeafee826557e8e5352872681e035c1402e623d",
+            "message": "Polish"
+        },
+        {
+            "hash": "0a4d58f221d7e55f2e7116a5c306a0d44025858f",
+            "message": "Merge pull request #28061 from polarbear567\n\n* pr/28061:\n  Polish contribution\n  Add default value for \"s.d.elasticsearch.client.reactive.endpoints\"\n\nCloses gh-28061"
+        },
+        {
+            "hash": "15de85d89affc2b7ea9476c05d0c3d7f138a3c4c",
+            "message": "Polish contribution\n\nSee gh-28061"
+        },
+        {
+            "hash": "0374c3d563860c3484a5a5a65f059959734b2e75",
+            "message": "Add default value for \"s.d.elasticsearch.client.reactive.endpoints\"\n\nSee gh-28061"
+        },
+        {
+            "hash": "c2361aeb04b0871c97365d12f732e1a524ecfea4",
+            "message": "Make WebMvcMetricsFilter set status consistently for all exceptions\n\nCloses gh-27988"
+        },
+        {
+            "hash": "c0895befc24e6d9599e5d112f62bcf26563f046f",
+            "message": "Upgrade to Spring Data 2020.0.13\n\nCloses gh-27912"
+        },
+        {
+            "hash": "eacb9273e33ba7df3d1a4499e333a59a06c4c550",
+            "message": "Polish property mapping in reactive Elastic REST client auto-config\n\nCloses gh-28038"
+        },
+        {
+            "hash": "97348f14f7a38995fe1680758dfe2b1294c42e20",
+            "message": "Upgrade to Spring HATEOAS 1.2.9\n\nCloses gh-27969"
+        },
+        {
+            "hash": "1900a11f8ab121bd0e2c7c7b490277ce0dd981e1",
+            "message": "Fix Undertow's resource loading when filename contains reserved chars\n\nFixes gh-9283"
+        },
+        {
+            "hash": "7f15a37909aff15c4216d2da450152a906e366b7",
+            "message": "Upgrade to Netty tcNative 2.0.43.Final\n\nCloses gh-28030"
+        },
+        {
+            "hash": "cee3449653b5579c9d52a33912eb310906d6fcdb",
+            "message": "Upgrade to Lettuce 6.0.8.RELEASE\n\nCloses gh-28029"
+        },
+        {
+            "hash": "3118c16c4865ae2270892df9d9f82d3cedd029d0",
+            "message": "Upgrade to Micrometer 1.6.11\n\nCloses gh-27910"
+        },
+        {
+            "hash": "4ada440b4d0dc79a6717d27ea73386b86496c65a",
+            "message": "Upgrade to Spring Framework 5.3.10\n\nCloses gh-27909"
+        },
+        {
+            "hash": "c8ff874e91d8b39e461fd5ffbc8827c5e237adb1",
+            "message": "Add builderFor label to ephemeral builder image\n\nAdding a label to the ephemeral builder image cloned from the base\nbuilder image eliminates contention between builds that are run\nconcurrently. Without this label, concurrent builds could result in\na race condition in the Docker daemon if the ephemeral builder image\nshared by builds was deleted by both builds at exactly the same time.\n\nFixes gh-27888"
+        },
+        {
+            "hash": "bb693d73a6707317426bc527e4b65f8820baa113",
+            "message": "Upgrade to Reactor 2020.0.11\n\nCloses gh-27908"
+        },
+        {
+            "hash": "57dcb70910490c54050d27f510630dda1df977af",
+            "message": "Start building against Spring HATEOAS 1.2.9 snapshots\n\nSee gh-27969"
+        },
+        {
+            "hash": "273600bcdd55ee7d46a5928c919517bdd65bdcf5",
+            "message": "Retain distinction between compile and runtime deps of optional deps\n\nPreviously, the optional configuration was added to the compile and\nruntime classpaths of each source set and the the javadoc classpath\nas well. This had a few disadvantages, the most notable of which is\nthat it meant that the configuration was ifrst resolved and then\nthe outcome of the resolution was added to the compile and runtime\nclasspaths. As a result, none of the attributes on the compile and\nruntime classpaths were considered to influence variant selection.\n\nThis commit reworks the optional dependencies plugin so that the\ncompile and runtime classpaths of each source set are now configured\nto extend from the optional configuration. This allows each\nclasspath configuration's attributes to influence the dependencies\nthat are selected from the optional configuration during resolution.\nFor example, when resolving the compile classpath, compile\ndependencies (Usage.JAVA_API) will be selected and when resolving the\nruntime classpath, runtime dependencies (Usage.JAVA_RUNTIME) will be\nselected.\n\nThe above-described change means that runtime dependencies of an\noptional dependencies will no longer leak into the compile classpath.\nAs a result of this, our Gradle plugin's test infrastructure has\nbeen updated so that it no longer references runtime dependencies of\nthe Kotlin Gradle plugin at compile time.\n\nCloses gh-27965"
+        },
+        {
+            "hash": "ab81e3c05c3ca8c91560f0d27eca2e8099c3c06d",
+            "message": "Upgrade to Tomcat 9.0.53\n\nCloses gh-27961"
+        },
+        {
+            "hash": "97f3c82743ff5f8a764aa1016a69b5fac462ce73",
+            "message": "Upgrade to Netty tcNative 2.0.42.Final\n\nCloses gh-27960"
+        },
+        {
+            "hash": "c8ea3af6f7d42c1fb01baffb1df86e3dcdc3caa8",
+            "message": "Upgrade to Netty 4.1.68.Final\n\nCloses gh-27959"
+        },
+        {
+            "hash": "21c53729abcf00ac5a08fa4fb050d5874ab5c276",
+            "message": "Upgrade to Maven War Plugin 3.3.2\n\nCloses gh-27958"
+        },
+        {
+            "hash": "fadf5ba33ab9ba50108c79ad981a5ee3da91903e",
+            "message": "Upgrade to Logback 1.2.6\n\nCloses gh-27957"
+        },
+        {
+            "hash": "3276c977e354aa6c9d41cfa8f5be79c6363af8b9",
+            "message": "Upgrade to jOOQ 3.14.14\n\nCloses gh-27956"
+        },
+        {
+            "hash": "0e3ac71857f2021c6a47dd21a53b6bced162ffdf",
+            "message": "Upgrade to Jetty EL 8.5.70\n\nCloses gh-27955"
+        },
+        {
+            "hash": "d09beaf9686532913e06990bfd2f22171d9ecc9b",
+            "message": "Upgrade to Gson 2.8.8\n\nCloses gh-27954"
+        },
+        {
+            "hash": "6eedf9cfe4a52af7e00cd1142f288443dc83e59c",
+            "message": "Upgrade to Groovy 2.5.15\n\nCloses gh-27953"
+        },
+        {
+            "hash": "a5b5b2d10f8bdbb8568d4a22c82a4287444d1586",
+            "message": "Upgrade to Glassfish EL 3.0.4\n\nCloses gh-27952"
+        },
+        {
+            "hash": "a3762b3f086f68636ce32316b42bf4bd129202b3",
+            "message": "Upgrade to Ehcache3 3.9.6\n\nCloses gh-27951"
+        },
+        {
+            "hash": "c678a0edc0de6b15dcffd4da7c05065d3f06d5f4",
+            "message": "Start building against Spring Integration 5.4.11 snapshots\n\nSee gh-27948"
+        },
+        {
+            "hash": "a0289d770e0f207abd38dee4e36ad5dfdd4f115b",
+            "message": "Merge pull request #27920 from cdalexndr\n\n* pr/27920:\n  Clarify Selenium auto-configuration requires HtmlUnit\n\nCloses gh-27920"
+        },
+        {
+            "hash": "60bc94e1d482904607fe4aad40e151144c497180",
+            "message": "Clarify Selenium auto-configuration requires HtmlUnit\n\nThe auto-configuration requires `HtmlUnit`, so this auto-cofiguration\nonly works if both Selenium and HtmlUnit are used.\n\nPrevents misinterpretation that WebDriver can be auto configured without\nhtmlunit.\n\nSee gh-27920"
+        },
+        {
+            "hash": "29a2321ee8a87a13217b72ec842e95ed5757ca8d",
+            "message": "Fix bug fix icon in changelog configuration\n\nCloses gh-27937"
+        },
+        {
+            "hash": "206176425a834b7095546a070bdc75e51664c0c1",
+            "message": "Broaden testing of ReactiveElasticsearchRestClientAutoConfiguration\n\nCloses gh-27919"
+        },
+        {
+            "hash": "08e79ee472f6a84ac7b57847fbe312c7c2fdc1d9",
+            "message": "Start building against Spring Data 2020.0.13 snapshots\n\nSee gh-27912"
+        },
+        {
+            "hash": "348863c4ae21b0b2ef3404f206177129a61f9f6a",
+            "message": "Start building against Micrometer 1.6.11 snapshots\n\nSee gh-27910"
+        },
+        {
+            "hash": "bcc4529cc5789b04a80356f0836c20d3035eeb44",
+            "message": "Start building against Spring Framework 5.3.10 snapshots\n\nSee gh-27909"
+        },
+        {
+            "hash": "f557a8a5d9ac5765254f6dc92d5107259f34e301",
+            "message": "Start building against Reactor 2020.0.11 snapshots\n\nSee gh-27908"
+        },
+        {
+            "hash": "11c79ac650a3fd4700a6fea6e1b5a78d77bbf184",
+            "message": "Move Docker-based reactive Elasticsearch test into separate class\n\nCloses gh-27907"
+        },
+        {
+            "hash": "1f2035ae640b2b26082acab96f52959cf5bb4419",
+            "message": "Move Docker-based Elasticsearch test into separate class\n\nCloses gh-27904"
+        },
+        {
+            "hash": "47163af9b6b426f17d3d0d0fd67070ab50d68e93",
+            "message": "Fix handling of Zip64 jar files larger than 4,294,967,295 bytes\n\nPreviously, a Zip64 jar file was identified by the number of entries\nin the central directory being 0xFFFF. This value indicates that\nthere the number of entries is too big for the 2-byte field. However,\na jar may be in Zip64 format due to it exceeding the Zip format's\nmaximum size rather than its maximum number of entries so this field\ncannot be used as a reliable indicator. The Zip specification doesn't\nrequire any of the fields of the end of central directory record to\nhave a value of 0xFFFF (2-byte fields) or 0xFFFFFFFF (4-byte fields)\nwhen using Zip64 format so we need to take a different approach.\n\nAdditionally, a number of places in the code assumed that an entry's\noffset would always be available from the central directory file\nheader directly. This assumption did not hold true when the jar was\na Zip64 archive due to its size as the offset's value would be\n0xFFFFFFF indicating that it should be read from the Zip64 extended\ninformation field within the header's extra field instead.\n\nThis commit updates the Zip64 detection to look for the Zip64 end of\ncentral directory locator instead. If present, it begins 20 bytes\nbefore the beginning of the end of central directory record. Its\nfirst four bytes are always 0x07064b50. The code that reads the\nlocal header offset has also been updated to refer to the Zip64\nextended information field when the offset is too large to fit in\nthe 4-byte field in the central directory file header. To allow\ngreater-than-4-byte offsets to be handled, a number of fields,\nmethod parameters, and local variables have had their type changed\nfrom an int to a long.\n\nFixes gh-27822"
+        },
+        {
+            "hash": "93ac6455d377b8dbe6c80376c22d9929610cc0ee",
+            "message": "Document that starter parent enables compilation with -parameters\n\nCloses gh-27762"
+        },
+        {
+            "hash": "6e6a6c059c01147895c67f236f21a25933ca08d9",
+            "message": "Upgrade to Testcontainers 1.16\n\nCloses gh-27882"
+        },
+        {
+            "hash": "4ca39534bc75ae78dc9666b1e98945c4afb1db81",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-27848"
+        },
+        {
+            "hash": "58e9992db91f65d497299d2889e609d495e99515",
+            "message": "Merge pull request #27812 from quaff\n\n* pr/27812:\n  Fix inconsistent devtools doc\n\nCloses gh-27812"
+        },
+        {
+            "hash": "6bf92f06e9e11f061f62505d00bab2ba49dcadcb",
+            "message": "Fix inconsistent devtools doc\n\nSee gh-27812"
+        },
+        {
+            "hash": "319f75e90cc144b98e75e96771751975d4db313c",
+            "message": "Merge pull request #27856 from hpoettker\n\n* pr/27856:\n  Fix typo in javadoc\n\nCloses gh-27856"
+        },
+        {
+            "hash": "831e28b0016a03d29118426ae8fbf8d0f2f823eb",
+            "message": "Fix typo in javadoc\n\nSee gh-27856"
+        },
+        {
+            "hash": "61764389c2dcb70da3e503cc67a2609fb7b1b92d",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-27858"
+        },
+        {
+            "hash": "44eb8c39d274ab70809a3b64d323530d49bf1083",
+            "message": "Align ApplicationTemp with Files.createTempDirectory\n\nUpdate `ApplicationTemp` to align the way that it creates temp folders\nwith the way that `Files.createTempDirectory` works.\n\nCloses gh-27857"
+        },
+        {
+            "hash": "87dbda2339815f983e423b26154815d89a7fea2e",
+            "message": "Ensure TypeConverterConverter is thread safe\n\nUpdate `TypeConverterConverter` do that a new `SimpleTypeConverter` is\nobtained for each `convert` operation. Prior to this commit the same\n`SimpleTypeConverter` could be accessed concurrently from multiple\nthreads which is not allowed.\n\nFixes gh-27829"
+        },
+        {
+            "hash": "69be1c872e501b36be8e75514d7af7540ce3a333",
+            "message": "Rename Spring Buildmaster account to Spring Builds\n\nCloses gh-27816"
+        },
+        {
+            "hash": "8b5d7b0bc051c7fbca786493b4fe8c0541540b03",
+            "message": "Polish"
+        },
+        {
+            "hash": "a8652a89b29a02c7fa8fb6b310118b897bd87f28",
+            "message": "Merge pull request #27755 from brneto\n\n* gh-27755:\n  Polish \"Document how to parameterize REST Docs' output dir with WebTestClient\"\n  Document how to parameterize REST Docs' output dir with WebTestClient\n\nCloses gh-27755"
+        },
+        {
+            "hash": "990b766847653955331b578079a91f0f87dac3cc",
+            "message": "Polish \"Document how to parameterize REST Docs' output dir with WebTestClient\"\n\nSee gh-27755"
+        },
+        {
+            "hash": "c83f6ebaa2734c23707418c003ed7a0a99d2076c",
+            "message": "Document how to parameterize REST Docs' output dir with WebTestClient\n\nSee gh-27755"
+        },
+        {
+            "hash": "f8ef90813f839f34787f362f2712411f5d9d9359",
+            "message": "Allow @MockBean to be used with Framework's @Repeat\n\nFixes gh-27693"
+        },
+        {
+            "hash": "02a988e055a7cd7b86c0fdbd2de6cc9d986fafe8",
+            "message": "Make secrets available to publish_gradle_plugin\n\nFixes gh-27774"
+        },
+        {
+            "hash": "29c187fda9531955f09ff5d6504ca426e6368a4e",
+            "message": "Upgrade to Gradle 6.9.1\n\nCloses gh-27788"
+        },
+        {
+            "hash": "9f402f0428f6c40a6e0048c2f59a00a26a4f03af",
+            "message": "Use snapshot rather than libs-snapshot when generating effective bom\n\nCloses gh-27785"
+        },
+        {
+            "hash": "0a79cf76a3423873a8870447a4d7662a25d025a9",
+            "message": "Update email address used for submitting the Homebrew update\n\nCloses gh-27775"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28087",
+            "title": "Upgrade to jOOQ 3.14.15"
+        },
+        {
+            "number": "28045",
+            "title": "Actuator endpoints do not sanitize SPRING_APPLICATION_JSON by default"
+        },
+        {
+            "number": "27948",
+            "title": "Upgrade to Spring Integration 5.4.11"
+        },
+        {
+            "number": "27988",
+            "title": "Web MVC metrics may have the wrong status when a filter throws an exception other than NestedServletException"
+        },
+        {
+            "number": "27912",
+            "title": "Upgrade to Spring Data 2020.0.13"
+        },
+        {
+            "number": "28038",
+            "title": "Polish property mapping in ReactiveElasticsearchRestClientAutoConfiguration"
+        },
+        {
+            "number": "27969",
+            "title": "Upgrade to Spring HATEOAS 1.2.9"
+        },
+        {
+            "number": "9283",
+            "title": "Embedded Undertow throws MalformedURLException when archive filename contains characters that are reserved in a URL"
+        },
+        {
+            "number": "28030",
+            "title": "Upgrade to Netty tcNative 2.0.43.Final"
+        },
+        {
+            "number": "28029",
+            "title": "Upgrade to Lettuce 6.0.8.RELEASE"
+        },
+        {
+            "number": "27910",
+            "title": "Upgrade to Micrometer 1.6.11"
+        },
+        {
+            "number": "27909",
+            "title": "Upgrade to Spring Framework 5.3.10"
+        },
+        {
+            "number": "27888",
+            "title": "Concurrent image builds cause error deleting builder image"
+        },
+        {
+            "number": "27908",
+            "title": "Upgrade to Reactor 2020.0.11"
+        },
+        {
+            "number": "27965",
+            "title": "Retain distinction between compile and runtime deps of optional deps"
+        },
+        {
+            "number": "27961",
+            "title": "Upgrade to Tomcat 9.0.53"
+        },
+        {
+            "number": "27960",
+            "title": "Upgrade to Netty tcNative 2.0.42.Final"
+        },
+        {
+            "number": "27959",
+            "title": "Upgrade to Netty 4.1.68.Final"
+        },
+        {
+            "number": "27958",
+            "title": "Upgrade to Maven War Plugin 3.3.2"
+        },
+        {
+            "number": "27957",
+            "title": "Upgrade to Logback 1.2.6"
+        },
+        {
+            "number": "27956",
+            "title": "Upgrade to jOOQ 3.14.14"
+        },
+        {
+            "number": "27955",
+            "title": "Upgrade to Jetty EL 8.5.70"
+        },
+        {
+            "number": "27954",
+            "title": "Upgrade to Gson 2.8.8"
+        },
+        {
+            "number": "27953",
+            "title": "Upgrade to Groovy 2.5.15"
+        },
+        {
+            "number": "27952",
+            "title": "Upgrade to Glassfish EL 3.0.4"
+        },
+        {
+            "number": "27951",
+            "title": "Upgrade to Ehcache3 3.9.6"
+        },
+        {
+            "number": "27937",
+            "title": "Fix bug fix icon in changelog configuration"
+        },
+        {
+            "number": "27919",
+            "title": "Improve test coverage of ReactiveElasticsearchRestClientAutoConfiguration"
+        },
+        {
+            "number": "27907",
+            "title": "Move test in ReactiveElasticsearchRestClientAutoConfigurationTests that requires Docker into a separate class"
+        },
+        {
+            "number": "27904",
+            "title": "Move test in ElasticsearchRestClientAutoConfigurationTests that requires Docker into a separate class"
+        },
+        {
+            "number": "27822",
+            "title": "IndexOutOfBoundsException when running a Zip64 jar file larger than 4,294,967,295 bytes"
+        },
+        {
+            "number": "27762",
+            "title": "Document that spring-boot-starter-parent configures Java compilation to use -parameters"
+        },
+        {
+            "number": "27882",
+            "title": "Upgrade to Testcontainers 1.16.0"
+        },
+        {
+            "number": "27848",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "27858",
+            "title": "Align ApplicationTemp creation code with Files.createTempDirectory"
+        },
+        {
+            "number": "27857",
+            "title": "Align ApplicationTemp creation code with Files.createTempDirectory"
+        },
+        {
+            "number": "27829",
+            "title": "Don't use CustomNumberEditor and CustomBooleanEditor for binding conversion"
+        },
+        {
+            "number": "27816",
+            "title": "Rename Spring Buildmaster to Spring Builds on CI"
+        },
+        {
+            "number": "27693",
+            "title": "@MockBean combined with @Repeat results in \"the field cannot have an existing value\" error"
+        },
+        {
+            "number": "27774",
+            "title": "GRADLE_PUBLISH_KEY and GRADLE_PUBLISH_SECRET are not available to publish_gradle_plugin"
+        },
+        {
+            "number": "27788",
+            "title": "Upgrade to Gradle 6.9.1"
+        },
+        {
+            "number": "27785",
+            "title": "Use snapshot rather than libs-snapshot repo when generating effective bom"
+        },
+        {
+            "number": "27775",
+            "title": "Homebrew task fails with GH007: Your push would publish a private email address"
+        }
+    ]
+}

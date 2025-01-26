@@ -11,63 +11,65 @@
     "commits_info": [
         {
             "hash": "70c6fa4a056e5bf6ce1c464d5e4c5bd6431a2828",
-            "message": "2.25.0 release (previous 2.24.10) + release notes updated by CI build 3956\n\n[ci skip-release]\n",
-            "tag_name": null
+            "message": "2.25.0 release (previous 2.24.10) + release notes updated by CI build 3956\n\n[ci skip-release]"
         },
         {
             "hash": "a7ee084e8501b29d74466213c869f9acbd26635c",
-            "message": "Merge pull request #1619 from ttanxu/release/2.x\n\nNew API to clean up all inline mocks after test\r\n\r\n[ci maven-central-release]",
-            "tag_name": null
+            "message": "Merge pull request #1619 from ttanxu/release/2.x\n\nNew API to clean up all inline mocks after test\r\n\r\n[ci maven-central-release]"
         },
         {
             "hash": "959cba41910f7bf215fe66d2932bf3b348d83014",
-            "message": "Merge branch 'release/2.x' into release/2.x",
-            "tag_name": null
+            "message": "Merge branch 'release/2.x' into release/2.x"
         },
         {
             "hash": "1641868a4651bf5c020f7afeb50fc728c3e38d27",
-            "message": "Javadoc\n",
-            "tag_name": null
+            "message": "Javadoc"
         },
         {
             "hash": "d61a8beb9a4bb8234e3685c9c55dff05de8d2673",
-            "message": "Added missing coverage\n",
-            "tag_name": null
+            "message": "Added missing coverage"
         },
         {
             "hash": "cc38b6cce7cc1873a84df921872a065fd87836bd",
-            "message": "Next minor version\n",
-            "tag_name": null
+            "message": "Next minor version"
         },
         {
             "hash": "ebb9b8547422331b8b69d1702a4b62294060d288",
-            "message": "Javadoc and since tags\n",
-            "tag_name": null
+            "message": "Javadoc and since tags"
         },
         {
             "hash": "c3c0d0a9349be4feb45e9bb9b152f6473ad0d42c",
-            "message": "Tweaked javadoc\n",
-            "tag_name": null
+            "message": "Tweaked javadoc"
         },
         {
             "hash": "a6027ac6acd6737032b8dbb839c7d98a492fa1b3",
-            "message": "Tweaked tests\n",
-            "tag_name": null
+            "message": "Tweaked tests"
         },
         {
             "hash": "e44d76e7da56ec94ae2d26d111e0ad0fe6f6c246",
-            "message": "Replace conditional with JUnit assume\n",
-            "tag_name": null
+            "message": "Replace conditional with JUnit assume"
         },
         {
             "hash": "808bae82f1401ce7dfbb23a9c861ac2462920437",
-            "message": "Tweaked the javadoc and method names\n",
-            "tag_name": null
+            "message": "Tweaked the javadoc and method names"
         },
         {
             "hash": "91c8e9c11754db7cdf4d715e38bcd0d6dc18faf6",
-            "message": "Fixes #1614: Add API to clean up mocks.\n\nDue to the introduction of map from weak reference from mock instance to\nits invocation handler, Mockito became vunerable to memory leaks as\nthere are multiple situations where Mockito could unintentionally hold\nstrong references to mock instances in the map record. The strong\nreferences could be through spiedInstance for spies, and arguments used\nto faciliate method stubbing.\n\nMockito could never know if the arguments passed in for method stubbing\nare also strongly referenced somewhere else or not, so Mockito needs to\nsave a strong reference to these arguments to avoid premature GC.\nTherefore to solve cyclic strong references through arguments Mockito\nneeds to explicitly know when mocks are out of their life, and clean\nup all internal strong references associated with them.\n\nThis commit also fixes #1532 and fixes #1533.\n",
-            "tag_name": null
+            "message": "Fixes #1614: Add API to clean up mocks.\n\nDue to the introduction of map from weak reference from mock instance to\nits invocation handler, Mockito became vunerable to memory leaks as\nthere are multiple situations where Mockito could unintentionally hold\nstrong references to mock instances in the map record. The strong\nreferences could be through spiedInstance for spies, and arguments used\nto faciliate method stubbing.\n\nMockito could never know if the arguments passed in for method stubbing\nare also strongly referenced somewhere else or not, so Mockito needs to\nsave a strong reference to these arguments to avoid premature GC.\nTherefore to solve cyclic strong references through arguments Mockito\nneeds to explicitly know when mocks are out of their life, and clean\nup all internal strong references associated with them.\n\nThis commit also fixes #1532 and fixes #1533."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1614",
+            "title": "Memory leak in mockito-inline calling method on mock with at least a mock as parameter"
+        },
+        {
+            "number": "1532",
+            "title": "Nested spies cause memory leaks "
+        },
+        {
+            "number": "1533",
+            "title": "Cross-references and a single spy cause memory leak"
         }
     ]
 }

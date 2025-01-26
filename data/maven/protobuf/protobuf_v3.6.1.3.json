@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.6.1.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 584.054675925926,
+    "commits_info": [
+        {
+            "hash": "66dc42d891a4fc8e9190c524fd67961688a37bbe",
+            "message": "Merge pull request #5433 from davido/remove_mention_of_buffer_in_utils.js\n\nRemove mention of Buffer in utils.js"
+        },
+        {
+            "hash": "da775bcb3825f3c8a41f10a332cfece5830eb881",
+            "message": "utils.js: Fix closure compiler error\n\nApply changes from this commit:\n\n\"Integrated internal changes from Google\"\n13fd045dbb2b4dacea32be162a41d5a4b0d1802f"
+        },
+        {
+            "hash": "3cb0aeca93f0afd5aa05fa83eaf85f4820f465e5",
+            "message": "Revert \"Removed mention of Buffer in byteSourceToUint8Array\"\n\nThis reverts commit 365e540d055636ae458f00a7d80959f9e9798e56."
+        },
+        {
+            "hash": "365e540d055636ae458f00a7d80959f9e9798e56",
+            "message": "Removed mention of Buffer in byteSourceToUint8Array\n\nThe Closure compiler complains about Buffer since that class exists only\nin Node. That logic does not seem to be needed (unit tests and conformance\ntests pass without it), so let's just remove it to solve the problem."
+        }
+    ],
+    "issues": []
+}

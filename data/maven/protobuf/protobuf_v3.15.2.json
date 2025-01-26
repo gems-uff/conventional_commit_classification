@@ -1,0 +1,33 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 5,
+    "start_delay": 0.0,
+    "duration": 3.5082175925925925,
+    "commits_info": [
+        {
+            "hash": "d7e943b8d2bc444a8c770644e73d090b486f8b37",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "1af4657b800b6f80b440c9d8bceeb5f2340a5055",
+            "message": "Updated CHANGES.txt"
+        },
+        {
+            "hash": "09f94e7311ddb407bb5c2ac5d4d65a8357524b0f",
+            "message": "Fix PROTOBUF_CONSTINIT macro redifinition\n\nThe #ifdef block is duplicated with the above (which was fixed in 3.15.1).\r\n\r\nIt would be great to have this fix backported to 3.15.1 (and released as 3.15.2)."
+        },
+        {
+            "hash": "2ff31d34aa39211879fb31a9f5de81a5960f20f0",
+            "message": "Merge pull request #8330 from haberman/rubyfix\n\n[Ruby] Fix for FieldDescriptor.get(msg)."
+        },
+        {
+            "hash": "4e3ea74e420d3fd8a24af239c7e5f4cae577a110",
+            "message": "[Ruby] Fix for FieldDescriptor.get(msg).\n\nThis fix is similar to the previous bug found in\nMessage.[]. The fix is the same: we need to handle\narrays and maps properly.\n\nFixes: https://github.com/protocolbuffers/protobuf/issues/8325"
+        }
+    ],
+    "issues": []
+}

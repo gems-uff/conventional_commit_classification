@@ -1,0 +1,302 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.18",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 58,
+    "start_delay": 0.0,
+    "duration": 110.94297453703703,
+    "commits_info": [
+        {
+            "hash": "b9f1f50b8e8ea01cf0642680af41f450ab4ff6db",
+            "message": "[versioning] pre-release version bump of the changelog as well"
+        },
+        {
+            "hash": "56d54bf1c46f110b6607d2f40829d58ec3e3a53b",
+            "message": "[versioning] pre-release version bump"
+        },
+        {
+            "hash": "e6d8665f0e2d22e18890106d6f57680ded0ba422",
+            "message": "[trivial] [build] .gitignore the jvm locations cachefile"
+        },
+        {
+            "hash": "eecd1a33e457446aa256231acdb93dd618a5754e",
+            "message": "Validate positions during tests"
+        },
+        {
+            "hash": "a234a8e1d1dadc6990f8b8f1d87e93757beafe1c",
+            "message": "[fixes #2691] Add end positions to all generated nodes"
+        },
+        {
+            "hash": "04f17f4dcfbb0e7881d605708467498e3ec56521",
+            "message": "Add to AUTHORS."
+        },
+        {
+            "hash": "648a56cb0adf0c0ad0147898de081c5feee107f0",
+            "message": "Improve Javadoc and consistently use SourceVersion.latest()."
+        },
+        {
+            "hash": "4f360802f59fd25fa08a1201577c19a24493802b",
+            "message": "Fix inconsistency in lombok.toString.callSuper doc"
+        },
+        {
+            "hash": "2e5ea518cc4041f2ef79d5d9cc0f970d805b6e64",
+            "message": "[fixes #2443] Remove multiline Javadoc tags"
+        },
+        {
+            "hash": "b8d49a884ed545176bb491b10b59dde9f481ea95",
+            "message": "[fixes #2695] Create void literal properly"
+        },
+        {
+            "hash": "831e277d0084ee0c37881344e826e0ba3f54c5af",
+            "message": "[website] Clarified @Accessors documentation and added links to issue #2464 and issue #2693"
+        },
+        {
+            "hash": "6f218d5ba896820bfc11143fefacccca8f8042d6",
+            "message": "Merge pull request #2690 from mattiasgronlund/master\n\nDo not lose generic arguments when adding annotations"
+        },
+        {
+            "hash": "01cc651540120947ae1081cea6434704e508574e",
+            "message": "Do not lose generic arguments when adding annotations #2689"
+        },
+        {
+            "hash": "67d66be9eccf050a5f3758273ea2d685217f6d5a",
+            "message": "fixing sneakythrows in ecj, and with that, the tests."
+        },
+        {
+            "hash": "11b6f8f97a6fde9a5f6e39f38e63cdff73742822",
+            "message": "Merge pull request #2684 from Rawi01/npe-javadoc\n\nFix NullPointerException during Javadoc copy"
+        },
+        {
+            "hash": "624c8a5a52d14ba1a6b690809f9ada15f71e15f5",
+            "message": "[fixes #2682] Fix NPE, always add Javadoc return statement"
+        },
+        {
+            "hash": "626c33255bbac12ddab72dda7de2447132f29ae4",
+            "message": "[tests] Support javadoc in ecj tests"
+        },
+        {
+            "hash": "f17dd036384242971546bc443749ad527b8cd21c",
+            "message": "fix #2679"
+        },
+        {
+            "hash": "082584cb634042641d781a28a0b9107daa449dd5",
+            "message": "Merge pull request #2674 from mjaggard/patch-1\n\nAdd information about 2020.3 having Lombok support"
+        },
+        {
+            "hash": "55c7eb32d3a2c1c65b7ae2c5ddaf9c683cbd5eb5",
+            "message": "Add information about 2020.3 having Lombok support\n\nBuilt in support is now available in IntelliJ"
+        },
+        {
+            "hash": "321727559f1c0ab91cba766cd680c9e329025cc1",
+            "message": "[trivial] recording ecj fix in changelog"
+        },
+        {
+            "hash": "d4c3c5580a9fe3ca3d66b1ad425050a894d2b421",
+            "message": "Fix typo"
+        },
+        {
+            "hash": "734b91ea97b825a8c323dabeba43ab45f5a54669",
+            "message": "[build] build is now far less unreliable\n\nTiered compilation used to dump every stage into the same build dir, and included that dir on the classpath,\nwhich means any ordering issues introduced into a build aren't going to result in a failed build,\nthus breaking the build for everybody except those who already had a working lombok in their\nbuild dir before starting a build. The opposite of bootstrapping, in other words.\n\nFixed by having each stage build into its own private stage phase."
+        },
+        {
+            "hash": "ea442e676c9a44aefef7e2c22ac546ffd32f87c1",
+            "message": "[build] the build can now autoclean\n\nautocleaning means that the build system detects that the usual incremental mode,\nwhere the build artefacts are not deleted and instead used to skip steps already performed,\nis not an option due to changes in the build script itself or a change in deps not detectable.\n\nIt works by having a version number which can be incremented, and a system that checks\nfor mismatches and forces a clean."
+        },
+        {
+            "hash": "59bf969500d997382fdc0c83d21ed4bf2d6a401c",
+            "message": "[build] bugfix for mapstructBinding build"
+        },
+        {
+            "hash": "b586c543cdf9338e112ab8a6668262ab350742e4",
+            "message": "[pr #2637] recent versions of ecj double-close the classfile stream, causing corrupt classfiles\n\nWould crash with java.lang.ClassFormatError: Extra bytes at the end of class file de/lomboktest/Application\nFixes https://github.com/mplushnikov/lombok-intellij-plugin/issues/969\n\nfiguring out the problem was the hard work - credits to @Rawi01 for discovering this"
+        },
+        {
+            "hash": "da2c793083efddc9d73342622204b83591aa10a8",
+            "message": "[build] added a publish target for the mapstruct binding jar"
+        },
+        {
+            "hash": "8cfe4c73fab797db2fa5a73402b458a91d5af2ba",
+            "message": "[build] #2616 have lombok-mapstruct-binding contain a java module file and java8 class files."
+        },
+        {
+            "hash": "2b3556878831612bac045808e27030f4a8b30a34",
+            "message": "[build] The 'utils' source files had a dep on main which is not okay; I need to address the build so that this causes errors."
+        },
+        {
+            "hash": "b59db90acffd7f31c3c1108961ad96b9791b24f2",
+            "message": "#2616 attempt to have java9 modules and java8 class files"
+        },
+        {
+            "hash": "6f39ee388cd2f9cbe8940948d069e573d83f60cc",
+            "message": "reorder exports"
+        },
+        {
+            "hash": "80133da5285fbafceaef224fed0f31c06b532b16",
+            "message": "Add documentation for cacheStrategy"
+        },
+        {
+            "hash": "965f2367e0e57744c51b10ac341400b8ec57287a",
+            "message": "[fixes #2657] Use the correct field to query parent type parameters"
+        },
+        {
+            "hash": "e1f82ac4d132769cfc272dccfc916aeba7181718",
+            "message": "[#2645] Fixing the reading of lombok.config on sbt 1.4+"
+        },
+        {
+            "hash": "f51be158c7642ad24efab7417b8894588fb5cfe8",
+            "message": "[website] fixing indents of snippets"
+        },
+        {
+            "hash": "3aace094f336393330ed275e1fb6d6c1f9187e14",
+            "message": "[refactor] reflection code streamlined by sending it through the Permit class"
+        },
+        {
+            "hash": "219bb4bea5035c370614474f630dac454cfe4223",
+            "message": "Update module-info.java\n\nExport the lombok.extern.jackson package"
+        },
+        {
+            "hash": "2e35148abe0245427ce579b2afbb36d1496979ed",
+            "message": "fix css class in documentation"
+        },
+        {
+            "hash": "28fbff467b3f3f3f5a4128313de02c9b1b2cb41d",
+            "message": "[issue #285] Compiling with Maven+Tycho should now work"
+        },
+        {
+            "hash": "647c36f01619d10bd88ec86f05f9833b08d8a371",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "5095cfaac98aa7f841cb88f432ca81fdb79de893",
+            "message": "[#2612] Set VarSymbol.owner"
+        },
+        {
+            "hash": "dfbd843e5ac95dcd10cfb0c3d403d588b4123394",
+            "message": "[#2612] VarSymbol.adr is a bit field"
+        },
+        {
+            "hash": "f04ee37f6bd57564f3529030ac1a5233428894ea",
+            "message": "[#2612] VarSymbol.adr is required for flow analysis in Netbeans"
+        },
+        {
+            "hash": "bfb9435daafe3de9ccc58f377a3f4cdabb872f71",
+            "message": "[versioning] post-release version bump"
+        },
+        {
+            "hash": "b4b034af37c4fa780c8618126000b023a95030c3",
+            "message": "Merge pull request #2676 from andrebrait/patch-1\n\nAdd missing PR number"
+        },
+        {
+            "hash": "b58eae2386d0e2c8749caddbfca1ca7f2b6d73cd",
+            "message": "Add missing PR number"
+        },
+        {
+            "hash": "2fcd0a2f5fd57a4eb4d9b0b3cf5a2da6b1d9a038",
+            "message": "[changelog] adding fix to ExtensionMethod with generics in ecj"
+        },
+        {
+            "hash": "51cc0d4b0a2c1251dc3227f6b4e2828264b9d871",
+            "message": "Merge pull request #2671 from kdombeck/add-changelog\n\nAdd new cache hashCode feature to changelog"
+        },
+        {
+            "hash": "2900a8d1120427de9c65651c4453ff1aa06e565f",
+            "message": "Add new cache hashCode feature to changelog"
+        },
+        {
+            "hash": "0bda744baf91150e477a59756747977475275e46",
+            "message": "Merge pull request #2658 from Rawi01/extension-method-generic\n\nReset inference context for extension methods"
+        },
+        {
+            "hash": "db80bb0a2168245dbae2e1ec565a830e92a7c684",
+            "message": "[fixes #2648] Reset inference context, remove generic information copy\n\nIn Java >= 8 ecj uses the inference context to resolve the generic\ninformation. This one is already set before lombok tries rewrite the\nmethod call. Simply copying the information does not cover all the\ndifferent cases but reseting the inference contexts and running type\ninference again does."
+        },
+        {
+            "hash": "c14aa6a6988f2bffa260f311b7b283078d8108d9",
+            "message": "Merge pull request #2668 from mkurz/fix-sbt-subprojects\n\nFixing reading files in sbt 1.4+ subprojects"
+        },
+        {
+            "hash": "02e3101a0b75b6d0d45387761920b0940c186978",
+            "message": "Fixing reading files in sbt 1.4+ subprojects"
+        },
+        {
+            "hash": "0532285eb8de98e9e4e3fc4131476b5f4ef2740d",
+            "message": "Merge pull request #2685 from Rawi01/copy-name-npe\n\nReplace duplicate code with new method, add null check"
+        },
+        {
+            "hash": "e131cf6b42add619b88fe60c2bff143b5276d55a",
+            "message": "[refactor] Replace duplicate code with new method, add null check"
+        },
+        {
+            "hash": "8ba5df7161f7a6ef24b67d783f3a4fd6c2359fee",
+            "message": "[trivial] hey, setting automatic module name is probably a good idea. Can't hurt."
+        },
+        {
+            "hash": "208329f10f88a89806f4c115a851235718cea81b",
+            "message": "Fix configuration test, the configuration app generates platform-specific line-endings"
+        },
+        {
+            "hash": "c9f6766b6365b72a155d701c2c5714b181e80a6e",
+            "message": "Run tests if no exclusions match"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2691",
+            "title": "Feature request [internal]: Universally fix up the Javac.storeEnd table"
+        },
+        {
+            "number": "2443",
+            "title": "[BUG] @Getter/@Setter Javadocs can't handle line breaks properly in @param/@return"
+        },
+        {
+            "number": "2695",
+            "title": "[BUG] Invalid com.sun.source.tree.LiteralTree generated by lombok?"
+        },
+        {
+            "number": "2464",
+            "title": "Allow noIsPrefix for getters on a per-getter basis"
+        },
+        {
+            "number": "2693",
+            "title": "Change lombok's property capitalization code. `Field xName` -> `getxName()`."
+        },
+        {
+            "number": "2689",
+            "title": "[BUG] SuperBuilder not compatible with lombok.addNullAnnotations = checkerframework"
+        },
+        {
+            "number": "2682",
+            "title": "[BUG] NullPointerException during Javadoc copy"
+        },
+        {
+            "number": "2679",
+            "title": "It seems I have lived for 18202 years "
+        },
+        {
+            "number": "2616",
+            "title": "[BUG] Lombok and MapStruct no longer work on JDK 1.8"
+        },
+        {
+            "number": "2657",
+            "title": "[BUG] NullPointerException when compiling class with Builder/toBuilder on a method"
+        },
+        {
+            "number": "2645",
+            "title": "[BUG] lombok.config files aren't read in when compiling with sbt 1.4"
+        },
+        {
+            "number": "285",
+            "title": "lombok should run flawlessly as agent in ecj environment. Lombok as AP in ecj is broken."
+        },
+        {
+            "number": "2612",
+            "title": "[BUG] [Regression] NetBeans integration broken in 1.18.16"
+        },
+        {
+            "number": "2648",
+            "title": "[BUG] ExtensionMethod for generic types does not work with generic parameters in ecj"
+        }
+    ]
+}

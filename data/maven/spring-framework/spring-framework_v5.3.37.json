@@ -1,0 +1,98 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.37",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 50.995185185185186,
+    "commits_info": [
+        {
+            "hash": "aca8b5d2f5a222244e35ad4e0ad67fbc3a101327",
+            "message": "Release v5.3.37"
+        },
+        {
+            "hash": "0ce1ef97ce698a0fff0e2965ba8deb417f6de429",
+            "message": "Polishing (aligned with 6.0.x)"
+        },
+        {
+            "hash": "e26ea007faa0f9898df4ae4e0f881f08026e31d9",
+            "message": "Upgrade to spring-javaformat-checkstyle 0.0.42 and Netty 4.1.111"
+        },
+        {
+            "hash": "c10b6c2c3e85c3de818a336a856f98dbe645bf25",
+            "message": "Upgrade to Reactor 2020.0.45\n\nCloses gh-33010"
+        },
+        {
+            "hash": "63568e6c4f510f4a36c0cb0b21006cd33ee26624",
+            "message": "Skip ajc-compiled aspects for ajc-compiled target classes\n\nIncludes defensive ignoring of incompatible aspect types.\n\nCloses gh-32970\n\n(cherry picked from commit 0ea96b48065fe2c1bbbe4b537849ded0ad821280)"
+        },
+        {
+            "hash": "d41048528f29f41ab17fbe785cade859e690e4f2",
+            "message": "Avoid NoSuchMethodException for annotation attribute checks\n\nCloses gh-32921\n\n(cherry picked from commit b08883b65c19cbed6e7a93990194977f5af73e0a)"
+        },
+        {
+            "hash": "2384474615945b30f9a8f45231007d6c7c3a9878",
+            "message": "Support compilation of map indexing with primitive in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into a Map using a primitive literal\n(boolean, int, long, float, or double).\n\nThis commit adds support for compilation of such expressions by\nensuring that primitive literals are boxed into their corresponding\nwrapper types in the compiled bytecode.\n\nCloses gh-32903\n\n(cherry picked from commit aed1d5f76271dd8b4082d77a1b42e258d1ad8c86)"
+        },
+        {
+            "hash": "0f04052ba1f9225dcfcb4ee0942110049af1ca20",
+            "message": "Support compilation of array and list indexing with Integer in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into an array or list using an\nInteger.\n\nThis commit adds support for compilation of such expressions by\nensuring that an Integer is unboxed into an int in the compiled\nbytecode.\n\nSee gh-32694\nCloses gh-32908\n\n(cherry picked from commit 079d53c8d69c17e58422303a9f6a80b952c27106)"
+        },
+        {
+            "hash": "98aa03c0c9c1dc02a97d79404f3567b4f2bac310",
+            "message": "Test detection of original generic method for CGLIB bridge method\n\nIncludes isBridgedCandidateFor optimization (aligned with 6.0.x)\n\nSee gh-32888"
+        },
+        {
+            "hash": "3e45b76132494af6cf929dffcfcd395cc741869a",
+            "message": "Polishing\n\n(cherry picked from commit 6c08d9399239f421d0a19fc838e3d9d623d7e2e0)"
+        },
+        {
+            "hash": "d42c9204efe48f420b3b73d3599ca2dd52992c24",
+            "message": "Defensive handling of incompatible advice methods\n\nThis covers AspectJ transaction and caching aspects when encountered by Spring AOP.\n\nCloses gh-32882\nSee gh-32793\n\n(cherry picked from commit 6d7cd9c7dc94dc55af9a8c4fba3171fedf5931b7)"
+        },
+        {
+            "hash": "d2babd46a2648fd135cc12b7beca5eae64f1468b",
+            "message": "Next development version (v5.3.37-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33010",
+            "title": "Upgrade to Reactor 2020.0.45"
+        },
+        {
+            "number": "32970",
+            "title": "AspectJ CTW aspects executed twice"
+        },
+        {
+            "number": "32921",
+            "title": "AnnotationUtils performance degrades with deep stacks"
+        },
+        {
+            "number": "32903",
+            "title": "SpEL compilation fails when indexing into a `Map` with a primitive"
+        },
+        {
+            "number": "32694",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32908",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32888",
+            "title": "BeanUtils.copyProperties no longer copies generic type properties from a base class that has been enhanced"
+        },
+        {
+            "number": "32882",
+            "title": "Application not starting with @EnableTransactionManagement(mode = AdviceMode.ASPECTJ) "
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        }
+    ]
+}

@@ -1,0 +1,522 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 88,
+    "start_delay": 0.0,
+    "duration": 77.86153935185185,
+    "commits_info": [
+        {
+            "hash": "34764252dcd1a74db7c965059835d3655b70e528",
+            "message": "Release v6.1.12"
+        },
+        {
+            "hash": "bb17ad8314b81850a939fd265fb53b3361705e85",
+            "message": "Efficient ETag parsing"
+        },
+        {
+            "hash": "63486bf19cfb4d61004b565b08789fd12baaf0b4",
+            "message": "Upgrade to Tomcat 10.1.28, Jetty 12.0.12, Netty 4.1.112, Undertow 2.3.15"
+        },
+        {
+            "hash": "d0bff584d7a2b276cb76669662189a5938be055a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8be5010f5d1d57667e7612f835d3ff591817ac0a",
+            "message": "LocaleEditor supports BCP 47 language tags as well\n\nCloses gh-33348"
+        },
+        {
+            "hash": "86761cd2337db656aae7218a24f16fb8ad2da72c",
+            "message": "Upgrade to Reactor 2023.0.9\n\nCloses gh-33326"
+        },
+        {
+            "hash": "07cdef410ed828546f741dacf8ae03b62193213b",
+            "message": "Upgrade to Micrometer 1.12.9\n\nCloses gh-33325"
+        },
+        {
+            "hash": "e74406afd09fefb3bac59c8e0feef3a9aceead1d",
+            "message": "Introduce withAssignmentDisabled() option for SimpleEvaluationContext\n\nTo support additional use cases, this commit introduces a\nwithAssignmentDisabled() method in the Builder for\nSimpleEvaluationContext.\n\nCloses gh-33319"
+        },
+        {
+            "hash": "fe4fd004291a1f2704281eb839609cf9e2fb5bea",
+            "message": "Polishing contribution\n\nCloses gh-33374"
+        },
+        {
+            "hash": "1703b71563ed6b159965c8962b71015c9f74c583",
+            "message": "Fix incorrect weak ETag assertion\n\nSee gh-33374"
+        },
+        {
+            "hash": "1911ca728d8827d9a558c0ea6ecca8354434e9ff",
+            "message": "Support invoking bridged suspending functions in AopUtils\n\nCloses gh-33045"
+        },
+        {
+            "hash": "f4a73b79b844486da5d39f4c0b7b997c72eb56ca",
+            "message": "Avoid CacheAspectSupport#findInCaches fall through to reactive handler\n\nPrior to this commit if the return type is a CompletableFuture but a\ncache get returns null, the execution falls through to the\nreactiveCachingHandler.\n\nThis commit ensures that evaluation instead continues onto the next\ncache (if any).\n\nCloses gh-33371"
+        },
+        {
+            "hash": "289c35c82973bfc59684d34896677e2841104232",
+            "message": "Merge pull request #33368 from tafjwr\n\n* pr/33368:\n  Polish \"Fix predicate setup in test\"\n  Fix predicate setup in test\n\nCloses gh-33368"
+        },
+        {
+            "hash": "749145be2a4713c5b293be7803c77bd2cf6c36e9",
+            "message": "Polish \"Fix predicate setup in test\"\n\nSee gh-33368"
+        },
+        {
+            "hash": "28eece3da14e40e3b2068bc4e7e8ef2e6bda73da",
+            "message": "Fix predicate setup in test\n\nSee gh-33368"
+        },
+        {
+            "hash": "2b8225f11ca5621e92243a88f15aa5b8e4f335ed",
+            "message": "Polish \"Sync GHA setup\""
+        },
+        {
+            "hash": "1e6767ac030ffb02ffb275182f5c5621b7c93e54",
+            "message": "Sync GHA setup"
+        },
+        {
+            "hash": "7a250aa8ea9e4d51bc5ced6d833684d00f305702",
+            "message": "Polish\n\nSee gh-33354"
+        },
+        {
+            "hash": "21bc8726d6f3838a6960fbda15130b88fae3f897",
+            "message": "Merge pull request #33354 from GoncaloPT\n\n* pr/33354:\n  Polish \"Fix error codes in Customizing Validation Errors section\"\n  Fix error codes in Customizing Validation Errors section\n\nCloses gh-33354"
+        },
+        {
+            "hash": "df7ac9b308b13f1d340bbb1c2b80b5241d0c9172",
+            "message": "Polish \"Fix error codes in Customizing Validation Errors section\"\n\nSee gh-33354"
+        },
+        {
+            "hash": "43217bdf069ae05abd8a6262c5e7ef0f8edfabc9",
+            "message": "Fix error codes in Customizing Validation Errors section\n\nSee gh-33354"
+        },
+        {
+            "hash": "a31945f8b6543c1683d44655348aa86ec4d60904",
+            "message": "Fix syntax error in RestClient documentation\n\nCloses gh-33350"
+        },
+        {
+            "hash": "a0edf129eb9ed7727444f535d1f5240273971140",
+            "message": "Fix misleading statement in ReactorResourceFactory javadoc\n\nCloses gh-33338"
+        },
+        {
+            "hash": "bcffa15c7dd3faeb18391f096961620e225a52db",
+            "message": "Reinstate qualifier support for JSR-330 @⁠javax.inject.Named\n\nThis commit revises QualifierAnnotationAutowireCandidateResolver to\nreinstate \"qualifier\" support for the legacy JSR-330\n@⁠javax.inject.Named annotation.\n\nSee gh-31090\nCloses gh-33345"
+        },
+        {
+            "hash": "f9d2641fd59a39b149277c707dd277922c3aa5d7",
+            "message": "Update field name to reflect switch to Jakarta"
+        },
+        {
+            "hash": "3b506e11a1ab1a39c309604f0b0c38fd0e8d3952",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ddee309e1188a9e454201f23b1e3ee14e3fa0039",
+            "message": "Merge pull request #33341 from pcvolkmer\n\n* pr/33341:\n  Add missing Kotlin example for expectAll()\n\nCloses gh-33341"
+        },
+        {
+            "hash": "7e4884fcfaf6a35b065bef0d77e567c512a246b2",
+            "message": "Add missing Kotlin example for expectAll()\n\nSee gh-33341"
+        },
+        {
+            "hash": "38a3d18256935741fa56a05bdd4f7d2ff7980b63",
+            "message": "Start Observation before scope open for Scheduled operation\n\nWhen ScheduledAnnotationReactiveSupport adds the Observation to the\ncontext, Reactor opens a scope through the Context Propagation API.\nThis happens before TrackingSubscriber would start the Observation and\nopening a scope without starting an Observation is invalid.\n\nThis change moves the Observation start before the scope opening.\n\nCloses gh-33349"
+        },
+        {
+            "hash": "6c74fee5e88073ec321e956f7c5a1dd5b00f2b08",
+            "message": "Remove unnecessary error signal from DefaultRestClient\n\nBefore UnknownContentTypeException is thrown, it is added to the current\nObservation but since UnknownContentTypeException is a\nRestClientException, the exception is added again in one of the\ncatch blocks later on.\n\nCloses gh-33347"
+        },
+        {
+            "hash": "36e84a5209db093ff2affd53bc7b39022f5e9ba7",
+            "message": "Fix RestClient instrumentation\n\nClientHttpResponse implements Closeable and the close method of\nDefaultConvertibleClientHttpResponse also stops the current Observation.\n\nBefore this change exiting the try-with-resource block stopped the\nObservation since it called close on ClientHttpResponse.\nAfter this, there were multiple error and stop calls on the Observation\nin the catch blocks after the Observation was already stopped\nwhich is invalid.\n\nThis change reorders the flow by stopping the Observation in the\nfinally block (closing ClientHttpResponse) and not stopping\nthe Observation in any of the catch blocks.\n\nCloses gh-33346"
+        },
+        {
+            "hash": "1e97b2137b1addb44ec9e58779c2a406f132abf7",
+            "message": "Disable class data sharing (CDS) for tests\n\nPrior to this commit, the Gradle build output the following warning\nmultiple times.\n\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n\nSince we don't need CDS enabled for our tests, I've added `-Xshare:off`\nas a JVM argument for our tests to disable CDS.\n\n(cherry picked from commit 27985b1439950106454da11a0a06c6b131938af9)"
+        },
+        {
+            "hash": "5e4e530c59812c7d8d2b4d2ba292861dc9cecec5",
+            "message": "Remove Java 21 classpath entries in Eclipse projects\n\nSince the me.champeau.mrjar stores Java 21 main and test sources in\nnon-standard locations, and since we can only use a single JDK within\nEclipse, this commit updates `ide.gradle` to remove `java21` classpath\nentries in Eclipse projects."
+        },
+        {
+            "hash": "76b2d13b2cd2adc9b0ccf6461bbe7e15532cd04d",
+            "message": "Add support for changing context path in ServletRequestPath\n\nThis commit implements modifyContextPath in ServletRequestPath and\napply the same logic of concatenating the servlet path with the\ncontext path.\n\nCloses gh-33251"
+        },
+        {
+            "hash": "9b85a246d83dd9386889c0edc47dfeffbbc8b6f8",
+            "message": "SimpleAsyncTaskScheduler stops accepting new tasks when isShutdown\n\nThis changes the criteria for simplified task rejection logging from\nto be that the executor is in the shutdown phase, not fully terminated.\n\nSee gh-33334\nCloses gh-33336"
+        },
+        {
+            "hash": "5a994078479c5ba5e5e63bbb7cc15411070b24d2",
+            "message": "Start building against Reactor 2023.0.9 snapshots\n\nSee gh-33326"
+        },
+        {
+            "hash": "05bd246cab05173fa1a066073bec8793dd3dfc07",
+            "message": "Start building against Micrometer 1.12.9 snapshots\n\nSee gh-33325"
+        },
+        {
+            "hash": "0127de5a7a80319a9a7973ad125002309a591a77",
+            "message": "Enforce read-only semantics in SpEL's SimpleEvaluationContext\n\nSimpleEvaluationContext.forReadOnlyDataBinding() documents that it\ncreates a SimpleEvaluationContext for read-only access to public\nproperties; however, prior to this commit write access was not disabled\nfor indexed structures when using the assignment operator, the\nincrement operator, or the decrement operator.\n\nIn order to better align with the documented contract for\nforReadOnlyDataBinding(), this commit makes it possible to disable\nassignment in general in order to enforce read-only semantics for\nSpEL's SimpleEvaluationContext when created via the\nforReadOnlyDataBinding() factory method. Specifically:\n\n- This commit introduces a new isAssignmentEnabled() \"default\" method\n  in the EvaluationContext API, which returns true by default.\n\n- SimpleEvaluationContext overrides isAssignmentEnabled(), returning\n  false if the context was created via the forReadOnlyDataBinding()\n  factory method.\n\n- The Assign, OpDec, and OpInc AST nodes -- representing the assignment\n  (=), increment (++), and decrement (--) operators, respectively --\n  now throw a SpelEvaluationException if assignment is disabled for the\n  current EvaluationContext.\n\nCloses gh-33319"
+        },
+        {
+            "hash": "fcc99a67b6e9ffe34c170a7f817353408ec567da",
+            "message": "Support lists for varargs invocations in SpEL\n\nThe changes made in conjunction with gh-33013 resulted in a regression\nfor varargs support in SpEL expressions. Specifically, before gh-33013\none could supply a list -- for example, an \"inline list\" -- as the\nvarargs array when invoking a varargs constructor, method, or function\nwithin a SpEL expression. However, after gh-33013 an inline list (or\ncollection in general) is no longer converted to an array for varargs\ninvocations. Instead, the list is supplied as a single argument of the\nresulting varargs array which breaks applications that depend on the\nprevious behavior.\n\nAlthough it was never intended that one could supply a collection as\nthe set of varargs, we concede that this is a regression in existing\nbehavior, and this commit therefore restores support for supplying a\njava.util.List as the varargs \"array\".\n\nIn addition, this commit introduces the same \"list to array\" conversion\nsupport for MethodHandle-based functions that accept varargs.\n\nNote, however, that this commit does not restore support for converting\narbitrary single objects to an array for varargs invocations if the\nsingle object is already an instance of the varargs array's component\ntype.\n\nSee gh-33013\nCloses gh-33315"
+        },
+        {
+            "hash": "8afff3359bc201f228616275123e670a5ad8fd91",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c57c2272a1d2a214bbbacac166a0845f287bbc73",
+            "message": "Throw exception for failure to set property as index in SpEL\n\nPrior to this commit, the Indexer in the Spring Expression Language\n(SpEL) silently ignored a failure to set a property via the indexed\nproperty syntax (['<property name>'] = <new value>) – for example, if\nproperty write access was disabled in the EvaluationContext.\n\nThis commit addresses this issue by properly throwing a\nSpelEvaluationException in PropertyIndexingValueRef.setValue(Object) if\nthe property could not be set.\n\nCloses gh-33310"
+        },
+        {
+            "hash": "8ec23a0fcc65a6b00b415bc7d0bf9a08e7463034",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8badae9d72d99dc896060ffe829e37763073872d",
+            "message": "Convert primitive array to Object[] when invoking varargs method in SpEL\n\nPrior to this commit, SpEL incorrectly wrapped a primitive array in an\nObject[] array when invoking Object[] varargs methods and constructors.\n\nThis commit addresses this by updating the convertArguments(...) method\nin ReflectionHelper as follows when the user supplies the varargs\nalready packaged in a primitive array.\n\n- When deciding whether to convert a single element passed as varargs,\n  we now check if the argument is an array that is assignable to the\n  varargs array type.\n\n- When converting an array supplied as the varargs, we convert that\n  array to the varargs array type.\n\nCloses gh-33317"
+        },
+        {
+            "hash": "444e7eeb741e59169ebd500a68867ca9c5169e78",
+            "message": "Enable test for primitive array to Object[] conversion in SpEL\n\nSee gh-33212"
+        },
+        {
+            "hash": "cb6a5baac508921486fd13a7a91cab9d7625868b",
+            "message": "Support conversion from primitive array to Object[] in ConversionService\n\nPrior to this commit, the ConversionService failed to convert a primitive\narray (such as int[]) to an Object[] due to an error in the logic in\nArrayToArrayConverter.\n\nThis commit addresses this by augmenting the \"can bypass conversion\"\ncheck in ArrayToArrayConverter to ensure that the supplied source object\nis an instance of the target type (i.e., that the source array can be\ncast to the target type array without conversion).\n\nCloses gh-33212"
+        },
+        {
+            "hash": "3b2a818f1e18f8643d3cecc06ed609eea39ba086",
+            "message": "Upgrade to Java 17.0.12"
+        },
+        {
+            "hash": "84d1122190ed84d11d3c9e0fd62ac6c62799a647",
+            "message": "Shorten CI and deploy snapshot jobs to 60 minutes\n\nCloses gh-33302"
+        },
+        {
+            "hash": "722dcae1b167b3c5ea286c4ab779e2df00ff16f4",
+            "message": "Fix buffer leak in MultipartParser\n\nThis change fixes a buffer leak when the MultipartParser is encountering\na body DataBuffer that only contains a boundary.\n\nCloses gh-33094"
+        },
+        {
+            "hash": "850a0de1b0c6aec5ff9e2e4573df9498e5b7171e",
+            "message": "Suppress deprecated warnings for autowiring\n\nThis commit extends our handling of deprecated with AOT to autowiring.\n\nCloses gh-33295"
+        },
+        {
+            "hash": "321e8a58aedc8c9e32955770f720caf10bdb8aff",
+            "message": "Document that NoOpResponseErrorHandler is not a good fit with RestClient\n\nCloses gh-33276"
+        },
+        {
+            "hash": "46ba13b6451d7cb624512bd5c363819e62f1e47a",
+            "message": "Review Caching infrastructure documentation\n\nCloses gh-33288"
+        },
+        {
+            "hash": "9d9e621efe06eedfad3735d3669a2e8b11dd9b32",
+            "message": "Defensive singleton check for non-registered bean\n\nCloses gh-33286"
+        },
+        {
+            "hash": "5aa38833dddf427c3d702930bf1678a126806191",
+            "message": "Fix XJC configuration to re-enable Eclipse IDE support\n\nOur recent switch from the `org.unbroken-dome.xjc` plugin to the\n`com.github.bjornvester.xjc` plugin resulted in errors when trying to\nimport Spring Framework projects into the Eclipse IDE.\n\nThis commit fixes those issues as follows.\n\n- @wilkinsona revised the XJC configuration in `spring-oxm.gradle` to\n  avoid the ConcurrentModificationException encountered when running\n  `./gradlew eclipse`.\n\n- I added a workaround in `ide.gradle` to manually remove lingering\n  \"main\" classpath entries for sources generated by XJC.\n\nCo-authored-by: Andy Wilkinson <andy.wilkinson@broadcom.com>\n\nCloses gh-33264"
+        },
+        {
+            "hash": "9aac24c18ae5708788632dac4f1dc1f59159b912",
+            "message": "Merge pull request #33277 from sheip9\n\n* pr/33277:\n  Polish \"Fix reference to configurePathMatching in code sample\"\n  Fix reference to configurePathMatching in code sample\n\nCloses gh-33277"
+        },
+        {
+            "hash": "ea665d776d2dae5d5feed0059470f4b9954bc30c",
+            "message": "Polish \"Fix reference to configurePathMatching in code sample\"\n\nSee gh-33277"
+        },
+        {
+            "hash": "7a2fc2ff09cbe5050e938ff85d4f24950ddb1e50",
+            "message": "Fix reference to configurePathMatching in code sample\n\nSee gh-33277"
+        },
+        {
+            "hash": "52849819def318034015a029020d64e0aa21a0a7",
+            "message": "Detect deprecation on enclosing classes as well\n\nThis commit improves CodeWarnings so that it detects if an enclosing\nclass is deprecated. Previously, it would only consider the annotated\nelement itself and the enclosing element is important for a class as\nit is required to refer to it.\n\nCloses gh-33273"
+        },
+        {
+            "hash": "bcdc991838ad7161a64fdb0c75f55b8374b7a28d",
+            "message": "Switch to Shadow plugin fork\n\nThis commit fixes to a fork of the shadow plugin that fixes support\nwith recent Gradle releases.\n\nSee https://github.com/johnrengelman/shadow/pull/876"
+        },
+        {
+            "hash": "589f17f48bf49f1f61cb8e7f83ddb88bef49e3ec",
+            "message": "Polish \"Upgrade XJC processing to com.github.bjornvester.xjc\"\n\nSee gh-33264"
+        },
+        {
+            "hash": "936630828552a85c05d852a140e95f3c02e91093",
+            "message": "Fix Gradle warning in RuntimeHintsAgentPlugin\n\nFixing the following warning in the runtime hints plugin configuration:\nhttps://docs.gradle.org/8.9/userguide/upgrading_version_8.html#test_task_default_classpath"
+        },
+        {
+            "hash": "12b996b07d499a53f0188714446d8ae927c3595f",
+            "message": "Upgrade XJC processing to com.github.bjornvester.xjc\n\nThis commit upgrades our build to use a different plugin for XJC\nprocessing, so that Gradle doesn't output a compatibility warning\nanymore.\n\nUnfortunately, com.github.bjornvester.xjc only works against main\nsources and our schema is only used for test purposes. This commit\ntherefore reconfigure the task to remove the xjc main source set and\napply it to the test source set instead.\n\nCloses gh-33264"
+        },
+        {
+            "hash": "656d08f075a0d2d57e73e6b4d2b158c76cab3a2e",
+            "message": "Fix warning in doc generation"
+        },
+        {
+            "hash": "6e9a19212f440d1aa2c6e14c67c2771c33cf5b6f",
+            "message": "Consistently check for Content-Length value\n\nThis commit makes sure to consistently check that the content length\nis not set above 2GB. Previously it was only checked in\nsetContentLength.\n\nCloses gh-33256"
+        },
+        {
+            "hash": "83ff8e4e98272127de3ba73b7ac53e83a7658149",
+            "message": "Support JAXBElement subtypes in Jaxb2XmlEncoder\n\nCloses gh-33258"
+        },
+        {
+            "hash": "cbdaafd409b4a35080eafdf512d1637a96ed62c6",
+            "message": "Order dependencies"
+        },
+        {
+            "hash": "e5c505b71a70f6fb036abf507ce4e238933ca0cd",
+            "message": "Merge pull request #33248 from ngocnhan-tran1996\n\n* pr/33248:\n  Polish \"Stop referring to STRUCT and ARRAY as they are deprecated\"\n  Stop referring to STRUCT and ARRAY as they are deprecated\n\nCloses gh-33248"
+        },
+        {
+            "hash": "af8dc4446989f337c1c903d80ce97b15e85a434b",
+            "message": "Polish \"Stop referring to STRUCT and ARRAY as they are deprecated\"\n\nSee gh-33248"
+        },
+        {
+            "hash": "955602bdbd2fa99b9308a424546cec4b39729352",
+            "message": "Stop referring to STRUCT and ARRAY as they are deprecated\n\nSee gh-33248"
+        },
+        {
+            "hash": "b62662296e3c66205fc5320f740b34b963b6186c",
+            "message": "Merge pull request #33245 from ngocnhan-tran1996\n\n* pr/33245:\n  Polish \"Update links in reference manual\"\n  Update links in reference manual\n\nCloses gh-33245"
+        },
+        {
+            "hash": "a3b737ed002a9f239c90d4c335ffef7aaf764286",
+            "message": "Polish \"Update links in reference manual\"\n\nSee gh-33245"
+        },
+        {
+            "hash": "61d1fde797c822b6227fe7a9b904faf7fa126fe8",
+            "message": "Update links in reference manual\n\nSee gh-33245"
+        },
+        {
+            "hash": "0bb309f433ce134cdf5f048df9eaa73b5cee5a63",
+            "message": "Instrument @JmsListener session for response messages\n\nPrior to this commit, the observation instrumentation for `@JmsListener`\nannotated methods (implemented in `AbstractMessageListenerContainer`\nwould not instrument the JMS session using the Micrometer JMS support.\nThis means that response messages returned from the listener method\nwould be sent but no observation would be recorded. As a result, tracing\nmessage properties would be also missing.\n\nThis commit ensures that the session provided to the listener method is\ninstrumented beforehand, if Micrometer is on the classpath and an\nobservation registry has been configured.\n\nFixes gh-33221"
+        },
+        {
+            "hash": "e8630f34094cba75051401145b386314f36b191b",
+            "message": "Remove useless permissions on build-and-deploy-snapshot workflow\n\nCloses gh-33238"
+        },
+        {
+            "hash": "c250817284b228f4147cfa7038256f3b21c57e10",
+            "message": "Update GHA actions"
+        },
+        {
+            "hash": "77bdbf7e37bdc49671165b43459c8f1cd98b8efe",
+            "message": "Polishing contribution\n\nCloses gh-33181"
+        },
+        {
+            "hash": "2fe7ab1f92914205d917586d8866a351197791ab",
+            "message": "Trim last allowed origin in comma-delimited list\n\nSee gh-33181"
+        },
+        {
+            "hash": "6becfe2508eeb576aa220c20a412edb002f4cab4",
+            "message": "Fix AOP for Kotlin suspending function with aspect + `@Cacheable`\n\nThis change simplifies the CacheInterceptor way of dealing with cached\ncoroutines, thanks to the fact that lower level support for AOP has been\nintroduced in c8169e5c. This fix is similar to the one applied for\n`@Transactional` in gh-33095.\n\nCloses gh-33210"
+        },
+        {
+            "hash": "dfcd8374c753f46f709a24e6d72ae4f0e84afa81",
+            "message": "Upgrade to Gradle 8.9\n\nCloses gh-33214"
+        },
+        {
+            "hash": "ae5dd54115bd9e21917a66255a60f03d50d935f0",
+            "message": "Add @⁠Disabled tests for primitive varargs array to Object[] conversion"
+        },
+        {
+            "hash": "e088892fc122875479c01bdc5561085f2044869c",
+            "message": "Support MethodHandle invocation with primitive varargs array in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) could not\ninvoke a varargs MethodHandle function with a primitive array\ncontaining the variable arguments, although that is supported for a\nvarargs Method function. Attempting to do so resulted in the first\nelement of the primitive array being supplied as a single argument to\nthe MethodHandle, effectively ignoring any variable arguments after the\nfirst one.\n\nThis commit addresses this by updating the\nconvertAllMethodHandleArguments(...) method in ReflectionHelper as\nfollows when the user supplies the varargs already packaged in a\nprimitive array.\n\n- Regarding conversion, use the wrapper type for a primitive varargs\n  array, since we eventually need an Object array in order to invoke\n  the MethodHandle in FunctionReference#executeFunctionViaMethodHandle().\n\n- When deciding whether to convert a single element passed as varargs,\n  we now check if the argument is an array that is assignable to the\n  varargs array type.\n\n- When converting an array supplied as the varargs, we now convert that\n  array to the varargs array type instead of the varargs component type.\n\nNote, however, that a SpEL expression cannot provide a primitive array\nfor an Object[] varargs target. This is due to the fact that the\nArrayToArrayConverter used by Spring's ConversionService does not\nsupport conversion from a primitive array to Object[] -- for example,\nfrom int[] to Object[].\n\nSee gh-33191\nCloses gh-33198"
+        },
+        {
+            "hash": "152914a752d399acf8d51ed9ad0700fc91973461",
+            "message": "Fix multipart async servlet request temporary files deletion\n\nThis change tracks the multipart nature of the async request\nwithin the `DispatcherServlet`, in the `WebAsyncManager`.\n\nThis allows for the second ASYNC dispatch to recognize the\nmultipart aspect and clean up the associated resources.\n\nCloses gh-33161"
+        },
+        {
+            "hash": "0f3f979d16c9203c5440cd9a1dd87a19312279a1",
+            "message": "Align classloader used to create the JAXBContext\n\nThis commit makes sure that JAXBContext.newInstance consistently use\nthe target class classloader to detect the necessary resources.\n\nPreviously, the current thread's context classloader was used, which\ncould lead to not finding the required JAXB components.\n\nCloses gh-33158"
+        },
+        {
+            "hash": "f8875ea97036cd5ad27418004cea74626ac058c5",
+            "message": "Add missing artifact properties for staging\n\nThis commit makes sure that docs artifacts have their attributes set\nfor staging as well. Previously they were not and deployment of Javadoc\ndid not occur.\n\nCloses gh-33204"
+        },
+        {
+            "hash": "c9375167fdf4eed50b85bf4c7812252aeaa6efac",
+            "message": "Harmonize properties of deploy action"
+        },
+        {
+            "hash": "48a6bd6ce7d1d078eea64da25cbe2ffee805fce8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e15f12348693fec55f6b46988bc7df95ff497cf2",
+            "message": "Remove concourse configuration now that CI is using GitHub Actions"
+        },
+        {
+            "hash": "2bfff7fc376c4c747cc9811c54c0ba320787db11",
+            "message": "Retain original URL instance in case of custom URLStreamHandler\n\nCloses gh-33199"
+        },
+        {
+            "hash": "1880e109c3120e2c8cd00f092f3b0836ab70915f",
+            "message": "Next development version (v6.1.12-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33348",
+            "title": "LocaleEditor cannot parse language tag with script like zh-Hans"
+        },
+        {
+            "number": "33326",
+            "title": "Upgrade to Reactor 2023.0.9"
+        },
+        {
+            "number": "33325",
+            "title": "Upgrade to Micrometer 1.12.9"
+        },
+        {
+            "number": "33319",
+            "title": "`SimpleEvaluationContext` does not enforce read-only semantics"
+        },
+        {
+            "number": "33045",
+            "title": "Support invoking bridged suspending functions in `AopUtils`"
+        },
+        {
+            "number": "33371",
+            "title": "Avoid CacheAspectSupport#findInCaches falling through to the reactiveCachingHandler"
+        },
+        {
+            "number": "33338",
+            "title": "Javadoc of ReactorResourceFactory#setConnectionProviderSupplier wrongly states it can be ignored"
+        },
+        {
+            "number": "31090",
+            "title": "Reinstate support for legacy JSR-250 `@javax.annotation.ManagedBean` and JSR-330 `@javax.inject.Named` annotations"
+        },
+        {
+            "number": "33345",
+            "title": "Reinstate qualifier support for legacy JSR-330 `@javax.inject.Named` annotation"
+        },
+        {
+            "number": "33349",
+            "title": "ScheduledAnnotationReactiveSupport starts the observation before it is opened"
+        },
+        {
+            "number": "33347",
+            "title": "RestClient observation flags error for UnknownContentTypeException twice"
+        },
+        {
+            "number": "33346",
+            "title": "RestClient instrumentation unnecessarily calls stop on a closed observation"
+        },
+        {
+            "number": "33251",
+            "title": "RequestPredicates fail with UnsupportedOperationException with a custom servlet path"
+        },
+        {
+            "number": "33334",
+            "title": "SimpleAsyncTaskScheduler should ignore scheduled exceptions after shutdown (not termination)"
+        },
+        {
+            "number": "33013",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33315",
+            "title": "SpEL no longer supports lists for varargs invocations"
+        },
+        {
+            "number": "33310",
+            "title": "SpEL `Indexer` silently ignores failure to set property as index"
+        },
+        {
+            "number": "33317",
+            "title": "SpEL wraps primitive array in `Object[]` when invoking varargs method"
+        },
+        {
+            "number": "33212",
+            "title": "`ConversionService` cannot convert primitive array to `Object[]`"
+        },
+        {
+            "number": "33302",
+            "title": "Specify a timeout shorter than 6hrs for GitHub Action jobs/workflows"
+        },
+        {
+            "number": "33094",
+            "title": "Memory Leak in WebFlux application handling HTTP Multipart"
+        },
+        {
+            "number": "33295",
+            "title": "AOT-generated code produces deprecation warnings when using a deprecated class for autowiring"
+        },
+        {
+            "number": "33276",
+            "title": "Document that NoOpResponseErrorHandler is to be used with the RestTemplate"
+        },
+        {
+            "number": "33288",
+            "title": "Improve EnableCaching & CachingConfigurer Javadoc"
+        },
+        {
+            "number": "33286",
+            "title": "@Scheduled method in test class not supported anymore"
+        },
+        {
+            "number": "33264",
+            "title": "Update XJC processing to fix Gradle compatibility warning"
+        },
+        {
+            "number": "33273",
+            "title": "AOT-generated code produces deprecation warnings when referencing a nested class of a deprecated class"
+        },
+        {
+            "number": "33256",
+            "title": "ShallowEtagHeaderFilter throws a NumberFormatException for responses bigger than 2Gb"
+        },
+        {
+            "number": "33221",
+            "title": "Missing observation for @JmsListener response messages"
+        },
+        {
+            "number": "33238",
+            "title": "build-and-deploy-snapshot workflow should not require write permission"
+        },
+        {
+            "number": "33095",
+            "title": "Spring coroutines AOP is not compatible with `@Transactional`"
+        },
+        {
+            "number": "33210",
+            "title": "Spring coroutines AOP is not compatible with `@Cacheable`"
+        },
+        {
+            "number": "33214",
+            "title": "Upgrade to Gradle 8.9"
+        },
+        {
+            "number": "33191",
+            "title": "SpEL cannot invoke varargs `MethodHandle` function with an array"
+        },
+        {
+            "number": "33198",
+            "title": " SpEL cannot invoke varargs `MethodHandle` function with a primitive array"
+        },
+        {
+            "number": "33161",
+            "title": "Multipart files not deleted after upload is finished with async request"
+        },
+        {
+            "number": "33158",
+            "title": "JaxbContextContainer does not define the ClassLoader to use to retrieve the JAXBContext to use"
+        },
+        {
+            "number": "33204",
+            "title": "Javadoc not published for new GA and milestone release processes"
+        },
+        {
+            "number": "33199",
+            "title": "PathMatchingResourcePatternResolver#convertClassLoaderURL drops URLStreamHandler in version 6.1.x"
+        }
+    ]
+}

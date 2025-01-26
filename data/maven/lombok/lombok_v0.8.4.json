@@ -1,0 +1,125 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.8.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 28,
+    "start_delay": 0.0,
+    "duration": 32.28056712962963,
+    "commits_info": [
+        {
+            "hash": "e645067820a2c9a53b001c0c225bcd6f68c06943",
+            "message": "Moved version from 0.8.4-HEAD to 0.8.4 as this version has just been released."
+        },
+        {
+            "hash": "10a4211346d76b5ae04161003ed0213a5d554b43",
+            "message": "Explained the correct pom magic incantation to force maven to use a v1.6 compiler."
+        },
+        {
+            "hash": "c66654505fc53c31e7cb5d5dc5f4190e1d99d027",
+            "message": "There was an issue for that last fix (of @SneakyThrows in eclipse), so added an explanation plus a link to the issue to the changelog."
+        },
+        {
+            "hash": "cb4c8ca4a1392844cd01b573e53b7926c1374872",
+            "message": "Fixed the problem where the eclipse editor AST just loses track of things when using @SneakyThrows (syntax colouring goes away, first character in the file is italic)."
+        },
+        {
+            "hash": "b069df74842976439112fd6a3d771ea8b30b31b4",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "af202da7db529e1c98344343e29c82a3689df2d6",
+            "message": "Added a simple rewriter to the catch block finder of ASTConverter: If it can't find it, it used to return -1, which is exceedingly useless and causes no end of bugs. Changed it to returning the start point of the search, which is a more useful fallback."
+        },
+        {
+            "hash": "da367086c56b1a21a549a81d66d6f85ae04709fd",
+            "message": "More work on fully addressing the David Lynch bug (issue #41) - the annotation @NotNull/@NonNull/@Nullable that is copied over by @Getter should no longer be causing the David Lynch bug."
+        },
+        {
+            "hash": "25e33d02e3b91b04947257ffa3c6233f1c81d3ce",
+            "message": "Added position information _everywhere_ in EqualsAndHashCode and ToString generating. This really does seem to fix the David Lynch bug (#41)."
+        },
+        {
+            "hash": "5b160554176f7439fba10fe709b948b8310a4fb0",
+            "message": "Well, bugger me! Adjusting the positions of the actual type identifier for the generated annotations seems to fix the David Lynch bug (issue #41).\n\nSaving this now before further fiddling breaks things again."
+        },
+        {
+            "hash": "60a62bced8894a90b22725482fb33a9eed967554",
+            "message": "Removed the various debug assist code in ClassLoaderWorkaround; the feature works now, no longer needed."
+        },
+        {
+            "hash": "cb091204f4bfc7f9971fc296903f7bc2a163f085",
+            "message": "Fixed documentation, specifically: added eclipse help system fix to the changelog, and added some documentation on the special handling of @NonNull/@NotNull/@Nullable for Data and Getter/Setter on the website docs."
+        },
+        {
+            "hash": "72cc800fd0c3e122a71a42536d5ced5297d6fa4e",
+            "message": "Fixed issue #26: Starting eclipse's help feature just shows you a 500 error, ond depending on your eclipse version, a long stack trace.\n\nThe problem boiled down to the JSP compiler used by the help system also being instrumented with lombok, but that's not exactly the environment lombok was expecting. Fixed by simply disabling lombok when the environments don't match what we expect. In the process, the instrumentation has been made a little more robust; multiple separate OSGi modules can all be instrumented now, instead of the first one winning."
+        },
+        {
+            "hash": "65b9365b5419f69ac78ad895308024b4bac15fbd",
+            "message": "Pretty showstopping bug in here."
+        },
+        {
+            "hash": "c7a45b294d1d8464b529f2513bbca37ade7afb92",
+            "message": "WHOOPS - that version number should have been updated much earlier. My fault (reinierz)."
+        },
+        {
+            "hash": "e92fd5abac039cfc1f47a030dc0f084e9f018b8b",
+            "message": "Fixes issue #35: ToString now defaults to includeFieldNames=true."
+        },
+        {
+            "hash": "0236721d8d3cde431d0a40995a61e4fd3fe14be1",
+            "message": "Updated documentation for @NonNull (and the changelog)."
+        },
+        {
+            "hash": "e1ee1b7d2db1ea998aa4d6aa3f6b4141315a9496",
+            "message": "null checks are no longer generated if you put @NonNull on primitives."
+        },
+        {
+            "hash": "d16775032b638789f998f3f362b7ed7d4f5098ae",
+            "message": "Set the source positions in eclipse of copied over annotations (used in @NonNull/@Nullable and getter/setter/constructor generation) to 0, as eclipse mysteriously fails for annotations copied WITH source positions, but only on methods (which happens for @Getter)."
+        },
+        {
+            "hash": "4e152f2f1485f904feb45ae614236d4aa4b6edc9",
+            "message": "Merge branch 'nonnull'\n\nConflicts:\n\tsrc/lombok/eclipse/handlers/HandleData.java\n\tsrc/lombok/eclipse/handlers/HandleEqualsAndHashCode.java\n\tsrc/lombok/eclipse/handlers/HandleSetter.java\n\tsrc/lombok/javac/handlers/HandleData.java\n\tsrc/lombok/javac/handlers/HandleEqualsAndHashCode.java\n\tsrc/lombok/javac/handlers/HandleSetter.java"
+        },
+        {
+            "hash": "fe0da3f53f1e88b704e21463cc5fea3d998e394a",
+            "message": "Now @Nullable is also copied over."
+        },
+        {
+            "hash": "e6bb460e2b1ba49698e5306ddcb5ce38748e2dfc",
+            "message": "Added javadoc and copyright header."
+        },
+        {
+            "hash": "388943a7e3c8d3cf64b44af045d4d3125b597444",
+            "message": "Introduced a NonNull annotation to generate null-checks"
+        },
+        {
+            "hash": "dd593a3af08d9fd300ecd3a11a3551507aa35b6f",
+            "message": "The constructors will now also add non-final fields if they have a NonNull annotation\n\nThe constructor will test for null-values\n\nThe constructor and static constructor will copy the NonNull annotations from the fields"
+        },
+        {
+            "hash": "c4d97b008afc85e495784929c312c6828aefde1d",
+            "message": "Moved the check to see if a variable is null to the PKG utility classes"
+        },
+        {
+            "hash": "f2c837bb47771a7eba5ad5a885af162d8d133559",
+            "message": "@Setter will copy all NotNull and NonNull (case-insensitive) annotations to the parameter\n@Getter will copy them to the getter method\n\nAdded @NonNull to lombok to support null-checks in the setter"
+        },
+        {
+            "hash": "0cfa9e99d99fc353d0c486e96cc53f5214ab031c",
+            "message": "Added support for @NonNull in the @Setter annotation"
+        },
+        {
+            "hash": "0221e460b2e648b142284c6c462d5798f33a3ff7",
+            "message": "Updated the changelog (WIP 0.8.4)"
+        },
+        {
+            "hash": "7c786f5af61185983940cad794fe2cb50d426005",
+            "message": "Made all parameters of all generated methods 'final'."
+        }
+    ],
+    "issues": []
+}

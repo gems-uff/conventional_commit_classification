@@ -1,0 +1,726 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.2.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 120,
+    "start_delay": 0.0,
+    "duration": 51.63333333333333,
+    "commits_info": [
+        {
+            "hash": "5ee237d8fe2de2b6afe5b4010062b7938d12d9cc",
+            "message": "Release v3.2.7"
+        },
+        {
+            "hash": "c2f21e9fcd282b1e76b0614a4c5034717fd4e3d7",
+            "message": "Don't execute @DockerComposeTests if docker is not running\n\nCloses gh-41171"
+        },
+        {
+            "hash": "2a4582b0840dc696ebbae6d942a8574538c3ec85",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "126e87e44dba044f339f48933adee3d5beb26f6d",
+            "message": "Fix appending of JDBC parameters to SQL Server JDBC URL\n\nFixes gh-41146"
+        },
+        {
+            "hash": "43cd24102fed1aee0c78ea0931027c8773634bc3",
+            "message": "Rework Docker Compose integration tests\n\nThis commit introduces a new annotation, `@DockerComposeTest`,\nthat allows a test class to have multiple tests, each of which\nuses a different Docker Compose YAML file.\n\nCloses gh-41154"
+        },
+        {
+            "hash": "491f34d25c2b5cf1f777b0b65344104ec1838eb8",
+            "message": "Improve container test code\n\nReplace `DockerImageNames` with a enum and relocate it from the\n`testcontainers` to `container` package. The enum now also\nbecomes a common location that we can use to apply container\nconfiguration such as timeouts.\n\nCloses gh-41164\n\nCo-authored-by: Phillip Webb <phil.webb@broadcom.com>"
+        },
+        {
+            "hash": "36a504b2fbac9a78da3a139daa5fc699fc3fddbc",
+            "message": "Upgrade to Tomcat 10.1.25\n\nCloses gh-41158"
+        },
+        {
+            "hash": "abf49e55db709b0f6cdab7b5afded0a3e03f682e",
+            "message": "Upgrade to Spring Session 3.2.4\n\nCloses gh-41026"
+        },
+        {
+            "hash": "02cb160057e86dc31893d864352663680f8fa7d5",
+            "message": "Upgrade to Spring Integration 6.2.6\n\nCloses gh-41021"
+        },
+        {
+            "hash": "fd4dc4d719e26e222bcd0cdbf8d950fde7306f36",
+            "message": "Upgrade to Spring GraphQL 1.2.7\n\nCloses gh-41020"
+        },
+        {
+            "hash": "32ef349f6c1fb5c2553bf6c21ae193f9c028827c",
+            "message": "Upgrade to Spring Framework 6.1.10\n\nCloses gh-41149"
+        },
+        {
+            "hash": "b606a6e4ca8e1ea85be4c401d816d7d41204767d",
+            "message": "Upgrade to Spring Authorization Server 1.2.5\n\nCloses gh-41017"
+        },
+        {
+            "hash": "242263d8d4dfd0cb801eb162209603314401b30c",
+            "message": "Update GitProperties date/time coercion to deal with more patterns\n\nUpdate `GitProperties` to deal with updated date/time patterns that\nare now used by the `git-commit-id` maven plugin. Previous patterns are\nstill supported as a fallback.\n\nFixes gh-41109"
+        },
+        {
+            "hash": "9cd6dfd85f40b05a7f253cc3d8a7b66142a9ac5f",
+            "message": "Start building against Spring Framework 6.1.10 snapshots\n\nSee gh-41149"
+        },
+        {
+            "hash": "82fd923d00468382adf1568b41d40fa45fb1a6d4",
+            "message": "Upgrade to Spring Security 6.2.5\n\nCloses gh-41025"
+        },
+        {
+            "hash": "97b8c7841104187e836d9f5c8fd7b85330eae0d7",
+            "message": "Upgrade to Spring Pulsar 1.0.7\n\nCloses gh-41024"
+        },
+        {
+            "hash": "e2296be9a70b476de08daf0ff74564b868f914a1",
+            "message": "Upgrade to Spring Kafka 3.1.6\n\nCloses gh-41022"
+        },
+        {
+            "hash": "2689b4dac0cca9b75bfed9b3b26283ed5a2bf22c",
+            "message": "Upgrade to Spring AMQP 3.1.6\n\nCloses gh-41143"
+        },
+        {
+            "hash": "c2b846c95f2a3d130a6e9744b352da87c2b0cdf3",
+            "message": "Merge pull request #41139 from dependabot[bot]\n\n* gh-41139:\n  Polish \"Bump gradle/actions from 3.4.1 to 3.4.2\"\n  Bump gradle/actions from 3.4.1 to 3.4.2\n\nCloses gh-41139"
+        },
+        {
+            "hash": "0193e476025bdde7e723000eeb0f23b82134f0c7",
+            "message": "Polish \"Bump gradle/actions from 3.4.1 to 3.4.2\"\n\nSee gh-41139"
+        },
+        {
+            "hash": "52718b8a8c0d355d19d771cb362d6478b2a6f423",
+            "message": "Bump gradle/actions from 3.4.1 to 3.4.2\n\nBumps [gradle/actions](https://github.com/gradle/actions) from 3.4.1 to 3.4.2.\n- [Release notes](https://github.com/gradle/actions/releases)\n- [Commits](https://github.com/gradle/actions/compare/31ae3562f68c96d481c31bc1a8a55cc1be162f83...dbbdc275be76ac10734476cc723d82dfe7ec6eda)\n\n---\nupdated-dependencies:\n- dependency-name: gradle/actions\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-41139"
+        },
+        {
+            "hash": "60b7e6cf23c9befefa78bb41e1fb5073d2258de7",
+            "message": "Allow 'status' and 'error' to be excluded from error response\n\nUpdate `ErrorAttributeOptions` to allow the `status` and `error`\nfields to be excluded from the response without throwing a\nNullPointerException.\n\nFixes gh-30011"
+        },
+        {
+            "hash": "1f698d8ea29b2f2e9e862ce2792daa4af6bcb4c1",
+            "message": "Prohibit .java8 Jaybird versions\n\nCloses gh-41130"
+        },
+        {
+            "hash": "beafbe5125d4854fb66ba825b9906e3efeb93b26",
+            "message": "Upgrade to Spring LDAP 3.2.4\n\nCloses gh-41023"
+        },
+        {
+            "hash": "10dcdccbe175197df6ffdad286bd6dc31fdb3e5c",
+            "message": "Upgrade to Spring Data Bom 2023.1.7\n\nCloses gh-41018"
+        },
+        {
+            "hash": "7de738041edc39d5a0e2562767b46e356be47389",
+            "message": "Upgrade to Pulsar Reactive 0.5.6\n\nCloses gh-41129"
+        },
+        {
+            "hash": "3c99f2e5be6f1ed00b4fec04cfbe0b447c6f32b9",
+            "message": "Upgrade to jOOQ 3.18.17\n\nCloses gh-41128"
+        },
+        {
+            "hash": "242afe1dcfa32262bf347af84e7c1a6fa28c669a",
+            "message": "Upgrade to Jaybird 5.0.5.java11\n\nCloses gh-41127"
+        },
+        {
+            "hash": "1a19e0bf8fb5e16fb023bc0ef4e420794ed203c3",
+            "message": "Pass access key into Prepare Gradle Build\n\nSee gh-41120"
+        },
+        {
+            "hash": "138307c13cd04fd21a3496bd6c0e3398a345a20c",
+            "message": "Disable test context cache in spring-boot-testcontainers\n\nCloses gh-41124"
+        },
+        {
+            "hash": "03a87ccd69ec8e4792c3e68c388d3794664dd698",
+            "message": "Clarify how Container's Docker image name is used to name a connection\n\nCloses gh-41111"
+        },
+        {
+            "hash": "270597e577b28b86620919a61fa17000fb64dd0b",
+            "message": "Use short-lived access token to authenticate with Develocity\n\nCloses gh-41120"
+        },
+        {
+            "hash": "2bbeb7e78c7ff3b927036d28f723732335fe58e9",
+            "message": "Upgrade to Gradle Actions 3.4.1\n\nCloses gh-41119"
+        },
+        {
+            "hash": "96586525d5830364d0fa9e1a57f65faa0380454e",
+            "message": "Make DelegatingFilterProxyRegistrationBeanTests idempotent\n\nFixes gh-38630"
+        },
+        {
+            "hash": "0c1c7e844ca1b6ecfd4bde14c3e5505b692efa99",
+            "message": "Don't detect main method from launcher classes\n\nUpdate `MainMethod` discovery so that launcher classes from the\n`org.springframework.boot.loader` code are not considered. This restores\nthe behavior of Spring Boot 2.7.11 and allows remote restart of uber\njars without pulling the loader classes into the `RestartClassLoader`.\n\nFixes gh-39733"
+        },
+        {
+            "hash": "0e42a02dc7eee2e81ed6270e4b230fce5ec3a6de",
+            "message": "Use anchor to position page when linking to CoC"
+        },
+        {
+            "hash": "aa967e7af46106390e0be89668aa8515c309e67b",
+            "message": "Polish CoC link"
+        },
+        {
+            "hash": "1b728d574f9b3d04439d3587964ad58d09b2d804",
+            "message": "Remove repo-specific code of conduct\n\nThis will allow us to inherit the org's CoC instead.\n\nCloses gh-41098"
+        },
+        {
+            "hash": "31f967723de1aae0a8c52e34f795f0374f4b1a53",
+            "message": "Fix Mongo health indicators when using the strict V1 API\n\nCloses gh-41101"
+        },
+        {
+            "hash": "60f8939e26e565c4f8e2d3e5bfa525d3e3b728ae",
+            "message": "Upgrade to Spring Framework 6.1.9\n\nCloses gh-41019"
+        },
+        {
+            "hash": "3687e4c9aa0961bfa1b19664ae89168d788e4647",
+            "message": "Upgrade to Reactor Bom 2023.0.7\n\nCloses gh-41016"
+        },
+        {
+            "hash": "622c0a9fbcd5cc39830207e9209851429221c0c4",
+            "message": "Upgrade to Infinispan 14.0.29.Final\n\nCloses gh-41096"
+        },
+        {
+            "hash": "2d2799784d1daf528ac89eed607000306ef611b5",
+            "message": "Upgrade to Hibernate 6.4.9.Final\n\nCloses gh-41095"
+        },
+        {
+            "hash": "e228ed39b3a43929b541ea6e20063d3743bbe801",
+            "message": "Support CNB builders that do not specify a stack\n\nFixes gh-41046"
+        },
+        {
+            "hash": "fed13b0e0ceefc4198b761704292ce290ae68066",
+            "message": "Back off if DataSource is not on the classpath\n\nCloses gh-41082"
+        },
+        {
+            "hash": "847ff50676bf417a1981018d5ad7e7554b48ee45",
+            "message": "Merge pull request #40974 from asashour\n\n* pr/40974:\n  Polish \"Use method references when possible in test code\"\n  Use method references when possible in test code\n  Polish \"Use method references when possible\"\n  Use method references when possible\n\nCloses gh-40974"
+        },
+        {
+            "hash": "bcbcafaab2af35bc5657a53cacee539a930e7038",
+            "message": "Polish \"Use method references when possible in test code\"\n\nSee gh-40974"
+        },
+        {
+            "hash": "207327d97c420c51715206635b7f3f93584c3d47",
+            "message": "Use method references when possible in test code\n\nSee gh-40974"
+        },
+        {
+            "hash": "dcccb3b2b194bc0e1e378fc21c1cf4d034277db3",
+            "message": "Polish \"Use method references when possible\"\n\nSee gh-40974"
+        },
+        {
+            "hash": "507229eef88346344a2101ef8d4d1dcc32756238",
+            "message": "Use method references when possible\n\nSee gh-40974"
+        },
+        {
+            "hash": "ef99ce0ba9e648d21c0f96618b11c1263ea3b504",
+            "message": "Merge pull request #40985 from asashour\n\n* pr/40985:\n  Prevent unnecessary unboxing\n  Remove redundant cast\n  Polish \"Use 'switch' instead of 'if'\"\n  Use 'switch' instead of 'if'\n\nCloses gh-40985"
+        },
+        {
+            "hash": "4f6509d5ff866028a01de0cc08d39112be99cc5a",
+            "message": "Prevent unnecessary unboxing\n\nSee gh-40985"
+        },
+        {
+            "hash": "623c395c0c9471d15f342f31a385bc699d979e6c",
+            "message": "Remove redundant cast\n\nSee gh-40985"
+        },
+        {
+            "hash": "a18cb37657a112d514d24d5c81a8df1bd1b2fdfa",
+            "message": "Polish \"Use 'switch' instead of 'if'\"\n\nSee gh-40985"
+        },
+        {
+            "hash": "2c5934dab27ecc1fa7e34032b8f0c3d85c5b22af",
+            "message": "Use 'switch' instead of 'if'\n\nSee gh-40985"
+        },
+        {
+            "hash": "9ddb7b02383c6f92825260ea4915487773674a8f",
+            "message": "Merge pull request #41053 from PiyalAhmed\n\n* pr/41053:\n  Polish \"Use constructor rather than Collection.addAll\"\n  Use constructor rather than Collection.addAll\n\nCloses gh-41053"
+        },
+        {
+            "hash": "ecc9a2352d9e132fa56bc61cf0ec813031f1682c",
+            "message": "Polish \"Use constructor rather than Collection.addAll\"\n\nSee gh-41053"
+        },
+        {
+            "hash": "17adcfc180d9e967592bc9431d41e53bfe9a5e77",
+            "message": "Use constructor rather than Collection.addAll\n\nSee gh-41053"
+        },
+        {
+            "hash": "d37098153cd92e2a0239db21f11e6bd5ec790e21",
+            "message": "Polish"
+        },
+        {
+            "hash": "20fbe74dfeacecfd324dcb230938f5c8a59dcc55",
+            "message": "Upgrade to Netty 4.1.111.Final\n\nCloses gh-41063"
+        },
+        {
+            "hash": "11835d1c967ddcd8c75260af253173bb338e3359",
+            "message": "Upgrade to Micrometer Tracing 1.2.7\n\nCloses gh-41027"
+        },
+        {
+            "hash": "428a6248f2586b1117b9c995526dfd10e99f940a",
+            "message": "Upgrade to Micrometer 1.12.7\n\nCloses gh-41015"
+        },
+        {
+            "hash": "42de5506c8c73f3b138d0ac6e08705dd30921504",
+            "message": "Upgrade to Maven Help Plugin 3.4.1\n\nCloses gh-41062"
+        },
+        {
+            "hash": "8628fc8831da6d303dae5a92c2751fb83e95bad9",
+            "message": "Upgrade to jOOQ 3.18.16\n\nCloses gh-41061"
+        },
+        {
+            "hash": "6e95529eb3287327a26a64da3ec7e27b50ff7b03",
+            "message": "Upgrade to Jetty 12.0.10\n\nCloses gh-41060"
+        },
+        {
+            "hash": "db7efbbe82d9e0fda4037e5257e8ec37a592a983",
+            "message": "Upgrade to Jetty Reactive HTTPClient 4.0.5\n\nCloses gh-41059"
+        },
+        {
+            "hash": "62008fe6d542061af86bdb426491e4b09a0ae8b2",
+            "message": "Upgrade to Jersey 3.1.7\n\nCloses gh-41058"
+        },
+        {
+            "hash": "c703dbad1ea2fc44d812a575d4998b804d735495",
+            "message": "Upgrade to HSQLDB 2.7.3\n\nCloses gh-41057"
+        },
+        {
+            "hash": "a51102319f29fb5a5b96053c007aa391ff74ec5d",
+            "message": "Upgrade to FreeMarker 2.3.33\n\nCloses gh-41056"
+        },
+        {
+            "hash": "60e02f83d87710bf412c71c2d07e523a10127fa0",
+            "message": "Upgrade to Dropwizard Metrics 4.2.26\n\nCloses gh-41055"
+        },
+        {
+            "hash": "f71e5c829854c3744499f4ffc72b2213d3a782af",
+            "message": "Upgrade to Byte Buddy 1.14.17\n\nCloses gh-41054"
+        },
+        {
+            "hash": "6548f23486c5dd78214994cffab5fc0723aed7e9",
+            "message": "Merge pull request #41052 from donghoony\n\n* pr/41052:\n  Fix typo in javadoc\n\nCloses gh-41052"
+        },
+        {
+            "hash": "8920c2f26932e53b81bf7e8729261b1852008986",
+            "message": "Fix typo in javadoc\n\nSee gh-41052"
+        },
+        {
+            "hash": "0f2326810ffbeff71421692e9baedcb4eb605949",
+            "message": "Merge pull request #41051 from mateusscheper\n\n* pr/41051:\n  Improve readability of the documentation\n\nCloses gh-41051"
+        },
+        {
+            "hash": "80b7107c56e690d50514256c89b4587db70bfb1d",
+            "message": "Improve readability of the documentation\n\nSee gh-41051"
+        },
+        {
+            "hash": "2bb74b261c44b5c9b1a9f3a312e9d447fac0886b",
+            "message": "Disable stale checking for local Docker daemon connections\n\nFixes gh-40697"
+        },
+        {
+            "hash": "45e4f137deb73b25af37138fcfbeff1049f20551",
+            "message": "Start building against Spring Session 3.2.4 snapshots\n\nSee gh-41026"
+        },
+        {
+            "hash": "b1e8216ccbf21f85a574895b46de8cfcb092b0c4",
+            "message": "Start building against Spring Security 6.2.5 snapshots\n\nSee gh-41025"
+        },
+        {
+            "hash": "70a12d79ec83d9260785b45a4fc7dae6b2ac112e",
+            "message": "Start building against Spring Pulsar 1.0.7 snapshots\n\nSee gh-41024"
+        },
+        {
+            "hash": "a253ede0c1f1bef923806f560fe532d061b6df6b",
+            "message": "Start building against Spring LDAP 3.2.4 snapshots\n\nSee gh-41023"
+        },
+        {
+            "hash": "a09e0e00b8e64c031101acf1d3497633cb55b147",
+            "message": "Start building against Spring Kafka 3.1.6 snapshots\n\nSee gh-41022"
+        },
+        {
+            "hash": "5f185df451dca4c5ca82113328a3586c30bcb0f6",
+            "message": "Start building against Spring Integration 6.2.6 snapshots\n\nSee gh-41021"
+        },
+        {
+            "hash": "be33a3579c8e0db396ea0351009a3781de867d3e",
+            "message": "Start building against Spring GraphQL 1.2.7 snapshots\n\nSee gh-41020"
+        },
+        {
+            "hash": "2a7708c8cf1b4549c91c6eecfc4cb620c2ac4541",
+            "message": "Start building against Spring Framework 6.1.9 snapshots\n\nSee gh-41019"
+        },
+        {
+            "hash": "26692a7f2601084b893aa46c31a79b8744cf7e14",
+            "message": "Upgrade to Neo4j Java Driver 5.21.0\n\nCloses gh-41028"
+        },
+        {
+            "hash": "34b99bd6be4ed5c68bbfb639298ef058a03facb3",
+            "message": "Start building against Spring Data Bom 2023.1.7 snapshots\n\nSee gh-41018"
+        },
+        {
+            "hash": "a2b1638d77d2ca5cca6d129bfbcd6b1ec013ebec",
+            "message": "Start building against Spring Authorization Server 1.2.5 snapshots\n\nSee gh-41017"
+        },
+        {
+            "hash": "a620bb420103bc9b6bb3ebb455fea7fe21b0b319",
+            "message": "Start building against Reactor Bom 2023.0.7 snapshots\n\nSee gh-41016"
+        },
+        {
+            "hash": "1eb1dade94e5112e9f48fd6d76e7efd76039d251",
+            "message": "Start building against Micrometer Tracing 1.2.7 snapshots\n\nSee gh-41027"
+        },
+        {
+            "hash": "73315b607fe68bb32760abeef6562a2bc58abc77",
+            "message": "Start building against Micrometer 1.12.7 snapshots\n\nSee gh-41015"
+        },
+        {
+            "hash": "fe536bf0752db07c6f4a9410998a9d5de0067de6",
+            "message": "Allow SSL to be used with Tomcat's Http11Nio2Protocol\n\nFixes gh-41007"
+        },
+        {
+            "hash": "217c2c862b0141787ed62b0acbc691f770072239",
+            "message": "Ignore file entries in META-INF/versions of multi-release jar\n\nFixes gh-41001"
+        },
+        {
+            "hash": "d4e9f458a38a91d60eed4a7f0d3a2597a105ca8a",
+            "message": "Fix path handling and wrapping in LoaderHidingResource\n\nCloses gh-39472"
+        },
+        {
+            "hash": "2ceb7b42170c15bb1f1452709667c552b1b33718",
+            "message": "Extract LoaderHidingResource as a top-level type\n\nSee gh-39472"
+        },
+        {
+            "hash": "3ff0979208901b65783bda659702dfd7996de2cd",
+            "message": "Merge pull request #40980 from dependabot[bot]\n\n* pr/40980:\n  Polish \"Bump jfrog/setup-jfrog-cli from 4.0.2 to 4.1.2\"\n  Bump jfrog/setup-jfrog-cli from 4.0.2 to 4.1.2\n\nCloses gh-40980"
+        },
+        {
+            "hash": "054a1a0c0f95a513b8ec170ae132df6ea9c874c5",
+            "message": "Polish \"Bump jfrog/setup-jfrog-cli from 4.0.2 to 4.1.2\"\n\nSee gh-40980"
+        },
+        {
+            "hash": "3c8b6828a527f531eeb58b8701317a293e0ebb1f",
+            "message": "Bump jfrog/setup-jfrog-cli from 4.0.2 to 4.1.2\n\nBumps [jfrog/setup-jfrog-cli](https://github.com/jfrog/setup-jfrog-cli) from 4.0.2 to 4.1.2.\n- [Release notes](https://github.com/jfrog/setup-jfrog-cli/releases)\n- [Commits](https://github.com/jfrog/setup-jfrog-cli/compare/727b480bafd0d8adbdfdb2257a7d7c2e08eb1779...7c95feb32008765e1b4e626b078dfd897c4340ad)\n\n---\nupdated-dependencies:\n- dependency-name: jfrog/setup-jfrog-cli\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-40980"
+        },
+        {
+            "hash": "8a7d670ff1b3fa9ba2ee39b817b79fd96f0915ea",
+            "message": "Merge pull request #40963 from quaff\n\n* pr/40963:\n  Remove unnecessary null check\n\nCloses gh-40963"
+        },
+        {
+            "hash": "5cfd079c55e754c8febba8015adbbfaf8b301831",
+            "message": "Remove unnecessary null check\n\nSee gh-40963"
+        },
+        {
+            "hash": "043d71f820065b66c29d933760cf566f1bb28bbb",
+            "message": "Merge pull request #40971 from cmabdullah\n\n* pr/40971:\n  Fix typos in method names and javadoc\n\nCloses gh-40971"
+        },
+        {
+            "hash": "570522d876927acb87c8c3bf30d4b742a70641d9",
+            "message": "Fix typos in method names and javadoc\n\nSee gh-40971"
+        },
+        {
+            "hash": "dd6f516d66d5833f264e7fa3f84de0b38b205de1",
+            "message": "Test Gradle Plugin against 8.8\n\nCloses gh-40573"
+        },
+        {
+            "hash": "c36909824eb0467beb91f2a23609166f7b29a38e",
+            "message": "Merge pull request #40955 from asashour\n\n* pr/40955-3.2.x:\n  Remove unused parameter and polish javadoc\n\nCloses gh-40955"
+        },
+        {
+            "hash": "f000af6a1293690d41e7edf377e83b84803260d3",
+            "message": "Remove unused parameter and polish javadoc\n\nSee gh-40955"
+        },
+        {
+            "hash": "0be290d6f799219381fe08da506a2c71cf9d07fb",
+            "message": "Merge pull request #40951 from mateusscheper\n\n* pr/40951:\n  Fix typo in Dev Services reference docs\n\nCloses gh-40951"
+        },
+        {
+            "hash": "6c5ae329f3a340cec834e054a4dff0ef041fb7d9",
+            "message": "Fix typo in Dev Services reference docs\n\nSee gh-40951"
+        },
+        {
+            "hash": "211bf95f451f456af433c9b0c67d3064a731309b",
+            "message": "Revert \"Adapt to Spring Data Neo4j now requiring a transaction manager\"\n\nThis reverts commit b6467ed826818db5d18061496768db3f6758c916. Changes\nin Spring Data Neo4j mean that these changes are no longer necessary.\nThey also caused a problem with multiple transaction managers being\npresent when mixing Neo4j and, say, Data JPA.\n\nCloses gh-40895"
+        },
+        {
+            "hash": "19fb3295606713c4a144f4abbb5c71555f4ad531",
+            "message": "Merge pull request #40821 from MazizEsa\n\n* gh-40821:\n  Polish \"Fix Flyway 10 in a GraalVM native image\"\n  Fix Flyway 10 in a GraalVM native image\n\nCloses gh-40821"
+        },
+        {
+            "hash": "10e23b8f35520bac6aa83b4a3225257d46b75427",
+            "message": "Polish \"Fix Flyway 10 in a GraalVM native image\"\n\nSee gh-40821"
+        },
+        {
+            "hash": "345edb13013095f104cbdf2fee4c6bc3e7dd4933",
+            "message": "Fix Flyway 10 in a GraalVM native image\n\nSee gh-40821"
+        },
+        {
+            "hash": "244df31f6559006dcf4e60720712069c921034f8",
+            "message": "Merge pull request #40905 from erie0210\n\n* pr/40905:\n  Add Kotlin example for @Testcontainers\n\nCloses gh-40905"
+        },
+        {
+            "hash": "2e1ad6bdcc25445cd8b928ebe8a902cc10597d45",
+            "message": "Add Kotlin example for @Testcontainers\n\nSee gh-40905"
+        },
+        {
+            "hash": "3b09791cff18c49c56cbefafa1ba84729da03df2",
+            "message": "Merge pull request #40900 from cmabdullah\n\n* pr/40900:\n  Fix various minor inconsistencies in the documentation\n\nCloses gh-40900"
+        },
+        {
+            "hash": "ab2ba674b653c69f921f967e70c19f035d8b4f87",
+            "message": "Fix various minor inconsistencies in the documentation\n\nSee gh-40900"
+        },
+        {
+            "hash": "96cfc14546bf7304223ccd797ff80773cbe6bc81",
+            "message": "Merge pull request #40918 from vsanna\n\n* pr/40918:\n  Warn in the documentation that spring.profiles.group can only be used in non-profile-specific documents\n\nCloses gh-40918"
+        },
+        {
+            "hash": "3ae1c111a009b2d788efcd69ab870f07fc43e7a3",
+            "message": "Warn in the documentation that spring.profiles.group can only be used in non-profile-specific documents\n\nSee gh-40918"
+        },
+        {
+            "hash": "5ee058033926417c4b6ac1c97a64d2da0634fb4a",
+            "message": "Upgrade to the latest Framework 6.0.x release\n\nCloses gh-40929"
+        },
+        {
+            "hash": "4bb9197a1441f187096694ea7600fd7713f75b35",
+            "message": "Do not update Homebrew tap when publishing 3.2.x releases\n\nCloses gh-40921"
+        },
+        {
+            "hash": "d80cf0540627f39cebba6c72d5962a36b067971c",
+            "message": "Remove unnecessary use of SingletonSupplier\n\nAs of Framework 6.1, it contains a field of a type that's\nincompatible with Gradle's configuration cache.\n\nFixes gh-40911"
+        },
+        {
+            "hash": "7cd1f0ab3b28862fcc40dd1674d667161d44c28d",
+            "message": "Polish JVM thread dump action"
+        }
+    ],
+    "issues": [
+        {
+            "number": "41171",
+            "title": "DockerComposeTest try to run even if docker is not running"
+        },
+        {
+            "number": "41146",
+            "title": "SQL Server JDBC URL is malformed after adding org.springframework.boot.jdbc.parameters label"
+        },
+        {
+            "number": "41154",
+            "title": "Rework Docker Compose integration tests so that the same class can test multiple compose files"
+        },
+        {
+            "number": "41164",
+            "title": "Improve container test code"
+        },
+        {
+            "number": "41158",
+            "title": "Upgrade to Tomcat 10.1.25"
+        },
+        {
+            "number": "41026",
+            "title": "Upgrade to Spring Session 3.2.4"
+        },
+        {
+            "number": "41021",
+            "title": "Upgrade to Spring Integration 6.2.6"
+        },
+        {
+            "number": "41020",
+            "title": "Upgrade to Spring GraphQL 1.2.7"
+        },
+        {
+            "number": "41149",
+            "title": "Upgrade to Spring Framework 6.1.10"
+        },
+        {
+            "number": "41017",
+            "title": "Upgrade to Spring Authorization Server 1.2.5"
+        },
+        {
+            "number": "41109",
+            "title": "Git instant properties cannot be coerced following git-commit-id Maven plugin upgrade"
+        },
+        {
+            "number": "41025",
+            "title": "Upgrade to Spring Security 6.2.5"
+        },
+        {
+            "number": "41024",
+            "title": "Upgrade to Spring Pulsar 1.0.7"
+        },
+        {
+            "number": "41022",
+            "title": "Upgrade to Spring Kafka 3.1.6"
+        },
+        {
+            "number": "41143",
+            "title": "Upgrade to Spring AMQP 3.1.6"
+        },
+        {
+            "number": "30011",
+            "title": "Excluding status code from DefaultErrorAttributes throws NPE"
+        },
+        {
+            "number": "41130",
+            "title": "Prohibit .java8 variants of Jaybird"
+        },
+        {
+            "number": "41023",
+            "title": "Upgrade to Spring LDAP 3.2.4"
+        },
+        {
+            "number": "41018",
+            "title": "Upgrade to Spring Data Bom 2023.1.7"
+        },
+        {
+            "number": "41129",
+            "title": "Upgrade to Pulsar Reactive 0.5.6"
+        },
+        {
+            "number": "41128",
+            "title": "Upgrade to jOOQ 3.18.17"
+        },
+        {
+            "number": "41127",
+            "title": "Upgrade to Jaybird 5.0.5.java11"
+        },
+        {
+            "number": "41120",
+            "title": "Use short-lived access token to authenticate with https://ge.spring.io"
+        },
+        {
+            "number": "41124",
+            "title": "Disable TestContext framework's cache in spring-boot-testcontainers"
+        },
+        {
+            "number": "41111",
+            "title": "Document more precisely how a Container's Docker image name is used to find the matching service connection"
+        },
+        {
+            "number": "41119",
+            "title": "Upgrade to Gradle Actions 3.4.1"
+        },
+        {
+            "number": "38630",
+            "title": "Tests in DelegatingFilterProxyRegistrationBeanTests are non idempotent"
+        },
+        {
+            "number": "39733",
+            "title": "Spring Boot remote restart with devtools causes 'factory already defined' Tomcat error when running with 'java -jar'"
+        },
+        {
+            "number": "41098",
+            "title": "Use organization level CODE_OF_CONDUCT"
+        },
+        {
+            "number": "41101",
+            "title": "MongoHealthIndicator not compliant with Mongo stable API with strict setting"
+        },
+        {
+            "number": "41019",
+            "title": "Upgrade to Spring Framework 6.1.9"
+        },
+        {
+            "number": "41016",
+            "title": "Upgrade to Reactor Bom 2023.0.7"
+        },
+        {
+            "number": "41096",
+            "title": "Upgrade to Infinispan 14.0.29.Final"
+        },
+        {
+            "number": "41095",
+            "title": "Upgrade to Hibernate 6.4.9.Final"
+        },
+        {
+            "number": "41046",
+            "title": "Image building requires builder to specify a stack"
+        },
+        {
+            "number": "41082",
+            "title": "DataSourceProperties fail to bind if java.sql module isn't included"
+        },
+        {
+            "number": "41063",
+            "title": "Upgrade to Netty 4.1.111.Final"
+        },
+        {
+            "number": "41027",
+            "title": "Upgrade to Micrometer Tracing 1.2.7"
+        },
+        {
+            "number": "41015",
+            "title": "Upgrade to Micrometer 1.12.7"
+        },
+        {
+            "number": "41062",
+            "title": "Upgrade to Maven Help Plugin 3.4.1"
+        },
+        {
+            "number": "41061",
+            "title": "Upgrade to jOOQ 3.18.16"
+        },
+        {
+            "number": "41060",
+            "title": "Upgrade to Jetty 12.0.10"
+        },
+        {
+            "number": "41059",
+            "title": "Upgrade to Jetty Reactive HTTPClient 4.0.5"
+        },
+        {
+            "number": "41058",
+            "title": "Upgrade to Jersey 3.1.7"
+        },
+        {
+            "number": "41057",
+            "title": "Upgrade to HSQLDB 2.7.3"
+        },
+        {
+            "number": "41056",
+            "title": "Upgrade to FreeMarker 2.3.33"
+        },
+        {
+            "number": "41055",
+            "title": "Upgrade to Dropwizard Metrics 4.2.26"
+        },
+        {
+            "number": "41054",
+            "title": "Upgrade to Byte Buddy 1.14.17"
+        },
+        {
+            "number": "40697",
+            "title": "Image building hangs when builder and buildpack are configured"
+        },
+        {
+            "number": "41028",
+            "title": "Upgrade to Neo4j Java Driver 5.21.0"
+        },
+        {
+            "number": "41007",
+            "title": "IllegalArgumentException when trying to use Tomcat's HttpNio2Protocol with Spring Boot-configured SSL"
+        },
+        {
+            "number": "41001",
+            "title": "Uber jar fails to start when it contains a dependency with Multi-Release: true in its manifest and unexpected file entries in META-INF/versions"
+        },
+        {
+            "number": "39472",
+            "title": "JSP-related resources may not be found in an executable war file when using Jetty"
+        },
+        {
+            "number": "40573",
+            "title": "Test Gradle plugin against Gradle 8.8"
+        },
+        {
+            "number": "40895",
+            "title": "The auto-configured reactiveNeo4jTransactionManager may cause a failure due to multiple TransactionManager beans"
+        },
+        {
+            "number": "40929",
+            "title": "Use latest Framework 6.0.x versions when downgrading it for compatibility with version of Gradle that do not support multi-release jars"
+        },
+        {
+            "number": "40921",
+            "title": "Don't update Homebrew tap when releasing 3.2.x"
+        },
+        {
+            "number": "40911",
+            "title": "buildInfo does not work with Gradle 8.7 or later when the configuration cache is enabled"
+        }
+    ]
+}

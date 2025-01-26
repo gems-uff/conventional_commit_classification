@@ -1,0 +1,74 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 14,
+    "start_delay": 0.0,
+    "duration": 4.527326388888889,
+    "commits_info": [
+        {
+            "hash": "3e1db3c01331d7fa65f74b70411256111d2d0ec2",
+            "message": "Update release notes by Travis CI build 1711 [ci skip]"
+        },
+        {
+            "hash": "2106e4b51fedc1324a9b5c16d2907c56913aba22",
+            "message": "Merge pull request #735 from mockito/verification-data\n\nExposed existing verification API so that it only leaks one private API class (VerificationData - it is hard to move this class to public space without breaking compatibility). It's good enough for now."
+        },
+        {
+            "hash": "d63b75fb7f1415f14a9b3fdd79b68b44ae226d6e",
+            "message": "Cosmetics based on feedback"
+        },
+        {
+            "hash": "799d3a1107e7b92fe7cdfaa4f060c32bc7e65c8f",
+            "message": "Brice saved my ass\n\n- My previous commit introduced backwards incompatible change and this commit fixes it. I cannot really create VerificationData in public package and delegate to the private, deprecated API. This would break compilation.\n- This change puts back the internal VerificationData, it will remain in internal package but at least it does not leak any other private types. In the next major version of Mockito, this class need to be moved to public package.\n- Added unit test that uses the old API\n\nThanks Brice for catching this problem in the code review!!!"
+        },
+        {
+            "hash": "3a9617af4c73198316094e6e69f7d41275755e35",
+            "message": "Updated since tags"
+        },
+        {
+            "hash": "b18da9a7f9f5da1e6325546671d5e026265ec1e1",
+            "message": "Merge branch 'release/2.x' into verification-data"
+        },
+        {
+            "hash": "3b8baef4a7ffa4023ce4e156bbef20197dc0e628",
+            "message": "Adds a link to ABI-Laboratory to track API backward compatibility\n\n[ci skip]"
+        },
+        {
+            "hash": "645723eb5810d3c0a84d6df976751448db924b0a",
+            "message": "Increment version '2.2.11' -> '2.2.12' by Travis CI build 1694 [ci skip]"
+        },
+        {
+            "hash": "3b18953435def54cfc4906c065b640cb14dc1037",
+            "message": "Updated parameter name\n\nCode review feedback"
+        },
+        {
+            "hash": "d09e3eb0e21a65f6675f189e0e2d97743abb586f",
+            "message": "Added missing javadoc"
+        },
+        {
+            "hash": "5e7aa578de7490747a37c71e4b81613a8568782b",
+            "message": "Made VerificationData backwards compatible\n\nFor motivation, see #730"
+        },
+        {
+            "hash": "a16c9a0de90069208c2086c759bd05363a54715a",
+            "message": "MatchableInvocation is fully public\n\n- It no longer leaks any private types\n- I didn't find value in exposing 'CapturesArgumentsFromInvocation' type so I blended it into MatchableInvocation. MatchableInvocation and Invocation are types intended for very advanced users and framework integrators. They already expose mutable methods.\n\nNeeded for #719"
+        },
+        {
+            "hash": "8842d2103fc60eba87f788304d1c3b0996b74051",
+            "message": "Created new type MatchableInvocation\n\nIt still leaks internal type CapturesArgumentsFromInvocation, will get fixed in the next commit\n\nNeeded for #719"
+        },
+        {
+            "hash": "008440dae097f64aca8eabe510a9100cc99e99c9",
+            "message": "Moved VerificationData to public package\n\nNeeded for #719"
+        }
+    ],
+    "issues": [
+        {
+            "number": "730",
+            "title": "Expose public verification API"
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.10.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 21,
+    "start_delay": 0.0,
+    "duration": 12.328680555555556,
+    "commits_info": [
+        {
+            "hash": "9cceed78bf51fc328e6cd9cb7cc908064fd8f9ab",
+            "message": "\"Update release notes by Travis CI build 297 [ci skip]\""
+        },
+        {
+            "hash": "6d665caedab2366313c8e14a770077383c206c14",
+            "message": "Moved classes to better packages.\n\nThis change fixes #107 at least for now."
+        },
+        {
+            "hash": "9378bc42c8c5cc870a755fe268af778e6261aa4b",
+            "message": "Fixed the test and added a TODO."
+        },
+        {
+            "hash": "5141b9d0a4dd00303851e8107ef8871392e02e32",
+            "message": "Tightened coverage."
+        },
+        {
+            "hash": "1760d3f080fe9a9f0cd5480c85d9d5a8a03b82b1",
+            "message": "Removed unnecessary interface."
+        },
+        {
+            "hash": "e8dd6d114e332e1c235a30ade1e4bf7ba29661f5",
+            "message": "Further insulation of cglib"
+        },
+        {
+            "hash": "ab10ef00cdfe24cfe3dad94c7e57397945cdbdc9",
+            "message": "ClassImposterizer does not have to be public"
+        },
+        {
+            "hash": "1b2a4f9715bbf9b4bfec063ed5c6781513863217",
+            "message": "Insulated most cglib in a separate package\n\nMajority of classes in this package are not public. I'd like to insulate all cglib so that it can be replaced easily."
+        },
+        {
+            "hash": "265aad7ab0fbfec5e7ca569b31612446e86ff77e",
+            "message": "Steps towards insulating cglib-dependent code"
+        },
+        {
+            "hash": "14c0df4d02612f7a27250628f671aa26a3842e9a",
+            "message": "Extracted an interface. Not used widely yet."
+        },
+        {
+            "hash": "f366c3deea86d82384dd9b0ec5b95978be41d47e",
+            "message": "Rename job\n\nPrepping for extracting an interface."
+        },
+        {
+            "hash": "1cd9d2d18a5823025018928fdfffbc2df4789056",
+            "message": "Refactoring for better clarity."
+        },
+        {
+            "hash": "d3cb4c58a3a02f94c0d51ff5dafef93db349aefc",
+            "message": "Rename job for clarity."
+        },
+        {
+            "hash": "de6c65820bc791a45dd4cb842aba4726de114fd8",
+            "message": "Avoided a singleton.\n\nReworked the code so that we can avoid more singletons. It also fixes a failing test."
+        },
+        {
+            "hash": "b211f3290f55b02c2182d4f17c79f16c14346ddb",
+            "message": "Refactoring to allow creating mocks by constructor.\n\nPushed out the creation of instances from imposterizer to a separate object. Should be easier to add new features around mocking/partial mocking abstract classes."
+        },
+        {
+            "hash": "1d9d483a599a8f8c5aec5d9bd1ff605623477388",
+            "message": "avoid releasing new version if binaries the same\n\nFixes #105 (more info on this ticket).\n\n- exposed an existing method on the RelelaseNotesBuilder\n- added new task that checks equality of the binaries\n- hooked up the task so that the release is not triggered if binaries the same\n- some tidy-up is still needed"
+        },
+        {
+            "hash": "7a74fbcce1f2b041293b62e7272e21557de698a3",
+            "message": "linked issue number in the release notes [ci skip]"
+        },
+        {
+            "hash": "386aa276d427cfa827b2345fa80b57a3ed7698a9",
+            "message": "Reuse message of issue #99 for PR #103\n\n[ci skip]"
+        },
+        {
+            "hash": "2afff7b59f5cf7286d6f21d56c7f048b1ddd0391",
+            "message": "Adds maven central badge [ci skip]"
+        },
+        {
+            "hash": "84d3c82f66bed46b03ecd7c622c98eece548cc3b",
+            "message": "\"Update release notes by Travis CI build 285 [ci skip]\""
+        },
+        {
+            "hash": "d6d7e44c1714f7ae19feecad953f5d0f4d2d82b1",
+            "message": "Increment version '1.10.8' -> '1.10.9' by Travis CI build 285 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "107",
+            "title": "Improve internal implementation so that it is possible to implement mocking abstract classes"
+        },
+        {
+            "number": "105",
+            "title": "Continuous deployment should not release new version if binaries are equal"
+        },
+        {
+            "number": "99",
+            "title": "RETURNS_DEEP_STUBS automatically tries to create serializable mocks"
+        }
+    ]
+}

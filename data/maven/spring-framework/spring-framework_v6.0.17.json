@@ -1,0 +1,258 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.17",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 37,
+    "start_delay": 0.0,
+    "duration": 35.076388888888886,
+    "commits_info": [
+        {
+            "hash": "f8bad939c323a1832f0f04cafa04791dd57b7290",
+            "message": "Release v6.0.17"
+        },
+        {
+            "hash": "ee100cfba7e583065fbdbd6f9b5b0c13f4ee0833",
+            "message": "Upgrade to Mockito 5.10, Mutiny 1.10, Undertow 2.3.11"
+        },
+        {
+            "hash": "aaf90f5a96ae570fc0ea62dd66509561952ba8db",
+            "message": "Upgrade to Reactor 2022.0.16\n\nIncludes SLF4J 2.0.12, Groovy 4.0.18, Jetty 11.0.20, Netty 4.1.107, OpenPDF 1.3.40"
+        },
+        {
+            "hash": "70be04ba814e187296f21fdb43a01919d24720dd",
+            "message": "Infer reflection hints for Jackson annotations `builder` attributes\n\nThis notably enables Jackson to reflectively call a user-provided\nbuilder class and invoke its declared methods (setters and build) in\na native app.\n\nSee gh-32238\nCloses gh-32257"
+        },
+        {
+            "hash": "b976ee3f67f66adf2de7c292cb3e8ffb04a969b4",
+            "message": "Consistent Lock field declaration (instead of ReentrantLock field type)\n\n(cherry picked from commit b4153618a414f43d12feb2b33487fa1a35be4674)"
+        },
+        {
+            "hash": "b11ff966521cd1b4038b3b0d876ff0956e7ca8de",
+            "message": "Update user info pattern\n\nCloses gh-32211"
+        },
+        {
+            "hash": "667e4e753188ec13a8640b3b98d40edd1f991100",
+            "message": "Implement MatchableHandlerMapping in RouterFunctionMapping\n\nSee gh-32221\nCloses gh-32222"
+        },
+        {
+            "hash": "5fd9fab0ce07ef7596b3e7c5ba2f6f12adcf8a71",
+            "message": "Polishing (backported from main)"
+        },
+        {
+            "hash": "95a86463091b05aadc34e2d1b6fba8ff808c2656",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5434edd726f1f4a6c330f2a4ebf2e00841af0ed7",
+            "message": "Avoid sendError call when response committed already (Tomcat 10.1.16)\n\nCloses gh-32206\n\n(cherry picked from commit 4ed337247ccd3e976cb544d831de023a1704c96d)"
+        },
+        {
+            "hash": "5f13ea95fb8106b954bdec90816ddbb56e0d9984",
+            "message": "Polish\n\nSee gh-32197"
+        },
+        {
+            "hash": "74bb42b78f91fd409eb40b0d8bed6088935e915e",
+            "message": "Optimize Map methods in ServletAttributesMap\n\nServletAttributesMap inherited default implementations of the size\nand isEmpty methods from AbstractMap which delegates to the Set returned\nby entrySet. ServletAttributesMap's entrySet method made this fairly\nexpensive, since it would copy the attributes to a List, then use a\nStream to build the Set. To avoid the cost, add implementations of\nisEmpty / size that don't need to call entrySet at all.\n\nAdditionally, change entrySet to return a Set view that simply lazily\ndelegates to the underlying servlet request for iteration.\n\nCloses gh-32197"
+        },
+        {
+            "hash": "55717adf8830e3a5c69a2dad78b6d368dad020aa",
+            "message": "Upgrade to Gradle 8.6\n\nCloses gh-32193"
+        },
+        {
+            "hash": "72835f10b9b07921978da419abf2a182abf67967",
+            "message": "Polishing"
+        },
+        {
+            "hash": "125ebd029ce590aecfca2195498abb0829278378",
+            "message": "Prevent AOT from failing with spring-orm without JPA\n\nThis commit improves PersistenceManagedTypesBeanRegistrationAotProcessor\nso that it does not attempt to load JPA classes when checking for the\npresence of a PersistenceManagedTypes bean. To make it more clear a\ncheck on the presence for JPA has been added to prevent the nested\nclasses to be loaded regardless of the presence of the bean.\n\nCloses gh-32160"
+        },
+        {
+            "hash": "d8d4fa0e2419e67f5288479383256ff1ba1a0a8e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bfd3b3ad885cf7d9c1cf64ac6f2c702e6aacdb71",
+            "message": "Eagerly initialize ZERO_NANOS constant"
+        },
+        {
+            "hash": "0909161ba1403205804cba0176831d4a968c56d0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4910c217dc897edd81f086941c7d7941afd73e8e",
+            "message": "Explicit documentation note on cron-vs-quartz parsing convention\n\nCloses gh-32128\n\n(cherry picked from commit a738e4d5fd58b1c8b06c63fb1efba4b5eb2bcaae)"
+        },
+        {
+            "hash": "f262046ef9785bffe3d6ccd93eecb426d9e69c96",
+            "message": "Update basics.adoc\n\nCloses gh-32151"
+        },
+        {
+            "hash": "d50d4a909259f23466be5c14891b488aa1ff37fc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b06305e64f2e302d015e93b27761784518e5480d",
+            "message": "Compare qualifier value arrays with equality semantics\n\nCloses gh-32106\n\n(cherry picked from commit c5a75219ceb5b5bc6a1afbeddff161d4e3f3a753)"
+        },
+        {
+            "hash": "c749a14326c0644c59275b20078f0be3427919b5",
+            "message": "Guard against multiple body subscriptions\n\nBefore this commit, the JDK and Jetty connectors do not have any\nsafeguards against multiple body subscriptions. Such as check has now\nbeen added.\n\nSee gh-32100\nCloses gh-32102"
+        },
+        {
+            "hash": "3817936ca5efda0c231f2b33ac9271ac834105a6",
+            "message": "Declare current observation context as available since 6.0.15\n\nSee gh-31609\nSee gh-31646"
+        },
+        {
+            "hash": "9bd2be80b9200155e7e4fc7363288aa78910d5d0",
+            "message": "Declare allowPrivateNetwork as available since 5.3.32\n\nSee gh-28546\nSee gh-31974"
+        },
+        {
+            "hash": "c6e9cd0c622f7d0fb2ebd7b528ff832681473c87",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e2a5cfb4591c2460d7d1ff26047a3ced0e6e2020",
+            "message": "Consistent nullability for concurrent result\n\n(cherry picked from commit b92877990da57c36eee035095c9ae72f5c0a7537)"
+        },
+        {
+            "hash": "b484ab116f818129471d3bf19feea2a9df1f2c92",
+            "message": "Record errors thrown by custom handler in RestTemplate observations\n\nPrior to this commit, the `RestTemplate` observation instrumentation\nwould only record `RestClientException` and `IOException` as errors in\nthe observation. Other types of errors can be thrown by custom\ncomponents, such as `ResponseErrorHandler` and in this case they aren't\nrecorded with the observation.\nAlso, the current instrumentation does not create any observation scope\naround the execution. While this would have a limited benefit as no\napplication code is executed there, developers could set up custom\ncomponents (such as, again, `ResponseErrorHandler`) that could use\ncontextual logging with trace ids.\n\nThis commit ensures that all `Throwable` are recorded as errors with the\nobservations and that an observation `Scope` is created around the\nexecution of the client exchange.\n\nFixes gh-32063"
+        },
+        {
+            "hash": "c6684731865e5699a28f30353157ef1dcbe02b17",
+            "message": "Polishing"
+        },
+        {
+            "hash": "38595c6a990e0190fd824c958c1ae89f9a853d57",
+            "message": "Handle Content-Length in ShallowEtagHeaderFilter more robustly\n\nThis commit ensures that setting the Content-Length through\nsetHeader(\"Content-Length\", x\") has the same effect as calling\nsetContentLength in the ShallowEtagHeaderFilter. It also filters out\nContent-Type headers similarly to Content-Length.\n\nSee gh-32039\nCloses gh-32050"
+        },
+        {
+            "hash": "d756c2b1286071a97940297733b930c60508d2ad",
+            "message": "Remove JDK 20 variant from CI build."
+        },
+        {
+            "hash": "3be4322f71a558f4afdea8160dd219d1d828ed41",
+            "message": "Upgrade CI image to JDK 17.0.10+13"
+        },
+        {
+            "hash": "328e444db3f1381003426227dbea7ed82031b7b3",
+            "message": "Upgrade CI image to Ubuntu Jammy 20240111"
+        },
+        {
+            "hash": "94bdd4380f8eb7c078067903e155cc051995d661",
+            "message": "Fix incorrect assertions using json path\n\nCloses gh-32040"
+        },
+        {
+            "hash": "3f9d479583e16314ccf9e58d56f722de7ca6c056",
+            "message": "Double-checked lock in ChannelSendOperator#request\n\nCloses gh-31865"
+        },
+        {
+            "hash": "338922f03dc91042faa50ea7b9f0443f38e0ace5",
+            "message": "Find destroy methods in superclass interfaces\n\nRelated tests will be added in\nhttps://github.com/spring-projects/spring-aot-smoke-tests.\n\nCloses gh-32017"
+        },
+        {
+            "hash": "fad857e06a63bcde9aa7c5c4060c0fc30437e722",
+            "message": "Next development version (v6.0.17-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32238",
+            "title": "`@JsonDeserialize(builder = ...)` does not work in GraalVM native image"
+        },
+        {
+            "number": "32257",
+            "title": "`@JsonDeserialize(builder = ...)` does not work in GraalVM native image"
+        },
+        {
+            "number": "32211",
+            "title": "Consistent parsing of user information in UriComponentsBuilder"
+        },
+        {
+            "number": "32221",
+            "title": "RouterFunctionMapping does not implement MatchableHandlerMapping"
+        },
+        {
+            "number": "32222",
+            "title": "RouterFunctionMapping does not implement MatchableHandlerMapping"
+        },
+        {
+            "number": "32206",
+            "title": "\"IllegalStateException: Cannot call sendError() after the response has been committed\" when IOException is thrown during resolving method argument values on Tomcat >= 10.1.16"
+        },
+        {
+            "number": "32197",
+            "title": "Optimize Map methods in ServletAttributesMap"
+        },
+        {
+            "number": "32193",
+            "title": "Upgrade to Gradle 8.6"
+        },
+        {
+            "number": "32160",
+            "title": "Cannot process AOT when spring-orm is on the classpath without JPA"
+        },
+        {
+            "number": "32128",
+            "title": "Document cron-vs-quartz parsing convention for dayOfWeek part in CronExpression"
+        },
+        {
+            "number": "32151",
+            "title": "Update basics.adoc"
+        },
+        {
+            "number": "32106",
+            "title": "QualifierAnnotationAutowireCandidateResolver.checkQualifier does identity checks when comparing arrays used as qualifier fields"
+        },
+        {
+            "number": "32100",
+            "title": "Guard against multiple body subscriptions in Jetty and JDK reactive responses"
+        },
+        {
+            "number": "32102",
+            "title": "Guard against multiple body subscriptions in Jetty and JDK reactive responses"
+        },
+        {
+            "number": "31609",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "31646",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "28546",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "31974",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "32063",
+            "title": "Exceptions thrown by custom error handlers are not recorded in RestTemplate observations"
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32050",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32040",
+            "title": "Tests using jsonPath wrongly use formatted arguments as the expected value"
+        },
+        {
+            "number": "31865",
+            "title": "ChannelSendOperator.WriteBarrier race condition in request(long) method leads to response being dropped"
+        },
+        {
+            "number": "32017",
+            "title": "Destroy method not found in Native image for `ExecutorService` Bean type"
+        }
+    ]
+}

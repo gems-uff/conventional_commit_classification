@@ -1,0 +1,226 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.12.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 48,
+    "start_delay": 0.0,
+    "duration": 50.034675925925924,
+    "commits_info": [
+        {
+            "hash": "21095bbb972b590cd4fc61ea911aca60ec30cedf",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "0c8eb5b01093ea75ae9a9c857080645cef2811e3",
+            "message": "we copied the tests into the build dir for some reason, that was not neccessary."
+        },
+        {
+            "hash": "6c1993659cd53f601520209771d116cb94e9b825",
+            "message": "Updated changelog to reflect fixes for issue #648 and getting rid of the JNA dep."
+        },
+        {
+            "hash": "60cce658818e84d4eefaffaec857e08ea48304fc",
+            "message": "Potential fix for NPE in classloader, issue 648"
+        },
+        {
+            "hash": "fbab1ca77cb8306843e26c5bad91186b34563282",
+            "message": "yet another patcher-sourced fix, heh. Version-a-day!"
+        },
+        {
+            "hash": "1fa01142832bf9ba6ddd9d08d7392bd807f8430f",
+            "message": "Updated to new patcher to get rid of JNA dep."
+        },
+        {
+            "hash": "ed57bc84b051debe8f8904a5fe90a36c300aa64a",
+            "message": "Updating to new lombok.patcher 'HomeFinder'."
+        },
+        {
+            "hash": "0bd2425b29b3433f8d4b3a9d662119a5430ef183",
+            "message": "Fixed documentation of @RequiredArgsConstructor (Issue 593)"
+        },
+        {
+            "hash": "6d37333f2df7f0b637939f1f66adcb79c595f1d0",
+            "message": "updated changelog to reflect the new support for luna and some JDK8 features in eclipse."
+        },
+        {
+            "hash": "f7822aed9addaa1a150342eb2760e1a4a85b3ffb",
+            "message": "Fixed debug template for LombokizedEclipse, and added 'local' option for lombok.patcher."
+        },
+        {
+            "hash": "33d6e5c45f77fc186ad8c4c2bc94ac0c40392260",
+            "message": "Fixed lombok support in eclipse 4.4 ('luna')."
+        },
+        {
+            "hash": "99784282b92a3b5ca2e7f2b936c3e6dd11aca6a6",
+            "message": "fun times ant hacking to make the ant eclipseForDebugging task ask which alternative you want in the face of multiple plugin versions."
+        },
+        {
+            "hash": "7d10aad6a6431680da557e6b5045595139abd636",
+            "message": "Updating some of the wording in the installer, notably any hint that this thing still does anything for netbeans."
+        },
+        {
+            "hash": "c4761096715a8388e683b9b7f86f2c6a3be4f7a0",
+            "message": "Fixed some issues when using lambda expressions in eclipse using the beta JDK8 support plugin for Kepler."
+        },
+        {
+            "hash": "e82a1c052e7d06a64b7b065d38db35e030323f1a",
+            "message": "yet another (much better) attempt at fixing the deadlock issue. Again all the work is in lombok.patcher, this is just updating the deps."
+        },
+        {
+            "hash": "15e7adfa08a3dc86e34008c80b5719e93fb73811",
+            "message": "Another shot in the dark to fix deadlock issues with eclipse and build plugins, issue #645 and issue #531. The actual fix is in lombok.patcher, this is just a dep update to use v0.8 of lombok.patcher which is the real shot in the dark."
+        },
+        {
+            "hash": "4372aedbd03cc4e43b90a4c0c4f703da01f322ef",
+            "message": "Issue 641:\t@Delegate is incorrectly allowed on static members in javac. Also added tests, Reinier."
+        },
+        {
+            "hash": "bef8d3cb41cc895226ebc29ecef8555d15f9beae",
+            "message": "previous fix also fixes issue 438: Using the surround with try/catch quickfix in methods with SneakyThrows"
+        },
+        {
+            "hash": "c72e2a273233719750af0f41e842f705292888ac",
+            "message": "[suspect:eclipse] Fix for issue 633: refactor script 'extract local variable' did not work inside for example SneakyThrows-protected methods.\n\nThis fix is reverting the change in e835daa9.\n\nDuring conversion of the internal.ast to the dom AST, a flag is introduced\nnamed 'ORIGINAL'. Commit e835daa9 always explicitly cleared it for\nall lombok-generated nodes, in an attempt to try and do the appropriate thing,\ntreating the ORIGINAL flag as a simile for 'generated code'.\n\nUnfortunately, for eclipse code analysis, all our generated code should be\ntreated as if it's \"really\" there, and in general this doesn't work because\neclipse's concept of 'generated' applies to explicit super() calls and the like,\nnot the kind of stuff lombok introduces."
+        },
+        {
+            "hash": "dccbcd8f5c25f6de88137003d97c4815007c35bc",
+            "message": "Use the source for the source :-)"
+        },
+        {
+            "hash": "b53da8728732630aa6c6e0760dd8247922c59196",
+            "message": "changelog updated for issue 632 (topic support for loggers)"
+        },
+        {
+            "hash": "cb8d1d034338c9e5c3516953cdd3bc4339cb664c",
+            "message": "fix to the new eclipseForDebugging target, which didnt work on windows due to backslashes in paths getting eliminated when using a path in a regexp replace string."
+        },
+        {
+            "hash": "3355ed89f3ab12a84b3494f5eb2e361e0e3df262",
+            "message": "Improved error reporting in Eclipse"
+        },
+        {
+            "hash": "d78135180c8f9e9f4c6c361679759d3eacb63be3",
+            "message": "[deps] Updated eclipse deps to 3.9 tree. This also enables testing java7 features on ecj.\n[Log] updated naming for @Log (topic= instead of mchmulder's 'value')."
+        },
+        {
+            "hash": "db24fd42c5732856a894dbdc5e1827ea31792757",
+            "message": "Merge branch 'issue-632' of https://github.com/mthmulders/lombok into i632"
+        },
+        {
+            "hash": "52bb71582bcff166469b8a8be0960a24bc3f02b7",
+            "message": "Explained how to customise the category of the generated Log(ger)"
+        },
+        {
+            "hash": "c0e00edb7bf369470c55d59307bbf80cc3abb9d9",
+            "message": "Handler and testcases for @XSlf4j"
+        },
+        {
+            "hash": "1045006fa9d19c6daf51b2c200176ba789c2372f",
+            "message": "Handler and testcases for @Log4j2"
+        },
+        {
+            "hash": "ebc9ee5f6d6bc89af65d27f472d13f18b34bef18",
+            "message": "Handler and testcases for @Log4j"
+        },
+        {
+            "hash": "e1153c16562dba545f4cc2ecbc26befde6c1a781",
+            "message": "Handler and testcases for @Log"
+        },
+        {
+            "hash": "f13191e02c1b8e8e8857cadfcf29cfd15dd1f1ad",
+            "message": "Handlers and testcases for @CommonsLog"
+        },
+        {
+            "hash": "c38a64a5564996b552d88448bfb00722403bf194",
+            "message": "Handlers and testcases for @Slf4j"
+        },
+        {
+            "hash": "d269cdcaf1012c967b353e3984072bf42a6061da",
+            "message": "Added my name to the AUTHORS file"
+        },
+        {
+            "hash": "e1344ec4c99878e2e6b7a09ae604b37b92dbb7eb",
+            "message": "Updated changelog"
+        },
+        {
+            "hash": "83efe294663fd173410b29a80578f54e84b55e03",
+            "message": "Fix for issue 631. Martin, thanks for the contribution."
+        },
+        {
+            "hash": "5782b909c5c0e8f766de36d600bc314eaa98e6b2",
+            "message": "[#585] Copying of javadoc to getters / setters / withers woudl copy non-relevant sections too."
+        },
+        {
+            "hash": "644e528564006b84c44526fb2b660754c16f335f",
+            "message": "[trivial] [copyright] updating LICENSE to 2014."
+        },
+        {
+            "hash": "ce8362fad53b0016dba9fb01fcb68ba2dd7ade36",
+            "message": "Added extra example to the online documentation for @Log"
+        },
+        {
+            "hash": "d5c366e93ea19f286da2bdee16c0fdca8850b22a",
+            "message": "Issue 630: Several small documentation fixed for Log"
+        },
+        {
+            "hash": "cdb4920d52b372831807347ccc28a3382a6fea7d",
+            "message": "Typo in changelog"
+        },
+        {
+            "hash": "14cc54527663018cdf7343eefffc8c37fbce93bb",
+            "message": "Issue 625: use (even) better primes for hashcodes"
+        },
+        {
+            "hash": "2ab6cc809d6aec8d253962547cab7e32598b84a7",
+            "message": "Issue 629: have delombok respect the emptyLines derecotry inside enum bodies as well"
+        },
+        {
+            "hash": "560552ddb3c7be4b92c7479098c40886aa3bb8aa",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "893585f526b852ff5059d279e69927fab0d41d42",
+            "message": "[i386] documentation update for Data/Value's behaviour in the face of existing constructors."
+        },
+        {
+            "hash": "6b0acc9a19cce1c13496d132ce695415780ab52b",
+            "message": "[eclipse debugging] a new target, 'eclipseForDebugging', which imports deps from your eclipse so that line numbers etc line up with your eclipse."
+        },
+        {
+            "hash": "d77bd114a83795b56f67122e7422137f94fe2629",
+            "message": "Updated changelog"
+        },
+        {
+            "hash": "c128331d4dd5c38f5f0218940632dfffb0b25f5c",
+            "message": "Merge pull request #43 from jlahoda/471\n\n#471: @SneakyThrows should work in NetBeans"
+        },
+        {
+            "hash": "d1182bbf45ffd392134cb2379b33913f744b69d0",
+            "message": "#471: @SneakyThrows should work in NetBeans"
+        }
+    ],
+    "issues": [
+        {
+            "number": "648",
+            "title": "Random compile errors under Intellij IDEA with parallel compile enabled"
+        },
+        {
+            "number": "645",
+            "title": "Builder should not include transient fields"
+        },
+        {
+            "number": "531",
+            "title": "Merge Lombok-PG"
+        },
+        {
+            "number": "585",
+            "title": "@Delegate feature with Exception forwarding"
+        },
+        {
+            "number": "471",
+            "title": "@ExtensionMethod broken for javac in nearly all cases"
+        }
+    ]
+}

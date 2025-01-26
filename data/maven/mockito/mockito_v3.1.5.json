@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.1.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.009409722222222222,
+    "commits_info": [
+        {
+            "hash": "6379ce9017e7f9d16883d4a08ae31d00d1216b9f",
+            "message": "3.1.5 release (previous 3.1.4) + release notes updated by CI build 4262\n\n[ci skip-release]"
+        },
+        {
+            "hash": "fc1fc313c168f9e8ea76b0a346a382220f8810b4",
+            "message": "Apply consistent import ordering with spotless (#1811)\n\nSpotless allows us to enforce a consistent import order. Configure it\r\nsuch that static imports are first and non-static imports afterwards.\r\nWithin imports, java imports first, then javax, then all others.\r\n\r\nThis is consistent with the existing CONTRIBUTING.md guidelines, apart\r\nfrom the fact that static imports are first. (File has been updated). I\r\nwould propose that makes more sense, but happy to discuss.\r\n\r\nIn any case, spotless already found inconsistent ordering within imports\r\nthemselves, so that is already providing value for consistency.\r\n\r\nI have also updated the CONTRIBUTING guidelines to explain how\r\n`./gradlew spotlessApply` will fix a lot of issues without the\r\ndeveloper having to worry about it. That should hopefully help newcomers\r\nmake changes more confidently.\r\n\r\n(The only 2 files that are interesting to you are the `build.gradle` and\r\n`.github/CONTRIBUTING.md`. All other file changes were automatically\r\nperformed after running `./gradlew spotlessApply` locally.)"
+        }
+    ],
+    "issues": []
+}

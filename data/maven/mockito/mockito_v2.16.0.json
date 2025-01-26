@@ -11,78 +11,69 @@
     "commits_info": [
         {
             "hash": "d4a508e65dcfaeb8033c48ec4321f59a4ed2cb99",
-            "message": "2.16.0 release (previous 2.15.6) + release notes updated by CI build 3257\n\n[ci skip-release]\n",
-            "tag_name": null
+            "message": "2.16.0 release (previous 2.15.6) + release notes updated by CI build 3257\n\n[ci skip-release]"
         },
         {
             "hash": "018a2e0c2746072fbb19de58d77cc87b1e12d00c",
-            "message": "Merge pull request #1321 from moltmann/KeepWeakRefsInInvocations\n\nPrevent memory leaks with inline MockMakers by using weak refs to mocks\r\n\r\n[ci maven-central-release]",
-            "tag_name": null
+            "message": "Merge pull request #1321 from moltmann/KeepWeakRefsInInvocations\n\nPrevent memory leaks with inline MockMakers by using weak refs to mocks\r\n\r\n[ci maven-central-release]"
         },
         {
             "hash": "bf0fd961e434e9e72ec6eacf9933e56ec2c9db3f",
-            "message": "Bumped minor version\n\nWe haven't had a Maven Central release in a month, let's bump a minor version and push new version to Central.\n",
-            "tag_name": null
+            "message": "Bumped minor version\n\nWe haven't had a Maven Central release in a month, let's bump a minor version and push new version to Central."
         },
         {
             "hash": "85e27f4a30fa8580550e961d8e85320266576ce0",
-            "message": "Checkstyle\n",
-            "tag_name": null
+            "message": "Checkstyle"
         },
         {
             "hash": "ec06ddbc742aa8e756d4a5205baafaaff3b71c3a",
-            "message": "Using MockWeakReference instead of WeakReference\n\nThis way we communicate the intent more clearly and we have better error reporting.\n",
-            "tag_name": null
+            "message": "Using MockWeakReference instead of WeakReference\n\nThis way we communicate the intent more clearly and we have better error reporting."
         },
         {
             "hash": "5738366c738107f096d26fda30d15e2a0dabff84",
-            "message": "Package cleanup\n\nAvoided importing classes from \"org.mockito.internal.creation.bytebuddy\" in other parts of the code. It is needed to isolate bytebuddy dependency.\n",
-            "tag_name": null
+            "message": "Package cleanup\n\nAvoided importing classes from \"org.mockito.internal.creation.bytebuddy\" in other parts of the code. It is needed to isolate bytebuddy dependency."
         },
         {
             "hash": "7ce65259b3b4814c369fcf8ec51be3b8b56381aa",
-            "message": "Reduced the public API of MockWeakReference\n",
-            "tag_name": null
+            "message": "Reduced the public API of MockWeakReference"
         },
         {
             "hash": "9d05a808a14f6f42aa4ac97012ddb1a72c0d94ed",
-            "message": "Removed unnecessary serialVersionUID\n\nWe don't use it consistently in the code.\n",
-            "tag_name": null
+            "message": "Removed unnecessary serialVersionUID\n\nWe don't use it consistently in the code."
         },
         {
             "hash": "2b1d13ec5131bd891a4569ac8962dc4381ea5635",
-            "message": "Reduced complexity\n\nWe don't need the conditional logic. We can use the caller to decide what MockReference to pass.\n",
-            "tag_name": null
+            "message": "Reduced complexity\n\nWe don't need the conditional logic. We can use the caller to decide what MockReference to pass."
         },
         {
             "hash": "a6d7382ec23f84f421b4c628f28d16ff870ec3ad",
-            "message": "Renamed classes\n\nMockReference communicates the intent more clearly than SerializableReference\n",
-            "tag_name": null
+            "message": "Renamed classes\n\nMockReference communicates the intent more clearly than SerializableReference"
         },
         {
             "hash": "207fbe946c75931a6b2b4266aa3c8f7359bb0e15",
-            "message": "Tweaked exception message and added coverage\n",
-            "tag_name": null
+            "message": "Tweaked exception message and added coverage"
         },
         {
             "hash": "26897f3639f53fefc00b4b0511964d745c3c9a74",
-            "message": "Removed unused methods\n",
-            "tag_name": null
+            "message": "Removed unused methods"
         },
         {
             "hash": "3452a18eb55f22a98bd5100c586d69ad31a7faf2",
-            "message": "Coverage for inline memory leaking of serializable mocks\n\nI noticed that we're missing some test coverage. We added code to handle serializable mocks with weak references. I verified that this test fails if we remove weak references from serializable mocks.\n",
-            "tag_name": null
+            "message": "Coverage for inline memory leaking of serializable mocks\n\nI noticed that we're missing some test coverage. We added code to handle serializable mocks with weak references. I verified that this test fails if we remove weak references from serializable mocks."
         },
         {
             "hash": "c04485a26e88d6ce4571315227b5535f7333f62e",
-            "message": "Made java memory setting local to the project that needs it\n\nAlso updated comments\n",
-            "tag_name": null
+            "message": "Made java memory setting local to the project that needs it\n\nAlso updated comments"
         },
         {
             "hash": "8626ba8d9aa11eccfba0e9b6d442d877b9b99b28",
-            "message": "Fixes #1313: Use weak refs to mock in invocations\n\nThis is needed for mock makers that store a\nmap<weakref<mock>, invocation>. If the invocation holds a strong\nreference to the mock, the key never gets gc-ed and the map keeps on\ngrowing.\n\nAs weak reference cannot be serialized, temporarily create a strong\nreference during serialization.\n\nAs the tests use invocations without keeping references to the mock we\nneed to keep strong references in these cases.\n",
-            "tag_name": null
+            "message": "Fixes #1313: Use weak refs to mock in invocations\n\nThis is needed for mock makers that store a\nmap<weakref<mock>, invocation>. If the invocation holds a strong\nreference to the mock, the key never gets gc-ed and the map keeps on\ngrowing.\n\nAs weak reference cannot be serialized, temporarily create a strong\nreference during serialization.\n\nAs the tests use invocations without keeping references to the mock we\nneed to keep strong references in these cases."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1313",
+            "title": "InlineByteBuddyMockMaker does not clean up stale mocks"
         }
     ]
 }

@@ -1,0 +1,170 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.16",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 24,
+    "start_delay": 0.0,
+    "duration": 28.061770833333334,
+    "commits_info": [
+        {
+            "hash": "66f4509c2c7a1ad0255ed84f9e5efb340bd0b470",
+            "message": "Release v6.0.16"
+        },
+        {
+            "hash": "b8395a2321dca1a278c408c13f633313b85358eb",
+            "message": "Upgrade to spring-javaformat-checkstyle 0.0.41"
+        },
+        {
+            "hash": "6df8be8be3802f4e481aa284933ba3335f7f56c0",
+            "message": "Exclude query from URI in WebClient checkpoints\n\nCloses gh-31992"
+        },
+        {
+            "hash": "4a599d0b222a759b3ddad546dc1773d17c9a33df",
+            "message": "Upgrade to Reactor 2022.0.15\n\nIncludes SLF4J 2.0.11, Groovy 4.0.17, Jetty 11.0.19, Netty 4.1.104, Apache HttpClient 5.2.3, POI 5.2.5, OpenPDF 1.3.36, Checkstyle 10.12.7\n\nCloses gh-31997"
+        },
+        {
+            "hash": "a1463c2bf2a6bf43e077d200b556136e2d5c48ec",
+            "message": "Do not set exception attribute if response body is set\n\nResponseEntityExceptionHandler should not set the exception attribute\nwhen there is a response body, and the response is fully handled.\n\nCloses gh-31541"
+        },
+        {
+            "hash": "23eff5c650e8e8cc9d7c23a7282d255782a4998d",
+            "message": "Update ContentRequestMatchers#multipartData Javadoc\n\nThis commit updates ContentRequestMatchers#multipartData\nJavadoc to mention Tomcat fork of Commons FileUpload library\ninstead of the original variant.\n\nIt also adds a similar note to\nContentRequestMatchers#multipartDataContains.\n\nCloses gh-31989\n\n(Backport of 598c972a78346dfeff459a5ffa510e90f4907ee2)"
+        },
+        {
+            "hash": "c44bb29aa5a48b6594ca237d05274e5b85413938",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0c22866b720469f7d45022ddd1a171ceffa15690",
+            "message": "Ensure correct capacity in DefaultDataBuffer\n\nSee gh-31873\nCloses gh-31979"
+        },
+        {
+            "hash": "0c6957e39592817934980603f00ef45e59666d4b",
+            "message": "Polishing\n\nSee gh-31975"
+        },
+        {
+            "hash": "8d51fc044484dc105da9da9d7c5a4631516567b9",
+            "message": "Add CORS support for Private Network Access\n\nThis commit adds CORS support for Private Network Access\nby adding an Access-Control-Allow-Private-Network response\nheader when the preflight request is sent with an\nAccess-Control-Request-Private-Network header and that\nPrivate Network Access has been enabled in the CORS\nconfiguration.\n\nSee https://developer.chrome.com/blog/private-network-access-preflight/\nfor more details.\n\nCloses gh-31975\n\n(cherry picked from commit 318d4602564fb287b448ea310cf6c146f89cc47a)"
+        },
+        {
+            "hash": "bad01011da270cfc82dc922a0bcef6a420842e87",
+            "message": "Avoid getMostSpecificMethod resolution for non-annotated methods\n\nThis is aligned with AutowiredAnnotationBeanPostProcessor now.\n\nCloses gh-31967\n\n(cherry picked from commit 9912a52bb8d677a27aa79f0ebea146e6e0d120bb)"
+        },
+        {
+            "hash": "867a1995073393506515ad91a4e5613c069a0b72",
+            "message": "Propagate arguments for dynamic prototype-scoped advice\n\nCloses gh-28407\n\n(cherry picked from commit 43107e7eb18cdd2d02661421b5cdaf90e5c19c30)"
+        },
+        {
+            "hash": "1b4a4ac51f24682e4b605d452946fd12993b7c78",
+            "message": "Polishing"
+        },
+        {
+            "hash": "dd0d26b4ba395c964ef4ddc37906f41b5750bf95",
+            "message": "Refine exception handling for type not present versus access exception\n\nIncludes TypeVariable bypass for reflection-free annotation retrieval.\nIncludes info log message for annotation attribute retrieval failure.\n\nCloses gh-27182\n\n(cherry picked from commit 70247c4a949b7e20cadd260b5fd46d880c183acb)"
+        },
+        {
+            "hash": "d074f660a1b59d25442adad6e94c8f6c96b3b2f2",
+            "message": "Default time zone resolution from scheduler-wide Clock\n\nCloses gh-31948"
+        },
+        {
+            "hash": "1b8baffbd7229cf47229b3edd7b09a6f7e57f471",
+            "message": "Upgrade CI to Ubuntu Jammy 20231211.1"
+        },
+        {
+            "hash": "56c63c779f84e5e6e6aabafa7c1cdbb4d95ef45f",
+            "message": "Fix HandlerMappingIntrospector uri matching\n\nPrior to this commit, the `HandlerMappingIntrospector` would comparea\nrequest with a cached request by using `String#matches` on their String\nURI. This could lead to `PatternSyntaxException` exceptions at runtime\nif the request URI contained pattern characters.\n\nThis commit fixes this typo to use `String#equals` instead.\n\nFixes gh-31946"
+        },
+        {
+            "hash": "198cf063fdc9d1c47d3c5bb3b3cc24290c047a91",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b1b6b544a2b374d3f84ffff73bdca119251de42c",
+            "message": "Add missing @Test\n\nSee gh-31914"
+        },
+        {
+            "hash": "9d13ea290f54fc7d4616418bc9f91db8cf6b664e",
+            "message": "Reject invalid forwarded requests in ForwardedHeaderFilter\n\nPrior to this commit, the `ForwardedHeaderFilter` and the forwarded\nheader utils would throw `IllegalArgumentException` and\n`IllegalStateException` when request headers are invalid and cannot be\nparsed for Forwarded handling.\n\nThis commit aligns the behavior with the WebFlux counterpart by\nrejecting such requests with HTTP 400 responses directly.\n\nFixes gh-31894"
+        },
+        {
+            "hash": "c9163b77df52c5e1def643d9628965f4295dfc29",
+            "message": "Add support for `@Async` Kotlin function returning `Unit?`\n\nCloses gh-31891"
+        },
+        {
+            "hash": "033c8df53f097363564b2b3a7d57fc98eecd8b1a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b272f4e6153afed10b6eb1dab939b2e142a7a96a",
+            "message": "Correctly set capacity of remainder in DefaultDataBuffer::split\n\nThis commit ensures that the capacity of the remainder buffer after a\nsplit operation is set directly on the field. Calling capacity(int)\ncaused a new buffer to be allocated.\n\nSee gh-31848\nCloses gh-31859"
+        },
+        {
+            "hash": "bafff5079f8f141f8f8b02dcc0c17107a5298ad7",
+            "message": "Next development version (v6.0.16-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31997",
+            "title": "Upgrade to Reactor 2022.0.15"
+        },
+        {
+            "number": "31541",
+            "title": "Double error response handling on suspended methods"
+        },
+        {
+            "number": "31989",
+            "title": "Update `ContentRequestMatchers#multipartData` Javadoc"
+        },
+        {
+            "number": "31873",
+            "title": "DefaultDataBuffer fails to transform its content to a string"
+        },
+        {
+            "number": "31979",
+            "title": "DefaultDataBuffer fails to transform its content to a string."
+        },
+        {
+            "number": "31975",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "31967",
+            "title": "Avoid early getMostSpecificMethod resolution in CommonAnnotationBeanPostProcessor"
+        },
+        {
+            "number": "28407",
+            "title": "Spring AOP does not propagate arguments for dynamic prototype-scoped advice "
+        },
+        {
+            "number": "27182",
+            "title": "MergedAnnotation swallows IllegalAccessException for attribute method"
+        },
+        {
+            "number": "31948",
+            "title": "CronTrigger hard-codes default ZoneId instead of participating in scheduler-wide Clock setup"
+        },
+        {
+            "number": "31946",
+            "title": "HandlerMappingIntrospector is throwing PatternSyntaxException for wildcards in the request URL"
+        },
+        {
+            "number": "31894",
+            "title": "ForwardedHeaderFilter should reject invalid requests"
+        },
+        {
+            "number": "31891",
+            "title": "`@Async` does not support `Unit?` return type"
+        },
+        {
+            "number": "31848",
+            "title": "Significant increase in memory consumption `StringDecoder` when splitting input by delimiters."
+        },
+        {
+            "number": "31859",
+            "title": "Significant increase in memory consumption `StringDecoder` when splitting input by delimiters."
+        }
+    ]
+}

@@ -11,78 +11,64 @@
     "commits_info": [
         {
             "hash": "5c4e72c14959c893269aa980b527da2ebc6d9c61",
-            "message": "Bump org.jetbrains.kotlin:kotlin-gradle-plugin from 1.9.10 to 1.9.20 (#3166)\n\nBumps [org.jetbrains.kotlin:kotlin-gradle-plugin](https://github.com/JetBrains/kotlin) from 1.9.10 to 1.9.20.\r\n- [Release notes](https://github.com/JetBrains/kotlin/releases)\r\n- [Changelog](https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md)\r\n- [Commits](https://github.com/JetBrains/kotlin/commits)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.jetbrains.kotlin:kotlin-gradle-plugin\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump org.jetbrains.kotlin:kotlin-gradle-plugin from 1.9.10 to 1.9.20 (#3166)\n\nBumps [org.jetbrains.kotlin:kotlin-gradle-plugin](https://github.com/JetBrains/kotlin) from 1.9.10 to 1.9.20.\r\n- [Release notes](https://github.com/JetBrains/kotlin/releases)\r\n- [Changelog](https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md)\r\n- [Commits](https://github.com/JetBrains/kotlin/commits)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.jetbrains.kotlin:kotlin-gradle-plugin\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "f62fbe75286f04b1fb138664a9eb475e07bb831f",
-            "message": "Bump org.jetbrains.kotlin:kotlin-stdlib from 1.9.10 to 1.9.20 (#3165)\n\nBumps [org.jetbrains.kotlin:kotlin-stdlib](https://github.com/JetBrains/kotlin) from 1.9.10 to 1.9.20.\r\n- [Release notes](https://github.com/JetBrains/kotlin/releases)\r\n- [Changelog](https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md)\r\n- [Commits](https://github.com/JetBrains/kotlin/commits)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.jetbrains.kotlin:kotlin-stdlib\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump org.jetbrains.kotlin:kotlin-stdlib from 1.9.10 to 1.9.20 (#3165)\n\nBumps [org.jetbrains.kotlin:kotlin-stdlib](https://github.com/JetBrains/kotlin) from 1.9.10 to 1.9.20.\r\n- [Release notes](https://github.com/JetBrains/kotlin/releases)\r\n- [Changelog](https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md)\r\n- [Commits](https://github.com/JetBrains/kotlin/commits)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.jetbrains.kotlin:kotlin-stdlib\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "f522f49874b1abf80d209447fe2b4d542f884587",
-            "message": "Attempt to detect system property mangling prior to loading ByteBuddy. (#3164)\n\nIf the user stubs their System properties (e.g. to test code that handles System properties\r\nto determine the platform), then they may unexpectedly hit the issue that ByteBuddy will\r\nattempt to fork a subprocess upon being installed, and that relies on the JVM Process class.\r\nInternally, the Process class makes a call to 'System.getProperty(os.name)', which results\r\nin a NullPointerException being raised if the property does not exist.\r\n\r\nWhen this exception occurs, it bubbles up to Mockito in the shape of a very confusing\r\nerror message, which we should ideally try to avoid.\r\n\r\nThis change adds a check for this edge case prior to loading ByteBuddy so that a meaningful\r\nerror message can be raised that instructs the user on how to mitigate this issue.",
-            "tag_name": null
+            "message": "Attempt to detect system property mangling prior to loading ByteBuddy. (#3164)\n\nIf the user stubs their System properties (e.g. to test code that handles System properties\r\nto determine the platform), then they may unexpectedly hit the issue that ByteBuddy will\r\nattempt to fork a subprocess upon being installed, and that relies on the JVM Process class.\r\nInternally, the Process class makes a call to 'System.getProperty(os.name)', which results\r\nin a NullPointerException being raised if the property does not exist.\r\n\r\nWhen this exception occurs, it bubbles up to Mockito in the shape of a very confusing\r\nerror message, which we should ideally try to avoid.\r\n\r\nThis change adds a check for this edge case prior to loading ByteBuddy so that a meaningful\r\nerror message can be raised that instructs the user on how to mitigate this issue."
         },
         {
             "hash": "a8adbf5027bfc295b002e5d87120e7c0d1229f96",
-            "message": "Handle Termux in InlineDelegateByteBuddyMockMaker.java (#3158)\n\nTermux on Android can run any JVM, so we cannot rely on the vendor\r\nhere to determine if we are in Termux. Nonetheless, ByteBuddy can fail to instrument correctly\r\non this platform, so it is worth showing a meaninful\r\nerror message in this scenario.",
-            "tag_name": null
+            "message": "Handle Termux in InlineDelegateByteBuddyMockMaker.java (#3158)\n\nTermux on Android can run any JVM, so we cannot rely on the vendor\r\nhere to determine if we are in Termux. Nonetheless, ByteBuddy can fail to instrument correctly\r\non this platform, so it is worth showing a meaninful\r\nerror message in this scenario."
         },
         {
             "hash": "1bca5b8bde6ec6fa67921731164caba47f3c2080",
-            "message": "Bump versions.errorprone from 2.22.0 to 2.23.0 (#3153)\n\nBumps `versions.errorprone` from 2.22.0 to 2.23.0.\r\n\r\nUpdates `com.google.errorprone:error_prone_core` from 2.22.0 to 2.23.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.22.0...v2.23.0)\r\n\r\nUpdates `com.google.errorprone:error_prone_test_helpers` from 2.22.0 to 2.23.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.22.0...v2.23.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.google.errorprone:error_prone_core\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n- dependency-name: com.google.errorprone:error_prone_test_helpers\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump versions.errorprone from 2.22.0 to 2.23.0 (#3153)\n\nBumps `versions.errorprone` from 2.22.0 to 2.23.0.\r\n\r\nUpdates `com.google.errorprone:error_prone_core` from 2.22.0 to 2.23.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.22.0...v2.23.0)\r\n\r\nUpdates `com.google.errorprone:error_prone_test_helpers` from 2.22.0 to 2.23.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.22.0...v2.23.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.google.errorprone:error_prone_core\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n- dependency-name: com.google.errorprone:error_prone_test_helpers\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "f5449f958cd38a64ca41df319f3426196e7b9206",
-            "message": "Fix license url according to spdx license spec (#3152)\n\n",
-            "tag_name": null
+            "message": "Fix license url according to spdx license spec (#3152)"
         },
         {
             "hash": "73d6afc3b98e24839b310b35d518b1ab1189f04d",
-            "message": "Remove checks for unsupported Java version from unit tests (#3150)\n\n",
-            "tag_name": null
+            "message": "Remove checks for unsupported Java version from unit tests (#3150)"
         },
         {
             "hash": "e73699229299eb949b1176a2b9965236181bf84d",
-            "message": "Add CodeCov token to upload coverage report (#3149)\n\nWe already had this secret configured in our settings,\r\nbut didn't supply it to the actual GitHub action step.",
-            "tag_name": null
+            "message": "Add CodeCov token to upload coverage report (#3149)\n\nWe already had this secret configured in our settings,\r\nbut didn't supply it to the actual GitHub action step."
         },
         {
             "hash": "9342e9a15c8a1d0ba9fb0334b5f0b0ed661079f1",
-            "message": "Add Java 21 to CI build matrix (#3145)\n\n",
-            "tag_name": null
+            "message": "Add Java 21 to CI build matrix (#3145)"
         },
         {
             "hash": "c574cead051a86f745b445fe53d2adf12a4f5fca",
-            "message": "Update JaCoCo to 0.8.11 (#3147)\n\n",
-            "tag_name": null
+            "message": "Update JaCoCo to 0.8.11 (#3147)"
         },
         {
             "hash": "fd628849447118a7da076a7005ad09e0681b731d",
-            "message": "Add generic-inferred method for Argumentcaptor (#3144)\n\nAdd a new method .captor(U...) on the ArgumentCaptor class that\r\nhas the same interface as Mockito.mock(U...) with the goal of removing\r\nthe need for unchecked-warning suppression when users make use of\r\ngeneric types in argument captors.",
-            "tag_name": null
+            "message": "Add generic-inferred method for Argumentcaptor (#3144)\n\nAdd a new method .captor(U...) on the ArgumentCaptor class that\r\nhas the same interface as Mockito.mock(U...) with the goal of removing\r\nthe need for unchecked-warning suppression when users make use of\r\ngeneric types in argument captors."
         },
         {
             "hash": "66acd090937c590c927f07cc7468c2bb2f70b407",
-            "message": "Update gradle to 8.4 (#3142)\n\n",
-            "tag_name": null
+            "message": "Update gradle to 8.4 (#3142)"
         },
         {
             "hash": "e4bb62f8ff70ce64c15f0fdee99193aec04110d9",
-            "message": "Bump biz.aQute.bnd.builder from 6.4.0 to 7.0.0 (#3135)\n\nBumps biz.aQute.bnd.builder from 6.4.0 to 7.0.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: biz.aQute.bnd.builder\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-major\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump biz.aQute.bnd.builder from 6.4.0 to 7.0.0 (#3135)\n\nBumps biz.aQute.bnd.builder from 6.4.0 to 7.0.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: biz.aQute.bnd.builder\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-major\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "9f06733477950e868bc3ed5a107cd17333dba63e",
-            "message": "Bump com.github.ben-manes.versions from 0.48.0 to 0.49.0 (#3139)\n\nBumps com.github.ben-manes.versions from 0.48.0 to 0.49.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.github.ben-manes.versions\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump com.github.ben-manes.versions from 0.48.0 to 0.49.0 (#3139)\n\nBumps com.github.ben-manes.versions from 0.48.0 to 0.49.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.github.ben-manes.versions\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "125e410024fe515c67119a056fd7dee346f8d67a",
-            "message": "Bump versions.bytebuddy from 1.14.8 to 1.14.9 (#3138)\n\nBumps `versions.bytebuddy` from 1.14.8 to 1.14.9.\r\n\r\nUpdates `net.bytebuddy:byte-buddy` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\nUpdates `net.bytebuddy:byte-buddy-agent` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\nUpdates `net.bytebuddy:byte-buddy-android` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: net.bytebuddy:byte-buddy\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-agent\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-android\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump versions.bytebuddy from 1.14.8 to 1.14.9 (#3138)\n\nBumps `versions.bytebuddy` from 1.14.8 to 1.14.9.\r\n\r\nUpdates `net.bytebuddy:byte-buddy` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\nUpdates `net.bytebuddy:byte-buddy-agent` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\nUpdates `net.bytebuddy:byte-buddy-android` from 1.14.8 to 1.14.9\r\n- [Release notes](https://github.com/raphw/byte-buddy/releases)\r\n- [Changelog](https://github.com/raphw/byte-buddy/blob/master/release-notes.md)\r\n- [Commits](https://github.com/raphw/byte-buddy/compare/byte-buddy-1.14.8...byte-buddy-1.14.9)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: net.bytebuddy:byte-buddy\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-agent\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n- dependency-name: net.bytebuddy:byte-buddy-android\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         }
-    ]
+    ],
+    "issues": []
 }

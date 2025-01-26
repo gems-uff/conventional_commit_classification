@@ -1,0 +1,570 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 120,
+    "start_delay": 0.0,
+    "duration": 105.00146990740741,
+    "commits_info": [
+        {
+            "hash": "91d6bcfeb5f7962f8fa95b29b4b4a58e2c8c06d5",
+            "message": "prerelease version bump"
+        },
+        {
+            "hash": "41ce6bef7520c40a597cb1e2c98c73d2b3fb019b",
+            "message": "Merge pull request #2036 from inabajunmr/fix-javadoc-builder\n\nFix Javadoc for @Builder"
+        },
+        {
+            "hash": "35d379791b5f7fea581c200ce0c896b38f3fb111",
+            "message": "fix doc for Builder"
+        },
+        {
+            "hash": "0bc68e4995441a331d9685e63bc4f7db8333cc26",
+            "message": "update changelog"
+        },
+        {
+            "hash": "984570df78fe26e56348c28c83b86b7e5ab20ada",
+            "message": "[test] Made it easier to run the tests on just one of the resource files."
+        },
+        {
+            "hash": "3d0beec38d8d19e8c90df56d7f4297d1c5f332ee",
+            "message": "[fixes #2011] If you have a field named `build` or `toString`, and you generate a builder, that builder wouldn’t make the build or toString methods because it thinks the builder-setter methods it just generated that so happen to have that name indicate you don’t want lombok to do that.\n\nYou really shouldn’t name any fields builder or toString, though."
+        },
+        {
+            "hash": "960811364b792654cd154787758fbb16f2600f09",
+            "message": "Remove javax.validation.constraints.NotNull from list"
+        },
+        {
+            "hash": "f65dff42ea18f4775dae993f4e4e3136ee79b602",
+            "message": "Augment NONNULL_ANNOTATIONS with more aliases for lombok.NonNull.\n\nAugment BASE_COPYABLE_ANNOTATIONS with more type annotations from the\nChecker Framework."
+        },
+        {
+            "hash": "7a670c5279d7277eeaf626467c4fe023a199ebbf",
+            "message": "[fixes #2013] documentation for config system was still referring to deprecated keys."
+        },
+        {
+            "hash": "54d2fffa0b8de4f22d676ecdf70c96c297611983",
+            "message": "docker support gradle 5.1.1"
+        },
+        {
+            "hash": "f2392ccd6214b8fd402af0e87d5afd94f4706737",
+            "message": "New strategy to force new rounds. Possible fix for #1723, #1858 and #1946"
+        },
+        {
+            "hash": "54dce4c83b57b78c75f471ec5978b87b2bbd464f",
+            "message": "[fixes #2024] FieldNameConstants was causing lots of problems in eclipse, especially with save actions."
+        },
+        {
+            "hash": "2a8225a6af39d4a82f20928409fcb96ae72d363f",
+            "message": "[website] updated docs for using lombok with gradle"
+        },
+        {
+            "hash": "f2d03973d59d96d8bfef51d8378a4069d8d46205",
+            "message": "Replace sized array in toArray with 0\n\nThis approach has been benchmarked to be marginally faster.\nFixes #2030."
+        },
+        {
+            "hash": "ccd802503d8aa578be3f1f956d97b06a803de0aa",
+            "message": "[fixes #2019] Lombok now properly deals with `@NonNull` specifically on the ‘type use’ of a parameter (and, in case of arrays, on the outermost dimension which is actually the first one listed. Weird corner case of the JLS)."
+        },
+        {
+            "hash": "ba4e69bf30bf1c761b84e78dbec1fa1e285b02b6",
+            "message": "[website] linked to blog for intellij install instructions just in case someone’s looking for screenshots and such"
+        },
+        {
+            "hash": "79d7b4c4a263c899a7ff193d96cf99274ec6fc0b",
+            "message": "add pom for jdk11 docker image\nuse openjdk11.0.2\nupdate maven default to 3.6.0"
+        },
+        {
+            "hash": "d50d63931b8aa066fbf5c3b39bedb5eb62bdca5b",
+            "message": "Delombok now also prints explicit no-arg super constructor calls, fixes #2023."
+        },
+        {
+            "hash": "1a2a3052310b1dc12ba9e4259a53298ae6851359",
+            "message": "typo"
+        },
+        {
+            "hash": "7a84e760c2008cb38ce26813cd7651cebae43f6f",
+            "message": "toBuilder required for all superclasses; removed Singular smallprint"
+        },
+        {
+            "hash": "e59beb76481c526ca0a62cc7fcd2782c628c5dfb",
+            "message": "Alphabetize list of annotations\n\nThis makes it easier to see what is there and to know where to add other annotations."
+        },
+        {
+            "hash": "2da5d27e9b94864959caf1fe5064adbe0c318196",
+            "message": "whitespace"
+        },
+        {
+            "hash": "3fdc1e96947ea0d15f3e00fefb28f8fb14c312b9",
+            "message": "Add Checker Framework NonNull and Nullable annotations"
+        },
+        {
+            "hash": "32d8e2f8509707987ba3b38c96270e4916dc35d7",
+            "message": "update changelog regarding #2008"
+        },
+        {
+            "hash": "514e89eafc991c146f95029411827e97389b765e",
+            "message": "Replace SetterWitherJavadocParamCopy with SetterAndWitherJavadoc"
+        },
+        {
+            "hash": "6dfbbe68b47356e24eb95e795fa764caca5e605e",
+            "message": "Remove irrelevant details from BuilderJavadoc test case"
+        },
+        {
+            "hash": "171cbc3b1c29e1b35cc2df0b9ef141aa731b2751",
+            "message": "Add myself to AUTHORS"
+        },
+        {
+            "hash": "1ad1a941430af5b6662946d6591c9756d0178cb2",
+            "message": "Copy Javadoc to @Builder setters"
+        },
+        {
+            "hash": "81c477c43dc8e52d6a40d6533b3d716f0b617e6e",
+            "message": "Fixed two minor typos\n\nSuppressFBWArnings => SuppressFBWarnings\r\nno-ars => no-args"
+        },
+        {
+            "hash": "720b7cbc920940ec41fe96d7f91a80109bdf7ea8",
+            "message": "[i1996] add test for warnings on non-existing fields"
+        },
+        {
+            "hash": "f3ead31326d0a6dc333c7d24f825f0f8441ebe30",
+            "message": "Upgraded lombok.patcher dep"
+        },
+        {
+            "hash": "ccfab5ebffbd14df59689b23ff6f3df52890dca8",
+            "message": "[#1033] steps on the way to issue 1033: You can add cleanup tasks which are deferred (during the javac run) until the end.\n\nThis already fixes the exotic-to-the-point-of-nonexistent bug where setter and wither compete to steal the `@param` off of the field’s javadoc. Next are to fix builder and setter/wither competing whilst bringing javadocs to `@Builder`.\n\nThen for various other conflicts, we should defer removal of lombok imports and annotations until the end too."
+        },
+        {
+            "hash": "20df86149d3fe45a82d9b83e33b801f5dc7c34ca",
+            "message": "[website] fixing tidelift referral links"
+        },
+        {
+            "hash": "2c7870a4c7e219668709563f2e6530319c68dfa0",
+            "message": "@Delegate @NonNull would error on jdk8, fixes #1935"
+        },
+        {
+            "hash": "ca46f98bebe62ce218de9e15d079a100146851ed",
+            "message": "Serve dependencies instead of using a CDN. Fixes #1964."
+        },
+        {
+            "hash": "2725637ef7a54917094f3302ec8af4df4e4f41d5",
+            "message": "[website] updated docs of FieldNameConstants to show how to generate an enum instead of a static class."
+        },
+        {
+            "hash": "b00c0b0bf9621201a7565abb87d34c70beaa6118",
+            "message": "[deps] updated dep versions."
+        },
+        {
+            "hash": "16aeef1608942137b857b1fa31661106547eeb29",
+            "message": "[website] Added security vulnerability disclosure page"
+        },
+        {
+            "hash": "6ca884be755ccb28d2ebfe4b2e138e5b0c276875",
+            "message": "[github] issue templates"
+        },
+        {
+            "hash": "c2bd6472872fd3c4476e9d7c47893242d3a67ad9",
+            "message": "Update issue templates\n\nAdding some issue templates."
+        },
+        {
+            "hash": "87600e814ce5fb436ccfafa20151959a94c1686a",
+            "message": "website and README updates (tidelift)"
+        },
+        {
+            "hash": "4126bc277286279c38fa2df785b56eae88b606af",
+            "message": "bugfix for clicking our W-8BEN form on the order page."
+        },
+        {
+            "hash": "94d11d89a79d6cb417bac8261449c3f895f84990",
+            "message": "[issue #1938] addressing some small issues with the documentation."
+        },
+        {
+            "hash": "db19327cb4b9f5a08665b85d4cb953118ce69c13",
+            "message": "[fixes #1628] Lombok now marks the `result` field used in the generated hashCode method as final if it isn’t modified. This doesn’t change its behavior whatsoever, but some linters and especially eclipse save actions (specifically: ‘mark local variables final if possible’) cause issues when they try to mess with generated code. Of course, now any save action with ‘remove useless modifiers’ would cause an issue but those don’t (yet…) exist."
+        },
+        {
+            "hash": "a685d0828c3cda044073054c203d17bcf6ab1096",
+            "message": "[fixes #1888] [jdk12] lombok can deal with the changes to case/break nodes in JDK12-preview javac."
+        },
+        {
+            "hash": "7e79316a1f28d1eb1ef8569119b97a70387fd6c6",
+            "message": "Improve toString generation for enums. Fixes #1916"
+        },
+        {
+            "hash": "dc641cc3696e63c46c9693ccdfd296f173afec53",
+            "message": "[fixes #1912] clarifying builder’s behaviour about generating constructors in the face of already present ones."
+        },
+        {
+            "hash": "a73965b2b7b4fe2e163cdb7d104fc5dff1aa7476",
+            "message": "[fixes #1918] toString now supports a configkey to tell it how to deal with super."
+        },
+        {
+            "hash": "2c0ec9315577cbc8d406aca2b3f3b6ad233f4f35",
+            "message": "[bugfix] attempting to fix an issue with buckbuild which uses some exotic trickery to compile straight from jar to jar, messing up our wrapper around javac’s javaFileObject. Bug report and suggested fix from external sources, we didn’t test it, but we only kick in this alternative if an exception occurs, so it couldn’t possibly affect anything that was already working fine. See PR #1929"
+        },
+        {
+            "hash": "9fc02601df84664454ac07a7225d596bb4bc7450",
+            "message": "[website] the usage example for FieldNameConstants was still written in the abandoned 1.18.2 style."
+        },
+        {
+            "hash": "4acda73319e95c4caf472ca47183af57a1bc9fd1",
+            "message": "[trivial] error out on mismatch between FieldNameConstants asEnum flag and actual handwritten type."
+        },
+        {
+            "hash": "2fd46a50b6125fd9f0e8177ffad5db8ee934fe34",
+            "message": "[feature] FieldNameConstants now works like Builder: Make whatever bits it does by hand and lombok fills in whatever is missing."
+        },
+        {
+            "hash": "21878e253e331f6ea340ae44bf824890185e1938",
+            "message": "[fixes #1932] We broke the delombok ant task."
+        },
+        {
+            "hash": "6e7924f865e47973595458c6df0447975bbd0770",
+            "message": "post-release version bump."
+        },
+        {
+            "hash": "cf7855b1a14fb604f4cf3d0eed708e2b6baf3e3e",
+            "message": "Merge pull request #2018 from emlun/refactor-singularizers\n\nReduce code duplication in singularizers"
+        },
+        {
+            "hash": "125b02e84b555d36dd3427919bd02da6ef41ab66",
+            "message": "Colocate statements declaration with use in Map generateSingularMethodStatements"
+        },
+        {
+            "hash": "b48af8dce8e76ffb2fb26c8edec8ceafcddb73b6",
+            "message": "Simplify Guava generateSingularMethodStatements return statement to single expression"
+        },
+        {
+            "hash": "4ea8c439e1cc61bca6863ec8cf24e081b939689e",
+            "message": "Simplify List generateSingularMethodStatements to single expression"
+        },
+        {
+            "hash": "3285d83e1636c0a21c7aada3bb278419ec2bd83a",
+            "message": "Pull createConstructBuilderVarIfNeeded calls up to JavacSingularizer"
+        },
+        {
+            "hash": "92fc11fd0efdd841f488fda8c937577349dc713c",
+            "message": "Inline Guava singularizer instances into getGuavaInstead()"
+        },
+        {
+            "hash": "258a9bf2886e841f2921208d44bd380d900ccc37",
+            "message": "Push Guava singularizer instances down from JavacJavaUtilSingularizer"
+        },
+        {
+            "hash": "f6d2933795d9091d0cace8d81df530967d84a779",
+            "message": "Pull useGuavaInstead logic up to JavacSingularizer"
+        },
+        {
+            "hash": "a633e395883d5d24806204a0c10d2ae5b008b8d8",
+            "message": "Replace JavacSingularizers with Guava version once and for all"
+        },
+        {
+            "hash": "e390aa12047a79e5de2a72170f980f8011789bba",
+            "message": "Remove unused imports"
+        },
+        {
+            "hash": "dc28a8a2d251fe48d414b90abd591b1d36f8bdd6",
+            "message": "Make some JavacSingularizer methods private"
+        },
+        {
+            "hash": "87bb89177c1ea0e1fb3e757d5d3c6d90f475ad7f",
+            "message": "Move return statement addition statement inside finishAndInjectMethod"
+        },
+        {
+            "hash": "07e4a3d4cac3e173d61ae49b267e7a87939d9104",
+            "message": "Move return statement addition statement to just before finishAndInjectMethod call"
+        },
+        {
+            "hash": "691c855b8962ef78d38ebb6851f5a74b500beab4",
+            "message": "Move invariant parameter inside finishAndInjectMethod"
+        },
+        {
+            "hash": "4c93fcb9fa3c7d4c026fffb4becb6beb7cc508a5",
+            "message": "Build statements list in generateClearMethod in the same way as in sibling methods"
+        },
+        {
+            "hash": "ad4cc0f1831136d1836335020582b0adf6d801a6",
+            "message": "Move single-use variable declarations to just before use"
+        },
+        {
+            "hash": "e7face9bd6d7660cf37f1c04b9754a1d0352f02e",
+            "message": "Inline single-use variable"
+        },
+        {
+            "hash": "683b43257c417fce0c1154eb666eabcf6af5f30c",
+            "message": "Make generateClearMethod package-private"
+        },
+        {
+            "hash": "8059a4e383b2c2ebbb8b811d8bb45e5fac2e2d4c",
+            "message": "Merge finishAndInjectPluralMethod into generatePluralMethod"
+        },
+        {
+            "hash": "bf43cb7cc4280bc9be67f1d1ac018c6d27d4cd39",
+            "message": "Extract method generatePluralMethodStatements"
+        },
+        {
+            "hash": "0ef178137759f0a780e3e3f6ea141ee073d96826",
+            "message": "Extract method finishAndInjectPluralMethod"
+        },
+        {
+            "hash": "b227bcb487471631fffb6e33999986d4fa1013b2",
+            "message": "Pull generatePluralMethod implementation up to JavacSingularizer"
+        },
+        {
+            "hash": "af3226ffaaf1277a217fc8c9fbe3c1259a561c78",
+            "message": "Pull overloaded createConstructBuilderVarIfNeeded up to JavacSingularizer"
+        },
+        {
+            "hash": "fe11913fa6ecbf3cec06263dcb0fef08a2eb8cce",
+            "message": "Extract overloaded method createConstructBuilderVarIfNeeded"
+        },
+        {
+            "hash": "e0b6dae52106f399ac9020f590119a1ec11a3636",
+            "message": "Extract references to getAddMethodName"
+        },
+        {
+            "hash": "c502090813dcbe73617643f8affebcc776a6dd6c",
+            "message": "Extract method getTypeArgumentsCount"
+        },
+        {
+            "hash": "749b8a5d1472ff49ca2ad5219d0c7f5f0b98d6a3",
+            "message": "Extract method getPluralMethodParamType"
+        },
+        {
+            "hash": "f4b77187afede3f30b4b82939b806b88772c3990",
+            "message": "Move single-use variable declarations to just before use"
+        },
+        {
+            "hash": "fe143bfd69f70749f4e745c5be6644c37840083f",
+            "message": "Move invariant parameter inside finishAndInjectMethod"
+        },
+        {
+            "hash": "36653329e51cd478199a2d74da6ec5ee471d9cac",
+            "message": "Move single-use variable declarations to just before use"
+        },
+        {
+            "hash": "1eaa6da81602ddfd7d2d170974c064b8c0b117cf",
+            "message": "Inline finishAndInjectSingularMethod into generateSingularMethod"
+        },
+        {
+            "hash": "452f1cb8eb11ab6335cc631e30c9ab21f9717140",
+            "message": "Pull generateSingularMethod implementation up to JavacSingularizer"
+        },
+        {
+            "hash": "ca7fdd7becb9340441d870e952ab1545973ae12a",
+            "message": "Pull method getAddMethodName up to JavacSingularizer"
+        },
+        {
+            "hash": "2ca4120ca2339d5ddf74cb74c0d3485e3779d3ca",
+            "message": "Extract method getAddMethodName"
+        },
+        {
+            "hash": "975f26bcc6324de748d2f307aed80e0950cd7f19",
+            "message": "Extract methods generateSingularMethod{Parameters,Statements}"
+        },
+        {
+            "hash": "3c28cf93ff79fb8f0c1c46c64a5851d235179700",
+            "message": "Extract function generateSingularMethodParameterNames"
+        },
+        {
+            "hash": "bbaa932c11dbe70bb14ec49434df9ef5196b04cc",
+            "message": "Replace for-int with for-each"
+        },
+        {
+            "hash": "223a3fdb97ce67247b03a2537f53600fa6f2c383",
+            "message": "Uae names.length instead of suffixes.size() as loop limits"
+        },
+        {
+            "hash": "73a70e3332230170a11657610417f6d62a269643",
+            "message": "Move invariant parameter inside finishAndInjectSingularMethod"
+        },
+        {
+            "hash": "0c20da8e0e19e6db37c4c9d0de05d784e472c258",
+            "message": "Move single-use variable declarations to just before use"
+        },
+        {
+            "hash": "fd7301117deeaa94f4ecb4316a3ef68c1a13a660",
+            "message": "Extract method finishAndInjectSingularMethod"
+        },
+        {
+            "hash": "e8c70dd755c528b4f975be95333a337c290db2be",
+            "message": "Extract local variable addMethodName"
+        },
+        {
+            "hash": "a4c21e941d28160c33e6541a29350d23209cfb8f",
+            "message": "Make last few statements the same between generateSingularMethod implementations"
+        },
+        {
+            "hash": "f995dd20360311f355e18bf5fa048058efecdd11",
+            "message": "Extract local variable: params"
+        },
+        {
+            "hash": "130c115eaf07ae9183f95c861ebb0c4011c74774",
+            "message": "Restore comments describing generated code"
+        },
+        {
+            "hash": "36e6e56a93b783b3847d53e998c8e124475d8053",
+            "message": "Inline single-use variables"
+        },
+        {
+            "hash": "54d8d4b4313cdaa46f7f9581ee6d4214a1542c20",
+            "message": "Extract method generateSingularMethodAddStatement"
+        },
+        {
+            "hash": "e9f4bcb890ba96f1c31bce01c3ee7c15bf56866f",
+            "message": "Extract local variables"
+        },
+        {
+            "hash": "8cec66794357b26f53a773f8dd448b2b3b1fdd72",
+            "message": "Inline single-use variable"
+        },
+        {
+            "hash": "2747ce6a2ca3ae5b06cc8fdbd1c2c8607c515858",
+            "message": "Move invariant parameter inside generateSingularMethodParameter"
+        },
+        {
+            "hash": "a367f7815dcf7a818e3494929e3d005e06c2efb1",
+            "message": "Move local variable declarations to just before use"
+        },
+        {
+            "hash": "b09f4ca38dd1a7f819b9294382db0c7a43ebe809",
+            "message": "Inline single-use variable"
+        },
+        {
+            "hash": "4599a65b7df036eabf5d6784466a0ab848a63d16",
+            "message": "Extract method JavacSingularizer.generateSingularMethodParameter"
+        },
+        {
+            "hash": "85759a1949fe862a2baa2cb836d0bbea5349db66",
+            "message": "Detangle key/value param creation in JavacJavaUtilMapSingularizer.generateSingularMethod"
+        },
+        {
+            "hash": "f84349965803816d46473b42d08ed0c0d288ce8a",
+            "message": "Extract local variable paramName"
+        },
+        {
+            "hash": "360c1d5a21273793ef5c96c21b979501bdebb5c3",
+            "message": "Move invariant parameters inside finishAndInjectMethod"
+        },
+        {
+            "hash": "bb7b5cce75988b0d774152a6f4d7b56ac1ab3953",
+            "message": "Move one-use variable declarations to just before use"
+        },
+        {
+            "hash": "3c9324e801b6192717c1e9b78e4d762c9e4ef57f",
+            "message": "Extract method finishAndInjectMethod"
+        },
+        {
+            "hash": "62bb81311e58f6ec1108e94bc4f61bbf93eb411a",
+            "message": "Pull return statement wrapping up into generateClearMethod"
+        },
+        {
+            "hash": "d08aa5a83d2302eaaf84c4323073dfe3edd43703",
+            "message": "Pull generateClearMethod up to JavacSingularizer"
+        },
+        {
+            "hash": "05ce5e050ea15a7feb26ba2ef6f3cda9b54c8498",
+            "message": "Extract abstract method JavacSingularizer.generateClearStatements"
+        },
+        {
+            "hash": "5c99e5b9a01e434644e9589d018360d3815332e6",
+            "message": "Extract method JavacSingularizer.finishGenerateClearMethod"
+        },
+        {
+            "hash": "a8a78880331db06122a4432009eb03d6833371b5",
+            "message": "Extract method JavacSingularsRecipes.doGenerateMethods"
+        },
+        {
+            "hash": "c37b43690fbfe59382445ab994a2b6b31be6a015",
+            "message": "Extract abstract method JavacSingularizer.generatePluralMethod"
+        },
+        {
+            "hash": "d57638b36e8013ff30bfe81cbf208aecdd4490aa",
+            "message": "Extract abstract method JavacSingularizer.generateClearMethod"
+        },
+        {
+            "hash": "c336e6ff21636b77f8b23ef9c7b64dc94a985248",
+            "message": "Extract abstract method JavacSingularizer.generateSingularMethod"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2011",
+            "title": "[BUG] Builder doesn't generate build() method when build field present."
+        },
+        {
+            "number": "2013",
+            "title": "[BUG][Documentation] addConstructorParameters not documented on the configuration page"
+        },
+        {
+            "number": "1723",
+            "title": "Lombok not working with JDK 11 modules (Jigsaw)"
+        },
+        {
+            "number": "1858",
+            "title": "EmptyLombokFileObject creates FileObject at root level and break modular builds"
+        },
+        {
+            "number": "1946",
+            "title": "Java 11 jigsaw modules"
+        },
+        {
+            "number": "2024",
+            "title": "[BUG] @FieldNameConstants causes Eclipse error messages on save"
+        },
+        {
+            "number": "2030",
+            "title": "Replace toArray(new T[size]) with toArray(new T[0])"
+        },
+        {
+            "number": "2019",
+            "title": "[BUG] @NonNull on primitives arrays does not compile in Eclipse (Java 7)"
+        },
+        {
+            "number": "2023",
+            "title": "[BUG] Delombok removes \"super();\""
+        },
+        {
+            "number": "1033",
+            "title": "@Builder and javadoc"
+        },
+        {
+            "number": "1935",
+            "title": "Generic @Delegate incompatible with @NonNull (stopped working in 1.18.4)"
+        },
+        {
+            "number": "1964",
+            "title": "Website https://projectlombok.org/ menu is non-clickable in China"
+        },
+        {
+            "number": "1938",
+            "title": "FieldNameConstants documentation doesn't match code"
+        },
+        {
+            "number": "1628",
+            "title": "Eclipse save actions with `@EqualsAndHashCode` without fields add misplaced `final`"
+        },
+        {
+            "number": "1888",
+            "title": "JDK 12 support"
+        },
+        {
+            "number": "1916",
+            "title": "@ToString over enum to incorporate enum field name"
+        },
+        {
+            "number": "1912",
+            "title": "@Data and @Builder don't work together or with constructor annotations"
+        },
+        {
+            "number": "1918",
+            "title": "Property lombok.toString.callSuper = call"
+        },
+        {
+            "number": "1932",
+            "title": "Lombok 1.18.4: delombok ant task broken."
+        }
+    ]
+}

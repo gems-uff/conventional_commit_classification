@@ -1,0 +1,33 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.18",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 5,
+    "start_delay": 0.0,
+    "duration": 1.447800925925926,
+    "commits_info": [
+        {
+            "hash": "28151804e1d2c05a206ff2ebc4d797c0ffbb88e7",
+            "message": "Update release notes by Travis CI build 1753 [ci skip]"
+        },
+        {
+            "hash": "ff8b3a86317a429d7d30ad9c1eb830e9ee484d03",
+            "message": "Merge pull request #759 from LiamClark/lambda-matcher-doc-fix\n\nUpdated the verification documentation to correctly use argThat with Java8 lambdas"
+        },
+        {
+            "hash": "41b611ac1d8fe2a631e615b5851323e56b38f5db",
+            "message": "Fix the verification documentation to correctly use argThat for lambda matchers"
+        },
+        {
+            "hash": "74ddc9933cf922c4153da21fae6c9afa083944ce",
+            "message": "Generate service-worker after generating JavaDoc for offline access (#602)\n\nService-workers intercept network calls and (if you are offline)\r\ncan serve files from the cache. The documentation of Mockito can\r\ntherefore be accessed even if you do not have internet access.\r\n\r\nAll files are pre-cached the first time you open the webpage.\r\nConsecutive openings of the website will result in significantly\r\nfaster responses (since we poke the cache) and also work offline.\r\n\r\nWhen new documentation is generated, the service-worker is updated\r\nand a friendly toast is displayed informing the user can refresh\r\nthe page to view the new content.\r\n\r\nRequirements for generating the service-worker is having npm\r\n(and therefore Node.js) installed. You must also make sure the\r\ngradle daemon has the correct permissions to write to the global\r\nnode_modules folder.\r\n\r\nThis normally is done with:\r\nsudo chown -R $(whoami) /usr/local/lib/node_modules\r\nsudo chown -R $(whoami) /usr/local/bin\r\nsudo chown -R $(whoami) ~/.npm"
+        },
+        {
+            "hash": "7f4e60424c4d1fcfccbb4cc9b0c503df9598bfa2",
+            "message": "Increment version '2.2.17' -> '2.2.18' by Travis CI build 1748 [ci skip]"
+        }
+    ],
+    "issues": []
+}

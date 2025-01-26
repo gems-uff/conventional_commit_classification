@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.18.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.0050810185185185186,
+    "commits_info": [
+        {
+            "hash": "554a608f79394cce1d277fbd8528272878b12fbe",
+            "message": "2.18.6 release (previous 2.18.5) + release notes updated by CI build 3423\n\n[ci skip-release]"
+        },
+        {
+            "hash": "3f96f3b5adc7618ab0dc95d712a7b19b6b6e85ac",
+            "message": "Make MockitoExtension constructor public (#1391)\n\n* Make MockitoExtension constructor public\r\n\r\nIt is possible to register an extension for automatic use using Java's `ServiceLoader` mechanism.\r\n\r\nhttps://junit.org/junit5/docs/current/user-guide/#extensions-registration-automatic\r\n\r\nSome projects may want to provide their own `META-INF` file to avoid tediously adding `MockitoExtension` to tests since it is very common. However, `ServiceLoader` requires the class to have a no-args *public* constructor, so the current extension cannot be used with the `ServiceLoader` mechanism.\r\n\r\n* Add test"
+        }
+    ],
+    "issues": []
+}

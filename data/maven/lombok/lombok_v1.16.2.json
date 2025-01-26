@@ -1,0 +1,161 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 37,
+    "start_delay": 0.0,
+    "duration": 224.11130787037038,
+    "commits_info": [
+        {
+            "hash": "3812bca3578fbf25ef86c2a5b19de8f55d36b748",
+            "message": "[version] pre-release version bump"
+        },
+        {
+            "hash": "32edc18b0e1509842ca52f3ca5b6fb4344b2b14e",
+            "message": "updates tests to reflect that fields in builders now get gen/suppress annotations."
+        },
+        {
+            "hash": "207606d1b83d325509865c6c6283fb39d859c691",
+            "message": "[delombok] [bugfix] lambdas with anything but exactly 1 arg would get an extra paren and thus break the output"
+        },
+        {
+            "hash": "08710ee9bfc022923775c215e69433ff355665f7",
+            "message": "Added lombok.Generated. We don’t do anything with this yet, but we will one day, and the more lombok.jars out in the wild that have this, the easier it’ll be."
+        },
+        {
+            "hash": "2aff2159fcaf35c2cda4f837c5ceb65318b81db9",
+            "message": "marking generated fields in builders as generated. This seems superfluous as the entire builder class is marked as such, but it won’t be if that part is manually written but builder is supposed to fill in a few blanks."
+        },
+        {
+            "hash": "855f9314d621327de3321e2e5bf230e33fb7b1dc",
+            "message": "[trivial] added some issues to the changelog."
+        },
+        {
+            "hash": "4b1c2d1583d172949a574c2342b1dc43380aa378",
+            "message": "improved the way lambdas are printed to conform better to style standards (no parens for 1 arg)."
+        },
+        {
+            "hash": "65de4693eb19a60e472b6e04aec0b9e083a648f4",
+            "message": "[shadowloader] Fix for lombok v1.16.0 no longer working in eclipses that use -target 1.4 style class files (such as eclipse indigo). It’s a doozy."
+        },
+        {
+            "hash": "fd12196eea80f622686e049597eb5e86d4c98e7a",
+            "message": "added the assertion logger feature, used for internal debugging only."
+        },
+        {
+            "hash": "58a7914027e3373faa942aa4ce7df2d3ebfb9a20",
+            "message": "@UtilityClass handlers now more intelligent about inner types of implicitly static contexts (enums, interfaces, and annotation declarations). Also added tests to test for these."
+        },
+        {
+            "hash": "74b38cd7d6806723145f6183273468996ea7dd57",
+            "message": "copyright header updates for web docs."
+        },
+        {
+            "hash": "2856702d77ce32e8253b8cbcc07a6cce1cbf47b7",
+            "message": "[i777] shadowloader’s ‘find myself’ feature didn’t work if spaces were in the path due to lack of decoding a URL."
+        },
+        {
+            "hash": "d8da2b9438056e945ecc38d98fed413444c847b3",
+            "message": "added impl for @UtilityClass."
+        },
+        {
+            "hash": "46ce592dff458a0561fed900c0659bccb1755a1a",
+            "message": "reordered AUTHORS."
+        },
+        {
+            "hash": "bbb0fd21e5d6b450790d32ce44aab59cd35fada2",
+            "message": "Merge branch 'master' of https://github.com/luanpotter/lombok into utility-class"
+        },
+        {
+            "hash": "b31709e8cc3157d402b5255dca83ce682c8ce545",
+            "message": "Adding my name to the authors file"
+        },
+        {
+            "hash": "10bced0f856db15571c83e4e928dbe7c521f1e72",
+            "message": "Added @UtilityClass annotation and javac handler"
+        },
+        {
+            "hash": "185c6ee684a696e7a32623a80c0ce58352f846f5",
+            "message": "[trivial] Wither would produce the wrong error message for bad use of onMethod/onParam."
+        },
+        {
+            "hash": "209654f19e69932fcc35fade290b878f85f30d81",
+            "message": "[i702] findbugs suppress warnings now available via config key."
+        },
+        {
+            "hash": "e5860edabe31f3b6ceabd91f9cbcadf3d4d0315a",
+            "message": "Fixed issues with val in inner classes, and re-enabled a test that caught it that we ignored earlier."
+        },
+        {
+            "hash": "a6170f5298daf42931877a2d9c98e6f2ad1985be",
+            "message": "updated some copyright headers and reverted a change to use a TreeMap to force a more deterministic order to file processing in order to aid debugging. Also updated changelog."
+        },
+        {
+            "hash": "ef1f4e6404be2a50a04c5adc4daba7b171bb26e0",
+            "message": "added unit tests that confirmed break before the i694 fix and work afterwards."
+        },
+        {
+            "hash": "6a91c013ca2b20cc378515b83e3584f1dad958c0",
+            "message": "[i694] When we resolve anything with inner classes, supertype references in those inner classes\nthat also have val will break, depending on compile order. This should fix it."
+        },
+        {
+            "hash": "e5705f94cd3778a2e0d25060f1e013d0c33bfb90",
+            "message": "* Added config key ‘lombok.addGeneratedAnnotation’.\n* Added ‘format’ directive for tests.\n* Updates tests to salt in some more format and config keys."
+        },
+        {
+            "hash": "26b2fb5cd6d4d73b270be3787fa876cc1bfe80f2",
+            "message": "* the j.u.List recipe is now used to singularize java.lang.Iterables.\n* Code gen for builder now adheres to format options when delomboking (doesn’t generate java.lang. FQNs if you ask it not to do that)."
+        },
+        {
+            "hash": "a7bd812893ecb1fa603229d81c924823426ea973",
+            "message": "[i623] added eclipse code for generating @javax.annotation.Generated, and refactored java impl to reduce DRY violations. -f pretty now includes skipping generation of this annotation, and updated ALL the test cases."
+        },
+        {
+            "hash": "7efbecfe49af452f117e6a16c969a4b2071e80cd",
+            "message": "Merge branch 'master' of https://github.com/petercgrant/lombok into i623"
+        },
+        {
+            "hash": "8a6c581bf6b4126c0dfd2dfb53bd03160712e8ae",
+            "message": "[i623] Added Peter Grant to AUTHORS"
+        },
+        {
+            "hash": "5a5f465a0433bef33ddb1260c338b26e1598501c",
+            "message": "[i623] Added javac impl of javax.annotation.Generated"
+        },
+        {
+            "hash": "8ed49ce0b5c0dbddb66a5519086a033889e6e2e2",
+            "message": "[i775] We broke the ant task with shadowloader; fixed again."
+        },
+        {
+            "hash": "b6e54e73e11804c2d242a7772ad12c160349896a",
+            "message": "Merge pull request #57 from edofic/patch-1\n\nadd instructions for using lombok with sbt"
+        },
+        {
+            "hash": "343e5ef6ecdcefdd86d3741bb4fb38b9915f163a",
+            "message": "add instructions for using lombok with sbt"
+        },
+        {
+            "hash": "f8acd3fd0b6ce6166ae1d3ce6ec1dba5332a2abb",
+            "message": "Merge pull request #56 from ebraminio/master\n\nMinor, put installer window on correct location"
+        },
+        {
+            "hash": "43a95247144b35c5b56480613a0fdef1f81402e9",
+            "message": "Minor, put installer window on correct location"
+        },
+        {
+            "hash": "a312ae9cdbdb516fdadb281f4e76c4747402e3ca",
+            "message": "Reverting the revert of purely a style issue; the copyAnnotations method is now ‘nicer’ and no longer requires having to deal with the fact that it can return both ‘null’ AND empty arrays.\n\nThanks to Maaartin Gracjar for setting this change in motion in commit 842a4759165c5cd05aae63da3921ee11a3641a4b."
+        },
+        {
+            "hash": "3388f685159d05f6a4d0575d5c14224b35110bf8",
+            "message": "ressurected the experimental variant of the Value webpage, which now explains its been promoted and links to the new docs."
+        },
+        {
+            "hash": "a9150bf1aab468771b907c2502d2386ae6ee7c08",
+            "message": "post-release version bump"
+        }
+    ],
+    "issues": []
+}

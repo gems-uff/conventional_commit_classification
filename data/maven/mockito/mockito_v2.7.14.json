@@ -1,0 +1,54 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 27.372569444444444,
+    "commits_info": [
+        {
+            "hash": "4115600cc5d1a1c152f32b5a2fc815c4966f34f2",
+            "message": "Update release notes by Travis CI build 2418 [ci skip]"
+        },
+        {
+            "hash": "54d39c424e10012c6e76088143c1e4156e124b5c",
+            "message": "Merge pull request #935 from mureinik/useConstructor\n\nSupport constructor parameters for spying on abstract classes\n\nFixes #685"
+        },
+        {
+            "hash": "b0e300a5ea28db8766fc26bf83e1809ab13cff53",
+            "message": "Improved exception messages\n\n - attempted to make the exception messages cleaner and providing suggestions to the user.\n - tidied up the test"
+        },
+        {
+            "hash": "3d2fb7a146e943003cb3e3cfe18c82f1663b833a",
+            "message": "Improved StringUtil\n\n- Added new method useful for modelling clean exception messages\n- Added Javadoc"
+        },
+        {
+            "hash": "6a82c030756a30932406d6b807e7ca34f20631e3",
+            "message": "Fixes #685: Ability to mock constructors with args\n\nTo quote the requirement:\n'''\nWe already support spying on abstract classes by allowing\nparameterless constructor. However, there is no support for\nconstructor parameters.\nThis has been asked about long time ago. Mockito API is not robust\nenough if it supports mocking with constructor but not when one has\nany constructor parameters.\n'''\n\nThis patch enhances the MockSettings#useConstrctor() method and adds\noptional ellipsis arguments that are passed to the constructor.\n\nThe patch streamlines the creation of mocks via constructors to a\nsingle flow, where using a no-arg constructor or an enclosing class\nare just private cases of this flow, and don't require their own\nspecial treatment."
+        },
+        {
+            "hash": "df026e80e6aa8ee04fd81dae8c2c8278a3cf8b72",
+            "message": "Introduce Checks#checkNotNull(T, String, String)\n\nEnhance the Checks class so that checkNotNull can receive and additional\noptional argument of a detailed message in order to use it in the\nfollowing patch."
+        },
+        {
+            "hash": "34ae9156f05aa2dc38da0ad44ff009fcbad70e60",
+            "message": "Introduce ChecksTests\n\nIntroduce a basic test case for Checks#checkNotNull in order to\nfacilitate refactoring it in following patches."
+        },
+        {
+            "hash": "b413bbeee9f6dc4b61bee8fb394c0c376dc48075",
+            "message": "Add editor config to automatically adhere to code style guide (#966)"
+        },
+        {
+            "hash": "1be0216b30db8eed46869ae989606e14d5f4455d",
+            "message": "Increment version '2.7.13' -> '2.7.14' by Travis CI build 2413 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "685",
+            "title": "Support constructor parameters for spying on abstract classes"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.26.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 1.089375,
+    "commits_info": [
+        {
+            "hash": "bfc5ecb8494b00d8b5ed4e226ad8770b08d9474b",
+            "message": "2.26.2 release (previous 2.26.1) + release notes updated by CI build 4040\n\n[ci skip-release]"
+        },
+        {
+            "hash": "086b0a0425b9e4c8b689088e7928d00b91938d37",
+            "message": "Merge pull request #1683 from mockito/location-impl-memory-computation\n\nEagerly compute stackTraceLine in LocationImpl"
+        },
+        {
+            "hash": "031d0546ff86f9c6a78efbd92e38496cd60ddfe0",
+            "message": "Upgrade animalsniffer-plugin for Gradle 5 compatibility"
+        },
+        {
+            "hash": "a470148139c93a78c90de8ff2bbfc7a74d790661",
+            "message": "Remove Gradle sha256sum\n\nGradle automatically adds this, but it is unreliable on Travis."
+        },
+        {
+            "hash": "adb43e9bdabd1b3be828416f2ad1aeccd66292de",
+            "message": "Upgrade Gradle to 5.3.1\n\nTo workaround https://github.com/gradle/gradle/issues/7059"
+        },
+        {
+            "hash": "07c83669a37fdefb89285352bed32f083929eb4a",
+            "message": "Fix CheckStyle warnings and only run memory test if fastpath is supported"
+        },
+        {
+            "hash": "5498e6b1936f8565a9c33af3e7ecbfe689343e6c",
+            "message": "Add missing parameter in test stub"
+        },
+        {
+            "hash": "fd6f88f129003ccbf4dc175f7b76a4bdec9ff493",
+            "message": "Fix some regressions\n\nThis also cleans up the handling of stacktraces when using the inline\nmockmaker. It will now no longer copy the whole stacktrace, but be\nsmart and simply skip 1 line."
+        },
+        {
+            "hash": "91add9a76db5c375945ac95ce62ae60479d9dcc5",
+            "message": "Flip logic for choosing a stacktraceelement"
+        },
+        {
+            "hash": "03526e43207888c32cb555048da69bbb08e76616",
+            "message": "Add simple test to enforce memory starvation\n\nThis test crashes early on release/2.x and runs just fine on this\nbranch."
+        },
+        {
+            "hash": "c16f43ac4f9ed980626586184f621b3a7b57eb2d",
+            "message": "Implement fast-path computation for stackTrace filtering\n\nThis significantly speeds up average test durations. On one internal\ntest, before this change it was timing out after 60 seconds. After this\nchange, it reliably completes within 25 seconds."
+        },
+        {
+            "hash": "a53fadd0b330460106e869ea81f92d78e77936b3",
+            "message": "Eagerly compute stackTraceLine in LocationImpl\n\nOn typical tests with large stacktraces and many invocations on mocks,\nthe storing of Throwable in `stackTraceHolder` would result in\nOutOfMemoryErrors. Eager computation of the stackTraceLine resulted in a\n~2/3rd memory reduction of a typical test (1.5GB -> 400MB)."
+        }
+    ],
+    "issues": []
+}

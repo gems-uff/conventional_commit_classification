@@ -1,0 +1,50 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.4.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 8,
+    "start_delay": 0.0,
+    "duration": 2.8114930555555557,
+    "commits_info": [
+        {
+            "hash": "7ac91ed48f6b6f568bca5a0d4f4e73e2e9ea8415",
+            "message": "Update release notes by Travis CI build 2086 [ci skip]"
+        },
+        {
+            "hash": "228e3a5b171a782cc5dcf022d123064c23ef2d31",
+            "message": "Merge pull request #847 from mockito/class-file-rename\n\nRename compiled MockMethodDispatcher class so that it works with Robolectric"
+        },
+        {
+            "hash": "df57b7833e802988975d2016f4b2dd7463770a82",
+            "message": "Added missing task dependency\n\nEnsured that there is a file to copy, e.g. the compileJava task ran frist"
+        },
+        {
+            "hash": "f96fef27e823738248b49c6bb2cd2939d8ecad4b",
+            "message": "Fixed build to only exclude mock dispatcher on packaging to allow IDE processing"
+        },
+        {
+            "hash": "8aed4e4003715abad92b9d160a4b0668e8cc17ad",
+            "message": "Locate class file by raw extension for dispatcher bootstrap injection"
+        },
+        {
+            "hash": "c98b128a2636f1ee4391109f15691eb5a8eb68b2",
+            "message": "Renames org.mockito.internal.creation.bytebuddy.MockMethodDispatcher.class to fix #845"
+        },
+        {
+            "hash": "c5125ce740f81dba2b03d4b7e67c63c73be710d8",
+            "message": "Automatically publish main jar to central\n\nI'm tired of doing it manually from the Bintray web interface."
+        },
+        {
+            "hash": "d072d3af6d296500662b40b1d22a1f216d8ed533",
+            "message": "Increment version '2.4.4' -> '2.4.5' by Travis CI build 2085 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "845",
+            "title": "Rename MockMethodDispatcher.class to MockMethodDispatcher.raw on build"
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.10.15",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 32,
+    "start_delay": 0.0,
+    "duration": 65.34450231481482,
+    "commits_info": [
+        {
+            "hash": "2ad5d99ac9c88ef56a5bb4170299bb1e565bcb14",
+            "message": "\"Update release notes by Travis CI build 336 [ci skip]\""
+        },
+        {
+            "hash": "87f22e3c7091c4120c70fec0592d9a1109211ab0",
+            "message": "Fixed test resource"
+        },
+        {
+            "hash": "3d092286207381a1626d6977635dbe71a2107e55",
+            "message": "Made the push command quiet"
+        },
+        {
+            "hash": "80d17bbed386675c86e2bff0eae3c8de28e36e4d",
+            "message": "Added javadoc annotations\n\nThis commit along with bunch of previous ones concludes and fixes #135"
+        },
+        {
+            "hash": "03092d20186b02385545dc574ca84dd015e53c89",
+            "message": "Refactoring: simplified the code"
+        },
+        {
+            "hash": "70ab70ffff17e319be0cb6d54417e611a9bfc9e8",
+            "message": "Renamed for clarity"
+        },
+        {
+            "hash": "5b01910d7a1eee59acc6a2e7936263f639e22319",
+            "message": "Tidied up coverage"
+        },
+        {
+            "hash": "198aca25f4ccba4357dcb1f72a4f3421e184bec1",
+            "message": "Cleaning up the code incrementally\n\nRefactored for better testability (in progress)."
+        },
+        {
+            "hash": "843c6bb0a2289c1a2c679c1f825924a5f0e8d4b4",
+            "message": "Ensured exception causes are supplied"
+        },
+        {
+            "hash": "e0c9fb7728fe087503dc52eb88a1df104b88e059",
+            "message": "Started using the utility in one of the classes"
+        },
+        {
+            "hash": "285f031a76c03447542dbe4929f6f8bb76674c89",
+            "message": "Added utility for Iterables"
+        },
+        {
+            "hash": "e76f3344e21d2a7c0ec341af5d0b8b39057a97a7",
+            "message": "Added some utility code\n\nA bit or reinventing the wheel but we don't want extra 3rd party deps."
+        },
+        {
+            "hash": "e1d04de3f44d930ecaf4e51f8f0e3ddc1bad6ea3",
+            "message": "Removed not needed code."
+        },
+        {
+            "hash": "11297396c45219e43e33fb9df74191728520b2d1",
+            "message": "More coverage for the plugin switcher"
+        },
+        {
+            "hash": "6dce6eb07e228d742dd7ee6673a3a64a225f4641",
+            "message": "Refactored the code to have less explicit static state"
+        },
+        {
+            "hash": "7c9a7e54cf8e2a4a0c5aa67e92edd3a9d580d44b",
+            "message": "Fixed the problem with tests\n\nMissing TestBase caused problems in other tests."
+        },
+        {
+            "hash": "b063319df8ad88026f887c9f5aa44b6a886de74a",
+            "message": "Added basic implementation of PluginSwitcher plugin"
+        },
+        {
+            "hash": "c8124d11952f2af795d0ca07cb588eb272431b63",
+            "message": "Simplified plugins file reading\n\nNo point reading the file fully when we get the implementation class name"
+        },
+        {
+            "hash": "722e7fa98c78505893080f7557e2e97655b0d225",
+            "message": "Tidy-up in code and coverage\n\nWrote tests on a higher level for the file reading capability. This change introduces a potential breaking change as we now ignore multiple class names supplied in the plugin file. However, I doubt that anyone puts multiple class implementations in the plugin configuration file. This would be rather awkward."
+        },
+        {
+            "hash": "f8fe13fda5a1efe47a02994909f107f92fd3dbe9",
+            "message": "Pushed out complexity to separate class\n\nMoved the file reading handling to a separate class"
+        },
+        {
+            "hash": "0685ede2762c746d80cdead8007d9789f8127daa",
+            "message": "Pushed out complexity to separate class\n\nMoved plugin loading mechanism out of the ClassPathLoader which should be renamed later on into ConfigurationLoader"
+        },
+        {
+            "hash": "d154fbd76bba53d35072b8b8ea97f17b5db5c973",
+            "message": "Added PluginSwitcher extension point\n\nIt does not work yet. Added an integration test."
+        },
+        {
+            "hash": "cad084a8d1a0101fdbe9b0bea6d92f8f2034f700",
+            "message": "Documented public package"
+        },
+        {
+            "hash": "15605a5ac40e77b6061e07d5ed3da16aabef286f",
+            "message": "Improved the documentation around BDDMockito\n\nTicket #100"
+        },
+        {
+            "hash": "8e9d46ff59893db4d6fa12acbd497e5927944a3b",
+            "message": "Tidied up the API interface of BDDMockito\n\nEnsured concrete classes don't leak"
+        },
+        {
+            "hash": "cc9ff686a4d1ed795c28d9c014824a0024258c19",
+            "message": "added since to Then methods\nadded deprecation for all API leaking classes"
+        },
+        {
+            "hash": "739f6b762c6d901acb7c18e7955effa61a92af8c",
+            "message": "deprecated Then constructor since it is not part of the public API"
+        },
+        {
+            "hash": "65b093df7368473b07c91826265b241c6f41e271",
+            "message": "Updated javadoc\n\n[ci skip]"
+        },
+        {
+            "hash": "93a52a3c95b59c4c010c1ff0c6eaee1d4b5c1e95",
+            "message": "Merge pull request #131 from dhruvarora/patch-1\n\nRefactoring: Remove erroneous question mark typo\r\n\r\n[ci skip]"
+        },
+        {
+            "hash": "55b2680abeb3887c033d88ac3eb65747a82468fa",
+            "message": "Refactoring: Remove erroneous question mark typo\n\nAccidental ? on line 108 following the word EasyMock removed."
+        },
+        {
+            "hash": "63ecbcfcc33498dff1fdf0fc5e66b1136dbfba6a",
+            "message": "\"Update release notes by Travis CI build 332 [ci skip]\""
+        },
+        {
+            "hash": "070a512986d0d1be223ef39293e404b6e3892d0f",
+            "message": "Increment version '1.10.14' -> '1.10.15' by Travis CI build 332 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "135",
+            "title": "Introduce PluginSwitch extension point"
+        }
+    ]
+}

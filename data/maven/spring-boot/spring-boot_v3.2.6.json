@@ -1,0 +1,1170 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.2.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 174,
+    "start_delay": 0.0,
+    "duration": 76.06302083333334,
+    "commits_info": [
+        {
+            "hash": "106ae499ca2ac2150bf5e4e72b0dfa3bff359c97",
+            "message": "Release v3.2.6"
+        },
+        {
+            "hash": "f9c10f31154c69b402d2be4202421a0433c0fb2c",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "6b0f8756d5fc3dd3203abcb3707ad9e160a17e96",
+            "message": "Next development version (v3.1.13-SNAPSHOT)"
+        },
+        {
+            "hash": "e77ffd819a73cd423969ef7b4620a8f57e930b02",
+            "message": "Upgrade to Spring Framework 6.1.8\n\nCloses gh-40828"
+        },
+        {
+            "hash": "477cdcae21f2e5f973059924aaef7791c7380df7",
+            "message": "Upgrade to Spring Batch 5.1.2\n\nCloses gh-40657"
+        },
+        {
+            "hash": "6ca3db067d46be93a7a826e23643e72cc49a8908",
+            "message": "Upgrade to Netty 4.1.110.Final\n\nCloses gh-40878"
+        },
+        {
+            "hash": "0ffd7e6910a5113564264d98bb0e1773b121d457",
+            "message": "Upgrade to Byte Buddy 1.14.16\n\nCloses gh-40877"
+        },
+        {
+            "hash": "9437ab96f415c05623e0450b7aca0ea585099b24",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "35fb54a4d32c5f2de2c27c94c9d233e14bc22006",
+            "message": "Polish deprecation notice"
+        },
+        {
+            "hash": "4e5cd2c2fd82f08f687141e2c9c99657db65c10f",
+            "message": "Fix default security options for bootBuildImage task\n\nFixes gh-39830"
+        },
+        {
+            "hash": "8392a7e47c4e1ae60f49e07c6e0122beb25aede6",
+            "message": "Merge pull request #40493 from onobc\n\n* pr/40493:\n  Encode JSON string in Pulsar auth params\n\nCloses gh-40493"
+        },
+        {
+            "hash": "7a7bcd07da2901f82d4bc8c596c93a8729439828",
+            "message": "Encode JSON string in Pulsar auth params\n\nThe values in the `spring.pulsar.client.authentication.param`\nconfig props map are not currently JSON encoded. For simple\nvalues this is fine. However, some custom auth modules may\nrequire more complex parameter values that may contain special\ncharacters that results in invalid JSON. This commmit encodes\nthe parameter values using a very simple hand-rolled escape\nfunction.\n\nSee gh-40493"
+        },
+        {
+            "hash": "d340f87c22d200a8722fceb29ea2eb1815e21eb9",
+            "message": "Disable test when Docker is not available\n\nSee gh-40585"
+        },
+        {
+            "hash": "de75283f36c8d9c26125aab8cc963d3d2824e3e7",
+            "message": "Upgrade to Spring Session 3.2.3\n\nCloses gh-40663"
+        },
+        {
+            "hash": "7a60bbbba4376a54cc04935c0e1ea320b0147819",
+            "message": "Upgrade to Spring Pulsar 1.0.6\n\nCloses gh-40662"
+        },
+        {
+            "hash": "814f01551d9d2ef5a4281f5b5b8e076fafb4d764",
+            "message": "Upgrade to Spring Integration 6.2.5\n\nCloses gh-40660"
+        },
+        {
+            "hash": "9be225ef076eca3ba04f010f8cb40e21f7265a2b",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "468e246dbbb558c7b1b8bc415a4cdf8aec9cf60c",
+            "message": "Make sure container's started before connection details use it\n\nPrior to this commit, a Testcontainer that was managed as a bean\nwould not have been started in time if it was accessed before\nthe bean factory's configuration had been frozen. A common way\nfor this to occur is when using JPA. The entity manager factory\nbean is LoadTimeWeaverAware which causes it to be created before\nconfiguration is frozen. Creating this bean requires the DataSource\nwhich in turn requires the JdbcConnectionDetails and its JDBC URL.\nGetting the JDBC URL From the connection details requires the\ncontainer hosting the SQL database to have been started.\n\nThis commit updates ContainerConnectionDetails, the super-class for\nall Testcontainer-based ConnectionDetails implementations, to publish\nan event when the Container is retrieved from the details. When this\nevent is published, TestcontainersLifecycleBeanPostProcessor\ninitializes all containers that are defined as beans.\n\nCloses gh-40585"
+        },
+        {
+            "hash": "cb22d57c94a6def6f8560d6a3d2f018ced8a5cdd",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "486ceecc9a10b603e1ae7d42e34aec3efa39d1bb",
+            "message": "Use the bean factory to get the type produced by a factory bean\n\nPreviously, we only looked at the OBJECT_TYPE_ATTRIBUTE on the\nfactory bean's definition. This did not work for situations\nwhere the information's provided by the definition's target type\nrather than the attribute.\n\nRather than manually considering the target type in addition to\nthe existing consideration of the attribute, we now ask the bean\nfactory for the type that will be produced by the factory bean\ninstead. This should insulate us from any changes and\nenhancements in Framework in the future.\n\nFixes gh-40234"
+        },
+        {
+            "hash": "a8948790854796789a4087739ed7199a43a0300c",
+            "message": "Use DefaultDbRefResolver whenever MongoDatabaseFactory is available\n\nFixes gh-39405"
+        },
+        {
+            "hash": "823cc90b46c17f54c3a9466b67828e21da2b1662",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40849"
+        },
+        {
+            "hash": "39ab959af8d0311d4c8a29dbbbc1d060bac2f428",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40845"
+        },
+        {
+            "hash": "44619a9eef07768b8389022c318e1552d1976304",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40843"
+        },
+        {
+            "hash": "dda74cab94b28d9b3739c0f51db2e0cef4ff9915",
+            "message": "Upgrade to Spring Kafka 3.1.5\n\nCloses gh-40661"
+        },
+        {
+            "hash": "1efa7d1127d462af8ce93c25aea23db0155ae23e",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "9d44468d442ecb4a7ad1eb3b09a054b5ecdde126",
+            "message": "Upgrade to Spring AMQP 3.1.5\n\nCloses gh-40827"
+        },
+        {
+            "hash": "8d3102d4687defd800c8e0892a2f09e4030a0dd5",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "b718e5806fe2572898c3050c9de7fd1f8ad0b080",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40838"
+        },
+        {
+            "hash": "f440f2c3ac6561c8c05c6ae5b136da75245891f9",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40834"
+        },
+        {
+            "hash": "375be93937c584dcf0de6976c8ab60d1025461b4",
+            "message": "Merge pull request #40822 from PiyalAhmed\n\n* gh-40822:\n  Polish \"Fix typo in CertificateMatchingTestSource class\"\n  Fix typo in CertificateMatchingTestSource class\n\nCloses gh-40822"
+        },
+        {
+            "hash": "75976713fe8a6a3866fc766bcfc564a524facb37",
+            "message": "Polish \"Fix typo in CertificateMatchingTestSource class\"\n\nSee gh-40822"
+        },
+        {
+            "hash": "092e92143380a17cc444440a9cb33f93dfd49896",
+            "message": "Fix typo in CertificateMatchingTestSource class\n\nSee gh-40822"
+        },
+        {
+            "hash": "967b99213770ef6476b238e5deb932cb1eb60252",
+            "message": "Start building against Spring Framework 6.1.8 snapshots\n\nSee gh-40828"
+        },
+        {
+            "hash": "5b892b163fdbcae00f34bc92f1e0cdcbf6aa7816",
+            "message": "Start building against Spring AMQP 3.1.5 snapshots\n\nSee gh-40827"
+        },
+        {
+            "hash": "a6c5a6e494669c59ce4e1ad4c4a34246cdd65d88",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "7f2b91785142b0ff378700cdb2b059021c8a30f9",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40818"
+        },
+        {
+            "hash": "7e74577d21fc73e56fa78c2f360cacc1ddbf1d4a",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40814"
+        },
+        {
+            "hash": "bc854b14a1ae3bda5ba583d4bf405f0c6e2973ab",
+            "message": "Upgrade to Spring WS 4.0.11\n\nCloses gh-40664"
+        },
+        {
+            "hash": "7a523b5f6e05e4d16cf11ac728e961cdf0432b7c",
+            "message": "Upgrade to Spring Data Bom 2023.1.6\n\nCloses gh-40658"
+        },
+        {
+            "hash": "04ebddc4ba8bf8e478413d5db76487e81cce59b1",
+            "message": "Upgrade to Pulsar Reactive 0.5.5\n\nCloses gh-40810"
+        },
+        {
+            "hash": "a33fb25c4ed490ba9ca1765268a0ffc00fe5cdb3",
+            "message": "Upgrade to Jetty Reactive HTTPClient 4.0.4\n\nCloses gh-40809"
+        },
+        {
+            "hash": "61036e1d280c7adf4fff273b53a0e5194f1a6cbf",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "c3e122d6eadb495c7106963832ac396f4c622901",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40804"
+        },
+        {
+            "hash": "d38c1e06b33ba0e4d7c3ae5a96ef188e4313a1fe",
+            "message": "Ignore exceptions when deleting caches in bind cache tests\n\nSee gh-40760"
+        },
+        {
+            "hash": "bdc6508b6292a7cae9707440e62988d2cb63b429",
+            "message": "Catch any exception when deleting image building workspace\n\nSee gh-40760"
+        },
+        {
+            "hash": "cd441130bd7a46da412baf327d6040d638fe23a5",
+            "message": "Warn when image building workspace directories cannot be deleted\n\nWhen the `buildWorkspace` location in the\n`spring-boot:build-image` Maven goal or `bootBuildImage` Gradle\ntask is configured to use a local bind source, the location\nis passed to the CNB lifecycle without further processing by\nSpring Boot. The lifecycle is in control of creating any files\nin the specified location. Spring Boot tries to remove the\ndirectories at the specified location after an image is\nsuccessfully created, but should not fail the image build\nif the lifecycle has created files or directories with\npermissions that keep them from being deleted successfully.\n\nFixes gh-40760"
+        },
+        {
+            "hash": "524424bc989d322b2d3a4bf36096a03e58b04a54",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40795"
+        },
+        {
+            "hash": "493efd679897f6082a1555717674cfcc63d34c2d",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40792"
+        },
+        {
+            "hash": "feaccef3a4dc4927cbd1538a2031bfb867b77c19",
+            "message": "Temporarily disable tests for image building with bind caches\n\nSee gh-40760"
+        },
+        {
+            "hash": "f24d4e4a0688cc3d4036624e42fd7b4e7ac582ad",
+            "message": "Upgrade to Tomcat 10.1.24\n\nCloses gh-40785"
+        },
+        {
+            "hash": "bb8cf46a2985e5abad9f61d8ca54e80665302dd9",
+            "message": "Upgrade to Spring Retry 2.0.6\n\nCloses gh-40784"
+        },
+        {
+            "hash": "c1f3f17f41572b3f381be96fc0332729648f8af9",
+            "message": "Upgrade to Spring Framework 6.1.7\n\nCloses gh-40659"
+        },
+        {
+            "hash": "50c6df99b5712947355b742c79728bc648a4f235",
+            "message": "Upgrade to SAAJ Impl 3.0.4\n\nCloses gh-40783"
+        },
+        {
+            "hash": "5dcd9799af8f9b2000bd19d3dcdf337266d7ab4d",
+            "message": "Upgrade to Reactor Bom 2023.0.6\n\nCloses gh-40656"
+        },
+        {
+            "hash": "d2b067ea3d7c9e112efb98f1c7b892c930974d60",
+            "message": "Upgrade to Jakarta XML WS 4.0.2\n\nCloses gh-40782"
+        },
+        {
+            "hash": "de17b6c3a1d7e3b136467a08058f5bcc5f654f89",
+            "message": "Upgrade to Jakarta XML SOAP 3.0.2\n\nCloses gh-40781"
+        },
+        {
+            "hash": "391395cac3fe66238b68709ee5dc95088c95daa8",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "ed93bcf099f0338bcdcdd2072a957d1189ed2ff4",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40774"
+        },
+        {
+            "hash": "5db9f59094571e03c8429491b2dea132ec3f242d",
+            "message": "Rework Jetty graceful shutdown to address race condition with 12.0.9\n\nSee gh-40724"
+        },
+        {
+            "hash": "c0296c28bb0ded363e35c73c64a7b4751d330501",
+            "message": "Fully-qualify KafkaContainer to make it clear which one we support\n\nTestcontainers now has org.testcontainers.containers.KafkaContainer\n(that we support) and org.testcontainers.kafka.KafkaContainer (that\nwe don't yet support). This commit fully-qualifies the name so that\nit's clear which KafkaContainer we're referring to.\n\nCloses gh-40699"
+        },
+        {
+            "hash": "341035903a9732d801ffe44141ee3df58bda3844",
+            "message": "Upgrade to Undertow 2.3.13.Final\n\nCloses gh-40735"
+        },
+        {
+            "hash": "6f096c0b5f505828a63919f726871413f202ba10",
+            "message": "Upgrade to Tomcat 10.1.23\n\nCloses gh-40734"
+        },
+        {
+            "hash": "f9d0a6dd046caca50c384f618544482bea9029d5",
+            "message": "Upgrade to Testcontainers 1.19.8\n\nCloses gh-40733"
+        },
+        {
+            "hash": "29be3e17231af7e2cb42a98c820dd2a0371f3bec",
+            "message": "Upgrade to R2DBC Proxy 1.1.5.RELEASE\n\nCloses gh-40732"
+        },
+        {
+            "hash": "e1e29432e8e9af85e86f9c281ac7c404197c6b26",
+            "message": "Upgrade to Pooled JMS 3.1.6\n\nCloses gh-40731"
+        },
+        {
+            "hash": "4e1fd41b9505c91a219cf76ea674b39a445a6531",
+            "message": "Upgrade to Micrometer Tracing 1.2.6\n\nCloses gh-40730"
+        },
+        {
+            "hash": "9d018a27fa8466726c0cc473a33ce6d4980736d0",
+            "message": "Upgrade to Micrometer 1.12.6\n\nCloses gh-40655"
+        },
+        {
+            "hash": "1f0b5fba4d0d6d95e4f1bb3bbc523c444452d531",
+            "message": "Upgrade to Maven Shade Plugin 3.5.3\n\nCloses gh-40729"
+        },
+        {
+            "hash": "3a34a38f9737f514a5355e9c301e5b4d96ebf240",
+            "message": "Upgrade to Maven Install Plugin 3.1.2\n\nCloses gh-40728"
+        },
+        {
+            "hash": "4662009596b00ea8b572562394be7e99e8d73544",
+            "message": "Upgrade to Maven Deploy Plugin 3.1.2\n\nCloses gh-40727"
+        },
+        {
+            "hash": "a2355517e6dff748854773354c36e63252289a76",
+            "message": "Upgrade to Kotlin 1.9.24\n\nCloses gh-40726"
+        },
+        {
+            "hash": "a21831bc03771fb1399225327292b9c911b2d604",
+            "message": "Upgrade to jOOQ 3.18.15\n\nCloses gh-40725"
+        },
+        {
+            "hash": "e0f93448f625561db4c816c9ea3a28dc1aed0083",
+            "message": "Upgrade to Jetty 12.0.9\n\nCloses gh-40724"
+        },
+        {
+            "hash": "96bdf1a8fcff0a4db2831e281dc030612a4e7654",
+            "message": "Upgrade to Infinispan 14.0.28.Final\n\nCloses gh-40723"
+        },
+        {
+            "hash": "436ae02ee98e5e4a5cd03a7297a57860e3b044e2",
+            "message": "Upgrade to Hibernate 6.4.8.Final\n\nCloses gh-40722"
+        },
+        {
+            "hash": "9130030ec8095a5b8d36e6b94847bae4548c3417",
+            "message": "Upgrade to Dependency Management Plugin 1.1.5\n\nCloses gh-40721"
+        },
+        {
+            "hash": "d7410acbe58d5021cf6b0cf275ab9417242cd97e",
+            "message": "Upgrade to Byte Buddy 1.14.15\n\nCloses gh-40720"
+        },
+        {
+            "hash": "bddb128fd8dc307bbc978535ad5ae08cc58d3e00",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "ccd573ad3dbf85f28a5a67efd504da12f35bfc49",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40706"
+        },
+        {
+            "hash": "ef0cf7e9dab89f77cce8abc637b5ee8e37f99b7d",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40702"
+        },
+        {
+            "hash": "364af04377fce2cace682ffc509393c1126347dc",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40700"
+        },
+        {
+            "hash": "e55773d14e13611af6e0b26e32bd2e41d5f43530",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40690"
+        },
+        {
+            "hash": "436f2758f852098b7f02d85e1075ee85d9a102f4",
+            "message": "Ensure that extensions have been built before Asciidoctor runs\n\nSee gh-40536"
+        },
+        {
+            "hash": "d01a049dd1734fd7f06bea15312edefb81a2a130",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40687"
+        },
+        {
+            "hash": "2d77ebcaed0d3d60d62ffed9e0ba046aa0f9ff08",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40684"
+        },
+        {
+            "hash": "207ea098e9d30f0f0d545df0be9a4666a1cac212",
+            "message": "Start building against Spring WS 4.0.11 snapshots\n\nSee gh-40664"
+        },
+        {
+            "hash": "d0550d8441f0527aef01200d38e373f9e090812d",
+            "message": "Start building against Spring Session 3.2.3 snapshots\n\nSee gh-40663"
+        },
+        {
+            "hash": "da1226822c10376da1f8348c9876af1116df4fcd",
+            "message": "Start building against Spring Pulsar 1.0.6 snapshots\n\nSee gh-40662"
+        },
+        {
+            "hash": "ef503323d81f03c908adc2fcab87424160b332a2",
+            "message": "Start building against Spring Kafka 3.1.5 snapshots\n\nSee gh-40661"
+        },
+        {
+            "hash": "30ef19c422f91460a029eaa6c3a5dc4ba8f3229d",
+            "message": "Start building against Spring Integration 6.2.5 snapshots\n\nSee gh-40660"
+        },
+        {
+            "hash": "52912c11d54af4dfb0b89a3637e55454dfea73f5",
+            "message": "Start building against Spring Framework 6.1.7 snapshots\n\nSee gh-40659"
+        },
+        {
+            "hash": "0a212dac4cf0a9fe287d07162701765823aa3543",
+            "message": "Upgrade to Neo4j Java Driver 5.20.0\n\nCloses gh-40665"
+        },
+        {
+            "hash": "5f6fb969313320be831e5c0e4fd38989971ac854",
+            "message": "Start building against Spring Data Bom 2023.1.6 snapshots\n\nSee gh-40658"
+        },
+        {
+            "hash": "b6135c564c32ebb8d3075ba97bfd36e12ff73446",
+            "message": "Start building against Spring Batch 5.1.2 snapshots\n\nSee gh-40657"
+        },
+        {
+            "hash": "077e29eb8cfee30eafe40a233c1ad5585add6c38",
+            "message": "Start building against Reactor Bom 2023.0.6 snapshots\n\nSee gh-40656"
+        },
+        {
+            "hash": "36bf25da9c3aade7ff6287e4402afa149d3bb272",
+            "message": "Start building against Micrometer 1.12.6 snapshots\n\nSee gh-40655"
+        },
+        {
+            "hash": "58334f339bfcfca2b63ecf42c6cd43746ff5727c",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "24bfe5087f5afa26c6662009b6848cd1b9986764",
+            "message": "Fix checkstyle violation\n\nSee gh-40549"
+        },
+        {
+            "hash": "8457fc333fb5134c202794e06df9ac8e2921d316",
+            "message": "Adapt Windows path handling fix to deal with Jetty\n\nUpdate `NestedLocation` to deal with the fact that Jetty attempts\nto fix URLs.\n\nSee gh-40549"
+        },
+        {
+            "hash": "7708ec75927653e78ee87c2d13582785b8955348",
+            "message": "Fix Windows path handling for nested jars\n\nUpdate `Path` creation for nested locations to allow both UNC and classic\nfile references to be used. This commit attempts to align our URL\nhandling with that of standard file URLs. The `NestedLocation` class\nno longer attempts to remove leading all `\\` characters and instead\nonly removes the first `\\` when the second char is `:`. This duplicates\nthe logic found in Java's own internal `WindowsUriSupport` class which\nis used when calling `Path.of(url)` with a `file:` URL.\n\nFixes gh-40549"
+        },
+        {
+            "hash": "ed42ed7c43e9c865c30258629bc9e00b5e523913",
+            "message": "Enable GraalVM native Paketo Builder Tests on Java 22\n\nCloses gh-40639"
+        },
+        {
+            "hash": "92f7414fadbe39764226b9b719d1ecea6934f69c",
+            "message": "Favor Duration accepting timeout method over int method\n\nCloses gh-40635"
+        },
+        {
+            "hash": "c47cdda8246947ea0110bd664d216fb1fc069cd7",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40624"
+        },
+        {
+            "hash": "8a72e55106af92fbbb86912633e228ad35c7fbd1",
+            "message": "Fix UriPathEncoder bug to improve performance\n\nFix `isAllowed` check and write test to ensure that additional object\ninstances are not created unnecessarily.\n\nSee gh-40615"
+        },
+        {
+            "hash": "d0ce4daec16f8070267948718237f7ac3d983093",
+            "message": "Use URI encoded values when creating NestedPath URIs\n\nUpdate `NestedPath.toUri()` so that the URI is constructed using encoded\nstrings.\n\nFixes gh-40615"
+        },
+        {
+            "hash": "75dac1435f0494fa173eda1bc8f6f7e7ec31b93f",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "516d3b1294882b8faef290b263e32a921192d2d7",
+            "message": "Test ANSI disabled in logging tests instead of integration tests\n\nSee gh-40172"
+        },
+        {
+            "hash": "2183b47e629d77e02f5b59cbd2a1c35488c1ace9",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40612"
+        },
+        {
+            "hash": "c7ec6080ce91f6c23ceb18fc48d31d062a4288e1",
+            "message": "Publish a runtime variant that supports Java 22\n\nIn order to support Java 22, we must use spring-core 6.1.x.\nspring-core 6.1.x is a multi-release jar so, in order to support Java\n22, a version of Gradle that supports multi-release jars must be\nused.\n\nThis commit adds a new variant to spring-boot-gradle-plugin for\nmodern versions of Gradle. When Gradle's plugin API version is 8.7 or\nlater, we use spring-core 6.1.x. spring-core 6.0.x is used at all\nother times.\n\nCloses gh-40074"
+        },
+        {
+            "hash": "6fd3ebb1d95968e30059e58aaaed27e216287130",
+            "message": "Merge pull request #40172 from facewise\n\n* pr/40172:\n  Polish \"Fix broken AnsiOutput.detectIfAnsiCapable on JDK22\"\n  Fix broken AnsiOutput.detectIfAnsiCapable on JDK22\n\nCloses gh-40172"
+        },
+        {
+            "hash": "713f4f22923f9df3d4d744e60ec7cea14af26c15",
+            "message": "Polish \"Fix broken AnsiOutput.detectIfAnsiCapable on JDK22\"\n\nSee gh-40172"
+        },
+        {
+            "hash": "1f9b62b1228d1a251d0b61ef5cc8eb5d7de595d0",
+            "message": "Fix broken AnsiOutput.detectIfAnsiCapable on JDK22\n\nSee gh-40172"
+        },
+        {
+            "hash": "46ab60cc4388e0a6403cab8bde44cdeb3518090f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40607"
+        },
+        {
+            "hash": "888ae040e4fe09bcdbd483126bb3dab9b7862dfc",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40605"
+        },
+        {
+            "hash": "16a6bcf422dcc9ba1314ed938d5abbaf02a57a60",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "93728cdfb139c6d0295c5ba8d559899480fd2b91",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40600"
+        },
+        {
+            "hash": "bd16fc4d26a1f393f515713f7f69bf97bff92a5c",
+            "message": "Merge pull request #39856 from yokotaso\n\n* pr/39856:\n  Fix possible NullPointerException from getPermission()\n\nCloses gh-39856"
+        },
+        {
+            "hash": "5b4bd617204728c4910e45fde44ac46d0f5672d4",
+            "message": "Fix possible NullPointerException from getPermission()\n\nFix regression in `JarUrlConnection` where a NullPointerException could\nbe thrown internally causing performance issues.\n\nWhen the SecurityManager is present, the following stack trace is\nthrown:\n\njava.lang.NullPointerException: Cannot invoke \"java.net.URLConnection.getPermission()\" because \"this.jarFileConnection\" is null\n        at org.springframework.boot.loader.net.protocol.jar.JarUrlConnection.getPermission(JarUrlConnection.java:175)\n        at java.base/jdk.internal.loader.URLClassPath.check(URLClassPath.java:553)\n        at java.base/jdk.internal.loader.URLClassPath$Loader.findResource(URLClassPath.java:612)\n        at java.base/jdk.internal.loader.URLClassPath.findResource(URLClassPath.java:296)\n        at java.base/java.net.URLClassLoader$2.run(URLClassLoader.java:629)\n        at java.base/java.net.URLClassLoader$2.run(URLClassLoader.java:627)\n        at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)\n        at java.base/java.net.URLClassLoader.findResource(URLClassLoader.java:626)\n        at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.findResource(JarUrlClassLoader.java:70)\n        at java.base/java.lang.ClassLoader.getResource(ClassLoader.java:1403)\n        at java.base/java.net.URLClassLoader.getResourceAsStream(URLClassLoader.java:290)\n        at java.base/java.lang.Class.getResourceAsStream(Class.java:2850)\n\nSee gh-39856"
+        },
+        {
+            "hash": "dcf97325d7a2d33c30b70bcdd8dcc473472d5f0a",
+            "message": "Renew trust material for SSL tests\n\nCloses gh-40589"
+        },
+        {
+            "hash": "a6dd8b71bdb9439386b1495843e71bc30862b89b",
+            "message": "Add exception and failure analyzer for missing AOT initializer\n\nThe diagnostics text include the name of the AOT initializer class and\nthe main class name. It also tells the user how to switch of the AOT\nmode.\n\nCloses gh-38645"
+        },
+        {
+            "hash": "883810bff8710d768114ab40539146adfccefc50",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "90b1c18a577aeffc1407ee6242a2bfbbc730a685",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40582"
+        },
+        {
+            "hash": "21a0bc7fee377038efedf31af88511c213047ce7",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40576"
+        },
+        {
+            "hash": "34e62bb4e2b4fc80d433a437346c5a41581abf4d",
+            "message": "Reinstate permissive alias check\n\nWithout the permissive check, unusually named static resources are\ninaccessible. The need for this may be due to a Jetty bug. This change\nrestores the tests to their previous form for now.\n\nSee gh-40568"
+        },
+        {
+            "hash": "f70a270ec8aff57aa21f1f26bdde71c302dae085",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40568"
+        },
+        {
+            "hash": "7ac0d0cde66b6394af4dd8f6ed4ddb9892060c82",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40564"
+        },
+        {
+            "hash": "be5039041cb776d5ea303e0a08047ea3dedc01f1",
+            "message": "Defer creation of maps in MapBinder\n\nCloses gh-39375"
+        },
+        {
+            "hash": "8a3b0cd221feb0ff2cac2a388e0a825082b5d9cc",
+            "message": "Throw dedicated exception if bundle content is not watchable\n\nThis also adds a FailureAnalyzer which prints a helpful message how to\nfix that problem.\n\nCloses gh-38903"
+        },
+        {
+            "hash": "0757857b74d6c3e790814beb37e08f552f7de29a",
+            "message": "Stop calling getProject() when ExtractVersionConstraints is executing\n\nCloses gh-40550"
+        },
+        {
+            "hash": "c139bdf5257babfa4ad36ebae5e3202d0a2d67c6",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "89b13c897af7bb861413023b9f7d2412a5428e39",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40547"
+        },
+        {
+            "hash": "023c104434d9383e1f1a329fb7bce82ecd5a6eb6",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40544"
+        },
+        {
+            "hash": "876d9213f534d8c282d1cdc19c91bfbd784d6abc",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40541"
+        },
+        {
+            "hash": "cfdb89fe0ba9091bfbea032ecef4d997a0c5eadc",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40538"
+        },
+        {
+            "hash": "3881cd0ea34dbdc9fbb8fce82af5694540d43ac8",
+            "message": "Upgrade to Asciidoctor Gradle Plugin 4.0.2\n\nCloses gh-40536"
+        },
+        {
+            "hash": "960f020a181dded25dc2cd3ac68f247093f8a0db",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40534"
+        },
+        {
+            "hash": "eb7e7b6425c5589903b745004fded87cdbdb022f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40532"
+        },
+        {
+            "hash": "5707ca83e9fe7325748a90ee78ab9799c67f0f9f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40529"
+        },
+        {
+            "hash": "087e46738743aa4fed7d60b3a04d4889372dd9ef",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40527"
+        },
+        {
+            "hash": "f13e487724838cafcb10e76bb1ec33459d492b5c",
+            "message": "Close streams in test before deleting file"
+        },
+        {
+            "hash": "9e409702807eb5e5d3b0d0756b2578e6c5ddcd1f",
+            "message": "Support gzip compressed image layers\n\nUpdate buildpack support to allow gzip compressed image layers to be\nused when returned by the Docker engine. This update is restores\nbuildpack support when using Docker Desktop with the \"Use containerd\nfor pulling and storing images\" option enabled.\n\nThis commit introduces a new `ExportedImageTar` class to deal with the\nintricacies of determining the mimetype of a layer. The class deals with\nthe parsing of `index.json' and related manifest blobs in order to\nobtain layer information. The legacy `manifest.json` format is also\nsupported should `index.json` be missing.\n\nTests have been added to ensure that export archives from Docker Engine,\nDocker Desktop (with and without containerd), and Podman can be used.\n\nFixes gh-40100\n\nCo-authored-by: Moritz Halbritter <moritz.halbritter@broadcom.com>\nCo-authored-by: Scott Frederick <scott.frederick@broadcom.com>"
+        },
+        {
+            "hash": "79c3f0335b4291ce4dda4d421e801eb071f4c54e",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40522"
+        },
+        {
+            "hash": "c267179957b21058647f3c0fc1d6dcb6550bc65e",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "c4938094990c291889a8dc7c9edcafc073c6a92c",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40519"
+        },
+        {
+            "hash": "26f1bbb634f87441529276d138c287a3b8c38b84",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40516"
+        },
+        {
+            "hash": "503d8c1273f2c802b8e11a201ba15f132c8c0cc0",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40514"
+        },
+        {
+            "hash": "b65cda4363f6eaae13b2693b2257a06ece9dfee1",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40506"
+        },
+        {
+            "hash": "3e2d151c0ebdb49ecc4d63fc3f895adc6e32c080",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40508"
+        },
+        {
+            "hash": "00a25f5d89d3c9e18ef9bbcf97cc3ae3498b3b8d",
+            "message": "Don't apply CookieSameSiteSupplier to session cookies when using Jetty\n\nCloses gh-39766"
+        },
+        {
+            "hash": "b416db4dee0fcba02f5f7834cc104944b0bf6cb7",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40498"
+        },
+        {
+            "hash": "97f0e62364e19735455abc5a800e0b73e574f8f7",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40487"
+        },
+        {
+            "hash": "35c9233007689d29d94ffdabfeb2f1db89711389",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40485"
+        },
+        {
+            "hash": "5c9d5e262f9f3534d6434d2515679745b69fb03f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40482"
+        },
+        {
+            "hash": "08bc0460ed10d5f05d7c1a56b699390cc2a9e37c",
+            "message": "Document usage of Docker Compose support in tests\n\nCloses gh-40171"
+        },
+        {
+            "hash": "3a9ee9f1a7ba61b6b8e0953ecb74645fb867ff17",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40478"
+        },
+        {
+            "hash": "fc03fded39a43286e34d6da1b5605b9610d6d646",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40475"
+        },
+        {
+            "hash": "1f06aa2e20c6a3ac05cbfc00fd0fbfca4518a4ca",
+            "message": "Merge pull request #39865 from quaff\n\n* gh-39865:\n  Polish \"Consider HandlerMethodValidationException in DefaultErrorAttributes\"\n  Consider HandlerMethodValidationException in DefaultErrorAttributes\n\nCloses gh-39865"
+        },
+        {
+            "hash": "82b218937c50da213294413f1f5e8186d854f073",
+            "message": "Polish \"Consider HandlerMethodValidationException in DefaultErrorAttributes\"\n\nSee gh-39865"
+        },
+        {
+            "hash": "20e9ff9f3d97bdd0f3110ea639799ca78ffb085c",
+            "message": "Consider HandlerMethodValidationException in DefaultErrorAttributes\n\nSee gh-39865"
+        },
+        {
+            "hash": "4b61ae415bdf569297480b8824b121d8bba6b63f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40470"
+        },
+        {
+            "hash": "3a6f83e2d630e0ce26058c2f407e1c85a9ed07e6",
+            "message": "Fix links to Batch's javadoc\n\nCloses gh-40468"
+        },
+        {
+            "hash": "07bb1878cfa4d96baa509b781066a5d1899f9cee",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40466"
+        },
+        {
+            "hash": "deffda47f66b49baf21752e1a6c919638da4a777",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40464"
+        },
+        {
+            "hash": "2e114b697105ebfec52d49686a33dee9b6444572",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40450"
+        },
+        {
+            "hash": "f78b239adae1cb207bac417e3d3ec20308be88bb",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40447"
+        },
+        {
+            "hash": "0ce2a80c8130d19e8d123b7d4a00ef820c81b6ff",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40444"
+        },
+        {
+            "hash": "4c7cb683b52cbe7a13acf334183590944def6582",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40442"
+        },
+        {
+            "hash": "c55f136c2a9aac0f56bc2f231a108f2fbfc66cca",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40440"
+        },
+        {
+            "hash": "887b94cbc8324f8fa1429a095a6757e1a53be7e4",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40413"
+        },
+        {
+            "hash": "01c26ef84e608a0f84d5bdd7f490b58b82d9360f",
+            "message": "Merge branch '3.1.x' into 3.2.x\n\nCloses gh-40416"
+        },
+        {
+            "hash": "38af8cd362b5b70850de97dd634f13999d050d08",
+            "message": "Merge branch '3.1.x' into 3.2.x"
+        },
+        {
+            "hash": "20e7e35df32a7c9920c3575368c3b3cb582f996a",
+            "message": "Correct misconfigured step in update-homebrew-tap action"
+        },
+        {
+            "hash": "740dc58661209925652f0ff7444ea8823c092505",
+            "message": "Next development version (v3.2.6-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "40828",
+            "title": "Upgrade to Spring Framework 6.1.8"
+        },
+        {
+            "number": "40657",
+            "title": "Upgrade to Spring Batch 5.1.2"
+        },
+        {
+            "number": "40878",
+            "title": "Upgrade to Netty 4.1.110.Final"
+        },
+        {
+            "number": "40877",
+            "title": "Upgrade to Byte Buddy 1.14.16"
+        },
+        {
+            "number": "39830",
+            "title": "gradlew bootBuildImage fails with Podman on macOS Sonoma"
+        },
+        {
+            "number": "40585",
+            "title": "When using JPA and ImportTestcontainers, test context may fail to refresh due to \"Mapped port can only be obtained after the container is started\""
+        },
+        {
+            "number": "40663",
+            "title": "Upgrade to Spring Session 3.2.3"
+        },
+        {
+            "number": "40662",
+            "title": "Upgrade to Spring Pulsar 1.0.6"
+        },
+        {
+            "number": "40660",
+            "title": "Upgrade to Spring Integration 6.2.5"
+        },
+        {
+            "number": "40234",
+            "title": "Starting from 3.2.x, @SpyBean is not able to initialise MongoRepository bean of the generic type"
+        },
+        {
+            "number": "39405",
+            "title": "Auto-configuration ordering change breaks DocumentReference (in non-reactive MongoTemplate) when depending on mongodb-driver-reactivestreams"
+        },
+        {
+            "number": "40849",
+            "title": "Ensure that Hazelcast binds to localhost in our client tests"
+        },
+        {
+            "number": "40845",
+            "title": "Improve graceful shutdown documentation to remove ambiguity"
+        },
+        {
+            "number": "40843",
+            "title": "Document ways to opt out from immutable @ConfigurationProperties binding with single constructor"
+        },
+        {
+            "number": "40661",
+            "title": "Upgrade to Spring Kafka 3.1.5"
+        },
+        {
+            "number": "40827",
+            "title": "Upgrade to Spring AMQP 3.1.5"
+        },
+        {
+            "number": "40838",
+            "title": "Document that a custom HttpMessageConverters bean can be used to reorder json message converters when needed"
+        },
+        {
+            "number": "40834",
+            "title": "Add missing Testcontainers service connection tests"
+        },
+        {
+            "number": "40818",
+            "title": "Relocate test CNB builder used in plugin integration tests"
+        },
+        {
+            "number": "40814",
+            "title": "Publish the first snapshot after a version bump more quickly"
+        },
+        {
+            "number": "40664",
+            "title": "Upgrade to Spring WS 4.0.11"
+        },
+        {
+            "number": "40658",
+            "title": "Upgrade to Spring Data Bom 2023.1.6"
+        },
+        {
+            "number": "40810",
+            "title": "Upgrade to Pulsar Reactive 0.5.5"
+        },
+        {
+            "number": "40809",
+            "title": "Upgrade to Jetty Reactive HTTPClient 4.0.4"
+        },
+        {
+            "number": "40804",
+            "title": "Disable system test that's broken by the latest jammy builder"
+        },
+        {
+            "number": "40760",
+            "title": "Image building fails during cleanup when bind mount has read-only content"
+        },
+        {
+            "number": "40795",
+            "title": "Limit configuration cache testing to the latest version of Gradle"
+        },
+        {
+            "number": "40792",
+            "title": "Test the lowest and highest supported versions of Maven"
+        },
+        {
+            "number": "40785",
+            "title": "Upgrade to Tomcat 10.1.24"
+        },
+        {
+            "number": "40784",
+            "title": "Upgrade to Spring Retry 2.0.6"
+        },
+        {
+            "number": "40659",
+            "title": "Upgrade to Spring Framework 6.1.7"
+        },
+        {
+            "number": "40783",
+            "title": "Upgrade to SAAJ Impl 3.0.4"
+        },
+        {
+            "number": "40656",
+            "title": "Upgrade to Reactor Bom 2023.0.6"
+        },
+        {
+            "number": "40782",
+            "title": "Upgrade to Jakarta XML WS 4.0.2"
+        },
+        {
+            "number": "40781",
+            "title": "Upgrade to Jakarta XML SOAP 3.0.2"
+        },
+        {
+            "number": "40774",
+            "title": "Bump jfrog/setup-jfrog-cli from 4.0.1 to 4.0.2"
+        },
+        {
+            "number": "40724",
+            "title": "Upgrade to Jetty 12.0.9"
+        },
+        {
+            "number": "40699",
+            "title": "Address ambiguity now that Testcontainers has two classes named KafkaContainer"
+        },
+        {
+            "number": "40735",
+            "title": "Upgrade to Undertow 2.3.13.Final"
+        },
+        {
+            "number": "40734",
+            "title": "Upgrade to Tomcat 10.1.23"
+        },
+        {
+            "number": "40733",
+            "title": "Upgrade to Testcontainers 1.19.8"
+        },
+        {
+            "number": "40732",
+            "title": "Upgrade to R2DBC Proxy 1.1.5.RELEASE"
+        },
+        {
+            "number": "40731",
+            "title": "Upgrade to Pooled JMS 3.1.6"
+        },
+        {
+            "number": "40730",
+            "title": "Upgrade to Micrometer Tracing 1.2.6"
+        },
+        {
+            "number": "40655",
+            "title": "Upgrade to Micrometer 1.12.6"
+        },
+        {
+            "number": "40729",
+            "title": "Upgrade to Maven Shade Plugin 3.5.3"
+        },
+        {
+            "number": "40728",
+            "title": "Upgrade to Maven Install Plugin 3.1.2"
+        },
+        {
+            "number": "40727",
+            "title": "Upgrade to Maven Deploy Plugin 3.1.2"
+        },
+        {
+            "number": "40726",
+            "title": "Upgrade to Kotlin 1.9.24"
+        },
+        {
+            "number": "40725",
+            "title": "Upgrade to jOOQ 3.18.15"
+        },
+        {
+            "number": "40723",
+            "title": "Upgrade to Infinispan 14.0.28.Final"
+        },
+        {
+            "number": "40722",
+            "title": "Upgrade to Hibernate 6.4.8.Final"
+        },
+        {
+            "number": "40721",
+            "title": "Upgrade to Dependency Management Plugin 1.1.5"
+        },
+        {
+            "number": "40720",
+            "title": "Upgrade to Byte Buddy 1.14.15"
+        },
+        {
+            "number": "40706",
+            "title": "Use ubuntu-latest GitHub Actions runner for Linux builds"
+        },
+        {
+            "number": "40702",
+            "title": "Fix typo in the JavaDoc of JavaConventions class"
+        },
+        {
+            "number": "40700",
+            "title": "Use CollectionUtils.isEmpty() and StringUtils.hasLength()"
+        },
+        {
+            "number": "40690",
+            "title": "Failure Analysis for InvalidConfigurationPropertyValueException is skipped when the property is not set"
+        },
+        {
+            "number": "40536",
+            "title": "Upgrade to Asciidoctor Gradle Plugin 4.0.2"
+        },
+        {
+            "number": "40687",
+            "title": "Update Github Actions configuration to correctly handle booleans that are actually strings"
+        },
+        {
+            "number": "40684",
+            "title": "Use OSS self-hosted runners"
+        },
+        {
+            "number": "40665",
+            "title": "Upgrade to Neo4j Java Driver 5.20.0"
+        },
+        {
+            "number": "40549",
+            "title": "IllegalArgumentException can be thrown when running an uber jar on a shared drive"
+        },
+        {
+            "number": "40639",
+            "title": "Enable GraalVM native Paketo Builder Tests on Java 22"
+        },
+        {
+            "number": "40635",
+            "title": "setReadTimeout can't be set via Reflective factory on JettyClientHttpRequestFactory"
+        },
+        {
+            "number": "40624",
+            "title": "Upgrade to bcprov-jdk18on 1.78.1"
+        },
+        {
+            "number": "40615",
+            "title": "URISyntaxException is raised if the spring boot application is started in a location that contains invalid URI characters"
+        },
+        {
+            "number": "40612",
+            "title": "Avoid using ClientHttpRequestFactory which may not on the classpath"
+        },
+        {
+            "number": "40074",
+            "title": "resolveMainClassName fails when building with Gradle using Java 22"
+        },
+        {
+            "number": "40607",
+            "title": "Clarify devtools restart class loader"
+        },
+        {
+            "number": "40605",
+            "title": "Help information for spring init's build option has the wrong default"
+        },
+        {
+            "number": "40600",
+            "title": "Remove reassignments for builders in GraphQL auto-configurations"
+        },
+        {
+            "number": "40589",
+            "title": "Renew trust material for SSL tests"
+        },
+        {
+            "number": "38645",
+            "title": "In some situations, the failure when the AOT-generated initializer cannot be loaded is less helpful than before"
+        },
+        {
+            "number": "40582",
+            "title": "Bump gradle/actions from 3.3.1 to 3.3.2"
+        },
+        {
+            "number": "40576",
+            "title": "Use ConcurrentHashMap.newKeySet where feasible"
+        },
+        {
+            "number": "40568",
+            "title": "Remove Concourse CI configuration"
+        },
+        {
+            "number": "40564",
+            "title": "Note that spring-boot-docker-compose is excluded by default from packaged jars"
+        },
+        {
+            "number": "39375",
+            "title": "Properties binding eagerly creates superfluous maps"
+        },
+        {
+            "number": "38903",
+            "title": "Configuring SSL bundle reload for non-file resource types causes errors that are difficult to diagnose"
+        },
+        {
+            "number": "40550",
+            "title": "Avoid calling getProject() during execution of extractVersionConstraints"
+        },
+        {
+            "number": "40547",
+            "title": "Avoid calling getProject() when checking configuration metadata"
+        },
+        {
+            "number": "40544",
+            "title": "Avoid calling getProject() during execution of publishMavenPublicationToProjectRepository"
+        },
+        {
+            "number": "40541",
+            "title": "Avoid calling getProject() during execution of AutoConfigurationMetadata task"
+        },
+        {
+            "number": "40538",
+            "title": "Avoid calling getProject() during execution of StarterMetadata task"
+        },
+        {
+            "number": "40534",
+            "title": "spring-boot-dependencies cannot be used with repositories that ban com.oracle.database.jdbc:ojdbc-bom"
+        },
+        {
+            "number": "40532",
+            "title": "Add support for checking that a library's modules align with a bom's dependency management"
+        },
+        {
+            "number": "40529",
+            "title": "Remove unnecessary null check for expectedDeprecationMessages"
+        },
+        {
+            "number": "40527",
+            "title": "Migrate 'com.gradle.enterprise' gradle plugin to 'com.gradle.develocity'"
+        },
+        {
+            "number": "40100",
+            "title": "Buildpacks do not support Docker with containerd image store"
+        },
+        {
+            "number": "40522",
+            "title": "Clarify docs around spring.jpa.generate-ddl"
+        },
+        {
+            "number": "40519",
+            "title": "Upgrade to release verification tests 0.0.3"
+        },
+        {
+            "number": "40516",
+            "title": "SpringBootMockMvcBuilderCustomizer can crash cryptically while collecting data that it would have discarded anyway"
+        },
+        {
+            "number": "40514",
+            "title": "Clarify the directory that's used by default to find Docker Compose compose.yaml"
+        },
+        {
+            "number": "40506",
+            "title": "Upgrade CI to Docker 26.1.0"
+        },
+        {
+            "number": "40508",
+            "title": "Containers not shut down between tests when using .withReuse(true) but env. does not support reuse (e.g. CI builds)"
+        },
+        {
+            "number": "39766",
+            "title": "CookieSameSiteSupplier influences session cookie"
+        },
+        {
+            "number": "40498",
+            "title": "Remove unnecessary nesting of calls to String.format"
+        },
+        {
+            "number": "40487",
+            "title": "Bump gradle/actions from 3.3.0 to 3.3.1"
+        },
+        {
+            "number": "40485",
+            "title": "Runtime hint registration for property binding should not fail when parameter information is unavailable"
+        },
+        {
+            "number": "40482",
+            "title": "ServiceLevelObjectiveBoundary properties cannot be bound in a native image application"
+        },
+        {
+            "number": "40171",
+            "title": "Suggest testAndDevelopmentOnly configuration when using Docker Compose support in tests"
+        },
+        {
+            "number": "40478",
+            "title": "Add a test that verifies that the default for spring.data.mongodb.uuid-representation is aligned with Spring Data's default"
+        },
+        {
+            "number": "40475",
+            "title": "Stop expecting deprecation warnings in NativeImagePluginActionIntegrationTests"
+        },
+        {
+            "number": "40470",
+            "title": "Clarify that all named properties must match for @ConditionalOnProperty to match"
+        },
+        {
+            "number": "40468",
+            "title": "Links to Spring Batch javadoc for EnableBatchProcessing and DefaultBatchConfiguration are broken"
+        },
+        {
+            "number": "40466",
+            "title": "spring.data.redis.cluster.nodes and spring.data.redis.sentinel.nodes do not handle IPv6 addresses correctly"
+        },
+        {
+            "number": "40464",
+            "title": "Using relative paths to describe the classpath in the error message from ResolveMainClassName hinders problem diagnosis"
+        },
+        {
+            "number": "40450",
+            "title": "Native image doesn't start and doesn't log anything if an environment post processor throws an exception"
+        },
+        {
+            "number": "40447",
+            "title": "Run system tests on GitHub Actions"
+        },
+        {
+            "number": "40444",
+            "title": "Move steps for preparing a Gradle build into a reusable action"
+        },
+        {
+            "number": "40442",
+            "title": "Set artifact properties on the docs zip when releasing"
+        },
+        {
+            "number": "40440",
+            "title": "Unlike DataSourceAutoConfiguration, DevToolsDataSourceAutoConfiguration assumes that javax.sql.DataSource will always be available"
+        },
+        {
+            "number": "40413",
+            "title": "Upgrade Java 21 version in CI image"
+        },
+        {
+            "number": "40416",
+            "title": "Upgrade Java 17 version in CI image and .sdkmanrc"
+        }
+    ]
+}

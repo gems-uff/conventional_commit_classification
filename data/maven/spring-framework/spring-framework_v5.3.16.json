@@ -1,0 +1,502 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.16",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 92,
+    "start_delay": 0.0,
+    "duration": 62.887511574074075,
+    "commits_info": [
+        {
+            "hash": "ab5a6a5e48e90acc85db8a99f840c9937672d4cc",
+            "message": "Release v5.3.16"
+        },
+        {
+            "hash": "f8a59c267f318e06522fdfa968c9b251cf1b07d9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1166577d2c7f1a2b2dba84ba3f1026f5b3ca9b2a",
+            "message": "Upgrade to Netty 4.1.74, Jetty 9.4.45, Undertow 2.2.16, Hibernate Validator 6.2.2, Apache Johnzon 1.2.16, EclipseLink 2.7.10"
+        },
+        {
+            "hash": "36dc4e4c5f3827cf9f13a691c8007cc5f2a46f17",
+            "message": "Add mavenCentral() to pluginManagement repositories\n\nUpdate the pluginManagement repositories used by Grade to include\n`mavenCentral()` since `gradlePluginPortal()` has been suffering\nfrom timeouts recently."
+        },
+        {
+            "hash": "3ac60147f3b9a37f136f25fcd60d145c49110251",
+            "message": "Improve documentation for uri(URI) method in WebTestClient\n\nPrior to this commit, it was not clear that a configured base URI would\nnot be applied when invoking uri(URI).\n\nThis commit adds a note to the Javadoc to clarify that behavior.\n\nCloses gh-28058"
+        },
+        {
+            "hash": "e3ceb9b23dacbed3db0811b7535cbe07ccda58cb",
+            "message": "Polish @Target declarations for stereotype annotations"
+        },
+        {
+            "hash": "5ab966fbdefc33840ff2ac4c12b26a6c306b59cf",
+            "message": "Polish contribution\n\nSee gh-28038"
+        },
+        {
+            "hash": "7276752e7cbc87aead678ae84ec8a83e7603a141",
+            "message": "Fix CronExpression issue with DST\n\nThis commit fixes an issue with CronExpression fails to calculate next\nexecution on the day of daylight saving time.\n\nCloses gh-28038"
+        },
+        {
+            "hash": "685a195ba17be18479ab682f808b14d8c586b3fa",
+            "message": "Deprecate SocketUtils\n\nSocketUtils was introduced in Spring Framework 4.0, primarily to assist\nin writing integration tests which start an external server on an\navailable random port. However, these utilities make no guarantee about\nthe subsequent availability of a given port and are therefore\nunreliable. Instead of using SocketUtils to find an available local\nport for a server, it is recommended that users rely on a server's\nability to start on a random port that it selects or is assigned by the\noperating system. To interact with that server, the user should query\nthe server for the port it is currently using.\n\nSocketUtils is now deprecated in 5.3.16 and will be removed in 6.0.\n\nCloses gh-28052"
+        },
+        {
+            "hash": "3188c0f7db54cffdb95e7127e2adde959dd078f9",
+            "message": "Ensure fix for gh-28012 is actually tested\n\nIn 3ec612aaf8, I accidentally removed tests that verified support for\nnon-synthesizable merged annotations for recursive annotations in\nKotlin.\n\nThis commit reinstates those non-synthesizable tests while retaining\nthe synthesizable tests."
+        },
+        {
+            "hash": "3ea540adbce6fd61ee745b7b7a103f3a16ef95ec",
+            "message": "Upgrade to Reactor 2020.0.16\n\nCloses gh-28039"
+        },
+        {
+            "hash": "ec03e8830ed0edb3cffbda1395c491127c0353b6",
+            "message": "Remove path variables from pathWithinMapping\n\nCloses gh-27913"
+        },
+        {
+            "hash": "11cb93823270e8c7003c6bf21909bef0601f062d",
+            "message": "Polishing contribution\n\nCloses gh-28000"
+        },
+        {
+            "hash": "f004bb1b64cd9f39d58adc181607a1d5f3034b29",
+            "message": "Add formatting for SockJS GoAway frame\n\nPrevents infinite loop for xhr-polling and xhr-streaming transports.\n\nSee gh-28000"
+        },
+        {
+            "hash": "88f73bffa0e98c1e14db065c86d17c5d6295cee0",
+            "message": "Make assertion message lazy in ServletRequestPathUtils\n\nCloses gh-27946"
+        },
+        {
+            "hash": "0ab054c7b943d65bb9034d1d7987f556e9d54d05",
+            "message": "Upgrade concourse-release-scripts in CI\n\nThis commit also reverts the change of resource type for the publication\nof the CI image and fixes a bug in the CI image setup with available\nJDKs."
+        },
+        {
+            "hash": "8eb618b480896092cae04d1c5e412f7a5dba0c9c",
+            "message": "Make Kotlin functions accessible in CoroutinesUtils\n\nIn order to allow using private classes like in Java\nfor example.\n\nCloses gh-23840"
+        },
+        {
+            "hash": "2f78abd56e39eb95c32fd211ca738359f8eec3e5",
+            "message": "Upgrade CI pipeline\n\nThis commit upgrades the CI pipeline with the following:\n\n* replace JDK16 with JDK17 as build variant\n* upgrade all JDK versions\n* replace docker-image with registry-image resource for CI image"
+        },
+        {
+            "hash": "3ec612aaf8611d2ad6e6f7f3d5868feee5024477",
+            "message": "Support recursive annotations in merged annotations\n\nAlthough Java does not allow the definition of recursive annotations,\nKotlin does, and prior to this commit an attempt to synthesize a\nmerged annotation using the MergedAnnotation API resulted in a\nStackOverflowError if there was a recursive cycle in the annotation\ndefinitions.\n\nThis commit addresses this issue by tracking which annotations have\nalready been visited and short circuits the recursive algorithm if a\ncycle is detected.\n\nCloses gh-28012"
+        },
+        {
+            "hash": "4eaee1e7381d5f3d8cd6e3ab77c8cfcf7ef2d716",
+            "message": "Short circuit if-conditions in AttributeMethods"
+        },
+        {
+            "hash": "eca755ec88a6f9c91d335f4d0931cb79668164ce",
+            "message": "Upgrade to Dokka 1.6.10\n\nCloses gh-28040"
+        },
+        {
+            "hash": "420147954621a4b1d653b6f441cbf59ad493173b",
+            "message": "Start building against Reactor 2020.0.16 snapshots\n\nSee gh-28039"
+        },
+        {
+            "hash": "b60340b102ac1858c1527faab4c848561a860898",
+            "message": "Simplify tests for synthesized annotation toString()\n\nSee gh-28015"
+        },
+        {
+            "hash": "2fd39839f83e8923277cb89bcff0b5dc5a18abfc",
+            "message": "Improve toString() for synthesized annotations\n\nAlthough the initial report in gh-28015 only covered inconsistencies\nfor arrays and strings in the toString() implementations for\nannotations between the JDK (after Java 9) and Spring, it has since\ncome to our attention that there was further room for improvement.\n\nThis commit therefore addresses the following in toString() output for\nsynthesized annotations.\n\n- characters are now wrapped in single quotes.\n\n- bytes are now properly formatted as \"(byte) 0x##\".\n\n- long, float, and double values are now appended with \"L\", \"f\", and\n  \"d\", respectively. The use of lowercase for \"f\" and \"d\" is solely to\n  align with the choice made by the JDK team.\n\nHowever, this commit does not address the following issues which we may\nchoose to address at a later point in time.\n\n- non-ASCII, non-visible, and non-printable characters within a\n  character or String literal are not escaped.\n\n- formatting for float and double values does not take into account\n  whether a value is not a number (NaN) or infinite.\n\nCloses gh-28015"
+        },
+        {
+            "hash": "ce87285be5d4be7ab9d981273acac8a8624883dc",
+            "message": "Use canonical names for types in synthesized annotation toString\n\nMy proposal for the same change in the JDK is currently targeted for\nJDK 19.\n\n- https://bugs.openjdk.java.net/browse/JDK-8281462\n- https://bugs.openjdk.java.net/browse/JDK-8281568\n- https://github.com/openjdk/jdk/pull/7418\n\nSee gh-28015"
+        },
+        {
+            "hash": "97582fd0a1f786c2cde12ba2af8196e423d47d87",
+            "message": "Update Eclipse template to @since 5.3.16"
+        },
+        {
+            "hash": "d2c7dfb79ee62900a0c5ded12768fc18458d765a",
+            "message": "Add convenience factory method for Managed[List|Set|Map]\n\nCloses gh-28026"
+        },
+        {
+            "hash": "7139a877f41f864b3a318c0dadd3450fa67deb19",
+            "message": "Ensure toString() for synthesized annotations is source code compatible\n\nSince the introduction of synthesized annotation support in Spring\nFramework 4.2 (a.k.a., merged annotations), the toString()\nimplementation attempted to align with the formatting used by the JDK\nitself. However, Class annotation attributes were formatted using\nClass#getName in Spring; whereas, the JDK used Class#toString up until\nJDK 9.\n\nIn addition, JDK 9 introduced new formatting for toString() for\nannotations, apparently intended to align with the syntax used in the\nsource code declaration of the annotation. However, JDK 9+ formats enum\nannotation attributes using Enum#toString instead of Enum#name, which\ncan lead to issues if toString() is overridden in an enum.\n\nThis commit updates the formatting used for synthesized annotations by\nensuring that toString() generates a string that is compatible with the\nsyntax of the originating source code, going beyond the changes made in\nJDK 9 by using Enum#name instead of Enum#toString.\n\nCloses gh-28015"
+        },
+        {
+            "hash": "669b05dc1d925cf88a084a1de6e582b6f0a773e1",
+            "message": "Allow AutowiredAnnotationBeanPostProcessor to compile on JDK 11"
+        },
+        {
+            "hash": "038b88e2a1cc64c845aacc438d1b39979110bce5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "eb84c843736aaa555d9078a544280bd70b714fbb",
+            "message": "Polish contribution\n\nSee gh-27993"
+        },
+        {
+            "hash": "920be8e1b201fa947b07941eeace62ecf0f431a9",
+            "message": "Add support for strict JSON comparison in WebTestClient\n\nPrior to this commit, WebTestClient only supported \"lenient\" comparison\nof the expected JSON body.\n\nThis commit introduces an overloaded variant of `json()` in the\nBodyContentSpec that accepts an additional boolean flag to specify\nwhether a \"strict\" comparison should be performed.\n\nThis new feature is analogous to the existing support in MockMvc.\n\nCloses gh-27993"
+        },
+        {
+            "hash": "a13ad3e96932683feb6f1272503aaa30dae6685e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "874432b38a357564d615ce40c3a1c542a4a97e52",
+            "message": "Merge pull request #28010 from izeye\n\n* pr/28010:\n  Fix Javadoc since for AopProxyUtils.isLambda()\n\nCloses gh-28010"
+        },
+        {
+            "hash": "4ab03fede8aa6fd501f136803277db7e868d9b7c",
+            "message": "Fix Javadoc since for AopProxyUtils.isLambda()\n\nSee gh-28010"
+        },
+        {
+            "hash": "5bbdd36e199dd53b237f168c34c81c7b4dcd8946",
+            "message": "Upgrade to Checkstyle 9.3, HtmlUnit 2.58, Apache HttpClient 5.1.3"
+        },
+        {
+            "hash": "a22feac8036393725113222055166eb9e7211c9a",
+            "message": "Update license header for https (nohttp rule)\n\nSee gh-27802"
+        },
+        {
+            "hash": "bc9cd9a687b598a3d567ebcd9fb4108e0342ce84",
+            "message": "Find interface method even for late-bound interface declaration in subclass\n\nCloses gh-27995"
+        },
+        {
+            "hash": "a71a45e71965acd9b4c5d9863bcd6f378990a465",
+            "message": "Deprecate AsyncTaskExecutor.execute(Runnable task, long startTimeout)\n\nCloses gh-27959"
+        },
+        {
+            "hash": "132d8c7f453f6770ec5ca08e72446b65fc0c8528",
+            "message": "Support for CGLIB BeanMap utility on JDK 17\n\nCloses gh-27802"
+        },
+        {
+            "hash": "5d7a632965aff526cb6bbd0380b445f102819dca",
+            "message": "Ensure Spring AOP generates JDK dynamic proxies for lambdas\n\nPrior to this commit, if AOP proxy generation was configured with\nproxyTargetClass=true (which is the default behavior in recent versions\nof Spring Boot), beans implemented as lambda expressions or method\nreferences could not be proxied with CGLIB on Java 16 or higher without\nspecifying `--add-opens java.base/java.lang=ALL-UNNAMED`.\n\nThis commit addresses this shortcoming by ensuring that beans\nimplemented as lambda expressions or method references are always\nproxied using a JDK dynamic proxy even if proxyTargetClass=true.\n\nCloses gh-27971"
+        },
+        {
+            "hash": "6bc7d417346ea32c79cec64497b6f3c709b09f37",
+            "message": "Merge pull request #28004 from An1s9n\n\n* pr/28004:\n  Polish reference to ManagedBean annotation\n\nCloses gh-28004"
+        },
+        {
+            "hash": "05d3e820f9e1b20afbdbc352ee4d40c126474ff6",
+            "message": "Polish reference to ManagedBean annotation\n\nSee gh-28004"
+        },
+        {
+            "hash": "f8a5a8d7be6040e60c21107c14fc394e67e75e6b",
+            "message": "Use modern language features in tests"
+        },
+        {
+            "hash": "82a2544918bac14301bece7c651114c278919f30",
+            "message": "Upgrade to spring javaformat 0.0.31"
+        },
+        {
+            "hash": "e702c22da45016cdb15cdc4b47fb361c5063c8b0",
+            "message": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "hash": "c4e362500be18bd2e277535d568f45e8a059b0db",
+            "message": "Polishing tests"
+        },
+        {
+            "hash": "8d5a6520ce033c38c57a9ec026102e17bd598acc",
+            "message": "Ensure all converters don't close InputStream\n\nCloses gh-27969"
+        },
+        {
+            "hash": "4effca35b500fda26f1f7d8322bc622468e5e93a",
+            "message": "Ignore Content-Type that is invalid (not concrete)\n\nCloses gh-27957"
+        },
+        {
+            "hash": "8f9a1cdc0c2ab2bee112dddad00a94bb501a3181",
+            "message": "Consider current date in \"1W\" cron expressions\n\nPrior to this commit, the QuartzCronField::weekdayNearestTo would elapse\nuntil the next month before checking if the current day matched.\n\nAfter this commit, the current day is checked before we elapse until\nthe next month.\n\nCloses gh-27966"
+        },
+        {
+            "hash": "136bd2002e898d7692a8d4e9f5b0728128e53dca",
+            "message": "Upgrade to spring javaformat 0.0.30"
+        },
+        {
+            "hash": "a749a6bf54ad4b715bd99144acf75c40817797a5",
+            "message": "Stop applying Groovy plugin for the root Gradle project\n\nThe root project does not rely on the Groovy plugin.\n\nSee gh-27945"
+        },
+        {
+            "hash": "7072aab53b765ccd57898bc54eec0f293fb4a700",
+            "message": "Improve log message when searching for default executor for async processing\n\nCloses gh-27983"
+        },
+        {
+            "hash": "dbeae27d3ca70eabd617538a09f4ac952f19126b",
+            "message": "Reduce build time by reducing shutdown wait period for Jetty tests"
+        },
+        {
+            "hash": "fb312d0ed5d55752df5755be29833023e5a21258",
+            "message": "Improve Javadoc for DatabasePopulator\n\nSee gh-27008"
+        },
+        {
+            "hash": "0e670b1c1546522b8f158bff6d1092b1b8035ea2",
+            "message": "Polish contribution\n\nSee gh-27984"
+        },
+        {
+            "hash": "fadfcf4e43725f4ce5180618a88c21010d55055a",
+            "message": "Fix ServletUriComponentsBuilder examples in ref docs\n\nCloses gh-27984"
+        },
+        {
+            "hash": "caa13690e8a7d726808e43394e92e000cc3b60d6",
+            "message": "Support multiple boundary buffers in MultipartParser\n\nIn a small minority of cases, the multipart boundary can spread across\nthree incoming buffers.\n\nPrior to this commit, MultipartParser.BodyState only supported two\nbuffers. If the boundary is spread across three buffers, the first\nbuffer of the three is sent as a whole, even though it contains the\nfirst bytes of the boundary.\n\nThis commit fixes this bug, by enqueuing all prior buffers in a queue,\nand emitting the ones that cannot contain boundary bytes.\n\nCloses gh-27939"
+        },
+        {
+            "hash": "6647023151771e6baa59e7fa923d24a009fcbb33",
+            "message": "Document how to register annotated classes in a GenericWebApplicationContext\n\nCloses gh-27778"
+        },
+        {
+            "hash": "e32f94bf8cbf5280d04434b0c5777fba73ab3e18",
+            "message": "Polish GenericWebApplicationContext and AnnotationConfigWebApplicationContext"
+        },
+        {
+            "hash": "bd6d697395efceab68521e598964dca78995a60d",
+            "message": "Upgrade Java versions in CI image"
+        },
+        {
+            "hash": "7f65e17ff2e728a2b1848da8db894f35fb09434f",
+            "message": "Improve documentation for implementing AspectJ around advice\n\nCloses gh-27980"
+        },
+        {
+            "hash": "9095f1d584d16f9b50536e3a76c9628d0e4d0660",
+            "message": "Polish AspectJ documentation"
+        },
+        {
+            "hash": "4f16d5b5b228bcbc59ebc9a4fc8a4c3552b7b2ba",
+            "message": "Merge pull request #27826 from Drezir\n\n* pr/27826:\n  Polish \"Add CacheErrorHandler implementation that logs exceptions\"\n  Add CacheErrorHandler implementation that logs exceptions\n\nCloses gh-27826"
+        },
+        {
+            "hash": "6a6c7df824675476a0f7b5bed80c503a9b279c01",
+            "message": "Polish \"Add CacheErrorHandler implementation that logs exceptions\"\n\nSee gh-27826"
+        },
+        {
+            "hash": "5c9fbcc23c59ae5b6f8f067198d8050a747a5a2a",
+            "message": "Add CacheErrorHandler implementation that logs exceptions\n\nSee gh-27826"
+        },
+        {
+            "hash": "f4f5cee76cc9b9b5a7ba8efbfd37fd4b55dfe8a1",
+            "message": "Polish AOP namespace tests"
+        },
+        {
+            "hash": "bf1cf549b1f6d410d830945157ef2f4294f77783",
+            "message": "Delete unused XML config in AOP namespace tests\n\nSee gh-22246"
+        },
+        {
+            "hash": "1272cd557d14f1ecf28e518b6bbd6edcd62e0536",
+            "message": "Upgrade to SmallRye Mutiny 1.3.1, Aalto 1.3.1, Woodstox 6.2.8"
+        },
+        {
+            "hash": "993b6d1351d6a92eb27b60e47d77cab8083b1b87",
+            "message": "Upgrade to Tomcat 9.0.58, Protobuf 3.19.3, Rome 1.18, H2 2.1.210, SLF4J 1.7.35, Mockito 4.3.1, HtmlUnit 2.57, XMLUnit 2.9, Checkstyle 9.2.1"
+        },
+        {
+            "hash": "0a92d84778dcb03dd5bf2860f2d997d1db2687f4",
+            "message": "Check open status before close call (aligned with EntityManagerFactoryUtils)\n\nCloses gh-27972"
+        },
+        {
+            "hash": "652c13a6eae11c3ce28410a6643f5860fe32b04d",
+            "message": "Enable ReflectionUtilsTests.findMethodWithVarArgs()\n\nSee gh-13286"
+        },
+        {
+            "hash": "cb3fa89946858203fc84f6eb1a897cf353d34445",
+            "message": "Polish ReflectionUtilsTests"
+        },
+        {
+            "hash": "d01dca14e94b6ead5d8ed98c99ba4c7dfed0fefb",
+            "message": "Filter methods in Object in ReflectionUtils.USER_DECLARED_METHODS\n\nPrior to this commit, the USER_DECLARED_METHODS MethodFilter in\nReflectionUtils did not actually filter methods declared in\njava.lang.Object as stated in its Javadoc.\n\nConsequently, if ReflectionUtils.doWithMethods was invoked with\nUSER_DECLARED_METHODS and Object.class as the class to introspect, all\nnon-bridge non-synthetic methods declared in java.lang.Object were\npassed to the supplied MethodCallback, which breaks the contract of\nUSER_DECLARED_METHODS.\n\nIn addition, if USER_DECLARED_METHODS was composed with a custom\nMethodFilter using `USER_DECLARED_METHODS.and(<custom MethodFilter>)`,\nthat composed method filter allowed all non-bridge non-synthetic\nmethods declared in java.lang.Object to be passed to the supplied\nMethodCallback, which also breaks the contract of\nUSER_DECLARED_METHODS. This behavior resulted in regressions in code\nthat had previously used USER_DECLARED_METHODS by itself and then began\nusing USER_DECLARED_METHODS in a composed filter. For example, since\ncommit c419ea7ba7 ReflectiveAspectJAdvisorFactory has incorrectly\nprocessed methods in java.lang.Object as candidates for advice methods.\n\nThis commit fixes this bug and associated regressions by ensuring that\nUSER_DECLARED_METHODS actually filters methods declared in\njava.lang.Object. In addition, ReflectionUtils.doWithMethods now aborts\nits search algorithm early if invoked with the USER_DECLARED_METHODS\nfilter and Object.class as the class to introspect.\n\nCloses gh-27970"
+        },
+        {
+            "hash": "d698446f7ce0018bcd35c17fe579db13e42f04a5",
+            "message": "Polish ReflectionUtils[Tests]"
+        },
+        {
+            "hash": "5ef023afd2432dda06a167b089e7be4cc6af759b",
+            "message": "Merge pull request #27967 from arey\n\n* pr/27967:\n  Fix CaffeineCacheManager configuration example in reference doc\n\nCloses gh-27967"
+        },
+        {
+            "hash": "316764cad04b247cbf69de6a5b3c974d642e5dd6",
+            "message": "Fix CaffeineCacheManager configuration example in reference doc\n\nSee gh-27967"
+        },
+        {
+            "hash": "a681d6af229146c73e4175b6c58292d677e8bc27",
+            "message": "Fix Javadoc links to JSR 305 annotations where feasible\n\nPrior to this commit, we only (indirectly) configured external Javadoc\nlinks for types in the javax.annotation package for JSR 250, since\nthose types are part of Java 8 SE. However, an external Javadoc link\nfor types from JSR 305 was not configured.\n\nTo address this issue, this commit now configures an external Javadoc\nlink for JSR 305 types. However, the external Javadoc link for JSR 305\nmust be configured last to ensure that types from JSR 250 (such as\n@PostConstruct) are still supported. This is due to the fact that JSR\n250 and JSR 305 both define types in javax.annotation, which results in\na split package, and the javadoc tool does not support split packages\nacross multiple external Javadoc sites. Instead, the Javadoc tool\niterates over all external links, and the first external site that\nclaims to support a given package (via the package-list file) wins.\n\nThis means:\n\n- Javadoc for JSR 250 annotations is fully supported.\n- Javadoc for JSR 305 annotations in the javax.annotation package will\n  continue to result in a 404 (page not found) error.\n- Javadoc for JSR 305 annotations in the javax.annotation.meta package\n  is fully supported.\n\nFor Spring Framework 6.0, the Javadoc for JSR 250 types in\njakarta.annotation package is served from the JBoss Application Server\nJavadoc site instead of from Oracle's Java SE documentation site, since\nJSR 250 annotations are no longer included in Java SE.\n\nCloses gh-27904"
+        },
+        {
+            "hash": "72119120570c7607d34e77973726a5346184b083",
+            "message": "Polish tests in spring-web\n\nThis PR polishes trivial things in tests in spring-web.\n\nCloses gh-27958"
+        },
+        {
+            "hash": "148eac0200ae4f1ab61034d133528ab6dad8ea1d",
+            "message": "Upgrade to SLF4J 1.7.33, Netty 4.1.73, R2DBC Arabba-SR12"
+        },
+        {
+            "hash": "86be03945b5a3d887a22e055d9b12981238159c6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "537aced28baff5b514dab2c6c59475c0f0e0f8f0",
+            "message": "Avoid message listener recovery in case of persistence exceptions on commit\n\nCloses gh-1807"
+        },
+        {
+            "hash": "5c76ff5ef68c995852b82996501458a7defd914f",
+            "message": "Ensure unresolvable placeholders can be ignored with @Value\n\nPrior to this commit, if a PropertySourcesPlaceholderConfigurer bean\nwas configured with its ignoreUnresolvablePlaceholders flag set to\ntrue, unresolvable placeholders in an @Value annotation were not\nignored, resulting in a BeanCreationException for the bean using @Value.\n\nFor example, given a property declared as `my.app.var = ${var}` without\na corresponding `var` property declared, an attempt to resolve\n`@Value(\"${my.app.var}\")` resulted in the following exception.\n\njava.lang.IllegalArgumentException: Could not resolve placeholder 'var' in value \"${var}\"\n\nThis commit fixes this by modifying\nPropertySourcesPlaceholderConfigurer's postProcessBeanFactory(...)\nmethod so that a local PropertyResolver is created if the\nignoreUnresolvablePlaceholders flag is set to true. The local\nPropertyResolver then enforces that flag, since the Environment in the\nApplicationContext is most likely not configured with\nignoreUnresolvablePlaceholders set to true.\n\nCloses gh-27947"
+        },
+        {
+            "hash": "d02d5adb5465d51885d374c55bce8bbb8dbd6279",
+            "message": "Download gradle-enterprise-conventions plugin from \"release\" repo\n\nSee gh-27942"
+        },
+        {
+            "hash": "71f74695788fda416b7aeba510c98180fb589187",
+            "message": "Upgrade to Gradle Enterprise 3.8.1\n\nCloses gh-27942"
+        },
+        {
+            "hash": "420c4f3df3809f5d394fd54a338ea0a1d91a14fe",
+            "message": "Explicitly test BeanPropertyRowMapper.underscoreName(String)\n\nSee gh-27929"
+        },
+        {
+            "hash": "420ff46b2acfc91a945a12a1ae0ea11f61b43e3e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "261bc2ad6acf974933267bbfcc2586c286cccad0",
+            "message": "Fix regression in BeanPropertyRowMapper.underscoreName(String)\n\nCommit 6316a35 introduced a regression for property names starting with\nmultiple uppercase letters (such as setEMail(...)).\n\nThis commit fixes that regression and includes an additional test to\ncover this case.\n\nSee gh-27929\nCloses gh-27941"
+        },
+        {
+            "hash": "c92b9bc7fe3c6a57cf5f15f53dd4afabd0b3e5ad",
+            "message": "Properly abort transferTo test for Undertow\n\nInstead of simply returning prematurely and allowing the tests to be\nmarked as SUCCESS, this commit uses a failed assumption to abort the\nthe trasferTo tests for Undertow, resulting in the parameterized test\ninvocation properly being marked as ABORTED.\n\nSee gh-25310"
+        },
+        {
+            "hash": "4b1b25496bfd72c288c3af07c741183d0d90567a",
+            "message": "Improve comment parsing in DTD/XSD detection algorithm\n\nPrior to this commit, XmlValidationModeDetector did not properly parse\nall categories of comments (described below). When such categories of\ncomments were encountered XmlValidationModeDetector may have\nincorrectly detected that an XML file used a DTD when it used an XSD,\nor vice versa.\n\nThis commit revises the parsing algorithm in XmlValidationModeDetector\nso that multi-line comments and multiple comments on a single line are\nproperly recognized.\n\nSpecifically, with this commit the following categories of comments are\nnow handled properly.\n\n- Multiple comments on a single line\n- Multi-line comment: beginning on one line and then ending on another\n  line with an additional comment following on that same line.\n- Multi-line comment: beginning at the end of XML content on one line\n  and then spanning multiple lines.\n\nCloses gh-27915"
+        },
+        {
+            "hash": "9e8b6feb546982dac33922b34e1f2432c8681ab6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3631d2f36ede38086e9209293a4adf6446cd8569",
+            "message": "Next development version (v5.3.16-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28058",
+            "title": "Improve documentation for uri(URI) method in WebTestClient regarding base URI"
+        },
+        {
+            "number": "28038",
+            "title": "CronExpression fails to calculate next execution on the day of daylight saving time"
+        },
+        {
+            "number": "28052",
+            "title": "Deprecate SocketUtils"
+        },
+        {
+            "number": "28012",
+            "title": "Using recursive annotations in Kotlin causes stack overflow"
+        },
+        {
+            "number": "28039",
+            "title": "Upgrade to Reactor 2020.0.16"
+        },
+        {
+            "number": "27913",
+            "title": "ResourceHttpRequestHandler with PathPatternParser cannot resolve resources with a jsessionid URL"
+        },
+        {
+            "number": "27946",
+            "title": "Large unnecessary memory allocation rate in Spring Boot 2.6.2 Web MVC"
+        },
+        {
+            "number": "28040",
+            "title": "Upgrade to Dokka 1.6.10"
+        },
+        {
+            "number": "28015",
+            "title": "Synthesized annotation toString() doesn't match non-synthesized annotation on Java 9+"
+        },
+        {
+            "number": "28026",
+            "title": "Add convenience factory method for ManagedList, ManagedSet and ManagedMap"
+        },
+        {
+            "number": "27802",
+            "title": "Support for CGLIB BeanMap utility on JDK 17"
+        },
+        {
+            "number": "27995",
+            "title": "Reflective method invocation does not detect interface method when interface is declared in a subclass (e.g. HashMap.HashIterator.hasNext)"
+        },
+        {
+            "number": "27959",
+            "title": "Deprecate AsyncTaskExecutor.execute(Runnable task, long startTimeout)"
+        },
+        {
+            "number": "27971",
+            "title": "Spring AOP cannot generate proxy for lambda on Java 16+"
+        },
+        {
+            "number": "27969",
+            "title": "RestTemplate reading Json prohibits JDK HttpClient connection reuse (keep-alive)"
+        },
+        {
+            "number": "27957",
+            "title": "ServletServerHttpRequest getHeaders() throws IllegalArgumentException instead of ignoring invalid content type */*"
+        },
+        {
+            "number": "27966",
+            "title": "CronExpression doesn't handle Quartz weekday of month expressions correctly"
+        },
+        {
+            "number": "27983",
+            "title": "Improve log message when searching for default executor for async processing"
+        },
+        {
+            "number": "27008",
+            "title": "DatabasePopulatorUtils.execute should commit if the current Connection has auto-commit set to false"
+        },
+        {
+            "number": "27939",
+            "title": "WebClient corrupts binary data when trying to upload many files"
+        },
+        {
+            "number": "27778",
+            "title": "Document how to register annotated classes with a GenericWebApplicationContext"
+        },
+        {
+            "number": "27980",
+            "title": "Improve documentation for implementing AspectJ around advice"
+        },
+        {
+            "number": "27972",
+            "title": "Inconsistent behaviour in spring-orm between EntityManagerFactoryUtils.closeEntityManager() and SessionFactoryUtils.closeSession()"
+        },
+        {
+            "number": "13286",
+            "title": "ReflectionUtils should find methods with compatible argument types [SPR-8644]"
+        },
+        {
+            "number": "27970",
+            "title": "ReflectionUtils.USER_DECLARED_METHODS does not filter methods declared in java.lang.Object"
+        },
+        {
+            "number": "27904",
+            "title": "Fix Javadoc links to JSR 305 annotations"
+        },
+        {
+            "number": "27947",
+            "title": "PropertySourcesPlaceholderConfigurer ignores ignoreUnresolvablePlaceholders flag"
+        },
+        {
+            "number": "27929",
+            "title": "BeanPropertyRowMapper underscoreName prepends redundant underscore when field descriptor begins in uppercase"
+        },
+        {
+            "number": "25310",
+            "title": "Determine why transferTo tests fail for Undertow"
+        },
+        {
+            "number": "27915",
+            "title": "Spring fails to determine XML is XSD-based if DOCTYPE appears in a comment"
+        }
+    ]
+}

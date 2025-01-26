@@ -1,0 +1,186 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.0.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 41,
+    "start_delay": 0.0,
+    "duration": 41.6028125,
+    "commits_info": [
+        {
+            "hash": "1a586735085e817b1f52e53feec92ce418049f69",
+            "message": "Merge pull request #2077 from pherl/3.0.x\n\nUpdate release date in the change log"
+        },
+        {
+            "hash": "e298ce5fd0aae61cfee4a20c01a8f2bfe10676a8",
+            "message": "Update release date in the change log"
+        },
+        {
+            "hash": "65a595dea86110c1b851136bc51899cb15820f65",
+            "message": "Merge pull request #2062 from pherl/3.0.2\n\nBump version number to 3.0.2"
+        },
+        {
+            "hash": "6e11540b329c363b614afe9dbfd92d6d1f8ba674",
+            "message": "Bump version number to 3.0.2"
+        },
+        {
+            "hash": "a098e809336c5fbad7a8ff8f1210e5e0ac8d29b2",
+            "message": "Merge pull request #1862 from pherl/3.0.0-GA\n\nCherry pick c# changes from master"
+        },
+        {
+            "hash": "4e169bf0e57107d864c26960d5720d203e3768e8",
+            "message": "Bring C#'s ToPascalCase method in line with C++.\n(This still doesn't fix the conformance tests, but at least\nwe're now consistent with the C++ code.)"
+        },
+        {
+            "hash": "86535a1ce7609bb5549d2b4f7e7aded0948e8d45",
+            "message": "Remove legacy_enum_values flag for GA."
+        },
+        {
+            "hash": "9befe479241614a2cd4a9f9a0646b1b0b6a3cf0c",
+            "message": "Merge pull request #1978 from pherl/cp\n\nCherry-pick into 3.0.0-GA branch: Add a jenkins test status badge."
+        },
+        {
+            "hash": "8b301451bc5f93bef16cb7b16c577cb267f6b9d1",
+            "message": "Add a jenkins test status badge.\n\n[ci skip]\n\nChange-Id: I5bf4f204e7ef0144d8fc984a985d502f92ce95ce"
+        },
+        {
+            "hash": "45d04d02960817b42b8ccc1c4f7063a4ad998d33",
+            "message": "Merge pull request #1977 from thomasvl/bump_cocoapod_spec\n\nBump the version in prep for the 3.0.2 tag being cut"
+        },
+        {
+            "hash": "584917fe84be0e6b9194323ba40f934b8f592642",
+            "message": "Bump the version in prep for the 3.0.2 tag being cut\n\nAlso pull the watchos support info from master."
+        },
+        {
+            "hash": "564c02f5cb86065cdb5be05ab84f419d1324384e",
+            "message": "Merge pull request #1975 from pherl/cp\n\nCherry pick objc changes into 3.0.0-GA branch"
+        },
+        {
+            "hash": "a877fdfafe3451d0d1a12bfcb270911bbe0ddfcd",
+            "message": "Record zero for \"has\" for proto3 if in a oneof.\n\nIf a message is proto3, then the zero values still count as being set one the\nfield is in a oneof.\n\nAdd tests to confirm oneofs work as expected in both syntaxes."
+        },
+        {
+            "hash": "116596a4e6ce105994d0c304d289d14c56259162",
+            "message": "Never use strlen on utf8 runs so null characters work.\n\nFixes https://github.com/google/protobuf/issues/1933\n\nAdd a new test that forces strings into two different implementations from the\nNSString class cluster to help confirm we're exercising both paths by which\nCodedOutputStream will extract data from an NSString.\n\nMove the old +load test (that was flawed because the behavior really depends on\nthe type of string from the NSString class cluster); into a unittest that\ntargets the specific case we're adding a behavior confirmation on.\n\nAs a bonus, improve the TextFormat generation of string characters < 0x20."
+        },
+        {
+            "hash": "62f2ff86b58f4d8d82516812a4b20429ad255ab2",
+            "message": "Fixes extra whitespace on generated comments. (#1950)\n\nFixes extra whitespace on generated comments."
+        },
+        {
+            "hash": "a989501f47a351472526a54c6e78bfbc4c6ec950",
+            "message": "Adds support for appledoc in generated code.  (#1928)\n\nConvert mapping of proto comments to appledoc format so they show up in Xcode and cocoadocs.\r\n\r\nFixes https://github.com/google/protobuf/issues/1866"
+        },
+        {
+            "hash": "42ab9b444207dd7112ef9609a2c7865c0610fa38",
+            "message": "Migrating documentation of the ObjectiveC runtime code to appledoc. (#1867)\n\nWork for #1866 \r\n\r\nMigrates all the public class docs over to appledoc format.  While Xcode is fine with blank lines in `///` comments, appledoc (used by cocoadocs) isn't and was leaving a bunch of info off the doc pages.\r\n\r\nThe generator still needs to be updated to do this also; that will be a follow up CL."
+        },
+        {
+            "hash": "cf42b608e050260a0ef41a69d930e4a50a69560d",
+            "message": "Merge pull request #1905 from pherl/fixdoc\n\nAdd and fix C++ runtime docs"
+        },
+        {
+            "hash": "3916a0aa999df3da9e8853b5911a5caf43a863fb",
+            "message": "Add and fix C++ runtime docs"
+        },
+        {
+            "hash": "3ef07568cd701338cb5babfee2f667efa1fad606",
+            "message": "Merge pull request #1894 from pherl/fixdist\n\nAdd python/setup.cfg into dist files"
+        },
+        {
+            "hash": "e139117108ad0e31c74e2493ef4c36f1781f0c70",
+            "message": "Add python/setup.cfg into dist files"
+        },
+        {
+            "hash": "c4790429fc454a687312a48a22e30d93c29efd4d",
+            "message": "Merge pull request #1892 from xfxyjwf/compatibility_tests\n\nRun Java compatibility tests on Travis."
+        },
+        {
+            "hash": "baa4023cd577d7ebb673fbb5102b3f33a827dae5",
+            "message": "Run Java compatibility tests on Travis.\n\nThe test is testing the binary/source compatibility between 3.0.0-beta-4\nand the current version (right now it's 3.0.0).\n\nChange-Id: Ic410b535758b38cee7baa99a15a0433734df44e6"
+        },
+        {
+            "hash": "7e93458bb7417e0c0c7af11a4eae9950b55a320a",
+            "message": "Merge pull request #1888 from pherl/fixbuildzip\n\nFix the build-zip.sh to add .exe for win packages."
+        },
+        {
+            "hash": "6a59ac94e1f6c2ae65b516e0c4928b68db3f335d",
+            "message": "Fix the build-zip.sh to add .exe for win packages."
+        },
+        {
+            "hash": "de30c5639165f69db0cdfe538d82d13250c274bb",
+            "message": "Merge pull request #1874 from pherl/buildzip\n\nChange the build.zip.sh to support lite"
+        },
+        {
+            "hash": "e3fac65addcf0e6d8db2dae13ec40f7a0ba648e6",
+            "message": "Change the build.zip.sh to support lite"
+        },
+        {
+            "hash": "2662fd3d0c08310c7bded005ef6c45ee65fb1df2",
+            "message": "Merge pull request #1871 from pherl/fixwin\n\nFix build protoc script for windows"
+        },
+        {
+            "hash": "1b1a8f40172518b8dc1f6c16202ca545beea162e",
+            "message": "Fix build protoc script for windows"
+        },
+        {
+            "hash": "f3449e5f57bd99eb2eb2f53f846bc857b7cdc752",
+            "message": "Merge pull request #1891 from pherl/python\n\nadd setup.cfg for building wheels"
+        },
+        {
+            "hash": "811674f4793bfd5b26835d322477adb15ae3855f",
+            "message": "add setup.cfg for building wheels"
+        },
+        {
+            "hash": "9d30a98893fdba4948852ed246e3209e5916a431",
+            "message": "Merge pull request #2026 from pherl/cpjs\n\nFix missing import of jspb.Map (#1885)"
+        },
+        {
+            "hash": "52e491b3bbbe7d5563b07774362141b24eaa1b83",
+            "message": "Use 64-bit protoc binaries in compatibility tests.\n\nTurns out travis doesn't have the library dependencies to run a 32-bit\nbinary.\n\nChange-Id: I5fadbcade2eb71c1e9ce21d90fa9459797df0e81"
+        },
+        {
+            "hash": "dd45c0b9fd9958e18695f33986a883884ec56b7f",
+            "message": "Merge pull request #2012 from haberman/rubymapgcfix\n\nRuby: make sure map parsing frames are GC-rooted."
+        },
+        {
+            "hash": "8335b7d93eb1e9a5bb1b866f489027a2a87a6d49",
+            "message": "Fix missing import of jspb.Map (#1885)"
+        },
+        {
+            "hash": "4fd4471de240627be8d18f6b5667f934fc4c166f",
+            "message": "Merge pull request #2014 from pherl/fixgmock\n\nChange autogen.sh to download the zip from github"
+        },
+        {
+            "hash": "1760feb621a913189b90fe8595fffb74bce84598",
+            "message": "Update gmock links.\n\nThe original link is no longer available.\n\nChange-Id: I2976d3f19c8e818689549fb31ff20af8eae92a07"
+        },
+        {
+            "hash": "1e6dc7d2c3a56e5613320ebbb0182a7cc4952608",
+            "message": "Update links in appveyor.yml\n\nChange-Id: I3d44e3c6877e00cfea5a903568fde1e6f597aac1"
+        },
+        {
+            "hash": "01d175047719ca9d601416e8b9510cd35380e68b",
+            "message": "Merge pull request #2061 from pherl/changelog\n\nChangelog update for 3.0.2"
+        },
+        {
+            "hash": "0c9999f6d09cd488d0d6895cced626a93c2f62f5",
+            "message": "ruby, js and c# changes"
+        },
+        {
+            "hash": "4041ed4c0d9e21894b0909de80a44655def1b47c",
+            "message": "objc change log"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1866",
+            "title": "Improve objc cocoadocs"
+        },
+        {
+            "number": "1885",
+            "title": "`jspb.Map` not exported"
+        }
+    ]
+}

@@ -1,0 +1,582 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 123,
+    "start_delay": 0.0,
+    "duration": 211.1240740740741,
+    "commits_info": [
+        {
+            "hash": "4ca9ccfc529c6287c88a3039c62adf5894048748",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "8c952fa0e0dc143d1d12f8d24ef729be03488d0a",
+            "message": "[trivial] we've decided to call this one 1.18.12, not 1.20.0."
+        },
+        {
+            "hash": "8943b49dfed95228e324422435a77597a95943c0",
+            "message": "[fixes #880] get rid of an unchecked cast warning for `@Getter(lazy=true)`"
+        },
+        {
+            "hash": "2e06cb3ff19fb25b709ddfe5513a953c3d658b2e",
+            "message": "[#2355] fixed tests for clashes in the generics for superbuilder"
+        },
+        {
+            "hash": "f12b7059ca0afa60ca50d0410ea84a3f92e22dd6",
+            "message": "[issue #1197] fixed documentation of NonNull\n\nIt did not mention the Guava and JDK options."
+        },
+        {
+            "hash": "680d63e6dbc6cb7743705ebe3a04dd9a836e4e31",
+            "message": "Merge pull request #2355 from janrieke/superBuilderAvoidMoreNameClashes\n\nAvoid more name clashes for SuperBuilder"
+        },
+        {
+            "hash": "4a34ed75b49f259823739df5691f1d81f37c12ca",
+            "message": "avoid more name clashes for builder type param; fixes #2297"
+        },
+        {
+            "hash": "a678e7effbe4f98e8cecc523e060951d443c0ab4",
+            "message": "[issue #1956] make 'ant intellij' work again"
+        },
+        {
+            "hash": "e22937705c2f3b29a396d0e5dadccd3d233c14be",
+            "message": "[fixing #2351] Reflecting the fix in the changelog.\nOur attempt to fix sonarlint plugin has been confirmed."
+        },
+        {
+            "hash": "3f0fec18726fb9c9f4dce614dbcfa650c1c04bf7",
+            "message": "[issue #788] Add more nullity annotations where relevant\n\n (chainable setters, static constructors, builder stuff)"
+        },
+        {
+            "hash": "c42bfbae39990b365a5f05eb23895da6203023bc",
+            "message": "[issue #2221] simplified configuration for `@Singular`-generated plural form nullchecks."
+        },
+        {
+            "hash": "d31182c4383a5ccc499862d2a8035d49e5202319",
+            "message": "[fixes #2235] aliasing the old wither to the new one was broken for explicit imports."
+        },
+        {
+            "hash": "6e2b5802beded1dc3c965d18ecda7f3d90b7e761",
+            "message": "[documentation] mostly the config feature page"
+        },
+        {
+            "hash": "180cfe3f822f9f66ccae9e129b71493dafa52a7b",
+            "message": "add test deps to gradle setup documentation"
+        },
+        {
+            "hash": "439d99f546db5ab42c17dafe4a9eeaabcb31d95c",
+            "message": "fix typo in changelog"
+        },
+        {
+            "hash": "e478c082ffb360d2c7fa62ca267ec9ed4bb739e3",
+            "message": "fixed markdown links in README to be the self-ref form; looks prettier"
+        },
+        {
+            "hash": "1e75274a5e06bf8f861537116f53b3588ccae8ef",
+            "message": "Merge pull request #2347 from kraiss/master\n\nChange README to README.md and add hyperlinks"
+        },
+        {
+            "hash": "7b593ca7a9b0643b47d81e8c78b77f1c62e1056e",
+            "message": "Include README.md file in JAR packaging"
+        },
+        {
+            "hash": "2caba79c769c161d400084c4c9ede9f0d3370c6e",
+            "message": "Use reference links instead of inlined links"
+        },
+        {
+            "hash": "0718855beb39d976edb4dc31e6ef8b4872bd67dc",
+            "message": "Change README to README.md and add hyperlinks"
+        },
+        {
+            "hash": "229cde2bf084e243913030ddad4bce13f6c38732",
+            "message": "[Fixes #2349] Support for JDK 14\nAdded the ability to parse and pretty-print the new 'x instanceof String y' pattern concept.\nAdded a test to the pretty printer to confirm that it works."
+        },
+        {
+            "hash": "e95680a76733c22ee5937a586ee50c703d5ba621",
+            "message": "[issue #2221] [issue #788] Lombok now adds nullity annotations.\n\nWhich 'flavour' is defined in lombok.config; applied to toString, equals, canEqual, and plural-form of `@Singular`."
+        },
+        {
+            "hash": "fa70b194aa7db62bdbc4cc759a606f97fe50fc92",
+            "message": "[trivial] the pos array was one too large here, shouldn't have any effect other than save a smidge of memory."
+        },
+        {
+            "hash": "91a40b83125808d3684ce07c5cb4a2927d0b979c",
+            "message": "[singular][issue #2221] the plural builder method now nullchecks its argument with configurable results."
+        },
+        {
+            "hash": "6cc74e42295b6138629c6b32dd56a99ee8c2c646",
+            "message": "Website: style example code"
+        },
+        {
+            "hash": "1caf1da5e1ba721e646b6616a7835f47a09d46d1",
+            "message": "Website: better wrapping for code snippets on narrow screens."
+        },
+        {
+            "hash": "80b7c434035d093d45d9b14b06294244dd54b180",
+            "message": "typo in website"
+        },
+        {
+            "hash": "9d310812c7020f8911afe14e32c12f55ab71d702",
+            "message": "Config import: add to changelog"
+        },
+        {
+            "hash": "0f31c62806f000516f4cdef1bfa87cf22c362130",
+            "message": "Config import: add documentation"
+        },
+        {
+            "hash": "0e583c0122d18285b858ec8cecc2e91a4f4feda0",
+            "message": "Config import: add support for environment variables"
+        },
+        {
+            "hash": "df4501a648f32111c6ee3ace1c826b3d3eef55a1",
+            "message": "Config import: add traces for archives to the tests"
+        },
+        {
+            "hash": "8b2d4ca67c2077d7812ba4fec93d94094df0faa8",
+            "message": "ConfigurationApp: hide not-mentioned by default, add parameter to show them anyway."
+        },
+        {
+            "hash": "04523763dff98206487b2e358697226ac7b87fd7",
+            "message": "Config import: support .jar and .zip archives"
+        },
+        {
+            "hash": "290edf95275f82e674952b21d27b9f485f5a2418",
+            "message": "Config import: add to trace"
+        },
+        {
+            "hash": "f2d49a89ecc09dc30fc03102254c9ffc62b7659e",
+            "message": "Config import: change bubble iteration"
+        },
+        {
+            "hash": "bb4fb7d220da8d49aea93087b92dcb8adbbb7f99",
+            "message": "Config import: move responsibilities"
+        },
+        {
+            "hash": "1444d6dfbf88ac24c93882574c4ae5b6cce4c6b1",
+            "message": "Rename Context to ConfigurationFile, move reading contents and metadata to it."
+        },
+        {
+            "hash": "091d14bd73e4da1d2b3e34f0648eaa63473c3b1c",
+            "message": "Config import: Allow imports in lombok.config"
+        },
+        {
+            "hash": "660a056240734659fe70fc9381024896becd5fba",
+            "message": "Implement E&HQ in CheckerFrameworkVersion because it is a ConfigurationValueType and might be listed."
+        },
+        {
+            "hash": "cccbdafa4be42de9fa6b47a9769b7b8b9f92e223",
+            "message": "Website: render wrapped lines code snippets indented"
+        },
+        {
+            "hash": "18d70e7bc677cc1bd2e7c14f917543d88ac26ac9",
+            "message": "Close more inputstreams"
+        },
+        {
+            "hash": "7ca43108f52e0d4432f0266db5897eef919c71cf",
+            "message": "Remove unused imports"
+        },
+        {
+            "hash": "56543053ace3e7c92702467180cd988eb833f97c",
+            "message": "Make test java version independent, error message changed"
+        },
+        {
+            "hash": "94381d0e9a6871d252e363fa98500d50e8e71dd2",
+            "message": "[fixes #2335] ObtainVia(method=) on more than one arg would crash in javac"
+        },
+        {
+            "hash": "299078684931e91863d7f3cfcc30d2c8e9eb24ee",
+            "message": "Document compiling java modules with maven. Fixes #2325"
+        },
+        {
+            "hash": "c497a2ab16d35ec9984bb7ddd04af98580a2c4cc",
+            "message": "Update javac documentation regarding the module system"
+        },
+        {
+            "hash": "c0c1279acd51379620c277a42c28bc7cd7c215de",
+            "message": "Rename example files for website"
+        },
+        {
+            "hash": "a4345d11453fc7d80e7814c27605ce1a5caa23f8",
+            "message": "new versions for docker"
+        },
+        {
+            "hash": "20952446671d78533e3662bfa8206e3801c70b54",
+            "message": "[issue #2314] disabled the intellij ant task"
+        },
+        {
+            "hash": "9ad2bd563b001c0742d767fea9ddaaeb60400ec7",
+            "message": "[fixes #788] lombok generated equals method plus a non-null-by-default annotation no longer clash."
+        },
+        {
+            "hash": "0b0656ae3c38ae915c86e17c2744d5e3d8fc805c",
+            "message": "[fixes #2323] javadoc `@return` generation updated."
+        },
+        {
+            "hash": "3f620e3b84dbb8d6625b4c13ca8ee9fd0aa5777c",
+            "message": "[fixes #2327] mostly trivial: Added this. for field access and unified code gen of build() methods for `@Builder`."
+        },
+        {
+            "hash": "889c935ec9f0e45bba1e88b0f256e1f29a734f39",
+            "message": "[fixes #2268] make lombok generate qualified types in order to avoid name clashes."
+        },
+        {
+            "hash": "0bb56192304905e2ae5bcee8ba6d72add950d381",
+            "message": "Update security.txt"
+        },
+        {
+            "hash": "16e438de8813cd760a472abc076a2bd6cdf38656",
+            "message": "Fix h1"
+        },
+        {
+            "hash": "fac7099e9609d26ac2a455a8bc30c4dbdb003359",
+            "message": "[docs] added changelog entry for previous fix"
+        },
+        {
+            "hash": "d57a1bc2b952978b14279c83962b1e86201394e4",
+            "message": "[#2273] [#2262] [#2278] test to reproduce bug"
+        },
+        {
+            "hash": "859c1149727a98648ab9ad2763f26f351448851f",
+            "message": "Merge pull request #2273 from Lekanich/issue2262\n\nFixed @SuperBuilder with generic with inner static class produces CE"
+        },
+        {
+            "hash": "31086f05ac06f19da2b5b3aba364e8bdad40a85a",
+            "message": "added name to AUTHORS list"
+        },
+        {
+            "hash": "da9cc7b6b27de2a233b1ed92333ff4e280f21f40",
+            "message": "Issue2262.\nAdded ability to process JCField as type parameter for HandleSuperBuilder. javac."
+        },
+        {
+            "hash": "a81df33c10f69d49425bdd0606052178a172a66f",
+            "message": "[website] typo in the ToString post-lombok example."
+        },
+        {
+            "hash": "04f21a249dd2f582a27c16da67aebc4df3d2c383",
+            "message": "Merge pull request #2245 from jyterencekim/patch-1\n\nUpdate With.html"
+        },
+        {
+            "hash": "3369e0ffc73a8150f58d74c0e44ef59a9e160976",
+            "message": "Update With.html\n\n## Summary\r\nThe current sentence fragment `Lombok's own <a href=\"/features/constructor\"><code>@AllArgsConstructor</code></a>` does not fully clarify the author's intention, which I presume is to recommend using `@AllArgsConstructor`."
+        },
+        {
+            "hash": "3c54d733537813f93988a4ab420eaf3a3c0c1d2a",
+            "message": "[trivial] removing some unused imports and such"
+        },
+        {
+            "hash": "538d2bd690b6288728cc8516bcb3c8093bf2acc6",
+            "message": "Refactored how the type resolver deals with aliases; fixes star import issues."
+        },
+        {
+            "hash": "5cceda7de97d1c761bb979433a5ae793668d1110",
+            "message": "[build] fixing the gen of javadoc with `ant website` / `ant website-publish`"
+        },
+        {
+            "hash": "1260297f73c043a90697675624e2b45203b53dbe",
+            "message": "improve `with` examples"
+        },
+        {
+            "hash": "80c1b2d2e767f92743b965e3735472e8420848bf",
+            "message": "add test for #2230"
+        },
+        {
+            "hash": "693af13472fc4c474edcb163e09cfe87b4c71f3e",
+            "message": "[website] Updating feature and experimental overviews to properly include the With promotion."
+        },
+        {
+            "hash": "8c32769f18361ed626ebd06962d924c288950d26",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "650e03705edda0788a91c89c34cc6695f4358665",
+            "message": "[live-debug] adding some logging when a very unexpected install error occurs"
+        },
+        {
+            "hash": "1ba29e4b8b20f675aeccb6e9453f470b7ce5b4fb",
+            "message": "[changelog] the top entry version wasnt bumped yet."
+        },
+        {
+            "hash": "8e7851034738d2cd2a7dbbb3810cd063ebac292a",
+            "message": "[bugfix] NPEs in TypeResolver (due to recent refactor of how TR works)"
+        },
+        {
+            "hash": "a0c17d87a5216a030fda2b60f4ddfbcd2a790cc5",
+            "message": "[jdk13] changelog update"
+        },
+        {
+            "hash": "3c7cfc8c548d2c387971431553afed5791fecdad",
+            "message": "[jdk13] support for switch expression's yield keyword."
+        },
+        {
+            "hash": "69011b90d8e9d15dbf45479df2f4f08658970a16",
+            "message": "[jdk13] Added support for printing text blocks (triple quoted strings) in text block form"
+        },
+        {
+            "hash": "230cd667657ab5c1e07819b18294c698bf17f9a5",
+            "message": "[jdk13] Added a new constant pool type to our cp parser"
+        },
+        {
+            "hash": "2fd318886e6c290153090a8ffcd7c064efad8e2f",
+            "message": "[jdk13] upgrading the patcher dep, which has the j13+ ASM dep built in"
+        },
+        {
+            "hash": "1b0055893822a7edc135e5c7bdcbbd63584dec2a",
+            "message": "Merge pull request #2283 from smillst/updateCheckerFrameworkV3.0.0\n\nUpdate the list of Checker Framework annotations for version 3.0.0."
+        },
+        {
+            "hash": "95e299b97bb81a8de60d36a2059014fbf1600864",
+            "message": "Add note."
+        },
+        {
+            "hash": "893378510d83a94225bb455890f3bd5aa9406e5d",
+            "message": "Add back old anotations."
+        },
+        {
+            "hash": "01d1ea6bbbf0f836a754c988e7f21185538e8345",
+            "message": "Update the list of Checker Framework annotations for version 3.0.0."
+        },
+        {
+            "hash": "08faffdf836c8b8d0cca9824bfc32dc1d6a7c2e6",
+            "message": "[website] slight update to the tolerate pages"
+        },
+        {
+            "hash": "d126ad64b3232565f1f0367efaa14249d3ed0aec",
+            "message": "Merge pull request #2251 from nejads/master\n\nAdd documentation for Tolerate"
+        },
+        {
+            "hash": "1e617ccfb51855736e27cd618afc092a70832983",
+            "message": "Add documentation for Tolerate"
+        },
+        {
+            "hash": "f8ecfafbcd30fdbb3b94a4b0bd1dd50fcf4e4b9e",
+            "message": "Merge branch 'floralvikings-feature/builder-setter-prefixes'"
+        },
+        {
+            "hash": "870937a46f912592206abda57638d142ae81e763",
+            "message": "[builder] setterPrefix option code review, formatting cleanup, and docs"
+        },
+        {
+            "hash": "35f9a8360e06a628823eae38a82b65b8bf1f5926",
+            "message": "[trivial] formatting"
+        },
+        {
+            "hash": "6bab046832d9bb9bfea67a1503917a2551687453",
+            "message": "Merge branch 'feature/builder-setter-prefixes' of git://github.com/floralvikings/lombok into floralvikings-feature/builder-setter-prefixes"
+        },
+        {
+            "hash": "b7e42d13ea98e280914f09f91fc03f355ea9682b",
+            "message": "Fix last test"
+        },
+        {
+            "hash": "1b0c2f34a50531e2af4d8c88ff196a9526e00ac8",
+            "message": "Fix eclipse map singularization"
+        },
+        {
+            "hash": "2a7afbc1d1f450dec98b224ffd990a7a972d770a",
+            "message": "Fix more singulars and tests"
+        },
+        {
+            "hash": "7a8bc61bae5f807887bce9a2cbfaed8afea8a588",
+            "message": "Remove now-unused variables"
+        },
+        {
+            "hash": "65302bc13a1ab670dac552e2214989c7381f71a8",
+            "message": "More test fixes"
+        },
+        {
+            "hash": "666defaff365d9841d5136063fc6f9e6ee5c0403",
+            "message": "Fix up some more tests and copy-paste errors"
+        },
+        {
+            "hash": "ffb299730e8f378748c4594988ec568812bf895b",
+            "message": "Fix more broken tests"
+        },
+        {
+            "hash": "24a49a9d2bc9ae6776eabcbeb8ce6bbe4ad5ebcf",
+            "message": "Fix more copy/paste test errors"
+        },
+        {
+            "hash": "4b6588ed02830e48adc3d178e5fac66c6b0fe943",
+            "message": "Fix test copy/paste errors"
+        },
+        {
+            "hash": "bae66a3450cf6118d7447a390baf333f862c7d8e",
+            "message": "Fix null pointers and incorrect tests"
+        },
+        {
+            "hash": "e1bd41fab9d62b5478e50b5c2fe2e45a0d767334",
+            "message": "Added setterPrefix to javac"
+        },
+        {
+            "hash": "288ee7be5c98eea9ca60143dde41a50f4a304dca",
+            "message": "Merge branch 'feature/builder-setter-prefixes' of https://github.com/floralvikings/lombok into feature/builder-setter-prefixes"
+        },
+        {
+            "hash": "f222050d13364565692cd585ff5d9a055498c52e",
+            "message": "Fix class names in before"
+        },
+        {
+            "hash": "5b16b48bbffdd579b26e2a7dc18684efdc32e219",
+            "message": "Fix class names in after-ecj"
+        },
+        {
+            "hash": "36287f2ff9ed2f809f8c1c76155919417ad04d3c",
+            "message": "Duplicate builder tests with setter prefix"
+        },
+        {
+            "hash": "cc070254a68331c2593c37359921854c74692661",
+            "message": "Remove extraneous import"
+        },
+        {
+            "hash": "66fbde5187fc9b41c0ac0c9642ac74e3df524a6e",
+            "message": "Add myself to AUTHORS"
+        },
+        {
+            "hash": "2baefe08cedebc9ef8c468b7de353e66b23eded1",
+            "message": "Explicitly recommend against  prefixes"
+        },
+        {
+            "hash": "dc56309dada0ae0fba2c939d3fc300d6abac145c",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok into feature/builder-setter-prefixes"
+        },
+        {
+            "hash": "4dc5c32d6b47264b5c8abb6fdf24077eec5aa7e7",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok into feature/builder-setter-prefixes"
+        },
+        {
+            "hash": "88bf742e3e107cc0bbfc3a72c2f456d34ef3079c",
+            "message": "Implement prefixed setters\n\nRelated to #1805, this change adds an optional `setterPrefix` parameter\nto the `Builder` annotation; if this parameter is unspecified or blank\nthe behavior of the `Builder` annotation is unchanged, but if it is\npresent the value specified will be prefixed to the generated methods.\n\nFor example, using:\n\n```\n@Builder(setterPrefix = \"include\")\nclass Foo {\n    private int someValue;\n}\n```\n\nwill result in a generated `Builder` class containing an `includeSomeValue(int someValue)`\nmethod instead of the default `someValue(int someValue)`."
+        },
+        {
+            "hash": "96151ade650c2038ab639a1c0f5a504747c4b1b5",
+            "message": "Add tests for prefixed builder"
+        },
+        {
+            "hash": "5f198d71c684c6a2f1eec9ae6026cca5f4fd7c30",
+            "message": "Add setterPrefix to Builder annotation"
+        },
+        {
+            "hash": "64fc7b373b02388258599d9241a7aee4857c124e",
+            "message": "Add iml files to gitignore"
+        },
+        {
+            "hash": "8b30eee6042c40ad0c815f5c67c86c9bf15f0dbb",
+            "message": "Adjusted test classes to include WithSetterPrefix."
+        },
+        {
+            "hash": "ea01e1c3199340b7e16ff75f63688eae0ca91c4b",
+            "message": "[deps] updated version on lombok.patcher in order to get ASM 7.2"
+        },
+        {
+            "hash": "d34da710c3e1cfff58debbb33240c6387bfa243a",
+            "message": "[website] removing mention on javac setup page that module support is only in edge (its in stable)"
+        },
+        {
+            "hash": "a023202e77c6ec013e0e7c452d10f99dc52fd573",
+            "message": "[website] [trivial] slight change to the utm codes for tidelift referral links"
+        },
+        {
+            "hash": "ad2cc23d2cc6b47c1453122505a3e589c3c0668f",
+            "message": "Add jdk13 to docker images"
+        },
+        {
+            "hash": "e510f918d044d47cb42d141e814e5a1e18bd9a12",
+            "message": "Improve error message when post-compiler fails"
+        },
+        {
+            "hash": "eabffab091f29b11562021c0c0cee155b22974f8",
+            "message": "[deps] added explicit link to lombok.patcher-0.36"
+        },
+        {
+            "hash": "d1e9a8e5abf0ae18315ad630fa2be926da13c9db",
+            "message": "[bughunt] [issue #2351] wild-stab try to fix issue 2351, without reproduction - this time for realsies, whoops."
+        },
+        {
+            "hash": "28f0c4c4b042a47fc2ee3323d3b8d90329991426",
+            "message": "[website] added a line about how sneakythrows doesn't really help you much with lambdas; a common question."
+        },
+        {
+            "hash": "025dd0e76e692ad68bc206a14fd1895d90ea2686",
+            "message": "[bughunt] [issue #2351] wild-stab try to fix issue 2351, without reproduction."
+        }
+    ],
+    "issues": [
+        {
+            "number": "880",
+            "title": "@Getter(lazy=true) causes unchecked cast warning"
+        },
+        {
+            "number": "1197",
+            "title": "@NonNull implementation using checker methods instead of if statements"
+        },
+        {
+            "number": "2297",
+            "title": "[BUG] @SuperBuilder does work on classes named B or C"
+        },
+        {
+            "number": "1956",
+            "title": "ant intellij fails with IllegalStateException"
+        },
+        {
+            "number": "2351",
+            "title": "[BUG] java.lang.NoClassDefFoundError: lombok/launch/PatchFixesHider$Transform with eclipse 2019-12 and SonarLint-Plugin"
+        },
+        {
+            "number": "788",
+            "title": "Illegal redefinition of parameter o when using lombok together with Eclipse null check annotation analysis"
+        },
+        {
+            "number": "2221",
+            "title": "[FEATURE] Collection field marked as @Singular should be able to accept null"
+        },
+        {
+            "number": "2235",
+            "title": "Regression in 1.18.10: @Wither broken (workarounds available)"
+        },
+        {
+            "number": "2349",
+            "title": "[BUG] Lombok compatibility for java14"
+        },
+        {
+            "number": "2335",
+            "title": "[BUG] Multiple @Builder.ObtainVia with different types fails to compile"
+        },
+        {
+            "number": "2325",
+            "title": "[BUG] Maven: Java modules wont' build without explicit <annotationProcessorPaths>"
+        },
+        {
+            "number": "2314",
+            "title": "[BUG] Can't generate IntelliJ IDEA project"
+        },
+        {
+            "number": "2323",
+            "title": "[BUG] Javadoc warnings on builder methods "
+        },
+        {
+            "number": "2327",
+            "title": "[BUG] Save Action not performed when using @Builder annotation."
+        },
+        {
+            "number": "2268",
+            "title": "[BUG] problem with setter when extending a class with the same simple name "
+        },
+        {
+            "number": "2262",
+            "title": "[BUG] @SuperBuilder with generic with inner static class produces CE"
+        },
+        {
+            "number": "2278",
+            "title": "[BUG] @SuperBuilder with Generics"
+        },
+        {
+            "number": "2230",
+            "title": "[BUG] Cannot use 'val' here because... representable type after upgrade to 1.18.10"
+        },
+        {
+            "number": "1805",
+            "title": "Add option to define a prefix for @Builder methods"
+        }
+    ]
+}

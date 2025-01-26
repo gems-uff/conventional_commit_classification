@@ -1,0 +1,446 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.1.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 73,
+    "start_delay": 0.0,
+    "duration": 44.74201388888889,
+    "commits_info": [
+        {
+            "hash": "2a1a57b93d27801bbf7c9d3af80fc0214b413c15",
+            "message": "Release v3.1.10"
+        },
+        {
+            "hash": "73c3f3170a437444f2c10fd8b7e0a1290285050f",
+            "message": "Upgrade to Spring Integration 6.1.7\n\nCloses gh-39875"
+        },
+        {
+            "hash": "2649d0d3bd532f0e5580a8916526ab127224bbc6",
+            "message": "Upgrade to Spring Authorization Server 1.1.6\n\nCloses gh-39914"
+        },
+        {
+            "hash": "96e1bcce4e7124236a07a4081cb359dd555d1f34",
+            "message": "Upgrade to Spring Session 3.1.5\n\nCloses gh-39878"
+        },
+        {
+            "hash": "9c8870090826ce32901c065c355f92d659cc9efe",
+            "message": "Upgrade to Spring Kafka 3.0.15\n\nCloses gh-39876"
+        },
+        {
+            "hash": "9d3d40833ce6f80cae4120e9d9986e3e45368aad",
+            "message": "Upgrade to Infinispan 14.0.27.Final\n\nCloses gh-40025"
+        },
+        {
+            "hash": "7eb155d76dffe098faefe98e2e78a924588498e7",
+            "message": "Upgrade to GraphQL Java 20.8\n\nCloses gh-40020"
+        },
+        {
+            "hash": "565f440eca6e250dc4fd17712b181d015661116a",
+            "message": "Use v0.0.1 of the Artifactory Deploy Action\n\nSee gh-39851"
+        },
+        {
+            "hash": "1f01e3b5fd799f2d33d0aaaebb0e9b48130d915f",
+            "message": "Upgrade to Spring AMQP 3.0.12\n\nCloses gh-39872"
+        },
+        {
+            "hash": "5244eea1edb28cb1effa806c2779e87db2a32597",
+            "message": "Upgrade to Spring Security 6.1.8\n\nCloses gh-39877"
+        },
+        {
+            "hash": "bbe9e896a4e7796cdf37b1720db7bb30c03712ab",
+            "message": "Upgrade to Postgresql 42.6.2\n\nCloses gh-39972"
+        },
+        {
+            "hash": "d588497b9289263b9f9038ae62ed5d940d127be2",
+            "message": "Upgrade to jOOQ 3.18.13\n\nCloses gh-39971"
+        },
+        {
+            "hash": "326bf4d231ced52775f04ba56504ae441d0421ae",
+            "message": "Upgrade to Jaybird 5.0.4.java11\n\nCloses gh-39970"
+        },
+        {
+            "hash": "a2f00129f2b0022e990e06a0ce952f7091af6a26",
+            "message": "Upgrade to Jakarta XML Bind 4.0.2\n\nCloses gh-39969"
+        },
+        {
+            "hash": "dfc2b7d7a762250da243324533d6b4948725c505",
+            "message": "Upgrade to Jakarta Mail 2.1.3\n\nCloses gh-39968"
+        },
+        {
+            "hash": "f687c36f23040065252e0f0fc94b05f813f3afeb",
+            "message": "Upgrade to Jakarta Activation 2.1.3\n\nCloses gh-39967"
+        },
+        {
+            "hash": "0f67e045fa58238bf37eb29eb7dfa3e19221e524",
+            "message": "Upgrade to Infinispan 14.0.26.Final\n\nCloses gh-39966"
+        },
+        {
+            "hash": "753965d8ae57d26b872c07334d81adbe3d5064df",
+            "message": "Upgrade to Hazelcast 5.2.5\n\nCloses gh-39965"
+        },
+        {
+            "hash": "8bcf591c9d6423f0b76612480fc4b9f22da2eca5",
+            "message": "Upgrade to Groovy 4.0.20\n\nCloses gh-39964"
+        },
+        {
+            "hash": "9b5f9acd195acf10ad221b1acff0df5d14a054e0",
+            "message": "Upgrade to Glassfish JAXB 4.0.5\n\nCloses gh-39963"
+        },
+        {
+            "hash": "c4e7073f4269f00e56a75027faaeeebec18bf192",
+            "message": "Upgrade to Awaitility 4.2.1\n\nCloses gh-39962"
+        },
+        {
+            "hash": "c71d58f9f1b89c46c36ab8fe37e9d9510f574a07",
+            "message": "Upgrade to Spring HATEOAS 2.1.4\n\nCloses gh-39949"
+        },
+        {
+            "hash": "323a88311f83cb35f0f3b07a857a75730f7db00e",
+            "message": "Upgrade to Spring Framework 6.0.18\n\nCloses gh-39874"
+        },
+        {
+            "hash": "b7fd2fa4acf18f6a6fcc71f2bd62e4235ea6dbea",
+            "message": "Upgrade to Spring Data Bom 2023.0.10\n\nCloses gh-39873"
+        },
+        {
+            "hash": "81dc0cc3cf3f6075c93bb7a8f70cc622d8ab8bd6",
+            "message": "Eliminate race condition in Tomcat's graceful shutdown\n\nThere was a race condition between the thread that's waiting for\nTomcat to become inactive or the graceful shutdown to be aborted\nand the thread that aborts the shutdown and stops Tomcat when the\ngrace period has elapsed. This race can lead to Tomcat appearing\nto have become inactive before the abort of the shutdown is\nnoticed. When this happens, the result of the shutdown is reported\nas IDLE when it should have been REQUESTS_ACTIVE. The consequences\nof this are mostly benign although it does affect the log messages\nthat are emitted. It is also causing some of our graceful shutdown\ntests to be flaky.\n\nThis commit eliminates the race condition by considering the\nstate of the aborted flag before logging and returning the result\nof the shutdown.\n\nCloses gh-39942"
+        },
+        {
+            "hash": "c83f7017c8468b6e966c5824502879a76db1f9bb",
+            "message": "Upgrade CI images to ubuntu:jammy-20240227\n\nCloses gh-39844"
+        },
+        {
+            "hash": "db3d282409db31fd17326f2a6adc17347271af8a",
+            "message": "Upgrade CI to Docker 25.0.4\n\nCloses gh-39937"
+        },
+        {
+            "hash": "781b14cffd1b1140b5dc90f864aa2db4bea77143",
+            "message": "Upgrade to Neo4j Java Driver 5.18.0\n\nCloses gh-39935"
+        },
+        {
+            "hash": "e170d0652ee1bafc2e9c372d6cead04830f2e3eb",
+            "message": "Start building against Spring Authorization Server 1.1.6 snapshots\n\nSee gh-39914"
+        },
+        {
+            "hash": "4af8f97a00470a3aea87a607b3c50f7b4722a77c",
+            "message": "Upgrade to Reactor Bom 2022.0.17\n\nCloses gh-39906"
+        },
+        {
+            "hash": "3e259337790894e47ff27eb462f66828d522f645",
+            "message": "Upgrade to Micrometer Tracing 1.1.11\n\nCloses gh-39871"
+        },
+        {
+            "hash": "de086cd650b14da2e13993095ce6f6592ee57143",
+            "message": "Upgrade to Micrometer 1.11.10\n\nCloses gh-39870"
+        },
+        {
+            "hash": "5910d1d7a423f7e6f2b9c59b19da6fff7047dfae",
+            "message": "Update build badge to point to GitHub Actions\n\nSee gh-39851"
+        },
+        {
+            "hash": "c67be7635f2fc0a1a441c95c641a836a4c8b72b6",
+            "message": "Start building against Spring Session 3.1.5 snapshots\n\nSee gh-39878"
+        },
+        {
+            "hash": "15b687c8890ccaf7288de69ae5420e6fb4befd20",
+            "message": "Start building against Spring Security 6.1.8 snapshots\n\nSee gh-39877"
+        },
+        {
+            "hash": "7a511c2a109ff0d37446e34cb04ab0433de5169e",
+            "message": "Start building against Spring Kafka 3.0.15 snapshots\n\nSee gh-39876"
+        },
+        {
+            "hash": "b978188096ebdba1288f293b539ed2e214f5428f",
+            "message": "Start building against Spring Integration 6.1.7 snapshots\n\nSee gh-39875"
+        },
+        {
+            "hash": "53cb242f8cf05092bb5359673f9e8178602b0b5a",
+            "message": "Start building against Spring Framework 6.0.18 snapshots\n\nSee gh-39874"
+        },
+        {
+            "hash": "bfe37b3630ef08b293c3300c2c8f0acb2ae664d8",
+            "message": "Start building against Spring Data Bom 2023.0.10 snapshots\n\nSee gh-39873"
+        },
+        {
+            "hash": "4ad7f22188539767754253341ef7ffa61cd21a45",
+            "message": "Start building against Spring AMQP 3.0.12 snapshots\n\nSee gh-39872"
+        },
+        {
+            "hash": "9ae375f818a2cbbecf55dfd893d0b62152af61d7",
+            "message": "Start building against Micrometer Tracing 1.1.11 snapshots\n\nSee gh-39871"
+        },
+        {
+            "hash": "339bb3a44c88cc5e446a126a9d09af589e656fe4",
+            "message": "Start building against Micrometer 1.11.10 snapshots\n\nSee gh-39870"
+        },
+        {
+            "hash": "f9be1ef0966f58071e3052d0282b0fd2cff53001",
+            "message": "Set artifact properties to auto-publish snapshots docs\n\nSee gh-39851"
+        },
+        {
+            "hash": "162832bb0b73be8d430cb67ccbdf8ff5011b5dc8",
+            "message": "Fix quoting in format string for notification's run name"
+        },
+        {
+            "hash": "b0c89e6e957017c7652b8d6db639c7ea6af7f23d",
+            "message": "Quote the URL used to send Google Chat notifications\n\nThe URL may contain special characters that are misinterpreted by\nthe shell. This can be avoided by quoting it, thereby passing it into\ncurl as-is."
+        },
+        {
+            "hash": "c671d2af43de357677887e912435f45171342b76",
+            "message": "Correct run name used for Google Chat notifications\n\nSee gh-39851"
+        },
+        {
+            "hash": "8ca551ae8dc1b0b9275488b1a4bb538faa865e46",
+            "message": "Switch from Concourse to GitHub Actions to deploy snapshots\n\nCloses gh-39851"
+        },
+        {
+            "hash": "1c8de17667fd80054de124fbec3ee91c3533900a",
+            "message": "Use larger Linux runner\n\nSee gh-39805"
+        },
+        {
+            "hash": "33db600af1924fe6bff637fe5c7a45f190ad22b7",
+            "message": "Polish CI notification message\n\nSee gh-39805"
+        },
+        {
+            "hash": "f59a7b45ffe4ad01157fc2934bbae0c0ce33a493",
+            "message": "Polish"
+        },
+        {
+            "hash": "34fe89981e1cefb3ca9bdf6235f696eb51cd391c",
+            "message": "Expand GitHub actions CI to Linux and multiple Java versions\n\nCloses gh-39805"
+        },
+        {
+            "hash": "16b6400bdf099ee3cf708dce100055d174653f6f",
+            "message": "Improve BuildpackReference's handling of URL-like strings on Windows\n\nCloses gh-39792"
+        },
+        {
+            "hash": "dd38fb8b6524569560bb223fccecfc574ab094e5",
+            "message": "Limit wait time when checking process's availability\n\nCloses gh-39788"
+        },
+        {
+            "hash": "b29e76b07d0a7587d4d914405a41dee80c3ff1d1",
+            "message": "Try using Powershell on Windows to fix permissions problem\n\nSee gh-39761"
+        },
+        {
+            "hash": "29e37a530538936a998defcc794018d61f22d98f",
+            "message": "Merge pull request #39403 from timgrohmann\n\n* pr/39403:\n  Allow creation of SpringProfileArbiter without Environment\n\nCloses gh-39403"
+        },
+        {
+            "hash": "bd6edeaa9417605d3338c2e011b56df30ffac065",
+            "message": "Allow creation of SpringProfileArbiter without Environment\n\nSee gh-39403"
+        },
+        {
+            "hash": "468c7e5c73ce31fa34a6c5b5dafef3f9125ee878",
+            "message": "Merge pull request #39777 from PiyalAhmed\n\n* pr/39777:\n  Fix Typo in Spring Boot Docs Section 10.1 Custom HTTP Exchange Recording\n\nCloses gh-39777"
+        },
+        {
+            "hash": "3028fe703effe0e786184712b929736e4e357baa",
+            "message": "Fix Typo in Spring Boot Docs Section 10.1 Custom HTTP Exchange Recording\n\nSee gh-39777"
+        },
+        {
+            "hash": "714a95aa823fadd7edef4751d8882c3f07a9681e",
+            "message": "Pass job status into send-notification action"
+        },
+        {
+            "hash": "164cef1ed16589e96e3e229bef36e10eef79b429",
+            "message": "Reduce scope of thread dumping action so it works on Windows\n\nSee gh-39761"
+        },
+        {
+            "hash": "049a2c01ed5c7cae9369ff90997bce57f8d934b6",
+            "message": "Make run name in CI notification configurable and improve default\n\nSee gh-39761"
+        },
+        {
+            "hash": "ca6ee61493916c8909b85dea3265307fff9cf65b",
+            "message": "Print JVM thread dumps if the build is cancelled\n\nSee gh-39761"
+        },
+        {
+            "hash": "868629d9c783d31e91587035b237938502b37949",
+            "message": "Allow the build to continue if sending a notification fails\n\nSee gh-39761"
+        },
+        {
+            "hash": "c1b15cd3677946d8dfdc08f385298558ca6122f3",
+            "message": "Send notifications from GitHub Actions to Google Chat\n\nSee gh-39761"
+        },
+        {
+            "hash": "e67e6bbb0245443d6cae84243492214495f1608b",
+            "message": "Merge pull request #39767 from snicoll\n\n* pr/39767:\n  Stop throwing BindingException in tests\n\nCloses gh-39767"
+        },
+        {
+            "hash": "f6e4bede098b069dca6447697eb2b829f86cf776",
+            "message": "Stop throwing BindingException in tests\n\nThis commit adapts the error controller tests that need the request\nto fail with a bind issue, and simulate the behavior of\nModelAttributeMethodProcessor.\n\nAs of Spring Framework 6.0.x, this processor no longer throws a\nBindingException, but rather a MethodArgumentNotValidException and\nthe handing of BindException itself is deprecated.\n\nThis makes sure that those tests can smoothly be executed against\nSpring Framework 6.2.x as throwing a BindingException now results\ninto an unresolved exception, and an internal server error rather than\nthe expected bad request.\n\nSee gh-39767"
+        },
+        {
+            "hash": "76c7371258c19f707f801917e9ba7fe609296d59",
+            "message": "Merge pull request #39750 from dreis2211\n\n* pr/39750:\n  Remove obsolete JDK 9 check in spring-boot-smoke-test-jersey\n\nCloses gh-39750"
+        },
+        {
+            "hash": "3d47c949a6d3695b87497a075b510cc59f208864",
+            "message": "Remove obsolete JDK 9 check in spring-boot-smoke-test-jersey\n\nSee gh-39750"
+        },
+        {
+            "hash": "a9b3420857decd9f010c89f0a8952aa2460b5f61",
+            "message": "Merge pull request #39737 from snicoll\n\n* pr/39737:\n  Make resolution algorithm of ConnectionDetailsFactory more explicit\n\nCloses gh-39737"
+        },
+        {
+            "hash": "c259a673d32d7891c624b56d9fcaed5fabb429a1",
+            "message": "Make resolution algorithm of ConnectionDetailsFactory more explicit\n\nThis commit moves the resolution check for ConnectionDetailsFactory\nto a dedicated method to make it more clear that it is meant to verify\nthat the implementation is resolved and can be loaded from the\nclasspath.\n\nThe previous algorithm relied on a behavior of ResolvableType that only\nresolves the first level generics. Further improvements in Spring\nFramework 6.2 make this check invalid as some implementations use a\nContainer that can hold a nested generic.\n\nSee gh-39737"
+        },
+        {
+            "hash": "54cdc833373bc276582733dc9035bf8e58a3b98b",
+            "message": "Only reference Gradle tasks beneath org.gradle.api\n\nFixes gh-39584"
+        },
+        {
+            "hash": "b1381e8178265daacc07ef9b31409fce14fd82fc",
+            "message": "Add Gradle user name to properties and configure all in separate step\n\nSee gh-39761"
+        },
+        {
+            "hash": "c4ec76e1d0b811b295fbdc7ff474b0ce5277f085",
+            "message": "Run Windows build on GitHub actions\n\nCloses gh-39761"
+        }
+    ],
+    "issues": [
+        {
+            "number": "39875",
+            "title": "Upgrade to Spring Integration 6.1.7"
+        },
+        {
+            "number": "39914",
+            "title": "Upgrade to Spring Authorization Server 1.1.6"
+        },
+        {
+            "number": "39878",
+            "title": "Upgrade to Spring Session 3.1.5"
+        },
+        {
+            "number": "39876",
+            "title": "Upgrade to Spring Kafka 3.0.15"
+        },
+        {
+            "number": "40025",
+            "title": "Upgrade to Infinispan 14.0.27.Final"
+        },
+        {
+            "number": "40020",
+            "title": "Upgrade to GraphQL Java 20.8"
+        },
+        {
+            "number": "39851",
+            "title": "Publish snapshots using GitHub Actions"
+        },
+        {
+            "number": "39872",
+            "title": "Upgrade to Spring AMQP 3.0.12"
+        },
+        {
+            "number": "39877",
+            "title": "Upgrade to Spring Security 6.1.8"
+        },
+        {
+            "number": "39972",
+            "title": "Upgrade to Postgresql 42.6.2"
+        },
+        {
+            "number": "39971",
+            "title": "Upgrade to jOOQ 3.18.13"
+        },
+        {
+            "number": "39970",
+            "title": "Upgrade to Jaybird 5.0.4.java11"
+        },
+        {
+            "number": "39969",
+            "title": "Upgrade to Jakarta XML Bind 4.0.2"
+        },
+        {
+            "number": "39968",
+            "title": "Upgrade to Jakarta Mail 2.1.3"
+        },
+        {
+            "number": "39967",
+            "title": "Upgrade to Jakarta Activation 2.1.3"
+        },
+        {
+            "number": "39966",
+            "title": "Upgrade to Infinispan 14.0.26.Final"
+        },
+        {
+            "number": "39965",
+            "title": "Upgrade to Hazelcast 5.2.5"
+        },
+        {
+            "number": "39964",
+            "title": "Upgrade to Groovy 4.0.20"
+        },
+        {
+            "number": "39963",
+            "title": "Upgrade to Glassfish JAXB 4.0.5"
+        },
+        {
+            "number": "39962",
+            "title": "Upgrade to Awaitility 4.2.1"
+        },
+        {
+            "number": "39949",
+            "title": "Upgrade to Spring HATEOAS 2.1.4"
+        },
+        {
+            "number": "39874",
+            "title": "Upgrade to Spring Framework 6.0.18"
+        },
+        {
+            "number": "39873",
+            "title": "Upgrade to Spring Data Bom 2023.0.10"
+        },
+        {
+            "number": "39942",
+            "title": "When graceful shutdown of Tomcat is aborted it may report that it completed successfully"
+        },
+        {
+            "number": "39844",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "39937",
+            "title": "Upgrade CI to Docker 25.0.4"
+        },
+        {
+            "number": "39935",
+            "title": "Upgrade to Neo4j Java Driver 5.18.0"
+        },
+        {
+            "number": "39906",
+            "title": "Upgrade to Reactor Bom 2022.0.17"
+        },
+        {
+            "number": "39871",
+            "title": "Upgrade to Micrometer Tracing 1.1.11"
+        },
+        {
+            "number": "39870",
+            "title": "Upgrade to Micrometer 1.11.10"
+        },
+        {
+            "number": "39805",
+            "title": "Run non-publishing Linux builds on GitHub Actions and run with more Java versions"
+        },
+        {
+            "number": "39792",
+            "title": "Resolving a BuildpackReference created from a URL-like String can fail on Windows"
+        },
+        {
+            "number": "39788",
+            "title": "@DisabledIfProcessUnavailable(\"docker\") can hang indefinitely"
+        },
+        {
+            "number": "39761",
+            "title": "Run Windows build on GitHub actions"
+        },
+        {
+            "number": "39584",
+            "title": "bootStartScripts tasks should be an instance of org.gradle.api.tasks.application.CreateStartScripts rather than its superclass org.gradle.jvm.application.tasks.CreateStartScripts"
+        }
+    ]
+}

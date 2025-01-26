@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 5,
+    "start_delay": 0.0,
+    "duration": 4.474236111111111,
+    "commits_info": [
+        {
+            "hash": "78ea2e166047a5a194ea9a866b396b1e8c49b936",
+            "message": "2.23.9 release (previous 2.23.8) + release notes updated by CI build 3688\n\n[ci skip-release]"
+        },
+        {
+            "hash": "d49c667860fce0758a0da9290c7290d06db78f7e",
+            "message": "Merge pull request #1549 from mockito/next-bugfix\n\nFixed issue with leftover state when stubbing with bad throwables"
+        },
+        {
+            "hash": "93540e729c72eda6c1b957e739c8bcaeee217111",
+            "message": "Fixed issue with stubbing state\n\nWhen stubbing with bad throwables we were leaving state behind. Fixes #1514"
+        },
+        {
+            "hash": "91fb1e4cdbb0db93e7848eb9442752607a5a894a",
+            "message": "Merge pull request #1552 from mockito/repro-1551\n\nMinimal test to repro generic issue with smart nulls"
+        },
+        {
+            "hash": "457f130278af169c583358aa2f2b5bac290427c2",
+            "message": "Minimal test to repro generic issue with smart nulls\n\nCreated a minimal test that reproduces bug with smart nulls and generics, see issue #1551."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1514",
+            "title": "Mockito remains in unfinished stubbing state if a stubbing fails"
+        },
+        {
+            "number": "1551",
+            "title": "ClassCastException with generics and smart nulls"
+        }
+    ]
+}

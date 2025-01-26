@@ -1,0 +1,466 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.24",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 84,
+    "start_delay": 0.0,
+    "duration": 604.9620486111111,
+    "commits_info": [
+        {
+            "hash": "2af9d961e4683245099ff3350ca85c7866cc1dfc",
+            "message": "Release v5.3.24"
+        },
+        {
+            "hash": "8e64701cb74aaded6f647d3c9aa0d186b8654b0b",
+            "message": "Fix Javadoc formatting issue in TestSocketUtils"
+        },
+        {
+            "hash": "ae9a9e3c06ae4e2391f99ab537c43afc96f37087",
+            "message": "Document TestSocketUtils in the testing chapter"
+        },
+        {
+            "hash": "c94025699f89520b982bb44173228b874513b468",
+            "message": "Upgrade to Reactor 2020.0.25\n\nSee gh-29464"
+        },
+        {
+            "hash": "ec3f59e6fea2b968ae00f41511c2e8ed6bda94d8",
+            "message": "Allow AutoCloseable dereferences on original AutoCloseable beans\n\nCloses gh-29480"
+        },
+        {
+            "hash": "49ee4a4fdf54f90407cae6360c220032d4d7895b",
+            "message": "Deprecated unused findAutowireCandidates template method (removed in 6.0)\n\nSee gh-29487"
+        },
+        {
+            "hash": "698f8995f72239d11052e1319c6b2802a34ba3e8",
+            "message": "Revise TestSocketUtils and tests\n\nCloses gh-29132"
+        },
+        {
+            "hash": "ee51dab1f348361f26c477ad64ab730ad7359d6e",
+            "message": "Introduce TestSocketUtils as a replacement for SocketUtils\n\nSocketUtils was officially deprecated in 5.3.16 (gh-28052) and removed\nin 6.0 M3 (gh-28054); however, there is still need for a subset of this\nfunctionality in integration tests for testing scenarios in which it is\nnot possible for the system under test to select its own random port\n(or rely on the operating system to provide an ephemeral port).\n\nThis commit therefore introduces a scaled down version in the\nspring-test module called TestSocketUtils which supports retrieval of a\nsingle TCP port.\n\nSee gh-29132"
+        },
+        {
+            "hash": "743a96b75ebf79b2d9a6aba82629b5a85f7167bc",
+            "message": "Polish SocketUtilsTests"
+        },
+        {
+            "hash": "b766a49a4d0eb8469545a1f8f4ff120f0aaa0cb4",
+            "message": "Support suspending functions returning Unit in WebFlux\n\nCloses gh-27629"
+        },
+        {
+            "hash": "3ff308403a8608489706c18fc0c888e38e7dfedb",
+            "message": "Fix two typos in integration.adoc and webflux.adoc\n\n- Change \"you ca\" to \"you can\" in webflux.adoc\n\n- English names can be used in \"month\" field instead of \"day-of-month\"\n  field in cron expressions in integration.adoc\n\nCloses gh-29469"
+        },
+        {
+            "hash": "27f3feea1a2488df17c3b6fbcbbf416768e7a5b3",
+            "message": "Ensure SpEL ternary and Elvis expressions are enclosed in parentheses in toStringAST()\n\nPrior to this commit, ternary and Elvis expressions enclosed in\nparentheses (to account for operator precedence) were properly parsed\nand evaluated; however, the corresponding toStringAST() implementations\ndid not enclose the results in parentheses. Consequently, the string\nrepresentation of the ASTs did not reflect the original semantics of\nsuch expressions.\n\nFor example, given \"(4 % 2 == 0 ? 1 : 0) * 10\" as the expression to\nparse and evaluate, the result of toStringAST() was previously\n\"(((4 % 2) == 0) ? 1 : 0 * 10)\" instead of\n\"((((4 % 2) == 0) ? 1 : 0) * 10)\", implying that 0 should be multiplied\nby 10 instead of multiplying the result of the ternary expression by 10.\n\nThis commit addresses this by ensuring that SpEL ternary and Elvis\nexpressions are enclosed in parentheses in toStringAST().\n\nCloses gh-29463"
+        },
+        {
+            "hash": "b42b785cd121f3bb64ad6ac0e6063c3ac2dbb21b",
+            "message": "Polish ParsingTests"
+        },
+        {
+            "hash": "f9d8367379371f52887a210f1bc8ff8682d596e2",
+            "message": "Exclude URL query from checkpoint in DefaultWebClient\n\nCloses gh-29148"
+        },
+        {
+            "hash": "09b19d7aa6344998fffac70cb9fdf9a3dd775558",
+            "message": "Update RestTemplate Javadoc\n\nCloses gh-29311"
+        },
+        {
+            "hash": "8ade083a053b853c21bb84973ffb0a2541dfc67e",
+            "message": "Filter out null WebSocketSession attributes\n\nCloses gh-29315"
+        },
+        {
+            "hash": "db9e89fba98047309f68a862ebde66b013944553",
+            "message": "Update docs on web controller method return values\n\nCloses gh-29349"
+        },
+        {
+            "hash": "d7d44c6c514f8e0ad46fb527f68cbcc9325b2f9e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "330d2a59822b9c36bc1d9e46d7d6623bfe101a30",
+            "message": "Upgrade to Reactor 2020.0.24\n\nIncludes Netty 4.1.85, Tomcat 9.0.68, Jetty 9.4.49, Jetty Reactive HttpClient 1.1.13, Undertow 2.2.21, SmallRye Mutiny 1.8, Log4J 2.19, OpenPDF 1.3.30, Mockito 4.8.1, HtmlUnit 2.66, Checkstyle 10.4\n\nCloses gh-29464"
+        },
+        {
+            "hash": "86fbb8678a505520caf4d23cbacee647a6cb2bb6",
+            "message": "Use unquoted value in assertion message in MediaType.checkParameters()\n\nCloses gh-29461"
+        },
+        {
+            "hash": "55b258f2dec5110145f9017fc8fc3ba05bbb7aeb",
+            "message": "Avoid unnecessary allocations in StompDecoder#unescape\n\nCloses gh-29443"
+        },
+        {
+            "hash": "f4b3333fa88e75c465786bb718af99a2e461f6e0",
+            "message": "Avoid reflection for annotation attribute method invocations\n\nAs a follow up to 332b25b680, this commit consistently avoids the use of\nreflection for annotation attribute method invocations.\n\nSee gh-29301\nCloses gh-29448"
+        },
+        {
+            "hash": "e5878ab15b46079e29043426d38ac7f1543ca377",
+            "message": "Fix precondition assertions"
+        },
+        {
+            "hash": "dedbbf0a7908c33a27e717ff3ffbc46848ff9b02",
+            "message": "Avoid warnings in tests"
+        },
+        {
+            "hash": "5f02323b9cf49754d10511216115d2dd0b757f0c",
+            "message": "Avoid String allocations with Assert.isTrue()"
+        },
+        {
+            "hash": "902cdd1a2f2d421ae721d4f92b5293c157e8f0f9",
+            "message": "Ignore spring-core-test from main branch in nohttp checks"
+        },
+        {
+            "hash": "deabd669394800053047bb7b2562473b12189f04",
+            "message": "Avoid String allocations with Assert.state()"
+        },
+        {
+            "hash": "2a853aea6754341a069191999a53d2065f49cf34",
+            "message": "Avoid String allocations in MediaType.checkParameters\n\nCloses gh-29428"
+        },
+        {
+            "hash": "a281d8c3fdf1d46f35e6f4b466f817aad86ccd96",
+            "message": "Polishing"
+        },
+        {
+            "hash": "638d91f5f425bf401240f9d467c7121f155010a8",
+            "message": "Ignore framework-docs from main branch in nohttp check"
+        },
+        {
+            "hash": "6abfe041b12509161a35d7aa2d03e994e6361e56",
+            "message": "Ignore /framework-docs/build folder from main branch"
+        },
+        {
+            "hash": "462d33e68d6bfe326d93f879d81d4844e2fd2a60",
+            "message": "Fix typo in WebSocket reference doc regarding subscription header\n\nCloses gh-29228"
+        },
+        {
+            "hash": "fded79d807b7d6b69e01ecc4e241399a438ee220",
+            "message": "Make SimpleMailMessage setters parameters nullable\n\nCloses gh-29139"
+        },
+        {
+            "hash": "c14cbd07f449d845269c99faa29241e7e2d0dfc1",
+            "message": "Use non-null DateFormat for CustomDateEditor in tests\n\nCloses gh-29419"
+        },
+        {
+            "hash": "58bb6e7181adc9671a3f7758dc9785873a497390",
+            "message": "Reduce allocations caused by producible media types\n\nCloses gh-29412"
+        },
+        {
+            "hash": "e1df05605907faf710fe351c0743d21c4c2fa037",
+            "message": "Fix typo: \"as describe in\" -> \"as described in\""
+        },
+        {
+            "hash": "46329851c1f4a4a7dab48380580152bd90644047",
+            "message": "Ensure state of PartGenerator accepts buffers\n\nThis commit makes sure that the current state of the PartGenerator\nis able to handle an incoming buffer, possibly requested because of\na request coming from the subscription. All states accept new buffers\nexcept the WritingFileState.\n\nCloses gh-29227"
+        },
+        {
+            "hash": "51d109de3001a53c44357d402ee9bb9d1e539f6a",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "3d89acf9ea0bce8c41d2084b55e7eca15d481be4",
+            "message": "Adjust checkForLeaks timeout settings\n\nLeakAwareDataBufferFactory#checkForLeaks automatically waits up to 5\nsec for buffers to be released, which could be used as a way of\nawaiting on some async logic to complete, and as long as buffers are\nreleased, it shouldn't be long. However, the leak test in\nLeakAwareDataBufferFactoryTests actually expects to find a leak, and\nalways ends up waiting the full 5 seconds.\n\nThis change, makes the wait configurable, with the no-arg method\nusing 0 (no waiting). AbstractLeakCheckingTests uses 1 second by\ndefault since ResourceRegionEncoderTests did fail locally. If more\ntests need this, we can adjust the settings."
+        },
+        {
+            "hash": "9410998897edf558a8708d46ce29ee0db546be7c",
+            "message": "Add caching headers to If-Unmodified-Since responses\n\nConditional requests using \"If-Unmodified-Since\" headers are generally\nused as precondition checks for state-changing methods (POST, PUT,\nDELETE). See https://datatracker.ietf.org/doc/html/rfc7232#section-3.4\nThe spec also allows for idempotent methods like GET and HEAD.\n\nPrior to this commit, the \"If-Unmodified-Since\" processing done in\n`checkNotModified` (see `ServletWebRequest` and\n`DefaultServerWebExchange`) would only focus on the state changing\nmethods and not take into account the safe methods. For those cases, the\n\"ETag\" and \"Last-Modified\" would be missing from the response.\n\nThis commit ensures that such headers are added as expected in these\ncases.\n\nFixes gh-29362"
+        },
+        {
+            "hash": "12cc8a9f0795e24337fcd4563837a3b47092c589",
+            "message": "Fix typos\n\nCloses gh-29364"
+        },
+        {
+            "hash": "4c38777064fdee624a1d6451dadc67175e1abc94",
+            "message": "Explain logger name semantics (see AbstractTraceInterceptor.setLoggerName)\n\nSee gh-28678"
+        },
+        {
+            "hash": "fb291379e4225223054eed8d310e1a794a533a29",
+            "message": "Avoid use of Commons Logging in LoggingCacheErrorHandler public API\n\nAt present, creating LoggingCacheErrorHandler with custom logger requires use of Commons Logging API, as the appropriate constructor expects org.apache.commons.logging.Log instance. As Commons Logging is rarely the logging framework of choice in applications these days, interaction with its API might not be desirable.\n\nThis commit adds LoggingCacheErrorHandler constructor that accepts logger name and thus avoids leaking out any details about the underlying logging framework."
+        },
+        {
+            "hash": "182ba4ac2972bbf4de255db7d663a31af33ea04e",
+            "message": "Upgrade to Checkstyle 10.3.4"
+        },
+        {
+            "hash": "dbcfeb8f4f35be2b3651b9479b8bef59c886718f",
+            "message": "Aligned with PathMatchingResourcePatternResolverTests on main\n\nSee gh-29333"
+        },
+        {
+            "hash": "6f64cfd1e5305566312bfa2125774aa4e3edfd75",
+            "message": "Test square brackets with index/key expressions\n\nSee gh-27925"
+        },
+        {
+            "hash": "652781c4a103b662df50d022086773ffe06c13d3",
+            "message": "Test status quo in 5.3.x for PathMatchingResourcePatternResolver\n\nSee gh-29333"
+        },
+        {
+            "hash": "8e25e32eb806f36659703f915e2efd5bc8c085c6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4b0bf16389bf978e1febc473363bd041e856f728",
+            "message": "Select ambiguous write method based on read method (matching its return type)\n\nAlso avoids unnecessary checks in name-based PropertyDescriptor constructor.\n\nSee gh-29320"
+        },
+        {
+            "hash": "33023b240fab6858958d6637febc8578348d2b99",
+            "message": "Provide optional SimpleBeanInfoFactory for better introspection performance\n\nCloses gh-29330"
+        },
+        {
+            "hash": "c407dc3df817cbfad0c0b72d90b26ae2756653aa",
+            "message": "Reset/rebuild BeanPostProcessorCache within full synchronization\n\nCloses gh-29299"
+        },
+        {
+            "hash": "1439c5bb8fa5ca8752b4d81232c8114aa8a376f4",
+            "message": "Document how to use WebJars without webjars-locator-core dependency\n\nCloses gh-29322"
+        },
+        {
+            "hash": "3f42d4de43de5d0a47f23effd34ea8fc867629e1",
+            "message": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "hash": "5ac687f4aa30d66423a52746bbb623b8b04e168a",
+            "message": "Add warning to AnnotatedElementUtils.getMergedRepeatableAnnotations()\n\nSee gh-20279"
+        },
+        {
+            "hash": "332b25b68005830d6760b1706ba7a9138f9d621d",
+            "message": "Support searches for non-public repeatable annotations\n\nPrior to this commit, searches for non-public repeatable annotations\nfailed with error messages similar to the following, since the\nrepeatable annotation's container's `value()` method could not be\ninvoked via reflection.\n\nJDK 8:\n\njava.lang.IllegalAccessError: tried to access class\norg.springframework.core.annotation.NestedRepeatableAnnotationsTests$A\nfrom class com.sun.proxy.$Proxy12\n\nJDK 17:\n\njava.lang.IllegalAccessError: failed to access class\norg.springframework.core.annotation.NestedRepeatableAnnotationsTests$A\nfrom class jdk.proxy2.$Proxy12\n(org.springframework.core.annotation.NestedRepeatableAnnotationsTests$A\nis in unnamed module of loader 'app'; jdk.proxy2.$Proxy12 is in module\njdk.proxy2 of loader 'app')\n\nThis commit makes it possible to search for non-public repeatable\nannotations by first attempting to invoke the repeatable annotation's\ncontainer's `value()` method via the container's InvocationHandler (if\nthe container is a JDK dynamic proxy) and then falling back to\nreflection for the method invocation if an error occurs (such as a\nSecurityException).\n\nCloses gh-29301"
+        },
+        {
+            "hash": "9876701493717704cfe6e8258c6f1d6ce0c016e1",
+            "message": "Support nesting in AnnotatedElementUtils.getMergedRepeatableAnnotations()\n\nThis commit is a follow up to 828f74f71a068f30b9c158f2a182f7fb9dc50b5e\nand applies to same fix for getMergedRepeatableAnnotations().\n\nSee the previous commit for details.\n\nCloses gh-20279"
+        },
+        {
+            "hash": "828f74f71a068f30b9c158f2a182f7fb9dc50b5e",
+            "message": "Support nesting in AnnotatedElementUtils.findMergedRepeatableAnnotations()\n\nPrior to this commit, the findMergedRepeatableAnnotations() methods in\nAnnotatedElementUtils failed to find repeatable annotations declared\non other repeatable annotations (i.e., when one repeatable annotation\ntype was used as a meta-annotation on a different repeatable annotation\ntype).\n\nThe reason is that\nfindMergedRepeatableAnnotations(element, annotationType, containerType)\nalways used RepeatableContainers.of(annotationType, containerType) to\ncreate a RepeatableContainers instance, even if the supplied\ncontainerType was null. Doing so restricts the search to supporting\nonly repeatable annotations whose container is the supplied\ncontainerType and prevents the search from finding repeatable\nannotations declared as meta-annotations on other types of repeatable\nannotations.\n\nNote, however, that direct use of the MergedAnnotations API already\nsupported finding nested repeatable annotations when using\nRepeatableContainers.standardRepeatables() or\nRepeatableContainers.of(...).and(...).and(...). The latter composes\nsupport for multiple repeatable annotation types and their containers.\n\nThis commit addresses the issue for findMergedRepeatableAnnotations()\nwhen the containerType is null or not provided.\n\nHowever, findMergedRepeatableAnnotations(element, annotationType, containerType)\nstill suffers from the aforementioned limitation, and the Javadoc has\nbeen updated to make that clear.\n\nCloses gh-20279"
+        },
+        {
+            "hash": "965dd66f8cfc162de94d517c4e5515d6002ac874",
+            "message": "Improve Javadoc for RepeatableContainers"
+        },
+        {
+            "hash": "b71d95df710f05c5ab5c5afaaa152ba1c223325f",
+            "message": "Document how to switch to the default set of TestExecutionListeners\n\nCloses gh-29281"
+        },
+        {
+            "hash": "b20de758b22ed530371dc0e0d6b8f4a26c3f922f",
+            "message": "Support custom status code in ExchangeResult for WebTestClient\n\nPrior to this commit, ExchangeResult.assertWithDiagnostics() threw an\nIllegalArgumentException for a custom HTTP status code since toString()\ninvoked getStatus() without a try-catch block.\n\nThis commit addresses this issue by introducing a formatStatus() method\nthat defensively formats the response status, initially trying to\nformat the HttpStatus and falling back to formatting the raw integer\nstatus code.\n\nCloses gh-29283"
+        },
+        {
+            "hash": "1c1a0afbed37ee00db593f5f1d786b8394bc2764",
+            "message": "Use AssertJ static imports consistently in 5.3.x\n\nCloses gh-29282"
+        },
+        {
+            "hash": "a599601dd952bb472bb9cf3ad7047b4f0fda6cc9",
+            "message": "Document how to switch to the default set of TestExecutionListeners\n\nCloses gh-29281"
+        },
+        {
+            "hash": "5eee4673c168effd12baa4079ae23e9849ca3f1e",
+            "message": "Document limitation of AopTestUtils.getUltimateTargetObject() regarding non-static TargetSource\n\nCloses gh-29276"
+        },
+        {
+            "hash": "8caed88c148a0912aee277cf081cd45e8321fe3d",
+            "message": "Test status quo for URI/URL for scanned filesystem resources\n\nSee gh-29275"
+        },
+        {
+            "hash": "3dc60f1627675b8029c0c9283a75bd2b1b5d6a1e",
+            "message": "Backport changes to PathMatchingResourcePatternResolverTests"
+        },
+        {
+            "hash": "fee38175b3bd0d3309f7e2421c6997fdd4ed0c14",
+            "message": "Revert \"Test encoding and Unicode normalization for scanned resources\"\n\nThis reverts commit eb2c1cbcd47194191a2926d53f7ced787e0dbc9f."
+        },
+        {
+            "hash": "eb2c1cbcd47194191a2926d53f7ced787e0dbc9f",
+            "message": "Test encoding and Unicode normalization for scanned resources\n\nThis commit introduces tests which serve as \"regression tests\" for the\nbehavior of PathMatchingResourcePatternResolver in Spring Framework\n5.3.x with regard to URL-encoding and Unicode normalization of resource\npaths.\n\nSpecifically, the new tests demonstrate that resource paths do NOT need\nto be decoded or normalized in 5.3.x.\n\nSee gh-29243"
+        },
+        {
+            "hash": "8d0ac214f3b3d8b74a6399d95a1ce2743e03d347",
+            "message": "Configure more memory for checkstyleNohttp\n\nSee https://docs.gradle.org/7.5/release-notes.html#checkstyle-tasks-use-toolchains-and-execute-in-parallel-by-default"
+        },
+        {
+            "hash": "7241c30141df2e6981cf2e2af4da102e74554801",
+            "message": "Backport changes to PathMatchingResourcePatternResolverTests"
+        },
+        {
+            "hash": "777caef4f70bdba735cb65f3169eb534cc9ed843",
+            "message": "Upgrade to Gradle 7.5.1"
+        },
+        {
+            "hash": "9465110917d5dd90db39b6f1f1f51b1e7f2fe539",
+            "message": "Polish\n\nSee gh-26707"
+        },
+        {
+            "hash": "b71e686cbd0689a3dbca55cc345de3e212ef7391",
+            "message": "Fix ServletContextResource isFile check\n\nPrior to this commit, `ServletContextResource` could rely on\n`ServletContext#getRealPath` to check whether a resource exists.\nThis behavior is not enforced on some Servlet containers, as this method\nis only meant to translate virtual paths to real paths, but not\nnecessarily check for the existence of the file.\n\nSee https://bz.apache.org/bugzilla/show_bug.cgi?id=55837#c3 for a\nrationale of this behavior in Tomcat.\n\nThis commit enforces an additional check, resolving the path as a `File`\nand checking that is exists and is a file.\n\nCloses gh-26707"
+        },
+        {
+            "hash": "433a23a0bd6cb73a4f5f77bed3b6f60df07d1830",
+            "message": "Merge pull request #29190 from dreis2211\n\n* pr/29190:\n  Polish \"Avoid resizing of Maps created by CollectionUtils\"\n  Avoid resizing of Maps created by CollectionUtils\n\nCloses gh-29190"
+        },
+        {
+            "hash": "7309fe9f2e18e32f531c8c7bd4549cb863fb2399",
+            "message": "Polish \"Avoid resizing of Maps created by CollectionUtils\"\n\nSee gh-29190"
+        },
+        {
+            "hash": "874a296a76d8c301bc38399a7158220e367dc8dc",
+            "message": "Avoid resizing of Maps created by CollectionUtils\n\nSee gh-29190"
+        },
+        {
+            "hash": "d872e7c3265262d95a7e9a7e6d51e472d09cf878",
+            "message": "Merge pull request #29198 from izeye\n\n* pr/29198:\n  Use actions/checkout@v3 for Gradle Wrapper Validation Action\n\nCloses gh-29198"
+        },
+        {
+            "hash": "4ca574cde1968d7410d18cfab4a3f20c7dd3831a",
+            "message": "Use actions/checkout@v3 for Gradle Wrapper Validation Action\n\nSee gh-29198"
+        },
+        {
+            "hash": "98ecf0a412e064543f1f1f206f9dfd0a69090eec",
+            "message": "Merge pull request #29201 from inabajunmr\n\n* pr/29201:\n  Fix MockMvc sample setup\n\nCloses gh-29201"
+        },
+        {
+            "hash": "ddef70935a80df7511319915e4144bad4f505e3a",
+            "message": "Fix MockMvc sample setup\n\nSee gh-29201"
+        },
+        {
+            "hash": "1d0dc43e5fd872833fc2f7b04524f6d112ed8b9e",
+            "message": "Upgrade to Gradle Enterprise Conventions Plugin 0.0.11\n\nCloses gh-29165"
+        },
+        {
+            "hash": "d8e4dc967fabfbd0893b6c3ceaa39c80c47c7d59",
+            "message": "Update Gradle Enterprise plugin to 3.11.1\n\nCloses gh-29164"
+        },
+        {
+            "hash": "f0f633d187551bcb37f675c9332df863610044fb",
+            "message": "Limit exclude to core Spring Framework committers"
+        },
+        {
+            "hash": "4b7aa6bb397f6a4738a75356f6fd8589fd686e11",
+            "message": "Exclude core committers from generated changelog"
+        },
+        {
+            "hash": "13933ee2c6b5d1de9e3dd9bbfec4589b29a70364",
+            "message": "Next development version (v5.3.24-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29464",
+            "title": "Upgrade to Reactor 2020.0.25"
+        },
+        {
+            "number": "29480",
+            "title": "Missing SessionFactory property (filter AutoCloseable from PropertyDescriptors) "
+        },
+        {
+            "number": "29487",
+            "title": "Remove unused AutowiredAnnotationBeanPostProcessor template methods"
+        },
+        {
+            "number": "28052",
+            "title": "Deprecate SocketUtils"
+        },
+        {
+            "number": "28054",
+            "title": "Remove deprecated SocketUtils"
+        },
+        {
+            "number": "27629",
+            "title": "Webflux fails to apply the rule for controller methods returning void to kotlin suspend functions returning Unit"
+        },
+        {
+            "number": "29463",
+            "title": "SpEL ternary and Elvis expressions are missing enclosing parentheses in toStringAST()"
+        },
+        {
+            "number": "29148",
+            "title": "DefaultWebClient logging sensitive information in URI"
+        },
+        {
+            "number": "29311",
+            "title": "Update RestTemplate Javadoc with regards to setting interceptors on startup vs at runtime"
+        },
+        {
+            "number": "29315",
+            "title": "Filter out `null` WebSocket session attributes"
+        },
+        {
+            "number": "29349",
+            "title": "Correct documentation for \"other return values\" from a web controller method"
+        },
+        {
+            "number": "29301",
+            "title": "Annotation searches fail for non-public repeatable annotations"
+        },
+        {
+            "number": "29448",
+            "title": "Avoid reflection for annotation method invocations"
+        },
+        {
+            "number": "29419",
+            "title": "Use non-null `DateFormat` for `CustomDateEditor` in tests"
+        },
+        {
+            "number": "29227",
+            "title": "Body token not expected error when trying to upload a large multipart file"
+        },
+        {
+            "number": "29362",
+            "title": "If-Unmodified-Since header check removes Last-Modified and Etag headers from response, even if condition passes"
+        },
+        {
+            "number": "29333",
+            "title": "PathMatchingResourcePatternResolver no longer finds directories"
+        },
+        {
+            "number": "27925",
+            "title": "NamedParameterUtils has broken square brackets handling"
+        },
+        {
+            "number": "29320",
+            "title": "Perform basic property determination without java.beans.Introspector"
+        },
+        {
+            "number": "29330",
+            "title": "Provide optional SimpleBeanInfoFactory for better introspection performance in 5.3.x"
+        },
+        {
+            "number": "29299",
+            "title": "AbstractBeanFactory's interaction with BeanPostProcessorCacheAwareList is not fully thread-safe"
+        },
+        {
+            "number": "29322",
+            "title": "Document how to use WebJars without `webjars-locator-core` dependency"
+        },
+        {
+            "number": "20279",
+            "title": "AnnotatedElementUtils does not find merged repeatable annotations on other repeatable annotations"
+        },
+        {
+            "number": "29281",
+            "title": "Document how to switch to the default set of TestExecutionListeners"
+        },
+        {
+            "number": "29283",
+            "title": "WebTestClient cannot assert custom HTTP status code"
+        },
+        {
+            "number": "29276",
+            "title": "Document limitation of AopTestUtils.getUltimateTargetObject() regarding non-static TargetSource"
+        },
+        {
+            "number": "29275",
+            "title": "Normalize URIs returned from FileSystemResource.getURI()"
+        },
+        {
+            "number": "29243",
+            "title": "PathMatchingResourcePatternResolver handles path names differently than Spring 5 on Mac OS"
+        },
+        {
+            "number": "26707",
+            "title": "Resource.isFile() return true when the resource path actually not exists"
+        }
+    ]
+}

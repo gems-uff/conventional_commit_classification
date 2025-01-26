@@ -1,0 +1,41 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.17",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 12.056655092592592,
+    "commits_info": [
+        {
+            "hash": "738b562ac967392747d47e5924b185aaed3cc544",
+            "message": "2.23.17 release (previous 2.23.16) + release notes updated by CI build 3846\n\n[ci skip-release]"
+        },
+        {
+            "hash": "3108ff10cd26fa49580df255b3eefb2edb53d16f",
+            "message": "Merge branch 'module-fix' into release/2.x"
+        },
+        {
+            "hash": "8f99e4749f62a37d3edbb18c33c860e3cd157e76",
+            "message": "Add package info to satisfy javadoc plugin and exclude it to avoid adding a package to the module."
+        },
+        {
+            "hash": "0080ff67e46ebed2a7d6c0e4bab7503215f9ea2c",
+            "message": "Move the mock method dispatcher to a dedicated package to avoid class loaders to skip the bootstrap class loader if Mockito is loaded as an automatic module due to the class's package being assigned to Mockito already."
+        },
+        {
+            "hash": "efb014bc25ab77491ed270869d5c41ad79bccab2",
+            "message": "Work-around possible JVM bug by specifying a class loader for the injected class explicitly. Add tests to check behavior of using Mockito as automatic module."
+        },
+        {
+            "hash": "63ce67f93adc010a4ad1e46223ac389940836ed5",
+            "message": "Merge branch 'javadoc-11-test' into release/2.x"
+        },
+        {
+            "hash": "1ae82bc15462b933573d932ed554662e78cdebfa",
+            "message": "Try to fix Javadoc generation on Java 11\n\nExplicitly set the source to Java 8. Inspired by\nhttps://github.com/junit-team/junit5/commit/d4da20f71367549538c0a9b100fa67ce674d065d\nwhich fixed the issue in JUnit."
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,178 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 38,
+    "start_delay": 0.0,
+    "duration": 32.77002314814815,
+    "commits_info": [
+        {
+            "hash": "82bd0072748af4bbd5d119aa870618fb6559de5b",
+            "message": "Update release notes by Travis CI build 2320 [ci skip]"
+        },
+        {
+            "hash": "ec61a3b6c645b273d238b5e6e6b0cd621f31fb64",
+            "message": "Unify Decamelizer, StringJoiner and RemoveFirstLine in static utility class StringUtil (#914)"
+        },
+        {
+            "hash": "59a544060fbddd9fec8d430cc54fce442d16654e",
+            "message": "Merge pull request #916 from mockito/release-docs\n\nImproved release automation documentation"
+        },
+        {
+            "hash": "73272a7367b8aeade723aea56df45f5c96f41389",
+            "message": "Fixed typo\n\nAddressed code review feedback"
+        },
+        {
+            "hash": "a5a5ac8c8eb961861d94e5cd49154ccca80db489",
+            "message": "Improved release automation documentation\n\nI plan to improve the release automation so that it's easier to troubleshoot. For now, added more docs.\n\nDriven by problem described at #915"
+        },
+        {
+            "hash": "7ef9251a6cb304ccbd9928da18780da5941a8e9b",
+            "message": "Reduced duplication in recent release notes entry\n\nAlso removed unnecessary details\n\n[ci skip]"
+        },
+        {
+            "hash": "b85dd1a4f4ecffdcc0739af8c5fd511774140e8b",
+            "message": "Increment version '2.7.0' -> '2.7.1' from local [ci skip]"
+        },
+        {
+            "hash": "421b5cd3d1f6efec7bb05a3d7f1bbf979d83dacf",
+            "message": "Update release notes from local [ci skip]"
+        },
+        {
+            "hash": "209ddbce171bd4643278d3ec8b3ac1ede5b0ec20",
+            "message": "Added blank line to work around an issue\n\nThe issue is documented at #915\n\n[ci skip]"
+        },
+        {
+            "hash": "3818e07ec099f3157d16f3df16923e1216d4b817",
+            "message": "Merge pull request #865 from mockito/strict-stubbing\n\nNew strict stubbing API - MockitoSession"
+        },
+        {
+            "hash": "d61f87757199e467e6f3ba608d0a3c30affc815f",
+            "message": "Improved assertion message\n\nI noticed this test failed on CI, I cannot reproduce it locally"
+        },
+        {
+            "hash": "2f0efb0d0f5be9901aa7a8b2410e5fb2adc56b79",
+            "message": "Coverage for concurrent use of sessions\n\n- added coverage demonstrating that mockito session can be used concurrently, so long single thread has single active mockito session\n- tidied up the existing test: removed sys out println, fixed the naming issue"
+        },
+        {
+            "hash": "04ae732a489912f90266043c2d3f5b0a84923950",
+            "message": "Added code comments\n\nAdded code comments based on pull request feedback"
+        },
+        {
+            "hash": "cbaceb321b2adc8073853a1bbcf754905ffc77d5",
+            "message": "Improved the documentation and tests\n\nImproved the documentation, exception message and tests wrt unfinished mocking session scenario."
+        },
+        {
+            "hash": "eac47aab3dd3d4b9f889358e4cf138dfbb13ce80",
+            "message": "Bumped minor version\n\nSignified important feature, new API."
+        },
+        {
+            "hash": "1b411b22e916668398e86136d436ab46c789c714",
+            "message": "More documentation\n\nDocumented why JUnitRule does not use MockitoSession API, linked to separate ticket #898"
+        },
+        {
+            "hash": "fb1abf309435c0e420ee1bdca0f3990e1c0d798c",
+            "message": "Main documentation includes MockitoSession\n\nMain documentation in the Mockito class links to MockitoSession from the paragraph that describes strictness. This way the main documentation is complete and describes the entire Mockito API."
+        },
+        {
+            "hash": "e501eebb766b59870efcd4ab34e180431e5497cc",
+            "message": "MockitoSession validates framework usage\n\nEnsured MockitoSession detects any incorrect framework usage caused by user's mistake"
+        },
+        {
+            "hash": "ae9274e0756c80330b2348617531b8ef3bd92ca5",
+            "message": "Improved an internal test utility\n\n- reduced duplication\n- added new assertion method I will need today"
+        },
+        {
+            "hash": "465ea863991c995a66e97179c2b33f66ea91811b",
+            "message": "Finalized \"strictness\" documentation\n\nMade a pass through the docs, attempted to drive cohesive and comprehensive documentation."
+        },
+        {
+            "hash": "7b93238241a5d98dd40e8f49517a51352cf35375",
+            "message": "Refactoring, addressed Brice feedback\n\nReplaced package-local fields with setter and getter for clarity. Indeed it looks better because after all I needed only 2 out of 4 setter/getter methods and the public footprint of the class is smaller. Thank you for the suggestion!"
+        },
+        {
+            "hash": "63352e386176791424f3fb25664c16d0467cd99d",
+            "message": "Addressed Brice feedback\n\nSome javadoc was unclear"
+        },
+        {
+            "hash": "f9b8780248165c498679a5f7882922b510de3108",
+            "message": "Continued to update the documentation\n\nUpdated the docs for consistency across multiple files. See game plan at #865."
+        },
+        {
+            "hash": "4ff97e67bbd0b0a598762321661a007642392e4b",
+            "message": "Continued to update the documentation\n\n1. Work still in progress\n2. Mockito Strictness spans currently multiple classes and it's not easy to document it cohesively. Following types need to be reviewed for consistency:\n\n  - UnnecessaryStubbingException\n  - PotentialStubbingProblem\n  - MockitoJUnitRunner and subclasses\n  - MockitoSession\n  - MockitoRule\n  - Strictness"
+        },
+        {
+            "hash": "167ffb877a50247a8fcf39469af63f8cb09cab24",
+            "message": "Updated the documentation\n\n- added comprehensive documentation for new MockitoSession API\n- mentioned new API from existing relevant methods (runner, the rule, mockito annotations)"
+        },
+        {
+            "hash": "b8588eb7f87d3950cf6111feede88de10c363a3f",
+            "message": "Added documentation and default behavior\n\n- Documented new public API methods. More documentation is pending.\n- Ensured predictable behavior for non-happy path. When 'null' values are configured, the builder will use sensible defaults.\n- Set the default strictness to be \"strict stubs\" so that users can take advantage for cleaner tests and better productivity by default."
+        },
+        {
+            "hash": "2cb89d6b66c7e1b9810dc5336b6b6fbfa6f9aa63",
+            "message": "New MockitoSession public API\n\n- Changed the public API to MockitoSession per our discussion at #857.\n- MockitoSession offers meaningful name and semantics as opposed to somewhat cryptic MockitoMocking interface\n- New builder style interface for constructing session instances\n\nPending\n\n- lots of javadoc (TODOs in code)\n- coverage for builder edge cases (e.g. when someone does not provide strictness or init mocks, etc.)"
+        },
+        {
+            "hash": "cce29e71942cbd15ab87b76818ec0913d6ddcca1",
+            "message": "Refactorings per code review\n\nAddressed code review feedback and refactored the code for readability and safety."
+        },
+        {
+            "hash": "5ad363a20e7dbdd7cace6060db65783e51c748f7",
+            "message": "Added more TODOs"
+        },
+        {
+            "hash": "6d9c1053e4f30b2ab1cc1cfa054abf1130bc4b5d",
+            "message": "Improved documentation\n\n- javadoc\n- exception messages\n\nMore javadoc work is pending"
+        },
+        {
+            "hash": "6a03d07f418806566c68b6b42ad2fff710c6de47",
+            "message": "Removed cleared TODO"
+        },
+        {
+            "hash": "14d91d6186334cb6f7199961e99e98139ffd9347",
+            "message": "Safeguard for unfinished mocking\n\nAdded safeguard for unfinished mocking. Pending tidy-up."
+        },
+        {
+            "hash": "c52a02a0cc5e300bfb4c40324b23efd919e81dc6",
+            "message": "Added more coverage\n\nAdded integ test coverage to prevent leaking of strictness setting to surrounding tests"
+        },
+        {
+            "hash": "1c33b23d7d8af2fa00553ef609c09e3c7bbc1f67",
+            "message": "Fixed the test\n\nWe need to invoke finish mocking otherwise there is a leftover state"
+        },
+        {
+            "hash": "6ddf6fe8a312284b0b511ed3bfd89cd8eafe6f02",
+            "message": "Renamed the name\n\nThe exception is no longer tied to JUnit rules"
+        },
+        {
+            "hash": "1a20354815067dffc61381279848305e7340f699",
+            "message": "Avoided redundant exceptions\n\n- split test code into separate test classes\n- added TODOs\n- added missing functionality in a form of an integ test"
+        },
+        {
+            "hash": "a49432cef858b1597ca78ec35a1d8b482adae21a",
+            "message": "Mockito strictness without JUnit\n\nIn order to take advantage of Mockito strict stubbing (debuggability, cleaner tests) developers must use JUnit integration. This means that it is not available for people on different unit test frameworks / people who don't use Mockito's JUnit integration (runner, rule).\n\n- Reviewable initial implementation\n- Pending javadoc, API/method naming tuning"
+        },
+        {
+            "hash": "23c75bd0fd190a08c7bbcc40ad298f52cc8f90af",
+            "message": "Increment version '2.6.9' -> '2.6.10' by Travis CI build 2296 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "915",
+            "title": "Release process failed on 'bumpVersion' release step"
+        },
+        {
+            "number": "898",
+            "title": "Design MockitoSession API improvements for unit test frameworks"
+        },
+        {
+            "number": "857",
+            "title": "New strict mocking API - MockitoSession"
+        }
+    ]
+}

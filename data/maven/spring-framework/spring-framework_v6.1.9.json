@@ -1,0 +1,418 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 65,
+    "start_delay": 0.0,
+    "duration": 51.07006944444444,
+    "commits_info": [
+        {
+            "hash": "06b492dc0e8daa296ba0428a150289a6c4fd5cfd",
+            "message": "Release v6.1.9"
+        },
+        {
+            "hash": "6f32ff489ab66f144c4a9222e6d3cb482efceb24",
+            "message": "Use null stream in ReactorNettyClientResponse if no body is available\n\nCloses gh-32805"
+        },
+        {
+            "hash": "24c8dfea1f3d166bae890efc8f5427e9b43124ac",
+            "message": "Remove duplicated javadoc paragraph"
+        },
+        {
+            "hash": "cdfe5816c88d27e8f64174ea673b3865df9496b0",
+            "message": "Upgrade to Netty 4.1.111 and Awaitility 4.2.1"
+        },
+        {
+            "hash": "0ff200b2f126c610735bb7f6affee34d2d8b9aa0",
+            "message": "Trigger cancellation on context close for non-managed objects only\n\nSpecifically for prototype/scoped beans and FactoryBean-exposed objects.\n\nCloses gh-33009"
+        },
+        {
+            "hash": "261dac87cc6ea034ae90323944119f6e94da118a",
+            "message": "Upgrade to Reactor 2023.0.7\n\nCloses gh-33007"
+        },
+        {
+            "hash": "fce2f49e46facf51dd9820b6e49be991994fbc08",
+            "message": "Polishing (aligned with main)"
+        },
+        {
+            "hash": "eca2b9657edc372fe77904565cb14f0f630ce697",
+            "message": "Documentation notes for @Bean overriding and bean name matching\n\nCloses gh-32825"
+        },
+        {
+            "hash": "e48f37d95631fc67c6e856a0a8634eb996f159b2",
+            "message": "Upgrade to Micrometer 1.12.7\n\nCloses gh-33001"
+        },
+        {
+            "hash": "ddc397dd05933e321bd4d38f5082c482ef56c3dc",
+            "message": "Upgrade to spring-javaformat-checkstyle 0.0.42"
+        },
+        {
+            "hash": "6b7f0bd4b60e54169817f5ff155a717100efe73e",
+            "message": "Fix typo"
+        },
+        {
+            "hash": "c97a895f0967ce862099718cb659e436fb866ee4",
+            "message": "Add support for double backslashes to StringUtils#cleanPath\n\nCloses gh-32962"
+        },
+        {
+            "hash": "3b13f2ed3831dc122df3367f3e5fa00a3989f8e6",
+            "message": "Update code-of-conduct email"
+        },
+        {
+            "hash": "a0eebca0cf5c12829696a2aa3064bda38fd36b2f",
+            "message": "Merge pull request #32993 from hlmg\n\n* pr/32993:\n  Fix typo\n\nCloses gh-32993"
+        },
+        {
+            "hash": "c6c64e6fe79cba2743d247beffb5cf0f4f28762c",
+            "message": "Fix typo\n\nSee gh-32993"
+        },
+        {
+            "hash": "0ca393c0dcfacf3d5a50f9d9a48432fba6a1cdbf",
+            "message": "Restrict memory allocation in ContentCachingRequestWrapper\n\nPrior to this commit, the `ContentCachingRequestWrapper` could allocate\na `FastByteArrayOutputStream` block that was larger than the content\ncache limit given as a consturctor argument. This was due to an\noptimization applied in gh-31834 for allocating the right content cache\nsize when the request size is known.\n\nFixes gh-32987"
+        },
+        {
+            "hash": "66813948864df711e7cbbfff93406e90bd975d7a",
+            "message": "Stop observations for async requests in Servlet filter\n\nPrior to this commit, the `ServerHttpObservationFilter` would support\nasync dispatches and would do the following:\n\n1. start the observation\n2. call the filter chain\n3. if async has started, do nothing\n4. if not in async mode, stop the observation\n\nThis behavior would effectively rely on Async implementations to\ncomplete and dispatch the request back to the container for an async\ndispatch. This is what Spring web frameworks do and guarantee.\n\nSome implementations complete the async request but do not dispatch\nback; as a result, observations could leak as they are never stopped.\n\nThis commit changes the support of async requests. The filter now\nopts-out of async dispatches - the filter will not be called for those\nanymore. Instead, if the application started async mode during the\ninitial container dispatch, the filter will register an AsyncListener to\nbe notified of the outcome of the async handling.\n\nFixes gh-32730"
+        },
+        {
+            "hash": "172987c874b45b4390470c07e9dcd68b57c7b02a",
+            "message": "Ignore checkpointOnRefresh after restore\n\nCloses gh-32978"
+        },
+        {
+            "hash": "47a5ebfde67197ee45fc3a9fd6e102a94a69097d",
+            "message": "Support canEncode() for JAXBElement in Jaxb2XmlEncoder\n\nCommit d7970e4ab8 introduced support for JAXBElement in\nJaxb2XmlEncoder's encodeValue() method; however, canEncode() still\nreturned false for a JAXBElement element type.\n\nThis commit revises canEncode() so that it returns true for an element\ntype that is assignable from JAXBElement.\n\nSee gh-30552\nSee gh-32972\nCloses gh-32977"
+        },
+        {
+            "hash": "43a113f06751dd726827417ae197b15f34417023",
+            "message": "Polishing\n\nSee gh-32983"
+        },
+        {
+            "hash": "dc250e1cc19502a68820aec138e3699689143a1b",
+            "message": "Remove outdated copyright from index.adoc\n\nCloses gh-32983"
+        },
+        {
+            "hash": "fe74fcfdeddd1b81f771007f6322cb71aa47d790",
+            "message": "Exclude node_modules from NoHttp checks\n\nCloses gh-32980"
+        },
+        {
+            "hash": "2451bd62b00697a7ce0a375e123b1e0a221f89b7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "624d6dd167dc55a1758864d60c74b85cfeef7c54",
+            "message": "Expose actual result value for @CacheEvict condition\n\nCloses gh-32960"
+        },
+        {
+            "hash": "0ea96b48065fe2c1bbbe4b537849ded0ad821280",
+            "message": "Skip ajc-compiled aspects for ajc-compiled target classes\n\nIncludes defensive ignoring of incompatible aspect types.\n\nCloses gh-32970"
+        },
+        {
+            "hash": "c28a0d562761f7f8f85e7637e40cacdad7fa2390",
+            "message": "Add missing hints for Hibernate `@TenantId`\n\nCloses gh-32967"
+        },
+        {
+            "hash": "61d045ce5293b0e2664bb957c2be6949ff55fdff",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c0bef2c693d7d6855ac37b1c52b5f67dd93c126e",
+            "message": "Lazily start resources on demand (if necessary outside of lifecycle)\n\nSee gh-32945"
+        },
+        {
+            "hash": "c3a0eaa95e5fbff0e1a58690564c9185d17a9801",
+            "message": "Merge pull request #32966 from ypyf\n\n* pr/32966:\n  Use HttpStatusCode consistently in reference guide\n\nCloses gh-32966"
+        },
+        {
+            "hash": "e12d1259d15b7c66001b8dc4bff788ad3cd01db4",
+            "message": "Use HttpStatusCode consistently in reference guide\n\nSee gh-32966"
+        },
+        {
+            "hash": "404c4d9d92ab7821a07ac4490aaf8af573ebe806",
+            "message": "Support @Valid on container elements for handler arguments\n\nPrior to this commit, #31870 added support for constraint annotations on\ncontainer elements for handler method argument validation. Supporting\nthis use case:\n\n```\npublic void addNames(List<@NotEmpty String> names)\n```\n\nThis commit does the same for `@Valid` annotation:\n\n```\npublic void addPeople(List<@Valid Person> people)\n```\n\nFixes gh-32964"
+        },
+        {
+            "hash": "7785f94c4c2b7a35d80c28f197c87c54fffc6564",
+            "message": "Revise and align Reactor client lifecycle management\n\nCloses gh-32945"
+        },
+        {
+            "hash": "4f6f2c0d41d036c4473e63d34f6d6979c6113bb6",
+            "message": "Revert to separate get/put steps against method cache for concurrency\n\nCloses gh-32958"
+        },
+        {
+            "hash": "e6da2a86fc9226c0afa5f1dcd647f252bed6782a",
+            "message": "Merge pull request #32957 from soglad\n\n* pr/32957:\n  Fix entity name in MappingSqlQuery example of reference guide\n\nCloses gh-32957"
+        },
+        {
+            "hash": "301087e5106cd575913ee94b4ee02282de720fcf",
+            "message": "Fix entity name in MappingSqlQuery example of reference guide\n\nSee gh-32957"
+        },
+        {
+            "hash": "6c054f88ea48d9faa0a27161b13d03283e1d866f",
+            "message": "Defensively handle UncheckedIOException cause (for NullAway compliance)"
+        },
+        {
+            "hash": "f58c7d80cc44f7d3a18909db418b0fd316b682f7",
+            "message": "Upgrade to SLF4J 2.0.13, Jetty 12.0.10, Netty 4.1.110, JRuby 9.4.7"
+        },
+        {
+            "hash": "e5be10d53defdff5b353a85555104c56d2865d7c",
+            "message": "Consistently throw IOException from ReactorNettyClientResponse\n\nAligned with ReactorNettyClientRequest.\n\nSee gh-32952"
+        },
+        {
+            "hash": "524da905db132bad827673a6c8b2f8444cd57a61",
+            "message": "Consistently throw IOException from ReactorNettyClientRequest\n\nThis commit renames ReactorNettyClientRequestFactoryTests.\n\nCloses gh-32952"
+        },
+        {
+            "hash": "4323c60513fdd91d77be9390919ad9bc326c4a54",
+            "message": "Common context lifecycle management for ReactorResourceFactory\n\nThis commit moves ReactorResourceFactoryTests to same package.\n\nCloses gh-32945"
+        },
+        {
+            "hash": "f6b608eecb400a11d39e3fab14c9cbf6fe458ef8",
+            "message": "Consistently support Hibernate annotation hint inference on methods\n\nSee gh-32842"
+        },
+        {
+            "hash": "4da1511ed3a7835b60201acc9f4b2c527b09ad20",
+            "message": "Infer hints for Hibernate generators\n\nThis commit updates\nPersistenceManagedTypesBeanRegistrationAotProcessor\nin order to infer hints for Hibernate annotations meta\nannotated with `@ValueGenerationType` (like `@CreationTimestamp`)\nand `@IdGeneratorType`.\n\n`@GenericGenerator` is not supported as it is deprecated as of\nHibernate 6.5.\n\nCloses gh-32842"
+        },
+        {
+            "hash": "7102c3366152a86dac7478119685ccad4795a62c",
+            "message": "Add section about using complex data structures with AOT\n\nCloses gh-32273"
+        },
+        {
+            "hash": "43409b00d08bac48a477668d0bb54ec9f7e4603b",
+            "message": "Refine KotlinDetector.isKotlinType documentation\n\nThis commit documents changes in lambda detection\nas of Kotlin 2.0.\n\nCloses gh-32905"
+        },
+        {
+            "hash": "d55abc6cf91147e5918a954531bbd01d0d67ecf7",
+            "message": "Fix RegisterReflectionForBinding Javadoc\n\nCloses gh-32947"
+        },
+        {
+            "hash": "31806f3a6b2a81af7d7fcf538c4d42e569c305b4",
+            "message": "Fix MethodValidationPostProcessor refdoc\n\nCloses gh-32929"
+        },
+        {
+            "hash": "8a84241c1e7d760bde4c6c80051fafb1fce88f58",
+            "message": "Polishing"
+        },
+        {
+            "hash": "624be6d4e61fb0e5bc6e0665aef6d11cf09ea869",
+            "message": "Report bean creation failure in sortAdvisors as AopConfigException\n\nCloses gh-32230"
+        },
+        {
+            "hash": "b08883b65c19cbed6e7a93990194977f5af73e0a",
+            "message": "Avoid NoSuchMethodException for annotation attribute checks\n\nCloses gh-32921"
+        },
+        {
+            "hash": "542ba3517f5c8c9ba74a3744c044e12cf8cd69d6",
+            "message": "Fix typo in Jakarta validation documentation\n\nCloses gh-32928"
+        },
+        {
+            "hash": "8c6a7799be87ad1b1af24caa3976ce99d9c873d8",
+            "message": "Upgrade to Checkstyle 10.17"
+        },
+        {
+            "hash": "557dbba58567cf838dbdc6ef565a8828c8540ac5",
+            "message": "Remove superfluous addToClassHierarchy call for Enum types\n\nCloses gh-32906"
+        },
+        {
+            "hash": "e9de426eb5ca14b354073ec35f10fa0cdfeb1791",
+            "message": "Support compilation of map indexing with primitive in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into a Map using a primitive literal\n(boolean, int, long, float, or double).\n\nThis commit adds support for compilation of such expressions by\nensuring that primitive literals are boxed into their corresponding\nwrapper types in the compiled bytecode.\n\nCloses gh-32903"
+        },
+        {
+            "hash": "cda577d1aacf0f90225f13050da42506f95bd2c8",
+            "message": "Support compilation of array and list indexing with Integer in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into any array or list using an\nInteger.\n\nThis commit adds support for compilation of such expressions by\nensuring that an Integer is unboxed into an int in the compiled\nbytecode.\n\nSee gh-32694\nCloses gh-32908"
+        },
+        {
+            "hash": "8feb842df5c55cb5c319cc7cea6af10394c0ce10",
+            "message": "Upgrade to AssertJ 3.26.0\n\nSee https://github.com/assertj/assertj/issues/3322"
+        },
+        {
+            "hash": "ea2931f24aeebb5b0b2392c8bcd8e4a7926248cd",
+            "message": "Use Develocity Gradle plugin API to avoid deprecation warning\n\nPrior to this commit, the Gradle build issued the following warning.\n\n- The deprecated \"gradleEnterprise.buildScan.value\" API has been\n  replaced by \"develocity.buildScan.value\""
+        },
+        {
+            "hash": "26d1c38d84a20dab5f3f6a92db2aaa4f53ecef08",
+            "message": "Polishing"
+        },
+        {
+            "hash": "345daaabbc034b3e29784a08d9f44188735245bf",
+            "message": "Detect original generic method for CGLIB bridge method\n\nCloses gh-32888"
+        },
+        {
+            "hash": "6c08d9399239f421d0a19fc838e3d9d623d7e2e0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6d7cd9c7dc94dc55af9a8c4fba3171fedf5931b7",
+            "message": "Defensive handling of incompatible advice methods\n\nThis covers AspectJ transaction and caching aspects when encountered by Spring AOP.\n\nCloses gh-32882\nSee gh-32793"
+        },
+        {
+            "hash": "73eb6f06605adb195f27688def94ccc6b7a0703f",
+            "message": "Complete a Kotlin code snippet in the refdoc\n\nCloses gh-32877"
+        },
+        {
+            "hash": "31f298b929419017cc74f4fd38c6e9dc268e373a",
+            "message": "Merge pull request #32874 from Seungpang\n\n* pr/32874:\n  Polish\n  Document using ThreadLocal#remove instead of ThreadLocal#set(null)\n\nCloses gh-32874"
+        },
+        {
+            "hash": "c01aab58502803ed4a12a360ef8f9ffa140dbb91",
+            "message": "Polish\n\nSee gh-32874"
+        },
+        {
+            "hash": "61ef5a89304054f0339c7fc81ba9789ed7fe7929",
+            "message": "Document using ThreadLocal#remove instead of ThreadLocal#set(null)\n\nSee gh-32874"
+        },
+        {
+            "hash": "3b53ee70387a8ab05108c17d84e6e6cb53a49502",
+            "message": "Next development version (v6.1.9-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32805",
+            "title": "ReactorNettyClientResponse should not throw exception if no body is available"
+        },
+        {
+            "number": "33009",
+            "title": "Behaviour change in ScheduledAnnotationBeanPostProcessor: canceling scheduled tasks on ContextClosedEvent v6.0 -> v6.1"
+        },
+        {
+            "number": "33007",
+            "title": "Upgrade to Reactor 2023.0.7"
+        },
+        {
+            "number": "32825",
+            "title": "Unexpected bean override / inject behavior"
+        },
+        {
+            "number": "33001",
+            "title": "Upgrade to Micrometer 1.12.7"
+        },
+        {
+            "number": "32962",
+            "title": "Add support for double backslashes to `StringUtils#cleanPath`"
+        },
+        {
+            "number": "31834",
+            "title": "Optimize ContentCachingRequestWrapper allocation for known request size"
+        },
+        {
+            "number": "32987",
+            "title": "ContentCachingRequestWrapper  may allocate too much memory"
+        },
+        {
+            "number": "32730",
+            "title": "Observation in ServerHttpObservationFilter is never stopped for asynchronous requests"
+        },
+        {
+            "number": "32978",
+            "title": "CRaC: ignore checkpointOnRefresh afterRestore"
+        },
+        {
+            "number": "30552",
+            "title": "Support JAXBElement in Jaxb2XmlEncoder"
+        },
+        {
+            "number": "32972",
+            "title": "Jaxb2XmlEncoder can not encode JAXBElement"
+        },
+        {
+            "number": "32983",
+            "title": "Remove outdated copyright from index.adoc"
+        },
+        {
+            "number": "32980",
+            "title": "Exclude `node_modules` from NoHttp checks"
+        },
+        {
+            "number": "32960",
+            "title": "@CacheEvict condition uses wrapper comparison instead of actual objects"
+        },
+        {
+            "number": "32970",
+            "title": "AspectJ CTW aspects executed twice"
+        },
+        {
+            "number": "32967",
+            "title": "Add missing hints for Hibernate `@TenantId`"
+        },
+        {
+            "number": "32945",
+            "title": "`ReactorResourceFactory` not working with CRaC onRefresh checkpoint"
+        },
+        {
+            "number": "31870",
+            "title": "Method validation is not triggered when constraints are applied to the elements of a List"
+        },
+        {
+            "number": "32964",
+            "title": "@Valid annotations on container elements for handler argument validation not supported"
+        },
+        {
+            "number": "32958",
+            "title": "ConcurrentHashMap.computeIfAbsent used in AdvisedSupport can cause virtual thread pinning"
+        },
+        {
+            "number": "32952",
+            "title": "Exception mapping does not work as expected when plugging in ReactorNettyClientRequestFactory into RestTemplate and RestClient"
+        },
+        {
+            "number": "32842",
+            "title": "Missing hints for Hibernate generators"
+        },
+        {
+            "number": "32273",
+            "title": "Document why complex object structure are not supported as paremeters or properties by AOT"
+        },
+        {
+            "number": "32905",
+            "title": "Refine `KotlinDetector.isKotlinType` documentation for Kotlin 2.x lambdas"
+        },
+        {
+            "number": "32947",
+            "title": "Fix `RegisterReflectionForBinding` Javadoc "
+        },
+        {
+            "number": "32929",
+            "title": "Reference documentation sample for `MethodValidationPostProcessor` is missing a `static` keyword"
+        },
+        {
+            "number": "32230",
+            "title": "AbstractAutoProxyCreator#determineBeanType can trigger bean initialization at build time for aspects implementing Ordered"
+        },
+        {
+            "number": "32921",
+            "title": "AnnotationUtils performance degrades with deep stacks"
+        },
+        {
+            "number": "32906",
+            "title": "Analysis of the Duplicate Calls to addToClassHierarchy in the getClassHierarchy Method"
+        },
+        {
+            "number": "32903",
+            "title": "SpEL compilation fails when indexing into a `Map` with a primitive"
+        },
+        {
+            "number": "32694",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32908",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32888",
+            "title": "BeanUtils.copyProperties no longer copies generic type properties from a base class that has been enhanced"
+        },
+        {
+            "number": "32882",
+            "title": "Application not starting with @EnableTransactionManagement(mode = AdviceMode.ASPECTJ) "
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        }
+    ]
+}

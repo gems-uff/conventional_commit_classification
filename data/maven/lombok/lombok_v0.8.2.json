@@ -1,0 +1,93 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.8.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 20,
+    "start_delay": 0.0,
+    "duration": 2.6588078703703704,
+    "commits_info": [
+        {
+            "hash": "de220ed5bb7cd2b5ed98c8c2dc2523ade6792591",
+            "message": "Release of v0.8.2!"
+        },
+        {
+            "hash": "4243bc26103da971ee14fa2e99e3f88e88cf8b5c",
+            "message": "Removed small print which was covering gimmies already covered in @ToString, @EqualsAndHashCode, and @Getter / @Setter documentation."
+        },
+        {
+            "hash": "86acfadf552be04499c22de4531cc473e26372c5",
+            "message": "Use single quote instead of double quote in javadoc generation due to wonky\nbehaviour of javadoc tool\n\nWorked on feature documentation\n\nRenamed all \"link to issue\" to \"Issue #n\""
+        },
+        {
+            "hash": "2781b8592b526beddef6158b756b19e2194c30d0",
+            "message": "bugfix in the build.xml file - \"ant website\" would not add the videos to the built .tar.bz2 file. Now it does. (use ant website-novideo to skip adding the videos, which reduces the upload from 18M to 1.4M)."
+        },
+        {
+            "hash": "7068db574ee40cc9df2fffbeef1078bf0569bbcf",
+            "message": "Updated website target to bzip2 the content, as our deployment these days isn't via git, but via an ssh upload."
+        },
+        {
+            "hash": "b4a4da1f9741ea6afb147dd4289989ec705a3fbd",
+            "message": "Version is now 'standalone' - it is separately compiled. The version is now reflected in all javadoc pages, and on the website itself.\n\nThe website design has been updated to have a link to the changelog and to mention the current version.\n\nAddresses issue #9."
+        },
+        {
+            "hash": "36f01682d030b32353dd8504263a00536357d2b4",
+            "message": "Address issue #10: If the video won't play, and you don't see the failsafe 'download it instead' message, there's now still a link in the footer if you can't see the video to help folks with\na bad mix of plugins along."
+        },
+        {
+            "hash": "12d6d2c521c8fa6bb9898819ca0c42f00eb1e487",
+            "message": "Updated the javadoc of EqualsAndHashCode and ToString (the annotation source files)"
+        },
+        {
+            "hash": "fb6be45d2bcb97e0e0288ba81a602679c7bedc46",
+            "message": "Added website feature documentation for @ToString and @EqualsAndHashCode, and modified the docs for @Data to refer to the docs of these new annotations.\n\nThe build script for the website has been updated to clean out the website build dir first, so files that used to exist but have now been tossed are no longer there.\n\nThere's also a special website-no-videos target which builds a website deployable without the videos. This makes the upload a lot faster if the videos haven't changed."
+        },
+        {
+            "hash": "e744f1829adf95f3b54fa54d813eb26c4c8e8c76",
+            "message": "Changed the way toString is generated to reduce the number of superfluous 'plus' nodes (e.g. concatenating the infix \", \" and a field name literal such as \"width=\" into \", width=\".\n\nAlso removed the [] brackets from the supercall, as, if you're chaining to another lombok-generated toString, those are superfluous - lombok's toString includes parentheses already."
+        },
+        {
+            "hash": "817eae66a61fc9334828a43b81d929ca1dd363cf",
+            "message": "Reflected issues #8 and #11 in the changelog."
+        },
+        {
+            "hash": "cf2ce698dcead0389513bff9bf3d697a7444966d",
+            "message": "on javac: Warnings associated with specific values in annotation parameters now 'point at' the right position, instead of at the entire annotation. (it already did so for errors).\n\nFixes issue #11"
+        },
+        {
+            "hash": "8fbcf8ffe43a9097b48d130caeaa3caba07063e6",
+            "message": "Split off generation of equals() and hashCode() methods form @Data into a new annotation, @EqualsAndHashCode.\nAddresses issue #8"
+        },
+        {
+            "hash": "beb0213b012cde40cf839703e9103a9aad4ebddc",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "902607a6abb216a647c33ef8f1de957e7835c267",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "d906899546edf29e23ed2ae4ac8b5a781337bdb4",
+            "message": "Added support for @ToString annotation. The code for generating toStrings has now moved from HandleData to the new HandleToString."
+        },
+        {
+            "hash": "3e03dcfac19901342a07f74b0dfd9d62dbb380f3",
+            "message": "Fixed bugs with annotation handling: An array initializer with more than 1 entry now no longer causes ArrayIndexOutOfBoundsException, the setWarning method on a single item in an array initializer on eclipse\nnow generates the warning on just that node (like with errors), and the API of AnnotationValues has been updated to support setting errors/warning on any node."
+        },
+        {
+            "hash": "15d77d473668335fd3dfe0f8f5a8d1f111c0ee44",
+            "message": "[TYPOS]"
+        },
+        {
+            "hash": "0ecd99a50eb5424ca045b78bb555453b49f44c64",
+            "message": "Version up to 0.8.2-HEAD as I just published."
+        },
+        {
+            "hash": "185f5ea1190933d22555bc575e4326f9fae515aa",
+            "message": "Quick and dirty documentation on how to release a new version."
+        }
+    ],
+    "issues": []
+}

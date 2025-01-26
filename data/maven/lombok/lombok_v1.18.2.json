@@ -1,0 +1,430 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 96,
+    "start_delay": 0.0,
+    "duration": 771.8526388888889,
+    "commits_info": [
+        {
+            "hash": "dc715da8b79bff32116ac477d0ac04875bd21167",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "7e94041dbc177476020969b00d3411020418f903",
+            "message": "Added key ‘dangerousconfig.lombok.disable’."
+        },
+        {
+            "hash": "7c3724c9dc03684b9e4ecb9b33296c894138add6",
+            "message": "[Fixes issue #1783] lombok.var / lombok.experimental.var import would be removed by eclipse’s organize imports."
+        },
+        {
+            "hash": "5ec61bb62d3dd2d9509ade090e750dd43e36c0f3",
+            "message": "[fixes issue #1759] We removed the ‘flag usage’ check on builder instead of replacing it with the non-experimental check about 3 years ago when builder moved out of experimental. The check has now been restored."
+        },
+        {
+            "hash": "111d0a5f16667824d0a73b733624e6deffe19a0e",
+            "message": "Fixes issue #1789 - picking another workspace duplicates the ‘lombok is installed’ text in the eclipse about dialog."
+        },
+        {
+            "hash": "be1cfd2f59933725726ec5810e0c189a4aca6ad7",
+            "message": "Replaced StringBuilder by simple char array in \"hotspot\" method"
+        },
+        {
+            "hash": "ff739d6d5a6a68f8d87480be7b0c0104e08f77e0",
+            "message": "Add Roland Praml to authors list"
+        },
+        {
+            "hash": "a195a47337f592eb117f519f7a1a42f0d8f570d1",
+            "message": "Attempting to fix issues with integration with mapstruct; issue #1359"
+        },
+        {
+            "hash": "0375f1a9e8f606588d4e136fc718a6876ff0ae4f",
+            "message": "lombok config broken: version must be string\n\notherwise gradle compile will fail."
+        },
+        {
+            "hash": "37434ba0cba68ea232efea0824d3f71e5e287dc2",
+            "message": "[Fixes #1347] issues with no-args constructor and Builder.Default now documented and fixed."
+        },
+        {
+            "hash": "b3771e86f924f97983748511546cb94a2d1f116d",
+            "message": "gave the tests for issue #1397 (generated constructors take `@Builder.Default` into account) an update."
+        },
+        {
+            "hash": "7472672f164460cb8fb45ce941b685f358435374",
+            "message": "[issue #1347] When lombok generates constructors, it should call the `@Builder.Default` static method instead of initializing to null/0/false. This does that, for ecj."
+        },
+        {
+            "hash": "3987f54b8321ae666cb1c774aef5986df05bf4ad",
+            "message": "[issue #1347] When lombok generates constructors, it should call the `@Builder.Default` static method instead of initializing to null/0/false. This does that, for javac."
+        },
+        {
+            "hash": "577ce94facde1092ab2eec9de12270183e8048bc",
+            "message": "changelog"
+        },
+        {
+            "hash": "657a13b0dde5606e6d3b103dc5b1ca5a89f162c9",
+            "message": "Merge branch 'sclExpansionUpdate'"
+        },
+        {
+            "hash": "4306f978fecb85ad49f5f147db6cf063305bf7b6",
+            "message": "[SCL] update that should make it a little easier to add custom lombok handlers."
+        },
+        {
+            "hash": "eb09843cce285caecd25e1a459e95d8c28dda417",
+            "message": "ShadowClassLoader is now friendlier to trying to extend lombok.\n\nYour (separate) jar/dir should have a file named META-INF/ShadowClassLoader.\nThis file should contain the string 'lombok'. If you have that, any classes\nin that jar/dir will be loaded in the same space as lombok classes. You can\nalso rename the class files to .SCL.lombok to avoid other loaders from finding\nthem."
+        },
+        {
+            "hash": "ea9ce72708e1fd995936ce6737acb187c6f86182",
+            "message": "[website] lombok licenses for international customers now via stripe instead of payoneer. Also, typos."
+        },
+        {
+            "hash": "f241ef8c309b90faacabe66431b9deaebfd7087a",
+            "message": "Transient fields should by default be excluded from equals and hashCode. Fixes #1724"
+        },
+        {
+            "hash": "2264ce492c77f92c03bf75a6c209ed240b247d09",
+            "message": "[trivial] make the website build again, bugfix in template loading of SuperBuilder.html."
+        },
+        {
+            "hash": "6ae4592f188f4ba72adb697f2ea3aa5f29f491b1",
+            "message": "added SuperBuilder to the changelog"
+        },
+        {
+            "hash": "5dea27f56fef57eef91697b25d630163193b2979",
+            "message": "Merge branch 'janrieke-superBuilder'"
+        },
+        {
+            "hash": "19ad4fd57d32afad1a33f20613fbb2e7607cfee0",
+            "message": "[SuperBuilder] code review, style update, making it JDK1.6 compatible, documentation review, bugfix for setter auto-presuming chaining even when you didn’t configure it to chain."
+        },
+        {
+            "hash": "3256ab6fc71b2b52fe2aedcbf0f59f8f95a0d7e5",
+            "message": "next lombok version is 1.18.1"
+        },
+        {
+            "hash": "e2fc6fa56433e5a62939bc2a3d92a4372539f3db",
+            "message": "SuperBuilder support for abstract classes"
+        },
+        {
+            "hash": "d4fa7c583bcef17663a7b0259c01ce0792cba29c",
+            "message": "next lombok version is 0.16.23"
+        },
+        {
+            "hash": "ebbe169f1a4e2747ca38763cb5a00929d1d70f23",
+            "message": "reverted unnecessary import reordering"
+        },
+        {
+            "hash": "d11263a6c60008894213a1b465f2b16be3a03468",
+            "message": "support @Builder.Default"
+        },
+        {
+            "hash": "51c0c40ac422ddd2828bb0ec79e252e85f1511c9",
+            "message": "handle experimental flag usage"
+        },
+        {
+            "hash": "32bed51fede1eebef2006d54b3e364de22ae9ac0",
+            "message": "ecj: generate default constructor for builder classes"
+        },
+        {
+            "hash": "795e3c84875de0a01f4d5e1321312f592139c7aa",
+            "message": "Revert \"ecj: SuperBuilderBasic test passes (removed superconstructor calls)\"\n\nThis reverts commit 9ee2491427f1522a7689d1c28a816294bcff315b."
+        },
+        {
+            "hash": "7bd60ea6e68699b9b75f6fb4ce8c68abfa69f5de",
+            "message": "second generics test case"
+        },
+        {
+            "hash": "4735f99d2856068d18292532eace281b3efe809b",
+            "message": "ecj: reordering of methods"
+        },
+        {
+            "hash": "664ed48460eba30b9cab7f9298ac563c4a23c993",
+            "message": "javac: delete @SuperBuilder when processing it"
+        },
+        {
+            "hash": "65b248ec62ffe87d9f4fe234c47f786f420d58dc",
+            "message": "fixed expected test results"
+        },
+        {
+            "hash": "1e87330f1825f1072fd2ce7eba15fb10e9e080e7",
+            "message": "test case for custom builder method"
+        },
+        {
+            "hash": "36c75b2d68551df3f297e8dcf10a8909307c854a",
+            "message": "no custom builders allowed, so there cannot be a toString() method"
+        },
+        {
+            "hash": "4c5a7cddab109391d7494be2a0fc575b466dfa43",
+            "message": "code formatting, reordering, rename etc."
+        },
+        {
+            "hash": "04269ef14bf463a1ebe2dd2b376e0a3ff71535e5",
+            "message": "fixed compiler errors in ant"
+        },
+        {
+            "hash": "cdee277f11becb5a3629158e0ffbe7292a85d255",
+            "message": "ecj: fixed compiler errors after revert of HandleBuilder"
+        },
+        {
+            "hash": "9470ca650ef6eb977047464041bff26fcafdeae3",
+            "message": "ecj: revert changes to HandleBuilder (everything in HandleSuperBuilder)"
+        },
+        {
+            "hash": "a74f4bdda04efcfea36f7b602fe2bdda2ef613fa",
+            "message": "ecj: no empty <> if there are no type params"
+        },
+        {
+            "hash": "b2f44c326430fd2e46e2830af7bbaa010f571a44",
+            "message": "ecj: type parameters for methods and constructor param"
+        },
+        {
+            "hash": "61f0689f6bfb8de28c90eb786cd9e9e06a776287",
+            "message": "ecj: copy type parameters to builder class"
+        },
+        {
+            "hash": "9ee2491427f1522a7689d1c28a816294bcff315b",
+            "message": "ecj: SuperBuilderBasic test passes (removed superconstructor calls)"
+        },
+        {
+            "hash": "55976fec127e7674222f81e46532755081ffb454",
+            "message": "ecj: remaining type args for non-generic class builders"
+        },
+        {
+            "hash": "5d35fe3bfbd46de7410bca96e29731e8f5236618",
+            "message": "ecj: method body for self(); type args for BuilderImpl extends clause"
+        },
+        {
+            "hash": "fb401d4887895d1ebb8529d6323797f1bc8072a2",
+            "message": "ecj: setter methods now return self()"
+        },
+        {
+            "hash": "ee51d77dd664ec13d3d3748798bfc74531594171",
+            "message": "ecj: type params for constructor, abstract builder class, self method"
+        },
+        {
+            "hash": "e12a956c2579ae6d38ef9850fb29f3f720ddac47",
+            "message": "ecj: builder generics [WIP]"
+        },
+        {
+            "hash": "eec57b87509c0a2841878aecb0e8f8f0839fa30c",
+            "message": "added @SuperBuilder test results for ecj"
+        },
+        {
+            "hash": "0b789291e42706f8772eafcd2510233f22f6ad76",
+            "message": "fixed generation problem caused by reusing expressions"
+        },
+        {
+            "hash": "9f3e8509f7564b82eb13d3e4d7d0fc22a6d13cc3",
+            "message": "no empty lines for expected test result"
+        },
+        {
+            "hash": "4f5d5b108dada037137c209e3b8a3b86af8643ae",
+            "message": "fixed javac tests (toString calls super now)"
+        },
+        {
+            "hash": "1dff81a0e0841f15a6ba805e022eb668e07335b4",
+            "message": "@SuperBuilder documentation for website"
+        },
+        {
+            "hash": "4434782cccf0559464c84b64356dd28b3dd38ba9",
+            "message": "first try for Eclipse handler [WIP]"
+        },
+        {
+            "hash": "460c70890cea12e0224d8b978b36bfc89b3b0e1e",
+            "message": "let @SuperBuilder's toString() call super.toString()"
+        },
+        {
+            "hash": "054a966bad3037a758af50d5801461c8995fffa9",
+            "message": "avoid name clashes with generics on the annotated class"
+        },
+        {
+            "hash": "9df65559122a572e7ee0ea355f05d2f9a934c7e5",
+            "message": "added SuperBuilder with generics test case"
+        },
+        {
+            "hash": "f13f5c697385fde8c3833c47786909deba2833ce",
+            "message": "use superclass generics for abstract builder class' extends clause"
+        },
+        {
+            "hash": "24a6c3354104e73874e8641f93517924a2f6d760",
+            "message": "consider generics on the annotated class and potential superclass"
+        },
+        {
+            "hash": "cec9b39c693a0fa06ea1451d698bd4617b5b2457",
+            "message": "revert changes to HandleBuilder (everything is in HandleSuperBuilder)"
+        },
+        {
+            "hash": "6dd21ad7e04cec9405fd798e236808ed4acac954",
+            "message": "adjusted expected result of test case"
+        },
+        {
+            "hash": "9697e6cc36cec5f304a43933d3fa5a8cf6eb58aa",
+            "message": "include superclass when referring to parent builder\n\nexample: \"ChildBuilder extends Parent.ParentBuilder\""
+        },
+        {
+            "hash": "9a3866ef52186bde47a698230ba9498df378768d",
+            "message": "correct return type and statement for @Singular"
+        },
+        {
+            "hash": "fdc23437e290b1b5d16d02d1d8927dc7dade3dcb",
+            "message": "@Override for overridden methods"
+        },
+        {
+            "hash": "8acc37011f5c13d6547ca2e76fa15d89e1472dae",
+            "message": "apply generics on builder extends clause; fixed builder name generation"
+        },
+        {
+            "hash": "e9929b100cc88246b13a9c3e76795db6fe446d38",
+            "message": "added author, (c) granted"
+        },
+        {
+            "hash": "9534af2d86e9d821fd1550ba4ca1e9890f077ccb",
+            "message": "build class names not configurable any more; removed toBuilder"
+        },
+        {
+            "hash": "c37c33be46961fd6ebc8bec24cee24f62d066f03",
+            "message": "wildcards for the constructor parameter"
+        },
+        {
+            "hash": "d586cc6b4fc1afb0a9e59e73ac3db1f5c914e191",
+            "message": "wildcards for the builder() method"
+        },
+        {
+            "hash": "1b38901064d7e53d4f4e7ab793031f56fe0a0000",
+            "message": "more generics; return getInstance() instead of this"
+        },
+        {
+            "hash": "0ffbd3eec7079b598e3364b90dc949357ad09654",
+            "message": "generics for the Builder class; generate abstract methods"
+        },
+        {
+            "hash": "aef9cdc3924bc7999dc966a536ff2b9060a4dd14",
+            "message": "add javac handler\n\nConflicts:\n\tsrc/core/lombok/experimental/SuperBuilder.java"
+        },
+        {
+            "hash": "3eea3b958946dd813197f00a1292b7a72380878a",
+            "message": "introduction of `@SuperBuilder` and a testcase."
+        },
+        {
+            "hash": "6b0b1a6a7ba73a2c43bb8ab413375505d61aacc6",
+            "message": "[builderParentClass] test cases"
+        },
+        {
+            "hash": "2a6c0c16b303b6af0b96e296858c2c54140f6dfe",
+            "message": "[builderParentClass] Code to handle builder on enums removed; that doesn’t make a heck of a lot of sense and enums aren’t extensible in the first place. Also fixed up a wrong access level; now all existing builder tests pass."
+        },
+        {
+            "hash": "cde47abc26ae04ebd41f4a5ad7430b187fcbc03d",
+            "message": "Merge branch 'master' of https://github.com/janrieke/lombok into janrieke-master\n\nAlso fixed up style and docs, and updated behaviour when using `@Builder(inherit = true)` to error if you have no parent class."
+        },
+        {
+            "hash": "14550d408415b9f7f7090db9770ef0b58ccd4212",
+            "message": "ConstructorProperties not necessary; javadoc"
+        },
+        {
+            "hash": "e61561b5a587f9cc770902c3ad9532f0daa5b85f",
+            "message": "singularizer's build code for any variable name (not only \"this\")"
+        },
+        {
+            "hash": "e79022226b18fae8cb5e0864a405c8c7c5d4a559",
+            "message": "singularizer's build code for any variable name (not only \"this\")"
+        },
+        {
+            "hash": "cd2e2f25690c46f01b876074682e87af369d15d3",
+            "message": "moved code only relevant to builders to HandleBuilder (Eclipse)\n\nreverted HandleConstructor to original state\nmoved generation of builder-based constructor to HandleBuilder"
+        },
+        {
+            "hash": "549e1b962210b8d4b0610d39789122ec537dcd89",
+            "message": "reverted HandleConstructor to original state"
+        },
+        {
+            "hash": "2e0d4183c236a7b42f2f6ff0e4a68812bba3e559",
+            "message": "moved generation of builder-based constructor to HandleBuilder"
+        },
+        {
+            "hash": "2346b15c8d2809b6efa9fc94f4f6cc56dcaa54b8",
+            "message": "Merge remote-tracking branch 'upstream/master'\n\n# Conflicts:\n#\tsrc/core/lombok/eclipse/handlers/HandleBuilder.java\n#\tsrc/core/lombok/eclipse/handlers/HandleConstructor.java\n#\tsrc/core/lombok/javac/handlers/HandleBuilder.java\n#\tsrc/core/lombok/javac/handlers/HandleConstructor.java"
+        },
+        {
+            "hash": "f51bbce3e396a0151bc0242d00e250f2bc720316",
+            "message": "do not assign values in build() method for extendable builders (WIP)"
+        },
+        {
+            "hash": "bd51fa8484fde587eef10fc58e4527f26ec16430",
+            "message": "activate extendable builders explicitly (ensure backwards compatibility)"
+        },
+        {
+            "hash": "4ec2e5135c373242dd00151eedf40997b0d75fe7",
+            "message": "builder-based constructors for type @Builders [javac]"
+        },
+        {
+            "hash": "f46aa53e8c592f562ef5dc21e65e9c74c98a8ecc",
+            "message": "builder-based constructors for type @Builders [Eclipse]"
+        },
+        {
+            "hash": "249256224a8bb928eb9037f2c111854896f39014",
+            "message": "forgot to update Version.java in the post-release version bump."
+        },
+        {
+            "hash": "58d9b8c242e33037a37aa9cbc7f4433542bddcc6",
+            "message": "Merge branch 'Wikia-gradle-incremental-fix'"
+        },
+        {
+            "hash": "6311a7efe394bf19cd2a874d29d7d97b26a25a8d",
+            "message": "Also generify AnnotationProcessor logic"
+        },
+        {
+            "hash": "4256d7daeda177ed3e361eb972fce62d9e1050c5",
+            "message": "Generify logic to obtain JavacFiler and JavacProcessingEnvironment"
+        },
+        {
+            "hash": "ca99bdfbede1586970a6253a1fbd3adb04be5a76",
+            "message": "Fix #1716: Update for Gradle incremental compilation API change in Gradle 4.8 and above"
+        },
+        {
+            "hash": "5f58f0aed2e5ab0add2c6d99e4248520efd11e65",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "304becdde7f5bcf44ed1fdb59b2c8d5bdf71125d",
+            "message": "running tests on command line can be finicky, lets not make it a requirement when pushing releases."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1783",
+            "title": "Eclipse removes \"import lombok.var;\" on Organize imports"
+        },
+        {
+            "number": "1759",
+            "title": "lombok.builder.flagUsage doesn't work"
+        },
+        {
+            "number": "1789",
+            "title": "Restarting Eclipse or switching workspaces injects Lombok a second time"
+        },
+        {
+            "number": "1359",
+            "title": "Eclipse javaagent and mapstruct APT implementation"
+        },
+        {
+            "number": "1347",
+            "title": "Builder.Default causes fields to be null when instantiating with new"
+        },
+        {
+            "number": "1397",
+            "title": "Netbeans crashing on using @Builder.Default on final variables"
+        },
+        {
+            "number": "1724",
+            "title": "lombock generated equals() not working as it did anymore"
+        },
+        {
+            "number": "1716",
+            "title": "ClassCastException for Lombok 1.6.22 and Gradle 4.8"
+        }
+    ]
+}

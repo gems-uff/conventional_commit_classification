@@ -1,0 +1,606 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.6.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 94,
+    "start_delay": 0.0,
+    "duration": 46.31513888888889,
+    "commits_info": [
+        {
+            "hash": "548e8e0d369f77d54b8b748d71309816dd5981f2",
+            "message": "Release v2.6.14"
+        },
+        {
+            "hash": "ebfbf4a4125cfa3b9f059a815c5d4a50670b47e7",
+            "message": "Stop testing Gradle plugin against Gradle 7.6 RCs\n\nCloses gh-33342"
+        },
+        {
+            "hash": "f68e8ce3b49438b966db4fe2157cf6961fe014b8",
+            "message": "Upgrade to Postgresql 42.3.8\n\nCloses gh-33337"
+        },
+        {
+            "hash": "b00f4f926a662dc2877015d28cd8b36133c18f57",
+            "message": "Create a HTTP connector in the custom tomcat connector example\n\nCloses gh-28707"
+        },
+        {
+            "hash": "2f6edecedba0d6e6faeba9dca19d45817581a7dc",
+            "message": "Improve JavaDoc on ConditionalOnClass\n\nCloses gh-27846"
+        },
+        {
+            "hash": "ae8ec86486092f6f56061d316de6bd88794f0af7",
+            "message": "Clarify startup probe in actuator documentation\n\nCloses gh-28432"
+        },
+        {
+            "hash": "92ed0dc61e322946e8ff9be01b31f373fbed6391",
+            "message": "Upgrade to HttpClient5 5.1.4\n\nCloses gh-33320"
+        },
+        {
+            "hash": "928d2106651d1a60fe678a312a46bd088a01dea6",
+            "message": "Upgrade to Dropwizard Metrics 4.2.13\n\nCloses gh-33319"
+        },
+        {
+            "hash": "c4151bb6298b87868e9bc82b2228cf3164528ba4",
+            "message": "Revert \"Start building against Spring Batch 4.3.8 snapshots\"\n\nThis reverts commit 2b4ceb35a29669d902821cca16838b19e0abb2da.\n\nThe 4.3.8 release has been postponed.\n\nSee gh-33128"
+        },
+        {
+            "hash": "673d301b884a484346bd44a02484a17701a4e4d2",
+            "message": "Make Ant smoke test more robust\n\nCloses gh-33295"
+        },
+        {
+            "hash": "b96060999525b891cd2dc680bf1e64056da7c547",
+            "message": "Upgrade to Spring Kafka 2.8.11\n\nCloses gh-33126"
+        },
+        {
+            "hash": "5035f638a53a7d809edf8206690069a9372475b5",
+            "message": "Upgrade to Spring AMQP 2.4.8\n\nCloses gh-33222"
+        },
+        {
+            "hash": "48e77ee4ae1eed958970ba4adc514249303a263a",
+            "message": "Merge pull request #33276 from hpoettker\n\n* pr/33276:\n  Make `ScheduledBeanLazyInitializationExcludeFilter` conditional\n\nCloses gh-33276"
+        },
+        {
+            "hash": "330848d339bc535f32a3b7c105b78dd7a0a2d9a7",
+            "message": "Make `ScheduledBeanLazyInitializationExcludeFilter` conditional\n\nSee gh-33276"
+        },
+        {
+            "hash": "a23c7df2dfd498e5d143caa0dde02fe1448e9f66",
+            "message": "Upgrade to Spring REST Docs 2.0.7.RELEASE\n\nCloses gh-33127"
+        },
+        {
+            "hash": "e0b08f0536c7bd833ad5c1a21c7a53d626638aa5",
+            "message": "Upgrade to Janino 3.1.9\n\nCloses gh-33271"
+        },
+        {
+            "hash": "e860efca6576954e758651aaa260d25ab2f8d66f",
+            "message": "Test Gradle plugin against 7.6-rc-3\n\nCloses gh-33267"
+        },
+        {
+            "hash": "ec467402b37a74cd7573d9a6452b3cf19cf5ad38",
+            "message": "Link to Micrometer's documentation on @Timed\n\nCloses gh-33264"
+        },
+        {
+            "hash": "0c8ae65bd40c57b072ae85bea1c39e63266d068e",
+            "message": "Switch of the banner when SpringBootTest runs an app with a parent\n\nCloses gh-33079"
+        },
+        {
+            "hash": "acb5491b796018d2f8a174d51402e739b16f855d",
+            "message": "Fix section links to not include .html suffix\n\nCloses gh-33206"
+        },
+        {
+            "hash": "d05e79215796527e638cea6b8fe18d9056e6e37f",
+            "message": "Clarify spring.cache.type=hazelcast in the documentation\n\nCloses gh-33245"
+        },
+        {
+            "hash": "fc9c036c883975dfe94b98576cfb89ee158b71d2",
+            "message": "Create git commit time with epoch seconds rather than milliseconds\n\nCloses gh-33237"
+        },
+        {
+            "hash": "7c65c3e260a7df15870b66b2352bdf81573b54e2",
+            "message": "Handle invalid names gracefully in properties migrator\n\nCloses gh-32729"
+        },
+        {
+            "hash": "97e6626b347e5d3b90e852f9daf26e4c082e7ad5",
+            "message": "Upgrade to Spring Data 2021.1.10\n\nCloses gh-33125"
+        },
+        {
+            "hash": "c1fe43a4ac9129b2bdc1844d092ba7db674088a4",
+            "message": "Merge pull request #33220 from sdeleuze\n\n* pr/33220:\n  Polish 'Refine BackgroundPreinitializer Jackson initialization'\n  Refine BackgroundPreinitializer Jackson initialization\n\nCloses gh-33220"
+        },
+        {
+            "hash": "6cc6a15edf18f5409f415e4bdbee6dc77e0b121e",
+            "message": "Polish 'Refine BackgroundPreinitializer Jackson initialization'\n\nSee gh-33220"
+        },
+        {
+            "hash": "bdac416a62d2ccb373745171229477c244b00689",
+            "message": "Refine BackgroundPreinitializer Jackson initialization\n\nAllEncompassingFormHttpMessageConverter already initializes\nJackson ObjectMapper. This commit updates BackgroundPreinitializer\nin order to not run JacksonInitializer when\nMessageConverterInitializer already takes care of initializing\nObjectMapper.\n\nSee gh-33220"
+        },
+        {
+            "hash": "a650361f1d0a541bac2787164768c9a4d4355c13",
+            "message": "Merge branch 'gh-17299' into 2.6.x\n\nCloses gh-17299"
+        },
+        {
+            "hash": "4bb13bcdfd5af5f33841e9f53055e4b2fd5d59aa",
+            "message": "Fix package tangles in spring-boot-autoconfigure\n\nSee gh-17299"
+        },
+        {
+            "hash": "1494deb4a03b7fde47d43deb0b5ce7b52259f3ae",
+            "message": "Check for package tangles at build time\n\nSee gh-17299"
+        },
+        {
+            "hash": "8bcde6d57b950071565932be173008550d67c5ed",
+            "message": "Start building against Spring AMQP 2.4.8 snapshots\n\nSee gh-33222"
+        },
+        {
+            "hash": "4067dec8115a6ef70f4f69a381dfb8d6e7832708",
+            "message": "Upgrade to Micrometer 1.8.12\n\nCloses gh-33122"
+        },
+        {
+            "hash": "afa5d15625a178aa99d4b8bfa1ee7b000e72a526",
+            "message": "Upgrade to Spring Framework 5.3.24\n\nCloses gh-33124"
+        },
+        {
+            "hash": "4d6f956b245045748dcf43f2ec4f65de71a040dd",
+            "message": "Fix summary of \"Core Features\" section\n\nCloses gh-33207"
+        },
+        {
+            "hash": "46acb6fb97b1e743f0ab85dd5baf07ec586b50cf",
+            "message": "Ignore bridge methods when binding java beans\n\nUpdate `JavaBeanBinder` so that bridge methods are ignored when binding.\n\nFixes gh-33105"
+        },
+        {
+            "hash": "e03c2e876ace9f3f9bc2adbd12abbde815b9fd68",
+            "message": "Revert \"Upgrade to Undertow 2.2.21.Final\"\n\nThis reverts commit 51a16732520bcbe45932cba9059d993ef10f68b4.\n\nSee gh-33165"
+        },
+        {
+            "hash": "0562636ae711a2fa7c1445a252e53fdb9d8dd0d0",
+            "message": "Upgrade to Reactor 2020.0.25\n\nCloses gh-33123"
+        },
+        {
+            "hash": "2a989b31aacdb923191952c1144b5a00397516be",
+            "message": "Create Environment and apply ConversionService to management contexts\n\nUpdate `ManagementContextFactory` implementations to create an\nappropriate `Environment` type and to apply the `ConversionService`\nfrom the parent context.\n\nPrior to this commit, the management context `Environment` would not\nbe able to convert values from a `configtree:` source due to a missing\nconverter.\n\nFixes gh-32941"
+        },
+        {
+            "hash": "51a16732520bcbe45932cba9059d993ef10f68b4",
+            "message": "Upgrade to Undertow 2.2.21.Final\n\nCloses gh-33165"
+        },
+        {
+            "hash": "80255acb7b06126ddc583f4248f6070ee4a26c1f",
+            "message": "Upgrade to Tomcat 9.0.69\n\nCloses gh-33164"
+        },
+        {
+            "hash": "7885387d243cd80e1bc846b792c05a369a4568e0",
+            "message": "Upgrade to Spring WS 3.1.4\n\nCloses gh-33163"
+        },
+        {
+            "hash": "cd7f6d049e204b86f54f54927fb023cba6ad6f3b",
+            "message": "Upgrade to Spring Security 5.6.9\n\nCloses gh-33162"
+        },
+        {
+            "hash": "925cd10d9dbc328f9cd6e6c56347324697e9316a",
+            "message": "Upgrade to Netty 4.1.85.Final\n\nCloses gh-33161"
+        },
+        {
+            "hash": "d8867e7c2ea8ff1a431ee22e4beb2b07a5bdf758",
+            "message": "Upgrade to MariaDB 2.7.7\n\nCloses gh-33160"
+        },
+        {
+            "hash": "c1e105ffea36d214d1e2a08a144cf503ac3aeee4",
+            "message": "Upgrade to Jaybird 4.0.7.java8\n\nCloses gh-33159"
+        },
+        {
+            "hash": "83ec78b2af683840403ac327740255e558267738",
+            "message": "Upgrade to HttpCore5 5.1.5\n\nCloses gh-33158"
+        },
+        {
+            "hash": "bdc80ec48423a1bd63e9f38edc62d4a985fc9a0d",
+            "message": "Upgrade to Hibernate 5.6.14.Final\n\nCloses gh-33157"
+        },
+        {
+            "hash": "2b4ceb35a29669d902821cca16838b19e0abb2da",
+            "message": "Start building against Spring Batch 4.3.8 snapshots\n\nSee gh-33128"
+        },
+        {
+            "hash": "579daad219e7b3f33fc66887740a044d605dcb40",
+            "message": "Start building against Spring REST Docs 2.0.7 snapshots\n\nSee gh-33127"
+        },
+        {
+            "hash": "37ffaa3e120c3593d8207d0bcf87307f8a632d0f",
+            "message": "Start building against Spring Kafka 2.8.11 snapshots\n\nSee gh-33126"
+        },
+        {
+            "hash": "4873671adac00e19448eb31cd704d7e0b78b7c28",
+            "message": "Start building against Spring Data 2021.1.10 snapshots\n\nSee gh-33125"
+        },
+        {
+            "hash": "22e56d27a6ea943d6d74f972002f73d865a83984",
+            "message": "Start building against Spring Framework 5.3.24 snapshots\n\nSee gh-33124"
+        },
+        {
+            "hash": "89212aa3ba56e88ad9632a286e0f8cd2581f2332",
+            "message": "Start building against Reactor 2020.0.25 snapshots\n\nSee gh-33123"
+        },
+        {
+            "hash": "36c5ddbd134793b2907e5658f6e27a6dbc2755d2",
+            "message": "Start building against Micrometer 1.8.12 snapshots\n\nSee gh-33122"
+        },
+        {
+            "hash": "91ed54821c417ec9315558a1d8180f8bdd472168",
+            "message": "Merge pull request #33098 from iamgd67\n\n* pr/33098:\n  Fix kafka streams start description typo in documentation\n\nCloses gh-33098"
+        },
+        {
+            "hash": "e55e23482a81efae7eb974b1cc9018e1ecd0089c",
+            "message": "Fix kafka streams start description typo in documentation\n\nSee gh-33098"
+        },
+        {
+            "hash": "f423a26dd52f9e94545541d4a99ad24366b0ec3c",
+            "message": "Polish"
+        },
+        {
+            "hash": "a431ae04e6bc397c4cb57b4c9d22490c4784833c",
+            "message": "Polish"
+        },
+        {
+            "hash": "6423535f67c498f2d9321f612c10afaec574c8f8",
+            "message": "Delete temp directory after MavenBuild has exected\n\nCloses gh-33083"
+        },
+        {
+            "hash": "f42e90a2b4c2a741c1dace5cfa1bd6457eaaa18c",
+            "message": "Add missing dependency management for Selenum\n\nCloses gh-32721"
+        },
+        {
+            "hash": "eed86c0d0a4bf4b09b8380ab411cbaed3eacc996",
+            "message": "Test Boot's Gradle plugin against Gradle 7.6-rc-2\n\nCloses gh-33073"
+        },
+        {
+            "hash": "5dab9b0e9f48c08c89382a5416f5920eb73b20a6",
+            "message": "Revert \"Temporarily work around problems with Gradle's plugin portal\"\n\nThis reverts commit fb954e8109c53ac7c290eeddd728361270ac815f."
+        },
+        {
+            "hash": "452cc717a6b95b76394385046e4a7000d91210b6",
+            "message": "Merge pull request #32931 from EricGao888\n\n* gh-32931:\n  Fix a minor bug in an example in oauth2 doc\n\nCloses gh-32931"
+        },
+        {
+            "hash": "569e752159c4b88ab676dcf3a15f098339ad68a4",
+            "message": "Fix a minor bug in an example in oauth2 doc\n\nSee gh-32931"
+        },
+        {
+            "hash": "30212638b0b8872cd2eaf4bb5af76eeaba48b64f",
+            "message": "Merge pull request #32916 from dreis2211\n\n* gh-32916:\n  Fix possible type pollution in ConditionEvaluationReport\n\nCloses gh-32916"
+        },
+        {
+            "hash": "34902f5a021ca8e5009881edc2231d55dc378a41",
+            "message": "Fix possible type pollution in ConditionEvaluationReport\n\nSee gh-32916"
+        },
+        {
+            "hash": "fb954e8109c53ac7c290eeddd728361270ac815f",
+            "message": "Temporarily work around problems with Gradle's plugin portal"
+        },
+        {
+            "hash": "ac6ad7c0f19007051df3432dec190542992c37e4",
+            "message": "Fix ModifiedClassPathExtension with parameterized tests\n\nCloses gh-33014"
+        },
+        {
+            "hash": "d2cceb6b779ea0fe6fd34420f2307c8dce031574",
+            "message": "Polish"
+        },
+        {
+            "hash": "caf46043c64313dcae380702dcc403f47a093f81",
+            "message": "Add @DirtiesUrlFactories annotation\n\nAdd `@DirtiesUrlFactories` annotation that can be used to reset URL\nfactories.\n\nCloses gh-33017"
+        },
+        {
+            "hash": "d4cc8fc3a6ee89a900a847192939e06f3ff24866",
+            "message": "Support modified classpath on methods and parameterized tests\n\nUpdate `ModifiedClassPathExtension` and related classes so that\nannotations can be used directly on test methods, or on classes\npassed into parameterized tests.\n\nCloses gh-33014"
+        },
+        {
+            "hash": "d00e004622a1579ba4cb7ad8cf777069a194ab2d",
+            "message": "Add missing XMLUnit dependency management\n\nCloses gh-32998"
+        },
+        {
+            "hash": "fcd3413ba04d0895b77e7e6f4766f1b71c34492c",
+            "message": "Allow histograms to be disabled for Lettuce metrics\n\nCloses gh-32985"
+        },
+        {
+            "hash": "beb62be843f0bd5715db29f46b83b2e23355ecb9",
+            "message": "Test Boot's Gradle plugin against Gradle 7.6-rc-1\n\nCloses gh-32933"
+        },
+        {
+            "hash": "e438721be41919cbcbf31c175cb0335117fbd598",
+            "message": "Upgrade to springio/github-changelog-generator 0.0.8\n\nCloses gh-32970"
+        },
+        {
+            "hash": "355945faed84825eb4b0e664f636584306b35477",
+            "message": "Upgrade Java 19 CI image to 19.0.1+11\n\nCloses gh-32895"
+        },
+        {
+            "hash": "17ffa5bd3d264bc451405169c2ff94b88f44be34",
+            "message": "Upgrade CI images to Docker 20.10.21\n\nCloses gh-32887"
+        },
+        {
+            "hash": "f881d12441368518dbe499cb9f75631fe32e9908",
+            "message": "Merge pull request #32920 from dreis2211\n\n* gh-32920:\n  Upgrade CI image update detection to Ubuntu Jammy\n\nCloses gh-32920"
+        },
+        {
+            "hash": "cc23dbe9f764a3b4ad3dcaa9858e44aff7dee34c",
+            "message": "Upgrade CI image update detection to Ubuntu Jammy\n\nSee gh-32920"
+        },
+        {
+            "hash": "92b513dc8d6c482e8c52aafd92b980f05cdf2ec4",
+            "message": "Polish"
+        },
+        {
+            "hash": "d7ac20cd6c5f543ea1662bdfca51e9b965bec7ec",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "a2cb3c67c3c10d7bdde9af4216a52a9f06b63d29",
+            "message": "Upgrade CI images to Docker 20.10.20\n\nCloses gh-32810"
+        },
+        {
+            "hash": "de3aa29ab0aac0782baf923880c7c93b615c1995",
+            "message": "Upgrade Java 17 CI to 17.0.5+8\n\nCloses gh-32808"
+        },
+        {
+            "hash": "f26cb53fe6b435edceecf7be131d5b0003b2e16f",
+            "message": "Upgrade Java 11 CI to 11.0.17+7\n\nCloses gh-32809"
+        },
+        {
+            "hash": "92ce609b750620462803baca864b43eb8b61086c",
+            "message": "Upgrade Java 8 CI to 8.0.352\n\nCloses gh-32807"
+        },
+        {
+            "hash": "fe51e03019b9c8ead20aac8dd082f469672def97",
+            "message": "Support IPv6 addresses in spring.redis.sentinel.nodes\n\nFixes gh-32762"
+        },
+        {
+            "hash": "1a14f39f83602b224572dee3b3ceb773f88bfff7",
+            "message": "Polish"
+        },
+        {
+            "hash": "463a614d271bfc82602cecaf9863413b0566526a",
+            "message": "Fix package tangle between SpringApplication and Environment types\n\nUpdate `SpringApplication` so that it no longer directly decides the\ntype of `Environment` that should be created.\n\nCloses gh-32825"
+        },
+        {
+            "hash": "81beb2e0c6752645e65e1182f84faa3665f3103d",
+            "message": "Merge pull request #32812 from jamessoun93\n\n* pr/32812:\n  Fix typos in logging.adoc\n\nCloses gh-32812"
+        },
+        {
+            "hash": "5e0a67ac66450f155d31c08b5b10e0bd58b33db4",
+            "message": "Fix typos in logging.adoc\n\nSee gh-32812"
+        },
+        {
+            "hash": "ea97e4ab87e61db4855097244ee776151d6a739f",
+            "message": "Merge pull request #32644 from eurythmia\n\n* pr/32644:\n  Upgrade copyright year of changed files\n  Harmonize ConfigurationProperties code samples\n\nCloses gh-32644"
+        },
+        {
+            "hash": "4d7cb7144e167e33d8def16eeadf2c1a416c7968",
+            "message": "Upgrade copyright year of changed files\n\nSee gh-32644"
+        },
+        {
+            "hash": "c5a194426786973ce3e697163c6a6031b9c0b71a",
+            "message": "Harmonize ConfigurationProperties code samples\n\nRename the SomeProperties class so that it is consistent with other\nexamples given within the Type-safe Configuration Properties. This\nensures that readers can intuitively draw the conclusion that the\nMyProperties class is annotated with ConfigurationProperties.\n\nSee gh-32644"
+        },
+        {
+            "hash": "954e874d727022b9e1c7ed31c248423d7d3087dc",
+            "message": "Next development version (v2.6.14-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33342",
+            "title": "Stop testing against Gradle 7.6 RCs"
+        },
+        {
+            "number": "33337",
+            "title": "Upgrade to Postgresql 42.3.8"
+        },
+        {
+            "number": "28707",
+            "title": "Align Tomcat multiple connectors example with recommendation to configure SSL declaratively"
+        },
+        {
+            "number": "27846",
+            "title": "ConditionalOnClass not working for Bean methods on Java 8"
+        },
+        {
+            "number": "28432",
+            "title": "Actuator document is misleading about k8s startup probe"
+        },
+        {
+            "number": "33320",
+            "title": "Upgrade to HttpClient5 5.1.4"
+        },
+        {
+            "number": "33319",
+            "title": "Upgrade to Dropwizard Metrics 4.2.13"
+        },
+        {
+            "number": "33128",
+            "title": "Upgrade to Spring Batch 4.3.8"
+        },
+        {
+            "number": "33295",
+            "title": "Make Ant smoke test more robust"
+        },
+        {
+            "number": "33126",
+            "title": "Upgrade to Spring Kafka 2.8.11"
+        },
+        {
+            "number": "33222",
+            "title": "Upgrade to Spring AMQP 2.4.8"
+        },
+        {
+            "number": "33127",
+            "title": "Upgrade to Spring REST Docs 2.0.7.RELEASE"
+        },
+        {
+            "number": "33271",
+            "title": "Upgrade to Janino 3.1.9"
+        },
+        {
+            "number": "33267",
+            "title": "Test Gradle Plugin against 7.6-rc-3"
+        },
+        {
+            "number": "33264",
+            "title": "Link to Micrometer's @Timed documentation"
+        },
+        {
+            "number": "33079",
+            "title": "SpringBootContextLoader prints banner twice when using a @ContextHierarchy"
+        },
+        {
+            "number": "33206",
+            "title": "Crosslinks should not include .html"
+        },
+        {
+            "number": "33245",
+            "title": "Clarify use of the `spring.cache.type` property with Hazelcast"
+        },
+        {
+            "number": "33237",
+            "title": "Example git.commit.time in the Actuator API documentation is thousands of years in the future"
+        },
+        {
+            "number": "32729",
+            "title": "Properties migrator causes an application to fail to start if it tries to map a property whose metadata data entry contains an invalid configuration property name"
+        },
+        {
+            "number": "33125",
+            "title": "Upgrade to Spring Data 2021.1.10"
+        },
+        {
+            "number": "17299",
+            "title": "Detect package tangles at build time"
+        },
+        {
+            "number": "33122",
+            "title": "Upgrade to Micrometer 1.8.12"
+        },
+        {
+            "number": "33124",
+            "title": "Upgrade to Spring Framework 5.3.24"
+        },
+        {
+            "number": "33207",
+            "title": "Links to Features describes sections that have moved elsewhere"
+        },
+        {
+            "number": "33105",
+            "title": "Configuration property binding does not deal with bridge methods"
+        },
+        {
+            "number": "33165",
+            "title": "Upgrade to Undertow 2.2.21.Final"
+        },
+        {
+            "number": "33123",
+            "title": "Upgrade to Reactor 2020.0.25"
+        },
+        {
+            "number": "32941",
+            "title": "Configuring management.server.port via a config tree results in a ConverterNotFoundException when the management context is refreshed"
+        },
+        {
+            "number": "33164",
+            "title": "Upgrade to Tomcat 9.0.69"
+        },
+        {
+            "number": "33163",
+            "title": "Upgrade to Spring WS 3.1.4"
+        },
+        {
+            "number": "33162",
+            "title": "Upgrade to Spring Security 5.6.9"
+        },
+        {
+            "number": "33161",
+            "title": "Upgrade to Netty 4.1.85.Final"
+        },
+        {
+            "number": "33160",
+            "title": "Upgrade to MariaDB 2.7.7"
+        },
+        {
+            "number": "33159",
+            "title": "Upgrade to Jaybird 4.0.7.java8"
+        },
+        {
+            "number": "33158",
+            "title": "Upgrade to HttpCore5 5.1.5"
+        },
+        {
+            "number": "33157",
+            "title": "Upgrade to Hibernate 5.6.14.Final"
+        },
+        {
+            "number": "33083",
+            "title": "MavenBuild should delete temporary directory following execution"
+        },
+        {
+            "number": "32721",
+            "title": "Dependency management for Selenium is incomplete"
+        },
+        {
+            "number": "33073",
+            "title": "Test Gradle plugin against 7.6-rc-2"
+        },
+        {
+            "number": "33014",
+            "title": "Support modified classpath on methods and parameterized tests"
+        },
+        {
+            "number": "33017",
+            "title": "Add @DirtiesUrlFactories annotation"
+        },
+        {
+            "number": "32998",
+            "title": "Dependency management for XMLUnit is incomplete"
+        },
+        {
+            "number": "32985",
+            "title": "Spring Boot's Lettuce metrics enable histrograms by default and it's hard to switch them off"
+        },
+        {
+            "number": "32933",
+            "title": "Test Gradle plugin against 7.6-rc-1"
+        },
+        {
+            "number": "32970",
+            "title": "Upgrade to GitHub Changelog Generator 0.0.8"
+        },
+        {
+            "number": "32895",
+            "title": "Upgrade Java 19 version in CI image"
+        },
+        {
+            "number": "32887",
+            "title": "Upgrade CI to Docker 20.10.21"
+        },
+        {
+            "number": "32810",
+            "title": "Upgrade CI to Docker 20.10.20"
+        },
+        {
+            "number": "32808",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "32809",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "32807",
+            "title": "Upgrade Java 8 version in CI image and .sdkmanrc"
+        },
+        {
+            "number": "32762",
+            "title": "NumberFormatException when configuring spring.redis.sentinel.nodes with an IPv6 address"
+        },
+        {
+            "number": "32825",
+            "title": "Fix package tangle in spring-boot caused by Environment creation in SpringApplication"
+        }
+    ]
+}

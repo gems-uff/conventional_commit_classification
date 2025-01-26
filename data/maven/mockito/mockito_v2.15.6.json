@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.15.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 11.976365740740741,
+    "commits_info": [
+        {
+            "hash": "6a56f6e0995732a14772630701d979c5759bdbe6",
+            "message": "2.15.6 release (previous 2.15.5) + release notes updated by CI build 3248\n\n[ci skip-release]"
+        },
+        {
+            "hash": "1d2fba412560df5237d431c25997bd14a4207d57",
+            "message": "Merge pull request #1320 from moltmann/SeparateByteBuddyMockMaker\n\nAvoid bytebuddy import Issue to enable repackaging without bytebuddy"
+        },
+        {
+            "hash": "679172a35ca8fb5aa2b8869af654b71688c7f60b",
+            "message": "Issue #1112: Don't import org.mockito.internal.creation.bytebuddy\n\nThis allows libs that use alternate mockmakers do cleanly exclude the\nbytebuddy subdirectory.\n\nTest: grep -r -e \"import org\\.mockito\\.internal\\.creation\\.bytebuddy\\.[^\\.]*$\" src/main\n      does not return anything"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1112",
+            "title": "mockito-android has extremely large method count"
+        }
+    ]
+}

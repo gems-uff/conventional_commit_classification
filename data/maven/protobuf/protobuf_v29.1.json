@@ -11,28 +11,29 @@
     "commits_info": [
         {
             "hash": "796e49f6ca82f763d1087d2ff7355d2f0d7b71b1",
-            "message": "Updating version.json and repo version numbers to: 29.1\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 29.1"
         },
         {
             "hash": "ba6da44dd0910910ea4aad90afc9ea0ae0afc9cf",
-            "message": "Rename maven to protobuf_maven in MODULE.bazel (#18641) (#19477)\n\nThe default name for the rules_jvm_external.maven rule is \"maven\". When not set, it defaults to \"maven\". For root modules also using rules_jvm_external, the name clash causes a warning:\r\n\r\n```\r\nDEBUG: $TMP/external/rules_jvm_external~/private/extensions/maven.bzl:154:14:\r\nThe maven repository 'maven' is used in two different bazel modules,\r\noriginally in '<my_workspace>' and now in 'protobuf'\r\n```\r\n\r\nSummarizing @shs96c in [1]:\r\n\r\n> The common maven repo name allows rulesets to contribute to the user's JARs.\r\n> However, this implies that maven is for the end user, not for transitive\r\n> dependencies. If a ruleset needs private dependencies, it should use a custom\r\n> namespace rather than the maven namespace.\r\n\r\nSince protobuf is not contributing to user's JARs, we'll use a custom namespace. There's precedent for using a custom namespace for library modules:\r\n\r\n- rules_jvm_external uses `rules_jvm_external_deps` instead of `maven`.\r\n- rules_kotlin uses `kotlin_rules_maven` instead of `maven`.\r\n\r\n[1]: https://github.com/bazel-contrib/rules_jvm_external/issues/916#issuecomment-1645527584\r\n\r\nFixes #16839.\r\n\r\nCloses #18641\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/18641 from jschaf:joe/protobuf-maven bd2c62f3118264adc1e725102d1ecc576f145f35\r\nPiperOrigin-RevId: 684625084\r\n\r\nCo-authored-by: Joe Schafer <joe.schafer@delta46.us>",
-            "tag_name": null
+            "message": "Rename maven to protobuf_maven in MODULE.bazel (#18641) (#19477)\n\nThe default name for the rules_jvm_external.maven rule is \"maven\". When not set, it defaults to \"maven\". For root modules also using rules_jvm_external, the name clash causes a warning:\r\n\r\n```\r\nDEBUG: $TMP/external/rules_jvm_external~/private/extensions/maven.bzl:154:14:\r\nThe maven repository 'maven' is used in two different bazel modules,\r\noriginally in '<my_workspace>' and now in 'protobuf'\r\n```\r\n\r\nSummarizing @shs96c in [1]:\r\n\r\n> The common maven repo name allows rulesets to contribute to the user's JARs.\r\n> However, this implies that maven is for the end user, not for transitive\r\n> dependencies. If a ruleset needs private dependencies, it should use a custom\r\n> namespace rather than the maven namespace.\r\n\r\nSince protobuf is not contributing to user's JARs, we'll use a custom namespace. There's precedent for using a custom namespace for library modules:\r\n\r\n- rules_jvm_external uses `rules_jvm_external_deps` instead of `maven`.\r\n- rules_kotlin uses `kotlin_rules_maven` instead of `maven`.\r\n\r\n[1]: https://github.com/bazel-contrib/rules_jvm_external/issues/916#issuecomment-1645527584\r\n\r\nFixes #16839.\r\n\r\nCloses #18641\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/18641 from jschaf:joe/protobuf-maven bd2c62f3118264adc1e725102d1ecc576f145f35\r\nPiperOrigin-RevId: 684625084\r\n\r\nCo-authored-by: Joe Schafer <joe.schafer@delta46.us>"
         },
         {
             "hash": "5864b5078a0187a1a16d4d2ed6f55972511d0a94",
-            "message": "Revert \"Remove deprecated service.py usages from test\". For 29.x only (#19434)\n\nThis reverts commit 471ff7727031d7ca17c62f34c38314758142393e.",
-            "tag_name": null
+            "message": "Revert \"Remove deprecated service.py usages from test\". For 29.x only (#19434)\n\nThis reverts commit 471ff7727031d7ca17c62f34c38314758142393e."
         },
         {
             "hash": "e0a3978b678be0f3aab8689770b64d1465d2479e",
-            "message": "Merge pull request #19425 from protocolbuffers/29.x-202411271837\n\nMerge release commits to 29.x",
-            "tag_name": null
+            "message": "Merge pull request #19425 from protocolbuffers/29.x-202411271837\n\nMerge release commits to 29.x"
         },
         {
             "hash": "9e78ac7afae5fe45f56d47bf831fd7d86c99e954",
-            "message": "Updating version.json and repo version numbers to: 29.1-dev\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 29.1-dev"
+        }
+    ],
+    "issues": [
+        {
+            "number": "16839",
+            "title": "Using `maven` as the repo name causes duplicate warnings when using bzlmod"
         }
     ]
 }

@@ -1,0 +1,206 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.12.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 47,
+    "start_delay": 0.0,
+    "duration": 216.23221064814814,
+    "commits_info": [
+        {
+            "hash": "e68c8d4fd4a0d6418b24cab4f4f8f3abaeca96fb",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "ab3ee68c386f6c65a4f6b3f49389aaeeee452a2d",
+            "message": "No functional change, but runPostCompiler in eclipse patching is no longer transplanted. It shouldn't matter (runPostCompiler will call lombok.jar code, so if there is a classloader issue, transplanting won't help), and roel thinks it might help debug an issue with Springsource gradle plugin for eclipse."
+        },
+        {
+            "hash": "a9b4fb0c685fbc52079d57532c04277e78c95ec2",
+            "message": "Fix for issues when mixing @NonNull on params with @SneakyThrows or @Synchronized [Issue #588]"
+        },
+        {
+            "hash": "08961edcfeef9b181621351e36bbc267f9395415",
+            "message": "Whoops, Classload errors running lombok on javac with backing JVM 7 or below; fixed."
+        },
+        {
+            "hash": "728dddbc81d9f9bfbbd3f8217b8c94f3f201c83d",
+            "message": "[jdk8support] ... and javadoc copying support is back for javac8. Also fixed some copyright headers."
+        },
+        {
+            "hash": "00a8b08226aa0daa2061d171607bf0d5369ed292",
+            "message": "[jdk8support] there was a bunch of duplicate code in both JavacAST and JavacResolution. We've unified this (and fixed the fact that the JavacAST variant didn't work with javac8)."
+        },
+        {
+            "hash": "7fc6e70b36c978ef230e3df41db151f3c0da3da1",
+            "message": "Pre-emptive fix for the anticipated removal of ListBuffer.lb() in javac8"
+        },
+        {
+            "hash": "f0cdc27a3f86c0ca728ad598893dd2b95ba38e20",
+            "message": "tiny tiny fix for some incredibly unlikely mix of intellij, ibm stuff, and who knows what. At any rate, Roel is absolutely sure this will fix it, so, hey, who am I to argue? NB: Unicum"
+        },
+        {
+            "hash": "7b8a85e1f991f838d6692ef789f53ed604a4a4e9",
+            "message": "Fixed slight typo issues with the tests due to merging and icelandic on the fly bug fixing."
+        },
+        {
+            "hash": "86a635876dd75c4f3a61593491fa2ce53f8444b8",
+            "message": "Merge branch 'master' into jdk8check\n\nConflicts:\n\tsrc/core/lombok/core/Version.java\n\tsrc/core/lombok/javac/handlers/HandleConstructor.java\n\ttest/transform/resource/messages-delombok/EqualsAndHashCodeWithSomeExistingMethods.java.messages\n\ttest/transform/resource/messages-ecj/EqualsAndHashCodeWithSomeExistingMethods.java.messages"
+        },
+        {
+            "hash": "72b55dccb18f38b8aefd0ac8e7c2e8bd2dd5c057",
+            "message": "Issue 559: NullPointerException when @NonNull is used in abstract method\n- Prevent NPE in javac and give a proper warning in both eclipse and javac\n- Add test cases"
+        },
+        {
+            "hash": "cf7290f86133bbed53c78120453ddfc2ed734fac",
+            "message": "fixed a code typo in the getterlazy usage example. Credits to Adam Brewster for spotting it!"
+        },
+        {
+            "hash": "b93318da303b36957f3774015090121af778665f",
+            "message": "* Fixed 553: @XArgsConstructor (and @Builder on a class) did not look at @Accessors to handle field accessors.\n* various operations on names in javac were really slow; they are faster now."
+        },
+        {
+            "hash": "613d7e9e0cc14e9f789e81b52d72dbef24aff2e9",
+            "message": "Merge pull request #38 from jqno/master\n\nFixed two typos"
+        },
+        {
+            "hash": "05b8501071b7a7d1a31713c607785b94119767d0",
+            "message": "Oops: didn't realise the text appeared in multiple places."
+        },
+        {
+            "hash": "7faff42d85c2e21b9a3b2e0014ebc36dbe5eb155",
+            "message": "Fixed two typos"
+        },
+        {
+            "hash": "deed98be16e5099af52d951fc611f86a82a42858",
+            "message": "Upyeared the copyright notice in the generated javadoc."
+        },
+        {
+            "hash": "023d90bc75517d478e7f0f9c063ccbfa135fe62b",
+            "message": "post-release version bump to 0.12.1"
+        },
+        {
+            "hash": "7ee868659f4ff3cb286b676d649e8c57e9248d87",
+            "message": "Fixed netbeans 7.4RC1 issue (JavaCompiler.version() was returning bogus values, so we now work around that javac bug)."
+        },
+        {
+            "hash": "b81d5ef65cbe25d120df8a456999ab04a5467d94",
+            "message": "updated SPI, it did not work in JDK8 properly"
+        },
+        {
+            "hash": "0ac3aedbca28844a1220a77c0403e56106011947",
+            "message": "version naming and changelog update for edge release"
+        },
+        {
+            "hash": "52d4c81a590f790de057653e7ffd091b6706ee34",
+            "message": "Updated unit tests to reflect new double-underscore default for onX. (Because single underscore generates warnings in javac8)."
+        },
+        {
+            "hash": "6a02cb40137788e6f77919c762b72b3d5880d2da",
+            "message": "[jdk8support] We now handle doc comments internally, alleviating the need to try and keep up with the complete rewrites of the doc comment parser from java6 to java7 to java8. Still doesn't actually work in jdk8, but only because of a last-mile issue. (we communicate the doc comment via compilationUnit.docComments but that changed types in jdk8, we just need to make a wrapper to make that work)."
+        },
+        {
+            "hash": "f2662518de40569e073991bc70a1629881ba655e",
+            "message": "[jdk8support] jdk8 support branch now compiles under javac7, and produces lombok.jar that works on all javas."
+        },
+        {
+            "hash": "0932ccb51b83ac6b98450f3b96f4b1b764a81651",
+            "message": "added a todo comment only"
+        },
+        {
+            "hash": "d1b26ab164bcd9e9a17c7c0b00f711de66602690",
+            "message": "Removed blanks"
+        },
+        {
+            "hash": "1c319579cbbd2153b6fd33a792bcb03e6a02ab74",
+            "message": "Fix suppressing diagnostic messages during resolution in #java8 #val"
+        },
+        {
+            "hash": "bad93ae677622c79883f658a53484d455e36ce9a",
+            "message": "Only look at the line number for errors and warnings."
+        },
+        {
+            "hash": "132d603dd4e43f50555ef33bac290b1080dfc5fa",
+            "message": "Getting the java8 compiler remember the comments"
+        },
+        {
+            "hash": "2b393ec62296edfeaa3e1d78850cdf3fb9767f78",
+            "message": "Merge branch 'jdk8support' of github.com:rzwitserloot/lombok into jdk8support"
+        },
+        {
+            "hash": "95cf815285ee736d3bc8119773139cb4fe0c1fb4",
+            "message": "replaced double underscore as new standard way of writing the dummy annotation for onX instead of single underscore, which emits warnings on javac8+.\n\nAlso made dollars and Xes legal in addition to underscores, in case double underscore disappears later too."
+        },
+        {
+            "hash": "df69425550d55da3de07f922fced3872432cd9d3",
+            "message": "position now set for all code generated by javac handlers;\nthis also solves the AssertionError in the Bits class on javac8-ea."
+        },
+        {
+            "hash": "9ed14b8cbf8beb209f0d63e69e472bf81efe1d35",
+            "message": "added Flags.PARAMETER to all the parameters we generate in javac."
+        },
+        {
+            "hash": "d0d2dd6f5d1b9bd33e9e127f8d66b3387f487271",
+            "message": "Some work on actually making lombok work on JDK8's javac."
+        },
+        {
+            "hash": "4dbe3802fda3b317bb82bca80d7c69f58b239cfd",
+            "message": "more progress. This one is less JDK8 compatible, but\nit has major refactorings to make JDK6-8 support\npossibly with much prettier code."
+        },
+        {
+            "hash": "e2af5ed0c7786e01bec861f21f2e5ec3bc5ea33f",
+            "message": "experiment: Can we wrap TreeMaker and remove a heck of a lot of opportunity to program handlers that are not cross javac6-8 compatible?"
+        },
+        {
+            "hash": "1b4d8669c48af215c38a73f6dfd15741619a1c45",
+            "message": "A source file with just @Getter in it now compiles in javac8, but there is still a looooong way to go."
+        },
+        {
+            "hash": "45697b50816df79475a8bb69dc89ff68747fbfe6",
+            "message": "Merge branch 'master' into jdk8. Also added some major fixes whilst merging.\n\nConflicts:\n\tsrc/core/lombok/javac/handlers/JavacHandlerUtil.java\n\tsrc/utils/lombok/javac/CommentCatcher.java\n\tsrc/utils/lombok/javac/Javac.java"
+        },
+        {
+            "hash": "4c03e3d220900431085897878d4888bf530b31ec",
+            "message": "Type fixes for JDK7"
+        },
+        {
+            "hash": "172202add2d0cb63e5b0780e7e3fc6000e43a3d9",
+            "message": "Some small fixes for Java 7"
+        },
+        {
+            "hash": "2658b1ba42001e62e8ffd57702ba915602c04224",
+            "message": "Fixed small typo"
+        },
+        {
+            "hash": "0b100f22071236907142e4c0fb85ffa50102818d",
+            "message": "Refactored out references to TypeTags.\n\nInstead they are retrieved\ndynamically, with a pinch of caching during runtime. We already had some\nfixes to make sure that compile time constanst were not inlined, but we\nneed to take into account that a lot of the Integer-based enums have\nbeen replaced with actual enums.\n\nAlso, certain TreeMaker methods needed to be invoked dynamically with\nreflection.\n\nThis needs to be reviewed, and if it turns out that these changes are too\ndramatic, we should fork out a larger part of our code for specific JVM\nversions."
+        },
+        {
+            "hash": "4be46113e81292a88cd5fdb3a5ce18fbcffd570d",
+            "message": "Compiler options can now be specified for JDK 8 or JDK 6/7 or lower.\n\nAfter this was finalized I realize that we might consider moving entirely\nto String based options, instead of inferring the options from the\nprovided enum. This setup does have the benefit of throwing exceptions when\noptions are not present."
+        },
+        {
+            "hash": "12771880260d57209afcda15fd2b00f3181c38a6",
+            "message": "Added switch to CommentsCatcher. Assumption, until proven otherwise is\nthat JDK8 behaves similar to JDK7."
+        },
+        {
+            "hash": "8bb1542acb4e0c3a10396babe265b16a5e9d0dfd",
+            "message": "Test setup for JDK8 support.\n\nOnly Oracle provides builds for JDK8 atm, and there is no OpenJDK\nbuild, so the setup is slightly different. Files have to be copied\nmanually from an installed JDK. For comparison purposes, an Oracle JDK7\noption has been added too. This should be removed before merging to master."
+        },
+        {
+            "hash": "1eaaf3e276833d163f39eb06af32e678e2a7ed89",
+            "message": "Merge branch 'jdk8support' of github.com:rzwitserloot/lombok into jdk8support"
+        },
+        {
+            "hash": "3619f889f5088ccb08245c2c3d7bc6e4459337d5",
+            "message": "To quote Reinier paraphrasing the compiler: \"If the loading doesn't work, I don't want it!\""
+        }
+    ],
+    "issues": [
+        {
+            "number": "588",
+            "title": "New @Builder feature does not use the @Accessors(prefix=..) when building fluent api"
+        }
+    ]
+}

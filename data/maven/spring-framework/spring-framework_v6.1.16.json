@@ -1,0 +1,162 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.16",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 21,
+    "start_delay": 0.0,
+    "duration": 27.846377314814816,
+    "commits_info": [
+        {
+            "hash": "6badc81d91cff77876089aa6dc1596178c3ed69a",
+            "message": "Release v6.1.16"
+        },
+        {
+            "hash": "0976d1a2521b1a35b17300644b65b201f48272e8",
+            "message": "Upgrade to RxJava 3.1.10 and Checkstyle 10.20.2"
+        },
+        {
+            "hash": "2c0ce790d86c3829c592549368974fc16c15626f",
+            "message": "Avoid deprecated ListenableFuture name for internal class"
+        },
+        {
+            "hash": "d512aafc36d0c194e755759f60550d0efe40e212",
+            "message": "Avoid javadoc references to deprecated types/methods\n\n(cherry picked from commit 68997d84162f9fdfccb17c23006f3c4f0620a993)"
+        },
+        {
+            "hash": "faa000f330786357cc702758166b9b9a9a161242",
+            "message": "Log alias removal in DefaultListableBeanFactory\n\nPrior to this commit, information was logged when a bean definition\noverrode an existing bean definition, but nothing was logged when the\nregistration of a bean definition resulted in the removal of an alias.\n\nWith this commit, an INFO message is now logged whenever an alias is\nremoved in DefaultListableBeanFactory.\n\nCloses gh-34070\n\n(cherry picked from commit 41d9f21ab97b8cda9c3b740fc10b677c4d27fb50)"
+        },
+        {
+            "hash": "daf1b3d7a74124f1f8445192ffbdc6ff16b9f606",
+            "message": "Remove unnecessary downcast to DefaultListableBeanFactory\n\nSee gh-33920\nSee gh-25952"
+        },
+        {
+            "hash": "a48897a24136524a58b84a6c36b19f0bbd6a433f",
+            "message": "Log provider setup failure at info level without stacktrace\n\nCloses gh-33979\n\n(cherry picked from commit 3e3ca7402012d4ad893958f7639579b4b3c69373)"
+        },
+        {
+            "hash": "7ffa12f90f2dc4ec07a3fec800c9c0de1d3e0eda",
+            "message": "Upgrade to Reactor 2023.0.13\n\nCloses gh-34049"
+        },
+        {
+            "hash": "0e74ffa1448138a8bb74a062774ec8c517e2d4ab",
+            "message": "Start building against Reactor 2023.0.13 snapshots\n\nSee gh-34049"
+        },
+        {
+            "hash": "357195289dcddf75065158f408a26a786a72e427",
+            "message": "Unit test for match against unresolvable wildcard\n\nSee gh-33982"
+        },
+        {
+            "hash": "4fbca99f202bfbc932d6d0eaff025e750c4833c5",
+            "message": "Remove unnecessary HandshakeHandlerRuntimeHints\n\nThose hints are not needed anymore as of Spring Framework 6.1.\nBackport of gh-34032.\n\nCloses gh-34033"
+        },
+        {
+            "hash": "c48ca5151f972908caa6a193dac9af9c09cc314c",
+            "message": "Upgrade to Gradle 8.11.1"
+        },
+        {
+            "hash": "aaf2e8fbe666e3e5f053d355856c0a4aa6cbae64",
+            "message": "Polishing\n\n(cherry picked from commit edf7f3cd43514cd27925c14c5425996b79627256)"
+        },
+        {
+            "hash": "3635ff0c17a2e4163007b42c754ba461a3acdf8a",
+            "message": "Consistent fallback to NoUpgradeStrategyWebSocketService\n\nCloses gh-33970\n\n(cherry picked from commit 58c64cba2cd4eeced72b874f8bc0f384e41e24f1)"
+        },
+        {
+            "hash": "f20e76e2270383ae4177ac9fb5a03d0644511622",
+            "message": "Upgrade to Undertow `2.3.18.Final`\n\nCloses gh-33976"
+        },
+        {
+            "hash": "dd32f951925c8aabd03ce01bc7ee4f076fd5710f",
+            "message": "Dispatch in UndertowHttpHandlerAdapter\n\nThis ensures that the reactive handling of the request is dispatched\nfrom the Undertow IO thread, marking the exchange as async rather than\nending it once the Undertow `handleRequest` method returns.\n\nSee gh-33885\nCloses gh-33969"
+        },
+        {
+            "hash": "75a920bc9fab9f340f8b8de7ca06f165d40164c5",
+            "message": "Fix a typo in the filters documentation\n\nBackport of gh-33959\nCloses gh-33971"
+        },
+        {
+            "hash": "92874adae9604e7b318cd19879b707f8093de7f5",
+            "message": "Polish SpEL documentation\n\n(cherry picked from commit 7196f3f5548640a29c0bcf30060d52d1dbdc03d3)"
+        },
+        {
+            "hash": "55167b7f50a816eaefb3eb30e274fe6a4a74e65f",
+            "message": "Fix SpEL examples in reference guide\n\nCloses gh-33907\n\n(cherry picked from commit a12d40e10b3dab11b1b5dec37d924f4ff8611a28)"
+        },
+        {
+            "hash": "3129afba1982a9d16c56967f88150cf0d1287e6e",
+            "message": "Upgrade to Gradle 8.11\n\nCloses gh-33895\n\n(cherry picked from commit bb32df0a066d3e8bb16adc4966599330b504037f)"
+        },
+        {
+            "hash": "1366d2926b924e3c8c70679cb3535ac8c13eff7e",
+            "message": "Upgrade to antora-ui-spring version 0.4.18\n\nCloses gh-33892\n\n(cherry picked from commit fe8573c0abb6b5fda6c540bcc51829a101553e3e)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "34070",
+            "title": "Log alias removal in `DefaultListableBeanFactory`"
+        },
+        {
+            "number": "33920",
+            "title": "Regression in duplicate beans with different method names"
+        },
+        {
+            "number": "25952",
+            "title": "@Component not picked up by @ComponentScan if it has the same simple name as the main class"
+        },
+        {
+            "number": "33979",
+            "title": "OptionalValidatorFactoryBean suppresses Hibernate Validator configuration failures too much"
+        },
+        {
+            "number": "34049",
+            "title": "Upgrade to Reactor 2023.0.13"
+        },
+        {
+            "number": "33982",
+            "title": "`ApplicationListener` no longer invoked for generic `ApplicationEvent` with 6.2.0"
+        },
+        {
+            "number": "34032",
+            "title": "Remove unnecessary `HandshakeHandlerRuntimeHints`"
+        },
+        {
+            "number": "34033",
+            "title": "Remove unnecessary `HandshakeHandlerRuntimeHints`"
+        },
+        {
+            "number": "33970",
+            "title": "HandshakeWebSocketService assumes jakarta websocket is present"
+        },
+        {
+            "number": "33976",
+            "title": "Upgrade to Undertow `2.3.18.Final`"
+        },
+        {
+            "number": "33885",
+            "title": "Update UndertowHttpHandlerAdapter to dispatch"
+        },
+        {
+            "number": "33969",
+            "title": "Update UndertowHttpHandlerAdapter to dispatch"
+        },
+        {
+            "number": "33971",
+            "title": "Fix a typo in the filters documentation"
+        },
+        {
+            "number": "33907",
+            "title": "SpEL documentation contains syntax errors"
+        },
+        {
+            "number": "33895",
+            "title": "Upgrade to Gradle 8.11"
+        },
+        {
+            "number": "33892",
+            "title": "Upgrade to `antora-ui-spring` version 0.4.18"
+        }
+    ]
+}

@@ -1,0 +1,554 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 98,
+    "start_delay": 0.0,
+    "duration": 63.75582175925926,
+    "commits_info": [
+        {
+            "hash": "c9a55a34ce6912bbdb581e92d818c4a340f8bc83",
+            "message": "Release v5.3.11"
+        },
+        {
+            "hash": "0705454ce012b6390ba50744f59a98223c0464a6",
+            "message": "Fix typo in Javadoc\n\nSee gh-27484"
+        },
+        {
+            "hash": "a178bbe86fb4ef408e5b43f6789f9e8e4cc54b86",
+            "message": "DefaultResponseErrorHandler shows full error details\n\nCloses gh-27552"
+        },
+        {
+            "hash": "fcf4315e020c9d76ed66e1a4fea4ee908fd563ec",
+            "message": "Indent with tabs instead of spaces"
+        },
+        {
+            "hash": "89c7797ffbe2f50c4087a9ada1ebf2fbd10462d9",
+            "message": "Commit in DatabasePopulatorUtils if Connection has auto-commit=false\n\nPrior to this commit, DatabasePopulatorUtils.execute(...) did not\nperform a commit for the current Connection. This works for most use\ncases; however, when DatabasePopulatorUtils is used to execute\ninitialization scripts without a managed transaction -- for example,\nvia a DataSourceInitializer configured as a bean in the\nApplicationContext or via Spring Boot configuration in\napplication.properties -- if the underlying database is configured with\nauto-commit=false, the results of executing the SQL scripts are not\ncommitted to the database which can lead to data being silently lost.\n\nThis commit addresses this issue by committing the Connection for the\nsupplied DataSource if the connection is not configured for auto-commit\nand is not transactional. Existing use cases running with a managed\ntransaction should therefore not be affected by this change.\n\nCloses gh-27008"
+        },
+        {
+            "hash": "4dac8339ffb4705554458bf2c32d81fc16b61f43",
+            "message": "Filter non-existing static resource locations\n\nSame as a2c52a97babdb927d809ad55c696c42d160d4fff, on the WebFlux side.\n\nSee gh-27538"
+        },
+        {
+            "hash": "0436dd04bff89670a0e307e7183220b04f97878a",
+            "message": "Correctly handle coroutine with ResponseEntity\n\nResponseEntityResultHandler nests correctly, only once for the ResponseEntity,\nwhen there is a Mono adapted from a Kotlin Continuation.\n\nCloses gh-27292"
+        },
+        {
+            "hash": "1e3996ea78f8540217037ebad8899ee9b6c9cab9",
+            "message": "Upgrade SmallRye Mutiny to 1.1.1\n\nCloses gh-27555"
+        },
+        {
+            "hash": "50b92118a966af79718dcf7b14d541b4dc13bf73",
+            "message": "Include correct keyword in CookieAssertions failure messages\n\nCloses gh-27550"
+        },
+        {
+            "hash": "b1c7f7d12732d820b144781c919351d933995424",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0f36569d75b814a43b081d5a8036534fc1090d62",
+            "message": "Remove dead fallback code"
+        },
+        {
+            "hash": "2cbba0923b17af2e29e7a8e99fa737279d11e832",
+            "message": "Upgrade to Netty 4.1.69, Jetty 9.4.44, Kotlin 1.5.31"
+        },
+        {
+            "hash": "800922266ab46c20cadd41dabfd3a4bce97ee3e0",
+            "message": "Upgrade to Reactor 2021.0.12\n\nCloses gh-27527"
+        },
+        {
+            "hash": "eda3ca5fbc3520f22cecd726e211dca053a8cb99",
+            "message": "Remove unnecessary final declarations at method level"
+        },
+        {
+            "hash": "e4934a90ebf22adfde31a8e44b32d88cae5ed7c1",
+            "message": "Use TriggerContext's Clock instead of new Date()\n\nCloses gh-27546"
+        },
+        {
+            "hash": "715f300fa11e4c20a7aaa9f9ac8439fc4072b00b",
+            "message": "Avoid expensive isReadable() check during classpath scan\n\nCloses gh-25741\nSee gh-21372"
+        },
+        {
+            "hash": "b53275f2d2344ce3ad52dfbd7be7183fbb093789",
+            "message": "Add efficient existence check to ClassPathResource.isReadable()\n\nIncludes reduced isReadable() check in PathResourceLookupFunction, aligned with PathResourceResolver.\n\nCloses gh-27538\nSee gh-21372"
+        },
+        {
+            "hash": "1490d27d7581e3741a10252d9ed0bdb81a8dbf34",
+            "message": "Decouple urlResourceWithCharset test from existence of tmp directory\n\nSee gh-25738"
+        },
+        {
+            "hash": "a2c52a97babdb927d809ad55c696c42d160d4fff",
+            "message": "Filter non-existing static resource locations\n\nSee gh-27538"
+        },
+        {
+            "hash": "5bd90538b32a84fd84026bceeae17b901cc39910",
+            "message": "Introduce test for gh-27499 and polish contribution"
+        },
+        {
+            "hash": "50ccb1bfcd93318508ec656e2cfe513b2e2bc6d2",
+            "message": "Avoid duplicate JCacheOperationSource bean registration in <cache:annotation-driven />\n\nIn our application we use XML context and <cache:annotation-driven />\ndeclaration. Also we disable bean definition duplication by setting\nGenericApplicationContext.setAllowBeanDefinitionOverriding(false) in an\nApplicationContextInitializer. This combination leads to a\nBeanDefinitionOverrideException because the\nDefaultJCacheOperationSource bean is registered twice.\n\n - once for: parserContext.getReaderContext().registerWithGeneratedName(sourceDef);\n - once for: parserContext.registerBeanComponent(new BeanComponentDefinition(sourceDef, sourceName));\n\nThis commit refactors JCacheCachingConfigurer.registerCacheAspect(...)\nso that the JCacheOperationSource bean is registered only once.\n\nCloses gh-27499"
+        },
+        {
+            "hash": "83eac9af187c0151bf8039f1827649a8c3ca588f",
+            "message": "Upgrade CI to github-release resource 1.5.5\n\nCloses gh-27459"
+        },
+        {
+            "hash": "eb07dea7958b0314fc79ea4f4b5e8ce710c169ef",
+            "message": "Polish contribution\n\nSee gh-27544"
+        },
+        {
+            "hash": "114fa47171e666cfd2214cf436f99c267b6a2d7d",
+            "message": "Use Arrays.hashCode() in ByteArrayResource.hashCode()"
+        },
+        {
+            "hash": "63fac1b7c871ce3c8129baf12705ee8e15a01f5c",
+            "message": "Allow default CacheAwareContextLoaderDelegate configuration via system property\n\nPrior to this commit, the default CacheAwareContextLoaderDelegate could\nbe configured by extending AbstractTestContextBootstrapper and\noverriding getCacheAwareContextLoaderDelegate(); however, this required\nthat the user configure the custom TestContextBootstrapper via\n@BootstrapWith.\n\nThis commit introduces a new\n\"spring.test.context.default.CacheAwareContextLoaderDelegate\" property\nthat can be configured via a JVM system property or via the\nSpringProperties mechanism. BootstrapUtils uses this new property to\nload the default CacheAwareContextLoaderDelegate. If the property is\nnot defined, BootstrapUtils will fall back to creating a\nDefaultCacheAwareContextLoaderDelegate as it did previously.\n\nThis allows third parties to configure the default\nCacheAwareContextLoaderDelegate transparently for the user -- for\nexample, to intercept context loading in order to load the context in a\ndifferent manner -- for example, to make use of ahead of time (AOT)\ntechniques for implementing a different type of ApplicationContext at\nbuild time.\n\nCloses gh-27540"
+        },
+        {
+            "hash": "e8f6cd10a543d4f03da8e8a9750091ec9291e703",
+            "message": "Apply value formatting to resolved exceptions"
+        },
+        {
+            "hash": "47b8e8d528e150fe595b33101daee7b9f2c1d9c6",
+            "message": "Upgrade to Mockito 4"
+        },
+        {
+            "hash": "bdfd983bb4d855218f2c07d40ddd33d754559fdb",
+            "message": "Fix example code formatting in @EnableWebMvc"
+        },
+        {
+            "hash": "87aaf5049b81bce2a8bbb37e7aef69128f79a1e5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4b01370f54f284f377d2c3dbc725a886fa105e97",
+            "message": "UriTemplateRequestEntity overrides equals/hashCode\n\nCloses gh-27531"
+        },
+        {
+            "hash": "b6111d04a5453a1e75840c53ad6f38eb7314138a",
+            "message": "Ensure WebClientResponseException for malformed response\n\nCloses gh-27262"
+        },
+        {
+            "hash": "9bd989f1bbf596c44b818b8979f5132b8cda0d1b",
+            "message": "WebClient tests for socket and response format issues\n\nAdded test case for malformed response chunk, which is\nnow failing as expected.\n\nSee gh-27262"
+        },
+        {
+            "hash": "d5597a75a670becc508f6a4f7560a9ef40e70e94",
+            "message": "Start building against Reactor 2020.0.12 snapshots\n\nSee gh-27527"
+        },
+        {
+            "hash": "90fdcf88d832eb6d8f635d3aa727c762b273845b",
+            "message": "Generalize formatValue\n\nProvide an overload for additional control and compact output."
+        },
+        {
+            "hash": "5d3b16cd3a5e7915f4aeeb37c5285ac7e173f6f2",
+            "message": "Indent with tabs instead of spaces"
+        },
+        {
+            "hash": "41ae9632d1ede2ceafbcb727166b6d6b6d4ab490",
+            "message": "Upgrade to Checkstyle 9.0 and spring-javaformat 0.0.29\n\nThis commit upgrades the Gradle build to use Checkstyle 9.0 and\nspring-javaformat 0.0.29 (which internally uses Checkstyle 8.45.1).\n\nCloses gh-27520"
+        },
+        {
+            "hash": "47b0da6b257dbe47f95e7ee3e7a55ef57e5641de",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c99210c01fa080758ce1e7b312a8b184dce1d7a6",
+            "message": "Propagate Reactor Context when using FluxSink\n\nThis commit makes sure that the Reactor context from a given mono or\nflux is propagated to the Flux returned by a FluxSink. This change\naffects both DataBufferUtils::write and internal classes used by the\nDefaultPartHttpMessageReader.\n\nCloses gh-27517"
+        },
+        {
+            "hash": "7b9848a352b0403d59fdeabeb6dc6e4ee043c1a6",
+            "message": "Replace deprecated Reactor Context related methods"
+        },
+        {
+            "hash": "0e834660237459069e3bc929bb5062664fa0d51b",
+            "message": "Reference Hamcrest Javadoc via javadoc.io\n\nDue to an SSL/TLS issue with hamcrest.org, the Dokka task fails with the\nfollowing.\n\n> Failed to download package-list from https://hamcrest.org/JavaHamcrest/javadoc/2.1/package-list,\n> this might suggest that remote resource is not available, module is\n> empty or dokka output got corrupted\n\nSee: https://github.com/hamcrest/JavaHamcrest/issues/280\n\nAs a workaround, this commit switches to javadoc.io to reference the\nHamcrest Javadoc APIs."
+        },
+        {
+            "hash": "48a507a99376165eebc020c2f61bbe412325f64c",
+            "message": "Clean up warnings"
+        },
+        {
+            "hash": "be3bc4c16440795368252dc2030d68b1a2c58164",
+            "message": "Comment out unused fudgeFactor"
+        },
+        {
+            "hash": "e68219c1acf6f3e3b49faa4e0b49eb02465b2e13",
+            "message": "ResponseStatusExceptionHandler logs exception message only\n\nNo need to log the full exception for a resolved exception, and as the\ncomment suggests that it mirrors Spring MVC equivalent, which also\nlogs the message only."
+        },
+        {
+            "hash": "151852b164e990dbff29235ef1bc010a3da0d723",
+            "message": "Upgrade to GitHub Changelog Generator 0.0.7 in CI\n\nCloses gh-27512"
+        },
+        {
+            "hash": "49427b0c3c7e0d1329b0fe85514d9807ee2f6001",
+            "message": "Upgrade to Apache Johnzon 1.2.14, Vavr 0.10.4, WebJars Locator 0.48, HtmlUnit 2.53"
+        },
+        {
+            "hash": "bf373c5065fc5b561b385365cb01a9eb27621e9e",
+            "message": "Skip all flaky StopWatch time assertions"
+        },
+        {
+            "hash": "678fd8344ea52702659bf47156a58f7883bd5d0e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f632165dec5df566f2ccac6350d9c67ac63106c4",
+            "message": "Invoke bean-derived (Auto)Closeable.close() method directly\n\nCloses gh-27504"
+        },
+        {
+            "hash": "fd11789db90de09e0edd906d6ad78189df895e22",
+            "message": "Polish JSR-107 caching ref docs"
+        },
+        {
+            "hash": "d6ec6f0fe9f50ff2241229a9972a8649ad2dead5",
+            "message": "Remove remark about missing caching API."
+        },
+        {
+            "hash": "7311ae19be835816534a5c18bd8a948d26143ded",
+            "message": "Fix build by disabling linking to JUnit 5.8.1 Javadoc\n\nThe `package-list` file no longer exists at\nhttps://junit.org/junit5/docs/5.8.1/api/, due to the following commit.\n\nhttps://github.com/junit-team/junit5/commit/67ad4e545518b0ce2b0e7c96df31a669866d5003"
+        },
+        {
+            "hash": "f0aa4f4857fbe197c162c9639d24d5bb460eb8f7",
+            "message": "Escape closing curly braces in regular expressions for Android support\n\nPR gh-24470 introduced a regression for Android users by no longer\nescaping closing curly braces in regular expressions.\n\nThis commit therefore partially reverts the changes made in 273812f9c5\nfor closing curly braces (`}`).\n\nCloses gh27467"
+        },
+        {
+            "hash": "f64f07049d4427909251b016c4ed6c152f3368a4",
+            "message": "Upgrade to SLF4J 1.7.32"
+        },
+        {
+            "hash": "24bcb52b2f08aae987cb1d2da14d2436a56a29e6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4f44ae3f282b72d7051a2ac67ec5b001ebd9e884",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a295a28e4be9dbace211f278ffec309e91a96f86",
+            "message": "Defensively handle fast class generation failure for individual methods\n\nIncludes rethrowing of last actual defineClass exception encountered.\n\nCloses gh-27490"
+        },
+        {
+            "hash": "bfa01b35df42c526253866a4b601e8be83746a4b",
+            "message": "Polishing\n\nSee gh-27488"
+        },
+        {
+            "hash": "388c8e4aa508798e2fcc170a67fc47c7932dc307",
+            "message": "Make sure that MediaType comparators are transitive\n\nPrevious to this commit, the specificity and quality comparators\n(used by MediaType::sortByQualityValue and MediaType::sortBySpecificity)\ncould result in IllegalArgumentExceptions when used for sorting.\nThe underlying reason was that the comparators were not transitive, and\nboth media types with the same type, and types with the same amount of\nparameters, would be considered identical by the comparator (result 0).\n\nThis commit ensures that the comparators are transitive.\n\nCloses gh-27488"
+        },
+        {
+            "hash": "96e4d3a53079f373de16b2754d1a5eee32d9ee2c",
+            "message": "Fail Gradle build for Javadoc warnings\n\nIn order to catch Javadoc errors in the build, we now enable the\n`Xwerror` flag for the `javadoc` tool. In addition, we now use\n`Xdoclint:syntax` instead of `Xdoclint:none` in order to validate\nsyntax within our Javadoc.\n\nThis commit fixes all resulting Javadoc errors and warnings.\n\nThis commit also upgrades to Undertow 2.2.12.Final and fixes the\nartifact names for exclusions for the Servlet and annotations APIs.\n\nThe incorrect exclusion of the Servlet API resulted in the Servlet API\nbeing on the classpath twice for the javadoc task, which resulted in the\nfollowing warnings in previous builds.\n\njavadoc: warning - Multiple sources of package comments found for package \"javax.servlet\"\njavadoc: warning - Multiple sources of package comments found for package \"javax.servlet.http\"\njavadoc: warning - Multiple sources of package comments found for package \"javax.servlet.descriptor\"\njavadoc: warning - Multiple sources of package comments found for package \"javax.servlet.annotation\"\n\nCloses gh-27480"
+        },
+        {
+            "hash": "040445612f157827e7ee199c2d6af55cbd2497bc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "86b010a6b2270d0fb3ff4017ca3e52eb100534d5",
+            "message": "Defensive reference to JNDI API for JDK 9+ (optional `java.naming` module)\n\nCloses gh-27483"
+        },
+        {
+            "hash": "2feedb98ccaad01d9c75073604a9c90956a33afb",
+            "message": "Remove lineSeparator LF requirement (accept LF/CR/CRLF by default)\n\nSee gh-27481"
+        },
+        {
+            "hash": "3be2b32e21ad91b94346a1b9f8cf58fb3ea48ced",
+            "message": "Remove only leading space for SSE data\n\nPrior to this commit, all white space was trimmed from Server Sent Event\ndata. After this commit, only a leading space is removed (if present).\n\nCloses gh-27473"
+        },
+        {
+            "hash": "85bdea6f47ed3654b12d696b6936671d7e6b5a2d",
+            "message": "Fix code formatting in Javadoc\n\nSee gh-27480"
+        },
+        {
+            "hash": "bfdc99ab799f652f33379bf8cc50d0cc5d08fd8a",
+            "message": "Fix Javadoc errors\n\nSee gh-27480"
+        },
+        {
+            "hash": "2567b2094962e7f779a6e85ca1af2a727a521107",
+            "message": "Upgrade to spring-javaformat 0.0.28 and downgrade to Checkstyle 8.41\n\nIn order to be able to use text blocks and other new Java language\nfeatures, we are upgrading to a recent version of Checkstyle.\n\nThe latest version of spring-javaformat-checkstyle (0.0.28) is built\nagainst Checkstyle 8.32 which does not include support for language\nfeatures such as text blocks. Support for text blocks was added in\nCheckstyle 8.36.\n\nIn addition, there is a binary compatibility issue between\nspring-javaformat-checkstyle 0.0.28 and Checkstyle 8.42. Thus we cannot\nuse Checkstyle 8.42 or higher.\n\nIn this commit, we therefore upgrade to spring-javaformat-checkstyle\n0.0.28 and downgrade to Checkstyle 8.41.\n\nThis change is being applied to `5.3.x` as well as `main` in order to\nbenefit from the enhanced checking provided in more recent versions of\nCheckstyle.\n\nCloses gh-27481"
+        },
+        {
+            "hash": "119c78b1c98364b244aaa9e082660b8d559a6c52",
+            "message": "Skip flaky StopWatch time assertions"
+        },
+        {
+            "hash": "d8e18f56e1e0e9395bcac437cb39c0454dcf56da",
+            "message": "Upgrade to Protobuf 3.18, Rome 1.16, BlockHound 1.0.6, Caffeine 2.9.2, Groovy 3.0.9, Tomcat 9.0.53"
+        },
+        {
+            "hash": "211f0bbf885a3d291f45c4a10db6cc5c0243b14f",
+            "message": "Fix invalid characters in source files\n\nCloses gh-27475"
+        },
+        {
+            "hash": "b0c424b37645c79447216e28b85a3da496bb11b5",
+            "message": "Deprecate RxJava 2 in favor of RxJava 3\n\nCloses gh-27474"
+        },
+        {
+            "hash": "9ff0d717f2b0c56ff78701d62c88c1cc82cdce1a",
+            "message": "Restore lenient fallback in case of several non-public constructors\n\nSee gh-27437"
+        },
+        {
+            "hash": "93f8706dd335f03d0bbb044f25c23e71a6a7d81d",
+            "message": "Update docs for ControllerAdvice\n\nIn 5.3 it became possible to handle exceptions from any handler through\nExceptionHandler's in a ControllerAdvice class, but this is not\nmentioned in the docs\n\nSee gh-22619, gh-27338"
+        },
+        {
+            "hash": "e29cfa350106d8811072159748e41a4ef0d0b697",
+            "message": "Polishing"
+        },
+        {
+            "hash": "208fafa4a3b358519eb2005868dee437e28df22a",
+            "message": "Fix contract violations in ConcurrentReferenceHashMap's EntrySet/Iterator\n\nCloses gh-27454"
+        },
+        {
+            "hash": "5cbc972a0de195ebb09645f65a1dea8fb85880c9",
+            "message": "Log rejected listener container tasks at warn level\n\nCloses gh-27451"
+        },
+        {
+            "hash": "58898de5429c43ae676a7643fcd20d684af1c9ec",
+            "message": "Provide accessors for externallyManagedConfigMembers and Init/DestroyMethods\n\nCloses gh-27449"
+        },
+        {
+            "hash": "f9d63e7bb1acaa4c752ab73a53513c08e3817021",
+            "message": "BeanUtils.getResolvableConstructor falls back to single non-public constructor\n\nCloses gh-27437"
+        },
+        {
+            "hash": "134c0e29167e3d80b7cc3e94ac39691f08e2cc07",
+            "message": "Upgrade to JUnit 5.8.1\n\nCloses gh-27450"
+        },
+        {
+            "hash": "1f8c233dfcef62781467cbb58a774933208f94cf",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0dc5d2794fa6716f26c228a8cef8aa60a8d4a4ae",
+            "message": "Avoid early ConversionService determination in StandardBeanExpressionResolver\n\nCloses gh-27446"
+        },
+        {
+            "hash": "49d003857d1dc98e5f1fa0274e9e5eb6b09a2f78",
+            "message": "Skip CGLIB class validation in case of optimize flag\n\nCloses gh-27439"
+        },
+        {
+            "hash": "eabe946a5385b690228c1141bad3fc131ac7f1b3",
+            "message": "Skip readStream optimization for compatibility with misbehaving InputStreams\n\nCloses gh-27429"
+        },
+        {
+            "hash": "09a1b87d37d074ee1ed96bf6a71ccab44018db0b",
+            "message": "About notes about AJDT and Kotlin not supported in Eclipse 4.21\n\nSee gh-27407"
+        },
+        {
+            "hash": "34abc8f5779e227e52ac6a7c9711564bc7a2bb14",
+            "message": "The Kotlin plugin is no longer required for development in Eclipse\n\nAs documented, it's only required if you with to run Kotlin tests or\ndevelop Kotlin extensions.\n\nSee gh-27407"
+        },
+        {
+            "hash": "b0dceb484acf1c190421519a47463c7c59268d1a",
+            "message": "Remove Eclipse Web Tools Platform (WTP) configuration\n\nSince the team no longer needs the ability to treat Eclipse projects as\nWTP modules, this commit removes the obsolete custom WTP configuration\nfor importing projects into Eclipse IDE.\n\nSee gh-27407"
+        },
+        {
+            "hash": "65c1eac11531bc3ee32f580b6c1ff5fa189444b1",
+            "message": "Fix formatting in Eclipse/STS Project Import Guide\n\nSee gh-27407"
+        },
+        {
+            "hash": "a37dde9a1cdc0fcd1151def147f1b02651af9928",
+            "message": "Revise Eclipse/STS Project Import Guide based on status quo\n\nSee gh-27407"
+        },
+        {
+            "hash": "28496059bca970fddf5591a3dba8533166b4aaf3",
+            "message": "Make TestNG test methods public due to bug in TestNG TestEngine\n\nThis commit makes all test methods in our TestNG test classes public\ndue to the following bug in the TestNG engine for the JUnit Platform.\n\nhttps://github.com/junit-team/testng-engine/issues/16\n\nSee gh-27407"
+        },
+        {
+            "hash": "40c51efee806fbb36de4f3337d76c36cb31aac65",
+            "message": "Introduce @Suite for TestNG tests\n\nIn order to allow developers to execute TestNG tests in Eclipse IDE\nwithout installing the TestNG plugin for Eclipse, this commit introduces\na JUnit Platform @Suite class that can be executed within the IDE.\n\nSee gh-27407"
+        },
+        {
+            "hash": "e439d6f64da2d616f2c6345444b1c7dd5640801b",
+            "message": "Upgrade to AssertJ 3.21.0"
+        },
+        {
+            "hash": "e29867b96e835a53d0222ad666273b5e93c800a6",
+            "message": "Exclude TestCase classes in spring-test build\n\nWhen not excluded, TestNG will pick up nested TestCase classes and run\nthem.\n\nThis commit therefore filters out `*TestCase` test classes from the\nbuild since these are not intended to be executed with the build.\n\nSee gh-27406"
+        },
+        {
+            "hash": "0b552a3534e080ca842c7f08a9950233ce56e72e",
+            "message": "Migrate to TestNG Engine for the JUnit Platform in spring-test\n\nPrior to this commit, we had configured separate test tasks for JUnit\nand TestNG. In addition, we configured a standard `test` task that\ndepended on the `junit` and `testNG` tasks, and we had an additional\n`aggregateTestReports` task that aggregated the reports from the JUnit\nand TestNG test tasks.\n\nThanks to the introduction of the \"TestNG Engine for the JUnit\nPlatform\", this commit simplifies our Gradle build in the spring-test\nmodule by running JUnit 4, JUnit Jupiter, and TestNG tests on the JUnit\nPlatform in a single Gradle `test` task.\n\nSee gh-27406"
+        },
+        {
+            "hash": "a50537fbaf3f6067071de5bcafa6052d1ac564fd",
+            "message": "Polish \"Fix collectionToDelimitedString failure for null elements.\"\n\nFixes gh-27419"
+        },
+        {
+            "hash": "0d6cc122744df002e35f0788eab28bbd492c46ed",
+            "message": "Fix collectionToDelimitedString failure for null elements.\n\nPrior to this commit, calling `StringUtils#collectionToDelimitedString`\nwould fail with an NPE if the collection contains null elements.\n\nThis commit ensures that null elements are converted as `\"null\"` in the\nresulting String without failure.\n\nSee gh-27419"
+        },
+        {
+            "hash": "008aa48d5c97b5f5969662f9cab5b0b7594cf1b5",
+            "message": "Fix formatting for SQL `IN` clause example in ref docs\n\nSee gh-27388"
+        },
+        {
+            "hash": "00eef79e5c29d953eb5c9a225ca31f5680952b00",
+            "message": "Upgrade to JApicmp Gradle Plugin 0.3.0\n\nFixes gh-27414"
+        },
+        {
+            "hash": "7907478d363ebf331b9e3c84adf3b3fec91bd594",
+            "message": "Watch 5.3.x branch in the CI pipeline\n\nMain branch has moved to the 6.0.x line, so this commit updates this CI\npipeline to the new 5.3.x maintenance branch."
+        },
+        {
+            "hash": "c7cca2e8790509a56eac422fdd7515ea56a4dc5d",
+            "message": "Next development version (v5.3.11-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27552",
+            "title": "Enhance DefaultResponseErrorHandler to allow logging complete error response body"
+        },
+        {
+            "number": "27008",
+            "title": "DatabasePopulatorUtils.execute should commit if the current Connection has auto-commit set to false"
+        },
+        {
+            "number": "27538",
+            "title": "Performance impact of ResourceUrlEncodingFilter on HttpServletResponse#encodeURL"
+        },
+        {
+            "number": "27292",
+            "title": "Spring HATEOAS results in 406 with Kotlin Coroutine and ResponseEntity in WebFlux"
+        },
+        {
+            "number": "27527",
+            "title": "Upgrade to Reactor 2020.0.12"
+        },
+        {
+            "number": "27546",
+            "title": "CronTrigger uses new Date() instead of context's Clock"
+        },
+        {
+            "number": "25741",
+            "title": "Current log level not checked by LogAccessor supplier-enabled logging methods"
+        },
+        {
+            "number": "21372",
+            "title": "ClassPathResource.isReadable() returns true for directory in runnable jar result in download empty file [SPR-16832]"
+        },
+        {
+            "number": "25738",
+            "title": "Optimize ConfigurationClassPostProcessor#enhanceConfigurationClasses method to shorten startup time"
+        },
+        {
+            "number": "27459",
+            "title": "Upgrade CI to github-release resource 1.5.5"
+        },
+        {
+            "number": "27540",
+            "title": "Allow default CacheAwareContextLoaderDelegate configuration via a system property"
+        },
+        {
+            "number": "27531",
+            "title": "UriTemplateRequestEntity doesn't override hashCode() and equals()"
+        },
+        {
+            "number": "27520",
+            "title": "Upgrade to spring-javaformat 0.0.29"
+        },
+        {
+            "number": "27517",
+            "title": "DataBufferUtils.write loses context"
+        },
+        {
+            "number": "27512",
+            "title": "Upgrade to GitHub Changelog Generator 0.0.7 in CI"
+        },
+        {
+            "number": "27504",
+            "title": "Invoke bean-derived (Auto)Closeable.close() method directly"
+        },
+        {
+            "number": "27490",
+            "title": "Proxy generation with Java 17 fails with \"Cannot invoke \"Object.getClass()\" because \"cause\" is null\""
+        },
+        {
+            "number": "27488",
+            "title": "MediaType.sortBySpecificityAndQuality throws java.lang.IllegalArgumentException: Comparison method violates its general contract"
+        },
+        {
+            "number": "27480",
+            "title": "Fail Gradle build for Javadoc warnings"
+        },
+        {
+            "number": "27483",
+            "title": "Defensive reference to JNDI API for JDK 9+ (optional `java.naming` module)"
+        },
+        {
+            "number": "27481",
+            "title": "Upgrade to spring-javaformat-checkstyle 0.0.28 and downgrade to Checkstyle 8.41"
+        },
+        {
+            "number": "27473",
+            "title": "Leading whitespaces are removed while reading SSE response"
+        },
+        {
+            "number": "27475",
+            "title": "Fix invalid characters in source files"
+        },
+        {
+            "number": "27474",
+            "title": "Deprecate RxJava 2 in favor of RxJava 3"
+        },
+        {
+            "number": "27437",
+            "title": "Add support for non-public record declarations"
+        },
+        {
+            "number": "22619",
+            "title": "ExceptionHandlerExceptionResolver should support exceptions from any handler"
+        },
+        {
+            "number": "27338",
+            "title": "If an exception occurs during Pre-Flight request processing, @ExceptionHandler fails to handle it."
+        },
+        {
+            "number": "27454",
+            "title": "ConcurrentReferenceHashMap's entrySet violates the Map contract"
+        },
+        {
+            "number": "27451",
+            "title": "DefaultMessageListenerContainer does not log an error/warning when consumer tasks have been rejected"
+        },
+        {
+            "number": "27449",
+            "title": "Provide accessor on externallyManaged RootBeanDefinition attributes"
+        },
+        {
+            "number": "27450",
+            "title": "Upgrade to JUnit 5.8.1"
+        },
+        {
+            "number": "27446",
+            "title": "Avoid early ConversionService determination in StandardBeanExpressionResolver"
+        },
+        {
+            "number": "27439",
+            "title": "Allow to avoid class validation in `CglibAopProxy` via `ProxyFactory`"
+        },
+        {
+            "number": "27429",
+            "title": "Spring Framework >= 5.3.8 ASM ClassReader fails to parse class file due to InputStream optimization"
+        },
+        {
+            "number": "27407",
+            "title": "Revise Eclipse IDE support"
+        },
+        {
+            "number": "27406",
+            "title": "Migrate to TestNG Engine for the JUnit Platform"
+        },
+        {
+            "number": "27414",
+            "title": "apiDiff task is broken with Gradle 7"
+        }
+    ]
+}

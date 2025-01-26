@@ -1,0 +1,41 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 0.23840277777777777,
+    "commits_info": [
+        {
+            "hash": "052dc799d24a2d27d847e6bad78019364e1b188f",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "24d8a554ea4654fc82d21d931e6bb8a8433ef45a",
+            "message": "Updated CHANGES.txt"
+        },
+        {
+            "hash": "d721e36eccfbf1deb2dd558e80856e9ac82a6a11",
+            "message": "Made some small fixes for MinGW and for C++20 with GCC\n\nOur use of constinit does not seem to work with GCC yet (see\nhttps://github.com/protocolbuffers/protobuf/issues/8310), so this\ncommit disables it on GCC for now.\n\nThis commit also updates mutex.h to work around the fact that MinGW's\nstd::mutex apparently does not have a constexpr constructor. We already\nhave this kind of workaround for MSVC, so we can just use the same\nworkaround."
+        },
+        {
+            "hash": "b12ab0cf53f87aa7c83758564b963c85f5ff3159",
+            "message": "Merge pull request #8320 from haberman/ruby-duration-fix\n\n[Ruby] Fix for truncating behavior when converting Float to Duration."
+        },
+        {
+            "hash": "3b3aac95a6e39c94530e601df832b0de267445be",
+            "message": "[Ruby] Fix for truncating behavior when converting Float to Duration."
+        },
+        {
+            "hash": "256f1327ea456da5728b116e9e80ec73baeb2066",
+            "message": "[Ruby] Bugfix for Message.[] for repeated or map fields."
+        },
+        {
+            "hash": "4f961c8a700a5fd7d02766a644e577f3b8fa5d8a",
+            "message": "Merge pull request #8313 from haberman/ruby-crash-fix\n\n[Ruby] Bugfix for Message.[] for repeated or map fields."
+        }
+    ],
+    "issues": []
+}

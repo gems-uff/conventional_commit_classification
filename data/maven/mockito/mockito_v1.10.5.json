@@ -1,0 +1,70 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.10.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 8.029861111111112,
+    "commits_info": [
+        {
+            "hash": "4d987dcd923b81525c42b1333e6c4e07440776c3",
+            "message": "Moved the new MockitoJUnitRule to 'junit' package."
+        },
+        {
+            "hash": "bc5349d3e90f127e3fdeb0cf1debbc70eba21992",
+            "message": "JUnit @Rule implementation added\n\nFixes #85"
+        },
+        {
+            "hash": "448f63a153c69054383a1e7bed53b78ad7d76b0b",
+            "message": "Improved the documentation a little bit."
+        },
+        {
+            "hash": "d2354f5e6fd5cdf03dd2e4004d4cdfdc4c9f987f",
+            "message": "C.D. machinery - started documenting the plan for the release automation"
+        },
+        {
+            "hash": "e4d16d09f6b625f60f893e26b5384a96f22cbdb9",
+            "message": "C.D. machinery - avoided shallow fetch of gh-pages\n\nThis way I can test out the machinery on a forked mockito. Without this change, I'm getting \"fatal: git fetch-pack: expected shallow list\" error."
+        },
+        {
+            "hash": "785f4e6123138b211fceb5534d487372d31fa923",
+            "message": "C.D. machinery - reworked the release steps\n\nEnhancement #95\n\n1. Changed the user to be an artificial 'Continuous Delivery Drone' instead of myself.\n2. Added some basic dry-running capabilities (needs more work and tidy-up).\n3. Changed the procedure so that there is only one git push at the end."
+        },
+        {
+            "hash": "f2b997e54c710e71e6667bbdee46d4a88071d618",
+            "message": "C.D. machinery - exposed a method for incrementing versions\n\nThis way, we can increment versions without invoking the task. This is useful for building a release procedure."
+        },
+        {
+            "hash": "7b6b65df7eed6d7eb3c6ec86c51c56cb04fc8e11",
+            "message": "C.D. machinery - simplified the retrieval of bintray github API\n\nThere is no point using a project property API, env. variables for local testing and development work just fine (we have to use env vars anyhow as Travis uses them)."
+        },
+        {
+            "hash": "15ee2bf8beddfd144394a7527b9e6f2958f1bc4a",
+            "message": "Fixed links in notes for older versions [ci skip]"
+        },
+        {
+            "hash": "03390840071838ed1488dcf0eafa05b56b19527c",
+            "message": "Updated the commit numbers for 1.10.0 [ci skip]"
+        },
+        {
+            "hash": "b7d3e760b3ccd6cf60630642760f8df0ee7a8465",
+            "message": "Added a TODO [ci skip]"
+        },
+        {
+            "hash": "95a5ca11d6ea5025bc1ab98502b8ff2a655fc2cb",
+            "message": "Increment version '1.10.4' -> '1.10.5' by Travis CI build 256 [ci skip]"
+        },
+        {
+            "hash": "01e3a3381184e992e4fb57d8689a8bb05c06d30b",
+            "message": "\"Update release notes by Travis CI build 256 [ci skip]\""
+        }
+    ],
+    "issues": [
+        {
+            "number": "95",
+            "title": "Make continuous delivery machinery commits explicit"
+        }
+    ]
+}

@@ -11,63 +11,65 @@
     "commits_info": [
         {
             "hash": "19ab3ea8389d215621b256e055987df204f400e4",
-            "message": "Fixes some mistakes and missing details in documentation (#2889)\n\n- Makes static mock verification and construction initialisers into\r\n  functional interfaces, and adds some missing documentation notes.\r\n- Fixes a number of grammar/spelling typos.\r\n- Replaces an instance of a JavaDoc comment suggesting to use a\r\n  deprecated method with a reference to the suggested replacement.\r\n- Adds a note about supporting chaining of Spy with InjectMocks into\r\n  the InjectMocks documentation",
-            "tag_name": null
+            "message": "Fixes some mistakes and missing details in documentation (#2889)\n\n- Makes static mock verification and construction initialisers into\r\n  functional interfaces, and adds some missing documentation notes.\r\n- Fixes a number of grammar/spelling typos.\r\n- Replaces an instance of a JavaDoc comment suggesting to use a\r\n  deprecated method with a reference to the suggested replacement.\r\n- Adds a note about supporting chaining of Spy with InjectMocks into\r\n  the InjectMocks documentation"
         },
         {
             "hash": "b47bab2970a7f9c782527ed90da2a6668f25409c",
-            "message": "Bump com.diffplug.spotless from 6.13.0 to 6.14.0 (#2888)\n\nBumps com.diffplug.spotless from 6.13.0 to 6.14.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.diffplug.spotless\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump com.diffplug.spotless from 6.13.0 to 6.14.0 (#2888)\n\nBumps com.diffplug.spotless from 6.13.0 to 6.14.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.diffplug.spotless\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "4775c67fe3569bbb735877e101b5f8a7889788f9",
-            "message": "Clean up JDK-8 related code (#2883)\n\nFixes #2879 \r\n\r\nSigned-off-by: Andriy Redko <drreta@gmail.com>",
-            "tag_name": null
+            "message": "Clean up JDK-8 related code (#2883)\n\nFixes #2879 \r\n\r\nSigned-off-by: Andriy Redko <drreta@gmail.com>"
         },
         {
             "hash": "91223f830552ce3bb5daf7095f4f30767e072b96",
-            "message": "Feat: reified mock overloads (#2882)\n\nAdded reified mock overload methods to match the methods\r\nthat consume an explicit Class<T> object.\r\n\r\nThe following methods have been added:\r\n\r\n- Mockito.<T>mock(String, T...) - Sets the mock name.\r\n- Mockito.<T>mock(Answer, T...) - Sets the default answer.\r\n- Mockito.<T>mock(WithSettings, T...) - Provides custom settings.\r\n\r\nI have also added a case where passing null varargs in would\r\nresult in a NullPointerException previously. Now, it will tell\r\nthe user that they should not be providing these varargs at all.\r\n\r\nThese overloads should not conflict with any existing usages of\r\nthis API in the intended way, as the assumption is that a user\r\nprobably isn't going to want to be mocking Mockito internals,\r\nStrings, or WithSettings objects anyway. If they do need to\r\nachieve this, then this is still accessible via the existing\r\nMockito.<T>mock(Class<T>) methods anyway.",
-            "tag_name": null
+            "message": "Feat: reified mock overloads (#2882)\n\nAdded reified mock overload methods to match the methods\r\nthat consume an explicit Class<T> object.\r\n\r\nThe following methods have been added:\r\n\r\n- Mockito.<T>mock(String, T...) - Sets the mock name.\r\n- Mockito.<T>mock(Answer, T...) - Sets the default answer.\r\n- Mockito.<T>mock(WithSettings, T...) - Provides custom settings.\r\n\r\nI have also added a case where passing null varargs in would\r\nresult in a NullPointerException previously. Now, it will tell\r\nthe user that they should not be providing these varargs at all.\r\n\r\nThese overloads should not conflict with any existing usages of\r\nthis API in the intended way, as the assumption is that a user\r\nprobably isn't going to want to be mocking Mockito internals,\r\nStrings, or WithSettings objects anyway. If they do need to\r\nachieve this, then this is still accessible via the existing\r\nMockito.<T>mock(Class<T>) methods anyway."
         },
         {
             "hash": "96452fa7fb1a297323dfd998953489deeca64e28",
-            "message": "Make sure the tests use mock maker with intended member accessor (#2872)\n\nFixes #2855\r\n\r\nSigned-off-by: Andriy Redko <drreta@gmail.com>",
-            "tag_name": null
+            "message": "Make sure the tests use mock maker with intended member accessor (#2872)\n\nFixes #2855\r\n\r\nSigned-off-by: Andriy Redko <drreta@gmail.com>"
         },
         {
             "hash": "1418769a9f89060f7035a48094d0bb2eba1e0ec5",
-            "message": "Bump assertj-core from 3.24.1 to 3.24.2 (#2875)\n\nBumps assertj-core from 3.24.1 to 3.24.2.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.assertj:assertj-core\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump assertj-core from 3.24.1 to 3.24.2 (#2875)\n\nBumps assertj-core from 3.24.1 to 3.24.2.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: org.assertj:assertj-core\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "f4d7c346b1783c4a14aa8905ec96aa16f9f2fdd5",
-            "message": "Bump com.diffplug.spotless from 6.12.1 to 6.13.0 (#2871)\n\nBumps com.diffplug.spotless from 6.12.1 to 6.13.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.diffplug.spotless\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
-            "tag_name": null
+            "message": "Bump com.diffplug.spotless from 6.12.1 to 6.13.0 (#2871)\n\nBumps com.diffplug.spotless from 6.12.1 to 6.13.0.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.diffplug.spotless\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
         },
         {
             "hash": "23e344ec7b7c11743331ace30f26c21da12767ba",
-            "message": "Remove broken link from `CONTRIBUTING.md` (#2870)\n\nFixes #2868",
-            "tag_name": null
+            "message": "Remove broken link from `CONTRIBUTING.md` (#2870)\n\nFixes #2868"
         },
         {
             "hash": "f2a47c35b8b16a8b1c560b9d93bc3cce62a3e310",
-            "message": "Improve examples for InOrder (#2843)\n\nInclude some context in InOrder examples and add an example that uses\r\na static mock as well.",
-            "tag_name": null
+            "message": "Improve examples for InOrder (#2843)\n\nInclude some context in InOrder examples and add an example that uses\r\na static mock as well."
         },
         {
             "hash": "484de454af8a12da8e2944ab889a262caac73ae0",
-            "message": "Update release badge to 5.x (#2869)\n\n",
-            "tag_name": null
+            "message": "Update release badge to 5.x (#2869)"
         },
         {
             "hash": "0aba0d5b031b4282c9b6686add2b443bda761817",
-            "message": "Update current version in README (#2867)\n\n",
-            "tag_name": null
+            "message": "Update current version in README (#2867)"
         },
         {
             "hash": "acddbbc00d1754d3c4da893f6322d03d782fb1a8",
-            "message": "Annotate `Mockito#{mock,spy}(T... reified)` with `@SafeVarargs` (#2866)\n\nThis avoids \"Unchecked generics array creation for varargs parameter\"\r\nwarnings at the call site.",
-            "tag_name": null
+            "message": "Annotate `Mockito#{mock,spy}(T... reified)` with `@SafeVarargs` (#2866)\n\nThis avoids \"Unchecked generics array creation for varargs parameter\"\r\nwarnings at the call site."
+        }
+    ],
+    "issues": [
+        {
+            "number": "2879",
+            "title": "Clean up JDK-8 related code"
+        },
+        {
+            "number": "2855",
+            "title": "Make sure the tests use mock maker with intended member accessor"
+        },
+        {
+            "number": "2868",
+            "title": "Broken link in `CONTRIBUTING.md`"
         }
     ]
 }

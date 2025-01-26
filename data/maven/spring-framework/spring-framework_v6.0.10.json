@@ -1,0 +1,714 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 121,
+    "start_delay": 0.0,
+    "duration": 71.7325925925926,
+    "commits_info": [
+        {
+            "hash": "0abadaa2f65479e77a4ab4201c620c50f9118950",
+            "message": "Release v6.0.10"
+        },
+        {
+            "hash": "b9221656ccb079636b4e4ad1415d5b69b8f15b92",
+            "message": "Declare ClassLoader for DeserializingConverter constructor as nullable\n\nCloses gh-30670"
+        },
+        {
+            "hash": "c30f6aa42799fda498cc29081bb9e1dd6c82af8f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "aa2028127f4e3f3a2f47d54b0fefb9b24f84dce7",
+            "message": "Overhaul TestExecutionListener for Micrometer ObservationRegistry\n\nThis commit overhauls the TestExecutionListener for Micrometer's\nObservationRegistry that was introduced in the previous commit.\n\nSpecifically, this commit:\n\n- Renames the listener to MicrometerObservationRegistryTestExecutionListener\n  since the use of a ThreadLocal is an implementation detail that may\n  change over time.\n\n- Makes the listener package-private instead of public in order to\n  allow the team greater flexibility in evolving this feature.\n\n- Eagerly loads the ObservationThreadLocalAccessor class and verifies\n  that it has a getObservationRegistry() method to ensure that the\n  listener is properly skipped when SpringFactoriesLoader attempts to\n  load it, if Micrometer 1.10.8+ is not on the classpath.\n\n- Switches the listener's automatic registration order to 2500 in order\n  to register it after the DependencyInjectionTestExecutionListener.\n\n- Only tracks the previous ObservationRegistry in beforeTestMethod() if\n  the test's ApplicationContext contains an ObservationRegistry bean.\n\n- Properly removes the TestContext attribute for the previous\n  ObservationRegistry in afterTestMethod().\n\n- Introduces DEBUG logging for diagnostics.\n\n- Adds an entry in the Javadoc for TestExecutionListener as well as in\n  the Testing chapter in the reference manual.\n\nCloses gh-30658"
+        },
+        {
+            "hash": "a82659c8375066419711ed29dfd125cfa45f70bb",
+            "message": "Introduce TestExecutionListener for Micrometer ObservationRegistry\n\nPrior to this commit, there was no way to specify the\nObservationRegistry that is registered in the given test's\nApplicationContext as the one that should be used by Micrometer's\nObservationThreadLocalAccessor for context propagation.\n\nThis commit introduces a TestExecutionListener for Micrometer's\nObservationRegistry in the Spring TestContext Framework. Specifically,\nthis listener obtains the ObservationRegistry registered in the test's\nApplicationContext, stores it in ObservationThreadLocalAccessor for the\nduration of each test method execution, and restores the original\nObservationRegistry in ObservationThreadLocalAccessor after each test.\n\nCo-authored-by: Sam Brannen <sam@sambrannen.com>\nSee gh-30658"
+        },
+        {
+            "hash": "3415b04c7326e1d78dae92b8997fb9355aff6223",
+            "message": "Use nanosecond precision for scheduling (aligned with calculations)\n\nCloses gh-30666"
+        },
+        {
+            "hash": "a73ad52a8a3e5f65403816e42d7186ac0765da8b",
+            "message": "Clarify removal of ResponseEntity::getStatusCodeValue"
+        },
+        {
+            "hash": "13c32d80bac8ac8349f6c5a01d24ee19302e8623",
+            "message": "Upgrade to Undertow 2.3.7 and JRuby 9.4.3"
+        },
+        {
+            "hash": "3171a8b0e2d7a4bfbdf27739f1c5beab565e25c9",
+            "message": "Align with 5.3.28 javadoc for isSimpleValueType\n\nSee gh-30661"
+        },
+        {
+            "hash": "927d27b1212e3b278c619f72003e6281329d6914",
+            "message": "Consider UUID as simple value type with concise toString output\n\nCloses gh-30661"
+        },
+        {
+            "hash": "1df5e9f30cd19196dada9ccb4dc69fc7e3dc6c19",
+            "message": "Upgrade to Reactor 2022.0.8\n\nCloses gh-30655"
+        },
+        {
+            "hash": "ed74b04520a4dbbe2287269d7f1ed3dc3fefb21b",
+            "message": "Move web-related test for BeanUtilsRuntimeHints to spring-web\n\nThe dependency on spring-web from spring-beans makes it impossible to\nimport the projects in Eclipse IDE due to cycles between projects.\n\nThis commit therefore moves the web-related test for\nBeanUtilsRuntimeHints to spring-web.\n\nSee gh-30491"
+        },
+        {
+            "hash": "6cfb11a360bb72ac50596a81ddfeda6668466200",
+            "message": "Upgrade to Micrometer BOM 1.10.8 and context-propagation 1.0.3\n\nCloes gh-30657"
+        },
+        {
+            "hash": "3b263c5c3d9e172cb23db064adfbfe60852c7565",
+            "message": "Synchronize transaction begin for non-lazy default transactions as well\n\nLazy and read-only database transactions remain exposed to potential isolation level mismatches in case of concurrent transactions with custom isolation levels.\n\nCloses gh-29997"
+        },
+        {
+            "hash": "f18a85e193889a6087b652a022e71d713b607406",
+            "message": "Polish null-safety documentation"
+        },
+        {
+            "hash": "f7d195782f0df74a222c3ae33af8ca2c20665edd",
+            "message": "Revert \"Temporarily re-enable ReactorNetty2StompBrokerRelayIntegrationTests\"\n\nThis reverts commit 7e52b803be07e89fea34d754cfd1728d4b60dc42."
+        },
+        {
+            "hash": "bbab4faf7a009e710f83c8d63b4429e5b56d3ce1",
+            "message": "Method level only, empty RequestMapping matches \"\" and \"/\"\n\nCloses gh-30293"
+        },
+        {
+            "hash": "3fb98b6a973ffe72c16da55bc1fd4a91061287ca",
+            "message": "Polishing"
+        },
+        {
+            "hash": "dc4f46df9f662056f028e18a82a63a075fe44efc",
+            "message": "Fix markup issue in Javadoc of QuartzCronField\n\nCloses gh-30646"
+        },
+        {
+            "hash": "80af7bedeff4deb015e930e7f2411de17e125d94",
+            "message": "Polish null-safety reference documentation"
+        },
+        {
+            "hash": "f8c8873c99e8064d9ba6b1c8d86217f019d46daa",
+            "message": "Document which @Scheduled attributes support SpEL expressions\n\nCloses gh-29290"
+        },
+        {
+            "hash": "cc8c852c2bd59d87afb90fe79b850161b23acf26",
+            "message": "Specific check for parent of MethodInvocationInfo ClassLoader\n\nSee gh-30389"
+        },
+        {
+            "hash": "fe7f8e2de5b6c06d856e7895e9be19a628b51695",
+            "message": "Polish CoWebFilter"
+        },
+        {
+            "hash": "0a5aff1b60f3082d07c523198e9f9d35aea6ffa3",
+            "message": "Specific check for parent of spring-aop ClassLoader\n\nAlso applied to getProxyClass now.\n\nCloses gh-30389"
+        },
+        {
+            "hash": "3d61d9e0d8ebfc130ccb768155455eaa2ddb98d2",
+            "message": "Handle custom JMS acknowledgment modes as client acknowledge (#30619)\n\nThis commit updates JmsAccessor to handle custom JMS acknowledgment\r\nmodes as client acknowledge, which is useful when working with JMS\r\nproviders that provide non-standard variations of CLIENT_ACKNOWLEDGE,\r\nsuch as AWS SQS and its UNORDERED_ACKNOWLEDGE mode."
+        },
+        {
+            "hash": "1a26e17f416e5d1fe184fe7dee3fc654ff2b57bc",
+            "message": "Ensure context cache stats are logged when ApplicationContext fails to load\n\nCloses gh-30635"
+        },
+        {
+            "hash": "439bcd67156277fcc05a75b5731572beb5523ba6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4e33d0c2931025c72ebc39111753a35a09a2cb10",
+            "message": "Add missing hint for ResourceEditor\n\nCloses gh-30628"
+        },
+        {
+            "hash": "9b4e0e9837a5eb81eae8faba24c6e57d9d0280d8",
+            "message": "Add missing hint for converting String to URI\n\nCloses gh-30627"
+        },
+        {
+            "hash": "071d6a2a5a578f981729510e24ddc8ea83d2f155",
+            "message": "Introduce hints for finding hints by conventions\n\nCloses gh-30491"
+        },
+        {
+            "hash": "d7d02926546a26d40b728f352d8a784843400597",
+            "message": "Document @DirtiesContext semantics when declared at class & method level\n\nCloses gh-30623"
+        },
+        {
+            "hash": "2817dce78f55274563ee3df3b9fdde42aec58875",
+            "message": "Polish @DirtiesContext Javadoc"
+        },
+        {
+            "hash": "698acd32a7d6bb5957efa05ab78b3d1400afa96c",
+            "message": "Configure logger per concrete @DirtiesContext TestExecutionListener"
+        },
+        {
+            "hash": "f36327b380af813e0d5634f60fbe52443fc7ba8b",
+            "message": "Exclude commons-logging dependency in spring-test"
+        },
+        {
+            "hash": "ea9c0ae6c0527181b1dfa0e841f870469394c93c",
+            "message": "Fix test fixture value in QualifierConfiguration\n\nCloses gh-30624"
+        },
+        {
+            "hash": "c16f582ed829eb6cee8c1019f2fafc6083ddffec",
+            "message": "Consistent equals implementations in AOP support classes"
+        },
+        {
+            "hash": "6931106c5eb1160091be17ef205258079f63dd0d",
+            "message": "Redesign inner Pointcut implementations as standalone classes\n\nAvoids exposure of implicit Advisor instance state in Pointcut instance.\n\nSee gh-30621"
+        },
+        {
+            "hash": "045df81f14685969f6d9994594092f2aae698456",
+            "message": "Reduce ProxyCallbackFilter to key-only role after class generation\n\nAvoids memory leaks from ProxyCallbackFilter-contained Advisors.\nIncludes consistent ProxyCallbackFilter#equals/hashCode methods.\n\nCloses gh-26266\nCloses gh-30615"
+        },
+        {
+            "hash": "e210f08dced17f01bf3308f399c8e089b8f8319a",
+            "message": "Declare Advisor#isPerInstance() as default method\n\nIncludes INSTANCE constants on default factory classes.\n\nCloses gh-30614"
+        },
+        {
+            "hash": "2317bef021c93c59c07ac983c5d90d5031649faf",
+            "message": "Add missing @Nullable in DefaultJmsListenerContainerFactory\n\nCloses gh-30620"
+        },
+        {
+            "hash": "ce5189a0a03e78cdd6c2ada96b8d692d663e0340",
+            "message": "Default ServerWebExchange::cleanupMultipart implementation\n\nThis commit provided a default implementation for ServerWebExchange::cleanupMultipart.\n\nSee gh-30590"
+        },
+        {
+            "hash": "7a4ed38cd4292332bb4f1eac7442c9549718ea9e",
+            "message": "This PR adds Javadoc for RegisteredBean.resolveAutowiredArgument()\n\nSee gh-30401\nCloses gh-30609"
+        },
+        {
+            "hash": "c1fe57135ee2702b12153bdbf5dc766cf0d8bd8e",
+            "message": "Clean multipart up only when data is read\n\nThis commit ensures that any storage used for multipart handling only\ngets cleaned up if multipart data is actually retrieved via\nServerWebExchange::getMultipartData.\n\nCloses gh-30590"
+        },
+        {
+            "hash": "2c8d1b7bff4731cb499b73c0971f51a1e9831963",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bd63c35b0b5cb8daaf148a234fa8e4405e75385a",
+            "message": "DefaultMessageListenerContainer tests for stop-and-restart\n\nSee gh-30612"
+        },
+        {
+            "hash": "c052a0259238ee577a00a55abeb771fb967de440",
+            "message": "Ignore null message when introspecting resource cleanup failure\n\nCloses gh-30597"
+        },
+        {
+            "hash": "5ad853ef5b31e410ca1677d8cbeff0b8ff438023",
+            "message": "Do not precede indexed access with a dot in SpEL AST representation\n\nPrior to this commit, if a Spring Expression Language (SpEL) expression\ncontained indexed access to an object, the generated AST String\nrepresentation incorrectly included a dot ('.') before the index access.\n\nFor example, 'property[0]' had a generated AST string representation of\n'property.[0]'.\n\nThis commit addresses this by reworking the logic in\nCompoundExpression.toStringAST().\n\nCloses gh-30610"
+        },
+        {
+            "hash": "dfbed616ba5bf18a01b1436ee783733a8ac9bdfc",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "94214562d071260e49b5ddc37aabcfd817c64303",
+            "message": "Polish contribution\n\nSee gh-30283"
+        },
+        {
+            "hash": "be94e1a2fb9e81b1ae54c7888ffb11ec6d6d1300",
+            "message": "Replace switch statements with enhanced switch statements for consistency\n\nCloses gh-30283"
+        },
+        {
+            "hash": "f2ae106c325b6257830ac8d13fc277b602ce1cd6",
+            "message": "Update deprecation Javadoc regarding \"for removal in 6.2\"\n\nSee gh-30608"
+        },
+        {
+            "hash": "7b20aefecf3564d740f0c1be1184bf2bc319f030",
+            "message": "Improve error message for unsupported character in SpEL expression\n\nPrior to this commit, when an unsupported character such as \"ü\" was\nencountered in a SpEL expression, the error message was:\n\nCannot handle (252) 'ü'\n\nWith this commit, the error message is now similar to:\n\nUnsupported character 'ü' (252) encountered at position 5 in expression.\n\nSee gh-30580\nCloses gh-30602"
+        },
+        {
+            "hash": "cdc4497664ed73290837d04c515579fc80248d43",
+            "message": "Restore creation of plain HashSet/HashMap for direct HashSet/HashMap type\n\nCloses gh-30596"
+        },
+        {
+            "hash": "6cc084dbdead171d548d19fab30cfa14f3b1531f",
+            "message": "Consistent javadoc references to JdbcTransactionManager"
+        },
+        {
+            "hash": "974e10379a4bce1b012e85fa18ca22c0df4b8eb4",
+            "message": "Add nested propagation support to R2dbcTransactionManager\n\nCloses gh-30134"
+        },
+        {
+            "hash": "22ef48bec27b73ce9bd6c945265372682ecf4ba0",
+            "message": "Shorten constant names to BUILD and RUN (for consistent spelling)\n\nSee gh-30511"
+        },
+        {
+            "hash": "4be813bbeefb48f66559ef305a7849e33c1f26a2",
+            "message": "Upgrade to Groovy 4.0.12, Tomcat 10.1.9, Netty 4.1.93, Undertow 2.3.6, Protobuf 3.23.2, Picocli 4.7.4, Checkstyle 10.12"
+        },
+        {
+            "hash": "65617f1e75f0be6db204ab1cb41130e2176a1efa",
+            "message": "Add isolation level test and restore null return value from beginTransaction\n\nSee gh-29997"
+        },
+        {
+            "hash": "aaebf5749cb9a2a353490a1fa092ce973c808a11",
+            "message": "Set and reset shared isolation value within synchronized transaction begin\n\nSince EclipseLink applies a custom transaction isolation value to its shared DatabasePlatform instance, we need to immediately restore the original value after the current value got picked up for JDBC Connection access inside of EclipseLink. In order to not interfere with concurrent transactions, we need to use synchronization around the transaction begin sequence in such a case.\n\nCloses gh-29997"
+        },
+        {
+            "hash": "24fa8793b10f803278964499d9cbc97926d1b242",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "4f10f559f7917caad6c4cadcaaf478197323e094",
+            "message": "Suppress warnings"
+        },
+        {
+            "hash": "2f35e7756b079c7715fd1df31a158d98c55be590",
+            "message": "Integration test status quo for SpEL 'selector' support in messaging\n\nSee gh-30550"
+        },
+        {
+            "hash": "cc50af08e4c25ec87931f784f8a88952a6818839",
+            "message": "Enhance unit tests for status quo for SpEL 'selector' support in messaging\n\nSee gh-30550"
+        },
+        {
+            "hash": "d08e4081c293910194c10ad35e0eea3d576be1fd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9751987dc14335c220e9bed9139098fefcf9b9f2",
+            "message": "Avoid unnecessary auto-commit check for proper transaction begin\n\nCloses gh-30508"
+        },
+        {
+            "hash": "d2906253f131ea11191b1fe94be9c150f4a41b85",
+            "message": "Fall back to plain setObject call for non-supported SQL type\n\nCloses gh-30556"
+        },
+        {
+            "hash": "4b8adf2dccd37285e4b68e2796620be521844e2f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c68552556f98b9b5b036200279e9d07e8ef9222e",
+            "message": "Revise TargetSource implementations for proper nullability\n\nIncludes hashCode optimization in AbstractBeanFactoryBasedTargetSource.\nIncludes ThreadLocal naming fix in ThreadLocalTargetSource.\n\nCloses gh-30576\nCloses gh-30581"
+        },
+        {
+            "hash": "b738a202338571b897cd64df3cfe34f11308d8a5",
+            "message": "Consistently publish events from CompletableFuture\n\nCloses gh-30578"
+        },
+        {
+            "hash": "cca8fbd3dec88c88da8669ff0cfffa755a82aebd",
+            "message": "Log warning in case of standard Commons Logging discovery\n\nCloses gh-30575"
+        },
+        {
+            "hash": "21397a67c6d802459fe8c62157b76496d8e10372",
+            "message": "Test status quo for SpEL 'selector' support in messaging\n\nPrior to this commit, the tests we had in place for SpEL 'selector'\nsupport did not assert what happens when a selector expression does not\nmatch or when a selector header is not present.\n\nSee gh-30550"
+        },
+        {
+            "hash": "e8ab53e76debdd686d8f5c9ad73c28973ca2d47a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5b471a534928607d7a2db1a733dec89305a9bcc0",
+            "message": "Merge pull request #30570 from kihyuk-sung\n\n* pr/30570:\n  Polish \"Fix invalid link in transaction resources\"\n  Fix invalid link in transaction resources\n\nCloses gh-30570"
+        },
+        {
+            "hash": "08240bbcac9cdab162a54c4d3de765f265ea74cd",
+            "message": "Polish \"Fix invalid link in transaction resources\"\n\nSee gh-30570"
+        },
+        {
+            "hash": "d719f3fc06962f3aa22881cd53ffcf3a013e6c1f",
+            "message": "Fix invalid link in transaction resources\n\nSee gh-30570"
+        },
+        {
+            "hash": "938dff7bbebb92b00309bae51b24190fc59fa7d1",
+            "message": "Remove (recently committed) erroneous character in test"
+        },
+        {
+            "hash": "162ccdd1553c42ab41e7179198ce717f860fcdf6",
+            "message": "Consistent handling of parts in HttpRequestValues\n\nCloses gh-30520"
+        },
+        {
+            "hash": "f1594312cd2c2814489db7528ea2345567e9937f",
+            "message": "Polishing in HttpRequestValues and tests\n\nSee gh-30520"
+        },
+        {
+            "hash": "7629ea56725d42be836e942a3027b0872fa9c6af",
+            "message": "Update docs to mention Boot's HttpMessageConverters\n\nCloses gh-30538"
+        },
+        {
+            "hash": "454a85978f7a58423e6418970119b115565f46ef",
+            "message": "Allow fallback on subclass of ProblemDetail\n\nCloses gh-30533"
+        },
+        {
+            "hash": "2cbc7eed733372ce9dfd014d7d99857e5983b6f1",
+            "message": "Always use MethodArgumentNotValidException(MethodParameter, BindingResult) constructor\n\ngh-23846 introduced a new\nMethodArgumentNotValidException(Executable, BindingResult)\nconstructor that can be advantageously replaced by using\nMethodArgumentNotValidException(MethodParameter, BindingResult)\nin ModelAttributeMethodProcessor.\n\nThis commit updates ModelAttributeMethodProcessor accordingly,\nand deprecates MethodArgumentNotValidException(Executable,\nBindingResult) in favor of\nMethodArgumentNotValidException(MethodParameter, BindingResult).\n\nCloses gh-30558"
+        },
+        {
+            "hash": "7a05f818441f61b8918c54da56b16946255a4aee",
+            "message": "Polish ModelAttributeMethodProcessor#constructAttribute Javadoc"
+        },
+        {
+            "hash": "71b2154ec86864838d6d8e124986ecee0ae980a2",
+            "message": "Remove libs-spring-framework-build repository\n\nThis commit removes the build configuration for the repository\n\"libs-spring-framework-build\", as it is not needed anymore for the\ndependencies it contains."
+        },
+        {
+            "hash": "a716391aab874139d62f47d38fe904746b10d62a",
+            "message": "Merge pull request #30554 from scordio\n\n* pr/30554:\n  Update copyright year of changed file\n  Fix `FileSystemUtils::deleteRecursively` Javadoc\n\nCloses gh-30554"
+        },
+        {
+            "hash": "09b2e5d0fb5febf1f260900093cc5835fcaaa301",
+            "message": "Update copyright year of changed file\n\nSee gh-30554"
+        },
+        {
+            "hash": "c6b2d2e1d9b67494b595e4ff1cf503f23c8d020a",
+            "message": "Fix `FileSystemUtils::deleteRecursively` Javadoc\n\nSee gh-30554"
+        },
+        {
+            "hash": "1cf6d1dd9d4037d50ba68a59575a346cca772414",
+            "message": "Refine GraalVM tracing agent detection\n\nThis commit refines how GraalVM tracing agent detection works\nfor both test and application executions.\n\nIt rolls back the introduction of TestAotDetector done in 111309605c7c1b4c4b8b40d7f8086a0e2338ca82\nand instead updates AotDetector.useGeneratedArtifacts()\nto only detect \"buildtime\" and \"runtime\" imagecode system\nproperty values by leveraging a new method\nNativeDetector.inNativeImage(NativeDetector.Context...).\n\nThis commit also adds a workaround for\nhttps://github.com/oracle/graal/issues/6691.\n\nCloses gh-30511"
+        },
+        {
+            "hash": "8b8d1474803437da4bf9c0830a13b1bcc85dff83",
+            "message": "Avoid Autowired shortcut resolution for NullBean values\n\nIncludes getBean documentation against NullBean values.\n\nCloses gh-30485"
+        },
+        {
+            "hash": "8fe21b8ef9cccbd821762d9289edce42427d0e0e",
+            "message": "Build Antora docs as part of CI check job\n\nThis commit adds the \"antora\" task to the check-project script in order\nto check for documentation failures when pushing to the current branch.\nThe actual documentation is build is performed on the docs-build branch.\n\nCloses gh-30528"
+        },
+        {
+            "hash": "7c9f5d05db3996625986dffc20a68199987d27a0",
+            "message": "Remove asciidoctor Gradle plugins\n\nThis part of the build has been replaced with Antora."
+        },
+        {
+            "hash": "110b809b7d584649aed31607a682bcdec16a0d6b",
+            "message": "Update CI pipeline"
+        },
+        {
+            "hash": "5e625c8d2efc4bdf66ce0cf2c6fa58488486c395",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3f648f54c52efa0b79e1877a779e57fd21ff2b08",
+            "message": "Set hibernate.cdi.extensions (for SpringBeanContainer on Hibernate 6.2)\n\nCloses gh-30545"
+        },
+        {
+            "hash": "d61074268a20f6ddf6d86992f24128427f9ed8fd",
+            "message": "Polish Javadoc for StatementFilterFunction"
+        },
+        {
+            "hash": "cfb3a45479d75c03ec82667f4a01b96f40cf920a",
+            "message": "Improve Javadoc for ExchangeFilterFunction\n\nSee gh-30543"
+        },
+        {
+            "hash": "7d7d7bccedcb71f228c094244f7c54361b347809",
+            "message": "Fix typos in Javadoc for ExchangeFilterFunction\n\nCloses gh-30543"
+        },
+        {
+            "hash": "6dfd330fa5ea43c14f5b209daa78a2fb42ef493c",
+            "message": "Polish JavaMailSenderTests"
+        },
+        {
+            "hash": "7f9349b7ae36af312c83ea1b9a9232e13490cfc3",
+            "message": "Remove non-empty filename check in ContentDisposition builder\n\nThis commit ensures that the ContentDisposition.Builder is consistent\nwith ContentDisposition and accepts null/empty filenames.\n\nCloses gh-30537"
+        },
+        {
+            "hash": "4c8f1910c82c340135082f3947f7dd9b611d6849",
+            "message": "Align HibernateJpaVendorAdapter with Hibernate ORM 6.2\n\nIncludes documentation and test revisions.\n\nCloses gh-30288"
+        },
+        {
+            "hash": "3b364c2a3d046e499807adcbc43b1a85f3ffff3c",
+            "message": "Add cached-antora-playbook.yml back to .gitignore\n\nSee gh-30481"
+        },
+        {
+            "hash": "0930407d0e109d6f89d931aa330b24c98342d887",
+            "message": "Revert \"Download the playbook to build dir\"\n\nThis reverts commit d8f6567c890340cfc145b8fa2766ccb4cf70fab2.\n\nSee gh-30481"
+        },
+        {
+            "hash": "4bb12c4ba4d98b147f53bb82aa3ca023f98bbece",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "8d6d99731f0df81ffc0a2c871311aacaba02fc22",
+            "message": "Delete unused code"
+        },
+        {
+            "hash": "b5902f4fbf6a287ad77db69640c0b5befa74311d",
+            "message": "Suppress unused warnings in tests"
+        },
+        {
+            "hash": "a4553171222370e4e526bd5d6c6c019fe54c0f39",
+            "message": "Treat directly registered class as configuration 'lite' mode candidate\n\nPrior to this commit, if a non-annotated [1] class was registered\ndirectly with an ApplicationContext -- for example, via\nAnnotatedBeanDefinitionReader, AnnotationConfigApplicationContext, or\n@ContextConfiguration -- it was not considered a configuration class in\n'lite' mode unless @Bean methods were declared locally. In other words,\nif the registered class didn't declare local @Bean methods but rather\nextended a class that declared @Bean methods, then the registered class\nwas not parsed as a @Configuration class in 'lite' mode, and the @Bean\nmethods were ignored.\n\nWhereas, a non-annotated class registered via @Import is always\nconsidered to be a configuration class candidate.\n\nTo address this discrepancy between @Import'ed classes and classes\nregistered directly with an ApplicationContext, this commit treats any\nclass registered via AnnotatedBeanDefinitionReader as a @Configuration\nclass candidate with @Bean 'lite' mode semantics.\n\n[1] In this context, \"non-annotated\" means a class not annotated (or\nmeta-annotated) with @Component, @ComponentScan, @Import, or\n@ImportResource.\n\nCloses gh-30449"
+        },
+        {
+            "hash": "a8b400803bba930f8dad81b3a5034ae566f7dd1b",
+            "message": "Upgrade to TestNG 7.8.0"
+        },
+        {
+            "hash": "fa856578013eaaff58578bf2c84849ed33eb2617",
+            "message": "Introduce method in MockHttpServletRequestBuilder to set remote address\n\nCo-authored-by: Sam Brannen <sam@sambrannen.com>\nSee gh-30510\nCloses gh-30497"
+        },
+        {
+            "hash": "424daede2fbb10a43537d66ceeaf684816ff7da6",
+            "message": "Add missing EntityManagerFactory hints for SharedEntityManagerCreator\n\nCloses gh-30523"
+        },
+        {
+            "hash": "e92c9c56198f81087c76cb53df16cd6642849e8f",
+            "message": "Disable Hibernate reflection optimizer with native\n\nCloses gh-30521"
+        },
+        {
+            "hash": "7660dbfd77958f8cc68029cfd97b2a9ca89b4b4c",
+            "message": "Merge pull request #30512 from izeye\n\n* pr/30512:\n  Add Javadoc since to InjectedElement.shouldInject()\n\nCloses gh-30512"
+        },
+        {
+            "hash": "15a7f43c7b53049ba3243145f2c898f005b872a8",
+            "message": "Add Javadoc since to InjectedElement.shouldInject()\n\nSee gh-30512"
+        },
+        {
+            "hash": "1721e42988425b7c88e8dca068076a68ccd26762",
+            "message": "Remove JBossAS catch-all javadoc external link\n\nThis commit removes the JBoss Application Server external javadoc link,\nwhich covers too many packages and can thus problematically take\nprecedence for said packages and lead to dead links.\n\nIt is replaced by Hibernate javadocs for `org.hibernate.*` packages,\nJakartaEE and jsr305 for annotations. We lose a limited number of links\naround org.xnio classes and Hibernate-and-JTA-related classes, as a\ntrade-off.\n\nSee gh-30455\nSee gh-30428"
+        },
+        {
+            "hash": "eabb846d07abf7676224dd74e08bedf36ba6b899",
+            "message": "Improve how the build deals with javadoc invalid references\n\nThis commit improves how the build deals with javadoc invalid references\nin two ways.\n\nLink/see references that are temporarily invalid during javadoc\ngeneration of individual modules are better masked by using the option\n`Xdoclint:syntax` instead of `Xdoclint:none` (warnings were still\nvisible in some cases, e.g. when individually building the javadoc for\na specific module).\n\nGlobal javadoc-building task `api` now combines `syntax` and `reference`\n`Xdoclint` groups, allowing to raise truly invalid references even when\nall the modules have been aggregated.\n\nThis commit also fixes the 20+ errors which appeared following the later\nchange in doclet configuration.\n\nCloses gh-30428"
+        },
+        {
+            "hash": "280b0de6464db73275e856142a103d724b407296",
+            "message": "Docs: Remove duplicate in SpEL feature list\n\nCloses gh-30404"
+        },
+        {
+            "hash": "2738b3e50f1ae4125245aab82d8eb51e9103556d",
+            "message": "Polishing\n\nSee gh-30482"
+        },
+        {
+            "hash": "169795d67371b3fd9b50933492d7a398d554e19d",
+            "message": "Fix wording in r2dbc Statement Filters section of ref docs\n\nCo-authored-by: Sam Brannen <sam@sambrannen.com>\nCloses gh-30482"
+        },
+        {
+            "hash": "085565a771270f7a124186e7691381534018dd03",
+            "message": "Skip class transformer in PersistenceUnitInfoDescriptor for native images\n\nIn order to restore native support with Hibernate 6.2, this\nchange updates the PersistenceUnitInfoDescriptor instance\ncreated by SpringHibernateJpaPersistenceProvider in order to\nskip the class transformer for native images.\n\nCloses gh-30492"
+        },
+        {
+            "hash": "806519f78a6816b55c3992722d23e46c266c759b",
+            "message": "Comment out check->antora dependency\n\nSee gh-30481"
+        },
+        {
+            "hash": "c3c5eaf9145f99c6de3318b9dc986799a1c6e957",
+            "message": "Align AOT contributions for injection with the runtime behavior\n\nBean post processors that use InjectionMetadata checks if a property\nvalue for the element it is about to inject is set and skip it, so\nthat the property value is used. Previously, the AOT contribution for\nthe same behavior did not check if a matching property value is set\nand therefore override the user-defined value.\n\nThis commit introduces an additional method that filters the injected\nelement list so that only the elements that should be processed are\ndefined.\n\nCloses gh-30476"
+        },
+        {
+            "hash": "a9b94241af7c41fdae536d8239ee6ba04cd23e3b",
+            "message": "Fix typo\n\nCloses gh-30473"
+        },
+        {
+            "hash": "7066dc4ba78a150f9b39b30a4f0d6c9c92fc57bf",
+            "message": "Next development version (v6.0.10-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30670",
+            "title": "ClassLoader can be null in DeserializingConverter and should be annotated with @Nullable"
+        },
+        {
+            "number": "30666",
+            "title": "Cron expression scheduling might be triggered 1 millisecond earlier"
+        },
+        {
+            "number": "30661",
+            "title": "Change of behaviour for UUID in bean validation output in v5.3.27"
+        },
+        {
+            "number": "30655",
+            "title": "Upgrade to Reactor 2022.0.8"
+        },
+        {
+            "number": "30491",
+            "title": "MediaType property binding issue in native builds"
+        },
+        {
+            "number": "30657",
+            "title": "Upgrade to `micrometer-bom` 1.10.8 and `context-propagation` 1.0.3"
+        },
+        {
+            "number": "29997",
+            "title": "EclipseLinkJpaDialect: Unexpected default isolation levels"
+        },
+        {
+            "number": "30293",
+            "title": "Empty `@RequestMapping` method should match both \"\" and \"/\" consistently"
+        },
+        {
+            "number": "29290",
+            "title": "Document which `@Scheduled` attributes support SpEL expressions"
+        },
+        {
+            "number": "30389",
+            "title": "Spring Framework 6.0.8 appears to cause issues in OSGi environment"
+        },
+        {
+            "number": "30635",
+            "title": "Test context cache stats are not logged when `ApplicationContext` fails to load"
+        },
+        {
+            "number": "30628",
+            "title": "Add missing hint for `ResourceEditor`"
+        },
+        {
+            "number": "30627",
+            "title": "Add missing hint for converting String to URI"
+        },
+        {
+            "number": "30623",
+            "title": "Document `@DirtiesContext` semantics when declared at the class level and method level"
+        },
+        {
+            "number": "30621",
+            "title": "Redesign inner Pointcut implementations as standalone classes"
+        },
+        {
+            "number": "26266",
+            "title": "Memory leak with CglibAopProxy$ProxyCallbackFilter"
+        },
+        {
+            "number": "30615",
+            "title": "Inconsistent ProxyCallbackFilter#equals/hashCode methods in CglibAopProxy"
+        },
+        {
+            "number": "30614",
+            "title": "Declare Advisor#isPerInstance() as default method"
+        },
+        {
+            "number": "30590",
+            "title": "Multipart data is always read irrelevant of handler response"
+        },
+        {
+            "number": "30401",
+            "title": "Support for `InjectionPoint` in bean factory methods when using AOT"
+        },
+        {
+            "number": "30612",
+            "title": "Release shared JMS Connection when message listener container is stopped"
+        },
+        {
+            "number": "30597",
+            "title": "NPE in `ReactiveTransactionSupport.unwrapIfResourceCleanupFailure`"
+        },
+        {
+            "number": "30610",
+            "title": "SpEL's `CompoundExpression.toStringAST()` incorrectly includes `.` for indexed properties"
+        },
+        {
+            "number": "30608",
+            "title": "Remove APIs deprecated for removal in 6.2"
+        },
+        {
+            "number": "30580",
+            "title": "Support letters other than A-Z in identifiers in SpEL expressions"
+        },
+        {
+            "number": "30602",
+            "title": "Improve error message for unsupported character in SpEL expression"
+        },
+        {
+            "number": "30596",
+            "title": "CollectionFactory.createMap(HashMap.class, 0) now returns a LinkedHashMap rather than a HashMap"
+        },
+        {
+            "number": "30134",
+            "title": "Add nested propagation support to R2dbcTransactionManager "
+        },
+        {
+            "number": "30511",
+            "title": "Support for AOT processing with GraalVM tracing agent is not consistent"
+        },
+        {
+            "number": "30550",
+            "title": "Disable SpEL selector support in WebSocket messaging by default"
+        },
+        {
+            "number": "30508",
+            "title": "Transaction isolation level not working with R2dbcTransactionManager "
+        },
+        {
+            "number": "30556",
+            "title": "Unsupported SQL type: TIMESTAMP_WITH_TIMEZONE when using OffsetDateTime with MySQL"
+        },
+        {
+            "number": "30576",
+            "title": "Performance optimization in AbstractBeanFactoryBasedTargetSource.hashCode()"
+        },
+        {
+            "number": "30581",
+            "title": "ThreadLocalTargetSource does not include actual target bean name in NamedThreadLocal"
+        },
+        {
+            "number": "30578",
+            "title": "ApplicationListenerMethodAdapter inconsistently publishes events from CompletableFuture"
+        },
+        {
+            "number": "30575",
+            "title": "Log a warning when `commons-logging` is in the classpath"
+        },
+        {
+            "number": "30520",
+            "title": "HTTP Interface client cannot send URI query parameter with multipart request"
+        },
+        {
+            "number": "30538",
+            "title": "Update Javadoc and reference doc for WebMvcConfigurer to mention Boot's HttpMessageConverters"
+        },
+        {
+            "number": "30533",
+            "title": "WebFlux returns 406 instead of RFC 7807 response for subtype of ProblemDetail"
+        },
+        {
+            "number": "23846",
+            "title": "Refine `ModelAttributeMethodProcessor` Kotlin exception handling"
+        },
+        {
+            "number": "30558",
+            "title": "Always use `MethodArgumentNotValidException(MethodParameter, BindingResult)` constructor"
+        },
+        {
+            "number": "30485",
+            "title": "For `@Bean` method that returns `null`, `@Autowired` injects `NullBean` instead of `null` for cached arguments"
+        },
+        {
+            "number": "30528",
+            "title": "Call antora task as part of CI build"
+        },
+        {
+            "number": "30545",
+            "title": "`SpringBeanContainer` not called with Hibernate ORM 6.2"
+        },
+        {
+            "number": "30288",
+            "title": "Align HibernateJpaVendorAdapter with Hibernate ORM 6.2"
+        },
+        {
+            "number": "30481",
+            "title": "A clean build leads to \"Failed to download playbook\""
+        },
+        {
+            "number": "30449",
+            "title": "`@Bean` 'lite' mode not supported if `@Bean` methods are not declared locally"
+        },
+        {
+            "number": "30510",
+            "title": "Introduce a method in `MockHttpServletRequestBuilder` to set remote address"
+        },
+        {
+            "number": "30523",
+            "title": "Add missing `EntityManagerFactory` hints for `SharedEntityManagerCreator`"
+        },
+        {
+            "number": "30521",
+            "title": "Disable Hibernate reflection optimizer with native"
+        },
+        {
+            "number": "30455",
+            "title": "Link for `@javax.annotation.Nonnull` is wrong in Javadoc for Spring's `@NonNull`"
+        },
+        {
+            "number": "30492",
+            "title": "Skip class transformer in `PersistenceUnitInfoDescriptor` for native images"
+        },
+        {
+            "number": "30476",
+            "title": "InjectionMetadata AOT contributions do not check for existing property value"
+        },
+        {
+            "number": "30473",
+            "title": "Typo in Spring official documentation"
+        }
+    ]
+}

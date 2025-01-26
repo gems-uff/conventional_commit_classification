@@ -11,108 +11,93 @@
     "commits_info": [
         {
             "hash": "906839d47b5bd8c7210d625e9a9060611b0ce23d",
-            "message": "2.11.0 release (previous 2.10.5) + release notes updated by CI build 2973\n\n[ci skip-release]\n",
-            "tag_name": null
+            "message": "2.11.0 release (previous 2.10.5) + release notes updated by CI build 2973\n\n[ci skip-release]"
         },
         {
             "hash": "8c79461d7dd3e91216a38103466ff15fdd01a731",
-            "message": "Merge pull request #1192 from mockito/mockito-spring-boot\n\nAdded experimental API for spring-boot use case\r\n[ci maven-central-release]",
-            "tag_name": null
+            "message": "Merge pull request #1192 from mockito/mockito-spring-boot\n\nAdded experimental API for spring-boot use case\r\n[ci maven-central-release]"
         },
         {
             "hash": "b41d1c58fe8d4480f7adb707c340d8f338c5141a",
-            "message": "Merge branch 'release/2.x' into mockito-spring-boot",
-            "tag_name": null
+            "message": "Merge branch 'release/2.x' into mockito-spring-boot"
         },
         {
             "hash": "f169b81f78647c2eb65c790b7fc473db0981e1cf",
-            "message": "Documented caveat based on discussion with Tim\n",
-            "tag_name": null
+            "message": "Documented caveat based on discussion with Tim"
         },
         {
             "hash": "71bd699c748658528f5356e366ea60d41049227b",
-            "message": "Bumped version\n",
-            "tag_name": null
+            "message": "Bumped version"
         },
         {
             "hash": "d8ae58d4dcb74391b774ffcca5ec5241cc6c01ea",
-            "message": "Updated code links\n",
-            "tag_name": null
+            "message": "Updated code links"
         },
         {
             "hash": "a7782abebe4fe444ac6a5a85469ffa674f5b3389",
-            "message": "Added top level documentation for new API\n\nWe strive to add top level documentation for every new feature added to Mockito.\n",
-            "tag_name": null
+            "message": "Added top level documentation for new API\n\nWe strive to add top level documentation for every new feature added to Mockito."
         },
         {
             "hash": "4bc732153e83b9490d6d94c2e27ea2f6ac9dc10c",
-            "message": "Removed unnecessary type, we can use public type instead\n\n- Instead of MockitoMock, we can simply use our public API: MockingDetails. It allows us to reuse / dogfood our public API and have cleaner codebase.\n- Added new public API: mockingDetails.getMock(). I needed it to implement APIs for Spring Boot integration. Plus, it just make sense to add this method to make MockingDetails type more complete.\n",
-            "tag_name": null
+            "message": "Removed unnecessary type, we can use public type instead\n\n- Instead of MockitoMock, we can simply use our public API: MockingDetails. It allows us to reuse / dogfood our public API and have cleaner codebase.\n- Added new public API: mockingDetails.getMock(). I needed it to implement APIs for Spring Boot integration. Plus, it just make sense to add this method to make MockingDetails type more complete."
         },
         {
             "hash": "4f0f9c973e31eee30c00700b5db9361d9e3df430",
-            "message": "Improved exception message\n\nAdded context what is the received parameter. Should be helpful when debugging.\n",
-            "tag_name": null
+            "message": "Improved exception message\n\nAdded context what is the received parameter. Should be helpful when debugging."
         },
         {
             "hash": "dbc7e2b137f477a2bcb72a3780648544c2bc8737",
-            "message": "Added handling of API misuse\n\nIn the event that the user passes a mock with a wrong type, let's fail early with graceful exception message. Also added missing coverage.\n",
-            "tag_name": null
+            "message": "Added handling of API misuse\n\nIn the event that the user passes a mock with a wrong type, let's fail early with graceful exception message. Also added missing coverage."
         },
         {
             "hash": "bf9524388ba5fc8f3350399a65c0ccd31442f730",
-            "message": "Added coverage for API misuse\n\nIn the event that the user passes a mock with a wrong type, let's fail early. Also added missing coverage.\n",
-            "tag_name": null
+            "message": "Added coverage for API misuse\n\nIn the event that the user passes a mock with a wrong type, let's fail early. Also added missing coverage."
         },
         {
             "hash": "f8cd5302bd16432f2f1263e716b1a57c82f086fa",
-            "message": "Updated TODOs\n",
-            "tag_name": null
+            "message": "Updated TODOs"
         },
         {
             "hash": "6ef15befa5e7cefacacfc9ab92ad6f05066c569b",
-            "message": "Moved one of the tests to a better place\n\nThe goal is to make tests easier to read. In the new place, it is easier to cleanly write coverage for this behavior.\n",
-            "tag_name": null
+            "message": "Moved one of the tests to a better place\n\nThe goal is to make tests easier to read. In the new place, it is easier to cleanly write coverage for this behavior."
         },
         {
             "hash": "83f3ba42f486ca9648e73ea7fafbe1641911c575",
-            "message": "Added decent exception message for API misuse\n",
-            "tag_name": null
+            "message": "Added decent exception message for API misuse"
         },
         {
             "hash": "23af43296ae2014776901ebd98d21c259fad5fb8",
-            "message": "Made exception messages consistent\n\nAlso renamed the method on the Reporter so that it is more generic\n",
-            "tag_name": null
+            "message": "Made exception messages consistent\n\nAlso renamed the method on the Reporter so that it is more generic"
         },
         {
             "hash": "e8283cffb86bcb80e76be4d08f3d9de12e0f6637",
-            "message": "Cleared a TODO\n\n- Avoided unnecessary calls to mockMaker.getHandler()\n- Added a way to avoid this problem in the future\n",
-            "tag_name": null
+            "message": "Cleared a TODO\n\n- Avoided unnecessary calls to mockMaker.getHandler()\n- Added a way to avoid this problem in the future"
         },
         {
             "hash": "2be8bef6b170f16730842225e067f965a27951ef",
-            "message": "Style / whitespace\n",
-            "tag_name": null
+            "message": "Style / whitespace"
         },
         {
             "hash": "4bc12e84090ccb8524220275ba0ef49150ff2189",
-            "message": "Removed a TODO that I will address in separate PR\n",
-            "tag_name": null
+            "message": "Removed a TODO that I will address in separate PR"
         },
         {
             "hash": "14c2c88f3ce7815df38fd024bd06ceade92f0087",
-            "message": "Added checking for null argument\n\n- improved test coverage\n- reduced code duplication\n",
-            "tag_name": null
+            "message": "Added checking for null argument\n\n- improved test coverage\n- reduced code duplication"
         },
         {
             "hash": "183ab9d97658ddb3342c60fc6611bcad5aa6d69d",
-            "message": "Added checking null argument\n\nAlso improved test coverage\n",
-            "tag_name": null
+            "message": "Added checking null argument\n\nAlso improved test coverage"
         },
         {
             "hash": "1f9b4f3de3af9f29e2123e74c5f6c036bb94d2aa",
-            "message": "Added an API for dual proxy use case (Spring Boot)\n\n- For design and rationale, see #1191\n- For all the details, see Javadoc in VerificationStartedListener\n",
-            "tag_name": null
+            "message": "Added an API for dual proxy use case (Spring Boot)\n\n- For design and rationale, see #1191\n- For all the details, see Javadoc in VerificationStartedListener"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1191",
+            "title": "Ensure spring-boot can use Mockito public API"
         }
     ]
 }

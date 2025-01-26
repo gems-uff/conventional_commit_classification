@@ -1,0 +1,354 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 60,
+    "start_delay": 0.0,
+    "duration": 142.70792824074073,
+    "commits_info": [
+        {
+            "hash": "ac5c8adb9830939e2329f1e16727c522a172c7c8",
+            "message": "Release v6.1.14"
+        },
+        {
+            "hash": "fde7116ae441c72dfbc66606ab1a3de7fc84a6f6",
+            "message": "Consistently skip processing of plain Java annotations\n\nCloses gh-33580"
+        },
+        {
+            "hash": "0a645916cd78de333482cf68329864618562fb98",
+            "message": "Add checkstyle rule for toLowerCase/toUpperCase\n\nThis commit adds a checkstyle rule that prevents the re-introduction of\nsuch calls.\n\nSee gh-33708"
+        },
+        {
+            "hash": "5302e7aa254751b9929bf774af7ee718c468aa79",
+            "message": "Update fallback.adoc\n\nFix a typo.\n\nCloses gh-33721"
+        },
+        {
+            "hash": "cad02c174359c05ad4d00cc32defa5e691ed7dcc",
+            "message": "Update Antora Spring UI to v0.4.17"
+        },
+        {
+            "hash": "c765d03a596a2481b9aa159d1bdeeda851437729",
+            "message": "Use Locale.ROOT consistently for toLower/toUpperCase\n\nCloses gh-33708"
+        },
+        {
+            "hash": "11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "message": "Use Locale.ROOT consistently for toLower/toUpperCase\n\nCloses gh-33708"
+        },
+        {
+            "hash": "23656aebc6c7d0f9faff1080981eb4d55eff296c",
+            "message": "Use Locale.ROOT consistently for toLower/toUpperCase\n\nSee gh-33708"
+        },
+        {
+            "hash": "feb6a5f52d4d4d9ab8651af1efb3b9aa220cb4be",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a228eb8bd643fb0e906c9023c61113b0327b7cfc",
+            "message": "Upgrade to Reactor 2023.0.11\n\nCloses gh-33637"
+        },
+        {
+            "hash": "c015814140e4d2b71c3c49aa4b0bef35a91e1828",
+            "message": "Upgrade to Micrometer 1.12.11\n\nCloses gh-33647"
+        },
+        {
+            "hash": "fb7890d73975a3d9e0763e0926df2bd0a608e87e",
+            "message": "Update processPath for double encoding\n\nSee gh-33689"
+        },
+        {
+            "hash": "7c2c4d7c9af33cb58d538893d2b5b0e0a788912f",
+            "message": "Update scheduling.adoc\n\nChange 'OutOfMemoryErrors' to 'OutOfMemoryError'.\n\nCloses gh-33703"
+        },
+        {
+            "hash": "3bfbe30a7814c9ea1556d40df9bd87ddb3ba372d",
+            "message": "Normalize static resource path early\n\nRather than leaving it to the Resource implementation, and\npotentially normalizing twice, we apply it once as part of the\ninitial processPath checks.\n\nCloses gh-33689"
+        },
+        {
+            "hash": "32962894a0157362d4cfdb90fad836311b36e8ec",
+            "message": "Add runtime hints for JMS connection factories proxies\n\nPrior to this commit, the JMS connection factories would proxy various\ninterfaces. This typically requires runtime hints for GraalVM native\napplications and spring-jms is missing those.\n\nThis commit adds a new `ConnectionFactoriesRuntimeHints` that\ncontributes such hints with type conditions.\n\nFixes gh-33590"
+        },
+        {
+            "hash": "97bce6d3615cebe7a4de51b3b7138cd807c7db1a",
+            "message": "Fix link in testing/support-jdbc.adoc\n\nFix the link to \"Testing Data Access Logic with an Embedded Database\".\n\nCloses gh-33686"
+        },
+        {
+            "hash": "8da31e1db76ee078735731765d8313e7d323692a",
+            "message": "Reject CORS request with 403 if Origin header is malformed\n\nWhen assessing if a request is a CORS request, both mvc and reactive\n`DefaultCorsProcessor` now catch `IllegalArgumentException` and turn\nthis into a 403 rejection rather than letting the exception propagate\ninto a 500 response.\n\nCloses gh-33688"
+        },
+        {
+            "hash": "f991c19b307350787be5bdcee1b703b40f979aba",
+            "message": "Merge pull request #33617 from asibross\n\n* pr/33617:\n  Polish \"Adapt Javadoc note about log level of BeanPostProcessorChecker\"\n  Adapt Javadoc note about log level of BeanPostProcessorChecker\n\nCloses gh-33617"
+        },
+        {
+            "hash": "3c80d4c978ad9fd48ecd45f803c20cf5e461aeec",
+            "message": "Polish \"Adapt Javadoc note about log level of BeanPostProcessorChecker\"\n\nSee gh-33617"
+        },
+        {
+            "hash": "6da32b4631c83f64d4bb86a0d231428dd1cf5de7",
+            "message": "Adapt Javadoc note about log level of BeanPostProcessorChecker\n\nSee gh-33617"
+        },
+        {
+            "hash": "91cadf7f24b704c3154fd60e48ec94a0ea3ad54e",
+            "message": "Start building against Reactor 2023.0.11 snapshots\n\nSee gh-33637"
+        },
+        {
+            "hash": "90637b6344d725cd9a8649f2ab60daae407ecbe9",
+            "message": "Start building against Micrometer 1.12.11 snapshots\n\nSee gh-33647"
+        },
+        {
+            "hash": "2622db1dbe58e2265036ae8b69db11c9bb437e87",
+            "message": "Consistent references to annotation-based autowiring"
+        },
+        {
+            "hash": "3dac274d20bea90eb26cec2dafe0af25391e73f9",
+            "message": "Avoid synchronization for delegate initialization\n\nCloses gh-33656"
+        },
+        {
+            "hash": "6b975592bf77b8a2deda2a47ecd54d9c30f3dd84",
+            "message": "Harmonize GitHub Actions structure\n\nSee https://github.com/spring-projects/spring-boot/issues/42512"
+        },
+        {
+            "hash": "c44e43d791ca3c0a0166581b59da405ab816fb99",
+            "message": "Upgrade to JUnit 5.10.5"
+        },
+        {
+            "hash": "c41f8ea3c896dbf878b652071a0e22d2600dddaf",
+            "message": "Merge pull request #33634 from junhyeongkim2\n\n* pr/33634:\n  Use HttpMethod.GET for better readability\n\nCloses gh-33634"
+        },
+        {
+            "hash": "a668580f77eb1482fb4f0dc5205b4a7440e8c110",
+            "message": "Use HttpMethod.GET for better readability\n\nSee gh-33634"
+        },
+        {
+            "hash": "b54420f8aa955e819da4c2662c2c729f26792738",
+            "message": "Include argument name in MethodArgumentTypeMismatchException message\n\nCloses gh-33573"
+        },
+        {
+            "hash": "0b3b1391c1de87c171b50b143dcbd48e1c021354",
+            "message": "Avoid usage of deprecated AssertJ feature"
+        },
+        {
+            "hash": "64daba34de543d7fd3728c89ee6020bd774b448b",
+            "message": "Upgrade to Awaitility 4.2.2\n\nSee gh-33143\nCloses gh-33604"
+        },
+        {
+            "hash": "87157d3200cdbd4b5a89be57f241b5ca3df79ea4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "95f181352f674422255ab5b32b878fd81760aa4b",
+            "message": "Defensively check MethodParameter.getMethod() in KotlinDelegate\n\nCloses gh-33609"
+        },
+        {
+            "hash": "e32a2f339d611053c2b53f0bb3d5f322e4df24d7",
+            "message": "Propagate method error in some cases of reactive `findInCaches` errors\n\nIn a Cacheable reactive method, if an exception is propagated from\nboth the method and the caching infrastructure, an NPE could previously\nsurface due to the `CacheAspectSupport` attempting to perform an\n`onErrorResume` with a `null`. This change ensures that in such a case\nthe user-level exception from the method is propagated instead.\n\nCloses gh-33492"
+        },
+        {
+            "hash": "9f4968ed05a9f557d8c0bb1663a367e0ee32e479",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b6cfa2db0bb19bad7ea563dcc2ef65fed682b4dc",
+            "message": "Refine warn log message with advisor and ROLE_INFRASTRUCTURE hints\n\nCloses gh-33184"
+        },
+        {
+            "hash": "26054d1ab0ef9121664560dcca519c469d462164",
+            "message": "Fix TargetSource setup for valid proxy interface specification\n\nSee gh-31304"
+        },
+        {
+            "hash": "f2b522211f678637d273ba3192ccda9c06a78db7",
+            "message": "Upgrade to Groovy 4.0.23"
+        },
+        {
+            "hash": "49da92b6a3a67f015d04712abb1891cba7930e77",
+            "message": "Avoid http URL String (making checkstyleNohttp happy)\n\nSee gh-33561"
+        },
+        {
+            "hash": "daa109e2ecef0ee42499c5b9317be110ed5f48a7",
+            "message": "Preserve URLStreamHandler in toRelativeURL and convertClassLoaderURL\n\nCloses gh-33561\nSee gh-33199"
+        },
+        {
+            "hash": "ca0448260f3bdc067cc94024be6bed2d966ddb19",
+            "message": "Convert DateTimeException to expected IllegalArgumentException\n\nCloses gh-33545"
+        },
+        {
+            "hash": "2ab0101b8a0418eb113e49ffc2b45c5835a160c0",
+            "message": "Add coroutine context tests for WebClientExtensions\n\nCloses gh-33548"
+        },
+        {
+            "hash": "478aa250a082a5759f607218fd748fbcfb3ea4c2",
+            "message": "Preserve coroutine context in WebClientExtensions\n\nSee gh-33548"
+        },
+        {
+            "hash": "5cc4d0a2ca2a30ce11f98495e0eaca4247aeaf0f",
+            "message": "Do not invoke AotTestExecutionListener for @⁠DisabledInAotMode tests\n\nCloses gh-33589"
+        },
+        {
+            "hash": "602ac903ff1d5ff546890072bdf1fd514e4cb232",
+            "message": "Upgrade to JUnit 5.10.4"
+        },
+        {
+            "hash": "af3a26ab06f0cd62fffb5006372ff495aa0d6eaf",
+            "message": "Clean up warnings in Gradle build"
+        },
+        {
+            "hash": "1cecf52883f74f08cc2e0ea7189d41b88d112a70",
+            "message": "Upgrade to Apache HttpCore Reactive 5.3\n\nCloses gh-33588"
+        },
+        {
+            "hash": "88905ea20d13c674bbc725302abe3607b1550604",
+            "message": "Upgrade to Apache HttpClient 5.4\n\nThis commit also updates the external Javadoc link to avoid the following\nwarning in the build.\n\nURL https://hc.apache.org/httpcomponents-client-5.2.x/current/httpclient5/apidocs/package-list was redirected to https://hc.apache.org/httpcomponents-client-5.4.x/current/httpclient5/apidocs/package-list\n\nCloses gh-33587"
+        },
+        {
+            "hash": "7df9db3bb76eaa302e0ea06d7dd61b27d1103601",
+            "message": "Polishing test\n\nAssert that BlockHound doesn't trigger, rather than assertions on a\ncondition that makes the test flakky because concurrency is involved."
+        },
+        {
+            "hash": "bd9c05a909916c1998399aef40d8b052973cc94d",
+            "message": "Upgrade to Gradle 8.10.2\n\nCloses gh-33584"
+        },
+        {
+            "hash": "94c04821ffcf0935077d0bf49c7467a12009806f",
+            "message": "Use correct method to check encoded resource path\n\nCloses: gh-33568"
+        },
+        {
+            "hash": "776811bdb882b7ed7e6b388f6433a5c1cf4c4938",
+            "message": "Defer ExchangeFilterFunction execution in WebClient\n\nPrior to this commit, the `DefaultWebClient` would execute the configured\n`ExchangeFilterFunction` as the reactive pipeline is assembled during\nsubscription. This means that if imperative code is executed in a filter\nfunction, it won't be aware of the current observation through the local\nscope.\n\nFor example, when automatic context propagation is enabled for Reactor\noperators, the logger MDC will not know about the current\ntraceId/spanId.\n\nThis commit ensures that client filter functions execution is deferred\nduring the actual client exchange.\n\nFixes gh-33559"
+        },
+        {
+            "hash": "de4ff4b44bbe0147009e3d98d31b6bc5f2373a53",
+            "message": "Polishing tests\n\nThis commit adds more test coverage of SpringCoreBlockHoundIntegration.\n\nSee gh-33450"
+        },
+        {
+            "hash": "f6e96a24d449630ded4ed41346935480da4952a1",
+            "message": "Add BlockHound exception for ConcurrentReferenceHashMap$ReferenceManager\n\nThis commit adds a SpringCoreBlockHoundIntegration configuration to\nallows `pollForPurge` method to block.\n\nCloses gh-33450"
+        },
+        {
+            "hash": "daea92397f5fa0f37d30b377017563516eaec4ee",
+            "message": "Reference the spring-framework-petclinic repository\n\nCloses gh-33539"
+        },
+        {
+            "hash": "5efb385e64c2b4aaaf5017ba9bfdfee09632991c",
+            "message": "Read Expires cookie attribute in HttpComponents connector\n\nPrior to this commit, the HttpComponents implementation for the\n`WebClient` would only consider the max-age attribute of response\ncookies when parsing the response. This is not aligned with other client\nimplementations that consider the max-age attribute first, and then the\nexpires if the former was not present. The expires date is then\ntranslated into a max-age duration. This behavior is done naturally by\nseveral implementations.\n\nThis commit updates the `HttpComponentsClientHttpResponse` to do the\nsame.\n\nFixes gh-33157"
+        },
+        {
+            "hash": "b388ff60ddbbdcf4af25a2e0fd512f6f37a36ec0",
+            "message": "Fix parameterized test display names and polishing"
+        },
+        {
+            "hash": "412f5f677bc5de068e6814f502c19dc43af2849c",
+            "message": "Fix NPEs in MimeMessageHelper when adding files without names\n\nPrior to this commit, `MimeMessageHelper` would accept `Resource`\ninstances as inline attachments in multipart MIME messages. If the\nprovided `Resource` implementation returns `null` for `getFileName()`,\nthe `addInLine` method would fail with a `NullPointerException` as\nJakarta activation fails to detect the content type for a null filename.\n\nThis commit falls back on \"application/octet-stream\" when the filename\nis not known for the given resource instead of failing with an\nexception.\n\nFixes gh-33527"
+        },
+        {
+            "hash": "6a20987933283bd441ff4aedd2bc3c554c7010fc",
+            "message": "Add missing URI template variables in RedirectViews\n\nPrior to this commit, the URL handler mapping would expose the matching\npattern, the path within mapping and matching URI variables as request\nattributes. This was the case when the mapping would use the\n`AntPathMatcher` as matching infrastructure, but not when using the\n`PathPattern` variant. In this case, the map of URI variables would be\n`null`. This could throw `IllegalArgumentException` when `RedirectView`\ninstances were relying on the presence of specific variables.\n\nThis commit ensures that URI variables are also extracted when the\n`PathPatternParser` is used.\n\nFixes gh-33422"
+        },
+        {
+            "hash": "2ae62dec8c56d9bed5ed95d316d207ff0cb89287",
+            "message": "Next development version (v6.1.14-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33580",
+            "title": "Skip processing of Java annotations in `QualifierAnnotationAutowireCandidateResolver`"
+        },
+        {
+            "number": "33708",
+            "title": "Use Locale.ROOT for locale neutral, case insensitive comparisons"
+        },
+        {
+            "number": "33637",
+            "title": "Upgrade to Reactor 2023.0.11"
+        },
+        {
+            "number": "33647",
+            "title": "Upgrade to Micrometer 1.12.11"
+        },
+        {
+            "number": "33689",
+            "title": "Improve checks for relative paths in static resource handling"
+        },
+        {
+            "number": "33590",
+            "title": "Missing native image hints for JDK proxies created by JMS connection factories"
+        },
+        {
+            "number": "33656",
+            "title": "DelegatingFilterProxy Causes Pinned Virtual Threads"
+        },
+        {
+            "number": "33573",
+            "title": "Include argument name in `MethodArgumentTypeMismatchException` error message"
+        },
+        {
+            "number": "33143",
+            "title": "Downgrade Awaitility  to 4.2.0"
+        },
+        {
+            "number": "33609",
+            "title": "Potential NPE from `MethodParameter.getMethod()` check in `KotlinDelegate.hasDefaultValue()`"
+        },
+        {
+            "number": "33492",
+            "title": "`@Cacheable` throws `NullPointerException` when `RuntimeException` is thrown inside annotated code"
+        },
+        {
+            "number": "33184",
+            "title": "Warning message about bean post-processing and eager injection may suggest the wrong cause"
+        },
+        {
+            "number": "31304",
+            "title": "Mixin created with `IntroductionInterceptor` results in dynamic proxy instead of CGLIB proxy"
+        },
+        {
+            "number": "33561",
+            "title": "`org.springframework.util.ResourceUtils#toRelativeURL` drops custom `URLStreamHandler`"
+        },
+        {
+            "number": "33199",
+            "title": "PathMatchingResourcePatternResolver#convertClassLoaderURL drops URLStreamHandler in version 6.1.x"
+        },
+        {
+            "number": "33545",
+            "title": "`ZoneIdEditor` throws wrong exception type for `TypeConverterSupport`"
+        },
+        {
+            "number": "33589",
+            "title": "`AotTestExecutionListener` should not be invoked for a `@DisabledInAotMode` test class"
+        },
+        {
+            "number": "33588",
+            "title": "Upgrade to Apache HttpCore Reactive 5.3"
+        },
+        {
+            "number": "33587",
+            "title": "Upgrade to Apache HttpClient 5.4"
+        },
+        {
+            "number": "33584",
+            "title": "Upgrade to Gradle 8.10.2"
+        },
+        {
+            "number": "33559",
+            "title": "Current observation not in scope during WebClient ExchangeFilterFunction execution"
+        },
+        {
+            "number": "33450",
+            "title": "Blocking call detected in ConcurrentReferenceHashMap by BlockHound"
+        },
+        {
+            "number": "33157",
+            "title": "Reactive `HttpComponentsClientHttpResponse` ignores `Expires` cookie attribute"
+        },
+        {
+            "number": "33527",
+            "title": "MimeMessageHelper addInline with ByteArrayResource fail with null filename"
+        },
+        {
+            "number": "33422",
+            "title": "Path variable values missing in RedirectView when PathPattern are used"
+        }
+    ]
+}

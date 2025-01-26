@@ -1,0 +1,49 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.52",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 6.704398148148148,
+    "commits_info": [
+        {
+            "hash": "541411cdbbca41d794a29b0927958378c3eb6adf",
+            "message": "version bumped + release notes updated by CI build 2779 [ci skip-release]"
+        },
+        {
+            "hash": "8e28181399803991846ef6692ad4456be3300f8e",
+            "message": "Merge pull request #1133 from mockito/sf2\n\nSimplified and documented .travis.yml file"
+        },
+        {
+            "hash": "f457008249f0f760d5bc468fd39f5e995e83ff97",
+            "message": "Documented why the 'install' step is still needed"
+        },
+        {
+            "hash": "bcbc2888bd019c75e4a30a825d6e3c9f8780e606",
+            "message": "Removed unnecessary install step\n\nI'd like to see what Travis does when we remove this step. The simpler the configuration file, the cleaner and easier to maintain is the code."
+        },
+        {
+            "hash": "061c1089e283c0ab428dbff77e76d2f554d161c5",
+            "message": "Removed unnecessary configuration from travis file\n\nhosts setting does not seem to be adding any value. I see errors/warnings in Travis console output related to this setting (I verified both: Java7 and Java8 jobs, example: https://travis-ci.org/mockito/mockito/jobs/244146929#L134). Let's get rid of this setting and see how it goes."
+        },
+        {
+            "hash": "3ad7d8ea6733fb1e4db6cdb75c441e17d272425b",
+            "message": "Tidied up .travis.yml file - formatting and comments"
+        },
+        {
+            "hash": "629e1bb3e8ea68929a0a32db990114ff26254216",
+            "message": "Simplified .travis.yml file (3)\n\nRemoved GRADLE_OPTS that don't add any value at the moment. They are not applied to the Gradle daemon and Gradle uses daemon by default. Removed TERM=dumb because I don't know why we need it."
+        },
+        {
+            "hash": "edcc8f62b4d7fefd8093dd5c437da9679dfc93b1",
+            "message": "Simplified .travis.yml file (2)\n\nRemoved explicit export of TRAVIS_COMMIT_MESSAGE env variable. This variable is automatically exported by Travis CI."
+        },
+        {
+            "hash": "557a57c0ee848d05b2953ed2a7acd0064352711f",
+            "message": "Simplified .travis.yml file (1)\n\nDeletion of specific directories of cache does not make sense now because we moved to newer version of Gradle that uses different directory name for cached artifacts. So far the builds were working. I assume that removing this setting is safe and will just reduce complexity from .travis.yml."
+        }
+    ],
+    "issues": []
+}

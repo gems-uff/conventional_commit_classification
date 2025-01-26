@@ -1,0 +1,554 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.7.18",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 81,
+    "start_delay": 0.0,
+    "duration": 112.29741898148148,
+    "commits_info": [
+        {
+            "hash": "0c8b382d42db22b92efcf47000d0ff9ef4971629",
+            "message": "Release v2.7.18"
+        },
+        {
+            "hash": "5490e73922b37a7f0bdde43eb318cb1038b45d60",
+            "message": "Improve Tags generation for methods names\n\nThis commit optimizes the `Tag` generation for method names by only\nallocating new `Tag` instances for well-known method names. Others will\nbe marked as \"UNKNOWN\"."
+        },
+        {
+            "hash": "7ad6e4470c945ae0e39e63af28c47aebbe27bbc0",
+            "message": "Upgrade to Spring Batch 4.3.10\n\nCloses gh-38281"
+        },
+        {
+            "hash": "a6346fba08f78f01737d192be1b4221e8c365684",
+            "message": "Merge pull request #38385 from PENEKhun\n\n* pr/38385:\n  Polish \"Document comments in SQL for database initialization\"\n  Document comments in SQL for database initialization\n\nCloses gh-38385"
+        },
+        {
+            "hash": "0171ed205cba038e0b8462228df3448cbc81c518",
+            "message": "Polish \"Document comments in SQL for database initialization\"\n\nSee gh-38385"
+        },
+        {
+            "hash": "578d0436e07b5fc7076e2eb22f2e3176abaf4f0a",
+            "message": "Document comments in SQL for database initialization\n\nSee gh-38385"
+        },
+        {
+            "hash": "49c4f33919261a63c2b5eed1fd80fea0aed4b36f",
+            "message": "Prepare for the final OSS release of 2.7.x\n\nCloses gh-38472"
+        },
+        {
+            "hash": "b473ffdea2b53a1fc7ee46f0b6c304f03333d3ed",
+            "message": "Upgrade to Spring Integration 5.5.20\n\nCloses gh-38491"
+        },
+        {
+            "hash": "d1cce0f8ef705b1989f36484c3d9f337b5e1449f",
+            "message": "Upgrade default CNB builders to Paketo Jammy\n\nCloses gh-38477"
+        },
+        {
+            "hash": "95fbb49a08dcdf49ca748cceafb1c98494e0b225",
+            "message": "Upgrade to Tomcat 9.0.83\n\nCloses gh-38435"
+        },
+        {
+            "hash": "ebb7a547af3fca9c58ee25bd208d4f0ff8e74b01",
+            "message": "Upgrade to Spring WS 3.1.8\n\nCloses gh-38284"
+        },
+        {
+            "hash": "3b169a4d531dff5f4a8a1b82564079b27472a383",
+            "message": "Upgrade to Spring RESTDocs 2.0.8.RELEASE\n\nCloses gh-38434"
+        },
+        {
+            "hash": "3c820b8613ddb5bd03e9fc11f8d6f483322b338f",
+            "message": "Upgrade to Spring Data Bom 2021.2.18\n\nCloses gh-38282"
+        },
+        {
+            "hash": "79c467c8b6c79879c5ae3767aa3ade1c97cbd816",
+            "message": "Upgrade to Pooled JMS 1.2.6\n\nCloses gh-38433"
+        },
+        {
+            "hash": "52fc4c019baa82070b527c8754404a7eeaec42e3",
+            "message": "Upgrade to Netty 4.1.101.Final\n\nCloses gh-38432"
+        },
+        {
+            "hash": "95149822a5d98b299b28f9341087faaf7c373139",
+            "message": "Upgrade to Glassfish JAXB 2.3.9\n\nCloses gh-38431"
+        },
+        {
+            "hash": "296af5f461de6b816bfcd9f9890c285790e277dd",
+            "message": "Upgrade to Elasticsearch 7.17.15\n\nCloses gh-38430"
+        },
+        {
+            "hash": "7c504394f41aa7ce0bd2e5473693e1813e34e012",
+            "message": "Upgrade to Dropwizard Metrics 4.2.22\n\nCloses gh-38429"
+        },
+        {
+            "hash": "c7c4ed3a129841fc6fcc573f7ce64070b074d02a",
+            "message": "Upgrade to DB2 JDBC 11.5.9.0\n\nCloses gh-38428"
+        },
+        {
+            "hash": "d437270e87f01196bedb94c995b5ea056aee5796",
+            "message": "Upgrade to ActiveMQ 5.16.7\n\nCloses gh-38427"
+        },
+        {
+            "hash": "b4348ecf19ff640ddf0cdc650fdda7f291b741a9",
+            "message": "Don't set next version when staging final version\n\nCloses gh-38399"
+        },
+        {
+            "hash": "83d1d8e36d02f47035532bfd86cf7ec1eebfb068",
+            "message": "Parameterize Artifactory repository names\n\nSee gh-38394"
+        },
+        {
+            "hash": "81ced3ecdb08ffa427ccf7728b2cbdf27da6a16c",
+            "message": "Improve parameterization of the CI pipeline\n\nCloses gh-38394"
+        },
+        {
+            "hash": "19f8e042a6ebf60b150b1e290f108405eee64db2",
+            "message": "Upgrade to Spring HATEOAS 1.5.6\n\nCloses gh-38373"
+        },
+        {
+            "hash": "239e8a640e13e03549109465d625bed8ac4270c7",
+            "message": "Start building against Spring HATEOAS 1.5.6 snapshots\n\nSee gh-38373"
+        },
+        {
+            "hash": "87e2b1ea8e7ba5f0d70467a68de96906eb97208e",
+            "message": "Upgrade to Spring Framework 5.3.31\n\nCloses gh-38283"
+        },
+        {
+            "hash": "c2156d6803bf304ad710509bfbd706ae265fef3d",
+            "message": "Remove static state from CF web endpoint integration tests\n\nThe mocks being static meant that their state was shared across each\ntest in the class. This resulted in the tests being order dependent.\nThis commit uses instance variables to hold the mocks, thereby\nensuring that they're recreated for each test as part of the standard\nJUnit lifecycle.\n\nCloses gh-38363"
+        },
+        {
+            "hash": "9b8bcec33e77c29b183d29d545c5a5b459facbcb",
+            "message": "Upgrade to Reactor Bom 2020.0.38\n\nCloses gh-38280"
+        },
+        {
+            "hash": "8d0194466625149fc2081b4f40f163a0a8329474",
+            "message": "Start building against Spring WS 3.1.8 snapshots\n\nSee gh-38284"
+        },
+        {
+            "hash": "34609133386b4f2a99b49bbb6fce0f9b423eb4e4",
+            "message": "Upgrade to Micrometer 1.9.17\n\nCloses gh-38279"
+        },
+        {
+            "hash": "935a617d58b21c70265192c83d370835c2f01ded",
+            "message": "Merge pull request #38330 from dreis2211\n\n* pr/38330:\n  Fix link to Elasticsearch health indicator\n\nCloses gh-38330"
+        },
+        {
+            "hash": "af0df78bd0c45446126f844b3685ed1e6e4bfde4",
+            "message": "Fix link to Elasticsearch health indicator\n\nSee gh-38330"
+        },
+        {
+            "hash": "d9e07a14814e16e0e6ff505adf1a6b6b0baae6f8",
+            "message": "Start building against Spring Framework 5.3.31 snapshots\n\nSee gh-38283"
+        },
+        {
+            "hash": "c95b5409b1412904712c8f8c155778c8574eaecb",
+            "message": "Start building against Spring Data Bom 2021.2.18 snapshots\n\nSee gh-38282"
+        },
+        {
+            "hash": "edc6da27f2859b03994c5b1ab41f3b51d13923b0",
+            "message": "Start building against Spring Batch 4.3.10 snapshots\n\nSee gh-38281"
+        },
+        {
+            "hash": "274ac907d2276c517092b7bc3a8b740dd6bc4001",
+            "message": "Start building against Reactor Bom 2020.0.38 snapshots\n\nSee gh-38280"
+        },
+        {
+            "hash": "9c72da072464b68a196d998c7872072d31f754ea",
+            "message": "Start building against Micrometer 1.9.17 snapshots\n\nSee gh-38279"
+        },
+        {
+            "hash": "61dbf4562805cb2c6429a5e85f3319c25f5f10b1",
+            "message": "Fix package declaration of sample in reference docs\n\nUpdate the \"Developing Your First Spring Boot Application\" sample so\nthat the package is not removed.\n\nCloses gh-34513"
+        },
+        {
+            "hash": "7c73a034b63ebcd9ae62e59452f726f4cc0e8c47",
+            "message": "Improve backwards- and forwards-compatibility of Flyway auto-config\n\nCloses gh-38164"
+        },
+        {
+            "hash": "66ed4fe519d5ddc14d36cae686f397cea101ceac",
+            "message": "Remove system property dependency from MockBeanContextCachingTests\n\nNow this test can be run regardless of the\n'spring.test.context.cache.maxSize' system property value.\n\nSee gh-38236"
+        },
+        {
+            "hash": "8fc59e33671e454b3cdaa673a3e4b21311c064aa",
+            "message": "Improve bom checking and address reported problems\n\nCloses gh-38250"
+        },
+        {
+            "hash": "fc6d4ef2c096d8f511e42004579b6ba045a3616a",
+            "message": "Improve commandline help for encodepassword command in the CLI\n\nCloses gh-38203"
+        },
+        {
+            "hash": "717d7a485011f517ca5978eeb6301dbfb2983e5f",
+            "message": "Merge pull request #38228 from izeye\n\n* pr/38228:\n  Remove obsolete prohibit for Undertow library\n\nCloses gh-38228"
+        },
+        {
+            "hash": "1f22f6ed6425260c59ad808f32f48ac0f7570975",
+            "message": "Remove obsolete prohibit for Undertow library\n\nSee gh-38228"
+        },
+        {
+            "hash": "6c5cb57afd67e54e113fcdb0512d62cd9a734379",
+            "message": "Document how to populate test data using Flyway and Liquibase\n\nCloses gh-26796"
+        },
+        {
+            "hash": "30bd1f9ccbedd2b2838decc060970f6e0a06b6ea",
+            "message": "Merge pull request #38207 from dreis2211\n\n* pr/38207:\n  Remove obsolete spring-boot-deployment-tests directory\n\nCloses gh-38207"
+        },
+        {
+            "hash": "3f7ece541817688ef4998dfbe2ee0ae4333fe701",
+            "message": "Remove obsolete spring-boot-deployment-tests directory\n\nSee gh-38207"
+        },
+        {
+            "hash": "06434f050a074bc4806b750a3d84e9897c9e40b1",
+            "message": "Upgrade to Spring Asciidoctor Extensions 0.6.3\n\nCloses gh-38211"
+        },
+        {
+            "hash": "18f9dc9b94ffe35dc097395a5e864a12b8f35fe1",
+            "message": "Document that customizers are not applied to additional connectors\n\nCloses gh-38183"
+        },
+        {
+            "hash": "54313d196296bbab4fc1e729f0dc17f539a577ca",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "e891a3e24c9877b82d38b67ff5f6fe26d9883b0f",
+            "message": "Polish adoc formatting"
+        },
+        {
+            "hash": "eecb15d1bacef1241c3320e5b69c10fc9eed8827",
+            "message": "Rename startDaemonAwaitThread() inside TomcatWebServer to match intent\n\nCloses gh-38155"
+        },
+        {
+            "hash": "1b32baaadcc65071544a6327ec908f0e38fad1e4",
+            "message": "Upgrade CI to Docker 24.0.7\n\nCloses gh-38169"
+        },
+        {
+            "hash": "48ef78bddd6ccb80e9522d8789da7af0c5c67149",
+            "message": "Merge pull request #38153 from dreis2211\n\n* gh-38153:\n  Fix typos in method names\n\nCloses gh-38153"
+        },
+        {
+            "hash": "990afd844f159bc60896e998eda6b5b70f85e6f8",
+            "message": "Fix typos in method names\n\nSee gh-38153"
+        },
+        {
+            "hash": "020c2b364e9066275d22b2c115c8a2f0924d844b",
+            "message": "Fix handling of value that overflows an int\n\nCloses gh-38146"
+        },
+        {
+            "hash": "747291c0b7a4ce081dddfef9e5a711c19d2b4113",
+            "message": "Clarify docs on when application.* banner properties will work\n\nCloses gh-33489"
+        },
+        {
+            "hash": "94e810201e317dca44e271c2729b0fd68cd6dcdd",
+            "message": "Fix test for incremental build of renamed properties class\n\nPreviously, the .class file for the renamed properties class was\non the class path of the compilation in two places:\n\n1. The output directory of the test's previous compilation\n2. The output directory of the compilation of src/test/java of\n   spring-boot-configuration-processor\n\nThe first of these locations is addressed by updating TestProject.\nThe .class file is now deleted from the project's output location\nat the same time as the .java file is deleted from its source\nlocation.\n\nThe second of these locations is addressed by configuring the class\npath of the compiler to include a copy of the result of compiling\nsrc/test/java of spring-boot-configuration-processor. From this copy\nentries can then be deleted as needed without destabilizing other tests.\n\nCloses gh-26271"
+        },
+        {
+            "hash": "c999d987a90e24cacf2c81ab284c3e52e4f8f1a7",
+            "message": "Improve systemd configuration documentation\n\nCloses gh-28453"
+        },
+        {
+            "hash": "f78dcac56f074ab8ff038dd0c434ac4d9f22bd12",
+            "message": "Clarify that @AutoConfigureWebTestClient uses mock infrastructure\n\nCloses gh-29890"
+        },
+        {
+            "hash": "0d8ea44f5baf7f6315379191e226ca0385ec1dda",
+            "message": "Fix MyErrorWebExceptionHandler in documentation\n\nCloses gh-38104"
+        },
+        {
+            "hash": "d9e71f7a670d9e79f05dd0adbeb32c49c1975ebc",
+            "message": "Add documentation section on AOP\n\nCloses gh-32642"
+        },
+        {
+            "hash": "e21fda2f4a63ad85468dadb2479a3b87533d42cf",
+            "message": "Merge pull request #38086 from GVictorG7\n\n* gh-38086:\n  Polish unit tests from buildSrc\n\nCloses gh-38086"
+        },
+        {
+            "hash": "b9c2c6b820ebfee858c07c3870141c3b02b7a38f",
+            "message": "Polish unit tests from buildSrc\n\n* remove redundant \"public\" access modifiers\n* remove a never thrown defined Exception\n* assert the emptiness instead of length of files\n\nSee gh-38086"
+        },
+        {
+            "hash": "e1203b7e28952598d560f7a47eda936d5ad2aa13",
+            "message": "Document that WRITE_DURATIONS_AS_TIMESTAMPS is disabled by default\n\nCloses gh-38083"
+        },
+        {
+            "hash": "3872ec868bffe7d3f21fe44fb98b98373f40bcdd",
+            "message": "Mention ForwardedHeaderTransformer in the documentation\n\nCloses gh-37282"
+        },
+        {
+            "hash": "1498faaf7f8d78064e7dc5c6d933909d2a279a5d",
+            "message": "Document auto-configuration packages and how to add to them\n\nCloses gh-27549"
+        },
+        {
+            "hash": "eae95f8d17a796519e2a33b41e843ec92269d714",
+            "message": "Handle null host value in MailHealthIndicator\n\nIf both the host and port are omitted from the mail properties, the\n`location` field will be omitted from the health indicator details.\n\nFixes gh-38007"
+        },
+        {
+            "hash": "aaaafc6ede8ad84872e2f79130fc9c4a8847d768",
+            "message": "Add a note about TestConfiguration, Import, and ordering\n\nCloses gh-30513"
+        },
+        {
+            "hash": "dc645f09b756e321bad57ec8ec4179317edc5680",
+            "message": "Add a brief mention of ConfigurationPropertyCaching\n\nCloses gh-34172"
+        },
+        {
+            "hash": "ea39a333373d1e6cdab519e0dfa9453343368bdd",
+            "message": "Document server.servlet.encoding.* configuration properties\n\nCloses gh-32472"
+        },
+        {
+            "hash": "666f68ea60331c53ba60410d1a0caffb8d38b8d7",
+            "message": "Document configuration for building images with Colima\n\nCloses gh-34522"
+        },
+        {
+            "hash": "9a23e1389472b041f1c74687a702a02b1c503214",
+            "message": "Add some documentation for customizing the reactive web server\n\nCloses gh-31917"
+        },
+        {
+            "hash": "a20f81b995d4154c78fed2085d91a4625b9eb92a",
+            "message": "Mention that classpath.idx is typically generated by build plugins\n\nCloses gh-37125"
+        },
+        {
+            "hash": "fcdc638336e863434f4dcdd1a7acdff71cd4b7aa",
+            "message": "Mention what to do when use-hal-as-default-json-media-type is false\n\nCloses gh-26814"
+        },
+        {
+            "hash": "8778884f5df8120f0e4f3af3d255da98a496962c",
+            "message": "Clarify role of WebMvcRegistrations and WebMvcConfigurer\n\nCloses gh-31232"
+        },
+        {
+            "hash": "bf97e6dad82ebf119a812fec07c9a47591bccad7",
+            "message": "Ban use of AssertJ assertThatThrownBy\n\nUse assertThatExceptionOfType instead.\n\nCloses gh-37968"
+        },
+        {
+            "hash": "313e3d59a31c032d3f5070718fccaf055b8ce0b4",
+            "message": "Update Java version in .sdkmanrc to 8u392+9\n\nCloses gh-37959"
+        },
+        {
+            "hash": "d47f8bf945658b6829e6ab9f22e172fdb2a9fd5d",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "548b0ea91f046ec0333eda8fbd917b54fdb44e9b",
+            "message": "Fix failing exception assertion\n\nSee gh-37964"
+        },
+        {
+            "hash": "abdad1cabe5f59f0e45f83881b9242fcae85fffa",
+            "message": "Constently use assertThatExceptionOf... assertions\n\nCloses gh-37964"
+        }
+    ],
+    "issues": [
+        {
+            "number": "38281",
+            "title": "Upgrade to Spring Batch 4.3.10"
+        },
+        {
+            "number": "38472",
+            "title": "Mark 2.7.18 as the final 2.7.x OSS release"
+        },
+        {
+            "number": "38491",
+            "title": "Upgrade to Spring Integration 5.5.20"
+        },
+        {
+            "number": "38477",
+            "title": "Upgrade default CNB builders to Paketo Jammy"
+        },
+        {
+            "number": "38435",
+            "title": "Upgrade to Tomcat 9.0.83"
+        },
+        {
+            "number": "38284",
+            "title": "Upgrade to Spring WS 3.1.8"
+        },
+        {
+            "number": "38434",
+            "title": "Upgrade to Spring RESTDocs 2.0.8.RELEASE"
+        },
+        {
+            "number": "38282",
+            "title": "Upgrade to Spring Data Bom 2021.2.18"
+        },
+        {
+            "number": "38433",
+            "title": "Upgrade to Pooled JMS 1.2.6"
+        },
+        {
+            "number": "38432",
+            "title": "Upgrade to Netty 4.1.101.Final"
+        },
+        {
+            "number": "38431",
+            "title": "Upgrade to Glassfish JAXB 2.3.9"
+        },
+        {
+            "number": "38430",
+            "title": "Upgrade to Elasticsearch 7.17.15"
+        },
+        {
+            "number": "38429",
+            "title": "Upgrade to Dropwizard Metrics 4.2.22"
+        },
+        {
+            "number": "38428",
+            "title": "Upgrade to DB2 JDBC 11.5.9.0"
+        },
+        {
+            "number": "38427",
+            "title": "Upgrade to ActiveMQ 5.16.7"
+        },
+        {
+            "number": "38399",
+            "title": "Do not set the next development version when staging a final maintenance release"
+        },
+        {
+            "number": "38394",
+            "title": "Improve parameterization of the CI pipeline"
+        },
+        {
+            "number": "38373",
+            "title": "Upgrade to Spring HATEOAS 1.5.6"
+        },
+        {
+            "number": "38283",
+            "title": "Upgrade to Spring Framework 5.3.31"
+        },
+        {
+            "number": "38363",
+            "title": "CloudFoundry endpoint integration tests are order dependent"
+        },
+        {
+            "number": "38280",
+            "title": "Upgrade to Reactor Bom 2020.0.38"
+        },
+        {
+            "number": "38279",
+            "title": "Upgrade to Micrometer 1.9.17"
+        },
+        {
+            "number": "34513",
+            "title": "Code sample in \"Developing Your First Spring Boot Application\" does not work"
+        },
+        {
+            "number": "38164",
+            "title": "App fails to start with a NoSuchMethodError when using Flyway 10.0.0"
+        },
+        {
+            "number": "38236",
+            "title": "Use @DirtiesContext with our own integration tests"
+        },
+        {
+            "number": "38250",
+            "title": "Improve bom checking"
+        },
+        {
+            "number": "38203",
+            "title": "Improve --help and documentation for \"encodepassword -a/--algorithm\" in the Spring Boot CLI"
+        },
+        {
+            "number": "26796",
+            "title": "Add how-to documentation for test-only database migrations with Flyway/Liquibase"
+        },
+        {
+            "number": "38211",
+            "title": " Upgrade to Spring Asciidoctor Extensions 0.6.3"
+        },
+        {
+            "number": "38183",
+            "title": "Document that TomcatConnectorCustomizers are not applied to additional connectors"
+        },
+        {
+            "number": "38155",
+            "title": "Rename startDaemonAwaitThread() inside TomcatWebServer to match intent"
+        },
+        {
+            "number": "38169",
+            "title": "Upgrade CI to Docker 24.0.7"
+        },
+        {
+            "number": "38146",
+            "title": "spring.webflux.multipart.max-disk-usage-per-part behaves incorrectly for values where the number of bytes overflows an int"
+        },
+        {
+            "number": "33489",
+            "title": "Document that application.* banner variables require a packaged jar or the use of Boot's launcher"
+        },
+        {
+            "number": "26271",
+            "title": "IncrementalBuildMetadataGenerationTests#incrementalBuildTypeRenamed does not test what it's supposed to"
+        },
+        {
+            "number": "28453",
+            "title": "Improve systemd configuration documentation"
+        },
+        {
+            "number": "29890",
+            "title": "Clarify that @AutoConfigureWebTestClient binds WebTestClient to mock infrastructure"
+        },
+        {
+            "number": "38104",
+            "title": "MyErrorWebExceptionHandler example in documentation isn't working"
+        },
+        {
+            "number": "32642",
+            "title": "Add section on AspectJ support"
+        },
+        {
+            "number": "38083",
+            "title": "Document that SerializationFeature.WRITE_DURATIONS_AS_TIMESTAMPS is disabled by default"
+        },
+        {
+            "number": "37282",
+            "title": "Update \"Running Behind a Front-end Proxy Server\" to include reactive and ForwardedHeaderTransformer"
+        },
+        {
+            "number": "27549",
+            "title": "Document how to customize the basePackages that auto-configurations consider (for example Spring Data Repositories)"
+        },
+        {
+            "number": "38007",
+            "title": "Mail health indicator fails when host is not set in properties"
+        },
+        {
+            "number": "30513",
+            "title": "Clarifying documentation on including a top-level @TestConfiguration class in a test"
+        },
+        {
+            "number": "34172",
+            "title": "Document ConfigurationPropertyCaching"
+        },
+        {
+            "number": "32472",
+            "title": "Document server.servlet.encoding.* properties and server.servlet.encoding.mapping in particular"
+        },
+        {
+            "number": "34522",
+            "title": "Document configuration for building images with Colima"
+        },
+        {
+            "number": "31917",
+            "title": "Add a section on customizing embedded reactive servers"
+        },
+        {
+            "number": "37125",
+            "title": "Improve documentation of `classpath.idx` file and its generation by the Maven and Gradle plugins"
+        },
+        {
+            "number": "26814",
+            "title": "Document additional user configuration that's required after setting `spring.hateoas.use-hal-as-default-json-media-type` to `false`"
+        },
+        {
+            "number": "31232",
+            "title": "Clarify that MVC components provided through WebMvcRegistrations are subject to subsequent processing and configuration by MVC"
+        },
+        {
+            "number": "37968",
+            "title": "Ban use of assertThatThrownBy"
+        },
+        {
+            "number": "37959",
+            "title": "Update Java version in .sdkmanrc to 8u392+9"
+        },
+        {
+            "number": "37964",
+            "title": "Consistent use assertThatExceptionOf... assertions"
+        }
+    ]
+}

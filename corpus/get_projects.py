@@ -3,7 +3,6 @@ import os
 import json
 from dotenv import load_dotenv
 
-# Carregar as variáveis de ambiente
 load_dotenv()
 
 API_KEY = os.getenv('LIBRARIES_IO_API_KEY')

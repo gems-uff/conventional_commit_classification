@@ -1,0 +1,690 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.0.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 106,
+    "start_delay": 0.0,
+    "duration": 28.14025462962963,
+    "commits_info": [
+        {
+            "hash": "837947ca090cc18934379a0142c8ba0fa9b3f0f5",
+            "message": "Release v3.0.1"
+        },
+        {
+            "hash": "5929d956040af8a30591fd6a4f44de8e88a54209",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "b10b788cd8f3a550b79f3334b3829ec5d8cd3a52",
+            "message": "Next development version (v2.7.8-SNAPSHOT)"
+        },
+        {
+            "hash": "f588793445dee905335625ba946674ed3a771db0",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "02546197820a00dedb012f43f20fd67e982e6f3f",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "2e7ca6f82d9a8552f6b0de3cb9f4f4bb0424a07c",
+            "message": "Warning if <springProfile> is used in phase 2 model elements\n\nAdd `SpringProfileIfNestedWithinSecondPhaseElementSanityChecker` which\nwill provide a warning if `<springProfile>` is used within a phase 2\nmodel element. This is similar to Logback's own `<if>` warnings.\n\nThe `LogbackLoggingSystem` has also been updated so that warning are\nprinted when present.\n\nFixes gh-33610"
+        },
+        {
+            "hash": "2ed512ddb5793b5bd6849ec4b7764e30e338407a",
+            "message": "Use model.deepMarkAsSkipped in SpringProfileModelHandler\n\nSwitch `model.markAsSkipped` to `model.deepMarkAsSkipped` in\n`SpringProfileModelHandler`.\n\nAlthough the current call doesn't appear to be causing issues,\nit seems best to align our <springProfile> support with the way\nthat Logback implements its own `<if>` support.\n\nCloses gh-33618"
+        },
+        {
+            "hash": "532fed3147b916d440007e0ecb8c4e7a10320f16",
+            "message": "Increase couchbase connection timeout for tests"
+        },
+        {
+            "hash": "9562a2c2f1fcc60204536ff21597178b51ba4954",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "6367a8c62cf95fccf5d39404bd4e6672a732fcc4",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "e57824fb5866b945ac9ef22090ffc52b97b7a723",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33617"
+        },
+        {
+            "hash": "5814543bb18d3076ff0124d80967bde5fe36b33b",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33616"
+        },
+        {
+            "hash": "94819ee313b62fd6541a21bea61141eb9e188443",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33615"
+        },
+        {
+            "hash": "c67915f9462d2968fb270dda7defc501e9c7ac71",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33612"
+        },
+        {
+            "hash": "6d16aed36ebeeca4fe56c5f21e7638bcde2c7f9c",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "c257f2b1d2392ba84fc45e7fe100a760d538e6a7",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "fead97695255589dab37e5d711cc98c1e29ffa1d",
+            "message": "Adapt to changes in Couchbase client\n\nSee gh-33588"
+        },
+        {
+            "hash": "5f30a705810a2b09fe1f34d7f4c0f2d710e49c2e",
+            "message": "Upgrade to Undertow 2.3.2.Final\n\nCloses gh-33608"
+        },
+        {
+            "hash": "41f5cd3fdeb891436d7adc4f7ef0ed9df6721e74",
+            "message": "Upgrade to UnboundID LDAPSDK 6.0.7\n\nCloses gh-33607"
+        },
+        {
+            "hash": "ed9dd0783afef913383cf9e491bc83f77d63a9ae",
+            "message": "Upgrade to Thymeleaf Extras SpringSecurity 3.1.1.RELEASE\n\nCloses gh-33606"
+        },
+        {
+            "hash": "bf855cf0532860e4c40edd0766626e7c1dcc7315",
+            "message": "Upgrade to Spring Integration 6.0.1\n\nCloses gh-33605"
+        },
+        {
+            "hash": "952c439c9e7401362173c4f8251b073785fb49ea",
+            "message": "Upgrade to SLF4J 2.0.6\n\nCloses gh-33604"
+        },
+        {
+            "hash": "cc8236f1c460b8ac6845b2f0dea0f5e299ba2410",
+            "message": "Upgrade to Netty 4.1.86.Final\n\nCloses gh-33603"
+        },
+        {
+            "hash": "f15f1309539578d4ffc561d6012bb3af23e232ae",
+            "message": "Upgrade to Native Build Tools Plugin 0.9.19\n\nCloses gh-33602"
+        },
+        {
+            "hash": "2a77f5fa6e4d69aa82a5c50dfcb68f35203e14ed",
+            "message": "Upgrade to MSSQL JDBC 11.2.2.jre17\n\nCloses gh-33601"
+        },
+        {
+            "hash": "7e57a100e8bd4465f3079d82e2e7ad33f1cc53c3",
+            "message": "Upgrade to MongoDB 4.8.1\n\nCloses gh-33600"
+        },
+        {
+            "hash": "29c0eb13d765c65671fef4779d5b94cfba2a6809",
+            "message": "Upgrade to Lettuce 6.2.2.RELEASE\n\nCloses gh-33599"
+        },
+        {
+            "hash": "66cf72b5ad2e9e393277d8bf79621b95bb812c6d",
+            "message": "Upgrade to Kotlin 1.7.22\n\nCloses gh-33598"
+        },
+        {
+            "hash": "b0b20e4e4218f06d2129dd38e94d243eab8ce385",
+            "message": "Upgrade to jOOQ 3.17.6\n\nCloses gh-33597"
+        },
+        {
+            "hash": "19f19559aa9dd3358ebfa227ec30dac995cfc7ca",
+            "message": "Upgrade to Jetty 11.0.13\n\nCloses gh-33596"
+        },
+        {
+            "hash": "c98f34ffca97eed4ecbe01dc3935569c21ae8cf8",
+            "message": "Upgrade to Jaybird 4.0.8.java11\n\nCloses gh-33595"
+        },
+        {
+            "hash": "d732eef8b69d605c5f8eb03a09cd88fff430405e",
+            "message": "Upgrade to Infinispan 14.0.4.Final\n\nCloses gh-33594"
+        },
+        {
+            "hash": "735f4225059d4a7a85a18551a3dacc2e03843b1d",
+            "message": "Upgrade to HttpCore 4.4.16\n\nCloses gh-33593"
+        },
+        {
+            "hash": "a6f0fcd8f2918dc16c3cbcfae3d2a92efe794ee3",
+            "message": "Upgrade to HttpClient 4.5.14\n\nCloses gh-33592"
+        },
+        {
+            "hash": "2eb7f643a82ddc5c2f0e61a897f133d7bce2fc29",
+            "message": "Upgrade to Hibernate 6.1.6.Final\n\nCloses gh-33591"
+        },
+        {
+            "hash": "a4bcf1bcf0d7bcc84ebcbd631dc60ea35ddac2e5",
+            "message": "Upgrade to Elasticsearch Client 8.5.3\n\nCloses gh-33590"
+        },
+        {
+            "hash": "914fbabcda7ea59b736a34de2d3aa4d2f1fdebb8",
+            "message": "Upgrade to Dropwizard Metrics 4.2.14\n\nCloses gh-33589"
+        },
+        {
+            "hash": "43d389f7e50aabb436d4a165707ac4c9212255cd",
+            "message": "Upgrade to Couchbase Client 3.4.1\n\nCloses gh-33588"
+        },
+        {
+            "hash": "0b3a8c51d2ffc06553c1e582b45628fc19ffdb5d",
+            "message": "Upgrade to Byte Buddy 1.12.20\n\nCloses gh-33587"
+        },
+        {
+            "hash": "edd6a3b271bae3bbaaf0cda4bf7805b26213daa6",
+            "message": "Upgrade to AspectJ 1.9.19\n\nCloses gh-33586"
+        },
+        {
+            "hash": "487dbf541773cb2424b8fb55dad3c1eded05bda1",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "41dce327a2a43a39e8802bf0c675200424e4d6ca",
+            "message": "Fix Spring Integration failing test\n\nInstead of asserting that an observation registry is null, we should\nensure that it's a NOOP instance."
+        },
+        {
+            "hash": "a054cb7cd65f9adff6530028eba93cdf2a7dbcd5",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33558"
+        },
+        {
+            "hash": "63de8bf3eac1e10a9fed642e9ace6b31285259c4",
+            "message": "Upgrade to Spring Kafka 3.0.1\n\nCloses gh-33480"
+        },
+        {
+            "hash": "49da9b71836f0b4a31a0b03aef546d2bcc563916",
+            "message": "Upgrade to Spring for GraphQL 1.1.1\n\nCloses gh-33477"
+        },
+        {
+            "hash": "28f9f20d39325985ea79868bbf85a51fffa76c8f",
+            "message": "Declare order for ServerHttpObservationFilter WebFilter\n\nThis commit declares an `@Order` for the `ServerHttpObservationFilter`\nbean declaration in the Observation WebFlux auto-configuration.\n\nThis allows developers to consistently order other `WebFilter` instances\nrelatively to this one. Here, `@Order(Ordered.HIGHEST_PRECEDENCE + 1)`\nhas been chosen to align with the order of its MVC counterpart.\n\nFixes gh-33444"
+        },
+        {
+            "hash": "fcf120783a598ea81ccbeff49c19ff9be38ccc83",
+            "message": "Upgrade to Spring Security 6.0.1\n\nCloses gh-33479"
+        },
+        {
+            "hash": "3310b595202e400affe4b78bac9df3e79625e53a",
+            "message": "Polish"
+        },
+        {
+            "hash": "593b5311e96841b06139e9827d4083078e7c29b9",
+            "message": "Configure GraphQL web propagation for tracing\n\nAs of spring-projects/spring-graphql#547, Spring GraphQL introduced a\n`PropagationWebGraphQlInterceptor` that propagates the incoming tracing\ninformation in HTTP request headers into the GraphQL context.\n\nThis commit auto-configures the propagation interceptor if the\napplication exposes a GraphQL HTTP endpoint and if it is configured for\nTracing support.\n\nFixes gh-33542"
+        },
+        {
+            "hash": "5a973b97239b840369a459390fa8dae43437e1ec",
+            "message": "Upgrade to Spring Framework 6.0.3\n\nCloses gh-33476"
+        },
+        {
+            "hash": "6b1aa48c35ce3e0cd7e83193f319fb17d30d9f13",
+            "message": "Upgrade to Reactor 2022.0.1\n\nCloses gh-33475"
+        },
+        {
+            "hash": "b132b5c31778b2bd453f5711705bdf2f679940ce",
+            "message": "Polish JSON classes"
+        },
+        {
+            "hash": "08659baebab003e5fc79b0cc5a0142ff38136029",
+            "message": "Polish away public modifier on tests"
+        },
+        {
+            "hash": "1754018a7b5e772678be1aea76f0ad7c10aa4bf1",
+            "message": "Polish DevToolsDataSourceAutoConfiguration"
+        },
+        {
+            "hash": "f36e2ecb7bc80a696297f7d9684f3ca996dd5630",
+            "message": "Use AutoClosables with try-with-resources\n\nCloses gh-33538"
+        },
+        {
+            "hash": "725337f9765494c474f33fac3214afada4aeac04",
+            "message": "Make fields final\n\nCloses gh-33537"
+        },
+        {
+            "hash": "216d15997a682b019822edb37d12caaa897ddeb3",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33512"
+        },
+        {
+            "hash": "ecbc768aa97da1b2370b7200c4cf4527bdeedf80",
+            "message": "Merge pull request #33505 from peter-janssen\n\n* pr-33505:\n  Fix documented Java compiler level\n\nCloses gh-33505"
+        },
+        {
+            "hash": "9a74c862dd9304a5bebf48a32d5b9debb37b90a8",
+            "message": "Fix documented Java compiler level\n\nSee gh-33505"
+        },
+        {
+            "hash": "47eb3b11b9dd5c1c948fe94934692e94eb2c8f21",
+            "message": "Upgrade Tomcat to 10.1.4\n\nCloses gh-33167\nCloses gh-33071"
+        },
+        {
+            "hash": "ed5fe2d26ec4abad88f49005b499602dae4daa17",
+            "message": "Merge pull request #33481 from izeye\n\n* gh-33481:\n  Resolve TODOs for observability tests\n\nCloses gh-33481"
+        },
+        {
+            "hash": "d21572a18939edc4f56929786ee4a43deb15b52f",
+            "message": "Resolve TODOs for observability tests\n\nSee gh-33481"
+        },
+        {
+            "hash": "ad63cb8e620097e2ad5bccf3af67e76dc87c528f",
+            "message": "Upgrade to Thymeleaf 3.1.1.RELEASE\n\nCloses gh-33486"
+        },
+        {
+            "hash": "1751df13f102b616337b46cc94b8ca602f02c304",
+            "message": "Start building against Spring Security 6.0.1 SNAPSHOTs\n\nSee gh-33479"
+        },
+        {
+            "hash": "5d9e9a443ac5272870f5e3b7efe6dc416daddd6e",
+            "message": "Start building against Spring Kafka 3.0.1 SNAPSHOTs\n\nSee gh-33480"
+        },
+        {
+            "hash": "64c9ac3aa7905e71b367a97483b20a7d407d9661",
+            "message": "Start building against Spring Integration 6.0.1 SNAPSHOTs\n\nSee gh-33478"
+        },
+        {
+            "hash": "9e17af5d6af684cc55af3b974c5e1aca6aa14642",
+            "message": "Start building against Spring Framework 6.0.3 SNAPSHOTs\n\nSee gh-33476"
+        },
+        {
+            "hash": "928df41f611453ef78eb9efeb00d8c0db8c1d540",
+            "message": "Start building against Reactor 2022.0.1 SNAPSHOTs\n\nSee gh-33475"
+        },
+        {
+            "hash": "ce33ec19cdf0590b1723f152082702f4c15e7f24",
+            "message": "Start building against Spring GraphQL 1.1.1-SNAPSHOT\n\nSee gh-33477"
+        },
+        {
+            "hash": "50be8cbf9162384af6968edfe5274459464982ca",
+            "message": "Fix IllegalArgumentException in WebClient convention adapter\n\nPrior to this commit, the `ClientObservationConventionAdapter` would\nfail with an `IllegalArgumentException` when the observation is first\nstarted: at this point, the carrier (the request builder here) is\npresent, but the full request not yet fully built.\n\nThis commit ensures that the convention adapter uses the request and, if\nnot available, the request builder to adapt to the\n`WebClientExchangeTagsProvider`.\n\nFixes gh-33483"
+        },
+        {
+            "hash": "87fd27c329d0dc4a6146ed9317071fbf2abfdf81",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "e6bcd98e0c497a94eb0e760b404148d3ef38cac5",
+            "message": "Merge pull request #33453 from ohdaeho\n\n* 33453:\n  Fix a typo in docs\n\nCloses gh-33453"
+        },
+        {
+            "hash": "f1edd17a425d141500cfa48c553ff4b77efec113",
+            "message": "Fix a typo in docs\n\nSee gh-33453"
+        },
+        {
+            "hash": "b56906a27f93dc5030a6058224d5afa7f8c87183",
+            "message": "Merge pull request #33455 from izeye\n\n* 33455:\n  Polish\n\nCloses gh-33455"
+        },
+        {
+            "hash": "78b43279a741c39e9917370558a3e0e2fda35353",
+            "message": "Polish\n\nSee gh-33455"
+        },
+        {
+            "hash": "a4779b7859aac4005e149d6e0646dd71719253fc",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33433"
+        },
+        {
+            "hash": "bf2bc441d2db0eaf332a3f3b0541e66fb1b49750",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33431"
+        },
+        {
+            "hash": "012255232c1b2d9f699b29757b4fd05a41a1befa",
+            "message": "Merge pull request #33419 from currenjin\n\n* add-test-on-output-extension:\n  Polish \"Add test for beforeEach of OutputExtension\"\n  Add test for beforeEach of OutputExtension\n\nCloses gh-33419"
+        },
+        {
+            "hash": "c1bd9310ea93dd997c8309eb611c52cea23db5d0",
+            "message": "Polish \"Add test for beforeEach of OutputExtension\"\n\nSee gh-33419"
+        },
+        {
+            "hash": "94193c9df2565bfb68515935cbda67a040b2de8f",
+            "message": "Add test for beforeEach of OutputExtension\n\nSee gh-33419"
+        },
+        {
+            "hash": "aa6e2398da4a74e411fa2ed1cb5e8898d531dcd2",
+            "message": "Merge pull request #33384 from izeye\n\n* 33384:\n  Polish\n\nCloses gh-33384"
+        },
+        {
+            "hash": "90589fd6d48872e8b61a95067eb6194f94aa1975",
+            "message": "Polish\n\nSee gh-33384"
+        },
+        {
+            "hash": "39a026ed656af95ab505be89e254f77982f37a54",
+            "message": "Merge pull request #33424 from candrews\n\n* 33424:\n  Update instead of replace environment in bootBuildImage documentation\n\nCloses gh-33424"
+        },
+        {
+            "hash": "703935612f5f959a5f2a6202ab5f24de9cae93c1",
+            "message": "Update instead of replace environment in bootBuildImage documentation\n\nCloses gh-32886\nSee gh-33424"
+        },
+        {
+            "hash": "c8d2200fc8328c8c51311a5bdfe720ec615a7623",
+            "message": "Merge pull request #33371 from lishangbu\n\n* 33371:\n  Avoid NPE when @SpringBootConfiguration not found in test\n\nCloses gh-33371"
+        },
+        {
+            "hash": "f5d0171fcca4f53384e9b1cd906fdd4b776f921c",
+            "message": "Avoid NPE when @SpringBootConfiguration not found in test\n\nSee gh-33371"
+        },
+        {
+            "hash": "93f8dc76ab1f986672b81d6466f9d2c6ffeef336",
+            "message": "Fix Neo4jReactiveHealthIndicator NoSuchElementException\n\nUpdate `Neo4jReactiveHealthIndicator` to ensure that `result.records()`\nis called before `result.consume()`. Prior to this commit, the indicator\nused `zipWith` to merge records with a summary. This worked with the\nprevious RxJava based driver, but fails with the Reactor based driver\ndue to a `NoSuchElementException: Source was empty` error.\n\nFixes gh-33428"
+        },
+        {
+            "hash": "8849f72ac5b95c1306e08cea03b560753cecc85a",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "9ed8b25e6b025647badfc5710077ed415dc5343e",
+            "message": "Make AOT goals release option mutually exclusive with source and target\n\nFixes gh-33382"
+        },
+        {
+            "hash": "351084ea062c1025d26ab8afb58e449dcbbdb365",
+            "message": "Document that native-maven-plugin is required for native images\n\nCloses gh-33422"
+        },
+        {
+            "hash": "c6536c54d834b41d847685a935338c04067ddc37",
+            "message": "Write native-image argfile only if there are excludes\n\nRefactors duplicate logic in BootZipCopyAction and Packager into\nseparate classes.\n\nCloses gh-33363\n\nCo-authored-by: Phillip Webb <pwebb@vmware.com>"
+        },
+        {
+            "hash": "276b2888910fa6763a451d14f05a5be49e0bffd0",
+            "message": "Prevent repeat configuration of DB init bean dependencies\n\nFixes gh-33374"
+        },
+        {
+            "hash": "e1efdadfe3ad3b181077b412784f959563bd9c53",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33416"
+        },
+        {
+            "hash": "67c9c7377aa6f743d7327e33852f1aaaa5d75f40",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33414"
+        },
+        {
+            "hash": "8626bdc05be0cc8496432f009e4355fafac9a1a7",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "41f6d5402070ca4a5cf95bafd3820b8151881d88",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33410"
+        },
+        {
+            "hash": "d48ab37505c68cd82f485b2397819e4c4bc8e038",
+            "message": "Reinstate GraphQL testing documentation\n\nCloses gh-33407"
+        },
+        {
+            "hash": "cfaade95df513349a9aa84963ed648f845df3e4d",
+            "message": "Add test to verify ZipkinRestTemplateBuilderCustomizer\n\nSee gh-33399"
+        },
+        {
+            "hash": "b3878e84ae3dc65148fb2f80514140daafca0afb",
+            "message": "Fix bug where using a YAML with anchors couldn't be loaded\n\nCloses gh-33404"
+        },
+        {
+            "hash": "2ceee789ce5ba271121704a90d87bba7610d10ab",
+            "message": "Fix bug where ZipkinRestTemplateBuilderCustomizer had no effect\n\nCloses gh-33399"
+        },
+        {
+            "hash": "d88f968d22e0872c246ad666ceb4e94fb776038e",
+            "message": "Merge branch '2.7.x'\n\nCloses gh-33403"
+        },
+        {
+            "hash": "bb1efe636c6ab862771ae75a78d08dc997603177",
+            "message": "Merge branch '2.7.x'"
+        },
+        {
+            "hash": "92415c996ad5cbfbf2d34a0af996eccd2333ab55",
+            "message": "Fix formatting of NEVER's description\n\nCloses gh-33398"
+        },
+        {
+            "hash": "c1dab0f9e687b9bdf1dd009617c0da6acc9bb2d5",
+            "message": "Fix AOT processing of add method with array parameter in Logback model\n\nFixes gh-33387"
+        },
+        {
+            "hash": "012e13527a162a562a70a1bfd6fa5f4c4efa19a6",
+            "message": "Fix typo in documentation"
+        },
+        {
+            "hash": "926db2c1401a4d757b0d06015ecb66d31da4166f",
+            "message": "Next development version (v3.0.1-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33610",
+            "title": "No warning is given when <springProfile> is used in a Logback <root> block"
+        },
+        {
+            "number": "33618",
+            "title": "Use model.deepMarkAsSkipped in SpringProfileModelHandler"
+        },
+        {
+            "number": "33617",
+            "title": "Improve gradle plugin tags documentation"
+        },
+        {
+            "number": "33616",
+            "title": "Improve maven plugin tags documentation"
+        },
+        {
+            "number": "33615",
+            "title": "Fix typo in LocalDevToolsAutoConfiguration logging"
+        },
+        {
+            "number": "33612",
+            "title": "Upgrade CI to Docker 20.10.22"
+        },
+        {
+            "number": "33588",
+            "title": "Upgrade to Couchbase Client 3.4.1"
+        },
+        {
+            "number": "33608",
+            "title": "Upgrade to Undertow 2.3.2.Final"
+        },
+        {
+            "number": "33607",
+            "title": "Upgrade to UnboundID LDAPSDK 6.0.7"
+        },
+        {
+            "number": "33606",
+            "title": "Upgrade to Thymeleaf Extras SpringSecurity 3.1.1.RELEASE"
+        },
+        {
+            "number": "33605",
+            "title": "Upgrade to Spring Integration 6.0.1"
+        },
+        {
+            "number": "33604",
+            "title": "Upgrade to SLF4J 2.0.6"
+        },
+        {
+            "number": "33603",
+            "title": "Upgrade to Netty 4.1.86.Final"
+        },
+        {
+            "number": "33602",
+            "title": "Upgrade to Native Build Tools Plugin 0.9.19"
+        },
+        {
+            "number": "33601",
+            "title": "Upgrade to MSSQL JDBC 11.2.2.jre17"
+        },
+        {
+            "number": "33600",
+            "title": "Upgrade to MongoDB 4.8.1"
+        },
+        {
+            "number": "33599",
+            "title": "Upgrade to Lettuce 6.2.2.RELEASE"
+        },
+        {
+            "number": "33598",
+            "title": "Upgrade to Kotlin 1.7.22"
+        },
+        {
+            "number": "33597",
+            "title": "Upgrade to jOOQ 3.17.6"
+        },
+        {
+            "number": "33596",
+            "title": "Upgrade to Jetty 11.0.13"
+        },
+        {
+            "number": "33595",
+            "title": "Upgrade to Jaybird 4.0.8.java11"
+        },
+        {
+            "number": "33594",
+            "title": "Upgrade to Infinispan 14.0.4.Final"
+        },
+        {
+            "number": "33593",
+            "title": "Upgrade to HttpCore 4.4.16"
+        },
+        {
+            "number": "33592",
+            "title": "Upgrade to HttpClient 4.5.14"
+        },
+        {
+            "number": "33591",
+            "title": "Upgrade to Hibernate 6.1.6.Final"
+        },
+        {
+            "number": "33590",
+            "title": "Upgrade to Elasticsearch Client 8.5.3"
+        },
+        {
+            "number": "33589",
+            "title": "Upgrade to Dropwizard Metrics 4.2.14"
+        },
+        {
+            "number": "33587",
+            "title": "Upgrade to Byte Buddy 1.12.20"
+        },
+        {
+            "number": "33586",
+            "title": "Upgrade to AspectJ 1.9.19"
+        },
+        {
+            "number": "33558",
+            "title": "Upgrade to Reactor 2020.0.26"
+        },
+        {
+            "number": "33480",
+            "title": "Upgrade to Spring Kafka 3.0.1"
+        },
+        {
+            "number": "33477",
+            "title": "Upgrade to Spring for GraphQL 1.1.1"
+        },
+        {
+            "number": "33444",
+            "title": "Reactive observation auto-configuration does not declare order for WebFilter"
+        },
+        {
+            "number": "33479",
+            "title": "Upgrade to Spring Security 6.0.1"
+        },
+        {
+            "number": "547",
+            "title": "Discovering mainClass via custom gradle task broken"
+        },
+        {
+            "number": "33542",
+            "title": "Auto-configure PropagationWebGraphQlInterceptor for tracing propagation"
+        },
+        {
+            "number": "33476",
+            "title": "Upgrade to Spring Framework 6.0.3"
+        },
+        {
+            "number": "33475",
+            "title": "Upgrade to Reactor 2022.0.1"
+        },
+        {
+            "number": "33538",
+            "title": "Use AutoClosables with try-with-resources"
+        },
+        {
+            "number": "33537",
+            "title": "Make fields final wherever possible"
+        },
+        {
+            "number": "33512",
+            "title": "Fix typo in tomcat accesslog checkExists doc"
+        },
+        {
+            "number": "33167",
+            "title": "Upgrade to Tomcat 10.1.4"
+        },
+        {
+            "number": "33071",
+            "title": "Revert tomcat hints after upgrade to next patch release"
+        },
+        {
+            "number": "33486",
+            "title": "Upgrade to Thymeleaf 3.1.1.RELEASE"
+        },
+        {
+            "number": "33478",
+            "title": "Upgrade to Spring Integration 6.0.1"
+        },
+        {
+            "number": "33483",
+            "title": "WebClient instrumentation fails with IllegalArgumentException when adapting to WebClientExchangeTagsProvider"
+        },
+        {
+            "number": "33433",
+            "title": "Web server fails to start due to \"Resource location must not be null\" when attempting to use a PKCS 11 KeyStore"
+        },
+        {
+            "number": "33431",
+            "title": "Add beforeEach tests to OutputExtensionExtendWithTests"
+        },
+        {
+            "number": "32886",
+            "title": "Refine documentation for bootBuildImage and use the additive form for lists and maps"
+        },
+        {
+            "number": "33428",
+            "title": "Actuator health endpoint for neo4j throws NoSuchElementException and always returns Status.DOWN"
+        },
+        {
+            "number": "33382",
+            "title": "Maven process-aot goal fails when release version is set in Maven compiler plugin"
+        },
+        {
+            "number": "33422",
+            "title": "Update the reference docs to document the need to declare the native-maven-plugin when using buildpacks to create a native image"
+        },
+        {
+            "number": "33363",
+            "title": "bootBuildImage always trys to create a native image due to bootJar always adding a META-INF/native-image/argfile to the jar"
+        },
+        {
+            "number": "33374",
+            "title": "`DependsOnDatabaseInitializationPostProcessor` re-declares bean dependencies at native image runtime"
+        },
+        {
+            "number": "33416",
+            "title": "Improve test coverage for OutputCaptureRule"
+        },
+        {
+            "number": "33414",
+            "title": "Document that SystemTestPlugin output should never be cached"
+        },
+        {
+            "number": "33410",
+            "title": "Document that the shutdown endpoint is not intended for use when deploying a war to a servlet container"
+        },
+        {
+            "number": "33407",
+            "title": "Reinstate GraphQL testing documentaion"
+        },
+        {
+            "number": "33399",
+            "title": "ZipkinRestTemplateSender is not customizable"
+        },
+        {
+            "number": "33404",
+            "title": "Anchors in YAML configuration files throw UnsupportedOperationException"
+        },
+        {
+            "number": "33403",
+            "title": "Upgrade to Gradle 7.6"
+        },
+        {
+            "number": "33398",
+            "title": "Description of `NEVER` in Sanitize Sensitive Values isn't formatted correctly"
+        },
+        {
+            "number": "33387",
+            "title": "AOT doesn't work with Logstash Logback Encoder"
+        }
+    ]
+}

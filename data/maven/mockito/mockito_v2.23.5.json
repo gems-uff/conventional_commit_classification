@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 28.826180555555556,
+    "commits_info": [
+        {
+            "hash": "edb6473ddfeb6e2405a36fcfa99dfb5d85f61a6a",
+            "message": "2.23.5 release (previous 2.23.4) + release notes updated by CI build 3651\n\n[ci skip-release]"
+        },
+        {
+            "hash": "21dbcb3d09cebadac1d0757c4231449aa50bacc6",
+            "message": "Merge pull request #1539 from mockito/next-strict-tweak\n\nImproved sensitivity of potential stubbing problem"
+        },
+        {
+            "hash": "90c89c384d75025691dc1c22c925e44a783a963d",
+            "message": "Updated @since version in a new public method"
+        },
+        {
+            "hash": "b5588b66e2176a28ee24c28a5da7d0075fe5d2b2",
+            "message": "Improved sensitivity of potential stubbing problem\n\nThis change improves the developer experience when stubbing same method with different argument, in the same test class. Example:\n\nwhen(mock.foo(1)).thenReturn(1);\nwhen(mock.foo(2)).thenReturn(2); // <- no longer throws PotentialStubbingProblem (false negative)\n\nThis reduces the number of false negatives reported by strict stubbing."
+        }
+    ],
+    "issues": []
+}

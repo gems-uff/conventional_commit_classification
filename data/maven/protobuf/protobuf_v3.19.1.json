@@ -1,0 +1,50 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.19.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 7.3059722222222225,
+    "commits_info": [
+        {
+            "hash": "7c40b2df1fdf6f414c1c18c789715a9c948a0725",
+            "message": "Update protobuf version (#9167)"
+        },
+        {
+            "hash": "42ff92a4d183fe952d48adffa23dc84e491c86fc",
+            "message": "Merge pull request #9166 from acozzette/cherry-pick-fixes\n\nCherry-pick fixes for 3.19.1 and update change log"
+        },
+        {
+            "hash": "1c8ae2459567388085f5da4b5ef2af7863a003fb",
+            "message": "Update changelog for 3.19.1\n\nI also updated CHANGES.txt to include a couple things I forgot to add\nfor 3.19.0."
+        },
+        {
+            "hash": "b2ac7ced50ed160985ba79bbbdea8bad8f28b039",
+            "message": "Fix memory leak in MessageClass.encode\n\nIf the line above raises an exception, the upb_arena is lost and memory\nis leaked."
+        },
+        {
+            "hash": "e58469bdbedf514988efa86af9e8e7b5b1fa272f",
+            "message": "JS: Fixed `ReferenceError: window is not defined` when getting the global object (#9156)"
+        },
+        {
+            "hash": "c7dfd0d6b92f825a4b9e986b3e948a5ab61c7438",
+            "message": "Align dependency handling with Bazel best practices (#9165)\n\nThis commit removes the use of bind() since that function goes against\r\nBazel best practices:\r\nhttps://docs.bazel.build/versions/main/external.html#repository-rules-1\r\nThe bind() function basically maps a dependency into //external, but\r\nthere is no good reason to do this. By mapping dependencies into\r\n//external and relying on this in our own BUILD files, we're forcing\r\nprojects that depend on us to do the same. The one bind() call that I\r\ndid leave in place was //:python_headers. This one seems to be doing\r\nsomething complicated I don't fully understand, and I don't want to risk\r\nbreaking it.\r\n\r\nThis change also moves our list of required Maven artifacts into a\r\nconstant in protobuf_deps.bzl. This way, projects that depend on us can\r\nrefer to this list when they invoke maven_install() and automatically\r\npull in all the necesary dependencies.\r\n\r\nThis fixes #9132."
+        },
+        {
+            "hash": "67c2a92f82b16331199cb89062b832e15aeb0c1f",
+            "message": "Ensure that release archives contain everything needed for Bazel (#9131)\n\nThis change adds some files to EXTRA_DIST in Makefile.am so that our\r\npublished tar and zip files will have everything needed for Bazel\r\nbuilds. I also added a basic test for this so that next time we should\r\nfind out sooner if we're missing any important files.\r\n\r\nThis should fix #9129."
+        }
+    ],
+    "issues": [
+        {
+            "number": "9132",
+            "title": "Maven dependencies not exposed to Bazel users"
+        },
+        {
+            "number": "9129",
+            "title": "protobuf_version.bzl missing from v3.19.0 source archive"
+        }
+    ]
+}

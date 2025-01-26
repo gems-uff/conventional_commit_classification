@@ -1,0 +1,510 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 89,
+    "start_delay": 0.0,
+    "duration": 28.78295138888889,
+    "commits_info": [
+        {
+            "hash": "b932df6ad25ee570909c3c2c1ed1a60bd49bbb48",
+            "message": "Release v6.1.6"
+        },
+        {
+            "hash": "494ed4e852e11907107e978f56f24f0b0aef8680",
+            "message": "Refine UriComponentsBuilder parsing\n\nThis commit refines the expressions for the scheme, user info, host and\nport parts of the URL in UriComponentsBuilder to better conform to\nRFC 3986.\n\nFixes gh-32616"
+        },
+        {
+            "hash": "39cd31613b60ba5759808f0774e6fa0261cccf87",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ca2b3c170c439b775a40fd36bd6b71e2adfe3cf3",
+            "message": "Add Kotlin hints for enclosing class\n\nThis is needed by Kotlin reflection in order to be able to list\nclass members on native.\n\nCloses gh-32472"
+        },
+        {
+            "hash": "019ce4418cd57391ed61c7fb6812bbd527db35e6",
+            "message": "BufferingClientHttpRequestWrapper should not write empty body\n\nPrior to this commit, `BufferingClientHttpRequestWrapper` would always\nwrite to the actual client request body, even if the buffered content\nwas empty (empty byte array).\nThis would cause issues with specific client request factories,\nespecially the OkHttp variant, that would consider empty byte arrays as\nnon-empty body and would reject such cases for GET requests with an\n\"IllegalArgumentException: method GET must not have a request body\".\n\nThis commit only writes to the request if the buffered content is not\nempty.\n\nFixes gh-32612"
+        },
+        {
+            "hash": "a0136a276a8228f109c78f31cc6a6cb1713b8cf1",
+            "message": "Upgrade to Reactor 2023.0.5\n\nCloses gh-32592"
+        },
+        {
+            "hash": "8d05028c2e4273f7d08f81d20922102283f5d0e2",
+            "message": "RequestParam resolver supports empty array suffix\n\nCloses gh-32577"
+        },
+        {
+            "hash": "4a68c44a279d31ac8330b9595befdcbefd60f7e9",
+            "message": "Update content-length when reconstructing body\n\nCloses gh-32471"
+        },
+        {
+            "hash": "e702733c7b787300d63c21bc473e1aab5c882991",
+            "message": "Detect bridge methods across ApplicationContexts in MethodIntrospector\n\nPrior to this commit, MethodIntrospector failed to properly detect\nbridge methods for subsequent invocations of selectMethods() with the\nsame targetType and MetadataLookup, if such subsequent invocations\noccurred after the ApplicationContext had been refreshed.\n\nThe reason this occurs is due to the following.\n\n- Class#getDeclaredMethods() always returns \"child copies\" of the\n  underlying Method instances -- which means that `equals()` should be\n  used instead of `==` whenever the compared Method instances can come\n  from different sources (such as the static caches mentioned below).\n\n- BridgeMethodResolver caches resolved bridge methods in a static cache\n  -- which is never cleared.\n\n- ReflectionUtils caches declared methods in a static cache\n  -- which gets cleared when an ApplicationContext is refreshed.\n\nConsequently, if you attempt to load an ApplicationContext twice in the\nsame ClassLoader, the second attempt uses the existing, populated cache\nfor bridged methods but a cleared, empty cache for declared methods.\nThis results in new invocations of Class#getDeclaredMethods(), and\nidentity checks with `==` then fail to detect equivalent bridge methods.\n\nThis commit addresses this by additionally comparing bridge methods\nusing `equals()` in MethodIntrospector.selectMethods().\n\nNote that the `==` checks remain in place as an optimization for when\n`equals()` is unnecessary.\n\nCloses gh-32586"
+        },
+        {
+            "hash": "187f641409e0eee2cea80e1570527ac9a260ef02",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ac74116d766b58f374d2d038997a54f706c5b641",
+            "message": "Instrument JmsTemplate#sendAndReceive\n\nPrior to this commit, the `JmsTemplate#sendAndReceive` method would not\ninstrument the JMS session. This means that no metric would be recorded\nwhen sending the message and no trace would be propagated downstream.\n\nThis commit ensures that the JMS session is instrumented in this case as\nwell. Note, the reception of the response message does not create a\n`\"jms.message.process\"` observation as the session is only receiving the\nmessage, no listener has been configured on the message consumer.\n\nFixes gh-32606"
+        },
+        {
+            "hash": "c5590ae9e6a3d75feae96f3015a65462c67dbcf8",
+            "message": "Log column type for limited support message in getResultSetValue\n\nCloses gh-32601"
+        },
+        {
+            "hash": "39b551c3346d6092adeee7c0d5898ecd357b63a9",
+            "message": "Document hand-off to execution thread (including ScheduledFuture impact)\n\nCloses gh-32589"
+        },
+        {
+            "hash": "23696b7db8e6fa7ccdfab297b25544f721f2905e",
+            "message": "Add a classpath check for AOP Coroutines/Reactive conversion\n\nCloses gh-32599"
+        },
+        {
+            "hash": "7b7cfb27a3cee209a457bcdbc863805de5d036e8",
+            "message": "Upgrade to Micrometer 1.12.5\n\nCloses gh-32596"
+        },
+        {
+            "hash": "f2889b1b43c264ed49d81e831c3959ca49ad7435",
+            "message": "Consistent support for generic FactoryBean type matching\n\nCloses gh-32590\nSee gh-32489"
+        },
+        {
+            "hash": "802967fc98480eeb86fff62b9ea7fdeb34731a54",
+            "message": "Add reproducer\n\nSee gh-32489"
+        },
+        {
+            "hash": "22328905da1ca3d464739054b8df52b3db7555ff",
+            "message": "Do not extract FactoryBean generic in case of targetType mismatch\n\nCloses gh-32489"
+        },
+        {
+            "hash": "67a81004a2edc43e78e8a85a25ec01304cf2edd3",
+            "message": "Upgrade to AspectJ 1.9.22, Groovy 4.0.20, Tomcat 10.1.20, Netty 4.1.108, OpenPDF 1.3.43, Woodstox 6.6.2, Checkstyle 10.15"
+        },
+        {
+            "hash": "84963ba4d865e995fc17483a7cc857bdce595e2f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "07472758ee55eecafb802c0cef2b46ad90efb8b9",
+            "message": "Detect Undertow RequestTooBigException message in handleParseFailure\n\nCloses gh-32549"
+        },
+        {
+            "hash": "47c9c7eb0719d83719c2d605a7c5d06700dd3752",
+            "message": "Update copyright\n\nSee gh-32528"
+        },
+        {
+            "hash": "8568aa691cc33648efeefa1bed37e5559a132ae5",
+            "message": "Stop linking to Websphere's Javadoc\n\nCloses gh-32581"
+        },
+        {
+            "hash": "b24221754aa80037df9bcec8194b7ab601c6cb71",
+            "message": "ReactorNettyClientResponse should close response body\n\nThis commit ensures that the response body is drained and closed when\nthe response itself is closed, instead of disposing the connection, as\nthis will disable the connection pool.\n\nCloses gh-32528"
+        },
+        {
+            "hash": "7a666cfd864093fbbf68e6ee6107e3cf96c2748c",
+            "message": "Revert some null-safety changes\n\nThis commit reverts some null-safety changes which make sense\non main but are too impactful for 6.1.x for Kotlin developers\nusing -Xjsr305=strict.\n\nSee gh-32475"
+        },
+        {
+            "hash": "4a7c24d90f25bae4df97f06e8fc39ed1b479a3c5",
+            "message": "Refine null-safety\n\nSee gh-32475"
+        },
+        {
+            "hash": "d955549037e632b76c7b716855bffcd673ffda04",
+            "message": "Clarify scope of exception\n\nSee gh-29491"
+        },
+        {
+            "hash": "b68f76c86e356044b6f88884172d7f025061c3a6",
+            "message": "Polish\n\nSee gh-32502"
+        },
+        {
+            "hash": "521cda009b851f0f46985953f6f9e98599db776d",
+            "message": "Use non-blocking thread in WebFlux controller with RequestBody parameter\n\nThis commit ensures that `InvocableHandlerMethod` executes the method\non the desired thread if a non-blocking thread is specified, even in the\ncase where arguments resolution happens on a different thread. This is\nnotably the case if the method body is resolved as an input argument to\nthe controller method (`@RequestBody`).\n\nCloses gh-32502"
+        },
+        {
+            "hash": "08c9b5c96cfcbbd05fef6891f8fb6de722510b80",
+            "message": "Upgrade to Gradle 8.7\n\nCloses gh-32566"
+        },
+        {
+            "hash": "a942a6e172648779d09a96bf1956d6adcd57c2d2",
+            "message": "Document behavior of profiles enabled for AOT optimizations\n\nCloses gh-32543"
+        },
+        {
+            "hash": "9b1d5ea6e069dec889de5aee6a6173726d60f0e6",
+            "message": "Merge pull request #32557 from Banuelorigni\n\n* pr/32557:\n  Polish reference guide\n\nCloses gh-32557"
+        },
+        {
+            "hash": "640b97f33c65e363b1bd104ba7b19b6f1e540ad4",
+            "message": "Polish reference guide\n\nSee gh-32557"
+        },
+        {
+            "hash": "1fb99e41920ec15bc82fda2092258cd6a588c9b5",
+            "message": "Merge pull request #32560 from quaff\n\n* pr/32560:\n  Polish javadoc of AnnotatedBeanDefinitionReader\n\nCloses gh-32560"
+        },
+        {
+            "hash": "23d89362b006160874c72bcf5942c29d7bbbc431",
+            "message": "Polish javadoc of AnnotatedBeanDefinitionReader\n\nSee gh-32560"
+        },
+        {
+            "hash": "048e4f0aa2972c91fc59ef23f00a1256978ea64f",
+            "message": "Invoke KCallablesJvm.setAccessible only when required\n\nCloses-32536"
+        },
+        {
+            "hash": "b28153e1d70fee11c190e6bcacb3c0aad788b696",
+            "message": "Fix handling of value class with private constructor\n\nSee gh-32536"
+        },
+        {
+            "hash": "88b9c0567d77992c37c38d344bdbd44f06b6dacd",
+            "message": "Refine null-safety in spring-test\n\nSee gh-32475"
+        },
+        {
+            "hash": "c7c9da56dacc13503579c53f4c5b94415324b108",
+            "message": "Consistent atMost period for Awaitility-based tests\n\nCloses gh-32537"
+        },
+        {
+            "hash": "290a41d3988b51efdb49910e116fbb54563f7653",
+            "message": "Refine null-safety in more modules\n\nThis commit refines the null-safety in all remaining modules\nexcept spring-test.\n\nSee gh-32475"
+        },
+        {
+            "hash": "1b563f8ba4aa73a7e74da5819253773e55f14f1d",
+            "message": "Refine null-safety in more modules\n\nThis commit refines the null-safety in:\n - spring-jdbc\n - spring-r2dbc\n - spring-orm\n - spring-beans\n - spring-aop\n\nSee gh-32475"
+        },
+        {
+            "hash": "dea31dd55e9859a4e7d0d5dddbb3d93799090ec3",
+            "message": "Refine null-safety in spring-messaging\n\nSee gh-32475"
+        },
+        {
+            "hash": "06b91c4ea5237edec3f443470a2f4fea985024cf",
+            "message": "Refine null-safety in spring-jms\n\nSee gh-32475"
+        },
+        {
+            "hash": "a63ebe7e9d8ca056874e5642d5617c0d42d34fdc",
+            "message": "Refine null-safety in spring-web and spring-websocket\n\nSee gh-32475"
+        },
+        {
+            "hash": "c4b615052ea4ccb9a6dc5cdda90ec2fec7dafc81",
+            "message": "Merge pull request #32517 from izeye\n\n* pr/32517:\n  Add Javadoc since to KotlinSerializationStringEncoder.setStreamingMediaTypes()\n\nCloses gh-32517"
+        },
+        {
+            "hash": "dca5f1dcd858cb2cbd27c1dafa52c22638c27114",
+            "message": "Add Javadoc since to KotlinSerializationStringEncoder.setStreamingMediaTypes()\n\nSee gh-32517"
+        },
+        {
+            "hash": "a16e8c34b275821196f27d825e6fb09b63b6fc36",
+            "message": "Refine null-safety in spring-webmvc\n\nSee gh-32475"
+        },
+        {
+            "hash": "52b8c71dcde583185915875e7aa56fc206672a2e",
+            "message": "Retain null-safe syntax in AST representation of selection & projection\n\nPrior to this commit, SpEL's CompoundExpression omitted the null-safe\nsyntax in AST string representations of the selection and projection\noperators.\n\nTo address this, this commit implements isNullSafe() in Projection and\nSelection.\n\nCloses gh-32515"
+        },
+        {
+            "hash": "f941754db668be5621b18c62e9a20aa9486c6d06",
+            "message": "Introduce isNullSafe() in SpelNodeImpl\n\nPrior to this commit, MethodReference and PropertyOrFieldReference\nalready defined local isNullSafe() methods, but we need identical\nmethods in Selection, Projection, and Indexer, and we may potentially\nneed null-safe support for additional operators in the future.\n\nTo address the common need for an is-null-safe check, this commit\nintroduces an isNullSafe() method in SpelNodeImpl with a default\nimplementation that returns false.\n\nCloses gh-32516"
+        },
+        {
+            "hash": "d4495a56542276d6ea9a09d6b61c0e30cb75188c",
+            "message": "Revise PropertyOrFieldReference since isNullSafe() is not final"
+        },
+        {
+            "hash": "c7c61e13e161bb0bc8192661d254e6b2c9764915",
+            "message": "Merge pull request #32514 from izeye\n\n* pr/32514:\n  Apply UnnecessarySemicolonInEnumeration Checkstyle module\n\nCloses gh-32514"
+        },
+        {
+            "hash": "4d722414da6b9fe60be3937e6e986a07d1e8cd51",
+            "message": "Apply UnnecessarySemicolonInEnumeration Checkstyle module\n\nThis commit also fixes its violation.\n\nSee gh-32514"
+        },
+        {
+            "hash": "87dfa492afd0b78e73f040f57162312f42ca32b2",
+            "message": "Refine null-safety in spring-webflux\n\nSee gh-32475"
+        },
+        {
+            "hash": "cf9033a60d8e84ea32f4cddf467bdc5c145e43a6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1e80694daf6c479d47158ac0c7fca8150def35dd",
+            "message": "Fix a regression with Kotlin generic controllers\n\nThis commit reintroduces a more defensive parameter type check that\nskips KClass casting for generic parameters.\n\nCloses gh-32510"
+        },
+        {
+            "hash": "e17c3d3be41ed19fa530c7e6ea20bd19ee48918d",
+            "message": "Upgrade actions that use deprecated features"
+        },
+        {
+            "hash": "2e98a8a2a4d905c8d53de8d6fc02ea67e084cfad",
+            "message": "Refine null-safety in spring-expression\n\nSee gh-32475"
+        },
+        {
+            "hash": "592f23674def23d3c51495834de458f1f4877a02",
+            "message": "Merge pull request #32494 from qww1552\n\n* pr/32494:\n  Fix link to vavr in the reference guide\n\nCloses gh-32494"
+        },
+        {
+            "hash": "0b3a05b463062d6dfbdbf79a7383241a09995295",
+            "message": "Fix link to vavr in the reference guide\n\nSee gh-32494"
+        },
+        {
+            "hash": "ef02f0bad87ddd4672c88f9018333e0fb9ba5cde",
+            "message": "Wrap InvalidMimeTypeException in HttpMediaTypeNotAcceptableException\n\nThe fix for #31254 resulted in an InvalidMimeTypeException being thrown\nby MimeTypeUtils.sortBySpecificity() instead of an\nIllegalArgumentException. However, InvalidMimeTypeException extends\nIllegalArgumentException. Consequently, the change from\nIllegalArgumentException to InvalidMimeTypeException did not result in\nthe desired effect in HeaderContentNegotiationStrategy.\n\nHeaderContentNegotiationStrategy.resolveMediaTypes() still allows the\nInvalidMimeTypeException to propagate as-is without wrapping it in an\nHttpMediaTypeNotAcceptableException.\n\nTo address this issue, this commit catches InvalidMediaTypeException\nand InvalidMimeTypeException in HeaderContentNegotiationStrategy and\nwraps the exception in an HttpMediaTypeNotAcceptableException.\n\nSee gh-31254\nSee gh-31769\nCloses gh-32483"
+        },
+        {
+            "hash": "836a0b3a40f281a642c122dcfb9976603d692e54",
+            "message": "Polishing"
+        },
+        {
+            "hash": "09f210f5f749e475385163be322ae1fef17c699e",
+            "message": "Polish wording in reference manual"
+        },
+        {
+            "hash": "aa0fb97ba5246dbf5fcdc361d5bd6ccf3666b1dc",
+            "message": "Nullability refinements\n\nSee gh-32475"
+        },
+        {
+            "hash": "71a117c0fdae0a2db3942b672f281f210961971b",
+            "message": "Document AOT limitations related to Kotlin backticks\n\nCloses gh-32487"
+        },
+        {
+            "hash": "bd27ddf83afc0e4432e7c6b0d7256dc85ad2fa55",
+            "message": "Polishing (aligned with main)"
+        },
+        {
+            "hash": "c531a8a7058d24a110b312cd9a7a8bcf306845af",
+            "message": "Nullability refinements and related polishing\n\nSee gh-32475"
+        },
+        {
+            "hash": "cd7ba1835cfeb37c0a28f1eba97a9956697b1623",
+            "message": "Propagate JMS IllegalStateException from commit/rollbackIfNecessary\n\nCloses gh-32473"
+        },
+        {
+            "hash": "5dc6a16c0b7ad2431a01c33885c1bf21442ff318",
+            "message": "Nullability refinements\n\nSee gh-32475"
+        },
+        {
+            "hash": "42a4f2896222959d85ba4642542cfe05aff91f2c",
+            "message": "Avoid unnecessary Annotation array cloning in TypeDescriptor\n\nCloses gh-32476"
+        },
+        {
+            "hash": "521d4f24d02aef261ea50bc90546aab33666cc9a",
+            "message": "Remove flaky test in JMS observation\n\nThere is no way to consistently test this use case because listener\ncontainer implementations have different behavior for unhandled errors\nand might retry or close the container altogether.\n\nSee gh-32458"
+        },
+        {
+            "hash": "039cbb3466612d7148f9d1ba7f86e174df357dec",
+            "message": "Merge pull request #32474 from izeye\n\n* pr/32474:\n  Add Javadoc since to AbstractClientHttpRequestFactoryWrapper.getDelegate()\n\nCloses gh-32474"
+        },
+        {
+            "hash": "d50c94fca9f8554a32a00dd151ec39c397048cba",
+            "message": "Add Javadoc since to AbstractClientHttpRequestFactoryWrapper.getDelegate()\n\nSee gh-32474"
+        },
+        {
+            "hash": "c1424acb940d0a23ed90628b24c8668dca649032",
+            "message": "Fix flaky test in JMS observability\n\nSee gh-32458"
+        },
+        {
+            "hash": "36d1bc57d74f69b645a5bfd795e2525c158f3fb5",
+            "message": "Upgrade to Checkstyle 10.14.2"
+        },
+        {
+            "hash": "b1c3b6e34b676ca91f98302c175a34d811f88efc",
+            "message": "Restore original toString representation (revert accidental backport)\n\nSee gh-32405"
+        },
+        {
+            "hash": "eb8b7c43313c55727dcd6e503475881cc5f1d669",
+            "message": "Remove superfluous @NonNull declarations"
+        },
+        {
+            "hash": "58bd057a2460613c87bdb62ecd60e38cc8b13616",
+            "message": "Avoid cloning empty Annotation array in TypeDescriptor (backport)\n\nCloses gh-32405"
+        },
+        {
+            "hash": "a78704af2422a0702fd1f6adad5a65e05d3d562a",
+            "message": "Record unhanlded JMS exceptions as observation errors\n\nPrior to this commit, when using the `DefaultMessageListenerContainer`\nas a backing listener container for JMS messages, the instrumentation\nwould not record JMS exceptions as observation errors when they were not\nhandled by configured `ErrorHandler`.\n\nThis commit ensures that this is the case.\n\nFixes gh-32458"
+        },
+        {
+            "hash": "d2000efbd8cfa5c78663654236394c8cca3d8d57",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c23fd784a0d91f5de1e6b5cab82e86b1746fc3b4",
+            "message": "Consistently apply TaskDecorator to ManagedExecutorService as well\n\nCloses gh-32455"
+        },
+        {
+            "hash": "68a39938974a6519b747698f5119575463b11991",
+            "message": "Merge pull request #32446 from LinorDolev\n\n* pr/32446:\n  Polish \"Fix default strategy description of ProblemDetail error codes\"\n  Fix default strategy description of ProblemDetail error codes\n\nCloses gh-32446"
+        },
+        {
+            "hash": "dfc1b839f38254fbba992b9a3c2005e173173699",
+            "message": "Polish \"Fix default strategy description of ProblemDetail error codes\"\n\nSee gh-32446"
+        },
+        {
+            "hash": "302c24aaa85a3863c5200290e39b0ae3e18d1c08",
+            "message": "Fix default strategy description of ProblemDetail error codes\n\nSee gh-32446"
+        },
+        {
+            "hash": "7357812b4e792bacb7e5d5e3fa7bfe816063215f",
+            "message": "Polish \"Only include production branches for docs deployment\"\n\nSee gh-32434"
+        },
+        {
+            "hash": "30087e1aea944f59ad57cb36b342523d2370cbf3",
+            "message": "Only include production branches for docs deployment\n\nCloses gh-32434"
+        },
+        {
+            "hash": "cd5758e6106da789a320662d39bdbc254c2a7fc5",
+            "message": "Restore CI execution per commit\n\nAs scheduled only works on the base branch anyway\n\nSee gh-32436"
+        },
+        {
+            "hash": "b82a0dd31af32acab3dafe0e2bce03eadcfddc04",
+            "message": "Polish \"Move CI and snapshot deployment to GitHub actions\"\n\nSee gh-32436"
+        },
+        {
+            "hash": "b7280400eed17b7b630028d407de692cf8279c3d",
+            "message": "Move CI and snapshot deployment to GitHub actions\n\nCloses gh-32436"
+        },
+        {
+            "hash": "a3345920ec0086451d833a09ed1ac38344616238",
+            "message": "Next development version (v6.1.6-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32616",
+            "title": "Refine scheme, userinfo, host and port parsing in UriComponentsBuilder"
+        },
+        {
+            "number": "32472",
+            "title": "Missing bean class in native image with a Kotlin nested class"
+        },
+        {
+            "number": "32612",
+            "title": "\"GET must not have a request body\" exception with OkhttpClient and BufferingClientHttpRequestFactory"
+        },
+        {
+            "number": "32592",
+            "title": "Upgrade to Reactor 2023.0.5"
+        },
+        {
+            "number": "32577",
+            "title": "`@RequestParam` binding does not support params with an empty array \"[]\" suffix"
+        },
+        {
+            "number": "32471",
+            "title": "Spring MVC re-creates form data from request params and re-encoding can change the content-length"
+        },
+        {
+            "number": "32586",
+            "title": "`MethodIntrospector.selectMethods()` fails to detect bridge methods across ApplicationContexts"
+        },
+        {
+            "number": "32606",
+            "title": "JMSTemplate.sendAndReceive does not propagate tracer over the wire"
+        },
+        {
+            "number": "32601",
+            "title": "Log column type for limited support message in `JdbcUtils.getResultSetValue`"
+        },
+        {
+            "number": "32589",
+            "title": "SimpleAsyncTaskScheduler: Returned ScheduledFuture does not track provided task execution"
+        },
+        {
+            "number": "32599",
+            "title": "Calling Kotlin suspend functions in non-reactive application crashes due to unresolvable class"
+        },
+        {
+            "number": "32596",
+            "title": "Upgrade to Micrometer 1.12.5"
+        },
+        {
+            "number": "32590",
+            "title": "Consistent support for generic `FactoryBean` type matching when using `getBeanProvider`"
+        },
+        {
+            "number": "32489",
+            "title": "Generic interface on `FactoryBean` class not autowired in case of `targetType` mismatch"
+        },
+        {
+            "number": "32549",
+            "title": "Maximum Request Size handling support for Undertow in StandardMultipartHttpServletRequest"
+        },
+        {
+            "number": "32528",
+            "title": "ReactorNettyClientResponse should not dispose connection"
+        },
+        {
+            "number": "32581",
+            "title": "Stop building Javadoc against Websphere's Javadoc"
+        },
+        {
+            "number": "32475",
+            "title": "Refine null-safety with NullAway build-time checks"
+        },
+        {
+            "number": "29491",
+            "title": "Improve 404 error handling in Spring MVC"
+        },
+        {
+            "number": "32502",
+            "title": "WebFlux Blocking controller runs on non-blocking thread when request input data present"
+        },
+        {
+            "number": "32566",
+            "title": "Upgrade to Gradle 8.7"
+        },
+        {
+            "number": "32543",
+            "title": "Document that active profiles are set at build time with AOT"
+        },
+        {
+            "number": "32537",
+            "title": "Awaitility-based tests should wait more than one second"
+        },
+        {
+            "number": "32515",
+            "title": "`CompoundExpression` omits null-safe syntax in AST string representation of null-safe selection/projection in SpEL"
+        },
+        {
+            "number": "32516",
+            "title": "Introduce common support for is-null-safe checks in SpEL nodes"
+        },
+        {
+            "number": "32510",
+            "title": "Generic Kotlin controllers got broken in 6.1.5"
+        },
+        {
+            "number": "31254",
+            "title": "HeaderContentNegotiationStrategy.resolveMediaTypes throws unexpected IllegalArgumentException "
+        },
+        {
+            "number": "32483",
+            "title": "`HeaderContentNegotiationStrategy.resolveMediaTypes()` throws unexpected `InvalidMimeTypeException`"
+        },
+        {
+            "number": "32487",
+            "title": "Document AOT limitations related to Kotlin identifiers with backticks"
+        },
+        {
+            "number": "32473",
+            "title": "JmsUtils.commitIfNecessary catches and ignores JMS IllegalStateException, losing message with ActiveMQ Artemis"
+        },
+        {
+            "number": "32476",
+            "title": "Avoid additional unnecessary `Annotation` array cloning in `TypeDescriptor`"
+        },
+        {
+            "number": "32458",
+            "title": "Unhandled JMS exceptions are not always recorded as observation errors"
+        },
+        {
+            "number": "32455",
+            "title": "Consistently apply TaskDecorator to ManagedExecutorService as well"
+        },
+        {
+            "number": "32434",
+            "title": "Deploy Docs Action should only run on production branches"
+        },
+        {
+            "number": "32436",
+            "title": "Move CI to GitHub Actions"
+        }
+    ]
+}

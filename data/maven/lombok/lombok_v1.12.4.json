@@ -1,0 +1,162 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.12.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 32,
+    "start_delay": 0.0,
+    "duration": 163.0417361111111,
+    "commits_info": [
+        {
+            "hash": "6363cac07d849e9e4619a2419ac802171e3a525a",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "68e7a11f500970aac1589193116b6f06791d8167",
+            "message": "[website] If video playback is not working, the site offers a direct download of the video, but that link was broken (pointed to .mov instead of the actual .mp4)."
+        },
+        {
+            "hash": "09ea02e4f5752e615be2ff5177be1fb328702a5b",
+            "message": "added package-infos to lots of packages, updated the javadoc in these, and made lots of private/package private methods 'public' in packages that aren't actually public API. Tumi asked for this, and I can imagine this is useful for others who are hacking add-ons to lombok. The package-info files clarify that we aren't committing to long-term stability of anything except the stuff directly in the lombok package, lombok.experimental, and lombok.extern."
+        },
+        {
+            "hash": "69d82faa74364baf8a8ddef88e145a8a05d5dee0",
+            "message": "Merge pull request #41 from serverperformance/master\n\n#591, #627: Fix for refactoring when @Getter(lazy=true)"
+        },
+        {
+            "hash": "71a22340ae70f9512fab48244b8ecaf5c73bf32a",
+            "message": "#627: Fix for refactoring when @Getter(lazy=true)\n\nWhen if in NB Editor, just make the getter available (lazy stuff will be created when compiling).\r\n\r\nThe inNetbeansEditor test is made after all the validations are made to the annotated field, and generates a regular getter for validations, Naviagator and autocompletion."
+        },
+        {
+            "hash": "ed82259e5276810ce7c8a8e2da5d1bc1dd35d7f8",
+            "message": "[trivial] fixed typos in test files."
+        },
+        {
+            "hash": "ae4864ebc3974b17a512849e7018556c4a3d1935",
+            "message": "[#626] introduction of formatting options triggered a longer standing bug about wonky timing on replacing Options with LombokOptions, causing javac to complain about not recognizing i.e. a Getter annotation when using it more than once in a file."
+        },
+        {
+            "hash": "20ac40f20110aa363d2bdf4cc1a1407d2c84135a",
+            "message": "[#625] Changelog entry for this issue"
+        },
+        {
+            "hash": "a40a86ad532881acd311200a665b5f55790c55cc",
+            "message": "[#625] Instead of '31' as a prime number for hashCode(), use something else. 31, probably owing to its inclusion in Effective Java, is overused, as proven by Maaartinus in issue 625. Switching to 277 instead. Also, 1231/1237 pair used for booleans has been replaced by 2591/2609."
+        },
+        {
+            "hash": "685ddfd52ebba4ca85ff93e08de14f38ecd8714b",
+            "message": "Added code to NOT add @SuppressWarnings to things if a @SuppressWarnings is already there. Lombok itself can't ever do that anyway (we don't add @SW except to things we just generated fresh), but some lombok extension builders do, and this helps them."
+        },
+        {
+            "hash": "7bbe19f1b8982e21ef0aa94644397b4961a5c470",
+            "message": "Merge pull request #40 from jlahoda/591\n\nLombok issue 591: Lombok 1.12.2 has some regressions with NetBeans"
+        },
+        {
+            "hash": "9760b35197969465736c004c6c4e4a283b1b8d3b",
+            "message": "591: setting positions for parameters even when running in NB editor, to avoid problems in javac's Flow."
+        },
+        {
+            "hash": "fa1d765445d5f883af3a53cd86878cc4b2f51910",
+            "message": "Added flag PARAMETER to the generated parameters."
+        },
+        {
+            "hash": "7d51842ca381c491d5dfb44bc76b0cea345e7170",
+            "message": "semi-fix for issue 602, but not complete as adding annotations to generated fields leads to crazy issues (see issue 217): generated LOG field now has @SuppressWarnings on it."
+        },
+        {
+            "hash": "5f92913a52f46300235e6f31b356025998d9f859",
+            "message": "Updated web docs and added format options support to delombok ant task."
+        },
+        {
+            "hash": "a19b99cba2fdee4495bafce558a28af49e8e36f0",
+            "message": "Added complete support for delombok's 'pretty' format options; covering all of the issue #608."
+        },
+        {
+            "hash": "9ac86c8a234f2ecd280f27f0dbda15440b1bf155",
+            "message": "fixed a bug where called LombokOptionsFactory.getLombokOptions() would actually cause the old options to be wrapped continuously, thus wrapping LombokOptions into itself infinitely. Now it just wraps if needed, other wise returns what's already been done."
+        },
+        {
+            "hash": "7e21683515144cc6127eff007226c86021b7b2df",
+            "message": "Added format preferences: Suppress @SuppressWarnings, suppress needless application of 'final'."
+        },
+        {
+            "hash": "9639bc2ff466e94f629d81ff00d8cab654f3ab19",
+            "message": "[pretty] Make the tests work with the new delombok formatting options."
+        },
+        {
+            "hash": "54c30d98c06277f42d2098d4f0731580b9f095e9",
+            "message": "[Pretty] Delombok prettyprinter now adheres to whitspace formatting rules"
+        },
+        {
+            "hash": "749baeaaed83edec855db5ac14d273743f8e8142",
+            "message": "[Pretty] Suppress final en last semicolon in try-with-resources. Do not indent empty lines."
+        },
+        {
+            "hash": "f865fe5fa2d34ed8f7ac022b448a4542b0b649e2",
+            "message": "added contingency case in format pref scanning if there is no input"
+        },
+        {
+            "hash": "21415af7b11e2b783ba954a8a504dc6906ff56c9",
+            "message": "added support for CharSequences"
+        },
+        {
+            "hash": "91c84ed67b18027ed84bcd8ae0a3bfd91a0a9367",
+            "message": "finished API for setting format prefs via command line."
+        },
+        {
+            "hash": "1723e21b5e5cb274080dafddaafb72e1aa9ae572",
+            "message": "formatpreferences system v1"
+        },
+        {
+            "hash": "1025ffb8baa26a0a843318b3b5e70c717bb36c9a",
+            "message": "[Pretty] Fix labeled statements and try-with-resources"
+        },
+        {
+            "hash": "083817732242cce815b9d78659e68520abdb5021",
+            "message": "Fix for Issue #591: v1.12.2 doesn't well with netbeans."
+        },
+        {
+            "hash": "78b2d6919e35887940f9f11b6ae1731245739b83",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok\n\nConflicts:\n\tsrc/delombok/lombok/delombok/DelombokApp.java"
+        },
+        {
+            "hash": "83b7e77b0cce6cd5993b17f36164271accdd281c",
+            "message": "changelog for bugfix for 598 from previous commit"
+        },
+        {
+            "hash": "5cdb0757d39d100c76bbca63734fb83b4cb13753",
+            "message": "[issue 598] JDK8 update broke assignment-with-operator in delombok."
+        },
+        {
+            "hash": "601cd66babeaec0963b8cadf2190fd48708d0d33",
+            "message": "Post release version bump"
+        },
+        {
+            "hash": "5deb185591904d275cb06eea85c0d739587fc738",
+            "message": "Suppressed warning about not closing the jar file since we use it for loading classes."
+        }
+    ],
+    "issues": [
+        {
+            "number": "591",
+            "title": "Enhancement: @Getter, support non-final lazy=true and @Setter"
+        },
+        {
+            "number": "627",
+            "title": "@Wither does not support wither methods overload"
+        },
+        {
+            "number": "626",
+            "title": "Lombok 1.12.2 has some regressions with NetBeans"
+        },
+        {
+            "number": "625",
+            "title": "Eclipse freezes due to multi thread WeakHashMap access in lombok"
+        },
+        {
+            "number": "608",
+            "title": "Java 7 multicatch exception syntax causes infinite loop"
+        }
+    ]
+}

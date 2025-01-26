@@ -1,0 +1,66 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.22",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 3.925625,
+    "commits_info": [
+        {
+            "hash": "dd1bce157ac4af440bcc4e09ef3ad73b13759a7d",
+            "message": "Update release notes by Travis CI build 1778 [ci skip]"
+        },
+        {
+            "hash": "235fd4d850a2fe25a2c871bfacf35d7672708e3c",
+            "message": "Merge pull request #763 from mockito/remove-internal-javadoc-links\n\nFixes #762 Removes ReturnsEmptyValue javadoc references"
+        },
+        {
+            "hash": "7a4bee38654b052361153cadc1dda5ede068d0ff",
+            "message": "Disables the testng javadoc task\n\nThis task is not configured and shows errors and warning.\nAlso the test-ng project is not released yet."
+        },
+        {
+            "hash": "167cd391975a6112e15459c9513482cb83d2dd51",
+            "message": "Removes internal classes from javadoc generation\n\nAfter some hacking and pondering the doclet is hard to maintain and to\nevolve, it let internal links slip through.\n\nOn the other hand gradle javadoc task has its own quirks :\n\n1. It works file by file, i.e. gradle feeds javadoc with a list of java\n   source files, and thus disable some javadoc features like package\n   linking.\n2. gradle exclusion removes files from the file list fed to javadoc,\n   as such javadoc emits errors and warning as it can't find these\n   types, errors can be :\n\n   * import org.mockito.internal.Internal <- error: package org.mockito.internal does not exists\n   * import org.mockito.internal.Internal.util <- error: static import only from classes and interfaces\n   * class Public extends Internal <- cannot find symbol\n   * warning - Tag @linkplain: reference not found: org.mockito.internal.Internal internal stuff\n   * warning - Tag @link: reference not found: org.mockito.stubbing\n\n   Yet the javadoc is still generated without the missing types.\n\nAs the javadoc is still generated, this commits chose to *hide* the\njavadoc errors and warning unless the gradle is run with the --info option."
+        },
+        {
+            "hash": "bf4b9035ec27d8bb09ffb78cc06705c052d9a3d6",
+            "message": "Remove internal exclusion from the javadoc configuration\n\nSigned-off-by: Brice Dutheil <brice.dutheil@gmail.com>"
+        },
+        {
+            "hash": "8f968f8a4bb5b59a766913d9c722fcc5ca1e21c2",
+            "message": "Moves HTTPS switch to javadoc 'top' option\n\nReason : the javadoc tool places the _escaped_ content of the 'header'\noption inside the title attribute : <h1 title=\"the escaped header\">\nand the script contains both double quotes and a closing angle bracket,\nand as such the browser show the title with some javascript and corrupts\nthe styling of the package page.\n\n:"
+        },
+        {
+            "hash": "504fef5f42c9cf6954e01035518272d80544e7b1",
+            "message": "Use javadoc task exclude as it removes generated references where necessary"
+        },
+        {
+            "hash": "a48e8e0574918372a2659c4ed7a90df64d224a20",
+            "message": "Fixes #762 Removes StackTraceCleaner internal doc references\n\nBut keeps them as text.\n\nSigned-off-by: Brice Dutheil <brice.dutheil@gmail.com>"
+        },
+        {
+            "hash": "fd3e07e43c9afc17b84b8f380f5ae75129611c96",
+            "message": "Fixes #762 Removes ReturnsMoreEmptyValues javadoc refs"
+        },
+        {
+            "hash": "49b381bd8443e62aaafe695812cd41a31372d6bb",
+            "message": "Fixes #762 Removes AnswerFunctionalInterfaces doc references\n\nSigned-off-by: Brice Dutheil <brice.dutheil@gmail.com>"
+        },
+        {
+            "hash": "35230a838503bb9a6492544064e62ea95aac5581",
+            "message": "Fixes #762 Removes ReturnsEmptyValue javadoc references"
+        },
+        {
+            "hash": "fc9329cba14c55310c3d4640b6667cf0230d042a",
+            "message": "Increment version '2.2.21' -> '2.2.22' by Travis CI build 1765 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "762",
+            "title": "Public javadoc offers links to internal classes"
+        }
+    ]
+}

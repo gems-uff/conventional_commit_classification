@@ -1,0 +1,246 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 36,
+    "start_delay": 0.0,
+    "duration": 35.011608796296294,
+    "commits_info": [
+        {
+            "hash": "4c7f939e0118d99a38478c9b2086cbbee9801a18",
+            "message": "Release v6.0.20"
+        },
+        {
+            "hash": "ea208dc3048b358f014d1e16a3722d6b73f41e13",
+            "message": "Polishing contribution\n\nCloses gh-32799"
+        },
+        {
+            "hash": "c8c95e360fa4a41b40e152b7a77b59c669b7a02d",
+            "message": "Polishing (aligned with 6.1.x)"
+        },
+        {
+            "hash": "9fb36a5dcb82c06a482b3388f96eed4017f47b18",
+            "message": "Upgrade to Reactor 2022.0.19\n\nIncludes AspectJ 1.9.22.1, Mockito 5.12, plugin alignment with 6.1.x\n\nCloses gh-32787"
+        },
+        {
+            "hash": "4caf6bc5b818aa78316267e9d0305287512aecff",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ee3e1591de7552046f8eec079cf02442fe63f949",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e81c788274b6026758fb5bdabfcf7eae875e97d8",
+            "message": "Accept ajc-compiled @Aspect classes for Spring AOP proxy usage\n\nAspectJExpressionPointcut leniently ignores unsupported expression.\n\nCloses gh-32793"
+        },
+        {
+            "hash": "09f23a578bd50dee8a67031db34bc546ecce1d62",
+            "message": "Update docs on HandlerInterceptor\n\nCloses gh-32729"
+        },
+        {
+            "hash": "5288504ceb17652945e6a77ed5606474466807a0",
+            "message": "Use instance field for ProblemDetail in ErrorResponse's\n\nCloses gh-32644"
+        },
+        {
+            "hash": "8b6a54c45fa60ead74072a5da25102b3b3cdadd0",
+            "message": "Update MockMvc section on Streaming in the docs\n\nCloses gh-32687"
+        },
+        {
+            "hash": "f3f3063091c99cb9e04a1a01c8ae3b4ea97be865",
+            "message": "Fix Dokka links to Spring Framework and Servlet APIs\n\nThis commit fixes links from Spring Framework's Dokka HTML to Javadoc\nfor Spring Framework and Servlet APIs by explicitly configuring the\n`element-list` page as the `package-list` in the Dokka Gradle plugin.\n\nCloses gh-32797\n\n(cherry picked from commit 7536980be9525d39fce7230b730efe1500174c44)"
+        },
+        {
+            "hash": "c1f3e37acd6f853b92cc035254bbf705f3724b3d",
+            "message": "Polish"
+        },
+        {
+            "hash": "427a96befc5ca5c4ab00cbef99ad334ca646d103",
+            "message": "Adapt docs deployment properties\n\nThis commit fixes the artifact properties we set for \"framework-docs\"\nartifacts. These have a different name as of 6.1.x and were backported\nas is.\n\nCloses gh-32780"
+        },
+        {
+            "hash": "77951dc622c9c9c0770cb8669cd10bb47493fccc",
+            "message": "Consistent RuntimeHintsRegistrar signature (plus related polishing)"
+        },
+        {
+            "hash": "43dd22ba31bb9325f49337786af97b7cf69c90c3",
+            "message": "Polishing\n\n(cherry picked from commit 05d9b52b19e1f740001abe40640fc02fd3001355)"
+        },
+        {
+            "hash": "dfe437ac887b5058fb11edcfed88cc233eeba1f1",
+            "message": "Unwrap raw target Query instance in case of proxy mismatch\n\nCloses gh-32766\n\n(cherry picked from commit 59a125d06f89ec4f0efe0628fe3a70ab143a5360)"
+        },
+        {
+            "hash": "9c775d26436717e17bcae8b22cdd12121a75b203",
+            "message": "Fix compilation error in test"
+        },
+        {
+            "hash": "3b50b6ef943d5fc7d8baf56f3a91308f8fdca424",
+            "message": "Include repeatable annotation container in MergedAnnotations results\n\nA bug has existed in Spring's MergedAnnotations support since it was\nintroduced in Spring Framework 5.2. Specifically, if the\nMergedAnnotations API is used to search for annotations with \"standard\nrepeatable annotation\" support enabled (which is the default), it's\npossible to search for a repeatable annotation but not for the\nrepeatable annotation's container annotation.\n\nThe reason is that MergedAnnotationFinder.process(Object, int, Object,\nAnnotation) does not process the container annotation and instead only\nprocesses the \"contained\" annotations, which prevents a container\nannotation from being included in search results.\n\nIn #29685, we fixed a bug that prevented the MergedAnnotations support\nfrom recognizing an annotation as a container if the container\nannotation declares attributes other than the required `value`\nattribute. As a consequence of that bug fix, since Spring Framework\n5.3.25, the MergedAnnotations infrastructure considers such an\nannotation a container, and due to the aforementioned bug the container\nis no longer processed, which results in a regression in behavior for\nannotation searches for such a container annotation.\n\nThis commit addresses the original bug as well as the regression by\nprocessing container annotations in addition to the contained\nrepeatable annotations.\n\nSee gh-29685\nCloses gh-32731\n\n(cherry picked from commit 4baad16437524f6f16f61fcfb3dc0458f7aaff47)"
+        },
+        {
+            "hash": "9a31f3b5a5265344fb7c904d89ba345fbddeb387",
+            "message": "Consistently propagate ApplicationStartup to BeanFactory\n\nCloses gh-32747\n\n(cherry picked from commit 25cedcfb9959bad9441c45029d62b5df07cc1b11)"
+        },
+        {
+            "hash": "b11d118376c8a445cb5b42a88c26ae9582997891",
+            "message": "Upgrade to Groovy 4.0.21, Netty 4.1.109, Undertow 2.3.13"
+        },
+        {
+            "hash": "0931769822976a82314b576a25ba7f458a8ef37a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f7b7e29fd7b19383175117c84ffc82c821ba7b58",
+            "message": "Ignore non-String keys in PropertiesPropertySource.getPropertyNames()\n\nCloses gh-32742\n\n(cherry picked from commit 610626aec69dd8a932dcc2cbee5642d2dcccc3bc)"
+        },
+        {
+            "hash": "08a63a4180832c653f45cdf512e06e4c661246da",
+            "message": "Fix build warnings\n\nSee gh-32726"
+        },
+        {
+            "hash": "4e3b834310efbc146efa626167f0ed452bc37fb5",
+            "message": "Fix guard against multiple subscriptions\n\nThis commit changes the guard against multiple subscriptions, as the\npreviously used doOnSubscribe hook could not function as guard in\ncertain scenarios.\n\nSee gh-32727\nCloses gh-32732"
+        },
+        {
+            "hash": "fb67f97a41b1c0242133ef1029c3105940edcd01",
+            "message": "Upgrade to gradle-enterprise-conventions 0.0.17\n\nCloses gh-32726"
+        },
+        {
+            "hash": "cafb5cfbbe9e79b529dfe825590c17708f0dc764",
+            "message": "Refine preDetermineBeanTypes algorithm\n\nThis commit refines the preDetermineBeanTypes algorithm that AOT uses\nto approximate the order of preInstantiateSingletons more closely.\n\nPreviously, the algorithm assumed that all beans where non-lazy\nsingletons in terms of initialization order, which led to inconsistent\norder in CGLIB proxy generation.\n\nWe now explicitly park lazy beans so that their types are determined\nduring a second phase, matching the order of regular initialization\norder.\n\nCloses gh-32701\n\nCo-authored-by: Juergen Hoeller <juergen.hoeller@broadcom.com>"
+        },
+        {
+            "hash": "9d2c6f80b88b22714b80911746333f3c76657444",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d9330bcac7e1c976050dd3fcde766b0b315ce6eb",
+            "message": "Skip close lock if acquired by other thread already\n\nCloses gh-32445\n\n(cherry picked from commit d151931f8649adf39e781c6ee4228b31c1fcc13b)"
+        },
+        {
+            "hash": "1fb179b057ad1638efb7fde386fe1a168008a754",
+            "message": "Relax scope of DataIntegrityViolationException\n\nThis commit updates the Javadoc of DataIntegrityViolationException to\nbroaden its scope as it was too specific before.\n\nCloses gh-32686"
+        },
+        {
+            "hash": "5c9f36435280395e138cfda590195a402b42ac0e",
+            "message": "Polishing\n\n(cherry picked from commit ec1f5ca600d61efa877bb04e67f341af2a14b6b2)"
+        },
+        {
+            "hash": "55f9581743b6c981ec36d394c43444a4d5f9dc93",
+            "message": "Try early initialization for all user-declared methods (including interfaces)\n\nCloses gh-32682\n\n(cherry picked from commit 62efdfb89c368fd3a3665fe78a7180692d174c23)"
+        },
+        {
+            "hash": "190397d5e00c0f55c672caf35408b421837db07e",
+            "message": "Upgrade to Java 17.0.11"
+        },
+        {
+            "hash": "94097fb1129a51bf78b3586ccbe3386629afbaae",
+            "message": "Polishing (aligned with 6.1.x)"
+        },
+        {
+            "hash": "e4ab2aa7756eff3116c1a2f36b8bd83b5dd955b9",
+            "message": "Update links to HttpOnly documentation at OWASP in ResponseCookie\n\nSee gh-32663\nCloses gh-32667\n\n(cherry picked from commit 7f27ba3902713e6e6051c81b404dc4b0f41321ca)"
+        },
+        {
+            "hash": "40bf550d565d39d9604194fc0d14be4a85103c71",
+            "message": "Ensure multipart data is deleted in WebFlux when connection terminates\n\nBefore this change temporary files would not consistently be deleted\nwhen the connection which uploads the multipart files closes naturally.\n\nThis change uses the usingWhen Reactor operator to ensure that the\ntermination of the connection doesn't prevent individual file parts\nfrom being deleted due to a cancellation signal.\n\nSee gh-31217\nCloses gh-32638"
+        },
+        {
+            "hash": "f3bdce455e9e8ae68f9de1dbf1fb66e1fcc14a03",
+            "message": "Next development version (v6.0.20-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32787",
+            "title": "Upgrade to Reactor 2022.0.19"
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        },
+        {
+            "number": "32729",
+            "title": "Improve documentation advising against use of HandlerInterceptor for security"
+        },
+        {
+            "number": "32644",
+            "title": "Incorrect AsyncRequestTimeoutException handling in ResponseEntityExceptionHandler"
+        },
+        {
+            "number": "32687",
+            "title": "Correct documentation on streaming with MockMvcWebTestClient"
+        },
+        {
+            "number": "32797",
+            "title": "Links to Framework and Servlet Javadoc from Framework's Kotlin API documentation are broken"
+        },
+        {
+            "number": "32780",
+            "title": "Javadoc snapshots no longer published since the move to GitHub Actions"
+        },
+        {
+            "number": "32766",
+            "title": "DeferredQueryInvocationHandler fails to unwrap QuerySqmImpl class outside of transaction"
+        },
+        {
+            "number": "29685",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist in container annotation"
+        },
+        {
+            "number": "32731",
+            "title": "`MergedAnnotations` search does not find container for repeatable annotation"
+        },
+        {
+            "number": "32747",
+            "title": "`AnnotationConfigWebApplicationContext` should propagate `ApplicationStartup` to `BeanFactory`"
+        },
+        {
+            "number": "32742",
+            "title": "Ignore non-String keys in `PropertiesPropertySource.getPropertyNames()`"
+        },
+        {
+            "number": "32726",
+            "title": "Upgrade to gradle-enterprise-conventions 0.0.17"
+        },
+        {
+            "number": "32727",
+            "title": "\"multiple subscribers not supported\" when using WebClient exchange"
+        },
+        {
+            "number": "32732",
+            "title": "\"multiple subscribers not supported\" when using WebClient exchange"
+        },
+        {
+            "number": "32701",
+            "title": "Wrong proxy generation order during AOT for classes with `ScopedProxyMode.TARGET_CLASS` and advisors"
+        },
+        {
+            "number": "32445",
+            "title": "Deadlock/Stall in ConcurrentWebSocketSessionDecorator with Undertow 2.3.10"
+        },
+        {
+            "number": "32686",
+            "title": "Document that DataIntegrityViolationException can also be thrown on read-only queries"
+        },
+        {
+            "number": "32682",
+            "title": "ConfigurationClassEnhancer should consistently trigger FastClass creation at build-time"
+        },
+        {
+            "number": "32667",
+            "title": "Update links to HttpOnly documentation at OWASP in `ResponseCookie`"
+        },
+        {
+            "number": "31217",
+            "title": "WebFlux temporary file not always deleted with parallel uploads."
+        },
+        {
+            "number": "32638",
+            "title": "WebFlux temporary file not always deleted with parallel uploads."
+        }
+    ]
+}

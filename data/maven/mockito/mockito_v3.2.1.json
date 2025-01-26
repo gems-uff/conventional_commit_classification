@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.2.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 1.1088078703703703,
+    "commits_info": [
+        {
+            "hash": "619c3939a0e0fc1325cd2cc7507784f8e301b142",
+            "message": "3.2.1 release (previous 3.2.0) + release notes updated by CI build 4317\n\n[ci skip-release]"
+        },
+        {
+            "hash": "dd68237199b19d8dac68d4e978f41b75326689ba",
+            "message": "Add matchers for incompatible type matchers (#1832)\n\nWe discovered that users run into issues with using the wrong Mockito\r\nmatcher for arguments. Examples include `any(Integer.class)` instead of\r\n`anyInt()` and `anyInt()` instead of `anyFloat()`. Users then run into\r\ncryptic run-time errors that are difficult to understand.\r\n\r\nThese ErrorProne checkers make these a compile warning, to warn the user\r\nbefore hand. They also provide the appropriate fixes that can be\r\ndirectly applied."
+        },
+        {
+            "hash": "ae8117f6b72350788f429168292bafe13e231e04",
+            "message": "Fixes #1839 : Badge improvements in README.md (#1840)\n\nUse shields.io badge for Bintray, as the Bintray hosted badge shows\r\n\"Download\" and cannot be made to show \"Bintray\".\r\n\r\nSplit an excessively long line for the first row of badges.\r\n\r\nUpdate the alt text for \"Release Notes\". Non-graphical users would only\r\nsee a link to the release notes.\r\n\r\n\"Javadoc\" was misspelled as \"Javadocs\".\r\n\r\nUse HTTPS for all links.\r\n\r\nUse direct links to the package on Maven Central and Bintray.\r\n\r\nUse the default color for Javadoc, red looks as an error."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1839",
+            "title": "Bintray badge is out of date"
+        }
+    ]
+}

@@ -11,1113 +11,917 @@
     "commits_info": [
         {
             "hash": "17b30e96476be70b8773b2b807bab857fd3ceb39",
-            "message": "Update protobuf version (#9119)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version (#9119)"
         },
         {
             "hash": "912eb8b89ef48f63877a6af9f022c74f13c8f8d4",
-            "message": "Merge pull request #9121 from haberman/rubyfix\n\nFix for descriptor_pb.rb: google/protobuf should be required first.",
-            "tag_name": null
+            "message": "Merge pull request #9121 from haberman/rubyfix\n\nFix for descriptor_pb.rb: google/protobuf should be required first."
         },
         {
             "hash": "bb5a2684de8b53cd23199965bdd193a80168eb44",
-            "message": "Minor whitespace fixes and test fixups.\n",
-            "tag_name": null
+            "message": "Minor whitespace fixes and test fixups."
         },
         {
             "hash": "4c445b18038b843588a2298b423d27b0d97cef1e",
-            "message": "Fix for descriptor_pb.rb: google/protobuf should be required first.\n",
-            "tag_name": null
+            "message": "Fix for descriptor_pb.rb: google/protobuf should be required first."
         },
         {
             "hash": "53a1d66d9d7fa0efa4547308bca8e1f750ea6010",
-            "message": "Update PHP release notes for 3.19.0 (#9110)\n\n",
-            "tag_name": null
+            "message": "Update PHP release notes for 3.19.0 (#9110)"
         },
         {
             "hash": "d1c6620347f9f2e1e5522168ba4a5e66fe56666e",
-            "message": "Update CHANGES.txt for 3.19.0\n",
-            "tag_name": null
+            "message": "Update CHANGES.txt for 3.19.0"
         },
         {
             "hash": "519340d662379feae6a50973e43220d5f1e252f0",
-            "message": "Update protobuf version (#9106)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version (#9106)"
         },
         {
             "hash": "6b0a1c2407b1d1de6e701784dd9c27e4e58697bb",
-            "message": "Add prost and quick-protobuf to third_party.md (#9104)\n\n",
-            "tag_name": null
+            "message": "Add prost and quick-protobuf to third_party.md (#9104)"
         },
         {
             "hash": "d049bce84405a26996979de1e9333c7d0fc7378a",
-            "message": "Remove references to HAVE_PTHREAD (#9100)\n\nThis is based on @haberman's changes in #8257. Now that we're using\r\nstd::mutex we no longer need to check whether pthreads are available, so\r\nthis commit removes references to HAVE_PTHREAD. I left the autotools\r\nbuild alone, though, since we are likely to drop support for it soon\r\nanyway.",
-            "tag_name": null
+            "message": "Remove references to HAVE_PTHREAD (#9100)\n\nThis is based on @haberman's changes in #8257. Now that we're using\r\nstd::mutex we no longer need to check whether pthreads are available, so\r\nthis commit removes references to HAVE_PTHREAD. I left the autotools\r\nbuild alone, though, since we are likely to drop support for it soon\r\nanyway."
         },
         {
             "hash": "c01cd6ec794fd91b316cb236663c81eefa1efa4e",
-            "message": "Add python 3.10 (#9034)\n\n* Add python 3.10\r\n\r\n* Update setup.py and tox.ini\r\n\r\n* fix: fix 3.9 -> 3.10\r\n\r\n* fix: py310-cpp",
-            "tag_name": null
+            "message": "Add python 3.10 (#9034)\n\n* Add python 3.10\r\n\r\n* Update setup.py and tox.ini\r\n\r\n* fix: fix 3.9 -> 3.10\r\n\r\n* fix: py310-cpp"
         },
         {
             "hash": "72f085747e157ba048ef5ebd11f49e54e6c2ab6e",
-            "message": "Use int32_t rather than int32.",
-            "tag_name": null
+            "message": "Use int32_t rather than int32."
         },
         {
             "hash": "6bc21b531e6d4d5166d0be04acff37a2849e4a34",
-            "message": "Update the way we get the global object, to comply with CSP no-unsafe-eval (#8864)\n\n",
-            "tag_name": null
+            "message": "Update the way we get the global object, to comply with CSP no-unsafe-eval (#8864)"
         },
         {
             "hash": "3e02f65f5cc6049e1593b7e99f8abe5fc227c994",
-            "message": "Skip exports if not available by CommonJS (#8856)\n\n",
-            "tag_name": null
+            "message": "Skip exports if not available by CommonJS (#8856)"
         },
         {
             "hash": "8b69867fef81f7066405eaa43444fddaecfdae8f",
-            "message": "Merge pull request #7642 from philjdf/master\n\n[C#] Make FieldDescriptor propertyName public",
-            "tag_name": null
+            "message": "Merge pull request #7642 from philjdf/master\n\n[C#] Make FieldDescriptor propertyName public"
         },
         {
             "hash": "115af28e8fb580c60bef269802b8f07e8ecccabf",
-            "message": "Make propertyName public\n",
-            "tag_name": null
+            "message": "Make propertyName public"
         },
         {
             "hash": "5106dea867525f3fc470ef720346411a759be5ff",
-            "message": "Merge pull request #7938 from alusco-scratch/patch-1\n\nOverride Map.clone to use Map's dup method",
-            "tag_name": null
+            "message": "Merge pull request #7938 from alusco-scratch/patch-1\n\nOverride Map.clone to use Map's dup method"
         },
         {
             "hash": "00a7ea4de12da348bfb55159b1d3469d249c9a45",
-            "message": "Override Map.clone to use Map's dup method\n\nMessage and Repeated field override clone so that it uses the internal implementation of dup but Map is missing this and only implements dup.  This can lead to unexpected behavior since two out of three complex types behave correctly.",
-            "tag_name": null
+            "message": "Override Map.clone to use Map's dup method\n\nMessage and Repeated field override clone so that it uses the internal implementation of dup but Map is missing this and only implements dup.  This can lead to unexpected behavior since two out of three complex types behave correctly."
         },
         {
             "hash": "12f70b7c4d43006cc132787f300ca2bc70b37bb1",
-            "message": "Merge pull request #8122 from mamapanda/MessageToDict-fix\n\nMake MessageToDict convert map keys to strings",
-            "tag_name": null
+            "message": "Merge pull request #8122 from mamapanda/MessageToDict-fix\n\nMake MessageToDict convert map keys to strings"
         },
         {
             "hash": "74056a0e2834577ad590d023ee73cc20cf103d38",
-            "message": "Make MessageToDict convert map keys to strings\n",
-            "tag_name": null
+            "message": "Make MessageToDict convert map keys to strings"
         },
         {
             "hash": "3d223dc5c5a2b8407c3458ac753319bc1af47786",
-            "message": "Merge pull request #8232 from qnighy/arm64-darwin\n\nRuby: build extensions for arm64-darwin",
-            "tag_name": null
+            "message": "Merge pull request #8232 from qnighy/arm64-darwin\n\nRuby: build extensions for arm64-darwin"
         },
         {
             "hash": "f2b5c33baff633f0dec7a6364e6c04efa16bc69a",
-            "message": "Specify aarch64 for older autotools\n",
-            "tag_name": null
+            "message": "Specify aarch64 for older autotools"
         },
         {
             "hash": "4111d504882d2c17697aee424aaf7867891c1d4d",
-            "message": "Merge branch 'master' into arm64-darwin\n",
-            "tag_name": null
+            "message": "Merge branch 'master' into arm64-darwin"
         },
         {
             "hash": "c57ee04cf32274681f45a0c0acb35e8605fff9e7",
-            "message": "Merge pull request #9029 from protocolbuffers/toolchain\n\nChange tool paths for docker",
-            "tag_name": null
+            "message": "Merge pull request #9029 from protocolbuffers/toolchain\n\nChange tool paths for docker"
         },
         {
             "hash": "3a493ffae5170a3794afed219eb12be11f76a500",
-            "message": "Change tool paths for docker\n",
-            "tag_name": null
+            "message": "Change tool paths for docker"
         },
         {
             "hash": "d1a1818898b842d7b22f77c654622dfa5475ca0c",
-            "message": "Changing clang path\n",
-            "tag_name": null
+            "message": "Changing clang path"
         },
         {
             "hash": "5e62362a093419bceff125a63dd58b7da684f1fc",
-            "message": "Changing directory of clang to match docker container\n",
-            "tag_name": null
+            "message": "Changing directory of clang to match docker container"
         },
         {
             "hash": "2a2c9767acb9ece954609dadace9e74abb9e5113",
-            "message": "Changing format of features\n",
-            "tag_name": null
+            "message": "Changing format of features"
         },
         {
             "hash": "25b1945faedd36b776ab2cedb8239e267c9e9fef",
-            "message": "Remove config suffix from .bazelrc configs\n",
-            "tag_name": null
+            "message": "Remove config suffix from .bazelrc configs"
         },
         {
             "hash": "b1877bb27f638b3e0f39238799e33d33ee15ac04",
-            "message": "Style nits\n",
-            "tag_name": null
+            "message": "Style nits"
         },
         {
             "hash": "33f3c0ec99aaef7215f519035b5f67867a1c9462",
-            "message": "Addressing first round of comments\n",
-            "tag_name": null
+            "message": "Addressing first round of comments"
         },
         {
             "hash": "5532dae1da5ad51c69a9311136acfe6a67fa0144",
-            "message": "Creating bazel toolchain to crosscompile with\n",
-            "tag_name": null
+            "message": "Creating bazel toolchain to crosscompile with"
         },
         {
             "hash": "a93074e546f022c12501b02d14b14943b3a74dee",
-            "message": "deps: add j2objc annotations (#9005)\n\n* deps: add j2objc annotations\r\n\r\n@pzd this will be needed on the next sync with google3\r\n",
-            "tag_name": null
+            "message": "deps: add j2objc annotations (#9005)\n\n* deps: add j2objc annotations\r\n\r\n@pzd this will be needed on the next sync with google3"
         },
         {
             "hash": "15c40c6cdac2f816a56640d24a5c4c3ec0f84b00",
-            "message": "Merge pull request #9002 from elharo/elharo-patch-1\n\ndocs: 3.18.0 is released",
-            "tag_name": null
+            "message": "Merge pull request #9002 from elharo/elharo-patch-1\n\ndocs: 3.18.0 is released"
         },
         {
             "hash": "06cfc9a0e6f941af8eb55d658f70199ccc6643f2",
-            "message": "docs: 3.18.0 is released",
-            "tag_name": null
+            "message": "docs: 3.18.0 is released"
         },
         {
             "hash": "2501e9b856c411239e2ae32bcc75518dcf840418",
-            "message": "Merge pull request #8912 from protocolbuffers/elharo-patch-3\n\nsame directory ignore",
-            "tag_name": null
+            "message": "Merge pull request #8912 from protocolbuffers/elharo-patch-3\n\nsame directory ignore"
         },
         {
             "hash": "7924f6d7ffc933a7b76921310749da713b103c70",
-            "message": "same directory ignore\n\nfixes #8745  @acozzette",
-            "tag_name": null
+            "message": "same directory ignore\n\nfixes #8745  @acozzette"
         },
         {
             "hash": "8cf990fc9f3651502f42de8c14cb06d865f8a06b",
-            "message": "Updtae version to 3.17.3 (#8889)\n\n",
-            "tag_name": null
+            "message": "Updtae version to 3.17.3 (#8889)"
         },
         {
             "hash": "66b7b71a455bbb295d0d407e32c07b9fcdbf85c0",
-            "message": "Merge pull request #8902 from acozzette/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #8902 from acozzette/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "9faf5a79bc2c8b322a86bdb20b07bcb1c6866d2e",
-            "message": "Use kName naming style for enum in binary_json_conformance_suite.cc\n\nThis style is officially the correct one according to the style guide,\nbut more importantly this fixes a conflict with TRUE and FALSE macros\ndefined on Mac OS.\n",
-            "tag_name": null
+            "message": "Use kName naming style for enum in binary_json_conformance_suite.cc\n\nThis style is officially the correct one according to the style guide,\nbut more importantly this fixes a conflict with TRUE and FALSE macros\ndefined on Mac OS."
         },
         {
             "hash": "877e7b6472920e472205d96a1fd519e51ecfa2eb",
-            "message": "Add new Python-C++ source files to Makefile.am\n",
-            "tag_name": null
+            "message": "Add new Python-C++ source files to Makefile.am"
         },
         {
             "hash": "1d842f1d81843482bc9e99089ec9382cab2e5568",
-            "message": "Update CHANGES.txt\n",
-            "tag_name": null
+            "message": "Update CHANGES.txt"
         },
         {
             "hash": "50ea0dc4025ec8f150caaaa5e78f2b8296637578",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
         },
         {
             "hash": "f78fefc1ff711564ad7d7daed1d6d3a5d362268b",
-            "message": "Sync from Piper @392954264\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @392954264\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "4eed0dab5a2914399f5074d7a329616d3473c673",
-            "message": "Sync from Piper @392076391\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @392076391\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "38f6e15e77a4e33a669d5d37efd87edfa15c7c04",
-            "message": "Merge pull request #8901 from haberman/release-notes\n\nAdded release notes indicating that 3.17.3 is the last Python 2.x release.",
-            "tag_name": null
+            "message": "Merge pull request #8901 from haberman/release-notes\n\nAdded release notes indicating that 3.17.3 is the last Python 2.x release."
         },
         {
             "hash": "16ae4ba3fa75a83813043ceb1dc8a79b0e575966",
-            "message": "Added release notes indicating that 3.17.3 is the last Python 2.x release.\n",
-            "tag_name": null
+            "message": "Added release notes indicating that 3.17.3 is the last Python 2.x release."
         },
         {
             "hash": "69b0a78315b464e6d4b1b87845cab409cc87dfe7",
-            "message": "Merge pull request #8968 from zhangskz/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #8968 from zhangskz/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "0fe47f3971b2363a82c4f29bfd9f1c49af56a110",
-            "message": "Merge branch 'master' into sync-stage",
-            "tag_name": null
+            "message": "Merge branch 'master' into sync-stage"
         },
         {
             "hash": "5f55fe1d6b2ee4b8d54d83eb49279089e5b67b9f",
-            "message": "enforce android API level 14 (#8971)\n\n* enforce android API level 14\r\nAdd animal-sniffer plugin to check for android compatibility\r\n\r\n* Revert \"Merge pull request #7855 from belugabehr/ObjectsRequireNonNull\"\r\n\r\nThis reverts commit a3e55874472403870275778ade0b91cce6333633, reversing\r\nchanges made to f79f956b7459ba15aa0ad91d6f09bd7931481593.",
-            "tag_name": null
+            "message": "enforce android API level 14 (#8971)\n\n* enforce android API level 14\r\nAdd animal-sniffer plugin to check for android compatibility\r\n\r\n* Revert \"Merge pull request #7855 from belugabehr/ObjectsRequireNonNull\"\r\n\r\nThis reverts commit a3e55874472403870275778ade0b91cce6333633, reversing\r\nchanges made to f79f956b7459ba15aa0ad91d6f09bd7931481593."
         },
         {
             "hash": "385672597f6980ca8c7629cf77c2f83130858101",
-            "message": "Disable MSVC warning C4125 (decimal digit terminates octal escape sequence) (#8928)\n\n",
-            "tag_name": null
+            "message": "Disable MSVC warning C4125 (decimal digit terminates octal escape sequence) (#8928)"
         },
         {
             "hash": "8c7e0829200a3bac3950e92579e14c9b179829d6",
-            "message": "Fix warning about unary minus operator (#8929)\n\n",
-            "tag_name": null
+            "message": "Fix warning about unary minus operator (#8929)"
         },
         {
             "hash": "d6699989ab5164cc7778ea4802e49aae51a4f417",
-            "message": "Fix shadowing warnings (#8926)\n\n",
-            "tag_name": null
+            "message": "Fix shadowing warnings (#8926)"
         },
         {
             "hash": "fabb59448a9961891465d28bd2d4e5d68bbadf8f",
-            "message": "Clean up unused code in src\\google\\protobuf\\compiler\\cpp\\cpp_helpers.h (#8819)\n\nCo-authored-by: junzeng <hjunzeng6@gmail.com>",
-            "tag_name": null
+            "message": "Clean up unused code in src\\google\\protobuf\\compiler\\cpp\\cpp_helpers.h (#8819)\n\nCo-authored-by: junzeng <hjunzeng6@gmail.com>"
         },
         {
             "hash": "96d983a02e5ec4f88172d7d95f04fe3b219ad945",
-            "message": "Tweak update_file_lists.sh to handle changes to Makefile.am. (#8965)\n\n",
-            "tag_name": null
+            "message": "Tweak update_file_lists.sh to handle changes to Makefile.am. (#8965)"
         },
         {
             "hash": "7beab00b059185f0f5ee1575e6b82ccc724a16dc",
-            "message": "Merge pull request #8966 from jtattermusch/reintroduce_setuppy_aarch64\n\nReintroduce setup.py changes from #8280 erased by piper import #8902",
-            "tag_name": null
+            "message": "Merge pull request #8966 from jtattermusch/reintroduce_setuppy_aarch64\n\nReintroduce setup.py changes from #8280 erased by piper import #8902"
         },
         {
             "hash": "3efd68c793ce659b760e873c5018636a7ac372fb",
-            "message": "Reintroduce setup.py changes from #8280 erased by piper import #8902\n",
-            "tag_name": null
+            "message": "Reintroduce setup.py changes from #8280 erased by piper import #8902"
         },
         {
             "hash": "75eff10d81233d3d08ce5ded215e526c1fcace88",
-            "message": "Merge pull request #8960 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #8960 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "c70b4e570b377140704e87b6ace07718e705133a",
-            "message": "Removed remaining dependence on six for Python.\n",
-            "tag_name": null
+            "message": "Removed remaining dependence on six for Python."
         },
         {
             "hash": "a76f5da9a035e014aaf60f93288b23b50ce26590",
-            "message": "Removed extraneous trailing backslashes.\n",
-            "tag_name": null
+            "message": "Removed extraneous trailing backslashes."
         },
         {
             "hash": "a33aa736fc71d56916788c604b4504854cb49a80",
-            "message": "Removed more testing of Python <3.5.\n",
-            "tag_name": null
+            "message": "Removed more testing of Python <3.5."
         },
         {
             "hash": "1a662aa18d6487bf69cf2c81c5bbbb133151835b",
-            "message": "Disabled build_files_updated unittest for now.\n",
-            "tag_name": null
+            "message": "Disabled build_files_updated unittest for now."
         },
         {
             "hash": "7adaf9eb790704b541ee07f815d41c7f3a16dc57",
-            "message": "Marked JS conformance runner as executable.\n",
-            "tag_name": null
+            "message": "Marked JS conformance runner as executable."
         },
         {
             "hash": "f46293839e681a440e39178cc7567adeb8554cb1",
-            "message": "Removed redundant license header that confounded shebang line.\n",
-            "tag_name": null
+            "message": "Removed redundant license header that confounded shebang line."
         },
         {
             "hash": "b6d1e05d55e422b0c970dca0d14fa8a2cf72514f",
-            "message": "Removed google-internal annotation.\n",
-            "tag_name": null
+            "message": "Removed google-internal annotation."
         },
         {
             "hash": "4a81770b7f6c0c771efd1e6cc830cbca6b35f7f8",
-            "message": "Reverted package change in test proto.\n",
-            "tag_name": null
+            "message": "Reverted package change in test proto."
         },
         {
             "hash": "bbf5d54ab7e6f850ad04a7ced57447b80a37b502",
-            "message": "Added missing source to Makefile.am.\n",
-            "tag_name": null
+            "message": "Added missing source to Makefile.am."
         },
         {
             "hash": "8b75c14592d204583a6b0660a4c7019f63936256",
-            "message": "Added release notes.\n",
-            "tag_name": null
+            "message": "Added release notes."
         },
         {
             "hash": "018e2e77514ce8effef58623e6d823456298efa8",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tsrc/google/protobuf/descriptor.pb.cc\n#\tsrc/google/protobuf/duration.pb.cc\n#\tsrc/google/protobuf/timestamp.pb.cc\n#\tsrc/google/protobuf/type.pb.cc\n#\tsrc/google/protobuf/wrappers.pb.cc\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tsrc/google/protobuf/descriptor.pb.cc\n#\tsrc/google/protobuf/duration.pb.cc\n#\tsrc/google/protobuf/timestamp.pb.cc\n#\tsrc/google/protobuf/type.pb.cc\n#\tsrc/google/protobuf/wrappers.pb.cc"
         },
         {
             "hash": "e5c570bb572bebe706d0389f2ea734a3e1a7d821",
-            "message": "Sync from Piper @395706834\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @395706834\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "10d0faef6de038960ec825c003c85581800fba1c",
-            "message": "Use ReadVarint32 for Int32 types (#8769)\n\n* Add INT32 to list of 32-bit varint types\r\n\r\n* update descriptor protos\r\n\r\nCo-authored-by: Greg Stoll <greg@gregstoll.com>",
-            "tag_name": null
+            "message": "Use ReadVarint32 for Int32 types (#8769)\n\n* Add INT32 to list of 32-bit varint types\r\n\r\n* update descriptor protos\r\n\r\nCo-authored-by: Greg Stoll <greg@gregstoll.com>"
         },
         {
             "hash": "a8b73fb904da6eb87937a628173750994a4d0f31",
-            "message": "OSS benchmark script improvements: use java 11, remove tcmalloc, remove JS (#8918)\n\n",
-            "tag_name": null
+            "message": "OSS benchmark script improvements: use java 11, remove tcmalloc, remove JS (#8918)"
         },
         {
             "hash": "768bc823ef55889a143a98512aec8401f2b4abd3",
-            "message": "Merge pull request #8948 from compnerd/split-check\n\nbuild: fix the support for CMake[<3.7]",
-            "tag_name": null
+            "message": "Merge pull request #8948 from compnerd/split-check\n\nbuild: fix the support for CMake[<3.7]"
         },
         {
             "hash": "bf7a5e40a86955564d63edbfef675540da049c00",
-            "message": "build: fix the support for CMake[<3.7]\n\nThe `VERSION_GREATER_EQUAL` operator was introduced in CMake 3.7.0\n(released in 2016).  Use the long form of the check by splitting the\noperation into two comparisons to support the older CMake.\n",
-            "tag_name": null
+            "message": "build: fix the support for CMake[<3.7]\n\nThe `VERSION_GREATER_EQUAL` operator was introduced in CMake 3.7.0\n(released in 2016).  Use the long form of the check by splitting the\noperation into two comparisons to support the older CMake."
         },
         {
             "hash": "4368383f0ed2e20454bd67aa5bfb5cb5ed9a1ced",
-            "message": "Merge pull request #8944 from jtattermusch/fix_arm64_dockcross_break\n\nfix arm64 tests broken by dockcross image update",
-            "tag_name": null
+            "message": "Merge pull request #8944 from jtattermusch/fix_arm64_dockcross_break\n\nfix arm64 tests broken by dockcross image update"
         },
         {
             "hash": "2bd61368de85336e8a6029c77ded2281443edb83",
-            "message": "fix arm64 C++ tests broken by dockcross image update\n",
-            "tag_name": null
+            "message": "fix arm64 C++ tests broken by dockcross image update"
         },
         {
             "hash": "981326af1dd9592b3db131873c024db6002e516a",
-            "message": "fix arm64 tests broken by dockcross image update\n",
-            "tag_name": null
+            "message": "fix arm64 tests broken by dockcross image update"
         },
         {
             "hash": "2937b2ca633667a17a447b10f0e7819c4d8624fd",
-            "message": "Addresses duplicates identified in #8925 (#8939)\n\n* Addresses duplicates identified in #8925\r\n\r\njava_export aliases the rule name to the full maven_project_jar which consolidates all deps into a merged jar. This is not what we want for Bazel users.\r\n\r\n* Update :util to match",
-            "tag_name": null
+            "message": "Addresses duplicates identified in #8925 (#8939)\n\n* Addresses duplicates identified in #8925\r\n\r\njava_export aliases the rule name to the full maven_project_jar which consolidates all deps into a merged jar. This is not what we want for Bazel users.\r\n\r\n* Update :util to match"
         },
         {
             "hash": "3bc229afae21e87da832ac7efed8d397c50a509d",
-            "message": "add Stack Overflow as a possible support channel. (#8908)\n\n* add Stack Overflow as a possible support channel. \r\n",
-            "tag_name": null
+            "message": "add Stack Overflow as a possible support channel. (#8908)\n\n* add Stack Overflow as a possible support channel."
         },
         {
             "hash": "c87e1ae59796a391758ed9e5fc95f608a6d54e7f",
-            "message": "Fix uninitialized variable warnings in descriptor.cc (#8931)\n\n* Fix uninitialized variable use warnings in descriptor.cc AllocateFieldNames and AllocRawInternal\r\n\r\n* Fix missing-field-initializers warning",
-            "tag_name": null
+            "message": "Fix uninitialized variable warnings in descriptor.cc (#8931)\n\n* Fix uninitialized variable use warnings in descriptor.cc AllocateFieldNames and AllocRawInternal\r\n\r\n* Fix missing-field-initializers warning"
         },
         {
             "hash": "ef6a9b285476d057cf404b5712c56857a7120fb6",
-            "message": "Fix cast truncates constant value warning (#8932)\n\n",
-            "tag_name": null
+            "message": "Fix cast truncates constant value warning (#8932)"
         },
         {
             "hash": "fe54248abaceae273d2913ab44e0bcb707e87bf4",
-            "message": "Merge pull request #8917 from Sil3ntStorm/issue-6159\n\nUse if constexpr in template functions",
-            "tag_name": null
+            "message": "Merge pull request #8917 from Sil3ntStorm/issue-6159\n\nUse if constexpr in template functions"
         },
         {
             "hash": "1473d74620680584ddab3e1b734cc64fee648f63",
-            "message": "Disable conditional expression is constant warning (C4127) inside protobuf\n",
-            "tag_name": null
+            "message": "Disable conditional expression is constant warning (C4127) inside protobuf"
         },
         {
             "hash": "a3e55874472403870275778ade0b91cce6333633",
-            "message": "Merge pull request #7855 from belugabehr/ObjectsRequireNonNull\n\nStandardize NPE checks on JDK Objects utility",
-            "tag_name": null
+            "message": "Merge pull request #7855 from belugabehr/ObjectsRequireNonNull\n\nStandardize NPE checks on JDK Objects utility"
         },
         {
             "hash": "5d168fa4c801415314fe580bf57b0d597c2753a2",
-            "message": "Standardize NPE checks on JDK Objects utility\n",
-            "tag_name": null
+            "message": "Standardize NPE checks on JDK Objects utility"
         },
         {
             "hash": "f79f956b7459ba15aa0ad91d6f09bd7931481593",
-            "message": "Merge pull request #8851 from compnerd/msvc-runtime-library\n\ncmake: support `MSVC_RUNTIME_LIBRARY` property",
-            "tag_name": null
+            "message": "Merge pull request #8851 from compnerd/msvc-runtime-library\n\ncmake: support `MSVC_RUNTIME_LIBRARY` property"
         },
         {
             "hash": "c47adad0c32e55b63f183c22af7a4d6bc09b3f1a",
-            "message": "cmake: support `MSVC_RUNTIME_LIBRARY` property\n\nWhen using a new enough CMake (3.15+) prefer to use the\n`MSVC_RUNTIME_LIBRARY` property on targets to select the runtime library\nvariant.  This property is automatically set to the value specified by\n`CMAKE_MSVC_RUNTIME_LIBRARY`.  This property requires that the CMake\nPolicy 91 is set to new (see CMP0091).\n",
-            "tag_name": null
+            "message": "cmake: support `MSVC_RUNTIME_LIBRARY` property\n\nWhen using a new enough CMake (3.15+) prefer to use the\n`MSVC_RUNTIME_LIBRARY` property on targets to select the runtime library\nvariant.  This property is automatically set to the value specified by\n`CMAKE_MSVC_RUNTIME_LIBRARY`.  This property requires that the CMake\nPolicy 91 is set to new (see CMP0091)."
         },
         {
             "hash": "d6b6fdd1141d70e88086d3d2c317102b766b2cba",
-            "message": "Merge pull request #8919 from TeBoring/3.18.x-cherry\n\nCherry pick changes to fix python release",
-            "tag_name": null
+            "message": "Merge pull request #8919 from TeBoring/3.18.x-cherry\n\nCherry pick changes to fix python release"
         },
         {
             "hash": "b0e1f289a50237e6f98473d3ac8f18de90449150",
-            "message": "Use a working docker image for build python release packages (#8916)\n\n* Use a working docker image for build python release packages\r\n\r\n* Update devtoolset-2-libatomic-devel to devtoolset-9-libatomic-devel",
-            "tag_name": null
+            "message": "Use a working docker image for build python release packages (#8916)\n\n* Use a working docker image for build python release packages\r\n\r\n* Update devtoolset-2-libatomic-devel to devtoolset-9-libatomic-devel"
         },
         {
             "hash": "f9758b546e7ce7349c48f19718cce3b722bbb5c7",
-            "message": "Stick to a working version of docker file\n",
-            "tag_name": null
+            "message": "Stick to a working version of docker file"
         },
         {
             "hash": "492be5130fc72da0ec93b71466cbfefb0b101b19",
-            "message": "Stop building wheel for python 3.5\n",
-            "tag_name": null
+            "message": "Stop building wheel for python 3.5"
         },
         {
             "hash": "2fbc07b2439c2518a4985972c9e78d07b44603c2",
-            "message": "Stopping build wheel for python 2.7\n",
-            "tag_name": null
+            "message": "Stopping build wheel for python 2.7"
         },
         {
             "hash": "0ac5680be90b9a83b25b968966cbe059b025e261",
-            "message": "Merge pull request #8909 from acozzette/python27-fix\n\n",
-            "tag_name": null
+            "message": "Merge pull request #8909 from acozzette/python27-fix"
         },
         {
             "hash": "bcdb4ca4c73db64ab14bb8fac5221969fe13d2fd",
-            "message": "No need to test python2.7 (#8891)\n\n",
-            "tag_name": null
+            "message": "No need to test python2.7 (#8891)"
         },
         {
             "hash": "0b0e404be9fac6aad3745ed2378439e92ac876ae",
-            "message": "Allocate 10 descriptor.proto extension numbers for COSI (#8921)\n\nFixes #8553.",
-            "tag_name": null
+            "message": "Allocate 10 descriptor.proto extension numbers for COSI (#8921)\n\nFixes #8553."
         },
         {
             "hash": "7b9b7fe4a054ad59d8dca487ff6591ef850a3edd",
-            "message": "Fix unreachable code return in a case label that has a switch with only a default case in it, which returns already (#8927)\n\n",
-            "tag_name": null
+            "message": "Fix unreachable code return in a case label that has a switch with only a default case in it, which returns already (#8927)"
         },
         {
             "hash": "757615ae5431c29949a7ddaeee64a34c2b06c25e",
-            "message": "Merge pull request #8959 from VeryStrongFingers/patch-1\n\nUpdate Field Presence doc",
-            "tag_name": null
+            "message": "Merge pull request #8959 from VeryStrongFingers/patch-1\n\nUpdate Field Presence doc"
         },
         {
             "hash": "c9dffbf3f41492e0ada02f46e440da02aa1fc0f0",
-            "message": "Update field_presence.md",
-            "tag_name": null
+            "message": "Update field_presence.md"
         },
         {
             "hash": "a52e00ed97db4ff1b38a551296d11dc6665ecb20",
-            "message": "Update Field Presence doc\n\nUpdated information surrounding the usage of `optional` and the `--experimental_allow_proto3_optional` flag with relevant information between v3.12 & 3.15.\r\n\r\nSince release v3.15:\r\n>  Optional fields for proto3 are enabled by default, and no longer require\r\n>  the --experimental_allow_proto3_optional flag.",
-            "tag_name": null
+            "message": "Update Field Presence doc\n\nUpdated information surrounding the usage of `optional` and the `--experimental_allow_proto3_optional` flag with relevant information between v3.12 & 3.15.\r\n\r\nSince release v3.15:\r\n>  Optional fields for proto3 are enabled by default, and no longer require\r\n>  the --experimental_allow_proto3_optional flag."
         },
         {
             "hash": "e56c930d39dcdd9736ff505a3ac80858da436ed7",
-            "message": "Fix map_test.proto package name\n",
-            "tag_name": null
+            "message": "Fix map_test.proto package name"
         },
         {
             "hash": "f286ae16f1a8a93b9b6e506d4a96730703def49e",
-            "message": "Update release notes.\n",
-            "tag_name": null
+            "message": "Update release notes."
         },
         {
             "hash": "6901a36a62afc13c42c3c71eea159cbf92674ed4",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
         },
         {
             "hash": "6dd21763548ac15bc26399917c4d916f09771815",
-            "message": "Sync from Piper @396393195\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @396393195\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "215dd1335bf65531edfec26163da31209440ab7e",
-            "message": "Sync from Piper @395989630\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @395989630\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "565294d79fc8d9061ebd5f2fa801a0717505cfa5",
-            "message": "Remove duplicate build_ext class and get_ext_filename method\n",
-            "tag_name": null
+            "message": "Remove duplicate build_ext class and get_ext_filename method"
         },
         {
             "hash": "5dcc8f2392b24cd21a2287cda0bb4c2dbc0b2187",
-            "message": "Add release notes.\n",
-            "tag_name": null
+            "message": "Add release notes."
         },
         {
             "hash": "c43d053c1b25f92b4a7d8d2bab8d47ee3d2de38f",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
         },
         {
             "hash": "8e451fa7c491b87f4e757c33a666ef8b447c8d7d",
-            "message": "Protobuf: Fix for C5041 for VC++ >= 15.5 (#8979)\n\n* Protobuf: Fix for C5041 for VC++ > 15.5\r\n\r\nIntroduced in 15.5: https://docs.microsoft.com/en-us/cpp/overview/cpp-conformance-improvements-2017?view=msvc-160#inline-variables\r\n15.5 is 1912: https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160\r\n\r\nIssue: #8978\r\n\r\n* Fix comment wording for #8978",
-            "tag_name": null
+            "message": "Protobuf: Fix for C5041 for VC++ >= 15.5 (#8979)\n\n* Protobuf: Fix for C5041 for VC++ > 15.5\r\n\r\nIntroduced in 15.5: https://docs.microsoft.com/en-us/cpp/overview/cpp-conformance-improvements-2017?view=msvc-160#inline-variables\r\n15.5 is 1912: https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-160\r\n\r\nIssue: #8978\r\n\r\n* Fix comment wording for #8978"
         },
         {
             "hash": "32677158b45c5bc75a94192bacff593faab62e8d",
-            "message": "Fix unused variable warnings outside of compiler directory (#8945)\n\n",
-            "tag_name": null
+            "message": "Fix unused variable warnings outside of compiler directory (#8945)"
         },
         {
             "hash": "e9b977fdce6c11b136fbcd119e2e8a3c40a849fd",
-            "message": "Adding an extension number for protoc-gen-jsonschema (#8999)\n\n",
-            "tag_name": null
+            "message": "Adding an extension number for protoc-gen-jsonschema (#8999)"
         },
         {
             "hash": "bc23dfe3147d9a6c535e378cc9c083e48f200ccb",
-            "message": "Merge pull request #9028 from protocolbuffers/toolchain\n\nChanging clang path in toolchain",
-            "tag_name": null
+            "message": "Merge pull request #9028 from protocolbuffers/toolchain\n\nChanging clang path in toolchain"
         },
         {
             "hash": "567efd4c3e3c7a2c7dd05cb76e7a9538a8fad10f",
-            "message": "Merge pull request #9026 from haberman/merge-release\n\nMerge 3.18.x release branch to master",
-            "tag_name": null
+            "message": "Merge pull request #9026 from haberman/merge-release\n\nMerge 3.18.x release branch to master"
         },
         {
             "hash": "31980b3f6cfe239a6deb3a9fcd4aa51ade53f627",
-            "message": "Corrected the labels for CHANGES.txt.\n",
-            "tag_name": null
+            "message": "Corrected the labels for CHANGES.txt."
         },
         {
             "hash": "2128ce074feb70f8f3d6ca4815f0e431b2c6e69f",
-            "message": "Merge branch '3.18.x' into merge-release\n",
-            "tag_name": null
+            "message": "Merge branch '3.18.x' into merge-release"
         },
         {
             "hash": "72c76f3ffc007eb3e4e6ecb17c3e5cf703b91d80",
-            "message": "Merge pull request #9027 from protocolbuffers/toolchain\n\nChanging directory of clang to match docker container",
-            "tag_name": null
+            "message": "Merge pull request #9027 from protocolbuffers/toolchain\n\nChanging directory of clang to match docker container"
         },
         {
             "hash": "c86071c9d00349e60ba011eaa758079a5c1ca0ce",
-            "message": "Merge pull request #9024 from protocolbuffers/toolchain\n\nChanging format of features",
-            "tag_name": null
+            "message": "Merge pull request #9024 from protocolbuffers/toolchain\n\nChanging format of features"
         },
         {
             "hash": "257146364dd1347f7570cdbacdad02712204352f",
-            "message": "Merge pull request #9022 from protocolbuffers/toolchain\n\nRemove config suffix from .bazelrc configs",
-            "tag_name": null
+            "message": "Merge pull request #9022 from protocolbuffers/toolchain\n\nRemove config suffix from .bazelrc configs"
         },
         {
             "hash": "5d5bc234eab4176ea9903bce93c767a83669118c",
-            "message": "Move some common code into a helper.\n",
-            "tag_name": null
+            "message": "Move some common code into a helper."
         },
         {
             "hash": "cb7be3851939c7c95935248f8dfc49c583a1ac4e",
-            "message": "Add Protokt to the list of 3rd party implementations (#7169)\n\n",
-            "tag_name": null
+            "message": "Add Protokt to the list of 3rd party implementations (#7169)"
         },
         {
             "hash": "57da2b45aef60880fb109fb627c1ff3a50c4ae31",
-            "message": "Update some types to be more current.\n",
-            "tag_name": null
+            "message": "Update some types to be more current."
         },
         {
             "hash": "1288d1ee2d42fccc0c156822a18f86cdccbd0c76",
-            "message": "Fix dist install test by ensuring that we use Python 3 (#9011)\n\n* Fix dist install test by ensuring that we use Python 3\r\n\r\nNow that we have dropped Python 2 support, we need to make sure this\r\ninstall test uses Python 3.\r\n\r\n* Update Docker image to install Python 3 version of setuptools\r\n\r\n* Run pip3 instead of pip",
-            "tag_name": null
+            "message": "Fix dist install test by ensuring that we use Python 3 (#9011)\n\n* Fix dist install test by ensuring that we use Python 3\r\n\r\nNow that we have dropped Python 2 support, we need to make sure this\r\ninstall test uses Python 3.\r\n\r\n* Update Docker image to install Python 3 version of setuptools\r\n\r\n* Run pip3 instead of pip"
         },
         {
             "hash": "8c39a1c4fd6759ccf0bbdf0b71df266edfa91cf2",
-            "message": "An additional range so we can have FieldOptions, MessageOptions, EnumOptions, FileOptions, and OneOfOptions (#9012)\n\n",
-            "tag_name": null
+            "message": "An additional range so we can have FieldOptions, MessageOptions, EnumOptions, FileOptions, and OneOfOptions (#9012)"
         },
         {
             "hash": "2a5bf40b37c18fb03197f1e3b4d3391b3101d3a1",
-            "message": "Merge pull request #9010 from protocolbuffers/toolchain\n\nCreating bazel toolchain to crosscompile with",
-            "tag_name": null
+            "message": "Merge pull request #9010 from protocolbuffers/toolchain\n\nCreating bazel toolchain to crosscompile with"
         },
         {
             "hash": "c4e0deddb9e23751ee640829bdfe0d5afdfda54a",
-            "message": "Add two new generation options around objc prefix usage.\n\n- `require_prefixes`: Fail generation if a file doesn't have the option.\n- `prefixes_must_be_registered`: If a prefix is in a file, it must be registered\n  in the expected file. There is a grey space here for files without packages as\n  there is no way to register it, so these case will still warn at the moment.\n",
-            "tag_name": null
+            "message": "Add two new generation options around objc prefix usage.\n\n- `require_prefixes`: Fail generation if a file doesn't have the option.\n- `prefixes_must_be_registered`: If a prefix is in a file, it must be registered\n  in the expected file. There is a grey space here for files without packages as\n  there is no way to register it, so these case will still warn at the moment."
         },
         {
             "hash": "b75bb0955116b833dc68a1aae5c0cdf81a638af3",
-            "message": "Add python-requires in setup.py (#8989)\n\n* Add python-requires in setup.py\r\n\r\n* Update setup.py",
-            "tag_name": null
+            "message": "Add python-requires in setup.py (#8989)\n\n* Add python-requires in setup.py\r\n\r\n* Update setup.py"
         },
         {
             "hash": "06c8cbea59887af3344ad0001c3280b268780266",
-            "message": "Fix cmake install for protoc component (#8994)\n\nFixes:\r\n  * RUNTIME DESTINATION for protoc TARGET is not given a COMPONENT option",
-            "tag_name": null
+            "message": "Fix cmake install for protoc component (#8994)\n\nFixes:\r\n  * RUNTIME DESTINATION for protoc TARGET is not given a COMPONENT option"
         },
         {
             "hash": "58a7c8ab92b6e78df263bddb8d6245f84caf0fc0",
-            "message": "Update port_def.inc (#8993)\n\n",
-            "tag_name": null
+            "message": "Update port_def.inc (#8993)"
         },
         {
             "hash": "8b59d5367c435115138bb15d52a14f18c1c30d81",
-            "message": "Fix typo in Descriptor docstring (#9001)\n\n",
-            "tag_name": null
+            "message": "Fix typo in Descriptor docstring (#9001)"
         },
         {
             "hash": "0a7a9a98c5e4a4d64890984e335a3d248fda3e42",
-            "message": "Ruby: build extensions for arm64-darwin\n",
-            "tag_name": null
+            "message": "Ruby: build extensions for arm64-darwin"
         },
         {
             "hash": "ed58b7d26ba21bb765eaedeefcf53aeb04b8edca",
-            "message": "Merge pull request #8562 from mcclymont/timestamp-from-time-class-method\n\nAdd class method Timestamp.from_time to ruby well known types",
-            "tag_name": null
+            "message": "Merge pull request #8562 from mcclymont/timestamp-from-time-class-method\n\nAdd class method Timestamp.from_time to ruby well known types"
         },
         {
             "hash": "6d847adda7b79f1e4668e848600caca09227459d",
-            "message": "Add class method from_time to ruby well known types - Timestamp\n",
-            "tag_name": null
+            "message": "Add class method from_time to ruby well known types - Timestamp"
         },
         {
             "hash": "25180ac9b6e7412aa3a4e6a87113d11b61934ae2",
-            "message": "Fix build failed for visual studio in multi-byte windows environments (#7235)\n\n* Set source and executable charset to utf-8 when Visual Studio\r\n\r\n* Remove unnecessary version check for visual studio",
-            "tag_name": null
+            "message": "Fix build failed for visual studio in multi-byte windows environments (#7235)\n\n* Set source and executable charset to utf-8 when Visual Studio\r\n\r\n* Remove unnecessary version check for visual studio"
         },
         {
             "hash": "255dec16d66854b1d77d37672b043840f40f07c5",
-            "message": "Add Android stlport and default toolchains to BUILD. (#8290)\n\nThese are additional possibilities for --crosstool_top for Android NDK\r\ncompilation. Since the NDK doesn't have -lpthread, getting these flags\r\nwrong leads to a linker error.\r\n\r\nFixes: 180084220",
-            "tag_name": null
+            "message": "Add Android stlport and default toolchains to BUILD. (#8290)\n\nThese are additional possibilities for --crosstool_top for Android NDK\r\ncompilation. Since the NDK doesn't have -lpthread, getting these flags\r\nwrong leads to a linker error.\r\n\r\nFixes: 180084220"
         },
         {
             "hash": "40e9cedf7a738afa16557a5e7d401d6217e5134b",
-            "message": "JDK 6 is too old to care about (#9097)\n\n@cpovirk",
-            "tag_name": null
+            "message": "JDK 6 is too old to care about (#9097)\n\n@cpovirk"
         },
         {
             "hash": "9eba6eddcebaea2c806e362748a68ce3b8e624a3",
-            "message": "update rules_python dependency to version 0.1.0 (#8214)\n\nother bazel libraries (e.g. rules_docker 0.15.0) require rules_python 0.1.0\r\nor above. running protobuf_deps() before importing rules_docker\r\nwill lead to errors.\r\n\r\nupgrading rules_python fixes this problem.",
-            "tag_name": null
+            "message": "update rules_python dependency to version 0.1.0 (#8214)\n\nother bazel libraries (e.g. rules_docker 0.15.0) require rules_python 0.1.0\r\nor above. running protobuf_deps() before importing rules_docker\r\nwill lead to errors.\r\n\r\nupgrading rules_python fixes this problem."
         },
         {
             "hash": "f8a22b45c04162b117204bb7c1211e1e4e13f19d",
-            "message": "Remove references to six (#9096)\n\nWe no longer support Python 2 and therefore no longer need to depend on\r\nsix. I'm hoping this will make it possible to merge #8214.",
-            "tag_name": null
+            "message": "Remove references to six (#9096)\n\nWe no longer support Python 2 and therefore no longer need to depend on\r\nsix. I'm hoping this will make it possible to merge #8214."
         },
         {
             "hash": "3881f49ce9b3c736aaeca95be3e2018361091a98",
-            "message": "Add size to Map class (#8068)\n\n",
-            "tag_name": null
+            "message": "Add size to Map class (#8068)"
         },
         {
             "hash": "dd3a6486ccfe0bd1d5d8d589fe05a3d985a79a02",
-            "message": "Update versions in README files (#9093)\n\n* update version numbers in java/README.md\r\n* update lite too",
-            "tag_name": null
+            "message": "Update versions in README files (#9093)\n\n* update version numbers in java/README.md\r\n* update lite too"
         },
         {
             "hash": "1ab7789f384472b84872a885d998a7a7ef411acc",
-            "message": "Emacs: Protobuf mode should be derived from prog-mode (#9076)\n\nProg mode is a basic major mode for buffers containing programming\r\nlanguage source code:\r\nhttps://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html\r\n\r\nA lot of programming mode setup is based on whether the major mode is\r\nderived from `prog-mode`.",
-            "tag_name": null
+            "message": "Emacs: Protobuf mode should be derived from prog-mode (#9076)\n\nProg mode is a basic major mode for buffers containing programming\r\nlanguage source code:\r\nhttps://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html\r\n\r\nA lot of programming mode setup is based on whether the major mode is\r\nderived from `prog-mode`."
         },
         {
             "hash": "ab993cf6ca5fecc743b2f3d0b96b69708977982b",
-            "message": "document the kinds of patches the repo is open to (#8900)\n\n* document the kinds of patches the repo is open to ",
-            "tag_name": null
+            "message": "document the kinds of patches the repo is open to (#8900)\n\n* document the kinds of patches the repo is open to"
         },
         {
             "hash": "5c8018c378e50ec9a13405a8ea51807a388bd79a",
-            "message": "Merge pull request #9092 from elharo/elharo-patch-2\n\ndeps: update maven-antrun-plugin",
-            "tag_name": null
+            "message": "Merge pull request #9092 from elharo/elharo-patch-2\n\ndeps: update maven-antrun-plugin"
         },
         {
             "hash": "c69b90cb066d5ee1869107aa18448820176d8eeb",
-            "message": "deps: update maven-antrun-plugin\n\nfixes #8704",
-            "tag_name": null
+            "message": "deps: update maven-antrun-plugin\n\nfixes #8704"
         },
         {
             "hash": "21873ae54ae1a1aa55c4d0cf9af377a03902b00a",
-            "message": "Merge pull request #7853 from belugabehr/CopyList\n\nUse ArrayList copy constructor",
-            "tag_name": null
+            "message": "Merge pull request #7853 from belugabehr/CopyList\n\nUse ArrayList copy constructor"
         },
         {
             "hash": "37f34f0ad66f4f9fa8a2259318c478fd73ed9272",
-            "message": "Use ArrayList copy constructor\n",
-            "tag_name": null
+            "message": "Use ArrayList copy constructor"
         },
         {
             "hash": "39013ab238a152b1794080b369f8c6648ab8104b",
-            "message": "Remove unused rubygems-tasks development dependency (#8824)\n\n* Cannot find any occurrence of `require 'rubygems/tasks` or `Gem::Tasks` in the source code, so I am confident that this development dependency can safely be removed.",
-            "tag_name": null
+            "message": "Remove unused rubygems-tasks development dependency (#8824)\n\n* Cannot find any occurrence of `require 'rubygems/tasks` or `Gem::Tasks` in the source code, so I am confident that this development dependency can safely be removed."
         },
         {
             "hash": "3e1967e10be786062ccd026275866c3aef487eba",
-            "message": "Merge pull request #9090 from acozzette/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #9090 from acozzette/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "9aa1adc60c52c8682c21ad1fc98afa1d3b805563",
-            "message": "Removed unused references to easymock_classextension\n",
-            "tag_name": null
+            "message": "Removed unused references to easymock_classextension"
         },
         {
             "hash": "454f0cccaa22e3c4958e25b76cbd25a677294cc1",
-            "message": "Add jsr305 dependency for Bazel\n",
-            "tag_name": null
+            "message": "Add jsr305 dependency for Bazel"
         },
         {
             "hash": "7f79a416ff4950ed255423812e29004e9d1db182",
-            "message": "Update the file lists with ./update_file_lists.sh\n",
-            "tag_name": null
+            "message": "Update the file lists with ./update_file_lists.sh"
         },
         {
             "hash": "68c17dcde81a7dfe2633eef7e94a3916f851765f",
-            "message": "Tweak syntax of casting function to void\n\nGCC 4.9 seems to be unable to handle (void) syntax with a function, but\nit is OK with a static_cast to void.\n",
-            "tag_name": null
+            "message": "Tweak syntax of casting function to void\n\nGCC 4.9 seems to be unable to handle (void) syntax with a function, but\nit is OK with a static_cast to void."
         },
         {
             "hash": "99612d0885f2fe76400803ccdb425af46f29f481",
-            "message": "Update CHANGES.txt\n",
-            "tag_name": null
+            "message": "Update CHANGES.txt"
         },
         {
             "hash": "4ffb31e90681ca06bfeca92a6068206ab78959ec",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
         },
         {
             "hash": "1f66b1b032dee1608157e221d4f234522e5aae58",
-            "message": "Sync from Piper @402594188\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @402594188\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "3afc8283099dd1747260e088cdf27240a010161e",
-            "message": "Sync from Piper @401883098\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @401883098\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "b7cc13068dc198e480271e98b53cbeed195e9d05",
-            "message": "Merge pull request #9071 from JasonLunn/jruby_explicit_java_dependency\n\nCreate an explicit build dependency from JRuby on Java",
-            "tag_name": null
+            "message": "Merge pull request #9071 from JasonLunn/jruby_explicit_java_dependency\n\nCreate an explicit build dependency from JRuby on Java"
         },
         {
             "hash": "0d3f95d7ae56698d7938702f37030ef721b61983",
-            "message": "Narrow the scope of the install\n",
-            "tag_name": null
+            "message": "Narrow the scope of the install"
         },
         {
             "hash": "2ed817348127b1b11b4dad86885adc959b23b866",
-            "message": "Bug fix for oracle7 regression\n",
-            "tag_name": null
+            "message": "Bug fix for oracle7 regression"
         },
         {
             "hash": "ddd7f46a7d2c63e06cff6cf08963313dc8942177",
-            "message": "Create an explicit build dependency from JRuby on Java.\n\nShould prevent future flakiness if unreleased JRuby features are dependent on unreleased Java features by populating the local Maven repository with the artifacts needed when running `tests.sh jruby`.\n",
-            "tag_name": null
+            "message": "Create an explicit build dependency from JRuby on Java.\n\nShould prevent future flakiness if unreleased JRuby features are dependent on unreleased Java features by populating the local Maven repository with the artifacts needed when running `tests.sh jruby`."
         },
         {
             "hash": "0613ca8284c1bc380f450b7bcfe679ed6cb5a468",
-            "message": "Merge pull request #9061 from acozzette/merge-3.18.x\n\nMerge 3.18.x into master",
-            "tag_name": null
+            "message": "Merge pull request #9061 from acozzette/merge-3.18.x\n\nMerge 3.18.x into master"
         },
         {
             "hash": "2a75e8ca5863c5e9de5b79c3842eb4f87ba78ba7",
-            "message": "Merge branch '3.18.x' into merge-3.18.x\n",
-            "tag_name": null
+            "message": "Merge branch '3.18.x' into merge-3.18.x"
         },
         {
             "hash": "6f99bfc8c66e9d0683556abd54ea67c6d2b856c3",
-            "message": "Merge pull request #9060 from protocolbuffers/toolchain\n\nChanging toolchain names",
-            "tag_name": null
+            "message": "Merge pull request #9060 from protocolbuffers/toolchain\n\nChanging toolchain names"
         },
         {
             "hash": "a793c7f72af41efb9a8b212036bdf916260b484f",
-            "message": "Fixing builds\n",
-            "tag_name": null
+            "message": "Fixing builds"
         },
         {
             "hash": "95fdfd771dcd0f93200fbc9ce8ec2d58529bc8f4",
-            "message": "Change include messages to match docker\n",
-            "tag_name": null
+            "message": "Change include messages to match docker"
         },
         {
             "hash": "f921df8ee01237acb2f6c1fcc699a12473ca6059",
-            "message": "Specify bits of architectures in toolchain names\n",
-            "tag_name": null
+            "message": "Specify bits of architectures in toolchain names"
         },
         {
             "hash": "d546ec75ef7da43cc496907cef8eda77e4a0048f",
-            "message": "Merge pull request #9047 from JasonLunn/jruby_test_fixes_redux\n\nAdopt pure ruby DSL implementation for JRuby",
-            "tag_name": null
+            "message": "Merge pull request #9047 from JasonLunn/jruby_test_fixes_redux\n\nAdopt pure ruby DSL implementation for JRuby"
         },
         {
             "hash": "05ddf82f207cc0a190fa6acc7eae8844d53a8bb6",
-            "message": "Remove blank line\n",
-            "tag_name": null
+            "message": "Remove blank line"
         },
         {
             "hash": "793c66ddf0f2ae836901c8afc40932f71fac88fe",
-            "message": "Include JRuby's pom.xml file when updating version numbers\n",
-            "tag_name": null
+            "message": "Include JRuby's pom.xml file when updating version numbers"
         },
         {
             "hash": "f88c8ef11af2f8d37f178784199588bec2de96c1",
-            "message": "Remove vestigial function that makes a dated claim that Ruby doesn't support proto2\n",
-            "tag_name": null
+            "message": "Remove vestigial function that makes a dated claim that Ruby doesn't support proto2"
         },
         {
             "hash": "e3ba5ec61561811caf2651e27c511d395739b77c",
-            "message": "Add trailing backslashes at end of line consistently\n",
-            "tag_name": null
+            "message": "Add trailing backslashes at end of line consistently"
         },
         {
             "hash": "f5ef2892b41e944f8057743ecd95f1bb77c336ed",
-            "message": "Add an explicit RUBYLIB path to fix a load error under JRuby\n",
-            "tag_name": null
+            "message": "Add an explicit RUBYLIB path to fix a load error under JRuby"
         },
         {
             "hash": "b5687819a62eb06a86a94320feb2ec84b9979428",
-            "message": "Fix a test regression observed after branch update\n",
-            "tag_name": null
+            "message": "Fix a test regression observed after branch update"
         },
         {
             "hash": "a09c8e1c795d87993e2795fa865728f1c9a34c55",
-            "message": "Fix logic to decouple from the order of fields.keySet\n",
-            "tag_name": null
+            "message": "Fix logic to decouple from the order of fields.keySet"
         },
         {
             "hash": "3581d85ced36aa468fbf90f22ed021ce23f3c24d",
-            "message": "Update JRuby to leverage pure-Ruby DSL.\n\nJRuby unit and conformance test fixes.\n",
-            "tag_name": null
+            "message": "Update JRuby to leverage pure-Ruby DSL.\n\nJRuby unit and conformance test fixes."
         },
         {
             "hash": "b6993a90605cde15ba004e0287bcb078b0f3959d",
-            "message": "Merge pull request #9044 from protocolbuffers/3.18.x\n\nMerge 3.18.x into master",
-            "tag_name": null
+            "message": "Merge pull request #9044 from protocolbuffers/3.18.x\n\nMerge 3.18.x into master"
         },
         {
             "hash": "ffcae81f1f4860e1f51135d381c066c580862701",
-            "message": "Merge pull request #9039 from thomasvl/test_parse_simple\n\nObjC: Test the simple parse helper and fix an edge case with errors in the final line",
-            "tag_name": null
+            "message": "Merge pull request #9039 from thomasvl/test_parse_simple\n\nObjC: Test the simple parse helper and fix an edge case with errors in the final line"
         },
         {
             "hash": "be37b08a310d0c9a4dc856e3949aa685ace61ea2",
-            "message": "review feedback\n",
-            "tag_name": null
+            "message": "review feedback"
         },
         {
             "hash": "a9e1d7c177b24ecaea98af4d0eda80f1f764d159",
-            "message": "Remove some of the state handoff via ivars within Parser.\n\nHopefully makes things a litte easier to follow.\n",
-            "tag_name": null
+            "message": "Remove some of the state handoff via ivars within Parser.\n\nHopefully makes things a litte easier to follow."
         },
         {
             "hash": "a7823bbd459e2edbc3bdbc4997ccd31b1a48a75b",
-            "message": "Ensure errors are reported from the last chunk of a file.\n\n- Fix case where no error was provide if the consumer rejected something in the\n  final chunk of input.\n- Expose a more testable interface for the parser.\n- Test all the basic behaviors of the parser.\n",
-            "tag_name": null
+            "message": "Ensure errors are reported from the last chunk of a file.\n\n- Fix case where no error was provide if the consumer rejected something in the\n  final chunk of input.\n- Expose a more testable interface for the parser.\n- Test all the basic behaviors of the parser."
         },
         {
             "hash": "94661516053018b39418ea567629976fb22f2886",
-            "message": "Merge pull request #9033 from protocolbuffers/toolchain\n\nSpecify bits of architectures in toolchain names",
-            "tag_name": null
+            "message": "Merge pull request #9033 from protocolbuffers/toolchain\n\nSpecify bits of architectures in toolchain names"
         },
         {
             "hash": "b83d5919ce6d9e0a8cd0dcd5a9b95eeb7678bfd3",
-            "message": "Merge pull request #8519 from zakhenry/fix/splitFloat32-inaccuracy\n\nfix(splitFloat32): Fix incorrect exponent when converting double to float",
-            "tag_name": null
+            "message": "Merge pull request #8519 from zakhenry/fix/splitFloat32-inaccuracy\n\nfix(splitFloat32): Fix incorrect exponent when converting double to float"
         },
         {
             "hash": "dfb4fc647739ce9463acbea7c22a24aa35cba9d2",
-            "message": "fix(splitFloat32): Fix incorrect exponent when converting double to float\n\nSubmitted on behalf of a third-party: Ihor Darkov\nSee https://github.com/protocolbuffers/protobuf/issues/6887#issue-522941516 for original source\n",
-            "tag_name": null
+            "message": "fix(splitFloat32): Fix incorrect exponent when converting double to float\n\nSubmitted on behalf of a third-party: Ihor Darkov\nSee https://github.com/protocolbuffers/protobuf/issues/6887#issue-522941516 for original source"
         },
         {
             "hash": "ef8d418fad8366f9854127eb4338b0757eda9aa3",
-            "message": "Merge pull request #9030 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #9030 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "a3d24e34a9dfa61fc68c4d5f99b467a5cbe06868",
-            "message": "Added new files to Makefile.am.\n",
-            "tag_name": null
+            "message": "Added new files to Makefile.am."
         },
         {
             "hash": "82deebfa7a256073c700670572d22a71482f7633",
-            "message": "Added new Java Lite files to BUILD/pom.xml.\n",
-            "tag_name": null
+            "message": "Added new Java Lite files to BUILD/pom.xml."
         },
         {
             "hash": "5a778041064cf1e197d2d188f75f2ac9e8253b53",
-            "message": "Added changelog entries from google3.\n",
-            "tag_name": null
+            "message": "Added changelog entries from google3."
         },
         {
             "hash": "129b3e8a985f2386dbf8f959e0b3277a571cdb2a",
-            "message": "Merge branch 'master' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge branch 'master' into sync-stage"
         },
         {
             "hash": "28c52fd5c4e24f9363528e4cb9f9f28782299679",
-            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
         },
         {
             "hash": "624d29d83306f3ce2c7e092dd44a891e04215e67",
-            "message": "Sync from Piper @399250367\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @399250367\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "9ab14a81e1043128b44570f92161b7f1ddfffdaa",
-            "message": "Fix spacing in message (missing a space between words from line split)\n",
-            "tag_name": null
+            "message": "Fix spacing in message (missing a space between words from line split)"
         },
         {
             "hash": "5a81e07d44033ee23f63af935489c2c9c72e9aee",
-            "message": "Add Xcode 13 to the build/test script.\n",
-            "tag_name": null
+            "message": "Add Xcode 13 to the build/test script."
         },
         {
             "hash": "ec494a07f4e2cd9c7eac82debed289a204512769",
-            "message": "Merge pull request #9052 from protocolbuffers/toolchain\n\nChange include messages to match docker",
-            "tag_name": null
+            "message": "Merge pull request #9052 from protocolbuffers/toolchain\n\nChange include messages to match docker"
         },
         {
             "hash": "1e88936fce10cf773cb72b44c6a7f48b38c7578b",
-            "message": "Stop using EasyMock classextension (#9008)\n\n* get rid of classextension and update EasyMock",
-            "tag_name": null
+            "message": "Stop using EasyMock classextension (#9008)\n\n* get rid of classextension and update EasyMock"
         },
         {
             "hash": "803a8cb9c7fa9bc005e8cf7cda154213cfaf1470",
-            "message": "Merge pull request #9074 from elharo/elharo-patch-1\n\nremove dependency on Jackson",
-            "tag_name": null
+            "message": "Merge pull request #9074 from elharo/elharo-patch-1\n\nremove dependency on Jackson"
         },
         {
             "hash": "174d95c1a7daf300686625c9e33e43fd658ba4dd",
-            "message": "remove dependency on Jackson",
-            "tag_name": null
+            "message": "remove dependency on Jackson"
         },
         {
             "hash": "7400f4b342715e5fc3c07225d92d82afba3074e1",
-            "message": "Merge pull request #9070 from JasonLunn/jruby-version-bump-3.18.1\n\nBump JRuby to 3.18.1",
-            "tag_name": null
+            "message": "Merge pull request #9070 from JasonLunn/jruby-version-bump-3.18.1\n\nBump JRuby to 3.18.1"
         },
         {
             "hash": "7051d82fa9fc1af3125cb369e1adb2bb873792f7",
-            "message": "Bump to 3.18.1",
-            "tag_name": null
+            "message": "Bump to 3.18.1"
         },
         {
             "hash": "9488e2f8eb48f04fef2724e5ae3ee7113ec380df",
-            "message": "Update cmake file lists (#9038)\n\nI ran ./update_file_lists.sh to update these files.",
-            "tag_name": null
+            "message": "Update cmake file lists (#9038)\n\nI ran ./update_file_lists.sh to update these files."
         },
         {
             "hash": "cbe2eadd5be9d37b9431687450931fed7777d481",
-            "message": "Merge pull request #9087 from JasonLunn/jruby_kokoro_test_fix\n\nInstall core rather than util",
-            "tag_name": null
+            "message": "Merge pull request #9087 from JasonLunn/jruby_kokoro_test_fix\n\nInstall core rather than util"
         },
         {
             "hash": "2ccc5df358fdefd026c5a7d92f99ef8cd4e9ed2d",
-            "message": "Install core rather than util\n",
-            "tag_name": null
+            "message": "Install core rather than util"
         },
         {
             "hash": "9650e9fe8f737efcad485c2a8e6e696186ae3862",
-            "message": "update to 3.18.1 (#9057)\n\n* update to 3.18.1",
-            "tag_name": null
+            "message": "update to 3.18.1 (#9057)\n\n* update to 3.18.1"
         },
         {
             "hash": "ae4fd1e24b15f25a8db890262faab60c4f669f66",
-            "message": "Fix cl deprecation warning (#9046)\n\n",
-            "tag_name": null
+            "message": "Fix cl deprecation warning (#9046)"
         },
         {
             "hash": "15c63ad850c0b60a728414fd107c5ed3b3eb2772",
-            "message": "Fix build error with MinGW (#9077)\n\nFixes:\r\n  * zero_copy_stream_impl.cc uses F_GETFL when build with MinGW,\r\n    which isn't defined under Windows.",
-            "tag_name": null
+            "message": "Fix build error with MinGW (#9077)\n\nFixes:\r\n  * zero_copy_stream_impl.cc uses F_GETFL when build with MinGW,\r\n    which isn't defined under Windows."
         },
         {
             "hash": "5142e362bc82012c67ebaec96f193ba3310713fe",
-            "message": "Update README.md (#9078)\n\nremove dollar sign for easier copying",
-            "tag_name": null
+            "message": "Update README.md (#9078)\n\nremove dollar sign for easier copying"
         },
         {
             "hash": "fd5202b6cd60d8336348bcb5ccdf8284c6430416",
-            "message": "Add twirp to RPC Implementations list (#9085)\n\n",
-            "tag_name": null
+            "message": "Add twirp to RPC Implementations list (#9085)"
         },
         {
             "hash": "ad717db5567ef7c06669b0ddee6a4a666aa79d28",
-            "message": "Merge pull request #9082 from JasonLunn/jruby_add_test_targets\n\nAdd JRuby test targets for 9.2.x and 9.3.x.",
-            "tag_name": null
+            "message": "Merge pull request #9082 from JasonLunn/jruby_add_test_targets\n\nAdd JRuby test targets for 9.2.x and 9.3.x."
         },
         {
             "hash": "b79a2f242c79981f647e2e1ac980cadb581c0596",
-            "message": "Add JRuby test targets for JRuby 9.2.x and 9.3.x.\n\nStandardize on JRuby 9.2.19.0 for building and for testing the 9.2.x branch.\n",
-            "tag_name": null
+            "message": "Add JRuby test targets for JRuby 9.2.x and 9.3.x.\n\nStandardize on JRuby 9.2.19.0 for building and for testing the 9.2.x branch."
         },
         {
             "hash": "728878e98f460fe8383a954d19d44e81ef76b2a2",
-            "message": "Add JRuby test targets for JRuby 9.2.x and 9.3.x.\n\nStandardize on JRuby 9.2.19.0 for building and for testing the 9.2.x branch.\n",
-            "tag_name": null
+            "message": "Add JRuby test targets for JRuby 9.2.x and 9.3.x.\n\nStandardize on JRuby 9.2.19.0 for building and for testing the 9.2.x branch."
         },
         {
             "hash": "9e49f0f46b5577590a2efc08c1ea687df21d2fb1",
-            "message": "Merge pull request #9081 from JasonLunn/jruby_update_ruby_docker\n\nUpdate the base image from jessie to stretch (for parity with the Java).",
-            "tag_name": null
+            "message": "Merge pull request #9081 from JasonLunn/jruby_update_ruby_docker\n\nUpdate the base image from jessie to stretch (for parity with the Java)."
         },
         {
             "hash": "eee60cec13e0656577f7d6baeecbbbe673de4e12",
-            "message": "Update the base image from jessie to stretch (for parity with the Java).\n\nAdd Maven and OpenJDK 8 and add JRuby 9.2.x and 9.3.x.\n\nReplace keys.gnupg.net with keyserver.ubuntu.com as the GPG keyserver since the former no longer exists.\n",
-            "tag_name": null
+            "message": "Update the base image from jessie to stretch (for parity with the Java).\n\nAdd Maven and OpenJDK 8 and add JRuby 9.2.x and 9.3.x.\n\nReplace keys.gnupg.net with keyserver.ubuntu.com as the GPG keyserver since the former no longer exists."
         },
         {
             "hash": "3bdcc1266b65e10a61d398ba15bfbec612cbdb5d",
-            "message": "Fix build on AIX and SunOS (#8373) (#9065)\n\n* fix includes for AIX and SunOS",
-            "tag_name": null
+            "message": "Fix build on AIX and SunOS (#8373) (#9065)\n\n* fix includes for AIX and SunOS"
         },
         {
             "hash": "1b22582bc049270026ce399bd1390572bdabf203",
-            "message": "Fix unused variable warnings in extension_set.h (#9073)\n\n",
-            "tag_name": null
+            "message": "Fix unused variable warnings in extension_set.h (#9073)"
         },
         {
             "hash": "b7928164dca31daeb56df82faf564ed349aee16f",
-            "message": "Merge pull request #9066 from elharo/testscope\n\nEasyMock should have scope test",
-            "tag_name": null
+            "message": "Merge pull request #9066 from elharo/testscope\n\nEasyMock should have scope test"
         },
         {
             "hash": "72fa7269d9b07f89346d6d734178da255a977b28",
-            "message": "EasyMock should have scope test",
-            "tag_name": null
+            "message": "EasyMock should have scope test"
         },
         {
             "hash": "8171716ae9ffd87f26a98a77d9811f4654646f73",
-            "message": "Added \"object\" as a reserved name for PHP (#8962)\n\n* Added \"object\" as a reserved name for PHP\r\n\r\n* Fixed spacing",
-            "tag_name": null
+            "message": "Added \"object\" as a reserved name for PHP (#8962)\n\n* Added \"object\" as a reserved name for PHP\r\n\r\n* Fixed spacing"
         },
         {
             "hash": "0da2ca5a1742421d7b9a04b997ec9961fe0fc25a",
-            "message": "Add jsr305 to protobuf-util deps. (#9059)\n\nThis prepares for a change (internal CL 399474184, to be mirrored out to GitHub) to add a few such annotations in FieldMaskUtil and JsonFormat.\r\n\r\n(Technically, this PR is probably not \"necessary\" because protobuf-util already depends transitively on jsr305. But it's better hygiene to depend on it directly, and the direct dependency could protect against problems if protobuf-util drops some of its other deps -- or if those deps drop their own deps on jsr305.)",
-            "tag_name": null
+            "message": "Add jsr305 to protobuf-util deps. (#9059)\n\nThis prepares for a change (internal CL 399474184, to be mirrored out to GitHub) to add a few such annotations in FieldMaskUtil and JsonFormat.\r\n\r\n(Technically, this PR is probably not \"necessary\" because protobuf-util already depends transitively on jsr305. But it's better hygiene to depend on it directly, and the direct dependency could protect against problems if protobuf-util drops some of its other deps -- or if those deps drop their own deps on jsr305.)"
         },
         {
             "hash": "e47ed057a587f401889cabec7780129869d6091d",
-            "message": "Make glob recursive if option is enabled (#8783)\n\n",
-            "tag_name": null
+            "message": "Make glob recursive if option is enabled (#8783)"
         },
         {
             "hash": "3c8c0ae7259484da0612623aead17fc3000deff9",
-            "message": "Merge pull request #7246 from ObsidianMinor/csharp/issue7241\n\nCorrectly set ExtensionRegistry when parsing with MessageParser, but using an already existing CodedInputStream",
-            "tag_name": null
+            "message": "Merge pull request #7246 from ObsidianMinor/csharp/issue7241\n\nCorrectly set ExtensionRegistry when parsing with MessageParser, but using an already existing CodedInputStream"
         },
         {
             "hash": "d36d84c77b37d712eea5a7539c038d38ab0e87fb",
-            "message": "Add test for parsing using coded input\n",
-            "tag_name": null
+            "message": "Add test for parsing using coded input"
         },
         {
             "hash": "ca123ec40e8500a230bc2eb65eac6439096c5204",
-            "message": "Swap registry from input when merging from existing input\n",
-            "tag_name": null
+            "message": "Swap registry from input when merging from existing input"
         },
         {
             "hash": "51cb7f99d7d87da6cdfd0e3e6ae3c4e71df57328",
-            "message": "Merge pull request #9120 from protocolbuffers/kotlinInlining\n\nFixing inlining and deprecation for repeated string fields in kotlin",
-            "tag_name": null
+            "message": "Merge pull request #9120 from protocolbuffers/kotlinInlining\n\nFixing inlining and deprecation for repeated string fields in kotlin"
         },
         {
             "hash": "ad9eb238cc5293de5cc5c2607f9ccfb2f31e913c",
-            "message": "Fixing formatting\n",
-            "tag_name": null
+            "message": "Fixing formatting"
         },
         {
             "hash": "33113ce9f9ef6d4240c4326564bb528087efcc94",
-            "message": "Fixing inlining and deprecation for repeated string fields in kotlin\n",
-            "tag_name": null
+            "message": "Fixing inlining and deprecation for repeated string fields in kotlin"
         },
         {
             "hash": "3f3e6f47c6d71e755faf6abb3f49b89dce8c5182",
-            "message": "Update version to 3.19.0-rc2 and fix changelog about Java 7 (#9116)\n\n* Update protobuf version\r\n\r\n* Update CHANGES.txt to reflect that we're not yet dropping Java 7",
-            "tag_name": null
+            "message": "Update version to 3.19.0-rc2 and fix changelog about Java 7 (#9116)\n\n* Update protobuf version\r\n\r\n* Update CHANGES.txt to reflect that we're not yet dropping Java 7"
+        }
+    ],
+    "issues": [
+        {
+            "number": "8745",
+            "title": "./.build/ directory is not ignored"
+        },
+        {
+            "number": "8925",
+            "title": "java_proto_library pulls in duplicate classes"
+        },
+        {
+            "number": "8553",
+            "title": "Reserve 10 extension numbers for COSI"
+        },
+        {
+            "number": "8978",
+            "title": "Generates C5041 warning as of VC++ 15.5"
+        },
+        {
+            "number": "8704",
+            "title": "Update maven-antrun-plugin dependency "
+        },
+        {
+            "number": "8373",
+            "title": "3.15.x doesn't build on FreeBSD cause of missing endian.h"
         }
     ]
 }

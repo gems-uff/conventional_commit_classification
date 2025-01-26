@@ -1,0 +1,454 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 71,
+    "start_delay": 0.0,
+    "duration": 159.17359953703703,
+    "commits_info": [
+        {
+            "hash": "91509805b759a108d7eca0b6b3041c434c61d837",
+            "message": "Release v5.3.3"
+        },
+        {
+            "hash": "fceceb480fd5b7432b6606fc5fecc2a32dd03a60",
+            "message": "Validate Resource type in ResourceHttpRequestHandler"
+        },
+        {
+            "hash": "e5ab67bd71d4261c07a6f23c59aca089b37cb512",
+            "message": "ResourceHandlerRegistration exposes List<Resource> locations"
+        },
+        {
+            "hash": "2d53570f4cc148250378b852e671fcb0369f754b",
+            "message": "Prevent kotlinx.serialization usage on interfaces\n\nRemove support for open polymorphic serialization in\nkotlinx.serialization web converters and codecs in order\nto prevent serialization handling suitable for Jackson\nor other general purpose Java JSON libraries.\n\nThis will probably need further refinements for collections\nfor example, and could ultimately be fixed when\nkotlinx.serialization will provide a dedicated function to\nevaluate upfront if a type can be serialized or not.\n\nCloses gh-26298"
+        },
+        {
+            "hash": "be5eb7037fc1f5d106991170fc73bfbf367fd6b8",
+            "message": "Explicit notes on non-null enforcement and deep cause support in 5.3\n\nCloses gh-26296\nSee gh-26317"
+        },
+        {
+            "hash": "fff2291f2a0e3dc7af5a553137eb6c526a0ffc9d",
+            "message": "Document context lifecycle & logging semantics for the TestContext framework\n\nThis commit documents ApplicationContext initialization and shutdown\nlogging semantics for console output triggered in conjunction with the\nSpring TestContext Framework.\n\nCloses gh-25385"
+        },
+        {
+            "hash": "917f3ad101cc75587457a52237c4015d7fb9e56c",
+            "message": "Upgrade to Reactor 2020.0.3\n\nCloses gh-26367"
+        },
+        {
+            "hash": "2fd6e6e87c675c9c450affb87221be31d251abce",
+            "message": "Polish Javadoc for base ExceptionHandlerMethodResolvers"
+        },
+        {
+            "hash": "570bdbd2535180b8ef164f6095bfdc0157a4d7bd",
+            "message": "Avoid unnecessary sorting in base ExceptionHandlerMethodResolvers"
+        },
+        {
+            "hash": "b587a16d460ad10a98874796c389b933ff85e457",
+            "message": "Expose all exception causes as provided handler method arguments\n\nCloses gh-26317"
+        },
+        {
+            "hash": "dd8ea89bea9809e5733eff954a13ab12516f731f",
+            "message": "Upgrade to Reactor 2020.0.3 snapshots\n\nSee gh-26367"
+        },
+        {
+            "hash": "b0dea4d3f6b5766d8120f0c6680efd64d132866f",
+            "message": "Upgrade to RxJava 2.2.20, OpenPDF 1.3.24, HtmlUnit 2.46"
+        },
+        {
+            "hash": "4ac27e4dab1cab0d983505c5d1696a33b030ee54",
+            "message": "Suppress ClassCastException for payload type mismatch as well\n\nCloses gh-26349"
+        },
+        {
+            "hash": "b0abdee0125c29c0696ca038a3c8c268d6080c98",
+            "message": "Add Revved up by Gradle Enterprise badge to Readme\n\nSimilar to: https://github.com/spring-projects/spring-boot/pull/24640\n\nCloses gh-26348"
+        },
+        {
+            "hash": "e4dc863ad09ed942430c4775623eda2867d9800d",
+            "message": "Fix headers keySet in WebFlux adapters\n\nPrior to this commit, WebFlux native headers adapters would delegate the\n`httpHeaders.keySet` to underlying implementations that do not honor the\n`remove*` methods.\n\nThis commit fixes the `Set` implementation backing the\n`httpHeaders.keySet` and ensures that headers can be safely removed from\nthe set.\n\nFixes gh-26361"
+        },
+        {
+            "hash": "689b5566bfc0f9765a6b52257e033e10bfd8128c",
+            "message": "Cache \"no match\" result from ExceptionHandler methods\n\nCloses gh-26339"
+        },
+        {
+            "hash": "234b4719c6551a0761eb3fae6d1a6e4806d7638b",
+            "message": "Use default bounded elastic scheduler\n\nInstead of using a new bounded elastic scheduler per\nDefaultPartHttpMessageReader instance, which creates daemon threads that\nare not shut down, we now use the shared bounded elastic scheduler.\n\nCloses gh-26347"
+        },
+        {
+            "hash": "ce1ae2f1b21311fc62f8936c2fefc61cda295839",
+            "message": "Only write non-default charset in FormHttpMessageConverter\n\nThis commit only writes the 'charset' parameter in the written headers\nif it is non-default (not UTF-8), since RFC7578 states that the only\nallowed parameter is 'boundary'.\n\nSee gh-25885\nCloses gh-26290"
+        },
+        {
+            "hash": "69ce7d33b9fefbaf45248f3482926f62cacc1bb1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e36d4162c254826d8cde048bd17691e312b4fcaa",
+            "message": "Filter empty buffers PayloadMethodArgumentResolver\n\nAn empty buffer for RSocket is an empty message and while some codecs\nsuch as StringDecoder may be able turn that into something such as an\nempty String, for other formats such as JSON it is invalid input.\n\nCloses gh-26344"
+        },
+        {
+            "hash": "d387d9ae1e8c7569c92f8e5d8571ebb901a6cfb9",
+            "message": "Allow quartz expression in cron expression lists\n\nThis commit introduces support for lists of quartz cron fields, such\nas \"1L, LW\" or \"TUE#1, TUE#3, TUE#5\".\n\nCloses gh-26289"
+        },
+        {
+            "hash": "138f6bfd84d0a1d8aa13e8d1ea6832c5be1c8055",
+            "message": "Update Javadoc of FilePart#filename\n\nSee gh-26299"
+        },
+        {
+            "hash": "a1cf6bbc3762726be3e8eaeef679ee72fa7475fb",
+            "message": "Avoid wrapping of AssertionError in ExchangeResult\n\nCloses gh-26303"
+        },
+        {
+            "hash": "fb040479eba85b49ceba9b1db60478037f32c1f0",
+            "message": "Update Javadoc of MultipartFile#getOriginalFilename\n\nCloses gh-26299"
+        },
+        {
+            "hash": "d50375da8e399d5d84e0270e9a7692724d37794b",
+            "message": "Add more static imports to MockMvc snippets\n\nCloses gh-26311"
+        },
+        {
+            "hash": "fb2e53276c77363128983224e3bef513fb2bc28f",
+            "message": "Assert WebFlux present for WebTestClient\n\nCloses gh-26308"
+        },
+        {
+            "hash": "c040cd7b052c1dd0a0382e9214595e2477e7423b",
+            "message": "Parsed RequestPath is recalculated on Forward\n\nCloses gh-26318"
+        },
+        {
+            "hash": "dcc8dcdff81dd76cfcb7df8c6f1d61b4a3d4f207",
+            "message": "Set content length on ServletHttpResponse\n\nPrior to this commit, the `ServletServerHttpResponse` would copy headers\nfrom the `HttpHeaders` map and calls methods related to headers exposed\nas properties (content-type, character encoding).\n\nUnlike its reactive variant, this would not set the content length.\nDepending on the Servlet container implementation, this could cause\nduplicate Content-Length response headers in the actual HTTP response.\n\nThis commit aligns both implementations and ensures that the\n`setContentLengthLong` method is called if necessary so that the Servlet\ncontainer can ensure a single header for that.\n\nFixes gh-26330"
+        },
+        {
+            "hash": "efa360cff76655dafe1aabb88523dbe5ffa49584",
+            "message": "Avoid writing content-length twice in resource handling\n\nPrior to this commit, the `ResourceHttpRequestHandler` would write the\nresource size to the \"Content-Length\" response header.\nThis is already done by the underlying `ResourceHttpMessageConverter`\nand `ResourceRegionHttpMessageConverter`.\n\nThis commit avoid this duplicate operation and delegates instead to the\nconverters.\n\nSee gh-26330\nCloses gh-26340"
+        },
+        {
+            "hash": "5804db64799682bf804a6a0254e392134c74b3e8",
+            "message": "Upgrade to Mockito 3.7, Checkstyle 8.39, RxJava 3.0.9, Joda-Time 2.10.9"
+        },
+        {
+            "hash": "faa749934bc7d6ba401d0142e09f230826c35d2c",
+            "message": "Minor refactoring\n\n- Remove unused clone() code left-over from previous way of cloning.\n- Lazy instantiation of ServerCodecConfigurer in\n  HttpWebHandlerAdapter since in most cases the configurer instance\n  is set externally.\n\nCloses gh-26263"
+        },
+        {
+            "hash": "e1385090e4b008236219bbbf6f5e4d635b4a130b",
+            "message": "Cached codec instances in DefaultCodecs\n\nCloses gh-26263"
+        },
+        {
+            "hash": "3113917c553197fc5e25282b02c6dcc504e46dca",
+            "message": "Update ReactiveAdapterRegistry to do classpath checks during init\n\nTo improve GraalVM native image footprint and compatibility.\n\nCloses gh-26295"
+        },
+        {
+            "hash": "994a35d6916791f9dfe98f35536dfbf089bc9950",
+            "message": "Mutated ServerHttpRequest returns native request correctly\n\nCloses gh-26304"
+        },
+        {
+            "hash": "8095ba4cd2a5602f938c5d1c8eeaf593fd1a6543",
+            "message": "Upgrade to Hibernate Validator 6.2 (and Hibernate ORM 5.4.27)\n\nCloses gh-26255"
+        },
+        {
+            "hash": "bd2edf26dfbba7a0ed3b7f31af004ee071d3feb1",
+            "message": "Fix implementation of isOpen() in ReactorNettyWebSocketSession\n\nSee gh-26332 for details.\n\nCloses gh-26341"
+        },
+        {
+            "hash": "4f6d26b25c0479429cf8665f4c43ab3eab07ab5a",
+            "message": "Parse list with range delta in CronExpression\n\nCloses gh-26313"
+        },
+        {
+            "hash": "6d85a8a0cc6972203337ca0bc14ddd08cc52e238",
+            "message": "Fix JdbcOperationsExtensions\n\nThis commit reverts some changes done in 2d5f9723fa9ba54480cffb650158f6a8e956e6c8\nin order to fix JdbcOperations.queryForObject and\nJdbcOperations.queryForList.\n\nIt is not possible to provide a vararg variant in Kotlin\nfor now due to a signature clash, but that will probably\nmake sense in Spring Framework 6 timeframe along to array\nbased variant removal for both Java and Kotlin.\n\nCloses gh-26312"
+        },
+        {
+            "hash": "44b29b6ecfdf77aec59409601301ca8e21452f0e",
+            "message": "Remove obsolete commandName attribute in spring-form.tld\n\nSince support for the commandName attribute was removed from the\nimplementation of FormTag in Spring Framework 5.0, the presence of the\ncommandName attribute in the spring-form.tld file is no longer valid\nand can lead one to assume that the commandName attribute is still\nsupported -- for example when using code completion in a JSP editor.\n\nThis commit therefore removes the obsolete commandName attribute in\nspring-form.tld.\n\nCloses gh-26337"
+        },
+        {
+            "hash": "91a625418792e0e7699785d9fe8d8dbdfc1c89bf",
+            "message": "Test status quo for repeatable @PropertySource on composed annotation\n\nThis commit introduces tests that verify support for using\n@PropertySource as a repeatable annotation without the\n@PropertySources container, both locally on an @Configuration class\nand on a custom composed annotation.\n\nSee gh-26329"
+        },
+        {
+            "hash": "c8ad762b40643927952dedd242a606b06202428d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5c1176786c9f0d02aa3db00ba9c5dba19a526ac2",
+            "message": "Test status quo for list support in CronExpression\n\nSee gh-26289"
+        },
+        {
+            "hash": "eab61f692f5c0b7bb464fcd762e00b57e66018a7",
+            "message": "Merge source and substitution configuration in reference docs\n\nCloses gh-25545"
+        },
+        {
+            "hash": "ee41ebc1ab77f5e0b8d956b4891e219dd6cfecf6",
+            "message": "Polish MockMvcReuseTests"
+        },
+        {
+            "hash": "885f6dbab94712fa76545276058a62216e17881e",
+            "message": "Ensure ParallelApplicationEventsIntegrationTests passes on CI server\n\nSee gh-25616"
+        },
+        {
+            "hash": "b0f404722e2edaa82407236c33af412abc9455e6",
+            "message": "Upgrade to ASM master (including early support for Java 17 bytecode)\n\nCloses gh-26307"
+        },
+        {
+            "hash": "cd7b0b11f3d80b180c943d56200d220e326284c8",
+            "message": "Upgrade to Hibernate ORM 5.4.26, Netty 4.1.56, XMLUnit 2.8.2"
+        },
+        {
+            "hash": "1565f4b83e7c48eeec9dc74f7eb042dce4dbb49a",
+            "message": "Introduce ApplicationEvents to assert events published during tests\n\nThis commit introduces a new feature in the Spring TestContext\nFramework (TCF) that provides support for recording application events\npublished in the ApplicationContext so that assertions can be performed\nagainst those events within tests. All events published during the\nexecution of a single test are made available via the ApplicationEvents\nAPI which allows one to process the events as a java.util.Stream.\n\nThe following example demonstrates usage of this new feature.\n\n@SpringJUnitConfig(/* ... */)\n@RecordApplicationEvents\nclass OrderServiceTests {\n\n    @Autowired\n    OrderService orderService;\n\n    @Autowired\n    ApplicationEvents events;\n\n    @Test\n    void submitOrder() {\n        // Invoke method in OrderService that publishes an event\n        orderService.submitOrder(new Order(/* ... */));\n        // Verify that an OrderSubmitted event was published\n        int numEvents = events.stream(OrderSubmitted.class).count();\n        assertThat(numEvents).isEqualTo(1);\n    }\n}\n\nTo enable the feature, a test class must be annotated or meta-annotated\nwith @RecordApplicationEvents. Behind the scenes, a new\nApplicationEventsTestExecutionListener manages the registration of\nApplicationEvents for the current thread at various points within the\ntest execution lifecycle and makes the current instance of\nApplicationEvents available to tests via an @Autowired field in the\ntest class. The latter is made possible by a custom ObjectFactory that\nis registered as a \"resolvable dependency\". Thanks to the magic of\nObjectFactoryDelegatingInvocationHandler in the spring-beans module,\nthe ApplicationEvents instance injected into test classes is\neffectively a scoped-proxy that always accesses the ApplicationEvents\nmanaged for the current test.\n\nThe current ApplicationEvents instance is stored in a ThreadLocal\nvariable which is made available in the ApplicationEventsHolder.\nAlthough this class is public, it is only intended for use within the\nTCF or in the implementation of third-party extensions.\n\nApplicationEventsApplicationListener is responsible for listening to\nall application events and recording them in the current\nApplicationEvents instance. A single\nApplicationEventsApplicationListener is registered with the test's\nApplicationContext by the ApplicationEventsTestExecutionListener.\n\nThe SpringExtension has also been updated to support parameters of type\nApplicationEvents via the JUnit Jupiter ParameterResolver extension\nAPI. This allows JUnit Jupiter based tests to receive access to the\ncurrent ApplicationEvents via test and lifecycle method parameters as\nan alternative to @Autowired fields in the test class.\n\nCloses gh-25616"
+        },
+        {
+            "hash": "65a395ef0e96c5e5ce28526d1fe975daaa566b0d",
+            "message": "Fix syntax in Kotlin example"
+        },
+        {
+            "hash": "947255e3774fe6248c59d2cdd6a1b06b9f6b5d9b",
+            "message": "Always propagate checked exceptions from Kotlin code behind CGLIB proxies\n\nCloses gh-23844"
+        },
+        {
+            "hash": "499be70a717b8d20c544bc2eac4fe5dacedc7f28",
+            "message": "Update async dispatch check in OncePerRequestFilter\n\nWe no longer need to rely on an indirect check since Servlet 3.0 is expected\nso we can just check the DispatcherType of the request.\n\nCloses gh-26282"
+        },
+        {
+            "hash": "0cf5005a3d8bfe387ccc970c95953351fc83fbe5",
+            "message": "Apply abortOnCancel in JettyClientHttpConnector\n\nThis new option allows a cancel signal to abort the request, which is\nhow we expect a connection to be aborted in a reactive chain that\ninvolves the WebClient.\n\nCloses gh-26287"
+        },
+        {
+            "hash": "f07fc76cf30cbfb6ae71134b653f26af9649ea1b",
+            "message": "Limit scheme/host check in fromUriString to HTTP URLs\n\nCloses gh-26258"
+        },
+        {
+            "hash": "d3e1c54354ada0fb8955410469bd3bc20e27d76a",
+            "message": "Upgrade to Hibernate Validator 6.1.7, Jetty Reactive HttpClient 1.1.5, Joda-Time 2.10.8, XMLUnit 2.8.1"
+        },
+        {
+            "hash": "a109b4c31a29a9a6c147e3238e14be27d70527f9",
+            "message": "Translate PostgreSQL code 21000 (cardinality_violation)\n\nCloses gh-26276"
+        },
+        {
+            "hash": "00b56c026ac2ce955c6107099f9cf2daf63d37e0",
+            "message": "Consistent handling of NullBean instances in resolveNamedBean\n\nCloses gh-26271"
+        },
+        {
+            "hash": "fbd2ffdd2343174bb119c2c996f8755957bad8c8",
+            "message": "Consistent declarations and assertions in MockMultipartFile\n\nSee gh-26261"
+        },
+        {
+            "hash": "b3a47c76f8776d9abfdc70aa83c84c252da4426d",
+            "message": "Introduce TestContextAnnotationUtils.hasAnnotation()"
+        },
+        {
+            "hash": "1292947f7837c2716d6e0335698af450d4f12732",
+            "message": "Introduce computeAttribute() in AttributeAccessor\n\nThis commit introduces computeAttribute() as an interface default method\nin the AttributeAccessor API. This serves as a convenience analogous to\nthe computeIfAbsent() method in java.util.Map.\n\nCloses gh-26281"
+        },
+        {
+            "hash": "ef6a582c78b1e5a11dae64cc9e9c9b9572646bc8",
+            "message": "Clean up warnings in Gradle build"
+        },
+        {
+            "hash": "a11d1c8510c34cdb0889a13af969c3cf424464f3",
+            "message": "Enrich WebSocketHandler context\n\nCloses gh-26210"
+        },
+        {
+            "hash": "83c19cd60ee95dd315237c24f1fcfd358e58d53b",
+            "message": "Fix NPE when calling NettyHeadersAdapter.add()\n\nPrior to this commit, the `NettyHeadersAdapter` would directly delegate\nthe `add()` and `set()` calls to the adapted\n`io.netty.handler.codec.http.HttpHeaders`. This implementation rejects\n`null` values with exceptions.\n\nThis commit aligns the behavior here with other implementations, by not\nrejecting null values but simply ignoring them.\n\nFixes gh-26274"
+        },
+        {
+            "hash": "bcfbde984894ea198124ac60a3558ca341cfc495",
+            "message": "Parse parts in MockMultipartHttpServletRequestBuilder\n\nCloses gh-26261"
+        },
+        {
+            "hash": "17e6cf1cc1b57bd65bfae8da8cddc8314a89408d",
+            "message": "Replace AtomicReference<Boolean> with AtomicBoolean in AbstractServerHttpResponse.writeWith()"
+        },
+        {
+            "hash": "ec33b4241adcfe98a565c5fb12603bd8b5cff725",
+            "message": "Upgrade to Netty 4.1.55, Tomcat 9.0.41, Caffeine 2.8.8"
+        },
+        {
+            "hash": "657641ebaac4d6b01cd20918096f450a86ab28f7",
+            "message": "Remove JDK14 CI variant from build pipeline"
+        },
+        {
+            "hash": "4597e9b5476770cb2dd301886b6c3b70d9963677",
+            "message": "Upgrade CI container images to Ubuntu Focal"
+        },
+        {
+            "hash": "721dacca5ae49afadf5f9801dbe673594bc99757",
+            "message": "Upgrade JDK8, JDK11 and JDK15 versions in CI build"
+        },
+        {
+            "hash": "9d124fffcbe1a4167a251b267bf2cc763bb2d3ec",
+            "message": "Fix typo in Javadoc for AbstractJdbcCall\n\nCloses gh-26254"
+        },
+        {
+            "hash": "2a47751fcd09f0db0a46fa00f1e089744073c966",
+            "message": "Defensively handle loadClass null result in BeanUtils.findEditorByConvention\n\nCloses gh-26252"
+        },
+        {
+            "hash": "06e352822abc1eb0f5858ca9e79e38f8958e3c63",
+            "message": "Next development version (v5.3.3-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "26298",
+            "title": "kotlinx.serialization should not be used for Java interfaces implemented by Java classes"
+        },
+        {
+            "number": "26296",
+            "title": "Spring data DomainClassConverter broken with Spring 5.3 in case of missing entity"
+        },
+        {
+            "number": "26317",
+            "title": "@ExceptionHandler methods not invokable if matched on exception's cause level > 1"
+        },
+        {
+            "number": "25385",
+            "title": "Document initialization and shutdown logging semantics for the TestContext framework"
+        },
+        {
+            "number": "26367",
+            "title": "Upgrade to Reactor 2020.0.3"
+        },
+        {
+            "number": "26349",
+            "title": "ClassCastException handling at SimpleApplicationEventMulticaster of payload items"
+        },
+        {
+            "number": "26361",
+            "title": "Cannot remove headers from httpHeaders.keySet() in WebFlux"
+        },
+        {
+            "number": "26347",
+            "title": "DefaultPartHttpMessageReader creates live resources that won't be shut down"
+        },
+        {
+            "number": "25885",
+            "title": "Non-compliant Content-Type header for multipart media types"
+        },
+        {
+            "number": "26290",
+            "title": "Non-compliant Content-Type header for multipart media type"
+        },
+        {
+            "number": "26344",
+            "title": "Sending empty Flux to RSocket channel causes DecodingException: JSON decoding error: No content to map due to end-of-input"
+        },
+        {
+            "number": "26289",
+            "title": "Problem with @Schedule with Quartz features in CronExpression "
+        },
+        {
+            "number": "26299",
+            "title": "MultipartFile.getOriginalFilename() documentation should warn user not to use it as destination file name"
+        },
+        {
+            "number": "26303",
+            "title": "Assertion error details lost in rethrow in assertWithDiagnostics"
+        },
+        {
+            "number": "26311",
+            "title": "Improve MockMvc samples in reference to show where static imports come from"
+        },
+        {
+            "number": "26308",
+            "title": "ClassNotFoundException: ExchangeFunction when using WebTestClient with Spring MVC"
+        },
+        {
+            "number": "26318",
+            "title": "Switch to PathPatternParser for Spring MVC breaks welcome page auto configuration"
+        },
+        {
+            "number": "26330",
+            "title": "The response has a duplicate \"Content-Length\" header when get by range header"
+        },
+        {
+            "number": "26263",
+            "title": "Lots of boundedElastic-evictor TIMED_WAITING threads related to form data requests"
+        },
+        {
+            "number": "26295",
+            "title": "Update ReactiveAdapterRegistry to do classpath checks at class initialization"
+        },
+        {
+            "number": "26304",
+            "title": "ClassCastException during websocket upgrade for mutated request"
+        },
+        {
+            "number": "26255",
+            "title": "Upgrade to Hibernate Validator 6.2"
+        },
+        {
+            "number": "26332",
+            "title": "The implementaion of isOpen() in ReactorNettyWebSocketSession is wrong"
+        },
+        {
+            "number": "26313",
+            "title": "CronExpression cannot parse combination of step values"
+        },
+        {
+            "number": "26312",
+            "title": "Fix JdbcOperations.queryForObject/queryForList extensions"
+        },
+        {
+            "number": "26337",
+            "title": "Remove obsolete commandName attribute in spring-form.tld"
+        },
+        {
+            "number": "26329",
+            "title": "How to change property source location in spring 5.3.1?"
+        },
+        {
+            "number": "26307",
+            "title": "Early support for JDK 17"
+        },
+        {
+            "number": "23844",
+            "title": "Spring AOP should not apply UndeclaredThrowableException to checked exceptions from Kotlin methods"
+        },
+        {
+            "number": "26282",
+            "title": "Update OncePerRequestFilter.isAsyncDispatch to use HttpServletRequest.getDispatcherType()"
+        },
+        {
+            "number": "26287",
+            "title": "Make use of abortOnRequest in Jetty Reactive HttpClient"
+        },
+        {
+            "number": "26258",
+            "title": "UriComponentsBuilder fromUriString cannot parse File URI"
+        },
+        {
+            "number": "26276",
+            "title": "Translate PostgreSQL code 21000 (cardinality_violation)"
+        },
+        {
+            "number": "26271",
+            "title": "Consistent type resolution handling for NullBean"
+        },
+        {
+            "number": "26261",
+            "title": "No originalFilename in MockMultipartFile now leads to add it just as part"
+        },
+        {
+            "number": "26281",
+            "title": "Introduce computeAttribute() in AttributeAccessor"
+        },
+        {
+            "number": "26210",
+            "title": "Subscriber context not propagated to WebSocketHandler for Tomcat websockets"
+        },
+        {
+            "number": "26274",
+            "title": "NettyHeadersAdapter.add() accepts @Nullable value but throws NullPointerException"
+        },
+        {
+            "number": "26252",
+            "title": "Defensively handle loadClass null result in BeanUtils.findEditorByConvention (against misbehaving ClassLoader impl such as in the GWT JettyLauncher)"
+        }
+    ]
+}

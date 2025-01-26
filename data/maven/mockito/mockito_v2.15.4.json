@@ -1,0 +1,126 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.15.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 27,
+    "start_delay": 0.0,
+    "duration": 13.252280092592592,
+    "commits_info": [
+        {
+            "hash": "723300cc655e14c719233901d8adfdbfbf91ab52",
+            "message": "2.15.4 release (previous 2.15.3) + release notes updated by CI build 3231\n\n[ci skip-release]"
+        },
+        {
+            "hash": "8f4b78826ec4cb94398fa7cbf0845a9109ac2c57",
+            "message": "Merge pull request #1304 from moltmann/MakeInstantiatorPublicAPI\n\nMake InstantiatorProvider a public API\n\nFixes #1303"
+        },
+        {
+            "hash": "140671babde344e94c07d9c51f011bfcbba63c0c",
+            "message": "Made version consistent in the javadoc / since tags"
+        },
+        {
+            "hash": "056a6d0d0d321d1eb2befad4b41c15eafc9a94a4",
+            "message": "Renamed wrapper -> adapter for clarity, one more time."
+        },
+        {
+            "hash": "8ce7003a0193cc349921b615de8d541a40601448",
+            "message": "Renamed wrapper -> adapter for clarity"
+        },
+        {
+            "hash": "ce111925adc1bf72df4e8d518c3af64e33daec2e",
+            "message": "Added missing unit test coverage"
+        },
+        {
+            "hash": "b1c419992e2c88dcf57dceaadc2bd648cb3af25a",
+            "message": "Busted complexity into separate classes\n\nThis way, it will be easier to write unit tests"
+        },
+        {
+            "hash": "24ad29176ec1ec551e53de9a6cc955042c3d687c",
+            "message": "Added sanity unit tests"
+        },
+        {
+            "hash": "fc6afc103ebddba5794856f90244b14c4a042a14",
+            "message": "Unify loadPlugin methods and add @since to new APIs"
+        },
+        {
+            "hash": "a37808066937828060180b5b6e8d2f0b897c9bbe",
+            "message": "Checkstyle"
+        },
+        {
+            "hash": "cb95e2f6f044bf0bbc06cc390a8c6fefc925ed87",
+            "message": "Tweaked the Javadoc"
+        },
+        {
+            "hash": "37fc8b4cfca918f725de14b297ee33696fa1fdd1",
+            "message": "Refactored for clarity\n\nLet's have the code that operates on 2 alternative types close together, rather than split it apart in constructor + getter. This makes it easier to understand what are the types we expect and why."
+        },
+        {
+            "hash": "e97ac672556f2ee6fcda19e71862d2136b335a42",
+            "message": "Reworded for consistency 'private' -> 'internal'"
+        },
+        {
+            "hash": "0bbcc7f9a0905c30340f876693d8baadc7658064",
+            "message": "Moved classes to better packages, refactoring, tweaked the test"
+        },
+        {
+            "hash": "a2b745d51ac1c623dd7d7b7faf1083306014d28a",
+            "message": "Renamed classes, moved the to better package\n\nRemoved the package \"switcher\" because it was confusing"
+        },
+        {
+            "hash": "ab45676d482cd1537ce1f38b1295da0c5b4ba018",
+            "message": "Renamed and refactored the test"
+        },
+        {
+            "hash": "7c650e03a0bb64a6bbf0d7789b6592b2e38f204a",
+            "message": "Added comment"
+        },
+        {
+            "hash": "4773c3c5ba588f0774c196ba2ecf6f9f09af3594",
+            "message": "Added deprecation on method"
+        },
+        {
+            "hash": "cbb08be27d152a511d12734fc1279335d05b2f14",
+            "message": "Simplified the build logic"
+        },
+        {
+            "hash": "5087a81add22ee6e457add158b007fecc89c86fd",
+            "message": "Deleted unnecessary classes"
+        },
+        {
+            "hash": "9d6eb907b1b8bf7ce41637a0cffcb31a96a263ea",
+            "message": "Add tests for InstantiatorProvider(2)\n\ntest that\n- correct plugin is selected if\n  - both plugins are defined\n  - only deprecated plugin is defined\n- InstantiatorProvider plugins are still working\n  - to init mocks\n  - with the correct exceptions types if thrown\n- plugins.getDefaultPlugin(InstantiatorProvider.class) returns a working InstantiatorProvider"
+        },
+        {
+            "hash": "08c0931684159e5f00f388e3de55cec97020e107",
+            "message": "Move compatiblity plugin loading to PluginLoader"
+        },
+        {
+            "hash": "88d0b0402c578d1045a6c1e7f0989a62342f131a",
+            "message": "Updated the documentation"
+        },
+        {
+            "hash": "7c1588494e583c02dfb9728a9d746c183e5cdba5",
+            "message": "Deprecate InstantiatorProvider, create InstantiatorProvider2\n\nThe new provider uses fully public APIs.\n\nAlso:\n- Change all internal instantiators to the new API\n- Change users of internal intstantiators to the new API\n  - Both bytebuddy\n  - and tests\n- Provide backwards support for custom legacy InstantiatorProvider-s"
+        },
+        {
+            "hash": "92c6e476847d4fbec1ea7a69498a3ccc13f04204",
+            "message": "Fixes #1303 : Make Instantiator a public API\n\nThe public API org.mockito.plugins.InstantiatorProvider#getInstantiator\nreturns an Instantiator object. Hence the Instantiator class needs to be\na public too, otherwise the API would be useless."
+        },
+        {
+            "hash": "2d6462fe65fbfcde1ac29eb311a2950e3653aede",
+            "message": "Merge pull request #1315 from mockito/update-kotlin-version\n\nUpdate Kotlin version to be compatible with the IntelliJ runtime version"
+        },
+        {
+            "hash": "5d607eb5d9460594065f863dde74221277ad26f6",
+            "message": "Update Kotlin version to be compatible with the IntelliJ runtime version"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1303",
+            "title": "Make  org.mockito.internal.creation.instance.Instantiator a public API"
+        }
+    ]
+}

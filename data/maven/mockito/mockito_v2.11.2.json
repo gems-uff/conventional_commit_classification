@@ -1,0 +1,58 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.11.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 8,
+    "start_delay": 0.0,
+    "duration": 1.2460069444444444,
+    "commits_info": [
+        {
+            "hash": "e10c5409e460c3ecd6b2ef9513a0b3802351d85f",
+            "message": "2.11.2 release (previous 2.11.1) + release notes updated by CI build 2999\n\n[ci skip-release]"
+        },
+        {
+            "hash": "a44761d52016fa2f77acdeb545fd31c1ce297d49",
+            "message": "Merge pull request #1218 from mockito/bb-update\n\nUpdated Byte Buddy and ASM dependencies. Fixes #1215."
+        },
+        {
+            "hash": "1652b58effdfa008f357a496683df7bbd3852ae9",
+            "message": "Updated Byte Buddy and ASM dependencies. Fixes #1215."
+        },
+        {
+            "hash": "5291d06b1b0f03267fb9b5b5f78f7f49a65f5da4",
+            "message": "Merge pull request #1216 from mockito/annotations-optional\n\nAdresses #1206: allow opting out from annotation copying within mocks."
+        },
+        {
+            "hash": "bb4c78c2debe7087882e3a6dd66de037590b40f0",
+            "message": "Adresses #1206: allow opting out from annotation copying within mocks."
+        },
+        {
+            "hash": "53976e932bdcee1ce0a9d85f00aa47bd5ba928d2",
+            "message": "Merge pull request #1217 from mockito/fix-self-invoke-check\n\nFixes #1183: Make override check more forgiving to accomondate Kotlin compile patterns."
+        },
+        {
+            "hash": "a507d05ccaedea4bf94f85b6966c4623b4c2ff47",
+            "message": "Fixes #1183: Make override check more forgiving to accomondate Kotlin compile patterns."
+        },
+        {
+            "hash": "839110244266a0321913f16f7ae7e16eed475b7a",
+            "message": "Standardize JUnit imports (#1213)\n\n* Verify FriendlyReminderException messages\r\n\r\nUse the ExpectedException @Rule in order to verify the messages it\r\ntests that check FriendlyReminderExceptions to enhance the test.\r\nAs a side bonus, this patch cleans up the code with a standard way of\r\ntesting exception instead of boiler-plate implement try-fail-catch\r\nstructures.\r\n\r\n* Import static methods from org.junit.Assert\r\n\r\nThe de-facto standard of Mockito's test is to use statically imported\r\nmethods from the org.junit.Assert class.\r\n\r\nThis patch changes the few places that import Assert and use its\r\nmethods to statically import them in order to standardize the\r\ncodebase and make it easier to maintain."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1215",
+            "title": "ClassFormatError when trying to mock certain interfaces"
+        },
+        {
+            "number": "1206",
+            "title": "Mockito should not copy annotations in all cases"
+        },
+        {
+            "number": "1183",
+            "title": "UnfinishedVerificationException with Kotlin after updating to 2.9.0"
+        }
+    ]
+}

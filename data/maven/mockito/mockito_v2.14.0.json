@@ -11,68 +11,61 @@
     "commits_info": [
         {
             "hash": "56a94f04070d8b1b96e98f156ec9b19beec44d2d",
-            "message": "2.14.0 release (previous 2.13.3) + release notes updated by CI build 3201\n\n[ci skip-release]\n",
-            "tag_name": null
+            "message": "2.14.0 release (previous 2.13.3) + release notes updated by CI build 3201\n\n[ci skip-release]"
         },
         {
             "hash": "de894403247eae574d90bac5011647c97666a7fc",
-            "message": "Merge pull request #1307 from moltmann/ThrowCallable\n\nFixes #1306: Invocation's real method throws Throwable",
-            "tag_name": null
+            "message": "Merge pull request #1307 from moltmann/ThrowCallable\n\nFixes #1306: Invocation's real method throws Throwable"
         },
         {
             "hash": "641ef30b41c5bcd36f36db54fc8b3a7b6c732a4c",
-            "message": "Simplified the test\n",
-            "tag_name": null
+            "message": "Simplified the test"
         },
         {
             "hash": "afc3a19125d28959cfbc22899d64faa4136cbc54",
-            "message": "Added test for deprecated API\n",
-            "tag_name": null
+            "message": "Added test for deprecated API"
         },
         {
             "hash": "4e44f8c156be656c832370aeff2be7ca46dc3853",
-            "message": "Started using non-deprecated type\n",
-            "tag_name": null
+            "message": "Started using non-deprecated type"
         },
         {
             "hash": "81c01092e164f2e504b2ef6845858c9724b2f5fe",
-            "message": "Reduced duplication\n",
-            "tag_name": null
+            "message": "Reduced duplication"
         },
         {
             "hash": "1310f0a98612c4343372941072252c64f28fc5e8",
-            "message": "Needed to make the new API serializable\n\nOtherwise, non-android use cases like Powermockito, will use the new public API and break when mocks are being serialized. For android use cases we don't need serialization, but this new public API will be used in other context, too.\n",
-            "tag_name": null
+            "message": "Needed to make the new API serializable\n\nOtherwise, non-android use cases like Powermockito, will use the new public API and break when mocks are being serialized. For android use cases we don't need serialization, but this new public API will be used in other context, too."
         },
         {
             "hash": "0fa2acd78122174aec78a3d607509a780406d3b0",
-            "message": "Updated version because changing public API\n\nNow the version is consistent with Javadoc.\n",
-            "tag_name": null
+            "message": "Updated version because changing public API\n\nNow the version is consistent with Javadoc."
         },
         {
             "hash": "3139e7da69c1f71ded5e5845942bdaf41933e6ee",
-            "message": "Documentation - emphasized deprecation and explained rationale\n",
-            "tag_name": null
+            "message": "Documentation - emphasized deprecation and explained rationale"
         },
         {
             "hash": "017cf577910c2156ed785a18914396bcba3d51f9",
-            "message": "Reduced duplication, removed serialVersionUID\n\nserialVersionUID is used inconsistently across the codebase and it is not updated when the class changes internal implementation. Hence, it is not useful at all. We don't have use cases to share serialized state between different versions of Mockito anyway.\n",
-            "tag_name": null
+            "message": "Reduced duplication, removed serialVersionUID\n\nserialVersionUID is used inconsistently across the codebase and it is not updated when the class changes internal implementation. Hence, it is not useful at all. We don't have use cases to share serialized state between different versions of Mockito anyway."
         },
         {
             "hash": "acdf96825f20a0433c2daf06b1f2cd864e65c133",
-            "message": "Fixes #1306: Invocation's real method throws Throwable\n\nA real method might throw a Throwable, but the invocations produced by\nInvocationFactory call the real method via a Callable that can only\nthrow a Exception.\n\nHence add a new method to InvocationFactory that allows to create\ninvocations with a RealMethodBehavior == a Callable that throws a\nThrowable.\n",
-            "tag_name": null
+            "message": "Fixes #1306: Invocation's real method throws Throwable\n\nA real method might throw a Throwable, but the invocations produced by\nInvocationFactory call the real method via a Callable that can only\nthrow a Exception.\n\nHence add a new method to InvocationFactory that allows to create\ninvocations with a RealMethodBehavior == a Callable that throws a\nThrowable."
         },
         {
             "hash": "1a3bc2e7cfdaf126f67645b8a954cf315172e580",
-            "message": "Update link of Maven Central badge (#1299)\n\nLink to list of mockito-core versions instead of linking to version 2.8.47",
-            "tag_name": null
+            "message": "Update link of Maven Central badge (#1299)\n\nLink to list of mockito-core versions instead of linking to version 2.8.47"
         },
         {
             "hash": "70a7cf8c17bcbf0ffb5316d6dd2457d9708bbe5f",
-            "message": "Update Gradle version\n",
-            "tag_name": null
+            "message": "Update Gradle version"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1306",
+            "title": "InvocationFactory.createInvocation's realmethod cannot throw a Throwable"
         }
     ]
 }

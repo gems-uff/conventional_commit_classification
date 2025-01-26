@@ -1,0 +1,57 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.6.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 11,
+    "start_delay": 0.0,
+    "duration": 1.819201388888889,
+    "commits_info": [
+        {
+            "hash": "2636f3b425729cced7ef2af8cb0679d405ef24fd",
+            "message": "Merge pull request #2089 from mockito/ci\n\nSwitched CI to GH Actions"
+        },
+        {
+            "hash": "7f9e1cab50d962159f21744a472ee67e1d3b47d3",
+            "message": "Added code comment"
+        },
+        {
+            "hash": "ac82b910014cfe6e7b55cb7f4068989ba2f61af0",
+            "message": "Kept Travis, enabled releases\n\n1. Kept Travis build for a little while until we are confident with GH actions.\n2. Enabled releasing from GH actions. Based on my testing I feel confident it will work.\n3. Removed releasing/code coverage reporting from Travis to avoid confusing/incorrect behavior."
+        },
+        {
+            "hash": "63cbc1099d575908f2f0f03cc9588594b8bdf909",
+            "message": "Switched CI to GH Actions\n\n[skip travis]"
+        },
+        {
+            "hash": "5014d086ab0190989a2180abb8a3e11f3f3883d0",
+            "message": "Enabled CI on GH Actions\n\nRenamed the workflow. Now it works and it is no longer \"work in progress\"\r\n\r\n[skip travis]"
+        },
+        {
+            "hash": "95bc0387d65c59ce5753702f9aa89e35d618fcc5",
+            "message": "Enabled full build with GH Actions\n\nEnabled the full build. For now, releasing is disabled. [skip travis]"
+        },
+        {
+            "hash": "723eff61af01138cd9fcfdcc3ddacb7847b25d00",
+            "message": "Update ci.yml\n\nIgnored the release step for now, after a successful smoke test [skip travis]"
+        },
+        {
+            "hash": "888da322b7e61d567d838b2f28ff20c75f13ffed",
+            "message": "Added releasability\n\n[skip travis]"
+        },
+        {
+            "hash": "8ab28f38c8204595c172f4f87afb5ec5575ee3c9",
+            "message": "Fixed checkout bug\n\nFurther testing exposed a problem: to get all tags, I need fetch-depth '0' (all history and tags). We'll evaluate the performance implication [skip travis]"
+        },
+        {
+            "hash": "561cd05a80860f0023ba56e3215c14d942ea52fb",
+            "message": "Made checkout more reliable\n\nAdded more commits to the fetch depth to ensure that we're getting all tags needed to auto-deduct version. 1000 is for my sanity and it shouldn't slow down the checkout (I'll verify).\r\n\r\n[skip travis]"
+        },
+        {
+            "hash": "b49879e845b35e06a985fe0e4c75187e018f52d6",
+            "message": "Added reproducibility check\n\nTidy up in the code comments [skip travis]"
+        }
+    ],
+    "issues": []
+}

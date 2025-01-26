@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.19.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 82.17856481481482,
+    "commits_info": [
+        {
+            "hash": "cc7b1b53234cd7a8f50d90ac3933b240dcf4cd97",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "ee432e55b808a57e44115178e41cd5ceae91b205",
+            "message": "Update CHANGES.txt for 3.19.3\n\nThe 3.19.2 release was supposed to fix the missing Python 3.10 wheel for\nWindows, but this turned out to need some more fixes. This commit\nupdates CHANGES.txt to reflect that this fix will happen in 3.19.3\ninstead of 3.19.2."
+        },
+        {
+            "hash": "203c593b9681d98e7e05f3d8f862aa183f5d9c91",
+            "message": "Fix build error with Python 3.10 build on Windows\n\nThe Windows build for Python 3.10 is giving us an error about ssize_t\nbeing undefined, so this commit fixes the problem by replacing it with\nPy_ssize_t, which is consistent with what we do elsewhere in the file."
+        },
+        {
+            "hash": "922a7ec18926aa2612d14a2b4abb8689477e97a4",
+            "message": "Fix Python 3.10 C++ tests (#9128)\n\nThe first change is to make sure we always define PY_SSIZE_T_CLEAN\r\nbefore including Python.h. Starting from Python 3.10 this is required.\r\nOtherwise we get errors like this:\r\n\r\nSystemError: PY_SSIZE_T_CLEAN macro must be defined for '#' formats\r\n\r\nThe second change is to update reflection_test.py to account for the\r\nfact that with Python 3.10, we get a TypeError even with the C++\r\nimplementation when trying to assign a float to a bool field. I'm not\r\nsure why this changed with Python 3.10, but it seems like a good thing\r\nsince this is the desired behavior anyway."
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.0.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 7.354143518518518,
+    "commits_info": [
+        {
+            "hash": "1ec2bed8b1d901a51c6b14afc4b34374070a942d",
+            "message": "3.0.3 release (previous 3.0.2) + release notes updated by CI build 4153\n\n[ci skip-release]"
+        },
+        {
+            "hash": "10143b9c5ca7f1210469b1163389ec559a2fa99a",
+            "message": "Travis: Explicit distribution of trusty (#1750)"
+        },
+        {
+            "hash": "e11a31c98d16220c073378c8d197cbe3f5381013",
+            "message": "Change implementation of ExceptionFactory to explicitly test for the presence of dependent classes (#1723)\n\nChange implementation of ExceptionFactory to explicitly test for the presence of dependent classes, rather than depending on the implicit classloading behaviour. This is necessary as Android classloading behaviour is slightly different.\r\n\r\nFixes #1716"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1716",
+            "title": "mockito-android 2.26+ tries to use missing opentest4j exceptions"
+        }
+    ]
+}

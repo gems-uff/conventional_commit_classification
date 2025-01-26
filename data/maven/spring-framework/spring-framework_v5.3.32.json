@@ -1,0 +1,250 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.32",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 37,
+    "start_delay": 0.0,
+    "duration": 91.22072916666667,
+    "commits_info": [
+        {
+            "hash": "1827776d2eb543034a4fa2a2c6b52dcf66971002",
+            "message": "Release v5.3.32"
+        },
+        {
+            "hash": "8e3ad4a488ec06d67b42c88d4762121040e87c35",
+            "message": "Upgrade to Reactor 2020.0.41\n\nIncludes Jetty 9.4.54, Netty 4.1.107, Undertow 2.2.29"
+        },
+        {
+            "hash": "6f4cc40a523f2de624017667fecb29084ce20b1b",
+            "message": "Document ResourcePropertiesPersister as only intended for internal use"
+        },
+        {
+            "hash": "452973fbbd4168d91f60dc0f192845b70120bbac",
+            "message": "Consistent Lock field declaration (instead of ReentrantLock field type)\n\n(cherry picked from commit b4153618a414f43d12feb2b33487fa1a35be4674)"
+        },
+        {
+            "hash": "7ec5c994c147f0e168149498b1c9d4a249d69e87",
+            "message": "Update user info pattern\n\nCloses gh-32211"
+        },
+        {
+            "hash": "60035b5e39c72bbc8ab9eea11ae1f8761ed5b4fc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "43ecb0b94a7e5809f8c65774cd9fe1dfbdbe0333",
+            "message": "Eagerly initialize ZERO_NANOS constant"
+        },
+        {
+            "hash": "0e5edc44740255f46abfaa82f0047cb01b2797d3",
+            "message": "Upgrade to Checkstyle 10.12.7 and spring-javaformat-checkstyle 0.0.41"
+        },
+        {
+            "hash": "70e2e896024d7d5a7601b08185008f2ff5d1202d",
+            "message": "Explicit documentation note on cron-vs-quartz parsing convention\n\nCloses gh-32128"
+        },
+        {
+            "hash": "a2af34f9b63016658ff41f3d10f3edf933547af7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c35e90c171df03d7ec78febaaec0ce0f8bd8d6cd",
+            "message": "Compare qualifier value arrays with equality semantics\n\nCloses gh-32106\n\n(cherry picked from commit c5a75219ceb5b5bc6a1afbeddff161d4e3f3a753)"
+        },
+        {
+            "hash": "186d6e370da7481688b1ede776891608d169e7d7",
+            "message": "Guard against multiple body subscriptions\n\nBefore this commit, the Jetty connector did not have any\nsafeguard against multiple body subscriptions. Such as check has now\nbeen added.\n\nSee gh-32100\nCloses gh-32101"
+        },
+        {
+            "hash": "732642d8ad9b1a06e408c766dc36f224e18587bd",
+            "message": "Declare allowPrivateNetwork as available since 5.3.32\n\nSee gh-28546\nSee gh-31974"
+        },
+        {
+            "hash": "d7649d088d6fab587e416b92d4a56575e4dffe78",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7ac66eff4d8c0b5e6d507f78eb3d65718c9b444a",
+            "message": "Consistent nullability for concurrent result\n\n(cherry picked from commit b92877990da57c36eee035095c9ae72f5c0a7537)"
+        },
+        {
+            "hash": "f22bdf4734da31c09a3f3e369ddca2f968d32de8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a0f24cf4851eb1dac634072d15df976f5f7c6788",
+            "message": "Handle Content-Length in ShallowEtagHeaderFilter more robustly\n\nThis commit ensures that setting the Content-Length through\nsetHeader(\"Content-Length\", x\") has the same effect as calling\nsetContentLength in the ShallowEtagHeaderFilter. It also filters out\nContent-Type headers similarly to Content-Length.\n\nSee gh-32039\nCloses gh-32051"
+        },
+        {
+            "hash": "562fa4e1adec735803b8abb281214dbbd192552e",
+            "message": "Upgrade CI image to JDK 8u402+7 and 17.0.10+13"
+        },
+        {
+            "hash": "9d10807f8b6f9c3fb0dfcc9ec42e2e22c78caa9b",
+            "message": "Upgrade CI image to Ubuntu Jammy 20240111"
+        },
+        {
+            "hash": "fd240b3b8679c699808baf7f4c94263d0e8e0e9f",
+            "message": "Double-checked lock in ChannelSendOperator#request\n\nCloses gh-31865"
+        },
+        {
+            "hash": "df1bec9e97910db9022cf94a7d982d05ab3b2a45",
+            "message": "Polishing\n\nSee gh-31974"
+        },
+        {
+            "hash": "cfec88bfa86ab2c5298c8ea6f3c8abfe54e7a309",
+            "message": "Add CORS support for Private Network Access\n\nThis commit adds CORS support for Private Network Access\nby adding an Access-Control-Allow-Private-Network response\nheader when the preflight request is sent with an\nAccess-Control-Request-Private-Network header and that\nPrivate Network Access has been enabled in the CORS\nconfiguration.\n\nSee https://developer.chrome.com/blog/private-network-access-preflight/\nfor more details.\n\nCloses gh-31974\n\n(cherry picked from commit 318d4602564fb287b448ea310cf6c146f89cc47a)"
+        },
+        {
+            "hash": "dd9b6749d7ef95d6b155f949819835f652e26136",
+            "message": "Avoid getMostSpecificMethod resolution for non-annotated methods\n\nThis is aligned with AutowiredAnnotationBeanPostProcessor now.\n\nCloses gh-31967\n\n(cherry picked from commit 9912a52bb8d677a27aa79f0ebea146e6e0d120bb)"
+        },
+        {
+            "hash": "2b9cea618fa602c274646fafbe97146847e51a28",
+            "message": "Propagate arguments for dynamic prototype-scoped advice\n\nCloses gh-28407\n\n(cherry picked from commit 43107e7eb18cdd2d02661421b5cdaf90e5c19c30)"
+        },
+        {
+            "hash": "e16dd5f3e29fd82d363005fa873d139269889bac",
+            "message": "Refine exception handling for type not present versus access exception\n\nIncludes TypeVariable bypass for reflection-free annotation retrieval.\nIncludes info log message for annotation attribute retrieval failure.\n\nCloses gh-27182\n\n(cherry picked from commit 70247c4a949b7e20cadd260b5fd46d880c183acb)"
+        },
+        {
+            "hash": "c1db06af8836a41f69b464c02fdff812377f7e0f",
+            "message": "Default time zone resolution from scheduler-wide Clock\n\nCloses gh-31948"
+        },
+        {
+            "hash": "b2bdc7de30d512f3afbc4443f0b99f179010596e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8f2bb4973d36a1c9a917b0e34f3046f174a2e7eb",
+            "message": "Scan annotations on method in interface hierarchy only once\n\nPrior to this commit, the AnnotationsScanner used in the\nMergedAnnotations infrastructure found duplicate annotations on methods\nwithin multi-level interface hierarchies.\n\nThis commit addresses this issue by scanning methods at a given level\nin the interface hierarchy using ReflectionUtils#getDeclaredMethods\ninstead of Class#getMethods, since the latter includes public methods\ndeclared in super-interfaces which will anyway be scanned when\nprocessing super-interfaces recursively.\n\nCloses gh-31803\n\n(cherry picked from commit 75da9c3c474374289cc128b714126d9d644b69a9)\n(cherry picked from commit 1e742aae34e4d32a703720fa8326c6c439efb498)"
+        },
+        {
+            "hash": "a45154c875b7194fe59f01d6b08874589658e248",
+            "message": "Polish MergedAnnotation tests\n\n(cherry picked from commit 952223dcf9ea07fa35e427ed76f0cc85ed8b6a80)\n(cherry picked from commit 20dd585c9387c4c65762eee4802667256c2877ba)"
+        },
+        {
+            "hash": "d54e101f00e869573ec4cdcc4b02921645154cb2",
+            "message": "PathEditor considers single-letter URI scheme as NIO path candidate\n\nCloses gh-29881\n\n(cherry picked from commit c56c3045364a93d135309536cc905e56a2eae38d)"
+        },
+        {
+            "hash": "9ef2b5d90846f1ba0b18898970b9bcc0b2f131d9",
+            "message": "Include scroll() in SharedEntityManagerCreator's queryTerminatingMethods\n\nThis commit supports the scroll() and scroll(ScrollMode) methods from\nHibernate's Query API in SharedEntityManagerCreator's query-terminating\nmethods set.\n\nSee gh-31682\nCloses gh-31684"
+        },
+        {
+            "hash": "0ecbeef01dcfd352cb68b578d0ff3d74dbef16da",
+            "message": "Consider generics in equals method (for ConversionService caching)\n\nCloses gh-31672\n\n(cherry picked from commit 710373d28677f9a87629c9ce7a6e12a06c4c7023)"
+        },
+        {
+            "hash": "5105fdf8c0a94224350e2d9aa375f5f7c3c6093c",
+            "message": "Filter candidate methods by name first (for more efficient sorting)\n\nCloses gh-28377\n\n(cherry picked from commit 0599320bd81edba1575f39922c586263c6d453b0)"
+        },
+        {
+            "hash": "687676ea474579db694f56ebb20a8c84320c1b24",
+            "message": "Fix ordering of releasing resources in JSON Encoder\n\nPrior to this commit, the Jackson 2.x encoders, in case of encoding a\nstream of data, would first release the `ByteArrayBuilder` and then the\n`JsonGenerator`. This order is inconsistent with the single value\nvariant (see `o.s.h.codec.json.AbstractJackson2Encoder#encodeValue`) and\ninvalid since the `JsonGenerator` uses internally the\n`ByteArrayBuilder`.\n\nIn case of a CSV Encoder, the codec can buffer data to write the column\nnames of the CSV file. Writing an empty Flux with this Encoder would not\nfail but still log a NullPointerException ignored by the reactive\npipeline.\n\nThis commit fixes the order and avoid such issues at runtime.\n\nFixes gh-31657"
+        },
+        {
+            "hash": "b17714bb7be15e411043c5b122128e43588e6b18",
+            "message": "Polishing"
+        },
+        {
+            "hash": "61ac912f6715d4c556127d06e752c4c9ce588994",
+            "message": "WebSocketMessageBrokerStats implements SmartInitializingSingleton\n\nCloses gh-26536"
+        },
+        {
+            "hash": "1077d5c5ea1a9afb1aeba54b6006856785b6ed71",
+            "message": "Next development version (v5.3.32-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32211",
+            "title": "Consistent parsing of user information in UriComponentsBuilder"
+        },
+        {
+            "number": "32128",
+            "title": "Document cron-vs-quartz parsing convention for dayOfWeek part in CronExpression"
+        },
+        {
+            "number": "32106",
+            "title": "QualifierAnnotationAutowireCandidateResolver.checkQualifier does identity checks when comparing arrays used as qualifier fields"
+        },
+        {
+            "number": "32100",
+            "title": "Guard against multiple body subscriptions in Jetty and JDK reactive responses"
+        },
+        {
+            "number": "32101",
+            "title": "Guard against multiple body subscriptions in Jetty and JDK reactive responses"
+        },
+        {
+            "number": "28546",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "31974",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32051",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "31865",
+            "title": "ChannelSendOperator.WriteBarrier race condition in request(long) method leads to response being dropped"
+        },
+        {
+            "number": "31967",
+            "title": "Avoid early getMostSpecificMethod resolution in CommonAnnotationBeanPostProcessor"
+        },
+        {
+            "number": "28407",
+            "title": "Spring AOP does not propagate arguments for dynamic prototype-scoped advice "
+        },
+        {
+            "number": "27182",
+            "title": "MergedAnnotation swallows IllegalAccessException for attribute method"
+        },
+        {
+            "number": "31948",
+            "title": "CronTrigger hard-codes default ZoneId instead of participating in scheduler-wide Clock setup"
+        },
+        {
+            "number": "31803",
+            "title": "`MergedAnnotations` finds duplicate annotations on method in multi-level interface hierarchy"
+        },
+        {
+            "number": "29881",
+            "title": "PathEditor cannot handle absolute Windows paths with forward slashes"
+        },
+        {
+            "number": "31682",
+            "title": "Include Hibernate's `Query.scroll()` in `SharedEntityManagerCreator`'s `queryTerminatingMethods` set"
+        },
+        {
+            "number": "31684",
+            "title": "Include Hibernate's `Query.scroll()` in `SharedEntityManagerCreator`'s `queryTerminatingMethods` set"
+        },
+        {
+            "number": "31672",
+            "title": "TypeDescriptor does not check generics in `equals` method (for ConversionService caching)"
+        },
+        {
+            "number": "28377",
+            "title": "Slow SpEL performance due to method sorting in `ReflectiveMethodResolver`"
+        },
+        {
+            "number": "31657",
+            "title": "Jackson encoder releases resources in wrong order"
+        },
+        {
+            "number": "26536",
+            "title": "WebSocketMessageBrokerStats has null stats for stompSubProtocolHandler since 5.3.2"
+        }
+    ]
+}

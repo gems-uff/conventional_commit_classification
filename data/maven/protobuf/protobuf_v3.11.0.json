@@ -11,983 +11,805 @@
     "commits_info": [
         {
             "hash": "ab5b61bf2f0fb1ac485be1b82fffca153c2509ed",
-            "message": "Update CHANGES.txt for 3.11.0 stable release (#6944)\n\n",
-            "tag_name": null
+            "message": "Update CHANGES.txt for 3.11.0 stable release (#6944)"
         },
         {
             "hash": "1d5375c6214384574eca20f24f660b7a9687f51c",
-            "message": "Update protobuf version to 3.11.0 (#6943)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version to 3.11.0 (#6943)"
         },
         {
             "hash": "b0386daa1968c3c7ace339fca10b73a3998071d3",
-            "message": "Remove add_proto_enumdesc and get_proto_enumdesc (#6931)\n\n",
-            "tag_name": null
+            "message": "Remove add_proto_enumdesc and get_proto_enumdesc (#6931)"
         },
         {
             "hash": "391440e3dddb8de34dc7741f4b3170d8cde46215",
-            "message": "Implement lazy loading of php class for proto messages (#6911) (#6925)\n\n* Implement lazy loading of php class for proto messages\r\n\r\n* Fix php 7.1\r\n\r\n* Fix encode\r\n\r\n* Fix memory leak\r\n\r\n* Fix enum descriptor",
-            "tag_name": null
+            "message": "Implement lazy loading of php class for proto messages (#6911) (#6925)\n\n* Implement lazy loading of php class for proto messages\r\n\r\n* Fix php 7.1\r\n\r\n* Fix encode\r\n\r\n* Fix memory leak\r\n\r\n* Fix enum descriptor"
         },
         {
             "hash": "6220db4ec48021e69adee4926695e8b5e44d5a1d",
-            "message": "Update protobuf version (#6927)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version (#6927)"
         },
         {
             "hash": "51475bc4ea1a77df42a9eb9d53969d2be3a56dcf",
-            "message": "Marked update_compatibility_version.py as executable (#6916)\n\n",
-            "tag_name": null
+            "message": "Marked update_compatibility_version.py as executable (#6916)"
         },
         {
             "hash": "01425cb2620a492ad53e7e9f9da95a03c985c175",
-            "message": "Revert \"Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required.\" (#6914)\n\nThis reverts commit 129a7c875fc89309a2ab2fbbc940268bbf42b024. We are\r\nseeing the following error when building Python release artifacts in Windows:\r\n\" error LNK2038: mismatch detected for 'RuntimeLibrary': value\r\n'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in\r\ndescriptor.obj\".\r\n",
-            "tag_name": null
+            "message": "Revert \"Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required.\" (#6914)\n\nThis reverts commit 129a7c875fc89309a2ab2fbbc940268bbf42b024. We are\r\nseeing the following error when building Python release artifacts in Windows:\r\n\" error LNK2038: mismatch detected for 'RuntimeLibrary': value\r\n'MD_DynamicRelease' doesn't match value 'MT_StaticRelease' in\r\ndescriptor.obj\"."
         },
         {
             "hash": "52b632cf27e0ac13a8d9b10a6bb9ecce1623f25c",
-            "message": "Update CHANGES.txt with 3.11.0-RC1 release notes (#6909)\n\n",
-            "tag_name": null
+            "message": "Update CHANGES.txt with 3.11.0-RC1 release notes (#6909)"
         },
         {
             "hash": "edda0c92f5fedec44a5b0ed0c376e15af655c410",
-            "message": "Persistent Descriptor Pool (#6899)\n\n* Make reserve names map persistent\r\n\r\n* Add DescriptorInternal to map\r\n\r\n* Use get_msgdef_desc in encode_decode.c\r\n\r\n* Add persistent map for ce=>def and enum=>def\r\n\r\n* Replace get_ce_obj\r\n\r\n* Remove get_proto_obj\r\n\r\n* Remove obsolete fields from Descriptor and EnumDescriptor\r\n\r\n* Add cache for descriptor php values\r\n\r\n* Add cache for descriptors\r\n\r\n* Fix bug\r\n\r\n* Avoid add generated file again if it has been added\r\n\r\n* Fix the bug upb depends on null-ended str for look up.\r\n\r\n* Initialize generated pool impl\r\n\r\n* Turn down old generated pool\r\n\r\n* Add init entry flag protobuf.keep_descriptor_pool_after_request\r\n\r\nBy default, it's off. Add protobuf.keep_descriptor_pool_after_request=1 to php.ini to enable it\r\n\r\n* Fix zts build\r\n",
-            "tag_name": null
+            "message": "Persistent Descriptor Pool (#6899)\n\n* Make reserve names map persistent\r\n\r\n* Add DescriptorInternal to map\r\n\r\n* Use get_msgdef_desc in encode_decode.c\r\n\r\n* Add persistent map for ce=>def and enum=>def\r\n\r\n* Replace get_ce_obj\r\n\r\n* Remove get_proto_obj\r\n\r\n* Remove obsolete fields from Descriptor and EnumDescriptor\r\n\r\n* Add cache for descriptor php values\r\n\r\n* Add cache for descriptors\r\n\r\n* Fix bug\r\n\r\n* Avoid add generated file again if it has been added\r\n\r\n* Fix the bug upb depends on null-ended str for look up.\r\n\r\n* Initialize generated pool impl\r\n\r\n* Turn down old generated pool\r\n\r\n* Add init entry flag protobuf.keep_descriptor_pool_after_request\r\n\r\nBy default, it's off. Add protobuf.keep_descriptor_pool_after_request=1 to php.ini to enable it\r\n\r\n* Fix zts build"
         },
         {
             "hash": "cd7b27be386290d9fbca89c7d52a51c2d1a8bf4c",
-            "message": "Update protobuf version (#6898)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version (#6898)"
         },
         {
             "hash": "4e93585e8bb234efeacb7737b8d080968c5ab91e",
-            "message": "Down integrate to GitHub (#6893)\n\n",
-            "tag_name": null
+            "message": "Down integrate to GitHub (#6893)"
         },
         {
             "hash": "bb0c5439343a01ffbe9542f80f5297a7aedaba3b",
-            "message": "Update Xcode version needed to run Kokoro tests and replace deprecated rubygem options (#6890)\n\n* Update Xcode version needed to run Kokoro tests\r\n\r\n* Replace deprecated --no-ri --no-rdoc rubygem options with --no-document\r\n",
-            "tag_name": null
+            "message": "Update Xcode version needed to run Kokoro tests and replace deprecated rubygem options (#6890)\n\n* Update Xcode version needed to run Kokoro tests\r\n\r\n* Replace deprecated --no-ri --no-rdoc rubygem options with --no-document"
         },
         {
             "hash": "601f6963eb203fb732dc95afc8898f707f4a9148",
-            "message": "Lazily Create Singular Wrapper Message (#6833)\n\n* Register additional handlers from wrappers\r\n\r\n* Return zval instead of parse frame\r\n\r\n* Use parse frame\r\n\r\n* Update upb\r\n\r\n* Lazily create wrapper messages\r\n\r\n* Fix a segment fault\r\n\r\nNeed check type of field before getting submsg def\r\n\r\n* Avoid expanding during serialization and direct access\r\n\r\n* Fix a bug that getXXXUnwrapped returns null for string\r\n\r\n* Implement writeWrapperUnwrapped\r\n\r\n* Add more tests\r\n\r\n* Fix oneof wrapper parsing\r\n\r\n* Fix get oneof field\r\n\r\n* Avoid expansion for oneof wrappers\r\n\r\n* Fix bug\r\n\r\n* Fix a bug that in php7 variable is defined out of scope\r\n\r\n* Fix broken tests\r\n * Update upb to fix Timestamp conformance tests\r\n * Fix segmentation fault for oneof wrapper fields\r\n\r\n* Fix encoding/decoding top level wrapper values\r\n\r\n* Add type checking for write wrapper value in php7\r\n\r\n* Fix zts build\r\n\r\n* Fix the bug that readWrapperValue uses parent message's layout to access wrapper value\r\n\r\n* Fix wrapper in map\r\n",
-            "tag_name": null
+            "message": "Lazily Create Singular Wrapper Message (#6833)\n\n* Register additional handlers from wrappers\r\n\r\n* Return zval instead of parse frame\r\n\r\n* Use parse frame\r\n\r\n* Update upb\r\n\r\n* Lazily create wrapper messages\r\n\r\n* Fix a segment fault\r\n\r\nNeed check type of field before getting submsg def\r\n\r\n* Avoid expanding during serialization and direct access\r\n\r\n* Fix a bug that getXXXUnwrapped returns null for string\r\n\r\n* Implement writeWrapperUnwrapped\r\n\r\n* Add more tests\r\n\r\n* Fix oneof wrapper parsing\r\n\r\n* Fix get oneof field\r\n\r\n* Avoid expansion for oneof wrappers\r\n\r\n* Fix bug\r\n\r\n* Fix a bug that in php7 variable is defined out of scope\r\n\r\n* Fix broken tests\r\n * Update upb to fix Timestamp conformance tests\r\n * Fix segmentation fault for oneof wrapper fields\r\n\r\n* Fix encoding/decoding top level wrapper values\r\n\r\n* Add type checking for write wrapper value in php7\r\n\r\n* Fix zts build\r\n\r\n* Fix the bug that readWrapperValue uses parent message's layout to access wrapper value\r\n\r\n* Fix wrapper in map"
         },
         {
             "hash": "f06800524f0fe0d2e71a2d3696ce7a5278836445",
-            "message": "Revert \"C# upgrade dotnet SDK (#6877)\" (#6888)\n\nThis reverts commit 0c8acb6c8d3de17acb09ba2fbd99a9aecd676336.",
-            "tag_name": null
+            "message": "Revert \"C# upgrade dotnet SDK (#6877)\" (#6888)\n\nThis reverts commit 0c8acb6c8d3de17acb09ba2fbd99a9aecd676336."
         },
         {
             "hash": "0c8acb6c8d3de17acb09ba2fbd99a9aecd676336",
-            "message": "C# upgrade dotnet SDK (#6877)\n\n* upgrade dotnet SDK\r\n\r\n* upgrade dotnet SDK version in global.json\r\n",
-            "tag_name": null
+            "message": "C# upgrade dotnet SDK (#6877)\n\n* upgrade dotnet SDK\r\n\r\n* upgrade dotnet SDK version in global.json"
         },
         {
             "hash": "9d61eada0f47d7be793983638c4a29707b192d0c",
-            "message": "Import MutableSequence from collections.abc on Python 3. (#6272)\n\nFixes https://github.com/protocolbuffers/protobuf/issues/5335.",
-            "tag_name": null
+            "message": "Import MutableSequence from collections.abc on Python 3. (#6272)\n\nFixes https://github.com/protocolbuffers/protobuf/issues/5335."
         },
         {
             "hash": "9b0fa3e7fbaf3463c3afa1c9ab111682108eeadb",
-            "message": "Remove java/lite/proguard.pgcfg from EXTRA_DIST since it's not part of\nprotoc.\n",
-            "tag_name": null
+            "message": "Remove java/lite/proguard.pgcfg from EXTRA_DIST since it's not part of\nprotoc."
         },
         {
             "hash": "df7197235872c6193dad97994db3dd7d35e52ee4",
-            "message": "Simplify template exporting macros\n",
-            "tag_name": null
+            "message": "Simplify template exporting macros"
         },
         {
             "hash": "394f5c8c0f82348a35764eeb1ca79e0336f5895c",
-            "message": "Whitelist newly added conformance test failures for Ruby, C#, and PHP\n",
-            "tag_name": null
+            "message": "Whitelist newly added conformance test failures for Ruby, C#, and PHP"
         },
         {
             "hash": "8edd68ea7576e03557f7fade2dd3372479f4883e",
-            "message": "Add proguard.pgcfg to EXTRA_DIST in Makefile.am\n",
-            "tag_name": null
+            "message": "Add proguard.pgcfg to EXTRA_DIST in Makefile.am"
         },
         {
             "hash": "58d4420e2dd8a3cd354fff9db0052881c25369ce",
-            "message": "Down Integrate Internal Changes\n",
-            "tag_name": null
+            "message": "Down Integrate Internal Changes"
         },
         {
             "hash": "6fc04c3f0e07857dff1f55b884f957b4c65aea8e",
-            "message": "Merge pull request #6832 from ObsidianMinor/csharp/test-overhaul\n\nMove generated test code for Google.Protobuf.Test to a separate lib",
-            "tag_name": null
+            "message": "Merge pull request #6832 from ObsidianMinor/csharp/test-overhaul\n\nMove generated test code for Google.Protobuf.Test to a separate lib"
         },
         {
             "hash": "cbafc68d9e7e4bb6cedf966fd6240fc27ebd5908",
-            "message": "Add project to Makefile.am\n",
-            "tag_name": null
+            "message": "Add project to Makefile.am"
         },
         {
             "hash": "b84929f7fbb775770e0afef58ef2b6081ab5eea5",
-            "message": "Rename .CodeGen to .TestProtos in Makefile and script\n",
-            "tag_name": null
+            "message": "Rename .CodeGen to .TestProtos in Makefile and script"
         },
         {
             "hash": "51fa766baa89f3e32362ff6f7a2571128b7b5a53",
-            "message": "Fix typos\nBring .NET Framework target down to 4.5\nRename project in comment\n",
-            "tag_name": null
+            "message": "Fix typos\nBring .NET Framework target down to 4.5\nRename project in comment"
         },
         {
             "hash": "a70c796988cdcb6185596ad50113e380dc357f8b",
-            "message": "Add project to solution\n",
-            "tag_name": null
+            "message": "Add project to solution"
         },
         {
             "hash": "8da87c620283d57e438dd330f2bea4a92e771e8d",
-            "message": "Rename Google.Protobuf.Test.CodeGen to Google.Protobuf.Test.TestProtos\n",
-            "tag_name": null
+            "message": "Rename Google.Protobuf.Test.CodeGen to Google.Protobuf.Test.TestProtos"
         },
         {
             "hash": "7e4be173ad42890ccdd7efb623f9f2d24a056bb4",
-            "message": "Move generated files in Makefile.am\n",
-            "tag_name": null
+            "message": "Move generated files in Makefile.am"
         },
         {
             "hash": "2bb49712aa6bdb17503c481c2bed52fe479515ad",
-            "message": "Add comment to summarize project\nSet lang version to C# 3.0\nAdd .NET Standard 2.0 target\nFix partial diagnostic string since it requires C# 6\n",
-            "tag_name": null
+            "message": "Add comment to summarize project\nSet lang version to C# 3.0\nAdd .NET Standard 2.0 target\nFix partial diagnostic string since it requires C# 6"
         },
         {
             "hash": "63780dfb281681a87203b7ce2ff2237725941a04",
-            "message": "Rebase on master\n",
-            "tag_name": null
+            "message": "Rebase on master"
         },
         {
             "hash": "a85c4a329917f641b98bf71723285ccae14f2a8f",
-            "message": "Move generated test code to a seperate lib\n",
-            "tag_name": null
+            "message": "Move generated test code to a seperate lib"
         },
         {
             "hash": "db586e466063fc300be53c6c5c53704c14165437",
-            "message": "Merge pull request #6856 from ObsidianMinor/csharp/propexpr\n\nChange _Extensions property to normal body rather than expression",
-            "tag_name": null
+            "message": "Merge pull request #6856 from ObsidianMinor/csharp/propexpr\n\nChange _Extensions property to normal body rather than expression"
         },
         {
             "hash": "c04a02774d2a748bc1e61c9eb5eb398c6a109b0e",
-            "message": "Change _Extensions property to normal body rather than expression\n",
-            "tag_name": null
+            "message": "Change _Extensions property to normal body rather than expression"
         },
         {
             "hash": "0150f7f5325a83d4804fcd89f29c72f574da8043",
-            "message": "Merge pull request #6843 from chrisdunelm/csharp_wrapper_primitive_opts\n\nC#: Optimize parsing of some primitive and wrapper types",
-            "tag_name": null
+            "message": "Merge pull request #6843 from chrisdunelm/csharp_wrapper_primitive_opts\n\nC#: Optimize parsing of some primitive and wrapper types"
         },
         {
             "hash": "d22eaded5c62e416907ad7f5035bf12a1e15f474",
-            "message": "Remove unneeded exception methods\n",
-            "tag_name": null
+            "message": "Remove unneeded exception methods"
         },
         {
             "hash": "2ac8946ee3666ecc9e72931fc6c2c8de63d3e9ae",
-            "message": "Allow extra fields in wrapper messages, more tests.\n",
-            "tag_name": null
+            "message": "Allow extra fields in wrapper messages, more tests."
         },
         {
             "hash": "e305e56cad7ae2ad70064e9eb7922b33556bd493",
-            "message": "C#: Optimize parsing of some primitive and wrapper types\n",
-            "tag_name": null
+            "message": "C#: Optimize parsing of some primitive and wrapper types"
         },
         {
             "hash": "4668a3323fda98c2301336ddfa6ed15a299a9a98",
-            "message": "Merge pull request #6836 from jtattermusch/csharp_wrappers_microbenchmark\n\nC#: Add microbenchmark for parsing wrapper types",
-            "tag_name": null
+            "message": "Merge pull request #6836 from jtattermusch/csharp_wrappers_microbenchmark\n\nC#: Add microbenchmark for parsing wrapper types"
         },
         {
             "hash": "3f810569b3885a77866960bbc2e2e777c21b9921",
-            "message": "update Makefile.am\n",
-            "tag_name": null
+            "message": "update Makefile.am"
         },
         {
             "hash": "b8b1b6793f25377fc43f11dd1cae45095279abd8",
-            "message": "add regenerate C# protos\n",
-            "tag_name": null
+            "message": "add regenerate C# protos"
         },
         {
             "hash": "85a87ed3cba4d634535768ab53fec23b0ba1338d",
-            "message": "add benchmark for wrapper type parsing\n",
-            "tag_name": null
+            "message": "add benchmark for wrapper type parsing"
         },
         {
             "hash": "c81bad1b04b3104dfa9a0ca30df9ae84b0555d54",
-            "message": "add wrapper_benchmark_messages.proto\n",
-            "tag_name": null
+            "message": "add wrapper_benchmark_messages.proto"
         },
         {
             "hash": "1ebae17b9415e62d29589a88892477cd44ddf074",
-            "message": "Merge pull request #6842 from jskeet/fix-makefile\n\nFix Makefile.am by adding generated files",
-            "tag_name": null
+            "message": "Merge pull request #6842 from jskeet/fix-makefile\n\nFix Makefile.am by adding generated files"
         },
         {
             "hash": "aa22aa32f3b2c9755b9e48d6963faff9703323f1",
-            "message": "Fix Makefile.am by adding generated files\n",
-            "tag_name": null
+            "message": "Fix Makefile.am by adding generated files"
         },
         {
             "hash": "9417a310d30ef2fa0b7e9770abcd987f9a5ffb92",
-            "message": "Merge pull request #6824 from jskeet/fix-extensions\n\nFix reflection access when using old generated code",
-            "tag_name": null
+            "message": "Merge pull request #6824 from jskeet/fix-extensions\n\nFix reflection access when using old generated code"
         },
         {
             "hash": "9b5fdb09380aa28aae2080aa0f5936e4100ab9d1",
-            "message": "Ignore incomplete extensions when building a FileDescriptor\n\nFileDescriptor construction uses an extension registry including extensions from imports. If these were created using an older version of protoc, the FieldDescriptor.Extension property may be null; we ignore such extensions rather than failing.\n",
-            "tag_name": null
+            "message": "Ignore incomplete extensions when building a FileDescriptor\n\nFileDescriptor construction uses an extension registry including extensions from imports. If these were created using an older version of protoc, the FieldDescriptor.Extension property may be null; we ignore such extensions rather than failing."
         },
         {
             "hash": "7581fd5ea62ddbc3777523ffe681b9b1975917cc",
-            "message": "Tests for issue 6822\n\n(The implementation to fix this is in the following commit.)\n",
-            "tag_name": null
+            "message": "Tests for issue 6822\n\n(The implementation to fix this is in the following commit.)"
         },
         {
             "hash": "e613ba6980cfe380510f085190949ac46e9e4b15",
-            "message": "Add braces around single-statement if/foreach\n",
-            "tag_name": null
+            "message": "Add braces around single-statement if/foreach"
         },
         {
             "hash": "4252b7aff3ac38d09b7ea6dba3b603d71561330c",
-            "message": "Fix broken javadoc generation for repeated enum values\n",
-            "tag_name": null
+            "message": "Fix broken javadoc generation for repeated enum values"
         },
         {
             "hash": "fc7c65a258172e5e6fdb7b914b5aee8fd808b643",
-            "message": "Update six.BUILD",
-            "tag_name": null
+            "message": "Update six.BUILD"
         },
         {
             "hash": "3581ee24e98eee66aef442590f61ff4726de3bd8",
-            "message": "Update six.BUILD",
-            "tag_name": null
+            "message": "Update six.BUILD"
         },
         {
             "hash": "e907a8781d7fcec5f95a04fe19eedf23d7396f34",
-            "message": "Update protobuf_deps.bzl",
-            "tag_name": null
+            "message": "Update protobuf_deps.bzl"
         },
         {
             "hash": "29d650aefbba4fcb47d44d9ef3399baefa60f993",
-            "message": "[bazel] Add `strip_prefix` to download of @six\n\nThis way, we can avoid an unnecessary copy.\n",
-            "tag_name": null
+            "message": "[bazel] Add `strip_prefix` to download of @six\n\nThis way, we can avoid an unnecessary copy."
         },
         {
             "hash": "342a2d627c023dfe5dcf1c9d9fd014338a0665be",
-            "message": "Merge pull request #6752 from rafi-kamal/201910111201\n\nDown integrate Google3 changes to Github",
-            "tag_name": null
+            "message": "Merge pull request #6752 from rafi-kamal/201910111201\n\nDown integrate Google3 changes to Github"
         },
         {
             "hash": "5e6d57bd8ce6d5fa8fffb6ed84634e98adba9391",
-            "message": "Merge branch '201910111201' of https://github.com/rafi-kamal/protobuf into 201910111201\n",
-            "tag_name": null
+            "message": "Merge branch '201910111201' of https://github.com/rafi-kamal/protobuf into 201910111201"
         },
         {
             "hash": "27c1defe3519b383c4910c7f8a858a4c9437952c",
-            "message": "Merge branch 'master' into 201910111201",
-            "tag_name": null
+            "message": "Merge branch 'master' into 201910111201"
         },
         {
             "hash": "d8e678aae4c77e32fe5e8e92046eb66f74dfd269",
-            "message": "Merge pull request #6728 from protocolbuffers/3.10.x-merge\n\nMerge 3.10.x with master and increment the version number",
-            "tag_name": null
+            "message": "Merge pull request #6728 from protocolbuffers/3.10.x-merge\n\nMerge 3.10.x with master and increment the version number"
         },
         {
             "hash": "000a8d09023bb016c88a98e917b208fa2adcd059",
-            "message": "Removed unnecessary conflict files\n",
-            "tag_name": null
+            "message": "Removed unnecessary conflict files"
         },
         {
             "hash": "2ed41359fe2881dfadaac737a690c631685f5e1b",
-            "message": "Update version to 3.11.0-RC0\n",
-            "tag_name": null
+            "message": "Update version to 3.11.0-RC0"
         },
         {
             "hash": "97c7c3fc97b4b4b4213b1697ef0b6e8af05dff71",
-            "message": "Merge 3.10.x to master\n",
-            "tag_name": null
+            "message": "Merge 3.10.x to master"
         },
         {
             "hash": "a32c2d030674ad5913cbc6ac3f65f6bce2f688c2",
-            "message": "Initialize well known type values (#6713)\n\n* Initialize well known type values\r\n\r\nAlso fixes #6667\r\n\r\n* Revert unwanted change\r\n",
-            "tag_name": null
+            "message": "Initialize well known type values (#6713)\n\n* Initialize well known type values\r\n\r\nAlso fixes #6667\r\n\r\n* Revert unwanted change"
         },
         {
             "hash": "f4ceaecf682318d86ad959719767f230ce1ee38e",
-            "message": "Updated deprecation macros to annotate deprecated code\n",
-            "tag_name": null
+            "message": "Updated deprecation macros to annotate deprecated code"
         },
         {
             "hash": "0d1d92d339b693a035ae962d41146325ff848ceb",
-            "message": "Revert \"Update signatures of UTF-8 string functions to accept size_t type sizes\"\n\nThis reverts commit 911e3040fa597e6a82351375d9eb416a6d3fae3a.\n",
-            "tag_name": null
+            "message": "Revert \"Update signatures of UTF-8 string functions to accept size_t type sizes\"\n\nThis reverts commit 911e3040fa597e6a82351375d9eb416a6d3fae3a."
         },
         {
             "hash": "00325ed97b81ae892ecc3dd12368ce13e6f76a46",
-            "message": "Update signatures of UTF-8 string functions to accept size_t type sizes\n",
-            "tag_name": null
+            "message": "Update signatures of UTF-8 string functions to accept size_t type sizes"
         },
         {
             "hash": "a4301ca6eb5f23d9010e8155cd654ecf51868182",
-            "message": "Cast size_t type to int type explicitly\n\nCurrently, the generated header file might cause warnings if user specifies `-Wconversion` compiler option. This commit should be able to fix it.",
-            "tag_name": null
+            "message": "Cast size_t type to int type explicitly\n\nCurrently, the generated header file might cause warnings if user specifies `-Wconversion` compiler option. This commit should be able to fix it."
         },
         {
             "hash": "11a5b035da6985bb25dadb2af0d98af0a86dcf39",
-            "message": "Update README.md (#6708)\n\n* Update README.md\r\n\r\nFixed spelling error\r\n\r\n* Update README.md\r\n",
-            "tag_name": null
+            "message": "Update README.md (#6708)\n\n* Update README.md\r\n\r\nFixed spelling error\r\n\r\n* Update README.md"
         },
         {
             "hash": "97b18021f675333d2fde67fb13508c90a4654837",
-            "message": "Remove unused function and add more UTs\n\nWhen browsing around the strutil files I found a function\nthat was never referenced inside the code base\n\"void StripString(string* s, const char* remove,\n-                                 char replacewith);\"\n\nThe name was kind of misleading as well and it seems like\nit's a carbon copy of\n\"void ReplaceCharacters(string* s, const char* remove,\n                                       char replacewith);\"\n(even the parameter names are the same, the code is the same..)\n\nIs it intentional? Maybe for compatibility reasons? If so,\nlet's make it deprecated and use the ReplaceCharacters method inside\nor the other way around.\n\nAlso, noticed there were no tests for \"StripString\" or \"Replace\".\nAdded some for both and planning on maybe making it more C++ish (?)\nin another commit.\n",
-            "tag_name": null
+            "message": "Remove unused function and add more UTs\n\nWhen browsing around the strutil files I found a function\nthat was never referenced inside the code base\n\"void StripString(string* s, const char* remove,\n-                                 char replacewith);\"\n\nThe name was kind of misleading as well and it seems like\nit's a carbon copy of\n\"void ReplaceCharacters(string* s, const char* remove,\n                                       char replacewith);\"\n(even the parameter names are the same, the code is the same..)\n\nIs it intentional? Maybe for compatibility reasons? If so,\nlet's make it deprecated and use the ReplaceCharacters method inside\nor the other way around.\n\nAlso, noticed there were no tests for \"StripString\" or \"Replace\".\nAdded some for both and planning on maybe making it more C++ish (?)\nin another commit."
         },
         {
             "hash": "95a1c4fbc4b91acbf17ea168352c1b67ae69369e",
-            "message": "Fix #6098\n",
-            "tag_name": null
+            "message": "Fix #6098"
         },
         {
             "hash": "f4a3e0610100c087654c6c64f40c1b600d52a84d",
-            "message": "Add option for dart",
-            "tag_name": null
+            "message": "Add option for dart"
         },
         {
             "hash": "66bae588dd6d701f63a383ab474c6cdf263f6757",
-            "message": "Add document for php development (#6694)\n\n* Add document for php development\r\n\r\n* Fix comments\r\n",
-            "tag_name": null
+            "message": "Add document for php development (#6694)\n\n* Add document for php development\r\n\r\n* Fix comments"
         },
         {
             "hash": "9a0c848108106067dc98e7982848cded9b9c72b3",
-            "message": "Merge pull request #6701 from elharo/patch-4\n\nUpdate Java Readme to 3.9.2",
-            "tag_name": null
+            "message": "Merge pull request #6701 from elharo/patch-4\n\nUpdate Java Readme to 3.9.2"
         },
         {
             "hash": "e157c5b9beb026c590a1231d02a58ad4f50dfe66",
-            "message": "Update to 3.9.2\n\n3.9.2 is on the Githib releases page.",
-            "tag_name": null
+            "message": "Update to 3.9.2\n\n3.9.2 is on the Githib releases page."
         },
         {
             "hash": "b9f405ae46036860a4e73e167bee3800dfe53a9e",
-            "message": "Removed unused-parameter warning\n",
-            "tag_name": null
+            "message": "Removed unused-parameter warning"
         },
         {
             "hash": "4702ba904318ef5b29a197454c7356bae82d4940",
-            "message": "Remove OSReadLittle* due to alignment requirements (#6678)\n\nThe OSReadLittleInt64 function as defined by Apple reduces down to:\r\n\r\n`return *(volatile uint64_t *)((uintptr_t)base + byteOffset);`\r\n\r\nwhich means we are type-punning using a cast. On ARMv7 and other aligned architectures this can cause crashes. \r\nMinimal example: https://gist.github.com/dmaclach/b10b0a71ae614d304c067cb9bd264336\r\n\r\nFixes #6679 \r\n",
-            "tag_name": null
+            "message": "Remove OSReadLittle* due to alignment requirements (#6678)\n\nThe OSReadLittleInt64 function as defined by Apple reduces down to:\r\n\r\n`return *(volatile uint64_t *)((uintptr_t)base + byteOffset);`\r\n\r\nwhich means we are type-punning using a cast. On ARMv7 and other aligned architectures this can cause crashes. \r\nMinimal example: https://gist.github.com/dmaclach/b10b0a71ae614d304c067cb9bd264336\r\n\r\nFixes #6679"
         },
         {
             "hash": "5846439713812c124615fce3ccce624be68af931",
-            "message": "[ObjC] Don't use unions and instead use memcpy for the type swaps. (#6672)\n\nThe code in question hasn't change in a long time so the cause of\r\nhttps://github.com/firebase/firebase-ios-sdk/issues/3851 still appears to be\r\nan Xcode 11 clang change/bug; but this does appear to be slightly better\r\ncode for the work being done.\r\n\r\nCleanup along the way for #6679 \r\n",
-            "tag_name": null
+            "message": "[ObjC] Don't use unions and instead use memcpy for the type swaps. (#6672)\n\nThe code in question hasn't change in a long time so the cause of\r\nhttps://github.com/firebase/firebase-ios-sdk/issues/3851 still appears to be\r\nan Xcode 11 clang change/bug; but this does appear to be slightly better\r\ncode for the work being done.\r\n\r\nCleanup along the way for #6679"
         },
         {
             "hash": "378231756f5290554b56aebb36f88eb31a0f4b21",
-            "message": "Merge pull request #6669 from ObsidianMinor/csharp/fix-comments\n\nFix incorrect Proto2 C# doc comments",
-            "tag_name": null
+            "message": "Merge pull request #6669 from ObsidianMinor/csharp/fix-comments\n\nFix incorrect Proto2 C# doc comments"
         },
         {
             "hash": "c54ff8d0dcbc6d7b7792df04829c279ad359a549",
-            "message": "Fix many proto2 C# doc comments\n",
-            "tag_name": null
+            "message": "Fix many proto2 C# doc comments"
         },
         {
             "hash": "2a4657971d654d30f208ee1c5acb85a989d71591",
-            "message": "Update to 3.10.0-rc0 (#6660)\n\n* Cherry pick changes on update_version.py #6643\r\n\r\n* Update version to 3.10.0-rc-0\r\n\r\n* Do not add rc0 to php packages.xml\r\n",
-            "tag_name": null
+            "message": "Update to 3.10.0-rc0 (#6660)\n\n* Cherry pick changes on update_version.py #6643\r\n\r\n* Update version to 3.10.0-rc-0\r\n\r\n* Do not add rc0 to php packages.xml"
         },
         {
             "hash": "a77412892ce4bd90ccbeebfe4658aaebbc024add",
-            "message": "Merge pull request #6656 from m0hamed/fix_export\n\nSimplify template exporting macros",
-            "tag_name": null
+            "message": "Merge pull request #6656 from m0hamed/fix_export\n\nSimplify template exporting macros"
         },
         {
             "hash": "4d034fecfc4a570363eaac27776acecf7c56eb25",
-            "message": "Simplify template exporting macros\n",
-            "tag_name": null
+            "message": "Simplify template exporting macros"
         },
         {
             "hash": "763c3588740b97e8e80b1b1a1a2dc4f417647133",
-            "message": "Down Integrate Internal Changes (#6634)\n\n* Down integrate to GitHub\r\n\r\n* Remove unintentional double assign\r\n\r\n* Change ByteCountInt64 to int64_t\r\n\r\n* Revert changes in binary_conformance_test.cc\r\n\r\n* Revert unnecessary changes\r\n",
-            "tag_name": null
+            "message": "Down Integrate Internal Changes (#6634)\n\n* Down integrate to GitHub\r\n\r\n* Remove unintentional double assign\r\n\r\n* Change ByteCountInt64 to int64_t\r\n\r\n* Revert changes in binary_conformance_test.cc\r\n\r\n* Revert unnecessary changes"
         },
         {
             "hash": "580f585f584751080f89c61d82966920c0ccbe1a",
-            "message": "add kotlin kroto plus",
-            "tag_name": null
+            "message": "add kotlin kroto plus"
         },
         {
             "hash": "8e6141a63dd2c54baff48d284bdede6a9ec56266",
-            "message": "[csharp] Fix typo\n",
-            "tag_name": null
+            "message": "[csharp] Fix typo"
         },
         {
             "hash": "d5fbdb45b06955e87f25e94560056d51c03a5893",
-            "message": "Added pbtools to third party implementations list.\n",
-            "tag_name": null
+            "message": "Added pbtools to third party implementations list."
         },
         {
             "hash": "bdf32b9a1799cf59cdc19813b2aa7da03accfd11",
-            "message": "Merge pull request #6629 from Geod24/patch-1\n\nRemove duplicate entry in third party list",
-            "tag_name": null
+            "message": "Merge pull request #6629 from Geod24/patch-1\n\nRemove duplicate entry in third party list"
         },
         {
             "hash": "c656d76894efa53fddc8fd60c10328c6a8c45e27",
-            "message": "Remove duplicate entry in third party list\n\nOn the linked Wiki page, it can be seen that the creator is `opticron`, whose Github repository is also linked, and contains a more up-to-date implementation.",
-            "tag_name": null
+            "message": "Remove duplicate entry in third party list\n\nOn the linked Wiki page, it can be seen that the creator is `opticron`, whose Github repository is also linked, and contains a more up-to-date implementation."
         },
         {
             "hash": "1363bf9c051af36c555c23d734a204246c215697",
-            "message": "Merge pull request #6628 from suztomo/linakge_monitor_fix\n\nLinakge Monitor fix to handle a new version of protobuf-bom not available in Maven Central",
-            "tag_name": null
+            "message": "Merge pull request #6628 from suztomo/linakge_monitor_fix\n\nLinakge Monitor fix to handle a new version of protobuf-bom not available in Maven Central"
         },
         {
             "hash": "c1a046528cd4ca59b74a75df7b2f5911c4607214",
-            "message": "MVN\n",
-            "tag_name": null
+            "message": "MVN"
         },
         {
             "hash": "f460c178fec1f20d9f808ad6f94d3dd1989db969",
-            "message": "Local install before changing version\n",
-            "tag_name": null
+            "message": "Local install before changing version"
         },
         {
             "hash": "7f520092d9050d96fb4b707ad11a51701af4ce49",
-            "message": "Sync upb (#6614)\n\n* Sync upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/209\r\n\r\n* Update upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/210\r\n",
-            "tag_name": null
+            "message": "Sync upb (#6614)\n\n* Sync upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/209\r\n\r\n* Update upb\r\n\r\nhttps://github.com/protocolbuffers/upb/pull/210"
         },
         {
             "hash": "dc974d22c56de4ba90fff205aa3522df74fa6232",
-            "message": "Fix small style issues in the dart example, following Effective Dart:\n\n- use final instead of obvious types for local variables\n- add missing `void` return type\n- make the comments doccomments (///)\n",
-            "tag_name": null
+            "message": "Fix small style issues in the dart example, following Effective Dart:\n\n- use final instead of obvious types for local variables\n- add missing `void` return type\n- make the comments doccomments (///)"
         },
         {
             "hash": "929a72d67c5fb1030a58260590d47320a0b2dbd8",
-            "message": "Fix up simple typo: invididual -> individual\n",
-            "tag_name": null
+            "message": "Fix up simple typo: invididual -> individual"
         },
         {
             "hash": "f74b56007249e6c542b00e616eab1f058cf70aed",
-            "message": "Enable PROTOBUF_EXPORT/PROTOBUF_USE_DLL on clang/gcc\n",
-            "tag_name": null
+            "message": "Enable PROTOBUF_EXPORT/PROTOBUF_USE_DLL on clang/gcc"
         },
         {
             "hash": "5102df29047570777408c86d4c178507feaa7b14",
-            "message": "Add Protojure to third-party wiki (#6554)\n\nThis adds links under the Clojure header to\r\n\r\nhttps://protojure.github.io\r\n\r\nSigned-off-by: Greg Haskins <gregory.haskins@gmail.com>",
-            "tag_name": null
+            "message": "Add Protojure to third-party wiki (#6554)\n\nThis adds links under the Clojure header to\r\n\r\nhttps://protojure.github.io\r\n\r\nSigned-off-by: Greg Haskins <gregory.haskins@gmail.com>"
         },
         {
             "hash": "ce942bcae1b92b4d8a0b3a5bb4a79663f4de0e5b",
-            "message": "Add binary conformance tests for map fields (#6560)\n\n* Add binary conformance tests for map fields\r\n\r\n* Update failure list\r\n\r\n* Fix php conformance test\r\n\r\n* Fix php conformance test\r\n\r\nIn 32-bit platform, int64 should be string. However, map iterator returns string key as integer.\r\n\r\n* Add more test cases for map\r\n\r\n* Update failure list\r\n",
-            "tag_name": null
+            "message": "Add binary conformance tests for map fields (#6560)\n\n* Add binary conformance tests for map fields\r\n\r\n* Update failure list\r\n\r\n* Fix php conformance test\r\n\r\n* Fix php conformance test\r\n\r\nIn 32-bit platform, int64 should be string. However, map iterator returns string key as integer.\r\n\r\n* Add more test cases for map\r\n\r\n* Update failure list"
         },
         {
             "hash": "e2f5da65ee07093ca1d0ae8d1f8f23e41afa93bd",
-            "message": "C#: add System.Memory dependency for net45 too (#6317)\n\n* introduce GOOGLE_PROTOBUF_SUPPORT_SYSTEM_MEMORY\r\n\r\n* allow building net45 target on unix systems too\r\n\r\n* add Span<> support on net45 as well\r\n",
-            "tag_name": null
+            "message": "C#: add System.Memory dependency for net45 too (#6317)\n\n* introduce GOOGLE_PROTOBUF_SUPPORT_SYSTEM_MEMORY\r\n\r\n* allow building net45 target on unix systems too\r\n\r\n* add Span<> support on net45 as well"
         },
         {
             "hash": "94cbf009e934d45ee6fc1441ff9b56df9b314b3b",
-            "message": "Merge pull request #6499 from ObsidianMinor/csharp/proto2-feature/docs\n\nDocument proto2 feature implementations in Google.Protobuf",
-            "tag_name": null
+            "message": "Merge pull request #6499 from ObsidianMinor/csharp/proto2-feature/docs\n\nDocument proto2 feature implementations in Google.Protobuf"
         },
         {
             "hash": "c920715cf580bab883500c7f6724fbf89e4c2171",
-            "message": "Remove wording indicating proto2 support is reimplemented",
-            "tag_name": null
+            "message": "Remove wording indicating proto2 support is reimplemented"
         },
         {
             "hash": "c9a981807580a3c08d1289614d8f9ad6e8e9d84c",
-            "message": "Update proto2.md\n\nReworded info about message initialization",
-            "tag_name": null
+            "message": "Update proto2.md\n\nReworded info about message initialization"
         },
         {
             "hash": "7feb16a377bb540543ba490b8b2256d3c53b65ef",
-            "message": "Update proto2.md\n\nAddressed review comments",
-            "tag_name": null
+            "message": "Update proto2.md\n\nAddressed review comments"
         },
         {
             "hash": "54a3d8e7efb0cd67e005778ea52f257743ed3dc4",
-            "message": "Add proto2 doc\n",
-            "tag_name": null
+            "message": "Add proto2 doc"
         },
         {
             "hash": "37bf540fd05bae1ee1da37343f8a1f1e7bdfc419",
-            "message": "Merge pull request #5936 from ObsidianMinor/csharp/proto2-feature/finale\n\nC# Proto2 feature : Finale",
-            "tag_name": null
+            "message": "Merge pull request #5936 from ObsidianMinor/csharp/proto2-feature/finale\n\nC# Proto2 feature : Finale"
         },
         {
             "hash": "4d5ae5b4a4b184def86c0cc4efb4980cf3d44f41",
-            "message": "Use proto2 and proto3 in unknown field tests\n",
-            "tag_name": null
+            "message": "Use proto2 and proto3 in unknown field tests"
         },
         {
             "hash": "bdc6cd1d0bbe49e2b2cb3b06a71c7d9c320cdb29",
-            "message": "Expose Extension field in FieldDescriptor\n",
-            "tag_name": null
+            "message": "Expose Extension field in FieldDescriptor"
         },
         {
             "hash": "6da14fa94dfc4c3ff9290e1f3b34e6bdb54faff7",
-            "message": "Add GeneratedMessageTest.Proto2.cs to EXTRA_DIST\n",
-            "tag_name": null
+            "message": "Add GeneratedMessageTest.Proto2.cs to EXTRA_DIST"
         },
         {
             "hash": "0436b8db856204d23d0980bfe7b2f87dc269bc2c",
-            "message": "GetOrRegisterExtension -> GetOrInitializeExtension\nAdd comment explaining IExtensionMessage instability\n",
-            "tag_name": null
+            "message": "GetOrRegisterExtension -> GetOrInitializeExtension\nAdd comment explaining IExtensionMessage instability"
         },
         {
             "hash": "c5fa0e08c759c75b02910acf0ed58e45d9bffe0c",
-            "message": "Fix comment on IExtendableMessage.GetOrRegisterExtension\n",
-            "tag_name": null
+            "message": "Fix comment on IExtendableMessage.GetOrRegisterExtension"
         },
         {
             "hash": "79cf8a8baeef406fba615580e5d06fc44389ee4f",
-            "message": "Fix readability in FieldCodec.ForMessage/Group factories\n",
-            "tag_name": null
+            "message": "Fix readability in FieldCodec.ForMessage/Group factories"
         },
         {
             "hash": "3237ad39f810e30b2bcc797460086e8bbc5565bb",
-            "message": "Rename ExtensionRegistry.Add(IEnumerable<Extension>) overload to AddRange\n",
-            "tag_name": null
+            "message": "Rename ExtensionRegistry.Add(IEnumerable<Extension>) overload to AddRange"
         },
         {
             "hash": "930db675ca010b09372e92df107a739d06e36ad0",
-            "message": "Revert changes for FieldPresenceAccessor\n",
-            "tag_name": null
+            "message": "Revert changes for FieldPresenceAccessor"
         },
         {
             "hash": "29141f482c52504b995f625e3744c8f0b7c2dc3d",
-            "message": "Fix default extension values being unused in FieldCodec\n",
-            "tag_name": null
+            "message": "Fix default extension values being unused in FieldCodec"
         },
         {
             "hash": "47f2017cf3880821727deb5c12c9b850b01fca9c",
-            "message": "Review changes\n * Add Syntax enum and make file syntax checks check the enum\n * Made IsPacked a normal get method without ternary op\n * Moved IFieldAccessor.HasValue to IFieldPresenceAccessor\n * Change naming of GetIsExtensionsInitialized\n * Fixed stray text in summary text\n",
-            "tag_name": null
+            "message": "Review changes\n * Add Syntax enum and make file syntax checks check the enum\n * Made IsPacked a normal get method without ternary op\n * Moved IFieldAccessor.HasValue to IFieldPresenceAccessor\n * Change naming of GetIsExtensionsInitialized\n * Fixed stray text in summary text"
         },
         {
             "hash": "29d5186867cef4cce9b434a63698288daa8bb7db",
-            "message": "Regenerate testprotos.pb\n",
-            "tag_name": null
+            "message": "Regenerate testprotos.pb"
         },
         {
             "hash": "2b9d0fdfba4659ddac8211d7dcb63004882e1f54",
-            "message": "Add missing files to Makefile.am\n",
-            "tag_name": null
+            "message": "Add missing files to Makefile.am"
         },
         {
             "hash": "6b90ac13e07e619881c627d880215f677c6b6b1c",
-            "message": "Reorganize some tests\n",
-            "tag_name": null
+            "message": "Reorganize some tests"
         },
         {
             "hash": "bf4f6c5431aaf54a5c19d16b08b31c6f1b4fc23f",
-            "message": "Make extension reflection helper use GetOrRegisterExtension\n",
-            "tag_name": null
+            "message": "Make extension reflection helper use GetOrRegisterExtension"
         },
         {
             "hash": "9163a6f1ade17573f82295d18666918340916822",
-            "message": "Add tests for extension accessor\n",
-            "tag_name": null
+            "message": "Add tests for extension accessor"
         },
         {
             "hash": "0c80570a8b104443ded4f230fc607c797abdff34",
-            "message": "Add ExtensionSet tests and add checks that non-message extension fields don't fail initialization checks\n",
-            "tag_name": null
+            "message": "Add ExtensionSet tests and add checks that non-message extension fields don't fail initialization checks"
         },
         {
             "hash": "f4cfd2def3941402f3531a55b52915e5e2f9cc4f",
-            "message": "Remove dead HasValue code for ExtensionValue and add null-checks to ExtensionSet.Set\n",
-            "tag_name": null
+            "message": "Remove dead HasValue code for ExtensionValue and add null-checks to ExtensionSet.Set"
         },
         {
             "hash": "8dc69ede45431d8e87ada404e3dab0fa0de5b1a7",
-            "message": "Remove unnecessary check in GetIsExtensionsInitialized\n",
-            "tag_name": null
+            "message": "Remove unnecessary check in GetIsExtensionsInitialized"
         },
         {
             "hash": "b78330b21df8a53eee60f1b89d0cd515b90ca488",
-            "message": "Fix RepeatedExtensionValue.IsInitialized\n",
-            "tag_name": null
+            "message": "Fix RepeatedExtensionValue.IsInitialized"
         },
         {
             "hash": "ebf0bfaed8bfc897874ebf0d981bf14327b1bfa8",
-            "message": "Add private \"_Extensions\" property to speed up IsInitialized checks\n",
-            "tag_name": null
+            "message": "Add private \"_Extensions\" property to speed up IsInitialized checks"
         },
         {
             "hash": "134242bc4635d5370948043d29780ba9168e2d50",
-            "message": "Change input message to UnknownFieldSet tests to proto2 test message to test groups.\n",
-            "tag_name": null
+            "message": "Change input message to UnknownFieldSet tests to proto2 test message to test groups."
         },
         {
             "hash": "cd6553542302212e37b5760bd6ae6edc7ec48305",
-            "message": "Added group roundtrip tests and fixed any issues discovered\n",
-            "tag_name": null
+            "message": "Added group roundtrip tests and fixed any issues discovered"
         },
         {
             "hash": "011427c9d8c350d770ba9f678c181ac6abc366b9",
-            "message": "Fix issues from interactive rebase and regenerate code\n",
-            "tag_name": null
+            "message": "Fix issues from interactive rebase and regenerate code"
         },
         {
             "hash": "5b2f2c52923fbed92d9527fad19cca1e42300c76",
-            "message": "file descriptors and the syntax field are really weird with proto2\n",
-            "tag_name": null
+            "message": "file descriptors and the syntax field are really weird with proto2"
         },
         {
             "hash": "8e917d1688d5a7d2f36a42c253733fd9dff8048b",
-            "message": "Added FieldDescriptor.IsExtension and sealed ExtensionCollection\n",
-            "tag_name": null
+            "message": "Added FieldDescriptor.IsExtension and sealed ExtensionCollection"
         },
         {
             "hash": "8b7fb7d0f4fdcc4ad1d6b917b592226c5dd9f4ce",
-            "message": "Add tests for field presence and default values\nAdjust APIs for extensions to properly return default values for extensions\nFix issues with IsInitialized and proto2 field reflection\n",
-            "tag_name": null
+            "message": "Add tests for field presence and default values\nAdjust APIs for extensions to properly return default values for extensions\nFix issues with IsInitialized and proto2 field reflection"
         },
         {
             "hash": "a976158b1cf345da7bf335e33d7a85ddf75ea5d5",
-            "message": "Fix incorrect code gen for string fields with default values\n",
-            "tag_name": null
+            "message": "Fix incorrect code gen for string fields with default values"
         },
         {
             "hash": "8a57ec847b0213791dd586ab3c554e1e49513825",
-            "message": "Add test protos to test project\nFix generated group code missing end group tag case\nFix generated field classes searching for presence index for extensions\n",
-            "tag_name": null
+            "message": "Add test protos to test project\nFix generated group code missing end group tag case\nFix generated field classes searching for presence index for extensions"
         },
         {
             "hash": "6e7c43fc682c4d440395c4d906eb8d51be973e58",
-            "message": "Add checks to make sure values retrieved from CustomOptions match extension values\n",
-            "tag_name": null
+            "message": "Add checks to make sure values retrieved from CustomOptions match extension values"
         },
         {
             "hash": "43619bb6b23a4a8a889b21de96a12bbcecbb5ac4",
-            "message": "Uncomment option code in OneofDescriptor\n",
-            "tag_name": null
+            "message": "Uncomment option code in OneofDescriptor"
         },
         {
             "hash": "03872044b1bab86be556bb1d5a5a5dddda2ead76",
-            "message": "Make extension container classes public and modify conformance to test proto2 messages\n",
-            "tag_name": null
+            "message": "Make extension container classes public and modify conformance to test proto2 messages"
         },
         {
             "hash": "05712c6791d959c73d059d255ec3ab316d8ab922",
-            "message": "Reapply custom option accessors from previous PR along with CustomOptions accessor deprecations\n",
-            "tag_name": null
+            "message": "Reapply custom option accessors from previous PR along with CustomOptions accessor deprecations"
         },
         {
             "hash": "4be0394686c5bb7440e73d8d55de9910df273618",
-            "message": "Remove proto2 check from generator\n",
-            "tag_name": null
+            "message": "Remove proto2 check from generator"
         },
         {
             "hash": "5caa44e0564bae42e00900c73c20e0ec2c76b058",
-            "message": "Remove internal constraint on descriptor proto\n",
-            "tag_name": null
+            "message": "Remove internal constraint on descriptor proto"
         },
         {
             "hash": "7114d73dea3daeb88b378f53380b46a94beb05ae",
-            "message": "Implement binary conformance test for oneof fields (#6622)\n\n* Implement binary conformance test for oneof fields\r\n\r\n* Update failure list\r\n\r\n* Update failure list for php c extension\r\n",
-            "tag_name": null
+            "message": "Implement binary conformance test for oneof fields (#6622)\n\n* Implement binary conformance test for oneof fields\r\n\r\n* Update failure list\r\n\r\n* Update failure list for php c extension"
         },
         {
             "hash": "2dec82e1e05141e9b14972880ce15976a2477719",
-            "message": "Fix conformance test (#6750)\n\n* Fix conformance test\r\n\r\nDefault value of string/message map is not encoded\r\n\r\n* Fix zts build\r\n",
-            "tag_name": null
+            "message": "Fix conformance test (#6750)\n\n* Fix conformance test\r\n\r\nDefault value of string/message map is not encoded\r\n\r\n* Fix zts build"
         },
         {
             "hash": "7efcc0466c31e18842d612b1a70cec3f1c9bfb23",
-            "message": "Change Protobuf BOM license from Apache to BSD",
-            "tag_name": null
+            "message": "Change Protobuf BOM license from Apache to BSD"
         },
         {
             "hash": "e0441b2f28bbdc36667f55d3fdb7494eb8708558",
-            "message": "export third_party BUILD files so they are accessible to users\n",
-            "tag_name": null
+            "message": "export third_party BUILD files so they are accessible to users"
         },
         {
             "hash": "5c11b412503453d3c1e155586623da8c7b9aa208",
-            "message": "Improve the grammar of the unused import message.\n",
-            "tag_name": null
+            "message": "Improve the grammar of the unused import message."
         },
         {
             "hash": "6c92f9dff1807c142edf6780d775b58a3b078591",
-            "message": "Down integrate to GitHub\n",
-            "tag_name": null
+            "message": "Down integrate to GitHub"
         },
         {
             "hash": "80734b2e1afe75602101bdc936173b3ae3a58ee8",
-            "message": "Reverted changes in conformance/failure_list_js.txt\n",
-            "tag_name": null
+            "message": "Reverted changes in conformance/failure_list_js.txt"
         },
         {
             "hash": "2fc88527e0a1db37fca3e949326cdc2d3e0fbc43",
-            "message": "c++ remove warning switch contains default but no case\n",
-            "tag_name": null
+            "message": "c++ remove warning switch contains default but no case"
         },
         {
             "hash": "3f4f3152664dba8fecd88afa529d45b4222b7b7f",
-            "message": "Merge pull request #6783 from suztomo/install_bom\n\nInstalling BOM before running Java test",
-            "tag_name": null
+            "message": "Merge pull request #6783 from suztomo/install_bom\n\nInstalling BOM before running Java test"
         },
         {
             "hash": "ca25badcbec5ef2d3bae5308012f915c04889fc2",
-            "message": "Installing BOM before running Java test\n",
-            "tag_name": null
+            "message": "Installing BOM before running Java test"
         },
         {
             "hash": "c08b7512cf9d65899e8e84edd02d4335a64b11b0",
-            "message": "Merge pull request #6759 from ObsidianMinor/csharp/extension-length-checks\n\nAdd length checks to ExtensionCollection",
-            "tag_name": null
+            "message": "Merge pull request #6759 from ObsidianMinor/csharp/extension-length-checks\n\nAdd length checks to ExtensionCollection"
         },
         {
             "hash": "f50bc62febd05a2e0a8b91886258323c3fd7fa04",
-            "message": "Add length checks to ExtensionCollection\n",
-            "tag_name": null
+            "message": "Add length checks to ExtensionCollection"
         },
         {
             "hash": "912d8195dad66d158fed2c9dc38a039448f3f43e",
-            "message": "c++ remove unused parameters\n",
-            "tag_name": null
+            "message": "c++ remove unused parameters"
         },
         {
             "hash": "6f0f382d5641b8632a05c3d27174e475f76f3f31",
-            "message": "c++ remove conversion warning in MapEntryFuncs::ByteSizeLong\n",
-            "tag_name": null
+            "message": "c++ remove conversion warning in MapEntryFuncs::ByteSizeLong"
         },
         {
             "hash": "b467aa16143acd06b9fb180eb2a9f1cb6fc26526",
-            "message": "more potential windows macro redefinition\n",
-            "tag_name": null
+            "message": "more potential windows macro redefinition"
         },
         {
             "hash": "bba24bcb6bbdc4267e87859a91389c99536c40dd",
-            "message": "avoid c++ macro redifitnion on windows\n",
-            "tag_name": null
+            "message": "avoid c++ macro redifitnion on windows"
         },
         {
             "hash": "e93dea77460c02fe0c7bfa42621817838f9d1342",
-            "message": "update Cmake example to build Visual Studio to newest 2019 version.\n",
-            "tag_name": null
+            "message": "update Cmake example to build Visual Studio to newest 2019 version."
         },
         {
             "hash": "2f7f6701341fb22c088c665cd82f0a5b451f0ce7",
-            "message": "Merge pull request #6530 from prat0088/csharp-ensuresize\n\nc# feature(RepeatedField): Capacity property to resize the internal array",
-            "tag_name": null
+            "message": "Merge pull request #6530 from prat0088/csharp-ensuresize\n\nc# feature(RepeatedField): Capacity property to resize the internal array"
         },
         {
             "hash": "da5740082ef7c39a5503e4d57ee73e11d3b43586",
-            "message": "c# feature(RepeatedField): Capacity property to resize the internal array\n\nThis property is useful for efficiently initializing long RepeatedFields.\n\nI used System.Collections.Generic.List's design as a model.  It should feel the most familiar to C# developers.\n",
-            "tag_name": null
+            "message": "c# feature(RepeatedField): Capacity property to resize the internal array\n\nThis property is useful for efficiently initializing long RepeatedFields.\n\nI used System.Collections.Generic.List's design as a model.  It should feel the most familiar to C# developers."
         },
         {
             "hash": "77646a45e20fe734b5a70a173b2410e480071c8e",
-            "message": "Merge pull request #6758 from XrXr/ub\n\nRemove unused argument to avoid UB",
-            "tag_name": null
+            "message": "Merge pull request #6758 from XrXr/ub\n\nRemove unused argument to avoid UB"
         },
         {
             "hash": "c1ba7c643cfdb43345ba1924e441077377bcfef6",
-            "message": "Remove unused argument to avoid UB\n\n`OneOfDescriptor_each` is registered as a Ruby method which takes zero\nparameters, which means it should take one argument.\n\nWhen Ruby invokes `OneOfDescriptor_each`, it calls it with one parameter\nonly, which is one less than what `OneOfDescriptor_each` takes before\nthis commit. Calling a function with the wrong number of argument is\ntechnically undefined behavior.\n\nSee also: §6.5.2.2, N1256\n",
-            "tag_name": null
+            "message": "Remove unused argument to avoid UB\n\n`OneOfDescriptor_each` is registered as a Ruby method which takes zero\nparameters, which means it should take one argument.\n\nWhen Ruby invokes `OneOfDescriptor_each`, it calls it with one parameter\nonly, which is one less than what `OneOfDescriptor_each` takes before\nthis commit. Calling a function with the wrong number of argument is\ntechnically undefined behavior.\n\nSee also: §6.5.2.2, N1256"
         },
         {
             "hash": "9fdb2cf2bb4f10b3fe4c8d2bac60eee09d1a5d27",
-            "message": "fixed typo",
-            "tag_name": null
+            "message": "fixed typo"
         },
         {
             "hash": "982222e71aba01d734306952287ce7927c4e296d",
-            "message": "Include cmath instead of math.h\n\nThis fixes build on, at least, NetBSD 8.1 with gcc 5.5 and SmartOS with gcc 7.\n",
-            "tag_name": null
+            "message": "Include cmath instead of math.h\n\nThis fixes build on, at least, NetBSD 8.1 with gcc 5.5 and SmartOS with gcc 7."
         },
         {
             "hash": "3a505c2ded567488b87c8c93454929badc954fe9",
-            "message": "Merge pull request #6744 from elharo/patch-5\n\nJava: Update to Guava 28.1-android",
-            "tag_name": null
+            "message": "Merge pull request #6744 from elharo/patch-5\n\nJava: Update to Guava 28.1-android"
         },
         {
             "hash": "e7db3d35e45f5563fbd72a8100565451745f95a3",
-            "message": "Update to Guava 28.1-android",
-            "tag_name": null
+            "message": "Update to Guava 28.1-android"
         },
         {
             "hash": "e249134eb815e0a74dc3544608acb74009ae9111",
-            "message": "Merge pull request #6756 from haberman/ruby-empty-names\n\nFixed bug in Ruby DSL when no names are defined in a file.",
-            "tag_name": null
+            "message": "Merge pull request #6756 from haberman/ruby-empty-names\n\nFixed bug in Ruby DSL when no names are defined in a file."
         },
         {
             "hash": "09a8639482db1e01a6a749a496f8abb56736f830",
-            "message": "Fixed bug in Ruby DSL when no names are defined in a file.\n",
-            "tag_name": null
+            "message": "Fixed bug in Ruby DSL when no names are defined in a file."
         },
         {
             "hash": "bf36d04348cb8c8774d6da9fad1c8087b5ed44ef",
-            "message": "Merge pull request #6757 from haberman/ruby-empty-names-release\n\nPorted names fix for Ruby to the release branch.",
-            "tag_name": null
+            "message": "Merge pull request #6757 from haberman/ruby-empty-names-release\n\nPorted names fix for Ruby to the release branch."
         },
         {
             "hash": "35da84bf64fd5e526a209fa34a8d15e729d6fca4",
-            "message": "Ported names fix for Ruby to the release branch.\n",
-            "tag_name": null
+            "message": "Ported names fix for Ruby to the release branch."
         },
         {
             "hash": "c0acff1c4e3ef82dd0668effd5694f5ed7c3206b",
-            "message": "Merge pull request #6786 from donaldchai/master\n\nAdd com.google.truth as test dependencies",
-            "tag_name": null
+            "message": "Merge pull request #6786 from donaldchai/master\n\nAdd com.google.truth as test dependencies"
         },
         {
             "hash": "175ddfc1751f99843fe30d333a77868f91a8509c",
-            "message": "Add com.google.truth as test dependencies\n\nThis goes hand-in-hand with other dependencies like junit, but seems to\nonly have been used from util/pom.xml.\n",
-            "tag_name": null
+            "message": "Add com.google.truth as test dependencies\n\nThis goes hand-in-hand with other dependencies like junit, but seems to\nonly have been used from util/pom.xml."
         },
         {
             "hash": "61d75cb8ec508303dc41581a78d4331332035489",
-            "message": "Merge pull request #6826 from jskeet/fix-custom-options\n\nAvoid NullReferenceException when accessing CustomOptions",
-            "tag_name": null
+            "message": "Merge pull request #6826 from jskeet/fix-custom-options\n\nAvoid NullReferenceException when accessing CustomOptions"
         },
         {
             "hash": "7282f29ced966e708fb6364d4f41bc01e86fb246",
-            "message": "Avoid NullReferenceException when accessing CustomOptions\n\nEven though the property is deprecated, it still shouldn't throw.\n",
-            "tag_name": null
+            "message": "Avoid NullReferenceException when accessing CustomOptions\n\nEven though the property is deprecated, it still shouldn't throw."
         },
         {
             "hash": "129a7c875fc89309a2ab2fbbc940268bbf42b024",
-            "message": "Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required.\n",
-            "tag_name": null
+            "message": "Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required."
         },
         {
             "hash": "403df1d047607b5194d938d3c9943a4813308eb3",
-            "message": "Added a descriptor option number for ocaml-protoc-plugin\n",
-            "tag_name": null
+            "message": "Added a descriptor option number for ocaml-protoc-plugin"
         },
         {
             "hash": "c53e5b8e11659528150737f285e5c171b0f159b2",
-            "message": "Avoid too much overhead in layout_init (#6716)\n\n* Avoid initializing primitive fields in layout_init\r\n\r\n* Avoid initializing string/bytes/message fields in layout_init\r\n\r\n* Lazily create map when needed\r\n\r\n* Lazily create repeated fields\r\n\r\n* Change layout_init to only do memcpy\r\n\r\n* Fix test for php-7.0\r\n\r\n* Fix conformance test where default value of string/message map is not encoded\r\n\r\n* Fix test for zts\r\n\r\n* Clean up\r\n\r\n* Fix comments\r\n",
-            "tag_name": null
+            "message": "Avoid too much overhead in layout_init (#6716)\n\n* Avoid initializing primitive fields in layout_init\r\n\r\n* Avoid initializing string/bytes/message fields in layout_init\r\n\r\n* Lazily create map when needed\r\n\r\n* Lazily create repeated fields\r\n\r\n* Change layout_init to only do memcpy\r\n\r\n* Fix test for php-7.0\r\n\r\n* Fix conformance test where default value of string/message map is not encoded\r\n\r\n* Fix test for zts\r\n\r\n* Clean up\r\n\r\n* Fix comments"
         },
         {
             "hash": "3fa17ca0bdda0602451cf387f773aeadacbf3835",
-            "message": "Merge pull request #6811 from elharo/guava\n\nUpdate GSON and errorprone",
-            "tag_name": null
+            "message": "Merge pull request #6811 from elharo/guava\n\nUpdate GSON and errorprone"
         },
         {
             "hash": "906b57475d8eacc004b3b6cf800272cc9219633a",
-            "message": "merge\n",
-            "tag_name": null
+            "message": "merge"
         },
         {
             "hash": "0ca0154ae5800ae5e73d49f7ac4f8f2f95c7c49a",
-            "message": "Update to Guava 28\n",
-            "tag_name": null
+            "message": "Update to Guava 28"
         },
         {
             "hash": "ed69e88695bbbeadd7aa332b439396d14ee97f59",
-            "message": "update error_prone and gson\n",
-            "tag_name": null
+            "message": "update error_prone and gson"
         },
         {
             "hash": "939a6f5de606af58d461fbb8d3e2b4d4bff0b78c",
-            "message": "Merge pull request #1 from protocolbuffers/master\n\nmerge",
-            "tag_name": null
+            "message": "Merge pull request #1 from protocolbuffers/master\n\nmerge"
         },
         {
             "hash": "7ce420298a2562f95c492e175e9f7f61e3bd9631",
-            "message": "fix one more line\n",
-            "tag_name": null
+            "message": "fix one more line"
         },
         {
             "hash": "50fb80cdd86c9e0a6b6ec560c1039e011c91f477",
-            "message": "fix check for undefined behavior\n",
-            "tag_name": null
+            "message": "fix check for undefined behavior"
         },
         {
             "hash": "fbbbc45ae5167e395f2132189c09e088dc7a6775",
-            "message": "address review\n",
-            "tag_name": null
+            "message": "address review"
         },
         {
             "hash": "a971a4ef1f4e9a165c30a852d83c84fd46f8267f",
-            "message": "Fix: Undefined behavior in UTF8GenericScanFastAscii\n",
-            "tag_name": null
+            "message": "Fix: Undefined behavior in UTF8GenericScanFastAscii"
         },
         {
             "hash": "620d8fb287431e869981aa9959056f418ab44f7a",
-            "message": "Merge pull request #6810 from elharo/patch-6\n\nUpdate to 3.10.0 in docs",
-            "tag_name": null
+            "message": "Merge pull request #6810 from elharo/patch-6\n\nUpdate to 3.10.0 in docs"
         },
         {
             "hash": "82db4520a12e8f2a15c6fa8bccc4a883b55f966e",
-            "message": "Update to 3.10.0 in docs",
-            "tag_name": null
+            "message": "Update to 3.10.0 in docs"
         },
         {
             "hash": "f6eeb435bfc50c2329268bfc97de1f7c49f34866",
-            "message": "General Xcode 11 support for picking iOS simulators to test against.\n",
-            "tag_name": null
+            "message": "General Xcode 11 support for picking iOS simulators to test against."
         },
         {
             "hash": "d052a05559a508d0349befbc6ac94d3a797e2b3d",
-            "message": "Merge pull request #6828 from ObsidianMinor/csharp/get-string-overload\n\nUse 3 parameter Encoding.GetString for default string values",
-            "tag_name": null
+            "message": "Merge pull request #6828 from ObsidianMinor/csharp/get-string-overload\n\nUse 3 parameter Encoding.GetString for default string values"
         },
         {
             "hash": "e119a432a8d1a1f0041b90949f25e41e8b509884",
-            "message": "Use 3 parameter Encoding.FromBytes for default string values\n",
-            "tag_name": null
+            "message": "Use 3 parameter Encoding.FromBytes for default string values"
         },
         {
             "hash": "0eb9b279e2abfccc19c6929bbf8a66c1a30a2556",
-            "message": "Merge pull request #6797 from haberman/ruby-lazy-wrappers\n\nRuby lazy wrappers optimization",
-            "tag_name": null
+            "message": "Merge pull request #6797 from haberman/ruby-lazy-wrappers\n\nRuby lazy wrappers optimization"
         },
         {
             "hash": "781d6963c65201a56406cf28b6258b041e45664f",
-            "message": "Fixed the case of multi-line strings in JSON.\n",
-            "tag_name": null
+            "message": "Fixed the case of multi-line strings in JSON."
         },
         {
             "hash": "5f2540025028c482c08c1c39561f7917693f965c",
-            "message": "Fixed conformance test regression: empty string wrapper.\n",
-            "tag_name": null
+            "message": "Fixed conformance test regression: empty string wrapper."
         },
         {
             "hash": "aae5c491f711c40a6ea974fc997835bfa5483975",
-            "message": "Merge branch 'master' into ruby-lazy-wrappers\n",
-            "tag_name": null
+            "message": "Merge branch 'master' into ruby-lazy-wrappers"
         },
         {
             "hash": "e8c67e14acceb93b048048d7823391df1f79c43c",
-            "message": "Fixed the oneof case for lazy wrappers.\n",
-            "tag_name": null
+            "message": "Fixed the oneof case for lazy wrappers."
         },
         {
             "hash": "8393d4833f6437a08ec8195f7c4cae347f7311a7",
-            "message": "Nearly all known cases (map, repeated field, and top-level) have been addressed.\n\nThe only case that doesn't work is decoding a wrapper type from JSON\nat the top level.  This doesn't make sense and probably no users do it\nI changed it to throw.\n",
-            "tag_name": null
+            "message": "Nearly all known cases (map, repeated field, and top-level) have been addressed.\n\nThe only case that doesn't work is decoding a wrapper type from JSON\nat the top level.  This doesn't make sense and probably no users do it\nI changed it to throw."
         },
         {
             "hash": "bd253f0130564704888136b14f638a69acc00d20",
-            "message": "Fixed equality, and extended to repeated fields and maps.\n",
-            "tag_name": null
+            "message": "Fixed equality, and extended to repeated fields and maps."
         },
         {
             "hash": "9cfb12bf0a694b2a0a9dc0e05a6603f6ab613390",
-            "message": "Tests pass for all common operations.\n\nA few things that don't work or aren't tested yet:\n- wrappers at the top level\n- equality checking for not-yet-expanded wrappers.\n",
-            "tag_name": null
+            "message": "Tests pass for all common operations.\n\nA few things that don't work or aren't tested yet:\n- wrappers at the top level\n- equality checking for not-yet-expanded wrappers."
         },
         {
             "hash": "969d245bd3e8187f89e7923797bc397d583e0abb",
-            "message": "WIP: first steps towards lazily creating wrappers.\n",
-            "tag_name": null
+            "message": "WIP: first steps towards lazily creating wrappers."
         },
         {
             "hash": "668eb3b4e698b2f4bdb1b6c8e19235923b163a97",
-            "message": "Fix decoding of overencoded booleans.\n\nif the value was >32bit with the low bits all being zero, it was decoded as\nfalse instead of as true.\n\nFixes #6863\n",
-            "tag_name": null
+            "message": "Fix decoding of overencoded booleans.\n\nif the value was >32bit with the low bits all being zero, it was decoded as\nfalse instead of as true.\n\nFixes #6863"
+        }
+    ],
+    "issues": [
+        {
+            "number": "6667",
+            "title": "[Reopened] Incorrect json serialization of empty StringValue"
+        },
+        {
+            "number": "6098",
+            "title": "cmake file overwrites existing CMAKE_STATIC_LINKER_FLAGS"
+        },
+        {
+            "number": "6679",
+            "title": "ObjC: clang for 32bit arm (iOS) can generate an unaligned read that traps"
+        },
+        {
+            "number": "6863",
+            "title": "Conformance Test Failures for Objective-C"
         }
     ]
 }

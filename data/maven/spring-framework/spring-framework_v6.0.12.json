@@ -1,0 +1,1006 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 181,
+    "start_delay": 0.0,
+    "duration": 891.9654050925926,
+    "commits_info": [
+        {
+            "hash": "73a1f4f82e029f5963469af32f9cb6395129af53",
+            "message": "Release v6.0.12"
+        },
+        {
+            "hash": "a51eb29e50d46580255da35252ede759587cffdb",
+            "message": "Clarify IN clause resolution with List/Iterable parameter\n\nCloses gh-31228"
+        },
+        {
+            "hash": "50d4a44dfcdcc54f2008deb5073d63cbf9c1c039",
+            "message": "Upgrade to Context Propagation 1.0.5\n\nCloses gh-31223"
+        },
+        {
+            "hash": "ebf2cef94e3cb2678693971109639a49394fcb09",
+            "message": "Upgrade to Reactor 2022.0.11\n\nCloses gh-31222"
+        },
+        {
+            "hash": "c89002a0fbefe8dc5bf3120aa319bf4cdd6f9acd",
+            "message": "Upgrade to Micrometer 1.10.11\n\nCloses gh-31221"
+        },
+        {
+            "hash": "29a4dabbe7a97ee82b6623444efcb34edee3fcf4",
+            "message": "Support @ModelAttribute with suspending function in WebFlux\n\nCloses gh-30894"
+        },
+        {
+            "hash": "f5f8eab4057143b31c0d468aff737ca90d5fdcc1",
+            "message": "Remove duplicated section links for test annotations\n\nSince the auto-generated \"Section Summary\" includes the exact same\nlinks, there's no need to manually duplicate them."
+        },
+        {
+            "hash": "659500bc1f33350157605b32b8b7894a601a4e01",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4235a11c4f137e92d48bb20336c1d2323ecdac20",
+            "message": "Throw IllegalArgumentException for unsupported Duration values\n\nCloses gh-31210"
+        },
+        {
+            "hash": "966b0a92c6282356a0a3ebc2609bd0e4999f33fb",
+            "message": "Defensively call Resource.getFile() for fallback resolution\n\nCloses gh-31216"
+        },
+        {
+            "hash": "4ca70256d6d6e5674b2642a83e7d07e90dad2469",
+            "message": "Backport polishing"
+        },
+        {
+            "hash": "c892ce5537748b0c1a05dd1ceacc71e4fc374b1d",
+            "message": "Refine CORS documentation for wildcard processing\n\nThis commit adds a reference documentation section dedicated\nto CORS credentialed requests and related wildcard processing.\n\nCloses gh-31143"
+        },
+        {
+            "hash": "76b8bb2c751e5b8c9064b7f40898a89a23d24036",
+            "message": "Refine CORS documentation for wildcard processing\n\nThis commit refines CORS wildcard processing Javadoc to\nprovides more details on how wildcards are handled for\nAccess-Control-Allow-Methods, Access-Control-Allow-Headers\nand Access-Control-Expose-Headers CORS headers.\n\nFor Access-Control-Expose-Headers, it is not possible to copy\nthe response headers which are not available at the point\nwhen the CorsProcessor is invoked. Since all the major browsers\nseem to support wildcard including on requests with credentials,\nand since this is ultimately the user-agent responsibility to\ncheck on client-side what is authorized or not, Spring Framework\ncontinues to support this use case.\n\nSee gh-31143"
+        },
+        {
+            "hash": "db7654225eb23c5f76469484b32d8b7d295b04e2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "78fce80c430c6f1e75b060c192ea4986729e68f1",
+            "message": "AnnotationUtils.clearCache() includes all annotation caches\n\nCloses gh-31170"
+        },
+        {
+            "hash": "268043e9c9013b41c44861562bacf09b2f5e3085",
+            "message": "Align abstract method signatures with original Commons Logging API\n\nCloses gh-31166"
+        },
+        {
+            "hash": "2880e6fba539fba84ff6acff9b211216a6728ac7",
+            "message": "Consistently release savepoint after nested transaction\n\nCloses gh-31133"
+        },
+        {
+            "hash": "11dc11e989c49dfcb0cef0c40925b1df28e3763c",
+            "message": "Fix typo in comment in XML configuration example\n\nCloses gh-31194"
+        },
+        {
+            "hash": "10de295a7216fe51566bb977714953ffcdd17574",
+            "message": "Document StandardTypeLocator configuration to support user types\n\nPrior to this commit, it was unclear to users and third parties that it\nis necessary to manually configure a StandardTypeLocator with a\nspecific ClassLoader to ensure that the SpEL expression parser is able\nto reliably locate user types.\n\nFor example, the StandardBeanExpressionResolver in the spring-context\nmodule configures a StandardTypeLocator using the bean ClassLoader of\nthe corresponding BeanFactory.\n\nThis commit improves the documentation to raise awareness of this fact.\n\nCloses gh-26253"
+        },
+        {
+            "hash": "1227fe5774383b752c47ddcd8110112e1620b891",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ea4105165119937d1da59704be053f4023d56a9c",
+            "message": "Do not invoke [Map|Collection].isEmpty() in nullSafeConciseToString()\n\ngh-30810 introduced explicit support for collections and maps in\nObjectUtils.nullSafeConciseToString() by invoking isEmpty() on a Map or\nCollection to determine which concise string representation should be\nused. However, this caused a regression in which an exception was\nthrown if the Map or Collection was a proxy generated by\nAbstractFactoryBean to support <util:set />, <util:list />, and\n<util:map /> in XML configuration.\n\nThis commit addresses this set of regressions by always returning\n\"[...]\" or \"{...}\" for a Collection or Map, respectively, disregarding\nwhether the map is empty or not.\n\nCloses gh-31138"
+        },
+        {
+            "hash": "311c58ea2daaa6ba4965e6a36b86e1af4698dae3",
+            "message": "Polish [Standard]TypeLocator"
+        },
+        {
+            "hash": "40f1cf67bd043ca83ffaea8a4581c04e1cbfac91",
+            "message": "Polish DefaultClientResponseTests and suppress \"unchecked\" warnings"
+        },
+        {
+            "hash": "6da9aed0555b059b052bb249643044ae7d72721b",
+            "message": "Update copyright header"
+        },
+        {
+            "hash": "12a01a680bffe88d8466c660e956f0a2694ac75c",
+            "message": "Document some non-nullable Kotlin extensions can throw NoSuchElementException\n\nCloses gh-31189"
+        },
+        {
+            "hash": "740f3b797f067ccb8e4663259db578e496e70701",
+            "message": "Polishing\n\nSee gh-31185"
+        },
+        {
+            "hash": "ab48b88f919f2c9f8ab4880be5d82b0d55052779",
+            "message": "Refine BeanValidationBeanRegistrationAotProcessor logging\n\nThis commit prints a log message at debug level without\na stacktrace for TypeNotPresentException and uses\nwarn level instead of error level for other exceptions\nsince the processing of such bean will just be skipped.\n\nCloses gh-31147"
+        },
+        {
+            "hash": "eda35e8074da938567dec2cb2af106b0b4df5ff5",
+            "message": "Add note to the interceptor section of the MVC config\n\nCloses gh-31185"
+        },
+        {
+            "hash": "e4887f3ed960767c35af0ac45aa74f7b58f25030",
+            "message": "Upgrade Ubuntu in CI image\n\nUpgrade to ubuntu:jammy-20230816"
+        },
+        {
+            "hash": "1cdbd68aecddfa89a160a249d506ac99311efc11",
+            "message": "Revise FilePatternResourceHintsRegistrar API and improve documentation\n\nThis commit revises the FilePatternResourceHintsRegistrar API and\nintroduces List<String> overrides of various var-args methods used with\nthe new builder API.\n\nCloses gh-29161"
+        },
+        {
+            "hash": "453c0e519147c33101a08c767cc2fa411d593398",
+            "message": "Backport changes from `main`"
+        },
+        {
+            "hash": "a6b567a630dcddc7134b9f79de3610a75f55cb4d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7a516170ef7fbaf6433adfd355baf7f6a96ce924",
+            "message": "WebClientResponseException supports decoding empty content\n\nCloses gh-31179"
+        },
+        {
+            "hash": "249f6f2da5766f6437cde0debb2ac85bf70a5c99",
+            "message": "Polish resolveArgument method in RequestResponseBodyMethodProcessor\n\nCloses gh-31175"
+        },
+        {
+            "hash": "73766c01e67806f9df503de33376e550d38bf046",
+            "message": "Add Javadoc since tags in FilePatternResourceHintsRegistrar\n\nSee gh-29161\nCloses gh-31174"
+        },
+        {
+            "hash": "278f228688dc605a8b899f53a7384eac6983a3a6",
+            "message": "Upgrade to Groovy 4.0.14, Tomcat 10.1.13, Jetty 11.0.16, Netty 4.1.97, Undertow 2.3.8, Mockito 5.5"
+        },
+        {
+            "hash": "c0c4298048a5e32973d521bb0eaa31e4d67db389",
+            "message": "Polishing"
+        },
+        {
+            "hash": "61f89a1f049dd69b8b8b356168888fa5aae17a71",
+            "message": "Refine note on listener container setup with CachingConnectionFactory\n\nCloses gh-25503"
+        },
+        {
+            "hash": "3e3f05109fa20199721d16a2bb6813e0e8082b47",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2d1d14b145e60b2d4067364daf7c11bb728e0189",
+            "message": "Add `/framework-*/build` to .gitignore\n\nDue to the introduction of the `framework-api` project in the main branch,\nwe now have 3 `framework-*` projects that should be ignored. I have\ntherefore removed `/framework-bom/build` and `/framework-docs/build` and\nadded `/framework-*/build` to ignore all 3 framework projects.\n\nSee gh-31049"
+        },
+        {
+            "hash": "1641cb75e2bb2f228066e1f04760338c40ddda10",
+            "message": "Refine Reactor field precomputing on native\n\nThis commit refines Reactor field precomputing on native\nto only compute at build-time fields in the reactor.core\npackage, since doing so in reactor.netty has unwanted side\neffects like Epoll always disabled.\n\nCloses gh-31141"
+        },
+        {
+            "hash": "c01e1b890139f82287cad7d4a36b022e2e2fcecf",
+            "message": "Document purpose of the name attribute in @PropertySource\n\nCloses gh-30195"
+        },
+        {
+            "hash": "2e4e43b5bdd6c548fcb644540e09559fd3433969",
+            "message": "Polish org.springframework.core.env.PropertySource\n\nSee gh-30195"
+        },
+        {
+            "hash": "6876c284f42d58ce7b3e15f9f35bd7cae9a89771",
+            "message": "Upgrade to Checkstyle 10.12.3"
+        },
+        {
+            "hash": "b167152108d5c3c29a93f23b8e14a530e8bb56d7",
+            "message": "Upgrade to spring-javaformat-checkstyle 0.0.39"
+        },
+        {
+            "hash": "bbf73848b54262c884808ad99deea1451d3c6e78",
+            "message": "Update warning for use of convention-based annotation attribute overrides\n\nSee gh-28761"
+        },
+        {
+            "hash": "1af259f928fcd4d787f013ac85a66a775456d5e7",
+            "message": "Merge pull request #29753 from perlun\n\n* pr/29753:\n  Polish \"Make sure NoUniqueBeanDefinitionException to be serializable\"\n  Make sure NoUniqueBeanDefinitionException to be serializable\n\nCloses gh-29753"
+        },
+        {
+            "hash": "1396daa4b62b6f15f6d759b6ef0d2d3f271231b3",
+            "message": "Polish \"Make sure NoUniqueBeanDefinitionException to be serializable\"\n\nSee gh-29753"
+        },
+        {
+            "hash": "1b409d5290bf5d6a1598a76623af894ab1c57beb",
+            "message": "Make sure NoUniqueBeanDefinitionException to be serializable\n\nSee gh-29753"
+        },
+        {
+            "hash": "ca14202d7817b8e1f3c15638059ae39c7fd8998b",
+            "message": "Merge pull request #27115 from gnagy\n\n* pr/27115:\n  Update copyright of changed file\n  Allow null attribute value in Model.set()\n\nCloses gh-27115"
+        },
+        {
+            "hash": "7231f22c231c5939419b378f787510874723a7b5",
+            "message": "Update copyright of changed file\n\nSee gh-27115"
+        },
+        {
+            "hash": "3470240ef052975ac0e78c010850e8ff597bafb2",
+            "message": "Allow null attribute value in Model.set()\n\nSee gh-27115"
+        },
+        {
+            "hash": "7598bca79939662bc9d3f355236f46455f7731a0",
+            "message": "Revise Checkstyle rules to prohibit use of assertions other than AssertJ\n\nCloses gh-31116"
+        },
+        {
+            "hash": "f9588de24749a5892c9c9e1703c1d3ef18f6c85a",
+            "message": "Reinstate FailingBeforeAndAfterMethodsTestNGTests\n\nThe tests were ignored due to \"Fails against TestNG 6.11\"; however,\nthese tests pass against the current version of TestNG that we build\nagainst (7.8.0)."
+        },
+        {
+            "hash": "2b3539a6de89a7ffed4aca75ee0fd2c6f2e63f35",
+            "message": "Merge pull request #26761 from 1zg12\n\n* pr/26761:\n  Polish \"Restore customization of PropertyResolver\"\n  Restore customization of PropertyResolver\n\nCloses gh-26761"
+        },
+        {
+            "hash": "2731d4f1002034abe7780336daf386435d133e59",
+            "message": "Polish \"Restore customization of PropertyResolver\"\n\nSee gh-26761"
+        },
+        {
+            "hash": "00fffb7ab0ec46c1a8ddfab7b48cdf8f26193a05",
+            "message": "Restore customization of PropertyResolver\n\nThis commit reintroduces the ability to customize the PropertyResolver\nto use in PropertySourcesPropertyResolver\n\nSee gh-26761"
+        },
+        {
+            "hash": "89b7a6bf471212a8e9564933381b17e9df8421aa",
+            "message": "Skip searching of nonexistent directory in PathMatchingResourcePatternResolver\n\nPrior to this commit, when PathMatchingResourcePatternResolver\nprocessed a `file:` pattern (for example, `file:/app-config/**`) for a\n`rootPath` that did not exist in the filesystem, the resolver attempted\nto search the directory and logged a WARNING message similar to the\nfollowing when it failed to do so.\n\nFailed to search in directory [/app-config/] for files matching pattern\n[**]: java.nio.file.NoSuchFileException: /app-config/\n\nTo avoid unnecessary attempts to search a nonexistent directory,\nPathMatchingResourcePatternResolver now skips searching of a nonexistent\ndirectory and preemptively logs an INFO message similar to the\nfollowing.\n\nSkipping search for files matching pattern [**]: directory [/app-config]\ndoes not exist\n\nCloses gh-31111"
+        },
+        {
+            "hash": "19570338c9854ccd55e47bb1f822330c5be2ad00",
+            "message": "Ensure doFindPathMatchingFileResources() returns a mutable Set\n\nThis commit ensures that PathMatchingResourcePatternResolver's\ndoFindPathMatchingFileResources() method returns a mutable Set in order\nto comply with the documented contract."
+        },
+        {
+            "hash": "906a9f7982c7f880313664a47f682ac379ae508b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6fed3a0d6b6905cbb9d6cf291a3c353c15b7b1b4",
+            "message": "Consistently throw ParseException instead of IllegalStateException\n\nCloses gh-31097"
+        },
+        {
+            "hash": "8934eb8464e9efdc560c0d8b1ffb34ddbd18bc0a",
+            "message": "Optimize ClassUtils#getMostSpecificMethod\n\nThis commit optimizes ClassUtils#getMostSpecificMethod which is\na method frequently invoked in typical Spring applications.\n\nIt refines ClassUtils#isOverridable by considering static and\nfinal modifiers as non overridable and optimizes its implementation.\n\nCloses gh-30272"
+        },
+        {
+            "hash": "4b9f89101de78ccfabeca08c22c287980b985e91",
+            "message": "Clarify handling of several representations for JOpt options\n\nSee gh-22168"
+        },
+        {
+            "hash": "b204f2e3960a58e0cc1544d4e8293a0ec6a20eef",
+            "message": "Merge pull request #30107 from izeye\n\n* pr/30107:\n  Use IllegalStateException in ReactiveTestTransactionManager.doCommit()\n\nCloses gh-30107"
+        },
+        {
+            "hash": "112f755e17a5618ed9df49d8338cf7f35ce7e805",
+            "message": "Use IllegalStateException in ReactiveTestTransactionManager.doCommit()\n\nSee gh-30107"
+        },
+        {
+            "hash": "542d0ef0b474b57927920a88f55658a355910c79",
+            "message": "Merge pull request #31091 from aahlenst\n\n* pr/31091:\n  Fix invalid type name in RSocket code example\n\nCloses gh-31091"
+        },
+        {
+            "hash": "452b2df849d3628d041ae5aaca68f0ca1c36d7e6",
+            "message": "Fix invalid type name in RSocket code example\n\nSee gh-31091"
+        },
+        {
+            "hash": "229b4782ee2484e3769577c28b4cac8d92e70c06",
+            "message": "Add @Nullable in doSetValue() in Argument[Type]PreparedStatementSetter\n\nThis commit adds @Nullable to the argValue parameters in the\ndoSetValue() methods in ArgumentPreparedStatementSetter and\nArgumentTypePreparedStatementSetter.\n\nCloses gh-31086"
+        },
+        {
+            "hash": "ad1554a631836d2ef5aa3dc5f15da0df34349546",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8be77cc65030db27495731899eb6e4043eccf2a4",
+            "message": "Revise documentation for cache infrastructure setup\n\nCloses gh-28250"
+        },
+        {
+            "hash": "d0d0ed05788d8b0134fd0ffc9f6f6957add42239",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "9911d91f088a7e9e36ff4a9fbeec0a303c0dcea2",
+            "message": "Add implementation note\n\nSee gh-31083"
+        },
+        {
+            "hash": "620a87bcbc966be0c71a3c66c78c5633936f66c8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "368036cab433e6f4b1dc1045725a2677e4400d70",
+            "message": "Allow overriding dynamic property from enclosing class in nested test class\n\nPrior to this commit, a dynamic property registered via a\n@DynamicPropertySource method in a @Nested test class was not able to\noverride a property registered via a @DynamicPropertySource method in\nthe enclosing class.\n\nSee gh-26091\nCloses gh-31083"
+        },
+        {
+            "hash": "8a6c0cd221d1b9b78acf26a60121d51f0446d6b3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b0fc2fe473414324732393fad44172390577e19d",
+            "message": "Document destroy method inference more prominently\n\nCloses gh-29546"
+        },
+        {
+            "hash": "2952cb95f500cc9d4d8c28e197e34159e731b29f",
+            "message": "Document custom SimpleApplicationEventMulticaster setup\n\nCloses gh-29996"
+        },
+        {
+            "hash": "c91708c1c095cd7f3191cc8372ca04883d294e0a",
+            "message": "Add missing proxy hints for Hibernate native query\n\nThis commit contributes proxy hints needed by\nSharedEntityManagerCreator for\norg.hibernate.query.sql.internal.NativeQueryImpl interfaces.\n\nA related smoke test has been contributed via\nspring-projects/spring-aot-smoke-tests#188.\n\nCloses gh-29603"
+        },
+        {
+            "hash": "47b1a2bc55220d6ce274b5ffc5d6a193afbfe838",
+            "message": "Clarify usage of FilePatternResourceHintsRegistrar\n\nThis commit review the API using a builder to make it more clear what\nthe registrar does.\n\nCloses gh-29161"
+        },
+        {
+            "hash": "e6565c600a642af2ebafb459c738cda06c58f493",
+            "message": "Refine type conversion errors in ModelAttributeMethodProcessor\n\nThis commit turns TypeMismatchException thrown in\nModelAttributeMethodArgumentResolver#createAttribute into\nproper ServerWebInputException in order get HTTP response\nwith 400 Bad Request status code instead of 500 Internal error.\n\nCloses gh-31045"
+        },
+        {
+            "hash": "8af9648c434ac99d60a7fdde4fc2c5e0aff6e4bb",
+            "message": "Polish ModelAttributeMethodArgumentResolverTests"
+        },
+        {
+            "hash": "c5bdd9d79de03831f3861daf94fed5b255d5694a",
+            "message": "Optimize whitespace checks in StringUtils\n\nCloses gh-31067"
+        },
+        {
+            "hash": "9efa99e0d84759d321c1676f0f4ac7d43f125eda",
+            "message": "Update link to \"Method visibility and @Transactional in proxy mode\"\n\nSee gh-31057\nSee gh-25582"
+        },
+        {
+            "hash": "957eb021d75feadcc206d43da85b38ef8933c41e",
+            "message": "Upgrade to Gradle 8.3\n\nCloses gh-31061"
+        },
+        {
+            "hash": "c8a40265128ceb56af2176911d46dcc1e92f9a39",
+            "message": "Revise note on non-public transactional methods for 6.0\n\nCloses gh-31057\nSee gh-25582"
+        },
+        {
+            "hash": "2111bf9b9d50a27ea3c56cb105fc44da98aa0c01",
+            "message": "Upgrade to Caffeine 3.1.8 and Apache HttpComponents Core Reactive 5.2.2"
+        },
+        {
+            "hash": "c72dd1ff66f841443e864925061d0ff01a1a59be",
+            "message": "Change \"!void\" pointcut expression to \"int\" for AspectJ 1.9.20"
+        },
+        {
+            "hash": "43bd78913c82160b1500aa39220e04d2d04fb594",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5458e0dccc3a0fb5dbceccb07da5c94d74d46194",
+            "message": "Upgrade to Tomcat 10.1.12 and AspectJ 1.9.20"
+        },
+        {
+            "hash": "78a73e5f57895aac5a84fc7b33f26430af1a4fcf",
+            "message": "Add missing Hibernate 6.2 proxy hints\n\nThis commit contributes proxy hints needed by\nSharedEntityManagerCreator for\norg.hibernate.query.sqm.internal.QuerySqmImpl interfaces.\n\nUntil Hibernate 6.1, those hints were erroneously provided\nat GraalVM reachability metadata level. As of Hibernate 6.2,\nthey are not, hence the need to contribute them at Spring\nFramework level.\n\nA related smoke test has been contributed via\nspring-projects/spring-aot-smoke-tests#188.\n\nCloses gh-31050"
+        },
+        {
+            "hash": "c7269feeaae8da24c39fd7deae206d6fd0ce196d",
+            "message": "Align validation metadata handling in PayloadMethodArgumentResolver\n\nReuses ValidationAnnotationUtils which is slightly optimized for the detection of Spring's Validated annotation now, also to the benefit of common web scenarios.\n\nCloses gh-21852"
+        },
+        {
+            "hash": "1e75041b001e64a2be50237a414d5929d5376f43",
+            "message": "Consistent references to scalar values vs Parameter objects\n\nSee gh-27282"
+        },
+        {
+            "hash": "08bc7ed8f0de1ac8da705ad50f4b8326dd0f90cd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2ce75dc415c0c6d1a91b5d7d3fa37b5fb01c92f1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8b3ddeed056c743ab8e5845a37cbfb06a775d1a5",
+            "message": "Test factory-bean/method placeholders as well\n\nSee gh-20189"
+        },
+        {
+            "hash": "389238f6229eccfd9b8a56e580762c521990bc44",
+            "message": "Add registerReactiveTypeOverride method to ReactiveAdapterRegistry\n\nCloses gh-31047"
+        },
+        {
+            "hash": "6f2a13fafd3313a719aef3f941711661ce9a2bdd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6baa60d4548b0b2a738c3be7266232f9c8f8a0a3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "92410395e3e2eeb8b0b4495465f883a8796d34fa",
+            "message": "Remove outdated documentation references to WebLogic/WebSphere\n\nSee gh-22093"
+        },
+        {
+            "hash": "d03af155161ccc783b95ce3c0ab39d7f53b7796a",
+            "message": "Explicit note on connection pool deadlock with REQUIRES_NEW\n\nCloses gh-26250"
+        },
+        {
+            "hash": "d781f299c0a38ed9a29001920e811165e2054773",
+            "message": "Use extracted attributes instead of annotation access\n\nSee gh-31034"
+        },
+        {
+            "hash": "6fc4898a1b5d663c6948d6c66291b34de134a246",
+            "message": "Find TransactionalEventListener annotation on target method\n\nCloses gh-31034"
+        },
+        {
+            "hash": "0c15be004e3c3caaa2620b87a851096db1703c25",
+            "message": "Use Any? in ProceedingJoinPoint Kotlin examples\n\nThis commit changes Any to Any? in ProceedingJoinPoint\nKotlin examples in order to be consistent with Java\nand avoid a \"NullPointerException: pjp.proceed() must\nnot be null\" error.\n\nCloses gh-31015"
+        },
+        {
+            "hash": "1c6ef3fe38e6dadfed6176ce779847b38d221bd3",
+            "message": "Use Any? in ProceedingJoinPoint Kotlin examples\n\nThis commit changes Any to Any? in ProceedingJoinPoint\nKotlin examples in order to be consistent with Java\nand avoid a \"NullPointerException: pjp.proceed() must\nnot be null\" error.\n\nSee gh-31015"
+        },
+        {
+            "hash": "d254bff19737401b194a0a97da8dfa0e618354fa",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6fc5a782524881d27c0c2f35b425fdecf61f463f",
+            "message": "Cancel without interruption of currently running tasks\n\nLeave potential interruption up to scheduler shutdown.\n\nCloses gh-31019"
+        },
+        {
+            "hash": "d58e48d9f5bf3a6b19ceec8db79d062811cc8d6c",
+            "message": "Explicit note on FactoryBean resolution with MBeanExporter\n\nCloses gh-21676"
+        },
+        {
+            "hash": "8973d1ad8a50a8eb752597e9e065fe35da761968",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2aae0a4e0cc7fc281408511e28bff023708aabb8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "156b3696a784b84f8b285a4afc622d745f22a7e9",
+            "message": "Reinstate Introspector.flushFromCaches() call for JDK ClassInfo cache\n\nCloses gh-27781"
+        },
+        {
+            "hash": "c36174b2636ad3b14ce3e16479dc23667c8e490d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6e5af9dccb453dd9adfe997c219eef31fd7ab903",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4a81814dbb54b20919154b1ed92fae657deb2223",
+            "message": "Check exception cause for @PropertySource(ignoreResourceNotFound) support\n\nPrior to this commit, the ignoreResourceNotFound flag in\n@PropertySource was ignored by PropertySourceProcessor if a\nPropertySourceFactory threw an exception which wrapped an exception\nthat would otherwise be ignored -- for example, a FileNotFoundException.\n\nTo address this issue, this commit updates PropertySourceFactory so\nthat it catches RuntimeException and IOException and then checks if the\nexception or its cause is an \"ignorable\" exception in terms of\nignoreResourceNotFound semantics.\n\nCloses gh-22276"
+        },
+        {
+            "hash": "1451f307814cf3144afd10791da13522cd54eca9",
+            "message": "Polish PropertySourceProcessor"
+        },
+        {
+            "hash": "4b54ca46d32c05a661123cf0b530ca816709b495",
+            "message": "Polish PropertySourceDescriptor"
+        },
+        {
+            "hash": "169392e132a9bcb5c78a67fa67c7de14fdbfa5a5",
+            "message": "Polish StringHttpMessageConverterTests"
+        },
+        {
+            "hash": "c0506422908ef0d985c0133f7e1c1059e6cb34e1",
+            "message": "Polish contribution\n\nSee gh-30942"
+        },
+        {
+            "hash": "7636eecb481d9d5ec9a145ec800dec09b90743da",
+            "message": "Use readNBytes in StringHttpMessageConverter when contentLength is available\n\nWhen the content length is known, use readNBytes on the InputStream in\nStringHttpMessageConverter, which avoids some extra copying and allocations.\n\nCloses gh-30942"
+        },
+        {
+            "hash": "d890827bae202eb2526b77e6887b988775b7963c",
+            "message": "Fisk asterisk formatting in Asciidoc"
+        },
+        {
+            "hash": "07a1aea9c73ef9859b7405c7c7d8e1905427e229",
+            "message": "Skip array sort when the length of array not greater than 1\n\nCloses gh-30934"
+        },
+        {
+            "hash": "da7b68a6436b69eccd9984afd94a67eb3b0bf14e",
+            "message": "Support Kotlin Serialization custom serializers\n\nThis commit updates WebMVC converters and WebFlux\nencoders/decoders to support custom serializers\nwith Kotlin Serialization when specified via\na custom SerialFormat.\n\nIt also turns the serializers cache to a non-static\nfield in order to allow per converter/encoder/decoder\nconfiguration.\n\nCloses gh-30870"
+        },
+        {
+            "hash": "e83793ba7f804c30f183a3295e4fd051914b1fbe",
+            "message": "Batch SSE events writes when possible\n\nPrior to this commit, the `SseEventBuilder` would be used to create SSE\nevents and write them to the connection using the `ResponseBodyEmitter`.\nThis would send each data item one by one, effectively writing and\nflushing to the network for each. Since multiple data lines are prepared\nby the `SseEventBuilder`, a typical write of an SSE event performs\nmultiple flushes operations.\n\nThis commit adds a method on `ResponseBodyEmitter` to perform batch\nwrites (given a `Set<DataWithMediaType>`) and only flush once all\nelements of the set have been written.\nThis also applies in case of early writes, where now all buffered\nelements are written then flushed altogether.\n\nFixes gh-30912"
+        },
+        {
+            "hash": "18966d048cac38e04a534a293444d5c176ddcf69",
+            "message": "Consistent equals/hashCode style (and related polishing)"
+        },
+        {
+            "hash": "7e6612a920219f2dd811f55ec0d6a1d282b15aee",
+            "message": "Sort multiple @Autowired methods on same bean class via ASM\n\nCloses gh-30359"
+        },
+        {
+            "hash": "9333ed22f6ea6fae9909f6b6e6aa317c1b45ce82",
+            "message": "Avoid repeated FactoryBean targetType check\n\nSee gh-30987"
+        },
+        {
+            "hash": "4b6fabbd2fac1cb0a71e4c8bae2e20f6f696854a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "cba2b6eaf440b61895d2eea1e008eefe393dc5b3",
+            "message": "Check FactoryBean targetType for generic type as well\n\nCloses gh-30987"
+        },
+        {
+            "hash": "34747baed083893a8d24c2a7edd4339753f6b5e1",
+            "message": "Fix broken links to AOT sections"
+        },
+        {
+            "hash": "7c5b2db5bf775a8389d838fff11dfef697bef291",
+            "message": "Suppress warnings in tests"
+        },
+        {
+            "hash": "2e07a721199f863238e229b136f709e7213ea084",
+            "message": "Delete duplicate DummyFactory"
+        },
+        {
+            "hash": "9ba5622efd0d7d1774adeec90c1a505fc7e63db1",
+            "message": "Update outdated Javadoc for PathPatternParser.defaultInstance\n\nSpring Framework 6.0 changed the default value of\nmatchOptionalTrailingSeparator from true to false.\n\nCloses gh-30976"
+        },
+        {
+            "hash": "3ff81a47c95bb28a1f9d49b458601ab5270ede20",
+            "message": "Polish PathPatternParser"
+        },
+        {
+            "hash": "dcec61ab7a5dd6766d377fed16e24e883b0b3ca1",
+            "message": "Remove obsolete dependency on picocli\n\nThe dependency on picocli was removed from the code in commit 019785a72e.\n\nThis commit removes the dependency management from the build.\n\nSee gh-28825"
+        },
+        {
+            "hash": "4922e0e439efc24d72b95976747e777c965f1947",
+            "message": "Give spring-core access to org.jboss.vfs for VfsUtils support on WildFly\n\nThis commit gives spring-core access to the org.jboss.vfs module to make\nVfsUtils work out of the box on WildFly 28+.\n\nCloses gh-30973"
+        },
+        {
+            "hash": "7adacd5ce5653f5db39303c15b065017f03a3ca2",
+            "message": "Upgrade to Netty 4.1.96"
+        },
+        {
+            "hash": "08d89f7aaca1dff971c32be0c56fc56618f4c9af",
+            "message": "Avoid Aalto XML parser override"
+        },
+        {
+            "hash": "d250a5155a4470be31a3c9a0e9e64c2fe694f309",
+            "message": "Consistent dependency declarations"
+        },
+        {
+            "hash": "52176edcbf5942782b7ee94d57cb7dc9baac8b8d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ae279eaced82cf7fe69235556b48befd65290966",
+            "message": "Polishing"
+        },
+        {
+            "hash": "18e72d5c0162b5b381b2d5a28d7bf004ecbb368f",
+            "message": "Always use given fallback producer in case of TypeBootstrapContext\n\nCloses gh-30924"
+        },
+        {
+            "hash": "148f5c459e81116b2d6f873d2a531cf291b1c1b5",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "abbea398550300f96ce69e1ddf796d9fb5bca494",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6fd40a8f60fe14421f9141871c86841f5058af0e",
+            "message": "Upgrade to Caffeine 3.1.7 and H2 2.2.220"
+        },
+        {
+            "hash": "333249e7b03d58d3cfe861b0b375828c1cb9e24a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2573ba4a5091875877bda6349bed40bd34b47563",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bbde68c49e66c3c531920cb80a55742262507be7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fdf1418dfbbdd7c06945d6223594c509bd194294",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5bcf5c6f7cac0ff5f1a7ba78ad9d7b7d2df7fb52",
+            "message": "Clarify DataAccessException/ScriptException declarations for R2DBC\n\nCloses gh-30932"
+        },
+        {
+            "hash": "87d4afda81c0f137f83fab5ab8ab0a82a6bdef9e",
+            "message": "Upgrade to Netty 4.1.95"
+        },
+        {
+            "hash": "3a9e0ea8a7c9334b397b0b79f126c8fe07ff6ab8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4ce1ac0dcbd35c6e247ea766bac339fa097138c8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8cc6dd629a0f564a7b528f3d3bfcc73a9833214b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "391d7f2c6a1a66be70333a7b0717e9498f5f8927",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c64a322e1984e2bac25ff7d92d0075b96f962c9b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2f33e77ab49f136d83b6ebf5eeb72d200fe23c0b",
+            "message": "Consistent equals/hashCode style (and related polishing)"
+        },
+        {
+            "hash": "bbcc788f609098f3dd22750718b446b122188ae1",
+            "message": "Decouple exception messages for sync=true from @Cacheable"
+        },
+        {
+            "hash": "038dda97f86f19df3857bb8154fa59bde97b66ce",
+            "message": "Document EntityManager injection via constructors/@Autowired\n\nCloses gh-15076"
+        },
+        {
+            "hash": "1ac05498816c1b621bf57b26c5efcdd328bfc0be",
+            "message": "Polishing"
+        },
+        {
+            "hash": "616f728afa272270d1a606e61b515b1bb9339064",
+            "message": "MethodIntrospector handles overriding bridge method correctly\n\nCloses gh-30906"
+        },
+        {
+            "hash": "161a71763969a86dbfd344cb3391bfd3d2231bfb",
+            "message": "Avoid synchronization for shortcut re-resolution\n\nSee gh-30883"
+        },
+        {
+            "hash": "28e63e9279347201d869f7d08f3838d429ab97b2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "11de70ed08274730a5fc818c1ad043d21d410c0b",
+            "message": "Update Javadoc for SimpleTriggerFactoryBean.setMisfireInstructionName()\n\norg.quartz.Trigger#MISFIRE_INSTRUCTION_IGNORE_MISFIRE_POLICY is also\nsupported."
+        },
+        {
+            "hash": "9283fd2162d16d2654a9513e928a5ea77977e3bb",
+            "message": "Update Javadoc for CronTriggerFactoryBean.setMisfireInstructionName()\n\norg.quartz.Trigger#MISFIRE_INSTRUCTION_IGNORE_MISFIRE_POLICY is also\nsupported."
+        },
+        {
+            "hash": "544f5945924eaa07ae6c67c68792257f7fcc738b",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "c21a8aa8b059d20ec774e5066980e92d64f4db1e",
+            "message": "Wrap ternary operator within parentheses as outlined in Code Style\n\nCloses gh-30358"
+        },
+        {
+            "hash": "30d6ec3398ce41add7bc44d360b8fb86ac0264b1",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "ab83972c3e9438a8d73d8c8e1ae7822bf00b1df1",
+            "message": "Add missing @Nullable annotations in AbstractResourceResolver subclasses\n\nSee gh-30601\nCloses gh-30893"
+        },
+        {
+            "hash": "9e3f3bee7140427ae43ab9ae9ec69fda7785c836",
+            "message": "Consistently throw TestContextAotException in TestContextAotGenerator\n\nSee gh-30898"
+        },
+        {
+            "hash": "2ba9939bd871761f090da4995908327e77a0da18",
+            "message": "Revise changes to DefaultGenerationContext and GeneratedClasses\n\nIn order to reduce the surface area of published APIs in the affected\nclasses, this commit:\n\n- Reverts the changes made to GeneratedClasses in c354b1014d.\n\n- Reverts the changes made to DefaultGenerationContext in a28ec3a0a8.\n\n- Makes the DefaultGenerationContext(DefaultGenerationContext, String)\n  constructor protected.\n\n- Reworks the internals of TestContextGenerationContext to align with\n  the above changes.\n\nSee gh-30861\nCloses gh-30895\nCloses gh-30897"
+        },
+        {
+            "hash": "3a278cc66d428dcc42faa86830cc9b7b8b08c8e3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6183f0684684912802021556dce916ba26228c26",
+            "message": "Cache DependencyDescriptor per autowired constructor argument\n\nAligned with shortcut handling in AutowiredAnnotationBeanPostProcessor.\nIncludes minor MethodInvoker optimization for pre-resolved targetClass.\n\nCloses gh-30883"
+        },
+        {
+            "hash": "a34f9fa66c3dabf8ee7e9fb3a00927f52f4f4ad8",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "f5db8bd1e8b4b0712f069c3399645b02020c98d5",
+            "message": "Retain existing feature name as prefix in test AOT processing\n\nPrior to this commit, test AOT processing failed if a feature name for\ngenerated class names was used for more than one ApplicationContext.\n\nFor example, when generating code for org.example.MessageService with a\n\"Management\" feature name, the \"BeanDefinitions\" class was named as\nfollows (without a uniquely identifying TestContext###_ feature name\nprefix).\n\norg/example/MessageService__ManagementBeanDefinitions.java\n\nWhen another attempt was made to generate code for the MessageService\nusing the same \"Management\" feature name, a FileAlreadyExistsException\nwas thrown denoting that the class/file name was already in use.\n\nTo avoid such naming collisions, this commit introduces a\nTestContextGenerationContext which provides a custom implementation of\nwithName(String) that prepends an existing feature name (if present) to\na new feature name, thereby treating any existing feature name as a\nprefix to a new, nested feature name.\n\nConsequently, code generation for the above example now results in\nunique class/file names like the following (which retain the uniquely\nidentifying TestContext###_ prefixes).\n\norg/example/MessageService__TestContext002_ManagementBeanDefinitions.java\norg/example/MessageService__TestContext003_ManagementBeanDefinitions.java\n\nCloses gh-30861"
+        },
+        {
+            "hash": "317c6fbec254ae15931349416024947cfb815053",
+            "message": "Introduce failOnError flag in TestContextAotGenerator\n\nThis commit introduces a `failOnError` flag in TestContextAotGenerator.\nWhen set to `true`, any error encountered during AOT processing will\nresult in an exception that fails the overall process. When set to\n`false` (the default), the previous behavior remains unchanged: a DEBUG\nor WARN message will be logged, and processing will continue.\n\nThis feature is currently only used for internal testing.\n\nSee gh-30861\nCloses gh-30898"
+        },
+        {
+            "hash": "c354b1014d35fa75129308317c1c7026549a3dd2",
+            "message": "Make GeneratedClasses#withFeatureNamePrefix(String) public\n\nSee gh-30861\nCloses gh-30897"
+        },
+        {
+            "hash": "a28ec3a0a87e640cc7c9e7e89cae0e232db38c81",
+            "message": "Make DefaultGenerationContext(<classes>,<files>,<hints>) constructor protected\n\nSee gh-30861\nCloses gh-30895"
+        },
+        {
+            "hash": "6ad647d7ce1e373201b3b9ea1fbfd0beb5d7a190",
+            "message": "Explicit hints for @PostConstruct methods (preventing deadlocks)\n\nCloses gh-25074"
+        },
+        {
+            "hash": "384246c360070616e625d549250a92e28fbc2ff7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e30391661d526ca6882295f4b5e9b3191516f3ba",
+            "message": "Document repeatable annotation semantics for @Scheduled\n\nCloses gh-23959"
+        },
+        {
+            "hash": "75f5dac16b57e6b19d712df128fd6b98632e561b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bddd3feb83c46154db673cdd2754503e1c10cbd4",
+            "message": "Next development version (v6.0.12-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31228",
+            "title": "Fix documentation: Passing in Lists of Values for IN Clause does not work with JdbcTemplate"
+        },
+        {
+            "number": "31223",
+            "title": "Upgrade to Context Propagation 1.0.5"
+        },
+        {
+            "number": "31222",
+            "title": "Upgrade to Reactor 2022.0.11"
+        },
+        {
+            "number": "31221",
+            "title": "Upgrade to Micrometer 1.10.11"
+        },
+        {
+            "number": "30894",
+            "title": "Spring webflux @ModelAttribute annotated methods not working with kotlin suspend methods"
+        },
+        {
+            "number": "31210",
+            "title": "ArithmeticException: long overflow on @Scheduled(fixedDelay = Long.MAX_VALUE, timeUnit = TimeUnit.MINUTES) "
+        },
+        {
+            "number": "31216",
+            "title": "Spring Boot fails with \"does not reside in the file system: manifoldclass://622488023/.../\""
+        },
+        {
+            "number": "31143",
+            "title": "Refine CORS documentation for wildcard processing"
+        },
+        {
+            "number": "31170",
+            "title": "Possible classloader leak through incomplete clearing of annotation caches"
+        },
+        {
+            "number": "31166",
+            "title": "Spring `LogFactory` implementation deviates from original Apache `LogFactory` in terms of abstract method declarations"
+        },
+        {
+            "number": "26253",
+            "title": "SpEL `T()` operator not able to locate user types with default `StandardTypeLocator` configuration"
+        },
+        {
+            "number": "30810",
+            "title": "Provide explicit support for collections, maps, and arrays in `ObjectUtils.nullSafeConciseToString()`"
+        },
+        {
+            "number": "31138",
+            "title": "Bean injection fails due to `nullSafeConciseToString()` invoking `isEmpty()` on a `Map`/`Collection` proxy"
+        },
+        {
+            "number": "31189",
+            "title": "Document some non-nullable Kotlin extensions can throw `NoSuchElementException`"
+        },
+        {
+            "number": "31185",
+            "title": "Improve documentation on applicability of mapped interceptors with the Spring MVC config"
+        },
+        {
+            "number": "31147",
+            "title": "Update logging level in BeanValidationBeanRegistrationAotProcessor for validation exceptions"
+        },
+        {
+            "number": "29161",
+            "title": "Revise `FilePatternResourceHintsRegistrar` API and improve documentation"
+        },
+        {
+            "number": "31179",
+            "title": "`WebClientResponseException.getResponseBodyAs` throws exception instead of returning `null` for empty body"
+        },
+        {
+            "number": "31049",
+            "title": "Stop publishing distribution zip artifact"
+        },
+        {
+            "number": "31141",
+            "title": "graalvm native image feature PreComputeFieldFeature disable all netty native transports"
+        },
+        {
+            "number": "30195",
+            "title": "Document purpose of `name` attribute in `@PropertySource`"
+        },
+        {
+            "number": "28761",
+            "title": "Remove convention-based annotation attribute override support"
+        },
+        {
+            "number": "31116",
+            "title": "Revise Checkstyle rules to prohibit use of assertions other than AssertJ"
+        },
+        {
+            "number": "31111",
+            "title": "Skip searching of nonexistent directory in `PathMatchingResourcePatternResolver`"
+        },
+        {
+            "number": "31097",
+            "title": "SpelExpressionParser throws IllegalStateException instead of ParseException for invalid expression"
+        },
+        {
+            "number": "30272",
+            "title": "Optimize `ClassUtils#getMostSpecificMethod`"
+        },
+        {
+            "number": "22168",
+            "title": "JOptCommandLinePropertySource selects property names in an inconsistent way [SPR-17639]"
+        },
+        {
+            "number": "31086",
+            "title": "Add `@Nullable` to `argValue` in `doSetValue()` in `Argument[Type]PreparedStatementSetter`"
+        },
+        {
+            "number": "28250",
+            "title": "Document how to configure the cache infrastructure globally"
+        },
+        {
+            "number": "26091",
+            "title": "@DynamicPropertySource is not supported via @NestedTestConfiguration semantics"
+        },
+        {
+            "number": "29546",
+            "title": "Document inference of destroy methods with Java config more prominently"
+        },
+        {
+            "number": "29996",
+            "title": "Document how to configure the `ApplicationEventMulticaster` used by the `ApplicationContext`"
+        },
+        {
+            "number": "29603",
+            "title": "Missing native hints for Hibernate Native Query proxy"
+        },
+        {
+            "number": "31045",
+            "title": "Spring Boot WebFlux validation of invalid inputs"
+        },
+        {
+            "number": "31067",
+            "title": "Optimize whitespace checks in `StringUtils`"
+        },
+        {
+            "number": "31057",
+            "title": "@Transactional on package-private/protected methods for class-based proxies"
+        },
+        {
+            "number": "25582",
+            "title": "@Transactional does not work on package protected methods of CGLib proxies"
+        },
+        {
+            "number": "31061",
+            "title": "Upgrade to Gradle 8.3"
+        },
+        {
+            "number": "31050",
+            "title": "Missing proxy hint when using a simple Spring Data `JpaRepository`"
+        },
+        {
+            "number": "21852",
+            "title": "Align validation metadata handling in `PayloadMethodArgumentResolver`"
+        },
+        {
+            "number": "27282",
+            "title": "R2DBC - DatabaseClient - Add bind method to accept an object"
+        },
+        {
+            "number": "20189",
+            "title": "Property placeholder in factory bean is not resolved [SPR-15630]"
+        },
+        {
+            "number": "31047",
+            "title": "Register an override for an existing adapter in `ReactiveAdapterRegistry`"
+        },
+        {
+            "number": "22093",
+            "title": "Upgrade Spring Context Support to Jakarta EE's com.sun.mail:jakarta.mail and com.sun.activation:jakarta.activation [SPR-17561]"
+        },
+        {
+            "number": "26250",
+            "title": "Propagation REQUIRES_NEW may cause connection pool deadlock"
+        },
+        {
+            "number": "31034",
+            "title": "`TransactionalApplicationListenerMethodAdapter` should find `@TransactionalEventListener` on target class method"
+        },
+        {
+            "number": "31019",
+            "title": "ScheduledAnnotationBeanPostProcessor: graceful shutdown should not interrupt currently running jobs"
+        },
+        {
+            "number": "21676",
+            "title": "Improve documentation for FactoryBean's getObject automatic call through @ManagedResource [SPR-17139]"
+        },
+        {
+            "number": "27781",
+            "title": "Permgen memory leak due to `ClassInfo` caching in `java.beans.Introspector` on JDK 11/17"
+        },
+        {
+            "number": "22276",
+            "title": "Check exception cause for `@PropertySource(ignoreResourceNotFound)` support"
+        },
+        {
+            "number": "30870",
+            "title": "Support Kotlin Serialization custom serializers"
+        },
+        {
+            "number": "30912",
+            "title": "Avoid flushing for each SseEventBuilder entry"
+        },
+        {
+            "number": "30359",
+            "title": "Make bean initialization deterministic for multiple `@Autowired` methods on same bean class"
+        },
+        {
+            "number": "30987",
+            "title": "`DefaultListableBeanFactory#getBeanNamesForType` does not take target type into account for `FactoryBean` resolution"
+        },
+        {
+            "number": "30976",
+            "title": "Javadoc for `PathPatternParser.defaultInstance` is outdated"
+        },
+        {
+            "number": "28825",
+            "title": "Introduce command-line application for triggering AOT test context processing"
+        },
+        {
+            "number": "30924",
+            "title": "TypeBootstrapContext constructor not called in custom types with Hibernate 6"
+        },
+        {
+            "number": "30932",
+            "title": "Clarify R2DBC `ConnectionAccessor` and `DatabasePopulator` exception declarations"
+        },
+        {
+            "number": "15076",
+            "title": "Injecting EntityManagers through constructor injection (and at non-@PersistenceContext injection points in general) [SPR-10443]"
+        },
+        {
+            "number": "30906",
+            "title": "`MethodIntrospector.selectMethods(…)` fails to find methods in case of special bridge method arrangement"
+        },
+        {
+            "number": "30883",
+            "title": "Performance bottlenecks while creating scoped bean instances"
+        },
+        {
+            "number": "30898",
+            "title": "Introduce `failOnError` flag in `TestContextAotGenerator`"
+        },
+        {
+            "number": "30861",
+            "title": "Test AOT processing fails if a feature name prefix is reused"
+        },
+        {
+            "number": "30895",
+            "title": "Make `DefaultGenerationContext(DefaultGenerationContext, String)` constructor `protected`"
+        },
+        {
+            "number": "30897",
+            "title": "Make `GeneratedClasses#withFeatureNamePrefix(String)` `public`"
+        },
+        {
+            "number": "25074",
+            "title": "Doc: Avoid deadlock in `@PostConstruct` through `SmartInitializingSingleton` or `ContextRefreshedEvent`"
+        },
+        {
+            "number": "23959",
+            "title": "Document expected behavior of a method annotated with multiple `@Scheduled` annotations"
+        }
+    ]
+}

@@ -1,0 +1,746 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 121,
+    "start_delay": 0.0,
+    "duration": 58.913773148148145,
+    "commits_info": [
+        {
+            "hash": "7cca14b8dcf9851aefbc45f3f91b9132224004c2",
+            "message": "Release v2.5.10"
+        },
+        {
+            "hash": "57009d562391c9b1b388a67f7f1961289f87c519",
+            "message": "Polish"
+        },
+        {
+            "hash": "67b13ee4c740602af482a814ee3de1b1b6128ebb",
+            "message": "Document that placeholders in @DefaultValue annotations are not resolved\n\nCloses gh-23164"
+        },
+        {
+            "hash": "cc95f734d7cc8df61b5884cd2a98771d3b795b80",
+            "message": "Clarify relation of import path to resultant properties in configtree import data\n\nCloses gh-29606"
+        },
+        {
+            "hash": "479a4e693c739625cde02d55e423bd6ebd28b9c6",
+            "message": "Upgrade to Spring Batch 4.3.5\n\nCloses gh-29714"
+        },
+        {
+            "hash": "773b0252082f315662c73d9738b2569d7ea9fcda",
+            "message": "Upgrade to Netty tcNative 2.0.50.Final\n\nCloses gh-29973"
+        },
+        {
+            "hash": "776ccf77a732495b8b4d3106383456f4e9824ef0",
+            "message": "Upgrade to Spring Session 2021.0.5\n\nCloses gh-29715"
+        },
+        {
+            "hash": "7aca75c58c471c8304d8c66233eb204c8885ee05",
+            "message": "Preserve ObjectName property order when name is unchanged\n\nCloses gh-29953"
+        },
+        {
+            "hash": "9c9e04b8e42e45d3062a034fcacab01102de2049",
+            "message": "Use mainClass rather than deprecated main in BootRun examples\n\nCloses gh-29965"
+        },
+        {
+            "hash": "ee7426a55500bb9a3a86587899a11c1f279a265d",
+            "message": "Upgrade to Spring Integration 5.5.9\n\nCloses gh-29962"
+        },
+        {
+            "hash": "3f2d01628db86012f83bd3f2b81091dc37e7ed44",
+            "message": "Upgrade to Spring Kafka 2.7.11\n\nCloses gh-29712"
+        },
+        {
+            "hash": "a70fa805719c30bcd774437c38abaa96f20b0244",
+            "message": "Rectify incorrect sanitizing regex example provided in how-to docs\n\nCloses gh-29951"
+        },
+        {
+            "hash": "1e8d29f7aadb28e61db20b9abfcad9a86f3edc12",
+            "message": "Configure Kotlin compilation JVM target by convention\n\nCloses gh-29952"
+        },
+        {
+            "hash": "49337f30dad8e8a5477cb0ddd959d2a737cc38a4",
+            "message": "Upgrade to Netty tcNative 2.0.49.Final\n\nCloses gh-29936"
+        },
+        {
+            "hash": "95d5a5159f70dc918bac6666c39d9cba7f70404d",
+            "message": "Merge pull request #29931 from UbaidurRehman1\n\n* pr/29931:\n  Clarify that any property of the environment can be used in a banner\n\nCloses gh-29931"
+        },
+        {
+            "hash": "7b48c516898b83d85f14f6b9fcd92eaddf1512ea",
+            "message": "Clarify that any property of the environment can be used in a banner\n\nSee gh-29931"
+        },
+        {
+            "hash": "ca2dbf39ecd447714a6df02f905c01383a756cf7",
+            "message": "Upgrade to Jetty Reactive HTTPClient 1.1.11\n\nCloses gh-29927"
+        },
+        {
+            "hash": "df6959679ca2aff6e2163e2c405ffd7ee24b9ee6",
+            "message": "Upgrade to AppEngine SDK 1.9.95\n\nCloses gh-29926"
+        },
+        {
+            "hash": "7db9bb94cd88032de332ecd956cc10b4c0d1139b",
+            "message": "Upgrade to ActiveMQ 5.16.4\n\nCloses gh-29925"
+        },
+        {
+            "hash": "4cb8ae6c8a8d69d906b330d3c70da084f28e8873",
+            "message": "Try to avoid hitting secondary rate limit when opening issues\n\nGitHub employs a secondary rate limit for actions that can trigger\nnotifications, such as opening a new issue. To avoid hitting this\nlimit, they recommend [1] waiting at least one second between each\nrequest.\n\nThis commit attempts to comply with this guidance by adding a\none-second sleep prior to each POST request that opens an issue.\n\nCloses gh-29879\n\n[1] https://docs.github.com/en/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits"
+        },
+        {
+            "hash": "21fb273ec3d9c9c492d5a7ec512d64bea94272f5",
+            "message": "Upgrade to Spring Security 5.5.5\n\nCloses gh-29713"
+        },
+        {
+            "hash": "55f68989d8d2cf6f6143b858cee3e2bfb9f0f537",
+            "message": "Remove redundant action to make plugins dat file reproducible\n\nCloses gh-29917"
+        },
+        {
+            "hash": "ca23c68b1c28017e101850bcff7705c7ac2a5f51",
+            "message": "Merge pull request #29896 from gcoppex\n\n* pr/29896:\n  Polish \"Clarify log message with a profile containing a comma\"\n  Clarify log message with a profile containing a comma\n\nCloses gh-29896"
+        },
+        {
+            "hash": "92cd51e6b01fbf84751f6f6713db85263ce8e2af",
+            "message": "Polish \"Clarify log message with a profile containing a comma\"\n\nSee gh-29896"
+        },
+        {
+            "hash": "c8466a14e97ff98d26cc5b2fc4e8d10d50001aef",
+            "message": "Clarify log message with a profile containing a comma\n\nSee gh-29896"
+        },
+        {
+            "hash": "5baa71f1b3c83aa93c8deb7c52b439c774b9493a",
+            "message": "Allow beans with circular dependencies to be spied\n\nCloses gh-29639"
+        },
+        {
+            "hash": "1c4fc7d3fa739837c55463c8e3b2f5dda4fdd12a",
+            "message": "Upgrade to Spring Data 2021.0.9\n\nCloses gh-29711"
+        },
+        {
+            "hash": "6bf172f0f26165d7cd1d87e5ed85526b14a34a37",
+            "message": "Upgrade to Spring LDAP 2.3.6\n\nCloses gh-29710"
+        },
+        {
+            "hash": "00114f9d61735a72812c16ef774a6f59b19748ac",
+            "message": "Deregister failed contexts from SpringApplicationShutdownHook\n\nPrior to this change, SpringApplication would register contexts to\nSpringApplicationShutdownHook and only deregister them when they're\nproperly closed. A failed refresh attempt does not deregister the\ncontext from the shutdown hook.\nWhen a test suite runs lots of tests failing because of failed contexts,\nthis can build up and consume lots of resources.\n\nThis commit fixes this leak and deregisters failed contexts.\n\nFixes gh-29874"
+        },
+        {
+            "hash": "c676b8b84db21561c5edd1ed0956c6b631d6455c",
+            "message": "Remove KafkaPropertiesKafka24Tests\n\nWe now use Kafka 2.7 by default so tests against 2.4 are no longer\nrequired.\n\nCloses gh-29882"
+        },
+        {
+            "hash": "ac38a5a3e97e8cec4ea50da0a41ae40ee0079ac5",
+            "message": "Update javadoc to reflect move to SecurityFilterChain\n\nCloses gh-29900"
+        },
+        {
+            "hash": "b1cfa402e820c09b15d6bc3e5ac28f9169ea5a80",
+            "message": "Upgrade to Spring Framework 5.3.16\n\nCloses gh-29709"
+        },
+        {
+            "hash": "0fba81adf092fb3d76bd7f54acf18c63c88645ed",
+            "message": "Upgrade to Micrometer 1.7.9\n\nCloses gh-29708"
+        },
+        {
+            "hash": "cca97ff4b7647b513f203c74f46cc9e2b5716737",
+            "message": "Upgrade Java 11 version in CI image\n\nCloses gh-29889"
+        },
+        {
+            "hash": "c86b1330cf5c2d7ff0d9303b6d132fb1e79baeac",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "9ab1b669d0171ba5d3d91f2adead75a862477d66",
+            "message": "Polish"
+        },
+        {
+            "hash": "fa6a1463d079f494b36f12feb0c7600d9d2ee7d9",
+            "message": "Polish"
+        },
+        {
+            "hash": "03352b0a8ca78d5e8507d914458fbe08e74fc056",
+            "message": "Prohibit use of APIs that prevent task configuration avoidance\n\nCloses gh-29809"
+        },
+        {
+            "hash": "865a829d29224db0c7b9b990afa82c1305474083",
+            "message": "Prevent upgrade to AspectJ 1.9.8 as it requires Java 11"
+        },
+        {
+            "hash": "008a793f92aa026b0c7ee3f91a6e932b39de18e3",
+            "message": "Merge pull request #29826 from izeye\n\n* gh-29826:\n  Fix Javadoc since for ResolveMainClassName#setClasspath(Object)\n\nCloses gh-29826"
+        },
+        {
+            "hash": "6bd6f590d37af43d2e4ca8076fa155e82e2bd02f",
+            "message": "Fix Javadoc since for ResolveMainClassName#setClasspath(Object)\n\nSee gh-29826"
+        },
+        {
+            "hash": "f3af0359413c1f665dfe3b989ea605bb683bf233",
+            "message": "Remove usage of SocketUtils in tests\n\nCloses gh-29821"
+        },
+        {
+            "hash": "f180397998abae5ab709dddfa40eda9e9a259f50",
+            "message": "Upgrade to Reactor 2020.0.16\n\nCloses gh-29707"
+        },
+        {
+            "hash": "7f196d33fb059ad9c902b4ca78b97452033589a4",
+            "message": "Merge pull request #29762 from larsgrefer\n\n* gh-29762:\n  Polish \"Avoid using Gradle APIs that trigger eager task creation\"\n  Avoid using Gradle APIs that trigger eager task creation\n\nCloses gh-29762"
+        },
+        {
+            "hash": "c84b35c460f100c3f3702b1a59192e4071263a26",
+            "message": "Polish \"Avoid using Gradle APIs that trigger eager task creation\"\n\nSee gh-29762"
+        },
+        {
+            "hash": "7cd87acd733605d2d7dd959edc00965d43865b38",
+            "message": "Avoid using Gradle APIs that trigger eager task creation\n\nSee gh-29762"
+        },
+        {
+            "hash": "622e6206db97d3d9430abf64e4c3ef435272c481",
+            "message": "Merge pull request #29758 from dreis2211\n\n* gh-29758:\n  Link to Integration section of the appendix for Kafka properties\n\nCloses gh-29758"
+        },
+        {
+            "hash": "39394b9c2b3ca02140beffbf41091198109c7662",
+            "message": "Link to Integration section of the appendix for Kafka properties\n\nSee gh-29758"
+        },
+        {
+            "hash": "4ee7b4b25ab96623f3c4ec140a4a2a91566dab1a",
+            "message": "Upgrade to Undertow 2.2.16.Final\n\nCloses gh-29781"
+        },
+        {
+            "hash": "2207bd88761cd0739e042732479a773db92e9c17",
+            "message": "Upgrade to Tomcat 9.0.58\n\nCloses gh-29780"
+        },
+        {
+            "hash": "e9eba82c6c5469700f612f0ad0060fe1b1d5d604",
+            "message": "Upgrade to Thymeleaf 3.0.15.RELEASE\n\nCloses gh-29779"
+        },
+        {
+            "hash": "0440147f412a3935c852da07e46058183fe0c605",
+            "message": "Upgrade to SLF4J 1.7.36\n\nCloses gh-29778"
+        },
+        {
+            "hash": "ea609ae6972ec277f19add6da3ea42c4446b0575",
+            "message": "Upgrade to Postgresql 42.2.25\n\nCloses gh-29777"
+        },
+        {
+            "hash": "1c1bf932b2ca3e5480423ac3d2087225f1a61427",
+            "message": "Upgrade to Netty tcNative 2.0.48.Final\n\nCloses gh-29776"
+        },
+        {
+            "hash": "66cc3e7730d8017195a604c4b4f9434c03cf191f",
+            "message": "Upgrade to Netty 4.1.74.Final\n\nCloses gh-29775"
+        },
+        {
+            "hash": "f29152496a53bd8a4263d59882f350a2726173ac",
+            "message": "Upgrade to Neo4j Java Driver 4.2.9\n\nCloses gh-29774"
+        },
+        {
+            "hash": "4f98bfd39d0246d54db39d52080d7fee5a14ce8c",
+            "message": "Upgrade to Json-smart 2.4.8\n\nCloses gh-29773"
+        },
+        {
+            "hash": "7de763f2d7cff9ea91fb3a266d9d4604461f96d9",
+            "message": "Upgrade to Johnzon 1.2.16\n\nCloses gh-29772"
+        },
+        {
+            "hash": "a99582a3bb9073cd15d22fcbcfabca56ba28ea80",
+            "message": "Upgrade to Jetty 9.4.45.v20220203\n\nCloses gh-29771"
+        },
+        {
+            "hash": "1cdb75f7805eab38c80a87e6b6479b4657885194",
+            "message": "Upgrade to Hibernate Validator 6.2.2.Final\n\nCloses gh-29770"
+        },
+        {
+            "hash": "2485c05a50a190ebffec652b1eb64bc7f69b564c",
+            "message": "Upgrade to Glassfish JAXB 2.3.6\n\nCloses gh-29769"
+        },
+        {
+            "hash": "6c09d4d7a151c7ae0dd82448d6cfae007811decd",
+            "message": "Upgrade to Dropwizard Metrics 4.1.30\n\nCloses gh-29768"
+        },
+        {
+            "hash": "81aec09357410301916f3a1156eac2fa47613ef5",
+            "message": "Upgrade to AppEngine SDK 1.9.94\n\nCloses gh-29767"
+        },
+        {
+            "hash": "1fd4a4d86b12b631277675962cbab6b8cf7b7aa3",
+            "message": "Remove code related to unsupported versions of Gradle\n\nCloses gh-29681"
+        },
+        {
+            "hash": "1f0134505750d9b0da9419699ebd23faff2b5665",
+            "message": "Fix assertion due to toString change in Spring Framework"
+        },
+        {
+            "hash": "387795d4db15022ec94ad6b53f846514217ed66e",
+            "message": "Remove trailing space from media type for ots mapping\n\nThe regular expression in the new test is intended to match the\ndocumented [1] ABNF for a media type:\n\n    type-name = reg-name\n    subtype-name = reg-name\n\n    reg-name = 1*127reg-name-chars\n    reg-name-chars = ALPHA / DIGIT / \"!\" /\n                     \"#\" / \"$\" / \"&\" / \".\" /\n                     \"+\" / \"-\" / \"^\" / \"_\"\n\nCloses gh-29746\n\n[1] https://datatracker.ietf.org/doc/html/rfc4288#section-4.2"
+        },
+        {
+            "hash": "c3eee4ad68ec952f1cb434ae7e5d1405d7cb02f7",
+            "message": "Align Gradle's plugin's META-INF repackaging with Maven plugin's\n\nCloses gh-28562"
+        },
+        {
+            "hash": "c46b45a1e3501f2df4217faf63366fa74f405b33",
+            "message": "Add dependency management for liquibase-cdi\n\nCloses gh-29676"
+        },
+        {
+            "hash": "e242dc5ce834948621571581e0575235d4c1f8cd",
+            "message": "Start building against Spring Session 2021.0.5 snapshots\n\nSee gh-29715"
+        },
+        {
+            "hash": "7afd33589f2d35423049169e4c6e584b7cb1afe5",
+            "message": "Start building against Spring Batch 4.3.5 snapshots\n\nSee gh-29714"
+        },
+        {
+            "hash": "3c3ebafa31dd52f7524993edcb903c3827f63d44",
+            "message": "Start building against Spring Security 5.5.5 snapshots\n\nSee gh-29713"
+        },
+        {
+            "hash": "b892bb44150e4bf95008c592845192e5c3739498",
+            "message": "Start building against Spring Kafka 2.7.11 snapshots\n\nSee gh-29712"
+        },
+        {
+            "hash": "cd94b27f2da6d053efa50ad076547430f8513591",
+            "message": "Start building against Spring Data 2021.0.9 snapshots\n\nSee gh-29711"
+        },
+        {
+            "hash": "29d502da5bbe2cbd72d7699fabc6c71e4eb307f6",
+            "message": "Start building against Spring LDAP 2.3.6 snapshots\n\nSee gh-29710"
+        },
+        {
+            "hash": "d15149c1a3abff5f905dfb5d2c78fc424b7e5b5f",
+            "message": "Start building against Spring Framework 5.3.16 snapshots\n\nSee gh-29709"
+        },
+        {
+            "hash": "0f630debb3edc1aba072f8da8e842923c4b03b97",
+            "message": "Start building against Micrometer 1.7.9 snapshots\n\nSee gh-29708"
+        },
+        {
+            "hash": "5767e1fda1e0c629f0dc1fb53fa3a7fb7347ce18",
+            "message": "Start building against Reactor 2020.0.16 snapshots\n\nSee gh-29707"
+        },
+        {
+            "hash": "6901f6dab2d30704d3dd5aad4131442267a6dfee",
+            "message": "Test our Gradle plugin against Gradle 7.4\n\nCloses gh-29673"
+        },
+        {
+            "hash": "92578f1cbe35b53c137d4e03d8d195af270fac28",
+            "message": "Merge pull request #29333 from terminux\n\n* gh-29333:\n  Polish \"Configure ForwardedHeaderFilter with Tomcat's use relative redirects\"\n  Configure ForwardedHeaderFilter with Tomcat's use relative redirects\n\nCloses gh-29333"
+        },
+        {
+            "hash": "64ee54423a4e1b4e08e0e482ef6eede9dd82b0aa",
+            "message": "Polish \"Configure ForwardedHeaderFilter with Tomcat's use relative redirects\"\n\nSee gh-29333"
+        },
+        {
+            "hash": "cec69feb95893bda37c07e3e227879735c9d24dc",
+            "message": "Configure ForwardedHeaderFilter with Tomcat's use relative redirects\n\nPreviously, when Tomcat was configured to use relative redirects\nand the ForwardedHeaderFilter is in use, the filter would ignore\nthe use of the relative redirects.\n\nThis commit corrects this misalignment by applying Tomcat's use\nrelative redirects setting to the filter, but only when Tomcat is\nbeing used as the servlet container.\n\nSee gh-29333"
+        },
+        {
+            "hash": "59799c81b0fa10fbaf6e6dbd9fdbc2def98fbb49",
+            "message": "Merge pull request #29683 from mhalbritter\n\n* pr-29683:\n  Add documentation for WebMvc.fn\n\nCloses gh-29683"
+        },
+        {
+            "hash": "096ba72a39abbd0628acba4c2aeb05fec14259b7",
+            "message": "Add documentation for WebMvc.fn\n\nSee gh-29683"
+        },
+        {
+            "hash": "430d510a33a97f612b72e01b30cdbf0ad595472c",
+            "message": "Merge pull request #29675 from mhalbritter\n\n* gh-29675:\n  Ignore invalid stream types when reading log update events\n\nCloses gh-29675"
+        },
+        {
+            "hash": "262db65a3873c63d720086dd88c74cef5c6f4d72",
+            "message": "Ignore invalid stream types when reading log update events\n\nSee gh-29675"
+        },
+        {
+            "hash": "43dc378adc1ef31f0c407722bd6f55555b8b85f6",
+            "message": "Merge pull request #29667 from mhalbritter\n\n* gh-29667:\n  Move appendix subsections under appendix section\n\nCloses gh-29667"
+        },
+        {
+            "hash": "52d9ba58d8f02d87bd043962116ee22cfa7d1729",
+            "message": "Move appendix subsections under appendix section\n\nThis involved a small code change to the generated configuration\nproperties snippets. The section id has to start with\n'appendix.', otherwise the section-id asciidoctor extension\ncomplains. To ensure that the anchors that are derived from the\nsection IDs remain backwards compatible, the anchor-rewrite\nproperties have been updated.\n\nSee gh-29667"
+        },
+        {
+            "hash": "48fe1513fecf4047455deacc09b88fcf0c0f7400",
+            "message": "Test documented build script snippets when they change\n\nCloses gh-29684"
+        },
+        {
+            "hash": "3a5bf49e24399534e3aa2a3b050bc4b87eae1255",
+            "message": "Merge pull request #29611 from halcyon22\n\n* gh-29611:\n  Replace use of classifier with archiveClassifier\n\nCloses gh-29611"
+        },
+        {
+            "hash": "2e9dcdd96df3e7661caf93f842369ecf96661f15",
+            "message": "Replace use of classifier with archiveClassifier\n\nclassifier has been deprecated so the docs should be using its\nreplacement, archiveClassifier, instead.\n\nSee gh-29611"
+        },
+        {
+            "hash": "43ca2d2cb01fb7afbef48f92c5220efdbcc130ff",
+            "message": "Access classpath lazily to allow later changes to be picked up\n\nPreviously, the classpath of bootJar, bootWar, and bootRun was\nconfigured directly as a FileCollection derived from the main source\nset's runtime classpath. This direct configuration meant that\nsubsequent changes to the main source set's runtime classpath may not\nhave been picked up.\n\nThis commit changes the configuration of the classpath to use a\nCallable. This indirection allows subsequent changes to the main\nsource set's runtime classpath to be picked up as long as they\noccur before Gradle calls the callable.\n\nCloses gh-29672"
+        },
+        {
+            "hash": "52f1799c20e7a754336d60f2ef8ed9ae17283f53",
+            "message": "Polish formatting"
+        },
+        {
+            "hash": "12a33a2eaf3fd0d506475660495edf56b607af8b",
+            "message": "Upgrade to spring-asciidoctor-backends 0.0.3\n\nCloses gh-29656"
+        },
+        {
+            "hash": "48649192cbd9438e45fe53cb215fdb8129cb0f28",
+            "message": "Fix schema file name for Batch auto-configuration tests\n\nCloses gh-29648"
+        },
+        {
+            "hash": "080de85e2e85cbe2d6788c5c2f8c331226cdce70",
+            "message": "Upgrade Java 17 version in CI image\n\nCloses gh-29626"
+        },
+        {
+            "hash": "57cd1ff07fa606cf2b7e77c4d3f745e54844512f",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-29628"
+        },
+        {
+            "hash": "79fc77fadea867b77df162d4440fa9c57b77349d",
+            "message": "Upgrade to spring-javaformat 0.0.31\n\nCloses gh-29633"
+        },
+        {
+            "hash": "2b40ce09d87c6736e61d552f4041b43ab3bb4b31",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "5975cdc5edb968a84bd996a36c437f994336f325",
+            "message": "Polish formatting"
+        },
+        {
+            "hash": "30e927adaeebcd6952be0c473e8c669b20bb1f6a",
+            "message": "Merge pull request #29276 from mihailcornescu\n\n* pr/29276:\n  Polish \"Add a note on early init with @ConditionalOnExpression\"\n  Add a note on early init with @ConditionalOnExpression\n\nCloses gh-29276"
+        },
+        {
+            "hash": "5fe617696619608397306c7ce7725bc092a7007e",
+            "message": "Polish \"Add a note on early init with @ConditionalOnExpression\"\n\nSee gh-29276"
+        },
+        {
+            "hash": "fce3cd1684cc0c581f904ec4e3cd6aaacb8126a2",
+            "message": "Add a note on early init with @ConditionalOnExpression\n\nSee gh-29276"
+        },
+        {
+            "hash": "bd2e992d48f7a8b5c4ef1c659f0d4cfcb7cb0598",
+            "message": "Merge pull request #29178 from quaff\n\n* pr/29178:\n  Polish \"Enforce use of BDDMockito\"\n  Enforce use of BDDMockito\n\nCloses gh-29178"
+        },
+        {
+            "hash": "7f17f819a606d677a914210aefcaeb3ec02186de",
+            "message": "Polish \"Enforce use of BDDMockito\"\n\nSee gh-29178"
+        },
+        {
+            "hash": "b49418aaaf1df161031a4d1281a8303dfdc994a1",
+            "message": "Enforce use of BDDMockito\n\n1. Replace Mockito.verify*() with BDDMockito.then()\n2. Replace Mockito.doReturn() with BDDMockito.willReturn()\n3. Adjust checkstyle rule\n\nSee gh-29178"
+        },
+        {
+            "hash": "f60af4dbbd775d591f1dfa17ce35764acad3c961",
+            "message": "Merge pull request #29438 from aahlenst\n\n* pr/29438:\n  Polish \"Make classloader customization easier to discover\"\n  Make classloader customization easier to discover\n\nCloses gh-29438"
+        },
+        {
+            "hash": "ab0b29cb53d50cb40f584c02d6ebf41491ed0524",
+            "message": "Polish \"Make classloader customization easier to discover\"\n\nSee gh-29438"
+        },
+        {
+            "hash": "96f48db2ab3d590457a23c407dd9c04c590b0118",
+            "message": "Make classloader customization easier to discover\n\nSee gh-29438"
+        },
+        {
+            "hash": "697c30346d5bf925599bdf2a0261732937dd75fd",
+            "message": "Merge pull request #29522 from polarbear567\n\n* pr/29522:\n  Polish \"Use a timeout when joining threads in HttpTunnelServerTests\"\n  Use a timeout when joining threads in HttpTunnelServerTests\n\nCloses gh-29522"
+        },
+        {
+            "hash": "0d78ff0657947c7debf3e1d7f267999858d9e467",
+            "message": "Polish \"Use a timeout when joining threads in HttpTunnelServerTests\"\n\nSee gh-29522"
+        },
+        {
+            "hash": "940d969c7c5645f7197dc8e88ba6c8ea19b90305",
+            "message": "Use a timeout when joining threads in HttpTunnelServerTests\n\nSee gh-29522"
+        },
+        {
+            "hash": "458f6721bbe98b329582454599f0e0e29dc4fb80",
+            "message": "Upgrade Java 11 version in CI image\n\nCloses gh-29579"
+        },
+        {
+            "hash": "440702df9944bdf16c5ae4f53fc95832a72c03ac",
+            "message": "Upgrade Java 8 version in CI image\n\nCloses gh-29580"
+        },
+        {
+            "hash": "3ed65f23834176aa1be9618a2f43ef2cfe066429",
+            "message": "Avoid running Maven plugin ITs for each s-b-dependencies change\n\nCloses gh-28781"
+        },
+        {
+            "hash": "f1bbce1aac9712fb4856867556a04cd12d5c6196",
+            "message": "Do not modify AliasChecks list from Jetty WebAppContext\n\nCloses gh-29555\nSigned-off-by: Lachlan Roberts <lachlan@webtide.com>"
+        },
+        {
+            "hash": "000cbfa2d99c4778aef6906e4c8be3ef7a5a78fc",
+            "message": "Set file permissions on all created test files\n\nCloses gh-29551"
+        },
+        {
+            "hash": "761bed6c4876e6e4d52f1a57c99909c0e52df636",
+            "message": "Upgrade buildSrc to Spring Framework 5.3.15\n\nCloses gh-29545"
+        },
+        {
+            "hash": "fa76209306ae7210b96f96fc331596288f8b9df7",
+            "message": "Merge pull request #29523 from axelfontaine\n\n* pr/29523:\n  Rename Boxfuse to CloudCaptain\n\nCloses gh-29523"
+        },
+        {
+            "hash": "48817587e69d96b3722bd7d40ae1c1080b2111da",
+            "message": "Rename Boxfuse to CloudCaptain\n\nSee gh-29523"
+        },
+        {
+            "hash": "516030a2fa66d9f26432053172292e9bffe1688e",
+            "message": "Merge pull request #29535 from jvalkeal\n\n* pr/29535:\n  Upgrade reference of gradle-git-properties to 2.3.2\n\nCloses gh-29535"
+        },
+        {
+            "hash": "d821f86b8ed9564a5b7615bfac730c8db33e9ba6",
+            "message": "Upgrade reference of gradle-git-properties to 2.3.2\n\nSee gh-29535"
+        }
+    ],
+    "issues": [
+        {
+            "number": "23164",
+            "title": "Document that placeholders in `@DefaultValue` annotations are not resolved"
+        },
+        {
+            "number": "29606",
+            "title": "Clarify relation of import path to resultant properties in configtree import data"
+        },
+        {
+            "number": "29714",
+            "title": "Upgrade to Spring Batch 4.3.5"
+        },
+        {
+            "number": "29973",
+            "title": "Upgrade to Netty tcNative 2.0.50.Final"
+        },
+        {
+            "number": "29715",
+            "title": "Upgrade to Spring Session 2021.0.5"
+        },
+        {
+            "number": "29953",
+            "title": "Default JmxAutoConfiguration changes JConsole hierarchy for multi-property @ManagedResource object names"
+        },
+        {
+            "number": "29965",
+            "title": "bootRun example should use mainClass, rather than main which was deprecated in Gradle 7.1"
+        },
+        {
+            "number": "29962",
+            "title": "Upgrade to Spring Integration 5.5.9"
+        },
+        {
+            "number": "29712",
+            "title": "Upgrade to Spring Kafka 2.7.11"
+        },
+        {
+            "number": "29951",
+            "title": "Rectify incorrect sanitizing regex example provided in how-to docs"
+        },
+        {
+            "number": "29952",
+            "title": "Set kotlinOptions jvmTarget by convention"
+        },
+        {
+            "number": "29936",
+            "title": "Upgrade to Netty tcNative 2.0.49.Final"
+        },
+        {
+            "number": "29927",
+            "title": "Upgrade to Jetty Reactive HTTPClient 1.1.11"
+        },
+        {
+            "number": "29926",
+            "title": "Upgrade to AppEngine SDK 1.9.95"
+        },
+        {
+            "number": "29925",
+            "title": "Upgrade to ActiveMQ 5.16.4"
+        },
+        {
+            "number": "29879",
+            "title": "Handle GitHub's secondary rate limit with dependency upgrades"
+        },
+        {
+            "number": "29713",
+            "title": "Upgrade to Spring Security 5.5.5"
+        },
+        {
+            "number": "29917",
+            "title": "Remove ReproducibleLog4j2PluginsDatAction as it is redundant"
+        },
+        {
+            "number": "29639",
+            "title": "@SpyBean causes BeanCurrentlyInCreationException when there are circular references"
+        },
+        {
+            "number": "29711",
+            "title": "Upgrade to Spring Data 2021.0.9"
+        },
+        {
+            "number": "29710",
+            "title": "Upgrade to Spring LDAP 2.3.6"
+        },
+        {
+            "number": "29874",
+            "title": "Failed application contexts are not deregistered from SpringApplicationShutdownHook"
+        },
+        {
+            "number": "29882",
+            "title": "Remove KafkaPropertiesKafka24Tests"
+        },
+        {
+            "number": "29900",
+            "title": "Update javadoc to reflect move from WebSecurityConfigurerAdapter to SecurityFilterChain"
+        },
+        {
+            "number": "29709",
+            "title": "Upgrade to Spring Framework 5.3.16"
+        },
+        {
+            "number": "29708",
+            "title": "Upgrade to Micrometer 1.7.9"
+        },
+        {
+            "number": "29889",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "29809",
+            "title": "Prohibit use of APIs that prevent task configuration avoidance in Gradle plugin's main source code"
+        },
+        {
+            "number": "29821",
+            "title": "Remove remaining use of SocketUtils in tests"
+        },
+        {
+            "number": "29707",
+            "title": "Upgrade to Reactor 2020.0.16"
+        },
+        {
+            "number": "29781",
+            "title": "Upgrade to Undertow 2.2.16.Final"
+        },
+        {
+            "number": "29780",
+            "title": "Upgrade to Tomcat 9.0.58"
+        },
+        {
+            "number": "29779",
+            "title": "Upgrade to Thymeleaf 3.0.15.RELEASE"
+        },
+        {
+            "number": "29778",
+            "title": "Upgrade to SLF4J 1.7.36"
+        },
+        {
+            "number": "29777",
+            "title": "Upgrade to Postgresql 42.2.25"
+        },
+        {
+            "number": "29776",
+            "title": "Upgrade to Netty tcNative 2.0.48.Final"
+        },
+        {
+            "number": "29775",
+            "title": "Upgrade to Netty 4.1.74.Final"
+        },
+        {
+            "number": "29774",
+            "title": "Upgrade to Neo4j Java Driver 4.2.9"
+        },
+        {
+            "number": "29773",
+            "title": "Upgrade to Json-smart 2.4.8"
+        },
+        {
+            "number": "29772",
+            "title": "Upgrade to Johnzon 1.2.16"
+        },
+        {
+            "number": "29771",
+            "title": "Upgrade to Jetty 9.4.45.v20220203"
+        },
+        {
+            "number": "29770",
+            "title": "Upgrade to Hibernate Validator 6.2.2.Final"
+        },
+        {
+            "number": "29769",
+            "title": "Upgrade to Glassfish JAXB 2.3.6"
+        },
+        {
+            "number": "29768",
+            "title": "Upgrade to Dropwizard Metrics 4.1.30"
+        },
+        {
+            "number": "29767",
+            "title": "Upgrade to AppEngine SDK 1.9.94"
+        },
+        {
+            "number": "29681",
+            "title": "Remove code that provides compatibility with unsupported versions of Gradle"
+        },
+        {
+            "number": "29746",
+            "title": "MimeMapping for ots has a trailing space in its mime type"
+        },
+        {
+            "number": "28562",
+            "title": "A fat jar built with Gradle moves META-INF beneath BOOT-INF/classes while Maven leaves it at the jar's root"
+        },
+        {
+            "number": "29676",
+            "title": "Dependency management for Liquibase does not include its liquibase-cdi module"
+        },
+        {
+            "number": "29673",
+            "title": "Test our Gradle plugin against Gradle 7.4"
+        },
+        {
+            "number": "29684",
+            "title": "Tests for the example Gradle build scripts included in the Gradle plugin's docs do not run when those build scripts are changed"
+        },
+        {
+            "number": "29672",
+            "title": "bootJar, bootRun, and bootWar do not pick up changes to the main source set's runtime classpath that are made after Boot's plugin has been applied"
+        },
+        {
+            "number": "29656",
+            "title": "Upgrade to spring-asciidoctor-backends 0.0.3"
+        },
+        {
+            "number": "29648",
+            "title": "Batch tests use a custom HSQL schema while running on H2"
+        },
+        {
+            "number": "29626",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "29628",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "29633",
+            "title": "Upgrade to spring-javaformat 0.0.31"
+        },
+        {
+            "number": "29579",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "29580",
+            "title": "Upgrade Java 8 version in CI image"
+        },
+        {
+            "number": "28781",
+            "title": "Decouple Maven plugin's integration tests from spring-boot-dependencies"
+        },
+        {
+            "number": "29551",
+            "title": "Ensure file permissions are set in image building tests"
+        },
+        {
+            "number": "29545",
+            "title": "Use an up-to-date version of Spring Framework in buildSrc"
+        }
+    ]
+}

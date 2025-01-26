@@ -1,0 +1,86 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.17.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 16,
+    "start_delay": 0.0,
+    "duration": 40.279375,
+    "commits_info": [
+        {
+            "hash": "26a7c62fd53c7d399e155d6d8534bcb9fd79f950",
+            "message": "2.17.7 release (previous 2.17.6) + release notes updated by CI build 3349\n\n[ci skip-release]"
+        },
+        {
+            "hash": "c8893962d79a5790c81a02f65579b3a8ba9e3d23",
+            "message": "Merge pull request #1324 from dmitry-timofeev/then_throw_cleanups\n\nImproved stubbing internals and test coverage"
+        },
+        {
+            "hash": "57a1fabaf61442eedddd15c2a613f597c56afa33",
+            "message": "Add a comment explaining the test scenarios."
+        },
+        {
+            "hash": "369e2e2790ca73d72654ac7a4a48a420edc90b7b",
+            "message": "Removed tests for coverage that is already covered"
+        },
+        {
+            "hash": "c78c6db9cbfd5caed61573d493856fbdbb5f7e71",
+            "message": "Added more coverage"
+        },
+        {
+            "hash": "920d98660702c2b43db6fde521b1284f16414ba2",
+            "message": "Renamed test class and add one more case\n\nThis way we preserve the current functionality in unit tests"
+        },
+        {
+            "hash": "c076839f15b3ff0c67f8e5fde803780688fa7c68",
+            "message": "Add a return statement so that it’s clear that the following code won’t be executed.\n\nIt also prevents false-positives of static-analysis tools (e.g., IDEA)."
+        },
+        {
+            "hash": "f44a4eed8dbfc06bb832be98ab169ab4237b1b47",
+            "message": "Add a couple of tests of ThrowsException:\n\n- Verify a custom exception breaking Throwable#fillInStackTrace contract\n  doesn't break ThrowableAnswer (see #866).\n- Verify a ThrowsException answer always answers with the same throwable,\n  if it is well-behaved."
+        },
+        {
+            "hash": "6c0ec5f5e058b5240f07e18879ead4a9170cb606",
+            "message": "Improved the assertion"
+        },
+        {
+            "hash": "dcc3568db430240baef32c4661fedf2ea7001e66",
+            "message": "Kept some functionality for backwards compatibility\n\nLet's keep the assignment for compatibility. There is no strong reason to remove it. We have test coverage for this complexity and it is cheap."
+        },
+        {
+            "hash": "8c50c17878c6cf06849ecbd05c7e8e76ff54f06c",
+            "message": "Reverted unnecessary changes\n\nReplaced TODO with a comment following conversation in PR #1324"
+        },
+        {
+            "hash": "8ca3cf60e846530e9b5e01b8e0c75c11eb133407",
+            "message": "Clarify that ThrowsException always returns the same throwable.\n\nThe previous `#answer` implementation might give an illusion that\n`Throwable#fillInStackTrace` produces a new throwable, but that\nis not correct — it always returns `this`.\n\nAlso, replace a possible NPE with a descriptive IllegalStateException."
+        },
+        {
+            "hash": "aafe27f22382732380a7b79fd250c615b8d7ca03",
+            "message": "Fixes #1323: Clarify intentions in BaseStubbing:\n\nReplace an obsolete TODO with a clarifying comment\nand add some tests covering related test cases.\n\nAlso, extract the code aborting the ongoing stubbing\nin a separate method that always throws.\nUse return `abortNullExceptionType` so that\nstatic-analysis tools (e.g., IDEA) yield no false-positives."
+        },
+        {
+            "hash": "9e6ccadc896936391ec36734e363239b0eb3d2e8",
+            "message": "Apply errorprone to all java projects (#1358)\n\n* apply errorprone plugin to all projects\r\n\r\n* add @SuppressWarnings in subprojects\r\n\r\n* apply errorprone to all java projects\r\n\r\n* configure errorprone version\r\n\r\n* move errorprone dependency to dependencies.gradle and use buildscript section to add errorprone plugin to the buildscript classpath\r\n\r\n* make script more consistent\r\n\r\n* using sourceCompatibility=1.8 for test projects and testng project"
+        },
+        {
+            "hash": "5b45cbf8b2e774783b8066f2c7226bc8c81e6a34",
+            "message": "Add JDK 10 and 11 to the build matrix (#1356)\n\n* Add JDK 10 and 11 to the build matrix\r\n\r\n* Remove jdk properties from build matrix\r\n\r\n* Update jacoco to 0.8.1 for java 10 compatibility\r\n\r\n* Update location of TestNG Javadoc\r\n\r\n* Update version of JDK 10 installation\r\n\r\n* Upgrade Kotlin JVM version to fix compilation on JDK 10/11\r\n\r\n* Use Gradle nightly version 4.8\r\n\r\n* Revert back to Gradle 4.6 and allow failures on JDK 11\r\n\r\n* Add back checksum sha256"
+        },
+        {
+            "hash": "a5910c68b419af33e1af539e5cea9c64fdb97adf",
+            "message": "Update shipkit to v2.0.15 (#1357)\n\n- we actually got rid of unnecessary hits to GitHub REST API during non-release builds"
+        }
+    ],
+    "issues": [
+        {
+            "number": "866",
+            "title": "When custom exception fillInstackTrace() returns null, Exception mock cannot work properly"
+        },
+        {
+            "number": "1323",
+            "title": "Improve BaseStubbing & ThrowsException internals"
+        }
+    ]
+}

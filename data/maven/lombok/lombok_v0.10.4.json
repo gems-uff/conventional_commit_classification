@@ -1,0 +1,133 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.10.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 30,
+    "start_delay": 0.0,
+    "duration": 20.95489583333333,
+    "commits_info": [
+        {
+            "hash": "09e472b047a63946762ce47437118bbed03e09dd",
+            "message": "release versioning prep 0.10.4"
+        },
+        {
+            "hash": "e24ac22aaa286cb91a0dcdbff1f95d09fb62f8ef",
+            "message": "Made an API for creating a (oracle javac) JavaCompiler which tracks comments on a per Compilation Unit basis. The old way involved making reflective calls and detecting whether you need the 1.6 or the 1.7 variant to do this. These shenanigans are now hidden behind a nice API (lombok.javac.CommentCatcher)."
+        },
+        {
+            "hash": "3fd3ca32a68c728bebd04d41720f2d1f636a3695",
+            "message": "--print option with multiple input files would only print one file."
+        },
+        {
+            "hash": "ef820d8d5ab76c6db8335201da3c7ab9de7cb56a",
+            "message": "Additional fix for issue 300: Using 'lombok.val' written out in full would cause ArrayIndexOutOfBoundsException: 0 errors to pop up in the editor.\nAlso updated changelog."
+        },
+        {
+            "hash": "246b4cc2bc03e5cccfd7ccca5aa48a3e8bb55b0c",
+            "message": "Fixed issue 300: 'lombok.val' (vs. just val and an import statement) didn't fix auto-complete dialogs.\n\nHowever, now the auto-highlight feature will crash with an IOOBE if you click in lombok.val."
+        },
+        {
+            "hash": "0139c62b6aac6f607639491b985c7a8cbb0a2b24",
+            "message": "Added changelog for previous commit (fixing issue 299)"
+        },
+        {
+            "hash": "3b921ad7f6a485287ae62e64d0f4a2859683732a",
+            "message": "Fix for issue 299: labels would break 'val' in javac."
+        },
+        {
+            "hash": "52ee15bdc13ab66c833863d75581f6ccae3081ce",
+            "message": "Added fixing of issues 90, 138, 263, 286 to changelog. (all jvanderhel's work)"
+        },
+        {
+            "hash": "dc92425f85d2f2dd187b688ff6d218d3c8e657b6",
+            "message": "Merge branch 'Issue_263' of https://github.com/jvanderhel/lombok into jvanderhel-Issue_263\n\nConflicts:\n\tsrc/eclipseAgent/lombok/eclipse/agent/EclipsePatcher.java"
+        },
+        {
+            "hash": "5cc928f471f3875f141ab1ee737cfe2613e9cdd6",
+            "message": "patched retrieveRightBraceOrSemiColonPosition && retrieveRightBrace so method bodies are converted instead of skipped\nSet Assignment.statementEnd to prevent invalid sourceRange in Statement convert"
+        },
+        {
+            "hash": "9433db4ecdf1a525541581a73161ababee0c352c",
+            "message": "Don't wrap code in documentation"
+        },
+        {
+            "hash": "e78fa98daab4a8e960c52e5621429125e8e0b872",
+            "message": "Replaced <code> with @code"
+        },
+        {
+            "hash": "45f9e9def12b8f32b76c86471487e735ebb7c09b",
+            "message": "Changed copyright notices"
+        },
+        {
+            "hash": "88a83e08a9406d332a82377ab7a8bf7a99b544a8",
+            "message": "Fixed eclipse and ecj unit test broken by 99e36bf51c26152c53c8acefa90cce80af6da434"
+        },
+        {
+            "hash": "acb5339c62aa118fa94ab3ae9a5abd52b3f7250e",
+            "message": "Instead of using the java 1.6 Arrays.copyOf method, we use System.arraycopy."
+        },
+        {
+            "hash": "dddeaf24c7c0bf9a1d8e027e2a194f59404be548",
+            "message": "Merge branch 'master' of github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "0fbe56a59248bf85e6868e43de42ee418a536082",
+            "message": "Renamed CONTRIBUTORS to AUTHORS to better reflect the purpose of the file."
+        },
+        {
+            "hash": "0bf65275916e89baf3dae32040105ad39fcb7710",
+            "message": "Added my name to the contributors file."
+        },
+        {
+            "hash": "e8495f0ddc8f6d08307d0a441c9f923d1d12766e",
+            "message": "Post-release version bump"
+        },
+        {
+            "hash": "99e36bf51c26152c53c8acefa90cce80af6da434",
+            "message": "Fixed issue 295: Using log in static initializers"
+        },
+        {
+            "hash": "1cdd42ac10c128765d3ff642d808c00eab6a1782",
+            "message": "Merge branch 'Issue_138' of https://github.com/jvanderhel/lombok into jvanderhel-Issue_138\n\nConflicts:\n\tsrc/eclipseAgent/lombok/eclipse/agent/EclipsePatcher.java"
+        },
+        {
+            "hash": "b43cd3509311e25b64a559cd7dd02d11a45d9f0e",
+            "message": "Lombok generated members are now handled better in a ListRewrite (like generate equals & hashcode)"
+        },
+        {
+            "hash": "9c469dc72ab58be4bcf175f077ba7124df8ef5f4",
+            "message": "MethodDeclarations and their SimpleName(s) are now marked as generated when using eclipse 3.7 M5 or higher (when appropriate)"
+        },
+        {
+            "hash": "f3253a73c29c393bb572e05c992afa22b4de4748",
+            "message": "Merge pull request #11 from jvanderhel/add_to_authors\n\nJappe van der Hel addes his name to AUTHORS."
+        },
+        {
+            "hash": "2a20f972433b045d495f99399c912e9f5c795db3",
+            "message": "Added my name to AUTHORS. (Requested by rspilker)"
+        },
+        {
+            "hash": "68c38e93e607683cb63b10a3f6c01075a7942227",
+            "message": "Merge pull request #10 from jvanderhel/Issue_90\n\nProposed fix for issue 90 - disables lombok when the AST is being parsed for an autoformatter run, and patches various methods of the ControlStatementFinder to not try to find generated nodes."
+        },
+        {
+            "hash": "fd736cc76f6b1b505d73173f270100161988338d",
+            "message": "disabling lombok for all postsavelisteners proved to cause some postsave actions to make the wrong decisions.\nPatching ControlStatementFinder solves the same problem, with less side effects"
+        },
+        {
+            "hash": "1950820d35c1653389a22bddfa3916e125d4bc24",
+            "message": "Lombok disabled during ast creation in DefaultCodeFormatter & CleanUpPostSaveListener"
+        },
+        {
+            "hash": "0d75d56fcef943d1a35f1169386830066371c12d",
+            "message": "Eclipse/JavacHandlerUtil.injectField(...) inserts the new fields after the enum constants.\nAlso the new fields are ordered in the same way the method injectField() gets invoked."
+        },
+        {
+            "hash": "fb4d2a45d21ed33405f8c2eddb05da6040ee3159",
+            "message": "Fixed a broken link in changelog."
+        }
+    ],
+    "issues": []
+}

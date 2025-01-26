@@ -1,0 +1,570 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 105,
+    "start_delay": 0.0,
+    "duration": 39.07246527777778,
+    "commits_info": [
+        {
+            "hash": "3bea4682b769b933129fc01cbfc2fe2839786254",
+            "message": "Release v6.0.8"
+        },
+        {
+            "hash": "be17c8d85f2b6b436a612e12ba05e8e1ebc0891b",
+            "message": "Disable variable assignment in SimpleEvaluationContext\n\nThis commit introduces infrastructure to differentiate between\nprogrammatic setting of a variable in an EvaluationContext versus the\nassignment of a variable within a SpEL expression using the assignment\noperator (=). In addition, this commit disables variable assignment\nwithin expressions when using the SimpleEvaluationContext.\n\nCloses gh-30326"
+        },
+        {
+            "hash": "b73f5fcac22555f844cf27a7eeb876cb9d7f7f7e",
+            "message": "Limit SpEL expression length\n\nThis commit enforces a limit of the maximum size of a single SpEL\nexpression.\n\nCloses gh-30325"
+        },
+        {
+            "hash": "bc1511d6673ef293b03069da27928d34490d96f1",
+            "message": "Limit string concatenation in SpEL expressions\n\nThis commit introduces support for limiting the maximum length of a\nstring resulting from the concatenation operator (+) in SpEL\nexpressions.\n\nCloses gh-30324"
+        },
+        {
+            "hash": "db9b139cf078dbaad2de8690c0a6ebd61a4fe835",
+            "message": "Change max regex length in SpEL expressions to 1000\n\nThis commit changes the max regex length in SpEL expressions from 1024\nto 1000 in order to consistently use \"round\" numbers for recently\nintroduced limits.\n\nSee gh-30265"
+        },
+        {
+            "hash": "bd029b921842cec7602aa469302db65e08a19d1e",
+            "message": "Ensure RestClientResponseException is serializable\n\nCloses gh-30224"
+        },
+        {
+            "hash": "5f2264816aaea7481b67910b49fb70f85ee08813",
+            "message": "Polishing contribution\n\nCloses gh-30294"
+        },
+        {
+            "hash": "a8f31f5b9e3956ad9e696faf0709ac1cbb48c761",
+            "message": "Improve ProblemDetail equals and hashCode\n\nLazy computed title property should be taken into account\n\nSee gh-30294"
+        },
+        {
+            "hash": "90627b4345aca53eb503ba629946ea0dfdc3ec66",
+            "message": "Upgrade to Micrometer 1.10.6\n\nCloses gh-30317"
+        },
+        {
+            "hash": "4acc71b282cfa964b6521fa5a60d2fe583dbcef6",
+            "message": "Upgrade to Reactor 2022.0.6 and Netty 4.1.91\n\nIncludes Checkstyle 10.9.3 and Mockito 5.3.0\n\nCloses gh-30316"
+        },
+        {
+            "hash": "cd0379a67f86f9171524911405c7dec486ebccd9",
+            "message": "Modified to slf4j2-impl in build.gradle\ndue to slf4j-api versions 1.7 x or earlier issue"
+        },
+        {
+            "hash": "e262e98bab1d1a7cfff98a0f703f4d3436a95985",
+            "message": "ConstructorResolver error hints about mixing indexed and named args\n\nThis commit adds a note to an exception in `ConstructorResolver`'s\n`autowireConstructor` method hinting that attention should be paid to\ncases that mix indexed arguments and named arguments. This is especially\nwhen inheriting bean definitions in xml.\n\nCloses gh-29976\nClose gh-PR"
+        },
+        {
+            "hash": "59c65fa9404e53165db35693b9ac834bdaaf4d34",
+            "message": "Replace `Collections.unmodifiableList(new ArrayList(..))` with `List.copyOf()` (#30166)"
+        },
+        {
+            "hash": "695601aa0681047c0922096bb880b8ec48c1e32a",
+            "message": "Merge pull request #30308 from izeye\n\n* pr/30308:\n  Add since tags to sameSite() and attribute() in CookieResultMatchersDsl\n\nCloses gh-30308"
+        },
+        {
+            "hash": "8f5a1fe7e2a0284f0a772a5a4d65fe6e9dfe1f6c",
+            "message": "Add since tags to sameSite() and attribute() in CookieResultMatchersDsl\n\nSee gh-30308"
+        },
+        {
+            "hash": "073226d79281138a412bbf83c0fc65b47bdc7150",
+            "message": "Polishing contribution\n\nCloses gh-30120"
+        },
+        {
+            "hash": "1abe15566325f1ac94f5fc29aa7abf3f4b2498a1",
+            "message": "Ensure WebSocket disconnect msg reaches the client\n\nIn some application setups, the WebSocket server does not transmit\nthe disconnect message to the client, so that the client has no idea\nthat the established connection has been terminated.\n\nThis issue arises when the application uses SimpleBrokerMessageHandler\nand the error handler is set to the instance of\nStompSubProtocolErrorHandler or an extended class that does not\noverride the handleErrorMessageToClient method.\n\nThe commit fixes disconnect message population so that\n`java.lang.IllegalArgumentException: No StompHeaderAccessor` exception\nis not thrown in the handleErrorMessageToClient method in\nStompSubProtocolErrorHandler class.\n\nSee gh-30120"
+        },
+        {
+            "hash": "33ef9107e068223b53b9f19cf9b7906aabf769e0",
+            "message": "Minor refactoring in PayloadMethodArgumentResolver\n\nCloses gh-30168"
+        },
+        {
+            "hash": "8463eade3325dff93f922996538281a645dd2e74",
+            "message": "Polishing contribution\n\nCloses gh-30192"
+        },
+        {
+            "hash": "e77faf748499f2136ac59cdf51fdd10720f550d4",
+            "message": "Improve performance of canRead() in HttpMessageReader's\n\nUse MimeType.WILDCARD_TYPE for faster String.equals().\nMove cheaper checks to the front of the canRead implementations.\n\nSee gh-30192"
+        },
+        {
+            "hash": "b23cc01cb7981bdaf7274483a69673c519123444",
+            "message": "Revise \"Ignore nonexistent default-destroy-method in XML config\"\n\nThis commit revises the fix in c811428512ffd04d41e558dbbc672382079ced2c.\n\nCloses gh-30301"
+        },
+        {
+            "hash": "01f97887ea784c8b84b5ed1b27f9e74e44a37ad0",
+            "message": "Improve WebClient observations handling of CANCEL signal\n\nPrior to this commit, `WebClient` observations would be recorded as\naborted (with tags \"outcome\":\"UNKNOWN\", \"status\":\"CLIENT_ERROR\")\nfor use cases like this:\n\n```\nFlux<String> result = client.get()\n    .uri(\"/path\")\n    .retrieve()\n    .bodyToFlux(String.class)\n    .take(1);\n```\n\nThis is due to operators like `take` or `next` that consume *some*\n`onNext` signals and then cancels the subscription before completion.\nThis means the subscriber is only partially interested in the response\nand we should not count this as a client error.\n\nThis commit ensures that observations are only recorded as aborted if\nthe response was not published at the time the CANCEL signal was\nreceived.\n\nThe code snippet above will now publish observations with\n\"outcome\":\"SUCCESS\" and \"status\":\"200\" tags, for example.\n\nCloses gh-30070"
+        },
+        {
+            "hash": "cef597bedd8800a4c6121b6574941ab8dd2b6100",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "01fabfe66dec4714fa51bf0a9c0958a311d3cf2b",
+            "message": "Suppress warnings in tests"
+        },
+        {
+            "hash": "c811428512ffd04d41e558dbbc672382079ced2c",
+            "message": "Ignore nonexistent default-destroy-method in XML config\n\nPrior to this commit, DisposableBeanAdapter attempted to invoke a\nconfigured default-destroy-method on every bean, including beans that\ndo not declare the named destroy method, resulting in a\nNullPointerException being thrown and logged at WARN level.\n\nThis commit addresses this by effectively ignoring any nonexistent\ndestroy method.\n\nCloses gh-30301"
+        },
+        {
+            "hash": "b5b115e52c02bd3b3ec97e5602ee49375a9b78f6",
+            "message": "Fix SSE with indenting serializer in WebMvc.fn\n\nThis commit ensures that HTTP headers like \"text/event-stream\"\nare correctly forwarded to the converter used in\nSseServerResponse for proper pretty print handling.\n\nClose gh-30277"
+        },
+        {
+            "hash": "310344cf615339ec330031da127737a41400b6cd",
+            "message": "Increase max regex length in SpEL expressions\n\nThis commit increases the max regex length in SpEL expressions from 256\nto 1024 in order to support use cases where a regex may be rather long\nwithout necessarily increasing the complexity of the regex.\n\nCloses gh-30265"
+        },
+        {
+            "hash": "2bac371c5b91dc003142f506434fa44c40e234ff",
+            "message": "Improve Javadoc for ObjectUtils.nullSafeConciseToString()"
+        },
+        {
+            "hash": "cef91668337611e702b59adfd7cc58720024612f",
+            "message": "Encode IPV6 Zone IDs in ReactorServerHttpRequest\n\nThis commit ensures that the zone id in the ReactorServerHttpRequest is\nproperly encoded.\n\nCloses gh-30188"
+        },
+        {
+            "hash": "d6460e0d578bfc56bbf431fdcba2444b3d7a1ad4",
+            "message": "Add Cookie attributes + SameSite CookieResultMatchers in MockMvc\n\nThis commit adds assertions to MockMvc's CookieresultMatchers:\n - `attribute` for arbitrary attributes\n - `sameSite` for the SameSite well-known attribute\n\nNote that the `sameSite` methods delegate to their `attribute`\ncounterparts. Note also that Jakarta's `Cookie#getAttribute` method is\ncase-insensitive, which is reflected in the documentation of the\n`attribute` assertion method and the tests.\n\nCloses gh-30285"
+        },
+        {
+            "hash": "842490beeb4cdd466b1e4d748c5d22c411dc041a",
+            "message": "Add tests for corner cases\n\nSee gh-30290\nSee gh-30286"
+        },
+        {
+            "hash": "e746230de67c382c12c1c3e2c8df251b0ba8b3ee",
+            "message": "Introduce ObjectUtils.nullSafeConciseToString()\n\nObjectUtils.nullSafeToString(Object) exists for generating a string\nrepresentation of various objects in a \"null-safe\" manner, including\nsupport for object graphs, collections, etc.\n\nHowever, there are times when we would like to generate a \"concise\",\nnull-safe string representation that does not include an entire object\ngraph (or potentially a collection of object graphs).\n\nThis commit introduces ObjectUtils.nullSafeConciseToString(Object) to\naddress this need and makes use of the new feature in FieldError and\nConversionFailedException.\n\nCloses gh-30286"
+        },
+        {
+            "hash": "8161316b1d2ec19aded91b30f3b20f9a88aedb7c",
+            "message": "Introduce StringUtils.truncate()\n\nStringUtils.truncate() serves as central, consistent way for truncating\nstrings used in log messages and exception failure messages, for\nimmediate use in LogFormatUtils and ObjectUtils.\n\nSee gh-30286\nCloses gh-30290"
+        },
+        {
+            "hash": "1734deca1e91fac25ea6b0f472a66e9882f63205",
+            "message": "Refactor AssertJ assertions into more idiomatic ones\n\nThis commit refactors some AssertJ assertions into more idiomatic and\r\nreadable ones. Using the dedicated assertion instead of a generic one\r\nwill produce more meaningful error messages. \r\n\r\nFor instance, consider collection size:\r\n```\r\n// expected: 5 but was: 2\r\nassertThat(collection.size()).equals(5);\r\n// Expected size: 5 but was: 2 in: [1, 2]\r\nassertThat(collection).hasSize(5);\r\n```\r\n\r\nCloses gh-30104"
+        },
+        {
+            "hash": "dd97ee4e99fe9e870e77c1257b1fdf822fb353ce",
+            "message": "Support SameSite cookie attribute in MockMvcHttpConnector\n\nCloses gh-30264"
+        },
+        {
+            "hash": "90b0f451f0fd1f7e50ba43e5f068a3981d78e340",
+            "message": "Add a couple missing java.time types to StatementCreatorUtils\n\nThis commit adds mapping for two types from the `java.time` package,\r\ncomplementing the types that are already translatable to Sql types\r\nTIME, DATE and TIMESTAMP:\r\n - `OffsetTime` maps to a `TIME_WITH_TIMEZONE`\r\n - `OffsetDateTime` maps to a `TIMESTAMP_WITH_TIMEZONE`\r\n\r\nThis is in accordance with the B.4 table provided in the JDBC 4.2\r\nspecification.\r\n\r\nWhen preparing statements, these `java.time` types use the `setObject`\r\nmethod. Tests covering the 5 `java.time` classes have also been added.\r\n\r\nSee gh-28778\r\nSee gh-28527\r\nCloses gh-30123"
+        },
+        {
+            "hash": "9fb61c57ae6dc04cbcea4a0785da2c1b7a8b5a33",
+            "message": "Sync MockCookie implementations\n\nSee gh-30263"
+        },
+        {
+            "hash": "f9cb0eba8702ceb2f1bf100355a2b11394b944c5",
+            "message": "Update Javadoc regarding Servlet 6 baseline for mocks"
+        },
+        {
+            "hash": "d1d2d5943e181d3aaaacb5c79d6e6dc3a0c02bbc",
+            "message": "Polish contribution\n\nSee gh-30263"
+        },
+        {
+            "hash": "281736f14eba93ea7bfe67ae7f349a338660ed71",
+            "message": "Update MockCookie to use Servlet 6.0 APIs and semantics for \"attributes\"\n\nCloses gh-30263"
+        },
+        {
+            "hash": "6bfc70b61e8e74dd44bdd7f9b4d57f4dc7c15a09",
+            "message": "Polishing"
+        },
+        {
+            "hash": "95883b9eb7228dfeafc227de9d2ccfbd22e90ce8",
+            "message": "Rename MockMVC matcher methods to prevent regression in user tests\n\nThis commit changes the name of two recently introduced methods in the\r\n`MockRestRequestMatchers` class for header and queryParam. These have\r\nbeen found to cause false negatives in user tests, due to the new\r\noverload taking precedence in some cases.\r\n\r\nNamely, using a `Matcher` factory method which can apply to both `List`\r\nand `String` will cause the compiler to select the newest list overload,\r\nby instantiating a `Matcher<Object>`.\r\n\r\nThis can cause false negatives in user tests, failing tests that used\r\nto pass because the Matcher previously applied to the first String in\r\nthe header or queryParam value list. For instance, `equalsTo(\"a\")`.\r\n\r\nThe new overloads are recent enough and this has enough potential to\r\ncause an arbitrary number of user tests to fail that we break the API\r\nto eliminate the ambiguity, by renaming the methods with a `*List`\r\nsuffix.\r\n\r\nCloses gh-30220\r\nCloses gh-30238\r\nSee gh-29953\r\nSee gh-28660"
+        },
+        {
+            "hash": "f0eb43a6af37df784cd2f0367022c5dba4273bf0",
+            "message": "Merge pull request #30157 from srivatsa-cfp:main\n\n* gh-30157:\n  Add non-null assertions in DefaultServerResponseBuilder"
+        },
+        {
+            "hash": "6c8ebc7f7e61b878fd7b53b944ff2625d832b7b1",
+            "message": "Add non-null assertions in DefaultServerResponseBuilder\n\nThis commit adds various non-null assertions to\nDefaultServerResponseBuilder, in both Spring MVC and WebFlux.\n\nCloses gh-30157"
+        },
+        {
+            "hash": "69c8f8e9c7387d71ec1d08fb9d0b993f5b889866",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "02f2d94f570af1ac99f5bba1a2b8a2d5af868846",
+            "message": "Polish contribution\n\nSee gh-30271"
+        },
+        {
+            "hash": "7fcbc869a6a5f21e87f9d94fce11714207b048ca",
+            "message": "Specify initial capacity when creating ArrayList in SpringFactoriesLoader\n\nCloses gh-30271"
+        },
+        {
+            "hash": "4eed2ced745ced974220fd9e7e15269a9ab111b7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "98f1287f3a33bb65712d7806338fcb7eeb5bafcd",
+            "message": "Fix HttpServiceMethod support for suspending functions\n\nThis commit fixes nested type handling for suspending\nfunctions in HttpServiceMethod.\n\nCloses gh-30266"
+        },
+        {
+            "hash": "8234fa2a137ec542c6e8e753044380e46403f9aa",
+            "message": "Fix JDK20 env variable declaration in CI pipeline\n\nSee gh-30185"
+        },
+        {
+            "hash": "8b9d2e3f951c624edb8608cf9919cf66ddb1269e",
+            "message": "Fix incorrect jakarta.inject artifact version\n\nCloses gh-30270"
+        },
+        {
+            "hash": "534d1cd35bdf3e16f1045e8237883af7d78cc9c6",
+            "message": "Polishing\n\nThis commit includes a null-safety fix in\nHttpComponentsHeadersAdapter.\n\nCloses gh-30267"
+        },
+        {
+            "hash": "ca545ac3d42f309786ec08300e5e7ddac9e6c18a",
+            "message": "Upgrade dependencies"
+        },
+        {
+            "hash": "ca7c2779bf095bed24a51fca675ee3a4d75bfa39",
+            "message": "Suppress warnings displayed in Gradle build for test source code"
+        },
+        {
+            "hash": "4a90257a84e929b39ba74a4baf3fd540f291c0b9",
+            "message": "Upgrade to Gradle 8\n\nThis commit upgrades the build to use Gradle 8.0.2 and Dokka 1.8.10.\n\nCloses gh-30000"
+        },
+        {
+            "hash": "49a4ed2ffaa72a4565224d057cc2dca8d57cd0f0",
+            "message": "Improve Javadoc for @PropertySource"
+        },
+        {
+            "hash": "717d03a29d95360e938a736fb817aa36843da91e",
+            "message": "Fix grammar"
+        },
+        {
+            "hash": "2b427efe7f9ac3be1b0e1a74b23c3fde882a546a",
+            "message": "Fix PathVariable reference documentation code snippets\n\nCloses gh-30243"
+        },
+        {
+            "hash": "3632bea51e5e5053e72737777c219b650848e22a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1efa162cf04a7df2a95974e9102452915ae3b345",
+            "message": "WebClient defaultStatusHandler do not apply to exchangeTo*\n\nThis commit documents the fact that default status handlers configured\non the `WebClient` are not applied to `exchangeTo*` methods as those\nvariants give full access to the client response.\n\nApplying them here would restrict the ability to adapt the behavior\ndepending on the HTTP response status.\n\nCloses gh-30059"
+        },
+        {
+            "hash": "a8b7a5e037e6d2452a81b3050923096e2be51f75",
+            "message": "Refine initRequestBuilder in DefaultWebClient\n\nCloses gh-30254"
+        },
+        {
+            "hash": "807325916f8ee60414a6160b6258c47de24411a2",
+            "message": "Add class hints for Jackson annotations on fields and methods\n\nBefore this commit, only class level annotations were\nprocessed.\n\nCloses gh-30208"
+        },
+        {
+            "hash": "d451d6adccf82c410a249c69d13964d413dcce97",
+            "message": "Ensure that client responses are observed when filters fail\n\nPrior to this commit, an error thrown by a `ExchangeFilterFunction`\nconfigured on a `WebClient` instance would be recorded as such by the\nclient observation, but the response details would be missing from the\nobservation.\nAll filter functions and the exchange function (performing the HTTP\ncall) would be merged into a single `ExchangeFunction`; this instance\nwas instrumented and osberved. As a result, the instrumentation would\nonly get the error signal returned by the filter function and would not\nsee the HTTP response even if it was received. This means that the\nrecorded observation would not have the relevant information for the\nHTTP status.\n\nThis commit ensures that between the configured `ExchangeFilterFunction`\nand the `ExchangeFunction`, an instrumentation `ExchangeFilterFunction`\nis inserted. This allows to set the client response to the observation\ncontext, even if a later error signal is thrown by a filter function.\n\nNote that with this change, an error signal sent by a filter function\nwill be still recorded in the observation.\n\nSee gh-30059"
+        },
+        {
+            "hash": "8fca258207538f9f1f2b66c493d73c2185147e0c",
+            "message": "Propagate HttpStreamResetException itself if cause is null\n\nCloses gh-30245"
+        },
+        {
+            "hash": "d126b99c91853ebad7b3f7b1afe4bd4dc6264ab2",
+            "message": "Refine generic type management in AbstractMessageWriterResultHandler\n\nThis commit updates AbstractMessageWriterResultHandler#writeBody in\norder to use the declared bodyParameter instead of\nResolvableType.forInstance(body) when the former has unresolvable\ngenerics.\n\nCloses gh-30214"
+        },
+        {
+            "hash": "c5f0f7bb11ce54383b960942de298f7d4c9580fd",
+            "message": "Refine DisposableBeanAdapter method discovery for native\n\nAfter this commit, DisposableBeanAdapter can find destruction related methods\neven when hints are just specified at interface level, which is typically the\ncase when a bean is exposed via one of its interfaces.\n\nCloses gh-29545"
+        },
+        {
+            "hash": "3a36d51473a8f3212601c6550c6ffaa3d7840bb2",
+            "message": "Polish\n\nSee gh-29246"
+        },
+        {
+            "hash": "fe6589d5afdc049a9f136a039e6ddf0f7325c171",
+            "message": "Add runtime hint test for inherited destroy methods\n\nThis commit ensures that init/destroy methods that are provided as\ndefault methods from interfaces are properly covered by runtime hints at\nruntime.\n\nCloses gh-29246"
+        },
+        {
+            "hash": "b3748243199fe809f177bb7922c69f7eb37ab6d2",
+            "message": "Contribute introspection hints on registered beans\n\nPrior to this commit, reflection hints registered for beans was\nselectively applied to only consider the methods that we'll actually\nneed reflection on at runtime. This would rely on an undocumented\nbehavior of GraalVM Native where calling `getDeclaredMethods` on a type\nwould only return known metadata at runtime, ignoring the ones that were\nnot registered during native compilation.\n\nAs of oracle/graal#5171, this behavior is now fixed in GraalVM and\naligns with the JVM behavior: all methods will be returned. This means\nthat if during native compilation, introspection was not registered for\nthe type a new `MissingReflectionMetadataException` will be raised.\n\nAs a follow up of #29205, this commit contributes the \"introspection on\ndeclared method\" reflection hint for all registered beans.\n\nCloses gh-29246"
+        },
+        {
+            "hash": "7e905e3e00d2efc6b1f525519180e89ff03a65a2",
+            "message": "Use JdkDynamicAopProxy class loader instead of JDK bootstrap/platform loader\n\nCloses gh-30115"
+        },
+        {
+            "hash": "491ae1e3beaf623c88c158b4ef8f3aa5a44a434a",
+            "message": "Use MethodInvocationInfo class loader in case of JDK platform loader as well\n\nCloses gh-30210"
+        },
+        {
+            "hash": "66cdf43b56dcc4e6ebbe397c3c0488d24face414",
+            "message": "Polish\n\nCloses gh-30223"
+        },
+        {
+            "hash": "2ba206f8ba586c16fc5da18f0387d6a59b5a1cc8",
+            "message": "Order metric labels in ObservationConventions\n\nSee gh-30223"
+        },
+        {
+            "hash": "5ba69441454a834e0bf4a7c992d0f5c06540502b",
+            "message": "Remove String.formatter from DefaultServerRequestObservationConvention\n\nCloses gh-30218"
+        },
+        {
+            "hash": "5609e671005e4df22a13d257557acbb133eafb70",
+            "message": "Improve Javadoc of MultipartBodyBuilder\n\nThis commit improves the Javadoc of MultipartBodyBuilder, to make it\nclear that it is intended for multipart/form-data.\n\nSee gh-30179"
+        },
+        {
+            "hash": "b2be07c73c5e51ac48481db45a6f78e7d907a5d4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ce2689eead26c73603455d33a30fb1822bc93d25",
+            "message": "Use MethodInvocationInfo class loader in case of core JDK interface type\n\nCloses gh-30210"
+        },
+        {
+            "hash": "2184d4e80e4d2c6de3488e2203a5c9d98ce305fb",
+            "message": "Fix incomplete assertions\n\nCloses gh-30209"
+        },
+        {
+            "hash": "50d01ce405f88939f9dc9f1cdec073611d1c2ff8",
+            "message": "feat: Add support for Vavr's Try monad to trigger transaction rollbacks\n\nUpdated the Spring Framework documentation to include an example of using Vavr's Try monad to trigger transaction rollbacks when a @Transactional-annotated method returns a Failure. The modified documentation demonstrates how to use Try in a transactional method and how to check if an exception has been wrapped inside a Try.Failure instance. Additionally, a link to the official Vavr documentation was added to provide more information on the Try method."
+        },
+        {
+            "hash": "0c0cda9815645f0864a87cd854158438e1e78117",
+            "message": "Polish contribution\n\nSee gh-30189"
+        },
+        {
+            "hash": "47aca90c5836dc03c276a27e06685422a693ade8",
+            "message": "Optimize array creation in SpEL ConstructorReference\n\n- Create primitive arrays directly instead of using Array#newInstance.\n\n- Replace if-else blocks with enhanced switch statement.\n\nCloses gh-30189"
+        },
+        {
+            "hash": "ddd6b123bbc4db54ba988bd2a846f19295f04c89",
+            "message": "Polish TypeCode"
+        },
+        {
+            "hash": "ec270c713515cf08d11a5bbb11ebd05d42a8feb9",
+            "message": "Use diamond operator in examples in reference manual\n\nCloses gh-30204"
+        },
+        {
+            "hash": "7cc72ddf7a39cf1c52c281dc4ddda71cb95dc77a",
+            "message": "Add HttpMethod reflection hint to ObjectToObjectConverterRuntimeHints\n\nThis commit adds a reflection hint for HttpMethod#valueOf in order\nto be able to support conversion required for Spring Boot\nconfiguration properties binding as described in\nhttps://github.com/spring-projects/spring-boot/issues/34483.\n\nCloses gh-30201"
+        },
+        {
+            "hash": "5f0ee2e4dd60f8786c81ed56ea7637983145b7e8",
+            "message": "Polish ConstructorReference"
+        },
+        {
+            "hash": "43031509c847eb17754af3df0dc0a180199cf183",
+            "message": "Update versions in Javadoc\n\nCloses gh-30170"
+        },
+        {
+            "hash": "e66c80667fcba87a3037edaf9f1208aaccae0011",
+            "message": "Fix example in Javadoc for @EnableWebSocket\n\nThe `echoWebSocketHandler()` method is not defined in the\n`WebSocketConfigurer` interface and should therefore be annotated with\n`@Bean` instead of `@Override`.\n\nCloses gh-30183"
+        },
+        {
+            "hash": "84714fbae9f335beb059753ee7d2a08653e6bb6c",
+            "message": "Allow JDK 20 builds to pass by using legacy locale data\n\nAfter setting up a JDK 20 CI build pipeline, numerous tests involving\ndate/time parsing and formatting began to fail [0]. (The failing JPA\ntests are not specific to JDK 20.)\n\nFor example, we encounter visually confusing assertion failures such as\nthe following.\n\norg.opentest4j.AssertionFailedError:\n\texpected: \"12:00 PM\"\n\tbut was:  \"12:00 PM\"\n\nThe expected string contains a normal space (which has always been the\ncase prior to JDK 20); whereas, the actual string now contains a narrow\nnon-breaking space.\n\nThe cause of this is mentioned in the JDK 20 Release Notes [1] as \"NBSP\nprefixed to a, instead of a normal space\". Note, however, that the\nlinks for the first two bullet points in that section are mixed up.\n\"NBSP prefixed to a, instead of a normal space\" should point to [2].\nFurthermore, the new whitespace character is not a non-breaking space\n(NBSP) but rather a narrow non-breaking space (NNBSP). In addition, the\nsecond bullet point should technically read \"NNBSP prefixed to `a`,\ninstead of a normal space\" -- even though `a` provides limited value to\nmost readers.\n\nThe downside for the Java community is that this constitutes a breaking\nchange for parsing and formatting date/time values that include \"AM\"\nand \"PM\" units (any may potentially apply to other date/time\nparsing/formatting scenarios). In Spring Framework's test suite we have\nwitnessed this in conjunction with Spring's @DateTimeFormat and\nDateTimeFormatterFactory infrastructure as well as with Google's\nGson-to-JSON support.\n\nA colleague who works at Oracle graciously informed me that one can use\n\"legacy locale data\" by supplying `-Djava.locale.providers=COMPAT` as a\nJVM argument, noting however that this option limits some newer\nfunctionalities (but without enumerating which new functionalities one\nmight be missing when using this option).\n\nIn any case, this commit adds that JVM argument to our Gradle toolchain\nbuilds so that our test suite passes on JDK 20, and we will continue to\ninvestigate further options for our builds and for our users.\n\nNote, however, that one must manually configure the\n`-Djava.locale.providers=COMPAT` JVM argument when running affected\ntests within an IDE.\n\nSee gh-30185\n\n[0] https://ge.spring.io/s/kmiq2bz2afafs/tests/overview?outcome=failed\n[1] https://jdk.java.net/20/release-notes#JDK-8284840\n[2] https://unicode-org.atlassian.net/browse/CLDR-14032"
+        },
+        {
+            "hash": "0ca02ce67720b7ff2b755fd19421b50e89df003d",
+            "message": "Disable affected tests on Java 18+/19+\n\nSee gh-30185"
+        },
+        {
+            "hash": "db29b653998be0804310858bb2d95447a0dd1ee4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "18adf905a8eb33bfaaaa42d4d6d078027f8090ea",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ce9a72f95c22abe6ecdf8b79b23e85c55faa95f1",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "dfb4a951ae785403171e0e118cdd78dd98353f32",
+            "message": "Suppress deprecation warnings instead of deprecating tests"
+        },
+        {
+            "hash": "d9776941bf1e2368045aad34dc7ba33516885aa0",
+            "message": "Update Java version for compatibility tests in CI\n\nThis commit configures Java 20 for compatibility tests in our CI,\nreplacing Java 19."
+        },
+        {
+            "hash": "24b359d51963b2eca4ff748e2d23fdc3b8f676dd",
+            "message": "Handle all exceptions for stored proc out param retrieval in SharedEntityManagerCreator\n\nPrior to this commit, the EntityManager was not closed in\nSharedEntityManagerCreator.DeferredQueryInvocationHandler's\ninvoke(Object, Method, Object[]) method if an invocation of\ngetOutputParameterValue(*) threw an exception other than\nIllegalArgumentException, which could lead to a connection leak.\n\nThis commit addresses this by catching RuntimeException instead of\nIllegalArgumentException.\n\nCloses gh-30161"
+        },
+        {
+            "hash": "ae70bf7c38e9011b8f56750a756b3eabc7f513af",
+            "message": "Merge pull request #30138 from yuzawa-san:LiteralPathElement-string-equals\n\n* gh-30138:\n  Polish external contribution\n  Use String.equals() in LiteralPathElement"
+        },
+        {
+            "hash": "c68e986b75ef999e6e99ec33b903bf039b914a2e",
+            "message": "Polish external contribution\n\nThis commit removes the text char[] in favor of the text String\nintroduced through the PR.\n\nCloses gh-30138"
+        },
+        {
+            "hash": "2bc1aa7827bee181536f026d016a4b68bb4d1713",
+            "message": "Use String.equals() in LiteralPathElement"
+        },
+        {
+            "hash": "570d21ebbdfa0ace6490d7da44ad48bbfdcd8809",
+            "message": "Fix anchor in link to \"Web on Reactive Stack\" chapter\n\nCloses gh-30158"
+        },
+        {
+            "hash": "800b13492b627d02da5d3591ee9ae9c04833da81",
+            "message": "Optimize some iterations in BodyExtractor and BodyInserter\n\nThis commit turns some stream-based iterations back into simpler\r\nenhanced for loops.\r\n\r\nFor simple use cases like these, where the stream API is merely used to\r\nmap/filter + collect to a List, a for loop is more efficient.\r\nThis is especially true for small collections like the ones we deal\r\nwith in BodyInserters/BodyExtractors here (in the order of 50ns/op vs\r\n5ns/op). These cases are also simple enough that they don't lose in\r\nreadability after the conversion.\r\n\r\nCloses gh-30136"
+        },
+        {
+            "hash": "4e896c8125c957ffa63238d10444f76d9913b549",
+            "message": "Use InputStream.readAllBytes() in FileCopyUtils.copyToByteArray()\n\nInputStream.readAllBytes() allows us to avoid the creation of an\nintermediate ByteArrayOutputStream and is likely to perform better.\n\nCloses gh-30155"
+        },
+        {
+            "hash": "9421fe1d758294e35bfed18721fe5ead2f3c5347",
+            "message": "Merge pull request #30139 from yuzawa-san:cache-reactor-request-methods\n\n* gh-30139:\n  Cache ServerHttpRequest::getMethod in AbstractServerHttpRequest\n  cache reactor request methods"
+        },
+        {
+            "hash": "37a4e8445031aebf7eb2deb027e3c4d599368652",
+            "message": "Cache ServerHttpRequest::getMethod in AbstractServerHttpRequest\n\nThis commit ensures that the HttpMethod, exposed through\nServerHttpRequest::getMethod, is cached in AbstractServerHttpRequest so\nthat potentially expensive HTTP method lookups are only done once.\n\nCloses gh-30139"
+        },
+        {
+            "hash": "c27a5687dcc8708584edd0141630af66ce6cbe90",
+            "message": "cache reactor request methods"
+        },
+        {
+            "hash": "4e8162c6dd8c74f60d92638bec90901d4fde9843",
+            "message": "Next development version (v6.0.8-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30326",
+            "title": "Disable variable assignment in SimpleEvaluationContext"
+        },
+        {
+            "number": "30325",
+            "title": "Limit SpEL expression length"
+        },
+        {
+            "number": "30324",
+            "title": "Limit string concatenation in SpEL expressions"
+        },
+        {
+            "number": "30265",
+            "title": "Increase max regex length in SpEL expressions"
+        },
+        {
+            "number": "30224",
+            "title": "HttpServerErrorException contains not-serializable field of type DefaultResponseErrorHandler "
+        },
+        {
+            "number": "30317",
+            "title": "Upgrade to Micrometer 1.10.6"
+        },
+        {
+            "number": "30316",
+            "title": "Upgrade to Reactor 2022.0.6"
+        },
+        {
+            "number": "29976",
+            "title": "Improve error message when mixing positional/named constructor arguments across parent/child beans"
+        },
+        {
+            "number": "30301",
+            "title": "NPE thrown for nonexistent `default-destroy-method` in XML config"
+        },
+        {
+            "number": "30070",
+            "title": "WebClient observations should not record CANCEL signals as aborted if response was received"
+        },
+        {
+            "number": "30277",
+            "title": "SSE breaks with indenting serializer in WebMvc.fn"
+        },
+        {
+            "number": "30188",
+            "title": "Encode IPV6 Zone IDs (%) in ReactorServerHttpRequest"
+        },
+        {
+            "number": "30285",
+            "title": "Introduce assertions against `Cookie` attributes in `CookieResultMatchers` for `MockMvc`"
+        },
+        {
+            "number": "30290",
+            "title": "Introduce `StringUtils.truncate()`"
+        },
+        {
+            "number": "30286",
+            "title": "Introduce `ObjectUtils.nullSafeConciseToString()`"
+        },
+        {
+            "number": "28778",
+            "title": "Spring JDBC does not recognize LocalDate and LocalDateTime in javaType to sqlType Mapping"
+        },
+        {
+            "number": "28527",
+            "title": "Made BeanPropertySqlParameterSource.beanWrapper protected"
+        },
+        {
+            "number": "30220",
+            "title": "Wrong MockRestRequestMatchers.header() method in spring-test being invoked (JDK issue?)"
+        },
+        {
+            "number": "28660",
+            "title": "Add support in `MockRestServiceServer` to assert ALL `header` and `queryParam` values with a single `Matcher`"
+        },
+        {
+            "number": "30266",
+            "title": "@HttpExchange interface does not resolve return type correctly while using with suspending methods"
+        },
+        {
+            "number": "30185",
+            "title": "Ensure compatibility with JDK 20"
+        },
+        {
+            "number": "30000",
+            "title": "Upgrade to Gradle 8"
+        },
+        {
+            "number": "30059",
+            "title": "Document that WebClient defaultStatusHandler do not apply to exchange* methods"
+        },
+        {
+            "number": "30208",
+            "title": "Add class hints for Jackson annotations on fields and methods"
+        },
+        {
+            "number": "30245",
+            "title": "NullPointerException on timeout in HttpComponentsClientHttpConnector when using Apache HttpComponents"
+        },
+        {
+            "number": "30214",
+            "title": "Refine generic type management in `AbstractMessageWriterResultHandler`"
+        },
+        {
+            "number": "29545",
+            "title": "Destroy method not found in native image if concrete bean type is not exposed"
+        },
+        {
+            "number": "29246",
+            "title": "Contribute init/destroy lifecycle introspection hints for registered beans"
+        },
+        {
+            "number": "5171",
+            "title": "Type of autowire used in the AbstractPathMapHandlerMapping [SPR-442]"
+        },
+        {
+            "number": "29205",
+            "title": "Align RuntimeHintsAgent behavior with GraalVM reflection changes"
+        },
+        {
+            "number": "30115",
+            "title": "TypeNotPresentException: org/springframework/cglib/proxy/NoOp not present on Java 17"
+        },
+        {
+            "number": "30210",
+            "title": "MvcUriComponentsBuilder.fromMethodCall breaks for controller with CharSequence return type"
+        },
+        {
+            "number": "30179",
+            "title": "`MultipartBodyBuilder` requires parts to be named"
+        },
+        {
+            "number": "30201",
+            "title": "Add `HttpMethod` reflection hint to `ObjectToObjectConverterRuntimeHints`"
+        }
+    ]
+}

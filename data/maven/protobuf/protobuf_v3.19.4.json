@@ -1,0 +1,49 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.19.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 2.4664814814814813,
+    "commits_info": [
+        {
+            "hash": "22d0e265de7d2b3d2e9a00d071313502e7d4cccf",
+            "message": "Update protobuf version for 3.19.4 (#9449)\n\nI also updated the PHP release notes in\r\nphp/ext/google/protobuf/package.xml."
+        },
+        {
+            "hash": "afeb6d8181db3bba03c81e31a309eb3d3243cae3",
+            "message": "Merge pull request #9451 from haberman/ruby-dataloss-bugfix\n\nFixed data loss bug in Ruby extension"
+        },
+        {
+            "hash": "98b8e055d560062c03aef7fd7f305d0699145252",
+            "message": "Merge branch '3.19.x' into ruby-dataloss-bugfix"
+        },
+        {
+            "hash": "eb301e1a336276b78ce3ddad6fe7bad45b54c127",
+            "message": "Merge pull request #9450 from haberman/php-dataloss-bugfix\n\nFixed data loss bug in PHP C extension"
+        },
+        {
+            "hash": "35a21c124971bb062cffe0b6bda6159fbbbb3297",
+            "message": "Added CHANGES.txt entry."
+        },
+        {
+            "hash": "67995fb4e9ccd43195993dddc051a018fd888086",
+            "message": "Fixed data loss bug with PHP C extension."
+        },
+        {
+            "hash": "779b97260d6f75c4701bee27ba5863f3bf246a41",
+            "message": "Update CHANGES.txt for 3.19.4 release (#9448)"
+        },
+        {
+            "hash": "a035bd0882f74d42798cf65fced7ce785b837646",
+            "message": "Make libprotobuf symbols local on OSX (#8346) (#9435)\n\n@gnossen gave a great overview in https://github.com/grpc/grpc/pull/24992 of the overall problem.\r\n\r\nIf a python process using both protobuf _and_ another native library linking in libprotobuf\r\nfrequently can cause crashes.  This seems to frequently affect tensorflow as well:\r\n\r\ntensorflow/tensorflow#8394,\r\ntensorflow/tensorflow#9525 (comment)\r\ntensorflow/tensorflow#24976,\r\ntensorflow/tensorflow#35573,\r\nhttps://github.com/tensorflow/tensorflow/blob/v2.0.0/tensorflow/contrib/makefile/rename_protobuf.sh,\r\ntensorflow/tensorflow#16104\r\n\r\nTesting locally this fixes both crashes when linking in multiple versions of protobuf\r\nand fixes `DescriptorPool` clashes as well (e.g. Python and Native code import different versions of the same message).\r\n\r\nCo-authored-by: Roy Williams <roy.williams.iii@gmail.com>"
+        },
+        {
+            "hash": "aceff710f4caef3269308a6c50ab075f3879176d",
+            "message": "Fixed data loss bug in Ruby extension."
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,950 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.8.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 233,
+    "start_delay": 0.0,
+    "duration": 47.48349537037037,
+    "commits_info": [
+        {
+            "hash": "099e15aa3ee62b81dc074f77f7e07076cd0e8d8f",
+            "message": "Upped version number, will release 0.8.1 immediately after this."
+        },
+        {
+            "hash": "a73dd520412b907ee072e8fe8164483d949d9ddf",
+            "message": "Added changelog tracking."
+        },
+        {
+            "hash": "f74109fdc8d35a1577167736598d95dcad321f0f",
+            "message": "Addresses issue #5:\nhitting 'find callers' on a @Data annotation should find callers of the (static) constructor.\n\nRight now it'll find callers to the *static* constructor ONLY. Letting it find callers of the public constructor if there is no static constructor just doesn't work."
+        },
+        {
+            "hash": "dfbc6a79e79c1e070ad9d661a468199cffffddc1",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "a9d29896887ee35903bcb847eb4307637801bcc2",
+            "message": "Addresses issue #4:\nIf boolean fields already start with a typical getter prefix (is, has, or get), lombok's @Getter will no longer generate its own prefix as well, so a field named 'hasFoo' will result in a getter named 'hasFoo()', not 'isHasFoo()'.\n\nAlso, if any likely getter name already exists for a boolean, a getter will not be generated. Thus, if your field is called 'hasFoo', and you already have a method named 'isFoo', then @Getter will not generate anything (and warn, unless the getter is being generated due to @Data).\n\nThis last mechanism works by taking the field name *AND* any other likely base names (defined by the field name being named as prefix+baseName, with prefix being is/has/get), and then prefixing all the likely fieldnames with is/has/get, and checking if any method with that name exists.\n\nOf course, this means weird things are going to happen if you have 2 fields named 'isFoo' and 'hasFoo', but then, you'd be a real idiot if you did that."
+        },
+        {
+            "hash": "0d9bde828d548893108f78a281016150121b1d8d",
+            "message": "Addresses issue #6:\n\nFor whatever reason, the path to the javaagent in eclipse.ini on linux needs to be absolute."
+        },
+        {
+            "hash": "ae83845e86715e7b2fd44698a5e84ca749fdcb09",
+            "message": "Starting the lombok installer on mac os X using soylatte instead of apple's JVM now correctly detects being on a mac, and using mac-specific code for finding and installing eclipses."
+        },
+        {
+            "hash": "0e8bda517fcf82fc8a620b20818e75872eb7e9d7",
+            "message": "Fixed two bugs regarding the installer on Win64"
+        },
+        {
+            "hash": "437d8965e1879a10604f8b7e9e369198973229c1",
+            "message": "Added WindowsDriveInfo support for 64-bit JVMs on windows. We think.\nHonestly, we haven't tested it! Also updated instructions on how to\nbuild the 64-bit version of the JVM, and generalized some of the loading\naspects of the DLL, as we now need to potentially try 2 of them."
+        },
+        {
+            "hash": "5835344277d10d069d792c59d67e41313d589d68",
+            "message": "Rewrote the \"find hard disks on windows\" to use a dll instead. The reasons:\n\nA) FSUTIL is internationalized, so on non-english installs, we can't figure out if a disk is fixed.\n\nB) I trust this better than fsutil for user control access (a.k.a. popups from hell) on vista.\n\nC) fsutil.exe is in C:\\windows\\system32 so pretty sure it would be there, but there's always a chance it's not in the PATH, or otherwise not accessible."
+        },
+        {
+            "hash": "f4bcabbe1a8a35028e18726168b56d10dc812787",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "d153c40823888049e5c7e8debab566bb6136fe88",
+            "message": "Added chrome to the list of alternative browser when the video doesn't play."
+        },
+        {
+            "hash": "441e371efe6b18f2aa1565ef23bc6cdfe3c9ecf5",
+            "message": "Added google analytics tracking."
+        },
+        {
+            "hash": "d0efaf3143bbff658b3e10e307128cc4621d629c",
+            "message": "Added a link to javadoc."
+        },
+        {
+            "hash": "08c3435d1b5b310fca00ee0b3cd27d3ce5598018",
+            "message": "Update to the credits page with photos and a mention of spi.googlecode.com"
+        },
+        {
+            "hash": "0b18e6d406faa7ae596525d03e61e70b1aeb76b7",
+            "message": "Okay, I _think_ the video should now work just about everywhere:\n\nFF3.5 (video)\nFF3.0 (flash, even if flash is at an ooold version)\nSafari 4 (video)\nIE6, 7, and 8\nOpera10\n\nAny flash version (or at least, 6 and up) should work, in that too old versions will show an upgrade-your-flash thingie. If javascript is on. Otherwise, well, you're screwed."
+        },
+        {
+            "hash": "b0267ddd1e02a034c0552274cef2babfa036307a",
+            "message": "On IE, without explicit sizes for the sldieshow images, they looked borked."
+        },
+        {
+            "hash": "6d0bbcf529d0e3f7429e4d83e8cc3a9ff34bc8fd",
+            "message": "Whoops, saved the images as quickdraw pictures. That's not going to work anywhere except on macs!"
+        },
+        {
+            "hash": "a84e1b2afafc49449461c49e4afe8c58387cab3a",
+            "message": "Added the slideshow"
+        },
+        {
+            "hash": "a466b566873936caae3656c7892f75acd23f65e9",
+            "message": "We don't put 'monospaced' in <code>'s CSS because that somehow affects rendering in safari. I also removed it from <pre>, because why in one but not the other?"
+        },
+        {
+            "hash": "fd4b514df67fe882abfa631f841ffd9148505101",
+            "message": "If the video tag doesn't work, flash is tried next instead of quicktime."
+        },
+        {
+            "hash": "fe3343694ad3c8d75f7ef7551bb84921d95a1089",
+            "message": "Added an extra note in the 'installation successful' dialog to add lombok.jar to your eclipse projects, lets people get confused and think it can work without doing that."
+        },
+        {
+            "hash": "3b5ce00dd090827228d251dfe5786ac228314941",
+            "message": "Sized the icon into a square form by adding more transparency at top and bottom. This way, the icon showing up in dialog boxes doesn't look borked."
+        },
+        {
+            "hash": "c095c5d365e4c943d6aca0f30bce12effd1f2b8c",
+            "message": "Version bump!"
+        },
+        {
+            "hash": "c8fc7a362e0d4f8eb3bf52b857958a4edc1351f6",
+            "message": "Final versions of the videos"
+        },
+        {
+            "hash": "14195c50740ff2c5881c8a342fb64126e9c85f95",
+            "message": "Worked on the installer so that it's vertically a lot smaller, and at least according to Roel, it looks better too."
+        },
+        {
+            "hash": "c0c0f90eb72aebdfa4d2d6bd975b1918139bc83c",
+            "message": "Updated credits and build.xml for the video."
+        },
+        {
+            "hash": "2f2e0fead62c333d623c92f43ee1483694df2bac",
+            "message": "Added the videos"
+        },
+        {
+            "hash": "297ab16c1ae7c2175da750d2f808bea234668f25",
+            "message": "Added credits page."
+        },
+        {
+            "hash": "4dbf06f171b4a68aec512d715efdcece2e3031ef",
+            "message": "More work on making that godawful excuse for a browser, IE6, render this stuff at least halfway readable. It's not nearly as cool as on proper browsers, but IE6 users can go stuff themselves."
+        },
+        {
+            "hash": "4dd9e15a4f5b7e5ecff45471ff723835a8989566",
+            "message": "Removed meta date tag and use single quotes to at least be consistent on\nWindows as well; the double quotes were removed from the actual javadoc html."
+        },
+        {
+            "hash": "efd0ba74077c8aa59f5e1a1431764a0e99d9e648",
+            "message": "Fixed javadoc"
+        },
+        {
+            "hash": "b96bd7e9265c1e4b9849f151667404767c241694",
+            "message": "Typo fixes."
+        },
+        {
+            "hash": "64216d3ea9ba04ee54a6a33f3074d59f55a6e0ef",
+            "message": "Added feedback from r.spilker."
+        },
+        {
+            "hash": "b7c969789961069b65bb811049826c2ccb5eb936",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "237c337ed13467376f30dd3a013c15ff7dea4b1c",
+            "message": "No constructor entry should be made for assigned final fields"
+        },
+        {
+            "hash": "ffec3c35f3c65c766acc34a363fcb237f0b2e899",
+            "message": "Changed the order of name and age in the toString method"
+        },
+        {
+            "hash": "bc35f73ae80802ab6758509481dacd66c5dc3285",
+            "message": "Added text for the Synchronized annotation to the features pages. Also did some fixes in regards to whitespacing (some fancy footwork in regards to white-space: pre)."
+        },
+        {
+            "hash": "1e369a3aa408601a3ba23493a961acccaa5c9be2",
+            "message": "Added descriptions to the ant targets"
+        },
+        {
+            "hash": "90923aff459973d4588ce6a69338e50553e80bde",
+            "message": "Needed for publish target in ant script"
+        },
+        {
+            "hash": "d2ffa540a44a56e2bd08fb6f65c0aa1946f72e65",
+            "message": "Project settings forced to UTF-8 and unix line endings"
+        },
+        {
+            "hash": "7448bd321afb0c9b71945c1912078856e7492560",
+            "message": "Added google.properties, which contains passwords, to gitignore"
+        },
+        {
+            "hash": "55dd52942e11dae5510a5a4b261b296151532e1e",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "a61efb8db4904a848ba69f3e87747db5883693c1",
+            "message": "Site now looks passable in IE6 and IE7 too."
+        },
+        {
+            "hash": "316ce2584a3d7b860dd3fbe96057df2086808364",
+            "message": "Added a byline to all current feature pages, as well as fixing 1 typo in Cleanup.html."
+        },
+        {
+            "hash": "efe46f68a9d0363fd58222048ddfa9efaf1bc9cd",
+            "message": "Added Cleanup features text."
+        },
+        {
+            "hash": "97974b9104430d4c31ef003da3643a7905af46c6",
+            "message": "Refactored the name of the cleanup method arg to 'value'."
+        },
+        {
+            "hash": "2f74334b6da4e2dd2e8a6deaaf452680650b4fc3",
+            "message": "Added a useful note pointing at website/publish script."
+        },
+        {
+            "hash": "c3d31c31d891c03a82eb29d2fe01234c992fb396",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "ba1a0391d5edf7b5cde4d841195d4ae27695d568",
+            "message": "Check for tar file instead of zip file"
+        },
+        {
+            "hash": "70739bf90afd71958d0a2a4e2ae4009f88487eed",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "145e069d304e82e268333e3579273f1032a8867f",
+            "message": "Moved from zip to tar for storing the website as an intermediate step, as git for windows has tar but not unzip."
+        },
+        {
+            "hash": "17d02d3ccace652353d75ee0ad9b5614cfa068b2",
+            "message": "Moved java2html.jar because naming a directory that doesn't contain built material 'build' was just stupid."
+        },
+        {
+            "hash": "25f11f26624f9854a81822666747026722208703",
+            "message": "Remove reliance on dirname, as its not available on some git-for-windows installs."
+        },
+        {
+            "hash": "c50e4c2ed65b8da60f2743a972063c98f40cf3a6",
+            "message": "Added a script that publishes the website dir to github via some crazy git fu.\n\nAlso stripped out how javadoc generated a comment with a timestamp, as to publish to github, we check in the files, which generates pointless and enormous changesets."
+        },
+        {
+            "hash": "99b3ec87b0cc4af797ad398c1d7fa2f6056d9cef",
+            "message": "Added generation of javadoc to the 'website' target, and we also build a zip file now."
+        },
+        {
+            "hash": "072939696a0be76718415f7e5348747179a67cba",
+            "message": "Changed the link to 'features' to our own features overview page."
+        },
+        {
+            "hash": "642dad3f0c13a8a900aac21fe26e1eb672fbb5a6",
+            "message": "Very minor typos in Data/GetterSetter, added an index page for the features overview, and increased transparancy on the pepper background."
+        },
+        {
+            "hash": "3bfe8d21610b7d92aa932685bc40abf011295328",
+            "message": "Now using the ant task for java2html, and also added the generation of line numbers."
+        },
+        {
+            "hash": "e041cad5f4c6eb55365464b8e346aa710a2e1b2f",
+            "message": "Moved lib/javadoc/java6/package-list to deps, because its not a runtime dependency."
+        },
+        {
+            "hash": "aab7230471684db99ab2798c9e8a09e805e72d56",
+            "message": "Moved right parenthesis"
+        },
+        {
+            "hash": "d13100d6bd29fdbf81a0a4a178033c8a556f17a0",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "e81dd1edbf6e23d5e4682f3ce2e04560bbf95e48",
+            "message": "Changed the generated javadoc to use links to the sun documentation for references to java6 se classes"
+        },
+        {
+            "hash": "9925c04782d78daa401e5f657869fdbdc31129c1",
+            "message": "Made background of found Eclipses white"
+        },
+        {
+            "hash": "b1d8d1dfc4856ccd7e89f75c47d308dba0c022c5",
+            "message": "Made the detection of drives more robust on Windows"
+        },
+        {
+            "hash": "d87a5204cfb17de787e787c0b6dad246b42a2b58",
+            "message": "Layout for the features pages."
+        },
+        {
+            "hash": "846b8d0211197b5fb473647d535887ad4b750187",
+            "message": "Made the downloadinfo on the index page a bit smaller (it was overflowing its container), and removed the fun but unreliable glow effect."
+        },
+        {
+            "hash": "08a7452f3ca40f4eaa29b430828d751e0adc96a8",
+            "message": "Added explanation for the download info text that you may have to run 'java -jar lombok.jar' in case some fucktard archiver tool overwrote the default action for jar files."
+        },
+        {
+            "hash": "6187d5059565ee96ac635ebbe5bd5514d25a6e2b",
+            "message": "Moved this script to copy the recently built lombok.jar to the same location that the installer uses."
+        },
+        {
+            "hash": "c4ced5e73892a3b1293d26204638641bfcb3705f",
+            "message": "Removed a debug print."
+        },
+        {
+            "hash": "a423175f9dc32ccb5a2af574c78ffcb256d1ad17",
+            "message": "Added icon to frame, set background color of found eclipses to WHITE, use\nplatform path separator in installer \"What do I do\" text."
+        },
+        {
+            "hash": "02a8102dd13aafd6b342251043d6908f9bb58246",
+            "message": "replaced line endings."
+        },
+        {
+            "hash": "8ada852308f2823efb12af7795e21eb3ff08f598",
+            "message": "Used reflection to call Apple native look to avoid errors in a non-mac\ndevelopment environment"
+        },
+        {
+            "hash": "f99fff3042a96ea509f2e1583fc182b3c4c9f5cd",
+            "message": "Added our test video"
+        },
+        {
+            "hash": "aa40323ae8dde889f4bcf21304e5cffdc0003b4c",
+            "message": "Fixed a problem where @Data with a static constructor and generics params on the class would generate errors regarding IllegalArgumentException in setSourcePosition in ASTNode."
+        },
+        {
+            "hash": "ba6f353fd867f641f6ab155c2ab83e47e0c9bed4",
+            "message": "Made the help text when you click on the download link properly positioned."
+        },
+        {
+            "hash": "2adf65aeb38ef33d665c1bfd85039f28659ceb27",
+            "message": "Example for the @Data annotation."
+        },
+        {
+            "hash": "5fef32c1f59403ef2978942ac2838731b1406413",
+            "message": "More fixes to avoid erroneous \"getter/setter is already there, not generating it\" warnings\nwhen the getter/setter already there was in fact generated by lombok, and fixed a bug\nin eclipse where a boolean array's getter method would be called isFoo() instead of getFoo()."
+        },
+        {
+            "hash": "12d44e59c57e4654a7c61f83baf606a39fbb8448",
+            "message": "'fixed' data up a bit by including only the final fields for the constructor.\n\nAlso fixed a bug in javac's toString() generation for the @Data constructor. It did\nnot include the transient fields."
+        },
+        {
+            "hash": "98382c6640798846efcc11113116cb46fb820595",
+            "message": "Added examples with pre and post lombok conversion for the website."
+        },
+        {
+            "hash": "f84f3a1bc8407160b82580300d2a58fd8c66aaa1",
+            "message": "The setter/getter handlers now mark themselves as not wanted to be called upon anymore when reporting errors.\n\nThey were logging 4 or more identical warnings per problem before this change."
+        },
+        {
+            "hash": "bc44e76b7d45da2301a1bb7d28d4e7e8fec4b94b",
+            "message": "Made 'printContent=true' work for types as well as method bodies/initializers."
+        },
+        {
+            "hash": "21aa78996ad11ebd945273405d752622ffbd9df0",
+            "message": "Added the github 'fork me' banner."
+        },
+        {
+            "hash": "762bcba0074a0d922ce9c37e57642f5f2bf0afb4",
+            "message": "More work on the website."
+        },
+        {
+            "hash": "08bc31232f35026b674cfaff26097febbe2c8af7",
+            "message": "I forgot; HandleSetter/HandleGetter already act appropriately with static modifiers."
+        },
+        {
+            "hash": "e25fd4fd9ffc0315c24a0f42dbd2876fa3c7ee9a",
+            "message": "Worked a lot on the 'what's next' documentation."
+        },
+        {
+            "hash": "97c6436fe69226e845ce8308273ac9be672f6d99",
+            "message": "Found ANOTHER javac bug."
+        },
+        {
+            "hash": "6f9a776367efe8094c9ed53c2ce224b3f6f5d71d",
+            "message": "Website."
+        },
+        {
+            "hash": "58d0ada6d7574c65b08480b8c62eb30c5d93db3e",
+            "message": "Made 'Throwable.class' the default for SneakyThrows."
+        },
+        {
+            "hash": "f6778b0426d86c8f6bc23b0e3bb7617eb7a08709",
+            "message": "Renamed all true names of 'eclipse' to 'Eclipse' (but not the eclipse package, of course),\nand fixed a showstopper bug in the installer that would add -javaagent:lombok.jar to\neclipse.ini, which is wrong of course; it needs to be lombok.eclipse.agent.jar."
+        },
+        {
+            "hash": "8534a8e0a552f21ad6479e94fad8db36e67d44d5",
+            "message": "Fixed javadoc problems, and added a javadoc target to the build script."
+        },
+        {
+            "hash": "527b992a074c1c65727bc52c820d40340f074a6b",
+            "message": "Last massive documentation dump. All basic javadoc is now done, though especially the docs\non the lombok annotations in the lombok package need far more massaging.\n\nAlso added a feature to HandleSynchronized to not auto-generate the locker fields if\na specific name is provided (because, imagine you typoed those. You'd never find it!)"
+        },
+        {
+            "hash": "8d4c5369ee7eff4020e892c7ca283ea0b1073638",
+            "message": "More documentation."
+        },
+        {
+            "hash": "7dd061c263803dadefe244bcc78a67f4d12bd42e",
+            "message": "More documentation."
+        },
+        {
+            "hash": "a9fe617303f9726794451eaf2c517a8ec57f3faf",
+            "message": "Final touches on the installer:\n - some bug fixes for linux\n - renamed InstallerWindow to Installer\n - Apple-specific prettification added (dock icon, app name)\n - more documentation.\n\nAlso, I started added an open source licence to all files."
+        },
+        {
+            "hash": "1f8a907187cbdeacc0947d3cc00d251640882a54",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "e7492d444cace44a39d94853512c31a9b95d930d",
+            "message": "W00t - written an installer that should work on linux (sort of), windows, and Mac OS X. Bumped the version number to celebrate, and changed build to roll the agent.jar into the main jar, and\nchange the executable class from the minimal help that was there to the installer. That minimal help thing (ShowUserHelp.java) is now gone."
+        },
+        {
+            "hash": "938d4bb9f231722b2f55b71a05ecf9c3878119aa",
+            "message": "These are nice, but kinda NSFW."
+        },
+        {
+            "hash": "4bf64a03463219c19c091f2ed297e23e8fd812ec",
+            "message": "A start on the installer."
+        },
+        {
+            "hash": "cf594564bed778fe4d73f32ae5865cf20290f360",
+            "message": "Fine-tuning eclipse's error reporting found some minor issues and even 1 bug that would show up rarely or not at all."
+        },
+        {
+            "hash": "c3e4ed5d78718b6c0aeb0ceabfa984e2ee2800ae",
+            "message": "[DOC]"
+        },
+        {
+            "hash": "17d81608dba2781eede4409865bee13619256cea",
+            "message": "Added @SneakyThrows support for javac. W00t."
+        },
+        {
+            "hash": "d174201c7f911e3752661a33ce6360a4240f8366",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "99d9728ede23aade67fdce4412a91bc58f5ab3dc",
+            "message": "Support for @SneakyThrows in eclipse."
+        },
+        {
+            "hash": "efe3931cf3d9134d7d8e5adf792b05a47ce2c423",
+            "message": "Added ability to @Synchronized to explicitly name the lock object.\nSpruced up @Cleanup's position settings and also forced initialization, because the error appears in a screwed up place if you don't, and we can't seem to move it."
+        },
+        {
+            "hash": "194c990f64165e0422b1f48a62cf1f77ccd52e43",
+            "message": "Added @Synchronized support to javac. Seems to work well."
+        },
+        {
+            "hash": "34780e3ab5c549dd83085fe0893e015d3ef4d211",
+            "message": "Added a bonus feature to @Cleanup: Assigning a @Cleanup marked variable to anything else generates a warning."
+        },
+        {
+            "hash": "db4819183f698acea6221656098e6e42a6e9e6fd",
+            "message": "@Synchronization support for eclipse! Seems to work fine, just need to write the same thing for javac."
+        },
+        {
+            "hash": "43992ff596cd3beb2b6b3f4cfaa686671f06fc2a",
+            "message": "Pretty big fix for reparse() - now uses rebuild(), which also received a pretty big fix in making the loop detection algorithm far more robust. Still not sure what was the problem, but the robustificationization helped."
+        },
+        {
+            "hash": "23ba6c2628f893678924d66382f962557514f66b",
+            "message": "Added HandleCleanup support for javac, and fixed a bug in AST.java which caused nested @Cleanup annotations to simply be ignored (rebuild was broken).\n\nHandleCleanup seems to work swimmingly now on both targets. yay!"
+        },
+        {
+            "hash": "008bca204568d4af8ae67d815bbff017aad65dae",
+            "message": "Saved the previous extensive commit message for posterity in TODO.txt"
+        },
+        {
+            "hash": "37006cb2954b6fcb23d2dcfaedbc3abac3fbb5d7",
+            "message": "After a great many iterations, Cleanup has now been reduced in functionality (exceptions from the cleanup call WILL mask exceptions from the body - this isn't intended, but it's just not possible to fix this without java 7 features or requiring a rewrite of the class file data.\n\nTried tactics, and why they won't work:\n\n - Replace every 'return', 'break', and 'continue' statement (for the latter 2, only if they break/continue out of the try block) with a block that first sets a uniquely named flag before doing the operation.\n   Then, check that flag in the finally block to see if the cleanup call should be guarded by a try/catchThrowable. This doesn't work, because its not possible to instrument the 4th way out of a try block without throwing an exception: Just letting it run its course. Tossing a \"#flag = true;\" at the end may cause a compile time error if the code is not reachable, but figuring that out requires resolution and quite a bit of analysis.\n\n - Put catch blocks in for all relevant exceptions (RuntimeException, Error, all exceptions declared as thrown by the method, and all types of exceptions of the catch blocks of encapsulating try blocks.\n   This doesn't work, partly because it'll fail for sneakily thrown exceptions, but mostly because you can't just catch an exception listed in the 'throws' clause of the method body; catching an exception\n   that no statement in the try block can throw is a compile time error, but it is perfectly allright to declare these as 'thrown'.\n\n - Put in a blanket catch Throwable to set the flag. Two problems with this:\n   First, sneaky throw can't be done. Thread.stop invokes a security manager and triggers a warning, Calling a sneakyThrow method creates a runtime dependency on lombok, constructing a sneakyThrow in-class creates visible methods or at least visible class files, and creating a new class via Class.loadClass would be very slow without caching - which gets you the same issues.\n   Secondly, this would mean that any statements in the try body that throw an exception aren't flagged to the user as needing to be handled.\n\nThe Cleanup annotation now also calls the cleanup method for you, and will call it at the END of the current scope. The following plans have been tried and abandoned:\n\n - Cleanup right after the final mention. This doesn't work, because the final mention may not be the final use-place. Example:\n   @Cleanup InputStream in = new FileInputStream(someFile);\n   InputStreamReader reader = new InputStreamReader(in);\n   reader.read(); //oops - in is already closed by now.\n\n - Require an explicit var.cleanup() call and consider that the cue to close off the try block.\n   This doesn't work either, because now variables set in between the @Cleanup declaration and the var.cleanup() call become invisible to following statements. Example:\n   @Cleanup InputStream in = new FileInputStream(someFile);\n   int i = in.read();\n   in.close();\n   System.out.println(i); //fail - i is inside the generated try block but this isn't, so 'i' is not visible from here.\n\nBy running to the end of visible scope, all these problems are avoided. This does remove the flexibility of declaring where you want a close call to be executed, but there are two mitigating factors available:\n\n 1) Create an explicit scope block. You can just stick { code } in any place where you can legally write a statement, in java. This is relatively unknown, so I expect most users will go for:\n\n 2) Just call close explicitly. I've yet to see a cleanup method which isn't idempotent anyway (calling it multiple times is no different than calling it once).\n\nDuring the course of investigating these options, the AST code has been extended to support live replacement of any child node, including updating the actual underlying system AST as well as our own.\nUnfortunately, this code has NOT been tested. It was rather a lot of work so I'm leaving it in, and at least for eclipse it even seemed to work."
+        },
+        {
+            "hash": "e0b623a3b85c89028bfc8c52578232b1c539723c",
+            "message": "Removed a debug print."
+        },
+        {
+            "hash": "d4556f8539ce707a5bec846ba90108bdea22644c",
+            "message": "All lombok code is now targeted at java 1.5, except for the javac-specific stuff, which is on 1.6."
+        },
+        {
+            "hash": "69844725fb9256a38c8f3e16d72a24c20a819e98",
+            "message": "Preparating for java 1.5-ification. All stuff that isn't specific to javac should run in java 1.5, so that an eclipse started on a 1.5 JVM will still run lombok."
+        },
+        {
+            "hash": "19f1b265931737a28760ccfe0200b4721f545989",
+            "message": "Rolled our own ServiceLoader, because its not part of java 1.5."
+        },
+        {
+            "hash": "dc7d0cacf5c12201fb51a8758e3fcca385cc583c",
+            "message": "AptProblem is not available when eclipse is run on java 1.5, and AptProblem is not neccessarily the proper target anyway. Rolled our own DefaultProblem subclass for problem reporting."
+        },
+        {
+            "hash": "cd866b852ce1bf4390e98a58cdf491fa9828839f",
+            "message": "Stuck some links for the foss licence in the todo list."
+        },
+        {
+            "hash": "71f67e1f65ca1a90b60555075c67194e8a1db752",
+            "message": "Added rebuild support to AST.Node."
+        },
+        {
+            "hash": "b4cab3f65c854ba4bda03528a87bff7654ccb817",
+            "message": "[IMPROVEMENT]\n\nEclipse will now also hold off on running @PrintAST handlers until the very end. Simple generators such as @Getter didn't need this, because PrintAST's handler will hold off until eclipse does a full parse,\nbut when changing the innards of methods, you would likely not see what you did. Fixed that.\n\nAlso, PrintAST has an option to, instead of diving into the ASTNodes of bodies (methods, initializers, etc), to just render the java code, to see if the AST creation/rewriting you've been doing looks like the java code you intended."
+        },
+        {
+            "hash": "b9714eae8ced8d22a319a471331be3a522ebccce",
+            "message": "[BUGFIX] Pretty major bug - due to a typo, ALL values for annotation methods were set to the value of the last annotation method. e.g in:\n\n@Foo(bar=10), ALL methods in the Foo annotation were presumed to be listed, and set to 10. This was obviously causing problems. Fixed it."
+        },
+        {
+            "hash": "c4611d669db5ef38ba59540dc850cb59a5168348",
+            "message": "[BUGFIX] For some reason, JCLiteral objects contain '1' or '0' (integers) for booleans, not actual booleans. You can tell the difference via the getKind() method. hence, boolean fields in annotations\nwere throwing unexpected type errors (Integer instead of Boolean). Fixed this."
+        },
+        {
+            "hash": "18931bec5315db308e369a05918af54e59ebd8b6",
+            "message": "[TRIVIAL] Added a toString to AnnotationValue, used to debug something, but useful enough to leave in there."
+        },
+        {
+            "hash": "4bddd821d2b1c37e4a1f59ee5c06668a315120dd",
+            "message": "Whoops - there was some debug printing left in eclipse's HandleGetter"
+        },
+        {
+            "hash": "157bbba3acd78aaff2ba0946ddb60a981186c7db",
+            "message": "Added a caching mechanism to AnnotationValues, for instantiating the annotation."
+        },
+        {
+            "hash": "47bd3e3c06379d8c52f572cf466e6388b0b91ce1",
+            "message": "Added some bugs that we need to fix."
+        },
+        {
+            "hash": "cea4c9bb042e6dceb6512f094a25870c7a084744",
+            "message": "Cleanup implemented for eclipse!\n\nThere's one serious problem though: The cleanup routine modifies the eclipse internal AST, but doesn't update our bi-directional AST. Thus, or example, having a @Cleanup annotation inside the scope\nof another @Cleanup fails, because the application of the second one climbs up to the wrong block level (the original block level instead of newly built try block)."
+        },
+        {
+            "hash": "91cd698b1efc627dd4ddd46c8cb8f561dd7bf0a7",
+            "message": "Added a readme."
+        },
+        {
+            "hash": "84e40cd4e3122035bf9b8aac5c7c14ee04c5cdab",
+            "message": "Bumped version from 0.3.0 to 0.3.5 in celebration of finishing all 3 generating annotations for both javac and eclipse (@Getter, @Setter, and @Data)."
+        },
+        {
+            "hash": "76135a9fb713afc4cdc8e20081b09dced51797af",
+            "message": "Added support for generating toString to javac's HandleData. Now javac's HandleData is COMPLETE! w00t!"
+        },
+        {
+            "hash": "29c610af1855c847a32e726e8556b80fdf98bfcb",
+            "message": "Added generating hashCode() to javac's HandleData."
+        },
+        {
+            "hash": "9d7e12d96ce469f44ada329c5dc5fdf522203e73",
+            "message": "trivial"
+        },
+        {
+            "hash": "19fec30bc17fe4923f74df7b007c38497f4ddcd1",
+            "message": "javac's HandleData now makes equals methods."
+        },
+        {
+            "hash": "dec4be37381caaf4e2ec9af301153734088889fd",
+            "message": "Removed adding the statement: 'final int PRIME = 31;' in the HandleData's createHashCode method when there are 0 fields in the type (it would generate a local variable never used warning!)"
+        },
+        {
+            "hash": "63894b98dd648ab5b83dd7bc57defb1dbcfd97ae",
+            "message": "Heh, on errors you'd never actually see any message, just the exception type. Whoops."
+        },
+        {
+            "hash": "bcee5a50db361abe7468de74c79194d394c8229e",
+            "message": "javac's HandleData now generates the constructor only if it doesn't already exist, and the staticConstructor is now also completed. Left: toString, hashCode, equals."
+        },
+        {
+            "hash": "6d425594176e8493ecec4d5e958a2dcbd611eeb1",
+            "message": "Work on HandleData, as well as generalizing features in the the PKG class and updating HandleGetter/Setter to call into it."
+        },
+        {
+            "hash": "c346b5c0546364e1721d0eda37ea5b465a20de0d",
+            "message": "Added printing for a constructor if it is the default (generated) constructor or not."
+        },
+        {
+            "hash": "99a38d4d08cb020182663ffaf9418d28becf1fd6",
+            "message": "Added proper support for changing the AST as its being visited, both removal and addition. The rule is now: children traversal traverses through the tree mostly as it was when it started."
+        },
+        {
+            "hash": "c834e09af460715a159506c5e809b3572dc22de5",
+            "message": "Useful script while developing on the javac part of lombok."
+        },
+        {
+            "hash": "7191aa78bde2072b86d4d3d99ad6a3dfb7fa6527",
+            "message": "fixed a bug where the auto-generated constructors (actual or static) would throw eclipse errors if you had 0 non-static fields."
+        },
+        {
+            "hash": "2ebb040c812191381d62aa7f7c9d3e81ac6c1971",
+            "message": "HandleData for eclipse now seems to work 100%. Also updated toString to use deepToString, and added @Override in case people have warnings for missing @Override annotations on."
+        },
+        {
+            "hash": "6210df32d073d0cd07682271e03fa0634de2adfa",
+            "message": "@Data's generation of the equals() method now works!"
+        },
+        {
+            "hash": "d27fd01b2b981740a08b497716c0cc065e29fab6",
+            "message": "Doc"
+        },
+        {
+            "hash": "e85ef24b4d99f922f77439d9ba5e0e27717f2d31",
+            "message": "Fixed some bugs in copyType(), and now the static constructor is generated without any raw generics warnings - it is effectively done."
+        },
+        {
+            "hash": "8bbdcec6fad6edf8f335f9e0c6899fddc56e07c1",
+            "message": "Figured out that our previous act of just assigning TypeReference objects directly to other nodes (e.g. from a FieldDeclaration's type to a method argument) is NOT a good idea, as this screws up when\nthe TypeReference object represents a generic type (like 'T') - each instance of a generic type has a different resolution, but 1 TypeReference object can only hold 1 resolution.\n\nThus, a copyType() method has been written, and the Handle* classes have been updated to use it.\n\nAlso, generateEquals() is half-finished in HandleData."
+        },
+        {
+            "hash": "6c82a3c780539825157f721fcfe1a8894e73b161",
+            "message": "This is a 3-day bughunt that ended up being something extremely simple:\n\n** DO NOT REUSE TYPEREFERENCE OBJECTS **\n\nbecause that makes the binding process go pearshaped - after hte first run, that TypeReference object's binding parameter is set, and as its set, the resolver won't bother re-resolving it.\n\nHowever, each parse run starts with new scope objects, and any 2 bindings created by different scopes aren't equal to each other. urrrrrrgh!\n\nFortunately, a lot of code that 'fixed' methods by adding bindings and scope have all been removed, as the parser patch point is well before these bindings are created. Thus:\n\n** NEVER CREATE YOUR OWN BINDINGS AND SCOPE OBJECTS **\n\nbecause if it comes down to that, you're doing it entirely wrong. That's eclipse's job. We're patching where we are so you don't have to do this."
+        },
+        {
+            "hash": "4ee8e7a3d2513420e0f7affcca61d916c2a7374b",
+            "message": "Put the actual numeric value of ASTNode.Bit24 in a comment, but it was missing a 0!"
+        },
+        {
+            "hash": "794801c3c9dc4f62906ac5d493b5e60473a91c47",
+            "message": "Removed the equalsPrime thing, because that's just needlessly putting implementation details in there. If switching primes is so important, hash the type name and turn that into a prime, or something.\n\nAlso added some javadoc."
+        },
+        {
+            "hash": "fdde039d2354d01481f22ebadf83f552d6cf9f50",
+            "message": "More work on the HandleData annotation. Constructor seems to work fine, static constructor not so much."
+        },
+        {
+            "hash": "a27c48dd5cc6f5d3140bd3b08debca83b47d1e37",
+            "message": "trivial"
+        },
+        {
+            "hash": "b8d9c9ed9771bbeed49f1fb2659e07a20559a25b",
+            "message": "Bug fix: using string literals in any lombok annotation value would blow up that processor."
+        },
+        {
+            "hash": "255bd5907176cb5d2c4fb1cf6a9b48b14af0b4ba",
+            "message": "Due to a java bug, constants in enums don't work, so instead the default access level for @Getter and @Setter have now just been hardcoded in GetterHandler and SetterHandler.\n\nAdded ability to look up the Node object for any given AST object on Node itself, as you don't usually have the AST object.\n\nAdded toString() method generating to @Data, and this required some fancy footwork in finding if we've already generated methods, and editing a generated method to fill in binding and type resolutions. HandleGetter and HandleSetter have been updated to use these features.\n\nExceptions caused by lombok handlers show up in the eclipse error log, but now, if they are related to a CompilationUnit, also as a problem (error) on the CUD - those error log entries are easy to miss!\n\nOur ASTs can now be appended to. When you generate a new AST node, you should add it to the AST, obviously. Getter/Setter have been updated to use this."
+        },
+        {
+            "hash": "2e8e43a12e21151ff470a2729373b4af4980d113",
+            "message": "Runs eclipse on a mac."
+        },
+        {
+            "hash": "ff306fa5d97a09d69332c76a33596bb053222855",
+            "message": "Added initial support for the @Data annotation. Currently produces getters and setters only,\nnot yet a constructor, toString, hashCode, or equals.\n\nHandleGetter and HandleSetter have been updated to handle static (theoretic; you can't put annotations on static fields normally).\n\nYou can now make AnnotationValue objects using just an annotationNode and a target type, as well as check if a given annotationNode is likely to represent a target annotation type. This is in Javac and Eclipse classes.\n\nHandleGetter and HandleSetter can now be asked to make a getter/setter, and will grab access level off of a Getter/Setter annotation, if present."
+        },
+        {
+            "hash": "e56ab6c2457531c0ce8556097f945b6e7946f6f2",
+            "message": "Added info on the addNetbeans branch."
+        },
+        {
+            "hash": "b964ec18fcc7f8fcbae40ef34113c972785629a3",
+            "message": "Finding lombok.jar would fail if you had any spaces in the path. Fixed that."
+        },
+        {
+            "hash": "7f7cdfc3fc9cbaf453137a6f27ac0472b41736c1",
+            "message": "Moved ClassLoaderWorkaround from 'java.lombok' to 'java.lombok.eclipse' as its clearly eclipse-specific."
+        },
+        {
+            "hash": "8b6b82191810af185b89a3bd09d8de056669fce6",
+            "message": "Live reloading of the eclipse parser classes is technically supported by the agent though I never tested it. I found a bug while browsing this code. fixed it."
+        },
+        {
+            "hash": "00452d0e954921b2e0f871bc67d5577daf4cc798",
+            "message": "Renamed EclipseParserPatcher to EclipsePatcher, as it patches not just the parser, but also the CompilationUnitDeclaration class so we can store our AST in it for caching purposes."
+        },
+        {
+            "hash": "7bbf7789f8db8573dc76f215f092ddd2d8a8cbfd",
+            "message": "List of stuff we still need to do as well as research notes on how to get there."
+        },
+        {
+            "hash": "0bb66dd93d591b5e3f05a24aaa751600207541d1",
+            "message": "Created a fully working HandleSetter for eclipse, and refactored HandleGetter a little mostly to stuff common code into PKG."
+        },
+        {
+            "hash": "6254337948180140a47c872cb046cdff7e1326c4",
+            "message": "Expanded the AST printers to support a target PrintStream, and expanded the @PrintAST annotation to let you supply an optional filename. Useful particularly for IDEs, which don't usually have a viewable console.\n\nAlso renamed the printers to just 'Printer', as they are already inner classes of a specifically named type (JavacASTVisitor & co)."
+        },
+        {
+            "hash": "eca3cd7ccc6e8c5736f5a70c3b1c095bd949689d",
+            "message": "AnnotationHandlers can now return a boolean to set if they actually handled the annotation or not (previously, the presumption was they always handled the annotation).\n\nThis is very useful for PrintAST on eclipse, because before this change, you'd never see method contents (as the initial dietParse would come first). Now Eclipse PrintASTHandler\n\nwill skip any non-full runs, and only print non-diet. It then returns true only if it printed."
+        },
+        {
+            "hash": "8fa50054449d88380ce45ba91881df6655737f20",
+            "message": "Added 'does setX/getX already exist' check to javac's HandleGetter/Setter. If they exist (with any returntype/paramlist), no getter/setter is generated, and instead a warning is added on the annotation."
+        },
+        {
+            "hash": "1929a28c9def0dd276dcf3fdb70ada8b84b1c64a",
+            "message": "Added the SetterHandler for javac. Also added a way to get the SymbolTable on a JavacAST.Node, because you need it to e.g. access constant types like 'void'."
+        },
+        {
+            "hash": "7c65e0fdff6a015b9773a0f6d6b5d8adf8cd9434",
+            "message": "Made the printing of Statements for @PrintAST slightly more useful (if a lot more verbose), and bumped the version number in honour of quite a bit of redesign these past few commits."
+        },
+        {
+            "hash": "8aae52a9923c041486484d30b9b35ee9b6f2a8ea",
+            "message": "A useful annotation that prints the AST of any annotated element via the XASTPrinters in each ASTVisitor interface."
+        },
+        {
+            "hash": "5bdfa539f2f4277eda9ab414dab167a4d6d883e9",
+            "message": "Just renamed some parameters to more sensical names."
+        },
+        {
+            "hash": "981e7db3541fc030a42e2bf5c2a18860b2fb8eeb",
+            "message": "A bugfix to the visitMethodArgument method, and printing improved by printing the raw (instead of resolved) types for fields etc, because usually they aren't resolved yet."
+        },
+        {
+            "hash": "57a57867340e81a5e742a725c1ba7fc2b400a0d0",
+            "message": "Moved the traverse() from Eclipse/JavacAST to Eclipse/JavacAST.Node, so that you can start your traversal at any point, not just from the top.\n\nAlso a bugfix for endVisitStatement which passed the wrong node, and method arguments in Javac are no longer misfiled as local declarations."
+        },
+        {
+            "hash": "1d85326769ddbeed3370b7a6256d86f3f787a29b",
+            "message": "No retention at all seems much smarter, because then it wouldn't be neccessary to have the lombok.jar in the deployment path of whatever you write WITH lombok, which is a good idea.\n\nThough - rewriting to e.g. a Lombok.sneakyThrow() call would require lombok.jar anyway. We'll cross that bridge when we get there."
+        },
+        {
+            "hash": "e737d64242329391ef681e51b36886aaf4d6fe35",
+            "message": "Renamed the Handler implementations."
+        },
+        {
+            "hash": "db2326714f796b8e7100edc0388e54b2ba3e5139",
+            "message": "Trivial"
+        },
+        {
+            "hash": "d3ee75020ee2b28795d602f2a0daf018b5131c9a",
+            "message": "Removed a debug print."
+        },
+        {
+            "hash": "af27ad5395b006a174ad86ed40074279b57d9411",
+            "message": "Error reporting now works 99% properly - the right position is being marked off. The only issue is that the count by javac is being misreported (it doesn't count lombok errors)."
+        },
+        {
+            "hash": "0c9897303f97fba2d2f626ebfd4ef4a1fbc78699",
+            "message": "Warnings and errors on specific positions works, sort of. Still missing something crucial to properly make javac generate the line + the ^^^^ indicators."
+        },
+        {
+            "hash": "ccf0e5da4124af22fc17b07d0a336a4e3463e030",
+            "message": "NullPointerExceptions were showing up in Eclipse, when a 2+ dimensional array of Statements contains inner arrays that are null. Fixed that."
+        },
+        {
+            "hash": "acbd2308b5711d8b9a7aee04da2346f937d69474",
+            "message": "Added reading in (via spi) JavacASTVisitors and calling them, as well as a mechanism to generate generic errors and warnings for javac."
+        },
+        {
+            "hash": "1a2392f8b31cfa24602d3d0cf11ff69f8a22b211",
+            "message": "None of the methods in this class were even being used, so deleted the whole thing."
+        },
+        {
+            "hash": "4ab2bb7be0ec2ea3e0c61bd2c0e24bee46ff41a8",
+            "message": "Turns out using instanceof checks to figure out if a LocalDeclaration is a method argument or not (by instanceof checking if it's an Argument) is faulty, as e.g. the argument to a catch block is also an Argument object. Rewritten the visitChild method to be based on a switch on the Node's getKind(), just like JavacAST. This even looks nicer."
+        },
+        {
+            "hash": "024d8ffa9801f463fecadd16f42d51bbed46dea7",
+            "message": "Massive refactors. This list isn't complete, but should give you an idea:\n\nA) many things in lombok.eclipse moved to lombok.core to enable reuse with lombok.javac.\n\nB) lombok.javac works now similarly to eclipse's model: We first make big ASTs that are bidirectionally traversable, then we walk through that for annotations.\n\nC) Instead of getting an annotation instance, you now get an object that is more flexible and can e.g. give you class values in an enum as a string instead of a Class object, which may fail if that class isn't on the classpath of lombok.\n\nD) sources to the internal sun classes for javac added to /contrib."
+        },
+        {
+            "hash": "aa6d2e262f3d6c43f6d89220cdc10c6954bb2bdd",
+            "message": "Moved the generation of the Trees object to init(), as it seems to be the same on every round."
+        },
+        {
+            "hash": "d289910196cd1a0eb5a7be190c04fcc2e72079dd",
+            "message": "Removed debug prints."
+        },
+        {
+            "hash": "f36be2eb01bcbff01a513d64bff2d1aba54460b1",
+            "message": "Implemented a lot of stuff for javac, but we ran into 2 major issues still to be implemented:\n1. The visit mode of a lombok handler (does not trigger off of annotations, instead sees every field, method, type, and statement), needs to be coded,\n2. triggering off of annotations via APT's annotation handling system skips method-local classes. We'll need to recode this via an AST visitor like we need for issue #1\n\nOther than that, triggering off of annotations works swimmingly!"
+        },
+        {
+            "hash": "d78a04d74886101c81de77659b067d16cb2d0de2",
+            "message": "See diff"
+        },
+        {
+            "hash": "bb4e1db759258b850d3924d84b46b671c89312fa",
+            "message": "Added ability to add visitor handlers."
+        },
+        {
+            "hash": "12162391160713e67b5bee7d6b98cfbee54225b8",
+            "message": "Propagated the fact that you get the Node object belonging to the annotation, and not the field/type/local/method it goes with, all the way, so that you can easily generate a warning on an annotation in a handler."
+        },
+        {
+            "hash": "92ab0e7971df9d1efc9345f17ad48355df95161a",
+            "message": "Switched the level of the Node object you get during a visitAnnotationOnX call from the Field/Type/Method/Local to the Annotation, so that you can interact with its handled flag."
+        },
+        {
+            "hash": "c2fd0a1ef514ec109f7f1b544f46bfb8338b7e8f",
+            "message": "Added annotations as definitive children of nodes in our custom AST, and updated the visitor to call a separate visitAnnotationOnX method for annotated stuff. This way, 'handled' can be set per annotation.\n\nAlso fixed a bug in AST generation that caused StackOverflowErrors on most source files, and did some cosmetic renaming of parameters."
+        },
+        {
+            "hash": "12ff7ca22385eca5ea213c4b2083d7183e174d92",
+            "message": "trivial"
+        },
+        {
+            "hash": "eebc3450e4272688e09d1eadbaa61ea171fff1f7",
+            "message": "all eclipse AST Statements objects are now part of the custom AST we build for lombok.\nThis way something like @AutoClose on a local var declaration can walk up one node, find\nall mentions of the variable, and add a close call right after the last mention."
+        },
+        {
+            "hash": "d2ffd52636113c5737e32779938511ae68a1a0fe",
+            "message": "Fixed showstopper bugs we ran into when actually running with these changes. Related to\n8353911b1d3a8d59a07042976bb924a7eccb5d0d"
+        },
+        {
+            "hash": "c4cd04b7d2ebf39821466bcd5d2285fdd25b221f",
+            "message": "Just in case people run lombok.jar as a java app (e.g. by double-clicking it), open a browser window with info, and print some useful help to the console."
+        },
+        {
+            "hash": "d7e5537b9e5afd299bd88aa4566ca343ba12edd7",
+            "message": "Moved version.txt to lombok.core.Version.java."
+        },
+        {
+            "hash": "293a4bfaf056d11256980fb55a914d47fbbcd36c",
+            "message": "Renamed lombok.transformations lombok.core as the purpose of this package is to contain stuff that is useful for any lombok implementation (be it e.g. javac via apt or eclipse via agent), but not annotations and other classes that are for 'end users'."
+        },
+        {
+            "hash": "842cefb75c735d333f3c55bcedf690f3c2f0eb18",
+            "message": "Moved TypeResolver to the eclipse package, as it has eclipse-specific code in it."
+        },
+        {
+            "hash": "8353911b1d3a8d59a07042976bb924a7eccb5d0d",
+            "message": "Renamed lombok.agent.eclipse to lombok.eclipse.agent"
+        },
+        {
+            "hash": "cd1ef24d0be6950be6440e80e59c334360c1828f",
+            "message": "Now you no longer need to add a -Xbootclasspath/a parameter to eclipse.ini; the agent fixes the classpath all by its lonesome. Wahey!"
+        },
+        {
+            "hash": "65de2407ae2b5fac6244d2ca670ea5b458992221",
+            "message": "Made lombok more robust by catching exceptions near the top level and turning them into eclipse-wide errors in the worst case, but usually in an error in the problems dialog."
+        },
+        {
+            "hash": "65cd03b6c592f825b037a6647888f4eafbaf3388",
+            "message": "Added support to generate errors, both on specific nodes in an AST (generified code in HandlerLibrary for unintelligible annotation param values), and more severe general errors for eclipse's error log.\n\nAlso unrolled the foreach loop on ServiceLoader, because any given .next() call can throw a ServiceLoaderError, which we now handle somewhat more nicely."
+        },
+        {
+            "hash": "012459832d32a57b3f831d362b7f225fa7587812",
+            "message": "the version number generator now strips the newline. It was generating files with newlines in it."
+        },
+        {
+            "hash": "47d3db6b9363afd50026e0ecc3883bbabdafc9f9",
+            "message": "Error reporting now works - we can use the error reporting on decoding annotation arguments for other places!\n\nBecause this stuff works so well now, I bumped the version number as well."
+        },
+        {
+            "hash": "343eb680439b3067feeca8a5c7ffe3a71f48b353",
+            "message": "Clinits should be skipped, as they are useless, and the docs even say they will be skipped.\n\nNow they are skipped."
+        },
+        {
+            "hash": "d1157b3b8a4a317de46343d5409b9f52cfacfe43",
+            "message": "Whoops. Bugfix for enums. They get parsed correctly now!"
+        },
+        {
+            "hash": "637298300039a4b943e49c654cb4d2b26161ba60",
+            "message": "Now everything works; handlers are called via SPI, and annotations are being parsed. w00t!"
+        },
+        {
+            "hash": "40e35d6f79f456fb868c95d764f5d0c9869ea6e4",
+            "message": "After spending 3 hours chasing down a NullPointerException inside the native method that handles method.invoke...\n\nfigured out that I accidentally added a second transform() method and that one was being found, and that somehow causes the problem.\n\nThe locating of the right transform method now also checks params. A 'method not found' is faaaaaaaaaaaaaaar easier to debug than picking the wrong one out of the lineup."
+        },
+        {
+            "hash": "7d24f9c9a52861ced99f419edb07533f9b99a7ed",
+            "message": "Removed the WeakHashMap for caching EclipseAST objects; obviously wasn't working due to\ncircular reference from the EclipseAST back to the CUD.\n\nNow, patched a field into CompilationUnitDeclaration and using that, which works much better\ntogether with the garbage collector."
+        },
+        {
+            "hash": "0ef67926087ed2a6878e8b1c32f387b135c1d3df",
+            "message": "For the strangest reason, compiling Getter with javac fails; it wants AccessLevel, but has AccessLevel. Yah, WTF. Turning AccessLevel into its FQN: lombok.AccessLevel fixes it. javac bug?"
+        },
+        {
+            "hash": "d7434059c4492d9684f81b32c1f373b121c6a577",
+            "message": "Found 2 bugs in spi. This fixes both of them. Also enabled the spi processor in eclipse project."
+        },
+        {
+            "hash": "95c38be18c15334d02b50ade987ef3c6b2a8ff26",
+            "message": "Added a link to how JavaFX bindings work."
+        },
+        {
+            "hash": "4cac23952ac2db6a68b8814fb0df6a97df909d6e",
+            "message": "There's nothing interesting in this file."
+        },
+        {
+            "hash": "7e24174dcc80a5e2fa76c9360d4f0d84cca1696c",
+            "message": "Filled out the deps and lib system with separate dirs for the agent and lombok proper, and moved spi into lombok's lib path."
+        },
+        {
+            "hash": "8517deb8be4a164644f5f884e8be0dec351b40ad",
+            "message": "Moved HandleGetter to its own package. This package should soon see HandleSetter, HandleAutoClose, etc."
+        },
+        {
+            "hash": "5dca3b7eea4ba6db0098bc46c24de9cba0548c34",
+            "message": "Incomplete work on pseudo-resolving something like \"@Getter\" to: Yes, this is almost certainly intended to be lombok.Getter, so get to work!"
+        },
+        {
+            "hash": "e84bdd32e71b029d8d1f2fa7849e998953984f47",
+            "message": "Singularly massive code change, too hard to document. Basically, hooking now occurs in the two most sane places:\n\n- After the parser is done building a first rendition of the AST. (Usually lightweight and missing method bodies etc)\n- After the parser is done taking such a lightweight AST and filling in the gaps.\n\nLombok then builts its own bidirectional and somewhat saner AST out of this, and hands this saner AST off for treatment. Things in the AST can be marked as 'handled'.\n\nThis seems to work swimmingly and should allow us to easily identify the annotations that are for us, and work our magic, no matter where they appear or on what, including\nstuff inside method bodies."
+        },
+        {
+            "hash": "4c18c774fc60eca7e104b3eaa5535ce94ec66198",
+            "message": "We were tracking ideas for annotations on the window, but writing on those gets old fast, so moved it to a text file."
+        },
+        {
+            "hash": "1f7c79e625cf6f9d4aedfe7ebe51f3f354995188",
+            "message": "Added more good ideas."
+        },
+        {
+            "hash": "466fc44671b5c96c021b111aab19131c5adf1832",
+            "message": "Build system splits the jars in two."
+        },
+        {
+            "hash": "2e80283a673bc1bf68dc59b74e03180313c44a3d",
+            "message": "Major bugfix."
+        },
+        {
+            "hash": "41fb7cba62b543243c784757d1af4e05824ddc4e",
+            "message": "Many changes:\n  - Split off the actual agent work into a separate src package in preparation for creating separate jars. Involved a lot of renaming\n  - Renamed TransformCompilationUnitDeclaration to TransformEclipseAST, as this class will also be transforming e.g. MethodDeclaration objects.\n  - Expanded the patching to also patch in transform calls when the parser fills in the Statement array for existing constructors, methods, and initializers.\n  - Redesigned the ClassLoaderWorkaround class quite a bit.\n  - Positioning should not work correctly ('jump to method' should jump to the getter annotation).\n(Apparently, Clinit objects are always fully parsed in the original run, so no need to patch anything there)."
+        },
+        {
+            "hash": "525211b872b982b880aa2bed5e263ec582593f0d",
+            "message": "@Getter now TOTALLY WORKS in eclipse! W00t!\n\nAlso made the handling of lombokisms in eclipse a little more frameworky, though there's still plenty to be done."
+        },
+        {
+            "hash": "9314db916d13c3642b60f3aad25d765e182a198c",
+            "message": "Improving on the structure a little."
+        },
+        {
+            "hash": "1677c4a52a0aea1b955f7c2c7d096903d4a8c5ce",
+            "message": "Initial commit. As a proof of concept, it already works in javac and eclipse!"
+        },
+        {
+            "hash": "63a4938a7da6d49ed4ef182369faffb9e43e5368",
+            "message": "Added documentation for the @Data annotation. Also fixed whitespace issues in the snippet views, and removed a debug print in one of the snippets."
+        },
+        {
+            "hash": "84d017e27047042c2299110fe08302840c45320d",
+            "message": "Features are now 'compiled' by the build.xml script to include the snippets, found in the usage_examples directory. Also worked on the styling of the feature pages."
+        },
+        {
+            "hash": "9d1dc93f1dd5334406231fcef46999dedc2b2e68",
+            "message": "We're not going to show the difference via images, so this image is no longer needed."
+        },
+        {
+            "hash": "d7e5b5ec50104cf3ced4f282ba26539d81001986",
+            "message": "Added useful error message in case you don't have the gh-pages branch locally."
+        },
+        {
+            "hash": "021665f443daf189c15a7460c92d46a9c37beeaf",
+            "message": "Added the openjdk6 tools.jar to the deps dir."
+        },
+        {
+            "hash": "de15a9d760d215b285d74a47184ca4e49c6c9268",
+            "message": "Added auto-upload feature"
+        },
+        {
+            "hash": "a0c0ef3f5e05596c9a0b78df4d9c471cfee88e9c",
+            "message": "Use tools.jar"
+        },
+        {
+            "hash": "932e185045e9b44b66150ec11d055502ace26435",
+            "message": "Added SneakyThrows which finishes the documentation for the features pages."
+        },
+        {
+            "hash": "8bd4da7fdd4e8e74f8d388961ea0853de3c9a215",
+            "message": "Setup for not using fsutil.exe which is probably going to rain a stash of User Action Control dialogs on vista, and has internationalized messages so fails to parse correctly on any non-english windows install."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1",
+            "title": "test"
+        }
+    ]
+}

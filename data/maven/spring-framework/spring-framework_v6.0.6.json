@@ -1,0 +1,406 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 74,
+    "start_delay": 0.0,
+    "duration": 237.60391203703705,
+    "commits_info": [
+        {
+            "hash": "68537d6d5b7098ffd63c87ed4db40c5644686742",
+            "message": "Release v6.0.6"
+        },
+        {
+            "hash": "57b838ddda82d827d4c8533d7da8c56efad659f9",
+            "message": "Upgrade to spring-asciidoctor-backends 0.0.5"
+        },
+        {
+            "hash": "8c784085d2c33e4a445725b2267d225c4462dd5f",
+            "message": "Update copyright dates"
+        },
+        {
+            "hash": "c0a1e1718ee4215288016fdab4c74e6be5de1c4b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fe29e734ae3f9f02770e2437d6fae21b605fbf7e",
+            "message": "Revise documentation for @AspectJ argument name resolution algorithm\n\nCloses gh-30026"
+        },
+        {
+            "hash": "50c3a6258990cfa03beb15b97e813f6d8a88b1c2",
+            "message": "Upgrade to Reactor Netty 2022.0.4\n\nCloses gh-30063"
+        },
+        {
+            "hash": "a936a6a8ce095f4f4868ebc5702d47ad475d9b0c",
+            "message": "Javadoc-only reference to SubscribeMapping from simp package (-> package dependency cycle)\n\nSee gh-30002"
+        },
+        {
+            "hash": "8d112b851489ae56196c7f658f6dd9856f5cf82a",
+            "message": "Test for explicit URI decoding in convertClassLoaderURL\n\nSee gh-30031"
+        },
+        {
+            "hash": "f8cb0fa2a0e42cc2ca22fe9d19ba11ede1d86792",
+            "message": "Custom resolution of preferred constructors for createBean(Class)\n\nAvoids side effects of traditional AUTOWIRE_CONSTRUCTOR algorithm.\n\nCloses gh-30041"
+        },
+        {
+            "hash": "c56c16d7bad2f3d617768475262c109fdb5bdc5d",
+            "message": "Polishing contribution\n\nCloses gh-30010"
+        },
+        {
+            "hash": "df1f8139ccac06c2a5b9122ecb1b3968eb95cdef",
+            "message": "Use Content-Length for optimal read to byte[]\n\nIf content-length is available, pass it to readNBytes in\nByteArrayHttpMessageConverter. When the content length is less than\nthe internal buffer size in InputStream (8192), this avoids a copy,\nas readNBytes will return the buffer directly. When the content length\nis greater than the buffer size used in InputStream, passing the\ncontent-length at least avoids over-allocating the final buffer (e.g.,\nif the content length were 8193 bytes, 1 byte more than the default\nbuffer size).\n\nIf the content length isn't present or is too large to represent as\nan integer, fall back to the default behavior of readAllBytes by\npassing in Integer.MAX_VALUE.\n\nSee gh-30010"
+        },
+        {
+            "hash": "9624ea392aa1a97f3e52f383e9c62ac3c84c04eb",
+            "message": "Resolve baseUrl to String vs temporary URI\n\nAlong the lines of what was suggested in #30047.\n\nCloses gh-30062"
+        },
+        {
+            "hash": "682a4d535305a16337a698079e75000eb56b9f8a",
+            "message": "Prefer request hostName and hostPort in ReactorServerHttpRequest\n\nSee gh-30062"
+        },
+        {
+            "hash": "4419d56178b126afa3431690b0af7eebb2582dec",
+            "message": "Explicit URI decoding for FileSystemResource in convertClassLoaderURL\n\nAlso raising the log level to warn for file system retrieval failures.\n\nCloses gh-30031"
+        },
+        {
+            "hash": "244c97993b952859626ad4afab11fcbb3ba2e5a3",
+            "message": "Update documentation for @AspectJ argument name resolution algorithm\n\nCloses gh-30026"
+        },
+        {
+            "hash": "9d28fe90f578dcf951fc5b39aa80fbf2c0b0db96",
+            "message": "Simplify AbstractAspectJAdvisorFactory internals"
+        },
+        {
+            "hash": "d2a4ac519cc5cb51fb2904485bef04d7d9216ba4",
+            "message": "Update build badge and link"
+        },
+        {
+            "hash": "dbbebf541d3470dd66bfa11c31cb3b6141c9052e",
+            "message": "Refine reflection hints handling for anonymous class\n\nBefore this commit, anonymous classes could throw an\nunexpected NullPointerException in\nReflectionsHint#registerType and lambdas entries could\nbe created in the related generated reflect-config.json.\n\nThis commit refines how anonymous classes are handled by\nexplicitly checking for null class and canonical name in\nReflectionTypeReference#of, while skipping such class in\nReflectionHints#registerType in order to keep a lenient\nbehavior.\n\nCloses gh-29774"
+        },
+        {
+            "hash": "fe73c630dae9dd87e58f301b75385636d1839e81",
+            "message": "Use URI String if necessary in ReactorClientHttpConnector\n\nCloses gh-30053"
+        },
+        {
+            "hash": "3456fd054f672dc6fceb4f426a481e1d29e40f70",
+            "message": "Remove obsolete MetadataAwareAspectInstanceFactory Javadoc\n\nWe no longer have any JDK 5 related limitations imposed on us as was\nthe case when MetadataAwareAspectInstanceFactory was introduced; however,\nMetadataAwareAspectInstanceFactory will remain as a specialized\nsub-interface of AspectInstanceFactory."
+        },
+        {
+            "hash": "5fd75dd27b5ce2036a72d750b70d594f72922a11",
+            "message": "Add missing package-info.java file for autoproxy.target package"
+        },
+        {
+            "hash": "6c29a5779e52d5063a20f6bd0db59408e1d2466e",
+            "message": "Fix .gitignore pattern for Maven \"target\" folders\n\nRationale: changes in org.springframework.aop.framework.autoproxy.target\nwere previously ignored since the \"target\" package was ignored by the\nprevious \"eager\" pattern for \"target\" folders."
+        },
+        {
+            "hash": "e9413b93c6d24a250cc3d67c94f9cd87aef2836a",
+            "message": "Apply \"instanceof pattern matching\" in BeanFactoryAdvisorRetrievalHelper"
+        },
+        {
+            "hash": "4cc02fe3bcbfcafe824a9ca130e47bfaa79cb522",
+            "message": "Protect JMS connection creation against prepareConnection errors\n\nThis commit uses a local variable for the creation of a new JMS\r\nConnection so that a rare failure in prepareConnection(...) does not\r\nleave the connection field in a partially initialized state.\r\n\r\nIf such a JMSException occurs, the intermediary connection is closed.\r\nThis commit further defends against close() failures at that point,\r\nby logging the close exception at DEBUG level. As a result, the original\r\nJMSException is always re-thrown.\r\n\r\nCloses gh-29116\r\nSee gh-29115"
+        },
+        {
+            "hash": "b1cf832c28473518240a91afed17bd51f95fbf9a",
+            "message": "Apply \"instanceof pattern matching\" in spring-tx\n\nThis commit applies \"instanceof pattern matching\" to the rest of the\ncode in spring-tx.\n\nSee gh-30019"
+        },
+        {
+            "hash": "34e5ce9360ed6c0fe83678a904d5e70064765db6",
+            "message": "Fix Checkstyle violations\n\nSee gh-30019"
+        },
+        {
+            "hash": "375114defa711b33babc0aef9b4f918f232e315f",
+            "message": "Apply \"instanceof pattern matching\" in spring-tx\n\nCloses gh-30019"
+        },
+        {
+            "hash": "00c2c1d2a1d342eea4c6ffd1430d7d3928271e33",
+            "message": "Polish \"Support @Value for record injection\"\n\nSee gh-28774"
+        },
+        {
+            "hash": "7c9fc575ff9625b21b39cf34e2a524dc8efe0ca9",
+            "message": "Support @Value for record injection\n\nAdd @Value support for record injection by disabling populateBean() for\nrecords, since records are immutable.\n\nSee gh-28770\nCloses gh-28774"
+        },
+        {
+            "hash": "c859211f7a312e625a408a8d03fad8e17667d719",
+            "message": "Polishing contribution\n\nCloses gh-29691"
+        },
+        {
+            "hash": "4dbe9d6709f7127261986cac545f59c99d640007",
+            "message": "Use ContextView in ServerWebExchangeContextFilter"
+        },
+        {
+            "hash": "acedbfbabaa1fb640446ce7dc86d19022928373e",
+            "message": "Polishing contribution\n\nCloses gh-30014"
+        },
+        {
+            "hash": "5d6f151031992e7527ca2b4c87b8003e9b83ef09",
+            "message": "Update Javadoc of ServletRequestPathFilter\n\nSee gh-30014"
+        },
+        {
+            "hash": "a09495d4e90630a420b620b8f4888472b38cd16f",
+            "message": "Polish contribution\n\nSee gh-30034"
+        },
+        {
+            "hash": "5cab6a1f3a5ca9af71db88cd5616d4c57726b35d",
+            "message": "Fix \"Configuring a Global Date and Time Format\" example\n\nCloses gh-30034"
+        },
+        {
+            "hash": "a02a017e6e3f2c5bc1a19a604a0c81930d819e05",
+            "message": "Add tests for SpEL on Kotlin suspending function parameters\n\nThis was broken at some point but seems to work now.\nThis commit adds related tests.\n\nCloses gh-26867"
+        },
+        {
+            "hash": "9f2f93129ba3f86f1ca312219d694277a3cdc310",
+            "message": "Move HttpServiceProxyFactoryExtensions.kt to spring-web module\n\nHttpServiceProxyFactoryExtensions.kt has been mistakenly created\nin spring-webflux module instead of spring-web, breaking JPMS for\nWebFlux users.\n\nThis commit moves this file and related tests to the spring-web\nmodule.\n\nCloses gh-30042"
+        },
+        {
+            "hash": "475ac6ef5debb02ab8f9282089e894d0e6723ec5",
+            "message": "Fix KotlinCoroutinesUtilsTests.invokeNonSuspendingFunctionWithContext()\n\nCloses gh-30029"
+        },
+        {
+            "hash": "79f43041adfcffa2663ed5653e9e9c3bac0d1552",
+            "message": "Catch defensively validator exceptions in AOT processing\n\nAn ArrayIndexOutOfBoundsException is thrown by\nValidator.getConstraintsForClass when processing Kotlin beans\nwith extensions functions (Kotlin or Hibernate Validator bug).\n\nThis commit catches those exceptions and report them as warning\nwithout the full stactrace, and report as well other\nones thrown as errors with the full stracktrace.\n\nCloses gh-30037"
+        },
+        {
+            "hash": "edb4a3467afd16cd3a06a941d67548fd8769120b",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "024d02225c39ceb6192705fca060aad8c5d2089c",
+            "message": "Apply \"instanceof pattern matching\" to remaining Validation classes"
+        },
+        {
+            "hash": "9305a64a503d31b4b81ee1b3272caf7364b83896",
+            "message": "Polish contribution\n\nSee gh-29994"
+        },
+        {
+            "hash": "40672c37155cb3531d473bb22dfee43544ed3e5f",
+            "message": "Apply \"instance of patten matching\" in context and messaging modules\n\nCloses gh-29994"
+        },
+        {
+            "hash": "7c50464bbae74edbbbdbcfc9d728fb9e8fdfd0b9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0d10d4beeee3f33f69e4b1d84513e30ea08ccf66",
+            "message": "Initialize ArrayList with exact size in HttpHeaders"
+        },
+        {
+            "hash": "f60bec986f9892c6f2f275a133f943a7bc7f490f",
+            "message": "Add missing @Nullable annotations to LogMessage methods\n\nCloses gh-30006"
+        },
+        {
+            "hash": "6825a842b5c29d0c6e8732f288200b1eafe60585",
+            "message": "Support package private methods on CGLIB proxies with AOT\n\nCloses gh-29582\nCloses gh-29764"
+        },
+        {
+            "hash": "7ace9aa42940b06e5829c043a7e0eed855ffd262",
+            "message": "Polish AspectJAdviceParameterNameDiscoverer\n\nThis commit also converts PointcutBody to a record."
+        },
+        {
+            "hash": "8979ac789f1ac0d09134f055f4fe2f7b996add8e",
+            "message": "Fix layout in \"Determining Argument Names\" section"
+        },
+        {
+            "hash": "9cb4c5565a54f06fb46254f646b7e85b74ed89a5",
+            "message": "Fix proxy hint Kotlin extensions\n\nCloses gh-30025"
+        },
+        {
+            "hash": "08f38c52c78173fb7a3f5d08f0e3d2dc33956dca",
+            "message": "Revise AspectJ examples in the reference manual\n\nThe extensive use of shared pointcuts can be confusing to users who\nread a given AspectJ example without having read the \"Sharing Common\nPointcut Definitions\" section of the AOP chapter.\n\nThe primary purpose of this commit is therefore to reduce the extensive\nuse of shared pointcuts in AspectJ examples by favoring \"inline\npointcuts\" over shared \"named pointcuts\" and by cross referencing the\ndeclaration of shared pointcuts when they are used.\n\nSince the affected parts of the documentation are intertwined, this\ncommit also refactors the examples to use a common \"com.xyz\" package\nnamespace for greater clarity.\n\nIn order to avoid the need to escape asterisks (\\*) in examples, this\ncommit also removes the `subs=\"quotes\"` configuration for code blocks.\n\nCloses gh-30003"
+        },
+        {
+            "hash": "afa936e9852fe19ecfbccc17fb6165850afef426",
+            "message": "Polish AOP chapter"
+        },
+        {
+            "hash": "3677d3597bba0acaebaeb1abd479da3bf28631ef",
+            "message": "Improve `@Lazy`'s javadoc by adding @code tag"
+        },
+        {
+            "hash": "76bc7deb8ee542cac6130f47a1057408e6fa5e98",
+            "message": "Polish AOP chapter"
+        },
+        {
+            "hash": "6c3cb5d2e07033995a393703aa2d524cda6b6606",
+            "message": "Revise chomp and fold settings in reference documentation\n\nThis commit overrides the `chomp` and `fold` settings for\nspring-asciidoctor-backends on a per-block basis.\n\nCloses gh-30001"
+        },
+        {
+            "hash": "3ce71932c043f49c9cd042be8475f2b95061c6b0",
+            "message": "Polish reference docs"
+        },
+        {
+            "hash": "3a9c7524f0a7317f8c1e8a8255de8e326f180c0b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ce66b251abbc5f14cff00771136a40b5e9507279",
+            "message": "Fix Javadoc for MockRestRequestMatchers"
+        },
+        {
+            "hash": "626a7fc52aa6a60c9f47db5abbfb44e59782a961",
+            "message": "Add native support for @SubscribeMapping and @MessageExceptionHandler\n\nCloses gh-30002"
+        },
+        {
+            "hash": "3d8455b257bdf903259676a04329fad28676c970",
+            "message": "Add unit tests for CoroutinesUtils\n\nCloses gh-29968"
+        },
+        {
+            "hash": "fd38c2369963dd819f424b5d99676478a31311af",
+            "message": "Refine CoroutinesUtils#invokeSuspendingFunction contract\n\nThis commit refines CoroutinesUtils#invokeSuspendingFunction in order\nto clarify the behavior when used on a non suspending function, and\nsupport usages with or without the Continuation argument.\n\nCloses gh-30005"
+        },
+        {
+            "hash": "e47418c9486c43720108af393e06f4c19f417548",
+            "message": "Polish attributes.adoc"
+        },
+        {
+            "hash": "d6de3744247eda3ef945c3bddc707615c744d7e8",
+            "message": "Restore package & import statements in AOP examples in ref docs\n\nSee gh-30001"
+        },
+        {
+            "hash": "b437b7be3463dc60e3fa49a648d85743182d6f74",
+            "message": "Introduce test for perthis with @Aspect and shared pointcut\n\nThis commit modifies PerThisAspect (which is used indirectly in\nAspectJAutoProxyCreatorTests.perThisAspect()) so that it uses a shared\n@Pointcut for both the @Aspect and @Around declarations, in order to\nrefute claims made in gh-29998 that the documentation in the reference\nmanual is incorrect."
+        },
+        {
+            "hash": "2d56505ea970ba83530e26f353f4b8f112a80b8f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8a44b6445d78e182c8093925b3c4b1caf76ee7b8",
+            "message": "Revise queryParam() and header() support in MockRestRequestMatchers\n\nSee gh-29953\nSee gh-29964"
+        },
+        {
+            "hash": "6d24e62e8372f9795bbea6c6b48cee01c720db49",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2d62be8590d826563bd89d5adabb414a092c6aae",
+            "message": "Fix Javadoc since for MockRestRequestMatchers queryParam() and header() (#29986)\n\nSee gh-29953\r\nSee gh-29964"
+        },
+        {
+            "hash": "2e1374b45918c560a281b86dc8727a715709cb6f",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "bb6150e44edd4a1407c42949533e97c6316807df",
+            "message": "Use correct Kotlin file extension in update_copyright_headers.sh"
+        },
+        {
+            "hash": "38a4f23f160af1be9c46a41a4170a7dc8ea31c46",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6739ca82ce616c3790cc580b7eabe1dedb43837c",
+            "message": "Polishing\n\nSee gh-23846\nSee gh-29955\nCloses gh-29992"
+        },
+        {
+            "hash": "88e6544d9d3498359b49a2548a1b6ef52b32a5ad",
+            "message": "Fix regression in WebFlux support for WebDAV methods\n\nThis commit ensures that WebFlux's RequestMethodsRequestCondition\nsupports HTTP methods that are not in the RequestMethod enum.\n\n- RequestMethod::resolve is introduced, to convert from a HttpMethod\n(name) to enum values.\n- RequestMethod::asHttpMethod is introduced, to convert from enum value\nto HttpMethod.\n- HttpMethod::valueOf replaced Map-based lookup to a switch statement\n- Enabled tests that check for WebDAV methods\n\nSee gh-27697\nCloses gh-29981"
+        },
+        {
+            "hash": "1999c78350a4db089fc1fc55a6977f9b060c32e4",
+            "message": "Next development version (v6.0.6-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30026",
+            "title": "@AspectJ argument name resolution algorithm is outdated in reference manual"
+        },
+        {
+            "number": "30063",
+            "title": "Upgrade to Reactor 2022.0.4"
+        },
+        {
+            "number": "30002",
+            "title": "`@SubscribeMapping` method not called when built as native image"
+        },
+        {
+            "number": "30031",
+            "title": "`PathMatchingResourcePatternResolver` can no longer handle paths containing spaces and special characters"
+        },
+        {
+            "number": "30041",
+            "title": "AutowireCapableBeanFactory.createBean does not prefer default constructor anymore"
+        },
+        {
+            "number": "29774",
+            "title": "`NullPointerException` if passing an anonymous class to `ReflectionsHint#registerType`"
+        },
+        {
+            "number": "30053",
+            "title": "WebClient now requires scheme"
+        },
+        {
+            "number": "29115",
+            "title": "SingleConnectionFactory - reconnection problem (AMQ Broker)"
+        },
+        {
+            "number": "28770",
+            "title": "Support `@Value` on records"
+        },
+        {
+            "number": "26867",
+            "title": "Add tests for SpEL expressions on Kotlin suspending function parameters"
+        },
+        {
+            "number": "30042",
+            "title": "Move `HttpServiceProxyFactoryExtensions.kt` to `spring-web` module"
+        },
+        {
+            "number": "30037",
+            "title": "Catch defensively exception thrown by validation contraints AOT processing of Kotlin extensions"
+        },
+        {
+            "number": "30006",
+            "title": "Add missing `@Nullable` annotations to `LogMessage.format` methods"
+        },
+        {
+            "number": "29582",
+            "title": "Native version of webflux/r2dbc failed"
+        },
+        {
+            "number": "29764",
+            "title": "Native hints for package private methods on custom `@Repository` class"
+        },
+        {
+            "number": "30025",
+            "title": "Fix proxy hint Kotlin extensions"
+        },
+        {
+            "number": "30003",
+            "title": "Revise AspectJ examples in the reference manual"
+        },
+        {
+            "number": "30001",
+            "title": "Revise `chomp` and `fold` settings in reference documentation"
+        },
+        {
+            "number": "29968",
+            "title": "Add unit tests for `CoroutinesUtils`"
+        },
+        {
+            "number": "30005",
+            "title": "Refine `CoroutinesUtils#invokeSuspendingFunction` contract"
+        },
+        {
+            "number": "29964",
+            "title": "Allow MockRest to match header/queryParam value list with one Matcher"
+        },
+        {
+            "number": "23846",
+            "title": "Refine `ModelAttributeMethodProcessor` Kotlin exception handling"
+        },
+        {
+            "number": "27697",
+            "title": "Refactor HttpMethod from enum to class"
+        },
+        {
+            "number": "29981",
+            "title": "WebFlux fails with WebDAV HTTP methods"
+        }
+    ]
+}

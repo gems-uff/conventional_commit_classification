@@ -1,0 +1,82 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 6.8392939814814815,
+    "commits_info": [
+        {
+            "hash": "850cb6c4c9df75b4ec9e0a2dfed98349d04e2ec5",
+            "message": "Release v5.3.12"
+        },
+        {
+            "hash": "3d6d8a947a8e1f252ae64306244ed4f4204cc627",
+            "message": "Update \"Reporting a Vulnerability\" link"
+        },
+        {
+            "hash": "6fa6bfe421e0ca41e8dfe5fc0701ba2291dd376e",
+            "message": "Fix link to Spring Framework project page in Javadoc overview"
+        },
+        {
+            "hash": "05ea991d6220069f089a190a86f0f3105c26c049",
+            "message": "Removing locations logging in ResourceHttpRequestHandler\n\nSee gh-27575"
+        },
+        {
+            "hash": "a248a525756923e20e159b56fee7eddb8a709a29",
+            "message": "Revert transitive MediaType comparators\n\nThe fix made for gh-27488 resulted in a change of the default order\nof codecs. This commit reverts these changes, so that the previous\norder is restored.\n\nCloses gh-27573"
+        },
+        {
+            "hash": "2a3c9e403f7cf016c90949eb7fc1f8bcf0db1f98",
+            "message": "Revert \"Polishing\"\n\nThis reverts commit bfa01b35df42c526253866a4b601e8be83746a4b."
+        },
+        {
+            "hash": "bad87be30630b9a3283e092ea70b5579a8c6a9ad",
+            "message": "Fix checkstyle warning\n\nSee gh-27569"
+        },
+        {
+            "hash": "346b75580267dc5d8d257be198d5841ce4e1add5",
+            "message": "Fix assertion message in DefaultDataBuffer\n\nCloses gh-27567"
+        },
+        {
+            "hash": "4978eeff7fe399dff75a800679e50fee4afba130",
+            "message": "Update Javadoc in DefaultResponseErrorHandler\n\nCloses gh-27569"
+        },
+        {
+            "hash": "052ed50f480d290d1d4e4d3721a1425fa33e0e62",
+            "message": "Fix copy-and-paste error in Javadoc"
+        },
+        {
+            "hash": "76c9306dda572ab1be9b888feeb7b56ceb989d85",
+            "message": "Adjust logging of resource locations"
+        },
+        {
+            "hash": "0853baaa3f9644df4de205a2472e71a748353e25",
+            "message": "Fix Javadoc in [NamedParameter]JdbcOperations.queryForObject methods\n\nThis commit fixes the Javadoc in all queryForObject(...) methods in\nJdbcOperations and NamedParameterJdbcOperations regarding what kinds of\nexceptions are thrown under which conditions.\n\nCloses gh-27559"
+        },
+        {
+            "hash": "bf461ba0b2e3beb14f27f2ec53d2f85bfca7095c",
+            "message": "Next development version (v5.3.12-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27575",
+            "title": "Update warn log message for empty static resource locations"
+        },
+        {
+            "number": "27488",
+            "title": "MediaType.sortBySpecificityAndQuality throws java.lang.IllegalArgumentException: Comparison method violates its general contract"
+        },
+        {
+            "number": "27573",
+            "title": "Default content type of response changed in v5.3.11"
+        },
+        {
+            "number": "27559",
+            "title": "Incorrect Javadoc in [NamedParameter]JdbcOperations.queryForObject methods regarding exceptions"
+        }
+    ]
+}

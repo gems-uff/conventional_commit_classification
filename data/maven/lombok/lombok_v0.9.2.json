@@ -1,0 +1,534 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.9.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 126,
+    "start_delay": 0.0,
+    "duration": 35.87517361111111,
+    "commits_info": [
+        {
+            "hash": "d5f4bb8d9e51780f1ff0e80242ee0ba42fb54759",
+            "message": "[javadoc]"
+        },
+        {
+            "hash": "fb189915506b964b40676348ea6dd81e4a7652ef",
+            "message": "prerelease prep"
+        },
+        {
+            "hash": "83f54c4f54652659d1397246a11145239e4443f1",
+            "message": "Added fix for issue #83 to the changelog."
+        },
+        {
+            "hash": "91faa94a9088817bc83fc0f6ba55042bfd5c108d",
+            "message": "Clarified previous commit with a comment."
+        },
+        {
+            "hash": "3d5f9b9f989a13d5f80e0aaced70a205e56e6ff9",
+            "message": "Potential fix for issue #83."
+        },
+        {
+            "hash": "e8736d6b6449145c220404bb5480ffcbbd900030",
+            "message": "This file really never should have been checked in."
+        },
+        {
+            "hash": "221171686cc9d646d9bce09b1a1ae9ee17691fd3",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "83702e9269c36a753b194468cc65084144a635d4",
+            "message": "Tell google we own this website"
+        },
+        {
+            "hash": "1815a7828e425549a7ace95005f8507ef50ed8cb",
+            "message": "Fixed issue #78: Delombok should not copy hidden directories (like .git or .cvs)."
+        },
+        {
+            "hash": "09b339db4747f889683c96d15267cbe80b64e315",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "d5e7ae61c0d820be49a181a3f1755d84c0908058",
+            "message": "Added tests to see if we handle fields that start with a $ correctly"
+        },
+        {
+            "hash": "89c058f96e55208299c23e3573d7578f7099d785",
+            "message": "Added tests to @Data to check if a field starting with $ will be ignored"
+        },
+        {
+            "hash": "021c9a223ca54e88d5bd179b40f2769a02309bcf",
+            "message": "Support finding tools.jar from other locations as well"
+        },
+        {
+            "hash": "26e0b7559eab9850ae426201264d0d1b2ce37f11",
+            "message": "Added release dates to the changelog"
+        },
+        {
+            "hash": "9cb622b83da5637324debdf41430d62fed8da51f",
+            "message": "One of the netbeans patches would cause a VerifyError on test builds of netbeans (class verification is off for netbeans distro versions).\nfixed."
+        },
+        {
+            "hash": "3fc9fdb4855d666224322732ff7011d2eb1626d4",
+            "message": "Fix for issue #76: Can't select directories in the 'specify location...' dialog of the installer. This was by design before (you pick the executable), but issue #76 convinced me the past design was stupid."
+        },
+        {
+            "hash": "770975ea6bf382898db03090a8919326506cf76e",
+            "message": "changelog updated for fixing #75."
+        },
+        {
+            "hash": "89d60fcebbd86c971b9b564c7bd68903978c0649",
+            "message": "Fix for issue #75: If 'setURL' exists, then lombok will no longer make a 'setUrl' field if you have a field named 'url'."
+        },
+        {
+            "hash": "229cbbb0d9e7b18b4a4b214f8d5198c527a4f714",
+            "message": "Prep work for fixing issue #75."
+        },
+        {
+            "hash": "a23d77f5804f4ac91c48cf78e21905960d45e179",
+            "message": "Started working on delombok without a file"
+        },
+        {
+            "hash": "51972823663c59bcfcee891db274f8608e413e40",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "b389dd5e0ed5be683e85451b2362189a3fa0108a",
+            "message": "Updated the publishing instructions."
+        },
+        {
+            "hash": "9c90d403307c2bc3ce410a98b3f408cda885fcd5",
+            "message": "Cleaned up TODO.txt. At this point it's more documentation of failed experiments than a todo list, so renamed it too."
+        },
+        {
+            "hash": "b4c3ab8f28427a30735bd77e1812d41170213582",
+            "message": "Post beta release prep"
+        },
+        {
+            "hash": "01d622d471d9b1809128dc9d5c834d33d4ff6866",
+            "message": "Beta Release Prep"
+        },
+        {
+            "hash": "881e1d0858327486bb2bad9782fac5f7cc4d8010",
+            "message": "Updated changelog with netbeans support note, as well as issue 73, and reordered and reformatted a few existing messages."
+        },
+        {
+            "hash": "7e31d9cd98d40fc7b9c2ddb4b13c0f9fead86677",
+            "message": "Fixes to git auto finding on windows and unix. It seems to work fine now on all 3 platforms!"
+        },
+        {
+            "hash": "e3e8bb2e1dc4c9b0ffb30401da53382089e93ca9",
+            "message": "Fix for installation - now uses quotes instead of backslash-space, as backslash-space doesn't work in windows."
+        },
+        {
+            "hash": "8ec48ec281ac85405013cae0f2f7bcd7899d39a0",
+            "message": "Merge branch 'installer'"
+        },
+        {
+            "hash": "29f8da78df272c085a3db50335e8831ba28a7837",
+            "message": "Small update to how shorthands work in command line reader."
+        },
+        {
+            "hash": "df84dffa62fc51231e9215d04b9751dba6c6cf4d",
+            "message": "Massive update to how the installer works, and added netbeans to the installer."
+        },
+        {
+            "hash": "db212a2fa08bf43b782cb422526cb3b4f809e295",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "9f69893ce2efd6ca0a6ef64022e48e49fc2b33f0",
+            "message": "Changed the order of the generated methods in for @Data\n- Constructor(s)\n- Getters/Setters per field\n- equals\n- hashCode\n- toString\nAdded first test for @Data"
+        },
+        {
+            "hash": "e3d9e116af1c573b27ba35ac07f0111aaa1882ac",
+            "message": "Use chainDots to generate java.lang.Object to get rid of the extra prepended dot!\n\nChange the order of the generated methods, first equals then hashCode"
+        },
+        {
+            "hash": "f05facd4576648122f7bdb80122dc7a1b3f6ecf6",
+            "message": "Make delombok actually work from the command line if tools.jar is not already on your classpath"
+        },
+        {
+            "hash": "2ef7ef3e9f925f92a23ad279755db165495623ab",
+            "message": "Improved tests to also test on value= parameters"
+        },
+        {
+            "hash": "2ff16d337505d540fc840eae49543aa3e8801107",
+            "message": "Added new tests for SneakyThrows"
+        },
+        {
+            "hash": "0de0f25c9071aa09d435d4990d3e819c060b7284",
+            "message": "Removed debug print"
+        },
+        {
+            "hash": "1f4fb2fb4885ad9c808a080fbbf63353042e08d1",
+            "message": "Fixed #73 SneakyThrows without parameter did not default to Throwable.class\nAdded tests for SneakyThrows"
+        },
+        {
+            "hash": "d2fc0df773912f8116bdcea88f4ded6343a13040",
+            "message": "Merge branch 'netbeans'"
+        },
+        {
+            "hash": "5bd3abdfe528344f0ae965b99332e20d7581680c",
+            "message": "[TRIVIAL]"
+        },
+        {
+            "hash": "8165f4628f75618f1cd105ad8901f273ada261e4",
+            "message": "netbeans agent now works!"
+        },
+        {
+            "hash": "199f7f74fd35462dced087280af066cf2cad7596",
+            "message": "Generalized the agent mechanism; now 1 lombok.jar can serve as the agent for BOTH netbeans AND eclipse, and is future-ready for an IntelliJ agent."
+        },
+        {
+            "hash": "92e2afe9b0dccc7d0055b52d07ab3128c2adf4de",
+            "message": "Fixes"
+        },
+        {
+            "hash": "9fb4c3a42429c102e4cb9235b7e70163b2d5ed86",
+            "message": "Added compiling of src/netbeansAgent, and temporarily set Agent-Class to netbeans agent. Will need to find a solution for a generic be-everything agent."
+        },
+        {
+            "hash": "21607e4a82c07917b611bdc01fb1129c4511db8e",
+            "message": "Merge branch 'master' into netbeans"
+        },
+        {
+            "hash": "2a56f341d0073099859db815caf9d455f74e6198",
+            "message": "Finally got the printing of comments right. Also added a test to see if the delomboking a file is an idempotent operation"
+        },
+        {
+            "hash": "34f38dad212b5b89a1e548abc5f78d3f0469e2d6",
+            "message": "More tests for Synchronized"
+        },
+        {
+            "hash": "eb1a51588779ca55c9855651f9eefed9459f0874",
+            "message": "Make lock fields private"
+        },
+        {
+            "hash": "8d9b4fdaca4c1f84385262d84c0c8db7cc222b1a",
+            "message": "Fixed the test code for Synchronized"
+        },
+        {
+            "hash": "96c122a2679eeaa9993b3dac5fff11187a734d1c",
+            "message": "Fixed premature removal of imports"
+        },
+        {
+            "hash": "18b2cc079662213cdf6e6da3b8f75b7729a8146f",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "c646def5791e3a5c27cf77c373e5ce40017c165c",
+            "message": "'ant test' will now run the lombok unit tests."
+        },
+        {
+            "hash": "3cf45e932b26f8e96caeecdae570cf7d9cd5e328",
+            "message": "Improved comment placement (newlines, whitespace)"
+        },
+        {
+            "hash": "f0585f4ed491eb455fe9484c735365463ae4184e",
+            "message": "Can now mark test files as Ignored"
+        },
+        {
+            "hash": "be20f7a1180e4aa3d699d89c756c0c07e2eba1a7",
+            "message": "Added tests for Setter, Cleanup and NonNull"
+        },
+        {
+            "hash": "0b36718d20bf149b4bdd9b2be88bf68055311b9a",
+            "message": "Annotations on parameters should be inline"
+        },
+        {
+            "hash": "ffb78b6af6e4ba1426de1bcfc36f43521026e39e",
+            "message": "Added more Getter-tests"
+        },
+        {
+            "hash": "311b667dfd29b8388686ba046ada2293947105dd",
+            "message": "New tests"
+        },
+        {
+            "hash": "6d9bc684692a6bbef5a960a113af834ce8a16447",
+            "message": "Use new DirectoryRunner to run tests on all files in a directory"
+        },
+        {
+            "hash": "c1ec2b5edbe6172bb0a031700bf928cd2950bac0",
+            "message": "Added new command line abilities of lombok to the changelog."
+        },
+        {
+            "hash": "96d83a55e44e6e574d42db4d72b23e0afe39fa79",
+            "message": "Made the createRuntime system more robust in the face of many different plugins. Also fixed an issue with the jar file containing a rooted name, which is generally a bad idea (/lombok/Lombok.class instead of lombok/Lombok.class)."
+        },
+        {
+            "hash": "e9ae8b0c37e1346a010db8cae0e648039944630c",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "e67e9e14dcc0f3754c3a42e6b4d039a7aa04db1a",
+            "message": "Added support for running unit tests using the method name to determine the file to test"
+        },
+        {
+            "hash": "e10d58efdafd5911398d2f68a2e0de3bcf25f389",
+            "message": "Merge branch 'master' of git@github.com:rzwitserloot/lombok"
+        },
+        {
+            "hash": "f1d33d4d1bca3ad262192771563caaff1dc037de",
+            "message": "post publish"
+        },
+        {
+            "hash": "0af4438ca1a50efb726020427e25119b76836749",
+            "message": "beta 2."
+        },
+        {
+            "hash": "a56319e3618990a171e0673259dd614e9c24c89a",
+            "message": "Fix for actually using tools.jar properly."
+        },
+        {
+            "hash": "caaa578ea21108d171b53d94882e18819617014b",
+            "message": "--help now no longer prints errors."
+        },
+        {
+            "hash": "2caddc3c2a4431aa5d2ffd4e4d1840dbd7c09a64",
+            "message": "Added documentation for delombok."
+        },
+        {
+            "hash": "3aa55579ccb47c0cd4fb7f2737fea8f3154a39a1",
+            "message": "Delombok now auto-discovers and uses tools.jar from your java installation."
+        },
+        {
+            "hash": "5a9dff08393e7767a7dbe5ca483764614aa1ac54",
+            "message": "Added documentation to LombokApp."
+        },
+        {
+            "hash": "3919e192f17dab936167215c9a163e8830a2b346",
+            "message": "The delombok task now works!"
+        },
+        {
+            "hash": "4eaf936df5e6666afdd76d154bafea7e59fdba14",
+            "message": "Fix on the previous commit involving the compile build script: delombok is now actually compiled. heh."
+        },
+        {
+            "hash": "8c7c764d7fcc2c6c37db38a3d77f5e6d1c7b87a7",
+            "message": "SPI-ified the 'app' concept, which lets us create little apps inside lombok.jar proper. Currently used only by 'delombok'."
+        },
+        {
+            "hash": "60476317bc7d44edad63350253dc052432dea0ed",
+            "message": "Whoops, eclipse dependency on com.zwitserloot.cmdreader wasn't set up correctly."
+        },
+        {
+            "hash": "44d6a6b6627c23ac66920ae6dc1d709f26de7e3f",
+            "message": "Solved the problem in the two-phase compile (some of lombok is JVM1.5, other bits are JVM1.6) being interdependent and causing implicit compilation warnings.\n\nAlso added source=\"1.x\" to all ant file javac targets, as apparently this needs to be there when compiling with JDK7."
+        },
+        {
+            "hash": "5ab3615b3d1bf14480c0626883c90145f6a72c63",
+            "message": "Updated changelog with the good news on issue #61 (now works on JDK7)"
+        },
+        {
+            "hash": "6d29e0c745428b36cc8f8f9d2e0d77ec15f45808",
+            "message": "Preliminary version of the delombok ant task."
+        },
+        {
+            "hash": "fb71e1bee37af989c7ff8d6df635b7ab3c5b5710",
+            "message": "This is a patch submitted by lahoda on the issue tracker (issue #61). It apparently makes lombok work on JDK7.\n\nWill need to verify it, but, awesome sleuthing work by lahoda!"
+        },
+        {
+            "hash": "003acffe45f5fb1b13c3ca92cb2f0822857fe437",
+            "message": "Pretty crucial bugfix that stopped all lombok annotations on types from working with javac. Whoops."
+        },
+        {
+            "hash": "7d63d0389621bd5d3c89d017696ed586ebf4a2b4",
+            "message": "Post-beta deploy"
+        },
+        {
+            "hash": "10f0a8da09aa6a3a208d049d576985d1106cbfff",
+            "message": "Building a  beta for deployment."
+        },
+        {
+            "hash": "a7954899f102df5a778b201c4bd7b051252e131e",
+            "message": "delombok is now part of the master branch!"
+        },
+        {
+            "hash": "9678c58ec86a18605e62ff813005fddb1cefb392",
+            "message": "Merge branch 'delombok'"
+        },
+        {
+            "hash": "2b61c2534b22f07a13d8cb4c97c2ad323c6c4597",
+            "message": "Delombok now works from the command line as:\n\njava -jar lombok.jar delombok (args)"
+        },
+        {
+            "hash": "9b55af61dbd585a745e24a43ac27574a69ed15f2",
+            "message": "Added delombok to the build scripts."
+        },
+        {
+            "hash": "1a3bd818bd956c297fffd0ebd9d11290272f3294",
+            "message": "Added cmdreader dependency, as delombok uses it to have a nice command line."
+        },
+        {
+            "hash": "9ac004b385f5fdc1a113a7b6fc38098c86e8ac8a",
+            "message": "Fixed whitespace to project standards."
+        },
+        {
+            "hash": "4316e77e1eb6654eec18d04780a6da78c22fb644",
+            "message": "Added a class that is easier to use than the parser itself for delombok, as well as code to process entire directories at a time.\nAlso removed duplication from the testcases."
+        },
+        {
+            "hash": "391db3dcecdd0d94eb76b656e655346891b02bb4",
+            "message": "Thorough work on inserting comments in the proper place for delombok; should now work fine with GWT native methods!\n\nNON-NLS-1 is still theoretically problematic, but that'll be a fix for another day.\n\nAlso added ability to recognize that nothing has changed, which will copy the original file instead of reparsing it."
+        },
+        {
+            "hash": "e54c3f36e3122dfe34a119178cfcca2dcdbad998",
+            "message": "Added change tracking so that 1 AST instance can tell you if any processor changed anything."
+        },
+        {
+            "hash": "c91e3701b9f5cf85a09f998d305895d4d1617206",
+            "message": "Added another test"
+        },
+        {
+            "hash": "86ac271a45e1152272f44fcd81f0c90914853013",
+            "message": "We encountered a strange NPE here. Can't reproduce, nevertheless added null-checks"
+        },
+        {
+            "hash": "e5d248c3ccf64211fd8a301f584bde82dd426601",
+            "message": "delombok now calls lombok. wahey!"
+        },
+        {
+            "hash": "f22021ca7808af2cd0ba03b7c34b8fd3758ff44b",
+            "message": "Minor refactoring + added testcase for for-loop"
+        },
+        {
+            "hash": "6cd3b8a8ca4809efd2001473f31c881c9f2381ea",
+            "message": "Major restructuring+adding tests"
+        },
+        {
+            "hash": "4c73407dc7f68fffd7d3166f6e01118d331d3a68",
+            "message": "Solved or suppressed warnings"
+        },
+        {
+            "hash": "1c77e9aaad1554280f9620de799bd20ab29de6ea",
+            "message": "Work in progress on delombok."
+        },
+        {
+            "hash": "1a0e611a9c5e1ee518670647ce1a44beae559b44",
+            "message": "Refactored the source folders."
+        },
+        {
+            "hash": "7fd947ea40c25dad9ee543ebc4b92de9a2e05efc",
+            "message": "Updated the changelog with recent changes."
+        },
+        {
+            "hash": "d9bc35065286f073c24c6b52b83f573bf9700290",
+            "message": "Fixing ticket #68 ... again!"
+        },
+        {
+            "hash": "6c22449923e886fae532b12a7ef3a6777d57a97c",
+            "message": "Added support for installing/uninstalling eclipse support from all eclipse locations that lombok is automatically able to find, from the command line without interaction (for mass deployment)"
+        },
+        {
+            "hash": "66d4709855d57ae5703ab15fdf70d6ddce2d677d",
+            "message": "Added more thorough support for detecting we're running as an annotation processor on an unsupported platform, even giving useful suggestions about what you're doing wrong when we detect you're trying to do this on eclipse.\n\nFixes ticket #53"
+        },
+        {
+            "hash": "45de32ff6ddbe20b8d386f343ef291c57c5fae74",
+            "message": "Post-v0.9.1 release work."
+        },
+        {
+            "hash": "6838c6be2f8bd8935fa6853067183cf11c013fcd",
+            "message": "We encountered a strange NPE here. Can't reproduce, nevertheless added null-checks"
+        },
+        {
+            "hash": "645a0b06c76ce6fbad8d48afe0161b21d04046bb",
+            "message": "Removed empty () for annotation without parameters"
+        },
+        {
+            "hash": "f2de0a28e70ff284fe6fac626c39df66f4bf3e89",
+            "message": "Improved error reporting"
+        },
+        {
+            "hash": "4a017f6f9688de87c8c03ed357635d637f1da970",
+            "message": "Moved TransformationsUtil to a new package."
+        },
+        {
+            "hash": "ce018589fe7e9d4b018f5797b7453a6ca16c6108",
+            "message": "Redesigned how lombok runs as a command line app, added the ability to print information about and generate lombok-runtime.jar, fleshed out the 'install' and 'uninstall' command line tools."
+        },
+        {
+            "hash": "ad09ad1d29a30e618afe9752216d328161095883",
+            "message": "The licence file is now also copied into the jar, as well as to the website."
+        },
+        {
+            "hash": "78c1f1da1169522324b69079cb49a91b9e8d7b76",
+            "message": "Updated tests for Getter, Setter and Cleanup. Added Synchronized"
+        },
+        {
+            "hash": "2886277b27299ecdb845e3e967554d9ef041c0a8",
+            "message": "Made it simpler."
+        },
+        {
+            "hash": "dfa401018d0eff370b34f1e9d7bb1d5fd498a631",
+            "message": "All basic elements of netbeans support are here except the actual agent part."
+        },
+        {
+            "hash": "29c2ba1bbba7393423463b6c92da2068b6fea7bb",
+            "message": "work in progress"
+        },
+        {
+            "hash": "64f47685ca8fee174d87688e8c5d33de4c153c9b",
+            "message": "Merge branch 'master' into netbeans"
+        },
+        {
+            "hash": "96b7c8ed471745366378d5b7cec8890d16532dee",
+            "message": "work in progress."
+        },
+        {
+            "hash": "2aebaff46026dbfa447fd7454472e88c41dc8103",
+            "message": "Moved test resource files to a better matching location"
+        },
+        {
+            "hash": "bc88c1f99b1d0972f5a209a6de81739b6e00e61e",
+            "message": "We need this org-openide-modules.jar too. No direct dependencies, but javac needs some class in it to finish the compile."
+        },
+        {
+            "hash": "d4ed666abfdafc9007734bccf9acf2a80a32770e",
+            "message": "Added some tests for @ToString"
+        },
+        {
+            "hash": "c3a3c09f4fd00b83814c1949fa5282ac9c595fa3",
+            "message": "Added support for SpringSource Tool Suite, which, given that its based on eclipse, was just a matter of updating the installer.\n\nAny future tools that are based on eclipse (and eclipse's JDT) should be very easy to add to the installer now."
+        },
+        {
+            "hash": "48404894d8e4c875346677c6f68fff742f314763",
+            "message": "Added hailbunny name to upcoming 0.9.2 release."
+        },
+        {
+            "hash": "d9d7fe80637e3d543ca193730f5b8a4e4dbc6a5a",
+            "message": "Running netbeans on a JVM1.5 is not a supported platform for lombok. Instead of an obscure error and no netbeans, you now get netbeans with no lombok, and a GUI warning box explaining what's wrong and how to fix it."
+        },
+        {
+            "hash": "1e6f5fc892b0ece639dfe1c2d640ee84ce6202d1",
+            "message": "installer fixes:\n - when manually specifying paths via the command line installer, each location would get installed/uninstalled twice, and errors would occur if you provided paths with no known IDEs\n - fixed a problematic earlier checkin regarding STSFinder; now STSFinder looks in all the appropriate spots."
+        },
+        {
+            "hash": "a9c1c99d4ed504c5447f8e6b6f17d69254880967",
+            "message": "Added -Xlint:unchecked to ant compile."
+        },
+        {
+            "hash": "a2bc25c39aaeb299014b68cacd6e66b7fe64a9ab",
+            "message": "eclipse project now explicitly defines target JVM as 1.6. Technically it's a mix of 1.5 and 1.6, but that is not expressible in eclipse .classpath files.\nUpdated eclipse project settings to be more specific (less 'workspace default')."
+        }
+    ],
+    "issues": [
+        {
+            "number": "83",
+            "title": "Add links to the video on the website, for those who don't have the right plugin combo."
+        },
+        {
+            "number": "78",
+            "title": "Attempt to make 'find callers' on @Data do the right thing (constructor)."
+        },
+        {
+            "number": "76",
+            "title": "add tools.jar to the build process."
+        },
+        {
+            "number": "75",
+            "title": "We really need a 'thank you' page with used software and other such notes."
+        }
+    ]
+}

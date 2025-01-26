@@ -1,0 +1,358 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 74,
+    "start_delay": 0.0,
+    "duration": 139.45289351851852,
+    "commits_info": [
+        {
+            "hash": "88d5d7d38d4069213cfc15fe0b3ce3479b4888eb",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "dbbb4c77ff3f8220c870617ad9b51b8a13cca28e",
+            "message": "[trivial] With PR 2138 reverted, lets not name it in the changelogs."
+        },
+        {
+            "hash": "2eab72cc9ffbd840b951900818727ddb8d137b8e",
+            "message": "introduce explanation for previous revert"
+        },
+        {
+            "hash": "877a169727a4c8078c43a4465929247c3390c897",
+            "message": "Undoing PR #2114 which tried to fix issue #1976\nThis PR does fix that, but introduces its own problem.\nSee commit immediately following this one for explanation"
+        },
+        {
+            "hash": "67fccba8efbb68d8a7d3c5804b87a29abb622eaf",
+            "message": "[With] fixing the internal aliasing system\n\nold Wither annotations were no longer being picked up."
+        },
+        {
+            "hash": "514fd710c5fc581dc22143352101d7b191d3df0f",
+            "message": "Update gradle.html"
+        },
+        {
+            "hash": "9a82f1c26bf8125aaba755f9f57a7ee6ef9b1f4a",
+            "message": "[trivial] typo"
+        },
+        {
+            "hash": "27589f7bb843c1299fa76a7106fada35a2370d72",
+            "message": "[With] [trivial] just docs and moving things around to the right place"
+        },
+        {
+            "hash": "da5d9a12e72dc19888b9c1f69b34e73b2b25590c",
+            "message": "[With] updated documentation for Wither/With"
+        },
+        {
+            "hash": "461b5541da3fc8c43439f032e2f1d37574a1a658",
+            "message": "[tests] fixing an error in a superbuilder/checkerframework test"
+        },
+        {
+            "hash": "c11edbf032ce27e448faa00d37245665942095af",
+            "message": "[With] renaming lombok.experimental.Wither to lombok.experimental.With"
+        },
+        {
+            "hash": "7bf70ed638fac701c60e2fb29217af7c38056a8c",
+            "message": "[docker] use AdoptOpenJdk for all java releases, and add the latest version for all supported build systems"
+        },
+        {
+            "hash": "ed3c8a67e2d757b0f15c5f2b53b7d6497f49db06",
+            "message": "Fixes #2156: also clone the annotations on the setter."
+        },
+        {
+            "hash": "38a48e8a853f436c9243503e6193806ec151c84c",
+            "message": "Use dynamic year-value for JavaDoc-Copyright"
+        },
+        {
+            "hash": "383c00fa85c50555dbaf4d7aff493ef99e7a8e1a",
+            "message": "Merge pull request #2201 from middagj/clone-type\n\nClone type to correctly set annotated type on constructor, getter and setter"
+        },
+        {
+            "hash": "db19a9fd8320a0abf7a530e9e35639089ce77050",
+            "message": "Merge branch 'master' into clone-type"
+        },
+        {
+            "hash": "ba8fd3782819682b3f4081cb410b6d43055989b9",
+            "message": "Merge pull request #2204 from d4rksh4de/fix-loading-extensions\n\nFix loading extensions"
+        },
+        {
+            "hash": "9773530fa9d17260c9c5ed7da256110cb84eb3ee",
+            "message": "fix loading extensions: Lombok extensions in external jar files were not included by class loader"
+        },
+        {
+            "hash": "ff1c01d9e9e66d898c30939b497490b04fe6163c",
+            "message": "add comments"
+        },
+        {
+            "hash": "867c3caf61fcc76b7cb8a7356e71858889f85ebf",
+            "message": "Fixes #2184: NPE on package-info.java without package declaration."
+        },
+        {
+            "hash": "1f58c92e44b30aef9eac1b83753718a4c8fabbd0",
+            "message": "[trivial][website] adding tidelift link to the normalizer htaccess list"
+        },
+        {
+            "hash": "218f28cc95ee30d5d362c3ac9d5440c2f86fd712",
+            "message": "[website] [fixes #2167] be more clear about how the constructor generation interacts if both `@Value` and `@Builder` are on the same class."
+        },
+        {
+            "hash": "aa80e1baf92f3327383b36466a771e92d8a91b05",
+            "message": "Fixes #1197, add Objects.requireNonNull and Preconditions.checkkNotNull to supported null-check styles"
+        },
+        {
+            "hash": "e1d1415d6e147edacaa50d8954737a168fbdafb5",
+            "message": "[fixes #2168] Added JsonSetter as a copyable annotation"
+        },
+        {
+            "hash": "b439e4ce771813a12300c3006f9fcc12f25678d7",
+            "message": "[Fixes #2115] builder fields tracking a property that has a default set is now called `$value` in order to convey that you shouldnt manually mess with it."
+        },
+        {
+            "hash": "b3824c9dc1861c0ce6acdf48049e6552d808e448",
+            "message": "[fixes #2169] Eclipse 2019-06 + JDK12 + `@Singular` caused a cavalcade of error popups"
+        },
+        {
+            "hash": "206e306615fadeea7e9a1fc6ec3fa40bfd560a19",
+            "message": "Add Till Brychcy to AUTHORS"
+        },
+        {
+            "hash": "b7e67345b998e2a40ff63fabc893393cc9327596",
+            "message": "Merge branch 'customlog'"
+        },
+        {
+            "hash": "5ad6796b182c8071fe747493ed2f9ad2443dc212",
+            "message": "Merge pull request #2136 from ataccama/customlog\n\nFixes for CustomLog, AUTHORS entry, extended changlog"
+        },
+        {
+            "hash": "2a98c4d1fd80ff0b3181da4fe8d5f3f32f168644",
+            "message": "Fix custom logger when topic presence != allowance"
+        },
+        {
+            "hash": "06004b933b6afaa58ca753c4c33e8a977f91e294",
+            "message": "Fixes for CustomLog, AUTHORS entry, extended changlog"
+        },
+        {
+            "hash": "7fe489686716e72983d2c3586c7e2e1e07200ba7",
+            "message": "Code review for `@CustomLog`, and added documentation and a changelog entry."
+        },
+        {
+            "hash": "bb66465751b8f0b129e53e639854f95fcdb3dca8",
+            "message": "Custom log declaration"
+        },
+        {
+            "hash": "399c516bd3a7d08830710e6eb1283897754805fd",
+            "message": "Configuration types without explicit registration"
+        },
+        {
+            "hash": "4ea4b8d27bb13ad71e3cce2312dce6d488959fd7",
+            "message": "IdentifierName instead of String"
+        },
+        {
+            "hash": "c479920db17e36392fa69e386156c982fe60cc27",
+            "message": "post-release version bump (to be clear, the static constructor feature 2 commits before this is NOT in the 1.18.8 release; this post-release bump is slightly late)."
+        },
+        {
+            "hash": "1a5363cc5b3fe24eb259b082e94ced9fc37fa326",
+            "message": "[trivial] updating changelog retroactively to list an improbable breaking change about the generated parameter is null exception"
+        },
+        {
+            "hash": "d3ae4d994880a1a087108275e101ab4fbb43f071",
+            "message": "[Feature] staticConstructor should use already defined private constructor if available"
+        },
+        {
+            "hash": "0984d14826c62c5b99a2887aa198766ef08fea16",
+            "message": "[changelog] adding to the changelog note about improved eclipse non-null support (see previous commit)"
+        },
+        {
+            "hash": "93540b267dd9026a7e80b347087a7eae0f0b1c4d",
+            "message": "Merge pull request #2155 from brychcy/master\n\nAvoid Eclipse warnings about lombok.NonNull when NonNullByDefault is used"
+        },
+        {
+            "hash": "8a6603d191f7b8d1f27d32f3b2fa25d1c2eb8e53",
+            "message": "Avoid Eclipse warnings about null checks generated for lombok.NonNull when NonNullByDefault is used"
+        },
+        {
+            "hash": "d9b8b14575280cd6411a6a157b6c4e8117edb1ba",
+            "message": "Add funding file"
+        },
+        {
+            "hash": "6ea37c90a66ddde50dddabd38e06333b64377828",
+            "message": "[website] changed the tidelift link to be more prominent + on docs pages"
+        },
+        {
+            "hash": "4af6e42b3bd5bc9e676e4ec8db3d2d48429d77a6",
+            "message": "[website] fixed history/ajax-load system to deal with anchor links"
+        },
+        {
+            "hash": "8f69331ce8d120c3a0c8440c805aab0b5e458e6d",
+            "message": "Merge branch 'bulgakovalexander-feature/typeInferenceImprovements'"
+        },
+        {
+            "hash": "2704f073aad6deb362707e0311b6275cde7c5e1a",
+            "message": "Code review + mention in changelog for the improvement to val handling vs. lambdas and conditional (ternary) expressions."
+        },
+        {
+            "hash": "cd49188aff9ffece51ce8831c961e0faab33fbc8",
+            "message": "#1976. one more test case"
+        },
+        {
+            "hash": "71aea086e4fa9d3fa77e29c5a208ef8e7458c387",
+            "message": "Merge branch 'master' into feature/typeInferenceImprovements"
+        },
+        {
+            "hash": "1fec035aa546b7a033acb67cf4f7c1afb8a79f52",
+            "message": "#1976. [@val] improved raw generic type inference by eclipse compiler."
+        },
+        {
+            "hash": "8f8cbae631ff2e7091a2a9b70339b778177122cc",
+            "message": "Merge remote-tracking branch 'lombok/master' into feature/typeInferenceImprovements"
+        },
+        {
+            "hash": "06fb1034eac690f5775e104c4bc82df3ad929cc9",
+            "message": "#1976. naive fix of the eclipse compiler's error 'The target type of this expression must be a functional interface' in code like 'lombok.val foo = (System.currentTimeMillis() > 0) ? (Runnable)()-> {} : System.out::println;'"
+        },
+        {
+            "hash": "8276dee2551d3f8d29f414a0a762565eec381258",
+            "message": "Merge branch 'feature/typeInferenceImprovements' of https://github.com/bulgakovalexander/lombok into feature/typeInferenceImprovements"
+        },
+        {
+            "hash": "2611e6bf9830e4971dcae3abedfede59f3cc86a5",
+            "message": "Revert \"[val] in ecj we were constructing a different type than for javac, when using ‘val’ on an intersection type.\"\n\nThis reverts commit 1730a991"
+        },
+        {
+            "hash": "715c731fc24bf2915d2eaefefd964615e62c12ed",
+            "message": "Merge remote-tracking branch 'lombok/master' into feature/typeInferenceImprovements"
+        },
+        {
+            "hash": "f0343886a331f3cb2175545a062f3736610f9179",
+            "message": "improvements type inference of type intersections (affects ValLambda.java, ValWeirdTypes.java tests)"
+        },
+        {
+            "hash": "afe9e374975c85a87fdf6c0d45171ac44f616a37",
+            "message": "Merge branch 'master' into feature/typeInferenceImprovements"
+        },
+        {
+            "hash": "56aabf5465918bd167c67fe46d56e72968c5cea3",
+            "message": "Update changelog. Fixes #2100"
+        },
+        {
+            "hash": "1c65efa7d97795b2e70d2736c9d28963fc6802c6",
+            "message": "[changelog] adding to the changelog note about improved val/var support (see previous commit)"
+        },
+        {
+            "hash": "8b805fadf74499c7bbf1724cfe6fea9d485d4b87",
+            "message": "Merge pull request #2138 from bulgakovalexander/feature/typeInferenceImprovements\n\nval. override error handling policy for problemReporter to guarantee AbortCompilation is throwing."
+        },
+        {
+            "hash": "a899ffcbca7d7d9e3d616659d12a843fe02da6f6",
+            "message": "[val]. more test cases"
+        },
+        {
+            "hash": "67441a074f351da80b074c00e7981627b1918c9c",
+            "message": "[val]. Sets false to ReferenceContexts' ignoreFurtherInvestigationField fields for generating bytecode correctly. Resolves the False part type of a conditional expression."
+        },
+        {
+            "hash": "089f2ec5f45567c8c12e9d13bf9be8fa5c107c18",
+            "message": "#1976. override error handling policy for problemReporter to guarantee AbortCompilation is throwing."
+        },
+        {
+            "hash": "c1039553b088dc45d272b942d930414d3224b06c",
+            "message": "[builder] added a feature: you can now configure builder class name via the config system"
+        },
+        {
+            "hash": "bcf2d55abfb2b9d17de5ec339d16221dca6db6d4",
+            "message": "[docker] Update test gradle file with the new style way to do things, which involves marking lombok explicitly as an annotation processor (via github user tagae: Sebastián González)"
+        },
+        {
+            "hash": "2ccd3f5f5d089f5525f6b219df35a1200596f0a8",
+            "message": "Fixes #2165: Generated equals fails on annotated array type"
+        },
+        {
+            "hash": "11065b564f3fc1cee2c540a33b7ed1b3774816e2",
+            "message": "[build] adding a security policy"
+        },
+        {
+            "hash": "bb0736fe006be22ad7d63e51d7f5fc969956255b",
+            "message": "[website] tidelift update"
+        },
+        {
+            "hash": "927a6774f5713c2103563b56ba1b57b6fc09ceaa",
+            "message": "[fixes #2140] when pretty-printing (delombok) varargs, only turn array brackets into varargs for the actual top-level type, not for arrays inside the type, such as an array as generics component."
+        },
+        {
+            "hash": "e33a2090227585301b95a368050e83dc4c5883e5",
+            "message": "[issue #2140] Reproducing the bug: delombok issue: When you delombok a signature like: `List<byte[]>... arg`, the array brackets are replaced by dots in the delomboked output, which isn’t valid java."
+        },
+        {
+            "hash": "453c4117a6aef8e9c5c7036782eea5dfe8b4cfe7",
+            "message": "add myself to authors"
+        },
+        {
+            "hash": "e6090dbd741925aae7becec3d5f2355ed2b6c4cc",
+            "message": "FailFast if Ant version does not support javac-modulepath"
+        },
+        {
+            "hash": "a835579f79267616a0de7b4f47f9a39d987341b7",
+            "message": "[website] fix the /setup/overview load from the menu"
+        },
+        {
+            "hash": "15df143df6d35dd64459d717a451a039eb26d761",
+            "message": "[checkerframework]\n\nA bit of a shadow feature because the checker framework folks need to do some work on their side.\nthis update makes lombok generate a few checker framework annotations (if configured to do so)\nwhich let the checker framework add warnings and errors for example if you misuse builders, or ignore\nthe return values of withers, etc."
+        },
+        {
+            "hash": "819d1956761f6077fdf897e77c4f6ac47e92104e",
+            "message": "[Fixes #2189] Clone type to correctly set annotated type on constructor, getter and setter."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1976",
+            "title": "val fails with method reference on @Delegate methods"
+        },
+        {
+            "number": "2156",
+            "title": "[BUG] 1.18.8 regression: ClassCastException in Eclipse"
+        },
+        {
+            "number": "2184",
+            "title": "[BUG] Maven + Java 11 + Lombok 1.18.8 + package-info.java without \"package ...\" -> NullPointerException"
+        },
+        {
+            "number": "2167",
+            "title": "[DOCUMENTATION] @Builder blocks public constructor by @Value"
+        },
+        {
+            "number": "1197",
+            "title": "@NonNull implementation using checker methods instead of if statements"
+        },
+        {
+            "number": "2168",
+            "title": "[FEATURE] `@JsonSetter` annotation should be copied to builder's setter method"
+        },
+        {
+            "number": "2115",
+            "title": "Unexpected behavior of customized @Builder when @Builder.Default is used"
+        },
+        {
+            "number": "2169",
+            "title": "[BUG] Eclipse 2019.06  Lombok v1.18.6 does not work with Java 12"
+        },
+        {
+            "number": "2100",
+            "title": "[FEATURE]  Value annotation should use already defined private constructor"
+        },
+        {
+            "number": "2165",
+            "title": "Generated equals fails on annotated array type"
+        },
+        {
+            "number": "2140",
+            "title": "[BUG] Delombok causes syntax error for varargs method parameter of a Array-parametrized type"
+        },
+        {
+            "number": "2189",
+            "title": "[BUG] Jandex \"Not a parameterized type\" with @Data pojo "
+        }
+    ]
+}

@@ -1,0 +1,538 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.6.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 88,
+    "start_delay": 0.0,
+    "duration": 37.722939814814815,
+    "commits_info": [
+        {
+            "hash": "7cdbaf816385cda9ee4007b05348c5ffb54ac94f",
+            "message": "Release v2.6.11"
+        },
+        {
+            "hash": "13bd61b6feeefe58cd082fbef4c170fac7e3b12f",
+            "message": "Revert nested jar fixes\n\nRevert the recent updates to nested jar support that were intended\nto allow verification of signed unpacked nested jars on Oracle JDK.\n\nUnfortunately the changes caused a number of regressions which\naffected a larger number of users than those that have issues with\nsigned jars.\n\nCloses gh-31853"
+        },
+        {
+            "hash": "bd74344025c1302c6700aa6b20f3e3951aeca32f",
+            "message": "Revert \"Don't close jar files early\"\n\nThis reverts commit b42f056ddbfd5041ef80d2d909dd2f5e51ec3ff0."
+        },
+        {
+            "hash": "674022d4014a668f9ff3f2f7837b716667ff6e30",
+            "message": "Revert \"Don't close nested jars or wrapper when parent is closed\"\n\nThis reverts commit 360eb027befd51012614f5938fb9cdc9f557a577."
+        },
+        {
+            "hash": "3b01325c6b17e4853bdb4efd7c4ae78418ee9509",
+            "message": "Use asList consistently\n\nCloses gh-32102"
+        },
+        {
+            "hash": "191593cf15eac5d722266bfdfc071826b04a350d",
+            "message": "Review Git contribution documentation\n\nCloses gh-31904"
+        },
+        {
+            "hash": "f7fba30345b5b4576c658be7246d9c6a7db73d0c",
+            "message": "Merge pull request #31997 from nilshartmann\n\n* pr/31997:\n  Polish \"Explicit error message if source is not an archive\"\n  Explicit error message if source is not an archive\n\nCloses gh-31997"
+        },
+        {
+            "hash": "e94ddfa5896ba2729adfe1616b94fa372694d112",
+            "message": "Polish \"Explicit error message if source is not an archive\"\n\nSee gh-31997"
+        },
+        {
+            "hash": "a0f273a041f7b3fe6bb517d232753f2beb10dd96",
+            "message": "Explicit error message if source is not an archive\n\nThis commit split the existing assertion to provide an explicit error\nmessage if the source file is not an archive.\n\nSee gh-31997"
+        },
+        {
+            "hash": "25507636697bd89ba6be0a2b499ed0ea5e21bbe3",
+            "message": "Upgrade to Undertow 2.2.19.Final\n\nCloses gh-32087"
+        },
+        {
+            "hash": "fd89ced078972593b51a0eac6ed1ec104d60e457",
+            "message": "Upgrade to Spring Security 5.6.7\n\nCloses gh-32039"
+        },
+        {
+            "hash": "360eb027befd51012614f5938fb9cdc9f557a577",
+            "message": "Don't close nested jars or wrapper when parent is closed\n\nUpdate `JarFile` so that the `close()` method no longer closes nested\njars or the wrapper. Prior to this commit it was possible for a parent\njar file to be garbage collected and closed even though references still\nexisted to the nested jars. When this happened the nested jars would get\nclosed and any access to entries would result in `JarFile.ensureOpen()`\nthrowing an `IllegalStateException`. The user would often not see this\nexception directly, but rather find `ClassNotFoundException` being\nthrown.\n\nFixes gh-31853"
+        },
+        {
+            "hash": "48443c95ef049e414ef421dc80a696551ef3079b",
+            "message": "Upgrade Java 8 version in CI image and .sdkmanrc\n\nCloses gh-32063"
+        },
+        {
+            "hash": "c9e69f555e5371b28fb4762e1bbcc6744ef02497",
+            "message": "Test our Gradle plugin against Gradle 7.5.1\n\nCloses gh-32058"
+        },
+        {
+            "hash": "64a3276b78a8dcd4d8ad8cf0f7102ff592eb2fe4",
+            "message": "Upgrade to Dependency Management Plugin 1.0.13.RELEASE\n\nCloses gh-32055"
+        },
+        {
+            "hash": "0b9c2025fb17ff680fe743dff60cb9bc8bd3dc9d",
+            "message": "Fix handling of String Java version in cache smoke test"
+        },
+        {
+            "hash": "e8c218908c230b1677afcc0b0c05920dfeb2a807",
+            "message": "Upgrade to Reactor 2020.0.22\n\nCloses gh-32037"
+        },
+        {
+            "hash": "f4ddd3b597210f7a05b5b90941d18a1552744e24",
+            "message": "Fix EhCache smoke test when building with a toolchain"
+        },
+        {
+            "hash": "f287acd1ff5b9273b3fa9a83ab028aea5861f1cb",
+            "message": "Fix external links in descriptions of Maven Plugin's goal parameters\n\nCloses gh-29171"
+        },
+        {
+            "hash": "24c2ed3c788452260d15e592671224f9f347d1e8",
+            "message": "Start building against Spring Security 5.6.7 snapshots\n\nSee gh-32039"
+        },
+        {
+            "hash": "19eb69c1bbf4a71f58b8c9135a37fe599d9d3ac9",
+            "message": "Start building against Reactor 2020.0.22 snapshots\n\nSee gh-32037"
+        },
+        {
+            "hash": "4a807ebbf4c5411b0c45076547f0c4102531d2d3",
+            "message": "Upgrade to Groovy 3.0.12\n\nCloses gh-32008"
+        },
+        {
+            "hash": "2f85ea3a305f7766cbc89e7ebc4be6b30682197a",
+            "message": "Protect against deeply nested maps\n\nUpdate BasicJsonParser to fix the deeply nested map protection logic.\n\nFixes gh-32029"
+        },
+        {
+            "hash": "8dea05fd348654274a03a1f33e5d19b5ea522cd2",
+            "message": "Merge pull request #32004 from ionascustefanciprian\n\n* pr/32004:\n  Polish contribution\n  Document the DefaultServlet is no longer being enabled by default\n\nCloses gh-32004"
+        },
+        {
+            "hash": "12c1da275b630b301d620c919d889f4bf3d53c67",
+            "message": "Polish contribution\n\nSee gh-32004"
+        },
+        {
+            "hash": "c441bafe271ba46f54b5fc017fe3e4d8f25b31be",
+            "message": "Document the DefaultServlet is no longer being enabled by default\n\nSee gh-32004"
+        },
+        {
+            "hash": "22a5ccfca7dc013c9c690ed477a1a806507407b6",
+            "message": "Add missing jaxb dependency for EhCache3 smoke test\n\nSee gh-31137"
+        },
+        {
+            "hash": "68b61f574a6aa07b428e086924d4b23d64dcfccd",
+            "message": "Upgrade to Netty tcNative 2.0.54.Final\n\nCloses gh-32012"
+        },
+        {
+            "hash": "81c5b5a9fed1ed28eaaa8c19c7cf73dca7713675",
+            "message": "Upgrade to MySQL 8.0.30\n\nCloses gh-32011"
+        },
+        {
+            "hash": "a614c912f64dd922aef800ef7d4f01887750d898",
+            "message": "Upgrade to Micrometer 1.8.9\n\nCloses gh-32010"
+        },
+        {
+            "hash": "6233e0356ac1baf385724f9c72bf1c09d9b7f828",
+            "message": "Upgrade to Hibernate Validator 6.2.4.Final\n\nCloses gh-32009"
+        },
+        {
+            "hash": "f0d61a8db857884d63f22223a8fde2bfefbfd939",
+            "message": "Upgrade to Dropwizard Metrics 4.2.11\n\nCloses gh-32007"
+        },
+        {
+            "hash": "b905d7f3414566a49d6b15eb87ed472859e1a541",
+            "message": "Normalize included log output to remove CI-specific details\n\nSee gh-28208"
+        },
+        {
+            "hash": "329fa8d37da216d08f4eaf1694e5cb91ed78bf6c",
+            "message": "Run cache smoke tests against all cache providers\n\nCloses gh-31137"
+        },
+        {
+            "hash": "6efa77f3f5085e0d236dd6c79ddbc5ca590d5014",
+            "message": "Generate console output examples at build time\n\nCloses gh-28208"
+        },
+        {
+            "hash": "7c0ccdf78cb599ad016831c83b6a6ccb630c1773",
+            "message": "Log allocated port when Livereload server is using an ephemeral port\n\nCloses gh-31983"
+        },
+        {
+            "hash": "1614941ecef8ae5271f3f53f2956c08770adbf31",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-31979"
+        },
+        {
+            "hash": "c500d8e7849b8c6e702a4b0a469df7bf11241c47",
+            "message": "Note need to record req start time to use %D with Undertow access log\n\nCloses gh-31103"
+        },
+        {
+            "hash": "591cd0feb332e4137b639e5f2dbd477e985299ea",
+            "message": "Mention TLS-terminating proxy as a usecase for h2c\n\nCloses gh-25855"
+        },
+        {
+            "hash": "fa73b73898af093ba4e9fca6e90f13bf42d47b23",
+            "message": "Fail build on missing configuration property descriptions\n\nCloses gh-31916"
+        },
+        {
+            "hash": "d540eefce0443e5307bcbe82bdc70b3ed3cb3547",
+            "message": "Set running to false when stop method is called\n\nUpdate `WebServerStartStopLifecycle` to change the `running` state when\nthe `stop()` method is called.\n\nFixes gh-31966"
+        },
+        {
+            "hash": "45ad1557c36426878aca0631e33289786a349084",
+            "message": "Perform LoggingSystem cleanup after web server shutdown\n\nUpdate `LoggingApplicationListener` so that logging system cleanup is\nperformed by a `SmartLifecycle` phased after web server shutdown.\n\nPrior to this commit, cleanup occurred on the `ContextClosedEvent` which\nwas published before Lifecycle beans were stopped. This meant that any\nexceptions output during web server shutdown were not logged.\n\nFixes gh-9457"
+        },
+        {
+            "hash": "d69fcf8948af86a0acf460f203544da8ebbc5f12",
+            "message": "Merge pull request #31887 from marcwrobel\n\n* gh-31887:\n  Fix links in documentations\n\nCloses gh-31887"
+        },
+        {
+            "hash": "3e0665e791e802e635d48e4caf274d167f402465",
+            "message": "Fix links in documentations\n\n- Fix broken links\n- Use HTTPS where possible,\n- Remove spring-security-oauth2-docs as it is no longer used\n- Remove https://github.com/ThierrySquirrel/rocketmq-spring-boot-starter.\n  This starter is 404 and https://github.com/rocketmq/rocketmq-spring-boot-starter\n  hasn't been updated for 4 years.\n- Clean up nohttp allowlist.lines.\n\nSee gh-31887"
+        },
+        {
+            "hash": "c0daede1aa1d53ac6c31d900184e7784c857135b",
+            "message": "Ensure that jarmode jar added to an app has same SHA as published jar\n\nCloses gh-31862"
+        },
+        {
+            "hash": "66a93a38eceb762b8e1bd0e150167eb9150e824b",
+            "message": "Merge pull request #31941 from vilmos\n\n* pr/31941:\n  Fix property placeholder references in @Value example\n\nCloses gh-31941"
+        },
+        {
+            "hash": "00be9e4e946846ea1faecdcb685f4c4a6f6cd31c",
+            "message": "Fix property placeholder references in @Value example\n\nSee gh-31941"
+        },
+        {
+            "hash": "141237e2f894bfb7cbe7f1a6f250524575699c74",
+            "message": "Upgrade Java 18 version in CI image\n\nCloses gh-31930"
+        },
+        {
+            "hash": "f3d0da64aef4b97b345de6966015b839727e22c4",
+            "message": "Upgrade Java 17 version in CI image\n\nCloses gh-31933"
+        },
+        {
+            "hash": "4ffb8eeda1eb024302c4508b05732061d4839279",
+            "message": "Upgrade Java 11 version in CI image\n\nCloses gh-31931"
+        },
+        {
+            "hash": "8ed202576e36e9cef6942a84d3c3e88f6ca17334",
+            "message": "Upgrade Java 8 version in CI image and .sdkmanrc\n\nCloses gh-31932"
+        },
+        {
+            "hash": "cc15eb0b967589a052fc2bb8c7a2ea01e3f45c15",
+            "message": "Configure existing probes at additional path when necessary\n\nFixes gh-30612"
+        },
+        {
+            "hash": "3a5b40645a927d81db9ca8eb1dd5af70c892b72c",
+            "message": "Restore support for C3P0\n\nCloses gh-31920"
+        },
+        {
+            "hash": "2596d616cbed1bb369ee1a0ee9c70fe4d4c82b91",
+            "message": "Merge pull request #31912 from Kalpesh-18\n\n* gh-31912:\n  Polish \"Allow config prop annotation processor to find reactive cookie props\"\n  Allow config prop annotation processor to find reactive cookie props\n\nCloses gh-31912"
+        },
+        {
+            "hash": "d39e146a7d7d9b050446031766e1f503c6db11ad",
+            "message": "Polish \"Allow config prop annotation processor to find reactive cookie props\"\n\nSee gh-31912"
+        },
+        {
+            "hash": "1f0d5f1130a449623cc985c3fe0b9db9f9b697e8",
+            "message": "Allow config prop annotation processor to find reactive cookie props\n\nSee gh-31912"
+        },
+        {
+            "hash": "532285b47e9adb9edf495832967a2f5cba9b6b0c",
+            "message": "Add support for upgrading specific libraries with Bomr\n\nCloses gh-31909"
+        },
+        {
+            "hash": "7d860df5f0b008cfe0d05d48e08b2939db93707f",
+            "message": "Polish"
+        },
+        {
+            "hash": "348b2c28e91f738989b02c1136699b891c8df91b",
+            "message": "Improve logging of changes that trigger a DevTools upload or restart\n\nCloses gh-31579"
+        },
+        {
+            "hash": "9a2ad6d42dd215bc2b73066176c31dcd756d88dd",
+            "message": "Remove references to ConfigFileApplicationListener\n\nUpdate documentation and meta-data to remove referenced to the now\ndeprecated `ConfigFileApplicationListener` class.\n\nCloses gh-31895"
+        },
+        {
+            "hash": "98627e3d7107569d9ec98f7abdf4d0c4ff33bc2e",
+            "message": "Fix spring.beaninfo.ignore SourceType\n\nFixes gh-31898"
+        },
+        {
+            "hash": "2709f77ab99dd83729a6487e26cb3d989629f94c",
+            "message": "Collect to named contributors to `LinkedHashMap`\n\nUpdate `NamedContributorsMapAdapter` to collect items to a\n`LinkedHashMap` rather than a `HashMap`.\n\nSee gh-31676"
+        },
+        {
+            "hash": "a4bafa88bc167eaff7e0cbf7bfe36da742db2b15",
+            "message": "Disable schema validation when testing against Hazelcast 3\n\nWe have hazelcast configuration files that are used with multiple\nversions of Hazelcast. Version 3's scheme doesn't allow us to set\n<auto-detection enabled=\"false\" />. To work around this, we\nconfigure a system property that causes Hazelcast to disable schema\nvalidation.\n\nSee gh-38163"
+        },
+        {
+            "hash": "9184d5483a987ccd7e15d2599ad49e6e2a634836",
+            "message": "Remove reference to nitrite-spring-boot-starter\n\nCloses gh-31892"
+        },
+        {
+            "hash": "e6a9e48c54176318262acef463ebec4704373d9c",
+            "message": "Remove reference to Azure Application Insights\n\nCloses gh-31889"
+        },
+        {
+            "hash": "e92c64f633f81516a02905dfe14adf3a027ab5a9",
+            "message": "Merge pull request #31863 from adrianbob\n\n* pr/31863:\n  Polish \"Disable auto-detection in tests that start Hazelcast\"\n  Disable auto-detection in tests that start Hazelcast\n\nCloses gh-31863"
+        },
+        {
+            "hash": "59139e632b88659b39744819d7b5751305b870f2",
+            "message": "Polish \"Disable auto-detection in tests that start Hazelcast\"\n\nSee gh-31863"
+        },
+        {
+            "hash": "aad9c8906a95cc6e4197127e96d2e5a0e231fc41",
+            "message": "Disable auto-detection in tests that start Hazelcast\n\nThis commit updates test configurations to disable auto-detection of\nHazelcast instances.\n\nSee gh-31863"
+        },
+        {
+            "hash": "782e3f75b6b3565b8d8f0169deca818ca0a0c543",
+            "message": "Polish Hazelcast configuration\n\nThis commit updates the XSD to 4.2 and removes the \"tcp-ip\" network\noption as it is disabled by default.\n\nSee gh-31863"
+        },
+        {
+            "hash": "1e886bd0836cb600c2d045b71c9504050535dbcb",
+            "message": "Merge pull request #31676 from terminux\n\n* pr/31676:\n  Polish \"Call the value adapter during NamedContributorsMapAdapter construction\"\n  Call the value adapter during NamedContributorsMapAdapter construction\n\nCloses gh-31676"
+        },
+        {
+            "hash": "59c9a9cd8a5e6ebe2d60be102b8c10f804761aad",
+            "message": "Polish \"Call the value adapter during NamedContributorsMapAdapter construction\"\n\nSee gh-31676"
+        },
+        {
+            "hash": "c530f12cc325ce119fb1ffbbd8a8d277dfac23f1",
+            "message": "Call the value adapter during NamedContributorsMapAdapter construction\n\nUpdate `NamedContributorsMapAdapter` so that the adapter function is\ncalled only once per entry. Prior to this commit, the adapter was called\ndynamically which made `CompositeHealthContributor` behave differently\nfrom a regular `HealthContributor`.\n\nSee gh-31676"
+        },
+        {
+            "hash": "5243cb8369784669dc7ba8cfb0d7cf926ecd7352",
+            "message": "Broaded dependency management for REST Assured\n\nCloses gh-31864"
+        },
+        {
+            "hash": "923dd3504b008dd38837c91d2c77ff3dd090a629",
+            "message": "Merge pull request #31870 from aoyvx\n\n* pr/31870:\n  Ensure PROTOCOL_HANDLER system property is reset\n\nCloses gh-31870"
+        },
+        {
+            "hash": "8c93d2e8a78531897fb4720573c0251e0f84d836",
+            "message": "Ensure PROTOCOL_HANDLER system property is reset\n\nSee gh-31870"
+        },
+        {
+            "hash": "9329acdad88e04fdb9ad5594c22cab6179244c55",
+            "message": "Reduce size of 'repeated-open-array.txt' file\n\nAttempt to fix CI memory issues."
+        },
+        {
+            "hash": "da91cde3047749db21c443936ca883d2c847ff14",
+            "message": "Protect against deeply nested JSON maps\n\nSee gh-31868"
+        },
+        {
+            "hash": "41324142062d92d421fb3325d614717984b6cfd7",
+            "message": "Protect against deeply malformed JSON map keys\n\nFixes gh-31869"
+        },
+        {
+            "hash": "6966ebd2a37f5e05ad407d6b2ca94187e2094217",
+            "message": "Protect against deeply nested JSON lists\n\nUpdate `BasicJsonParser` to protect against deeply nested JSON lists\nin the same way as Jackson.\n\nFixes gh-31868"
+        },
+        {
+            "hash": "24c4ba3b538f85624696b89c52b53cc45bb6418e",
+            "message": "Merge pull request #31734 from marcwrobel\n\n* pr/31734:\n  Update copyright year for \"Fix typos in code and documentation\"\n  Fix typos in code and documentation\n\nCloses gh-31734"
+        },
+        {
+            "hash": "f8412847dcb315029a7a1796349a9cd77ff2eca2",
+            "message": "Update copyright year for \"Fix typos in code and documentation\"\n\nSee gh-31734"
+        },
+        {
+            "hash": "dbfc6bded42c9d220952ded1edcdae161798d67d",
+            "message": "Fix typos in code and documentation\n\nSee gh-31734"
+        },
+        {
+            "hash": "4bcec6e0ee27107ce0711c97e79bbd4ed9ce9ec5",
+            "message": "Polish"
+        },
+        {
+            "hash": "757a0c2664766b375b46203da2039b3201ce4a96",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "dd1d7a1c03fe4f7d311edbeb85e7fd727626ffe5",
+            "message": "Merge pull request #31845 from dreis2211\n\n* gh-31845:\n  Polish\n\nCloses gh-31845"
+        },
+        {
+            "hash": "de5834d20312d5a8bdf16de275de81cb486decab",
+            "message": "Polish\n\nSee gh-31845"
+        },
+        {
+            "hash": "a1443d1cdc7faa85b47507452139c17940b42f30",
+            "message": "Enforce ordering in additional-spring-configuration-metadata.json files\n\nCloses gh-31575"
+        },
+        {
+            "hash": "75359a2bce11de8b3331991348d44ac157667f53",
+            "message": "Next development version (v2.6.11-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31853",
+            "title": "ClassNotFoundException can be thrown for classes in nested jars when under GC pressure"
+        },
+        {
+            "number": "32102",
+            "title": "AutoConfigurationImportSelector#getExcludes doesn't use asList consistently"
+        },
+        {
+            "number": "31904",
+            "title": "Review Git contribution documentation "
+        },
+        {
+            "number": "32087",
+            "title": "Upgrade to Undertow 2.2.19.Final"
+        },
+        {
+            "number": "32039",
+            "title": "Upgrade to Spring Security 5.6.7"
+        },
+        {
+            "number": "32063",
+            "title": "Upgrade Java 8 version in CI image and .sdkmanrc"
+        },
+        {
+            "number": "32058",
+            "title": "Test our Gradle plugin against Gradle 7.5.1"
+        },
+        {
+            "number": "32055",
+            "title": "Upgrade to Dependency Management Plugin 1.0.13.RELEASE"
+        },
+        {
+            "number": "32037",
+            "title": "Upgrade to Reactor 2020.0.22"
+        },
+        {
+            "number": "29171",
+            "title": "Documentation for Maven Plugin classifier has an unresolved external reference"
+        },
+        {
+            "number": "32008",
+            "title": "Upgrade to Groovy 3.0.12"
+        },
+        {
+            "number": "32029",
+            "title": "BasicJsonParser does not protect against deeply nested maps"
+        },
+        {
+            "number": "31137",
+            "title": "Run cache smoke tests against all cache providers"
+        },
+        {
+            "number": "32012",
+            "title": "Upgrade to Netty tcNative 2.0.54.Final"
+        },
+        {
+            "number": "32011",
+            "title": "Upgrade to MySQL 8.0.30"
+        },
+        {
+            "number": "32010",
+            "title": "Upgrade to Micrometer 1.8.9"
+        },
+        {
+            "number": "32009",
+            "title": "Upgrade to Hibernate Validator 6.2.4.Final"
+        },
+        {
+            "number": "32007",
+            "title": "Upgrade to Dropwizard Metrics 4.2.11"
+        },
+        {
+            "number": "28208",
+            "title": "Example log output is out-of-date and inconsistent"
+        },
+        {
+            "number": "31983",
+            "title": "OptionalLiveReloadServer logs the wrong port number when it is configured to use an ephemeral port"
+        },
+        {
+            "number": "31979",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "31103",
+            "title": "Document that Undertow's record-request-start-time server option must be enabled for %D to work in access logging"
+        },
+        {
+            "number": "25855",
+            "title": "Update documentation on using H2C to consider running behind a proxy that's performing TLS termination"
+        },
+        {
+            "number": "31916",
+            "title": "Some properties in the Common Application Properties appendix have no description"
+        },
+        {
+            "number": "31966",
+            "title": "Servlet WebServerStartStopLifecycle doesn't set running to false on stop"
+        },
+        {
+            "number": "9457",
+            "title": "JUL-based logging performed during close of application context is lost"
+        },
+        {
+            "number": "31862",
+            "title": "The hash of spring-boot-jarmode-layertools.jar that's added to a fat jar doesn't match the hash of the equivalent published artifact"
+        },
+        {
+            "number": "31930",
+            "title": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "number": "31933",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "31931",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "31932",
+            "title": "Upgrade Java 8 version in CI image and .sdkmanrc"
+        },
+        {
+            "number": "30612",
+            "title": "management.endpoint.health.probes.add-additional-paths has no effect when configuration properties have already created the liveness and/or readiness groups"
+        },
+        {
+            "number": "31920",
+            "title": "UnsupportedDataSourcePropertyException is thrown when attempting to set jdbcUrl for C3P0"
+        },
+        {
+            "number": "31909",
+            "title": "Provide an option to run Bomr against only certain libraries"
+        },
+        {
+            "number": "31579",
+            "title": "Dev Tools restart failures caused by a too short quiet period are hard to diagnose"
+        },
+        {
+            "number": "31895",
+            "title": "Remove documentation and metadata references to ConfigFileApplicationListener"
+        },
+        {
+            "number": "31898",
+            "title": "Metadata for 'spring.beaninfo.ignore' has incorrect SourceType"
+        },
+        {
+            "number": "38163",
+            "title": "Failed to build spring native image with `native-maven-plugin`"
+        },
+        {
+            "number": "31892",
+            "title": "Remove reference to nitrite-spring-boot-starter"
+        },
+        {
+            "number": "31889",
+            "title": "Remove reference to Azure Application Insights"
+        },
+        {
+            "number": "31864",
+            "title": "Dependency management for REST Assured is incomplete"
+        },
+        {
+            "number": "31868",
+            "title": "BasicJsonParser can fail with a stackoverflow exception"
+        },
+        {
+            "number": "31869",
+            "title": "BasicJsonParser can fail with a timeout or stackoverflow with malformed map JSON"
+        }
+    ]
+}

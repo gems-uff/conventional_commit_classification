@@ -11,33 +11,33 @@
     "commits_info": [
         {
             "hash": "548d34f4620a21d218ec56944beb36dbfbaa7df8",
-            "message": "Updating version.json and repo version numbers to: 27.5\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.5"
         },
         {
             "hash": "6481fecc135f72e37a6a5c59bd4213c7dcec62eb",
-            "message": "Remove `--copt=\"-Werror\"` from `.bazelrc` (#18392)\n\nThis appears to be causing a bunch of errors during our release process,\r\nbut I don't think it's critical to have this flag in `.bazelrc`. We\r\nshould still be able to get about the same test coverage since we also\r\nset `-Werror` in the `bazelrc` files in the `ci/` directory.\r\n\r\nPiperOrigin-RevId: 672673187\r\n\r\nCo-authored-by: Adam Cozzette <acozzette@google.com>",
-            "tag_name": null
+            "message": "Remove `--copt=\"-Werror\"` from `.bazelrc` (#18392)\n\nThis appears to be causing a bunch of errors during our release process,\r\nbut I don't think it's critical to have this flag in `.bazelrc`. We\r\nshould still be able to get about the same test coverage since we also\r\nset `-Werror` in the `bazelrc` files in the `ci/` directory.\r\n\r\nPiperOrigin-RevId: 672673187\r\n\r\nCo-authored-by: Adam Cozzette <acozzette@google.com>"
         },
         {
             "hash": "d6c82fc55a76481c676f541a255571e8950bb8c3",
-            "message": "Add recursion check when parsing unknown fields in Java.  (#18388)\n\n* Internal change\r\n\r\nPiperOrigin-RevId: 663919912\r\n\r\n* Internal change\r\n\r\nPiperOrigin-RevId: 653615736\r\n\r\n* Add recursion check when parsing unknown fields in Java.\r\n\r\nPiperOrigin-RevId: 675657198\r\n\r\n---------\r\n\r\nCo-authored-by: Protobuf Team Bot <protobuf-github-bot@google.com>",
-            "tag_name": null
+            "message": "Add recursion check when parsing unknown fields in Java.  (#18388)\n\n* Internal change\r\n\r\nPiperOrigin-RevId: 663919912\r\n\r\n* Internal change\r\n\r\nPiperOrigin-RevId: 653615736\r\n\r\n* Add recursion check when parsing unknown fields in Java.\r\n\r\nPiperOrigin-RevId: 675657198\r\n\r\n---------\r\n\r\nCo-authored-by: Protobuf Team Bot <protobuf-github-bot@google.com>"
         },
         {
             "hash": "6fa3f2d79bcb5518e3453687fe10e3bbd16cbfe6",
-            "message": "Fix cord handling in DynamicMessage and oneofs. (#18374)\n\n* Fix cord handling in DynamicMessage and oneofs.\r\n\r\nThis fixes a memory corruption vulnerability for anyone using cord with dynamically built descriptor pools.\r\n\r\n* Move -Werror to our test/dev bazelrc files. (#17938)\r\n\r\n    * Move -Werror to our test/dev bazelrc files.\r\n\r\n    Putting it into BUILD files unintentionally forces it on all our downstream users.  Instead, we just want to enable this during testing and let them choose for themselves in their builds.\r\n\r\n    Note, that this expands the scope of -Werror to our entire repo for CI, so a bunch of fixes and opt-outs had to be applied to get this change passing.\r\n\r\n    Closed #14714\r\n\r\n    PiperOrigin-RevId: 666903224\r\n\r\n    * Fix extra warnings on 28.x\r\n\r\n    * Fix zlib issues on macos\r\n\r\n    * Second try at zlib/macos issues\r\n\r\n    * Only disable deprecated-non-prototype on macos-14\r\n\r\n* Silence expected ubsan failures from absl::Cord\r\n\r\n* Fix test dependency\r\n\r\n* Fix python/upb warnings\r\n\r\n* Fix last upb warning\r\n\r\n---------\r\n\r\nCo-authored-by: Mike Kruskal <mkruskal@google.com>",
-            "tag_name": null
+            "message": "Fix cord handling in DynamicMessage and oneofs. (#18374)\n\n* Fix cord handling in DynamicMessage and oneofs.\r\n\r\nThis fixes a memory corruption vulnerability for anyone using cord with dynamically built descriptor pools.\r\n\r\n* Move -Werror to our test/dev bazelrc files. (#17938)\r\n\r\n    * Move -Werror to our test/dev bazelrc files.\r\n\r\n    Putting it into BUILD files unintentionally forces it on all our downstream users.  Instead, we just want to enable this during testing and let them choose for themselves in their builds.\r\n\r\n    Note, that this expands the scope of -Werror to our entire repo for CI, so a bunch of fixes and opt-outs had to be applied to get this change passing.\r\n\r\n    Closed #14714\r\n\r\n    PiperOrigin-RevId: 666903224\r\n\r\n    * Fix extra warnings on 28.x\r\n\r\n    * Fix zlib issues on macos\r\n\r\n    * Second try at zlib/macos issues\r\n\r\n    * Only disable deprecated-non-prototype on macos-14\r\n\r\n* Silence expected ubsan failures from absl::Cord\r\n\r\n* Fix test dependency\r\n\r\n* Fix python/upb warnings\r\n\r\n* Fix last upb warning\r\n\r\n---------\r\n\r\nCo-authored-by: Mike Kruskal <mkruskal@google.com>"
         },
         {
             "hash": "b96676eaa5dcaab01e8c6a2eb06496a16d9bdd74",
-            "message": "Merge pull request #17986 from protocolbuffers/27.x-202408271953\n\nMerge release commits to 27.x",
-            "tag_name": null
+            "message": "Merge pull request #17986 from protocolbuffers/27.x-202408271953\n\nMerge release commits to 27.x"
         },
         {
             "hash": "a428a16b9285625f225af379b835e141eb6e3ec4",
-            "message": "Updating version.json and repo version numbers to: 27.5-dev\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.5-dev"
+        }
+    ],
+    "issues": [
+        {
+            "number": "14714",
+            "title": "`-Werror` by default can break downstream Bazel builds"
         }
     ]
 }

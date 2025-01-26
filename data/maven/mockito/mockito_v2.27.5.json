@@ -1,0 +1,70 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.27.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 10,
+    "start_delay": 0.0,
+    "duration": 19.726296296296297,
+    "commits_info": [
+        {
+            "hash": "99413819a63a5de6f2f8adaae23f581c780ab1c4",
+            "message": "2.27.5 release (previous 2.27.4) + release notes updated by CI build 4115\n\n[ci skip-release]"
+        },
+        {
+            "hash": "d86b9a33ee95eb87c95f86e2002ee7631a57b4d9",
+            "message": "Fixes #1717: configure the MethodVisitor for Java 11+ compatibility (#1718)\n\nBy using Byte Buddy's supported ASM API version, the visitor will always be\r\ncompatible with the currently supported bytecode, including when using the\r\nexperimental feature.\r\n\r\n[ci maven-central-release]"
+        },
+        {
+            "hash": "71603d46ebd8d1e35a55e4d54651b77ae46ccb49",
+            "message": "Fixes #298: replaces Objenesis references from stubbing classes with plugin equivalents. (#1715)\n\n* Replaces Objenesis references from stubbing support with plugin calls.\r\n\r\nThis enables the iOS Mockito plugin\r\n(https://github.com/google/j2objc/tree/master/testing/mockito) to upgrade to v2.\r\n\r\n* Added unit test to verify core classes do not depend on bytecode libraries."
+        },
+        {
+            "hash": "18f06889329e23d919005f4cb925f5a35e3e25a6",
+            "message": "Fixes #1713: fix typo in Mockito.java javadoc (#1714)"
+        },
+        {
+            "hash": "ac012350f3464e6a65451baf2c684730348810c1",
+            "message": "Migrate junitJupiterExtensionTest subproject to kotlin dsl (#1704)"
+        },
+        {
+            "hash": "53e8a93141e1f8c41d6b6d4fd72c20488826269a",
+            "message": "Fixes #1623 : Rename TooLittleActualInvocations (#1708)\n\nRename the exception TooLittleActualInvocations to\r\nTooFewActualInvocations as this is more correct English. As this\r\nexception is public API, we rename by subclassing and deprecating the\r\noriginal. Rename all tests and internal methods that were referencing\r\nthe old name by aligning with the new name."
+        },
+        {
+            "hash": "b6f0fcffbb97a8af2a1b93c1b126c0021ad5be35",
+            "message": "Fix a typo (#1706)"
+        },
+        {
+            "hash": "aa468b9255a0ad11d055f31e99362fc235d23992",
+            "message": "Change master to release/3.x in pull request template (#1707)"
+        },
+        {
+            "hash": "237e915e76a42292965dbc737c61790c32cf7735",
+            "message": "Remove no longer relevant code from settings.gradle.kts (#1705)"
+        },
+        {
+            "hash": "092009e47ff3d0796c479ad3afe597916bea79fc",
+            "message": "Use require instead of assert in settings.gradle (#1703)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1717",
+            "title": "Incompatibility between the inline mocks and JaCoCo 0.8.4"
+        },
+        {
+            "number": "298",
+            "title": "ObjenesisHelper references in MockMaker-independent code"
+        },
+        {
+            "number": "1713",
+            "title": "Typo in Mockito.java javadoc"
+        },
+        {
+            "number": "1623",
+            "title": "Consider renaming TooLittleActualInvocations"
+        }
+    ]
+}

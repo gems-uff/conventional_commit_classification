@@ -1,0 +1,354 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.21",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 67,
+    "start_delay": 0.0,
+    "duration": 35.35559027777778,
+    "commits_info": [
+        {
+            "hash": "fcfb16839fa37b53f5d6242cba56fbdae0d58084",
+            "message": "Release v5.3.21"
+        },
+        {
+            "hash": "c75da7ba10f329ae67989cadafeb5c682d99b10b",
+            "message": "Upgrade to Reactor 2020.0.20\n\nCloses gh-28612"
+        },
+        {
+            "hash": "eeac150030db41ee41369381e00bab22f20a1e5e",
+            "message": "Polish contribution\n\nSee gh-28616"
+        },
+        {
+            "hash": "0ce9516aeff0f4bd8dd37770d161671e23a54304",
+            "message": "Avoid eager instantiation of non-singleton FactoryBean in getBeanNamesForType\n\nCloses gh-28616"
+        },
+        {
+            "hash": "e47cc4494724c48b77ee08a1411f9783f1d265b7",
+            "message": "Polish DefaultListableBeanFactoryTests"
+        },
+        {
+            "hash": "57db73dcb8608c693b923955b667e3d71306e396",
+            "message": "Upgrade to Tomcat 9.0.64, Jackson 2.12.7, Apache Johnzon 1.2.18, OpenPDF 1.3.28, H2 2.1.212, Mockito 4.6.1, HtmlUnit 2.62, Checkstyle 10.3"
+        },
+        {
+            "hash": "d7be1e0dab1d93e41e6919c2a7ee8520580bd26b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "30c873b4b51e9a71b08fa4508719d31c031d0c4f",
+            "message": "Move NestedServletExceptionTests to spring-web module\n\nSee gh-25162"
+        },
+        {
+            "hash": "e72b0a04cdd5447261341ed949db8b054c9ab813",
+            "message": "Document limitations for MessageProducer/Consumer caching with WebLogic JMS\n\nCloses gh-28500"
+        },
+        {
+            "hash": "f8b41c1ad2192e481f5fb331c540203b58996361",
+            "message": "Consistent support for setContextClass in CGLIB beans package\n\nCloses gh-28530"
+        },
+        {
+            "hash": "8c777111fa1b8943cf9cdebfb8c3bcdba73e39f9",
+            "message": "Revise commit #52d068 with corrected test\n\nUpdate test detecting RouterFunction beans in parent contexts to use\ndifferent bean names and avoid shadowing. Changed the fix accordingly\ngiven that BeanProvider does detect beans in parent contexts.\n\nSee gh-28595"
+        },
+        {
+            "hash": "d28d603081a55a74f1e29500442bdcab521731ed",
+            "message": "Polishing\n\nSee gh-28595"
+        },
+        {
+            "hash": "52d0681ca1cf4529ba866e3ddd9700ef3304f6a9",
+            "message": "WebMvc respects RouterFunction beans ordering\n\nCloses gh-28595"
+        },
+        {
+            "hash": "97854d9fec8b89783443dd9571c0ce76efd041aa",
+            "message": "Refactor ObjectToObjectConverter to use Executable instead of Member"
+        },
+        {
+            "hash": "73f3860bb711b73e55a65a422b4515504d59e661",
+            "message": "Polish Javadoc for ObjectToObjectConverter"
+        },
+        {
+            "hash": "452f1b877cb9a315785f2ae286ee3863f56f4e99",
+            "message": "Consider return type of static methods in ObjectToObjectConverter\n\nPrior to this commit, ObjectToObjectConverter considered the return\ntype of non-static `to[targetType.simpleName]()` methods but did not\nconsider the return type of static `valueOf(sourceType)`,\n`of(sourceType)`, and `from(sourceType)` methods.\n\nThis led to scenarios in which `canConvert()` returned `true`, but a\nsubsequent `convert()` invocation resulted in a\nConverterNotFoundException, which violates the contract of the\nconverter.\n\nThis commit addresses this issue by taking into account the return type\nof a static valueOf/of/from factory method when determining if the\nObjectToObjectConverter supports a particular conversion. Whereas the\nexisting check in `determineToMethod()` ensures that the method return\ntype is assignable to the `targetType`, the new check in\n`determineFactoryMethod()` leniently ensures that the method return\ntype and `targetType` are \"related\" (i.e., reside in the same type\nhierarchy).\n\nCloses gh-28609"
+        },
+        {
+            "hash": "c278d8c65677814735d01472a6f19bb9360287ea",
+            "message": "Do not ignore charset in Jaxb2XmlDecoder\n\nThis commit makes sure that the charset, if defined in the mimetype, is\nused when decoding XML to JAXB2 objects.\n\nCloses gh-28599"
+        },
+        {
+            "hash": "e3b288716d6f39c77121831405c1abeb0a07d08d",
+            "message": "Upgrade to Reactor 2020.0.20\n\nCloses gh-28612"
+        },
+        {
+            "hash": "27738cc20fc6d640b175a9fc7ff36f766fe3a3d2",
+            "message": "Fix code samples for nested router functions\n\nCloses gh-28603"
+        },
+        {
+            "hash": "babff8e6353ed36de6f2bc03dd25e1a94f91839e",
+            "message": "Fix Kotlin example for dependency injection with static factory method\n\nCloses gh-28589"
+        },
+        {
+            "hash": "290cc73d3d513086ac2ff927e908859641a7412c",
+            "message": "Fix Kotlin example for @Required\n\nSince @Required can only be declared on a method, this commit moves the\n@Required declaration from the field to the \"set\" method.\n\nCloses gh-28590"
+        },
+        {
+            "hash": "8a30bc299344bd3231bce4c597186b884d2544b8",
+            "message": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "hash": "aa8be28a01051797d36ad4361fc0a46a4b9dd03e",
+            "message": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "hash": "f43b28e7bafba0d4321beae6f099417af1aad122",
+            "message": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "hash": "1476867ee77976970f512fe3760315bfe093869c",
+            "message": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "hash": "4d9dc61f5d90a54d573c37a7b4f86a8e3b8e309a",
+            "message": "Polish"
+        },
+        {
+            "hash": "7eebc48a6e200043aa9d4a0f63b8cb229135338c",
+            "message": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "hash": "8478e8e70aafb795c7ee0491204915ee5cea08e0",
+            "message": "Polish contribution\n\nThis commit:\n\n- fixes Checkstyle violations\n- improves Javadoc\n- adds missing @since tags\n- renames getCurrentQueueSize() to getQueueSize()\n- avoids NullPointerExceptions in getQueueSize()\n- introduces tests for queue size and queue capacity\n\nCloses gh-28583"
+        },
+        {
+            "hash": "e386bdb82c9a6fb7e740e4321167ac4afafa1d07",
+            "message": "Expose ThreadPoolTaskExecutor queue size and capacity for metrics\n\nWe use Grafana to monitor our app via Spring's JMX exporter, and we\nthink it could be interesting to have at least the current queue size\nfor this purpose since the queue size directly affects the app memory\nload. Having the queue capacity seems also interesting to set up\ntriggers whose values are calculated based on the maximum capacity of\nthe queue.\n\nThis commit introduces new getCurrentQueueSize() and getQueueCapacity()\nmethods in ThreadPoolTaskExecutor.\n\nSee gh-28583"
+        },
+        {
+            "hash": "4912c3c4551ab05306812474e9317e61bd271c6b",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "8fcc7ab9d1916533cdd0e9ef68eb5eadd8f9da59",
+            "message": "CompositeLog respects log level changes at runtime\n\nCloses gh-28477"
+        },
+        {
+            "hash": "7c47b470ff53f4e1950ea5a3bb4a6d0aa9654d07",
+            "message": "MockMvc allows HttpMethod input for multipart request\n\nCloses gh-28545"
+        },
+        {
+            "hash": "479ef3f3fdb1ca5914d646dce69a66366c317ff5",
+            "message": "Update documentation regarding nested test class support\n\nCloses gh-28579"
+        },
+        {
+            "hash": "be1b7da12f43af40bc8be764f306de9971e79bf1",
+            "message": "Add entries for \"Sam Brannen\" to .mailmap"
+        },
+        {
+            "hash": "89360b18f4b04fb40082bbcb916fd595aa250fc7",
+            "message": "Update '.mailmap` to consistently use @vmware.com emails\n\n(cherry picked from commit 83063a7269f7293ecc07b05771036a85ee4344b5)"
+        },
+        {
+            "hash": "209fe5f452860eec8924d3be0fb5efd94e9f0b92",
+            "message": "Merge pull request #28572 from gorisanson\n\n* pr/28572:\n  Polish contribution\n  Update reference docs to use PropertySourcesPlaceholderConfigurer\n\nCloses gh-28572"
+        },
+        {
+            "hash": "e18a118f8b0089f963805c3d1a5ac09f9b8a7bf9",
+            "message": "Polish contribution\n\nSee gh-28572"
+        },
+        {
+            "hash": "77aac7768d730d455410c5bcac623af5ba4cd1b7",
+            "message": "Update reference docs to use PropertySourcesPlaceholderConfigurer\n\nSee gh-28572"
+        },
+        {
+            "hash": "e2767371b569eee237882f913916985e30374316",
+            "message": "Lazily initialize DataSize.PATTERN\n\nTo avoid unnecessary eager initialization of DataSize.PATTERN, this\ncommit initializes it lazily in the first invocation of DataSize.parse\nby moving PATTERN to a private static nested class.\n\nCloses gh-28560"
+        },
+        {
+            "hash": "aab9da03668c5275057c15209cea60631cba7aee",
+            "message": "Polish LocaleResolver support"
+        },
+        {
+            "hash": "cda1e5507c829779a88098be0e1b0aa3851e6bc2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1d5ffaf30ae40616a765c0d6c0c73de0e947dafa",
+            "message": "Always construct new exception on error in DefaultWebClient\n\nAlways construct new exception on error, otherwise memory leak may\noccur due to repeated use of singleton exception.\n\nCloses gh-28550"
+        },
+        {
+            "hash": "c55606ed08609653c537c6da6c8900fc8ea07513",
+            "message": "Recognize Kotlin coroutines in isAsyncVoidReturnType\n\nThis commit makes sure that Kotlin coroutines are correctly identified\nby InvocableHandlerMethod::isAsyncVoidReturnType.\n\nCloses gh-26829"
+        },
+        {
+            "hash": "aa8802a81d1312386b71786711dbef8639cd35f3",
+            "message": "Avoid new AssertJ deprecations"
+        },
+        {
+            "hash": "1beb7068f62d0d75683e2d701d5cbfa9c2459ee8",
+            "message": "Use new AssertJ exception assertions"
+        },
+        {
+            "hash": "9d324e59a05bad3e4ad17f15e67a9a7ac6b673c3",
+            "message": "Upgrade to AssertJ 3.23.0"
+        },
+        {
+            "hash": "8547f8601d86ca19e939339cb62cf132ba2c2953",
+            "message": "Polish LocaleResolver tests"
+        },
+        {
+            "hash": "40cb81470b2d15a78624d1bad427b5364a3deff6",
+            "message": "Merge pull request #28542 from eltociear\n\n* pr/28542:\n  Fix typo in webflux.adoc\n\nCloses gh-28542"
+        },
+        {
+            "hash": "6e3b3c5419244785aee2bf6419d05677ee011c03",
+            "message": "Fix typo in webflux.adoc\n\nSee gh-28542"
+        },
+        {
+            "hash": "a2218355587637bb7d049a4fc84cb9b8addb3f9f",
+            "message": "Throw IllegalStateException for invalid port in HierarchicalUriComponents\n\nPrior to this commit, getPort() in HierarchicalUriComponents threw a\nNumberFormatException for an invalid port supplied as a String, which\nwas inconsistent with exception handling elsewhere in the class as well\nas within the same method.\n\nThis commit introduces a try-catch block in getPort() to consistently\nthrow IllegalStateExceptions for ports that cannot be parsed.\n\nCloses gh-28521"
+        },
+        {
+            "hash": "aa06a09dee61c571acac13c7f14b733e5337175f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bde0931e51ff93ef679e9d79f7798f681858f81c",
+            "message": "Fix Javadoc for DatabaseClient\n\nThe documentation for DatabaseClient had misplaced double quotes in the\nexample on how to map a select statement to a row.\n\nCloses gh-28520"
+        },
+        {
+            "hash": "7b95c928d14244a41005b98db385bf669c0ddeb0",
+            "message": "Fix Javadoc for ResourcePatternResolver"
+        },
+        {
+            "hash": "53f88d455ff1d704740ee9b8e7114cfdfad10dbc",
+            "message": "Fix Javadoc for AbstractFileResolvingResource.isFile(URI)"
+        },
+        {
+            "hash": "53a506f6bbc89c4752e3d4069fe09c213e8b96b0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f95bf96ec903c1b227ba452c0d5e7a2d754afe4a",
+            "message": "Correct path encoding/decoding in PathResourceResolver\n\nDecoding is required for non-UrlResource when the HandlerMapping is\nnot expected to decode the path. Encoding is the opposite.\n\nThis commit ensures correct determination of whether the HandlerMapping\nis expected to have decoded the path or not that in turn depends on\nwhether PathPattern or PathMatcher is in use.\n\nCloses gh-27791"
+        },
+        {
+            "hash": "66a5742df360cea5799bced763e9ce08828b5af7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "59c7bb1f86723e3f70f47f4556ab90cc616288a7",
+            "message": "Use Arrays.toString instead of Arrays.asList when generating Strings"
+        },
+        {
+            "hash": "a1c3efbb5fe08fea35a3471b2506de1cc4920ebc",
+            "message": "Polish ManagedList[Tests] and ManagedSet[Tests]"
+        },
+        {
+            "hash": "6efe3aee34c19408a490c8b289273afd5ad779fc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f2fe7f335c3b55cb2a2f9bd4cada56dc2ad35633",
+            "message": "Improve nullReturningBeanPostProcessor() test\n\nSee gh-28459"
+        },
+        {
+            "hash": "48c797e429dc26c8156c92cba409c3be07aa6498",
+            "message": "Fix Kotlin example for static factory method\n\nCloses gh-28399"
+        },
+        {
+            "hash": "be782a219726cf3ad57bf810d03b3bb705f731d1",
+            "message": "Polish ref docs regarding the BeanFactory API\n\nSee gh-28403"
+        },
+        {
+            "hash": "8098e45bad76af2ea9a0a1d80ad8c0815e1c1a2f",
+            "message": "Sync gradle.properties between 5.3.x and main"
+        },
+        {
+            "hash": "06679a5583e6e5bbd8ec10a12f665cdfc561cc19",
+            "message": "Fix tests in DispatcherServletTests\n\nSee gh-28424"
+        },
+        {
+            "hash": "745eb1a88174a09b9ab6e735ac44e538dec42b85",
+            "message": "Polish DispatcherServletTests"
+        },
+        {
+            "hash": "10c55ff9125fe80aeb12c9031d0727b8077e8a3f",
+            "message": "Next development version (v5.3.21-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28612",
+            "title": "Upgrade to Reactor 2020.0.20"
+        },
+        {
+            "number": "25162",
+            "title": "Nested Exception's message should not include the messages from causal chain"
+        },
+        {
+            "number": "28500",
+            "title": "CachingConnectionFactory with WebLogic JMS not caching producers nor consumers"
+        },
+        {
+            "number": "28530",
+            "title": "Support for CGLIB BeanCopier utility on JDK 17"
+        },
+        {
+            "number": "28595",
+            "title": "Support RouterFunction ordering in Spring MVC"
+        },
+        {
+            "number": "28609",
+            "title": "ObjectToObjectConverter doesn't consider return type of static methods"
+        },
+        {
+            "number": "28599",
+            "title": "Charset for input stream ignored in Jaxb2XmlDecoder"
+        },
+        {
+            "number": "28603",
+            "title": "Fix code sample for nested router functions"
+        },
+        {
+            "number": "28589",
+            "title": "Fix Kotlin example for dependency injection with static factory method "
+        },
+        {
+            "number": "28590",
+            "title": "Fix Kotlin example for  @Required"
+        },
+        {
+            "number": "28477",
+            "title": "Allow changes to `org.springframework.web` log category at runtime"
+        },
+        {
+            "number": "28545",
+            "title": "MockMvcWebTestClient forces HTTP POST for multipart requests"
+        },
+        {
+            "number": "28579",
+            "title": "Update documentation regarding nested test class support"
+        },
+        {
+            "number": "28560",
+            "title": "Lazily initialize DataSize.PATTERN"
+        },
+        {
+            "number": "26829",
+            "title": "RSocket (Kotlin) Fire and Forget - Missing 'rsocketResponse'"
+        },
+        {
+            "number": "28521",
+            "title": "HierarchicalUriComponents::getPort() throws NumberFormatException with invalid port in URI"
+        },
+        {
+            "number": "27791",
+            "title": "Cannot serve static resources with spaces from \"file:\" location when using `PathPattern` and UrlPathHelper is set to not decode"
+        },
+        {
+            "number": "28399",
+            "title": "Fix Kotlin example for static factory method"
+        }
+    ]
+}

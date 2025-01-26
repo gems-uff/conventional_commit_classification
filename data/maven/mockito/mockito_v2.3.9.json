@@ -1,0 +1,173 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.3.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 40,
+    "start_delay": 0.0,
+    "duration": 8.02042824074074,
+    "commits_info": [
+        {
+            "hash": "b879c7c75b51d29eddf04fc0e03384a5eeb45830",
+            "message": "Update release notes by Travis CI build 2013 [ci skip]"
+        },
+        {
+            "hash": "e6624295944d10d72908be61440d8ded247331f0",
+            "message": "Merge pull request #835 from mockito/publication-bug2\n\nPublication fixes - workaround for Bintray plugin/Gradle bug"
+        },
+        {
+            "hash": "81a2fd91afc861642c541ffbf3bab2c933eff2dc",
+            "message": "Manually updated release notes to unstuck the release"
+        },
+        {
+            "hash": "a940a96c6652d3d69b2871675a071aef6b9f5437",
+            "message": "Fixed the workaround for Bintray plugin/Gradle bug\n\nThe previous workaround did not quite work"
+        },
+        {
+            "hash": "28c567ee1b30efe5bf34d4a10b808673745f3058",
+            "message": "Increment version '2.3.8' -> '2.3.9' by Travis CI build 2008 [ci skip]"
+        },
+        {
+            "hash": "546b458d43e0f7f358478267cce645f04cf54a70",
+            "message": "Update release notes by Travis CI build 2008 [ci skip]"
+        },
+        {
+            "hash": "1e782e7357f2ae8394adecbfb5c0a0144d7ac01e",
+            "message": "Merge pull request #834 from mockito/submodule-2\n\nRelease automation fixes"
+        },
+        {
+            "hash": "c57b0e86e9a4454add13c2c02f13ef85388d5970",
+            "message": "Updated code comment"
+        },
+        {
+            "hash": "82f851f740a6a86d7eb81673cc785048e005ec31",
+            "message": "Reverted to old way of declaring plugins\n\nOtherwise the build fails on Travis with:\n\nError resolving plugin [id: 'com.jfrog.bintray', version: '1.7.3']\n> Could not GET 'https://plugins.gradle.org/api/gradle/2.14.1/plugin/use/com.jfrog.bintray/1.7.3'.\n   > sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target\n\nhttps://travis-ci.org/mockito/mockito/jobs/184938189#L269"
+        },
+        {
+            "hash": "6f55dd7e45678bc55d905b2c16fb11677be1bff0",
+            "message": "Added workaround for Bintray bug"
+        },
+        {
+            "hash": "fcf8d3e38c8debdad2e8691b32a31763b196d3cd",
+            "message": "mockito-core back to 'maven' bintray repo\n\nfor now, removed central sync"
+        },
+        {
+            "hash": "6582368f2a21782b510c768b144433d5bd602868",
+            "message": "Made testing releases simpler\n\n- Made it so that 'releaseNeeded' can be -x from command line to force a release\n- Fixed the logic that determined if we're a Travis pull request build or not\n- Added some extra logging to make validating releases easier"
+        },
+        {
+            "hash": "1066c593e7f21d358761baef849efefd8e72dbc3",
+            "message": "Bumped Bintray plugin\n\nChanged mockito-core target repo to be 'test'"
+        },
+        {
+            "hash": "57632e91c585b8a6f6099f9b631d79259cfe406c",
+            "message": "Increment version '2.3.7' -> '2.3.8' by Travis CI build 1999 [ci skip]"
+        },
+        {
+            "hash": "38f6adea37a6f5f51b39ad46eddb49678f71763b",
+            "message": "Update release notes by Travis CI build 1999 [ci skip]"
+        },
+        {
+            "hash": "c024870e6df8a748a3f1ce5008a315fa490e28da",
+            "message": "Merge pull request #832 from mockito/submodule-2\n\nFixed problem with publication"
+        },
+        {
+            "hash": "815b8574dcb55c737526057a24fa122725802599",
+            "message": "Description needs to be provided\n\nEvery submodule that wishes to be published needs to contribute the description."
+        },
+        {
+            "hash": "132fa1ebb2bcb083342447be4321c4370b2e44ca",
+            "message": "Release automation\n\n1. Made BintrayRepo configurable. For some reason, bintray plugin publishes android submodule despite it is configured not to.\n2. Turned off mockito-core auto-publication. I want to experiment with this. The consequence is that mockito will not be automatically visible in Bintray and we need to manuallly pull the trigger in Bintray."
+        },
+        {
+            "hash": "0db8f0476d6dfee44c164349a69a45f7767577b3",
+            "message": "Merge pull request #809 from mockito/android-release\n\nAutomated publication of mockito submodule like mockito-android"
+        },
+        {
+            "hash": "8a0a9a45e0e45396154b78d04b54fa7ebebaff9a",
+            "message": "Moved gradle files around a little bit\n\nFor clarity"
+        },
+        {
+            "hash": "245cdc75159f81c9591e410ed1523ef44515536c",
+            "message": "Fixed pom.xml problem"
+        },
+        {
+            "hash": "2740407c9602bc08433024e6c89c9d7e67beae7a",
+            "message": "Added more integ-test coverage\n\nAdded an integ test that ensures that generated pom.xml contains correct set of dependencies."
+        },
+        {
+            "hash": "9b3cc762a6d927130450f456342f2c3288b34272",
+            "message": "Prevented merging"
+        },
+        {
+            "hash": "c274eb93e1b45603a1361362a7b9f8d6a15dd22c",
+            "message": "Started publishing to main repo again"
+        },
+        {
+            "hash": "c1c2a65d52ca5af990cd7423776003a69574e79c",
+            "message": "Fixed publication bug"
+        },
+        {
+            "hash": "a5af879fee87774cf4ebf7cc8c0fecaf268c29af",
+            "message": "Started releasing to test repo\n\nTo flush out publication bug that publishes versions from PRs."
+        },
+        {
+            "hash": "acb2a9e4239b9a1b28bd3b305dee32720dd8d366",
+            "message": "Removed build scans for now\n\nUntil we resolve the problem with failures to send build scans"
+        },
+        {
+            "hash": "dc13d58924e0a7d955255eb5c798816f191aaab0",
+            "message": "Rename job for clarity\n\nAlso updated the documentation"
+        },
+        {
+            "hash": "30ccfe0826814009da77d41a6fd0be29d778925f",
+            "message": "Fixed typo"
+        },
+        {
+            "hash": "81c0416a67a58a2d1993a3a83bf7b1a5563c6462",
+            "message": "Added documentation"
+        },
+        {
+            "hash": "8d7a2802f8d1efb6c2844ab83513ba3729907b0b",
+            "message": "Ensured that that all artifacts are published"
+        },
+        {
+            "hash": "fa53b951ef37841859bb6ea6e5def0e8a468da2f",
+            "message": "Improved the releasability\n\nCleaned up the test utils from the build scripts"
+        },
+        {
+            "hash": "5afc65824b45d3a9579c52fd469d6c0ec23d8d09",
+            "message": "Made the build scripts cleaner\n\nPushed some complexity away and created convenience properties"
+        },
+        {
+            "hash": "0ce7cd935e3194a2a70f256fb762560867257c86",
+            "message": "Made android module release easier to test"
+        },
+        {
+            "hash": "763520e98690d3e8c6cb42a84118c4de3754bc9b",
+            "message": "Enabled publishing 'android submodule'"
+        },
+        {
+            "hash": "76faa92a5e56e21b4d2c2776fcddc3493c554a0e",
+            "message": "Made releasing easier\n\nEmit clean message if the env variables are not provided"
+        },
+        {
+            "hash": "1d41eeaf8ae3bac9478ff76034eab78dd59a732c",
+            "message": "More Gradle build scripts refactoring\n\nMade the publication generic"
+        },
+        {
+            "hash": "280c6e0582980fa4396695a4c4ad4e46529d98b3",
+            "message": "More Gradle build scripts refactoring\n\nGetting closer to have the publication logic reusable"
+        },
+        {
+            "hash": "ea6a7d1aa4258b35c65fc2788735ab4410a7d33b",
+            "message": "Gradle build scripts refactoring\n\nThe goal is to make additional jars publishable, like 'mockito-android'"
+        },
+        {
+            "hash": "269171b73e31b08697cb2aa4bb06e8d46d2f212a",
+            "message": "Increment version '2.3.6' -> '2.3.7' by Travis CI build 1994 [ci skip]"
+        }
+    ],
+    "issues": []
+}

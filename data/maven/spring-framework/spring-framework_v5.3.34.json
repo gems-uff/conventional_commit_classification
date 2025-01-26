@@ -1,0 +1,126 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.34",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 19,
+    "start_delay": 0.0,
+    "duration": 27.90931712962963,
+    "commits_info": [
+        {
+            "hash": "fb9a56f40cf6d6a978f92c0c0d52515f59efb0c9",
+            "message": "Release v5.3.34"
+        },
+        {
+            "hash": "7678286fb3efa7bd7719ffe3055da9ed01e9f2f9",
+            "message": "Refine UriComponentsBuilder parsing\n\nThis commit refines the expressions for the scheme, user info, host and\nport parts of the URL in UriComponentsBuilder to better conform to\nRFC 3986.\n\nFixes gh-32618"
+        },
+        {
+            "hash": "510ff8772150d8aa47f48f5fbf0b54d08dcd97a2",
+            "message": "Upgrade to Reactor 2020.0.43\n\nCloses gh-32594"
+        },
+        {
+            "hash": "7609727433da969969b07b66232f6ce57add50ba",
+            "message": "Detect bridge methods across ApplicationContexts in MethodIntrospector\n\nPrior to this commit, MethodIntrospector failed to properly detect\nbridge methods for subsequent invocations of selectMethods() with the\nsame targetType and MetadataLookup, if such subsequent invocations\noccurred after the ApplicationContext had been refreshed.\n\nThe reason this occurs is due to the following.\n\n- Class#getDeclaredMethods() always returns \"child copies\" of the\n  underlying Method instances -- which means that `equals()` should be\n  used instead of `==` whenever the compared Method instances can come\n  from different sources (such as the static caches mentioned below).\n\n- BridgeMethodResolver caches resolved bridge methods in a static cache\n  -- which is never cleared.\n\n- ReflectionUtils caches declared methods in a static cache\n  -- which gets cleared when an ApplicationContext is refreshed.\n\nConsequently, if you attempt to load an ApplicationContext twice in the\nsame ClassLoader, the second attempt uses the existing, populated cache\nfor bridged methods but a cleared, empty cache for declared methods.\nThis results in new invocations of Class#getDeclaredMethods(), and\nidentity checks with `==` then fail to detect equivalent bridge methods.\n\nThis commit addresses this by additionally comparing bridge methods\nusing `equals()` in MethodIntrospector.selectMethods().\n\nNote that the `==` checks remain in place as an optimization for when\n`equals()` is unnecessary.\n\nCloses gh-32586\n\n(cherry picked from commit e702733c7b787300d63c21bc473e1aab5c882991)"
+        },
+        {
+            "hash": "a0ae96da6972fd9a535febc9be99d29241117b9f",
+            "message": "Upgrade to Netty 4.1.108"
+        },
+        {
+            "hash": "1d2daa5d6ec1b0725316be350481febc63fcc6f5",
+            "message": "Log column type for limited support message in getResultSetValue\n\nCloses gh-32601\n\n(cherry picked from commit c5590ae9e6a3d75feae96f3015a65462c67dbcf8)"
+        },
+        {
+            "hash": "239594595c9cfd00243f84a91bbc6f16b0f7d3e5",
+            "message": "Upgrade actions that use deprecated features"
+        },
+        {
+            "hash": "76c0017180c07fa60bf9929ee38f1a6ede662478",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0628b479f15dfb3a7d44bde7b86dfec5d9430c11",
+            "message": "Propagate JMS IllegalStateException from commit/rollbackIfNecessary\n\nCloses gh-32473\n\n(cherry picked from commit cd7ba1835cfeb37c0a28f1eba97a9956697b1623)"
+        },
+        {
+            "hash": "f6205d4207c6728fb4293d394639f953986d9895",
+            "message": "Avoid unnecessary Annotation array cloning in TypeDescriptor\n\nCloses gh-32476\n\n(cherry picked from commit 42a4f2896222959d85ba4642542cfe05aff91f2c)"
+        },
+        {
+            "hash": "d21100fea02361685bd87f4d25283365e14df073",
+            "message": "Restore original toString representation (revert accidental backport)\n\nSee gh-32405"
+        },
+        {
+            "hash": "f7f1028428a7010471b72f026d7d87bac47b1d8d",
+            "message": "Remove superfluous @NonNull declarations"
+        },
+        {
+            "hash": "1cb0c7c0363b4c58a863b0b90a643c71d06ab7dc",
+            "message": "Avoid cloning empty Annotation array in TypeDescriptor (backport)\n\nCloses gh-32405"
+        },
+        {
+            "hash": "51d70dcf343c6aed6feb0ca0b492eba2a6972c26",
+            "message": "Polishing"
+        },
+        {
+            "hash": "61f7087911a87848de3adbd5a7780463ac040cad",
+            "message": "Consistently apply TaskDecorator to ManagedExecutorService as well\n\nCloses gh-32455"
+        },
+        {
+            "hash": "2ff8a00e9aad7330f84608c5dd91631ef08131a0",
+            "message": "Enable backport bot on 5.3.x\n\nCloses gh-32451"
+        },
+        {
+            "hash": "a653b85378f5421ea01eb97386d58151ac737db3",
+            "message": "Harmonize Concourse configuration"
+        },
+        {
+            "hash": "17650e074137e95bac57c3de4c778d3e0b47d7d6",
+            "message": "Move CI to GitHub Actions\n\nCloses gh-32449"
+        },
+        {
+            "hash": "0c17d257fb62bb1520cece2cf155e46163be26ed",
+            "message": "Next development version (v5.3.34-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32618",
+            "title": "Refine scheme, userinfo, host and port parsing in UriComponentsBuilder"
+        },
+        {
+            "number": "32594",
+            "title": "Upgrade to Reactor 2020.0.43"
+        },
+        {
+            "number": "32586",
+            "title": "`MethodIntrospector.selectMethods()` fails to detect bridge methods across ApplicationContexts"
+        },
+        {
+            "number": "32601",
+            "title": "Log column type for limited support message in `JdbcUtils.getResultSetValue`"
+        },
+        {
+            "number": "32473",
+            "title": "JmsUtils.commitIfNecessary catches and ignores JMS IllegalStateException, losing message with ActiveMQ Artemis"
+        },
+        {
+            "number": "32476",
+            "title": "Avoid additional unnecessary `Annotation` array cloning in `TypeDescriptor`"
+        },
+        {
+            "number": "32455",
+            "title": "Consistently apply TaskDecorator to ManagedExecutorService as well"
+        },
+        {
+            "number": "32451",
+            "title": "Backport bot not running on 5.3.x"
+        },
+        {
+            "number": "32449",
+            "title": " Move CI to GitHub Actions"
+        }
+    ]
+}

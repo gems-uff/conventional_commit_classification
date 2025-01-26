@@ -1,0 +1,686 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.4.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 103,
+    "start_delay": 0.0,
+    "duration": 30.638958333333335,
+    "commits_info": [
+        {
+            "hash": "623f9ff49a1e256d7378fcc54cdc501ed90634e6",
+            "message": "Release v2.4.7"
+        },
+        {
+            "hash": "7c4f178c176be7e4623b8c73b6a3c2305dba105d",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "3b48526732bb7c4f7487a30641723be15451cb8b",
+            "message": "Polish"
+        },
+        {
+            "hash": "456fcac0f29719eb8980c3e19a0efab2f11192cc",
+            "message": "Upgrade CI to Docker 20.10.7\n\nCloses gh-26842"
+        },
+        {
+            "hash": "63806d5bac5033a02235347cbef0eb9f43ee851c",
+            "message": "Remove duplicate copyright notice from docs"
+        },
+        {
+            "hash": "d4200a7c5608cac9bf74c2889d0688b2cbff7186",
+            "message": "Upgrade to Spring Integration 5.3.8.RELEASE\n\nCloses gh-26772"
+        },
+        {
+            "hash": "03e1b255eaaf263f9a6526d77462069fe4aff298",
+            "message": "Upgrade to Spring AMQP 2.2.18.RELEASE\n\nCloses gh-26770"
+        },
+        {
+            "hash": "53068a24897be7dfdeb73ec968dbe042b09de7ca",
+            "message": "Upgrade to Spring Kafka 2.5.14.RELEASE\n\nCloses gh-26771"
+        },
+        {
+            "hash": "872ec0bf003773b222b9598bd16bfa2ec5acb4ff",
+            "message": "Upgrade to RSocket 1.0.5\n\nCloses gh-26832"
+        },
+        {
+            "hash": "f73e7bcc0c3b11c14c4207d6b7139cfbea05f40b",
+            "message": "Upgrade to Neo4j OGM 3.2.24\n\nCloses gh-26831"
+        },
+        {
+            "hash": "1ef0068b38467b88e0a4fc9837ce347f8bf3ee5b",
+            "message": "Upgrade to Jetty 9.4.42.v20210604\n\nCloses gh-26830"
+        },
+        {
+            "hash": "0563955324bd67ea117d35a28cdde2ef24d8bf6b",
+            "message": "Upgrade to Jetty Reactive HTTPClient 1.1.9\n\nCloses gh-26829"
+        },
+        {
+            "hash": "d1e1796f768ea0e2c2ad761efeee785f1194192d",
+            "message": "Consider overridden getRootUri() when getting root URI\n\nFixes gh-26812"
+        },
+        {
+            "hash": "1f6983c4c9e8fa200df79b4ab0964e22389e1291",
+            "message": "Make CompositeHealth.getDetails() public\n\nChange `CompositeHealth.getDetails()` to public so that it serializes\ncorrectly when `MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS` is\ndisabled.\n\nFixes gh-26797"
+        },
+        {
+            "hash": "9e1c78da99da0bd8e1ce557d96c7224b2cfb2a2e",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "1e680241ed837bdce7ae808fe96f4876ae6c55c4",
+            "message": "Upgrade to Johnzon 1.2.13\n\nCloses gh-26781"
+        },
+        {
+            "hash": "3a0794da4b526ff935c39fd226fff5fc40adfb14",
+            "message": "Upgrade to JBoss Logging 3.4.2.Final\n\nCloses gh-26780"
+        },
+        {
+            "hash": "84a4693dcff52d1e20efe008f122a8bec0f1c2e9",
+            "message": "Upgrade to Hibernate 5.4.32.Final\n\nCloses gh-26779"
+        },
+        {
+            "hash": "790a8c1f478fc68fc666f40095e175bda70c42c2",
+            "message": "Upgrade to Gson 2.8.7\n\nCloses gh-26778"
+        },
+        {
+            "hash": "7ccbe3c5f8663fe12d54dea0ffa6aef6f5b257f2",
+            "message": "Upgrade to Dropwizard Metrics 4.1.22\n\nCloses gh-26777"
+        },
+        {
+            "hash": "f3049e8e94665a6d6b4db8f221cd462d919019e7",
+            "message": "Upgrade to AppEngine SDK 1.9.89\n\nCloses gh-26776"
+        },
+        {
+            "hash": "39f259554baf6ff28f3b9458a1cdd12736b93a06",
+            "message": "Start building against Spring Integration 5.3.8 snapshots\n\nSee gh-26772"
+        },
+        {
+            "hash": "37625854b6cfa4abf769bb2bd6d88398b03ac013",
+            "message": "Start building against Spring Kafka 2.5.14 snapshots\n\nSee gh-26771"
+        },
+        {
+            "hash": "323d1e224dd5e45d6df8c4fcb62e5263ac79415a",
+            "message": "Start building against Spring AMQP 2.2.18 snapshots\n\nSee gh-26770"
+        },
+        {
+            "hash": "6490edc16db7233a290b4d4b7776d9acf5eed9be",
+            "message": "Polish"
+        },
+        {
+            "hash": "0d904666a73bf6e937a2763fa14d2626bd67a06e",
+            "message": "Merge pull request #26737 from dreis2211\n\n* pr/26737:\n  Remove reference to surefirebooter JAR\n\nCloses gh-26737"
+        },
+        {
+            "hash": "f470151535d78ef6a14b85488d26fb9ea75cfd7a",
+            "message": "Remove reference to surefirebooter JAR\n\nSee gh-26737"
+        },
+        {
+            "hash": "1beee5700c9a2e9cd8a81fdfcb95b2e2a7e24af2",
+            "message": "Don't close early when SecurityManager present\n\nUpdate `JarFile` and `JarFileWrapper` classes so that they no longer\nclose the `JarFile` early if a `SecurityManager` is in use.\n\nPrior to this commit, the closed `JarFile` would cause (an ultimately\nswallowed) NPE in `ZipFile` which manifested itself as a\n`ClassNotFoundException` when starting the app.\n\nCloses gh-25538"
+        },
+        {
+            "hash": "d0e2925dcca6db2e803d8e59c060e189540d3e1f",
+            "message": "Fix link to Spring Data JPA docs\n\nFixes gh-26736"
+        },
+        {
+            "hash": "15324956a8209ca72585ac53fb8624529cfab2e3",
+            "message": "Align int and long in RandomValuePropertySource\n\nThis commit aligns int and long so that a random number is generated\nby delegating to ints/longs in the JDK's Random API. In the case of a\nsingle bound value, it needs to be greater than 0 because 0 is used as\nthe lower bound.\n\nFixes gh-26628"
+        },
+        {
+            "hash": "3f23b9265d108ecb9517851d7d37f02072c7ef13",
+            "message": "Clarify when a connection pool is created for Redis\n\nCloses gh-26733"
+        },
+        {
+            "hash": "7e4defbcba0033e24df0596b0da6541545963d9e",
+            "message": "Properly guard LogbackLoggingSystem\n\nPreviously, LoggingSystem#get would chose Logback by the sole presence\nof a class in logback-core, with the assumption that logback-classic is\nalso on the classpath. An app that only had the former would therefore\nfail.\n\nThis commit updates the condition to check for a class in\nlogback-classic instead.\n\nCloses gh-26711"
+        },
+        {
+            "hash": "647451087fccd174769ca429a05eb8e8ea20197e",
+            "message": "Merge pull request #26713 from weixsun\n\n* pr/26713:\n  Remove redudant space\n\nCloses gh-26713"
+        },
+        {
+            "hash": "4b3bf75a4ce64b12aa193d1acc4eea3947890550",
+            "message": "Remove redudant space\n\nSee gh-26713"
+        },
+        {
+            "hash": "617f7b9587436f81fc1e82c01566154010d2ae5c",
+            "message": "Improve ImageName/ImageReference parse performance\n\nUpdate `ImageName` and `ImageReference` to use distinct regex patterns\nto parse specific parts of the value. Prior to this commit a single\nregex pattern was used which could hang given certain input strings.\n\nFixes gh-23115"
+        },
+        {
+            "hash": "f55e4c08f53527afd591d9aecd22bf24bea8481c",
+            "message": "Add note about Kubernetes termination grace period\n\nCloses gh-26469"
+        },
+        {
+            "hash": "67fe60ba8a77cca0a82df4e81c0e650db0a68697",
+            "message": "Add missing static on JerseyInfrastructureConfiguration\n\nCloses gh-26695"
+        },
+        {
+            "hash": "3fbf5eeb5bf442318972b1b3085638f7666195ec",
+            "message": "Document spring.profiles.default in the reference guide\n\nCloses gh-26592"
+        },
+        {
+            "hash": "39e3746cf6ad3b16e4cadbfcb192a3808a8edc2a",
+            "message": "Force Eclipse to use JavaSE-1.8 runtime\n\nAdd `EclipseConventions` to force the JavaSE-1.8 runtime to be applied\nto the imported projects.\n\nCloses gh-26669"
+        },
+        {
+            "hash": "b5ebf836e38dc2e16afeb4c7c635943776e5a8d5",
+            "message": "Document spring.profiles.default\n\nCloses gh-26592"
+        },
+        {
+            "hash": "9bdb205dbae53cd5526373f105e68ef871b8da91",
+            "message": "Merge pull request #26632 from dreis2211\n\n* pr/26632:\n  Remove workaround for SUREFIRE-1679\n\nCloses gh-26632"
+        },
+        {
+            "hash": "01ee6190a287f91f107f6bea4ccbe19ef4d44966",
+            "message": "Remove workaround for SUREFIRE-1679\n\nSee gh-26632"
+        },
+        {
+            "hash": "2aa1c9764a81d2b9c5962293aefb1673a29b9b83",
+            "message": "Upgrade CI to Docker 20.10.7\n\nCloses gh-26841"
+        },
+        {
+            "hash": "ed386e67df58d16c3848cdf46feb65ef9e2d4b07",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "e3042b38f5c921c163a5648ead78f0c60871198f",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "d79b3597bb16d607273a3ae4716d11bcf08b0b8c",
+            "message": "Upgrade to Spring AMQP 2.3.8\n\nCloses gh-26762"
+        },
+        {
+            "hash": "f111a905253e436ae7b18d50d20f8acfd2ee06cc",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "4a11c6a1353484edf0f89e97bc88c93cdfcda32c",
+            "message": "Upgrade to Spring Kafka 2.6.9\n\nCloses gh-26763"
+        },
+        {
+            "hash": "66823c76410228975b83c359c19ad4cfc3e56320",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "a1c5fcca58f7a7d7b77d10d392834167586141d1",
+            "message": "Move common Asciidoctor configuration into our conventions\n\nCloses gh-26620"
+        },
+        {
+            "hash": "8ce7a2b5a3caf5c2933288c8eee223e1d3a364c8",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "6a7a11ba5917dd123e4ddf9b15ef3a70f68cc7e2",
+            "message": "Upgrade to RSocket 1.1.1\n\nCloses gh-26836"
+        },
+        {
+            "hash": "66ae421f7416b7b5d3bc6cb6da133a530ce6acae",
+            "message": "Upgrade to Neo4j Java Driver 4.1.3\n\nCloses gh-26835"
+        },
+        {
+            "hash": "f9a0b0308da685decc1b1d9f0bc74b89f2e73068",
+            "message": "Upgrade to Jetty 9.4.42.v20210604\n\nCloses gh-26834"
+        },
+        {
+            "hash": "6cdbed7dc3db986707be2778811d8aceccb7784c",
+            "message": "Upgrade to Jetty Reactive HTTPClient 1.1.9\n\nCloses gh-26833"
+        },
+        {
+            "hash": "e9592229fcb1a3de462f0556ec71f63d3a42a747",
+            "message": "Upgrade to Spring Framework 5.3.8\n\nCloses gh-26760"
+        },
+        {
+            "hash": "303edac6bb093367552b8d6fffe0be33df292ff3",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26826"
+        },
+        {
+            "hash": "d5264664e606d7ab24070c0d32bde372af21165d",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26822"
+        },
+        {
+            "hash": "4d62e47c5df1116ebba66c9a59232014cadd653f",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "bac89a3919d9aba1a842d63e61b753f11ba852d0",
+            "message": "Upgrade to Undertow 2.2.8.Final\n\nCloses gh-26791"
+        },
+        {
+            "hash": "d6f22f080204673b5afcc4b031edf11b8ef3ef2e",
+            "message": "Upgrade to jOOQ 3.14.11\n\nCloses gh-26790"
+        },
+        {
+            "hash": "99169af57c8d0f6daaff6b7c42f454ec02794c21",
+            "message": "Upgrade to Johnzon 1.2.13\n\nCloses gh-26789"
+        },
+        {
+            "hash": "fe249dd772bef65e05d41ee4058e9244abb2373c",
+            "message": "Upgrade to JBoss Logging 3.4.2.Final\n\nCloses gh-26788"
+        },
+        {
+            "hash": "5be4a9ab50e424bb65e90325a96162e40da8a86e",
+            "message": "Upgrade to Hibernate 5.4.32.Final\n\nCloses gh-26787"
+        },
+        {
+            "hash": "e496d2e3219e6dbf59d2bf61c4ce401aad8389ac",
+            "message": "Upgrade to Gson 2.8.7\n\nCloses gh-26786"
+        },
+        {
+            "hash": "16ff9318b510faf19ff52e75cd25504bfd801020",
+            "message": "Upgrade to Ehcache3 3.9.4\n\nCloses gh-26785"
+        },
+        {
+            "hash": "90f96e2d48af25dad0648e084165e80f9c31b87a",
+            "message": "Upgrade to Dropwizard Metrics 4.1.22\n\nCloses gh-26784"
+        },
+        {
+            "hash": "cfaab0904b7485058299e642212eb8f00393e987",
+            "message": "Upgrade to AppEngine SDK 1.9.89\n\nCloses gh-26783"
+        },
+        {
+            "hash": "7396e1e743c5098fa36e88cc130f4c6150cd963f",
+            "message": "Fix property ordering within '.' and '/config'\n\nAllow groups to be used with standard locations so that order of\nprofile-specific files is consistent.\n\nPrior to this commit, the default search locations considered for\napplication properties/yaml files was the following:\n\n\toptional:classpath:/\n\toptional:classpath:/config/\n\toptional:file:./\n\toptional:file:./config/\n\toptional:file:./config/*/\n\nEach of these locations was independent which could cause confusion\nif certain combinations were used. For example, if profile-specific\nfiles were added to `classpath:/` and `classpath:/config/` then the\nlatter would always override the former regardless of the profile\nordering.\n\nThis commit updates `StandardConfigDataLocationResolver` so that a\ngroup of locations can be specified for each item. This allows us to\ndefine the following set of search locations which provide more logical\nordering for profile-specific files\n\n\toptional:classpath:/;optional:classpath:/config/\n\toptional:file:./;optional:file:./config/;optional:file:./config/*/\n\nCloses gh-26593"
+        },
+        {
+            "hash": "c0cbef9aaa0e38e7b89e3577b4476cada7438392",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "d1652c2749f08c712b3c65462a4dd36a8e04ed90",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "de06bbb4dc89c7aa7a5b8925720cfafb20c2d72d",
+            "message": "Start building against Spring Kafka 2.6.9 snapshots\n\nSee gh-26763"
+        },
+        {
+            "hash": "4c31ccb576b029ec40f4981321ee2ae3a28084cb",
+            "message": "Start building against Spring AMQP 2.3.8 snapshots\n\nSee gh-26762"
+        },
+        {
+            "hash": "d2fe417bbb76555607cc627a416ca16737dcb2a4",
+            "message": "Start building against Spring Framework 5.3.8 snapshots\n\nSee gh-26760"
+        },
+        {
+            "hash": "aea859711479a8933b31fe299b00d8c35a1cf6af",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "0da0d2d4693779a91cd2e7c18ca4c3e567d4d633",
+            "message": "Prevent nested profile-specific resolution\n\nUpdate the `ConfigDataEnvironment` so that the `resolveProfileSpecific`\nmethod of `ConfigDataLocationResolver` is no longer called when\nresolving imports declared in a profile-specific file.\n\nFixes gh-26753"
+        },
+        {
+            "hash": "d1b256a1693657fd32cc0991214101a24e838cce",
+            "message": "Prevent indirect standard profile-specific imports\n\nUpdate `StandardConfigDataLocationResolver` so that profile-specific\nimports can only be used when there is no parent import.\n\nPrior to this commit, given the following application.properties file:\n\n\tspring.profiles.active=p1,p2\n\tspring.config.import=other.properties\n\nWe would attempt to import `other.properties`, `other-p1.properties`\nand `other-p2.properties`. This seems quite confusing and when we really\nonly need to support profile-specific properties for the initial root\nset of locations.\n\nFixes gh-26752"
+        },
+        {
+            "hash": "ad99aa2f4ac0be995a67f3cbd92722215411c0d0",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26747"
+        },
+        {
+            "hash": "1cda557d033a72d96db9f398793c0ff63719b24c",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26743"
+        },
+        {
+            "hash": "2ff3fe22e57bf3f59bbdfeae29bc8fbeb0dff2fd",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26740"
+        },
+        {
+            "hash": "b102fdd3928b88ce70a59e6cf877dba0215b6f8d",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26738"
+        },
+        {
+            "hash": "363c43e31573dc2518408406f5dacdd89f36af4e",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26734"
+        },
+        {
+            "hash": "c8959180fe76834d323efd7d372a593e741d1f36",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26724"
+        },
+        {
+            "hash": "897fd63faff77842089dcae340e5986303e2005c",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26716"
+        },
+        {
+            "hash": "49d3ecc2b2cde573879fb9407a62259c8f5bdb4f",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26702"
+        },
+        {
+            "hash": "5314bda48de16f48c92706cdadf242d390c6035a",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26700"
+        },
+        {
+            "hash": "7f5adb7e9dfe5cd96f3077effb10f67718ebac04",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26696"
+        },
+        {
+            "hash": "454d72d9b2ede41c228fabe00d4d752079590ad4",
+            "message": "Document spring.profiles.default in the reference guide\n\nCloses gh-26592"
+        },
+        {
+            "hash": "49c30854afa6762022e7a661ee9606bdb20ae5c7",
+            "message": "Rename PRODUCTION_RUNTIME_CLASSPATH_NAME\n\nRename the now public constant for consistency with the JavaPlugin.\n\nSee gh-26686"
+        },
+        {
+            "hash": "1e0ae9d5e34f199b4c9199cb6512c13ea941b4f3",
+            "message": "Make PRODUCTION_RUNTIME_CLASSPATH_NAME public\n\nChange `SpringBootPlugin.PRODUCTION_RUNTIME_CLASSPATH_NAME` from package\nprivate to public so that it can be accessed in user build scripts.\n\nFixes gh-26686"
+        },
+        {
+            "hash": "8661f74f2e14dc96055ea6a96e3282b4e8e036ef",
+            "message": "Revert \"Test optional directories without sub-directories\"\n\nThis reverts commit 3f858ed8a4b4f190885f7c4a5eff1c423f8546a9\nsince the test already existed."
+        },
+        {
+            "hash": "35f1194651b908fce4eddf33be729d8e47590de9",
+            "message": "Merge pull request #26677 from izeye\n\n* pr/26677:\n  Test optional directories without sub-directories\n  Fix \"Allow optional directories without sub-directories\"\n\nCloses gh-26677"
+        },
+        {
+            "hash": "3f858ed8a4b4f190885f7c4a5eff1c423f8546a9",
+            "message": "Test optional directories without sub-directories\n\nAdd an additional test to ensure that optional wildcard\ndirectory patterns do not fail.\n\nSee gh-26677"
+        },
+        {
+            "hash": "38b9a833bd16b12a4fe73fe3595e15e2c19c4e64",
+            "message": "Fix \"Allow optional directories without sub-directories\"\n\nFix the update to `resolvePatternEmptyDirectories` introduced in\ncommit 01dd68e29edc which was incorrectly checking `isOptional`.\n\nSee gh-26677"
+        },
+        {
+            "hash": "01dd68e29edc43cb52651f568af482d94ade01fe",
+            "message": "Allow optional directories without sub-directories\n\nUpdate `StandardConfigDataLocationResolver` so that directory resources\nare only required when the location is not optional.\n\nCloses gh-26627\n\nCo-authored-by: Phillip Webb <pwebb@vmware.com>"
+        },
+        {
+            "hash": "14f578ed80db4a8a4c75b8e78e70240fbe93fc55",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26670"
+        },
+        {
+            "hash": "967a794fa8263a854942a7c4ca90a52f2746fb72",
+            "message": "Merge pull request #26421 from lower-case\n\n* pr/26421:\n  Polish \"Clarify Kotlin version requirements in documentation\"\n  Clarify Kotlin version requirements in documentation\n\nCloses gh-26421"
+        },
+        {
+            "hash": "fe1e2319b2090040746aecb7ab1be141b381f0c9",
+            "message": "Polish \"Clarify Kotlin version requirements in documentation\"\n\nSee gh-26421"
+        },
+        {
+            "hash": "944ba34556d2c69cdfba3799c5d565d18509a643",
+            "message": "Clarify Kotlin version requirements in documentation\n\nSee gh-26421"
+        },
+        {
+            "hash": "9ff372c9152a455c3092fda861717d2e540f6b23",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26653"
+        },
+        {
+            "hash": "4955c80da5a369cc2d2c8474b964b7502d4ac9ea",
+            "message": "Remove test that is no long necessary"
+        },
+        {
+            "hash": "8f2b180eb622c3c3707c16de342037cbe20db3b8",
+            "message": "Use Sso Binding from SAML metadata uri if present\n\nIf the property is explicitly configured, that gets used.\nIf none are present, we rely on Spring Security's default value of\nREDIRECT.\n\nFixes gh-26454"
+        },
+        {
+            "hash": "942691753d027c6ac93c982a5ad0b2cdc220def5",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-26645"
+        }
+    ],
+    "issues": [
+        {
+            "number": "26842",
+            "title": "Upgrade CI to Docker 20.10.7"
+        },
+        {
+            "number": "26772",
+            "title": "Upgrade to Spring Integration 5.3.8"
+        },
+        {
+            "number": "26770",
+            "title": "Upgrade to Spring AMQP 2.2.18"
+        },
+        {
+            "number": "26771",
+            "title": "Upgrade to Spring Kafka 2.5.14"
+        },
+        {
+            "number": "26832",
+            "title": "Upgrade to RSocket 1.0.5"
+        },
+        {
+            "number": "26831",
+            "title": "Upgrade to Neo4j OGM 3.2.24"
+        },
+        {
+            "number": "26830",
+            "title": "Upgrade to Jetty 9.4.42.v20210604"
+        },
+        {
+            "number": "26829",
+            "title": "Upgrade to Jetty Reactive HTTPClient 1.1.9"
+        },
+        {
+            "number": "26812",
+            "title": "MetricsRestTemplateCustomizer and LocalHostUriTemplateHandler cannot be used together when building a RestTemplate with RestTemplateBuilder"
+        },
+        {
+            "number": "26797",
+            "title": "CompositeHealth.getDetails() does not serialize if MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS is disabled"
+        },
+        {
+            "number": "26781",
+            "title": "Upgrade to Johnzon 1.2.13"
+        },
+        {
+            "number": "26780",
+            "title": "Upgrade to JBoss Logging 3.4.2.Final"
+        },
+        {
+            "number": "26779",
+            "title": "Upgrade to Hibernate 5.4.32.Final"
+        },
+        {
+            "number": "26778",
+            "title": "Upgrade to Gson 2.8.7"
+        },
+        {
+            "number": "26777",
+            "title": "Upgrade to Dropwizard Metrics 4.1.22"
+        },
+        {
+            "number": "26776",
+            "title": "Upgrade to AppEngine SDK 1.9.89"
+        },
+        {
+            "number": "25538",
+            "title": "Jar startup fails on JDK 11 with a SecurityManager enabled"
+        },
+        {
+            "number": "26736",
+            "title": "Link to Spring Data JPA points to Spring Data JDBC"
+        },
+        {
+            "number": "26628",
+            "title": "Possible divide by zero bugs when using RandomValuePropertySource"
+        },
+        {
+            "number": "26733",
+            "title": "Clarify when a connection pool is created for Redis"
+        },
+        {
+            "number": "26711",
+            "title": "LoggingSystem should not return LogbackLoggingSystem if logback-classic is not available"
+        },
+        {
+            "number": "23115",
+            "title": "bootBuildImage runs forever when a custom image name is used and the version contains an illegal character"
+        },
+        {
+            "number": "26469",
+            "title": "Document Kubernetes terminationGracePeriodSeconds"
+        },
+        {
+            "number": "26695",
+            "title": "Non-static nested @Configuration in JerseySameManagementContextConfiguration"
+        },
+        {
+            "number": "26592",
+            "title": "Document spring.profiles.default property"
+        },
+        {
+            "number": "26669",
+            "title": "Eclipse import has incorrect JRE System Library"
+        },
+        {
+            "number": "26841",
+            "title": "Upgrade CI to Docker 20.10.7"
+        },
+        {
+            "number": "26762",
+            "title": "Upgrade to Spring AMQP 2.3.8"
+        },
+        {
+            "number": "26763",
+            "title": "Upgrade to Spring Kafka 2.6.9"
+        },
+        {
+            "number": "26620",
+            "title": "Configure more of Asciidoctor by convention"
+        },
+        {
+            "number": "26836",
+            "title": "Upgrade to RSocket 1.1.1"
+        },
+        {
+            "number": "26835",
+            "title": "Upgrade to Neo4j Java Driver 4.1.3"
+        },
+        {
+            "number": "26834",
+            "title": "Upgrade to Jetty 9.4.42.v20210604"
+        },
+        {
+            "number": "26833",
+            "title": "Upgrade to Jetty Reactive HTTPClient 1.1.9"
+        },
+        {
+            "number": "26760",
+            "title": "Upgrade to Spring Framework 5.3.8"
+        },
+        {
+            "number": "26826",
+            "title": "MetricsRestTemplateCustomizer and LocalHostUriTemplateHandler cannot be used together when building a RestTemplate with RestTemplateBuilder"
+        },
+        {
+            "number": "26822",
+            "title": "CompositeHealth.getDetails() does not serialize if MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS is disabled"
+        },
+        {
+            "number": "26791",
+            "title": "Upgrade to Undertow 2.2.8.Final"
+        },
+        {
+            "number": "26790",
+            "title": "Upgrade to jOOQ 3.14.11"
+        },
+        {
+            "number": "26789",
+            "title": "Upgrade to Johnzon 1.2.13"
+        },
+        {
+            "number": "26788",
+            "title": "Upgrade to JBoss Logging 3.4.2.Final"
+        },
+        {
+            "number": "26787",
+            "title": "Upgrade to Hibernate 5.4.32.Final"
+        },
+        {
+            "number": "26786",
+            "title": "Upgrade to Gson 2.8.7"
+        },
+        {
+            "number": "26785",
+            "title": "Upgrade to Ehcache3 3.9.4"
+        },
+        {
+            "number": "26784",
+            "title": "Upgrade to Dropwizard Metrics 4.1.22"
+        },
+        {
+            "number": "26783",
+            "title": "Upgrade to AppEngine SDK 1.9.89"
+        },
+        {
+            "number": "26593",
+            "title": "Profile-specific property files are incorrectly ordered when both '.' and './config' folders are used in the same application"
+        },
+        {
+            "number": "26753",
+            "title": "A spring.config.import declared in an application-<profile>.properties file calls ConfigDataLocationResolver.resolveProfileSpecific"
+        },
+        {
+            "number": "26752",
+            "title": "A spring.config.import declared in an application.properties file also attempts to import profile-specific files"
+        },
+        {
+            "number": "26747",
+            "title": "Remove reference to surefirebooter JAR"
+        },
+        {
+            "number": "26743",
+            "title": "Jar startup fails on JDK 11 with a SecurityManager enabled"
+        },
+        {
+            "number": "26740",
+            "title": "Link to Spring Data JPA points to Spring Data JDBC"
+        },
+        {
+            "number": "26738",
+            "title": "Possible divide by zero bugs when using RandomValuePropertySource"
+        },
+        {
+            "number": "26734",
+            "title": "Clarify when a connection pool is created for Redis"
+        },
+        {
+            "number": "26724",
+            "title": "LoggingSystem should not return LogbackLoggingSystem if logback-classic is not available"
+        },
+        {
+            "number": "26716",
+            "title": "Polish description of server.servlet.session.cookie.domain"
+        },
+        {
+            "number": "26702",
+            "title": "bootBuildImage runs forever when a custom image name is used and the version contains an illegal character"
+        },
+        {
+            "number": "26700",
+            "title": "Document Kubernetes terminationGracePeriodSeconds"
+        },
+        {
+            "number": "26696",
+            "title": "Non-static nested @Configuration in JerseySameManagementContextConfiguration"
+        },
+        {
+            "number": "26686",
+            "title": "Gradle plugin does not provided public constant for the productionRuntimeClasspath configuration"
+        },
+        {
+            "number": "26627",
+            "title": "No subdirectories found for mandatory directory location 'file:./config/*/' is thrown when config dir exists"
+        },
+        {
+            "number": "26670",
+            "title": "Eclipse import has incorrect JRE System Library"
+        },
+        {
+            "number": "26653",
+            "title": "Document spring.profiles.default property"
+        },
+        {
+            "number": "26454",
+            "title": "SingleSignOnService Binding from SAML IdP metadata gets overridden by default"
+        },
+        {
+            "number": "26645",
+            "title": "Remove workaround for SUREFIRE-1679"
+        }
+    ]
+}

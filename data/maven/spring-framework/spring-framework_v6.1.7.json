@@ -1,0 +1,562 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 86,
+    "start_delay": 0.0,
+    "duration": 35.0183912037037,
+    "commits_info": [
+        {
+            "hash": "5d6f2c84c8ef9f521d7f990c31b499aab1e9d58a",
+            "message": "Release v6.1.7"
+        },
+        {
+            "hash": "010e8a303b1caf3b80e244fc5e4aebc23d854118",
+            "message": "Polishing contribution\n\nCloses gh-32799"
+        },
+        {
+            "hash": "78549d4963a15c6decfd17ea9be15f27c3cdc03c",
+            "message": "Fix cookie management in reactive JdkClientHttpRequest\n\nPrevent cookies to be set to empty in the HTTP request if no cookie\nis present\n\nSee gh-32799"
+        },
+        {
+            "hash": "e4e69101225d915c28f0fff3571fb7f79e7b1db2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2270df515b040d8612c691acc0102d1a224bcd82",
+            "message": "Enforce cleaned URL for root resource from ClassLoader\n\nCloses gh-32828"
+        },
+        {
+            "hash": "70886e32c01a03f8c3080904022f98316497e831",
+            "message": "Upgrade to Reactor 2023.0.6\n\nIncludes AspectJ 1.9.22.1, Tomcat 10.1.24, Jetty 12.0.9, Mockito 5.12\n\nCloses gh-32786"
+        },
+        {
+            "hash": "e509385eae29056621071b653e81fa8c0382b625",
+            "message": "Add InputStreamResource(InputStreamSource) constructor for lambda expressions\n\nIncludes notes for reliable InputStream closing, in particular with Spring MVC.\n\nCloses gh-32802"
+        },
+        {
+            "hash": "b7aafda8723dfb555cda4211209654cd35aab709",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a89a88d17c8a0761ffedca85817d38bccfbce819",
+            "message": "Upgrade to Micrometer 1.12.6\n\nCloses gh-32810"
+        },
+        {
+            "hash": "c6b6ccdc890f980ac910f0ea01b828eb6720a15b",
+            "message": "Close ResponseBodyEmitter in case of write errors\n\nPrior to this commit, the `ReactiveTypeHandler` would handle `Flux`-like\nreturn types from controller methods and adapt them to SSE streams using\nthe `SseEmitter`/`ResponseBodyEmitter` APIs. In case an `IOException` is\nthrown while writing to the HTTP response stream, the\n`ReactiveTypeHandler` would rely on the Servlet container to call\n`AsyncListener#onError` - this would be the signal for Spring MVC to\ncomplete the async exchange. To prevent racing issues between this\nsignal and the actual handling of the exception, changes like  gh-20173\nwere applied. Since then, robust checks were added with gh-32340 in\n`StandardServletAsyncWebRequest.LifecycleHttpServletResponse`.\n\nWith Jetty 12, `AsyncListener#onError` would not be called as the error\nwould happen while writing in blocking mode to the response (so, not\nusing the Servlet WriteListener contract). But still, such `IOException`\nwould still result in the closing of the HTTP connection. As of Jetty\n12.0.4, this is no longer the case and the party managing the async\nlifecycle is in charge of completing the exchange, as it should. This\nmeans that the current behavior leaks HTTP connections for these cases\nand causes memory issues.\n\nThis commit ensures that such exceptions happening during response\nwrites are caught and result in the completion of the `SSEEmitter` and\nthe closing of the exchange. Even if other Servlet containers still\npropagate the error `AsyncListener#onError`, competing signals are still\nmanaged with gh-32340.\n\nCloses gh-32629"
+        },
+        {
+            "hash": "09b8feadc20057ec431d2d31ba5dcf185baba66c",
+            "message": "Document streaming/collecting behavior for Flux return values\n\nCloses gh-32630"
+        },
+        {
+            "hash": "d03ea0bf19512d81496a002d105b8c5f51a68dfb",
+            "message": "Update docs on HandlerInterceptor\n\nCloses gh-32729"
+        },
+        {
+            "hash": "a5a1ef6b30cd7e1115e953ea4b9dabbead02f28e",
+            "message": "Use instance field for ProblemDetail in ErrorResponse's\n\nCloses gh-32644"
+        },
+        {
+            "hash": "1b60b86bb210df38c8e54f5c5162cc4c12731f82",
+            "message": "Update MockMvc section on Streaming in the docs\n\nCloses gh-32687"
+        },
+        {
+            "hash": "89ce63f1f36c2e526ea5270fb7a5b969043d7554",
+            "message": "Replace RFC7807 by RFC9457 in documentation\n\nThis commit updates all references to RFC7807 by RFC9457 since the\nformer is now obsolete.\n\nCloses gh-32806"
+        },
+        {
+            "hash": "7536980be9525d39fce7230b730efe1500174c44",
+            "message": "Fix Dokka links to Spring Framework and Servlet APIs\n\nThis commit fixes links from Spring Framework's Dokka HTML to Javadoc\nfor Spring Framework and Servlet APIs by explicitly configuring the\n`element-list` page as the `package-list` in the Dokka Gradle plugin.\n\nCloses gh-32797"
+        },
+        {
+            "hash": "c1229b03a7481ced0d9c787b50ced18b1b207dc3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a4135bac5cbde34a3f6e08b6ba379388160cc3a6",
+            "message": "Leniently ignore unsupported pointcut expression\n\nSee gh-32793"
+        },
+        {
+            "hash": "bf08e0c1b4334192f45e3be865f0d360617de9da",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9202c0ad41300babd10cd1a63599b30a35e1ede8",
+            "message": "Accept ajc-compiled @Aspect classes for Spring AOP proxy usage\n\nCloses gh-32793"
+        },
+        {
+            "hash": "22b6d66a286256556a21d83a16e82b756b732da8",
+            "message": "Document @Order behavior on @Configuration classes versus @Bean methods\n\nIncludes brief note on self injection (extracted from qualifiers section).\n\nCloses gh-30177\nCloses gh-28299"
+        },
+        {
+            "hash": "9376e6322d6616a6aea68a10f261b0b866e0186e",
+            "message": "Revise IoC container introduction for modern configuration styles\n\nIncludes @Configuration(proxyBeanMethods=false) documentation.\n\nCloses gh-32429"
+        },
+        {
+            "hash": "0eb937a8662a70228d190c4030c77fb924b2e79d",
+            "message": "Document limitations of CGLIB proxy class generation in JPMS module setups\n\nIncludes extended exception messages with common hints and explanations.\n\nCloses gh-32671"
+        },
+        {
+            "hash": "6250b64766eb64a7f25984aa2ac33838bd7d5925",
+            "message": "Add support for form data in MockHttpServletRequestBuilder\n\nCloses gh-32757"
+        },
+        {
+            "hash": "5b1278d03c868b34cdeed8822b591bcd951be3c5",
+            "message": "Refine exception message to include bean name\n\nCloses gh-32775"
+        },
+        {
+            "hash": "4f02be263f570d5c52bb369a63cf37a620d8b125",
+            "message": "Polishing"
+        },
+        {
+            "hash": "05d9b52b19e1f740001abe40640fc02fd3001355",
+            "message": "Polishing"
+        },
+        {
+            "hash": "59a125d06f89ec4f0efe0628fe3a70ab143a5360",
+            "message": "Unwrap raw target Query instance in case of proxy mismatch\n\nCloses gh-32766"
+        },
+        {
+            "hash": "aebc48ee8d475b0db93405461d65f6098da17196",
+            "message": "Revise contribution\n\nSee gh-32704"
+        },
+        {
+            "hash": "f51be0a17ebcfcf256722affcff5f7ad20a8b877",
+            "message": "Support varargs invocations in SpEL for varargs array subtype\n\nCloses gh-32704"
+        },
+        {
+            "hash": "1d2b5a15c3b4200e1873c5cbd35a7055e1753670",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4baad16437524f6f16f61fcfb3dc0458f7aaff47",
+            "message": "Include repeatable annotation container in MergedAnnotations results\n\nA bug has existed in Spring's MergedAnnotations support since it was\nintroduced in Spring Framework 5.2. Specifically, if the\nMergedAnnotations API is used to search for annotations with \"standard\nrepeatable annotation\" support enabled (which is the default), it's\npossible to search for a repeatable annotation but not for the\nrepeatable annotation's container annotation.\n\nThe reason is that MergedAnnotationFinder.process(Object, int, Object,\nAnnotation) does not process the container annotation and instead only\nprocesses the \"contained\" annotations, which prevents a container\nannotation from being included in search results.\n\nIn #29685, we fixed a bug that prevented the MergedAnnotations support\nfrom recognizing an annotation as a container if the container\nannotation declares attributes other than the required `value`\nattribute. As a consequence of that bug fix, since Spring Framework\n5.3.25, the MergedAnnotations infrastructure considers such an\nannotation a container, and due to the aforementioned bug the container\nis no longer processed, which results in a regression in behavior for\nannotation searches for such a container annotation.\n\nThis commit addresses the original bug as well as the regression by\nprocessing container annotations in addition to the contained\nrepeatable annotations.\n\nSee gh-29685\nCloses gh-32731"
+        },
+        {
+            "hash": "abcc1dfc6cb851b35ad163e29212560519affcb2",
+            "message": "Review usage of BindingReflectionHintsRegistrar#registerReflectionHints\n\nCloses gh-32753"
+        },
+        {
+            "hash": "47c5cd208c6e45f9f2ae8e3dc6017868c8c0728e",
+            "message": "Add missing \"Content-Length: 0\" header with HttpComponents\n\nPrior to this commit, HTTP requests sent with the\n`HttpComponentsClientHttpRequestFactory` would not set a\n\"Content-Length\" header for empty request bodies. Setting a request\nentity is the expected behavior for unsafe HTTP methods, and this would\nalign the behavior with other HTTP clients.\nDevelopers would often rely on `BufferingClientHttpRequestFactory` to\nset this information on the request.\n\nThis commit ensures that a `NullEntity` is used for unsafe HTTP methods,\nwhen no body has been set for the request. This result in a\n\"Content-Length:0\" request header.\n\nFixes gh-32678"
+        },
+        {
+            "hash": "5a24e94d2eac430910d83f77d057a37f4567562a",
+            "message": "Polish tests"
+        },
+        {
+            "hash": "f90bdbef424363bae41881866c20a8917d276729",
+            "message": "Add noop implementation for ResponseErrorHandler\n\nCloses gh-32750"
+        },
+        {
+            "hash": "f17527a48bfb20b98edf225b60a7576e6536a940",
+            "message": "Use expectBody<Person>() in WebTestClient documentation\n\nCloses gh-32733"
+        },
+        {
+            "hash": "64b0283042000d93a4dd6f2436e0b7da2bc23228",
+            "message": "Revert \"Do not set 0 Content-Length header in BufferingClientHttpRequestFactory\"\n\nThis reverts commit b3a45670f9b8b193a34c022b63cc2b587feae6ef.\n\nSee gh-32650"
+        },
+        {
+            "hash": "25cedcfb9959bad9441c45029d62b5df07cc1b11",
+            "message": "Consistently propagate ApplicationStartup to BeanFactory\n\nCloses gh-32747"
+        },
+        {
+            "hash": "610626aec69dd8a932dcc2cbee5642d2dcccc3bc",
+            "message": "Ignore non-String keys in PropertiesPropertySource.getPropertyNames()\n\nCloses gh-32742"
+        },
+        {
+            "hash": "d8afe7a8ad21854917a47124a67238e5bb476b64",
+            "message": "Fix build warnings\n\nSee gh-32724"
+        },
+        {
+            "hash": "32c80d5ae6629f86cd7c29cbb054e5175805f4cf",
+            "message": "Fix incorrect class reference syntax in Kotlin code sample\n\nCloses gh-32733"
+        },
+        {
+            "hash": "0241a02e66f56623877f5bc8d91684d8d315cb97",
+            "message": "Fix guard against multiple subscriptions\n\nThis commit changes the guard against multiple subscriptions, as the\npreviously used doOnSubscribe hook could not function as guard in\ncertain scenarios.\n\nCloses gh-32727"
+        },
+        {
+            "hash": "cbda46984c754545e35e8724be8e4d39997ce7f2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "72637715528187ef9c87670d371761abb4749f45",
+            "message": "Add documentation for CompletableFuture-driven rollback\n\nCloses gh-32709"
+        },
+        {
+            "hash": "fab3633c7504686f8ab89a4449e2cf910014388f",
+            "message": "Add notes on constructor and factory method overloading\n\nCloses gh-32091"
+        },
+        {
+            "hash": "26706f003962ab1a22981633deeedbae7ba475c4",
+            "message": "Upgrade to Groovy 4.0.21, Tomcat 10.1.23, Jetty 12.0.8, Netty 4.1.109, Undertow 2.3.13, Checkstyle 10.16"
+        },
+        {
+            "hash": "3cf2cd70aba33c5503d00f4d627d0fc00684264c",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0ac04a7f86a80e48cc2f50711b2ac089f2c8552f",
+            "message": "Include original exception message in dependency initialization exception\n\nCloses gh-32470"
+        },
+        {
+            "hash": "370a4ee8b34fd1c169e92b4756ce62043003e13f",
+            "message": "Upgrade to gradle-enterprise-conventions 0.0.17\n\nCloses gh-32724"
+        },
+        {
+            "hash": "55361fa4f6ed8a571314e19eb6eff47fc7ef2714",
+            "message": "Release RSocket setup payload when it is not handled\n\nThis commit counterbalances the retain in the MessagingRSocket\nhandleConnectionSetupPayload method with a conditional release on SETUP\nframe type in handleNoMatch, preventing Netty buffer leaks.\n\nCloses gh-32424"
+        },
+        {
+            "hash": "546ca9b8342bad634555daba1442c1ce4cbfe5ee",
+            "message": "Polishing"
+        },
+        {
+            "hash": "09b476ac18b6fb704a381846739fb5cdfa3ec741",
+            "message": "Polishing"
+        },
+        {
+            "hash": "387e34d881d9286d50446dee0ff62a6a8da98e10",
+            "message": "Wrap depends-on exception for specifically requested top-level bean\n\nCloses gh-32470"
+        },
+        {
+            "hash": "4a10bc3288f9a473076defbfc9b1cccedcb89da1",
+            "message": "Refine preDetermineBeanTypes algorithm\n\nThis commit refines the preDetermineBeanTypes algorithm that AOT uses\nto approximate the order of preInstantiateSingletons more closely.\n\nPreviously, the algorithm assumed that all beans where non-lazy\nsingletons in terms of initialization order, which led to inconsistent\norder in CGLIB proxy generation.\n\nWe now explicitly park lazy beans so that their types are determined\nduring a second phase, matching the order of regular initialization\norder.\n\nCloses gh-32669\n\nCo-authored-by: Juergen Hoeller <juergen.hoeller@broadcom.com>"
+        },
+        {
+            "hash": "580adfcbed11d1a82e54bb7a51272d42c1c68d14",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d151931f8649adf39e781c6ee4228b31c1fcc13b",
+            "message": "Skip close lock if acquired by other thread already\n\nCloses gh-32445"
+        },
+        {
+            "hash": "16d8d69cf935fb4ec4d3fb450139004ed2c89d20",
+            "message": "Merge pull request #32696 from izeye\n\n* pr/32696:\n  Update copyright year of changed files\n  Polish\n\nCloses gh-32696"
+        },
+        {
+            "hash": "95ac0eae4a2dfd849348c9a38ac6c9dc42f1d8e1",
+            "message": "Update copyright year of changed files\n\nSee gh-32696"
+        },
+        {
+            "hash": "cc73ccefef36fb48d8ec804ff4be8dd075cfb6b1",
+            "message": "Polish\n\nSee gh-32696"
+        },
+        {
+            "hash": "4d34444a699d0e083d37d922781b9ce4731c004a",
+            "message": "Consistent annotation lookup in MvcUriComponentsBuilder\n\nPreviously, a UriComponents build based on a method would require the\ngiven method to be the annotated one as method parameter resolution only\napplied locally. This was a problem when a controller was specified on\na method whose mapping is defined in a parent.\n\nThis commit harmonies the lookup using AnnotatedMethod who provides\nsupport for a synthesized method parameter that takes annotations from\nparent parameter into account.\n\nCloses gh-32553"
+        },
+        {
+            "hash": "d4ddbd537bc78f63ab91a16b9ad193d677d3ba01",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0b9b9b4602050a7594deabad82d5ccbdecb1e520",
+            "message": "Avoid overreading of InputStream in copyRange\n\nCloses gh-32695"
+        },
+        {
+            "hash": "40596d444c51fba98d9d0361652d60384ebf0c98",
+            "message": "Provide a more explicit link to URI composition examples\n\nCloses gh-32685"
+        },
+        {
+            "hash": "cb5b9dcaedb92c0623acfbe714b484af4746456b",
+            "message": "Document AOT limitation of creating beans with custom arguments\n\nCloses gh-32690"
+        },
+        {
+            "hash": "c99e7f8616123597c4a171ade1af2976e73f5b74",
+            "message": "Ignore InstanceSupplier for getBean with arguments\n\nPreviously, a BeanDefinition that has an instance supplier would be\nused irrespective of custom arguments being provided. This commit only\napplies the instance supplier if no arguments are provided. With\ncustom arguments, the regular lookup takes place based on the\ninformation provided in the bean factory.\n\nCloses gh-32657"
+        },
+        {
+            "hash": "8a8c8fe00edf09c3df4885ef92e3f2f728d21704",
+            "message": "Detect target of factory method with AOT\n\nPreviously, if a factory method is defined on a parent, the generated\ncode would blindly use the method's declaring class for both the target\nof the generated code, and the signature of the method.\n\nThis commit improves the resolution by considering the factory metadata\nin the BeanDefinition.\n\nCloses gh-32609"
+        },
+        {
+            "hash": "f45e7b9b9bc06f0b11457d99cf9f3e2d15140de2",
+            "message": "Relax scope of DataIntegrityViolationException\n\nThis commit updates the Javadoc of DataIntegrityViolationException to\nbroaden its scope as it was too specific before.\n\nCloses gh-32631"
+        },
+        {
+            "hash": "ec1f5ca600d61efa877bb04e67f341af2a14b6b2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "62efdfb89c368fd3a3665fe78a7180692d174c23",
+            "message": "Try early initialization for all user-declared methods (including interfaces)\n\nCloses gh-32682"
+        },
+        {
+            "hash": "c3da43291b763748bc5f140e19e493aea62b93fe",
+            "message": "Upgrade to Java 17.0.11"
+        },
+        {
+            "hash": "5aa576f5c66116f0d429a3831256726155446aee",
+            "message": "Register status handler exceptions in observations\n\nPrior to this commit, `RestClientException` thrown by status handlers\nwould not be registered as observation errors. This commit ensures that\nsuch exceptions are first caught, registered in the observation and\nrethrown as expected.\n\nCloses gh-32575"
+        },
+        {
+            "hash": "0268180799e5d02278ce878d35910745ebf31676",
+            "message": "Rethrow unhandled JMS listener exceptions\n\nFixes gh-32666"
+        },
+        {
+            "hash": "da4547a27e0246131165c56f1957cc2228061714",
+            "message": "Extend observations to RestClient ResponseSpec\n\nPrior to this commit, the `RestClient` observations would be stopped as\nsoon as the exchange function was called. This means that all errors\nrelated to response decoding or mapping would not be recorded by the\nobsevations.\n\nThis commit extends the observation recording to the `ResponseSpec` DSL\ncalls as well as custom exchange functions.\n\nFixes gh-32575"
+        },
+        {
+            "hash": "97eddb769a15535b462f2a6c4f106c6200991e94",
+            "message": "Avoid duplicate subscriptionId's in destinationCache\n\nCloses gh-32625"
+        },
+        {
+            "hash": "0e0397a38553b26f3292a1eeec66e80d86d95d23",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fec4f9b8cb253eb336957b9de226a121f1afa0b4",
+            "message": "Add test for pre-resolved target type on RootBeanDefinition\n\nSee gh-32649"
+        },
+        {
+            "hash": "4e20cdeb43bcadc029ebc976730af513542380c3",
+            "message": "Expand comment on participation in existing transaction\n\nCloses gh-32659"
+        },
+        {
+            "hash": "7f27ba3902713e6e6051c81b404dc4b0f41321ca",
+            "message": "Update links to HttpOnly documentation at OWASP in ResponseCookie\n\nCloses gh-32663"
+        },
+        {
+            "hash": "b3a45670f9b8b193a34c022b63cc2b587feae6ef",
+            "message": "Do not set 0 Content-Length header in BufferingClientHttpRequestFactory\n\nPrior to this commit, the `BufferingClientHttpRequestFactory`, through\nthe `AbstractBufferingClientHttpRequest`, would set a \"Content-Length\"\nheader value, even if the buffered body was empty.\n\nThis behavior is invalid since no request body would be set by the\nclient code in the first place.\n\nThis commit ensures that this header is only set if a request body has\nbeen buffered and is about to be written to the request.\n\nFixes gh-32650"
+        },
+        {
+            "hash": "8ec27438e70a67828b0957525de3c7c01cd8a2f5",
+            "message": "Fix transaction definition setTimeout error message since zero is valid\n\nThis commit rephrases the `DefaultTransactionDefinition#setTimeout`\nexception message to better reflect the fact that 0 is a valid input\nvalue.\n\nEven though this often leads to a transaction immediately timing out\nafter opening, there is one notable case where this has another\nmeaningful effect: in Jakarta transactions (`UserTransaction`), when\npassing 0 \"the transaction service restores the default value\".\n\nCloses gh-32635"
+        },
+        {
+            "hash": "bf3278596c3b46184d911c566ac245edac0dcbb9",
+            "message": "Include actual cause's message in various parsing exception messages\n\nThis change improves the message of several parsing-related exceptions\nthat would previously entirely swallow the original exception's message\nand sometimes have a slightly misleading message as a result.\n\nThis is done by appending the cause's `toString` representation to the\nIllegalArgumentException messages instead of an hardcoded \"cause\".\n\nCloses gh-32636"
+        },
+        {
+            "hash": "3971632415d61f4cd73b187e7c7619c6f1beb3da",
+            "message": "Reintroduce SimpleClientHttpRequestFactory limitations\n\nCloses gh-32641"
+        },
+        {
+            "hash": "1e54916119c3efe108cfefe048383c7d6b424efa",
+            "message": "Ensure multipart data is deleted in WebFlux when connection terminates\n\nBefore this change temporary files would not consistently be deleted\nwhen the connection which uploads the multipart files closes naturally.\n\nThis change uses the usingWhen Reactor operator to ensure that the\ntermination of the connection doesn't prevent individual file parts\nfrom being deleted due to a cancellation signal.\n\nCloses gh-31217"
+        },
+        {
+            "hash": "6e20af41bf4eae54b525ae5f7905ad5565884dd1",
+            "message": "Upgrade CI image to Java 23ea17"
+        },
+        {
+            "hash": "c68c62b6c668f8a1f4398d740525224fdf5ec3d9",
+            "message": "Next development version (v6.1.7-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32828",
+            "title": "Inconsistent use of cleaned URLs in PathMatchingResourcePatternResolver"
+        },
+        {
+            "number": "32786",
+            "title": "Upgrade to Reactor 2023.0.6"
+        },
+        {
+            "number": "32802",
+            "title": "ResponseEntity<Resource> is not reliably closed with InputStreamResource"
+        },
+        {
+            "number": "32810",
+            "title": "Upgrade to Micrometer 1.12.6"
+        },
+        {
+            "number": "20173",
+            "title": "Handle onError events that are sent by the servlet containers [SPR-15614]"
+        },
+        {
+            "number": "32340",
+            "title": "Better protect against concurrent error handling for async requests"
+        },
+        {
+            "number": "32629",
+            "title": "Jetty HttpConnections not closed with SSE on Jetty 12.0.7+ when clients close the connection"
+        },
+        {
+            "number": "32630",
+            "title": "Update documentation to explain streaming vs collecting and error handling with `Flux<T>` return values"
+        },
+        {
+            "number": "32729",
+            "title": "Improve documentation advising against use of HandlerInterceptor for security"
+        },
+        {
+            "number": "32644",
+            "title": "Incorrect AsyncRequestTimeoutException handling in ResponseEntityExceptionHandler"
+        },
+        {
+            "number": "32687",
+            "title": "Correct documentation on streaming with MockMvcWebTestClient"
+        },
+        {
+            "number": "32806",
+            "title": "Replace RFC 7807 by RFC 9457 in documentation"
+        },
+        {
+            "number": "32797",
+            "title": "Links to Framework and Servlet Javadoc from Framework's Kotlin API documentation are broken"
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        },
+        {
+            "number": "30177",
+            "title": "Document `@Order` behavior on types, bean methods, and config classes"
+        },
+        {
+            "number": "28299",
+            "title": "Clarify recommendation on self-injection for legitimate use cases (e.g. @Transactional re-entrant calls)"
+        },
+        {
+            "number": "32429",
+            "title": "Revise \"The IoC Container\" section to be more relevant for modern Spring applications"
+        },
+        {
+            "number": "32671",
+            "title": "Document limitations of CGLIB proxy class generation in JPMS module setups"
+        },
+        {
+            "number": "32757",
+            "title": "Provide methods to unambiguously send form data with MockMvc"
+        },
+        {
+            "number": "32775",
+            "title": "Failure to process a bean definition ahead-of-time with an instance supplier should provide more contextual information"
+        },
+        {
+            "number": "32766",
+            "title": "DeferredQueryInvocationHandler fails to unwrap QuerySqmImpl class outside of transaction"
+        },
+        {
+            "number": "29685",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist in container annotation"
+        },
+        {
+            "number": "32731",
+            "title": "`MergedAnnotations` search does not find container for repeatable annotation"
+        },
+        {
+            "number": "32753",
+            "title": "BindingReflectionHintsRegistrar#registerReflectionHints can be invoked with a null type"
+        },
+        {
+            "number": "32678",
+            "title": "HttpComponentsClientHttpRequestFactory does not set Content-Length: 0"
+        },
+        {
+            "number": "32750",
+            "title": "Introduce NoOp implementation for ResponseErrorHandler"
+        },
+        {
+            "number": "32650",
+            "title": "BufferingClientHttpRequestFactory should not set content length for empty request body"
+        },
+        {
+            "number": "32747",
+            "title": "`AnnotationConfigWebApplicationContext` should propagate `ApplicationStartup` to `BeanFactory`"
+        },
+        {
+            "number": "32742",
+            "title": "Ignore non-String keys in `PropertiesPropertySource.getPropertyNames()`"
+        },
+        {
+            "number": "32724",
+            "title": "Upgrade to gradle-enterprise-conventions 0.0.17"
+        },
+        {
+            "number": "32727",
+            "title": "\"multiple subscribers not supported\" when using WebClient exchange"
+        },
+        {
+            "number": "32709",
+            "title": "Inconsistent behaviour on transactional async method"
+        },
+        {
+            "number": "32091",
+            "title": "XML bean definition with `factory-method` does not always determine correct target type"
+        },
+        {
+            "number": "32470",
+            "title": "When retrieval of a LoadTimeWeaverAware bean fails the resulting exception message may not indicate why it was being created"
+        },
+        {
+            "number": "32424",
+            "title": "RSocket setup payload can cause Netty ByteBuf leak"
+        },
+        {
+            "number": "32669",
+            "title": "Wrong proxy generation order during AOT for classes with `ScopedProxyMode.TARGET_CLASS` and advisors"
+        },
+        {
+            "number": "32445",
+            "title": "Deadlock/Stall in ConcurrentWebSocketSessionDecorator with Undertow 2.3.10"
+        },
+        {
+            "number": "32553",
+            "title": "MvcUriComponentsBuilder.fromMethodName does not pick the annotated method transparently"
+        },
+        {
+            "number": "32695",
+            "title": "StreamUtils.copyRange overreads source stream in some cases"
+        },
+        {
+            "number": "32685",
+            "title": "Provide an example of custom request URL with RestClient in the reference guide"
+        },
+        {
+            "number": "32690",
+            "title": "Document that getBean with arguments is not recommended with AOT"
+        },
+        {
+            "number": "32657",
+            "title": "beanFactory#getBean with arguments ignore them if an Instance supplier is defined"
+        },
+        {
+            "number": "32609",
+            "title": "Configuration class with Bean factory method on an interface generates wrong target with AOT"
+        },
+        {
+            "number": "32631",
+            "title": "Document that DataIntegrityViolationException can also be thrown on read-only queries"
+        },
+        {
+            "number": "32682",
+            "title": "ConfigurationClassEnhancer should consistently trigger FastClass creation at build-time"
+        },
+        {
+            "number": "32575",
+            "title": "RestClient observations are stopped before ResponseSpec calls"
+        },
+        {
+            "number": "32666",
+            "title": "Unhandled JMS listener exceptions are not propagated"
+        },
+        {
+            "number": "32625",
+            "title": "Prevent duplicate subscription ID's in destinationCache of DefaultSubscriptionRegistry"
+        },
+        {
+            "number": "32649",
+            "title": "Type-based bean name resolution with fallback matching for incomplete generics"
+        },
+        {
+            "number": "32641",
+            "title": "Document that RestTemplate may not return a body for certain exceptions"
+        },
+        {
+            "number": "31217",
+            "title": "WebFlux temporary file not always deleted with parallel uploads."
+        }
+    ]
+}

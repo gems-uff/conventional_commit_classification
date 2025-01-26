@@ -1,0 +1,61 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.19.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 81.84944444444444,
+    "commits_info": [
+        {
+            "hash": "cb46755e6405e083b45481f5ea4754b180705529",
+            "message": "Tweak wording of CHANGES.txt"
+        },
+        {
+            "hash": "eb94f17a8b8babc4851fb9bb27f9fb1919fe9cfc",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "ea9a01a0f5c259e9597c199e447d99eaab19930b",
+            "message": "Update CHANGES.txt for 3.19.2 release"
+        },
+        {
+            "hash": "9638a5e5315bf73f5e7148c16181676372321892",
+            "message": "Improve performance of parsing unknown fields in Java (#9371)\n\nCredit should go to @elharo for most of these Java changes--I am just\r\ncherry-picking them from our internal codebase. The one thing I did\r\nchange was to give the UTF-8 validation tests their own Bazel test\r\ntarget. This makes it possible to give the other tests a shorter\r\ntimeout, which is important for UnknownFieldSetPerformanceTest in\r\nparticular."
+        },
+        {
+            "hash": "0e02f95b876c40ecb04a76e729dd3f0d9185431e",
+            "message": "Fix Ruby release build by pinning rake-compiler-dock version (#9372)\n\nOur Ruby release build broke at some point in the past day or so, and I\r\nstrongly suspect it is due to a new version (1.2.0) of\r\nrake-compiler-dock. This commit pins the version to 1.1.0 as a temporary\r\nfix."
+        },
+        {
+            "hash": "9057466a7aea0b927f3bf7ab125355be3317d4a0",
+            "message": "Merge pull request #9336 from acozzette/merge-3.18.x\n\nMerge 3.18.x into 3.19.x"
+        },
+        {
+            "hash": "9227f60f85701be60f5a0585a27d0e881ebc84b0",
+            "message": "Merge branch '3.18.x' into merge-3.18.x"
+        },
+        {
+            "hash": "1fe07f9ce2e98ca66a403b989d78a060f3153d5b",
+            "message": "Cherry-pick fix from #9311 into 3.18.x (#9320)\n\n* Dropped Ruby 2.4 support for CI and releases.\r\n\r\n* Removed Kokoro configs for old Ruby versions.\r\n\r\n* Update Dockerfile to allow it to be rebuilt\r\n\r\nCo-authored-by: Joshua Haberman <jhaberman@gmail.com>"
+        },
+        {
+            "hash": "8a0aa4b3721f89fdbfae57c1dcbc4ef7bed733a8",
+            "message": "Update Mac test runs to download RVM directly from GitHub (#9107)\n\nOur Mac test runs recently started failing to download RVM. The issue\r\nappears to be a combination of an SSL certificate expiring and old\r\nOpenSSL versions having a bug preventing them from validating the\r\nreplacement certificate: https://github.com/rvm/rvm/issues/5133\r\n\r\nThis commit works around the problem by downloading RVM from GitHub as\r\nsuggested in one of the comments on the issue above."
+        },
+        {
+            "hash": "cb1f49ae73cf26dd61368f8bd1297e11c62a5f03",
+            "message": "Cherry-pick Python 3.10 fix to 3.19.x (#9323)"
+        },
+        {
+            "hash": "bb5094881c6a496a458cb5d1c939ac4d0e822964",
+            "message": "Update python 3.10 install MD5 Sum (#9322)\n\nhttps://www.python.org/downloads/release/python-3100/"
+        },
+        {
+            "hash": "31dd7b71cc5ff697e7cc37156b083a1eb5fd4d9b",
+            "message": "Fix benchmark by making sure we use Python 3 (#9170) (#9176)\n\nThe benchmark runs have been failing since we started requiring Python\r\n3, so this changes fixes the benchmarks by ensuring we always use Python\r\n3."
+        }
+    ],
+    "issues": []
+}

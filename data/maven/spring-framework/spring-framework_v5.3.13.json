@@ -1,0 +1,210 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.13",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 38,
+    "start_delay": 0.0,
+    "duration": 168.08164351851852,
+    "commits_info": [
+        {
+            "hash": "23bb745ea49ae3d5ae58638e465c54a3595c5f78",
+            "message": "Release v5.3.13"
+        },
+        {
+            "hash": "9197f15a306a497b3aa10c6ed48c581b3e938f58",
+            "message": "Use ByteArrayDecoder in DefaultClientResponse::createException\n\nThis commit changes DefaultClientResponse::createException to use\nthe ByteArrayDecoder, instead of converting to DataBuffers and\nturning these into a byte array.\n\nCloses gh-27666"
+        },
+        {
+            "hash": "15a6373fed1b8acf6dcda7cc2a144de34e32f4cd",
+            "message": "Avoid nullability warnings"
+        },
+        {
+            "hash": "2a268701c41aaa1324a6c2fcf0e7e71c40f91ec2",
+            "message": "Introduce optimizeLocations flag for resource location filtering on startup\n\nThis flag is off by default since it requires jar files with directory entries.\n\nCloses gh-27624"
+        },
+        {
+            "hash": "11a0df3fd144a8c792cd2f9d5a721d21abe52f2b",
+            "message": "Upgrade to Tomcat 9.0.54, Netty 4.1.70, HtmlUnit 2.54, XMLUnit 2.8.3"
+        },
+        {
+            "hash": "b167e1a93fe299b19f339896d86e65337b05b78f",
+            "message": "Remove unnecessary final declarations (for consistency)"
+        },
+        {
+            "hash": "8d735e6e605737f561252bb4e629c8fb160b9ddf",
+            "message": "Note on PersistenceExceptionTranslator sorting and non-singleton retrieval\n\nCloses gh-26412"
+        },
+        {
+            "hash": "9bc09631d61e2d011972232a5b32c1edc51c6dcf",
+            "message": "Recommend ObjectProvider as alternative to @Lazy for optional dependencies\n\nCloses gh-27649"
+        },
+        {
+            "hash": "39be572a7a70b7db24d0a0c4fd9a74a200ca6e3f",
+            "message": "Upgrade to Reactor 2020.0.13\n\nCloses gh-27636"
+        },
+        {
+            "hash": "6ac780d595b9a661d6ec357183f0d5bd0028981b",
+            "message": "Fix grammar in webflux-webclient.adoc\n\nCloses gh-27657"
+        },
+        {
+            "hash": "c6ce65ef564dfb89944ae07dd3a2c25f28fc287f",
+            "message": "Polishing contribution\n\nCloses gh-27623"
+        },
+        {
+            "hash": "b5743966d6d926ed9b146ca4c34713b406628038",
+            "message": "Improve efficiency of UrlPathHelper#getSanitizedPath\n\nSee gh-27623"
+        },
+        {
+            "hash": "c5de5c99390a69f23e7682b7748c273b01a63907",
+            "message": "Update Javadoc of LogFormatUtils\n\nCloses gh-27632"
+        },
+        {
+            "hash": "ff1485fd8d6581edce2ad9bfbe2eb36d2efae8cc",
+            "message": "Fix log message formatting in CandidateComponentsIndexLoader"
+        },
+        {
+            "hash": "1b4438caacee097238de7e7713a2a50bf73ed216",
+            "message": "Start building against Reactor 2020.0.13 snapshots\n\nSee gh-27636"
+        },
+        {
+            "hash": "0c7e0002504f728d3ca3e182406d19ed3c4c9973",
+            "message": "Refactor Contents to DefaultParts\n\nThis commit moves the Contents abstraction into DefaultParts\n\nSee gh-27613"
+        },
+        {
+            "hash": "694db2273f24be1152914c9f5bb849a8c0ccbb12",
+            "message": "Add Part::delete method\n\nThis commit introduces the Part::delete method, that deletes its\nunderlying storage.\n\nCloses gh-27612"
+        },
+        {
+            "hash": "47d3819eab4ce92eeeed997a3e8138ebfc8411e9",
+            "message": "Merge pull request #27604 from Xjzon\n\n* pr/27604:\n  Polish \"Add support for custom expression parsing\"\n  Add support for custom expression parsing\n\nCloses gh-27604"
+        },
+        {
+            "hash": "f295c8b2fbb8ac61f570c9b35abb45f0837fdd66",
+            "message": "Polish \"Add support for custom expression parsing\"\n\nSee gh-27604"
+        },
+        {
+            "hash": "40d84c297bd88a2c4b7979b14eb7925e5fce0170",
+            "message": "Add support for custom expression parsing\n\nSee gh-27604"
+        },
+        {
+            "hash": "0416168d0edfaa8f321e318bd4129df7b425ee79",
+            "message": "Fix bug in max header calculation in DefaultPartHttpMessageReader\n\nThis commit fixes a bug in the DefaultPartHttpMessageReader, in the\ncheck for exceeding the maximum header size. Before this commit, the\nentire buffer size was considered, thus triggering an exception even\nthough the max header limit was not exceeded. After this commit, we only\nconsider the size up until the end-of-header mark (CRLFCRLF).\n\nFurthermore, this commit increases the default maximum header size to\n10k, the same default as Commons File upload.\n\nCloses gh-27612"
+        },
+        {
+            "hash": "c4c3d59d07bfe7775f0df88f40babebd27975ca2",
+            "message": "Remove unused code in FormattingConversionServiceTests"
+        },
+        {
+            "hash": "0268e762980f302e251a92743dd6724403660399",
+            "message": "Improve mapping function in ExtendedEntityManagerCreator.createProxy()\n\nCloses gh-27456"
+        },
+        {
+            "hash": "4ec8ae42f48da6415a3be29507c9e327dec94538",
+            "message": "Add test cases to SpEL's MapAccessorTests\n\nCloses gh-26981"
+        },
+        {
+            "hash": "995aaa6159957222b189f352672e20e3626ac442",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2c89ff934ddd5b7efa14f715c4ec6a67bab7fd69",
+            "message": "Update copyright date\n\nSee gh-27560"
+        },
+        {
+            "hash": "c58853f5e5891147c43487fac3a249ba5c98de0c",
+            "message": "Use LocalDataSourceJobStore only if one is not set via Quartz properties\n\nPrior to this commit, Spring's SchedulerFactoryBean always set the\n\"org.quartz.jobStore.class\" property to LocalDataSourceJobStore even if\nthe user had already specified a custom JobStore implementation via the\nQuartz properties file or Properties object, thereby effectively\nignoring the user configuration.\n\nThis commit addresses this by configuring Quartz to use Spring's\nLocalDataSourceJobStore only if a JobStore has not already been\nspecified via user configuration.\n\nCloses gh-27560"
+        },
+        {
+            "hash": "66826ac960be20aa0df25f22f1a47612c5b91845",
+            "message": "Fix typo in Javadoc in HeaderAssertions\n\nCloses gh-27589"
+        },
+        {
+            "hash": "a603779f33d47cd9ac87919ccc26f8c2d279fa40",
+            "message": "Return previous value in UndertowHeadersAdapter's remove() method\n\nPrior to this commit, UndertowHeadersAdapter's remove() method violated\nthe java.util.Map contract by always returning null.\n\nThis commit fixes this by returning the previous list stored under the\nspecified key, and otherwise returning null if no previous value was\npresent.\n\nCloses gh-27592"
+        },
+        {
+            "hash": "e5475d698a8a861a03a18c24de16e3e4f0d22f72",
+            "message": "Iterate over Map's entrySet() instead of keySet() in PropertyEditorRegistrySupport\n\nCloses gh-27591"
+        },
+        {
+            "hash": "b728b4640b70c293c18ca1290ee303dee1f0d413",
+            "message": "Add explicit tests for SpEL functions for fix for gh-27582"
+        },
+        {
+            "hash": "bc657eb4d5babccf5065ef26fca8c9723675a083",
+            "message": "Fix SpEL vararg method invocation for strings containing commas\n\nPrior to this commit, if a SpEL expression invoked a method or\nregistered function that declares a String varargs argument, there were\nsometimes issues with converting the input arguments into the varargs\narray argument. Specifically, if the expression supplied a single\nString argument containing a comma for the varargs (such as \"a,b\"),\nSpEL's ReflectionHelper.convertArguments() method incorrectly converted\nthat single String to an array via the ConversionService, which\nindirectly converted that String using the StringToArrayConverter,\nwhich converts a comma-delimited String to an array. Thus, \"a,b\"\neffectively got converted to a two-dimensional array [\"a\", \"b\"] instead\nof simply [\"a,b\"].\n\nThis commit fixes this bug by avoiding use of the TypeConverter and\nConversionService for single arguments supplied as varargs when the\nsingle argument's type matches the varargs array component type.\n\nCloses gh-27582"
+        },
+        {
+            "hash": "9b967775ede2d885746d734347a356abb8b3d1db",
+            "message": "Polish Spel's ReflectionHelper.setupArgumentsForVarargsInvocation()"
+        },
+        {
+            "hash": "9af11ad5ce137e8fe71f0ce9e980745e4c840818",
+            "message": "Fix Javadoc formatting issues"
+        },
+        {
+            "hash": "7a54ff2d21ad7e1900ce603ea1a814d8021bacb9",
+            "message": "Extract public TypeFilterUtils from ComponentScanAnnotationParser\n\nPrior to this commit, third parties using @ComponentScan's @Filter\nannotation had to implement their own parsing for @Filter\nAnnotationAttributes as well as instantiation of the corresponding\nTypeFilters. In such cases the various *Aware callbacks\n(BeanFactoryAware, EnvironmentAware, etc.) should also be supported.\n\nThis commit therefore extracts a new public TypeFilterUtils class from\nComponentScanAnnotationParser so that third parties can benefit from\nconsistent TypeFilter creation from @ComponentScan @Filter annotations.\n\nCloses gh-27553"
+        },
+        {
+            "hash": "ec3f857bda2ffbba5d96787215cc99565d95c3cf",
+            "message": "Polish contribution\n\nSee gh-27586"
+        },
+        {
+            "hash": "b3eb1a2ad725ab4e8c9af7e1fe51840fa01289d0",
+            "message": "Improve example in Javadoc for HttpEntity\n\nCloses gh-27586"
+        },
+        {
+            "hash": "bce850aa12ee678a98a44b1074c7fc5a2f2f8e96",
+            "message": "Next development version (v5.3.13-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27666",
+            "title": "Use ByteArrayDecoder in DefaultClientResponse::createException"
+        },
+        {
+            "number": "27624",
+            "title": "Static resources are missing when jar does not have a directory entry"
+        },
+        {
+            "number": "26412",
+            "title": "PersistenceExceptionTranslationInterceptor attempting to instantiate prototype PersistenceExceptionTranslator beans"
+        },
+        {
+            "number": "27649",
+            "title": "Lazy annotation throws exception if non-required bean does not exist"
+        },
+        {
+            "number": "27636",
+            "title": "Upgrade to Reactor 2020.0.13"
+        },
+        {
+            "number": "27632",
+            "title": "Clarify LogFormatUtils limitLength vs replaceNewlines parameters"
+        },
+        {
+            "number": "27613",
+            "title": "Add option to cleanup multipart temp files"
+        },
+        {
+            "number": "27612",
+            "title": "MultipartParser emits DataBufferLimitException about \"Part headers exceeded the memory usage limit\" unexpectedly"
+        },
+        {
+            "number": "27592",
+            "title": "UndertowHeadersAdapter's remove() method violates Map contract"
+        },
+        {
+            "number": "27582",
+            "title": "SpEL vararg method invocation fails if string literal contains a comma"
+        },
+        {
+            "number": "27553",
+            "title": "Introduce TypeFilterUtils for processing @ComponentScan.Filter"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.2.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.0037847222222222223,
+    "commits_info": [
+        {
+            "hash": "2c5a2e8d244734e93f22749a22183d0fec641212",
+            "message": "3.2.11 release (previous 3.2.10) + release notes updated by CI build 4380\n\n[ci skip-release]"
+        },
+        {
+            "hash": "39e5d84e5b0fc10a2884748dfa008bbb26d5d03d",
+            "message": "Add TestRule to MockitoJUnit (#1858)\n\nJUnit has two types of test rules: MethodRule and TestRule. The existing\r\nMockitoJUnit rule returns a MockitoRule which extends MethodRule.\r\nHowever, since this is not a TestRule, some features of JUnit do not\r\nnicely integrate with Mockito. For example, the RuleChain feature of\r\nJUnit only works on TestRules.\r\n\r\nTherefore, add a separate entrypoint to MockitoJUnit which returns a\r\nTestRule that can be integrated with RuleChain. It introduces a separate\r\ninterface to make this distinction clear. If we would change the\r\nexisting MockitoRule to also extend TestRule, the JUnit logic would no\r\nlonger run the MethodRule [1] and would thus break existing users.\r\n\r\n[1]: https://github.com/junit-team/junit4/blob/2df7e0882128d551565f87f688bbe745d85aacba/src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java#L402"
+        }
+    ],
+    "issues": []
+}

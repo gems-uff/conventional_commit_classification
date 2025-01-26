@@ -1,0 +1,306 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.15",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 41,
+    "start_delay": 0.0,
+    "duration": 27.773194444444446,
+    "commits_info": [
+        {
+            "hash": "f32e749dc01ba7e27974ee9b2a74dfb797c7bc8a",
+            "message": "Release v6.0.15"
+        },
+        {
+            "hash": "ccaecab500d603443bc2bb8fe515e225bc80f9f1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "67e03105b587a3fb3cc7b776d9e685f0837a6b68",
+            "message": "Introduce test for XML replaced-method element without explicit arg-type\n\nThis commit introduces an integration test for the regression fixed in\nthe previous commit (76bc9cf325).\n\nSee gh-31826\nCloses gh-31828\n\n(cherry picked from commit 8d4deca2a658d8ea456a18ecce8a7418373030c4)"
+        },
+        {
+            "hash": "76bc9cf325cd6fcea838453bedfde17182980db0",
+            "message": "Prepare method overrides when bean class gets resolved\n\nSee gh-31826\nSee gh-31828\n\n(cherry picked from commit cd64e6676c67ebabb242be6de0eb3cdee9ba6dc2)"
+        },
+        {
+            "hash": "db52c77cca58689f9305611486454f6ab56079ca",
+            "message": "Minor updates in HandlerMappingIntrospector\n\nRequired by Spring Security to complete work on\nhttps://github.com/spring-projects/spring-security/issues/14128\n\nThe setCache and resetCache methods used from createCacheFilter are now\npublic. Generally they don't need to be used outside of the Filter if\nonly making checks against the current request. Spring Security, however,\nmakes additional checks against requests with alternative paths."
+        },
+        {
+            "hash": "1e742aae34e4d32a703720fa8326c6c439efb498",
+            "message": "Scan annotations on method in interface hierarchy only once\n\nPrior to this commit, the AnnotationsScanner used in the\nMergedAnnotations infrastructure found duplicate annotations on methods\nwithin multi-level interface hierarchies.\n\nThis commit addresses this issue by scanning methods at a given level\nin the interface hierarchy using ReflectionUtils#getDeclaredMethods\ninstead of Class#getMethods, since the latter includes public methods\ndeclared in super-interfaces which will anyway be scanned when\nprocessing super-interfaces recursively.\n\nCloses gh-31803\n\n(cherry picked from commit 75da9c3c474374289cc128b714126d9d644b69a9)"
+        },
+        {
+            "hash": "20dd585c9387c4c65762eee4802667256c2877ba",
+            "message": "Polish MergedAnnotation tests\n\n(cherry picked from commit 952223dcf9ea07fa35e427ed76f0cc85ed8b6a80)"
+        },
+        {
+            "hash": "707eb701dc895327f33334aeea5edb403e6eebed",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2c97996796d724ea661d62fd7a7edef33653eb73",
+            "message": "Upgrade to Reactor 2022.0.14\n\nIncludes Groovy 4.0.16 and Mockito 5.8\n\nCloses gh-31815"
+        },
+        {
+            "hash": "3a068b807bd923bde79db3f9587dba304eaed570",
+            "message": "Update link to stompjs library\n\nCloses gh-28409"
+        },
+        {
+            "hash": "f54b19ff908ee092b529437f28556d6e0f782ba5",
+            "message": "Start building against Reactor 2022.0.14 snapshots\n\nSee gh-31815"
+        },
+        {
+            "hash": "494d2ab727cb8b756ca175a60a19c9740aaccc30",
+            "message": "Remove .mailmap file\n\nSee gh-31740"
+        },
+        {
+            "hash": "627d9cf8bee4c419bcd54bbcff5766586e0a74b1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "dd3a67c7ab6b0417e5ed7a66ab97ee59c10edf85",
+            "message": "Process tokens after each feed in Jackson2Tokenizer\n\nThis commit ensures that we process after each fed buffer in\nJackson2Tokenizer, instead of after all fed buffers.\n\nSee gh-31747\nCloses gh-31772"
+        },
+        {
+            "hash": "85cc22906306c516848154039adbf64e5c149ad0",
+            "message": "Fix and polish Javadoc for MimeTypeUtils\n\n(cherry picked from commit 1afea0b144e3fabf138f5ebb4b9f84f75f7d279a)"
+        },
+        {
+            "hash": "fa95f12be00ff78234a4d7c195ca06394b576986",
+            "message": "Fix condition for \"Too many elements\" in MimeTypeUtils.sortBySpecificity()\n\nSee gh-31254\nSee gh-31769\nCloses gh-31773\n\n(cherry picked from commit 7b95bd72f7e9922f655c582f47c2fe80d8664a1b)"
+        },
+        {
+            "hash": "035cc72fc89979cd57a2f3b8641cab401215f37b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "29a39b617e8d375d196efebca74c70f435f357a6",
+            "message": "Support empty part in DefaultPartHttpMessageReader\n\nThis commit fixes a bug in DefaultPartHttpMessageReader's\nMultipartParser, due to which the last token in a part window was not\nproperly indicated.\n\nSee gh-30953\nCloses gh-31766"
+        },
+        {
+            "hash": "a1471a9266237293e99c01fc16caea5900b3ba81",
+            "message": "Document `@ModelAttribute` usage with native images\n\nCloses gh-31767"
+        },
+        {
+            "hash": "21793b4f93915486741d1eb112646a52317e9dc6",
+            "message": "Suppress warnings in Gradle build\n\n(cherry picked from commit c05b4ce776aa196c5a3e1ecc3cf1e1e0299e203b)"
+        },
+        {
+            "hash": "2d255c4d5e7fb1f4e73deecb1a6abc96294d6b40",
+            "message": "Upgrade to Gradle 8.5\n\nCloses gh-31734\n\n(cherry picked from commit 3a53446a2beb4505fb2bede94b52aa6ecfa38391)"
+        },
+        {
+            "hash": "10391586d12c94026c79563d869f36d84787f42e",
+            "message": "PathEditor considers single-letter URI scheme as NIO path candidate\n\nCloses gh-29881\n\n(cherry picked from commit c56c3045364a93d135309536cc905e56a2eae38d)"
+        },
+        {
+            "hash": "edadc7983505186c4fff4f91d2699b37bed76924",
+            "message": "Fix reactive HTTP server Observation instrumentation\n\nPrior to this commit, regressions were introduced with gh-31417:\n\n1. the observation keyvalues would be inconsistent with the HTTP response\n2. the observation scope would not cover all controller handlers, causing\n  traceIds to be missing\n\nThe first issue is caused by the fact that in case of error signals, the\nobservation was stopped before the response was fully committed, which\nmeans further processing could happen and update the response status.\nThis commit delays the stop event until the response is committed in\ncase of errors.\n\nThe second problem is caused by the change from a `contextWrite`\noperator to using the `tap` operator with a `SignalListener`. The\nobservation was started in the `doOnSubscription` callback, which is too\nlate in some cases. If the WebFlux controller handler is synchronous\nnon-blocking, the execution of the handler is performed before the\nsubscription happens. This means that for those handlers, the\nobservation was not started, even if the current observation was\npresent in the reactor context. This commit changes the\n`doOnSubscription` to `doFirst` to ensure that the observation is\nstarted at the right time.\n\nFixes gh-31715\nFixes gh-31716"
+        },
+        {
+            "hash": "3783d31c09c0c2a7f83961ebb59c4bf03f8fc2cb",
+            "message": "Quote name attribute if necessary\n\nThis commit updates MetadataNamingStrategy to quote an ObjectName\nattribute value if necessary. For now, only the name attribute is\nhandled as it is usually a bean name, and we have no control over\nits structure.\n\nCloses gh-31708"
+        },
+        {
+            "hash": "87730f76b1ffc7bc3fd9258d06cfccb79b259d1a",
+            "message": "Include scroll() in SharedEntityManagerCreator's queryTerminatingMethods\n\nThis commit supports the scroll() and scroll(ScrollMode) methods from\nHibernate's Query API in SharedEntityManagerCreator's query-terminating\nmethods set.\n\nSee gh-31682\nCloses gh-31683\n\n(cherry picked from commit a15f472898ec4c3e79c30949981da9fe75148240)"
+        },
+        {
+            "hash": "6fae3e150e9c07550a20c2a5307af927ba80866b",
+            "message": "Consider generics in equals method (for ConversionService caching)\n\nCloses gh-31672\n\n(cherry picked from commit 710373d28677f9a87629c9ce7a6e12a06c4c7023)"
+        },
+        {
+            "hash": "ad44e8ab0a7ec6bb3cff3083fdf6bbb667dbf574",
+            "message": "Filter candidate methods by name first (for more efficient sorting)\n\nCloses gh-28377\n\n(cherry picked from commit 0599320bd81edba1575f39922c586263c6d453b0)"
+        },
+        {
+            "hash": "aadf96ba9247ca440a0ca9e0c6ecb3c4ba6d8257",
+            "message": "Properly return loaded type even if identified as reloadable\n\nCloses gh-31668\n\n(cherry picked from commit 8921be18de88a0a1e63136c9d77d52eeea0acbe2)"
+        },
+        {
+            "hash": "2baf064d040a73ec1265bed123e255d399a19ab8",
+            "message": "Add current observation context in ClientRequest\n\nPrior to this commit, `ExchangeFilterFunction` could only get the\ncurrent observation from the reactor context. This is particularly\nuseful when such filters want to add KeyValues to the observation\ncontext.\n\nThis commit makes this use case easier by adding the context of the\ncurrent observation as a request attribute. This also aligns the\nbehavior with other instrumentations.\n\nFixes gh-31646"
+        },
+        {
+            "hash": "6121e2f526b587d2c3d78cab753dd87a3c714445",
+            "message": "Remove API diff Gradle plugin configuration\n\nWe have not published API diffs for a while now so we should remove the\nconfiguration entirely from our build."
+        },
+        {
+            "hash": "8e33805d2965fc33f3915e7089d0d9db6442e273",
+            "message": "Fix ordering of releasing resources in JSON Encoder\n\nPrior to this commit, the Jackson 2.x encoders, in case of encoding a\nstream of data, would first release the `ByteArrayBuilder` and then the\n`JsonGenerator`. This order is inconsistent with the single value\nvariant (see `o.s.h.codec.json.AbstractJackson2Encoder#encodeValue`) and\ninvalid since the `JsonGenerator` uses internally the\n`ByteArrayBuilder`.\n\nIn case of a CSV Encoder, the codec can buffer data to write the column\nnames of the CSV file. Writing an empty Flux with this Encoder would not\nfail but still log a NullPointerException ignored by the reactive\npipeline.\n\nThis commit fixes the order and avoid such issues at runtime.\n\nFixes gh-31656"
+        },
+        {
+            "hash": "1f19bb231105b5434ca7a8df7874a00fd9a2a0e7",
+            "message": "Update STOMP WebSocket transport reference docs\n\nCloses gh-31616"
+        },
+        {
+            "hash": "2784410cc60506562f5eaba97ba42ea7fca4e65a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f4ac323409fe42f1db1a2b0150c5925e99c3c57d",
+            "message": "Test for mixed order across bean factory hierarchy\n\nSee gh-28374\n\n(cherry picked from commit 48f3c0839563cd8999870d90a963326099553e2f)"
+        },
+        {
+            "hash": "6db00e63c7b21593da5bb4fe156acb718e397898",
+            "message": "WebSocketMessageBrokerStats implements SmartInitializingSingleton\n\nCloses gh-26536"
+        },
+        {
+            "hash": "ed613e767ad47b589a2aa98be7c10765d8b0af2e",
+            "message": "Skip buffer in StreamUtils#copy(String)\n\n(cherry picked from commit 54f87f1ff796eff3b54d61ed4992f86ef93b6483)"
+        },
+        {
+            "hash": "65781046cf4b46b0f7d76cd2ea7ef530f108ce56",
+            "message": "Polishing\n\n(cherry picked from commit fff50657d241a2756d885f49b3d5eda1b1c4af55)"
+        },
+        {
+            "hash": "0ee36095e7ca79a1c2e7767b9db92518a5ce98ad",
+            "message": "Restore outdated local/remote-slsb attributes for declaration compatibility\n\nLegacy EJB attributes are ignored since 6.0 due to being bound to a plain JndiObjectFactoryBean - but can still be declared now, e.g. when validating against the common versions of spring-jee.xsd out there.\n\nCloses gh-31627\n\n(cherry picked from commit 695559879e5bd7936cc60fba937889b49c9c2f8e)"
+        },
+        {
+            "hash": "0fc38117dffac61b0ed276198dc5231bc5be20f4",
+            "message": "Handle default package with AOT processing\n\nAdding generated code in the default package is not supported as we\nintend to import it, most probably from another package, and that is\nnot supported. While this situation is hard to replicate with Java,\nKotlin is unfortunately more lenient and users can end up in that\nsituation if they forget to add a package statement.\n\nThis commit checks for the presence of a valid package, and throws\na dedicated exception if necessary.\n\nCloses gh-31629"
+        },
+        {
+            "hash": "86b8a70ce6ae0c8864fe06d7dec0e7c809bc2440",
+            "message": "Ensure PathResourceResolvers log warnings for non-existent resources\n\nPrior to this commit, the getResource() methods in PathResourceResolver\nimplementations allowed an exception thrown from Resource#getURL() to\npropagate instead of logging a warning about the missing resource as\nintended.\n\nThis commit modifies the getResource() methods in PathResourceResolver\nimplementations so that the log messages include the output of the\ntoString() implementations of the underlying resources instead of their\ngetURL() implementations, which may throw an exception.\n\nFurthermore, logging the toString() output of resources aligns with the\nexisting output for \"allowed locations\" in the same log message.\n\nNote that the toString() implementations could potentially also throw\nexceptions, but that is considered less likely.\n\nSee gh-31623\nCloses gh-31624\n\n(cherry picked from commit 7d2ea7e7e15afb8d3137a1d2667101e4818937ae)"
+        },
+        {
+            "hash": "4bf759d8720e5069895506d8fc85c1439cca621f",
+            "message": "Next development version (v6.0.15-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31826",
+            "title": "`<replaced-method />` unnecessarily requires explicit `arg-type` since 6.0"
+        },
+        {
+            "number": "31828",
+            "title": "`<replaced-method />` unnecessarily requires explicit `arg-type` since 6.0"
+        },
+        {
+            "number": "31803",
+            "title": "`MergedAnnotations` finds duplicate annotations on method in multi-level interface hierarchy"
+        },
+        {
+            "number": "31815",
+            "title": "Upgrade to Reactor 2022.0.14"
+        },
+        {
+            "number": "28409",
+            "title": "Documentation needs to be updated with instructions for STOMP Client"
+        },
+        {
+            "number": "31740",
+            "title": "Remove `.mailmap` file"
+        },
+        {
+            "number": "31747",
+            "title": "Spring unable to decode aggregated JSON content"
+        },
+        {
+            "number": "31772",
+            "title": "Spring unable to decode aggregated JSON content"
+        },
+        {
+            "number": "31254",
+            "title": "HeaderContentNegotiationStrategy.resolveMediaTypes throws unexpected IllegalArgumentException "
+        },
+        {
+            "number": "31773",
+            "title": "Fix condition for \"Too many elements\" in `MimeTypeUtils.sortBySpecificity()`"
+        },
+        {
+            "number": "30953",
+            "title": "Multipart messages with empty parts are not correctly parsed in WebFlux"
+        },
+        {
+            "number": "31766",
+            "title": "Multipart messages with empty parts are not correctly parsed in WebFlux"
+        },
+        {
+            "number": "31767",
+            "title": "Document explicit `@ModelAttribute` is required for reflection hints inference"
+        },
+        {
+            "number": "31734",
+            "title": "Upgrade to Gradle 8.5"
+        },
+        {
+            "number": "29881",
+            "title": "PathEditor cannot handle absolute Windows paths with forward slashes"
+        },
+        {
+            "number": "31417",
+            "title": "Prevent duplicate HTTP server observations for cancelled exchanges"
+        },
+        {
+            "number": "31715",
+            "title": "Wrong observation status tag when a Not Found in a webflux application"
+        },
+        {
+            "number": "31716",
+            "title": "TraceId is missing in WebFlux controller handlers"
+        },
+        {
+            "number": "31708",
+            "title": "Fail to register MBean with bean name containing invalid character"
+        },
+        {
+            "number": "31682",
+            "title": "Include Hibernate's `Query.scroll()` in `SharedEntityManagerCreator`'s `queryTerminatingMethods` set"
+        },
+        {
+            "number": "31683",
+            "title": "Include Hibernate's `Query.scroll()` in `SharedEntityManagerCreator`'s `queryTerminatingMethods` set"
+        },
+        {
+            "number": "31672",
+            "title": "TypeDescriptor does not check generics in `equals` method (for ConversionService caching)"
+        },
+        {
+            "number": "28377",
+            "title": "Slow SpEL performance due to method sorting in `ReflectiveMethodResolver`"
+        },
+        {
+            "number": "31668",
+            "title": "SpEL expression on a reloadable type can no longer be resolved"
+        },
+        {
+            "number": "31646",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "31656",
+            "title": "Jackson encoder releases resources in wrong order"
+        },
+        {
+            "number": "31616",
+            "title": "Improve STOMP WebSocket documentation for input message buffer size"
+        },
+        {
+            "number": "26536",
+            "title": "WebSocketMessageBrokerStats has null stats for stompSubProtocolHandler since 5.3.2"
+        },
+        {
+            "number": "31627",
+            "title": "`<jee:local-slsb>` no longer works with a `business-interface` attribute"
+        },
+        {
+            "number": "31629",
+            "title": "GeneratedFiles#addSourceFile should not allow to add a source in the default package"
+        },
+        {
+            "number": "31623",
+            "title": "`PathResourceResolver.getResource()` does not log warning if `Resource#getURL()` throws exception"
+        },
+        {
+            "number": "31624",
+            "title": "`PathResourceResolver.getResource()` does not log warning if `Resource#getURL()` throws exception"
+        }
+    ]
+}

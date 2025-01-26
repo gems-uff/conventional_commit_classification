@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.6.1.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 6,
+    "start_delay": 0.0,
+    "duration": 197.1282175925926,
+    "commits_info": [
+        {
+            "hash": "b829ff2a4614ff25048944b2cdc8e43b6488fda0",
+            "message": "Merge pull request #5424 from acozzette/mac-python-fix\n\nCherry-picked fix from #5406"
+        },
+        {
+            "hash": "4bb130e7e65c3c5208f59419cef831274db2de9c",
+            "message": "Change MACOSX_DEPLOYMENT_TARGET to 10.9 (#5406)\n\n* Add kokoro build for python source package\r\n\r\n* Use libc++ for xcode 10 (#5303)\r\n\r\nThe xcode 10 removes the deprecated libstdc++ library. We could set\r\n\"MACOSX_DEPLOYMENT_TARGET\" to \"10.9\" to use libc++ instead.\r\n\r\n* Add python 3.7 build\r\n\r\n* Add build for python 3.7 on linux and windows\r\n\r\n* Remove unused source build\r\n\r\n* Add comment\r\n\r\n* Fix $MACOSX_DEPLOYMENT_TARGET mismatch\r\n\r\n* Fix MACOSX_DEPLOYMENT_TARGET mismatch\r\n\r\n* Add missing import for sysconfig\r\n\r\n* Add missing imports"
+        },
+        {
+            "hash": "d0d945539f40ea9baab8430078ee6229cd710336",
+            "message": "Merge pull request #5423 from acozzette/python-3.7-cherry-pick\n\nCherry-pick fix for compatibility with Python 3.7"
+        },
+        {
+            "hash": "539bc017a62f91bdf7c547b58948cb5a2f59d918",
+            "message": "Add Python 3.7 compatibility (#4862)\n\nCompilation of Python wrappers fails with Python 3.7 because\r\nthe Python folks changed their C API such that\r\nPyUnicode_AsUTF8AndSize() now returns a const char* rather\r\nthan a char*. Add a patch to work around. Relates #4086."
+        },
+        {
+            "hash": "aa368855516ee858acb3c80d11e0c9b06fae3ee2",
+            "message": "Merge pull request #5404 from acozzette/cherry-pick-4650\n\nCherry-picked fix from PR #4650 into 3.6.x branch"
+        },
+        {
+            "hash": "af4810663bf1fb2388e88ad9038b80551aefd6da",
+            "message": "remove PACKAGE_NAME and REPOSITORY_NAME deprecated usage (#4650)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "4086",
+            "title": "//:protobuf_python with use_fast_cpp_protors does not compile with python3.7 due to python's breaking changes in C API"
+        }
+    ]
+}

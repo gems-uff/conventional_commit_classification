@@ -1,0 +1,98 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.20.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 19,
+    "start_delay": 0.0,
+    "duration": 36.30756944444445,
+    "commits_info": [
+        {
+            "hash": "21027a27c4c2ec1000859ccbcfff46d83b16e1ed",
+            "message": "Merge pull request #9832 from haberman/php-dist\n\nFixed PHP release script."
+        },
+        {
+            "hash": "634a5681b8f249d4cce876e36d179d9c8a8e12d2",
+            "message": "Fixed PHP release script.\n\nPreviously it was releasing content from main/master, not the\nrelease branch!\n\nI fixed this by not checking out a separate copy of protobuf.\nAlso updated the composer.json so we don't need to rewrite it with\nsed."
+        },
+        {
+            "hash": "616a7ef54d3b157b4a68054f705ba70929fb094a",
+            "message": "Updated CHANGES.txt for 3.20.1 (#9826)\n\n* Update protobuf version\r\n\r\n* Updated Makefile.am for composer.json move.\r\n\r\n* Updated CHANGES.txt for 3.20.1.\r\n\r\n* Fixed spelling."
+        },
+        {
+            "hash": "296c1fdaff6fd16b319633fe215d890b90342304",
+            "message": "Update protobuf version (#9820)\n\n* Update protobuf version\r\n\r\n* Updated Makefile.am for composer.json move."
+        },
+        {
+            "hash": "6387f95aa974bc24907896d4099deb98241602e8",
+            "message": "fix: move composer.json out of root to avoid confusion (#9819)\n\n* move composer.json out of root to avoid confusion\r\n\r\n* fix: update php deployed json"
+        },
+        {
+            "hash": "653de45a2174e0a59ae8ec550b6383399af9357c",
+            "message": "Disable the aarch64 build on macOS because it is broken. (#9816)\n\nSee https://github.com/protocolbuffers/protobuf/issues/9804 for details."
+        },
+        {
+            "hash": "acd24bcd8dbd3834050f0c70a45c51d4fb619db8",
+            "message": "Add disallowment of setting numpy singleton arrays and multi-dimensio… (#9788)\n\n* Add breaking change (disallow setting numpy singleton arrays and multi-dimensional arrays to fields/repeated fields) and fix to CHANGES.txt, which was missed in a previous git sync."
+        },
+        {
+            "hash": "26d11fdba2fb6435ee4bef8a20fa011574397225",
+            "message": "-Dsurefire.failIfNoSpecifiedTests=false (#9761)\n\n@mrkruskal\n\n(cherry picked from commit 88eb7550a66252234f1e20523feaa5075b359831)"
+        },
+        {
+            "hash": "044cb7fd45cdf112b7682381c3be2f23aedd1f98",
+            "message": "-DfailIfNoSpecifiedTests=false (#9753)\n\n@jtattermusch @mkruskal-google\n\n(cherry picked from commit 55177c3574ce2718acf3d91cfcfbe9d035a6836d)"
+        },
+        {
+            "hash": "7db4eca77f2b03f93632edca5825f33ab65590e7",
+            "message": "Update changelogs for 3.20.1-rc1"
+        },
+        {
+            "hash": "803e371946df2e41b0f80cea5b7511045235651e",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "5edc8442a4bc7b68e9b974de4bc0ff8e42ec6ed6",
+            "message": "Merge pull request #9727 from mlocati/build-packaged-php-extension\n\nFix building packaged PHP extension\n\n(cherry picked from commit 7f9901c5f640fe0fbcd5dbdd303a269908fb3b62)"
+        },
+        {
+            "hash": "d24edbca5316e808c8dbdf9a34829f8b75c567c5",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "e097b3673216f9d7149c2cfe828c3908d0c0d0d7",
+            "message": "Merge pull request #9714 from JasonLunn/3.20.x\n\nCherry pick JRuby changes that fix NPE during encoding (#9507) and implements respond_to? (#9202) into 3.20.x."
+        },
+        {
+            "hash": "31a6482b8597099547769323878f27fef498e3d3",
+            "message": "Implement `respond_to?` in RubyMessage (#9677)\n\nAll synthetic methods implemented by `method_missing` are now supported by `respond_to?`.\n\nFixes issue #9202.\n\n* Fix null pointer exceptions exposed by new regression tests.\n* Fix clear_ on oneofs so that it is safe to call repeatedly and so that respond_to? does not depend on whether the oneof is currently cleared.\n* Code cleanup: reenable more tests on JRuby.\n* Align JRuby behavior with CRuby by throwing a RuntimeError when attempting to assign to a oneof.\n\n(cherry picked from commit 8e7f93669612a06cafc39625f61258b9d6b77a3c)"
+        },
+        {
+            "hash": "7fa212bba15da2fd725860dcc2e511a89eadba89",
+            "message": "Fix NPE during encoding and add regression test for issue 9507.\n\n(cherry picked from commit 58e320a7323b55f65137222064ed0e72fe423e23)"
+        },
+        {
+            "hash": "faa42e900cad226eec6df2781336224d0b3ea5e7",
+            "message": "Revert \"Use repo-relative labels wherever possible (#9187)\" (#9696)\n\nThis reverts commit 11de748d66a0b358b01c2ca1a03b6455b33f808b."
+        },
+        {
+            "hash": "7f9f75f30ef5b022a576428b0e66706a44a57688",
+            "message": "Merge pull request #9679 from darly/3.20.x-202203251917\n\n3.20.0"
+        },
+        {
+            "hash": "25045e3f69933dfc5582487eae2500bc5dea1be6",
+            "message": "Update protobuf version"
+        }
+    ],
+    "issues": [
+        {
+            "number": "9507",
+            "title": "Calling `inspect` on a proto instance causes a `NullPointerException` on subsequent `to_proto`"
+        },
+        {
+            "number": "9202",
+            "title": "jruby: protobuf fields should be defined as methods"
+        }
+    ]
+}

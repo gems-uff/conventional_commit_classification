@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 6,
+    "start_delay": 0.0,
+    "duration": 1.951886574074074,
+    "commits_info": [
+        {
+            "hash": "ceb1d29743c1abf733c2014bb3aa0bc364cf9007",
+            "message": "2.23.6 release (previous 2.23.5) + release notes updated by CI build 3653\n\n[ci skip-release]"
+        },
+        {
+            "hash": "8dd8d1ad916c37fdebfccbfe72d46534fd82f5fa",
+            "message": "Merge pull request #1544 from maxgrabenhorst/fix_premature_cleanup\n\nFixes #1541: Prevent premature garbage collection of mock objects"
+        },
+        {
+            "hash": "38dc92d45410c5afb9f9c9902362944146d7dc21",
+            "message": "Simplified code, passing only mock as parameter\n\nAlso made the constructors package-protected, followed by IDEA hint. It's always a good idea to reduce the scope."
+        },
+        {
+            "hash": "88a2d3d02571afe575150673942c88548272d28f",
+            "message": "Ensured that retryTest uses the same memory setting\n\nThis way we can reliably run stress tests from 'inline' submodule"
+        },
+        {
+            "hash": "40aae78266f57c6b598ef6eae7fac1b9afca27c6",
+            "message": "Stressed memory some more to get consistent failure"
+        },
+        {
+            "hash": "f6e95923231e68c0f43ca27a5bfae12e0761b33f",
+            "message": "Fixes #1541: Prevent premature garbage collection of mock object when using 'One-liner stubs' by using strong ref in BaseStubbing"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1541",
+            "title": "Mock object premature garbage collected when using 'One-liner stubs'"
+        }
+    ]
+}

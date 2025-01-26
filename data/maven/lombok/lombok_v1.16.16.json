@@ -1,0 +1,174 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.16",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 33,
+    "start_delay": 0.0,
+    "duration": 40.88780092592592,
+    "commits_info": [
+        {
+            "hash": "ade0a348926a682bf290feee95a42367037e22e4",
+            "message": "pre-release version bump.. with a new name!"
+        },
+        {
+            "hash": "164beb36becba6be897b4bd67287ce9fccc22fe9",
+            "message": "Fixed issue #1342: builder now marks generated stuff as deprecated if appropriate."
+        },
+        {
+            "hash": "ae54fa51ac6162a53dc0ac424d0ba17cdac89ba3",
+            "message": "[i1180] generate ConstructorProperties also for (package) private constructors"
+        },
+        {
+            "hash": "969ed9125e239380ce70b1c0abc78abc614eebaa",
+            "message": "[i1329] respect configuration for field access when generating equals, hashCode and toString from Data and Value"
+        },
+        {
+            "hash": "3b1792c39701fad8a8abc8d0d508b90ab2832e05",
+            "message": "Added tests to check warnings/errors emitted by Builder.Default support."
+        },
+        {
+            "hash": "11fdfb56f735dde042aebd9be6e4b488edfa0d84",
+            "message": "Builder.Default now throws out a few more warnings if misused."
+        },
+        {
+            "hash": "f8f9e2a0254082219596e8e91ee6aea9e0262dce",
+            "message": "[changelog][jdk9] added line about provisional jdk9 support."
+        },
+        {
+            "hash": "1db7052464d8956d7ebe303b15729a7c0be557bf",
+            "message": "[jdk9] Workaround for a weird casting issue that shows up for singularizer support."
+        },
+        {
+            "hash": "6b3aa5ffd3d4e4d7a26ea41cd77b2b031722e365",
+            "message": "[jdk9] fix val/var"
+        },
+        {
+            "hash": "f4d7e0dfb63fcb145c5b84b7a7cd8bc09ca4eb3e",
+            "message": "update references to issue numbers"
+        },
+        {
+            "hash": "0407894b65eaaf6a83eb5e5ee45249fa0db8b409",
+            "message": "[jdk9] Fix bug regarding multipleError field"
+        },
+        {
+            "hash": "bf54986e8a08d246877fae902c58dc41ca2f559b",
+            "message": "Fixing issue #1201: Builder now supports defaults!"
+        },
+        {
+            "hash": "c63c1528843a3ac591c9fbd2db3732af8824d097",
+            "message": "[wip] reworking how builder works with initialized fields."
+        },
+        {
+            "hash": "a2c10c70fa8e2c8736464a5c3d445e2ca6e8a296",
+            "message": "removed the suppressConstructorProperties param."
+        },
+        {
+            "hash": "d05d03743316e45abfd0d00397999d7eb959eb64",
+            "message": "Fixed issue #778: problems with onX if the annotation to be added has named args."
+        },
+        {
+            "hash": "8bfbd7fa846537c9393350e02c459c6878c0dec2",
+            "message": "fixded the version mess in the test framework."
+        },
+        {
+            "hash": "eb91f71e830900f9ce76456f54f97f3988a8906a",
+            "message": "Added support for restricting tests to certain platforms (ecj, javac)"
+        },
+        {
+            "hash": "b7cede3c27e42351e72618c45fd5e960df0e0133",
+            "message": "Reproduced issue #1132 (javac only); self-ref generics doesn’t work in `@Builder` in javac."
+        },
+        {
+            "hash": "74603cd9d355353f5373deb167988c5eaf015346",
+            "message": "Fixing issue #1298: `@Builder` with recursive generics didn’t work in javac/delombok."
+        },
+        {
+            "hash": "fe3490328a35d431fdd7bdf16eed08970e47b85c",
+            "message": "ExoticJava was missing a marker for java7+; as it contains ARM construct, it needs that."
+        },
+        {
+            "hash": "c096cbc65aeb883a886d70a6ae43ebea2de2a217",
+            "message": "Fixed versionmatching for our test framework."
+        },
+        {
+            "hash": "272b33a6ffb7c8697148b4e3de405dbaf59fedfa",
+            "message": "bugfix for JDK9: The enterMethod was erroneously hooked up to the remove method. whoops."
+        },
+        {
+            "hash": "06ddfd4e656255dadaf4a47c9070e3765ea57d8e",
+            "message": "A stray debug variant of an error message left in the source."
+        },
+        {
+            "hash": "8ec7abf996ba1089104f5d56cc417b17dcadca5f",
+            "message": "Reproduces the bug with recursive generics in builder (issue #1298)."
+        },
+        {
+            "hash": "a38b41f100ac759eadb05433341cf062e7094f4c",
+            "message": "Added a test case to highlight issue #1302: `@Builder` on non-static inner classes (or constructors of non-static inner classes) doesn't work."
+        },
+        {
+            "hash": "40c40c6b944011cd2c29bc7f6de3a60a67823135",
+            "message": "[jdk9] changelog"
+        },
+        {
+            "hash": "e3a86782e590e11291e1f208417d5ca61aac4fac",
+            "message": "[jdk9] Fix members_field error"
+        },
+        {
+            "hash": "05f93771e9aeb6ad0c884f22df4b9fa8c1f6cc2f",
+            "message": "[jdk9] Create FileObjects for jdk9"
+        },
+        {
+            "hash": "1d32894ca316dd83c873d1e46746ee6ca37f8059",
+            "message": "Fixes issue #1287 - if a field gets marked as static via `@UtilityClass`, don’t make it final via `@FieldDefaults`."
+        },
+        {
+            "hash": "627e9dc8a7f381ace59f91c9ee4a023733d4717e",
+            "message": "Updated the text to also mention rebuilding projects. Also fixed various size issues with swing’s… peculiar layouting mechanism."
+        },
+        {
+            "hash": "ad4bd36274d2bfe8dcf74977d921a114739386b1",
+            "message": "Now searches through any subdir of any dir containing the string ‘eclipse’ (or STS or whatnot), to any depth, instead of requiring each subdir to be searched to again contain ‘eclipse’ or some variant thereof.\n\nThe mac installer installs to /Applications/eclipse/java-neon, for example, by default, so it wasn’t being found."
+        },
+        {
+            "hash": "9491bce6021d22c98dd615821d5dbb9fdf5e3fc5",
+            "message": "[trivial] Added a suppress warnings\n\n(to suppress an expected and in this case analysed to be harmless, intentional use of our own deprecated API)"
+        },
+        {
+            "hash": "5eaf74ec22879e8fabc3f9d86a520fc04a097dc3",
+            "message": "Post-release version bump."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1342",
+            "title": "[Feature Request] Builder adds @Deprecated annotations"
+        },
+        {
+            "number": "1201",
+            "title": "@Builder should get a @Default companion annotation."
+        },
+        {
+            "number": "778",
+            "title": "onX bug with JDK8"
+        },
+        {
+            "number": "1132",
+            "title": "Builder breaks on recursive generic type"
+        },
+        {
+            "number": "1298",
+            "title": "@Builder with generics does not compile but delomboked code does"
+        },
+        {
+            "number": "1302",
+            "title": "@Builder on non-static inner classes does not work."
+        },
+        {
+            "number": "1287",
+            "title": "Something with annotation values that use a constant instead of a literal"
+        }
+    ]
+}

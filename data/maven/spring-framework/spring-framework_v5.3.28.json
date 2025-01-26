@@ -1,0 +1,254 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.28",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 38,
+    "start_delay": 0.0,
+    "duration": 62.931979166666665,
+    "commits_info": [
+        {
+            "hash": "b02f4a06ca445cf5e20dadd389c75d49dd34d6cc",
+            "message": "Release v5.3.28"
+        },
+        {
+            "hash": "99ae6e70bbaefc50616beda80db3599cdd99d01e",
+            "message": "Declare ClassLoader for DeserializingConverter constructor as nullable\n\nCloses gh-30670\n\n(cherry picked from commit b9221656ccb079636b4e4ad1415d5b69b8f15b92)"
+        },
+        {
+            "hash": "c2cc55eacc544f0f1f6591f5c54b865f2a6cc348",
+            "message": "Consider UUID as simple value type with concise toString output\n\nCloses gh-30661\n\n(cherry picked from commit 927d27b1212e3b278c619f72003e6281329d6914)"
+        },
+        {
+            "hash": "9cff2ace97bd134ecb87004b2895eecfe6909aca",
+            "message": "Upgrade to Reactor 2020.0.33\n\nCloses gh-30656"
+        },
+        {
+            "hash": "3c2590d339e163f760b89a445f1ac214da6fc3df",
+            "message": "Document limited isolation level support for concurrent transactions\n\nSee gh-29997"
+        },
+        {
+            "hash": "4b55333b0e0d9aa2d15fdf5614b0718745299c07",
+            "message": "Document which @Scheduled attributes support SpEL expressions\n\nCloses gh-29290\n\n(cherry picked from commit f8c8873c99e8064d9ba6b1c8d86217f019d46daa)"
+        },
+        {
+            "hash": "c27acad6161cbe8c975eacf5a2783d08d6db16fc",
+            "message": "Specific check for parent of MethodInvocationInfo ClassLoader\n\nSee gh-30389"
+        },
+        {
+            "hash": "70be9afdc6ebd2eb1f2f882437cfa4f7da34f42f",
+            "message": "Reuse method cache from original proxy factory (aligned with 6.0.x)\n\nSee gh-30616"
+        },
+        {
+            "hash": "d4450a8702241dd08b032e1d5838b61fec9ad1a6",
+            "message": "Specific check for parent of spring-aop ClassLoader\n\nCloses gh-30389\n\n(cherry picked from commit 0a5aff1b60f3082d07c523198e9f9d35aea6ffa3)"
+        },
+        {
+            "hash": "210e47d65ebc4f79d02b24cbe87eaa93b6cfbc97",
+            "message": "Polishing"
+        },
+        {
+            "hash": "06411831e856b446942323d150a902f6f8a46264",
+            "message": "Consistent ProxyCallbackFilter#equals/hashCode methods\n\nOpaque check in equals instead; no consideration of optimize flag.\n\nCloses gh-30616"
+        },
+        {
+            "hash": "8c7daa807afd3d9236e29a9ef470dafad11b1359",
+            "message": "Polishing"
+        },
+        {
+            "hash": "46d171a8fddb3158da21b2e4c72c9d6f335d3a8b",
+            "message": "Restore creation of plain HashSet/HashMap for direct HashSet/HashMap type\n\nCloses gh-30596\n\n(cherry picked from commit cdc4497664ed73290837d04c515579fc80248d43)"
+        },
+        {
+            "hash": "259bd5250d6d302a056c2ec51e5c08c6d1805578",
+            "message": "Consistent javadoc references to JdbcTransactionManager"
+        },
+        {
+            "hash": "cef046218cd94cc7fb41991b5661c53fd04f39c6",
+            "message": "Upgrade to Tomcat 9.0.75, Netty 4.1.93, Undertow 2.2.24, EclipseLink 2.7.12"
+        },
+        {
+            "hash": "e4bd1344e23301d2516d2ed5ec739941d385ac37",
+            "message": "Set and reset shared isolation value within synchronized transaction begin\n\nSince EclipseLink applies a custom transaction isolation value to its shared DatabasePlatform instance, we need to immediately restore the original value after the current value got picked up for JDBC Connection access inside of EclipseLink. In order to not interfere with concurrent transactions, we need to use synchronization around the transaction begin sequence in such a case.\n\nCloses gh-29997"
+        },
+        {
+            "hash": "9decbf21585eb1f13fa266fe2c8220ec922e155f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "268b7a8931991c3bf5219a98b2b9e04031f69de7",
+            "message": "Revise TargetSource implementations for proper nullability\n\nIncludes hashCode optimization in AbstractBeanFactoryBasedTargetSource.\nIncludes ThreadLocal naming fix in ThreadLocalTargetSource.\n\nCloses gh-30576\nCloses gh-30581\n\n(cherry picked from commit c68552556f98b9b5b036200279e9d07e8ef9222e)"
+        },
+        {
+            "hash": "1240fb6b9a2b1eb7294a260a5f5bb3482d43863f",
+            "message": "Consistently publish events from CompletableFuture\n\nCloses gh-30578\n\n(cherry picked from commit b738a202338571b897cd64df3cfe34f11308d8a5)"
+        },
+        {
+            "hash": "7dae3afb4bc15f9d36314a4bb3ecd3ca61cfdeb7",
+            "message": "Resolve Asciidoctor extensions from Central\n\nThis commit upgrades spring-asciidoctor-extensions-block-switch to 0.6.1\nas this version is available on Maven Central."
+        },
+        {
+            "hash": "d9de36b5ee8e7451351a2af5504b1e3a7c4b44eb",
+            "message": "Merge branch 'gh-30555' into 5.3.x\n\nCloses gh-30555"
+        },
+        {
+            "hash": "4e696db922fe45b83a18c02ec0934df59b695cba",
+            "message": "Update copyright year of changed file\n\nSee gh-30554"
+        },
+        {
+            "hash": "0adad1059513133e34e67d3d6ad776ce684177dc",
+            "message": "Fix `FileSystemUtils::deleteRecursively` Javadoc\n\nSee gh-30554"
+        },
+        {
+            "hash": "540d0d93455097eaa49c8283141ee46abec2bac8",
+            "message": "Avoid Autowired shortcut resolution for NullBean values\n\nIncludes getBean documentation against NullBean values.\n\nCloses gh-30485\n\n(cherry picked from commit 8b8d1474803437da4bf9c0830a13b1bcc85dff83)"
+        },
+        {
+            "hash": "572bbeeba30bf9769cb64536c9d0bf6460a16082",
+            "message": "Use spring-doc-resources SNAPSHOT version"
+        },
+        {
+            "hash": "77cd44dd20692ef8feb7c939fff2ae39d415a183",
+            "message": "Update CI pipeline"
+        },
+        {
+            "hash": "65e7b4a279a30d6f570800d986628196eaf54cd2",
+            "message": "Add ignore rule for cached-antora-playbook.yml\n\nIn case of checking out the 5.3.x branch after 6.0.x or main"
+        },
+        {
+            "hash": "7d95a24573ef38be93a9c8e86bb92ede105c0cd4",
+            "message": "Make maximum SpEL expression length configurable\n\nCloses gh-30446"
+        },
+        {
+            "hash": "1dbe0ee6dbddc3cbf149c8a22f920a8e4107de1f",
+            "message": "Respect TaskDecorator configuration on DefaultManagedTaskExecutor\n\nCloses gh-30442"
+        },
+        {
+            "hash": "0211016957822e21317db50878f3c8c3affd244c",
+            "message": "Consistent support for MultiValueMap and common Map implementations\n\nCloses gh-30440"
+        },
+        {
+            "hash": "08fe12393063d1b9ed92ade42a74b2296ceb523e",
+            "message": "Introduce Environment.matchesProfiles() for profile expressions\n\nEnvironment.acceptsProfiles(String...) was deprecated in 5.1 in\nconjunction with gh-17063 which introduced a new\nacceptsProfiles(Profiles) method to replace it. The deprecated method\nonly supports OR semantics; whereas, the new method supports profile\nexpressions. Thus, the goal was to encourage people to use the more\npowerful profile expressions instead of the limited OR support with\nprofile names.\n\nHowever, there are use cases where it is difficult (if not impossible)\nto provide a Profiles instance, and there are use cases where it is\nsimply preferable to provide profile expressions directly as strings.\n\nTo address these issues, this commit introduces a new matchesProfiles()\nmethod in Environment that accepts a var-args list of profile\nexpressions.\n\nSee gh-30206\nCloses gh-30226"
+        },
+        {
+            "hash": "219448796fdb7f5759dfe62d3fd68f18c35ec3a6",
+            "message": "Polish Environment and StandardEnvironmentTests\n\nSee gh-30206\nSee gh-30226"
+        },
+        {
+            "hash": "0956c144c9b89122392e7cf0d5f4f78dc000dec0",
+            "message": "Polish ProfilesParser internals"
+        },
+        {
+            "hash": "964950a8b9b6e0900ed4bb1ef5e7fc081fb245d2",
+            "message": "Reject null and empty SpEL expressions\n\nPrior to gh-30325, supplying a null reference for a SpEL expression was\neffectively equivalent to supplying the String \"null\" as the\nexpression. Consequently, evaluation of a null reference expression\nalways evaluated to a null reference. However, that was accidental\nrather than by design.\n\nDue to the introduction of the checkExpressionLength(String) method in\nInternalSpelExpressionParser (in conjunction with gh-30325), an attempt\nto evaluate a null reference as a SpEL expression now results in a\nNullPointerException.\n\nTo address both of these issues,\nTemplateAwareExpressionParser.parseExpression() and\nSpelExpressionParser.parseRaw() now reject null and empty SpEL\nexpressions.\n\nSee gh-30371\nCloses gh-30373"
+        },
+        {
+            "hash": "5afd94f90f08ee96967188067cbfa8f0288b6d38",
+            "message": "Polish SpelParserTests and TemplateExpressionParsingTests"
+        },
+        {
+            "hash": "ec5f7644e4e59af9dfc0db996185ad1164ac3084",
+            "message": "Updated CI image JDK"
+        },
+        {
+            "hash": "0c8ef4c67189b512c3eb23576a1a1f4bbc18cc28",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "a851b7309a5c7156180ecec4afbe2d4c1a9f464d",
+            "message": "Next development version (v5.3.28-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30670",
+            "title": "ClassLoader can be null in DeserializingConverter and should be annotated with @Nullable"
+        },
+        {
+            "number": "30661",
+            "title": "Change of behaviour for UUID in bean validation output in v5.3.27"
+        },
+        {
+            "number": "30656",
+            "title": "Upgrade to Reactor 2020.0.33"
+        },
+        {
+            "number": "29997",
+            "title": "EclipseLinkJpaDialect: Unexpected default isolation levels"
+        },
+        {
+            "number": "29290",
+            "title": "Document which `@Scheduled` attributes support SpEL expressions"
+        },
+        {
+            "number": "30389",
+            "title": "Spring Framework 6.0.8 appears to cause issues in OSGi environment"
+        },
+        {
+            "number": "30616",
+            "title": "Inconsistent ProxyCallbackFilter#equals/hashCode methods in CglibAopProxy"
+        },
+        {
+            "number": "30596",
+            "title": "CollectionFactory.createMap(HashMap.class, 0) now returns a LinkedHashMap rather than a HashMap"
+        },
+        {
+            "number": "30576",
+            "title": "Performance optimization in AbstractBeanFactoryBasedTargetSource.hashCode()"
+        },
+        {
+            "number": "30581",
+            "title": "ThreadLocalTargetSource does not include actual target bean name in NamedThreadLocal"
+        },
+        {
+            "number": "30578",
+            "title": "ApplicationListenerMethodAdapter inconsistently publishes events from CompletableFuture"
+        },
+        {
+            "number": "30555",
+            "title": "FileSystemUtils::deleteRecursively Javadoc refers to File instead of Path"
+        },
+        {
+            "number": "30485",
+            "title": "For `@Bean` method that returns `null`, `@Autowired` injects `NullBean` instead of `null` for cached arguments"
+        },
+        {
+            "number": "30446",
+            "title": "Make maximum SpEL expression length configurable"
+        },
+        {
+            "number": "30442",
+            "title": "Respect TaskDecorator configuration on DefaultManagedTaskExecutor"
+        },
+        {
+            "number": "30440",
+            "title": "Consistent support for MultiValueMap and common Map implementations in CollectionFactory"
+        },
+        {
+            "number": "17063",
+            "title": "Support AND operator in @Profile annotation [SPR-12458]"
+        },
+        {
+            "number": "30206",
+            "title": "Introduce `Environment.matchesProfiles()` for profile expressions"
+        },
+        {
+            "number": "30226",
+            "title": "Introduce `Environment.matchesProfiles()` for profile expressions"
+        },
+        {
+            "number": "30325",
+            "title": "Limit SpEL expression length"
+        },
+        {
+            "number": "30371",
+            "title": "Reject null and empty SpEL expressions"
+        },
+        {
+            "number": "30373",
+            "title": "Reject null and empty SpEL expressions"
+        }
+    ]
+}

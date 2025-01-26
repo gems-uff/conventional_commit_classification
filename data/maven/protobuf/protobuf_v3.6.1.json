@@ -1,0 +1,166 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.6.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 37,
+    "start_delay": 0.0,
+    "duration": 56.10444444444445,
+    "commits_info": [
+        {
+            "hash": "48cb18e5c419ddd23d9badcfe4e9df7bde1979b2",
+            "message": "Updated change log for 3.6.1 release"
+        },
+        {
+            "hash": "9e1286b949adc40b450a0097c6ffd4dd491506c0",
+            "message": "Updated version numbers to 3.6.1"
+        },
+        {
+            "hash": "e508fc0c661fefe5228a9cab77d0c07ef220f34a",
+            "message": "Check the message to be encoded is the wrong type. (#4885) (#4949)\n\n* Check the message to be encoded is the wrong type. (#4885)\r\n\r\n* Change TypeError to ArgumentError"
+        },
+        {
+            "hash": "fc90fd6df1db9c89e08eaf93a9a525928c459cdf",
+            "message": "Make assertEquals pass for message (#4947)\n\nThis change only makes assertEquals pass for message in c extension. However, it actually does nothing.\r\nThis is the same behavior before 3.6.0 release."
+        },
+        {
+            "hash": "d85ffdce419eb3e5b8444e2fed7c9e13f3b9637e",
+            "message": "Merge pull request #4924 from xfxyjwf/3.6.x\n\nCherry-pick master build fixes and kokoro changes to 3.6.x"
+        },
+        {
+            "hash": "8356d270a54e18c21f4feac6f5e2b6f1061dc8d5",
+            "message": "Add continuous test for ruby 2.3, 2.4 and 2.5 (#4829)\n\n* Add continuous test for ruby 2.3, 2.4 and 2.5\n\n* Change ruby 2.5 to 2.5.0\n\n* No need to provide argument to rb_funcall when argc is 0\n\n* Fix tests for ruby 2.5\n\n* Use rescue instead of assert_raise to accept subclass of error"
+        },
+        {
+            "hash": "7fdebf2c2eda381bc7f4701811aae334b0f742ab",
+            "message": "Fix cpp_distcheck"
+        },
+        {
+            "hash": "6c8241119849fa535f019556093652ba9feced03",
+            "message": "Fix php conformance test."
+        },
+        {
+            "hash": "11e2eca43e020c18ec4e168f8287d916056bd571",
+            "message": "protoc-artifacts: Update centos base from 6.6 to 6.9\n\nThis avoids the need to use \"yum update && yum upgrade\" in the container\nto be able to contact GitHub, which requires TLS 1.2[1].\n\nI have verified that binaries built with this container still run in the\nprevious container; no errors like \"/lib64/libc.so.6: version\n`GLIBC_2.14' not found\", which occur if using too new of a glibc when\ncompiling. CentOS 6.6 has glibc version 2.12 release 1.209.el6. CentOS\n6.9 has glibc version 2.12 release 1.149.el6. Both would upgrade to\nrelease 1.212.el6 via \"yum update && yum upgrade\".\n\n1. https://githubengineering.com/crypto-deprecation-notice/"
+        },
+        {
+            "hash": "6fc2bac3f36e564e1c5e1171788ada13aff0d355",
+            "message": "Updated Docker setup to use GCC 4.8\n\nNow that we depend on C++11, we need at least GCC 4.8 instead of 4.7.\nThis change updates the Docker setup to continue using CentOS 6.6 but\nwith GCC 4.8.\n\nI also added libm to the whitelist for dynamically linked libraries for\nthe ARM64 protoc binary."
+        },
+        {
+            "hash": "b3e4e3abe0d2f79ec9f1e4e24e12dc642d662546",
+            "message": "Remove js_embed binary. (#4709)\n\n* Remove js_embed binary."
+        },
+        {
+            "hash": "0b3b4708a940337c38e69138e55ece4360e0484d",
+            "message": "Fix cpp benchmark dependency on mac"
+        },
+        {
+            "hash": "ae8def639e1a44d9cce75b164ca2540cead93cd2",
+            "message": "Comment out unused command from release script."
+        },
+        {
+            "hash": "9327dc72581dd1485cbae6a33192e4dbe9a3ecb6",
+            "message": "Run autogen.sh in release script."
+        },
+        {
+            "hash": "9209a41f8294f6da8556266f3cacb83e5ad03e75",
+            "message": "Add protoc release script for Linux build."
+        },
+        {
+            "hash": "4d0fbd173780e368f4fad84fd585d110f828a01b",
+            "message": "Add cpp tests under release docker image.\n\n1. Added C++ tests under the release docker image.\n2. Cleaned up tests.sh and removed traivis stuff."
+        },
+        {
+            "hash": "474fd3160f6ef0daa7ad75941d203dfb34bcf3e5",
+            "message": "Update protoc build scripts.\n\n1. Changed maven script to only do artifact uploading and removed build\nscript invocation from it. We didn't use maven to invoke the build\nscript before (we built protoc manually and editted pom.xml to only do\nuploading for previous releases), and will not use it in the future (we\nwill use kokoro to build artifacts).\n2. Cleaned up build-protoc.sh and README.md: removed the part about\nusing maven to build and listed supported platforms explicitly."
+        },
+        {
+            "hash": "b23429ea324818150754e3b7a78a996871fbd2ae",
+            "message": "Fix 32bit php tests"
+        },
+        {
+            "hash": "8758cc160641d0a51e560611ef6fa4896366c0e9",
+            "message": "Fix php tests"
+        },
+        {
+            "hash": "bd1224e7b6b1fa93d7979b6a0b1b66c34e6decdd",
+            "message": "fix golang kokoro linux build"
+        },
+        {
+            "hash": "359889bafd0e86db8d75ae7683b45fc673a9e78e",
+            "message": "fix python cpp kokoro build"
+        },
+        {
+            "hash": "c1e6c4df738d62fbb9eff3f735292d349655ab03",
+            "message": "fix linux kokoro build in docker"
+        },
+        {
+            "hash": "22503a01722939385a7584c3b65f1c43dc5b2ef8",
+            "message": "fix for API change in PHP 7.3 (#4898)"
+        },
+        {
+            "hash": "e529d162838f747362c123ec10e87ebe3970c677",
+            "message": "Make ruby release configs consistent with protoc."
+        },
+        {
+            "hash": "82019f90fff5c44477f91084c84b24989a93df7a",
+            "message": "Merge pull request #4900 from xfxyjwf/3.6.x\n\nAdd kokoro bazel configs to 3.6.x branch."
+        },
+        {
+            "hash": "0e38f9ee1bb98ef3d5b6bff678f265324fc25615",
+            "message": "Fix bazel build of examples."
+        },
+        {
+            "hash": "b5975c109aeb3d4f77d662e7b7222b87c653c69d",
+            "message": "Add kokoro bazel configs for 3.6.x branch."
+        },
+        {
+            "hash": "4a4a60bf934b6c60862640afceb7f2d99890f7e3",
+            "message": "Merge pull request #4880 from nashimus/3.6.x\n\nAdditional support for building and deploying ppcle_64 artifacts"
+        },
+        {
+            "hash": "1f7837a2abb4445c58f725864a6e721de2698872",
+            "message": "Additional support for building and deploying ppcle_64 artifacts"
+        },
+        {
+            "hash": "f7ada1280fac4af717d478e6a9765d3f02b418b3",
+            "message": "Build ruby gem on kokoro (#4819)\n\n* Install rake compiler\r\n\r\n* Add kokoro config to build ruby gem on linux\r\n\r\n* Rename from linix to linux\r\n\r\n* Fix prepare_build.sh name\r\n\r\n* Clean up\r\n\r\n* Install bundler\r\n\r\n* Install bundler\r\n\r\n* Use c99 in order to build gem on mingw-32 on ruby 2.0.0\r\n\r\nSee https://github.com/rake-compiler/rake-compiler-dock/issues/4\r\n\r\n* Move c99 config to extcofig.rb"
+        },
+        {
+            "hash": "56d27530ab573d8c8a9808bff9542ca2e8a9291a",
+            "message": "Rename build_artifacts.cfg to release.cfg (#4818)"
+        },
+        {
+            "hash": "b907a03185a3267a3ce0e4456aabf32dcfc54049",
+            "message": "Add files to build ruby artifact for mac on kokoro (#4814)\n\n* Add files to build ruby artifact for mac on kokoro\r\n\r\n* Move ruby specific stuff to ruby dir"
+        },
+        {
+            "hash": "ad85c3b4a2598670de129015fab03a97edea73bc",
+            "message": "Added Kokoro protoc release build for OS X (#4770)\n\nThis configuration builds both 32-bit and 64-bit binaries for Mac OS X.\r\nOne thing I had to change was to increase our minimum supported version\r\nfor 10.7 to 10.9, because 10.9 (Mavericks) appears to be the earliest\r\nversion supporting C++11."
+        },
+        {
+            "hash": "885be9c9828514595f2f1d24c45aec620b739730",
+            "message": "Work around MSVC issue with std::atomic initialization (#4777)\n\n* Work around MSVC issue with std::atomic initialization\r\n\r\nMSVC seems to have a bug where it does not use constant initialization\r\nfor std::atomic, which ends up causing crashes during initialization.\r\nThis change introduces a workaround by putting the std::atomic inside a\r\nunion, which causes the compiler to use constant initialization for it.\r\n\r\n* Added an AppVeyor test for static linking with MSVC"
+        },
+        {
+            "hash": "b0a8220e92ce7eaccb3042efa123e17b4d0719e9",
+            "message": "Added Kokoro Windows release build config for protoc (#4766)\n\nThis should make it easy to automatically build 32-bit and 64-bit\r\nWindows protoc binaries."
+        },
+        {
+            "hash": "e1845779ed1115dd61eb2a3b8f0a78c252ca5b2b",
+            "message": "Merge pull request #4878 from acozzette/fix-msvc-initialization\n\nFix initialization with Visual Studio"
+        },
+        {
+            "hash": "a9abc7831e45257d334cfa682746b6cadf9e95d9",
+            "message": "Fix initialization with Visual Studio\n\nIt appears that Visual Studio does not work well with std::once_flag\nbecause it has a bug causing it to initialize that during dynamic\ninitialization instead of constant initialization. This change works\naround the problem by using function static initializers instead.\n\n@gerben-s originally wrote this change for the Google-internal codebase\nbut I am just cherry-picking it here.\n\nThis fixes #4773."
+        }
+    ],
+    "issues": [
+        {
+            "number": "4773",
+            "title": "global std::once_flag variables don't work with Visual Studio"
+        }
+    ]
+}

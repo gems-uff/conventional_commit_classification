@@ -1,0 +1,398 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.13",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 67,
+    "start_delay": 0.0,
+    "duration": 47.64949074074074,
+    "commits_info": [
+        {
+            "hash": "bf20fb30d8c93cd8797b60d505d5e6f5799abacb",
+            "message": "Release v2.5.13"
+        },
+        {
+            "hash": "77edb27a073ce32d1bf148520393e218b8395ed4",
+            "message": "Fix package tangle caused by ApplicationContextFactory\n\nFix package tangle by changing `ApplicationContextFactory.DEFAULT` to\nuse `spring.factories` to discover implementations rather than needing\ndirect access to our own `ApplicationContext` classes.\n\nCloses gh-30272"
+        },
+        {
+            "hash": "5c4b63be119c85b91abec193e627190b92427dbc",
+            "message": "Upgrade to Spring Session 2021.0.6\n\nCloses gh-30595"
+        },
+        {
+            "hash": "1bd1b2a3a43ca24d99db2692b695d06bbf7809f6",
+            "message": "Upgrade to Lombok 1.18.24\n\nCloses gh-30753"
+        },
+        {
+            "hash": "792ebdbbf80039e199fb70adcb92befc96c4db3e",
+            "message": "Upgrade to Janino 3.1.7\n\nCloses gh-30752"
+        },
+        {
+            "hash": "e1ad6578884e9ee34e08f632484e3a4cc3b11476",
+            "message": "Merge pull request #30748 from rfigueroa\n\n* pr/30748:\n  Use eclipse-temurin in docker samples\n\nCloses gh-30748"
+        },
+        {
+            "hash": "ae267bfab2c3056d402fccd5888413afd884cab8",
+            "message": "Use eclipse-temurin in docker samples\n\nAs AdoptOpenJDK moved to the Eclipse Foundation, this commit updates the\ndocs to reflect that in docker file samples.\n\nSee gh-30748"
+        },
+        {
+            "hash": "1e32f3b7182efebf0f89bb6e12d48a636f29f8f8",
+            "message": "Upgrade to Spring Integration 5.5.11\n\nCloses gh-30700"
+        },
+        {
+            "hash": "9f7a9546bd961523de6b54c96aebd04630f70223",
+            "message": "Upgrade to Spring Data 2021.0.11\n\nCloses gh-30594"
+        },
+        {
+            "hash": "4c52de3ef783b79ca14dbc5a98c035f0873db2b1",
+            "message": "Merge pull request #30692 from terminux\n\n* pr/30692:\n  Polish \"Validate overrides against CharsetMapperDefault.properties\"\n  Validate overrides against CharsetMapperDefault.properties\n\nCloses gh-30692"
+        },
+        {
+            "hash": "1fa4701d6dd9c017b332a4531eb9af406619bcf1",
+            "message": "Polish \"Validate overrides against CharsetMapperDefault.properties\"\n\nSee gh-30692"
+        },
+        {
+            "hash": "407ae3b04f919185b597047c75e3fdc325808eff",
+            "message": "Validate overrides against CharsetMapperDefault.properties\n\nSee gh-30692"
+        },
+        {
+            "hash": "2c30d661a46eebb37f25c1ec54bb66356ac880d0",
+            "message": "Merge pull request #30659 from jprinet\n\n* pr/30659:\n  Upgrade to Gradle Enterprise plugin 3.9\n\nCloses gh-30659"
+        },
+        {
+            "hash": "209e6fbe55ab913199d3b9b2086a9b2ad2d06a7d",
+            "message": "Upgrade to Gradle Enterprise plugin 3.9\n\nSee gh-30659"
+        },
+        {
+            "hash": "0ad6ae9a03b14692fbfaa8d92eb4bce6fce19d02",
+            "message": "Upgrade to Spring Kafka 2.7.13\n\nCloses gh-30592"
+        },
+        {
+            "hash": "1c08f503ba90e850226ae7a751c07b35946bb9e0",
+            "message": "Upgrade to Spring AMQP 2.3.16\n\nCloses gh-30699"
+        },
+        {
+            "hash": "c25a2eb274601df0a0bdc3dd76166aaf23794738",
+            "message": "Upgrade to Spring Security 5.5.6\n\nCloses gh-30593"
+        },
+        {
+            "hash": "07ba83be5d11bab5ff5861ecb3202fd272a70295",
+            "message": "Upgrade to Spring LDAP 2.3.7\n\nCloses gh-30589"
+        },
+        {
+            "hash": "8e1e909444b17f1eade2d241aa01be36c2ac170e",
+            "message": "Start building against Spring Integration 5.5.11 snapshots\n\nSee gh-30700"
+        },
+        {
+            "hash": "5cdcdbdcf15d6902476fa1647a2b648868b53a8e",
+            "message": "Start building against Spring AMQP 2.3.16 snapshots\n\nSee gh-30699"
+        },
+        {
+            "hash": "9299329256b32156c969fb5f0e4ace5ea0283e1e",
+            "message": "Upgrade to Spring Retry 1.3.3\n\nCloses gh-30590"
+        },
+        {
+            "hash": "be2b70452e38f236ebf319a32537e6c4faee1fe0",
+            "message": "Upgrade to Undertow 2.2.17.Final\n\nCloses gh-30681"
+        },
+        {
+            "hash": "8199ffd4ed66e066882df0bc66aa9ee2c1fad80d",
+            "message": "Upgrade to Tomcat 9.0.62\n\nCloses gh-30680"
+        },
+        {
+            "hash": "ded1810bd1fbe08d8d7fa23c70dcd626cdb64c68",
+            "message": "Upgrade to RSocket 1.1.2\n\nCloses gh-30679"
+        },
+        {
+            "hash": "a913e4fdd54cb7b6cace95f175eab1ebf347470e",
+            "message": "Upgrade to Pooled JMS 1.2.4\n\nCloses gh-30678"
+        },
+        {
+            "hash": "0389bc84db717e19c46d34142c85dcab44eaa3c1",
+            "message": "Upgrade to Netty 4.1.76.Final\n\nCloses gh-30677"
+        },
+        {
+            "hash": "a245028b052e9ab262dc1d5232d12289e190d94a",
+            "message": "Upgrade to Jetty 9.4.46.v20220331\n\nCloses gh-30676"
+        },
+        {
+            "hash": "c6473bb5b54a9759f4ddd1293f2eeddbcceedb26",
+            "message": "Upgrade to AppEngine SDK 1.9.96\n\nCloses gh-30675"
+        },
+        {
+            "hash": "5661c18d264147fbe7a03f1bc178dcdac27216b0",
+            "message": "Upgrade to Micrometer 1.7.11\n\nCloses gh-30588"
+        },
+        {
+            "hash": "f7d181e65b2104f3f61172cac4a166e625409682",
+            "message": "Handle null additional properties more gracefully\n\nCloses gh-30654"
+        },
+        {
+            "hash": "8f1b8622ba403c6e2f14f7f89c469f40c6f16a8d",
+            "message": "Ensure that webEnvironment=NONE creates non-web context\n\nPreviously, if spring.main.web-application-type was configured in\napplication.properties to servlet or reactive, setting\nwebEnvironment=NONE on @SpringBootTest would not work correctly and\na servlet or reactive web application context would be created\nbased on the value of spring.main.web-application-type.\n\nThis commit updates the test context bootstapper to set\nspring.main.web-application-type to none when webEnvironment has been\nset to none. This is done in the merged context configuration's\nproperty source properties which are applied to the environment in a\nhigh-precedence test property source that will override configuration\nin application.properties.\n\nCloses gh-29695"
+        },
+        {
+            "hash": "c8de843d8549b584d21324258b0d3926ac105410",
+            "message": "Honor final web application type when creating context in tests\n\nPreviously, SpringBootContextLoader would configure its\nSpringApplication with an ApplicationContextFactory that ignores\nthe WebApplicationType with which its called and instead returns a\nhard-coded type of context based on the type of the\nMergedContextConfiguration. This hard-coding would result in the\nwrong type of context being used if a subsequent change was made to\nthe application's WebApplicationType, for example due to binding of\nthe spring.main.web-application-type configuration property.\n\nThis commit updates SpringBootContextLoader to configure\nSpringApplication with an ApplicationContextFactory that takes the\nWebApplicationType with which it is called into consideration.\n\nFixes gh-29170"
+        },
+        {
+            "hash": "dfc0f21932bef82d3cd588c282a037693224eeca",
+            "message": "Fix language in WavefrontProperties\n\nCloses gh-30649"
+        },
+        {
+            "hash": "08954fce85471fdafabf6204b18fab259edba378",
+            "message": "Upgrade to Spring Framework 5.3.19\n\nCloses gh-30516"
+        },
+        {
+            "hash": "a1fe2b8857210b2249b1ee95e8142a70eecdafd6",
+            "message": "Upgrade to Reactor 2020.0.18\n\nCloses gh-30587"
+        },
+        {
+            "hash": "613470c35b066213db2efe14b5ba9bfa891a190f",
+            "message": "Merge pull request #30514 from chessvivek\n\n* gh-30514:\n  Polish \"Remove assumptions about ordering when comparing JSON in tests\"\n  Remove assumptions about ordering when comparing JSON in tests\n\nCloses gh-30514"
+        },
+        {
+            "hash": "b88f062f0499fafe487b6e98e3cc9ff9bbbba1a2",
+            "message": "Polish \"Remove assumptions about ordering when comparing JSON in tests\"\n\nSee gh-30514"
+        },
+        {
+            "hash": "5b3bc1a9365578010aa3187119bdd01c15f2ae16",
+            "message": "Remove assumptions about ordering when comparing JSON in tests\n\nSee gh-30514"
+        },
+        {
+            "hash": "70fa7e5e9367e72de48742dd6e5a4182a4115510",
+            "message": "Make properties field final\n\nCloses gh-30615"
+        },
+        {
+            "hash": "6aa8436c6d5fc1661068629efbb0e1f93c871626",
+            "message": "Start building against Spring Session 2021.0.6 snapshots\n\nSee gh-30595"
+        },
+        {
+            "hash": "455c37645d37d2ceef281b3dde1083846721f3b0",
+            "message": "Start building against Spring Security 5.5.6 snapshots\n\nSee gh-30593"
+        },
+        {
+            "hash": "bb8be2425a9024cc657fa08463f07deec3999412",
+            "message": "Start building against Spring Kafka 2.7.13 snapshots\n\nSee gh-30592"
+        },
+        {
+            "hash": "aab8fc80ec6199a70725b1879b44dad6e3b89ba3",
+            "message": "Start building against Spring Data 2021.0.11 snapshots\n\nSee gh-30594"
+        },
+        {
+            "hash": "0080e45172cf0e032c0d77b43b792ecc933ca9e2",
+            "message": "Start building against Spring Retry 1.3.3 snapshots\n\nSee gh-30590"
+        },
+        {
+            "hash": "5b05304c2c758e2dab84196cd821b1383e351b0c",
+            "message": "Start building against Spring LDAP 2.3.7 snapshots\n\nSee gh-30589"
+        },
+        {
+            "hash": "ea6e87adefd6c9b1fd27c748b28ecdc9c705a4f6",
+            "message": "Start building against Micrometer 1.7.11 snapshots\n\nSee gh-30588"
+        },
+        {
+            "hash": "e70451635cae237899d8642556f3b4a9c73709d2",
+            "message": "Start building against Spring Framework 5.3.19 snapshots\n\nSee gh-30516"
+        },
+        {
+            "hash": "9dda20cfabad5dc71613f5b7651287666a80e89f",
+            "message": "Start building against Reactor 2020.0.18 snapshots\n\nSee gh-30587"
+        },
+        {
+            "hash": "0768b842da52c72fbf5a10b6c545c5bf65a2cfa1",
+            "message": "Merge pull request #30522 from izeye\n\n* gh-30522:\n  Move Jetty 9 specific exclusions to correct dependency\n\nCloses gh-30522"
+        },
+        {
+            "hash": "618d113fadf0a4eb57ea187f4c7721a02038184e",
+            "message": "Move Jetty 9 specific exclusions to correct dependency\n\nSee gh-30522"
+        },
+        {
+            "hash": "d9b0efb469a4b9017c45a9137ad2eccccb60f8f0",
+            "message": "Merge pull request #30068 from qxo\n\n* gh-30068:\n  Polish \"Fix NPE in configprops endpoint\"\n  Fix NPE in configprops endpoint\n\nCloses gh-30068"
+        },
+        {
+            "hash": "35154a96f32897456a6c7c77ecb3f5247343e197",
+            "message": "Polish \"Fix NPE in configprops endpoint\"\n\nSee gh-30068"
+        },
+        {
+            "hash": "a1fe05f40b02cc79dc3777ff6f90a04ac4de6eac",
+            "message": "Fix NPE in configprops endpoint\n\nThis works around spring-projects/spring-framework#28298. The bug\nmeans that when a @Configuration class is annotated with\n@ConfigurationProperties any bean defined by a static @Bean method\nis considered to be annotated with @ConfigurationProperties.\n\nSee gh-30068"
+        },
+        {
+            "hash": "e3859fadd6b0b103f578ada7aa8cad69155f1a85",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-30569"
+        },
+        {
+            "hash": "8536c8399904cf006e1fe073f49d9d24cfffaec2",
+            "message": "Merge pull request #30489 from dugenkui03\n\n* gh-30489:\n  Make ApplicationAvailabilityBean threadsafe\n\nCloses gh-30489"
+        },
+        {
+            "hash": "035a16278e7c74815b1cb72d1418df175308b0c0",
+            "message": "Make ApplicationAvailabilityBean threadsafe\n\nSee gh-30489"
+        },
+        {
+            "hash": "41ab46d0c75516644dae16cb302ed774c1769bad",
+            "message": "Fix wrong replacement hint for 'spring.data.neo4j.username'\n\nCloses gh-30550"
+        },
+        {
+            "hash": "bc81ae81fc5d3fb875be14188d502a9fa8e90ba9",
+            "message": "Merge pull request #30461 from dalbani\n\n* gh-30461:\n  Polish \"Refer to list of internal proxies in reference documentation\"\n  Refer to list of internal proxies in reference documentation\n\nCloses gh-30461"
+        },
+        {
+            "hash": "83cfc951f84a923e5d001abf04a673b128b5cd89",
+            "message": "Polish \"Refer to list of internal proxies in reference documentation\"\n\nSee gh-30461"
+        },
+        {
+            "hash": "91306b58d526eb8f1c7702253fe5e89c3999e360",
+            "message": "Refer to list of internal proxies in reference documentation\n\nSee gh-30461"
+        },
+        {
+            "hash": "18c62e2bf30e567dd4bc886687d78fa2a7d2c238",
+            "message": "Merge pull request #30535 from chrisrhut\n\n* gh-30535:\n  Add Tomcat locale mapping for Japanese to preserve UTF-8 charset\n\nCloses gh-30535"
+        },
+        {
+            "hash": "65d8c76ac35aa8da45f4f648c3bab493ba2b5969",
+            "message": "Add Tomcat locale mapping for Japanese to preserve UTF-8 charset\n\nSee gh-30535"
+        },
+        {
+            "hash": "b5a02d9a66d29f0e944d8ecf78582573978db114",
+            "message": "Merge pull request #30498 from izeye\n\n* gh-30498:\n  Polish documentation\n\nCloses gh-30498"
+        },
+        {
+            "hash": "09d6215b65a35dbf2c7233b96e921bcb49286c03",
+            "message": "Polish documentation\n\nSee gh-30498"
+        },
+        {
+            "hash": "4faa1a741d0230b7d6430629966e975ee239c541",
+            "message": "Merge pull request #30506 from izeye\n\n* pr/30506:\n  Test Spring Boot Gradle Plugin against Gradle 7.4.2\n\nCloses gh-30506"
+        },
+        {
+            "hash": "40d0e38e764e148d4d7e38b5096f4251db83ba34",
+            "message": "Test Spring Boot Gradle Plugin against Gradle 7.4.2\n\nSee gh-30506"
+        },
+        {
+            "hash": "0019243d25ccec42ecac9e9a6009b9ffd77c4986",
+            "message": "Next development version (v2.5.13-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30272",
+            "title": "Fix package tangle caused by ApplicationContextFactory"
+        },
+        {
+            "number": "30595",
+            "title": "Upgrade to Spring Session 2021.0.6"
+        },
+        {
+            "number": "30753",
+            "title": "Upgrade to Lombok 1.18.24"
+        },
+        {
+            "number": "30752",
+            "title": "Upgrade to Janino 3.1.7"
+        },
+        {
+            "number": "30700",
+            "title": "Upgrade to Spring Integration 5.5.11"
+        },
+        {
+            "number": "30594",
+            "title": "Upgrade to Spring Data 2021.0.11"
+        },
+        {
+            "number": "30592",
+            "title": "Upgrade to Spring Kafka 2.7.13"
+        },
+        {
+            "number": "30699",
+            "title": "Upgrade to Spring AMQP 2.3.16"
+        },
+        {
+            "number": "30593",
+            "title": "Upgrade to Spring Security 5.5.6"
+        },
+        {
+            "number": "30589",
+            "title": "Upgrade to Spring LDAP 2.3.7"
+        },
+        {
+            "number": "30590",
+            "title": "Upgrade to Spring Retry 1.3.3"
+        },
+        {
+            "number": "30681",
+            "title": "Upgrade to Undertow 2.2.17.Final"
+        },
+        {
+            "number": "30680",
+            "title": "Upgrade to Tomcat 9.0.62"
+        },
+        {
+            "number": "30679",
+            "title": "Upgrade to RSocket 1.1.2"
+        },
+        {
+            "number": "30678",
+            "title": "Upgrade to Pooled JMS 1.2.4"
+        },
+        {
+            "number": "30677",
+            "title": "Upgrade to Netty 4.1.76.Final"
+        },
+        {
+            "number": "30676",
+            "title": "Upgrade to Jetty 9.4.46.v20220331"
+        },
+        {
+            "number": "30675",
+            "title": "Upgrade to AppEngine SDK 1.9.96"
+        },
+        {
+            "number": "30588",
+            "title": "Upgrade to Micrometer 1.7.11"
+        },
+        {
+            "number": "30654",
+            "title": "bootBuildInfo fails with a NullPointerException when an additional property has a null value"
+        },
+        {
+            "number": "29695",
+            "title": "@SpringBootTest(webEnvironment = WebEnvironment.NONE) is overridden by spring.main.web-application-type in application.properties"
+        },
+        {
+            "number": "29170",
+            "title": "Respect WebApplicationType.REACTIVE in tests with a mock web environment"
+        },
+        {
+            "number": "30649",
+            "title": "Fix language in Wavefront properties"
+        },
+        {
+            "number": "30516",
+            "title": "Upgrade to Spring Framework 5.3.19"
+        },
+        {
+            "number": "30587",
+            "title": "Upgrade to Reactor 2020.0.18"
+        },
+        {
+            "number": "30615",
+            "title": "properties in PropertiesConfigAdapter can be final"
+        },
+        {
+            "number": "28298",
+            "title": "Upgrade to Jackson Bom 2.13.0"
+        },
+        {
+            "number": "30569",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "30550",
+            "title": "Incorrect Neo4j username property replacement hint by spring-boot-properties-migrator"
+        }
+    ]
+}

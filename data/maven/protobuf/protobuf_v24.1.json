@@ -11,78 +11,73 @@
     "commits_info": [
         {
             "hash": "b256412ba0c37c54247731aec9daa9592627ad5c",
-            "message": "Updating version.json and repo version numbers to: 24.1\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 24.1"
         },
         {
             "hash": "d5ed61d6749522f3462a00958b0efe393fa5ba46",
-            "message": "Merge pull request #13597 from zhangskz/revert-absl-bump\n\nRevert absl bump back to Abseil LTS 20230125.3",
-            "tag_name": null
+            "message": "Merge pull request #13597 from zhangskz/revert-absl-bump\n\nRevert absl bump back to Abseil LTS 20230125.3"
         },
         {
             "hash": "6051ad19a4dc8863c7e794a08703b6c668c35958",
-            "message": "Revert absl bump\n",
-            "tag_name": null
+            "message": "Revert absl bump"
         },
         {
             "hash": "a669cac4daaaac778ed3736f203be4763a576eab",
-            "message": "Merge pull request #13595 from protocolbuffers/kfm-24.x-dev\n\nupdate upb dep to 24.x latest",
-            "tag_name": null
+            "message": "Merge pull request #13595 from protocolbuffers/kfm-24.x-dev\n\nupdate upb dep to 24.x latest"
         },
         {
             "hash": "1c846304aebfa1f917c60828d3912cff9d1fda56",
-            "message": "update upb dep to 24.x latest\n",
-            "tag_name": null
+            "message": "update upb dep to 24.x latest"
         },
         {
             "hash": "3094b492468caafcdb61c132dab636cc3c87773f",
-            "message": "ruby: Fix object cache lookups on 32-bit platforms (#13494) (#13580)\n\nhttps://github.com/protocolbuffers/protobuf/pull/13204 refactored the Ruby object cache to use a key of `LL2NUM(key_val)` instead of `LL2NUM(key_val >> 2)`. On 32-bit systems, `LL2NUM(key_val)` returns inconsistent results because a large value has to be stored as a Bignum on the heap. This causes cache lookups to fail.\r\n\r\nThis commit restores the previous behavior of using `ObjectCache_GetKey`, which discards the lower 2 bits, which are zero. This enables a key to be stored as a Fixnum on both 32 and 64-bit platforms.\r\n\r\nAs https://patshaughnessy.net/2014/1/9/how-big-is-a-bignum describes, a Fixnum uses:\r\n\r\n* 1 bit for the `FIXNUM_FLAG`.\r\n* 1 bit for the sign flag.\r\n\r\nTherefore the largest possible Fixnum value on a 64-bit value is 4611686018427387903 (2^62 - 1). On a 32-bit system, the largest value  is 1073741823 (2^30 - 1).\r\n\r\nFor example, a possible VALUE pointer address on a 32-bit system:\r\n\r\n0xff5b4af8 => 4284173048\r\n\r\nDropping the lower 2 bits makes up for the loss of range to these flags. In the example above, we see that shifting by 2 turns the value into a 30-bit number, which can be represented as a Fixnum:\r\n\r\n(0xff5b4af8 >> 2) => 1071043262\r\n\r\nThis bug can also manifest on a 64-bit system if the upper bits are 0xff.\r\n\r\nCloses #13481\r\n\r\nCloses #13494\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13494 from stanhu:sh-fix-ruby-protobuf-32bit d63122a6fc6eb21b81cc37412d4c4f8730f46125\r\nPiperOrigin-RevId: 557211768\r\n\r\nCo-authored-by: Stan Hu <stanhu@gmail.com>",
-            "tag_name": null
+            "message": "ruby: Fix object cache lookups on 32-bit platforms (#13494) (#13580)\n\nhttps://github.com/protocolbuffers/protobuf/pull/13204 refactored the Ruby object cache to use a key of `LL2NUM(key_val)` instead of `LL2NUM(key_val >> 2)`. On 32-bit systems, `LL2NUM(key_val)` returns inconsistent results because a large value has to be stored as a Bignum on the heap. This causes cache lookups to fail.\r\n\r\nThis commit restores the previous behavior of using `ObjectCache_GetKey`, which discards the lower 2 bits, which are zero. This enables a key to be stored as a Fixnum on both 32 and 64-bit platforms.\r\n\r\nAs https://patshaughnessy.net/2014/1/9/how-big-is-a-bignum describes, a Fixnum uses:\r\n\r\n* 1 bit for the `FIXNUM_FLAG`.\r\n* 1 bit for the sign flag.\r\n\r\nTherefore the largest possible Fixnum value on a 64-bit value is 4611686018427387903 (2^62 - 1). On a 32-bit system, the largest value  is 1073741823 (2^30 - 1).\r\n\r\nFor example, a possible VALUE pointer address on a 32-bit system:\r\n\r\n0xff5b4af8 => 4284173048\r\n\r\nDropping the lower 2 bits makes up for the loss of range to these flags. In the example above, we see that shifting by 2 turns the value into a 30-bit number, which can be represented as a Fixnum:\r\n\r\n(0xff5b4af8 >> 2) => 1071043262\r\n\r\nThis bug can also manifest on a 64-bit system if the upper bits are 0xff.\r\n\r\nCloses #13481\r\n\r\nCloses #13494\r\n\r\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/13494 from stanhu:sh-fix-ruby-protobuf-32bit d63122a6fc6eb21b81cc37412d4c4f8730f46125\r\nPiperOrigin-RevId: 557211768\r\n\r\nCo-authored-by: Stan Hu <stanhu@gmail.com>"
         },
         {
             "hash": "7520effdeb30a4d049b819fae834f6a42cb75a80",
-            "message": "Merge pull request #13534 from zhangskz/backport-24-x\n\nBackport 24.x fixes for absl dep update and setup.py",
-            "tag_name": null
+            "message": "Merge pull request #13534 from zhangskz/backport-24-x\n\nBackport 24.x fixes for absl dep update and setup.py"
         },
         {
             "hash": "63cbb637213cc2683c75953c0eefa97fa534e2e0",
-            "message": "Update absl submodule and dep to latest 20230802.0 LTS (#13515)\n\n* Update absl submodule and dep to latest 20230802.0 LTS\r\n\r\n* Fix absl submodule\r\n\r\n* Update submodule\r\n\r\n* Update absl submodule to correct commit",
-            "tag_name": null
+            "message": "Update absl submodule and dep to latest 20230802.0 LTS (#13515)\n\n* Update absl submodule and dep to latest 20230802.0 LTS\r\n\r\n* Fix absl submodule\r\n\r\n* Update submodule\r\n\r\n* Update absl submodule to correct commit"
         },
         {
             "hash": "2ea7c05576c5a79989024bb146dac2ab4cae1c48",
-            "message": "Remove editions test proto from setup.py.\n\nThis proto is only used in C++ tests, and doesn't need to be built in python.  Python doesn't support editions yet, so we should just remove it for now.  This also fixes some other issues with setup.py where tests fail.\n\nCloses #13501\n\nPiperOrigin-RevId: 555681295\n",
-            "tag_name": null
+            "message": "Remove editions test proto from setup.py.\n\nThis proto is only used in C++ tests, and doesn't need to be built in python.  Python doesn't support editions yet, so we should just remove it for now.  This also fixes some other issues with setup.py where tests fail.\n\nCloses #13501\n\nPiperOrigin-RevId: 555681295"
         },
         {
             "hash": "d0c2a74c8340f23721d462dc2505d6d2a36cf25c",
-            "message": "Merge pull request #13510 from zhangskz/update-24-x-dep\n\nUpdate upb dep to latest 24.x commit",
-            "tag_name": null
+            "message": "Merge pull request #13510 from zhangskz/update-24-x-dep\n\nUpdate upb dep to latest 24.x commit"
         },
         {
             "hash": "7257d85ab2481ddaa1d61dab1a0ce94bcd82ded2",
-            "message": "Update upb dep to latestl 24.x commit\n",
-            "tag_name": null
+            "message": "Update upb dep to latestl 24.x commit"
         },
         {
             "hash": "6a04b215a8d206062b4477f2fb8199592693d971",
-            "message": "Merge pull request #13506 from zhangskz/backport-bazel6-fix\n\nAdd a release flag to disambiguate between release and local config_s…",
-            "tag_name": null
+            "message": "Merge pull request #13506 from zhangskz/backport-bazel6-fix\n\nAdd a release flag to disambiguate between release and local config_s…"
         },
         {
             "hash": "9195c96ae75430a60c2abac3ef8d1b36a0aafe28",
-            "message": "Add a release flag to disambiguate between release and local config_settings.\n\nThis flag will be set in UPB which will be submitted separately due to version skew between repos.\n\nThis attempts to fix the following error from local and release settings both matching.\n```\nERROR: /workspace/_build/out/external/upb/python/dist/BUILD.bazel:251:9: Illegal ambiguous match on configurable attribute \"platform\" in @upb//python/dist:binary_wheel:\n@upb//python/dist:linux_x86_64_local\n@upb//python/dist:windows_x86_64\nMultiple matches are not allowed unless one is unambiguously more specialized or they resolve to the same value. See https://bazel.build/reference/be/functions#select.\n```\nPiperOrigin-RevId: 553184373\n",
-            "tag_name": null
+            "message": "Add a release flag to disambiguate between release and local config_settings.\n\nThis flag will be set in UPB which will be submitted separately due to version skew between repos.\n\nThis attempts to fix the following error from local and release settings both matching.\n```\nERROR: /workspace/_build/out/external/upb/python/dist/BUILD.bazel:251:9: Illegal ambiguous match on configurable attribute \"platform\" in @upb//python/dist:binary_wheel:\n@upb//python/dist:linux_x86_64_local\n@upb//python/dist:windows_x86_64\nMultiple matches are not allowed unless one is unambiguously more specialized or they resolve to the same value. See https://bazel.build/reference/be/functions#select.\n```\nPiperOrigin-RevId: 553184373"
         },
         {
             "hash": "955eb44ff86f59fe2f0af7c62fa016b009ecd1c4",
-            "message": "Merge pull request #13476 from protocolbuffers/24.x-202308082113\n\n24.x 202308082113",
-            "tag_name": null
+            "message": "Merge pull request #13476 from protocolbuffers/24.x-202308082113\n\n24.x 202308082113"
         },
         {
             "hash": "8b20d179a95d88dad77c693fa05199880f8c21dc",
-            "message": "Updating version.json to: 24.1-dev\n",
-            "tag_name": null
+            "message": "Updating version.json to: 24.1-dev"
+        }
+    ],
+    "issues": [
+        {
+            "number": "13481",
+            "title": "[ruby] Unable to instantiate a descriptor in v3.24.0 on 32-bit system"
+        },
+        {
+            "number": "13501",
+            "title": "v24.0 python module failed to build at `Generating google/protobuf/unittest_arena_pb2.py`"
         }
     ]
 }

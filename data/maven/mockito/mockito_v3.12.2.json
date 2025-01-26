@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.12.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 3.7407523148148147,
+    "commits_info": [
+        {
+            "hash": "4f81d4f1de676f845d6ee111eb6285dbdd5935c6",
+            "message": "Fix cache key computation for generated mock/spy classes (#2400)\n\nAdd defaultAnswer to the `MockitoMockKey` to distinguish the mock types, i.e. to separate mocks from spies.\r\nOtherwise, spies and mocks of the same class might accidentally rely on the same generated type class,\r\nresulting in spurious test failures (depending on which mock/spy is created first).\r\n\r\nFixes #2399"
+        },
+        {
+            "hash": "b04c7039031c170dae5f90acb3ec74c16289886f",
+            "message": "Bump versions.errorprone from 2.8.1 to 2.9.0 (#2396)\n\nBumps `versions.errorprone` from 2.8.1 to 2.9.0.\r\n\r\nUpdates `error_prone_core` from 2.8.1 to 2.9.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.8.1...v2.9.0)\r\n\r\nUpdates `error_prone_test_helpers` from 2.8.1 to 2.9.0\r\n- [Release notes](https://github.com/google/error-prone/releases)\r\n- [Commits](https://github.com/google/error-prone/compare/v2.8.1...v2.9.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: com.google.errorprone:error_prone_core\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n- dependency-name: com.google.errorprone:error_prone_test_helpers\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2399",
+            "title": "Sporadic mock verification failures related to hashCode/equals on 3.12.1"
+        }
+    ]
+}

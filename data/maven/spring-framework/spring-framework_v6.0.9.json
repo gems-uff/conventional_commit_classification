@@ -1,0 +1,494 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 87,
+    "start_delay": 0.0,
+    "duration": 85.45556712962963,
+    "commits_info": [
+        {
+            "hash": "c9930dd831b6549bf8d24a8721b6e9222199422e",
+            "message": "Release v6.0.9"
+        },
+        {
+            "hash": "3f889e997cb8648f54e034c29e009960e8a086e3",
+            "message": "Clarify RootBeanDefinition vs GenericBeanDefinition\n\nCloses gh-30444"
+        },
+        {
+            "hash": "6622a3c7d6c475a5e205f49fe63eff0f569a4780",
+            "message": "Consistent package-info declarations for CGLIB fork\n\nCloses gh-30461"
+        },
+        {
+            "hash": "d8f6567c890340cfc145b8fa2766ccb4cf70fab2",
+            "message": "Download the playbook to build dir\n\nCloses gh-30465"
+        },
+        {
+            "hash": "111309605c7c1b4c4b8b40d7f8086a0e2338ca82",
+            "message": "Support Test AOT processing with GraalVM tracing agent and NBT\n\nPrior to this commit, test AOT processing failed when using the GraalVM\ntracing agent and GraalVM Native Build Tools (NBT) plugins for Maven\nand Gradle.\n\nThe reason is that the AOT support in the TestContext framework (TCF)\nrelied on AotDetector.useGeneratedArtifacts() which delegates\ninternally to NativeDetector.inNativeImage() which does not\ndifferentiate between values stored in the\n\"org.graalvm.nativeimage.imagecode\" JVM system property.\n\nThis commit addresses this issue by introducing a TestAotDetector\nutility that is specific to the TCF. This detector considers the\ncurrent runtime to be in \"AOT runtime mode\" if the \"spring.aot.enabled\"\nSpring property is set to \"true\" or the GraalVM\n\"org.graalvm.nativeimage.imagecode\" JVM system property is set to any\nnon-empty value other than \"agent\".\n\nCloses gh-30281"
+        },
+        {
+            "hash": "89bcee68bb0561a8f30b5c7fb34a067f54d028ae",
+            "message": "Add author tag"
+        },
+        {
+            "hash": "c8927ae7530a89657f1e70e92c92ae124d3aa485",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e228f4ba6479694975c93e2f2a908ed91481bc65",
+            "message": "Consistent pre-resolution of event type vs payload type\n\nRestores proper event type propagation to parent context.\nSelectively applies payload type to given payload object.\nAlso reuses cached type for regular ApplicationEvent now.\n\nCloses gh-30360"
+        },
+        {
+            "hash": "c733ae0f22cacfa67398b6291a419867938a7475",
+            "message": "Fix ApplicationListenerMethodAdapter#supportsEventType check\n\nThis commit fixes the check by avoiding a fallback to eventType's\nhasUnresolvableGenerics(). This could previously lead to checking a\ngeneric event type `A<T>` against a listener which accepts unrelated\n`B` and return `true` despite the inconsistency.\n\nNote that this wouldn't necessarily surface to the user because there is\na `catch (ClassCastException e)` down the line, which was primarily put\nin place to deal with lambda-based listeners but happens to catch an\nexception thrown due to the bad result of `supportsEventType`.\n\nThe `supportsEventType` now matches generic `PayloadApplicationEvent`\ntypes with a raw counterpart, using the above fallback only in that case\nand otherwise ultimately returning `false`.\n\nCloses gh-30399"
+        },
+        {
+            "hash": "aefcb9d2d6ee385c14d83852bee50b0307b42ce4",
+            "message": "Make maximum SpEL expression length configurable\n\nCloses gh-30380"
+        },
+        {
+            "hash": "120c228b7064d606163fae4067602b7e8d868ae1",
+            "message": "Handle injection of several persistence units\n\nThis commit adapts the generated code so that each injection point has\na dedicated namespace in the form of a private method. That prevents\nthe same variable to be reused twice which lead to a compilation failure\npreviously.\n\nCloses gh-30437"
+        },
+        {
+            "hash": "bd66c70b2b9b8f49ab5e5f24e8b28f73480dbe34",
+            "message": "Potential fix for flaky STOMP integration tests\n\nWhen ReactorNetty2StompBrokerRelayIntegrationTests fail, typically there\nare multiple exceptions \"Connection refused: /127.0.0.1:61613\" that\nappear after we've conneted, sent CONNECT, and expecting CONNECTED, but\nthat does not come within the 10 second timeout.\n\n61613 is the default port for STOMP. However, in all integration tests\nwe start ActiveMQ with port 0 which results in a random port. Moreover,\nthe stacktrace is for Netty 4 (not 5), and the eventloop thread id's\nare different than the one where the connection to the correct, random\nport was established.\n\nThe suspicion is that these are log messages from\nMessageBrokerConfigurationTests which focuses on testing configuration\nbut nevertheless as a bean starts and attempts to connect to the default\nport and fails. Perhaps those attempts to connect on the default port\nsomehow affect the ActiveMQ server, and it stops responding.\n\nThis change adds a no-op TcpClient in MessageBrokerConfigurationTests\nto avoid unnecessary attempts to connect that are not needed.\n\nSee gh-29287"
+        },
+        {
+            "hash": "e73798003385a75fdbe10839f3d7480016848316",
+            "message": "Ensure chunks released on cancel in StringDecoder\n\nThe current test were not catching the issue because they request 1\nvia StepVerifier, wait for it, and then cancel. In the case of\nStringDecoder it means all chunks are used up to produce that first\nString and so the cancel doesn't catch any cached chunks.\n\nCloses gh-30299"
+        },
+        {
+            "hash": "93fa01004cbfcc998bd6188f6df6960706273af0",
+            "message": "Document AOT best practices\n\nThis commit augment the AOT section with best practices we have\nexperienced while working on the AOT engine. In particular, it describes\nhow a FactoryBean with an unresolved generic should be handled.\n\nCloses gh-30434"
+        },
+        {
+            "hash": "c1f6d7197b100268463182830d0d8395ef78ed15",
+            "message": "Add support for InjectionPoint with AOT\n\nThis commit reviews BeanInstanceSupplier to reuse more code from\nConstructorResolver. Previously, the autowired argument resolution was\npartially duplicated and this commit introduces a new common path via\nRegisteredBean#resolveAutowiredArgument.\n\nCloses gh-30401"
+        },
+        {
+            "hash": "a133aae8d6a70b2452288802bd4a26eea693ad6f",
+            "message": "Document @ResponseStatus behavior\n\nThis commit documents that the ResponseStatus annotation does not\noverride the status set through other means.\n\nCloses gh-30305\nSee gh-18019"
+        },
+        {
+            "hash": "3a0a19cff81dc2b4c364b55abeea65673ba648c6",
+            "message": "Fix migration to asciidoctor tabs\n\nThe automation to asciidoctor tabs did not migrate properly for all\ncases this commit fixes the migration.\n\nSee gh-30435"
+        },
+        {
+            "hash": "6930d4d531df584350eeb510955e4366c27748b2",
+            "message": "Upgrade to Reactor 2022.0.7 and Micrometer 1.10.7\n\nIncludes Protobuf 3.23, Woodstox 6.5.1, Caffeine 3.1.6, Picocli 4.7.3, BlockHound 1.0.8, ActiveMQ 5.17.4\n\nCloses gh-30450\nCloses gh-30451"
+        },
+        {
+            "hash": "6bc674b2dd569f235e99d4ac6bf80b52d99e183e",
+            "message": "Upgrade CI image to Ubuntu Jammy"
+        },
+        {
+            "hash": "4aa8619ac28cc0f5bab8b137deaa6afe1ffa94b2",
+            "message": "Upgrade to Tomcat 10.1.8, Jetty 11.0.15 / 12.0.0.beta1, Netty 4.1.92, Jackson 2.14.3, Mockito 5.3.1, Checkstyle 10.10"
+        },
+        {
+            "hash": "2c7e8661cfa88afcf75a9d0460ec867e7318d019",
+            "message": "Respect TaskDecorator configuration on DefaultManagedTaskExecutor\n\nCloses gh-30442"
+        },
+        {
+            "hash": "c09055b83afe5530e11ad3f7a61af0f758efa3a8",
+            "message": "Consistent support for MultiValueMap and common Map implementations\n\nCloses gh-30440"
+        },
+        {
+            "hash": "2c15dcc56b26457e2a0c153671ba36f2e6adb2e0",
+            "message": "Fix native support for generic array parameters\n\nThis commit adds a workaround for oracle/graal#6529\ntriggered by b3748243199fe809f177bb7922c69f7eb37ab6d2.\n\nWhen the GraalVM fix will have reached a wide enough\naudience, it should be removed via gh-30394.\n\nCloses gh-30407"
+        },
+        {
+            "hash": "06f16f15eda8423ee9f76293c896c3d7efab08c9",
+            "message": "Remove PDF Link\n\nSee gh-30430"
+        },
+        {
+            "hash": "da37deec1b0a82600fcdf8acde98feec923ea8af",
+            "message": "Merge pull request #30423 from izeye\n\n* pr/30423:\n  Polish \"Introduce internal constants for implicit bounds in TypeUtils\"\n  Introduce internal constants for implicit bounds in TypeUtils\n\nCloses gh-30423"
+        },
+        {
+            "hash": "88361a4f3e4eedbd7a00163945ebf4faf01d36fc",
+            "message": "Polish \"Introduce internal constants for implicit bounds in TypeUtils\"\n\nSee gh-30423"
+        },
+        {
+            "hash": "92cf7f1a7f167899085a0fe3c988416723e21a61",
+            "message": "Introduce internal constants for implicit bounds in TypeUtils\n\nSee gh-30423"
+        },
+        {
+            "hash": "8a8fb31f4a950aaa4696082f170b528a1e9dd28f",
+            "message": "Update target repository for Antora\n\nSee gh-30414"
+        },
+        {
+            "hash": "719553f6274e77cbb73be8bd67bc72d79644f690",
+            "message": "Fix Web Reactive link on the landing page"
+        },
+        {
+            "hash": "993447deb04c5faaf048d2453deb1f5656037c50",
+            "message": "Remove invalid deploy-docs.yml"
+        },
+        {
+            "hash": "88c9b0f4670db3d4d8acf3ee90ccdf1b5f8a00b5",
+            "message": "Use the shared antora playbook"
+        },
+        {
+            "hash": "39146f9066c97619eb2386d4d1ff75033f314860",
+            "message": "Migrate to Asciidoctor Tabs"
+        },
+        {
+            "hash": "71154fd16b3312780f13ad9540afc82db38a74a8",
+            "message": "Add ./github/workflow/deploy-docs.yml"
+        },
+        {
+            "hash": "7b0ba0188f1d4ba6bf75a8e6e318bfb433dbdc43",
+            "message": "Structural Fixes"
+        },
+        {
+            "hash": "3774e9be7a1441a76f4008fadc05a21e70a4499d",
+            "message": "Trim IDs with parent"
+        },
+        {
+            "hash": "9c38f8c3c60334d23add8d3b8ff0ffdf6b79a82f",
+            "message": "Make local build (temporary)"
+        },
+        {
+            "hash": "26171d9efb8be507ac724cb827b42eac4e7a38a1",
+            "message": "Fix Title in antora.yml"
+        },
+        {
+            "hash": "68235464fcfe44276906099d8019a1ed8d8db47f",
+            "message": "Use include-code Macro"
+        },
+        {
+            "hash": "51ada4e19db3b7c5b25d13bfa0310f384faba1dd",
+            "message": "Fix invalid nav elements"
+        },
+        {
+            "hash": "1a8e0031fe087158db387f8a19fe92841dcc24f7",
+            "message": "Fix index Overview link"
+        },
+        {
+            "hash": "d8bcbd53e1d9a3915af0a16717783893255db81c",
+            "message": "Fix invalid attributes"
+        },
+        {
+            "hash": "6993a9eee4004cf0a5442f88537d496560c8bcef",
+            "message": "fix antora.yml attributes"
+        },
+        {
+            "hash": "d2720741a50abb9e7529507a623716cefffc70e0",
+            "message": "Fix antora.yml gradle command"
+        },
+        {
+            "hash": "067e6c2a9e3b15653b047fab74b70cea5a2bbf7a",
+            "message": "fix framework-docs.gradle"
+        },
+        {
+            "hash": "35229c8bffbd613f57266553c5fcec163b26ae2b",
+            "message": "Enable Section Summary TOC for small pages"
+        },
+        {
+            "hash": "139cde47e2e35561517334d02c0e023ea713c03c",
+            "message": "Fix cross references"
+        },
+        {
+            "hash": "6b341ddf194882521e6a5b6623068d2999b7fb18",
+            "message": "Remove includes"
+        },
+        {
+            "hash": "5aecfb1878185e2a21d845972efb52b0cd080c33",
+            "message": "Generate a default navigation"
+        },
+        {
+            "hash": "9f49d24833e1b69c5537f2231e2bb575d999bdb2",
+            "message": "Split files"
+        },
+        {
+            "hash": "ac69a5dac3f972a8dceb76f77a99554be70d7ef0",
+            "message": "Copy default antora files"
+        },
+        {
+            "hash": "7f9061a3cb0506c7c701336676790b2bc92bd619",
+            "message": "Fix image::image"
+        },
+        {
+            "hash": "a05ff6c126a7f88419e1982af27fa4cc7f88b675",
+            "message": "Remove unnecessary asciidoc attributes"
+        },
+        {
+            "hash": "9ceb75b228f5ce4c47145afbbdac132ac5e8949e",
+            "message": "Insert explicit ids for headers"
+        },
+        {
+            "hash": "3fe7c652189d3af7ea6b76f0668d92a5312f6d01",
+            "message": "Migrate Structure"
+        },
+        {
+            "hash": "a78836c18bed04283d236364f7a5197af95183dd",
+            "message": "Remove duplicated testing from .adoc file path"
+        },
+        {
+            "hash": "2a4a1cc5508fefcff6ff106a60fd447a920c898f",
+            "message": "Remove -languages suffix from .adoc files"
+        },
+        {
+            "hash": "c762c072907570979b7b8ce305490a6a6b990fa4",
+            "message": "Remove integration- prefix from .adoc files"
+        },
+        {
+            "hash": "957467aa32488284ddf2156b23ca6adecc3dac77",
+            "message": "Remove data-access- prefix from .adoc files"
+        },
+        {
+            "hash": "49a4734cfa7a68d248a5e00c0f7c3874f8e5d80b",
+            "message": "Remove core- prefix from .adoc files"
+        },
+        {
+            "hash": "44b427c3e1e2e9025d1574d23adb9790d01a3b32",
+            "message": "Add AOT support for Qualifiers\n\nThis commit handles AutowiredCandidateQualifier instances, rather than\nrelying on qualifiers being statically defined and meta-annotated with\n`@Qualifier`.\n\nCloses gh-30410"
+        },
+        {
+            "hash": "aabd6852250b3a1a3b4acf01546fae467c7dfbf5",
+            "message": "Update major/minor version properties in MockServletContext\n\nServletContext has sets of major/minor version properties that we have\nnot updated in MockServletContext in several years.\n\nSince we upgraded the baseline to Servlet 6.0 in Spring Framework 6.0,\nnow seems like a good time to update those version properties.\n\nCloses gh-30395"
+        },
+        {
+            "hash": "cefb734763a8a83a22123789f52cb5cc31283eb8",
+            "message": "Restore native support for record beans\n\nAfter b3748243199fe809f177bb7922c69f7eb37ab6d2 related\nto gh-29246, `\"queryAllDeclaredMethods\": true` is now added\non all registered beans.\n\nThis legit change triggers oracle/graal#6510. This\ncommit workarounds this GraalVM bug, and should be\nremoved once the GraalVM fix has reached a wide enough\naudience.\n\nCloses gh-30383"
+        },
+        {
+            "hash": "82e5464972e4a63293384e2a3ae12a81ae8f7b73",
+            "message": "Avoid extra \"__BeanDefinitions\" suffix for inner classes\n\nThis commit makes AOT class names for bean definitions shorter.\nPreviously, the \"__BeanDefinitions\" suffix was applied for all\nclasses, but it was unnecessary for inner classes as the container\nclass already has the qualifier.\n\nCloses gh-29846"
+        },
+        {
+            "hash": "02132bd060040c399c9f00ac7d8d83e1e54480b2",
+            "message": "Infer resource hints for PropertySource#value\n\nThis commit adds a resource hints for the target(s) of a @PropertySource\ndeclaration.\n\nCloses gh-30376"
+        },
+        {
+            "hash": "f6875b11ff97e3622521e51ec3dd913b6953e32d",
+            "message": "Generate missing hints for custom PropertySource factories\n\nCloses gh-30175"
+        },
+        {
+            "hash": "230840a41cc0ae575b3178e09800f284b639d180",
+            "message": "Upgrade to JUnit 5.9.3"
+        },
+        {
+            "hash": "3b8a9b18f92ee72c2c4ddb1705037d4a860aa511",
+            "message": "Upgrade to Gradle 8.1.1\n\nCloses gh-30351"
+        },
+        {
+            "hash": "d023b94a42b2f87ca08ca169964558ad1d01e8c1",
+            "message": "Introduce Environment.matchesProfiles() for profile expressions\n\nEnvironment.acceptsProfiles(String...) was deprecated in 5.1 in\nconjunction with gh-17063 which introduced a new\nacceptsProfiles(Profiles) method to replace it. The deprecated method\nonly supports OR semantics; whereas, the new method supports profile\nexpressions. Thus, the goal was to encourage people to use the more\npowerful profile expressions instead of the limited OR support with\nprofile names.\n\nHowever, there are use cases where it is difficult (if not impossible)\nto provide a Profiles instance, and there are use cases where it is\nsimply preferable to provide profile expressions directly as strings.\n\nTo address these issues, this commit introduces a new matchesProfiles()\nmethod in Environment that accepts a var-args list of profile\nexpressions.\n\nCloses gh-30206"
+        },
+        {
+            "hash": "47ba819f964bf1f9dc915644b096204b57a10ef6",
+            "message": "Polish Environment and StandardEnvironmentTests\n\nSee gh-30206"
+        },
+        {
+            "hash": "ea4c64ebc4d9ac59adfeb983d4b197c6d2c8c0d0",
+            "message": "Polish ProfilesParser internals"
+        },
+        {
+            "hash": "de113f1d11e6b995c6beaf70a3d3ce116d9915ec",
+            "message": "Reject null and empty SpEL expressions\n\nPrior to gh-30325, supplying a null reference for a SpEL expression was\neffectively equivalent to supplying the String \"null\" as the\nexpression. Consequently, evaluation of a null reference expression\nalways evaluated to a null reference. However, that was accidental\nrather than by design.\n\nDue to the introduction of the checkExpressionLength(String) method in\nInternalSpelExpressionParser (in conjunction with gh-30325), an attempt\nto evaluate a null reference as a SpEL expression now results in a\nNullPointerException.\n\nTo address both of these issues,\nTemplateAwareExpressionParser.parseExpression() and\nSpelExpressionParser.parseRaw() now reject null and empty SpEL\nexpressions.\n\nCloses gh-30371"
+        },
+        {
+            "hash": "ca13b5cbca078002acaee1d095134644a4efded9",
+            "message": "Polish SpelParserTests and TemplateExpressionParsingTests"
+        },
+        {
+            "hash": "5dacf50b9b611ac6bc94a2960d5e6335e1a2ec5e",
+            "message": "Optimize MultiValueMap iteration operations\n\n* use forEach and putIfAbsent to copy headers in DefaultClientRequestBuilder\n* use forEach in ReactorClientHttpRequest and ReactorNetty2ClientHttpRequest\n* circumvent ReadOnlyHttpHeaders.entrySet()\n* ensure the fast path to LinkedCaseInsensitiveMap for forEach and putIfAbsent exists\n\nCloses gh-29972"
+        },
+        {
+            "hash": "beb23b5da602b9ec3133d85c85c984845fe287f1",
+            "message": "Updated CI image JDK"
+        },
+        {
+            "hash": "d07df24adc30436e2ce682a64923dbb2623fb242",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "2d1ddbb65c8a7d76904e670b952ae78a349c31b8",
+            "message": "Polish contribution\n\nSee gh-30282"
+        },
+        {
+            "hash": "af54ee9eba4e180a8cd59abf410edfd6c91b074f",
+            "message": "Polish ClassUtils and TypeUtils\n\nCloses gh-30282"
+        },
+        {
+            "hash": "7a780929349d9fa5daa4d8ce1817f43b7613485a",
+            "message": "Merge pull request #30343 from divcon\n\n* pr/30343:\n  Polish contribution\n  Use putIfAbsent in Netty5HeadersAdapter\n\nCloses gh-30343"
+        },
+        {
+            "hash": "ea0340f892df58f7e7960a05b229ad3cabb7f560",
+            "message": "Polish contribution\n\nSee gh-30343"
+        },
+        {
+            "hash": "f79d145b4cd96b67bc7475acc4f2684fd35a9f7f",
+            "message": "Use putIfAbsent in Netty5HeadersAdapter\n\nSee gh-30343"
+        },
+        {
+            "hash": "5deab3afd0a42f74710cb667eb7ecff69a3abc01",
+            "message": "Merge pull request #30357 from izeye\n\n* pr/30357:\n  Polish\n\nCloses gh-30357"
+        },
+        {
+            "hash": "66bd891a0b75d2dbd88c55ab5b9b3fea4bc8d660",
+            "message": "Polish\n\nSee gh-30357"
+        },
+        {
+            "hash": "685548b58b3d509c41fe5fa7a4a02fa33f969921",
+            "message": "Merge pull request #30252 from luozhenyu:content-disposition\n\n* gh-30252:\n  Polish contribution\n  Quote question marks in content-disposition"
+        },
+        {
+            "hash": "74d3268656d15413a62bb51fc7707d410596d9fe",
+            "message": "Polish contribution\n\nThis commit polishes an external contribution, ensuring that not just\nspaces are encoded as underscores, and that underscores are encoded\nas non-printable.\n\nSee gh-30252"
+        },
+        {
+            "hash": "5a4a46af7811c00c748e5522813200cc17bb1b2e",
+            "message": "Quote question marks in content-disposition\n\nThis commit ensures that question marks are encoded, in accordance\nwith RFC 2047, section 4.2, rule (3).\n\nCloses gh-30252"
+        },
+        {
+            "hash": "a465b16f7c7038a9bb52890c1758656ec49597c5",
+            "message": "Set current version to 6.0.9-SNAPSHOT"
+        },
+        {
+            "hash": "5d1abfbc2d8d7e62681e063a5a8f6d6eb15ff91b",
+            "message": "Update CI pipeline to 6.0.x branch"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30444",
+            "title": "Clarify differences between GenericBeanDefinition and RootBeanDefinition"
+        },
+        {
+            "number": "30461",
+            "title": "Update `package-info` for CGLIB fork"
+        },
+        {
+            "number": "30281",
+            "title": "Support Test AOT processing with GraalVM tracing agent and Native Build Tools"
+        },
+        {
+            "number": "30360",
+            "title": "ApplicationEventPublisher - PayloadApplicationEvent not received by EventListener if event fired from child context"
+        },
+        {
+            "number": "30399",
+            "title": "`ApplicationListenerMethodAdapter` supports non-matching generic events"
+        },
+        {
+            "number": "30380",
+            "title": "Make maximum SpEL expression length configurable"
+        },
+        {
+            "number": "30437",
+            "title": "Processing several @PersistenceContext injection points on the same class with AOT generates code that does not compile"
+        },
+        {
+            "number": "29287",
+            "title": "Fix and reenable flaky ReactorNetty2StompBrokerRelayIntegrationTests"
+        },
+        {
+            "number": "30299",
+            "title": "StringDecoder.decode() should release chunks on cancellation"
+        },
+        {
+            "number": "30434",
+            "title": "Document how to configure FactoryBean with a configurable target with AOT"
+        },
+        {
+            "number": "30401",
+            "title": "Support for `InjectionPoint` in bean factory methods when using AOT"
+        },
+        {
+            "number": "30305",
+            "title": "@ResponseStatus documentation incorrect"
+        },
+        {
+            "number": "18019",
+            "title": "Document that @ResponseStatus overrides redirect views [SPR-13439]"
+        },
+        {
+            "number": "30450",
+            "title": "Upgrade to Reactor 2022.0.7"
+        },
+        {
+            "number": "30451",
+            "title": "Upgrade to Micrometer 1.10.7"
+        },
+        {
+            "number": "30442",
+            "title": "Respect TaskDecorator configuration on DefaultManagedTaskExecutor"
+        },
+        {
+            "number": "30440",
+            "title": "Consistent support for MultiValueMap and common Map implementations in CollectionFactory"
+        },
+        {
+            "number": "6529",
+            "title": "Add batchQuery methods to JDBCTemplate [SPR-1835]"
+        },
+        {
+            "number": "30394",
+            "title": "Remove the workarounds for introspection hints on bean declared methods"
+        },
+        {
+            "number": "30407",
+            "title": "Bean methods with generic array/varargs parameters break native compilation"
+        },
+        {
+            "number": "30410",
+            "title": "Qualifiers registered programmatically are not supported by AOT"
+        },
+        {
+            "number": "30395",
+            "title": "Update major/minor version properties in `MockServletContext`"
+        },
+        {
+            "number": "29246",
+            "title": "Contribute init/destroy lifecycle introspection hints for registered beans"
+        },
+        {
+            "number": "6510",
+            "title": "Add init() method to NamespaceHandler [SPR-1816]"
+        },
+        {
+            "number": "30383",
+            "title": "Record beans do not compile to native images"
+        },
+        {
+            "number": "29846",
+            "title": "Aot generated sources fail to compile with 'File name too long' error"
+        },
+        {
+            "number": "30376",
+            "title": "Missing resource hint for @PropertySource#value"
+        },
+        {
+            "number": "30175",
+            "title": "Missing reflection hint for custom `PropertySourceFactory` in native image"
+        },
+        {
+            "number": "30351",
+            "title": "Upgrade to Gradle 8.1.1"
+        },
+        {
+            "number": "17063",
+            "title": "Support AND operator in @Profile annotation [SPR-12458]"
+        },
+        {
+            "number": "30206",
+            "title": "Introduce `Environment.matchesProfiles()` for profile expressions"
+        },
+        {
+            "number": "30325",
+            "title": "Limit SpEL expression length"
+        },
+        {
+            "number": "30371",
+            "title": "Reject null and empty SpEL expressions"
+        }
+    ]
+}

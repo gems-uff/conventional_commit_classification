@@ -1,0 +1,34 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.9.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 0.2904861111111111,
+    "commits_info": [
+        {
+            "hash": "52b2447247f535663ac1c292e088b4b27d2910ef",
+            "message": "Update version to 3.9.2 (#6682)"
+        },
+        {
+            "hash": "cfee7d81911e361ee1eadf5ea638b402a5775252",
+            "message": "Merge pull request #6680 from thomasvl/objc_fix\n\nPull the ObjC fixes from #6679 to the 3.9.x branch"
+        },
+        {
+            "hash": "a0eb83f5904757cc9690fec7867c04b8c2c95249",
+            "message": "Remove OSReadLittle* due to alignment requirements (#6678)\n\nThe OSReadLittleInt64 function as defined by Apple reduces down to:\r\n\r\n`return *(volatile uint64_t *)((uintptr_t)base + byteOffset);`\r\n\r\nwhich means we are type-punning using a cast. On ARMv7 and other aligned architectures this can cause crashes. \r\nMinimal example: https://gist.github.com/dmaclach/b10b0a71ae614d304c067cb9bd264336\r\n\r\nFixes #6679"
+        },
+        {
+            "hash": "42e0ff54859ac05751a8bbed0be859242a8a2bd7",
+            "message": "[ObjC] Don't use unions and instead use memcpy for the type swaps. (#6672)\n\nThe code in question hasn't change in a long time so the cause of\r\nhttps://github.com/firebase/firebase-ios-sdk/issues/3851 still appears to be\r\nan Xcode 11 clang change/bug; but this does appear to be slightly better\r\ncode for the work being done.\r\n\r\nCleanup along the way for #6679"
+        }
+    ],
+    "issues": [
+        {
+            "number": "6679",
+            "title": "ObjC: clang for 32bit arm (iOS) can generate an unaligned read that traps"
+        }
+    ]
+}

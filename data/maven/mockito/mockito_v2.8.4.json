@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.0031944444444444446,
+    "commits_info": [
+        {
+            "hash": "e0250006a14e8a9a1d364789e4b7d65264afefa2",
+            "message": "Bumped version and updated release notes by Travis CI build 2577 [ci skip]"
+        },
+        {
+            "hash": "70143b79fb848a0a347d11d4893a2c899857fad8",
+            "message": "Fix several javadoc issues (#1040)\n\n* SilentRunnerTest#HasUnnecessaryStubs javadoc\r\n\r\nThis patch moves the class' javadoc before the annotation to solve a\r\n\"dangling javadoc\" warning.\r\n\r\n* ArgumentMatchingToolTest#shouldUseMatchersSafely comment\r\n\r\nThe inner StringMatcher is not a top level or member class, it's a\r\nlocal variable.\r\nAs such, using a javadoc style comment (/** */) on it generates a\r\n\"dangling javadoc\" warning. This patch changes that javadoc comment\r\nto a regular java comment (//) to resolve that warning.\r\n\r\n* @see tag references to bugs\r\n\r\nIf a @see tag doesn't reference another class/method, the link should\r\nbe manually handled by a <a> HTML tag.\r\n\r\n* VarargsTest#shouldCaptureVarArgsAsArray @throws tag\r\n\r\nRemove a @throws tag for the checked Exception that isn't thrown by\r\nthis method."
+        }
+    ],
+    "issues": []
+}

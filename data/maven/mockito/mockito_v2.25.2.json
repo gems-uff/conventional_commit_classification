@@ -1,0 +1,58 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.25.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 16.935960648148146,
+    "commits_info": [
+        {
+            "hash": "656d83730aca1ab66a938c68701ea4e18a4299ca",
+            "message": "2.25.2 release (previous 2.25.1) + release notes updated by CI build 3984\n\n[ci skip-release]"
+        },
+        {
+            "hash": "56a30b31a00060a4a952c87d49c53f871ade4d75",
+            "message": "Merge pull request #1667 from kriegfrj/1663-add-opentest-support\n\nImproved IDE experience for JUnit5 - visual comparison failure"
+        },
+        {
+            "hash": "42f802ea93d36343616d42a4928a42d3479ff3ca",
+            "message": "Added support for OpenTest4J's AssertionFailedError.\n\nFixes #1663."
+        },
+        {
+            "hash": "9b46745009f598eb035cee663bdeba858fe4c3e3",
+            "message": "Refactor ExceptionFactory to make use of interface.\n\nRemoves the need to check for JUnit each time createArgumentsAreDifferentException() is\ncalled and also makes it easy to 1. extend and 2. streamline further if source 1.8\ncompatibility is introduced."
+        },
+        {
+            "hash": "2a95f86c49ac35e6364bdacae86e98e4a3c3aa07",
+            "message": "Merge pull request #1669 from mockito/errorprone-subproject\n\nAdd ErrorProne subproject"
+        },
+        {
+            "hash": "0f889741a70d5171fd8823d809a53779a63b2a59",
+            "message": "Only run ErrorProne tests on JDK 8"
+        },
+        {
+            "hash": "5ead0a20497a3a4605d7d02e701eb468575af4a9",
+            "message": "Use Junit 4.13 only for ErrorProne subproject"
+        },
+        {
+            "hash": "244392958c6b94b2f35fc058319248694bec4df9",
+            "message": "Fix CI integration"
+        },
+        {
+            "hash": "c9a07be705bef9ec1234ed75ac2c719ea52a7f91",
+            "message": "Add ErrorProne subproject\n\nThese checkers allow us to enforce API contracts that the Java compiler\notherwise would not enforce. As a first example, the added checker\nenforces that users can not subclass interfaces that are annotated by\n`@NotExtensible`.\n\nFixes #1668"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1663",
+            "title": "Improve IDE UX comparison failure for JUnit5"
+        },
+        {
+            "number": "1668",
+            "title": "Add subproject for errorprone Mockito plugins"
+        }
+    ]
+}

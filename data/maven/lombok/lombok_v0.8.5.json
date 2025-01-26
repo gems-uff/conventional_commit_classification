@@ -1,0 +1,65 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.8.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 1.0619675925925927,
+    "commits_info": [
+        {
+            "hash": "9bbe8bdaceeffd9971c5f6042793b1e6ae298262",
+            "message": "Version release."
+        },
+        {
+            "hash": "bcf6f51cd35db683e5d2ab1b54016616e0869e95",
+            "message": "bugfix in the javac implementation of AnnotationValues."
+        },
+        {
+            "hash": "d0116a8efe58c608b2001855d0cde92392ae9ca2",
+            "message": "Updated website features documentation for the new AnnotationLevel.NONE."
+        },
+        {
+            "hash": "0b30a5695022649c0e9288b167fe15893e06887b",
+            "message": "Fixed a problem in AnnotationValues where 'isExplicit' always returned true."
+        },
+        {
+            "hash": "cfa9bef58d15bea474b83b3ce80c06f5af814711",
+            "message": "Added changelog for previous commit."
+        },
+        {
+            "hash": "b262ed905a299215d99664664930b5e013284d63",
+            "message": "Added an AccessLevel.NONE to suppress generating getters and setters (useful in combination with @Data). Addresses issue #37."
+        },
+        {
+            "hash": "c07196d3d2f1e98c90bb05e9f37bcb00892626a2",
+            "message": "Added changelog note for previous commit."
+        },
+        {
+            "hash": "f1124aad02569c983cb8979445245141bf029a88",
+            "message": "Addressed issue #32: The @EqualsAndHashCode and @ToString annotations now support explicitly listing the fields to use, via the new 'of' parameter.\n\nWe've also added any fields that start with $ to the default excludes list. Lombok itself can generate these fields ($lock of @Synchronized, for example), and in general they probably should count as effectively not part of the class."
+        },
+        {
+            "hash": "6b7919166e9a550d7d2b1f7156c794e76905fcab",
+            "message": "Added support for checking if an annotation parameter is explicitly mentioned. This functionality is used in quite a few places, so generalized it."
+        },
+        {
+            "hash": "780a17e583a9fb9261b8423acaf8afae5533fd19",
+            "message": "Added changelog on previous commit."
+        },
+        {
+            "hash": "c46bf8576fb2424c107f970a90bc57bc6ed5204a",
+            "message": "\"Fixed\" issue #43\" - problems with javax.validation.NotNull, which lombok used to copy over to the method parameter of generated setters and constructors, but NotNull is not valid there. We've fixed it by limiting ourselves to annotations named 'NonNull', popular versions of which are legal in all the places we copy them to.\n\nThis leaves IDEA's NotNull out in the cold, but, lombok doesn't support IDEA anyway.\n\nThis is a workaround - once lombok supports type introspection we'll fix this properly."
+        },
+        {
+            "hash": "2b51cf84f4b11fb458c566317b4c2ecc94c8631b",
+            "message": "I think this one FINALLY fixes the problems with SneakyThrows! Issue #30"
+        },
+        {
+            "hash": "3bffd6b08e75e5f8737749b911359317920cdb37",
+            "message": "Version moved to 0.8.5-HEAD as part of a release process."
+        }
+    ],
+    "issues": []
+}

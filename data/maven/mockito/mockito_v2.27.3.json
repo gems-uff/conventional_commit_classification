@@ -1,0 +1,38 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.27.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 5,
+    "start_delay": 0.0,
+    "duration": 0.8543287037037037,
+    "commits_info": [
+        {
+            "hash": "a1a78ef7539a6b7527acbec6e2323413d0c2dfa3",
+            "message": "2.27.3 release (previous 2.27.2) + release notes updated by CI build 4078\n\n[ci skip-release]"
+        },
+        {
+            "hash": "96557452ebf0ef8a5448eff55aa930b43df7c433",
+            "message": "Fix ClonesArguments for null and arrays (#1698)"
+        },
+        {
+            "hash": "e3ec730da3ec53688b499804475b8cc253322e3d",
+            "message": "Capitalize goals in argument matcher design doc (#1700)"
+        },
+        {
+            "hash": "c5e2b80af76e3192cae7c9550b70c4d1ab312034",
+            "message": "Merge pull request #1699 from marcphilipp/issues/1689-fix-coverage-report\n\nFix JaCoCo code coverage report"
+        },
+        {
+            "hash": "dc68dfacf95312c3c4e0a92caaa15e0e91804ebc",
+            "message": "Fix JaCoCo code coverage report\n\nInstead of collecting execution data of all test tasks of all\nsubprojects in a single file, each subproject's test task writes its own\nexecution data file. The `mockitoCoverage` task is configured to include\nall execution data files into account that exists when it starts. This\nis done to avoid exceptions for missing files for skipped test tasks for\nthe android and errorprone subprojects.\n\nFixes #1689."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1689",
+            "title": "Coverage report is broken since Gradle 5"
+        }
+    ]
+}

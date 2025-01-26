@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.27",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.002939814814814815,
+    "commits_info": [
+        {
+            "hash": "1626576c4c4ada9e2764a39e5242be331a4cd328",
+            "message": "Bumped version and updated release notes by CI build 2642 [ci skip]"
+        },
+        {
+            "hash": "e3dd381b65b6696b16f77f801bbfe5f25ce38239",
+            "message": "Support Kotlin suspending functions (#1032)\n\n* Support Kotlin suspending functions\r\n\r\nOriginal user problem report:\r\nhttps://discuss.kotlinlang.org/t/verifying-suspending-functions-with-mockito-or-alternatives/2492\r\n\r\nThe crux of the problem is that Kotlin compiler adds additional synthetic parameter\r\nto suspending functions that is not visible in the source as explained in the design docs:\r\nhttps://github.com/Kotlin/kotlin-coroutines/blob/master/kotlin-coroutines-informal.md#continuation-passing-style\r\n\r\nExpanded test cases in this repo pass with this patch:\r\nhttps://github.com/elizarov/CoroutinesMockitoPlayground\r\n\r\n* Get rid of MockitoMethod.isSuspending & fix ReturnsArgumentAtTest test\r\n\r\n* Extracted Kotlin tests to separate submodule\r\n\r\nFor safety and isolation of main binary from Kotlin additions.\r\n\r\nThank you for great contribution!\r\n\r\n* Refactoring - keeping parameters in class field\r\n\r\nThis way we avoid extra calculation on each mock method invocation\r\n\r\n* More tests for various kinds of Kotlin suspend functions"
+        }
+    ],
+    "issues": []
+}

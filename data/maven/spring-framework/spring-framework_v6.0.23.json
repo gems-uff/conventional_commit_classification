@@ -1,0 +1,278 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.23",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 40,
+    "start_delay": 0.0,
+    "duration": 62.020497685185184,
+    "commits_info": [
+        {
+            "hash": "22281d36b0d9afee39fb0927b94bf108ef72e791",
+            "message": "Release v6.0.23"
+        },
+        {
+            "hash": "8d16a50907c11f7e6b407d878a26e84eba08a533",
+            "message": "Efficient ETag parsing\n\nCloses gh-33372"
+        },
+        {
+            "hash": "ab161ca796642396c87e84aef3a6ab2ff7b5f808",
+            "message": "Upgrade to Netty 4.1.112 and Undertow 2.3.15"
+        },
+        {
+            "hash": "b5377ee9cf1ce775307ea80833d6fad0218d3aa1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "eff1ca92f00ba68ca8f3db8819290d0237b33cfe",
+            "message": "Upgrade to Reactor 2022.0.22\n\nCloses gh-33324"
+        },
+        {
+            "hash": "79c7bfdbadb73bdabf5412d477454bdeddb67aa5",
+            "message": "Introduce withAssignmentDisabled() option for SimpleEvaluationContext\n\nTo support additional use cases, this commit introduces a\nwithAssignmentDisabled() method in the Builder for\nSimpleEvaluationContext.\n\nSee gh-33319\nCloses gh-33321\n\n(cherry picked from commit e74406afd09fefb3bac59c8e0feef3a9aceead1d)"
+        },
+        {
+            "hash": "f78b09fddf2df0466486e1b17535f648e03bf536",
+            "message": "Fix incorrect weak ETag assertion\n\nCloses gh-33376"
+        },
+        {
+            "hash": "b7ca746493ce05e317a50d3c2b4d3d6378797c58",
+            "message": "Sync GHA setup"
+        },
+        {
+            "hash": "6c062399eafcd6b8e9efd8c17d77f81d2743c404",
+            "message": "Start building against Reactor 2022.0.22 snapshots\n\nSee gh-33324"
+        },
+        {
+            "hash": "e1ab306506d4e350b119331387f504b726fbc776",
+            "message": "Enforce read-only semantics in SpEL's SimpleEvaluationContext\n\nSimpleEvaluationContext.forReadOnlyDataBinding() documents that it\ncreates a SimpleEvaluationContext for read-only access to public\nproperties; however, prior to this commit write access was not disabled\nfor indexed structures when using the assignment operator, the\nincrement operator, or the decrement operator.\n\nIn order to better align with the documented contract for\nforReadOnlyDataBinding(), this commit makes it possible to disable\nassignment in general in order to enforce read-only semantics for\nSpEL's SimpleEvaluationContext when created via the\nforReadOnlyDataBinding() factory method. Specifically:\n\n- This commit introduces a new isAssignmentEnabled() \"default\" method\n  in the EvaluationContext API, which returns true by default.\n\n- SimpleEvaluationContext overrides isAssignmentEnabled(), returning\n  false if the context was created via the forReadOnlyDataBinding()\n  factory method.\n\n- The Assign, OpDec, and OpInc AST nodes -- representing the assignment\n  (=), increment (++), and decrement (--) operators, respectively --\n  now throw a SpelEvaluationException if assignment is disabled for the\n  current EvaluationContext.\n\nSee gh-33319\nCloses gh-33321\n\n(cherry picked from commit 0127de5a7a80319a9a7973ad125002309a591a77)"
+        },
+        {
+            "hash": "2165b1651bf29fcae27f0b8a134e688e34e9554e",
+            "message": "Throw exception for failure to set property as index in SpEL\n\nPrior to this commit, the Indexer in the Spring Expression Language\n(SpEL) silently ignored a failure to set a property via the indexed\nproperty syntax (['<property name>'] = <new value>) – for example, if\nproperty write access was disabled in the EvaluationContext.\n\nThis commit addresses this issue by properly throwing a\nSpelEvaluationException in PropertyIndexingValueRef.setValue(Object) if\nthe property could not be set.\n\nSee gh-33310\nCloses gh-33311\n\n(cherry picked from commit c57c2272a1d2a214bbbacac166a0845f287bbc73)"
+        },
+        {
+            "hash": "bf72e921458cfb3a0f06763aeb3a37754f57c982",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3e7372491c6a152c473c746dd75e029e0a6ac8b8",
+            "message": "Support conversion from primitive array to Object[] in ConversionService\n\nPrior to this commit, the ConversionService failed to convert a primitive\narray (such as int[]) to an Object[] due to an error in the logic in\nArrayToArrayConverter.\n\nThis commit addresses this by augmenting the \"can bypass conversion\"\ncheck in ArrayToArrayConverter to ensure that the supplied source object\nis an instance of the target type (i.e., that the source array can be\ncast to the target type array without conversion).\n\nCloses gh-33212\n\n(cherry picked from commit cb6a5baac508921486fd13a7a91cab9d7625868b)"
+        },
+        {
+            "hash": "e11a419cc32a5c680070d7e7199e5c2a833cb94c",
+            "message": "Revert \"Support single String argument for varargs invocations in SpEL\"\n\nThis reverts commit d33f66d9b5865d7eb76cfde70e93a25f23c5e4fb.\n\nSee gh-33013\nSee gh-33189"
+        },
+        {
+            "hash": "d33f66d9b5865d7eb76cfde70e93a25f23c5e4fb",
+            "message": "Support single String argument for varargs invocations in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) incorrectly\nsplit single String arguments by comma for Object... varargs method and\nconstructor invocations.\n\nThis commit addresses this by checking if the single argument type is\nalready \"assignable\" to the varargs component type instead of \"equal\"\nto the varargs component type.\n\nSee gh-33013\nCloses gh-33189"
+        },
+        {
+            "hash": "8da29636441ff4035679732384eaf53850d529fa",
+            "message": "Remove useless permissions on build-and-deploy-snapshot workflow\n\nCloses gh-33239"
+        },
+        {
+            "hash": "9a11c127407538cd127ea64ff2e92bfc5862bc80",
+            "message": "Upgrade to Gradle 8.9\n\nCloses gh-33215"
+        },
+        {
+            "hash": "743c8f755ba4d1cceb29e9117f0cba89cbd61ed1",
+            "message": "Add missing artifact properties for staging\n\nThis commit makes sure that docs artifacts have their attributes set\nfor staging as well. Previously they were not and deployment of Javadoc\ndid not occur.\n\nCloses gh-33207"
+        },
+        {
+            "hash": "0376ebeaf305c6fe123fe7600add766071d972a7",
+            "message": "Remove concourse configuration now that CI is using GitHub Actions"
+        },
+        {
+            "hash": "a2a793e324233af48f892ccb1031b039e5fb3f5e",
+            "message": "Release from GitHub Actions\n\nCloses gh-33201"
+        },
+        {
+            "hash": "fd7e7633d4bd5928416e71d2885fbe8eea165150",
+            "message": "Polishing"
+        },
+        {
+            "hash": "be7029c35dca4d70de15ea097649799aec19ac88",
+            "message": "Retain previous factory method in case of nested invocation with AOT\n\nThis commit harmonizes the invocation of a bean supplier with what\nSimpleInstantiationStrategy does. Previously, the current factory method\nwas set to `null` once the invocation completes. This did not take\ninto account recursive scenarios where an instance supplier triggers\nanother instance supplier.\n\nFor consistency, the thread local is removed now if we attempt to set\nthe current method to null. SimpleInstantiationStrategy itself uses\nthe shortcut to align the code as much as possible.\n\nCloses gh-33185"
+        },
+        {
+            "hash": "84efba682d97f0645a12a9f8e63b4c503882d24d",
+            "message": "Upgrade to Groovy 4.0.22, Jetty 11.0.22, Undertow 2.3.14\n\nIncludes downgrade to Awaitility 4.2.0 (aligned with 6.1.x branch)"
+        },
+        {
+            "hash": "e66be910051eaf60641456b44ea0a840aedd81b3",
+            "message": "Backport \"Harmonize CI configuration\"\n\nThis commit applies the harmonization changes in eacfd77 whilst keeping\nthe doc attributes specific changes to 6.0.x"
+        },
+        {
+            "hash": "c7fd5c9c34ff199392767ef4a64177eaeb73af9a",
+            "message": "Upgrade to Gradle 8.8\n\nCloses gh-33147"
+        },
+        {
+            "hash": "09123def57edf9a216bba111acac3d5ce21dd5f1",
+            "message": "Detect ajc markers in superclasses as well (for weaving check)\n\nCloses gh-33113\n\n(cherry picked from commit 100da83913884510103423d54257c37f2a428792)"
+        },
+        {
+            "hash": "069d0819ddce0a39f08e688c97b1c31deb29d4d8",
+            "message": "Apply fallback resolution for non-hierarchical URIs such as \"file:.\"\n\nIncludes meaningful exception message for file system resolution.\n\nCloses gh-33124\n\n(cherry picked from commit daea3f0eaed755814c6a32e9837e59cc95893923)"
+        },
+        {
+            "hash": "a352d884c986a9ed3492ce186d954fc31dad15d4",
+            "message": "Re-enable async dispatches in Observation Filter\n\nPrior to this commit, the fix for gh-32730 disabled the involvment of\nthe osbervation filter for async dispatches. Instead of relying on ASYNC\ndispatches to close the observation for async requests, this is now\nusing an async listener instead: async dispatches are not guaranteed to\nhappen once the async request is handled.\n\nThis change caused another side-effect: because async dispatches are not\nconsidered anymore by this filter, the observation scope is not\nreinstated for async dispatches. For example, `ResponseBodyAdvice`\nimplementations do not have the observation scope opened during their\nexecution.\n\nThis commit re-enables async dispatches for this filter, but ensures\nthat observations are not closed during such dispatches as this will be\ndone by the async listener.\n\nFixes gh-33128"
+        },
+        {
+            "hash": "3498a35377407a3bd5461642a9dbf313d825a941",
+            "message": "Fix name of GitHub actions bot\n\nSee gh-gh-33077"
+        },
+        {
+            "hash": "06fc5bc3eacafa7d45d83ccd1bde0547bd8f8db9",
+            "message": "Exclude GitHub Actions bot from changelog\n\nCloses gh-33077"
+        },
+        {
+            "hash": "f59b56c4c93702a3d70cdd03b3d3f26f3c14677c",
+            "message": "Use Sonatype S01 token in release pipeline"
+        },
+        {
+            "hash": "5a83fc8f8605cc191a8262ba87099c3afd651022",
+            "message": "Polishing"
+        },
+        {
+            "hash": "db8d2d1626627152b3a62e16a838e5a92f4940b9",
+            "message": "Backported test for @Autowired @Bean method on configuration subclass\n\nSee gh-33030"
+        },
+        {
+            "hash": "12949becfcaeee49f10fc2ca814b2f4ec0e1f15a",
+            "message": "Correct and consistent event class names in constructor javadoc\n\nCloses gh-33032\n\n(cherry picked from commit e79a9a5bff15323545e21b812f7cea8585f8eddd)"
+        },
+        {
+            "hash": "debf5717224f1208e3d723b0e401b179544bb0a7",
+            "message": "Fix typo\n\nCloses gh-33054"
+        },
+        {
+            "hash": "f87b1bd6ce89d2b075cf32ce236c04dbd432f6ba",
+            "message": "Update Antora Spring UI to v0.4.16"
+        },
+        {
+            "hash": "e17afed0fe764a14d835f041821726c5d0005a57",
+            "message": "Fix property name in Container Extension Points section\n\nCloses gh-33038"
+        },
+        {
+            "hash": "77964374f9823fa44d16f6c7dfbc26ab7031dd33",
+            "message": "Do not attempt to load pre-enhanced class for reloadable classes\n\nCloses gh-33024\n\n(cherry picked from commit 089e4e69f1adbbe45d3a17807e7268a57e9a5ddf)"
+        },
+        {
+            "hash": "67686d776e3025ccc8401b804e2c074fa1d5d8b5",
+            "message": "Fix invalid character in Javadoc of BeanFactory"
+        },
+        {
+            "hash": "2d83fca57188deb8e6adca3253362a8ecce85f35",
+            "message": "Next development version (v6.0.23-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33372",
+            "title": "Efficient handling of conditional HTTP requests"
+        },
+        {
+            "number": "33324",
+            "title": "Upgrade to Reactor 2022.0.22"
+        },
+        {
+            "number": "33319",
+            "title": "`SimpleEvaluationContext` does not enforce read-only semantics"
+        },
+        {
+            "number": "33321",
+            "title": "`SimpleEvaluationContext` does not enforce read-only semantics"
+        },
+        {
+            "number": "33376",
+            "title": "Fix incorrect weak ETag validation"
+        },
+        {
+            "number": "33310",
+            "title": "SpEL `Indexer` silently ignores failure to set property as index"
+        },
+        {
+            "number": "33311",
+            "title": "SpEL `Indexer` silently ignores failure to set property as index"
+        },
+        {
+            "number": "33212",
+            "title": "`ConversionService` cannot convert primitive array to `Object[]`"
+        },
+        {
+            "number": "33013",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33189",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33239",
+            "title": "build-and-deploy-snapshot workflow should not require write permission"
+        },
+        {
+            "number": "33215",
+            "title": "Upgrade to Gradle 8.9"
+        },
+        {
+            "number": "33207",
+            "title": "Javadoc not published for new GA and milestone release processes"
+        },
+        {
+            "number": "33201",
+            "title": "Release from GitHub Actions"
+        },
+        {
+            "number": "33185",
+            "title": "Nested bean instance supplier invocation does not retain previous factory method"
+        },
+        {
+            "number": "33147",
+            "title": "Upgrade to Gradle 8.8"
+        },
+        {
+            "number": "33113",
+            "title": "Mockito mock falsely initialized as CGLIB proxy with AspectJ aspect"
+        },
+        {
+            "number": "33124",
+            "title": "\"file:.\" cannot be resolved to `java.nio.file.Path` (and plain \".\" value resolves to classpath root)"
+        },
+        {
+            "number": "32730",
+            "title": "Observation in ServerHttpObservationFilter is never stopped for asynchronous requests"
+        },
+        {
+            "number": "33128",
+            "title": "Trace and Span IDs are no longer propagated RequestBodyAdvice beans"
+        },
+        {
+            "number": "33077",
+            "title": "Exclude GitHub Actions bot from changelog"
+        },
+        {
+            "number": "33030",
+            "title": "No qualifying bean of type 'java.lang.String' in case of accidental `@Autowired` `@Bean` method with `@Value` parameter"
+        },
+        {
+            "number": "33032",
+            "title": "Incorrect constructor details in the javadoc for ApplicationContextEvent"
+        },
+        {
+            "number": "33054",
+            "title": "Typo in Annotation-driven Listener Endpoints section of Spring Framework documentation"
+        },
+        {
+            "number": "33038",
+            "title": "Container Extension Points section of Spring Framework documentation refers to the wrong property name"
+        },
+        {
+            "number": "33024",
+            "title": "ConfigurationClassEnhancer does not use correct ClassLoader when called multiple times"
+        }
+    ]
+}

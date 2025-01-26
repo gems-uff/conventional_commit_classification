@@ -11,103 +11,84 @@
     "commits_info": [
         {
             "hash": "63def39e881afa496502d9c410f4ea948e59490d",
-            "message": "Updating version.json and repo version numbers to: 27.2\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.2"
         },
         {
             "hash": "19bd2115d04fcc6196e504a4f07d99b6f16be7d7",
-            "message": "Port windows bootstrapping fix (#17225)\n\n",
-            "tag_name": null
+            "message": "Port windows bootstrapping fix (#17225)"
         },
         {
             "hash": "4923b8d72d39a4189ca7c7b9e20359d6ba527a10",
-            "message": "Fix string_type bugs in edition 2023 (#17211)\n\n* Fix a bug in which proto code uses ctype instead of string_type internally.\r\n\r\nWe change InferLegacyProtoFeatures to set ctype based on string_type when string_type is set. We need to update CppGenerator::ValidateFeatures to allow both ctype and string_type to be set because it runs after InferLegacyProtoFeatures.\r\n\r\nPiperOrigin-RevId: 645480157\r\n\r\n* Regenerate stale files\r\n\r\n* Fix bad merge where cpp_type isn't useable during build in 27.x\r\n\r\n* Infer string type feature from ctype pre-editions.\r\n\r\nThis will allow internal code to simply check the feature value instead of checking both ctype and string_type.\r\n\r\nPiperOrigin-RevId: 625897380\r\n\r\n---------\r\n\r\nCo-authored-by: Protobuf Team Bot <protobuf-github-bot@google.com>",
-            "tag_name": null
+            "message": "Fix string_type bugs in edition 2023 (#17211)\n\n* Fix a bug in which proto code uses ctype instead of string_type internally.\r\n\r\nWe change InferLegacyProtoFeatures to set ctype based on string_type when string_type is set. We need to update CppGenerator::ValidateFeatures to allow both ctype and string_type to be set because it runs after InferLegacyProtoFeatures.\r\n\r\nPiperOrigin-RevId: 645480157\r\n\r\n* Regenerate stale files\r\n\r\n* Fix bad merge where cpp_type isn't useable during build in 27.x\r\n\r\n* Infer string type feature from ctype pre-editions.\r\n\r\nThis will allow internal code to simply check the feature value instead of checking both ctype and string_type.\r\n\r\nPiperOrigin-RevId: 625897380\r\n\r\n---------\r\n\r\nCo-authored-by: Protobuf Team Bot <protobuf-github-bot@google.com>"
         },
         {
             "hash": "b0a3c23f94af5cf347d71ed7d5b2bd768bff192a",
-            "message": "Merge pull request #17164 from protocolbuffers/cp-stubs\n\nBackport stubs / tests for compatibility with <4.26.x gencode to 27.x ",
-            "tag_name": null
+            "message": "Merge pull request #17164 from protocolbuffers/cp-stubs\n\nBackport stubs / tests for compatibility with <4.26.x gencode to 27.x"
         },
         {
             "hash": "270ca6681a686fea24e23f7a389e4e3997409a4c",
-            "message": "Cleanup imports and comments in V3 stubs.\n\nPiperOrigin-RevId: 644146189\n",
-            "tag_name": null
+            "message": "Cleanup imports and comments in V3 stubs.\n\nPiperOrigin-RevId: 644146189"
         },
         {
             "hash": "1e360a422a04942ff0758f4a390fb6c27b680c96",
-            "message": "Add stubs for GeneratedMessageV3, RepeatedFieldBuilderV3, SingleFieldBuilderV3 for compatibility with older <4.26.x gencode.\n\nThese classes are deprecated and will be removed in the next breaking change. Users should update gencode to >= 4.26.x which uses GeneratedMessage instead of GeneratedMessageV3.\n\nTested with //compatibility:java_conformance_v3.25.0 which builds the runtime against 3.25.0 gencode.\n\nPiperOrigin-RevId: 644136172\n",
-            "tag_name": null
+            "message": "Add stubs for GeneratedMessageV3, RepeatedFieldBuilderV3, SingleFieldBuilderV3 for compatibility with older <4.26.x gencode.\n\nThese classes are deprecated and will be removed in the next breaking change. Users should update gencode to >= 4.26.x which uses GeneratedMessage instead of GeneratedMessageV3.\n\nTested with //compatibility:java_conformance_v3.25.0 which builds the runtime against 3.25.0 gencode.\n\nPiperOrigin-RevId: 644136172"
         },
         {
             "hash": "9cfb59b5e305dba959403b56112d9a8cf1f4d832",
-            "message": "Add simple conformance test that builds the old gencode against the current runtime.\n\nPiperOrigin-RevId: 631486123\n",
-            "tag_name": null
+            "message": "Add simple conformance test that builds the old gencode against the current runtime.\n\nPiperOrigin-RevId: 631486123"
         },
         {
             "hash": "6c6f514a5db63ed1a6a139453852dd220aa4eb00",
-            "message": "Merge pull request #17161 from protocolbuffers/backport-java\n\nBackport handling of unknown and custom java features to 27.x",
-            "tag_name": null
+            "message": "Merge pull request #17161 from protocolbuffers/backport-java\n\nBackport handling of unknown and custom java features to 27.x"
         },
         {
             "hash": "c7a006a225e0b94b639a9be694b03c835f4db6d6",
-            "message": "Fix checking unknown field set empty which wasn't exposed yet in 27.x\n",
-            "tag_name": null
+            "message": "Fix checking unknown field set empty which wasn't exposed yet in 27.x"
         },
         {
             "hash": "2426a02b90d61e6c18b8ffa411e76b1642f47ad6",
-            "message": "Reserialize all unresolved features using java features from the generated pool in case of descriptors from the custom pool.\n\nThis extends previous workaround for java features in unknown fields, to include features extensions that are known but use a mismatched descriptor.\n\nThis can happen when users bring their own descriptors via buildFrom.\n\nPiperOrigin-RevId: 644013578\n",
-            "tag_name": null
+            "message": "Reserialize all unresolved features using java features from the generated pool in case of descriptors from the custom pool.\n\nThis extends previous workaround for java features in unknown fields, to include features extensions that are known but use a mismatched descriptor.\n\nThis can happen when users bring their own descriptors via buildFrom.\n\nPiperOrigin-RevId: 644013578"
         },
         {
             "hash": "e5ddc45645871fbe2c6fc089ebe09f72ca727b5e",
-            "message": "Reparse unknown features using extension registry containing Java features.\n\nThis should not be needed for generated code, but may be needed for user calls to the public buildFrom method. FileDescriptorProto should really be parsed with java features in the extension registry (like other extensions), but we can handle this in Java runtime to ease editions adoption.\n\nPiperOrigin-RevId: 638715579\n",
-            "tag_name": null
+            "message": "Reparse unknown features using extension registry containing Java features.\n\nThis should not be needed for generated code, but may be needed for user calls to the public buildFrom method. FileDescriptorProto should really be parsed with java features in the extension registry (like other extensions), but we can handle this in Java runtime to ease editions adoption.\n\nPiperOrigin-RevId: 638715579"
         },
         {
             "hash": "86768b3dc67a6328ffdcdf7fe3a0b5fe3d920fe6",
-            "message": "Merge pull request #17129 from protocolbuffers/delimited-fix\n\nBackport fixes to delimited handling",
-            "tag_name": null
+            "message": "Merge pull request #17129 from protocolbuffers/delimited-fix\n\nBackport fixes to delimited handling"
         },
         {
             "hash": "3d71e22b7ae17cbe82dd20a29ef7ef4e75e06ec5",
-            "message": "Fix data race in crosslink.\n\nThis was introduced by the previous fix for delimited inheritance, and was never released.  This fix removes all getType() calls from crosslink, where it's not safe to inspect the message type, which is still a placeholder, until after crosslinking.  Using the inferred type is not necessary since we treat messages and groups the same during crosslink.\n\nPiperOrigin-RevId: 643394981\n",
-            "tag_name": null
+            "message": "Fix data race in crosslink.\n\nThis was introduced by the previous fix for delimited inheritance, and was never released.  This fix removes all getType() calls from crosslink, where it's not safe to inspect the message type, which is still a placeholder, until after crosslinking.  Using the inferred type is not necessary since we treat messages and groups the same during crosslink.\n\nPiperOrigin-RevId: 643394981"
         },
         {
             "hash": "29f1b5259ea224abcaa9a4eb5e28f804ea8d5097",
-            "message": "Regenerate stale files\n",
-            "tag_name": null
+            "message": "Regenerate stale files"
         },
         {
             "hash": "c4f359ebf03e235d348a363d3b76660c6c960773",
-            "message": "Fix delimited inheritance in all languages.\n\nThis was previously fixed in C++ (https://github.com/protocolbuffers/protobuf/issues/16549), but not ported to other languages.  Delimited field encoding can be inherited by fields where it's invalid, such as non-messages and maps.  In these cases, the encoding should be ignored and length-prefixed should be used.\n\nPiperOrigin-RevId: 642792988\n",
-            "tag_name": null
+            "message": "Fix delimited inheritance in all languages.\n\nThis was previously fixed in C++ (https://github.com/protocolbuffers/protobuf/issues/16549), but not ported to other languages.  Delimited field encoding can be inherited by fields where it's invalid, such as non-messages and maps.  In these cases, the encoding should be ignored and length-prefixed should be used.\n\nPiperOrigin-RevId: 642792988"
         },
         {
             "hash": "eb61e6b666f7ffe6f3634dbecdc480219c3cdd17",
-            "message": "Merge pull request #17077 from protocolbuffers/cp-warn\n\nMake the underlying type of the enum by 8-bits instead of using bitfi…",
-            "tag_name": null
+            "message": "Merge pull request #17077 from protocolbuffers/cp-warn\n\nMake the underlying type of the enum by 8-bits instead of using bitfi…"
         },
         {
             "hash": "aa7fcb3662f677b6ef06b55d5cae9d5b242fa1ef",
-            "message": "Avoid calling absl::InitializeLog in protoc with MSVC\n\nThe recent github runner image update changes the MSVC version, and InitializeLog now crashes in optimized builds.  Until Abseil works with MSVC, we can just log to stderr in protoc.\n\nPiperOrigin-RevId: 641024759\n",
-            "tag_name": null
+            "message": "Avoid calling absl::InitializeLog in protoc with MSVC\n\nThe recent github runner image update changes the MSVC version, and InitializeLog now crashes in optimized builds.  Until Abseil works with MSVC, we can just log to stderr in protoc.\n\nPiperOrigin-RevId: 641024759"
         },
         {
             "hash": "316f493b2f7f87f4402caea0d0ae1f332e2550fb",
-            "message": "Make the underlying type of the enum by 8-bits instead of using bitfields for\nit.\nIt silences a warning in gcc 8/9.\n\nPiperOrigin-RevId: 633719795\n",
-            "tag_name": null
+            "message": "Make the underlying type of the enum by 8-bits instead of using bitfields for\nit.\nIt silences a warning in gcc 8/9.\n\nPiperOrigin-RevId: 633719795"
         },
         {
             "hash": "9a58f074f9c2fc83edb584da8022fab2dc3e65b7",
-            "message": "Merge pull request #17041 from protocolbuffers/27.x-202406051659\n\nMerge release commits to 27.x",
-            "tag_name": null
+            "message": "Merge pull request #17041 from protocolbuffers/27.x-202406051659\n\nMerge release commits to 27.x"
         },
         {
             "hash": "cc74be31a9eabb8e7a9cbcc1e274ca6db1f67e80",
-            "message": "Updating version.json and repo version numbers to: 27.2-dev\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 27.2-dev"
         }
-    ]
+    ],
+    "issues": []
 }

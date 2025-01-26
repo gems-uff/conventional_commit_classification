@@ -1,0 +1,462 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.4.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 67,
+    "start_delay": 0.0,
+    "duration": 27.33039351851852,
+    "commits_info": [
+        {
+            "hash": "f5a8cdc687a698d22db9e840f0b0921e1920a41e",
+            "message": "Release v2.4.9"
+        },
+        {
+            "hash": "3ca86435d18c55ccc6e97a0a03e4bf53691f713d",
+            "message": "Upgrade to Undertow 2.2.9.Final\n\nCloses gh-27446"
+        },
+        {
+            "hash": "aaf26245d59ce53124042049a280857e5dfc098b",
+            "message": "Upgrade to SLF4J 1.7.32\n\nCloses gh-27445"
+        },
+        {
+            "hash": "7fbfbfe21e1cf2f7578c29f8941b246a4192b9aa",
+            "message": "Upgrade to MySQL 8.0.26\n\nCloses gh-27444"
+        },
+        {
+            "hash": "70ecaac16ced16a818dab83aa92aac86851a4425",
+            "message": "Configure a mirror for registry-image image_resources\n\nCloses gh-27441"
+        },
+        {
+            "hash": "79990a1b9c8c4b4fa865f1234cfbc071dc4a0646",
+            "message": "Upgrade to artifactory-resource 0.0.15\n\nCloses gh-27232"
+        },
+        {
+            "hash": "14e23bf5568298920558ce39f8a06c5ec993579d",
+            "message": "Merge pull request #27418 from izeye\n\n* gh-27418:\n  Polish\n\nCloses gh-27418"
+        },
+        {
+            "hash": "734293d491c23d11f535867df604cd997304e0b6",
+            "message": "Polish\n\nSee gh-27418"
+        },
+        {
+            "hash": "c8c1452ced2cdc14138a720b3703784e95b94504",
+            "message": "Merge pull request #27417 from dreis2211\n\n* gh-27417:\n  Polishing\n\nCloses gh-27417"
+        },
+        {
+            "hash": "4d0c98011e40d5dd98605e4d29ce8fd2621bf8e0",
+            "message": "Polishing\n\nSee gh-27417"
+        },
+        {
+            "hash": "dcced2561a42dced6f09e360171ad723efecb514",
+            "message": "Upgrade to Gradle Enterprise Conventions 0.0.8\n\nCloses gh-26115"
+        },
+        {
+            "hash": "b5587b053debb07e1dc2f8ae96a0abea4e723780",
+            "message": "Use ClassLoader that will load Yaml to check if it's present\n\nFixes gh-27133"
+        },
+        {
+            "hash": "9d64269552a3370950879f45a02d6d9f5df8ead1",
+            "message": "Upgrade to Logback 1.2.4\n\nCloses gh-27380"
+        },
+        {
+            "hash": "9973937af314e85390f2452d06964d0142d7ae1f",
+            "message": "Upgrade to Spring AMQP 2.3.10\n\nCloses gh-27391"
+        },
+        {
+            "hash": "3e0829cd476f5fe856b4ec66a1e37edeb40c3bb6",
+            "message": "Upgrade to Spring Data 2020.0.11\n\nCloses gh-27161"
+        },
+        {
+            "hash": "d8959f4bb26ec144e4f01c0e7557c1d1a603df2c",
+            "message": "Upgrade to Netty 4.1.66.Final\n\nCloses gh-27381"
+        },
+        {
+            "hash": "47afdc0218857c31f786ad90de785e2e41416b0e",
+            "message": "Upgrade to jOOQ 3.14.13\n\nCloses gh-27379"
+        },
+        {
+            "hash": "f8e3d86223fd3c05a76156e8d31c423c0a5ab1e4",
+            "message": "Upgrade to Dropwizard Metrics 4.1.25\n\nCloses gh-27378"
+        },
+        {
+            "hash": "1d3b0d626287cfd96f9918ee1b03d4d06d2a98d2",
+            "message": "Upgrade to AppEngine SDK 1.9.90\n\nCloses gh-27377"
+        },
+        {
+            "hash": "06a3c405063621f3aaeb3940720b1bad348f4dca",
+            "message": "Use a 10s init query timeout in Cassandra tests\n\nCloses gh-27368"
+        },
+        {
+            "hash": "fe081b1742f5901c0c938ef6e33d89d20adf6d89",
+            "message": "Add Gson converter immediately before default Jackson converter\n\nPreviously, when the preferred json mapper was set to Gson, the Gson\nHTTP message converter was added before any other converters. This\nchanged the form of String responses that were already valid. When\nJackson is in use, a string converter is used as it appears earlier\nin the list than the Jackson converter. When the mapper is switched\nto Gson, the Gson converter is added first in the list of converters\nand the Strong converter is no longer used. This results in the\nString, that was already valid JSON, being converted again. This\nchanges its form as quotes are escaped, etc.\n\nThis commit updates HttpMessageConverters so that the Gson converter\nis added to the list immediately before the default Jackson\nconverter. This is done by considering the Gson converter to be an\nequivalent of the Jackson converter.\n\nFixes gh-27354"
+        },
+        {
+            "hash": "2f54198e31eb7d98590c63dcc0499f6199cebaad",
+            "message": "Merge pull request #27348 from izeye\n\n* gh-27348:\n  Remove Flyway references from DependsOn BFPPs for Liquibase\n\nCloses gh-27348"
+        },
+        {
+            "hash": "198e40c72e689f6ee691549fead8c403357a0b27",
+            "message": "Remove Flyway references from DependsOn BFPPs for Liquibase\n\nSee gh-27348"
+        },
+        {
+            "hash": "7a23a12ce08106f281e3a563bf2558d575ed1a36",
+            "message": "Fix configprops endpoint's handling of config tree values\n\nFixes gh-27327"
+        },
+        {
+            "hash": "2d3006171d82242258e03f793c926573a9a9bb05",
+            "message": "Merge branch '2.3.x' into 2.4.x"
+        },
+        {
+            "hash": "235e48683cd35f3c87340f1655be8924fd42ebff",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-27335"
+        },
+        {
+            "hash": "7b14d5bb087b49565676625b12acac620765b8cd",
+            "message": "Protect against NPE in isAlreadyPromoted\n\nFixes gh-27094"
+        },
+        {
+            "hash": "d1b242e6c840961d1ddc764ef8f9ce0e23e41c7c",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-27337"
+        },
+        {
+            "hash": "8694b67744bbc14426c0484fdc8570c5a2cecf5f",
+            "message": "Upgrade to Spring HATEOAS 1.2.8\n\nCloses gh-27183"
+        },
+        {
+            "hash": "52996e139e1c3f9229060c53b719d3b6cdb34ebc",
+            "message": "Upgrade to Micrometer 1.6.9\n\nCloses gh-27340"
+        },
+        {
+            "hash": "6f949a17445306f0d38d6d62377fb122cebde32d",
+            "message": "Upgrade to Lettuce 6.0.7.RELEASE\n\nCloses gh-27339"
+        },
+        {
+            "hash": "c005e1de9a3f866a688e007ef6b7ab0d4442ecf2",
+            "message": "Rename test classes to match our naming conventions\n\nCloses gh-27331"
+        },
+        {
+            "hash": "3511a007a236796ecb99cab2489264910644e5c4",
+            "message": "Upgrade to Spring Framework 5.3.9\n\nCloses gh-27160"
+        },
+        {
+            "hash": "23b377e1a1f8d9be00430c4805b1829ee3026a48",
+            "message": "Fix typo"
+        },
+        {
+            "hash": "7848cf3c790dd684ad82920681dc50c1c1a4c32d",
+            "message": "Merge pull request #27300 from hoanvh\n\n* gh-27300:\n  Polish \"Mark Redis as down when cluster_state is fail\"\n  Mark Redis as down when cluster_state is fail\n\nCloses gh-27300"
+        },
+        {
+            "hash": "49baacbc1cb02a59efce1fe1698166de92d41d67",
+            "message": "Polish \"Mark Redis as down when cluster_state is fail\"\n\nSee gh-27300"
+        },
+        {
+            "hash": "f31141de09802030db1192dc6eeb1919cbc72950",
+            "message": "Mark Redis as down when cluster_state is fail\n\nSee gh-27300"
+        },
+        {
+            "hash": "96e58d815d8d4d64fc1abede170e8be3bbd257c2",
+            "message": "Upgrade to Reactor 2020.0.9\n\nCloses gh-27159"
+        },
+        {
+            "hash": "1341ca99dbfab895a1fd14160e45184350bd4e84",
+            "message": "Align with Framework's deprecation of getLastModified\n\nSee gh-27160"
+        },
+        {
+            "hash": "2354dd5ccbeb5ad30568e6d42f3d4c21721f2286",
+            "message": "Include Jetty metrics in list of supported metrics\n\nCloses gh-27299"
+        },
+        {
+            "hash": "afb96af0ebeda594e7c46fdfdf950399f5037631",
+            "message": "Upgrade to Tomcat 9.0.50\n\nCloses gh-27245"
+        },
+        {
+            "hash": "895a2ed013318c9b4a669d0a8fea3dccdb69a2a6",
+            "message": "Upgrade to Postgresql 42.2.23\n\nCloses gh-27244"
+        },
+        {
+            "hash": "bed528f2031ca120b1a050aaba8b55ceeca2ddc2",
+            "message": "Upgrade to jOOQ 3.14.12\n\nCloses gh-27243"
+        },
+        {
+            "hash": "5811b22554a24522a44f32a65c51efbeb2c7c46b",
+            "message": "Upgrade to Johnzon 1.2.14\n\nCloses gh-27242"
+        },
+        {
+            "hash": "3c6db2bc2817f10253d9fc0ca6cce36ba7592d85",
+            "message": "Upgrade to Jetty 9.4.43.v20210629\n\nCloses gh-27241"
+        },
+        {
+            "hash": "58b03ac56f3245b5f9e785d14b4fb3f4c3fe8efe",
+            "message": "Upgrade to Jetty Reactive HTTPClient 1.1.10\n\nCloses gh-27240"
+        },
+        {
+            "hash": "88e0916ad64319c888ffe61226e21ff1d83d300c",
+            "message": "Upgrade to DB2 JDBC 11.5.6.0\n\nCloses gh-27239"
+        },
+        {
+            "hash": "2d671021d9fb7d4d10b23e993730128e77ce92d7",
+            "message": "Upgrade to AspectJ 1.9.7\n\nCloses gh-27238"
+        },
+        {
+            "hash": "57d7ba0836a58a9f0952f9710f0104bf1b5430b6",
+            "message": "Switch s-b-server-tests from libs-snapshot to snapshot and milestone\n\nCloses gh-27233"
+        },
+        {
+            "hash": "2ce38cdc43d555fe63cf05a1832067fc789bda45",
+            "message": "Start using 0.0.15 snapshots of the Artifactory Resource\n\nSee gh-27232"
+        },
+        {
+            "hash": "7b94b40a19fa363c3602341a1a61e05aeb35918d",
+            "message": "Ensure that Session JDBC schema is in place before DB is accessed\n\nFixes gh-27208"
+        },
+        {
+            "hash": "4b1b2d66032e578947d6ae08a048de342f81aa18",
+            "message": "Consider Flyway and Liquibase as possible Batch DB initializers\n\nThis is a follow-on from 3fec4110 which only considered\nBatchDataSourceInitializer as a possible initializer of Batch's\ndatabase schema. Flyway and Liquibase are now also considered.\n\nCloses gh-27193"
+        },
+        {
+            "hash": "3fec41104e17ed087a7def2db7d806e01e9682ed",
+            "message": "Ensure that Batch schema is in place before DB is accessed\n\nFixes gh-27193"
+        },
+        {
+            "hash": "42e556dd73853e9642886f00a7b54326f2e092a8",
+            "message": "Handle file with name matching an optional wildcard location\n\nPreviously, the presence of a file with the same name\nas an optional wildcard location would cause a failure. With\nthis change the pattern is resolved only if the resource is a\ndirectory.\n\nAdditionally, if an optional wildcard search location that was a file\nwould also fail with an exception. This commit fixes that so that those\nlocations are not resolved.\n\nFixes gh-27120\nFixes gh-27209"
+        },
+        {
+            "hash": "84110a22bc1bb26c44de17802488a6f2d8d7f879",
+            "message": "Don't change case of 'Sec-WebSocket-Key'\n\nPolish commit 5ca687c9a6b5 had an accidental side-effect of changing\nthe 'Sec-WebSocket-Key' header value to lowercase. This breaks\nconnections since the value needs to be echoed unchanged in the\n\"Sec-WebSocket-Accept\" header.\n\nFixes gh-27147"
+        },
+        {
+            "hash": "815ccd14b5cefe4a9ed5fd6f9e55c96ef4fd18df",
+            "message": "Start building against Spring Data 2020.0.11 snapshots\n\nSee gh-27161"
+        },
+        {
+            "hash": "434d4a6f76388ce42c88c6ba9f2e40656c78a242",
+            "message": "Start building against Spring HATEOAS 1.2.8 snapshots\n\nSee gh-27183"
+        },
+        {
+            "hash": "861f87911c184aa823532aac990252ec17bcfacb",
+            "message": "Start building against Spring Framework 5.3.9 snapshots\n\nSee gh-27160"
+        },
+        {
+            "hash": "74d5fdbcd03ba0aa52882e1cec4ce8f3c77df28c",
+            "message": "Start building against Reactor 2020.0.9 snapshots\n\nSee gh-27159"
+        },
+        {
+            "hash": "32889e900f8b3c8c62c3e87920b0bb54cd45836f",
+            "message": "Merge pull request #27149 from marckchr\n\n* pr/27149:\n  Polish \"Fix duration to microseconds conversion\"\n  Fix duration to microseconds conversion\n\nCloses gh-27149"
+        },
+        {
+            "hash": "5ec0c7ed12686d0e1794b6a9e8c40f8ff955230f",
+            "message": "Polish \"Fix duration to microseconds conversion\"\n\nSee gh-27149"
+        },
+        {
+            "hash": "a406a46fa10536a955494abc5d331573bb88f28e",
+            "message": "Fix duration to microseconds conversion\n\nSee gh-27149"
+        },
+        {
+            "hash": "877f618a690b37ccc776ecc82e2699524e7e6451",
+            "message": "Clarify that HATEOAS can be used with Webflux without starter\n\nCloses gh-26897"
+        },
+        {
+            "hash": "6c4273b5c9d0136679d4b3818d92c3ca7a1d3ce9",
+            "message": "Document spring hateoas is spring mvc specific\n\nCloses gh-26897"
+        },
+        {
+            "hash": "eb4144eb97aeb056a96f69808fea415cc6368dc5",
+            "message": "Add clarification on when @DevaultValue is used during binding\n\nCloses gh-26742"
+        },
+        {
+            "hash": "44b0bd43a415fe4404c1dab938f5489cee77ec9b",
+            "message": "Automate publication of gradle plugin\n\nCloses gh-27079"
+        },
+        {
+            "hash": "618c1e42e2668aa41929e8acedaef99271af1b91",
+            "message": "Merge branch '2.3.x' into 2.4.x\n\nCloses gh-27095"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27446",
+            "title": "Upgrade to Undertow 2.2.9.Final"
+        },
+        {
+            "number": "27445",
+            "title": "Upgrade to SLF4J 1.7.32"
+        },
+        {
+            "number": "27444",
+            "title": "Upgrade to MySQL 8.0.26"
+        },
+        {
+            "number": "27441",
+            "title": "Configure a mirror for registry-image image_resources"
+        },
+        {
+            "number": "27232",
+            "title": "Upgrade to Artifactory Resource 0.0.15"
+        },
+        {
+            "number": "26115",
+            "title": "Upgrade to Gradle Enterprise Conventions 0.0.8"
+        },
+        {
+            "number": "27133",
+            "title": "YamlPropertySourceLoader may not use the right ClassLoader to check if SnakeYAML is present"
+        },
+        {
+            "number": "27380",
+            "title": "Upgrade to Logback 1.2.4"
+        },
+        {
+            "number": "27391",
+            "title": "Upgrade to Spring AMQP 2.3.10"
+        },
+        {
+            "number": "27161",
+            "title": "Upgrade to Spring Data 2020.0.11"
+        },
+        {
+            "number": "27381",
+            "title": "Upgrade to Netty 4.1.66.Final"
+        },
+        {
+            "number": "27379",
+            "title": "Upgrade to jOOQ 3.14.13"
+        },
+        {
+            "number": "27378",
+            "title": "Upgrade to Dropwizard Metrics 4.1.25"
+        },
+        {
+            "number": "27377",
+            "title": "Upgrade to AppEngine SDK 1.9.90"
+        },
+        {
+            "number": "27368",
+            "title": "DataCassandraTestIntegrationTests are flaky"
+        },
+        {
+            "number": "27354",
+            "title": "Setting Gson as preferred mapper breaks controller methods returning JSON Strings"
+        },
+        {
+            "number": "27327",
+            "title": "Exception thrown from /actuator/configprops endpoint when spring.config.import=configtree:xxxx is used"
+        },
+        {
+            "number": "27335",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "27094",
+            "title": "CI Promote can fail with NPE following Artifactory upgrade"
+        },
+        {
+            "number": "27337",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "27183",
+            "title": "Upgrade to Spring HATEOAS 1.2.8"
+        },
+        {
+            "number": "27340",
+            "title": "Upgrade to Micrometer 1.6.9"
+        },
+        {
+            "number": "27339",
+            "title": "Upgrade to Lettuce 6.0.7.RELEASE"
+        },
+        {
+            "number": "27331",
+            "title": "Some test classes are named …Test but should be …Tests"
+        },
+        {
+            "number": "27160",
+            "title": "Upgrade to Spring Framework 5.3.9"
+        },
+        {
+            "number": "27159",
+            "title": "Upgrade to Reactor 2020.0.9"
+        },
+        {
+            "number": "27299",
+            "title": "Document auto-configured Jetty metrics"
+        },
+        {
+            "number": "27245",
+            "title": "Upgrade to Tomcat 9.0.50"
+        },
+        {
+            "number": "27244",
+            "title": "Upgrade to Postgresql 42.2.23"
+        },
+        {
+            "number": "27243",
+            "title": "Upgrade to jOOQ 3.14.12"
+        },
+        {
+            "number": "27242",
+            "title": "Upgrade to Johnzon 1.2.14"
+        },
+        {
+            "number": "27241",
+            "title": "Upgrade to Jetty 9.4.43.v20210629"
+        },
+        {
+            "number": "27240",
+            "title": "Upgrade to Jetty Reactive HTTPClient 1.1.10"
+        },
+        {
+            "number": "27239",
+            "title": "Upgrade to DB2 JDBC 11.5.6.0"
+        },
+        {
+            "number": "27238",
+            "title": "Upgrade to AspectJ 1.9.7"
+        },
+        {
+            "number": "27233",
+            "title": "spring-boot-server-tests should use snapshot and milestone repositories rather than libs-snapshot"
+        },
+        {
+            "number": "27208",
+            "title": "Spring Session JDBC does not work when lazy initialization is enabled"
+        },
+        {
+            "number": "27193",
+            "title": "App fails to start when using Spring Batch with JDBC and lazy initialization is enabled"
+        },
+        {
+            "number": "27120",
+            "title": "File named \"config\" in working directory causes IllegalStateException"
+        },
+        {
+            "number": "27209",
+            "title": "Optional file search locations with pattern throws exception if not present"
+        },
+        {
+            "number": "27147",
+            "title": "Live Reload using Devtools no longer connects"
+        },
+        {
+            "number": "26897",
+            "title": "Document that hateoas starter is spring MVC specific"
+        },
+        {
+            "number": "26742",
+            "title": "Improve javadoc of @DefaultValue"
+        },
+        {
+            "number": "27079",
+            "title": "Automate the publication of Boot's Gradle plugin"
+        },
+        {
+            "number": "27095",
+            "title": "CI Promote can fail with NPE following Artifactory upgrade"
+        }
+    ]
+}

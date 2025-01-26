@@ -1,0 +1,78 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 15,
+    "start_delay": 0.0,
+    "duration": 11.007511574074075,
+    "commits_info": [
+        {
+            "hash": "2bf5129d21a6b1e1f809ecdf7da2824cf9b43412",
+            "message": "\"Update release notes by Travis CI build 1626 [ci skip]\""
+        },
+        {
+            "hash": "19cc5095ba9d80b48cd576271a7756e4dc5de558",
+            "message": "Merge pull request #691 from mockito/issue-542\n\nNew API: Mockito.mockingDetails(mock).getStubbings()"
+        },
+        {
+            "hash": "1ed542f9c063a0a637ac3975605b71bc50ebaff7",
+            "message": "Automatic commits should not trigger CI pipeline\n\nThose are completely unnecessary builds"
+        },
+        {
+            "hash": "484b502b515d08ba05d0ec206d0d18363506a4e4",
+            "message": "Ignored test that caused problems\n\nIt was using up the quota for getting github tickets, let's disable it for now. It can be manually ran for verification if needed. Long term, it will be enabled when mockito release automation goes to a separate library."
+        },
+        {
+            "hash": "49ffbf8d5d3efaa4a795c98b371df97376a5ddaa",
+            "message": "Minor refactoring based on feedback"
+        },
+        {
+            "hash": "708c2964df5467fb4835963e9cf38bc0b4458565",
+            "message": "Removed duplicate tests"
+        },
+        {
+            "hash": "ffe666846c985a6c8ea5a9928ef12f50089a84dd",
+            "message": "Exposed the public API\n\nStubbing interface is intended for public use."
+        },
+        {
+            "hash": "a949768f733e1ca803de1ab71c51070717501307",
+            "message": "Updated documentation in the main class\n\nKeeping Mockito main class as a manual of all the features"
+        },
+        {
+            "hash": "eef94371ad80419e575fd30e3ed94b7412c8a63d",
+            "message": "Added even more javadoc\n\nFixes #542"
+        },
+        {
+            "hash": "4dfc7524407b397c6045fd94768743dc702af0d5",
+            "message": "Moved tests to single class\n\nThere is still some overlap between tested methods but fixing this is low priority at this time. At least, the same coverage is in the same test class"
+        },
+        {
+            "hash": "43a4e99106d5f93100c780041b00e805748adb57",
+            "message": "Added javadoc"
+        },
+        {
+            "hash": "8054946890221cb19d5ba200064d61e7d764bcd2",
+            "message": "Added test that covers existing functionality"
+        },
+        {
+            "hash": "9549b77edb993cf7e679206bec59cce80e24d264",
+            "message": "New API: Mockito.mockingDetails(mock).getStubbings()\n\nWork in progress - preview commit\n\nSee issue #542"
+        },
+        {
+            "hash": "7dc5701b16f1da4479e0ec4fa694ad29917bf9c7",
+            "message": "Updated bugfix info in 2.2.1\n\n[ci skip]"
+        },
+        {
+            "hash": "91ab053b36e97da7618c3e93ebc3e94914980549",
+            "message": "Increment version '2.2.2' -> '2.2.3' by Travis CI build 1622"
+        }
+    ],
+    "issues": [
+        {
+            "number": "542",
+            "title": "new API MockingDetails.getStubbings for advanced users and integrations"
+        }
+    ]
+}

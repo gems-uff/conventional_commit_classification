@@ -1,0 +1,698 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 108,
+    "start_delay": 0.0,
+    "duration": 28.166238425925926,
+    "commits_info": [
+        {
+            "hash": "8a03344c037e2093dedacc3abba9ef2e343fafce",
+            "message": "Release v2.5.6"
+        },
+        {
+            "hash": "6cdafc4b72341817fa50b9c8ffb7bb5875ca3016",
+            "message": "Upgrade to Spring Session 2021.0.3\n\nCloses gh-28248"
+        },
+        {
+            "hash": "4a9931f5e8c46d67a9c7586e1a33f76848ab6c93",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "7e3d663762566f6eb130103aa29a53842cd370ff",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-28401"
+        },
+        {
+            "hash": "d80d692029c1886876f79601d987b042dd454bd6",
+            "message": "Upgrade to Spring Framework 5.3.12\n\nCloses gh-28241"
+        },
+        {
+            "hash": "cc54be43eec6a867fa958df017af2131c6ea729e",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "841f8b480a20d9afdcb51156ce432e06318752aa",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "7328f609c2c325928ab24166e8c0be54c967c16b",
+            "message": "Upgrade to XmlUnit2 2.8.3\n\nCloses gh-28397"
+        },
+        {
+            "hash": "8d3e67e56101c924d673b75594f8db5c5798763e",
+            "message": "Upgrade to SendGrid 4.7.6\n\nCloses gh-28396"
+        },
+        {
+            "hash": "80e3c9a9cce6054f450be9e3cddaf24c7fd5e8e2",
+            "message": "Upgrade to MySQL 8.0.27\n\nCloses gh-28395"
+        },
+        {
+            "hash": "cae0b50393da4487510d2842680e5c65d14d3d3d",
+            "message": "Upgrade to Ehcache3 3.9.7\n\nCloses gh-28394"
+        },
+        {
+            "hash": "9b1660a111c6ab0df51249e5416f6f62a437d339",
+            "message": "Upgrade to Spring Integration 5.5.5\n\nCloses gh-28249"
+        },
+        {
+            "hash": "f2ef8f92453299cfe071ea687c7d3b0efe7dd82f",
+            "message": "Start building against Spring Framework 5.3.12 snapshots\n\nThis reverts commit 196013fc3929106e183241e6af9b9b534c9cdc2b, reversing\nchanges made to 8b0c563832844938e3f5ad3ae2da1a240ff80d67.\n\nCloses gh-28384\nSee gh-28241"
+        },
+        {
+            "hash": "feed904814f39112a7737103ccd775c409061453",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "76272ffb629d8acac28e0bfdeda9d9ef93bbf917",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28382"
+        },
+        {
+            "hash": "dfb349e9ca37968efc6abb102a9a2423101fc2d2",
+            "message": "Merge pull request #28375 from artembilan\n\n* gh-28375:\n  Remove redundant info about DefaultMetricsFactory\n\nCloses gh-28375"
+        },
+        {
+            "hash": "344d008848e425a902d3743ce5343da6fc6e75dd",
+            "message": "Remove redundant info about DefaultMetricsFactory\n\nThe DefaultMetricsFactory was removed from Spring Integration starting\nwith version 5.4. This commit updates the documentation to match.\n\nSee gh-28375"
+        },
+        {
+            "hash": "ab3396de261f4f205888a10962ef1897046a4ee6",
+            "message": "Upgrade to Spring Security 5.5.3\n\nCloses gh-28247"
+        },
+        {
+            "hash": "d767e0e1f1dfdcfadfb3af1cfec49592c0a0815c",
+            "message": "Upgrade to Spring Kafka 2.7.8\n\nCloses gh-28246"
+        },
+        {
+            "hash": "b00a5cb91e9b48457b5e206d0c253779b5a8cb7a",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "c8e0791b50b130af9c629a3e4a3677dad6879f7f",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28379"
+        },
+        {
+            "hash": "bc2bf840b4c90c862c9c3038613b9855a9553e44",
+            "message": "Fix conditions on DevToolsR2dbcAutoConfiguration\n\nSee gh-28345"
+        },
+        {
+            "hash": "0f5bd905393e00cd4ec62ba052b6f1ec8422758b",
+            "message": "Add checkstyle ignore for unusual test structure"
+        },
+        {
+            "hash": "b93a629dbe0accac24fc019a924900f702b641e0",
+            "message": "Shutdown in-memory R2DBC databases before devtools restart\n\nAdd `DevToolsR2dbcAutoConfiguration` to automatically shutdown in-memory\nR2DBC databases before restarting. Prior to this commit, restarts that\ninvolved SQL initialization scripts could fail due to dirty database\ncontent.\n\nThe `DevToolsR2dbcAutoConfiguration` class is similar in design to\n`DevToolsDataSourceAutoConfiguration`, but it applies to both pooled\nand non-pooled connection factories. The `DataSource` variant does not\nneed to deal with non-pooled connections due to the fact that\n`EmbeddedDataSourceConfiguration` calls `EmbeddedDatabase.shutdown`\nas a `destroyMethod`. With R2DB we don't have an `EmbeddedDatabase`\nequivalent so we can always trigger a shutdown for devtools.\n\nFixes gh-28345"
+        },
+        {
+            "hash": "19d30078068868bcd4151f79770d9d1b1979cf80",
+            "message": "Polish"
+        },
+        {
+            "hash": "f87b2478d508600d8b100d0ed9658640b2cc0cb3",
+            "message": "Upgrade to Spring AMQP 2.3.11\n\nCloses gh-28245"
+        },
+        {
+            "hash": "f12716596be59a9a259c76a03674830a22310011",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "5f4c001316e64e5f5b9250a54daae14fee38a2df",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28371"
+        },
+        {
+            "hash": "e865c3a7d7a1b3f01099d822365088224294c28a",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "390fcd6b06d64f684fb04dda2ca946966610980a",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "c1ca16c971c48f67588be4dd489e3acf217a3adb",
+            "message": "Revert \"Start building against Spring Batch 4.3.4 snapshots\"\n\nThis reverts commit c0605ffc71f0086a7529eb117cdd587f9136e401.\n\nSee gh-28250"
+        },
+        {
+            "hash": "394fe5d7b81d33260e3069a947cb11878fa2dc88",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "16dbdc5d887414c36d2b8da091cc589cf46b2304",
+            "message": "Upgrade to Spring Data 2021.0.6\n\nCloses gh-28244"
+        },
+        {
+            "hash": "04abaa2dd139a11fbbfac58ef641f71f2ae35643",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "196013fc3929106e183241e6af9b9b534c9cdc2b",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nSee gh-28241"
+        },
+        {
+            "hash": "8b0c563832844938e3f5ad3ae2da1a240ff80d67",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "a4453045845eae4d5407627ee075d2e9f7e69ae1",
+            "message": "Upgrade to Netty 4.1.69.Final\n\nCloses gh-28360"
+        },
+        {
+            "hash": "ea6021cccd653b16d028653b4bdec420ff30da04",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "1a1d074f5bc935f41b0a7dc478d8cd823737d8e1",
+            "message": "Upgrade to Spring HATEOAS 1.3.5\n\nCloses gh-28243"
+        },
+        {
+            "hash": "e3a2d42a9697deb5403a8c1a602ec2712e2b7439",
+            "message": "Upgrade to Micrometer 1.7.5\n\nCloses gh-28242"
+        },
+        {
+            "hash": "a93304c9736e5a94f35941f48882c82046ec0d46",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28356"
+        },
+        {
+            "hash": "467e063d4b41eaaba5915da2b949e734943e36e3",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "cf8a1b8b04ec4076374e9e2f7947a23c13055a91",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28353"
+        },
+        {
+            "hash": "aeadb0ceb672a40745d125bb696ab8aa185d9c04",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28351"
+        },
+        {
+            "hash": "a9df8c3ef4a4c613cdd3c4e4ecee7a62fb38aec2",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28349"
+        },
+        {
+            "hash": "2430d8a41a41cc45f32ef00229ad7bc4c60fefa4",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28347"
+        },
+        {
+            "hash": "1a30c660f32a7fb5abddc8bbabfd285cdd6f8a77",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28342"
+        },
+        {
+            "hash": "865615e09943e990d0c39752b4df77078a716c71",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28340"
+        },
+        {
+            "hash": "3800f060b5141fd1aa8614c925ad5f7b4091fd37",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28336"
+        },
+        {
+            "hash": "b02873fc46c9dd1553a006c5e780660e93bb0b39",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "0dcdabed9e761efbe39d4ba5ae3335844b7c17df",
+            "message": "Upgrade to Spring Framework 5.3.11\n\nCloses gh-28241"
+        },
+        {
+            "hash": "5fd5556b1fecd2fd5be5b2b75f8cf8e551f2623a",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28333"
+        },
+        {
+            "hash": "d3037103fe5aefbe695b0a1506413a1177912ef3",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28330"
+        },
+        {
+            "hash": "02b577390f79df0a8d70f909d168e1ae6ebf4050",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "f427ea5802cca2370ff6ef5660bfd1abfd16c912",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28304"
+        },
+        {
+            "hash": "3755c563df5dadef32199e8afd6ed57378837072",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "ec6bfa80624571a85763bd53f84008bcf3cf6374",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "24711d9109f1fbd80850ff69122ba57339249c9a",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "f04da491b2f9607576aa15d97ea208c0e1e8dc2e",
+            "message": "Upgrade to Reactor 2020.0.12\n\nCloses gh-28240"
+        },
+        {
+            "hash": "3e1b91911a8031ccea4cb70c27ace287445c6dc9",
+            "message": "Upgrade to Undertow 2.2.12.Final\n\nCloses gh-28289"
+        },
+        {
+            "hash": "4478ffae3b2963a4f19f81f50369e74d8db2a403",
+            "message": "Upgrade to Tomcat 9.0.54\n\nCloses gh-28288"
+        },
+        {
+            "hash": "9118644d2aadd635cb6c32c3b8a935765b0d302c",
+            "message": "Upgrade to R2DBC Bom Arabba-SR11\n\nCloses gh-28287"
+        },
+        {
+            "hash": "3e8229e6a16203808c4ac95a61f04e836cf84cbc",
+            "message": "Upgrade to Postgresql 42.2.24\n\nCloses gh-28286"
+        },
+        {
+            "hash": "ed77189d69b397dea6f2c4646e083dc268b5b546",
+            "message": "Upgrade to Netty tcNative 2.0.44.Final\n\nCloses gh-28285"
+        },
+        {
+            "hash": "c5abb57bdbc009ebe8ec515cfc99e5cc9155c9e9",
+            "message": "Upgrade to Lombok 1.18.22\n\nCloses gh-28284"
+        },
+        {
+            "hash": "45507a3d19e76fb7f42615099d34c68a482322f4",
+            "message": "Upgrade to Jetty 9.4.44.v20210927\n\nCloses gh-28283"
+        },
+        {
+            "hash": "5c0b76ec18fee6ccbd8cb2bc612bbd003c20f6cc",
+            "message": "Upgrade to Jaybird 4.0.4.java8\n\nCloses gh-28282"
+        },
+        {
+            "hash": "f2a5c6bcd0a30ccf8591e09a72be292f680a74fe",
+            "message": "Upgrade to HttpCore5 5.1.2\n\nCloses gh-28281"
+        },
+        {
+            "hash": "706eb6df603d2c3f29ef72b72bea21d0f7ee6d0e",
+            "message": "Upgrade to Dropwizard Metrics 4.1.26\n\nCloses gh-28280"
+        },
+        {
+            "hash": "0103eb123bc5733b2b90d8a078f93ced2256b838",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28278"
+        },
+        {
+            "hash": "763b14ae671bac1598b2e020eb3e26e3845f4d46",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "d47260637bcb92c7173ddc4c29a23a2d72f6e48f",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28262"
+        },
+        {
+            "hash": "c0605ffc71f0086a7529eb117cdd587f9136e401",
+            "message": "Start building against Spring Batch 4.3.4 snapshots\n\nSee gh-28250"
+        },
+        {
+            "hash": "98bc8e711d0967b846f9b48e16920c38ad9bcdb5",
+            "message": "Start building against Spring Integration 5.5.5 snapshots\n\nSee gh-28249"
+        },
+        {
+            "hash": "b0aa1cdb0091b12e0a02f1e992e89dcc979be1d3",
+            "message": "Start building against Spring Session 2021.0.3 snapshots\n\nSee gh-28248"
+        },
+        {
+            "hash": "a9513ccf072aaba3237afb0569891ab3df7ad01f",
+            "message": "Start building against Spring Security 5.5.3 snapshots\n\nSee gh-28247"
+        },
+        {
+            "hash": "5396a980c318eef8c087e39bf9564efc000333bb",
+            "message": "Start building against Spring Kafka 2.7.8 snapshots\n\nSee gh-28246"
+        },
+        {
+            "hash": "123e93f1d5379905373d0bd37f25c1f12408dbee",
+            "message": "Start building against Spring AMQP 2.3.11 snapshots\n\nSee gh-28245"
+        },
+        {
+            "hash": "bbdb74bff08008b044356acdbd0907bf378f6624",
+            "message": "Start building against Spring Data 2021.0.6 snapshots\n\nSee gh-28244"
+        },
+        {
+            "hash": "70b0fa4512004180d409b81ba0a3c01987d2147d",
+            "message": "Start building against Spring HATEOAS 1.3.5 snapshots\n\nSee gh-28243"
+        },
+        {
+            "hash": "69e7fe1c57b9db9bdd3dde73438e46d502195f5b",
+            "message": "Start building against Micrometer 1.7.5 snapshots\n\nSee gh-28242"
+        },
+        {
+            "hash": "737cea0d7363694532112a6c72e31ed146433d17",
+            "message": "Start building against Spring Framework 5.3.11 snapshots\n\nSee gh-28241"
+        },
+        {
+            "hash": "24ada6f240b0d185681dcf06642bd5eed34d139f",
+            "message": "Start building against Reactor 2020.0.12 snapshots\n\nSee gh-28240"
+        },
+        {
+            "hash": "9b0c0af8c7e1826d6beaffdeac99074789f6b84d",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "b222461c04e3583c0e35bea521dc36acdd39d5df",
+            "message": "Upgrade CI to Docker 20.10.9\n\nCloses gh-28216"
+        },
+        {
+            "hash": "92aa791b1f16baa6fd9955b6927bd34a709f7f0e",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-28215"
+        },
+        {
+            "hash": "a9b1a796eaa138d97fcb6052ae401ea6a431a750",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "1931104d135eb132e26280eabdfd6cbdb2f364d3",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28206"
+        },
+        {
+            "hash": "9f4cf8398b93df59a313ac5e682d902f202f4174",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28201"
+        },
+        {
+            "hash": "322615d9c5bd852aca5fcd5d65b405e48bdb2945",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28199"
+        },
+        {
+            "hash": "51c3758801a94b5b91bc7e5dbbacb6d5bfd1b897",
+            "message": "Merge branch 'gh-28130' into 2.5.x\n\nFixes gh-28130"
+        },
+        {
+            "hash": "437a1601efe8bd7b9983bbeec27b360368bfe80b",
+            "message": "Fix broken content negotiation for Prometheus with OpenMetrics\n\nUpdate Prometheus `TextOutputFormat` so that OpenMetrics is used in\npreference to text output when an appropriate accept header is found.\n\nIf the accept header contains `*/*` or is missing then the text format\nwill be used.\n\nSee gh-28130"
+        },
+        {
+            "hash": "d8141e6a8d4b51b7d9b41c2d3a8b2bc92227face",
+            "message": "Allow Producible enums to indicate a default value\n\nAdd an `isDefault()` method to `Producible` which can be used to\nindicate which of the enum values should be used when the accept header\nis `*/*` or `null`.\n\nPrior to this commit, the last enum value was always used as the\ndefault.\n\nSee gh-28130"
+        },
+        {
+            "hash": "a1c88faf462588964acd8611183701eef0a077f0",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28195"
+        },
+        {
+            "hash": "d22167b96a590d0081e395a1e3ae559b392cb2b2",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28193"
+        },
+        {
+            "hash": "ff3eed73eeb2fce8c9a5afbd93edd11de9eaf3e7",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28190"
+        },
+        {
+            "hash": "71020fd70d4ac19e55d57bec523fba029f07fe65",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28186"
+        },
+        {
+            "hash": "3249d054647d5beab9fd3d00f99273a96346ad0a",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28171"
+        },
+        {
+            "hash": "14a57adb53e9e511d34edbbc00b6ef3d7c8a2a79",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28165"
+        },
+        {
+            "hash": "d238566920b2e05e26eb27478b65885525d8fbfb",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nSee gh-28134"
+        },
+        {
+            "hash": "1c139b1d230aacf7229c3a1f4a788737c521fa26",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28159"
+        },
+        {
+            "hash": "9e484e2cdc9bac1b4a60eabd8b1266e7a7ecc58d",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28152"
+        },
+        {
+            "hash": "fcb6f557f7f805cd3ed4db69d87e8849586fe87b",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28134"
+        },
+        {
+            "hash": "ef18a2166debdc538d52ec9c04c9e5848a708724",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28119"
+        },
+        {
+            "hash": "4e5da6a6ed13b871e08f6366aabe79da04b731cc",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28117"
+        },
+        {
+            "hash": "84d332e527a49651f594c71fe0310ac3cab0588d",
+            "message": "Merge branch '2.4.x' into 2.5.x\n\nCloses gh-28115"
+        },
+        {
+            "hash": "ec08a6c733f87c8ce64c22089b1954f80cbaaf3b",
+            "message": "Merge branch '2.4.x' into 2.5.x"
+        },
+        {
+            "hash": "21aea2f752f330e026264f87ace49aae16b43ad6",
+            "message": "Next development version (v2.5.6-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28248",
+            "title": "Upgrade to Spring Session 2021.0.3"
+        },
+        {
+            "number": "28401",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "28241",
+            "title": "Upgrade to Spring Framework 5.3.12"
+        },
+        {
+            "number": "28397",
+            "title": "Upgrade to XmlUnit2 2.8.3"
+        },
+        {
+            "number": "28396",
+            "title": "Upgrade to SendGrid 4.7.6"
+        },
+        {
+            "number": "28395",
+            "title": "Upgrade to MySQL 8.0.27"
+        },
+        {
+            "number": "28394",
+            "title": "Upgrade to Ehcache3 3.9.7"
+        },
+        {
+            "number": "28249",
+            "title": "Upgrade to Spring Integration 5.5.5"
+        },
+        {
+            "number": "28384",
+            "title": "Revert resource logging workaround once we're building against Framework 5.3.12"
+        },
+        {
+            "number": "28382",
+            "title": "Fix typo in EnvironmentPostProcessor's class-level javadoc"
+        },
+        {
+            "number": "28247",
+            "title": "Upgrade to Spring Security 5.5.3"
+        },
+        {
+            "number": "28246",
+            "title": "Upgrade to Spring Kafka 2.7.8"
+        },
+        {
+            "number": "28379",
+            "title": "Misleading failure analysis when jOOQ's DSLContext is unavailable due to R2DBC taking precedence over JDBC"
+        },
+        {
+            "number": "28345",
+            "title": "Devtools restart fails with in-memory R2DBC database and SQL initialization scripts"
+        },
+        {
+            "number": "28245",
+            "title": "Upgrade to Spring AMQP 2.3.11"
+        },
+        {
+            "number": "28371",
+            "title": "When lazy initialization is enabled, JMX endpoints are not available"
+        },
+        {
+            "number": "28250",
+            "title": "Upgrade to Spring Batch 4.3.4"
+        },
+        {
+            "number": "28244",
+            "title": "Upgrade to Spring Data 2021.0.6"
+        },
+        {
+            "number": "28360",
+            "title": "Upgrade to Netty 4.1.69.Final"
+        },
+        {
+            "number": "28243",
+            "title": "Upgrade to Spring HATEOAS 1.3.5"
+        },
+        {
+            "number": "28242",
+            "title": "Upgrade to Micrometer 1.7.5"
+        },
+        {
+            "number": "28356",
+            "title": "JarFileWrapper may cause many FinalReferences causing GC pressure"
+        },
+        {
+            "number": "28353",
+            "title": "Flattened VCAP_SERVICES properties are not sanitized by default"
+        },
+        {
+            "number": "28351",
+            "title": "MeterValue with \"d\" suffix not parsed as Duration for timer"
+        },
+        {
+            "number": "28349",
+            "title": "spring-boot-starter-test has an unnecessary dependency on jakarta.xml.bind-api"
+        },
+        {
+            "number": "28347",
+            "title": "CachingOperationInvoker cache can consume a significant amount of heap space"
+        },
+        {
+            "number": "28342",
+            "title": "Prohibit org.apache.geronimo.specs dependencies from our starters"
+        },
+        {
+            "number": "28340",
+            "title": "ActiveMQ starter depends on org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec"
+        },
+        {
+            "number": "28336",
+            "title": "Check starters for unnecessary exclusions"
+        },
+        {
+            "number": "28333",
+            "title": "spring-boot-starter-oauth2-client has an unnecessary dependency on com.sun.mail:jakarta.mail"
+        },
+        {
+            "number": "28330",
+            "title": "Prohibit JBoss spec dependencies from our starters"
+        },
+        {
+            "number": "28304",
+            "title": "Spring Data Neo4j auto-configuration test class TestRelationshipProperties does not meet contract"
+        },
+        {
+            "number": "28240",
+            "title": "Upgrade to Reactor 2020.0.12"
+        },
+        {
+            "number": "28289",
+            "title": "Upgrade to Undertow 2.2.12.Final"
+        },
+        {
+            "number": "28288",
+            "title": "Upgrade to Tomcat 9.0.54"
+        },
+        {
+            "number": "28287",
+            "title": "Upgrade to R2DBC Bom Arabba-SR11"
+        },
+        {
+            "number": "28286",
+            "title": "Upgrade to Postgresql 42.2.24"
+        },
+        {
+            "number": "28285",
+            "title": "Upgrade to Netty tcNative 2.0.44.Final"
+        },
+        {
+            "number": "28284",
+            "title": "Upgrade to Lombok 1.18.22"
+        },
+        {
+            "number": "28283",
+            "title": "Upgrade to Jetty 9.4.44.v20210927"
+        },
+        {
+            "number": "28282",
+            "title": "Upgrade to Jaybird 4.0.4.java8"
+        },
+        {
+            "number": "28281",
+            "title": "Upgrade to HttpCore5 5.1.2"
+        },
+        {
+            "number": "28280",
+            "title": "Upgrade to Dropwizard Metrics 4.1.26"
+        },
+        {
+            "number": "28278",
+            "title": "Remove unused settings.xml in integration tests"
+        },
+        {
+            "number": "28262",
+            "title": "Remove unnecessary finalize overrides"
+        },
+        {
+            "number": "28216",
+            "title": "Upgrade CI to Docker 20.10.9"
+        },
+        {
+            "number": "28215",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "28206",
+            "title": "Upgrade to Spring Java Format 0.0.29"
+        },
+        {
+            "number": "28201",
+            "title": "Update docs to be explicit about dot notation being correctly mapped"
+        },
+        {
+            "number": "28199",
+            "title": "syncAppSource tasks should declare project.version as an input"
+        },
+        {
+            "number": "28130",
+            "title": "Broken content negotiation for OpenMetrics"
+        },
+        {
+            "number": "28195",
+            "title": "Upgrade to concourse-java-scripts 0.0.4"
+        },
+        {
+            "number": "28193",
+            "title": "Section 4.4 File Rotation mentions the wrong configuration file name for Log4j2"
+        },
+        {
+            "number": "28190",
+            "title": "Layertools extract does not preserve last modified and last access times"
+        },
+        {
+            "number": "28186",
+            "title": " Upgrade to GitHub Changelog Generator 0.0.7 in CI"
+        },
+        {
+            "number": "28171",
+            "title": "Update Javadoc with note mentioning that class using ConstructorBinding must be enabled using annotations"
+        },
+        {
+            "number": "28165",
+            "title": "Avoid running the launch script tests unnecessarily"
+        },
+        {
+            "number": "28134",
+            "title": "NumberFormatException when configuring spring.rabbitmq.addresses with an IPv6 address"
+        },
+        {
+            "number": "28159",
+            "title": "Make it clearer that, when using `@AutoConfigureTestEntityManager` outside of `@DataJpaTest`, any tests using the test entity manager must be `@Transactional`"
+        },
+        {
+            "number": "28152",
+            "title": "Avoid implicit task dependencies in Gradle build"
+        },
+        {
+            "number": "28119",
+            "title": "Don't include spring-boot-loader.jar and spring-boot-jarmode-layer-tools.jar files in the source jar of spring-boot-loader-tools"
+        },
+        {
+            "number": "28117",
+            "title": "Upgrade to NoHTTP 0.0.10"
+        },
+        {
+            "number": "28115",
+            "title": "Upgrade CI to github-release resource 1.5.5"
+        }
+    ]
+}

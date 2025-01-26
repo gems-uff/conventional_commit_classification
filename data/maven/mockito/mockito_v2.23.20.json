@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.0038888888888888888,
+    "commits_info": [
+        {
+            "hash": "5de598cd806f61f5247f2a70908f2c6d42c80e79",
+            "message": "2.23.20 release (previous 2.23.19) + release notes updated by CI build 3857\n\n[ci skip-release]"
+        },
+        {
+            "hash": "4affa6618bb134fb8278a10d9dac3f9cc6729652",
+            "message": "Fixes #1578: handle multiple invocations on MockitoSession (#1596)\n\n- Problem - JUnitRule detects an unfinished mocking session when the apply method is invoked more than once.  This commonly happens with Runners that enable developers to write nested test classes.\r\n- Fix - If a MockitoSession has been established for JUnitRule, then use that and initialize any new mocks (typically from a nested test class).\r\n- Test - Instantiate one @Rule and assign it to a second one.  This will simulate the apply method being invoked more than once without introducing a new test dependency."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1578",
+            "title": "UnfinishedMockingSessionException with inner test classes"
+        }
+    ]
+}

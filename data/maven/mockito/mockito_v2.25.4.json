@@ -1,0 +1,25 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.25.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.05122685185185185,
+    "commits_info": [
+        {
+            "hash": "d6098a6bbdfbafd966a2078627a90d9ffbedc7ea",
+            "message": "2.25.4 release (previous 2.25.3) + release notes updated by CI build 3990\n\n[ci skip-release]"
+        },
+        {
+            "hash": "d84bcb57a9ef647c33e6286916a07629adede919",
+            "message": "Merge pull request #1672 from marcphilipp/junit-4.13-compat\n\nReport initialization failures per test method"
+        },
+        {
+            "hash": "49e6311fcf774f6931ffbb627702e4fb99ef3604",
+            "message": "Report initialization failures per test method\n\nPrior to this commit, `DefaultInternalRunner` threw an exception when\n`MockitoAnnotations.initMocks()` failed from the overridden\n`withBefores` method. Instead, it now returns a `Statement` that is\nresponsible for initializing. Potential exceptions are then handled by\nJUnit, regardless whether version 4.12 or 4.13-beta-2 is used. Instead\nof reporting a class-level error, JUnit will now report a failure for\neach test method in such test classes.\n\nRelated issue: junit-team/junit4#1599"
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,33 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.21.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 5,
+    "start_delay": 0.0,
+    "duration": 6.031087962962963,
+    "commits_info": [
+        {
+            "hash": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
+            "message": "2.21.2 release (previous 2.21.1) + release notes updated by CI build 3576\n\n[ci skip-release]"
+        },
+        {
+            "hash": "87d89835b8b03dc36cc5ad680a8486a2d3a7f905",
+            "message": "Merge pull request #1475 from mockito/next-session-bug\n\nMockitoSession API does not clean up listener when initMocks fails"
+        },
+        {
+            "hash": "91c2899e5453e9214d7b06243dc1eaa9b9eb0639",
+            "message": "Added code comments to improve understanding of this change"
+        },
+        {
+            "hash": "f990cccb36f08752ed3a0734664b42015a5c7661",
+            "message": "Removed unnecessary field"
+        },
+        {
+            "hash": "fd6ac88424f800ff216e145a1713e477ab1af604",
+            "message": "Fixed bug in MockitoSession API\n\nWhen initMocks() fails we did not clean up the session listener. This led to a confusing error message on the next attempt to create session. I stumbled upon this problem when attempting to configure TestNG to use strict stubbing.\n\nIn order to fix this cleanly I need to keep the existing functionality that protects the user from forgetting to use 'finishMocking()'. Hence, I still need to throw an exception if the user adds the same listener multiple times. However, in the event that the listener is dirty, I clean it up automatically instead of failing."
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.5.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 4.084050925925926,
+    "commits_info": [
+        {
+            "hash": "876ac537fdf3d0e8c920cac050346e0408a407e6",
+            "message": "Update release notes by Travis CI build 2167 [ci skip]"
+        },
+        {
+            "hash": "011e340b63436c00d8fe1b8c563d9c0141cc6b11",
+            "message": "Merge pull request #870 from izeye/patch-2\n\nRemove redundant defaultAnswer(RETURNS_DEFAULTS)"
+        },
+        {
+            "hash": "c531068005db4278a5ab75ddee5db67d08dc0fb6",
+            "message": "Remove redundant defaultAnswer(RETURNS_DEFAULTS)\n\n`withSettings()` invokes `defaultAnswer(RETURNS_DEFAULTS)` as follows:\r\n\r\n```\r\n    public static MockSettings withSettings() {\r\n        return new MockSettingsImpl().defaultAnswer(RETURNS_DEFAULTS);\r\n    }\r\n```\r\n\r\nso, invoking it again is redundant.\r\n\r\nThis commit simply removes the redundant invocation."
+        },
+        {
+            "hash": "f838ad33cdacaa925770425ea406983bd27e038b",
+            "message": "Increment version '2.5.5' -> '2.5.6' by Travis CI build 2158 [ci skip]"
+        }
+    ],
+    "issues": []
+}

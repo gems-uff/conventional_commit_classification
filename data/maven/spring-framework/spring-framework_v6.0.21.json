@@ -1,0 +1,90 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.21",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 6.3134375,
+    "commits_info": [
+        {
+            "hash": "2d9bc8797cf87f725b2711d1040953fb499f92f2",
+            "message": "Release v6.0.21"
+        },
+        {
+            "hash": "c993615f988f1871583bd1e8809d12ee643e6d75",
+            "message": "Remove outdated Javadoc links\n\nCloses gh-32873"
+        },
+        {
+            "hash": "d068f5a4c698769303fb2e5220269b68b076f64d",
+            "message": "Modernize Antora Build\n\n- Use same playbook as docs-build\n- Use Env Variables to cause partial build (same as docs-build)\n- Use package.json so that dependencies can be updated with dependabot"
+        },
+        {
+            "hash": "e73d68b0a8682fc0a1b2f06feb9c9fc7af3a90ba",
+            "message": "Select most specific advice method in case of override\n\nCloses gh-32865\n\n(cherry picked from commit ea596aa211ea17b814099a73bb5a091a9af1cadd)"
+        },
+        {
+            "hash": "0ca47e5e0335d560d7316a89bb71fff4df393566",
+            "message": "Polishing"
+        },
+        {
+            "hash": "33d3496a162f8f734ee3e5e971d919dd3ea271d8",
+            "message": "Polishing\n\n(cherry picked from commit 20dea0dae2725fbf371ff720fceb82e99d5fdd41)"
+        },
+        {
+            "hash": "84a5a8a61e236ccd2eb2fa78483a2de7c2e9e18a",
+            "message": "Default fallback parsing for UTC without milliseconds\n\nCloses gh-32856\n\n(cherry picked from commit fee17e11ba6668a5392c0db28c79d2d75be10c3d)"
+        },
+        {
+            "hash": "2b8a1faeaac3763aa82d34890827899305e57f19",
+            "message": "Polishing\n\n(cherry picked from commit 65e1337d35cf7aa398798b8a7a8034518943940e)"
+        },
+        {
+            "hash": "4c9de3cbbddddb4791ffdef12d6dfae9ff6dc674",
+            "message": "Avoid creation of SAXParserFactory for every read operation\n\nIncludes JAXBContext locking revision (avoiding synchronization) and consistent treatment of DocumentBuilderFactory (in terms of caching as well as locking).\n\nCloses gh-32851\n\n(cherry picked from commit a4c2f291d986ccf988f37af5466265a7f534c16a)"
+        },
+        {
+            "hash": "a0f07af375fa817898dcc76a266cc7f1f0b07428",
+            "message": "Avoid reader on empty content to be shared by multiple requests\n\nThis commit avoids several instances of MockHttpServletRequest to\nhave a common reader for empty content as closing it will have an\nunwanted side effect on the others.\n\nCloses gh-32848"
+        },
+        {
+            "hash": "97e12bd0e84a4f5bc5689609cc8d5dfddeba3cce",
+            "message": "Defensively catch and log pointcut parsing exceptions\n\nCloses gh-32838\nSee gh-32793\n\n(cherry picked from commit 617833bec97bdee369af01462b68f8878eb1b155)"
+        },
+        {
+            "hash": "c374c46cdc7f9080785b9e8979dd8bbef9a08bb9",
+            "message": "Next development version (v6.0.21-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32873",
+            "title": "Review Javadoc links in build configuration"
+        },
+        {
+            "number": "32865",
+            "title": "Overridden aspect method runs twice"
+        },
+        {
+            "number": "32856",
+            "title": "`@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)` cannot convert UTC without milliseconds to `java.util.Date`"
+        },
+        {
+            "number": "32851",
+            "title": "Avoid creation of SAXParserFactory for every read operation in Jaxb2Marshaller and co"
+        },
+        {
+            "number": "32848",
+            "title": "MockHttpServletRequest should not use a shared reader when no content is available"
+        },
+        {
+            "number": "32838",
+            "title": "Spring AOP fails against registered `@Configurable` aspect"
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        }
+    ]
+}

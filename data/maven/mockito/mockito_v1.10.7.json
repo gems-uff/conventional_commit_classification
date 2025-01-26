@@ -1,0 +1,54 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.10.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 8,
+    "start_delay": 0.0,
+    "duration": 0.9681597222222222,
+    "commits_info": [
+        {
+            "hash": "5922f176b4fbf265ad2d5bd5f1b1dc0774769f7c",
+            "message": "\"Update release notes by Travis CI build 282 [ci skip]\""
+        },
+        {
+            "hash": "739096bef2b2f9b925d84ef031a49d1759ee6041",
+            "message": "bintray plugin - fixed problem with vcs tag setting\n\nbintray plugin - fixed issue with vcs tag setting"
+        },
+        {
+            "hash": "2415961bf5b31dca125cb9ea5ee0bec7df2007d1",
+            "message": "Improved automated release\n\n1. The author is no longer hardcoded into git settings. This way I don't accidentally push changes as continuous delivery drone after testing out the release process locally.\n2. Added a TODO\n\n[ci skip]"
+        },
+        {
+            "hash": "64005991de5c992d8c78bfcb0ca320249f35ddda",
+            "message": "Tuned the bintray plugin settings\n\nAdded vcs tag information, the default name of the vcs tag listed in bintray was missing 'v' before the version. Removed some commented out codes."
+        },
+        {
+            "hash": "440ce5a4ac3acaa85af0f351216726ddec6639e4",
+            "message": "Fixed #101 removed non-existing version from docs"
+        },
+        {
+            "hash": "407c84963477d441cc6e4b44421b440db0ed5d46",
+            "message": "Fixed #98 possible NPE\n\nNPE was possible when constructing user-friendly exception message for a different problem. This change does not fix any underlying, environmental/classloading issues the user has. At least Mockito shows the right message."
+        },
+        {
+            "hash": "bd387b4648d1c6c90f7aa625d5df22fdf57e175b",
+            "message": "\"Update release notes by Travis CI build 275 [ci skip]\""
+        },
+        {
+            "hash": "bff57d5d3c0fee4b1ca19c6c11485f291fad5da3",
+            "message": "Increment version '1.10.6' -> '1.10.7' by Travis CI build 275 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "101",
+            "title": "Documentation mentions non-existing version 1.9.8 in few places"
+        },
+        {
+            "number": "98",
+            "title": "possible NPE exception when class cannot be mocked via PowerMockito"
+        }
+    ]
+}

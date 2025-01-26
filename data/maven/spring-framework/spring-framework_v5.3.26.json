@@ -1,0 +1,538 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.26",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 84,
+    "start_delay": 0.0,
+    "duration": 998.0347337962963,
+    "commits_info": [
+        {
+            "hash": "3540029931c957b646fe219e6c3e713f044ee767",
+            "message": "Release v5.3.26"
+        },
+        {
+            "hash": "eafe3afe11c9fc440ce3088e7e45ecaeffb57a52",
+            "message": "Polishing and minor refactoring in HandlerMappingIntrospector\n\nCloses gh-30128"
+        },
+        {
+            "hash": "26e0343c1638d59a28a7991bfcaed32dbc4996e4",
+            "message": "Improve diagnostics in SpEL for `matches` operator\n\nSupplying a large regular expression to the `matches` operator in a\nSpEL expression can result in errors that are not very helpful to the\nuser.\n\nThis commit improves the diagnostics in SpEL for the `matches` operator\nby throwing a SpelEvaluationException with a meaningful error message\nto better assist the user.\n\nCloses gh-30145"
+        },
+        {
+            "hash": "4d5e7207f20a140258495ad72923c2259e3c800f",
+            "message": "Improve diagnostics in SpEL for repeated text\n\nAttempting to create repeated text in a SpEL expression using the\nrepeat operator can result in errors that are not very helpful to the\nuser.\n\nThis commit improves the diagnostics in SpEL for the repeat operator by\nthrowing a SpelEvaluationException with a meaningful error message in\norder to better assist the user.\n\nCloses gh-30143"
+        },
+        {
+            "hash": "430fc25acad2e85cbdddcd52b64481691f03ebd1",
+            "message": "Increase scope of regex pattern cache for the SpEL `matches` operator\n\nPrior to this commit, the pattern cache for the SpEL `matches` operator\nonly applied to expressions such as the following where the same\n`matches` operator is invoked multiple times with different input:\n\n  \"map.keySet().?[#this matches '.+xyz']\"\n\nThe pattern cache did not apply to expressions such as the following\nwhere the same pattern ('.+xyz') is used in multiple `matches`\noperations:\n\n  \"foo matches '.+xyz' AND bar matches '.+xyz'\"\n\nThis commit addresses this by moving the instance of the pattern cache\nmap from OperatorMatches to InternalSpelExpressionParser so that the\ncache can be reused for all `matches` operations for the given parser.\n\nCloses gh-30141"
+        },
+        {
+            "hash": "0882ca57d45c80fd35ab11d763bcc50737af8287",
+            "message": "Polishing"
+        },
+        {
+            "hash": "94bbf85c0e348091ee2923d834ee1e1ef35a19c2",
+            "message": "Stop printing to System.out in SpEL tests"
+        },
+        {
+            "hash": "2c2ef12f6853f074f526088f284122bb1f8a9483",
+            "message": "Upgrade to Netty 4.1.90 and Checkstyle 10.9.1"
+        },
+        {
+            "hash": "120d512ff6ea2591ed96ccdbb1f374398af7a465",
+            "message": "Polishing (backported from main)"
+        },
+        {
+            "hash": "3ddf183922fa8a73b248fe3fa44cabaf7b813359",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "4c69bfd32f6a3aca4c1d0fdc75da6e92c355f2b1",
+            "message": "Upgrade to Reactor 2020.0.30\n\nCloses gh-30116"
+        },
+        {
+            "hash": "41d71e9a7f10fd4426747b838783f72a6fddc66e",
+            "message": "Revise contribution\n\nSee gh-25316"
+        },
+        {
+            "hash": "36682b7ad2f86c09deea5467a59347efb4e296f1",
+            "message": "Ensure methods declared in Object can be invoked on a JDK proxy in SpEL\n\nThis commit ensures that methods declared in java.lang.Object (such as\ntoString() can be invoked on a JDK proxy instance in a SpEL expression.\n\nCloses gh-25316"
+        },
+        {
+            "hash": "30601a5014c3e4262da5a3439aa5af7cccf96caa",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f2371f5e7d82679b6adfdfbd8c83d4887c7ef01c",
+            "message": "Ignore quality factor when filtering out \"*/*\"\n\nPrior to this commit, the `RequestedContentTypeResolverBuilder` would\ncreate a `RequestedContentTypeResolver` that internally delegates to a\nlist of resolvers. Each resolver would either return the list of\nrequested media types, or a singleton list with the \"*/*\" media type; in\nthis case this signals that the resolver cannot find a specific media\ntype requested and that we should continue with the next resolver in the\nlist.\n\nMedia Types returned by resolvers can contain parameters, such as the\nquality factor. If the HTTP client requests \"*/*;q=0.8\", the\n`HeaderContentTypeResolver` will return this as a singleton list. While\nthis has been resolved from the request, such a media type should not be\nselected over other media types that could be returned by other\nresolvers.\n\nThis commit changes the `RequestedContentTypeResolverBuilder` so that it\ndoes not select \"*/*;q=0.8\" as the requested media type, but instead\ncontinues delegating to other resolvers in the list. This means we need\nto remove the quality factor before comparing it to the \"*/*\" for\nequality check.\n\nFixes gh-30121"
+        },
+        {
+            "hash": "f0da099b127f0b281f15e3baff62a55fd0cd9355",
+            "message": "Prefer request hostName and hostPort in ReactorServerHttpRequest\n\nBackport of 682a4d53 and 9624ea39\n\nCloses gh-29974"
+        },
+        {
+            "hash": "d00fd4c502a3bb91206a2ed7e0b89436e57e35bc",
+            "message": "Allow runtime compatibility with SnakeYaml 2.0\n\nThis commit ensures that SnakeYaml 2.0 is compatible at runtime with\nSpring Framework 5.3.x with the `YamlProcessor` support.\nThe baseline version for SnakeYaml remains the same.\n\nCloses gh-30097"
+        },
+        {
+            "hash": "44a6d13cc0cb1327a864421c67ecd8fa312c5367",
+            "message": "Fix minor spacings in webflux docs\n\nCloses gh-30095"
+        },
+        {
+            "hash": "284657355a048e73acbdbb2debc06dabe528e9df",
+            "message": "Upgrade to Log4J 2.20, Tomcat 9.0.73, Jetty 9.4.51, Undertow 2.2.23"
+        },
+        {
+            "hash": "6a81ed3a50758cd9960c1953a89873951ac03ea0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0a053cfccb4ab961f66a57f3fdaec5dd908f7fbe",
+            "message": "Avoid lock contention in CaffeineCacheManager\n\nPrior to this commit, using a dynamic `CaffeineCacheManager` would rely\non `ConcurrentHashMap#computeIfAbsent` for retrieving and creating cache\ninstances as needed. It turns out that using this method concurrently\ncan cause lock contention even when all known cache instances are\ninstantiated.\n\nThis commit avoids using this method if the cache instance already\nexists and avoid storing `null` entries in the map. This change reduces\nlock contention and the overall HashMap size in the non-dynamic case.\n\nSee gh-30066\nFixes gh-30085"
+        },
+        {
+            "hash": "22bb76d32680b138e20352f1c6dfaa41f0def680",
+            "message": "Revise documentation for @AspectJ argument name resolution algorithm\n\nCloses gh-30057"
+        },
+        {
+            "hash": "4dc45d551ce5b2846904e4551a0be4261a00efa2",
+            "message": "Update documentation for @AspectJ argument name resolution algorithm\n\nCloses gh-30057"
+        },
+        {
+            "hash": "e5d05ddfc39acb97f954012471f840f202e6ff29",
+            "message": "Remove obsolete MetadataAwareAspectInstanceFactory Javadoc\n\nWe no longer have any JDK 5 related limitations imposed on us as was\nthe case when MetadataAwareAspectInstanceFactory was introduced; however,\nMetadataAwareAspectInstanceFactory will remain as a specialized\nsub-interface of AspectInstanceFactory."
+        },
+        {
+            "hash": "44a5f8ec067ed2741f7568edbd53678a609936a7",
+            "message": "Add missing package-info.java file for autoproxy.target package"
+        },
+        {
+            "hash": "0a8bda40f45ebd5f8b393eee6ca14dffc5ee486d",
+            "message": "Fix .gitignore pattern for Maven \"target\" folders\n\nRationale: changes in org.springframework.aop.framework.autoproxy.target\nwere previously ignored since the \"target\" package was ignored by the\nprevious \"eager\" pattern for \"target\" folders."
+        },
+        {
+            "hash": "8a879c6fed83ec15ac3f621bd8742fee04c75b73",
+            "message": "Protect JMS connection creation against prepareConnection errors\n\nThis commit uses a local variable for the creation of a new JMS\nConnection so that a rare failure in prepareConnection(...) does not\nleave the connection field in a partially initialized state.\n\nIf such a JMSException occurs, the intermediary connection is closed.\nThis commit further defends against close() failures at that point,\nby logging the close exception at DEBUG level. As a result, the original\nJMSException is always re-thrown.\n\nSee gh-29116\nCloses gh-30051"
+        },
+        {
+            "hash": "28d11aaf6469911e31e1f2bdb9c22b5c24715e19",
+            "message": "Polish contribution\n\nSee gh-30036"
+        },
+        {
+            "hash": "02941127e19057052d8b7f9f718e7d64b0a54ce9",
+            "message": "Fix \"Configuring a Global Date and Time Format\" example\n\nCloses gh-30036"
+        },
+        {
+            "hash": "b1b24458c92e9e5feed4b6dd085563220332d9f1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "854b625be218b77ac93c330d6367e4b2fcd85617",
+            "message": "Add missing @Nullable annotations to LogMessage methods\n\nCloses gh-30009"
+        },
+        {
+            "hash": "a2b7a907ec8aa5f34a20f533a064067e56ef6967",
+            "message": "Prefer local hostAddress in ReactorServerHttpRequest\n\nCloses gh-28601"
+        },
+        {
+            "hash": "4f0a8911ca536e8e427df0f61d8b1334bbd24448",
+            "message": "Fix CI image resource in pipeline\n\nThis commit fixes the CI image resource configuration so that it can be\nchecked autmatically by the pipeline.\nThis also updates various resources."
+        },
+        {
+            "hash": "40fef7b232ff93138c4071795c1b45b3a2cd3a84",
+            "message": "Fix Javadoc for MockRestRequestMatchers"
+        },
+        {
+            "hash": "423134f64cb80bec3804ed0b958fa667dfabca5e",
+            "message": "Revise queryParam() and header() support in MockRestRequestMatchers\n\nSee gh-29953\nSee gh-29964"
+        },
+        {
+            "hash": "574c10d219f2c2340200cc3b3833802eb7c03009",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2b4b947050d59967d0ff5b9b0d01e59ed49c7765",
+            "message": "Fix Javadoc since for MockRestRequestMatchers queryParam() and header() (#29986)\n\nSee gh-29953\r\nSee gh-29964"
+        },
+        {
+            "hash": "4993b1090a73ed4b2d18b59a1f6ee677bd7393e3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3adabf391f91a7505ea29226d28479221739a8ba",
+            "message": "Consistent ordering of Resource methods (backported from main)"
+        },
+        {
+            "hash": "0026338c00d6ebfd4da09f41f66120f58c06da62",
+            "message": "Consistent @Bean method return type for equivalence with XML example\n\nCloses gh-29970"
+        },
+        {
+            "hash": "cdea667e581fd72445b9d78a7f827c719e2f76b8",
+            "message": "Test for request attribute visibility in FreeMarker (backported from main)\n\nSee gh-29787"
+        },
+        {
+            "hash": "66b1c0b4b0c5ff9d7c207c3708bc6b292df38b2d",
+            "message": "Upgrade to Netty 4.1.89"
+        },
+        {
+            "hash": "6e42d36614193ae51e3532ab8e220c2ad9ae2af1",
+            "message": "ASM upgrade for JDK 20/21 support (backported from main)\n\nCloses gh-29966"
+        },
+        {
+            "hash": "7f2c93fa1f937ca6760671122d968db8a7186caa",
+            "message": "Allow MockRest to match header/queryParam value list with one Matcher\n\nThis commit adds a `header` variant and a `queryParam` variant to the\n`MockRestRequestMatchers` API which take a single `Matcher` over the\nlist of values.\n\nContrary to the vararg variants, the whole list is evaluated and the\ncaller can choose the desired semantics using readily-available iterable\nmatchers like `everyItem`, `hasItems`, `hasSize`, `contains` or\n`containsInAnyOrder`...\n\nThe fact that the previous variants don't strictly check the size of the\nactual list == the number of provided matchers or expected values is\nnow documented in their respective javadocs.\n\nSee gh-29953\nCloses gh-29964"
+        },
+        {
+            "hash": "4c351e811ae21f7e43e6f4fa61a736b932b6d388",
+            "message": "Polish\n\nSee gh-29928"
+        },
+        {
+            "hash": "5b67dea506cbfbcae4057fb4eff89f3ef7fca4a6",
+            "message": "Unwrap session before selecting stats counter\n\nSee gh-29375"
+        },
+        {
+            "hash": "b9fe095f60a4fd2f4cd9f77cf19a37a90491727a",
+            "message": "Clearly document that DataClassRowMapper supports Java records\n\nCloses gh-29814"
+        },
+        {
+            "hash": "6b17014b5aa9a429a893f8971d30e873e183e4a7",
+            "message": "Polish RowMapper tests"
+        },
+        {
+            "hash": "878246b09b877676d2ce7410da47530329157f98",
+            "message": "Avoid confusing terminology in BeanPropertyRowMapper\n\nPrior to this commit, the term \"field\" was sometimes used to refer to a\ndatabase column and sometimes used to refer to a bean property, which\nlead to confusion in the Javadoc as well as within the code.\n\nThis commit addresses this by avoiding use of the term \"field\"."
+        },
+        {
+            "hash": "9067ccab2d1e5ef88f8271af0e066e67bd2d155a",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "4e00aece7a6e7f621d82b60b60fc70d2f3172af7",
+            "message": "Restrict forwards in MockMvcWebConnection to 100\n\nThis change restricts the maximum number of forwards in MockMvcWebConnection to 100,\nin case a forward is configured in a way that causes a loop. This is necessary in HtmlUnit\nbacked tests, unlike in classic MockMvc tests in which the forwards are not actually resolved.\n\nSee gh-29557\nCloses gh-29866\n\nCo-authored-by: Simon Baslé <sbasle@vmware.com>"
+        },
+        {
+            "hash": "c9841f37b6b04eb2007d1de0f58b86158d7524fe",
+            "message": "Revise Testcontainers examples based on feedback\n\nCloses gh-29940"
+        },
+        {
+            "hash": "92d513e9fb13579dd65ef0936f9e78a3954746b0",
+            "message": "Add MockMvc.multipart() Kotlin extensions with HttpMethod\n\nSee gh-28545\nSee gh-28631\nCloses gh-29941"
+        },
+        {
+            "hash": "782ee34cb735c0d3f8e867f04efb31a4afe2b46d",
+            "message": "Update @DynamicPropertySource examples regarding changes in Testcontainers\n\nCloses gh-29939"
+        },
+        {
+            "hash": "80c10fad924102bf6b37c66825779d5e4b2ff093",
+            "message": "Polish RowMapper tests"
+        },
+        {
+            "hash": "498a0d286f3eaf032d30da31468863a46c5bafed",
+            "message": "Clarify semantics of primitivesDefaultedForNullValue in BeanPropertyRowMapper\n\nCloses gh-29923"
+        },
+        {
+            "hash": "e9d45d1b49d7f27448ebc34030c4ab289db2b93f",
+            "message": "Polish Javadoc for RowMappers"
+        },
+        {
+            "hash": "0851b0f72d71b10ba3b61922e91e1729aaad0665",
+            "message": "Release R2DBC connection when cleanup fails in transaction\n\nWhen using R2dbcTransactionManager, connection will not be released if\nit encounters error while doing `afterCleanup` steps. As `afterCleanup`\ncan use a database connection when doing `setAutoCommit(true)`, it can\nfail under some conditions where the connection is not reliable.\n\nThis leads to the Connection not being released.\n\nThis commit ensures that inner steps of the `doCleanupAfterCompletion`\nare protected against errors, logging the errors and continuing the\ncleanup until the last step, which releases the connection.\n\nBackport of commit e050c37\nSee gh-29703\nCloses gh-29925\n\nCo-authored-by: Simon Baslé <sbasle@vmware.com>"
+        },
+        {
+            "hash": "91d991e86cc0785788e697cfaa265bc67437cb21",
+            "message": "Rely only on Docker Hub for fetching OCI images"
+        },
+        {
+            "hash": "960f6fb9365572778157397192dcf5f07c7938f2",
+            "message": "Add missing warn level check (backported from main)"
+        },
+        {
+            "hash": "4d3d34528eb23da9b67ea242365a1e7968b728f5",
+            "message": "Upgrade to Tomcat 9.0.71, Netty 4.1.87, AssertJ 3.24.2, HtmlUnit 2.70, Checkstyle 10.7"
+        },
+        {
+            "hash": "78ba9462668dd4d1b7ea1bccee797e4f826058c2",
+            "message": "Clarify postProcessBeanFactory lifecycle state\n\nCloses gh-29064\n\n(cherry picked from commit b8827d8e11f2b5e3a3c2465616deace388b358d1)"
+        },
+        {
+            "hash": "42e7318cbbaf4d8e461bf2789058a797995b7043",
+            "message": "Polishing"
+        },
+        {
+            "hash": "000383fbff477c2aa6f17d8928cd6600f3703c9e",
+            "message": "Explicit target ClassLoader for interface-based infrastructure proxies\n\nIncludes direct JDK Proxy usage instead of ProxyFactory where possible.\n\nCloses gh-29913\n\n(cherry picked from commit 4d6249811e0ffbf13876060ee473ab7ce7aaf061)"
+        },
+        {
+            "hash": "37cbdc2cf4c7b68bdf380b05b93fce97304dc84d",
+            "message": "Lazily load ContextLoader.properties (and lazily fail if not present)\n\nCloses gh-29905\n\n(cherry picked from commit a74b86e8124c3012e54481b70ffeddbc7bb357a9)"
+        },
+        {
+            "hash": "6d95e7f9d9a94144028d3efb2705716849e1d0ab",
+            "message": "Declare no-op close() method in order to avoid container-triggered shutdown call\n\nCloses gh-29892\n\n(cherry picked from commit 7c9dca3d2e2715e38fbfb74218dc11d1cac06f23)"
+        },
+        {
+            "hash": "45a7917a368e5f2446b44223766a79d7d7aacc74",
+            "message": "Backport of cf9fc69d6beaff1af817c841a56829c03c9eed8f\n\nCloses gh-29911"
+        },
+        {
+            "hash": "25b95b8b982f7ce8c38cf6c4fff87397731d09ca",
+            "message": "Avoid ClassLoader issue in Jetty10 WebSocket upgrade\n\nCloses gh-29256"
+        },
+        {
+            "hash": "6bd7a7321e78878d5888930ab39c71162d045f16",
+            "message": "Revise generated default name for @JmsListener subscription\n\nThe previous commit changed the generated default name for a JMS\nsubscription to <FQCN>#<method name> -- for example:\n\n- org.example.MyListener#myListenerMethod\n\nHowever, the JMS spec does not guarantee that '#' is a supported\ncharacter. This commit therefore changes '#' to '.' as the separator\nbetween the class name and method name -- for example:\n\n- org.example.MyListener.myListenerMethod\n\nThis commit also introduces tests and documentation for these changes.\n\nSee gh-29902"
+        },
+        {
+            "hash": "11aaba9877b62287d3376d37b961e4bb5731ee71",
+            "message": "Polishing"
+        },
+        {
+            "hash": "07fd7606e73bf60f23b21b0e5399e331175f3b90",
+            "message": "Improve generated default name for a @JmsListener subscription\n\nPrior to this commit, when using durable subscribers with @JmsListener\nmethods that do not specify a custom subscription name the generated\ndefault subscription name was always\norg.springframework.jms.listener.adapter.MessagingMessageListenerAdapter.\nConsequently, multiple such @JmsListener methods were assigned the\nsame subscription name which violates the uniqueness requirement.\n\nTo address this, MessagingMessageListenerAdapter now implements\nSubscriptionNameProvider and generates the subscription name based on\nthe following rules.\n\n- if the InvocableHandlerMethod is present, the subscription name will\n  take the form of handlerMethod.getBeanType().getName() + \"#\" +\n  handlerMethod.getMethod().getName().\n- otherwise, getClass().getName() is used, which is analogous to the\n  previous behavior.\n\nCloses gh-29902"
+        },
+        {
+            "hash": "40d246633432a950f215d134705c212a4b9ef0dc",
+            "message": "Fix build due to Jackson Javadoc publication changes\n\nThe Jackson project no longer publishes Javadoc at\nhttps://fasterxml.github.io which breaks the `javadoc` and `api` build\ntasks due to their dependency on that web site for external Javadoc links.\n\nAs a workaround, we now reference Jackson's Javadoc via\nhttps://www.javadoc.io.\n\nSee https://github.com/FasterXML/jackson-databind/issues/3440\nCloses gh-29895"
+        },
+        {
+            "hash": "3d6d853bbc99d2321a46385466e0150885b9f4bb",
+            "message": "Include all Hibernate methods in SharedEntityManagerCreator's queryTerminatingMethods\n\nPrior to this commit, we included Hibernate's Query.list() method in\nSharedEntityManagerCreator's queryTerminatingMethods set but did not\ninclude all of Hibernate's query-terminating methods.\n\nTo address this, this commit additionally includes the stream(),\nuniqueResult(), and uniqueResultOptional() methods from Hibernate's\nQuery API in SharedEntityManagerCreator's query-terminating methods set.\n\nCloses gh-29888"
+        },
+        {
+            "hash": "90ea39cc6b30c7c65ca24f1397d2efbf87d09a4e",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "21c3d4f4a949e9a7882f71074158b2ee1417449b",
+            "message": "Support Jetty 10 in JettyClientHttpRequest\n\nThough Jetty 10 was previously supported in the JettyClientHttpResponse,\nthis commit ensures support in the JettyClientHttpRequest.\n\nCloses gh-29867\nSee gh-26123"
+        },
+        {
+            "hash": "de53d7734405bb21f798c38aa55b2acb51a37cc9",
+            "message": "DatabaseClient uses SQL Supplier more lazily\n\nThis commit modifies the `DefaultDatabaseClient` implementation in order\nto ensure lazier usage of the `Supplier<String>` passed to the sql\nmethod (`DatabaseClient#sql(Supplier)`).\n\nSince technically `DatabaseClient` is an interface that could have 3rd\nparty implementations, the lazyness expectation is only hinted at in the\n`DatabaseClient#sql` javadoc.\n\nPossible caveat: some log statements attempt to reflect the now lazily\nresolved SQL string. Similarly, some exceptions can capture the SQL that\ncaused the issue if known. We expect that these always occur after the\nexecution of the statement has been attempted (see `ResultFunction`).\nAt this point the SQL string will be accessible and logs and exceptions\nshould reflect it as before. Keep an eye out for such strings turning\ninto `null` after this change, which would indicate the opposite.\n\nBackport of d72df5ace4f187deb64bbf3624a1732b0736a4c1\nSee gh-29367\nCloses gh-29887"
+        },
+        {
+            "hash": "e4e90bbec01ecd9d1b0234798c2b534cfcb2bc76",
+            "message": "Polish RouterFunctionDsl KDoc"
+        },
+        {
+            "hash": "d0828be0cd2d2551f4c8bf95f7becbe6fdaaf6c7",
+            "message": "Remove WebClientIntegrationTests#exchangeWithRelativeUrl outdated test\n\nThis test can fail when a web server runs on port 80 and\nis not relevant anymore due to the removal of related feature\nvia 6e936a408195f95d41f3463bb93e255218493664.\n\nCloses gh-29863"
+        },
+        {
+            "hash": "4a4b3327096aaabe3faf3b0ba5c521279a2518f1",
+            "message": "Refine Jackson2ObjectMapperBuilder#configureFeature exception handling\n\nThis commit changes the FatalBeanException previously thrown for\nan IllegalArgumentException which seems more suitable for that\nuse case.\n\nCloses gh-29860"
+        },
+        {
+            "hash": "33f1c9b6140d6e1a9d8e99d44893931a31200e19",
+            "message": "Upgrade Gradle Enterprise & Conventions plugins\n\nThis is required to adapt to the repo.spring.io permission changes."
+        },
+        {
+            "hash": "53ac812fb086bd7a8f1c6559fd184c906c5a3c09",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "60c89dd2df3c0cbb33ada883a125cae94df0f7af",
+            "message": "Fix IllegalStateException in empty ProducesRequestCondition\n\nWhen comparing empty ProducesRequestCondition, compareTo would throw an\nIllegalStateException if the Accept header was invalid. This commit\nfixes that behavior.\n\nSee gh-29794\nCloses gh-29836"
+        },
+        {
+            "hash": "4bd2531774975b27f521e85ab80072ef727346e6",
+            "message": "Fix R2dbcTransactionManager debug log: don't log a Mono (#29800)\n\nWhen logging the current connection inside R2dbcTransactionManager\ndoBegin, the mono object was logged instead of the connection lambda\nparameter.\n\nOther similar debug-level logs do use the actual Connection object,\nso this commit does the same.\n\nBackport of gh-29800\nCloses gh-29824"
+        },
+        {
+            "hash": "4fd5630700c3db03d8b736ee48724780c9a759d0",
+            "message": "Next development version (v5.3.26-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30128",
+            "title": "Minor updates in HandlerMappingIntrospector"
+        },
+        {
+            "number": "30145",
+            "title": "Improve diagnostics in SpEL for `matches` operator"
+        },
+        {
+            "number": "30143",
+            "title": "Improve diagnostics in SpEL for repeated text"
+        },
+        {
+            "number": "30141",
+            "title": "Increase scope of regex pattern cache for the SpEL `matches` operator"
+        },
+        {
+            "number": "30116",
+            "title": "Upgrade to Reactor Netty 2020.0.30"
+        },
+        {
+            "number": "30121",
+            "title": "RequestedContentTypeResolver does not ignore quality factor when filtering */* media types"
+        },
+        {
+            "number": "29974",
+            "title": "ReactorServerHttpRequest does not reflect forwarded host and port when `forwarding-header-strategy=native` or cloud platform detected"
+        },
+        {
+            "number": "30097",
+            "title": "Allow SnakeYaml 2.0 runtime compatibility"
+        },
+        {
+            "number": "30095",
+            "title": "Fix minor spacings in webflux docs"
+        },
+        {
+            "number": "30066",
+            "title": "CaffeineCacheManager getCache method cause thread block"
+        },
+        {
+            "number": "30085",
+            "title": "CaffeineCacheManager getCache method cause thread block"
+        },
+        {
+            "number": "30057",
+            "title": "@AspectJ argument name resolution algorithm is outdated in reference manual"
+        },
+        {
+            "number": "30051",
+            "title": "Protect JMS connection creation against prepareConnection errors"
+        },
+        {
+            "number": "30036",
+            "title": "Fix \"Configuring a Global Date and Time Format\" example"
+        },
+        {
+            "number": "30009",
+            "title": "Add missing `@Nullable` annotations to `LogMessage.format` methods"
+        },
+        {
+            "number": "28601",
+            "title": "ReactorServerHttpRequest does not reflect forwarded host and port when `forwarding-header-strategy=native` or cloud platform detected"
+        },
+        {
+            "number": "29964",
+            "title": "Allow MockRest to match header/queryParam value list with one Matcher"
+        },
+        {
+            "number": "29970",
+            "title": "Consistent @Bean method return type for equivalence with XML example"
+        },
+        {
+            "number": "29787",
+            "title": "CSRF token not available to FreeMarker templates"
+        },
+        {
+            "number": "29966",
+            "title": "ASM upgrade for JDK 20/21 support"
+        },
+        {
+            "number": "29375",
+            "title": "WebSocket stats not updated correctly when sessions cleared"
+        },
+        {
+            "number": "29814",
+            "title": "Clearly document that `DataClassRowMapper` supports Java records"
+        },
+        {
+            "number": "29866",
+            "title": "Possible infinite forward loop with MockMvcWebConnection"
+        },
+        {
+            "number": "29940",
+            "title": "Update `@DynamicPropertySource` examples regarding changes in Testcontainers"
+        },
+        {
+            "number": "28545",
+            "title": "MockMvcWebTestClient forces HTTP POST for multipart requests"
+        },
+        {
+            "number": "29941",
+            "title": "Add `MockMvc.multipart()` Kotlin extensions with `HttpMethod`"
+        },
+        {
+            "number": "29939",
+            "title": "Update `@DynamicPropertySource` examples regarding changes in Testcontainers"
+        },
+        {
+            "number": "29923",
+            "title": "Clarify semantics of `primitivesDefaultedForNullValue` in `BeanPropertyRowMapper`"
+        },
+        {
+            "number": "29925",
+            "title": "Release R2DBC connection when cleanup fails in transaction"
+        },
+        {
+            "number": "29064",
+            "title": "Outdated Javadoc for AbstractApplicationContext.postProcessBeanFactory"
+        },
+        {
+            "number": "29913",
+            "title": "Explicit target ClassLoader for interface-based proxies in MvcUriComponentsBuilder"
+        },
+        {
+            "number": "29905",
+            "title": "org.springframework.web.context.ContextLoader cannot be loaded in a native image"
+        },
+        {
+            "number": "29892",
+            "title": "Closing an ApplicationContext leads to Exception at ExecutorServiceAdapter"
+        },
+        {
+            "number": "29911",
+            "title": "Improve debug logging in RestTemplate#handleResponse if getStatusCode raises IOException"
+        },
+        {
+            "number": "29256",
+            "title": "JettyWebSocketCreator referenced from a method is not visible from class loader with `Jetty10RequestUpgradeStrategy`"
+        },
+        {
+            "number": "29902",
+            "title": "Improve generated default name for `@JmsListener` subscription"
+        },
+        {
+            "number": "29895",
+            "title": "Fix builds due to Jackson Javadoc publication changes"
+        },
+        {
+            "number": "29888",
+            "title": "Include all Hibernate query methods in `SharedEntityManagerCreator`'s `queryTerminatingMethods` set"
+        },
+        {
+            "number": "29867",
+            "title": "Spring Framework 5.3.x is incompatible with Jetty 10 (Client)"
+        },
+        {
+            "number": "26123",
+            "title": "Jetty 10 Support"
+        },
+        {
+            "number": "29367",
+            "title": "SQL supplier in R2DBC `DatabaseClient` is eagerly invoked"
+        },
+        {
+            "number": "29887",
+            "title": "SQL supplier in R2DBC `DatabaseClient` is eagerly invoked"
+        },
+        {
+            "number": "29863",
+            "title": "WebClientIntegrationTests are failing if port 80 is in use"
+        },
+        {
+            "number": "29860",
+            "title": "Refine `Jackson2ObjectMapperBuilder#configureFeature` exception handling"
+        },
+        {
+            "number": "29794",
+            "title": "Invalid Accept header results in IllegalStateException"
+        },
+        {
+            "number": "29836",
+            "title": "Invalid Accept header results in IllegalStateException"
+        },
+        {
+            "number": "29824",
+            "title": "Fix R2dbcTransactionManager debug log: don't log a Mono"
+        }
+    ]
+}

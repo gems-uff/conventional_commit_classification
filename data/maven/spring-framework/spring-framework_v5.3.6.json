@@ -1,0 +1,334 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 58,
+    "start_delay": 0.0,
+    "duration": 28.353703703703705,
+    "commits_info": [
+        {
+            "hash": "83c6d100950221189d5d6001d3b2e806213f3a98",
+            "message": "Release v5.3.6"
+        },
+        {
+            "hash": "f31933e67e054a4df2fcd58684750aaf3efc7bbb",
+            "message": "Nullability refinements"
+        },
+        {
+            "hash": "c7989c78c80f0613b96df1650d646ad11b7e1ca4",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f03ccd5cc98e94cf528c9b46cea687af8f59487a",
+            "message": "Fix Javadoc in AcceptHeaderLocaleResolver\n\nCloses gh-26793"
+        },
+        {
+            "hash": "bcc6171a72b0a7fa3e21919f2c2fc7b3daf36a30",
+            "message": "Polish contribution\n\nSee gh-26785"
+        },
+        {
+            "hash": "a80c5fcfaf2786ab506d176e4a713ae983f9bfe5",
+            "message": "Improve @EventListener documentation in reference manual\n\nCloses gh-26785"
+        },
+        {
+            "hash": "04ce8e0ac470e341366d150f6e36b0a5e5786799",
+            "message": "Make URL path tests compatible with Windows\n\nSee gh-26775"
+        },
+        {
+            "hash": "74f7eb11be33fcf4c987adbf6cffdd500f6bac43",
+            "message": "Polish \"Upgrade to Reactor 2020.0.6\"\n\nSee gh-26767"
+        },
+        {
+            "hash": "e05b5846239fcd7a119a8ac884f5527b9bc24263",
+            "message": "Ignore testWindowsAbsoluteFilePath exception if not on Windows\n\nSee gh-26702"
+        },
+        {
+            "hash": "29955a2898264e5ced29b304b1e93fe2cd9eaf70",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4b6b12bf2f226b6bba146d12c1c4dc8e7f94e182",
+            "message": "Bypass root path resolution for \"file:\" prefix only\n\nCloses gh-26702"
+        },
+        {
+            "hash": "ab0e8f0617321669ed413a85dbdfe62711a2e777",
+            "message": "Upgrade to Reactor 2020.0.6\n\nCloses gh-26767"
+        },
+        {
+            "hash": "0a6a6d48e2a0b5b6c08c065d542843ad8504b6cf",
+            "message": "Avoid CI failures with UTF-8 chars in test filenames\n\nSee gh-26775"
+        },
+        {
+            "hash": "a08593b44bada4f53797f991d89a21582eee4217",
+            "message": "Correct matching of static resources with parsed patterns\n\nCloses gh-26775"
+        },
+        {
+            "hash": "7954dc7a00f56a80b5e439c9c9238b9871afac36",
+            "message": "Polish tests\n\nCloses gh-26708"
+        },
+        {
+            "hash": "22d9012081bc5e8da58589e5af8893db8c5361fd",
+            "message": "Retain root cause for parsing patterns in @DateTimeFormat\n\nThe support for fallback parsing patterns in @DateTimeFormat introduced\nin gh-20292 introduced a regression in that the original cause of the\nparsing exception was no longer retained.\n\nThis commit ensures that the original DateTimeParseException is set as\nthe cause for any newly created DateTimeParseException, thereby\nretaining the original exception as the root cause.\n\nCloses gh-26777"
+        },
+        {
+            "hash": "327e761536eb23c9db90e93c18a549b6bccca2f8",
+            "message": "Recreate file storage directory when removed in DefaultPartHttpMessageReader\n\nSome operating systems delete temp files not just when booting up, but\nalso during operation. This commit makes sure that the\nDefaultPartHttpMessageReader recreates the directory used to store\nfiles in, if it's not there.\n\nCloses gh-26790"
+        },
+        {
+            "hash": "4e42b5dfbc266b19586de27621bbab2cff64f5e7",
+            "message": "Upgrade to Tomcat 9.0.45, Jetty 9.4.39, Undertow 2.2.7, Netty 4.1.63, RxJava 3.0.12"
+        },
+        {
+            "hash": "432c720dd0398b8995625cd286b20a0a8184778c",
+            "message": "Allow spring-expression to be more easily repackaged\n\nThis commit allows the spring-expression module to be more easily repackaged\r\nfor embedding in third-party JARs -- for example, via the Shadow Gradle plugin.\r\n\r\nCloses gh-26779"
+        },
+        {
+            "hash": "f7606ba51b1ba8b2de012f316cab2091a49bfb90",
+            "message": "Update ref docs regarding RequiredAnnotationBPP registration\n\nThe RequiredAnnotationBeanPostProcessor is no longer automatically\r\nregistered via XML namespace elements.\r\n\r\nCloses gh-26783"
+        },
+        {
+            "hash": "0f54585f05734a21324600b0cd1ea07826acb66f",
+            "message": "Polish contribution\n\nSee gh-26782"
+        },
+        {
+            "hash": "d3d6e100da22d80c7601cb97b6246258d382168b",
+            "message": "Merge pull request #26781 from runningcode\n\n* pr/26781:\n  Update to Gradle Enterprise Gradle Plugin 3.6.1\n\nCloses gh-26781"
+        },
+        {
+            "hash": "a48c5f6a0d9d6d4b10d39b7428dc043a65c4a354",
+            "message": "Update to Gradle Enterprise Gradle Plugin 3.6.1\n\nSee gh-26781"
+        },
+        {
+            "hash": "35ea33e13a452b7fd3b7e5fae3eeddc058ae4b00",
+            "message": "Update documentation for <context:annotation-config/>\n\nCloses gh-26782"
+        },
+        {
+            "hash": "a2d91a562de7ab3e0d4ccbe2b1dbadb8f5324156",
+            "message": "Support \"Accept-Patch\" for unsupported media type\n\nThis commit introduces support in both servlet and webflux for the\n\"Accept-Patch\" header, which is sent when the client sends unsupported\ndata in PATCH requests.\nSee  section 2.2 of RFC 5789.\n\nCloses gh-26759"
+        },
+        {
+            "hash": "97f3846971ec2e9338d8f3eccfe4ea30250e8647",
+            "message": "Support \"Accept-Patch\" for OPTIONS requests\n\nThis commit introduces support in both servlet and webflux for the\n\"Accept-Patch\" header in OPTIONS requests, as defined in section 3.1 of\nRFC 5789.\n\nSee gh-26759"
+        },
+        {
+            "hash": "44e1d6d1bf5ac559fe7e2367396e1be9abea435a",
+            "message": "Merge pull request #26776 from KENNYSOFT\n\n* pr/26776:\n  Update copyright year of changed file\n  Fix javadoc link syntax\n\nCloses gh-26776"
+        },
+        {
+            "hash": "7adac25e7e87f66c1291c5543501c31171bb47ec",
+            "message": "Update copyright year of changed file\n\nSee gh-26776"
+        },
+        {
+            "hash": "7dca6a36a62e2be84f43c005b81e18b7d465f477",
+            "message": "Fix javadoc link syntax\n\nSee gh-26776"
+        },
+        {
+            "hash": "c5ac8e8ab62cf7a616d5316bc6ef6d5d5e461c10",
+            "message": "Use createUnresolved for forwarded header address\n\nAvoid DNS resolution.\n\nSee gh-26748"
+        },
+        {
+            "hash": "fa4c62cab22eac474b006de3ef7357667a936921",
+            "message": "Start building against Reactor 2020.0.6 snapshots\n\nSee gh-26767"
+        },
+        {
+            "hash": "8a1182a6785477a96e09ae9246a315174d9e767f",
+            "message": "Additional validation for forwarded header address value\n\nCloses gh-26748"
+        },
+        {
+            "hash": "01bea34569cd3dd00e8691a08ab1a2fc53d6c13e",
+            "message": "Merge pull request #26755 from izeye\n\n* pr/26755:\n  Add since to WebClient.ResponseSpec.awaitBodyOrNull()\n\nCloses gh-26755"
+        },
+        {
+            "hash": "aec151e0143a08a1e23ca4e8b6b48e2143e68335",
+            "message": "Add since to WebClient.ResponseSpec.awaitBodyOrNull()\n\nSee gh-26755"
+        },
+        {
+            "hash": "58e40d1aa2c23f6d9c41d4289f5b5debc10868f6",
+            "message": "Add awaitBodyOrNull to WebClient.ResponseSpec\n\nSuch variant is already provided for ClientResponse but not\nfor WebClient.ResponseSpec.\n\nCloses gh-26731"
+        },
+        {
+            "hash": "85dbd2a4c3765312847595e0064e2b352800ea85",
+            "message": "Upgrade Kotlin to 1.4.32"
+        },
+        {
+            "hash": "eca87b87de8445feab00dd4e98a634ece6c80e20",
+            "message": "Improve Kotlin support in BridgeMethodResolver#findBridgedMethod\n\nThis commit adds support for Kotlin non-nullable type which resolves\nto primitive Java types in BridgeMethodResolver#findBridgedMethod.\n\nCloses gh-26585"
+        },
+        {
+            "hash": "5e1e29a2dd6e94d7221aa90d21e052ffdc824a06",
+            "message": "Fix failing tests\n\nSee gh-26746"
+        },
+        {
+            "hash": "7dc3a5564873b0839d7b74b2d2eb5ed5de50ce4e",
+            "message": "Deferred buffer allocation in SSE message writer\n\nSee gh-26746"
+        },
+        {
+            "hash": "f982fd99d7d3bed6e879b00f7599cb8c587228cc",
+            "message": "Fix timezone offset in CronExpressionTests\n\nCloses gh-26744"
+        },
+        {
+            "hash": "ab18ab60250e256da4b1502e1786b168c374a229",
+            "message": "Fix CronExpression issue with ZonedDateTime & DST\n\nThis commit fixes an issue with CronExpression when used in combination\nwith ZonedDateTime and daylight saving time.\n\nCloses gh-26744"
+        },
+        {
+            "hash": "d83fb099149bd9178ee7d103c6da1ea52152c1cc",
+            "message": "Change header encoding to UTF8 in DefaultPartHttpMessageReader\n\nThis commit changes the encoding used to parse multipart headers from\nISO-8859-1 to UTF-8, in accordance with RFC 7578.\n\nCloses gh-26736"
+        },
+        {
+            "hash": "b651c10e83e6876bffa54d057ec15bc2f630c017",
+            "message": "Fix error messages to match commit #1a9556\n\nSee gh-26679"
+        },
+        {
+            "hash": "5651695fd17c182044186b2fee043e4d7bc683b8",
+            "message": "Fix typo in Javadoc\n\nCloses gh-26740"
+        },
+        {
+            "hash": "1a9556925def8a0ad6f8e9c257dd9112e3379872",
+            "message": "missingAfterConversion flag for missing request values\n\nCloses gh-26679"
+        },
+        {
+            "hash": "2dc203ffdce6955749c5105ef321c86677d52b73",
+            "message": "Polish web docs example"
+        },
+        {
+            "hash": "610de3ae786812f332b71a7453a67afd39834a03",
+            "message": "Upgrade to Concourse Release Scripts 0.3.2"
+        },
+        {
+            "hash": "5b2ace57423148bc9fd6af864e4c7c1eb04d515b",
+            "message": "Upgrade to Hibernate ORM 5.4.30, Tomcat 9.0.44, FreeMarker 2.3.31, Log4J 2.14.1, TestNG 7.4, HtmlUnit 2.48"
+        },
+        {
+            "hash": "5b227e5677d35b9c010c432ed9698d67a0cf7fe2",
+            "message": "Upgrade to Objenesis 3.2\n\nCloses gh-26714"
+        },
+        {
+            "hash": "41d5048280409f358365fc702753122557e0fbf1",
+            "message": "Add BlockHoundIntegration for spring-web\n\nCloses gh-26712"
+        },
+        {
+            "hash": "a931ff12f6243afcbce5c8e4b97aea302d29a65f",
+            "message": "MappedInterceptor falls back on PathMatcher\n\nCloses gh-26690"
+        },
+        {
+            "hash": "e4f753e3e3237c1c7c6d0b57b7a30d6721923cba",
+            "message": "Honor class-level @DirtiesContext if test class is disabled via SpEL\n\nPrior to this commit, if a test class annotated with @DirtiesContext\nand @EnabledIf/@DisabledIf with `loadContext = true` was disabled due\nto the evaluated SpEL expression, the ApplicationContext would not be\nmarked as dirty and closed.\n\nThe reason is that @EnabledIf/@DisabledIf are implemented via JUnit\nJupiter's ExecutionCondition extension API which results in the entire\ntest class (as well as any associated extension callbacks) being\nskipped if the condition evaluates to `disabled`. This effectively\nprevents any of Spring's TestExecutionListener APIs from being invoked.\nConsequently, the DirtiesContextTestExecutionListener does not get a\nchance to honor the class-level @DirtiesContext declaration.\n\nThis commit fixes this by implementing part of the logic of\nDirtiesContextTestExecutionListener in\nAbstractExpressionEvaluatingCondition (i.e., the base class for\n@EnabledIf/@DisabledIf support). Specifically, if the test class for an\neagerly loaded ApplicationContext is disabled,\nAbstractExpressionEvaluatingCondition will now mark the test\nApplicationContext as dirty if the test class is annotated with\n@DirtiesContext.\n\nCloses gh-26694"
+        },
+        {
+            "hash": "4982b5fcb9a2ca49edda697918557bdb76e3d282",
+            "message": "Improve docs on SSE tests for Spring MVC\n\nCloses gh-26687"
+        },
+        {
+            "hash": "f7678cdcdda14e1575f435ad424af31451934c10",
+            "message": "Polish core-beans.adoc"
+        },
+        {
+            "hash": "3ab39eda087e8460d5053395ee2a5f588766437c",
+            "message": "Fix Gradle Toolchain configuration\n\nSee gh-25787"
+        },
+        {
+            "hash": "14a6909c4a9d737f57e114fdaa17d435f2549661",
+            "message": "Fix release pipeline for Maven Central publication\n\nThis commit fixes the missing pieces in our Maven Central publication\npipeline. Our first attempt at releasing with it showed a few problems:\n\n* the promote task did not have the artifacts downladed with the\n  artifactory repository\n* we applied the wrong Sonatype credentials to the task\n* the github changelog task would fail because of docker rate limiting\n  since we were not using the right type of resource, which is\n  configured with the proper caching mechanism\n\nSee gh-26654"
+        },
+        {
+            "hash": "fd17738f76f0fd6015fc5b673b163fa2c75b0031",
+            "message": "Polish TestContextAnnotationsUtilsTests\n\nCloses gh-26684"
+        },
+        {
+            "hash": "f674652dd0b10c9c5923bf419187d865514b162a",
+            "message": "Next development version (v5.3.6-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "26793",
+            "title": "Fix Javadoc in AcceptHeaderLocaleResolver"
+        },
+        {
+            "number": "26775",
+            "title": "ResourceHttpRequestHandler fails to resolve encoded paths when PathPattern is used"
+        },
+        {
+            "number": "26767",
+            "title": "Upgrade to Reactor 2020.0.6"
+        },
+        {
+            "number": "26702",
+            "title": "Root path resolution for java.nio.Path properties does not work on Linux anymore"
+        },
+        {
+            "number": "20292",
+            "title": "Support fallback parsing patterns in @DateTimeFormat"
+        },
+        {
+            "number": "26777",
+            "title": "Addition of fallback patterns to temporal parser loses cause in Spring 5.3.5"
+        },
+        {
+            "number": "26790",
+            "title": "Make sure file storage directory exists before usage in DefaultPartHttpMessageReader"
+        },
+        {
+            "number": "26759",
+            "title": "Support 'Accept-Patch' header in MVC and WebFlux"
+        },
+        {
+            "number": "26748",
+            "title": "Invalid IPv6 Address with X-Forwarded-For leads to number format exception"
+        },
+        {
+            "number": "26585",
+            "title": "BridgeMethodResolver#isBridgeMethodFor return incorrect result for kotlin code in certain circumstance"
+        },
+        {
+            "number": "26746",
+            "title": "ByteBuf Leak Report with Server-Sent Event Response"
+        },
+        {
+            "number": "26744",
+            "title": "Scheduling a task that runs once a day results in March 28 being skipped"
+        },
+        {
+            "number": "26736",
+            "title": "Support UTF-8 in DefaultPartHttpMessageReader"
+        },
+        {
+            "number": "26679",
+            "title": "Exceptions for missing request values should expose information when they are missing after conversion"
+        },
+        {
+            "number": "26740",
+            "title": "Typo in RequestBodyAdviceAdapter Javadoc"
+        },
+        {
+            "number": "26714",
+            "title": "Upgrade to Objenesis 3.2"
+        },
+        {
+            "number": "26712",
+            "title": "Reactive AbstractErrorWebExceptionHandler#htmlEscape() may be blocking"
+        },
+        {
+            "number": "26690",
+            "title": "MappedInterceptor in 5.3 does not support all AntPatternMatcher patterns "
+        },
+        {
+            "number": "26694",
+            "title": "@DirtiesContext not applied when class-level @EnabledIf evaluates to false"
+        },
+        {
+            "number": "26687",
+            "title": "Improve Docs on Testing Streaming Responses in Spring MVC"
+        },
+        {
+            "number": "25787",
+            "title": "Use Gradle Toolchains for JVM projects to test on unsupported JDK versions"
+        },
+        {
+            "number": "26654",
+            "title": "Publish directly to Maven Central"
+        }
+    ]
+}

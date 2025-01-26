@@ -1,0 +1,74 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 10.135416666666666,
+    "commits_info": [
+        {
+            "hash": "7021a049b934436ffe46d20487d1470f6661043a",
+            "message": "Update release notes by Travis CI build 2481 [ci skip]"
+        },
+        {
+            "hash": "2dd5d43ad3662ebf0ccfa4ba159c68c864f8b62c",
+            "message": "Merge pull request #1010 from mockito/sf\n\nBumped version to fix CI build"
+        },
+        {
+            "hash": "106c45e5e271f945ad040c25220a0ffe80b5b867",
+            "message": "Bumped version\n\nManually bumped version to unstuck the release process. This should help and get Travis CI jobs back in shape. More details about the problem and our long term plan - see mailing list discussion: https://groups.google.com/forum/#!topic/mockito/TTMuY5KdbjU"
+        },
+        {
+            "hash": "a9e1e7f1ebad912e6ce8a5ae6b6d8ac3bc9c8e29",
+            "message": "Verifies #688: Acceptance test to prevent future regression (#972)"
+        },
+        {
+            "hash": "0fe2644767b4526e4db961b511f9c59c34158e6c",
+            "message": "Add explicit mention for code style check (#996)\n\n* Add explicit mention for code style check\r\n\r\n* Change to Gradle check"
+        },
+        {
+            "hash": "aa18f994b05999496f1396f62573b5c7b2dd0a16",
+            "message": "Merge pull request #1009 from mureinik/UnusedImports\n\nClean up unused imports\r\n\r\n[ci skip-release]"
+        },
+        {
+            "hash": "e860c7419fdaa3fa0ea23fc5f1ad14f3a96a7817",
+            "message": "Clean up unused imports\n\nDuring development work, orphaned, unused, imports sometime get left\nbehind in the code. At best, these imports are just redundant. At\nworst, they introduce false dependencies in places there aren't\nsupposed to be any dependencies.\n\nThis patch removes all those unused imports and adds a Checkstyle\nmodule to verify no such redundant imports will be introduced in the\nfuture."
+        },
+        {
+            "hash": "7567f77e43610efdba06664248d1b572c0c9a677",
+            "message": "Merge pull request #1001 from mureinik/README-release-notes\n\nFix release notes badge\r\n\r\n[ci skip-release]"
+        },
+        {
+            "hash": "03b420d631f1ded2f3228526126ae6bd2da9d26d",
+            "message": "Fix release notes badge\n\nGitHub doesn't seem to render images from URLs with spaces properly,\nbreaking the release notes badge.\nThis change encodes the URL, replacing the space with %20 to make it\nrender properly.\n\n[ci skip]"
+        },
+        {
+            "hash": "4315da8cc7d4f7d60f9cf8d5ef0c7550ef0580cd",
+            "message": "Merge pull request #994 from delftswa2017/link\n\nfix the broken link on 1357 line in Mockito.java\r\n\r\n[ci skip-release]"
+        },
+        {
+            "hash": "8b082ed3a0f8adf11a96d312b6ad345619026bb9",
+            "message": "fix the broken link in 1357 line in Mockito.java"
+        },
+        {
+            "hash": "ccd5e85a0c60e7f3ae10ac86db1e5110966e9d41",
+            "message": "Fixes #974: Fix to get correct stubbing location with inline mocking (#979)\n\n* Fixes #974: Add constructors to LocationImpl\r\n\r\n* Fixes #974: Add Location parameter to constructor of InterceptedInvocation\r\n\r\n* Fixes #974: Add MockMethodInterceptor#doIntercept() to take a Location argument\r\n\r\n* Fixes #974: Fix to get correct stubbing location with inline mocking"
+        },
+        {
+            "hash": "482731ec4d25f7a340e16f80d2931e1d77f22d06",
+            "message": "Add missing license headers"
+        }
+    ],
+    "issues": [
+        {
+            "number": "688",
+            "title": "Enabled mocking interface clone method"
+        },
+        {
+            "number": "974",
+            "title": "MockitoJUnitRunner.StrictStubs does not detect 'Unnecessary Stubbing' when inline mock maker is enabled"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.10.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 0.8990625,
+    "commits_info": [
+        {
+            "hash": "0f0369be556b0fb14d27c0a7ca15fd27d8b6d5cc",
+            "message": "\"Update release notes by Travis CI build 256 [ci skip]\""
+        },
+        {
+            "hash": "5f061e30e8890b096a15b359aa625a2fa80e8aae",
+            "message": "Tidy up: renamed a test, added javadoc, removed @Ignored test"
+        },
+        {
+            "hash": "f76811e7e735962627317dd09a1f8258573bb14f",
+            "message": "Added specific exception type.\n\nRelated to #90. It feels this scenario deserves a custom exception type."
+        },
+        {
+            "hash": "93967fa58afaeda6cec4263cabdce9c64f593e03",
+            "message": "Fixed #90 Mockito hints at the \"non public parent\" problem.\n\nDuring state validation, when invalid use of the API is detected, Mockito also hints at the limitation of the mocking engine, that we don't support mocking methods that are declared on non-public parent class."
+        },
+        {
+            "hash": "3f9ad60102e69b886e097cec8fbe6e621b7e00e0",
+            "message": "Fixed the transient problem that caused test failures.\n\nEnsure the state is reset correctly after a test run. Enabled back the test that was disabled previously."
+        },
+        {
+            "hash": "965eac623d32c8bf922e4a09b524a3c3a7a4084e",
+            "message": "Improved the build logic related to releases.\n\nAvoided the hack with applying the release-notes plugin late. Added task for updating release notes locally for dry-running purposes [ci skip]"
+        },
+        {
+            "hash": "79b3af04836bb7cf74cb4d036f1756d3adf83cfe",
+            "message": "Regenerated the release notes [ci skip]"
+        },
+        {
+            "hash": "f6429dd564ed5ca40190c39de478a34d6d3c0790",
+            "message": "Increment version '1.10.3' -> '1.10.4' by Travis CI build 255 [ci skip]"
+        },
+        {
+            "hash": "378ed053a10f4a9afa85ce7e183e090864ba58bd",
+            "message": "\"Update release notes by Travis CI build 255 [ci skip]\""
+        }
+    ],
+    "issues": [
+        {
+            "number": "90",
+            "title": "Improve exception messages when user mocks a method declared on non-public parent"
+        }
+    ]
+}

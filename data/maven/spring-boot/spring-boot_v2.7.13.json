@@ -1,0 +1,442 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.7.13",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 70,
+    "start_delay": 0.0,
+    "duration": 48.69592592592593,
+    "commits_info": [
+        {
+            "hash": "de539742baabdf925eae952e35a1baca922d19ac",
+            "message": "Release v2.7.13"
+        },
+        {
+            "hash": "fff30efed5a9029065132a512bee7fd44cd253d1",
+            "message": "Configure timeouts on staging builds\n\nCloses gh-36022"
+        },
+        {
+            "hash": "f6841c3c160294659d646e8ea044dff2daa658bc",
+            "message": "Revert \"Start building against Spring WS 3.1.7 snapshots\"\n\nThis reverts commit 5e963b02a735be7a9c020c0af0b515409c3e9384.\n\nSee gh-35732"
+        },
+        {
+            "hash": "0fb4c9a09585493b731b2c1f1f132a92456f0a8d",
+            "message": "Prohibit upgrades to RSocket 1.1.4\n\nCloses gh-35798"
+        },
+        {
+            "hash": "cb5330fd116b9e6dc23345fa1d343c4aa8de1103",
+            "message": "Upgrade to Spring Session Bom 2021.2.2\n\nCloses gh-35731"
+        },
+        {
+            "hash": "b0af37003899629a4895e300c61348937aaf2d73",
+            "message": "Upgrade to Spring Security 5.7.9\n\nCloses gh-35730"
+        },
+        {
+            "hash": "f206f1807f237680a5dd070f0d9e3347e56f3ae8",
+            "message": "Upgrade to Netty 4.1.94.Final\n\nCloses gh-35988"
+        },
+        {
+            "hash": "0dd93de05d22af8245f31d9fc39b8c6ec28427b5",
+            "message": "Upgrade to Hazelcast 5.1.7\n\nCloses gh-35987"
+        },
+        {
+            "hash": "33341f241d96b936519a0a189c5b1d3984db6a69",
+            "message": "Upgrade to Spring Data Bom 2021.2.13\n\nCloses gh-35728"
+        },
+        {
+            "hash": "b4b6477899cf9526c6b9d6e05afa886c58b1c81a",
+            "message": "Upgrade to Spring AMQP 2.4.13\n\nCloses gh-35727"
+        },
+        {
+            "hash": "efa072204af0f43b7eb75fa10b878b844ff9b0ff",
+            "message": "Don't migrate properties that cause a circular reference\n\nUpdate `PropertiesMigrationReporter` so that properties are only\nmigrated automatically when they don't cause a circular reference.\n\nFixes gh-35919"
+        },
+        {
+            "hash": "2f39ebfe892ccf0fd39d1bdf17db19b059ea06f5",
+            "message": "Polish"
+        },
+        {
+            "hash": "b8d2c279eef9ca96218e0fe2f6f2b24055c3a9af",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "f3f8610539369e03992e1fd5604cb51ae334ba2d",
+            "message": "Polish"
+        },
+        {
+            "hash": "c46bef1858089db319d257ff0adca1d4ea0a518a",
+            "message": "Protect against unconstrained dependencies in starters\n\nCloses gh-19775"
+        },
+        {
+            "hash": "137f4ee4515b0b9706669e3b31035078ed3680ef",
+            "message": "Support reporting of custom Log4J2 log levels from the LoggersEndpoint\n\nSupport custom Log4J2 log levels by changing `LoggerConfiguration` so\nthat it can now report levels using a `LevelConfiguration` object\nrather than the limited `LogLevel` enum.\n\nThe `Log4J2LoggingSystem` class now uses `LevelConfiguration.ofCustom`\nfor custom logging levels, rather than throwing an exception.\n\nThe `LoggersEndpoint` has also been updated so that it can return the\ncustom logger name.\n\nFixes gh-35227"
+        },
+        {
+            "hash": "e779fb0bc40f377eace4a41fcf9311b9d9515f51",
+            "message": "Validate constructor bound config props that implement Validator\n\nCloses gh-33669"
+        },
+        {
+            "hash": "836d88c9c8846a895817d0dcec213241c8510070",
+            "message": "Upgrade to Spring Framework 5.3.28\n\nCloses gh-35729"
+        },
+        {
+            "hash": "ee606db34a2b824049714a1ab418a3b192c748a7",
+            "message": "Update Data REST starter description to mention Spring MVC\n\nCloses gh-35678"
+        },
+        {
+            "hash": "9feb84e234f9cd0342fe1d8ba09a7ea72abf2cce",
+            "message": "Add DynmicPropertySource to ordered list of property sources\n\nCloses gh-32901"
+        },
+        {
+            "hash": "088006ff60ed911cf0f28f01c7f23a4093ffde92",
+            "message": "Use ephemeral port for Hazelcast\n\nWhen Hazelcast is started on a fixed port and that port is already in\nuse, it does not fail to start which makes the problem hard to\ndetect. A symptom of the problem is that clients will not be able to\nconnect and will either retry indefinitely or will timeout depending\non their configuration.\n\nThis commit updates the Hazelcast client tests to start the Hazelcast\ninstance on an ephemeral port and to customize the client\nconfiguration with the instance's address before use. This should\nallow the client tests to work reliably in an environment where\nHazelcast's default port is already in use.\n\nCloses gh-35903"
+        },
+        {
+            "hash": "63978978b4f4b1b056d10ea58f4fe9780c6f87e5",
+            "message": "Drop STS plugins from Eclipse setup"
+        },
+        {
+            "hash": "7d07c0d09c4c0cd21944594fbf40a636f76ef1fc",
+            "message": "Polish configuration related to predictive test selection\n\nMost notably, this commit splits the tests that use Spring REST Docs\nout into a separate task for which predictive test selection is\ndisabled. This allows it to be cached and use Gradle's built-in\nup-to-date checking, thereby avoiding the generation of new snippets\nand the need to then run the asciidoctor and asciidoctorPdf tasks.\n\nIt also updates spring-boot-smoke-test-junit-vintage to disable\npredictive test selection so that we can continue to assert that\nthe some tests were executed.\n\nSee gh-35869"
+        },
+        {
+            "hash": "27b8ec8a3d612d5fef9d3b9d0c762adad5ac6171",
+            "message": "Upgrade CI images to ubuntu:jammy-20230522\n\nCloses gh-35778"
+        },
+        {
+            "hash": "f2a44d7f065b84d203e9ff9c479f7bb6491de4aa",
+            "message": "Upgrade to Reactor Bom 2020.0.33\n\nCloses gh-35726"
+        },
+        {
+            "hash": "7576117dd970eeec857812570723ee58580f4e5e",
+            "message": "Upgrade to Micrometer 1.9.12\n\nCloses gh-35725"
+        },
+        {
+            "hash": "2084ae1d1f71363517e5cd8871d87e90ce1557f6",
+            "message": "Make predictive test selection opt-in\n\nCloses gh-35869"
+        },
+        {
+            "hash": "b2ef9da15421a67f8fda75a56df2fcbbf7c530bb",
+            "message": "Always run Actuator documentation tests\n\nThe tests must run so that the snippets included in the docs are\ngenerated.\n\nCloses gh-35875"
+        },
+        {
+            "hash": "1e0c1294522e20f2d88c7042accc1ccdd4714bcf",
+            "message": "Enable predictive test selection for local builds\n\nCloses gh-35869"
+        },
+        {
+            "hash": "984dc1d58f449b71b69cd8a0067d654e64380118",
+            "message": "Allow package-private main classes to be used with Devtools\n\nFixes gh-35858"
+        },
+        {
+            "hash": "ad0ce41f8a34cce50cf34b16aa5f066deb6c35e5",
+            "message": "Upgrade to Undertow 2.2.25.Final\n\nCloses gh-35801"
+        },
+        {
+            "hash": "1201d8fa010753f6321fc779da63e5d941744c35",
+            "message": "Upgrade to UnboundID LDAPSDK 6.0.9\n\nCloses gh-35800"
+        },
+        {
+            "hash": "c55d9e152cd08953d4e0fa4531b4cbf75a993b5e",
+            "message": "Upgrade to Tomcat 9.0.76\n\nCloses gh-35799"
+        },
+        {
+            "hash": "0bd08a6233c99d3a972d60b6bce33061ca55f697",
+            "message": "Upgrade to Netty 4.1.93.Final\n\nCloses gh-35797"
+        },
+        {
+            "hash": "ef90c11a1ada9b69f51f712db4e60f3688327937",
+            "message": "Upgrade to Lombok 1.18.28\n\nCloses gh-35796"
+        },
+        {
+            "hash": "461f2fa05442479bf7e717684e6964ac59e2ea08",
+            "message": "Upgrade to Infinispan 13.0.18.Final\n\nCloses gh-35795"
+        },
+        {
+            "hash": "9306d0868a74c8b3a6b5ec30f01d74e54cae07be",
+            "message": "Upgrade to Dropwizard Metrics 4.2.19\n\nCloses gh-35794"
+        },
+        {
+            "hash": "5e97f869d0a8c2efc986c64ef745fad6f0166a0a",
+            "message": "Remove unnecessary usage of Supplier\n\nCloses gh-35787"
+        },
+        {
+            "hash": "ca50cd8c8a6ee3dc187e167712fa8c8b337f7fbc",
+            "message": "Stop using an infinite timeout for connecting to Hazelcast\n\nCloses gh-35771"
+        },
+        {
+            "hash": "140e806357f0a07e971014bdb5d795b42592967e",
+            "message": "Enable LoaderIntegrationTests on Java 20\n\nSee gh-35758"
+        },
+        {
+            "hash": "c38f674585a6bca113fc1ebd1971f6eb5be82a45",
+            "message": "Merge pull request #35662 from twobiers\n\n* pr/35662:\n  Move property notes up to external configuration section\n\nCloses gh-35662"
+        },
+        {
+            "hash": "0dbc0fcf91e169b4d9942fcf255d888f7972c97b",
+            "message": "Move property notes up to external configuration section\n\nSee gh-35662"
+        },
+        {
+            "hash": "a9393143ae95174d59997a0273151c1079f3fe9b",
+            "message": "Merge pull request #35716 from bbulgarelli\n\n* pr/35716:\n  Add @AliasFor annotation to EndpointCloudFoundryExtension\n\nCloses gh-35716"
+        },
+        {
+            "hash": "51afaa79a7c36f3e61ae17be6ce6fa22edacd4f3",
+            "message": "Add @AliasFor annotation to EndpointCloudFoundryExtension\n\nSee gh-35716"
+        },
+        {
+            "hash": "2927d50d18288f7b09597497e2dc57340d7f3756",
+            "message": "Add JavaVersion.TWENTY\n\nCloses gh-35758"
+        },
+        {
+            "hash": "be72e482acc3281d826eb7d4da98992d0c7e8a12",
+            "message": "Print thread dumps when PR build is cancelled\n\nCloses gh-35760"
+        },
+        {
+            "hash": "4eda5bd36fc8de1fc795d69c95399ac9f9d30f54",
+            "message": "Polish"
+        },
+        {
+            "hash": "c115ffb02e160bf0bb00a1e373d530ba886aae18",
+            "message": "Start building against Spring Framework 5.3.28 snapshots\n\nSee gh-35729"
+        },
+        {
+            "hash": "5e963b02a735be7a9c020c0af0b515409c3e9384",
+            "message": "Start building against Spring WS 3.1.7 snapshots\n\nSee gh-35732"
+        },
+        {
+            "hash": "adc2077be33d0e5bad800b7e51c3a6f6797b7055",
+            "message": "Start building against Spring Session Bom 2021.2.2 snapshots\n\nSee gh-35731"
+        },
+        {
+            "hash": "a47112bbeb3500af94644d6535d8a1fc58cec15a",
+            "message": "Start building against Spring Security 5.7.9 snapshots\n\nSee gh-35730"
+        },
+        {
+            "hash": "c680a892fe74aabd2f5318f4a6e9d84be35b1e96",
+            "message": "Start building against Spring Data Bom 2021.2.13 snapshots\n\nSee gh-35728"
+        },
+        {
+            "hash": "a04f6b3b027f63aa12ad2a54d3774d634fa07847",
+            "message": "Start building against Spring AMQP 2.4.13 snapshots\n\nSee gh-35727"
+        },
+        {
+            "hash": "163f5052c1c66d0e5f767a87608a9b8770a1cf31",
+            "message": "Start building against Reactor Bom 2020.0.33 snapshots\n\nSee gh-35726"
+        },
+        {
+            "hash": "d92012b82f54fd53f6786f6142077fa9659f4adb",
+            "message": "Start building against Micrometer 1.9.12 snapshots\n\nSee gh-35725"
+        },
+        {
+            "hash": "5623fe3b944efa30c514485e9e85644d12aaf890",
+            "message": "Test Gradle plugin against Gradle 8.2-rc-1\n\nCloses gh-35699"
+        },
+        {
+            "hash": "db03dc77439ed6267624a6a4f0937bf221fbf7e7",
+            "message": "Upgrade CI to Docker 24.0.2\n\nCloses gh-35687"
+        },
+        {
+            "hash": "c847db77e69a8fb0dafc466d7175bd1feadb2e70",
+            "message": "Correct precedence in description of MongoDB properties\n\nCloses gh-35686"
+        },
+        {
+            "hash": "812a48e877380f1bd8ad250fda0f1a645342fd79",
+            "message": "Merge pull request #35286 from bikash30851\n\n* gh-35286:\n  Polish \"Document audience support in Oauth2 resource server\"\n  Document audience support in Oauth2 resource server\n\nCloses gh-35286"
+        },
+        {
+            "hash": "f452a8617518184940c47d72116850af565362cf",
+            "message": "Polish \"Document audience support in Oauth2 resource server\"\n\nSee gh-35286"
+        },
+        {
+            "hash": "13c5c6efb14addd4c9f45aeb124bf54044d2526d",
+            "message": "Document audience support in Oauth2 resource server\n\nSee gh-35286"
+        },
+        {
+            "hash": "7c5fd06d77a43c13fc6ee46a5ac74068eca218a2",
+            "message": "Check out code and validate Gradle wrapper in PR workflow"
+        },
+        {
+            "hash": "746f2aa77e4f44d85388a24e642dc0ca7c94fae9",
+            "message": "Add workflow for building pull requests"
+        },
+        {
+            "hash": "c88a768977d7a35fec6d8d5c7417b16acc7843b3",
+            "message": "Merge branch '2.6.x' into 2.7.x"
+        },
+        {
+            "hash": "f8c9fee3b0c8ff9ef48cf12fb4a9f8a51630a485",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "6c4781086fc2fec77b0994e09e4a561d8739b616",
+            "message": "Remove unused CI files"
+        },
+        {
+            "hash": "46c8b58eb5d5b5d267b55c7d7144c219fea7d151",
+            "message": "Update CI pipeline"
+        },
+        {
+            "hash": "12b09acc876d4c6de42d8e2db877bfa3b536288a",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "5d1fcfa472e103697426ba8a2641592ad4f5cea7",
+            "message": "Merge branch '2.6.x' into 2.7.x"
+        },
+        {
+            "hash": "a5a5be37ec37faa98ab212d6c4d2a0027a0cf4af",
+            "message": "Upgrade CI to Docker 24.0.1\n\nCloses gh-35622"
+        }
+    ],
+    "issues": [
+        {
+            "number": "36022",
+            "title": "Configure a timeout for staging builds"
+        },
+        {
+            "number": "35732",
+            "title": "Upgrade to Spring WS 3.1.7"
+        },
+        {
+            "number": "35798",
+            "title": "Prohibit upgrades to RSocket 1.1.4"
+        },
+        {
+            "number": "35731",
+            "title": "Upgrade to Spring Session Bom 2021.2.2"
+        },
+        {
+            "number": "35730",
+            "title": "Upgrade to Spring Security 5.7.9"
+        },
+        {
+            "number": "35988",
+            "title": "Upgrade to Netty 4.1.94.Final"
+        },
+        {
+            "number": "35987",
+            "title": "Upgrade to Hazelcast 5.1.7"
+        },
+        {
+            "number": "35728",
+            "title": "Upgrade to Spring Data Bom 2021.2.13"
+        },
+        {
+            "number": "35727",
+            "title": "Upgrade to Spring AMQP 2.4.13"
+        },
+        {
+            "number": "35919",
+            "title": "Spring Boot properties migrator can create circular references"
+        },
+        {
+            "number": "19775",
+            "title": "Starter projects should verify that their runtime classpath can be resolved"
+        },
+        {
+            "number": "35227",
+            "title": "Actuator loggers list endpoint throws exception on Log4J2 loggers with custom log levels"
+        },
+        {
+            "number": "33669",
+            "title": "Validation is not applied for ConfigurationProperties that implement Validator and use @ConstructorBinding"
+        },
+        {
+            "number": "35729",
+            "title": "Upgrade to Spring Framework 5.3.28"
+        },
+        {
+            "number": "35678",
+            "title": "Update description of spring-boot-starter-data-rest to clarify that it uses Spring MVC"
+        },
+        {
+            "number": "32901",
+            "title": "Add @DynamicPropertySource to documented list of property source ordering"
+        },
+        {
+            "number": "35869",
+            "title": "Enable predictive test selection when ENABLE_PREDICTIVE_TEST_SELECTION is set to true"
+        },
+        {
+            "number": "35778",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "35726",
+            "title": "Upgrade to Reactor Bom 2020.0.33"
+        },
+        {
+            "number": "35725",
+            "title": "Upgrade to Micrometer 1.9.12"
+        },
+        {
+            "number": "35875",
+            "title": "Always run tests in org.springframework.boot.actuate.autoconfigure.endpoint.web.documentation"
+        },
+        {
+            "number": "35858",
+            "title": "Devtools does not support package-private main classes"
+        },
+        {
+            "number": "35801",
+            "title": "Upgrade to Undertow 2.2.25.Final"
+        },
+        {
+            "number": "35800",
+            "title": "Upgrade to UnboundID LDAPSDK 6.0.9"
+        },
+        {
+            "number": "35799",
+            "title": "Upgrade to Tomcat 9.0.76"
+        },
+        {
+            "number": "35797",
+            "title": "Upgrade to Netty 4.1.93.Final"
+        },
+        {
+            "number": "35796",
+            "title": "Upgrade to Lombok 1.18.28"
+        },
+        {
+            "number": "35795",
+            "title": "Upgrade to Infinispan 13.0.18.Final"
+        },
+        {
+            "number": "35794",
+            "title": "Upgrade to Dropwizard Metrics 4.2.19"
+        },
+        {
+            "number": "35787",
+            "title": "Simplify OAuth2ResourceServerJwtConfiguration.JwtDecoderConfiguration.getValidators(Supplier<OAuth2TokenValidator<Jwt>>)"
+        },
+        {
+            "number": "35771",
+            "title": "HazelcastAutoConfigurationClientTests use an infinite cluster connect timeout and may block forever"
+        },
+        {
+            "number": "35758",
+            "title": "Java 20 is supported but there's no value for it in the JavaVersion enum"
+        },
+        {
+            "number": "35760",
+            "title": "Print JVM thread dumps when a PR build is cancelled"
+        },
+        {
+            "number": "35699",
+            "title": "Test Gradle Plugin against 8.2-rc-1"
+        },
+        {
+            "number": "35687",
+            "title": "Upgrade CI to Docker 24.0.2"
+        },
+        {
+            "number": "35686",
+            "title": "Description of spring.data.mongodb.uri property incorrectly states that it overrides spring.data.mongodb.database"
+        },
+        {
+            "number": "35622",
+            "title": "Upgrade CI to Docker 24.0.1"
+        }
+    ]
+}

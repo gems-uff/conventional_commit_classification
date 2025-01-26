@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.21",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.5979861111111111,
+    "commits_info": [
+        {
+            "hash": "cdb1de10200663a45072ccbfb650d788d25c1120",
+            "message": "Update release notes by Travis CI build 1765 [ci skip]"
+        },
+        {
+            "hash": "76ac001f56e5e718fb668ed8a4f1a5a00d2dae9c",
+            "message": "Fixes  #764: Retains parameter names on instrumentation.\n\nFilter parameter names that are sometimes retained due to Byte Buddy implicitly writing back parameter names for instrumented methods. Added filter to avoid duplicate writing which crashed the reflection API's parsing such that the parameter names did not appear."
+        },
+        {
+            "hash": "00996504cd0fda3d3ce26ef053c969a8aa131425",
+            "message": "Increment version '2.2.20' -> '2.2.21' by Travis CI build 1756 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "764",
+            "title": "Mockito 2.2.17 regression: `mock-maker-inline` drops `-parameters`"
+        }
+    ]
+}

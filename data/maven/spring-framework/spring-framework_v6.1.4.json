@@ -1,0 +1,1438 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 269,
+    "start_delay": 0.0,
+    "duration": 97.87543981481481,
+    "commits_info": [
+        {
+            "hash": "9bd6aef090161cb26ef5d1326d6604b0fa3d54ac",
+            "message": "Release v6.1.4"
+        },
+        {
+            "hash": "f41c7ceaf7a550ccc7593eeab064e17dc0e919ee",
+            "message": "Upgrade to Undertow 2.3.11"
+        },
+        {
+            "hash": "9a068869efeca91665b410e272bae3e6d2fb975c",
+            "message": "Upgrade to Reactor 2023.0.3, Micrometer 1.12.3, Context Propagation 1.1.1\n\nIncludes Groovy 4.0.18, Netty 4.1.107, OpenPDF 1.3.40, Protobuf 3.25.2"
+        },
+        {
+            "hash": "d147609e04a7fdb5cca6220e1cf2f7ecf29ccbb9",
+            "message": "Update a reference to the build pipeline"
+        },
+        {
+            "hash": "e9a359f873aacbc788ea0f9b63f8b28382dd2c18",
+            "message": "Fix pipeline reference"
+        },
+        {
+            "hash": "78f0688ed0754c6b825422a88ee6e6cc73c2866c",
+            "message": "Fix javadoc error\n\nSee gh-32205"
+        },
+        {
+            "hash": "504b7619bdb9580bd6346bd256263239283edf07",
+            "message": "WebSocketMessageBrokerConfigurer allows to configure Lifecycle phase\n\nCloses gh-32205"
+        },
+        {
+            "hash": "f9ae54d91e67ebf4ca27d5f0bcc3c39d8f66b8c1",
+            "message": "Allow sending SSE events without data\n\nPrior to this commit, the SseBuilder API in WebMvc.fn would only allow\nto send Server-Sent Events with `data:` items in them. The spec doesnn't\ndisallow this and other specifications rely on such patterns to signal\nthe completion of a stream, like:\n\n```\nevent:next\ndata:some data\n\nevent:complete\n\n```\n\nThis commit adds a new `send()` method without any argument that sends\nthe buffered content (id, event comment and retry) without data.\n\nFixes: gh-32270"
+        },
+        {
+            "hash": "2284254d39eb59eae13f84e72f921993be07f60e",
+            "message": "Fix Kotlin syntax errors in RestClient builder example\n\nCloses gh-32265"
+        },
+        {
+            "hash": "6e9607ce999a01c942551f2d0c85107aa1d4f94b",
+            "message": "Use double dot in META-INF/aop.xml documentation\n\nCloses gh-32264"
+        },
+        {
+            "hash": "b4bec4ca612ec4b1ac54a2b656dd69d2f73601a2",
+            "message": "Allow repeatable writes in Client Interceptors\n\nSee gh-31449"
+        },
+        {
+            "hash": "48da9524c34642edca35cf694896090b1b3e7cfd",
+            "message": "Polish"
+        },
+        {
+            "hash": "68189f3de9d3a64ddddf87b67fd935c0a6f0e4e9",
+            "message": "Document that \"functions are variables\" in SpEL evaluation contexts\n\nAlthough EvaluationContext defines the API for setting and looking up\nvariables, the internals of the Spring Expression Language (SpEL)\nactually provide explicit support for registering functions as\nvariables.\n\nThis is self-evident in the two registerFunction() variants in\nStandardEvaluationContext; however, functions can also be registered as\nvariables when using the SimpleEvaluationContext.\n\nSince custom functions are also viable in use cases involving the\nSimpleEvaluationContext, this commit documents that functions may be\nregistered in a SimpleEvaluationContext via setVariable().\n\nThis commit also explicitly documents the \"function as a variable\"\nbehavior in the class-level Javadoc for both StandardEvaluationContext\nand SimpleEvaluationContext, as well as in the reference manual.\n\nCloses gh-32258"
+        },
+        {
+            "hash": "10bc93c05863a6d07ec1926f7700078d7d7a6dca",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9b93c948a7dda1ecb2727198e10f215ac8f778fd",
+            "message": "Infer reflection hints for Jackson annotations `builder` attributes\n\nThis notably enables Jackson to reflectively call a user-provided\nbuilder class and invoke its declared methods (setters and build) in\na native app.\n\nCloses gh-32238"
+        },
+        {
+            "hash": "abe381488a1da1f48aff91e374a27937ba49ae90",
+            "message": "Add missing RequestPredicate variants in coRouter\n\nCloses gh-32256"
+        },
+        {
+            "hash": "cc6dd193245e81546ee9e67cab629fbcb6ddb549",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2fe33218130342e5f87585292bdc8292ccc0e6e9",
+            "message": "Fix pathExtension null-safety in Kotlin DSLs\n\nCloses gh-32254"
+        },
+        {
+            "hash": "8c3fc8c549f29c5c5e4ddca43bdf4c7b7e1c0311",
+            "message": "Add documentation for functional resource handling\n\nCloses gh-27257"
+        },
+        {
+            "hash": "d3ca6f9f6a881b1bf88c92592835b655b1ee0ba8",
+            "message": "Add resource redirection to WebMVC functional router\n\nSee gh-27257"
+        },
+        {
+            "hash": "2d7b2e59b62e759c3b8559befa13898f9164aff4",
+            "message": "Add resource redirection to WebFlux functional router\n\nSee gh-27257"
+        },
+        {
+            "hash": "46108deff413b28edad457eaab35210d3dc047dd",
+            "message": "Make SimpleEvaluationContext.Builder final and its constructor private\n\nCloses gh-32253"
+        },
+        {
+            "hash": "4454b3b5efc3e537ea6da864f0fbe8e6c1b81bf6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2dd22f64e1a3b44f03939ca22bd61b7b6aedd5ee",
+            "message": "Improve cancellation of read/write inactivity\n\nThe cancellation of read and write inactivity tasks was done via\nWebSocketHandler#afterConnectionClosed, relying on the WebSocket\nlibrary to always invoke the callback.\n\nThis change moves the cancellation to the `close` method instead\nthat in turn is called from DefaultStompSession#resetConnection,\nin effect making the cancellation more proactive and aligned with\nconnection cleanup in DefaultStompSession vs relying on a\nsubsequent call from the WebSocket library after the connection\nis closed.\n\nCloses gh-32195"
+        },
+        {
+            "hash": "6be0432e3d03b3b0fa7f6911d073a8c40988bf11",
+            "message": "Use ConnectionLostException after heartbeat failures\n\nConnectionLostException was applies only after the WebSocket library\nnotified us of a session close. However, read inactivity and heartbeat\nsend failures are also cases of the connection being lost rather than\nclosed intentionally.\n\nThis commit also ensures resetConnection is called after a heartbeat\nwrite failure, consistent with other places where a transport error\nis handled that implies the connection is lost.\n\nSee gh-32195"
+        },
+        {
+            "hash": "6a5953dca399f581447c4eadd9a45a827531e9f7",
+            "message": "Polishing in WebSocketStompClient\n\nSee gh-32195"
+        },
+        {
+            "hash": "b4153618a414f43d12feb2b33487fa1a35be4674",
+            "message": "Consistent Lock field declaration (instead of ReentrantLock field type)"
+        },
+        {
+            "hash": "0b09f1e12fb2e39dd1f94ec3a72353dcb42e1c08",
+            "message": "Use ReentrantLock instead of synchronization for concurrency throttle\n\nCloses gh-32251"
+        },
+        {
+            "hash": "120ea0a51c63171e624ca55dbd7cae627d53a042",
+            "message": "Update user info pattern\n\nCloses gh-32211"
+        },
+        {
+            "hash": "c46d6286ee3ca66be76f276ee0b6b19234e3e7e4",
+            "message": "Review AOT recommendations in the reference guide\n\nThis commit focuses on improving the AOT section on programmatic\nregistration of additional beans. This makes it more clear that a\n`BeanDefinitionRegistry` must be used and that singletons are not\nprocessed.\n\nCloses gh-32240\nCloses gh-32241"
+        },
+        {
+            "hash": "750cb739023a4ceb52e91ea66ce09f98638a8821",
+            "message": "Introduce single-value request predicates\n\nThis commit introduces new HTTP method, Content-Type, and Accept header\nrequest predicates that handle single values. Previously, these\npredicates were always dealt with as single-value collections, which\nintroduced computational overhead.\n\nCloses gh-32244"
+        },
+        {
+            "hash": "5851cdc6793e1da6d13bc5380b785393e76ee520",
+            "message": "Refine invocation of checkSessions\n\nIt makes more sense to call this from afterConnectionEstablished as it\nrelates to the creation of new sessions.\n\nSee gh-32195"
+        },
+        {
+            "hash": "2e833d908ab4a83ad80bd3a0621054bbbc4832cd",
+            "message": "Merge pull request #32231 from OlgaMaciaszek\n\n* pr/32231:\n  Polish \"Document @RequestAttribute\"\n  Document @RequestAttribute\n\nCloses gh-32231"
+        },
+        {
+            "hash": "728d5eeb745bf4b84f7aafb0c87fd10f748e54ca",
+            "message": "Polish \"Document @RequestAttribute\"\n\nSee gh-32231"
+        },
+        {
+            "hash": "89e34ae5ffcd0db094f3d76d74bcefbe1620c97e",
+            "message": "Document @RequestAttribute\n\nSee gh-32231"
+        },
+        {
+            "hash": "9ee7c6383f09d2b7b2cbbbf09824dc23f0c6fa4b",
+            "message": "Merge pull request #32232 from OlgaMaciaszek\n\n* pr/32232:\n  Update copyright year of changed file\n  Fix supportsRequestAttributes for RestClientAdapter\n\nCloses gh-32232"
+        },
+        {
+            "hash": "ee801d1b28f623921aea3883634e8c9181c02af2",
+            "message": "Update copyright year of changed file\n\nSee gh-32232"
+        },
+        {
+            "hash": "eebdff23e7b40c25e6e461d273bba155d74f2a2d",
+            "message": "Fix supportsRequestAttributes for RestClientAdapter\n\nPreviously, RestClientAdapter claimed that it supports request\nattributes when, in fact, it does not. This commit updates the\nimplementation accordingly.\n\nSee gh-32232"
+        },
+        {
+            "hash": "a2000dba33fdd7195198a45cc350e4baea3be619",
+            "message": "Leniently accept tasks after context close in lifecycle stop phase\n\nSchedulers remain strict, just plain executors are lenient on shutdown now.\nAn early shutdown for executors can be enforced via setStrictEarlyShutdown.\n\nCloses gh-32226"
+        },
+        {
+            "hash": "4a3ef3e24aba9fffad0855ec94a5b2817be858bf",
+            "message": "Document safe navigation semantics within compound expressions in SpEL\n\nCloses gh-21827"
+        },
+        {
+            "hash": "4a5dc7c1b090a771ef2aa49d871365155f6892b5",
+            "message": "Document null-safe collection selection/projection support in SpEL\n\nCloses gh-32208"
+        },
+        {
+            "hash": "347d08502059acb7dfe8862d394b3d285dbf498b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f295def2a85e8fe574ec26b1b5b3d775cace476e",
+            "message": "Include function name in SpelMessage.INCORRECT_NUMBER_OF_ARGUMENTS_TO_FUNCTION\n\nCloses gh-32239"
+        },
+        {
+            "hash": "dc2dbd97008f6fabc6e3e0e6d5a45f89cc085e95",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6b67972ec4e1e3f3e3b098f269ee81d5cfa8732d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "64fc9ee301da74135364931e61638637ac51d9f0",
+            "message": "Test function registration with SimpleEvaluationContext"
+        },
+        {
+            "hash": "ce43d1b1da4361b6dbbbd9153a86602e891f5155",
+            "message": "Simplify logic in ApplicationContextAwareProcessor.postProcessBeforeInitialization()"
+        },
+        {
+            "hash": "dc73ec76fc5614c5a9bde9962fb553c6ba21786c",
+            "message": "Address TODOs in SpEL's Indexer\n\nThis commit deletes outdated TODOs and addresses a remaining \"current\"\nTODO in SpEL's Indexer."
+        },
+        {
+            "hash": "888e50175d6e8b5e65b29d34b97a898fe5d1ae4c",
+            "message": "Polish SpEL Javadocs and internals"
+        },
+        {
+            "hash": "1080c145e3f820bbadd521bb4411f0af6e2ae9b3",
+            "message": "Polish ApplicationContextAwareProcessor"
+        },
+        {
+            "hash": "f726e806cd712297df379c7bcd1ddf83b1e398b6",
+            "message": "Merge pull request #32236 from spencergibb\n\n* pr/32236:\n  Polish \"Fixes syntax error in JdbcClient examples\"\n  Fixes syntax error in JdbcClient examples\n\nCloses gh-32236"
+        },
+        {
+            "hash": "b1f6401e4f02ead72958ea1dcc242451ce12fd2d",
+            "message": "Polish \"Fixes syntax error in JdbcClient examples\"\n\nSee gh-32236"
+        },
+        {
+            "hash": "169b9abeef7079518739a9a7b123cab25297705d",
+            "message": "Fixes syntax error in JdbcClient examples\n\nSee gh-32236"
+        },
+        {
+            "hash": "e72b523995db89d7de4f3f4a31b1ac9e1f2d0f93",
+            "message": "Polish SpEL support"
+        },
+        {
+            "hash": "99bdc4211df5b6a2841e1129976be314a859fe8c",
+            "message": "Add Coroutines support to NonReactiveHandlerMethodPredicate\n\nCloses gh-32227"
+        },
+        {
+            "hash": "d47c69746be8e86b6b4678cc8c081915029384d2",
+            "message": "Upgrade CI to Ubuntu Jammy 20240125"
+        },
+        {
+            "hash": "052bbcc53031bd48dc76d070ba862f5293618600",
+            "message": "Cache parameter types array in ClassUtils.findInterfaceMethodIfPossible()"
+        },
+        {
+            "hash": "f9791664ef9220d20d64a5659ad1f272bf4f4f07",
+            "message": "Implement MatchableHandlerMapping in RouterFunctionMapping\n\nCloses gh-32221"
+        },
+        {
+            "hash": "af44b3e6c0159186a09de07cedef3264b133dddd",
+            "message": "Fix delegation in ServerRequest decorators\n\nCloses gh-31955"
+        },
+        {
+            "hash": "2724c6d8fe68a05c9d1020899e653be6b338182d",
+            "message": "Update beanvalidation.adoc\n\nFieldErrro to FieldError"
+        },
+        {
+            "hash": "f7e5c9fbb27cad276800909fc5d395234c76d64a",
+            "message": "In Kotlin variables should be defined as val or var. \"mockMvc\" was not defined properly"
+        },
+        {
+            "hash": "4486ab1cb7d0ea915803b17251b2889c5a5320bc",
+            "message": "Initialize Map with correct size in RequestPredicates\n\nFix another instance where a LinkedHashMap was initialized with an initial\ncapacity that would always cause a resize / rehash to occur. Switch to\nCollectionUtils.newLinkedHashMap to size the map appropiately for the expected\nnumber of items.\n\nCloses gh-32215"
+        },
+        {
+            "hash": "78c96b6d781b5de774001344235c2cba95713720",
+            "message": "Fix SpEL collection selection/projection examples in reference manual\n\nThis commit also updates and polishes the documentation tests."
+        },
+        {
+            "hash": "43bbe8f3e8aa99436ac5c33fcff5a8795e00a2ed",
+            "message": "Add tests for collection selection with Iterables"
+        },
+        {
+            "hash": "7d612e895812b4f2f4a1885416f730c6281722ca",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9a38355896fa062f67ebca4cad00ad09479277b2",
+            "message": "Improve tests for indexing and collection selection/projection in SpEL"
+        },
+        {
+            "hash": "3ecbc4de13382f25b64aac639c7470aa4f05e7c8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "81c156eefbd574bc5f646606b16548e431e3ffdf",
+            "message": "Replace public hasRestTemplateDefaults() method with hasBaseUri()\n\nSee gh-32180"
+        },
+        {
+            "hash": "d8c4a33beafac9c21c46648c3f8bb71ed36064d5",
+            "message": "Upgrade to SLF4J 2.0.12, Jetty 12.0.6, Apache HttpClient 5.3.1, OpenPDF 1.3.39, Mockito 5.10, Checkstyle 10.13"
+        },
+        {
+            "hash": "cfa47fa4fbac51c614943018b02deca684b761d0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "80949eb30f5b41d3467463506b5e9e07c6df53cd",
+            "message": "Store known attribute names in session (for distributed sessions)\n\nCloses gh-30463"
+        },
+        {
+            "hash": "4ed337247ccd3e976cb544d831de023a1704c96d",
+            "message": "Avoid sendError call when response committed already (Tomcat 10.1.16)\n\nCloses gh-32206"
+        },
+        {
+            "hash": "81cdfafa782a358161a1fa4bd2972f140c91503d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d5cb1d9adb862266612d4034c9b637f1ec227249",
+            "message": "Initialize Map with correct size in RequestPredicates\n\nPrior to this commit, the `RequestPredicates` would add new attributes\nto the existing request attributes by creating a new `LinkedHashMap`\nwith the total number of elements as its new initial capacity.\n\nThis would not achieve optimal performance as initial resize or rehash\noperations could be expected. Consistently using\n`CollectionUtils#newLinkedHashMap` avoids this problem.\n\nCloses gh-32201"
+        },
+        {
+            "hash": "9698dbc23284811c0134055a023e3db73a5d7569",
+            "message": "Add javadoc and rename merge method to mergeProperties\n\nSee gh-32118"
+        },
+        {
+            "hash": "9c15b3fa4c1127644ceec319e6118c734773695f",
+            "message": "Upgrade to AssertJ 3.25.3"
+        },
+        {
+            "hash": "c559ec4dfb653f215a5245d5fc33edd75961a0e1",
+            "message": "Refactor ReloadableResourceBundleMessageSource\n\nThis change allows subclasses to reuse collecting and merging\nalgorithm when overriding getMergedProperties method."
+        },
+        {
+            "hash": "341ac76209a0a5ad34cb80385179040d47636974",
+            "message": "Rely on HashSet for uniqueness of mapped names\n\nSee gh-32199"
+        },
+        {
+            "hash": "8ff102115a9825bcec6426b10754163a44583bb5",
+            "message": "Let BeanPropertyRowMapper subclasses customize mapped names\n\nCloses gh-32199"
+        },
+        {
+            "hash": "f50a262cf2bac0e76dab4f09806402b2ef75a881",
+            "message": "Polish\n\nSee gh-32189"
+        },
+        {
+            "hash": "c570f3b2da2f17dbffdcdbed2e0e99e685d8b47f",
+            "message": "Fix off-by-one error in PartEvent part count\n\nThis commit fixes an off-by-one error in the\nPartEventHttpMessageReader,  so that it no longer counts empty windows.\n\nCloses gh-32122"
+        },
+        {
+            "hash": "0fdf7598964bbe79894615d075f1d895aaa6ae1f",
+            "message": "Optimize Map methods in ServletAttributesMap\n\nServletAttributesMap inherited default implementations of the size\nand isEmpty methods from AbstractMap which delegates to the Set returned\nby entrySet. ServletAttributesMap's entrySet method made this fairly\nexpensive, since it would copy the attributes to a List, then use a\nStream to build the Set. To avoid the cost, add implementations of\nisEmpty / size that don't need to call entrySet at all.\n\nAdditionally, change entrySet to return a Set view that simply lazily\ndelegates to the underlying servlet request for iteration.\n\nCloses gh-32189"
+        },
+        {
+            "hash": "c04d4da9a3c2615dd5634cd84f63769a56de9b5e",
+            "message": "Polish"
+        },
+        {
+            "hash": "b737f36f392b7b17e577d735b6efea31ed26124b",
+            "message": "Upgrade to JUnit 5.10.2"
+        },
+        {
+            "hash": "8d601384d31d647bf85524aab035c62be116d395",
+            "message": "Upgrade to Gradle 8.6\n\nCloses gh-32192"
+        },
+        {
+            "hash": "ea52ecc5e08a14869ec351af38481c4008c8bcd8",
+            "message": "Polish"
+        },
+        {
+            "hash": "9b5febea20bc99a0696423bf0c8d32bbc62a4705",
+            "message": "Document SpEL limitations for minimum values for numeric literals\n\nCloses gh-20779"
+        },
+        {
+            "hash": "7627d8c6fc9561210359cc15052c3acf892cd43a",
+            "message": "Improve layout for Literal Expressions section"
+        },
+        {
+            "hash": "20f91b7dc346aef4510caf34816034eddcffd0c9",
+            "message": "Fix tabs in SpEL \"Classes Used in the Examples\" section"
+        },
+        {
+            "hash": "e15c150696617087882e1a10eb1cfd6e04a172fe",
+            "message": "Only copy UriBuilderFactory when customized\n\nThis commit ensures that, when creating a RestClient.Builder from a\nRestTemplate, the UriBuilderFactory is only copied if it has been\nchanged from the default values.\nBefore this commit, the UriBuilderFactory was effectively alway copied,\nresulting in not being able to use a baseUrl.\n\nThis commit also introduces a small memory optimization in\nDefaultUriBuilderFactory, so that default environment variables are\ncreated lazily.\n\nCloses gh-32180"
+        },
+        {
+            "hash": "7025b7aac25afa4be0f086c1ffc6787014183f25",
+            "message": "Provide example for calculating Integer.MIN_VALUE with SpEL's power operator"
+        },
+        {
+            "hash": "1e432ff95d79ff5f5402313a49884520097d8d89",
+            "message": "Improve documentation for overloaded operators in SpEL\n\nSee gh-32182"
+        },
+        {
+            "hash": "ae17b11b703029616aed78e36ace11c3beb446fd",
+            "message": "Preserve overridden toString result in HandlerMethod copy constructor\n\nCloses gh-32184"
+        },
+        {
+            "hash": "1a783f41aaf180406f56ce2743ba0bf6bbb59309",
+            "message": "Use target class for candidate retrieval but not for method matching\n\nCloses gh-32181\nSee gh-21843"
+        },
+        {
+            "hash": "521fbfdb854343a5d4a7431b487120245afc5f8c",
+            "message": "Update copyright headers in contribution"
+        },
+        {
+            "hash": "87377d6f3e9be0785d2a0c0ca96fe329c1c564c0",
+            "message": "Fix modelAttribitePredicate typos\n\nThis commit replaces occurrences of modelAttribitePredicate with modelAttributePredicate\nin HandlerMethodValidationException and the associated validator.\n\nCloses gh-32183"
+        },
+        {
+            "hash": "af2934c09b8fa489e4285b33bbff48899c1341e7",
+            "message": "Document support for overloading operators in SpEL in reference manual\n\nCloses gh-32182"
+        },
+        {
+            "hash": "17ee82e004998ca6452dda2734b78ea6a15765d5",
+            "message": "Organize and clean up SpEL documentation tests"
+        },
+        {
+            "hash": "a82108ec73a4fc92c29a20ccd97c045bb9b117a1",
+            "message": "Clarify semantics of SpEL's between operator\n\nSee gh-32140"
+        },
+        {
+            "hash": "d4401cc69a9df50f2ce594812accb6103d5f447e",
+            "message": "Polish"
+        },
+        {
+            "hash": "2367314b5276381bc16a129463dea03f40e9ec12",
+            "message": "Polish SpEL chapter"
+        },
+        {
+            "hash": "80a3c1923f456db52075e1b41e693aabaf8ad50d",
+            "message": "Link to Jakarta EL instead of mentioning Unified EL in SpEL overview\n\nAs a bit of trivia, Jakarta EL was originally Unified EL, which was\noriginally JSP EL, which was originally SPEL.\n\nSPEL: Simplest Possible Expression Language\nSpEL: Spring Expression Language\n\nSo one could say that SPEL inspired SpEL."
+        },
+        {
+            "hash": "c989cba9637ae3963c8187171c737b3df13528a9",
+            "message": "Add Checkstyle rule to enforce use of class literals for primitives & void\n\nThis commit introduces a globally applied Checkstyle rule which\nenforces the use of class literals for primitive types and void by\nforbidding the use of the TYPE constants in Boolean, Character, Byte,\nShort, Integer, Long, Float, Double, and Void.\n\nFor example, if MyClass uses one of the TYPE constants, the build will\nnow fail with a message similar to the following.\n\n[ERROR] <...>/MyClass.java:39: Please use class literals for primitives and void -- for example, int.class instead of Integer.TYPE."
+        },
+        {
+            "hash": "3d4d68c26fbffc6f2978043ff903a517ee890b40",
+            "message": "Run listener/send task locally as fallback on RejectedExecutionException\n\nCloses gh-32171"
+        },
+        {
+            "hash": "b61552b9df8e3f18f901fd30996ae0ec0f222060",
+            "message": "Merge pull request #32176 from quaff\n\n* pr/32176:\n  Fix assertion in BeanWrapperAutoGrowingTests\n\nCloses gh-32176"
+        },
+        {
+            "hash": "615973cce46d856d457f06eb4567286034e75426",
+            "message": "Fix assertion in BeanWrapperAutoGrowingTests\n\n See gh-32176"
+        },
+        {
+            "hash": "00577ed80acfc22104b41d6a631f433a3fa7e6af",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9b2b485444c6f223c7ca7df6bc5fda893146eb88",
+            "message": "Disabled test for auto-growing nested map values\n\nSee gh-32154"
+        },
+        {
+            "hash": "d586513d66f75de2bf43a83c6c4caf2ae7cd8060",
+            "message": "Introduce SqlBinaryValue/SqlCharacterValue as alternative to SqlLobValue\n\nIncludes direct byte array support via setBytes in StatementCreatorUtils.\n\nCloses gh-32161"
+        },
+        {
+            "hash": "2b52582dffff751d9d6a4d25f1101a4034e2e967",
+            "message": "Polishing"
+        },
+        {
+            "hash": "67958656e47220627948774d8f8e9cf712a1064a",
+            "message": "Polish"
+        },
+        {
+            "hash": "a4db0e7448287028d228d46fe7b4df202150958a",
+            "message": "Merge pull request #32164 from quaff\n\n* pr/32164:\n  Polish contribution\n  Polish StatementCreatorUtilsTests\n\nCloses gh-32164"
+        },
+        {
+            "hash": "ef2cae36aca789ed5ceb727ebd25d614fb9b2394",
+            "message": "Polish contribution\n\nSee gh-32164"
+        },
+        {
+            "hash": "efaf41862cf1a59b9c31ee7d6a6f5320f628242e",
+            "message": "Polish StatementCreatorUtilsTests\n\nSee gh-32164"
+        },
+        {
+            "hash": "af5acb6d34829de7b550bd40ffce601f43f142e3",
+            "message": "Avoid pre-conversion attempt in case of overloaded write methods\n\nCloses gh-32159\nSee gh-31872"
+        },
+        {
+            "hash": "067638ae6ebae9dc5990902e9d8d6543e7f3cd27",
+            "message": "Introduce ClassUtils.isVoidType() utility method"
+        },
+        {
+            "hash": "398cc01650825d56adf1bdc8fbee8bf6006527db",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3a518b60e73f5675da0a10cd59f69beed70604fa",
+            "message": "Merge pull request #32157 from jee14\n\n* pr/32157:\n  Upgrade copyright year of changed file\n  Wrap ternary operator within parantheses\n\nCloses gh-32157"
+        },
+        {
+            "hash": "298f308ce1f723ecacf7ad1f3f4230c8670a5de3",
+            "message": "Upgrade copyright year of changed file\n\nSee gh-32157"
+        },
+        {
+            "hash": "6ffb74def366bf3f836bed301c683b2950c48cfc",
+            "message": "Wrap ternary operator within parantheses\n\nSee gh-32157"
+        },
+        {
+            "hash": "b55a4d3908d5f08f237b9cb60a5e9dfe0480b3be",
+            "message": "Prevent AOT from failing with spring-orm without JPA\n\nThis commit improves PersistenceManagedTypesBeanRegistrationAotProcessor\nso that it does not attempt to load JPA classes when checking for the\npresence of a PersistenceManagedTypes bean. To make it more clear a\ncheck on the presence for JPA has been added to prevent the nested\nclasses to be loaded regardless of the presence of the bean.\n\nCloses gh-32155"
+        },
+        {
+            "hash": "db535863dd990466f208bafa5e138aca2cdd90ec",
+            "message": "Consistently use class literals for primitive types\n\nTo improve consistency and avoid confusion regarding primitive types\nand their wrapper types, this commit ensures that we always use class\nliterals for primitive types.\n\nFor example, instead of using the `Void.TYPE` constant, we now\nconsistently use `void.class`."
+        },
+        {
+            "hash": "95a3f3bb6eb64a43537e1bbc68ac31126f202460",
+            "message": "Upgrade CI to Java 22ea+33"
+        },
+        {
+            "hash": "84cce6018c0dfa77784f548b7877aa1a2e7fb56c",
+            "message": "Document the between operator in SpEL\n\nCloses gh-32140"
+        },
+        {
+            "hash": "e97fc7be3849d9719eae8b08ef2a07e4681755f7",
+            "message": "Improve documentation for alternative textual operators in SpEL"
+        },
+        {
+            "hash": "9eae0ba50e822868fa32bc5967727e7edfd0cb02",
+            "message": "Clean up warnings in build"
+        },
+        {
+            "hash": "f3c8102882b9756a1be98c93f6ee678b0473866e",
+            "message": "Polish SpEL Tokenizer"
+        },
+        {
+            "hash": "005d5ef922556358c5abad6060db112c61eace85",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5dc26460fbeeb321ae379a53b378716d65b6f854",
+            "message": "Eagerly initialize ZERO_NANOS constant"
+        },
+        {
+            "hash": "542502b2b6e22b7cdefb6436fc9a2272e88abf48",
+            "message": "Upgrade to AssertJ 3.25.2"
+        },
+        {
+            "hash": "f6d844378175c8f68d79922d6e60d1092017d8ce",
+            "message": "Fix logic in SupplierUtils"
+        },
+        {
+            "hash": "a44341ece3f3b02928f79af129003a099d790b78",
+            "message": "Consistent method declaration order in Call/TableMetaDataProvider"
+        },
+        {
+            "hash": "969b18b0e8e819a1feaaf2acea843150e0107a0a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2e9d6a1d4e4720414ab3c5c0f64f9ff20cf676eb",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7e5efdd8dd03573780b0344bed3e0b4d06bea9aa",
+            "message": "Reuse MapPropertySource for DynamicValuesPropertySource implementation\n\nCloses gh-32110"
+        },
+        {
+            "hash": "08e6df8832a897c5d1e27671baea190939aaee9f",
+            "message": "Revise shutdown phase log message and executor shutdown documentation\n\nCloses gh-32109"
+        },
+        {
+            "hash": "a738e4d5fd58b1c8b06c63fb1efba4b5eb2bcaae",
+            "message": "Explicit documentation note on cron-vs-quartz parsing convention\n\nCloses gh-32128"
+        },
+        {
+            "hash": "9c4b4ab81e829d15326e60e28b9473e5cfca23b7",
+            "message": "Update basics.adoc\n\nCloses gh-32145"
+        },
+        {
+            "hash": "0ee2d415285050efd3838f59629168f454c18452",
+            "message": "Delete obsolete test utility method\n\nCommit dc6ce30663 made this method obsolete."
+        },
+        {
+            "hash": "dc6ce30663b77568e8dd55cb62f87e67615e6f87",
+            "message": "Polishing"
+        },
+        {
+            "hash": "62fa3f11c1673d5393434d0b82c088a6f5b1a8ce",
+            "message": "Correctly request primitive conversion in SpEL's Indexer\n\nPrior to this commit, SpEL's Indexer incorrectly requested conversion\nto wrappers instead of primitives when setting an element in a\nprimitive array.\n\nThis commit addresses this by requesting primitive conversion -- for\nexample, conversion to `int.class` instead of `Integer.class` when\nsetting a value in an `int[]` array.\n\nFor greater clarity, this commit also switches from using `TYPE`\nconstants in wrapper classes to primitive class literals -- for\nexample, from `Integer.TYPE` to `int.class`.\n\nCloses gh-32147"
+        },
+        {
+            "hash": "2e56361fe4cb93cb8c16deabe3bde82a2ba9991c",
+            "message": "Simplify implementation of internal VariableNotAvailableException\n\nSince VariableNotAvailableException is not a public type, there is no\nneed to store the variable name in a field/property."
+        },
+        {
+            "hash": "9b0162da497bf0f62f75bd81d2945f33b08470dd",
+            "message": "Document increment and decrement operators in SpEL\n\nCloses gh-32136"
+        },
+        {
+            "hash": "ab98210e6d37eda1c3b48490c83f310b888fb901",
+            "message": "Polishing"
+        },
+        {
+            "hash": "97ad4792501e8131311fe9f6fa0eeccddc57e070",
+            "message": "Sync assignment operator test with example used in reference manual"
+        },
+        {
+            "hash": "24d6565cad534037ad16cb02697147c4944b02b3",
+            "message": "Provide example for SpEL's exponential power operator (^)"
+        },
+        {
+            "hash": "e34ad6bf5f2edf26cf77fb659ff6b86ee9c70e4e",
+            "message": "Support prefix notation for SpEL increment/decrement in AST representation\n\nCloses gh-32144"
+        },
+        {
+            "hash": "179b976964602ab7ccf082583b34dd5a57f74f0b",
+            "message": "Introduce tests for SpEL's Inc/Dec operators and polishing"
+        },
+        {
+            "hash": "1ff84671f89012a0e571df474dd40a418e725459",
+            "message": "Remove obsolete InProgressTests\n\nSince SpEL is no longer \"in progress\", this commit removes the obsolete\nInProgressTests class and moves all non-duplicated test cases to other\ntest classes."
+        },
+        {
+            "hash": "e1c22c5385a16b438bc77caec4708ab0b3f1cad6",
+            "message": "Clean up InProgressTests"
+        },
+        {
+            "hash": "3f30a1540c2193ec10c764a98dae9975e2b7de75",
+            "message": "Additional SpEL setValue() tests and polishing"
+        },
+        {
+            "hash": "ae9153e644b0e4ccc414e1e4749ac082ca242739",
+            "message": "Polish SpEL-related tests"
+        },
+        {
+            "hash": "003407a7e3796a1c665bce0a682254518e6d257d",
+            "message": "Polish Javadoc for SpelEvaluationException and Expression"
+        },
+        {
+            "hash": "a7764dc61d95bebfd151ab86b0f9d47f37efb78a",
+            "message": "Merge pull request #32141 from kzander91\n\n* pr/32141:\n  Polish \"Simplify use of Reactor's cast operator\"\n  Simplify use of Reactor's cast operator\n\nCloses gh-32141"
+        },
+        {
+            "hash": "4b4778d5694402bea70ab72ad4c7dc5a4520374b",
+            "message": "Polish \"Simplify use of Reactor's cast operator\"\n\nSee gh-32141"
+        },
+        {
+            "hash": "d96a63944c3d6586dd2c22bd086989d26a3235c8",
+            "message": "Simplify use of Reactor's cast operator\n\nThis commit replaces filter(x -> x instanceof C).cast(C.class) with the\nbuilt-in ofType(C.class).\n\nSee gh-32141"
+        },
+        {
+            "hash": "ad7c090f4cbc948eb178a5d7d7b283302b8b7cba",
+            "message": "Use catalog name in SimpleJdbcInsert\n\nThis commit harmonizes SimpleJdbcCall and SimpleJdbcInsert to\nconsistently use a catalog name if one is set. Previously,\nSimpleJdbcInsert only used the catalog name to retrieve database\nmetadata.\n\nCloses gh-32124"
+        },
+        {
+            "hash": "b9bad56fc1aee966839ae3cd2ab4325b0a60ff5d",
+            "message": "Document repeat and characer subtraction String operators in SpEL\n\nCloses gh-32137"
+        },
+        {
+            "hash": "fdf0a6f6c79c8526ef47fb3435592f6546267252",
+            "message": "Polishing"
+        },
+        {
+            "hash": "86266b3d67c4b886bffbb96bb8e4fdb96f554924",
+            "message": "Update documentation for supported letters in variable names in SpEL\n\nCloses gh-32138"
+        },
+        {
+            "hash": "68cf3b928bb6313c5e29f567a3343d3affc44765",
+            "message": "Remove obsolete reference to local variable support in SpEL"
+        },
+        {
+            "hash": "3024c6efa96aa4b8651d6f11cdd08d3bb07ce136",
+            "message": "Polishing"
+        },
+        {
+            "hash": "500767a0fb7052d91435391af0ae1908a4ecae9f",
+            "message": "Annotate core functional SPIs in SpEL with @FunctionalInterface\n\nPrior to this commit, only the MethodFilter and ConstructorResolver\nfunctional SPIs in the org.springframework.expression package were\nannotated with @⁠FunctionalInterface.\n\nFor consistency, this commit designates each of the following\nfunctional SPIs in that package as a @⁠FunctionalInterface as well.\n\n- BeanResolver\n- ConstructorExecutor\n- MethodExecutor\n- MethodResolver\n\nCloses gh-32135"
+        },
+        {
+            "hash": "5b5319a659e622c5f15781965dc52f2c28846c19",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3ce7c52030fd4845bf8d7f1e99f49a484668c940",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "bafcd1dc1c1ae71d39ff66510a210fb0b85da05e",
+            "message": "Remove SpEL README and tests for unsupported features"
+        },
+        {
+            "hash": "00b07659d92a243807571882b69bb16dd992b17e",
+            "message": "Polish SpEL documentation and tests"
+        },
+        {
+            "hash": "9df94357ded6eaca36886488dd0d08d2383d509a",
+            "message": "Enable test for argument conversion in SpEL"
+        },
+        {
+            "hash": "0e45f4cec40035a3428b28c89bdc942f35344647",
+            "message": "Polishing"
+        },
+        {
+            "hash": "88157880044f8af84ca1d81012f3de0c55bbc4e5",
+            "message": "Allow an existing TaskExecutor to be configured in ChannelRegistration\n\nThis commit introduces a new method to configure an existing\nTaskExecutor in ChannelRegistration. Contrary to\nTaskExecutorRegistration, a ThreadPoolTaskExecutor is not necessary,\nand it can't be further configured. This includes the thread name\nprefix.\n\nCloses gh-32081"
+        },
+        {
+            "hash": "b7e4fa16cae5f5a45fd661c51d558c8b9e5c39ae",
+            "message": "Upgrade com.gradle.enterprise plugin to 3.16.1"
+        },
+        {
+            "hash": "645d0db2607f01b2215790fde597485e03261de5",
+            "message": "Merge pull request #32123 from wfouche\n\n* pr/32123:\n  Upgrade to gradle-versions-plugin 0.51.0\n\nCloses gh-32123"
+        },
+        {
+            "hash": "f4b3c768e8e08aa2c5b32f7b8a2d16ba0f379664",
+            "message": "Upgrade to gradle-versions-plugin 0.51.0\n\nSee gh-32123"
+        },
+        {
+            "hash": "6b3bf554ce7eb4a8b5ed6494e282dc13f04cb1c4",
+            "message": "Fix typo\n\nIntroduced by commit f9726ae0c8f7755886c5264c3cb83fd2aa3825e7\n\nCloses gh-32111"
+        },
+        {
+            "hash": "c6121da1510588a6c9e190115a88bfd62eed4e31",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c5a75219ceb5b5bc6a1afbeddff161d4e3f3a753",
+            "message": "Compare qualifier value arrays with equality semantics\n\nCloses gh-32106"
+        },
+        {
+            "hash": "89e7174cc4c1cbb06da875e889bb57d0f8e86cf0",
+            "message": "Share cached interceptors for entire Advised instance if possible\n\nCloses gh-32104"
+        },
+        {
+            "hash": "4f16297e454808ec8227035b793aec26b9abfc4f",
+            "message": "Polishing\n\nSee gh-32074"
+        },
+        {
+            "hash": "11898daed726cee7c3ea189e058f48fd611f4848",
+            "message": "Add support for JSON streams to Kotlin Serialization\n\nCloses gh-32074"
+        },
+        {
+            "hash": "4d7da0059e826a25b79dea1521f65279b2d2a731",
+            "message": "Revert \"Merge pull request #32071 from mnhock\"\n\nThis reverts commit c3127249ac8005dc793034291926088521015a60, reversing\nchanges made to 11c8b22c5a14b8b857f1698177ce6b41c0500c9d.\n\nSee gh-32071"
+        },
+        {
+            "hash": "a4fcef4a6211fe640dcb3e97710b8f05b0faec49",
+            "message": "Upgrade to jetty-reactive-httpclient:4.0.2\n\nCloses gh-31931"
+        },
+        {
+            "hash": "f2e267b494730fe6162de8816265b9f4d5e6026f",
+            "message": "Guard against multiple body subscriptions\n\nBefore this commit, the JDK and Jetty connectors do not have any\nsafeguards against multiple body subscriptions. Such as check has now\nbeen added.\n\nCloses gh-32100"
+        },
+        {
+            "hash": "f9726ae0c8f7755886c5264c3cb83fd2aa3825e7",
+            "message": "Update description of web validation in docs\n\nCloses gh-32082"
+        },
+        {
+            "hash": "199a6756926ba94561e6070a4a3d27881a18af82",
+            "message": "Declare current observation context as available since 6.0.15\n\nSee gh-31609\nSee gh-31646"
+        },
+        {
+            "hash": "2f921dd13d8553c09df475f5f923192da2657ff6",
+            "message": "Declare allowPrivateNetwork as available since 5.3.32\n\nSee gh-28546\nSee gh-31974"
+        },
+        {
+            "hash": "b92877990da57c36eee035095c9ae72f5c0a7537",
+            "message": "Consistent nullability for concurrent result"
+        },
+        {
+            "hash": "d7778c0212d0e23b86fcd4585d749307c89c5bef",
+            "message": "Polishing"
+        },
+        {
+            "hash": "531ac89e7e53edec3c8ea58989e9f4226f286b0d",
+            "message": "Expose sendError message as default body\n\nCloses gh-26720"
+        },
+        {
+            "hash": "358555929d4ff7d33dc1a5895a324e550cfa993e",
+            "message": "Revert \"Merge pull request #32088 from Ryan-Dia\"\n\nThis reverts commit 484aee069e7edaf0cf904d0135ab10b6b8162e70, reversing\nchanges made to 6bd7f0231dcc47e8099000dea301157788fd5b15.\n\nSee gh-32088"
+        },
+        {
+            "hash": "9230a7db16e0e63507cd6ee7fcc88e26438363db",
+            "message": "WebAsyncManager handles disconnected client errors\n\nSee gh-32042"
+        },
+        {
+            "hash": "7e53a1f048fdcc8b8b33c7e07df8af8b3820aaf0",
+            "message": "Re-enable Jaxb2MarshallerTests on JDK 22+\n\nSince the bug in JDK 22-ea builds has been fixed [1], this commit\nre-enables the disabled tests.\n\nVerified using: OpenJDK Runtime Environment (build 22-ea+31-2314)\n\n[1] https://bugs.openjdk.org/browse/JDK-8322214"
+        },
+        {
+            "hash": "45a1f98bd620065ae0740eed05424b429c8917d0",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5faace0eb341032a1c25c1da1f714da1abc44f01",
+            "message": "Predetermine validation groups on initialization\n\nCloses gh-32068"
+        },
+        {
+            "hash": "5656eaccb7245b8a3799529bc774dee907ece4d1",
+            "message": "Avoid bridge resolution for method from unrelated class hierarchy\n\nCloses gh-32087"
+        },
+        {
+            "hash": "3b2f6e74a6baade66ac8389314c5499b60734f55",
+            "message": "Make assertions based on Annotation#toString() lenient\n\nThe behavior for the toString() implementation for annotations changed\nin JDK 19, per my request to the JDK team (see link below).\n\nSpecifically, since JDK 19, the toString() implementation for annotation\nproxies created by the JDK started using canonical names instead of\nbinary names for types.\n\nSee https://bugs.openjdk.org/browse/JDK-8281462"
+        },
+        {
+            "hash": "484aee069e7edaf0cf904d0135ab10b6b8162e70",
+            "message": "Merge pull request #32088 from Ryan-Dia\n\n* pr/32088:\n  Upgrade copyright year of changed file\n  Use count in ParamsRequestCondition#getValueMatchCount\n\nCloses gh-32088"
+        },
+        {
+            "hash": "def70756953ab8f22f9b90825d58ec397806b993",
+            "message": "Upgrade copyright year of changed file\n\nSee gh-32088"
+        },
+        {
+            "hash": "2daa0745611f4989a5dc99619dd4aef541288503",
+            "message": "Use count in ParamsRequestCondition#getValueMatchCount\n\nSee gh-32088"
+        },
+        {
+            "hash": "6bd7f0231dcc47e8099000dea301157788fd5b15",
+            "message": "Avoid double exists() call for common resource resolution\n\nSee gh-30369\nSee gh-18990"
+        },
+        {
+            "hash": "70d9f7c62cc5f698490a926100da7c11503f169e",
+            "message": "Record errors thrown by custom handler in RestTemplate observations\n\nPrior to this commit, the `RestTemplate` observation instrumentation\nwould only record `RestClientException` and `IOException` as errors in\nthe observation. Other types of errors can be thrown by custom\ncomponents, such as `ResponseErrorHandler` and in this case they aren't\nrecorded with the observation.\nAlso, the current instrumentation does not create any observation scope\naround the execution. While this would have a limited benefit as no\napplication code is executed there, developers could set up custom\ncomponents (such as, again, `ResponseErrorHandler`) that could use\ncontextual logging with trace ids.\n\nThis commit ensures that all `Throwable` are recorded as errors with the\nobservations and that an observation `Scope` is created around the\nexecution of the client exchange.\n\nFixes gh-32060"
+        },
+        {
+            "hash": "5856d2e54efe9209e415b0547174cd754473d6cc",
+            "message": "Polish contribution\n\nSee gh-32069"
+        },
+        {
+            "hash": "a8fa98e2a6ddc28febb07303eab644efe3162025",
+            "message": "Remove unnecessary semicolons in enum declarations\n\nCloses gh-32069"
+        },
+        {
+            "hash": "73725905ba847f381b41ec8365935986f192fc14",
+            "message": "Merge pull request #32072 from mnhock\n\n* pr/32072:\n  Use 'Map.getOrDefault' rather than explicit check with fallback\n\nCloses gh-32072"
+        },
+        {
+            "hash": "1e71d3d3631050006d9112a732e95eb9eaaa0e5a",
+            "message": "Use 'Map.getOrDefault' rather than explicit check with fallback\n\nSee gh-32072"
+        },
+        {
+            "hash": "c3127249ac8005dc793034291926088521015a60",
+            "message": "Merge pull request #32071 from mnhock\n\n* pr/32071:\n  Upgrade copyright year of changed file\n  Remove unnecessary conversion to 'String'\n\nCloses gh-32071"
+        },
+        {
+            "hash": "91b980f5cbc32b43685cc247a587007fc7a47f56",
+            "message": "Upgrade copyright year of changed file\n\nSee gh-32071"
+        },
+        {
+            "hash": "d9e86dd68cc24ea57106ee421eec8d1b3de2f199",
+            "message": "Remove unnecessary conversion to 'String'\n\nSee gh-32071"
+        },
+        {
+            "hash": "11c8b22c5a14b8b857f1698177ce6b41c0500c9d",
+            "message": "Polish"
+        },
+        {
+            "hash": "1a52c56bd42c1a9ba8cc8f8849d5f5cb742a97e5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4cc91a2869566eb3c8e2e87ac0890341cee1d1bf",
+            "message": "Ensure inherited @⁠HttpExchange annotation can be overridden in controller\n\nThis commit revises the RequestMappingHandlerMapping implementations in\nSpring MVC and Spring WebFlux to ensure that a @⁠Controller class which\nimplements an interface annotated with @⁠HttpExchange annotations can\ninherit the @⁠HttpExchange declarations from the interface or\noptionally override them locally with @⁠HttpExchange or\n@⁠RequestMapping annotations.\n\nCloses gh-32065"
+        },
+        {
+            "hash": "17cef18760cfb7302531e35560b3daa192658078",
+            "message": "Upgrade Antora extensions versions\n\nSync with the versions used in the docs-build\nbranch.\n\nSee gh-32044"
+        },
+        {
+            "hash": "00bda65848fd111345b333da2479e5f87f4d7bf9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "66974610034724b9f36cded93a7b0a4cfa44d20f",
+            "message": "Reject mixed @⁠RequestMapping and @⁠HttpExchange declarations in MVC & WebFlux\n\nThis commit updates the RequestMappingHandlerMapping implementations in\nSpring MVC and Spring WebFlux so that mixed @⁠RequestMapping and\n@⁠HttpExchange declarations on the same element are rejected.\n\nNote, however, that a @⁠Controller class which implements an interface\nannotated with @⁠HttpExchange annotations can still inherit the\n@⁠HttpExchange declarations from the interface or optionally override\nthem locally with @⁠HttpExchange or @⁠RequestMapping annotations.\n\nSee gh-31962\nSee gh-32049\nCloses gh-32065"
+        },
+        {
+            "hash": "c820e44a995b7a6c4b76af67e51e86f90358c561",
+            "message": "Unwrap request factory when creating RestClient from RestTemplate\n\nThis commit makes sure that, when building a RestClient based on the\nconfiguration of a RestTemplate, the request factory is unwrapped if it\nis a InterceptingClientHttpRequestFactory.\n\nCloses gh-32038"
+        },
+        {
+            "hash": "472dcdb59cfa751908856b6bcd6c353f87260fe7",
+            "message": "Allow JPA entities to be filtered\n\nThis commit provides more control over JPA entities scanning by allowing\nthe result to be filtered.\n\nCloses gh-27892"
+        },
+        {
+            "hash": "6691ff207244ef46cdf18e16df17f3cd19c9ce2a",
+            "message": "Reject multiple @⁠HttpExchange declarations in HTTP interface clients\n\nThis commit updates HttpServiceMethod so that multiple @⁠HttpExchange\ndeclarations on the same element (class or method) are rejected.\n\nCloses gh-32049"
+        },
+        {
+            "hash": "9c6e55939eb90d99629771752f0d6c9b420e58de",
+            "message": "Improve toString of ExponentialBackOff\n\nCloses gh-32061"
+        },
+        {
+            "hash": "7e511931b305edc84eb04a219c277a6c8fdcba59",
+            "message": "Merge pull request #32057 from erichaagdev\n\n* pr/32057:\n  Rename Gradle enterprise badge to Develocity\n\nCloses gh-32057"
+        },
+        {
+            "hash": "4bd898c359efef38b9a25275cf86d729906e5a4c",
+            "message": "Rename Gradle enterprise badge to Develocity\n\nSee gh-32057"
+        },
+        {
+            "hash": "1fba430dfc873fd1bfac9286abee590a9257d46a",
+            "message": "Update HttpExchange Javadoc to mention uses\n\nSee gh-32008"
+        },
+        {
+            "hash": "efe85c0d709448f1495c8ecea66a054faa634e22",
+            "message": "Remove tautological ternary statement"
+        },
+        {
+            "hash": "2ec0c16889d87a50ba8eab02c61abc7308f2d365",
+            "message": "Polishing"
+        },
+        {
+            "hash": "899de4f3bfc373bdf1c0e67c7160331bd056825b",
+            "message": "Upgrade SDK env to Java 17.0.10\n\nSee b9d366d203810658931d85bf8463ca7730b2daea"
+        },
+        {
+            "hash": "d1d9d483fe51b07b699a8462d50b593cbb592756",
+            "message": "Document @⁠HttpExchange support in RequestMappingHandlerMapping"
+        },
+        {
+            "hash": "375e0e6827216ceb38e9bcf0b97b46bb79d79de6",
+            "message": "Handle Content-Length in ShallowEtagHeaderFilter more robustly\n\nThis commit ensures that setting the Content-Length through\nsetHeader(\"Content-Length\", x\") has the same effect as calling\nsetContentLength in the ShallowEtagHeaderFilter. It also filters out\nContent-Type headers similarly to Content-Length.\n\nCloses gh-32039"
+        },
+        {
+            "hash": "b8b31ff8a14af13975541cba41657c08ee64868e",
+            "message": "Reject multiple @⁠HttpExchange declarations in MVC and WebFlux\n\nThis commit updates the RequestMappingHandlerMapping implementations in\nSpring MVC and Spring WebFlux so that multiple @⁠HttpExchange\ndeclarations on the same element are rejected.\n\nCloses gh-32049"
+        },
+        {
+            "hash": "c5c77b93fe6655586da9dd021aabd62b1a70493a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6b905049ebbb395e4043ee8682f4105a6dfe7585",
+            "message": "Polishing\n\nSee gh-31962"
+        },
+        {
+            "hash": "88a7ca0b0ab0d8a96b6a559bb2a829d80fb15ff4",
+            "message": "Rename class-data-sharing.adoc to cds.adoc\n\nCloses gh-32044"
+        },
+        {
+            "hash": "e8012a64c36137789705098a68532999fdd18121",
+            "message": "Upgrade CI image to Ubuntu Jammy 20240111"
+        },
+        {
+            "hash": "b9d366d203810658931d85bf8463ca7730b2daea",
+            "message": "Upgrade CI to JDK 17.0.10+13 21.0.2+14 and 22-ea+31"
+        },
+        {
+            "hash": "f5b0d9509d7cbbc8c16c7d1659b8971b276f6275",
+            "message": "Polish"
+        },
+        {
+            "hash": "699da7c383fc594ef76fcc23a26983f8eadbfd7b",
+            "message": "Log warning if multiple @⁠RequestMapping annotations are declared\n\nIf multiple request mapping annotations are discovered, Spring MVC and\nSpring WebFlux now log a warning similar to the following (without\nnewlines).\n\nMultiple @⁠RequestMapping annotations found on\nvoid org.example.MyController.put(), but only the first will be used:\n[\n@⁠org.springframework.web.bind.annotation.PutMapping(consumes={}, headers={}, name=\"\", params={}, path={\"/put\"}, produces={}, value={\"/put\"}),\n@⁠org.springframework.web.bind.annotation.PostMapping(consumes={}, headers={}, name=\"\", params={}, path={\"/put\"}, produces={}, value={\"/put\"})\n]\n\nCloses gh-31962"
+        },
+        {
+            "hash": "5bf74cae11becd7184a7702744dcd5e19a184985",
+            "message": "Polish documentation for @⁠RequestMapping"
+        },
+        {
+            "hash": "46128cb4b97aef9ec2ff90c3612fe2a5105f585c",
+            "message": "Delete duplicate content"
+        },
+        {
+            "hash": "5dd48fc068b736536a99fafbb091b9130b1e1cf8",
+            "message": "Mention PathPattern in functional router Javadoc\n\nThis commit makes the various supported patterns\nmore discoverable.\n\nCloses gh-32045"
+        },
+        {
+            "hash": "0ada78ad841319f5fe7f93fb61e2be30a331cfad",
+            "message": "Enable RestClient.defaultRequest\n\nThis commit enables the defaultRequest setting in the RestClient\nbuilder.\n\nCloses gh-32028"
+        },
+        {
+            "hash": "682f4715cf56fe727a5ee39645300534e5904a84",
+            "message": "Polishing\n\nSee gh-30393"
+        },
+        {
+            "hash": "c4a34fa26c57a3a22697def02772b0a33f6c2257",
+            "message": "Improve cancel handling in AbstractListenerReadPublisher\n\nCloses gh-30393"
+        },
+        {
+            "hash": "e3f185a696b0d6ca017a83366f24ed692573d14e",
+            "message": "Upgrade to Gradle Enterprise Plugin 3.15\n\nThis reverts commit e1c8a84fec02373b79f9023880a8a8c3dd8ef593 as our\nversion of Gradle Enterprise is not yet compatible with it."
+        },
+        {
+            "hash": "1b312b6f3fb59d5e9a00ac3f4fef63d6971efa3c",
+            "message": "Polish"
+        },
+        {
+            "hash": "dc5a21fbd1d59a573b7385cdeb92d3bc103672a1",
+            "message": "Remove outdated note\n\nSee gh-20606"
+        },
+        {
+            "hash": "e1c8a84fec02373b79f9023880a8a8c3dd8ef593",
+            "message": "Upgrade com.gradle.enterprise plugin to 3.16.1"
+        },
+        {
+            "hash": "410fe409d2d958f47e41094134c51a0d66899f5b",
+            "message": "Upgrade io.spring.ge.conventions plugin to 0.0.15"
+        },
+        {
+            "hash": "e0c5068d0b7b30a1489f92f3aeeb1829b07e963e",
+            "message": "Fix incorrect assertions using json path\n\nCloses gh-32036"
+        },
+        {
+            "hash": "faba044735ad173d96b4b1adab62752b48b2c758",
+            "message": "Polish JsonPathExpectationsHelperTests"
+        },
+        {
+            "hash": "4d885f9aad3ff60f83e956c4ec9364eb9253d146",
+            "message": "Polish"
+        },
+        {
+            "hash": "fdf187ec465da1d8cc04a8f1b4b892a32f346e33",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0c42965fc36f19868fbba382b2e03ed172087438",
+            "message": "Polish"
+        },
+        {
+            "hash": "e1236a8672822f3d88f6658b98e56b178eff996d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7daff59cb164aeb8fcd1a01c4150b8e5e6caca3f",
+            "message": "Fix alias resolution error message in SimpleAliasRegistry\n\nPrior to this commit, the alias resolution error message in\nSimpleAliasRegistry was misleading.\n\nWhen a resolution conflict is detected, the IllegalStateException\nthrown by resolveAliases(...) now states that the resolved alias is\nalready registered for an `existingName` instead of the `registeredName`.\n\nSee gh-31353\nCloses gh-32025"
+        },
+        {
+            "hash": "5d309d572469655179b513cd36a35a90824a83c2",
+            "message": "Improve SimpleAliasRegistryTests\n\nThis commit improves SimpleAliasRegistryTests in the following ways.\n\n- Some existing methods have been split up into smaller test methods\n  which focus on a single use case.\n\n- The use of Mockito mocks has been replaced by a hand-crafted\n  StubStringValueResolver which ensures that existing aliases and names\n  are not accidentally replaced by null thereby removing their removing\n  there mappings inadvertently.\n\n- Several test methods now include inline comments that document the\n  current state of the aliasMap in order to clarify what is happening\n  behind the scenes in the ConcurrentHashMap.\n\n- Several test methods warn that the current expectations are based on\n  ConcurrentHashMap iteration order!\n\n- New @⁠ParameterizedTest which is currently @⁠Disabled but\n  demonstrates that complex use cases involving placeholder replacement\n  can be supported consistently -- regardless of the values of the\n  aliases involved -- but only if alias registration order is honored.\n\nCloses gh-31353"
+        },
+        {
+            "hash": "eeb145ee0b860b29cfc6109704305821fc9125b7",
+            "message": "Fix link to global appendix"
+        },
+        {
+            "hash": "9f5cda958e11e52c4f904e8cdd67b3df65f5f2df",
+            "message": "Enable table striping by default in the reference manual\n\nCloses gh-32022"
+        },
+        {
+            "hash": "47779d6a53e09ad60cf7ad6ba4a880d4623968bd",
+            "message": "Double-checked lock in ChannelSendOperator#request\n\nCloses gh-31865"
+        },
+        {
+            "hash": "2a43cc7574352652aa193c29f3e0878590ffde76",
+            "message": "Polish"
+        },
+        {
+            "hash": "c4831d2586de5563a637ef307d017f4d8314b2e5",
+            "message": "Document that Conditions can be ordered\n\nCloses gh-32019"
+        },
+        {
+            "hash": "e4569defd9bc8bd4e59e32ba21f741e7198f7c30",
+            "message": "Polish Javadoc for Condition"
+        },
+        {
+            "hash": "65cb59517d9315143444121c2bf53c6085e44bac",
+            "message": "Polishing contribution\n\nCloses gh-32008"
+        },
+        {
+            "hash": "b729008f4d847d1f39a966670f59425e917c9b24",
+            "message": "Improve docs on server use of @HttpExchange\n\nSee gh-32008"
+        },
+        {
+            "hash": "122d8b9e4eeb269405f77811ac6da807fcb41141",
+            "message": "Polish"
+        },
+        {
+            "hash": "b16f379788b8b56e4a744e5645f8f524f343da57",
+            "message": "Improve RestTemplate Javadoc\n\nSee gh-32016"
+        },
+        {
+            "hash": "c868bc554f1ff6d9ba7f2c39ca05c4c8d5366594",
+            "message": "Refine Kotlin internal modifier impact documentation\n\nThis commit is a refinement of 01b28561149127eeb7c7ec5d3977d83877cee6d4.\n\nCloses gh-32010"
+        },
+        {
+            "hash": "5c77c3739ea2eaf292639a702f721c0b5a73a277",
+            "message": "Find destroy methods in superclass interfaces\n\nRelated tests will be added in\nhttps://github.com/spring-projects/spring-aot-smoke-tests.\n\nCloses gh-32006"
+        },
+        {
+            "hash": "ee04442be7d4caa0bbfd658240c708565dffe913",
+            "message": "Polish"
+        },
+        {
+            "hash": "f067ff862bbf44e77a93f82b9af992e8c2097b87",
+            "message": "Merge pull request #32015 from wfouche\n\n* pr/32015:\n  Upgrade to JMH 1.37\n\nCloses gh-32015"
+        },
+        {
+            "hash": "68864674cca2b605e7026c97219575f5fa14b837",
+            "message": "Upgrade to JMH 1.37\n\nSee gh-32015"
+        },
+        {
+            "hash": "f1a335708a0ced4fc97cb2e1969a9887e734a70a",
+            "message": "Polish"
+        },
+        {
+            "hash": "d786635239e1518ef3891239e7631e6ab7fecfb8",
+            "message": "Next development version (v6.1.4-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32205",
+            "title": "Make SmartLifecycle `phase` value configurable in STOMP message handling components"
+        },
+        {
+            "number": "32270",
+            "title": "Cannot send Server-Sent Events without data using WebMvc.fn SseBuilder"
+        },
+        {
+            "number": "32264",
+            "title": "Use double dot in \"META-INF/aop.xml\" documentation"
+        },
+        {
+            "number": "31449",
+            "title": "Allow repeatable writes in StreamingHttpOutputMessage "
+        },
+        {
+            "number": "32258",
+            "title": "Document that functions are variables in SpEL EvaluationContexts"
+        },
+        {
+            "number": "32238",
+            "title": "`@JsonDeserialize(builder = ...)` does not work in GraalVM native image"
+        },
+        {
+            "number": "32256",
+            "title": "Add missing RequestPredicate variants in coRouter"
+        },
+        {
+            "number": "32254",
+            "title": "Fix `pathExtension` null-safety in Kotlin DSLs"
+        },
+        {
+            "number": "27257",
+            "title": "Provide and document a way to handle single-page application redirects"
+        },
+        {
+            "number": "32253",
+            "title": "`SimpleEvaluationContext.Builder` is not `final` and has a `public` constructor"
+        },
+        {
+            "number": "32195",
+            "title": "Improve client and server handling of STOMP heartbeat failures "
+        },
+        {
+            "number": "32251",
+            "title": "Adapt ConcurrencyThrottleSupport to use ReentrantLock for better virtual thread support"
+        },
+        {
+            "number": "32211",
+            "title": "Consistent parsing of user information in UriComponentsBuilder"
+        },
+        {
+            "number": "32240",
+            "title": "Add section on AOT best practices about registering singletons"
+        },
+        {
+            "number": "32241",
+            "title": "Add section on AOT best practices about registering  beans programmatically"
+        },
+        {
+            "number": "32244",
+            "title": "Create optimized versions of request predicates"
+        },
+        {
+            "number": "32226",
+            "title": "ThreadPoolTaskExecutor rejecting tasks as soon as the context has been closed can lead to exceptions during web app shutdown"
+        },
+        {
+            "number": "21827",
+            "title": "Document safe navigation semantics within compound expressions in SpEL"
+        },
+        {
+            "number": "32208",
+            "title": "Document safe navigation support for collection selection/projection in SpEL"
+        },
+        {
+            "number": "32239",
+            "title": "Include function name in `SpelMessage.INCORRECT_NUMBER_OF_ARGUMENTS_TO_FUNCTION`"
+        },
+        {
+            "number": "32227",
+            "title": "Add Coroutines support to `NonReactiveHandlerMethodPredicate`"
+        },
+        {
+            "number": "32221",
+            "title": "RouterFunctionMapping does not implement MatchableHandlerMapping"
+        },
+        {
+            "number": "31955",
+            "title": "`RequestPredicate` fails with WebFlux 6.1.2"
+        },
+        {
+            "number": "32180",
+            "title": "Unable to use baseUrl on builders created from RestTemplate"
+        },
+        {
+            "number": "30463",
+            "title": "Using types in `@SessionAttributes` is sometimes not reflected in the model"
+        },
+        {
+            "number": "32206",
+            "title": "\"IllegalStateException: Cannot call sendError() after the response has been committed\" when IOException is thrown during resolving method argument values on Tomcat >= 10.1.16"
+        },
+        {
+            "number": "32199",
+            "title": "Let `BeanPropertyRowMapper` subclasses customize mapped names"
+        },
+        {
+            "number": "32122",
+            "title": "Validation of `PartEventHttpMessageReader#maxParts` is off by one"
+        },
+        {
+            "number": "32192",
+            "title": "Upgrade to Gradle 8.6"
+        },
+        {
+            "number": "20779",
+            "title": "Document limitation of SpEL regarding minimum values for numeric literals"
+        },
+        {
+            "number": "32182",
+            "title": "Document support for overloading operators in SpEL"
+        },
+        {
+            "number": "32184",
+            "title": "No longer able to override the `toString()` in `HandlerMethod` from `6.1.3`"
+        },
+        {
+            "number": "32181",
+            "title": "6.1.3 regression: aspect not called with multiple inheritance"
+        },
+        {
+            "number": "21843",
+            "title": "`@annotation` pointcut is not matched with complex hierarchy and generics against classes compiled by Eclipse [SPR-17310]"
+        },
+        {
+            "number": "32140",
+            "title": " Document `between` operator in SpEL"
+        },
+        {
+            "number": "32171",
+            "title": "MessageDeliveryException on shutdown with open WebSocket connections"
+        },
+        {
+            "number": "32154",
+            "title": "AutoGrow not applied for nested map values"
+        },
+        {
+            "number": "32161",
+            "title": "Support binary streams with `JdbcClient`"
+        },
+        {
+            "number": "32159",
+            "title": "With XML configuration, setter selection can be random in case of overloaded setter methods (e.g. on SimpleClientHttpRequestFactory in 6.1.3 from convertForProperty method)"
+        },
+        {
+            "number": "31872",
+            "title": "With XML configuration, setter selection can be random in case of overloaded setter methods (e.g. on SimpleClientHttpRequestFactory in 6.1)"
+        },
+        {
+            "number": "32155",
+            "title": "Cannot process AOT when spring-orm is on the classpath without JPA"
+        },
+        {
+            "number": "32110",
+            "title": "Reuse `MapPropertySource` for `DynamicValuesPropertySource` implementation (as a template for custom variants)"
+        },
+        {
+            "number": "32109",
+            "title": "Graceful shutdown does not cancel @Scheduled tasks"
+        },
+        {
+            "number": "32128",
+            "title": "Document cron-vs-quartz parsing convention for dayOfWeek part in CronExpression"
+        },
+        {
+            "number": "32147",
+            "title": "SpEL's `Indexer.setArrayElement()` incorrectly requests conversion to wrapper instead of primitive"
+        },
+        {
+            "number": "32136",
+            "title": "Document increment and decrement operators in SpEL"
+        },
+        {
+            "number": "32144",
+            "title": "SpEL increment and decrement operators do not generate prefix AST representation"
+        },
+        {
+            "number": "32124",
+            "title": "Cannot use `SimpleJdbcInsert` with catalog name"
+        },
+        {
+            "number": "32137",
+            "title": "Document repeat and character subtraction `String` operators in SpEL"
+        },
+        {
+            "number": "32138",
+            "title": "Update documentation for supported letters in variable names in SpEL"
+        },
+        {
+            "number": "32135",
+            "title": "Annotate core functional SPIs in SpEL with `@FunctionalInterface`"
+        },
+        {
+            "number": "32081",
+            "title": "Make it possible to configure any TaskExecutor through ChannelRegistration"
+        },
+        {
+            "number": "32106",
+            "title": "QualifierAnnotationAutowireCandidateResolver.checkQualifier does identity checks when comparing arrays used as qualifier fields"
+        },
+        {
+            "number": "32104",
+            "title": "Improve Spring AOP performance for methods without specific advice"
+        },
+        {
+            "number": "31931",
+            "title": "Upgrade to Jetty Reactive HttpClient 4.0.2"
+        },
+        {
+            "number": "32100",
+            "title": "Guard against multiple body subscriptions in Jetty and JDK reactive responses"
+        },
+        {
+            "number": "32082",
+            "title": "Spring MVC and WebFlux docs need to say method validation applies if any method parameter has constraint annotations  "
+        },
+        {
+            "number": "31609",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "31646",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "28546",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "31974",
+            "title": "Add CORS support for Private Network Access"
+        },
+        {
+            "number": "26720",
+            "title": "MockMvcClientHttpRequestFactory swallows ServletResponse.errorMessage"
+        },
+        {
+            "number": "32042",
+            "title": "ClientAbortException from StreamingResponseBody can cause infinite loop of dispatches"
+        },
+        {
+            "number": "32068",
+            "title": "Avoid reflecting to obtain `validationGroups`  every time the call is made"
+        },
+        {
+            "number": "32087",
+            "title": "Parameter based cache keys on repository methods can't resolve after 6.1.2->6.1.3"
+        },
+        {
+            "number": "18990",
+            "title": "Support additional file formats in `ReloadableResourceBundleMessageSource`"
+        },
+        {
+            "number": "32060",
+            "title": "Exceptions thrown by custom error handlers are not recorded in RestTemplate observations"
+        },
+        {
+            "number": "32065",
+            "title": "Reject `@RequestMapping` and `@HttpExchange` declarations on the same element"
+        },
+        {
+            "number": "32044",
+            "title": "Rename `class-data-sharing.html` to `cds.html`"
+        },
+        {
+            "number": "31962",
+            "title": "Log warning if multiple `@PostMapping`, `@GetMapping`, etc. annotations are declared"
+        },
+        {
+            "number": "32049",
+            "title": "Reject multiple `@HttpExchange` declarations on the same element"
+        },
+        {
+            "number": "32038",
+            "title": "`RestClient` calls interceptors from `RestTemplate` twice"
+        },
+        {
+            "number": "27892",
+            "title": "Provide more control over JPA entities scanning"
+        },
+        {
+            "number": "32061",
+            "title": "Missing toString for ExponentialBackOff"
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32045",
+            "title": "Add `@see PathPattern` to function router methods with a pattern parameter"
+        },
+        {
+            "number": "32028",
+            "title": "`DefaultRestClientBuilder.defaultRequest(...)` doesn't do anything"
+        },
+        {
+            "number": "30393",
+            "title": "Improve read publisher cancel handling to avoid connections in CLOSE_WAIT state with WebSocket on Tomcat "
+        },
+        {
+            "number": "20606",
+            "title": "Unable to use WebTestClient with mock server in Kotlin"
+        },
+        {
+            "number": "32036",
+            "title": "Tests using jsonPath wrongly use formatted arguments as the expected value"
+        },
+        {
+            "number": "31353",
+            "title": "Improve `SimpleAliasRegistryTests`"
+        },
+        {
+            "number": "32025",
+            "title": "Alias resolution error message in `SimpleAliasRegistry` is misleading"
+        },
+        {
+            "number": "32022",
+            "title": "Enable table striping by default in the reference manual"
+        },
+        {
+            "number": "31865",
+            "title": "ChannelSendOperator.WriteBarrier race condition in request(long) method leads to response being dropped"
+        },
+        {
+            "number": "32019",
+            "title": "Document that Conditions can be ordered"
+        },
+        {
+            "number": "32016",
+            "title": "Plan for Synchorized Rest Clients RestTemplate"
+        },
+        {
+            "number": "32006",
+            "title": "Destroy method not found in Native image for `ExecutorService` Bean type"
+        }
+    ]
+}

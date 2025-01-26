@@ -1,0 +1,34 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.16.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 121.75880787037038,
+    "commits_info": [
+        {
+            "hash": "45a78a03a38fd2408f0ea7a3e1342fbffcfb9237",
+            "message": "2.16.1 release (previous 2.16.0) + release notes updated by CI build 3261\n\n[ci skip-release]"
+        },
+        {
+            "hash": "cd5265ac9c1bc0e7b30f5f8e28c6d342f7451ab8",
+            "message": "Merge pull request #1258 from mockito/singleton-lock\n\nPrevent class loading race condition\r\n\r\nFixes #1067"
+        },
+        {
+            "hash": "865cf8534417ecd95a345d4a06c74c5de2d0cd7d",
+            "message": "Simplified locking during class generation\n\nLet's optimise the implementation for correctness rather than performance. Especially if we don't have evidence that using classloader objects as the monitor makes Mockito faster. I made tests on our own build and the execution of tests takes exactly the same."
+        },
+        {
+            "hash": "42163027cee6314935a7720a36f22c70c4937f63",
+            "message": "Addresses #1067: offer singleton class loading lock to avoid loading races."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1067",
+            "title": "Deadlock after upgrading to Mockito 2 and parallel tests execution"
+        }
+    ]
+}

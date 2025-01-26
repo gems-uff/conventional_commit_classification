@@ -1,0 +1,690 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 130,
+    "start_delay": 0.0,
+    "duration": 20.79923611111111,
+    "commits_info": [
+        {
+            "hash": "0fbc94fae002a2bf25b62b0591dcadffab817b94",
+            "message": "Release v6.0.3"
+        },
+        {
+            "hash": "6e08c56076280021542ee086a6ddd971a256c5ca",
+            "message": "Improve Javadoc for RepeatableContainers"
+        },
+        {
+            "hash": "fb6d3f5b5c3a0a13a48811b9c72a7b9cb7218dfc",
+            "message": "Remove duplicated test code"
+        },
+        {
+            "hash": "6fe565278334d31dd7bdae3081f7fce4620a1d6a",
+            "message": "Support non-standard HTTP methods in FrameworkServlet\n\nThis commit ensures that HTTP methods not supported by HttpServlet, for\ninstance WebDAV methods, are still supported in FrameworkServlet.\n\nCloses gh-29689"
+        },
+        {
+            "hash": "ca68bbc9ff050097e3d383222951a33e64d85be2",
+            "message": "Upgrade to Reactor 2022.0.1\n\nCloses gh-29679"
+        },
+        {
+            "hash": "e7bcb48e579d2f7aa814f1f0c739f67e1b56988d",
+            "message": "Remove obsolete AttributeMethods.hasOnlyValueAttribute() method\n\nSee gh-29685"
+        },
+        {
+            "hash": "433b1c480cdc0f4dbe2a4d4a4686461344d79b09",
+            "message": "Support repeatable annotation containers with multiple attributes\n\nPrior to this commit, there was a bug in the implementation of\nStandardRepeatableContainers.computeRepeatedAnnotationsMethod() which\nhas existed since Spring Framework 5.2 (when\nStandardRepeatableContainers was introduced). Specifically,\nStandardRepeatableContainers ignored any repeatable container\nannotation if it declared attributes other than `value()`. However,\nJava permits any number of attributes in a repeatable container\nannotation.\n\nIn addition, the changes made in conjunction with gh-20279 made the bug\nin StandardRepeatableContainers apparent when using the\ngetMergedRepeatableAnnotations() or findMergedRepeatableAnnotations()\nmethod in AnnotatedElementUtils, resulting in regressions for the\nbehavior of those two methods.\n\nThis commit fixes the regressions and bug by altering the logic in\nStandardRepeatableContainers.computeRepeatedAnnotationsMethod() so that\nit explicitly looks for the `value()` method and ignores any other\nmethods declared in a repeatable container annotation candidate.\n\nCloses gh-29685"
+        },
+        {
+            "hash": "0b08246760fc5aee5eb4d5fc25ce3a512d6bab16",
+            "message": "Revise RepeatableContainersTests"
+        },
+        {
+            "hash": "c7bdfbea4f5076114b8d3a08bd289af45ff291a6",
+            "message": "Add missing Javadoc\n\nSee gh-29574"
+        },
+        {
+            "hash": "618989d3175e883cb2efbea9df93048a266ee91b",
+            "message": "Update copyright date"
+        },
+        {
+            "hash": "7fe78b745f89bd516cb3191ff8e7a61aa955e22d",
+            "message": "Polish Javadoc"
+        },
+        {
+            "hash": "98f152e8d568240ae99a64057b6ac13669ea62a5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d74191427eca4420d2d0d9a8e69cd0f5d25204a5",
+            "message": "Avoid NPE on BeanDescriptor access with SimpleBeanInfoFactory\n\nCloses gh-29681"
+        },
+        {
+            "hash": "4c69892f39989ab26579e987d4c96ce01a0bea62",
+            "message": "Detect SQL state 23505/40001 as DuplicateKeyException/CannotAcquireLockException\n\nFavors PessimisticLockingFailureException over plain ConcurrencyFailureException.\nDeprecates CannotSerializeTransactionException and DeadlockLoserDataAccessException.\n\nCloses gh-29511\nCloses gh-29675"
+        },
+        {
+            "hash": "c79ae0c8422880586dbb52f0d18ca81f5e4ea4aa",
+            "message": "Align multipart codecs on client and server\n\nThis commit ensures that the same multipart codecs are registered on\nboth client and server. Previously, only the client enabled only sending\n multipart, and the server only receiving.\n\nCloses gh-29630"
+        },
+        {
+            "hash": "46fc28fd1a26f1eed58561e2855761ceeeabc968",
+            "message": "Clean up Javadoc and source code regarding \" .\" typos"
+        },
+        {
+            "hash": "f8a1dac5931d6cbcb5bda83c0a87819a0e85d5b1",
+            "message": "Use consistent visibility for ResponseEntityExceptionHandler.getMessageSource()\n\nSee gh-29574\r\nCloses gh-29676"
+        },
+        {
+            "hash": "9712bb62fdc772144c1876e5210eeec77c31e026",
+            "message": "Upgrade optional dependencies"
+        },
+        {
+            "hash": "e85f6342a222872a560af902f24837a4f4695f92",
+            "message": "Start building against Reactor 2022.0.1\n\nSee gh-29679"
+        },
+        {
+            "hash": "7199782d45e6d9016232951ff42094133ca9c03a",
+            "message": "Upgrade to Micrometer 1.10.2\n\nCloses gh-29678"
+        },
+        {
+            "hash": "5ed4a14e2b27b628a3150631a9e5c9f54ca52133",
+            "message": "Make @ModelAttribute and @InitBinder reflective\n\nCloses gh-29572"
+        },
+        {
+            "hash": "b27735d4a6ab6f0f17174e2cd1ffae1a41dbc219",
+            "message": "Refine BindingReflectionHintsRegistrar Kotlin support\n\nCloses gh-29593"
+        },
+        {
+            "hash": "dc5a773b2b9fd3bf7278d8a48438d224711d95e9",
+            "message": "Support properties on records in BindingReflectionHintsRegistrar\n\nCloses gh-29571"
+        },
+        {
+            "hash": "2b6f3caff4f3f9eb784c583c5521987fe6c66ceb",
+            "message": "Remove dead code in MockClientHttpRequest"
+        },
+        {
+            "hash": "83eb8ac0eaada42b3f94819f02eff7fbf8e0019f",
+            "message": "Introduce additional constructors in MockClientHttp[Request|Response]\n\nThis commit introduces additional constructors in MockClientHttpRequest\nand MockClientHttpResponse that were previously only present in the\ninternal \"test fixtures\" in spring-web.\n\nThis commit also aligns the mocks in spring-test with the test fixtures\nin spring-web to simplify continued maintenance of the mocks and test\nfixtures.\n\nCloses gh-29670"
+        },
+        {
+            "hash": "9b38e43c1754563465c275c253fb4b6fd1cf9345",
+            "message": "Use URI#create instead of URI constructor where feasible in spring-websocket"
+        },
+        {
+            "hash": "284cb12f8fb4c5cedb4bcb25b0c52f702c5f083e",
+            "message": "Use URI#create instead of URI constructor where feasible in spring-webmvc"
+        },
+        {
+            "hash": "67644a28b6bb344538527de7a0404560c8f6f1a3",
+            "message": "Use URI#create instead of URI constructor where feasible in spring-webflux"
+        },
+        {
+            "hash": "1b57f2bda58f7aef6f1b249d74b47971e0c9b05e",
+            "message": "Use URI#create instead of URI constructor where feasible in spring-web"
+        },
+        {
+            "hash": "a1a140f7d5492943276cf0b837ae9f80948aa244",
+            "message": "Use URI#create instead of URI constructor where feasible in spring-test"
+        },
+        {
+            "hash": "4caf3c8ce09fa8ccf5063ad1061417086ba00ecb",
+            "message": "Polish tests in spring-test"
+        },
+        {
+            "hash": "485c80fcf3bb154aeac911371457a27c664a330f",
+            "message": "Apply 'instanceof pattern matching' in spring-test and Servlet mocks"
+        },
+        {
+            "hash": "aae46263cc844f5240a977a23ee0851f1a463669",
+            "message": "Restore top-level read permission for backport bot"
+        },
+        {
+            "hash": "39d4d2041a2d40e94f62fcbcc8ac0151c0fc462f",
+            "message": "Polishing contribution\n\nCloses gh-29634"
+        },
+        {
+            "hash": "5ac97b16a83fe32439adbe4852a9fb9b6254efb6",
+            "message": "Optimize object creation PartialMatchHelper\n\nSee gh-29634"
+        },
+        {
+            "hash": "f457c17c78424a048f1adfc4d83abdf57fd30f3f",
+            "message": "Remove top-level permissions from backport-bot.yml"
+        },
+        {
+            "hash": "b0b2bbc85720c550305f3f9f1e466bdb42e034ed",
+            "message": "Polish CGLIB fork\n\n- primarily automated \"clean up\" using Eclipse IDE"
+        },
+        {
+            "hash": "69f47e7700137397c883159a0716f9cd574b55c0",
+            "message": "Polishing\n\n- primarily automated \"clean up\" using Eclipse IDE"
+        },
+        {
+            "hash": "52af5c2b3831b1c27608563dd5bd29b72ea08dab",
+            "message": "Support arrays in AST string representations of SpEL expressions\n\nPrior to this commit, SpEL's ConstructorReference did not provide\nsupport for arrays when generating a string representation of the\ninternal AST. For example, 'new String[3]' was represented as 'new\nString()' instead of 'new String[3]'.\n\nThis commit introduces support for standard array construction and array\nconstruction with initializers in ConstructorReference's toStringAST()\nimplementation.\n\nCloses gh-29665"
+        },
+        {
+            "hash": "404661d5cb721b40e7cffc4e025d0e86c7aec3a5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f07a4587bbe8554a9bd3f39d91a293f487f28c1a",
+            "message": "Apply 'instanceof pattern matching' in spring-expression"
+        },
+        {
+            "hash": "114d6a925639d9c1194c8a7562381001633a3820",
+            "message": "Apply 'instanceof pattern matching' in spring-jdbc"
+        },
+        {
+            "hash": "73a18046c3945bcd296fe0b3a82ad3fec8812fa6",
+            "message": "Fix SpEL support for quotes within String literals\n\nPrior to this commit, there were two bugs in the support for quotes\nwithin String literals in SpEL expressions.\n\n- Two double quotes (\"\") or two single quotes ('') were always replaced\n  with one double quote or one single quote, respectively, regardless\n  of which quote character was used to enclose the original String\n  literal. This resulted in the loss of one of the double quotes when\n  the String literal was enclosed in single quotes, and vice versa. For\n  example, 'x \"\" y' became 'x \" y'.\n\n- A single quote which was properly escaped in a String literal\n  enclosed within single quotes was not escaped in the AST string\n  representation of the expression. For example, 'x '' y' became 'x ' y'.\n\nThis commit fixes both of these related issues in StringLiteral and\noverhauls the structure of ParsingTests.\n\nCloses gh-29604, gh-28356"
+        },
+        {
+            "hash": "c899af0e0390b48b84920fcc086bc651dcdf2fa8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "098c924e329ba43c5f6d346ccba5c1e1a58a65ad",
+            "message": "Introduce @Suite classes for individual modules"
+        },
+        {
+            "hash": "4289a64e24458f04cd63288af7a9e0afb3b62755",
+            "message": "Improve Javadoc for SqlLobValue"
+        },
+        {
+            "hash": "761576203914b280484df499d489c477bbc8cb08",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "d601f3196a46c7a97988192ddcaa3383bee97c3d",
+            "message": "Fix BindingReflectionHintsRegistrar anonymous classes support\n\nThis commit ensures that giving an anonymous class for reflection hints\nregistration does not result in a NullPointerException, since the\ncanonical name of anonymous classes is null.\n\nFixes gh-29657"
+        },
+        {
+            "hash": "92a6e7ddcdf36dd2bf2657c9f54dc230a4dd8ab5",
+            "message": "Fix InputStream violation in DataBufferInputStream\n\nThis commit fixes an issue in DataBufferInputStream::mark, which before\ndid not follow the contract defined by InputStream.\n\nCloses gh-29642"
+        },
+        {
+            "hash": "c79474d269312d75d8540cb962640e8476d3796e",
+            "message": "Polish var-args declarations\n\nCloses gh-29640"
+        },
+        {
+            "hash": "f4bc9ffb98456b67cd4d51046bfab56cbfbccde5",
+            "message": "Reintroduce component index support for Jakarta annotations\n\nSpring Framework 6.0 GA introduced a regression in the component index\nsupport for Jakarta annotations such as @Named and @ManagedBean.\n\nPrior to this commit, @Named and @ManagedBean components were\nregistered in the component index at build time; however, component\nscanning failed to find those component at run time.\n\nThis commit updates ClassPathScanningCandidateComponentProvider so that\n`jakarta.*` annotation types are once again supported for component\nscanning via the component index at run time.\n\nCloses gh-29641"
+        },
+        {
+            "hash": "e124e802a30a8949380992eb6d1689bb092ae354",
+            "message": "Polishing"
+        },
+        {
+            "hash": "348cc012841a1d94de530dcb2297b42cc659138c",
+            "message": "Rename MultipartWebClientIntegrationTests classes to avoid duplicate names"
+        },
+        {
+            "hash": "9f7a510f9027f4a2c29072e7e51156d765337638",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f64397d822ca0b59e0498bbfe5bd9b2968f6aa4b",
+            "message": "Apply \"instanceof pattern matching\" in spring-webflux\n\nCloses gh-29635"
+        },
+        {
+            "hash": "918edaba2efe8705445bc97617e362b248392f6c",
+            "message": "Add convenience methods for binding error messages\n\nCloses gh-29574"
+        },
+        {
+            "hash": "5214bd309370e328ee874a50144af2e00787f7fe",
+            "message": "Fix issue with getHeaders in NoHandlerFoundException\n\nCloses gh-29626"
+        },
+        {
+            "hash": "752ef6f4560aeba5b2352e1d38b8550322cd3ecb",
+            "message": "Fall back to JdkClientHttpConnector as ClientHttpConnector"
+        },
+        {
+            "hash": "bea1980e22311423d29497a117b6458369b3680d",
+            "message": "Correct (again) permissions key in backport bot config"
+        },
+        {
+            "hash": "f3360e4ee2fbcf242f4b12c0240632056c55a25f",
+            "message": "Correct permissions key in backport bot config"
+        },
+        {
+            "hash": "8330bd424b2257cd33b9819ce1737e519ee90fd8",
+            "message": "Add write permission in backport bot config"
+        },
+        {
+            "hash": "507c9697fbdca95305d6077084e85f38287a030c",
+            "message": "Correct event name in backport bot config"
+        },
+        {
+            "hash": "52c073724dc65fd989b27131ce3e9474f0bacd6a",
+            "message": "Enable backport bot for pull requests"
+        },
+        {
+            "hash": "de07ad47f1c328dd22744e57bd0573d32026a4ac",
+            "message": "Polishing, suppression of deprecation warnings, copyright headers, etc."
+        },
+        {
+            "hash": "93ea2e1df95eeb00f2475c7a5360c4a293a490ab",
+            "message": "Push canWrite down into MultipartHttpMessageWriter\n\nThe implementation in the base class only matches the\nMultipartHttpMessageWriter subclass. The other two override it anyway.\n\nCloses gh-29631"
+        },
+        {
+            "hash": "a7bf14b3641e9147881336a81bae5b1008db29b8",
+            "message": "Fix canWrite of PartHttpMessageWriter\n\nSee gh-29631"
+        },
+        {
+            "hash": "7899fa3b0a5578d2e6a2608ee27f70c5b4107fef",
+            "message": "Polishing contribution\n\nCloses gh-29622"
+        },
+        {
+            "hash": "c1da2a4e73fc149b8ce0dbc46f9bc475381b94a2",
+            "message": "Improve Netty code sample\n\nSee gh-29622"
+        },
+        {
+            "hash": "db53b618c12da87b1bd7bea85f11a2f94015a0b2",
+            "message": "Simplify form data handling in HttpRequestValues\n\nCloses gh-29615"
+        },
+        {
+            "hash": "913163884a9d766abf7672fbcb4b1d6cac34d95e",
+            "message": "Improve invalid Content-Type handling in WebFlux\n\nCloses gh-29565"
+        },
+        {
+            "hash": "4a555aaef155a4913340065937bb98649acd7a65",
+            "message": "Reduce heap memory usage in ConcurrentLruCache\n\nPrior to this commit, the `ConcurrentLruCache` implementation would use\narrays of `AtomicReference` as operation buffers, and the buffer count\nwould be calculated with the nearest power of two for the CPU count.\n\nThis can result in significant heap memory usage as each\n`AtomicReference` buffer entry adds to the memory pressure. As seen in\nFasterXML/jackson-databind#3665, this can add a significant overhead for\nno real added benefit for the current use case.\n\nThis commit changes the current implementation to use\n`AtomicReferenceArray` as buffers and reduce the number of buffers.\nJMH benchmarks results are within the error margin so we can assume that\nthis does not change the performance characteristics for the typical use\ncase in Spring Framework.\n\nFixes gh-29520"
+        },
+        {
+            "hash": "e9ada8d15c1275fea37dfdb62249f791df4ede80",
+            "message": "Upgrade JMH build plugins\n\nThis commit upgrades the Gradle JMH plugin to 0.6.8 and the companion\nJMH version to 1.36."
+        },
+        {
+            "hash": "63d841664c4b7b11451c25104dc0d66c220ba24f",
+            "message": "Polish ref docs build"
+        },
+        {
+            "hash": "9779d25d98114a6c6664dd56a9c4d981a3d42bb2",
+            "message": "Revise PDF ref docs to include TOC, authors, and legal sections"
+        },
+        {
+            "hash": "89d0c6b962f0feb5dc1c85f5f9c587c6cb5aa654",
+            "message": "Do not refer to HTML ref docs from HTML ref docs"
+        },
+        {
+            "hash": "20da0835b3b0e084b5a8e52f8f78689ab84d53d4",
+            "message": "Polish overview for consistency"
+        },
+        {
+            "hash": "4f232a90035de9ddc98a7a3402e1d20997d87600",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "c24a51323d1cfe2f535f52ec2a709110246e4a99",
+            "message": "Reinstate test for JmxUtils.locateMBeanServer()"
+        },
+        {
+            "hash": "69d022712b93eab33ffc79082f19243b3920fd2c",
+            "message": "Polish Javadoc for ErrorResponse etc."
+        },
+        {
+            "hash": "aa1f3d1681c314d224e4a406d7e7e4d04465b793",
+            "message": "Apply \"instanceof pattern matching\""
+        },
+        {
+            "hash": "b366cd352e62f5e5f57de37c63366d3b41eeb2c3",
+            "message": "Fix ErrorResponse#type documentation\n\nCloses gh-29632"
+        },
+        {
+            "hash": "ac667a1e2b24baa432653603aba8ae81218f7006",
+            "message": "Upgrade to Apache HttpClient 5.2\n\nIncludes JRuby 9.4, Groovy 4.0.6, Hibernate ORM 5.6.14, HSQLDB 2.7.1, SLF4J 2.0.5, Caffeine 3.1.2, Gson 2.10, POI 5.2.3, Protobuf 3.21.10, WebJars Locator 0.52, HtmlUnit 2.67, Mockito 4.9, Checkstyle 10.5\n\nCloses gh-29627"
+        },
+        {
+            "hash": "a09f93768a7d2ee2ce675d019bf6e8a660a18628",
+            "message": "Fix URI override for HttpExchange\n\nCloses gh-29624"
+        },
+        {
+            "hash": "0ccd2f8b8749dfd9c019b14f05ef28f7c993833e",
+            "message": "Deprecate GraphQL media type in favor of new one\n\nThis commit deprecates the `\"application/graphql+json\"` media type in\nfavor of the new `\"application/graphql-response+json\"`, since the former\nhas been removed in graphql/graphql-over-http#215.\n\nCloses gh-29617"
+        },
+        {
+            "hash": "b1fdb148d0ed2a43b0ee7a57f93e03f36705aa01",
+            "message": "ResponseStatusException delegates to protected constructor\n\nThis ensures that by default the reason is used to set the \"detail\"\nfield. It's a follow-up fix to a27f2e994b632a63ca1bbd6f3de5d9b60246ccaa\nwhich resolved the issue partially.\n\nCloses gh-29608"
+        },
+        {
+            "hash": "955ca4d1462f40c23197c827bf20dea46c699830",
+            "message": "Revised support for Jetty 12 (tested against 12.0.0.alpha2)\n\nAvoids HttpFields optimization completely, relying on Servlet header access instead.\nServletServerHttpResponse provides applyHeaders/adaptHeaders split for better reuse.\n\nSee gh-29575"
+        },
+        {
+            "hash": "d5732fed451416dc3d2f35f2b77186329f3910f6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4c7b04e32a0b17eb8e2d670a6a6319012770d535",
+            "message": "Use resolved factory method return type for supplier code generation\n\nCloses gh-29598"
+        },
+        {
+            "hash": "74ec10bf3a849e803ba5bb4e7baddd64f87ddcdb",
+            "message": "Polish\n\nCloses gh-29619"
+        },
+        {
+            "hash": "dd6cb1b728c88e286f11c729f70856f1cdaf146e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1e4c10cef1618302f7f5fb0d6c28f3bc00d66f51",
+            "message": "Add equals/hashCode methods to ProblemDetail\n\nCloses gh-29606"
+        },
+        {
+            "hash": "e47978e1685d56b914e4bb5ef97f83e04d2d917b",
+            "message": "Avoid unnecessary parameter name inspection for constructor-arg resolution\n\nCloses gh-29612"
+        },
+        {
+            "hash": "52e967a5256d389f486b0159e05e2656e4411701",
+            "message": "Apply update_copyright_headers.sh to staged files as well"
+        },
+        {
+            "hash": "1de9d123a5244732a96edf582ae20f1c381a71f9",
+            "message": "Update Javadoc for MBeanTestUtils"
+        },
+        {
+            "hash": "ad60164911d57f04fbfcee965b2b6ca82ba772ad",
+            "message": "Update copyright headers for source code changed since August 2022\n\nThe changes in this commit were performed using the newly introduced\nupdate_copyright_headers.sh script."
+        },
+        {
+            "hash": "c49b0825f9855a324cb7fb3325a34e3bc63b7cc6",
+            "message": "Introduce update_copyright_headers.sh shell script\n\nIn order to automate maintenance of copyright headers in our source\ncode (especially when merging PRs from external contributors), this\ncommit introduces an update_copyright_headers.sh script (tested on\nmac OS) that will update the copyright headers of all Java, Kotlin,\nand Groovy source files that have been added or modified this year\n(or at least as far back as the git log history supports it).\n\nFor example, running this script currently outputs the following.\n\nUpdating copyright headers in Java, Kotlin, and Groovy source code for year 2022\nwarning: log for 'main' only goes back to Tue, 16 Aug 2022 16:24:55 +0200"
+        },
+        {
+            "hash": "fdec9f0adccb5a72b513c51a69c66b5b98ab4af5",
+            "message": "Apply \"instanceof pattern matching\""
+        },
+        {
+            "hash": "a88dbbec980b5ccafc30ae54ceff973f86f4a253",
+            "message": "Apply project formatting rules for ternary operator\n\nDiscovered via RegEx: ^\\s+\\?"
+        },
+        {
+            "hash": "61d8774da0c9fb72f73a30cd3eb13f11ed5ea9be",
+            "message": "Add missing callout"
+        },
+        {
+            "hash": "c2b16f1ffbcd95663c64529ec3d1892eb40df060",
+            "message": "Fix code example callouts in reference manual"
+        },
+        {
+            "hash": "6af94dffe54c115e98b2fe359749d5e586d12fcf",
+            "message": "Add \"missing\" callout for parity"
+        },
+        {
+            "hash": "2147175898e475541179a3014f3b1ed1c31d1e42",
+            "message": "Polishing"
+        },
+        {
+            "hash": "052542254a6d500805a11c03f7fb403e8ac8205f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1bb723b9e0d5baa47fb4c3469202fe6f74d88f82",
+            "message": "Rename to AbstractReactiveWebSocketIntegrationTests to avoid duplicate class names"
+        },
+        {
+            "hash": "db02c96c55652a0661284f852c8f9a87c1db4720",
+            "message": "Avoid deprecation warnings in tests"
+        },
+        {
+            "hash": "164141a63e93c5ad326f41441fc475e5ebaf6cdb",
+            "message": "Fix broken tests in SockJsServiceTests\n\nSee gh-29594"
+        },
+        {
+            "hash": "0a731413debe8eff2567c27408eac7ec30e52347",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6e5dd64025774e57502ee587b456169dcef5027a",
+            "message": "Polish contribution\n\nSee gh-29594"
+        },
+        {
+            "hash": "650875468cf37cd334dfac5e7d2e732cd9f8ffdb",
+            "message": "Add title to SockJS iFrames for accessibility compliance\n\nCloses gh-29594"
+        },
+        {
+            "hash": "6d2a25b877cfcb02cffd480071c3268bd8bf88f2",
+            "message": "Fix typo in observability documentation\n\nCloses gh-29590"
+        },
+        {
+            "hash": "28476219288851aa12b378e369fae828f5e43652",
+            "message": "Fix errors in Testing chapter\n\n- group code example callouts to ensure callouts are displayed for the\n  correct examples\n\n- add missing callouts\n\n- fix syntax, annotation attribute names, etc."
+        },
+        {
+            "hash": "3afc6a50795224d827733b11608fd9376bd00e5d",
+            "message": "Polish Testing chapter"
+        },
+        {
+            "hash": "6c8fb6c20490ef32deafce3f4389c45105827657",
+            "message": "Add MessageSource getters\n\nSee gh-29574"
+        },
+        {
+            "hash": "8e9a553517de71a21415f5d3e44b87e6024b609a",
+            "message": "Update Javadoc regarding JUnit versions"
+        },
+        {
+            "hash": "537d539b1d39bb7cf8a6a7dc92c038fcf10c5c28",
+            "message": "Use JUnit Jupiter annotations as examples in TestContextManager JavaDoc"
+        },
+        {
+            "hash": "476b9cfc99268c6aa1e37399f811b2dc543b650d",
+            "message": "Polish TestContextManager internals"
+        },
+        {
+            "hash": "352087a637905e2c3c110ce20a278f572f6a416d",
+            "message": "Forbid loading of test ApplicationContext in AOT mode if AOT processing failed\n\nPrior to this commit, if AOT processing of a test's ApplicationContext\nfailed, the TestContext Framework (TCF) still attempted to load the\ncontext via standard (JVM) mechanisms when running in AOT mode.\n\nFor example, if a test class uses Spring Boot's @MockBean, AOT\nprocessing of that test's context will fail with a WARN log message,\nand there will no mapping from that test class to an AOT-generated\nApplicationContextInitializer (ACI). Consequently, when the test suite\nis run in AOT mode that particular test class will currently fail with\na confusing stack trace due to the fact that Spring Boot's\nSpringApplication attempts to locate a \"main\" ACI instead of the\nmissing \"test\" ACI (missing because it was not generated during AOT\nprocessing).\n\nIn general, the TCF should not attempt to load an ApplicationContext in\n\"JVM mode\" while running in \"AOT mode\".\n\nThis commit therefore reworks the logic in\nDefaultCacheAwareContextLoaderDelegate to fail fast (with a meaningful\nerror message) if an AOT-generated ACI cannot be found while running in\nAOT mode. This avoids the aforementioned confusion when @MockBean tests\nfail in AOT mode (on the JVM or within a native image), and it also\nhelps to diagnose build problems if AOT processing has not yet been\nperformed for the project's test suite.\n\nCloses gh-29579"
+        },
+        {
+            "hash": "33d33802a848a2a341f263c07d5cc345f37953a2",
+            "message": "Improve logging in TestContextManager"
+        },
+        {
+            "hash": "9ec937c843de372ea9e4d7e6c1312c936b58ef22",
+            "message": "Remove erroneous Javadoc link"
+        },
+        {
+            "hash": "8e5eb84da1fe18c68d4cfbd92cb467b409be3731",
+            "message": "Consistently register CGLIB hints for lazy resolution proxy classes\n\nCore JDK/CGLIB proxy registration code extracted to ClassHintUtils.\n\nCloses gh-29584"
+        },
+        {
+            "hash": "902f8dd1d8350bc7fbdf711fa92a8a01fd5d0036",
+            "message": "Upgrade Gradle wrapper\n\nSee gh-29583"
+        },
+        {
+            "hash": "22f8ea61fb58d85425741c96976e0babcff713c2",
+            "message": "Upgrade to Gradle 7.6\n\nCloses gh-29583"
+        },
+        {
+            "hash": "8ce1f145546fa52aa8ad13c06483cffa1c06abaf",
+            "message": "Document Observability support in reference docs\n\nCloses gh-29524"
+        },
+        {
+            "hash": "9a3cb628af3c5e674a6a29fbbe01a85032d73709",
+            "message": "Split integration chapter in smaller documents\n\nThis commit splits the integration chapter of the reference\ndocumentation in smaller documents for easier maintenance."
+        },
+        {
+            "hash": "b0a4c5d72cebe27ee9dc35d58116b355e19c47fb",
+            "message": "Fix unrendered titles in websocket section\n\nThis commit fixes the rendering of titles in the websocket section of\nthe reference documentation.\n\nFixes gh-29569"
+        },
+        {
+            "hash": "8b110c9971469d8d76a7d5a4f66694ee337d43e5",
+            "message": "Reinstate checkstyle for reference docs code snippets\n\nThis commit also ensures that checks are performed before the\napplication is rendered to get early feedback on errors."
+        },
+        {
+            "hash": "21d3a7529c107e40a098f056d68facd9d6d0b4e8",
+            "message": "Consistent documentation references to Jakarta WebSocket (2.1)\n\nCloses gh-29581"
+        },
+        {
+            "hash": "9c7b471634a296451d65376ea7e5c08d3e8ce19b",
+            "message": "Deprecate JettyWebSocketClient in favor of StandardWebSocketClient\n\nJettyWebSocketClient only supported on Jetty 11, to be phased out.\n\nCloses gh-29576"
+        },
+        {
+            "hash": "45d45c298984b93ac26268b0ee924fe25ddfcd05",
+            "message": "Early support for Jetty 12 (developed against 12.0.0.alpha2)\n\nReflective getHeaders calls to be revisited; see GitHub issue #8938 in Jetty project.\nHttpOutput optimization commented out still in order to avoid alpha build dependency.\n\nSee gh-29575"
+        },
+        {
+            "hash": "4ff18741fdabf1aa762ab9d0fd75e59c2ed8c6d2",
+            "message": "Next development version (v6.0.3-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29689",
+            "title": "Cannot use WebDAV methods in Spring MVC 6.0 anymore"
+        },
+        {
+            "number": "29679",
+            "title": "Upgrade to Reactor 2022.0.1"
+        },
+        {
+            "number": "29685",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist in container annotation"
+        },
+        {
+            "number": "20279",
+            "title": "AnnotatedElementUtils does not find merged repeatable annotations on other repeatable annotations"
+        },
+        {
+            "number": "29574",
+            "title": "Improve options to expose MessageSource formatted errors for a ProblemDetail response"
+        },
+        {
+            "number": "29681",
+            "title": "BeanWrapperImpl NPE in setWrappedInstance after invoking getPropertyValue"
+        },
+        {
+            "number": "29511",
+            "title": "Duplicate key violation gets translated to DataIntegrityViolationException instead of DuplicateKeyException in Spring 6"
+        },
+        {
+            "number": "29675",
+            "title": "Throw PessimisticLockingFailureException/CannotAcquireLockException instead of plain ConcurrencyFailureException"
+        },
+        {
+            "number": "29630",
+            "title": "Align multipart codecs on client and server"
+        },
+        {
+            "number": "29678",
+            "title": "Upgrade to Micrometer 1.10.2"
+        },
+        {
+            "number": "29572",
+            "title": "Make `@ModelAttribute` and `@InitBinder` annotations `@Reflective`"
+        },
+        {
+            "number": "29593",
+            "title": "Refine `BindingReflectionHintsRegistrar` Kotlin support"
+        },
+        {
+            "number": "29571",
+            "title": "Update `BindingReflectionHintsRegistrar` to support properties on records"
+        },
+        {
+            "number": "29670",
+            "title": "Introduce additional constructors in `MockClientHttpRequest` and `MockClientHttpResponse`"
+        },
+        {
+            "number": "29665",
+            "title": "SpEL `ConstructorReference` does not generate AST representation of arrays"
+        },
+        {
+            "number": "29604",
+            "title": "SpEL string literal misses single quotation marks in toStringAST()"
+        },
+        {
+            "number": "28356",
+            "title": "SpEL: Two double quotes are replaced by one double quote in single quoted `String` literal (and vice versa)"
+        },
+        {
+            "number": "29657",
+            "title": "NullPointerException in BindingReflectionHintsRegistrar for anonymous classes"
+        },
+        {
+            "number": "29642",
+            "title": "DataBufferInputStream violates InputStream contract"
+        },
+        {
+            "number": "29641",
+            "title": "Component scanning no longer uses component index for `@Named`, `@ManagedBean`, and other Jakarta annotations"
+        },
+        {
+            "number": "29626",
+            "title": "`NoHandlerFoundException` mistakenly returns request headers from `ErrorResponse#getHeaders`"
+        },
+        {
+            "number": "29615",
+            "title": "HTTP interface client does not call FormHttpMessageWriter when writing form data"
+        },
+        {
+            "number": "29565",
+            "title": "500 error from WebFlux when parsing Content-Type leads to InvalidMediaTypeException"
+        },
+        {
+            "number": "29520",
+            "title": "ConcurrentLruCache implementation is using too much heap memory"
+        },
+        {
+            "number": "29627",
+            "title": "Upgrade to Apache HttpClient 5.2"
+        },
+        {
+            "number": "29624",
+            "title": "URI override for `@HttpExchange` doesn't work if there are both `URI` and `@PathVariable` method parameters"
+        },
+        {
+            "number": "29617",
+            "title": "Deprecate \"application/graphql+json\" media type after spec changes"
+        },
+        {
+            "number": "29575",
+            "title": "Jetty 12 support in WebFlux"
+        },
+        {
+            "number": "29598",
+            "title": "AOT code generation fails for bean of type `boolean`"
+        },
+        {
+            "number": "29606",
+            "title": "ProblemDetail doesn't override the equals method"
+        },
+        {
+            "number": "29612",
+            "title": "Unnecessary parameter name introspection for constructor-arg resolution (leading to LocalVariableTableParameterNameDiscoverer warnings)"
+        },
+        {
+            "number": "29579",
+            "title": "Forbid loading of a test's `ApplicationContext` in AOT mode if AOT processing failed"
+        },
+        {
+            "number": "29584",
+            "title": "`request`-scoped bean with `@Lazy` fails in native image (due to missing detection of CGLIB lazy resolution proxies)"
+        },
+        {
+            "number": "29583",
+            "title": "Upgrade to Gradle 7.6"
+        },
+        {
+            "number": "29524",
+            "title": "Document observability support"
+        },
+        {
+            "number": "29569",
+            "title": "Unrendered asciidoc headings in reference documentation"
+        },
+        {
+            "number": "29581",
+            "title": "Consistent documentation references to Jakarta WebSocket (2.1)"
+        },
+        {
+            "number": "29576",
+            "title": "Deprecate JettyWebSocketClient in favor of StandardWebSocketClient"
+        },
+        {
+            "number": "8938",
+            "title": "Recreate \"edit\" action for Pets in the 2.5 version of petportal [SPR-4260]"
+        }
+    ]
+}

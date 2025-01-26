@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 0.6935763888888888,
+    "commits_info": [
+        {
+            "hash": "983d115bd9f388468fd65d1e623b858eb12bc528",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "eb542e606b55de33df41d3868c909c73d040110b",
+            "message": "Updated CHANGES.txt for 3.15.3 release"
+        },
+        {
+            "hash": "80ec787928277e7b30e6bdf9e775c5618dbe8255",
+            "message": "Merge pull request #8341 from haberman/ruby-2.5-gc\n\nRuby <2.7now uses WeakMap too, which prevents memory leaks."
+        },
+        {
+            "hash": "9879f423ff9f2af8e85ce2f64ef7dc5fe6779c28",
+            "message": "Ruby <2.7now uses WeakMap too, which prevents memory leaks.\n\nRuby <2.7 does not allow non-finalizable objects to be WeakMap\nkeys: https://bugs.ruby-lang.org/issues/16035\n\nWe work around this by using a secondary map for Ruby <2.7 which\nmaps the non-finalizable integer to a distinct object.\n\nFor now we accept that the entries in the secondary map wil never\nbe collected.  If this becomes a problem we can perform a GC pass\nevery so often that looks at the contents of the object cache to\ndecide what can be deleted from the secondary map."
+        }
+    ],
+    "issues": []
+}

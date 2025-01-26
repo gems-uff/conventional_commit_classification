@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.21",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 6,
+    "start_delay": 0.0,
+    "duration": 2.7388310185185185,
+    "commits_info": [
+        {
+            "hash": "ca29ad6048db094fd617ca79c51c3b66142072d1",
+            "message": "Update release notes by Travis CI build 2498 [ci skip]"
+        },
+        {
+            "hash": "dcb21e0f17c783e99254e8486c115d6a0251a793",
+            "message": "Fix #952: fix invalid examples in javadoc of AnswerX and VoidAnswerX\n\ncommit 4a38b4c1b9edabc59fb8cc0f299c7b286b5f81c8\nAuthor: Tim van der Lippe <tvanderlippe@gmail.com>\nDate:   Sat Apr 1 12:59:41 2017 +0200\n\n    Remove whitespace\n\ncommit ad481d5af1e581c43f784be4dfb3bf29ef664fea\nAuthor: SaiyiW <saiyiwang@gmail.com>\nDate:   Mon Mar 27 22:01:19 2017 +0200\n\n    Changes according to feedback\n\ncommit 42ea418a0d077cb27b5704163a13060f81c0db4d\nAuthor: SaiyiW <saiyiwang@gmail.com>\nDate:   Thu Mar 16 02:23:12 2017 +0100\n\n    Fix #952: fix invalid examples in javadoc of AnswerX and VoidAnswerX."
+        },
+        {
+            "hash": "47a63013a79ae5014f8afcc181b46a5e5b03888d",
+            "message": "Merge pull request #1011 from mockito/sf\n\nTidy-up in build automation"
+        },
+        {
+            "hash": "5917b1f23e445b498b0cb1e7eed012ec8a417f6c",
+            "message": "Tidy-up in IDE setup\n\nRemoved unnecessary manipulation of the IDEA ipr file. We can use built-in 'vcs' method to configure the version control system for the project. This way, the build is simpler.\n\nTested by regenerating IDEA configuration and loading to IntelliJ, vcs was correctly set up."
+        },
+        {
+            "hash": "b06e3fc394b2e1c2f05391c15c9f8f030dfa55a3",
+            "message": "Tidy-up in the build automation\n\nRemoved unnecessary 'provided' configuration. Gradle 2.12 introduced 'compileOnly' configuration that can be used instead. This way, we can clean up our build script and avoid unnecessary build logic.\n\nTesting done:\n- ran build, tests pass, jars are created, things look good\n- ran old build and new build, compared build dirs, eyeballed binaries and javadocs, seem good.\n- recreated idea configuration with “./gradlew cleanIdea idea”, loaded to IntelliJ, rebuilt project in IDEA, ran tests from all submodules, all good.\n- cleaned idea configuration with “./gardlew cleanIdea”, then loaded to IDEA using IntelliJ-own Gradle support"
+        },
+        {
+            "hash": "9b98d71fa2444b0ebc35265d79458e5432cb5396",
+            "message": "Increment version '2.7.20' -> '2.7.21' by Travis CI build 2481 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "952",
+            "title": "Javadoc, Answer1 code example does not compile."
+        }
+    ]
+}

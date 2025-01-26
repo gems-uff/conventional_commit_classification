@@ -1,0 +1,734 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 145,
+    "start_delay": 0.0,
+    "duration": 367.5688078703704,
+    "commits_info": [
+        {
+            "hash": "21c3b51e1fcf0a20f9880d280a71cbace4905e41",
+            "message": "Release v5.3.10"
+        },
+        {
+            "hash": "aa14c248990bcfe8345bd1a93ef8f7fa0b415101",
+            "message": "Migrate to Spring Builds account"
+        },
+        {
+            "hash": "4c720eaa38704cb97705b86761cd505ceb59835e",
+            "message": "Fix GitHub credentials to use token rather than password\n\nCloses gh-27402"
+        },
+        {
+            "hash": "2d65bce18ee22e4eb5afde83b71033097f5bbf26",
+            "message": "Polish Eclipse IDE support"
+        },
+        {
+            "hash": "b8b85a6a59db19ae3283becadf7f60de606d5616",
+            "message": "Defensive handling of dimensions nullability"
+        },
+        {
+            "hash": "3baacedfd9c8d908ac95be00ee745d938033cd67",
+            "message": "Alignment with other abstract utils classes"
+        },
+        {
+            "hash": "4322ee194452bc1c2c1fb51932279b038c27205c",
+            "message": "Polish Eclipse IDE support"
+        },
+        {
+            "hash": "3faf445603e760d0b9223c194861809b410577c9",
+            "message": "Re-enable import into Eclipse IDE\n\nThe migration to Gradle 7.2 resulted in a regression for our Eclipse\nIDE support: several projects ended up with recursive classpath entries\nin their generated .classpath files which prevent those projects from\nbeing built within Eclipse.\n\nThis commit addresses this issue with a solution that may well be a\n\"hack\". Nonetheless, a working hack is better than not being able to\nimport into Eclipse at all.\n\nSee gh-26870"
+        },
+        {
+            "hash": "9e986c031b92ea7035e639436c79deb77c33e842",
+            "message": "Polish ide.gradle"
+        },
+        {
+            "hash": "f07e6a1b9de59331647b2c8dd54f696d59a8b902",
+            "message": "Support char primitive default values in BeanUtils.instantiateClass()\n\nCloses gh-27390"
+        },
+        {
+            "hash": "5cc09849cedfc21a5922930d17bce7a61fccd238",
+            "message": "Introduce test for gh-27390"
+        },
+        {
+            "hash": "92cd680a2c3e93f7415562f03e3e96cc4d8fb526",
+            "message": "Support float and double primitive default values in BeanUtils.instantiateClass()\n\nSee gh-27390"
+        },
+        {
+            "hash": "caf88ff2cc311b345f5fc0a5ced54d24bd9d553f",
+            "message": "Improve HandlerMethod#bridgedMethod initialization\n\nEnsure makeAccessible is called once when the bridgedMethod is\ninitialized.\n\nCloses gh-19795"
+        },
+        {
+            "hash": "813dbbce5894231193a3006c5d72e8a58e0863f9",
+            "message": "Polish contribution\n\nSee gh-27388"
+        },
+        {
+            "hash": "c46cc666d6bd5b26860964d8bceddb528d7897b2",
+            "message": "Fix some typos and mistakes in ref docs\n\nCloses gh-27388"
+        },
+        {
+            "hash": "674dc2f2039fb6186b35ab674c3046ecd5809bb3",
+            "message": "Do not log request parameters for multipart requests\n\nCloses gh-27350"
+        },
+        {
+            "hash": "8adf28763bd01bec4647ce70f9111481141cf5f1",
+            "message": "Upgrade to Reactor 2020.0.11\n\nCloses gh-27399"
+        },
+        {
+            "hash": "b1a4d3033be769073d3b4408ececf2cef63164d9",
+            "message": "Avoid usage of deprecated Gradle API in spring-oxm.gradle\n\nThis upgrade avoids the warning about the following on Gradle 7.1+.\n\n- The SourceDirectorySet.outputDir property has been deprecated.\n\nCloses gh-26870"
+        },
+        {
+            "hash": "8c14251a1a9b0d0f5a2c4fbdcd1d1703fb07cea3",
+            "message": "Upgrade to nohttp 0.0.10\n\nThis upgrade avoids warnings about the following on Gradle 7.1+.\n\n- The Report.destination property has been deprecated.\n- The JavaExec.main property has been deprecated.\n\nSee gh-26870"
+        },
+        {
+            "hash": "18ee308e4e3c59117f4bd41da16e837f88db0933",
+            "message": "Delete obsolete Assume test utility"
+        },
+        {
+            "hash": "6540e87ac0660f5ec0bc9610656fe658ea75159f",
+            "message": "Upgrade to Netty 4.1.68, Jackson 2.12.5, Mockito 3.12.4, MockK 1.12, JsonPath 2.6"
+        },
+        {
+            "hash": "6c17e9375b0d277ea28cb7220b4a162cc9ec0436",
+            "message": "Reduce log statement for non-unique JavaBean property to debug level\n\nCloses gh-27372"
+        },
+        {
+            "hash": "0a776a76d114c95361105a9b7917874815bf3a2e",
+            "message": "Fix memory leak on AOP Proxy class definition cache"
+        },
+        {
+            "hash": "52b03e3326559189c329ec3851164a76cc4ee530",
+            "message": "Migrate CoroutinesUtils to Java\n\nMigrate `CoroutinesUtils` from Kotlin code to Java and drop the\n`kotlin-coroutines` module.\n\nThis update removes the need for Kotlin tooling IDE plugins to be\ninstalled.\n\nCloses gh-27379"
+        },
+        {
+            "hash": "d55cbf8b4dc2c45259bf69bf983f6b575e188938",
+            "message": "Avoid use of deprecated API in aggregateTestReports task\n\nSee gh-26870"
+        },
+        {
+            "hash": "04e6b233cade1510a2d32bc2f7bfcf2d6e21b9c7",
+            "message": "Upgrade to JUnit 5.8\n\nCloses gh-27392"
+        },
+        {
+            "hash": "db424d0bc5b5a8b6d77062039f260edea02bfb66",
+            "message": "Replace word \"request\" with \"response\""
+        },
+        {
+            "hash": "a087d13aea77cd93b39b36b6e9b68270b140f9da",
+            "message": "Fix wording in Javadoc of ClientResponse.mutate()\n\nRemoved an extra \"the\"."
+        },
+        {
+            "hash": "c02ae7bcb86a0aeddc66812d8cadec6cd45a6037",
+            "message": "Fix noHttp failure"
+        },
+        {
+            "hash": "ca34d0cce8cb10a989ad60f98114c62c734f834c",
+            "message": "Polish Gradle upgrade\n\nCloses gh-26870"
+        },
+        {
+            "hash": "ab41db474e2a94d672fa44f4f66c34c136f7db46",
+            "message": "Update dokka to 1.5.0\n\nSee gh-26870"
+        },
+        {
+            "hash": "cecc0849a8c9a912004a843561a8458e7925ce3c",
+            "message": "Upgrade to Gradle 7.2\n\nThis commit upgrades Gradle to 7.2.\nGradle configuration names are updated accordingly.\nThis also upgrades Gradle build plugins.\n\nSee gh-26870"
+        },
+        {
+            "hash": "2db1e6daada8fc65340a5568ed6323e81c188a54",
+            "message": "Merge pull request #27387 from crlikcngroup\n\n* pr/27387:\n  Fix misplaced comma in AOP doc\n\nCloses gh-27387"
+        },
+        {
+            "hash": "78dd219787c7087a4804c5b3a815ee1c614324a5",
+            "message": "Fix misplaced comma in AOP doc\n\nSee gh-27387"
+        },
+        {
+            "hash": "bb45a7ae5ea45670884434ba15924d3490527e8a",
+            "message": "Fix bug fix icon in changelog configuration\n\nCloses gh-27384"
+        },
+        {
+            "hash": "c3e424c29a5c72c3e9d69e9722f91d52f4a0c6fe",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c23f0cd070aa2e5429fadf4a41e670533c4016c8",
+            "message": "Polishing contribution\n\nSee gh-27374"
+        },
+        {
+            "hash": "63ffa710d6d9b8f5b6e615b7c7c92ff62f6c421a",
+            "message": "Include all bytes of body in UnknownContentTypeException\n\nHttpMessageConverterExtractor uses MessageBodyClientHttpResponseWrapper\nwhich may read the first byte of the response stream to check if there\nis content. After that it is necessary to use the wrapper to get the\nfull body.\n\nThis commit ensures that when UnknownContentTypeException is raised\nit gets the body through the wrapper, or otherwise the first byte is\nmissed if the InputStream is not markable.\n\nCloses gh-27374"
+        },
+        {
+            "hash": "b6037d0d07efee37ddc7200f80f31b862cbed04c",
+            "message": "Correctly format class name in default package\n\nCloses gh-27247"
+        },
+        {
+            "hash": "41ab2687338c6419cb0f04c1bf79a9c52157a861",
+            "message": "Polishing contribution\n\nSee gh-27331"
+        },
+        {
+            "hash": "1dc128361f87b3708f796ec0b4b3565ca28f8ba6",
+            "message": "Add SmallRye Mutiny adapters\n\nCloses gh-26222"
+        },
+        {
+            "hash": "8f33450df20352ad6eabe632c082d9b02cb46c9a",
+            "message": "Fix typo in core-beans.adoc\n\nCloses gh-27377"
+        },
+        {
+            "hash": "55b3e064e93c376b9c60ec9458b56b0b20f6f184",
+            "message": "Upgrade to Kotlin 1.5.30\n\nAlso upgrades related libraries:\n- Coroutines upgraded to 1.5.2\n- Serialization upgraded to 1.2.2\n\nCloses gh-27371"
+        },
+        {
+            "hash": "a3655c48581dd3977de02f13dd3a7ecc3dcde6c2",
+            "message": "Add tip related to user destinations in STOMP\n\nSee gh-26986"
+        },
+        {
+            "hash": "3f66ef7aeebdcc9f599487357294143099242abd",
+            "message": "Compile with parameter names\n\nCompiled code should contain parameter names to avoid the need\nfor class resources to be included in native image builds.\n\nCloses gh-27369"
+        },
+        {
+            "hash": "d8191b48088b0ac2843b64beac861ddfcb99d9dd",
+            "message": "Polish contribution\n\nSee gh-26984"
+        },
+        {
+            "hash": "417bce8be5e32ae43c2e3b25de1e24cd03c71e93",
+            "message": "Add tests for MessageBodyClientHttpResponseWrapper\n\nCloses gh-26984"
+        },
+        {
+            "hash": "19283c92459aef68cdfe738fd8bdf17b49597058",
+            "message": "Avoid accidental dependency on older version of Byte Buddy\n\nThis commit allows Mockito-based tests in spring-test to work again\nin Eclipse IDE.\n\nThis problem was uncovered while fixing gh-27365"
+        },
+        {
+            "hash": "d7ea4d230f3e00b54e12c823d710b2f3c8422524",
+            "message": "Remove Eclipse-specific code from OptionalDependenciesPlugin\n\nTo support the recent changes to our `optional` dependencies plugin,\nthis commit removes the Eclipse-specific code which no longer appears\nto be necessary.\n\nCloses gh-27365"
+        },
+        {
+            "hash": "e7b499f7b6d0020e0c8ac38bd9e267f1e7f2506c",
+            "message": "Upgrade to JMH 1.32 and avoid accidental dependency on jopt-simple 4.6\n\nJMH is now implicitly configured to use jopt-simple 5.0.4 instead of 4.6.\n\nThis problem was uncovered while fixing gh-27365"
+        },
+        {
+            "hash": "77a6dce1b58bbd11ec4c7c110c08cb20af38d8d8",
+            "message": "Review Servlet API version in Spring OXM tests\n\nThis commit ensures that Servlet 4.0+ is used in the Spring OXM test\nsuite, as Servlet 4 specific APIs are used in the tests.\n\nThis problem was uncovered while fixing gh-27365"
+        },
+        {
+            "hash": "d23afea168b8360d08bf296ac2189239ab9db7fc",
+            "message": "Extend optional rather than adding it to existing classpath\n\nThis allows the attributes configured on compileClasspath and\nruntimeClasspath to independently influence the variant selection when\nresolving the optional configuration, allowing it to contribute compile\ndependencies (JAVA_API) to the former and runtime dependencies\n(JAVA_RUNTIME) to the latter.\n\nFixes gh-27365"
+        },
+        {
+            "hash": "0ec4be37d591bcc8a3f5ae10ac3daa905599bb84",
+            "message": "Configure optional configuration to consume its dependencies' API\n\nPreviously, the optional configuration had no usage attribute. This\nresulted in it using the default, JAVA_RUNTIME, which caused it to\nonly consume the runtime produced by its dependencies and not the\nAPI. Given that the optional configuration is added to the compile\nclasspath, this was incorrect.\n\nThis commit updates the optional configuration to be configured to\nconsume the Java API of its dependencies. The configuration has\nalso been marked as not being for consumption. This prevents other\nprojects attempting to consume the optional variant of a project\nthat has the optional dependencies plugin applied and further\naligns it with Gradle's built-in configurations of a similar nature.\n\nSee gh-27365"
+        },
+        {
+            "hash": "532b4b636d6b347df18f897aaa769aa734477f8b",
+            "message": "Update CI pipeline with JDK16\n\nThis commit replaces the JDK15 build with a JDK16 variant.\nThis also updates the CI image with a new OS version and updated\nJDK versions."
+        },
+        {
+            "hash": "d1a00b43019843c59a24b89ff97ed43d00768cf9",
+            "message": "Polishing\n\nSee gh-27230"
+        },
+        {
+            "hash": "87d3d1bbd1e5620fb8c2583c487507bab9614fb2",
+            "message": "Throw UnsupportedOperationException in defaultResponseCharacterEncoding()\n\nThis commit updates the defaultResponseCharacterEncoding() `default`\nmethod in ConfigurableMockMvcBuilder so that it throws an\nUnsupportedOperationException instead of silently ignoring the user's\nrequest to set the default response character encoding.\n\nNote, however, that AbstractMockMvcBuilder already overrides the\ndefault method with a concrete implementation which is used by default\nin MockMvc.\n\nSee gh-27230"
+        },
+        {
+            "hash": "1b3fd9edfffd78a90da820d04455acbdbc3d4661",
+            "message": "Ensure one time logging for request details\n\nCloses gh-26969"
+        },
+        {
+            "hash": "5ea7592d7014c19140a867c9b57e8026653a80d3",
+            "message": "Polishing in ExchangeResult"
+        },
+        {
+            "hash": "9cf8cca96d9c8280eac87595a7933aa338ec5599",
+            "message": "Minor language corrections."
+        },
+        {
+            "hash": "b2a17a8d86a50dc8844edfa9b9c1dd3fc7519132",
+            "message": "Fix typo"
+        },
+        {
+            "hash": "bec0bb0c53a4e2a3cee0c03b3bd274953c93e7ae",
+            "message": "Revert \"Add doOnDiscard hook for streaming mode\"\n\nThis reverts commit 77a562dfee04cfb4a76a84257cf33fd73ab6b696.\n\nAs per findings under\nhttps://github.com/reactor/reactor-netty/issues/1746 it looks this\nwasn't the issue and isn't required."
+        },
+        {
+            "hash": "434cbab6a7147ebb7f51078cb14422fe26f1798a",
+            "message": "Update copyright date in tests in spring-test\n\nCloses gh-27354"
+        },
+        {
+            "hash": "b2eaa7c1c3025dddd197df62a46d80ee2a84b8dd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2f60392fe347066b6bacab00b4ff0437a00203b4",
+            "message": "Upgrade to Netty 4.1.67, RxJava 3.1.1, Gson 2.8.8, XStream 1.4.18"
+        },
+        {
+            "hash": "b6c2c11805993a7d0b6e2520ee205fbb54ad215f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "837301fdb3a92b1e40535a404dbdbf57b01c3816",
+            "message": "Convenient configuration of type permissions for XStream 1.4.18\n\nCloses gh-27343"
+        },
+        {
+            "hash": "164dcef6ae3ca05e03c828cbdc0bfd97b8043bd0",
+            "message": "Tracking ASM master\n\nSee gh-27069"
+        },
+        {
+            "hash": "310bdbb1b204bcb1e4b241d73b81df9bc153e9ac",
+            "message": "Fix error in ApplicationEvents example"
+        },
+        {
+            "hash": "88af24c1cb5cb0325c2322e0efdc109e4eceb487",
+            "message": "Update copyright date"
+        },
+        {
+            "hash": "871e378ed054d95f19bcb75fa0f01e202e83f367",
+            "message": "Polish AbstractAspectJAdvisorFactory\n\nCloses gh-27340"
+        },
+        {
+            "hash": "e5a5f8b20b00a896bb1edad5fbc13f982cd0e6ca",
+            "message": "Remove unnecessary brace in websocket documenation\n\nCloses gh-#27339"
+        },
+        {
+            "hash": "cc026fcb8ae51172f3d063e7ed07a32927e23d8e",
+            "message": "Polish \"Optimize allocation in StringUtils#cleanPath\"\n\nThis commit also introduces JMH benchmarks related to the code\noptimizations.\n\nCloses gh-2631"
+        },
+        {
+            "hash": "8d3e8ca3a2d534f6ee872bb6a65a89c44e987cf6",
+            "message": "Optimize allocation in StringUtils#cleanPath\n\nThis commit applies several optimizations to StringUtils#cleanPath and\nrelated methods:\n\n* pre-size pathElements deque in StringUtils#cleanPath with\n  pathElements.length elements, since this this is the maximum size and\n  the most likely case.\n* optimize StringUtils#collectionToDelimitedString to calculate the size\n  of the resulting String and avoid array auto-resizing in the\n  StringBuilder.\n* If the path did not contain any components that required cleaning,\n  return the (normalized) path as-is. No need to concatenate the prefix\n  and the trailing path.\n\nSee gh-26316"
+        },
+        {
+            "hash": "ae56f2ac09248c3d97288acb044ff30c5ea16897",
+            "message": "Polish contribution\n\nSee gh-27336"
+        },
+        {
+            "hash": "debf61b948fd44a8757c4a8c286202ca3b6762b5",
+            "message": "Remove unused private loggers\n\nCloses gh-27336"
+        },
+        {
+            "hash": "b120e0b8f4e48b44ffba59b0002d6d04883dc4a4",
+            "message": "Fix Kotlin example for filtering handler functions\n\nCloses gh-#27337"
+        },
+        {
+            "hash": "c27ec00ae94bb3a2555c7762264ff009fa57ee0c",
+            "message": "Polish scheduling Javadoc"
+        },
+        {
+            "hash": "9a7fb7022dd5b7d2d8d5514ab2fb827b3e32854a",
+            "message": "Fix typo in @Scheduled\n\nSee gh-27309"
+        },
+        {
+            "hash": "bd72e4498b9d1824646c88fa6fa08c1780484d2f",
+            "message": "Revise and document TimeUnit support in @Scheduled\n\nThis commit also fixes a bug introduced in commit e99b43b91e, where\njava.time.Duration strings were converted to milliseconds and then\nconverted again using the configured TimeUnit.\n\nSee gh-27309"
+        },
+        {
+            "hash": "e99b43b91e2a02b1cf18261ee85dccae5e6494e7",
+            "message": "Support TimeUnit in the @Scheduled annotation\n\nThis commit introduces a new `timeUnit` attribute in the @Scheduled\nannotation to allow the user to specify a time unit other than\nmilliseconds.\n\nCloses gh-27309"
+        },
+        {
+            "hash": "3c2dfebf4ec5e9d791c1f3c9fa0ad35a5a9fcd6b",
+            "message": "Polish soft assertion support for WebTestClient\n\nSee gh-26969"
+        },
+        {
+            "hash": "25dca404138e85e8864e4bfa4b37c88f236a559e",
+            "message": "Introduce soft assertions for WebTestClient\n\nIt happens very often that WebTestClient is used in heavyweight\nintegration tests, and it's a hindrance to developer productivity to\nfix one failed assertion after another. Soft assertions help a lot by\nchecking all conditions at once even if one of them fails.\n\nThis commit introduces a new expectAllSoftly(..) method in\nWebTestClient to address this issue.\n\nclient.get().uri(\"/hello\")\n\t.exchange()\n\t.expectAllSoftly(\n\t\tspec -> spec.expectStatus().isOk(),\n\t\tspec -> spec.expectBody(String.class).isEqualTo(\"Hello, World\")\n\t);\n\nCloses gh-26969"
+        },
+        {
+            "hash": "dd9b99e13d6b30462fb168799e6bbca1456123da",
+            "message": "Introduce ResultActions.andExpectAll() for soft assertions in MockMvc\n\nCloses gh-26917"
+        },
+        {
+            "hash": "cd078eaad83e2c6cb441719086b460e665c20f35",
+            "message": "Use ExceptionCollector for soft assertions in MockMvc\n\nSee gh-26917"
+        },
+        {
+            "hash": "5f47d3be227e115c57b03e73f5df97993c44fdd8",
+            "message": "Polish soft assertions for MockMvc\n\nSee gh-26917"
+        },
+        {
+            "hash": "35bec8102b014feac18c5b096b39c3592c27b76e",
+            "message": "Introduce soft assertions for MockMvc\n\nIt happens very often that MockMvc is used in heavyweight integration\ntests. It's no use to waste time to check if another condition has been\nfixed or not. Soft assertions help a lot by checking all conditions at\nonce even if one of them fails.\n\nSee gh-26917\n\nCo-authored-by: Sach Nguyen <sachnbbkhn@gmail.com>"
+        },
+        {
+            "hash": "4c153b80eef662af0d5ae3b316aa4f9f3d874e8a",
+            "message": "Make ExceptionCollector.Executable public\n\nSee gh-27316"
+        },
+        {
+            "hash": "81a6ba42a36230ad7cdbf1d4e699e09dad012ad1",
+            "message": "Introduce ExceptionCollector testing utility\n\nThis commit introduces a new ExceptionCollector testing utility in order\nto support \"soft assertion\" use cases.\n\nCloses gh-27316"
+        },
+        {
+            "hash": "8a7c4fc10d60168ebded312e2b02b3a052c46d33",
+            "message": "Support HtmlFileInput.setData() with HtmlUnit and MockMvc\n\nPrior to this commit, if the user tested file upload support with\nHtmlUnit and MockMvc by invoking HtmlFileInput.setData() instead of\nHtmlFileInput.setFiles(), the in-memory file data was simply ignored.\n\nThis commit addresses this issue by creating a MockPart from the\nin-memory data in HtmlUnitRequestBuilder.\n\nCloses gh-27199"
+        },
+        {
+            "hash": "7da7a976e67fad30b2e5e5caaf9bf2fa8045d5d1",
+            "message": "Document when prepareTestInstance() is invoked by the SpringMethodRule\n\nCloses gh-27305"
+        },
+        {
+            "hash": "b28f403bf8314d27704b789a0eeda11f74aaf886",
+            "message": "Fix Checkstyle violation\n\nSee gh-27303"
+        },
+        {
+            "hash": "6c71cf2f96d8ccb46965753d5a47847b2adfdcdf",
+            "message": "Polishing"
+        },
+        {
+            "hash": "99970a5ddc063b6747970973c3bfdf803e21b1b3",
+            "message": "Polish contribution\n\nSee gh-27303"
+        },
+        {
+            "hash": "462e19d417dc1e3513211ef5d5a3ea4c351f1c14",
+            "message": "Fix UrlPathHelper#shouldRemoveSemicolonContent() (#27303)\n\nThe checkReadOnly() method should only be called from\r\nmethods that modify properties to prevent modification\r\nof read-only instances.\r\n\r\nFixes #27256"
+        },
+        {
+            "hash": "9f7a94058a4bbc967fe47bfe6a82d88cb3feddfb",
+            "message": "Update copyright date\n\nSee gh-27298"
+        },
+        {
+            "hash": "caf6760ddd5f616a8d71cd7445d5709f61296690",
+            "message": "Fix grammatical errors in Javadoc\n\nCloses gh-27298"
+        },
+        {
+            "hash": "4a9c7e631c60a12f3426d42143e9e27be0bf68ab",
+            "message": "Merge pull request #27291 from benelog\n\n* pr/27291:\n  Polish \"Fix duplicate \"the\" in Javadoc and XSD\"\n  Fix duplicate \"the\" in Javadoc and XSD\n\nCloses gh-27291"
+        },
+        {
+            "hash": "af6fd6c303252a2bf83770419bfd829849d12e70",
+            "message": "Polish \"Fix duplicate \"the\" in Javadoc and XSD\"\n\nSee gh-27291"
+        },
+        {
+            "hash": "ac722772588633508690940ca40b928c81f90a63",
+            "message": "Fix duplicate \"the\" in Javadoc and XSD\n\nSee gh-27291"
+        },
+        {
+            "hash": "6770e4b3ccab93dadf6450658aeb49facf4586af",
+            "message": "Fix and document CompositeUriComponentsContributor#hasContributors()\n\nPrior to this commit, the hasContributors() method incorrectly returned\nfalse if contributors had been configured.\n\nThis commit fixes the logic in hasContributors() and documents it.\n\nCloses #27271"
+        },
+        {
+            "hash": "6177f00a630021e207424b11fe447edec596739f",
+            "message": "Polish PropertyAccessor tests"
+        },
+        {
+            "hash": "9bdc545a958c1824ec0e549fb701311e7490d4b1",
+            "message": "Upgrade to Tomcat 9.0.52, Undertow 2.2.10, RxJava 3.1, HtmlUnit 2.52, Checkstyle 8.45.1"
+        },
+        {
+            "hash": "44951873f9cffe8ddf0f96442efe4fd20739b107",
+            "message": "Introduce accessors for allowCircularReferences/allowRawInjectionDespiteWrapping\n\nCloses gh-27289"
+        },
+        {
+            "hash": "77a562dfee04cfb4a76a84257cf33fd73ab6b696",
+            "message": "Add doOnDiscard hook for streaming mode\n\nPotential fix for issue reported at\nhttps://github.com/reactor/reactor-netty/issues/1746"
+        },
+        {
+            "hash": "7b80f4feebd2fc2775a4214fac79c3c5037d0393",
+            "message": "Upgrade to Reactor 2020.0.10\n\nCloses gh-27250"
+        },
+        {
+            "hash": "98f69c51a14992824e1d9d8e0bea7ef282924066",
+            "message": "Merge pull request #27260 from joshua-qa\n\n* pr/27260:\n  Fix typo in DefaultPartHttpMessageReader\n\nCloses gh-27260"
+        },
+        {
+            "hash": "3a35d79c72b1152313aec5d499f678fb57a96099",
+            "message": "Fix typo in DefaultPartHttpMessageReader\n\nSee gh-27260"
+        },
+        {
+            "hash": "451bcfc832dacbd601969e675dcd8e01fe92aa48",
+            "message": "Start building against Reactor 2020.0.10 snapshots\n\nSee gh-27250"
+        },
+        {
+            "hash": "d4cd9405dd5bf6eb75a3d8b106c96619fd999def",
+            "message": "Merge pull request #27248 from Syuziko\n\n* pr/27248:\n  Polish contribution\n  Polish tests\n\nCloses gh-27248"
+        },
+        {
+            "hash": "31b651a1149767382fe49186063f40f90baeb5e8",
+            "message": "Polish contribution\n\nSee gh-27248"
+        },
+        {
+            "hash": "eaf9deedfd06f2f324c05503f787b41f37c537c4",
+            "message": "Polish tests\n\nSee gh-27248"
+        },
+        {
+            "hash": "ce6217be8536944201a1215679870a57c414381d",
+            "message": "Polishing contribution\n\nCloses gh-27220"
+        },
+        {
+            "hash": "e290ae285cfc8d8e48b0685ce580262bef1a2688",
+            "message": "Improve Javadoc for ClientRequest#from\n\nSee gh-27220"
+        },
+        {
+            "hash": "8670b1c3f0f2ea5ffbb44be862ae0cfff8a6efb5",
+            "message": "Merge pull request #27238 from izeye\n\n* pr/27238:\n  Polish printMvcResultsToWriterWithFailingGlobalResultMatcher()\n\nCloses gh-27238"
+        },
+        {
+            "hash": "86ef0236e6581ca609091f3295e88f208e8f85d8",
+            "message": "Polish printMvcResultsToWriterWithFailingGlobalResultMatcher()\n\nSee gh-27238"
+        },
+        {
+            "hash": "ce94f69e525282b418f801e9d734070ad5cbfc45",
+            "message": "Polish contribution\n\nSee gh-27234"
+        },
+        {
+            "hash": "01c8de0111806d8f9346f332b22ece9dd9fef618",
+            "message": "Simplify getInternalBeanFactoryForBean\n\nThis commit simplifies getInternalBeanFactoryForBean() in\r\nAbstractBeanFactoryBasedTargetSourceCreator via\r\nMap::computeIfAbsent.\r\n\r\nCloses gh-27234"
+        },
+        {
+            "hash": "bd1f5bd9fcd04874fec2c791add3616e9a69b9ce",
+            "message": "Support Charset for character encoding in MockMvc\n\nTo improve the developer experience and avoid the use of String\nliterals, this commit provides overloaded support via Charset for\ncharacter encoding in MockHttpServletRequestBuilder and\nContentResultMatchers.\n\nCloses gh-27231"
+        },
+        {
+            "hash": "4d115eef91bfb6518d42a5f6fc74d33fbc97bdfa",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0f421f9f86fc6a06d2b41fbe538ac6b97ed2470f",
+            "message": "Support default character encoding for response in MockMvc\n\nCommit e4b9b1fadb introduced support for setting the default character\nencoding in MockHttpServletResponse.\n\nThis commit introduces support for configuring the default character\nencoding in the underlying MockHttpServletResponse used in MockMvc.\n\nCloses gh-27230"
+        },
+        {
+            "hash": "41fa199178d313bf0399873483d37bb5b298715f",
+            "message": "Polish PrintingResultHandler"
+        },
+        {
+            "hash": "881fa889fcdb1870e12beb7010408a316b30dc62",
+            "message": "Apply global ResultHandlers before ResultMatchers in MockMvc\n\nPrior to this commit, MockMvc applied global ResultMatchers before\nglobal ResultHandlers. This lead to unexpected scenarios where a\nfailing matcher would prevent a handler from being applied.\n\nOne concrete use case is `alwaysDo(print(System.err))` which should\nprint out MockMvc results for debugging purposes. However, if MockMvc is\nconfigured with something like `alwaysExpect(content().string(\"?\"))`\nand the expectation fails, the user will never see the expected debug\noutput to help diagnose the problem.\n\nThis commit addresses this issue by applying global ResultHandlers\nbefore ResultMatchers in MockMvc.\n\nCloses gh-27225"
+        },
+        {
+            "hash": "e4b9b1fadb35c4e439acc8931910aaba6e1342e3",
+            "message": "Introduce setDefaultCharacterEncoding() in MockHttpServletResponse\n\nPrior to this commit, it was possible to set the character encoding\nin MockHttpServletResponse via setCharacterEncoding() or\nsetContentType(); however, those methods append \"charset=...\" to the\nContent-Type header which may not be an acceptable side effect.\n\nThis commit addresses this shortcoming by introducing a new\nsetDefaultCharacterEncoding() in MockHttpServletResponse which allows\none to override the previously hard coded value of \"ISO-8859-1\". In\naddition, setDefaultCharacterEncoding() does not modify the Content-Type\nheader.\n\nThe reset() method has also been updated to reset the character encoding\nto the configured default character encoding.\n\nCloses gh-27214"
+        },
+        {
+            "hash": "55e17ef30636b58052b8a53322394ec9d91df22e",
+            "message": "Polishing contribution\n\nCloses gh-27203"
+        },
+        {
+            "hash": "f2be4e93203d2949a8e46466f92a1715954b85b5",
+            "message": "Use MessageSource for @ExceptionHandler methods\n\nFollow-up for commit bb816c123ca86c6f373ee2bd1632f43c117a8f15\n\nSee gh-27203"
+        },
+        {
+            "hash": "5b3f11c543cefabd4de3a1eb1f8b7ab38e394472",
+            "message": "Add @Nullable to setLocale in MockHttpServletResponse\n\nSee gh-26493"
+        },
+        {
+            "hash": "96ee8a3bc71815700c5e952d5eaac733415bfeda",
+            "message": "Ensure characterEncoding in MockHttpServletResponse is non-null\n\nCloses gh-27219"
+        },
+        {
+            "hash": "915f1027a571f850c177a0a7da9263ead95599df",
+            "message": "Update copyright date\n\nSee gh-27223"
+        },
+        {
+            "hash": "f1b35f15931e1d0e74df3feb9d74ddecedc694f8",
+            "message": "Fix reference to Optional.isPresent() in ObjectUtils.isEmpty() \n\nCloses gh-27223"
+        },
+        {
+            "hash": "c2f91765b401c2976fd802358e6453d0fad0d2fd",
+            "message": "Fix typo in Javadoc in AbstractHandlerMapping\n\nCloses gh-27218"
+        },
+        {
+            "hash": "403e04c0b4a79c68b4caf69aabcc9fd0c7bbbd3c",
+            "message": "Polish MockHttpServletResponse"
+        },
+        {
+            "hash": "6c68419073b43fb29114a3af4e402c729084ed84",
+            "message": "Polishing contribution\n\nCloses gh-27216"
+        },
+        {
+            "hash": "a747cc3e91ea3b16be3351edf2ed6d536524ee60",
+            "message": "Fix error message in SynchronossPartHttpMessageReader"
+        },
+        {
+            "hash": "161c9dc3bd42f2391eaa9f538d4ccad828da1ab0",
+            "message": "Improve @Cacheable documentation regarding java.util.Optional\n\nThis commit improves the documentation for @Cacheable to point out that\n`null` will be stored in the cache for an empty `Optional` return value.\n\nCloses gh-27184"
+        },
+        {
+            "hash": "42edef0bccb75a09523040b9567866281b574629",
+            "message": "Avoid StringIndexOutOfBoundsException in WebSocketMessageBrokerStats\n\nPrior to this commit, if the TaskExecutor configured in\nWebSocketMessageBrokerStats for the inboundChannelExecutor or\noutboundChannelExecutor was not a ThreadPoolTaskExecutor, a\nStringIndexOutOfBoundsException was thrown when attempting to parse the\nresults of invoking toString() on the executor.\n\nThe reason is that ThreadPoolTaskExecutor delegates to a\nThreadPoolExecutor whose toString() implementation generates text\ncontaining \"pool size = ...\", and WebSocketMessageBrokerStats'\ngetExecutorStatsInfo() method relied on the presence of \"pool\" in the\ntext returned from toString().\n\nThis commit fixes this bug by ensuring that the text returned from\ntoString() contains \"pool\" before parsing the text. If \"pool\" is not\npresent in the text, getExecutorStatsInfo() now returns \"unknown\"\ninstead of throwing a StringIndexOutOfBoundsException.\n\nCloses gh-27209"
+        },
+        {
+            "hash": "e94811f1b9a616db44ffbab7fbc816589332c6cc",
+            "message": "Polish WebSocketMessageBrokerConfigurationSupportTests"
+        },
+        {
+            "hash": "d034a1f26d0ea3782f53b8ff7a2a0cea7c825b71",
+            "message": "Blockhound rule for MediaTypeFactory static initializer\n\nCloses gh-26631"
+        },
+        {
+            "hash": "460947651ae4c58d31386a0a14396c273b287119",
+            "message": "Minor refactoring in DefaultPathContainer\n\nCloses gh-27204"
+        },
+        {
+            "hash": "af67764edbb90495f492124275dd67e3fe55a146",
+            "message": "Upgrade to Netty 4.1.66 and Undertow 2.2.9"
+        },
+        {
+            "hash": "ba08006d52a1dace8c6af0b713f63eb75bc9d976",
+            "message": "ObjectMapper.configure(MapperFeature, boolean) is deprecated as of Jackson 2.13\n\nCloses gh-27206"
+        },
+        {
+            "hash": "2594f4e0584269a7dab0e2c37c1d871405548547",
+            "message": "Avoid unnecessary cause initialization in ResponseStatusException\n\nCloses gh-27196"
+        },
+        {
+            "hash": "9c0825629b715949b7082201bbcd90bfbf9d660b",
+            "message": "Reintroduce left-hand side navigation in ref docs\n\nA side effect of 71995a90876fd5b0aa39259df35476fcc3b0c5ef caused the\ndynamic table of contents in the left-hand side navigation to no longer\nbe displayed, likely due to the missing \"details\" DIV.\n\nThis commit addresses this issue by applying the custom header only to\nindex.adoc.\n\nConsequently, the TOC is now displayed again on all pages except the\nindex page, but the customized header is no longer applied to those\npages.\n\nWe may revisit this issue if we decide that we want the custom header\non all pages (and not just the index page).\n\nCloses gh-27177"
+        },
+        {
+            "hash": "e0c0e7f878df0d0e0c5a8ebb615f22527390d72e",
+            "message": "Fix typo in ref docs"
+        },
+        {
+            "hash": "0b1d14cdd95eb7582d19daa9f31c13b8f8bfb86d",
+            "message": "Follow-up fix, checking also \"ws\" and port 80 case\n\nSee gh-27097"
+        },
+        {
+            "hash": "ca262eaa1c21fa367783def51c33657abf78f99c",
+            "message": "Next development version (v5.3.10-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "27402",
+            "title": "Update GitHub credentials in CI pipeline"
+        },
+        {
+            "number": "26870",
+            "title": "Upgrade to Gradle 7.2"
+        },
+        {
+            "number": "19795",
+            "title": "InvocableHandlerMethod calls makeAccessible(getBridgedMethod()) on every call [SPR-15230]"
+        },
+        {
+            "number": "27350",
+            "title": "CommonsMultipartResolver and DEBUG logging lead to empty fileMap in MultipartHttpServletRequest"
+        },
+        {
+            "number": "27399",
+            "title": "Upgrade to Reactor 2020.0.11"
+        },
+        {
+            "number": "27372",
+            "title": "Invalid JavaBean property 'logoutHandlers' being accessed (warning in the logs for Spring Security's ConcurrentSessionFilter)"
+        },
+        {
+            "number": "27392",
+            "title": "Upgrade to JUnit 5.8"
+        },
+        {
+            "number": "27384",
+            "title": "Fix bug fix icon in changelog configuration"
+        },
+        {
+            "number": "27247",
+            "title": "Error with formatMapping method in AbstractMethodMessageHandler.java"
+        },
+        {
+            "number": "26222",
+            "title": "Add Smallrye Mutiny support"
+        },
+        {
+            "number": "27371",
+            "title": "Upgrade to Kotlin 1.5.30"
+        },
+        {
+            "number": "27369",
+            "title": "Compile with parameter names"
+        },
+        {
+            "number": "27230",
+            "title": "Support default character encoding for response in MockMvc"
+        },
+        {
+            "number": "27343",
+            "title": "Convenient configuration of type permissions for XStream 1.4.18"
+        },
+        {
+            "number": "27069",
+            "title": "Upgrade to ASM 9.2 (for early Java 18 support)"
+        },
+        {
+            "number": "27316",
+            "title": "Introduce `ExceptionCollector` testing utility"
+        },
+        {
+            "number": "27199",
+            "title": "`HtmlUnitRequestBuilder` ignores file uploaded via `HtmlFileInput.setData()`"
+        },
+        {
+            "number": "27305",
+            "title": "Document when `prepareTestInstance()` is invoked when using the `SpringMethodRule`"
+        },
+        {
+            "number": "27256",
+            "title": "UrlPathHelper: checkReadOnly() called in read method shouldRemoveSemicolonContent()"
+        },
+        {
+            "number": "27271",
+            "title": "CompositeUriComponentsContributor#hasContributors: method name is not compliant with its intention"
+        },
+        {
+            "number": "27289",
+            "title": "Make it possible to determine if circular references are prohibited or if the cycle just couldn't be broken"
+        },
+        {
+            "number": "27250",
+            "title": "Upgrade to Reactor 2020.0.10"
+        },
+        {
+            "number": "27231",
+            "title": "Support Charset for character encoding in MockMvc"
+        },
+        {
+            "number": "27225",
+            "title": "Apply default `ResultHandler`s before default `ResultMatcher`s in `MockMvc`"
+        },
+        {
+            "number": "27214",
+            "title": "Introduce `setDefaultCharacterEncoding()` in `MockHttpServletResponse`"
+        },
+        {
+            "number": "26493",
+            "title": "Ignore null Locale in MockHttpServletResponse"
+        },
+        {
+            "number": "27219",
+            "title": "`MockHttpServletResponse.characterEncoding` should not be `@Nullable`"
+        },
+        {
+            "number": "27184",
+            "title": "@Cacheable caches empty Optionals but documentation states otherwise"
+        },
+        {
+            "number": "27209",
+            "title": "WebSocketMessageBrokerStats.getExecutorStatsInfo() throws exception if Executor is not a ThreadPoolExecutor"
+        },
+        {
+            "number": "26631",
+            "title": "Blockhound flags a blocking call when WebFlux serves a static resource"
+        },
+        {
+            "number": "27204",
+            "title": "DefaultPathContainer#parsePathParamValues should decode and test name once in outer loop"
+        },
+        {
+            "number": "27206",
+            "title": "Compatibility with Jackson 2.13"
+        },
+        {
+            "number": "27196",
+            "title": "ResponseStatusException.initCause always throws IllegalStateException"
+        },
+        {
+            "number": "27177",
+            "title": "Reference docs missing left-hand side navigation"
+        },
+        {
+            "number": "27097",
+            "title": "Consider \"wss\" and \"https\" for secure flag in Forwarded header checks"
+        }
+    ]
+}

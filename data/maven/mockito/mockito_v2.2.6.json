@@ -1,0 +1,82 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.2.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 16,
+    "start_delay": 0.0,
+    "duration": 4.424768518518518,
+    "commits_info": [
+        {
+            "hash": "889366f35b7d75a36f91fdf9fcc52052e6373d90",
+            "message": "\"Update release notes by Travis CI build 1638 [ci skip]\""
+        },
+        {
+            "hash": "af0763cc028fb27967a6b9c90a6e3622a24a556c",
+            "message": "Merge pull request #698 from mockito/issue-543\n\nNew API: MockingDetails.printInvocations() for debugging mock behavior"
+        },
+        {
+            "hash": "f8a1160a05e587d5306e269132b1ed9a41f531cd",
+            "message": "Used AssertJ\n\nUpdated to use AssertJ following really good feedback from Brice."
+        },
+        {
+            "hash": "1a0d435a8cd35b9e2234cab1db686fa39c0e91d6",
+            "message": "Refactoring for StringBuilder\n\nBased on review feedback"
+        },
+        {
+            "hash": "b0647817082f0828e2630f0361226be56ca7297a",
+            "message": "Marked more internal types @Deprecated\n\nBased on review feedback"
+        },
+        {
+            "hash": "4ca157cf57cce4c1974ed6cf5af594e4bc0440af",
+            "message": "Updated @since tag after the release"
+        },
+        {
+            "hash": "81e1a33d51c979b98d687275f2168db99c6a0b1e",
+            "message": "Updated @since tag"
+        },
+        {
+            "hash": "f10b89479ea65f19128adc06bb2f9999251f2083",
+            "message": "Updated formatting of Mockito interactions printer\n\nSince the feature is going public, I wanted to make the formatting decent.\n\nMockingDetails.printInvocations is not a 1-1 replacement of MockitoDebugger.printInvocations. The latter accepts multiple mocks. Let's wait for users feedback if this is needed.\n\nFixes #543"
+        },
+        {
+            "hash": "ccff6f9da3ae58cc6bea49a58029df7802f24300",
+            "message": "Tightened test coverage\n\n#543"
+        },
+        {
+            "hash": "bbf1aaf417a8b445814f9157a559da96d0cfe8c9",
+            "message": "Removed unnecessary tests\n\nAdded TODO that outlines the plan for the world after MockitoDebugger is deleted\n\n#543"
+        },
+        {
+            "hash": "5f1409e910084de14ae0496c65640bc5b7077acd",
+            "message": "Transplanted basic functionality\n\nMoved the feature to mocking details, removed one test for MockitoDebugger\n\n#543"
+        },
+        {
+            "hash": "a7bdc37b0bac244bf9436ffe1eefb45eb0134a11",
+            "message": "Tidied up documentation, initial design\n\nWork-in-progress ticket #543"
+        },
+        {
+            "hash": "8d01739af809fa277e1401d024fe828e9f52d11c",
+            "message": "Fixed the documentation in javadocs"
+        },
+        {
+            "hash": "55f57e883c33ee7b7feef28c56724aaab43434c4",
+            "message": "Backport readme links of master\n\n[ci skip]"
+        },
+        {
+            "hash": "8b6455be19cd333a5104bde8fc66aa0451584c3f",
+            "message": "Updated one of the tickets title\n\n[ci skip]"
+        },
+        {
+            "hash": "bddab8cdeec413672b5f23d4d72236f06f2823e1",
+            "message": "Increment version '2.2.5' -> '2.2.6' by Travis CI build 1630 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "543",
+            "title": "new MockingDetails.printInvocations() API for debugging tests and edge cases"
+        }
+    ]
+}

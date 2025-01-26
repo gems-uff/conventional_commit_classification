@@ -1,0 +1,841 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.9.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 207,
+    "start_delay": 0.0,
+    "duration": 428.75775462962963,
+    "commits_info": [
+        {
+            "hash": "e43a958833df5aa46f54d7cd83b1c17fa19cc5dc",
+            "message": "issue 372 : Working implementation of the Argument Captor for Varargs"
+        },
+        {
+            "hash": "adf127bc2ff5e932245eac473fddc8e0d06e249d",
+            "message": "issue 372 : underscored test methods before adding test"
+        },
+        {
+            "hash": "d24617c3b27a57d60b69390d81c6e9bddf551f83",
+            "message": "Add mercurial as the VCS of the generated IPR file"
+        },
+        {
+            "hash": "4b0bc1cc9d4ca09d939b9d9f0c78b64ff686b861",
+            "message": "issue 380 : print arguments of other invocations as well"
+        },
+        {
+            "hash": "e4ba2db49598801bc13cd5e047238f22d5f05de5",
+            "message": "issue 380 : underscored test methods before adding test"
+        },
+        {
+            "hash": "7b6589661698cd2846833b733a7857854b81bec4",
+            "message": "updated CI url"
+        },
+        {
+            "hash": "64e34e44193f4bd837369f2d91237df14e51fa1b",
+            "message": "Used a specific exception for API misuse case.\n\n--HG--\nrename : src/org/mockito/exceptions/misusing/NotAMockException.java => src/org/mockito/exceptions/misusing/CannotVerifyStubOnlyMock.java"
+        },
+        {
+            "hash": "5a52c029cee21e8b50a6e50e3a5bba14634e79d7",
+            "message": "gc'ed some TODOs\n\n--HG--\nrename : test/org/mockito/internal/stubbing/MockitoStubberTest.java => test/org/mockito/internal/stubbing/InvocationContainerImplStubbingTest.java"
+        },
+        {
+            "hash": "00e437f4852c957973465f10517509a702d2c595",
+            "message": "gc'ed some TODOs"
+        },
+        {
+            "hash": "c7a12c51a89f1e75cd12cc5e8239c273439611af",
+            "message": "Rename job, simplified the RegisteredInvocations instance that works with stubOnly().\n\n--HG--\nrename : src/org/mockito/internal/verification/RegisteredInvocationsStubOnly.java => src/org/mockito/internal/verification/SingleRegisteredInvocation.java"
+        },
+        {
+            "hash": "677c38840a8ae641a0a6f38b974e10781c17054b",
+            "message": "Small rename job.\n\n--HG--\nrename : src/org/mockito/internal/verification/RegisteredInvocationsAll.java => src/org/mockito/internal/verification/DefaultRegisteredInvocations.java\nrename : test/org/mockito/internal/verification/RegisteredInvocationsAllTest.java => test/org/mockito/internal/verification/DefaultRegisteredInvocationsTest.java"
+        },
+        {
+            "hash": "344bbe373e920b53c61190527cbd59bec2a582ae",
+            "message": "Issue 84: method invocations are not recorded when using stubOnly() feature\n(transplanted from cf5df0109dc0a0cd9eec3b3458ffd3dd96d1b930)\n\n--HG--\nrename : test/org/mockito/internal/verification/RegisteredInvocationsTest.java => test/org/mockito/internal/verification/RegisteredInvocationsAllTest.java\nextra : transplant_source : %CF%5D%F0%10%9D%C0%A0%CD%9E%EC%3B4X%FF%D3%DD%96%D1%B90"
+        },
+        {
+            "hash": "92d44782ef38b7aaf5f0f4bd27442a2a888d7ae0",
+            "message": "Fixed the botched merge."
+        },
+        {
+            "hash": "04d9f6b214cb2116163e659bca04442b06ab811f",
+            "message": "Added stubOnly() mock settings - not used in the code yet\n(transplanted from 5ab5ed723f58695c1252c1892b5f974fee0c6e0a)\n\n--HG--\nextra : transplant_source : Z%B5%EDr%3FXi%5C%12R%C1%89%2B_%97O%EE%0Cn%0A"
+        },
+        {
+            "hash": "06010dc717574c3f5f4d968a7bf85fad15c81e03",
+            "message": "Made the PMD happy."
+        },
+        {
+            "hash": "2b92eb882e46b07d36cfbf6f7ba85509b34be5e4",
+            "message": "Fixed way to fire threads in test at the same time\n(transplanted from 5ce5a37379e1d6b2570798855b6ae7a230887395)\n\n--HG--\nextra : transplant_source : %5C%E5%A3sy%E1%D6%B2W%07%98%85%5Bj%E7%A20%88s%95"
+        },
+        {
+            "hash": "1703ea5a0a496fc0e9a6eba312daf5f5e44ad7b8",
+            "message": "Removed IDEA metadata, let's keep the ignored for now. Gradle can be used to generate IDE metadata."
+        },
+        {
+            "hash": "9a857ccaaa0864d87c2945059013aa6735784dde",
+            "message": "Improved some synchronized code based on Hynek's suggestions."
+        },
+        {
+            "hash": "d00ac4e108946d1668db45d0191cf9f39f8053c3",
+            "message": "Some fixes to the build files."
+        },
+        {
+            "hash": "b206310cf5960419b96d69ce5baba3a02446729a",
+            "message": "Added tests for the new extension point. It's easiest if they live in a separate subprojects so that we're sure the plugin is only loaded for those tests."
+        },
+        {
+            "hash": "5f60c46a9311c227ebe5c2820bb6782da15c4fce",
+            "message": "Some .hgignore fixes"
+        },
+        {
+            "hash": "af161bfff52545b4c71f1d409a6807a15be74069",
+            "message": "Made the test tiny bit safer."
+        },
+        {
+            "hash": "28c45e6095237d358f70df8433d86461b456092e",
+            "message": "Merged with tip."
+        },
+        {
+            "hash": "17e59b5712f5420eca03d7cb0f5d82ab44b67c37",
+            "message": "Fixing Javadoc typo daAnswer -> doAnswer, thx to Tomek Kaczanowski for reporting this"
+        },
+        {
+            "hash": "97f307633481afa3e955a74c9e264540cfa671fd",
+            "message": "Cleaned up some tests"
+        },
+        {
+            "hash": "5c9f33f7b58e1510067b740abf800e915bc5d464",
+            "message": "Fixed issue 375 : warn when .serializable() used with objects that don't implement Serializable"
+        },
+        {
+            "hash": "ce292338e80d084d386cf3b338c4263f51ae3820",
+            "message": "fixed a weird javadoc task error where the double quote \" character was causing illegal package name error under windows (not osx)"
+        },
+        {
+            "hash": "f5739be41921347552a94335f2761a15195391d7",
+            "message": "Tweaked Javadoc with project name & version in header as well"
+        },
+        {
+            "hash": "87582359d4dd11027ec1cf7b2ea2d359146caeb3",
+            "message": "Removed syntax highlighting for IE < 9"
+        },
+        {
+            "hash": "87b1b2f6fe545172ffdd1aa03e403798f2d77566",
+            "message": "forgotten PMD report path creation task"
+        },
+        {
+            "hash": "66c379f98701ea6ff481643dfeddf575e8af0403",
+            "message": "Added PMD XML report to PMD task, file will be generated in target/reports/pmd/pmd_report.xml"
+        },
+        {
+            "hash": "1e82d7a95af6d6350fb2029458087352d8110374",
+            "message": "Merged Brice work, head 1967, Hopefully all is ok :)"
+        },
+        {
+            "hash": "60ef03e89fa68550535f8f9c72143cd619b21745",
+            "message": "issue 356 Fix typo & javadoc (thx to konigsberg@google.com)"
+        },
+        {
+            "hash": "e51a574c9f65ecd1f677bc8b969f04ce8281234f",
+            "message": "Merged the work on the extension point for configuring / enhancing the stack trace filter. Issue 360."
+        },
+        {
+            "hash": "f1290c47070dee037e2250f179dbbf93fe6b0759",
+            "message": "Exposed an extension point for configuring the stack trace filter. Driven by the android/dexmaker requirements. See issue 360.\n\n--HG--\nbranch : release\nrename : src/org/mockito/internal/exceptions/base/package.html => src/org/mockito/exceptions/stacktrace/package.html\nrename : src/org/mockito/internal/exceptions/base/ConditionalStackTraceFilter.java => src/org/mockito/internal/exceptions/stacktrace/ConditionalStackTraceFilter.java\nrename : src/org/mockito/internal/exceptions/base/StackTraceFilter.java => src/org/mockito/internal/exceptions/stacktrace/StackTraceFilter.java\nrename : src/org/mockito/internal/exceptions/base/package.html => src/org/mockito/internal/exceptions/stacktrace/package.html\nrename : test/org/mockito/internal/exceptions/base/ConditionalStackTraceFilterTest.java => test/org/mockito/internal/exceptions/stacktrace/ConditionalStackTraceFilterTest.java\nrename : test/org/mockito/internal/exceptions/base/StackTraceFilterTest.java => test/org/mockito/internal/exceptions/stacktrace/StackTraceFilterTest.java"
+        },
+        {
+            "hash": "54c9cbd00f66926aeef5091b6caae12e2e3f89e3",
+            "message": "Fixed the problem with license replacing task.\n\n--HG--\nbranch : 1.9.5-rc1"
+        },
+        {
+            "hash": "4d57481a8bf98f13385c5f0a093d75eb760f57aa",
+            "message": "Updated the license headers.\n\n--HG--\nbranch : 1.9.5-rc1"
+        },
+        {
+            "hash": "03aa75e400dcfe75579833c5bbb44f473972f5ce",
+            "message": "Updated the version.\n\n--HG--\nbranch : 1.9.5-rc1"
+        },
+        {
+            "hash": "8ebf5aa6b8db55aa9e199d2dd668626260f2b345",
+            "message": "More steps to automate the release process. It's rough at the moment but we'll iterate until it's perfect :)"
+        },
+        {
+            "hash": "acadd1703eeb64002c6574936c9f0c0474821401",
+            "message": "Some steps to automate the release process. It's rough at the moment but we'll iterate until it's perfect :)"
+        },
+        {
+            "hash": "d8dab7582ed55eda53e2459086159720adf843cf",
+            "message": "Mentioned that MockingDetails is incubating."
+        },
+        {
+            "hash": "25832cdd55654c870ebea01ba44c2a3042423046",
+            "message": "More fixes to the MockMaker javadocs."
+        },
+        {
+            "hash": "3ea2bf67e4ad39b8a84c8737de5c2ad6b0472c72",
+            "message": "Some fixes to the javadocs."
+        },
+        {
+            "hash": "af4936be9f3c7e4d664e87e2ed47bd9b13c41976",
+            "message": "Merged with tip"
+        },
+        {
+            "hash": "1a4c5478a2cac1e11183443a52ed00afb8e6fcd4",
+            "message": "Javadoc tweaks."
+        },
+        {
+            "hash": "b8634ba11f9efe4a7b3da1269b3025f4cc249a14",
+            "message": "Fixed issue 331. The result from MockHandler should not be null for primitives.\n\nThis feature is not strictly needed if cglib is used because cglib internally turns nulls into primitives if necessary. However, cglib is pluggable now via MockMaker so it made sense to make some action."
+        },
+        {
+            "hash": "40129db358b066bb27c2108d09f8e14a780194cf",
+            "message": "Moved classes to a better package.\n\n--HG--\nrename : src/org/mockito/internal/InvocationNotifierHandler.java => src/org/mockito/internal/handler/InvocationNotifierHandler.java\nrename : src/org/mockito/internal/MockHandlerFactory.java => src/org/mockito/internal/handler/MockHandlerFactory.java\nrename : src/org/mockito/internal/MockHandlerImpl.java => src/org/mockito/internal/handler/MockHandlerImpl.java\nrename : test/org/mockito/internal/InvocationNotifierHandlerTest.java => test/org/mockito/internal/handler/InvocationNotifierHandlerTest.java\nrename : test/org/mockito/internal/MockHandlerImplTest.java => test/org/mockito/internal/handler/MockHandlerImplTest.java"
+        },
+        {
+            "hash": "3069df778f602aee564ea6299d2c60b601a4ebc3",
+            "message": "Put some creation complexity into a separate class."
+        },
+        {
+            "hash": "b6494294f526b30dbac9be4e520fe8011b306d19",
+            "message": "Javadoc tweaks."
+        },
+        {
+            "hash": "bba22e6ac6f9dd9e0a5a2b0aebf36d858eaade01",
+            "message": "Next version will be 1.9.5"
+        },
+        {
+            "hash": "ff32a690a2cc73d709ec7d079ee73d92eba99183",
+            "message": "Merged from 1.9.0\n\n--HG--\nrename : src/org/mockito/internal/MockHandlerInterface.java => src/org/mockito/internal/InternalMockHandler.java\nrename : src/org/mockito/internal/MockHandler.java => src/org/mockito/internal/MockHandlerImpl.java\nrename : src/org/mockito/internal/debugging/Location.java => src/org/mockito/internal/debugging/LocationImpl.java\nrename : src/org/mockito/internal/invocation/StubInfo.java => src/org/mockito/internal/invocation/StubInfoImpl.java\nrename : src/org/mockito/exceptions/verification/junit/JUnitTool.java => src/org/mockito/internal/junit/JUnitTool.java\nrename : src/org/mockito/exceptions/Discrepancy.java => src/org/mockito/internal/reporting/Discrepancy.java\nrename : src/org/mockito/exceptions/Pluralizer.java => src/org/mockito/internal/reporting/Pluralizer.java\nrename : src/org/mockito/stubbing/answers/ReturnsElementsOf.java => src/org/mockito/internal/stubbing/answers/ReturnsElementsOf.java\nrename : src/org/mockito/internal/util/MockName.java => src/org/mockito/internal/util/MockNameImpl.java\nrename : src/org/mockito/internal/util/ArrayUtils.java => src/org/mockito/internal/util/collections/ArrayUtils.java\nrename : src/org/mockito/internal/MockitoInvocationHandler.java => src/org/mockito/invocation/MockHandler.java\nrename : test/org/mockito/exceptions/PluralizerTest.java => test/org/mockito/internal/reporting/PluralizerTest.java\nrename : test/org/mockito/internal/util/MockNameTest.java => test/org/mockito/internal/util/MockNameImplTest.java\nrename : test/org/mockitousage/internal/debugging/LocationTest.java => test/org/mockitousage/internal/debugging/LocationImplTest.java"
+        },
+        {
+            "hash": "5a2415278e865ac0becfcbaf8626d4f0c3b17a70",
+            "message": "Make additional answers internal, and expose them via AdditionalAnswers. Renaming returnsArgAtPosition to returnsArgAt\n\n--HG--\nrename : src/org/mockito/stubbing/answers/ReturnsArgumentAt.java => src/org/mockito/internal/stubbing/answers/ReturnsArgumentAt.java\nrename : src/org/mockito/stubbing/answers/ReturnsElementsOf.java => src/org/mockito/internal/stubbing/answers/ReturnsElementsOf.java\nrename : test/org/mockito/stubbing/answers/ReturnsArgumentAtTest.java => test/org/mockito/internal/stubbing/answers/ReturnsArgumentAtTest.java"
+        },
+        {
+            "hash": "d883cda4d1e73664c623042d283b637990f6cc0d",
+            "message": "Started pulling up methods to the MockHandler."
+        },
+        {
+            "hash": "c45a107c3ebdcb3c032740b42c2689b6fa2f14ab",
+            "message": "MockHandler is now one of our main API classes. It won't have much for now but it will change as we start moving out from InternalMockHandler.\n\n--HG--\nrename : src/org/mockito/invocation/MockitoInvocationHandler.java => src/org/mockito/invocation/MockHandler.java"
+        },
+        {
+            "hash": "9c693bcdd2608f8c2ab4dafad7430cf5f845fd57",
+            "message": "Next step of a rename job. The end goal is get the codebase more conventional.\n\n--HG--\nrename : src/org/mockito/internal/MockHandlerInterface.java => src/org/mockito/internal/InternalMockHandler.java"
+        },
+        {
+            "hash": "0ddff905eef6cfa89949661097f0afc9c7eb496d",
+            "message": "First step of some longer rename job. MockHandler->MockHandlerImpl\n\n--HG--\nrename : src/org/mockito/internal/MockHandler.java => src/org/mockito/internal/MockHandlerImpl.java\nrename : test/org/mockito/internal/MockHandlerTest.java => test/org/mockito/internal/MockHandlerImplTest.java"
+        },
+        {
+            "hash": "7e9220eebfebd3ea210e51a8fb78798e50452386",
+            "message": "Simplified some internal classes - one of the arguments was not really needed."
+        },
+        {
+            "hash": "5bfaa36f0a5f66a5d59bdf57d4f174f0a9222e35",
+            "message": "Finished the MockMaker interface and other related APIs to the shape that is good enough for the release. There're still some things pending for refactoring but at least I'm happy with the API. I dropped a tiny bit of unit testing coverage (it's still covered in integ tests)."
+        },
+        {
+            "hash": "4e7db50df6aa8af3d320fc2ba7a21bf44d9b7520",
+            "message": "Refactored forwardTo() api into a regular answer at the AdditionalAnswers. Brice - stay happy - I decided to change forwardTo into delegatesTo() because we've already talked in the javadocs about 'delegating' in few places. So I wanted to use a consistent language. We haven't yet released so you can still convince me why should we stop talking about 'delegate' in favor of 'forward'. Tweaked some javadocs."
+        },
+        {
+            "hash": "39d09ae87b2cd2a02d44dc11164da6138661cb95",
+            "message": "Some rename job in the MockName area. Added javadocs for the public type."
+        },
+        {
+            "hash": "17521a166d85d978d36c210458efe75fd9076cf0",
+            "message": "Exposed the MockName interface. A fallout after exposing other parts of the API. Now behind a proper interface."
+        },
+        {
+            "hash": "31ca6e48e75ca5b2c6d60c07845bdb1f3034c306",
+            "message": "Renamed MockName into MockNameImpl so that we can expose MockName interface.\n\n--HG--\nrename : src/org/mockito/internal/util/MockName.java => src/org/mockito/internal/util/MockNameImpl.java\nrename : test/org/mockito/internal/util/MockNameTest.java => test/org/mockito/internal/util/MockNameImplTest.java"
+        },
+        {
+            "hash": "427bc00158d56d9e11ac49c76104b40e4a6e4b66",
+            "message": "Unfortunetly meaty checkin but things got out of hand during Easter... Further work on exposing an MockSettingsInfo. Encountered few obstacles and did some refactorings along the way. Stopped using the class array in few place in favor of a Collection - MockMaker interface has changed in due course. Fixed the javadoc a bit. There's still long way to get the MockSettings cleaned up but I'm getting there. The purpose is to avoid casting to our internal type (MockSettingsImpl) and use the information provided by the interface MockSettingsInfo. MockSettingsInfo is an interface exposed when we created MockMaker API."
+        },
+        {
+            "hash": "39dbb0f10abda381e03711846d6e61099613d44f",
+            "message": "Fixed a problem that reset(null) and reset(nonMock) gave NPE instead of a decent exception message."
+        },
+        {
+            "hash": "84dead8d443751d0a148c1cc0812618b4b5aee7c",
+            "message": "A bucket of cold water. The MockitoInvocationHandler interface does not make much sense yet. Internally we cast it anyway to an internal type. This means that this API is not yet ready to be completely public. No problem, though, I made the MockitoInvocationHandler a marker interface. The contract of the MockMaker at the moment is that it should not create own instances of MockitoInvocationHandler. Instead, it should keep hold on the instance that is provided by Mockito. Documented this contract in the MockMaker interface.\n\nDown the road MockHandlerInterface will merge into MockitoInvocationHandler and the invocation API will be completely open. For now what we have should do."
+        },
+        {
+            "hash": "899fd91f31246e569eea833b129eacd4b57bb9f7",
+            "message": "Changed ReturnsSmartNulls so that it does not use MockMaker. Instead it uses the regular way of creating mocks. This also enables some further refactorings in the Invocations area."
+        },
+        {
+            "hash": "4b81c5d36e1ab63412c9a55d982cf5c6df238dab",
+            "message": "Renamed ReturnsIdentity by ReturnsArgumentAt\n\n--HG--\nrename : src/org/mockito/stubbing/answers/ReturnsIdentity.java => src/org/mockito/stubbing/answers/ReturnsArgumentAt.java\nrename : test/org/mockito/stubbing/answers/ReturnsIdentityTest.java => test/org/mockito/stubbing/answers/ReturnsArgumentAtTest.java"
+        },
+        {
+            "hash": "93b572cf4e791e891eae691c7af6fc40b981ef16",
+            "message": "More javadoc for AdditionalAnswers"
+        },
+        {
+            "hash": "7a86dc4965540939d30c938e5672866a383b410a",
+            "message": "Tweaks of the CSS for the meaningful links"
+        },
+        {
+            "hash": "d82ff6100709f9f39a72c7ab5942e4408adf8ae4",
+            "message": "Fixed Javadoc generation warnings"
+        },
+        {
+            "hash": "850852a3a3aa71c4da3d7404e83c74a98191cb6c",
+            "message": "Javadoc works :\n - Release note.\n - Added many @since where appropriate.\n - Added underscores in the meaningful links."
+        },
+        {
+            "hash": "51eb7cea9e47e3458b9a082f5ffde27775187992",
+            "message": "Renaming LocationTest and InvocationTest to match their tested concrete types\n\n--HG--\nrename : test/org/mockito/internal/invocation/InvocationTest.java => test/org/mockito/internal/invocation/InvocationImplTest.java\nrename : test/org/mockitousage/internal/debugging/LocationTest.java => test/org/mockitousage/internal/debugging/LocationImplTest.java"
+        },
+        {
+            "hash": "dda1c41ea0fe96abfe62bb1bfd1e1d51d2c5c509",
+            "message": "Added reporting on answer misuse. Plus some more use cases.\n\n--HG--\nrename : src/org/mockito/internal/util/ArrayUtils.java => src/org/mockito/internal/util/collections/ArrayUtils.java"
+        },
+        {
+            "hash": "c2567cb2c05acdf45b96c9521bbe0f96daf7b109",
+            "message": "Renaming test methods to new naming convention before adding new test methods"
+        },
+        {
+            "hash": "5490d9b2fc7814bc4c1efe5a66f05ce5874d38bc",
+            "message": "Refactoring a bit the patch of Eric, added AdditionalAnswers as a placeholder for future answers.\n\n--HG--\nrename : src/org/mockito/stubbing/answers/IdentityAnswers.java => src/org/mockito/stubbing/answers/ReturnsIdentity.java\nrename : test/org/mockito/stubbing/answers/IdentityAnswersTest.java => test/org/mockito/stubbing/answers/ReturnsIdentityTest.java"
+        },
+        {
+            "hash": "ae7ad39c99ea7ffecd84c1453aa26f44846f066a",
+            "message": "Helper methods when returning one of the parameters\n\n--HG--\nextra : transplant_source : %2A39%84%21%F4%AB%C4%2A%A5v%0BD%AB8%81%82%3A%C9k"
+        },
+        {
+            "hash": "956d31341569c2a352b39ccb87ef616c9225424b",
+            "message": "Moving @Incubating out of internal package\n\n--HG--\nrename : src/org/mockito/internal/Incubating.java => src/org/mockito/Incubating.java"
+        },
+        {
+            "hash": "570cb6d8a0536df272aaa15713cbf9ad7cca970a",
+            "message": "Made MockingDetails abstract"
+        },
+        {
+            "hash": "c1394fad9804852838e22202f96205bb88863b51",
+            "message": "Made MockingDetails abstract\n\n--HG--\nrename : src/org/mockito/MockingDetails.java => src/org/mockito/internal/util/DefaultMockingDetails.java"
+        },
+        {
+            "hash": "04c175c6f401908cb99f2e6f157210d2de598241",
+            "message": "Recommending the do* family methods for spies."
+        },
+        {
+            "hash": "0eb755f7625a1ef34c1a3e26359c83324dc4b5cd",
+            "message": "Few Javadoc tweaks as proposed by Ivan Hristov\n----------------\nFew Javadoc tweaks as proposed by Ivan Hristov\n----------------\nFew Javadoc tweaks as proposed by Ivan Hristov"
+        },
+        {
+            "hash": "e78afec0f5d00d52256a6e7234b3bf0fc80d2322",
+            "message": "Better Javadoc for the MockMaker interface"
+        },
+        {
+            "hash": "f66dc40301559a750bfa601a5e125d535e06e6c6",
+            "message": "fix compilation, thx jenkins"
+        },
+        {
+            "hash": "69689ca18215f23c1b70a9ec2f0cad8718d8c938",
+            "message": "TestNG integration will need Mockito 1.9.1"
+        },
+        {
+            "hash": "4c1a6c2d1012c34ce9e72f9fd29d2346cec6dc72",
+            "message": "Renaming the isEmpty call on the String as it's part of the JDK 6. Added better Javadoc on ClassPathLoader"
+        },
+        {
+            "hash": "b796d2046e74d89f0beb821b330bce972fa4eab5",
+            "message": "Fixing merge error"
+        },
+        {
+            "hash": "5e7ef66fd469848eee66dcc476f885c4474e75cb",
+            "message": "Merging TestNG stuff"
+        },
+        {
+            "hash": "7b715326a38a70933f27cd688cd0346cd6a0cd89",
+            "message": "Fields unit test\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "014ec7bebe9cb2ef80ee7346053f854faf5fc41e",
+            "message": "issue 304 : initialize captors before each methods\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "7342c3c8a7f72ae21dbc683053aefc8d026554b2",
+            "message": "revamp fields manipulation in testng integration to avoid code duplication\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "5ea5f32d6ca22a7352ff2d43dfc61b7f6f6c2cea",
+            "message": "extract simple field processing as small functions\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "fb8e3f49fd8de6cb28689890bb2952d547df8e46",
+            "message": "issue 304 : Fixed Gradle tests\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "346d4b45560e19300f91f5cd9e676c7ae5af446f",
+            "message": "issue 304 : last implementation found on the issue thread + tests / Captor reinitialization not yet managed. Use TestNG suite configuration : mockito-testng.xml\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "4dec37f5da9ec241830cc0a4925d148b76fa6431",
+            "message": "issue 304 : preliminary implementation of the MockitoTestNGListener, tests where lost in the transfer process\n\n--HG--\nbranch : issue 304 : TestNG integration"
+        },
+        {
+            "hash": "b74f891c2749b01dc5b2710eb657436a89404ec1",
+            "message": "issue 308 : now load configuration file from classpath:mockito-extensions instead of classpath:META-INF/services, this due to the fact that ApkBuilder on Android discard resources located under META-INF."
+        },
+        {
+            "hash": "c478e6c8709034e4796cffc1d1bfeba8dc8d0ca2",
+            "message": "New ClassPathLoader that doesn't depend on ServiceLoader."
+        },
+        {
+            "hash": "5f8d4a27c63e8cfebc335185e9ab18919db01420",
+            "message": "Fix typo."
+        },
+        {
+            "hash": "29c3a7f49d0670b1d9d7ca051ec1d6eae1c5f814",
+            "message": "Added some room for testng work. It's very basic. Usage:\n\nGenerally, use it from root by running ./gradlew (linux) or gradlew (windows).\n\n//building:\ngradlew testng:build\n\n//generating IDE metadata for import to the environment:\ngradlew testng:idea\ngradlew testng:eclipse"
+        },
+        {
+            "hash": "1e43fb2055221a8f3ed2fee111e887c284967ffb",
+            "message": "Reverted to make the source compatible with the JDK 6 compiler (even though we are using Java 5 language features)"
+        },
+        {
+            "hash": "66f93c35034e9719f8ed9973e303516eca924523",
+            "message": "Made those two classes compilable with JDK 5"
+        },
+        {
+            "hash": "bfa1226f57643f86ff3d01b71c1d9352bf6b7579",
+            "message": "Issue 308 Removed the dependency to java.beans.Introspector which is not available in the Android SDK, tiddied up tests"
+        },
+        {
+            "hash": "a5fd16a4a8de6cdca1a830e609a0b4a013a163e5",
+            "message": "Merged from issue296"
+        },
+        {
+            "hash": "497f09fe084922531951c2f11b43da54eca25fc5",
+            "message": "Added given, when, then comments to tests\n\n--HG--\nbranch : issue296"
+        },
+        {
+            "hash": "380dcaaf05c73285c9f454e253b41430081694ca",
+            "message": "Changed timesNow to calls, and added tests with mixed verification modes\n\n--HG--\nbranch : issue296\nrename : src/org/mockito/internal/verification/TimesNow.java => src/org/mockito/internal/verification/Calls.java\nrename : test/org/mockitousage/verification/VerificationInOrderWithTimesNowTest.java => test/org/mockitousage/verification/VerificationInOrderWithCallsTest.java"
+        },
+        {
+            "hash": "889c569be8eed10078ee90aebf21181fe22eb2a9",
+            "message": "Added non-greedy verification mode\n\n--HG--\nbranch : issue296"
+        },
+        {
+            "hash": "9eb1a269a5dcb595e4b06c88993fc406119f2623",
+            "message": "merged idea metadata"
+        },
+        {
+            "hash": "532306b6b736448b0eaa3870b9cb5f869437bde9",
+            "message": "Another Javadoc fix"
+        },
+        {
+            "hash": "7b130db2dfd73edad4bfef04ee8c78f748302d05",
+            "message": "wrongly commited project file"
+        },
+        {
+            "hash": "29c5f71c63ae7eb6b0093e91141be473e1a1a472",
+            "message": "An even better javadoc, with syntax highlighting where applicable\n\n--HG--\nrename : img/logo.jpg => javadoc/img/logo.jpg"
+        },
+        {
+            "hash": "81a2cac91ea292120ca689fa112ea91f785099d6",
+            "message": "More javadoc tweaks + added information about missing type checks on any methods and ArgumentCaptor"
+        },
+        {
+            "hash": "a52aa1164bfd505fd0f22b2f52765afd7edfe90d",
+            "message": "Spy Javadoc enhancement + some visual tweaks for bold parts"
+        },
+        {
+            "hash": "6823686a1e41f7dabdc43256db3798ede6b0bc7d",
+            "message": "issue 289 : quick fix to reset candidate filter for each class in the type hierarchy\n\n--HG--\nextra : transplant_source : %F6%AAg%24%7B%92%90%91J%3B.x%3CVtnA%A3%5B%B2"
+        },
+        {
+            "hash": "b189ec7997c990fa0d18069a49da32b584336099",
+            "message": "issue 260 : factored out the mock scanning for injection (missing modification)"
+        },
+        {
+            "hash": "d650bb8b4c16d4580a391735ef3b760e960c592a",
+            "message": "issue 260 : factored out the mock scanning for injection"
+        },
+        {
+            "hash": "69d80a9aa2e4218a550a64893ec409f5f15b40df",
+            "message": "issue 260 : use field name for unnamed mocks"
+        },
+        {
+            "hash": "a183ba71fd0f803a8db820084ed799b55a0c69aa",
+            "message": "issue 277 : better documentation + added some tests to document the feature"
+        },
+        {
+            "hash": "08d5436c2ed0d21596b6491b8fbab7aa3c234e68",
+            "message": "Again forgot the fail()"
+        },
+        {
+            "hash": "a73a2c44769158a551fb0424cefd241ec382e5b1",
+            "message": "Merged previous work"
+        },
+        {
+            "hash": "cc4361de21e733192a01cd6372ed814f825a9cc4",
+            "message": "issue 233: better reporting of why the ClassCastException might happen"
+        },
+        {
+            "hash": "1193677c86b012554f45ada671af2dbcfe0ad60f",
+            "message": "issue248 doCallRealMethods on Stubber interface"
+        },
+        {
+            "hash": "139fff98f91ceb84f6d339aebc0923812e730c27",
+            "message": "issue 260 : scan inlined mocks for dependency injection"
+        },
+        {
+            "hash": "e989b7e84b4f9b2e5b3b70e766d6215fd68fcb3b",
+            "message": "minor tweaks regarding field initialization and javadocs"
+        },
+        {
+            "hash": "4377477f7f55e45b1ee1a73680e503f6dc49d135",
+            "message": "Test for issue 277 : Improving code readability a bit"
+        },
+        {
+            "hash": "c4a6f9cb64d4af2e7bb9736e0a2903368fcf2135",
+            "message": "deep stubs can now handle argument matchers in nested calls when verifying\n\n--HG--\nextra : transplant_source : %ED4%9Fs%1AC%11PZP%95_%F4U%C1%96%90%FB%0D%E0"
+        },
+        {
+            "hash": "cc7dd59c4400d64b4a6e75bb428d439e5e496c19",
+            "message": "issue 212 : report to the user why this is happening"
+        },
+        {
+            "hash": "3921b5d40d1d1725ca54457c3ba657c602d6286a",
+            "message": "Test for issue 233 : damn got caught again by the classpath differences in IntelliJ and Ant build system"
+        },
+        {
+            "hash": "60b99d9f4123c2ce6ad78b60a15c90515072e273",
+            "message": "Test for issue 233 : done for the sake of testing but also for fun with ClassLoading"
+        },
+        {
+            "hash": "c3e55a273574f6288692222dbab853163bf945b7",
+            "message": "issue 282 : mock invocation listeners were removed on reset(mock)"
+        },
+        {
+            "hash": "71f7715764a225d5eb921c4514af0ec3f86efa5a",
+            "message": "Added warning on spy stubbing misuse on WrongTypeOfReturnValue"
+        },
+        {
+            "hash": "436dc93626810090924d488d2d4ebdb500580c8c",
+            "message": "issue 233, MockitoConfiguration setting to disable objenesis cache"
+        },
+        {
+            "hash": "c95a3842e5588ee033fb8859939117ac7a468282",
+            "message": "In order to satisfy Sonatype OSS repository requirements I added developer information"
+        },
+        {
+            "hash": "092c124597d6a915a26a91b71a47e86777ac1e49",
+            "message": "In order to conform with Sonatype OSS maven repository standards I added packaging information"
+        },
+        {
+            "hash": "89a1ef4c81d9ce389b8aeb8f923b67a96c8489d0",
+            "message": "Rerun the replace headers code from gradle build. Many files updated but the update is quite boring."
+        },
+        {
+            "hash": "e4a7c491ceb105bd3f95cf2262ac0e0751140997",
+            "message": "Started automating the release in gradle"
+        },
+        {
+            "hash": "96b88b3106c840b15733e1b394c2d40bb59fbd14",
+            "message": "Added to hgignore"
+        },
+        {
+            "hash": "ea7e377f4a576f57c1ebb82b1036f198f8fa39ca",
+            "message": "Removed some no longer needed logic (the package rewriting). Added explicit task dependency."
+        },
+        {
+            "hash": "4f8430585d6fef6006a25c63d91f6c184e3622bd",
+            "message": "Some changes to the idea metadata"
+        },
+        {
+            "hash": "acad8477da31d5202463425506ca285b5a899a28",
+            "message": "Added gradle wrapper infrastructure."
+        },
+        {
+            "hash": "f113d7df7f3f3060099b8e40534e44f23b4557a0",
+            "message": "Improved automation a bit."
+        },
+        {
+            "hash": "ce6b947805b2f56f9192b59ad89b978521c25140",
+            "message": "Moved MockMaker to the public packages. Added tiny bit of docs.\n\n--HG--\nrename : src/org/mockito/internal/IMockMaker.java => src/org/mockito/plugins/MockMaker.java"
+        },
+        {
+            "hash": "8b2091365a2abc15281e8ed9b2e2f559fe9abd77",
+            "message": "Moved the MockitoInvocationHandler to public space. Added a new annotation to mark the 'incubating' apis. Refactored ReturnsSmartNulls a bit so that it uses the interface rather than the implementation.\n\n--HG--\nrename : src/org/mockito/internal/MockitoInvocationHandler.java => src/org/mockito/plugins/MockitoInvocationHandler.java"
+        },
+        {
+            "hash": "ff84cd2fbb21f1a11bf33cb798dd647c5b655c82",
+            "message": "Introduced new interface to hide the details of MockSettingsImpl in the plugins API. It's still an incubating api, might change."
+        },
+        {
+            "hash": "ebb6d01cd17a8f94fed0381cb72cde79c59119ed",
+            "message": "Don't depend on cglib's ability to inject code into the current class loader for a test.\n\n(Cglib can generate classes into the current class loader using reflection and magic; other IMockMaker implementations can't.)\n\n--HG--\nextra : transplant_source : %3C%5B%BF%DB%96p%AB%EE%D2%98Mu%85%B96O%2A%89%C8%C3"
+        },
+        {
+            "hash": "76ec5fceb1a9851d8aa6356f95f7a5668023e231",
+            "message": "Break ReturnsSmartNulls' dependency on cglib.\n\n--HG--\nextra : transplant_source : %88O%A75%E6V%A8%17%B6%A2yo%EE%88%19Z%BB_%CD%11"
+        },
+        {
+            "hash": "a4c2825d2cffcf0493e8a8acd13da1bdaf0cd2f7",
+            "message": "Extract an IMockMaker interface to encapsulate the cglib dependency.\n\nhttp://code.google.com/p/mockito/issues/detail?id=308\n\n--HG--\nextra : transplant_source : %28e%EF%9C%B3%96%D4%1D3m%E93%40%E6%E0%12%F2%83s5"
+        },
+        {
+            "hash": "0281caf46869a272532e4d21389f575d0ef6737c",
+            "message": "Added version to Mockito javadoc in window title and document title."
+        },
+        {
+            "hash": "d700c606d326d3daf3c0873f58aa3b6af5c10170",
+            "message": "Removed other javadoc generation warnings"
+        },
+        {
+            "hash": "a1fbfb1232b9b38beaf540c5420f148a48fd58fb",
+            "message": "Added returnFirstArgument answer."
+        },
+        {
+            "hash": "cd10933653937915b1570c7c80ed8ad61b2ad8c9",
+            "message": "Fixed javadoc and  added generics."
+        },
+        {
+            "hash": "fb763844ef12e060dd5cc4f919f6dfbbf15d35cd",
+            "message": "merging heads"
+        },
+        {
+            "hash": "c1e01f86a7fb1693e516638b6b1ad74fa4cc27a1",
+            "message": "Merged heads"
+        },
+        {
+            "hash": "243301a679920360e404d5d37115b9151a38590f",
+            "message": "issue 280 : renaming the answer + overzealous test to show that primitive/wrapper stuff wasn't needed in the answer.\n\n--HG--\nrename : src/org/mockito/internal/stubbing/defaultanswers/ReturnsDelegate.java => src/org/mockito/internal/stubbing/defaultanswers/ForwardsInvocations.java"
+        },
+        {
+            "hash": "099316432cd44a353eace03293eb0799b8f52c07",
+            "message": "Better javadoc for a verification with timeout"
+        },
+        {
+            "hash": "8bc5850f720002ed89b70ea90e6a979cfd5d67ac",
+            "message": "issue 327 : replace HashSet by a safe set that don't use Mock hashCode and equals method as they might be unreliable if not stubbable. Created an internal collection utils package."
+        },
+        {
+            "hash": "f00a5d7736939f19fd11d2bb5b856f1505526c15",
+            "message": "issue 145 / 280 : mock with delegate instance"
+        },
+        {
+            "hash": "2f07821e3fc93559a84a420717d7d393833629c9",
+            "message": "issue 322 synchronization fix test informations thx to edocomar"
+        },
+        {
+            "hash": "21649c3e56387e29275d90ed9b73b58c64bb0e6d",
+            "message": "Made clear that when pulling matchers it is actually LocalizedMatchers"
+        },
+        {
+            "hash": "6f0861dfc8b22d5819104f3a2dd53e237126e69c",
+            "message": "Cleanly the use the reporter in ArgumentMatcherStorage + use of defensive copy for the reporting"
+        },
+        {
+            "hash": "5652d1733e12aa10927f3bbe1dff42d016105957",
+            "message": "issue 306 : some code renaming, thx to Julien Meddah for his contribution"
+        },
+        {
+            "hash": "bd37bc544ddac2837b14a36601da1942353a9895",
+            "message": "Issue 306: Report improper usage of ArgumentMatcher"
+        },
+        {
+            "hash": "075acb4884b6ac0afd261249dc2939d4d0bb29bf",
+            "message": "issue 322 synchronization fix. thx to edocomar and Jose Paumard"
+        },
+        {
+            "hash": "120f622c8b299ce2347243dd67b9314cef33da89",
+            "message": "Added MockingDetails; also tweaked Mockito javadocs"
+        },
+        {
+            "hash": "1db289e9dd71048bb83bb48de72942b868d7a28f",
+            "message": "Don't use ServiceConfigurationError as it's only present from JDK 1.6"
+        },
+        {
+            "hash": "7095a8253f431abf7db5758e46e25c9445956d7d",
+            "message": "Minor javadoc tuning."
+        },
+        {
+            "hash": "534d0bd32ac28ec2242d9fd4179e371d529ab846",
+            "message": "Added javadocs for the new types. Moved the incubating API types around packages a bit.\n\n--HG--\nrename : src/org/mockito/plugins/MockitoInvocationHandler.java => src/org/mockito/invocation/MockitoInvocationHandler.java\nrename : src/org/mockito/plugins/MockSettingsInfo.java => src/org/mockito/mock/MockSettingsInfo.java"
+        },
+        {
+            "hash": "73745d37572a58e48ee79d7ee6a5c064bd37d6f9",
+            "message": "Added javadocs for the new types."
+        },
+        {
+            "hash": "b270b262b93ce524bf284ffea6a5a82129a50f34",
+            "message": "Added more detailed info on the Incubating interface."
+        },
+        {
+            "hash": "e7fdca920441e9b285961ae9f985f962a40dd3c9",
+            "message": "Fixed a problem with PrintableInvocation and DescribedInvocation. Reverted the type hierarchy - it should be more backwards compatible this way."
+        },
+        {
+            "hash": "9eebf1cfb0062e36634fd6d5bcbc047af0ae8fcc",
+            "message": "Made the PrintableInvocation deprecated and created DescribedInvocation instead. I didn't like the PrintableInvocation that much, DescribedInvocation better describes the purpose and lives in a better package, too."
+        },
+        {
+            "hash": "f4a654fd26bfe2afac6b7fd03347dde79b882840",
+            "message": "Copied the Pluralizer class to a private package. Left the deprecated variant just in case some uses it (however I think it's unlikely).\n\n--HG--\nrename : src/org/mockito/exceptions/Pluralizer.java => src/org/mockito/internal/reporting/Pluralizer.java\nrename : test/org/mockito/exceptions/PluralizerTest.java => test/org/mockito/internal/reporting/PluralizerTest.java"
+        },
+        {
+            "hash": "a4f14b52c78f924d47e77d9a72606357c1bcea43",
+            "message": "Copied the Discrepancy class to a private package. Left the deprecated variant just in case some uses it (however I think it's unlikely).\n\n--HG--\nrename : src/org/mockito/exceptions/Discrepancy.java => src/org/mockito/internal/reporting/Discrepancy.java"
+        },
+        {
+            "hash": "c7be3968d5ab439a7a2a9073bd1199857a9b939f",
+            "message": "Some clean-up with classes leaking to the public API. Made the JUnitTool private.\n\n--HG--\nrename : src/org/mockito/exceptions/verification/junit/JUnitTool.java => src/org/mockito/internal/junit/JUnitTool.java"
+        },
+        {
+            "hash": "dd91f7779b73eca16d34b520d002b35d27fac044",
+            "message": "Using Invocation instead of InvocationImpl where possible, even more."
+        },
+        {
+            "hash": "bb29c7721dc74a5b3de40a2cda1129529463f9fc",
+            "message": "Started using Invocation instead of InvocationImpl where possible"
+        },
+        {
+            "hash": "d87b82cf9c9138076b208d858cf921f65dcf61d9",
+            "message": "Started using Location instead of LocationImpl where possible"
+        },
+        {
+            "hash": "60f0c0c767879989d40d7846054cfc1df64e76af",
+            "message": "Started using the new Invocation interface where possible."
+        },
+        {
+            "hash": "756e46adf9246b0c2b3015441650d83b475ebfd0",
+            "message": "Renamed PublicInvocation -> Invocation before using the interface type where possible...\n\n--HG--\nrename : src/org/mockito/invocation/PublicInvocation.java => src/org/mockito/invocation/Invocation.java"
+        },
+        {
+            "hash": "a99d63b477bac80720fa25214ef7c3eb73576627",
+            "message": "Renamed Invocation -> InvocationImpl before using the interface type where possible...\n\n--HG--\nrename : src/org/mockito/internal/invocation/Invocation.java => src/org/mockito/internal/invocation/InvocationImpl.java"
+        },
+        {
+            "hash": "82a1c42f1e83016618996bd4ea4448d7a7a54168",
+            "message": "Moved some implementation to a better spot."
+        },
+        {
+            "hash": "fe02f89f4f49d37f1c7a2b757d8c19419addcd66",
+            "message": "Identified some public api around the invocation. More fun :) Needs some polishing still but we're almost there to have an interface for the Invocation type.\n\n--HG--\nrename : src/org/mockito/internal/invocation/StubInfo.java => src/org/mockito/internal/invocation/StubInfoImpl.java"
+        },
+        {
+            "hash": "87670dcd2a782a8218fa3c559a5da20c9e181476",
+            "message": "Renamed Location so that we can hoist up an interface to the public api.\n\n--HG--\nrename : src/org/mockito/internal/debugging/Location.java => src/org/mockito/internal/debugging/LocationImpl.java"
+        },
+        {
+            "hash": "eaa3fe7fcb0d2bf7b5b7d3e34a304f6e45863543",
+            "message": "Moved out more implementation details out of the Invocation class."
+        },
+        {
+            "hash": "faf7250a7a79709faf698fd09f3ef9480ebcd107",
+            "message": "Thinning up the Invocation implementation. Moved out some more implementation."
+        },
+        {
+            "hash": "519e11ae749d78bd721e6e3adc5c231c6cca4264",
+            "message": "Some refactoring before thinning up the Invocation implementation."
+        },
+        {
+            "hash": "3c5934e4224447ae4e278a2c510ee6334bbe951b",
+            "message": "Started moving out stuff to a public interface type. Moved some implementation elsewhere so that the public api can be thin."
+        },
+        {
+            "hash": "bfc2c4802218f7c05a690921c438a51df321c17a",
+            "message": "Preparation before making Invocation an interface. Making the API more lightweight - removing some public methods. This will make code slightly less LoD but that's a reasonable trade off."
+        },
+        {
+            "hash": "b6374e85948e2ef0e1b023a6850be96359f4f31b",
+            "message": "Preparation before making Invocation an interface. Polishing the public API."
+        },
+        {
+            "hash": "384e9afcfadea110232d9d6ad909123b9e58c2d6",
+            "message": "finder meta into the .hgignore"
+        },
+        {
+            "hash": "5950ae4b34ceaefb3e44660ae8f393ff718ab6f9",
+            "message": "Refactored MockingDetails.\n\nAlthough the factory method looked sweet I'd prefer to have MockingDetails interface. It made sense to include the mockingDetails() method in the core api (Mockito class).\n\n--HG--\nrename : test/org/mockito/MockingDetailsTest.java => test/org/mockitousage/basicapi/MockingDetailsTest.java"
+        },
+        {
+            "hash": "7868342609aa725794652dfe04d696de1ba7545d",
+            "message": "Issue 335 fix: EqualsWithDelta not null safe\nI added null checks in EqualsWithDelta class corresponding to:\nIf wanted is null and actual is not, return false.\nIf actual is null and wanted is not, return false.\nIf wanted and actual are null, return true"
+        },
+        {
+            "hash": "573056c16f4030c8d8567ec0ae7b1b1f74433a8c",
+            "message": "Made the SyntaxHighlighter base url configurable in the ant file. Now fetches the javascript files on the same URL as javadoc, this will make us less dependant of other hosts."
+        },
+        {
+            "hash": "2b7834f1643d02d2b5f1f701f82a1b1fe1ca719d",
+            "message": "Fixed Javadoc beauty of code issue, URAL has changed. Hosting can be seen there : http://alexgorbatchev.com/SyntaxHighlighter/hosting.html\nAlso note that beautyOfCode do not look like compatible with SyntaxHighlighter v3.x"
+        },
+        {
+            "hash": "6147963024639c3b5ea3a2e4ee7ed3db6b64d34b",
+            "message": "issue 353 - @InjectMocks behaved differently between Java 6 and 7. Also tweaked the property/field injection with a second pass to allow injection in some edge cases."
+        },
+        {
+            "hash": "e896cc7f1c293a8b7ffbb84498567b738858cdfa",
+            "message": "changed CI server URL"
+        },
+        {
+            "hash": "1cea5e1b2fed6aa2fc5317806ca63586c7e3b239",
+            "message": "fixed typo in MockMaker javadoc"
+        },
+        {
+            "hash": "8fd6cf210c3c42150c914880700b5d3182adf0ed",
+            "message": "issue 352 : simplified Primitives, HandyReturnValues and ReturnsEmptyValues"
+        },
+        {
+            "hash": "af44738c7de74f24e37ea0c1242e73b07c3f4362",
+            "message": "issue 352 : With answer ReturnsEmptyValues, Mockito-mocked methods returning primitive types other than \"int\" throw ClassCastException: java.lang.Integer.\nThanks to Jesse Wilson for spotting that one and providing a patch.\nI changed a few things however  especially:\n - used Primitives utility class instead\n - applied underscored names for test cases, as decided internally"
+        },
+        {
+            "hash": "41441c6b00e64c9f1f1275ff01a0ac4f7c4ae13e",
+            "message": "Merged from 1.9.5 branch. Updated the version"
+        },
+        {
+            "hash": "264b7307b34a5c9ab80c52166c7b555ac580b802",
+            "message": "Merged the stack trace cleaning extension point work. Not sure why another commit was need. Looks like me or hg got confused."
+        },
+        {
+            "hash": "9b42a6ebedcbc56dcb413b3ae8af0eef2f018b3f",
+            "message": "Added one more release instruction."
+        },
+        {
+            "hash": "06d2d0c19f80756b95a3f4fc157573aa91b17777",
+            "message": "Updated .hgignore so that ant build files are not included :) Fixed the problem with incremental build for jars."
+        },
+        {
+            "hash": "892426d6f09f134184b8fb27a471acad28d69919",
+            "message": "More work to get Gradle rolling. Gradle build should produce osgified jars now (only with clean build for now, though...)"
+        },
+        {
+            "hash": "123c5423901f558f2a0343a979963fe936d4c5c3",
+            "message": "Configured jar task so that it produces the equivalent of the ant build. Reduced duplication between two jar tasks."
+        },
+        {
+            "hash": "09a055acf84759e2031056fd37b4de547ada171c",
+            "message": "Added allJar building capability to gradle. It mimics the ant task behavior for now. The contents of the jar generated by gradle is the same as the one generated by ant."
+        },
+        {
+            "hash": "e096c14c83cb7b75de92b2b82a08029bd53ffd05",
+            "message": "Started migrating the ant build into Gradle. Moved the release stuff into a separate Gradle file."
+        },
+        {
+            "hash": "8747d950be955c908a78912d16062dd75c37d3d4",
+            "message": "Tweaked the tests so that Gradle test does not run some of the ignored tests."
+        },
+        {
+            "hash": "fa10cdfe8352fd5dce73254410eefd5848a90f6a",
+            "message": "Excluded testNg until Gradle migration is ready."
+        }
+    ],
+    "issues": []
+}

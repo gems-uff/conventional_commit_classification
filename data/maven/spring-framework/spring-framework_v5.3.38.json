@@ -1,0 +1,214 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.38",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 30,
+    "start_delay": 0.0,
+    "duration": 61.906400462962964,
+    "commits_info": [
+        {
+            "hash": "55be1e62f23fa1a4ec3e607d1364cf1830700b18",
+            "message": "Release v5.3.38"
+        },
+        {
+            "hash": "f00bc7bb24dfcaa78ed00097e82e7bcfe66a97d1",
+            "message": "Remove snapshot repo"
+        },
+        {
+            "hash": "582bfccbb72e5c8959a0b472d1dc7d03a20520f3",
+            "message": "Efficient ETag parsing\n\nCloses gh-33372"
+        },
+        {
+            "hash": "406b33d380925740d6221f357c85c8dd92d52f16",
+            "message": "Upgrade to Netty 4.1.112"
+        },
+        {
+            "hash": "f9c3d00af07e3b5e634f9161f86a2daacc64d682",
+            "message": "Introduce withAssignmentDisabled() option for SimpleEvaluationContext\n\nTo support additional use cases, this commit introduces a\nwithAssignmentDisabled() method in the Builder for\nSimpleEvaluationContext.\n\nSee gh-33319\nCloses gh-33320\n\n(cherry picked from commit 79c7bfdbadb73bdabf5412d477454bdeddb67aa5)"
+        },
+        {
+            "hash": "d2715d2fa1a9e8e6fcad23e6abe39234ed20bbf6",
+            "message": "Fix incorrect weak ETag assertion\n\nCloses gh-33377"
+        },
+        {
+            "hash": "57b02da8b9615e78d29d648d2e6cf7ed24dcfeec",
+            "message": "Upgrade to Reactor 2020.0.47\n\nCloses gh-33322"
+        },
+        {
+            "hash": "df33bf27bdf90602675c2fade7f955088c04c1ec",
+            "message": "Sync GHA setup"
+        },
+        {
+            "hash": "f75cebd8f2ea75e238cb7742beed21362154fbf8",
+            "message": "Start building against Reactor Reactor 2020.0.47 snapshots\n\nSee gh-33322"
+        },
+        {
+            "hash": "26f2dad388499faecf99e75b8856788e95d8d658",
+            "message": "Enforce read-only semantics in SpEL's SimpleEvaluationContext\n\nSimpleEvaluationContext.forReadOnlyDataBinding() documents that it\ncreates a SimpleEvaluationContext for read-only access to public\nproperties; however, prior to this commit write access was not disabled\nfor indexed structures when using the assignment operator, the\nincrement operator, or the decrement operator.\n\nIn order to better align with the documented contract for\nforReadOnlyDataBinding(), this commit makes it possible to disable\nassignment in general in order to enforce read-only semantics for\nSpEL's SimpleEvaluationContext when created via the\nforReadOnlyDataBinding() factory method. Specifically:\n\n- This commit introduces a new isAssignmentEnabled() \"default\" method\n  in the EvaluationContext API, which returns true by default.\n\n- SimpleEvaluationContext overrides isAssignmentEnabled(), returning\n  false if the context was created via the forReadOnlyDataBinding()\n  factory method.\n\n- The Assign, OpDec, and OpInc AST nodes -- representing the assignment\n  (=), increment (++), and decrement (--) operators, respectively --\n  now throw a SpelEvaluationException if assignment is disabled for the\n  current EvaluationContext.\n\nSee gh-33319\nCloses gh-33320\n\n(cherry picked from commit e1ab306506d4e350b119331387f504b726fbc776)"
+        },
+        {
+            "hash": "7e390784ba81bc0a802e163c6f57aea3b9ad22a5",
+            "message": "Throw exception for failure to set property as index in SpEL\n\nPrior to this commit, the Indexer in the Spring Expression Language\n(SpEL) silently ignored a failure to set a property via the indexed\nproperty syntax (['<property name>'] = <new value>) – for example, if\nproperty write access was disabled in the EvaluationContext.\n\nThis commit addresses this issue by properly throwing a\nSpelEvaluationException in PropertyIndexingValueRef.setValue(Object) if\nthe property could not be set.\n\nSee gh-33310\nCloses gh-33312\n\n(cherry picked from commit c57c2272a1d2a214bbbacac166a0845f287bbc73)"
+        },
+        {
+            "hash": "d5c5c91f416d7c59cdcda207c4d5b404648d8423",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1847d2f686bb70f1e614a37dab91439a00778db8",
+            "message": "Support conversion from primitive array to Object[] in ConversionService\n\nPrior to this commit, the ConversionService failed to convert a primitive\narray (such as int[]) to an Object[] due to an error in the logic in\nArrayToArrayConverter.\n\nThis commit addresses this by augmenting the \"can bypass conversion\"\ncheck in ArrayToArrayConverter to ensure that the supplied source object\nis an instance of the target type (i.e., that the source array can be\ncast to the target type array without conversion).\n\nCloses gh-33212\n\n(cherry picked from commit cb6a5baac508921486fd13a7a91cab9d7625868b)\n(cherry picked from commit 3e7372491c6a152c473c746dd75e029e0a6ac8b8)"
+        },
+        {
+            "hash": "351a17a28be11a5d4545f51d271ff921b133bf61",
+            "message": "Revert \"Support single String argument for varargs invocations in SpEL\"\n\nThis reverts commit dffb6c5bb6c7a8b60ee6ab0f3ddd9edb40e378e2.\n\nSee gh-33013\nSee gh-33188"
+        },
+        {
+            "hash": "dffb6c5bb6c7a8b60ee6ab0f3ddd9edb40e378e2",
+            "message": "Support single String argument for varargs invocations in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) incorrectly\nsplit single String arguments by comma for Object... varargs method and\nconstructor invocations.\n\nThis commit addresses this by checking if the single argument type is\nalready \"assignable\" to the varargs component type instead of \"equal\"\nto the varargs component type.\n\nSee gh-33013\nCloses gh-33188\n\n(cherry picked from commit d33f66d9b5865d7eb76cfde70e93a25f23c5e4fb)"
+        },
+        {
+            "hash": "286f5f295eb22c48078653a87c6407ebbb7c0303",
+            "message": "Remove useless permissions on build-and-deploy-snapshot workflow\n\nCloses gh-33240"
+        },
+        {
+            "hash": "d8e5613ef77c8209b618e5564b3f9ecc5ad6b3e0",
+            "message": "Add missing artifact properties for staging\n\nThis commit makes sure that docs artifacts have their attributes set\nfor staging as well. Previously they were not and deployment of Javadoc\ndid not occur.\n\nCloses gh-33208"
+        },
+        {
+            "hash": "e319bd7016f40ec6f7314d8e6519e7ab70da15bc",
+            "message": "Remove concourse configuration now that CI is using GitHub Actions"
+        },
+        {
+            "hash": "c8e9ad6289fd0d3551f34aaad0c814aef33c68c6",
+            "message": "Backport improvements to CI setup\n\nThis includes the ability to release from GitHub Actions.\n\nCloses gh-33202"
+        },
+        {
+            "hash": "562351f42f66edd0408d71ccfe6eadcf9a79fd4d",
+            "message": "Detect ajc markers in superclasses as well (for weaving check)\n\nCloses gh-33113\n\n(cherry picked from commit 100da83913884510103423d54257c37f2a428792)"
+        },
+        {
+            "hash": "2302b30c2b17dbe85895d5737ce6ee26458f7eb2",
+            "message": "Apply fallback resolution for non-hierarchical URIs such as \"file:.\"\n\nIncludes meaningful exception message for file system resolution.\n\nCloses gh-33124\n\n(cherry picked from commit daea3f0eaed755814c6a32e9837e59cc95893923)"
+        },
+        {
+            "hash": "96e3aa68a8707402e5d7fcfd078e0650f0b734ca",
+            "message": "Fix name of GitHub actions bot\n\nSee gh-gh-33078"
+        },
+        {
+            "hash": "2303ea92fe83d6fda28631dc446f6a93b1a9aa57",
+            "message": "Exclude GitHub Actions bot from changelog\n\nCloses gh-33078"
+        },
+        {
+            "hash": "fa05de1d968589d31f6e95c060ed69c7175ba68a",
+            "message": "Use Sonatype S01 token in release pipeline"
+        },
+        {
+            "hash": "6b62b93d435484b075cea76d5515896eb58a27cf",
+            "message": "Backported test for @Autowired @Bean method on configuration subclass\n\nSee gh-33030"
+        },
+        {
+            "hash": "2eed02ea44d2f26951d30ecbfc2970699f2628cf",
+            "message": "Correct and consistent event class names in constructor javadoc\n\nCloses gh-33032\n\n(cherry picked from commit e79a9a5bff15323545e21b812f7cea8585f8eddd)"
+        },
+        {
+            "hash": "bafb1c7e2be35ecdfdb676d2477f397566d260b5",
+            "message": "Fix typo\n\nCloses gh-33052"
+        },
+        {
+            "hash": "c8df1861bf247798082db6e785ae43457ce8c159",
+            "message": "Fix property name in Container Extension Points section\n\nCloses gh-33039"
+        },
+        {
+            "hash": "ef81f065280f7da91ba4bd9be59110fadb5c02fb",
+            "message": "Fix invalid character in Javadoc of BeanFactory"
+        },
+        {
+            "hash": "a65ea7983daa85e8346ae7ccf6005913d9e9ea6b",
+            "message": "Next development version (v5.3.38-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33372",
+            "title": "Efficient handling of conditional HTTP requests"
+        },
+        {
+            "number": "33319",
+            "title": "`SimpleEvaluationContext` does not enforce read-only semantics"
+        },
+        {
+            "number": "33320",
+            "title": "`SimpleEvaluationContext` does not enforce read-only semantics"
+        },
+        {
+            "number": "33377",
+            "title": "Fix incorrect weak ETag validation"
+        },
+        {
+            "number": "33322",
+            "title": "Upgrade to Reactor 2020.0.47"
+        },
+        {
+            "number": "33310",
+            "title": "SpEL `Indexer` silently ignores failure to set property as index"
+        },
+        {
+            "number": "33312",
+            "title": "SpEL `Indexer` silently ignores failure to set property as index"
+        },
+        {
+            "number": "33212",
+            "title": "`ConversionService` cannot convert primitive array to `Object[]`"
+        },
+        {
+            "number": "33013",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33188",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33240",
+            "title": "build-and-deploy-snapshot workflow should not require write permission"
+        },
+        {
+            "number": "33208",
+            "title": "Javadoc not published for new GA and milestone release processes"
+        },
+        {
+            "number": "33202",
+            "title": "Improve CI setup, including release from GitHub Actions"
+        },
+        {
+            "number": "33113",
+            "title": "Mockito mock falsely initialized as CGLIB proxy with AspectJ aspect"
+        },
+        {
+            "number": "33124",
+            "title": "\"file:.\" cannot be resolved to `java.nio.file.Path` (and plain \".\" value resolves to classpath root)"
+        },
+        {
+            "number": "33078",
+            "title": "Exclude GitHub Actions bot from changelog"
+        },
+        {
+            "number": "33030",
+            "title": "No qualifying bean of type 'java.lang.String' in case of accidental `@Autowired` `@Bean` method with `@Value` parameter"
+        },
+        {
+            "number": "33032",
+            "title": "Incorrect constructor details in the javadoc for ApplicationContextEvent"
+        },
+        {
+            "number": "33052",
+            "title": "Typo in Annotation-driven Listener Endpoints section of Spring Framework documentation"
+        },
+        {
+            "number": "33039",
+            "title": "Container Extension Points section of Spring Framework documentation refers to the wrong property name"
+        }
+    ]
+}

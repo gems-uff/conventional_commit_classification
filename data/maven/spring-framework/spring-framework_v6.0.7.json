@@ -1,0 +1,410 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 76,
+    "start_delay": 0.0,
+    "duration": 998.0247222222222,
+    "commits_info": [
+        {
+            "hash": "da19cb342d0c134e1e36410455abbbc2c0e7e5c0",
+            "message": "Release v6.0.7"
+        },
+        {
+            "hash": "202fa5cdb3a3d0cfe6967e85fa167d978244f28a",
+            "message": "Polishing and minor refactoring in HandlerMappingIntrospector\n\nCloses gh-30127"
+        },
+        {
+            "hash": "8010de8b63057af06984df5c7550ba99d006e909",
+            "message": "Improve diagnostics in SpEL for `matches` operator\n\nSupplying a large regular expression to the `matches` operator in a\nSpEL expression can result in errors that are not very helpful to the\nuser.\n\nThis commit improves the diagnostics in SpEL for the `matches` operator\nby throwing a SpelEvaluationException with a meaningful error message\nto better assist the user.\n\nCloses gh-30144"
+        },
+        {
+            "hash": "5529294ec975f8a309161797670d68c3f0eeab7f",
+            "message": "Improve diagnostics in SpEL for repeated text\n\nAttempting to create repeated text in a SpEL expression using the\nrepeat operator can result in errors that are not very helpful to the\nuser.\n\nThis commit improves the diagnostics in SpEL for the repeat operator by\nthrowing a SpelEvaluationException with a meaningful error message in\norder to better assist the user.\n\nCloses gh-30142"
+        },
+        {
+            "hash": "935c29e3ddba5b19951e54f6685c70ed45d9cbe5",
+            "message": "Increase scope of regex pattern cache for the SpEL `matches` operator\n\nPrior to this commit, the pattern cache for the SpEL `matches` operator\nonly applied to expressions such as the following where the same\n`matches` operator is invoked multiple times with different input:\n\n  \"map.keySet().?[#this matches '.+xyz']\"\n\nThe pattern cache did not apply to expressions such as the following\nwhere the same pattern ('.+xyz') is used in multiple `matches`\noperations:\n\n  \"foo matches '.+xyz' AND bar matches '.+xyz'\"\n\nThis commit addresses this by moving the instance of the pattern cache\nmap from OperatorMatches to InternalSpelExpressionParser so that the\ncache can be reused for all `matches` operations for the given parser.\n\nCloses gh-30140"
+        },
+        {
+            "hash": "4a3518b4d6e8e320d4aecd8a0614344a4ae95249",
+            "message": "Polishing"
+        },
+        {
+            "hash": "dd4a34778b7d794e6fb45d95bf117ad557d5be4b",
+            "message": "Stop printing to System.out in SpEL tests"
+        },
+        {
+            "hash": "46bd6add15bb41163445e375908df33af2831b95",
+            "message": "Mention JAR signing key in SECURITY.md\n\nThis commit adds a link to the now published information on spring.io\nabout the GPG key used to sign the Spring artifacts published on Maven\nCentral.\n\nCloses gh-23434"
+        },
+        {
+            "hash": "19384ac8ad6f0feb63ec96206417f17e07e1790d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a0358a465088c803c8701ae0ee8de404f0562018",
+            "message": "Upgrade to Reactor 2022.0.5 and Netty 4.1.90\n\nIncludes Checkstyle 10.9.1 and Mockito 5.2.0\n\nCloses gh-30133"
+        },
+        {
+            "hash": "88bc50462528509a8092c10d6d07b83cf5741a1e",
+            "message": "Skip validation constraint hint inference if no provider available\n\nCloses gh-30130"
+        },
+        {
+            "hash": "3af8efbdc7d31f6736f6c763f417b6af08174e20",
+            "message": "Add anchor rewrites in the reference documentation\n\nThis commit adds an `anchor-rewrite.properties` file in the reference\ndocumentation sources. This allows to redirect from one anchor to\nanother when they are renamed.\n\nThis also populates the file with anchors that were renamed in the AOT\nsection of the documentation.\n\nCloses gh-30132"
+        },
+        {
+            "hash": "2e08a07d7c02fe2994486f668398995288d6a489",
+            "message": "Add a list of produced observations\n\nThis commit adds a list observations produced by Spring Framework in the\nreference documentation.\n\nCloses gh-30060"
+        },
+        {
+            "hash": "df4e7d1929b73b52012bbf2a049ba737116b27a6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2a5eab4b899dcb2000655039b6b754715348d66f",
+            "message": "Ignore quality factor when filtering out \"*/*\"\n\nPrior to this commit, the `RequestedContentTypeResolverBuilder` would\ncreate a `RequestedContentTypeResolver` that internally delegates to a\nlist of resolvers. Each resolver would either return the list of\nrequested media types, or a singleton list with the \"*/*\" media type; in\nthis case this signals that the resolver cannot find a specific media\ntype requested and that we should continue with the next resolver in the\nlist.\n\nMedia Types returned by resolvers can contain parameters, such as the\nquality factor. If the HTTP client requests \"*/*;q=0.8\", the\n`HeaderContentTypeResolver` will return this as a singleton list. While\nthis has been resolved from the request, such a media type should not be\nselected over other media types that could be returned by other\nresolvers.\n\nThis commit changes the `RequestedContentTypeResolverBuilder` so that it\ndoes not select \"*/*;q=0.8\" as the requested media type, but instead\ncontinues delegating to other resolvers in the list. This means we need\nto remove the quality factor before comparing it to the \"*/*\" for\nequality check.\n\nFixes gh-29915"
+        },
+        {
+            "hash": "1de36abc078e93388b58c1576f6401ed6b5f572c",
+            "message": "Revise contribution\n\nSee gh-25316"
+        },
+        {
+            "hash": "97b5af8a5597e54f2472eaac6f14aa1b524d6314",
+            "message": "Ensure methods declared in Object can be invoked on a JDK proxy in SpEL\n\nThis commit ensures that methods declared in java.lang.Object (such as\ntoString() can be invoked on a JDK proxy instance in a SpEL expression.\n\nCloses gh-25316"
+        },
+        {
+            "hash": "4751769a7c984f9bce6dd095e6c9324c8fce150e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1f8e9f5c55b963bda86ba2c6f561ec910f1a9174",
+            "message": "Support Windows path in ContentDisposition::parse\n\nThis commit makes sure that ContentDisposition::parse supports Windows\npath with a backslash.\n\nCloses gh-30111"
+        },
+        {
+            "hash": "c3ce8478712b43d7c1c30332ae8722a8883bfcec",
+            "message": "Polishing contribution\n\nCloses gh-30092"
+        },
+        {
+            "hash": "cd8955fa72df80aa8f7ba5c761d61ed69fc2495b",
+            "message": "Remove extra copy in WebClient headers/cookies\n\nSee gh-30092"
+        },
+        {
+            "hash": "d18bcb3f3dd4e6a941e3e1bc088b48b3de319de7",
+            "message": "Raise MethodArgumentNotValidException consistently\n\nCloses gh-30100"
+        },
+        {
+            "hash": "e17f5c50a8472ba4173d6d9840fa7eace4729664",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "00be19c647a15765f081ac6ea6fdd723e9489dde",
+            "message": "Consistently declare Object::equals argument as @Nullable"
+        },
+        {
+            "hash": "a6dab1030932780f44687b2a1057439dbca3b296",
+            "message": "Update code regarding null-safety semantics\n\nSee gh-30083"
+        },
+        {
+            "hash": "b617e16d8d6b948b6973e871e5ed885be2d95fa5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "9cf7b0e230af83e08efa73a43334c75f6110988f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3431b2330a7f210015baaa2dfdf5c7fdc9ea400e",
+            "message": "Avoid unnecessary parameter name inspection for factory method type check\n\nCloses gh-30103\nSee gh-29612"
+        },
+        {
+            "hash": "99e54fec3ac8dfedd2537fde5f19fbcc4f1f6202",
+            "message": "Ensure all packages declare package-info.java with null-safety annotations\n\nThis commit picks up where the two previous commits left off.\n\nSpecifically, this commit:\n\n- Removes the \"severity=warning\" configuration to ensure that violations\n  actually fail the build.\n- Fixes regular expressions for suppressions by matching forward\n  slashes using `[\\\\/]` instead of `\\/`.\n- Moves the configuration for newly introduced checks to locations in\n  checkstyle.xml that align with the existing organization of that file.\n- Renames the IDs for RegexpSinglelineJava checks from\n  javaDocPackageNonNullApiAnnotation/javaDocPackageNonNullFieldsAnnotation\n  to packageLevelNonNullApiAnnotation/packageLevelNonNullFieldsAnnotation,\n  respectively, since these checks are not related to Javadoc.\n- Simplifies the null-safety annotation checks to match against\n  imported annotation types, which enforces consistency across\n  package-info.java files for the annotation declarations.\n- Simplifies the RegEx for JavadocPackage suppressions to only exclude\n  packages not under src/main/java (vs src/main) and those in the\n  framework-docs module.\n- Consistently suppresses all checks for the `asm`, `cglib`, `objenesis`,\n  and `javapoet` packages in spring-core.\n- Adds explicit suppressions for null-safety annotations for the `lang`\n  package in spring-core.\n- Adds explicit suppressions for null-safety annotations for the\n  `org.aopalliance` package in spring-aop.\n- Revises the RegEx for null-safety annotation suppressions to only\n  exclude package-info.java files not under src/main/java and\n  additionally to exclude package-info.java files in the framework-docs\n  module as well as those in the spring-context-indexer,\n  spring-instrument, and spring-jcl modules.\n- Adds all missing package-info.java files.\n- Adds null-safety annotations to package-info.java files where\n  appropriate.\n\nCloses gh-30069"
+        },
+        {
+            "hash": "7e32f504b021015ca8a7eaed7280453fad724b0f",
+            "message": "Configure Checkstyle to require package-level null-safety annotations\n\nThis commit updates the project's checkstyle configuration to check\nthat package-info.java files contain the @NonNullApi and @NonNullFields\nnull-safety annotations.\n\nSee gh-30069"
+        },
+        {
+            "hash": "268e3fec9921653de17ab2f495039239f6b6152e",
+            "message": "Configure Checkstyle to require package-info.java files\n\nThis commit updates the project's checkstyle configuration to require\nthe existence of a package-info.java file for all packages within the\nsrc/main directory while excluding the framework-docs module and\ncertain packages inside the spring-core module. A missing\npackage-info.java file will result in emitting a warning.\n\nSee gh-30069"
+        },
+        {
+            "hash": "9b50c0d590d5029e5cd3aaf7512664472f89194f",
+            "message": "Ensure reactive transaction rollback on commit error\n\nThis change fixes a situation where error handling was skipped during\n`processCommit()` in case the `doCommit()` failed. The error handling\nwas set up via an `onErrorResume` operator that was nested inside a\n`then(...)`, applied to an inner `Mono.empty()`. As a consequence,\nit would never receive an error signal (effectively decoupling the\nonErrorResume from the main chain).\n\nThis change simply moves the error handling back one level up. It also\nsimplifies the `doCommit` code a bit by getting rid of the steps that\nartificially introduce a `Mono<Object>` return type, which is not really\nneeded.\n\nA pre-existing test was missing the fact that the rollback didn't occur,\nwhich is now fixed. Another dedicated test is introduced building upon\nthe `ReactiveTestTransactionManager` class.\n\nCloses gh-30096"
+        },
+        {
+            "hash": "2e5d0470dc0c9766d98d144d5b6bd56248112e46",
+            "message": "Polishing"
+        },
+        {
+            "hash": "d2868f5dd0840c158a5a60fa96c4afd9ce19f777",
+            "message": "Use Set to track ignored properties in BeanUtils.copyProperties()\n\nCloses gh-30088"
+        },
+        {
+            "hash": "1acbc97b16acf0901b1db3a3b264cf533605e2a3",
+            "message": "Fix minor spacings in webflux docs\n\nCloses gh-30078"
+        },
+        {
+            "hash": "e88ec06a36e6ba1e1e6b6587690a894050d83ee6",
+            "message": "Disable flaky unit test for undertow"
+        },
+        {
+            "hash": "2302358606cae5804a633d4ab8080e86385bcca9",
+            "message": "Upgrade to Log4J 2.20, Tomcat 10.1.7, Jetty 11.0.14, Undertow 2.3.4"
+        },
+        {
+            "hash": "d213522dfc8d1dd45dc54d2cb48401d65d0678ac",
+            "message": "Polishing"
+        },
+        {
+            "hash": "95710646d1b54d32eb70d3fbc1e8dc7ce95c3584",
+            "message": "Pass pre-determined merged bean definition into InstanceSupplier (for inner beans)\n\nReplaces useless protected obtainFromSupplier method with obtainInstanceFromSupplier.\nMoves InstanceSupplier handling to appropriate subclass (DefaultListableBeanFactory).\nBeanInstanceSupplier throws BeanInstantiationException instead of BeanCreationException.\n\nCloses gh-29803"
+        },
+        {
+            "hash": "6cd67412ccd0a3df419205cc0281bbed59260bab",
+            "message": "Avoid lock contention in CaffeineCacheManager\n\nPrior to this commit, using a dynamic `CaffeineCacheManager` would rely\non `ConcurrentHashMap#computeIfAbsent` for retrieving and creating cache\ninstances as needed. It turns out that using this method concurrently\ncan cause lock contention even when all known cache instances are\ninstantiated.\n\nThis commit avoids using this method if the cache instance already\nexists and avoid storing `null` entries in the map. This change reduces\nlock contention and the overall HashMap size in the non-dynamic case.\n\nFixes gh-30066"
+        },
+        {
+            "hash": "e427ea808674f189ae2e0b3b83632840e3827a28",
+            "message": "Merge pull request #30046 from srivatsa-cfp:main\n\n* gh-30046:\n  Add non-null assertions in DefaultServerRequestBuilder"
+        },
+        {
+            "hash": "d8fbd3546756268b349262bbba6b7ba72368b3c7",
+            "message": "Add non-null assertions in DefaultServerRequestBuilder\n\nThis commit adds various non-null assertions to\nDefaultServerRequestBuilder, in both Spring MVC and WebFlux.\n\nCloses gh-30046"
+        },
+        {
+            "hash": "a31cfba992049f607f14aa421025f540cbd33571",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-websocket module\n\nSee gh-30067"
+        },
+        {
+            "hash": "14973fd6f3c352719ddf1bd51d2105322d90805a",
+            "message": "Unset reproducibleFileOrder and preserveFileTimestamps Gradle flags\n\nThis commit reverts the changes done via 50a0094a47bc25539ccca4cb184af53f44aff3f0\nin order to ensure consistency across modules (those changes were specific to\nspring-core).\n\nReproducible builds are likely desirable, but it is a complex topic\n(see gradle/gradle#14819) that needs to be addressed portfolio wide, with\na better control than what Gradle currently allows (for example to allow\nusing EPOCH instead of the current 1980 date).\n\nBasic tests did not show an obvious impact on testing avoidance with modern\nGradle versions.\n\nCloses gh-29633"
+        },
+        {
+            "hash": "ffe7ec4a99e2f8b55f7b46d2603b4356e8339246",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-webmvc module\n\nSee gh-30067"
+        },
+        {
+            "hash": "9b811a01f6ac3bd7d66d2c128725d4452ccd788c",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2b23d1693d80d71abe4248df21fef50000ee82ee",
+            "message": "Remove unused service package"
+        },
+        {
+            "hash": "9011ce9c68e5b28344c275e6ec4366225fa0d8e8",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-web module\n\nSee gh-30067"
+        },
+        {
+            "hash": "29fe0a3c6a2cb4228ee9c01548374675703e76d0",
+            "message": "Update TODO for linking to JUnit 5 docs\n\nSee gh-27497"
+        },
+        {
+            "hash": "c20efba45c731a90d6bf203f554fb919147b61d8",
+            "message": "End javadoc generated AOT with a period consistently\n\nCloses gh-29357"
+        },
+        {
+            "hash": "fa95bf4dc159c50e1da5d68808a1d914c3bbd451",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-test module\n\nSee gh-30067"
+        },
+        {
+            "hash": "eea000d034b4da342f13cd36cae6bba8ff2f1332",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-r2dbc module\n\nSee gh-30067"
+        },
+        {
+            "hash": "a6338fcc43e54cef13f20d311d08c98349d888f3",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "dafc7a2aab48150169fead0264fbdb6561ebbd60",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-oxm module\n\nSee gh-30067"
+        },
+        {
+            "hash": "b7288a4073ce8a8316af1e8b1f5f6240ce64d4b2",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-orm module\n\nSee gh-30067"
+        },
+        {
+            "hash": "004a144bdcf9a302e44e194c65f4d5a6a027c74d",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-messaging module\n\nSee gh-30067"
+        },
+        {
+            "hash": "09b60220d8ba6284066b4b8fafab6171dd35811e",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-jms module\n\nSee gh-30067"
+        },
+        {
+            "hash": "7f1b81ff53371061ea5b6cfe5aff946b10d97dc0",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-jdbc module\n\nSee gh-30067"
+        },
+        {
+            "hash": "8175a3bf099fbfaf4075221fe314ad3cf5d6ad08",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7eadedae36e416739fad5ecdd688a13d91477204",
+            "message": "Apply \"instanceof pattern matching\" in spring-jcl module\n\nSee gh-30067"
+        },
+        {
+            "hash": "cb4f93561e52928a56d3e0e83b7670275ae9952e",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-expression module\n\nSee gh-30067"
+        },
+        {
+            "hash": "f3cb331e4efde2a36f0dfe4be94105f55db2c29b",
+            "message": "Optimize find[Getter|Setter]ForProperty() in ReflectivePropertyAccessor"
+        },
+        {
+            "hash": "74f6725a37cda143e565f69b760dc04edef1f289",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "edf0ae77e502dd0e5b85a4fa8fc08d3e516d990a",
+            "message": "Avoid rollback after a commit failure in TransactionalOperator\n\nA failure to commit a reactive transaction will complete the\ntransaction and clean up resources. Executing a rollback at\nthat point is invalid, which causes an\nIllegalTransactionStateException that masks the cause of the\ncommit failure.\n\nThis change restructures TransactionalOperatorImpl and\nReactiveTransactionSupport to avoid executing a rollback after\na failed commit. While there, the Mono transaction handling in\nTransactionalOperator is simplified by moving it to a default\nmethod on the interface.\n\nCloses gh-27572"
+        },
+        {
+            "hash": "95481018d01eca361091f22961c73923c1edeca0",
+            "message": "Apply \"instanceof pattern matching\" in spring-core-test\n\nSee gh-30067"
+        },
+        {
+            "hash": "56523d5014e6d102382219549c3a0924b459c9dc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8ebd746d69cfe551eab87db97d647aa5ba51e839",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-core module\n\nSee gh-30067"
+        },
+        {
+            "hash": "162c09d0365a9bf83874effa0b5ac2205d0c3168",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-context-support module\n\nSee gh-30067"
+        },
+        {
+            "hash": "7766b518d31c72279f4076fff9d1914df4a1f7e0",
+            "message": "Apply \"instanceof pattern matching\" in spring-context-indexer module\n\nSee gh-30067"
+        },
+        {
+            "hash": "24de8c6f4c22523b62e797145a596a9a83fe56a3",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-context module\n\nSee gh-30067"
+        },
+        {
+            "hash": "d9500e60a1075ef1d45e2d675be45ab3452fb35c",
+            "message": "Apply \"instanceof pattern matching\" in remainder of spring-beans module\n\nSee gh-30067"
+        },
+        {
+            "hash": "e5d20a4f9de11512d8f3cc8aab3f2c60c2546ab3",
+            "message": "Convert EventExpressionRootObject to a record"
+        },
+        {
+            "hash": "37458d28d92b169fdb58dbec2353bd05b8a0c6c1",
+            "message": "Covert InterceptorAndDynamicMethodMatcher to a record"
+        },
+        {
+            "hash": "c9aba1eaad3ce0bcf68b09305a61d67c942d3660",
+            "message": "Enable Jetty 12 support in WebFlux\n\nCloses gh-29575"
+        },
+        {
+            "hash": "3854861a8a71da97a8275c76ea81ad04025da9ae",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3dd0fbfb5710a8bb75212d85c84ea8222cc43bbd",
+            "message": "Next development version (v6.0.7-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30127",
+            "title": "Minor updates in HandlerMappingIntrospector"
+        },
+        {
+            "number": "30144",
+            "title": "Improve diagnostics in SpEL for `matches` operator"
+        },
+        {
+            "number": "30142",
+            "title": "Improve diagnostics in SpEL for repeated text"
+        },
+        {
+            "number": "30140",
+            "title": "Increase scope of regex pattern cache for the SpEL `matches` operator"
+        },
+        {
+            "number": "23434",
+            "title": "Please publish PGP signing keys publicly"
+        },
+        {
+            "number": "30133",
+            "title": "Upgrade to Reactor 2022.0.5"
+        },
+        {
+            "number": "30130",
+            "title": "Gradle task `processAot` fails when Bean Validation API present but no provider found"
+        },
+        {
+            "number": "30132",
+            "title": "Add anchor rewrites in the reference documentation"
+        },
+        {
+            "number": "30060",
+            "title": "Add a list of observations produced by Spring Framework"
+        },
+        {
+            "number": "29915",
+            "title": "RequestedContentTypeResolver does not ignore quality factor when filtering */* media types"
+        },
+        {
+            "number": "30111",
+            "title": "ContentDisposition::parse does not support Windows paths"
+        },
+        {
+            "number": "30100",
+            "title": "BindException raised instead of MethodArgumentNotValidException subclass"
+        },
+        {
+            "number": "30083",
+            "title": "Assess null-safety semantics for newly annotated packages"
+        },
+        {
+            "number": "30103",
+            "title": "Skip parameter name resolution when not needed in `AbstractAutowireCapableBeanFactory`"
+        },
+        {
+            "number": "29612",
+            "title": "Unnecessary parameter name introspection for constructor-arg resolution (leading to LocalVariableTableParameterNameDiscoverer warnings)"
+        },
+        {
+            "number": "29803",
+            "title": "@Autowired/@Value does not work on inner bean in native"
+        },
+        {
+            "number": "30066",
+            "title": "CaffeineCacheManager getCache method cause thread block"
+        },
+        {
+            "number": "30067",
+            "title": "Apply \"`instanceof` pattern matching\" in the remainder of the code base"
+        },
+        {
+            "number": "14819",
+            "title": "UriComponents break UriTemplate serialization [SPR-10186]"
+        },
+        {
+            "number": "29633",
+            "title": "The last modified timestamps of files in spring-core JAR are incorrect"
+        },
+        {
+            "number": "27497",
+            "title": "Reinstate links to JUnit 5 Javadoc APIs using JDK 18+"
+        },
+        {
+            "number": "29357",
+            "title": "Generated javadoc for AOT classes should end with a period"
+        },
+        {
+            "number": "29575",
+            "title": "Jetty 12 support in WebFlux"
+        }
+    ]
+}

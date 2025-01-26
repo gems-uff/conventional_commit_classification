@@ -1,0 +1,481 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v1.8.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 117,
+    "start_delay": 0.0,
+    "duration": 121.08302083333334,
+    "commits_info": [
+        {
+            "hash": "e949950134ab8dd804f70cef10641cf34d68b6a5",
+            "message": "released javadoc, updated version\n\n--HG--\nbranch : 1.8.1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1%401764"
+        },
+        {
+            "hash": "dce0004f962a48f704824d188db00f4fd56eb33c",
+            "message": "branched before release\n\n--HG--\nbranch : 1.8.1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1%401763"
+        },
+        {
+            "hash": "8c0dca7a1d7ae51d3ead66960558fd2cac0e1346",
+            "message": "Fixed issue 152\nUser should be able to set mock to be serializable AND set additional interfaces\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401759"
+        },
+        {
+            "hash": "173528a1363d488b9e13e198b4e88b7da810cbd1",
+            "message": "In order to fix issue 151. To allow stubbing mocks configured to return mocks.\nMockito core should not reset ongoing stubbing all the time. It is too defensive. (merged from head)\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401758"
+        },
+        {
+            "hash": "296c2d9a75777e26e015be1df7d75cb1d5220578",
+            "message": "added IDEA stuff\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401757"
+        },
+        {
+            "hash": "1a3319ab4dbaef19a23b9b10f53d8fc150c9fd18",
+            "message": "In order to fix issue 151. To allow stubbing mocks configured to return mocks.\nMockito core should not reset ongoing stubbing all the time. It is too defensive.\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401756"
+        },
+        {
+            "hash": "c1ac89ccf14940dc52fce15f69a2151b7769ce53",
+            "message": "Added hgignore (target)\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401755"
+        },
+        {
+            "hash": "b0975f19509ce61b0fecc8544e37f55695cc9bac",
+            "message": "added IDEA descriptor\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401754"
+        },
+        {
+            "hash": "00fd42a8b8b09486f2954d00be5ea801b9e9b4d8",
+            "message": "- in order to move Serializable out of interfaces and back to concrete classes\n-- made all implementations of RealMethod implement Serializable\n-- removed Serializable extension from RealMethod\n-- cleaned up un-needed suppresswarnings\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401753"
+        },
+        {
+            "hash": "b94fdd5b5eae2125c0e3b1767d47b43c7b5a1625",
+            "message": "- in order to move Serializable out of interfaces and back to concrete classes\n-- made all implementations of CaptureArguments and CaptureArgumentsForInvocation implement Serializable\n-- removed Serializable extension from CaptureArguments and CaptureArgumentsForInvocation\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401752"
+        },
+        {
+            "hash": "904ec7fae2f6207b6d0f4b48c7fd522651e13dd2",
+            "message": "- in order to move Serializable out of interfaces and back to concrete classes (from trunk 1745)\n-- removed serialversionid from abstract CompareTo\n-- removed un-needed warnings\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401751"
+        },
+        {
+            "hash": "f7fdd82b373bc08b068597fad20b3e9f34e01cd5",
+            "message": "- in order to move Serializable out of interfaces and back to concrete classes (from trunk 1744)\n-- made all implementations of ArgumentMatcher implements Serializable\n-- removed Serializable extension from ArgumentMatcher\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401750"
+        },
+        {
+            "hash": "7ed3f36d310918014559bb758f08f532e2cbeafd",
+            "message": "- in order to move Serializable out of interfaces and back to concrete classes (from trunk 1743)\n-- made all implementations of Answer implements Serializable\n-- removed Serializable extension from Answer\n-- fixed test to show that any implementation of Answer must implement Serializable for mocks to be Serializable\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401749"
+        },
+        {
+            "hash": "1c447585035bb6267d39d002110ef2eefa0afdeb",
+            "message": "Tagged new release\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401704"
+        },
+        {
+            "hash": "92c3ea8963cec297c4b5135ae32a71dd5bb3a33a",
+            "message": "released javadoc, updated version\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401703"
+        },
+        {
+            "hash": "771cce739f3577b95b172ddc2b15b0a131652736",
+            "message": "branched before release\n\n--HG--\nbranch : 1.8.1-rc1\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/branches/1.8.1-rc1%401702"
+        },
+        {
+            "hash": "97b8a3a040a70131f4b0bb62ad29a5f38d0b86db",
+            "message": "In order to have better version in release.py\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401699"
+        },
+        {
+            "hash": "102d3459a14a7379a488b7a4000efb9abb11358c",
+            "message": "In order to work around weird ant bug I renamed one of the temp folders\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401697"
+        },
+        {
+            "hash": "e685a92f5dc743c3e05123200715a9c55b096e99",
+            "message": "In order to smooth up release process\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401696"
+        },
+        {
+            "hash": "ef77a8570e0ae81b9e2466eedbdb4e19eec2c0dc",
+            "message": "Updated license headers\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401693"
+        },
+        {
+            "hash": "2f358f94d7789c39b4e43ec2a7004447f145249c",
+            "message": "Added tagging capability to release script\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401692"
+        },
+        {
+            "hash": "f6dcd851bab4cd1fc3bfd2aeba231238ae74fabc",
+            "message": "Fixed issue 144\nIt is a process tweak - When searching for similar invocation, there is no point in matching arguments when method name does not match.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401691"
+        },
+        {
+            "hash": "eac6ed040b25277093b011869f6a4fa7d01fac44",
+            "message": "Tuned the javadocs\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401690"
+        },
+        {
+            "hash": "5182cbe6bb910efbe5de43d3c3648d8026089b59",
+            "message": "Tuned the javadocs\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401689"
+        },
+        {
+            "hash": "383bbee7be6d5e79fae8afc0eacc5eba2f274105",
+            "message": "Tuned the javadocs around Serialization\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401688"
+        },
+        {
+            "hash": "b20e6e46d130c3367d917e2809d9240879b4f319",
+            "message": "added missing tests for my sanity\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401687"
+        },
+        {
+            "hash": "2ffa96c9c92dcdd82e74801f16066659914dc7fe",
+            "message": "added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401686"
+        },
+        {
+            "hash": "c3cbb49a9183fb18310e83997cb75405c9062b04",
+            "message": "In order to make it simpler to make the mock serializable\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401685"
+        },
+        {
+            "hash": "2c1b9cd70a5bff1eb890ac43430a9e2be34d3bec",
+            "message": "refactoring\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401684"
+        },
+        {
+            "hash": "af789b2e900abf974f93abf6665970e783cd140c",
+            "message": "removed TODO as it annoyingly shows up in the TODO window\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401683"
+        },
+        {
+            "hash": "b6f706c7256e2bbaa36d08839fc18b89defc7922",
+            "message": "removed TODO as the feature was already implemented\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401682"
+        },
+        {
+            "hash": "e86dcf87174c2418fd25e8162860359a656baecf",
+            "message": "excluded cglib-and-asm so that IDEA doesn't pick it up during searches, etc.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401681"
+        },
+        {
+            "hash": "8c5a375d78b1a227294ffc2d35e10c36020e9658",
+            "message": "added TODOs before the release\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401680"
+        },
+        {
+            "hash": "8717814f2e075927e4058d91ba746f4d9ec54dcc",
+            "message": "Fixed issue 141\nIn order to do smarter matching when parameters are arrays.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401679"
+        },
+        {
+            "hash": "f7cf9a86fb25aeba5c3ec37ddb6e5fedd219a4da",
+            "message": "In order to have hamcrest sources included\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401678"
+        },
+        {
+            "hash": "27a2f515197d4688c4df82afb791bf8ce20a5504",
+            "message": "Fixed issue 98\nIn order to avoid NPE in some very rare cases.\n\n--HG--\nrename : test/org/mockitousage/bugs/NPEWithIsAClassMatcherTest.java => test/org/mockitousage/bugs/NPEWithCertainMatchersTest.java\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401677"
+        },
+        {
+            "hash": "bff7ae0f4db9c5c0f7bfcdd3a47d4fa0fdaa1232",
+            "message": "added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401676"
+        },
+        {
+            "hash": "0513b1f8137e850e19face093882567bac20e64a",
+            "message": "Added missing javadoc\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401675"
+        },
+        {
+            "hash": "048acaeea5196d385952e8123bc9fe492afa3ede",
+            "message": "Added missing javadoc\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401674"
+        },
+        {
+            "hash": "a72b9a8a96a18192b0d2ed12fa51edb10af4dbab",
+            "message": "Fixed issue 142\nIn order to provide best feedback when dev misuses jUnit I forward initializer jUnit exceptions (for example: @BeforeClass must be static). This way exceptions from jUnit are correctly handled by IDE (previously, confusing Mockito exception was thrown).\nSome tiny refactorings according to IDEA warnings.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401673"
+        },
+        {
+            "hash": "7d8498434f56017471680291ea0de026f9050ff4",
+            "message": "removed warnings and some dead code\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401672"
+        },
+        {
+            "hash": "26e8efca4533ea4be11a103787d83bb775ae0589",
+            "message": "added missing tests\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401671"
+        },
+        {
+            "hash": "f3f7b84f33054c00abdcc4dcd83e3f133e4cd2b0",
+            "message": "In order to keep performance high - using DelegatingMockitoMethod\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401670"
+        },
+        {
+            "hash": "624f2627be1501169bbb0c0d4423b4f6cd8a4baf",
+            "message": "Refactoring.\nIntroduced Wes' changes back. There has to be a distinction between SerializableMethod and DelegatingMethod\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401669"
+        },
+        {
+            "hash": "af7f19ccf9fc5232ed5cc289ec4ac50cb606c679",
+            "message": "In order to make Mockito compatible with previous versions I had to change the return type of InvocationOnMock.getMethod()\nRenamed one test class to be consistent with renamed class\n\n--HG--\nrename : test/org/mockito/internal/invocation/SerializableMockitoMethodTest.java => test/org/mockito/internal/invocation/SerializableMethodTest.java\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401668"
+        },
+        {
+            "hash": "fe7c33b8e548666065423c05e3bdf59717914cc8",
+            "message": "renamed a class and added a TODO\n\n--HG--\nrename : src/org/mockito/internal/invocation/MockitoMethod.java => src/org/mockito/internal/invocation/SerializableMethod.java\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401667"
+        },
+        {
+            "hash": "b6bf0c1fd79449cd57e6b98762935ae0ae906e65",
+            "message": "Removed redundant interface (had only single interface)\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401666"
+        },
+        {
+            "hash": "e980c656c10a9a4bfa17e1af8fc7c724cb34ee89",
+            "message": "Refactored to be closer to LoD\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401665"
+        },
+        {
+            "hash": "84c142f56fe971ed52ecfe42b42bc0aa7bef8354",
+            "message": "Inform the user with a good message when she tries to 'callRealMethod()' on a mock of a interface. Fixed issue 140\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401664"
+        },
+        {
+            "hash": "ecbd951497132c68dd2b264d7014251e33acba92",
+            "message": "Added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401663"
+        },
+        {
+            "hash": "fba2bbd0fb28ac6671e3e0cd14e0f5c6c74d100e",
+            "message": "Inform the user immediately when she tries to 'callRealMethod()' on a mock of a interface. Tuning the exception message. (Fixed issue 140).\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401662"
+        },
+        {
+            "hash": "c0222c2dbfbd2b053961a46e4c2a3973aec55a75",
+            "message": "Inform the user immediately when she tries to 'callRealMethod()' on a mock of a interface. Fixed issue 140\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401661"
+        },
+        {
+            "hash": "3b603ebf4bd3b416a2a00b7729233ae44ec75943",
+            "message": "Added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401660"
+        },
+        {
+            "hash": "1676b39c7100561877617233fdde71b7da5bec82",
+            "message": "Added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401659"
+        },
+        {
+            "hash": "f319112b71df8a5848d7e7923bcb446e7f1bb4d3",
+            "message": "Fixed issue 139\nIn order to provide decent exception quickly when user does something wrong - passes wrong arguments to the mock() method (incosistent types of mocked type and spied instance type).\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401658"
+        },
+        {
+            "hash": "cf6eb1c24deecf8a5fc23d4a0b09f46ba780d48f",
+            "message": "- in order to have serializable mocks\n-- added documentation for serializable mocks\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401657"
+        },
+        {
+            "hash": "c427a8fc30b63e8666ee45d86fc4e31e50a000d5",
+            "message": "- in order to clean up separation of serializable from non-serializable mocks\n-- removed DelegatingMockitoMethod (not needed. more complication without enough value) Serializable version is not very dangerous.\n-- removed the createMockitoMethod from IMockHandler and MockHandler\n\n- in order to clean up separation of serializable from non-serializable mocks\n-- removed DelegatingMockitoMethod (not needed. more complication without enough value) Serializable version is not very dangerous.\n-- moved the createMockitoMethodProxy from IMockHandler to MethodInterceptorFilter\n-- injected MethodInterceptorFilter with MockSettings\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401656"
+        },
+        {
+            "hash": "f8681148a48edb7b742343f4d9e995d4523345bb",
+            "message": "- in order to start seperating serializable funtionality (sorry 5 hg versions again)\n-- created a MockitoMethod Interface\n-- changed MockitoMethod to SerializableMockitoMethod which implements MockitoMethod\n-- return MockitoMethod everywhere we were calling the getMethod before\n-- added methods to MockitoMethod that match the methods we were using from a normal Method\n\n- in order to begin separation of serializable from non-serializable mocks\n-- renamed MockitoMethodProxy to SerializableMockitoMethodProxy\n-- created MockitMethodProxy interface\n-- return MockitoMehtodProxy in all classes that were using a MethodProxy. (CGLIBHacker, FilteredCGLIBProxyRealMethod, HasCGLIBMethodProxy, MethodInterceptorFilter)\n\n- in order to begin separation of serializable from non-serializable mocks\n-- renamed MockitoMethodProxy to SerializableMockitoMethodProxy\n-- created MockitMethodProxy interface\n-- return MockitoMehtodProxy in all classes that were using a MethodProxy. (CGLIBHacker, FilteredCGLIBProxyRealMethod, HasCGLIBMethodProxy, MethodInterceptorFilter)\n\n- in order to begin separation of serializable from non-serializable mocks\n-- add serializable MockSetting\n-- when creating MockitoMockProxy look at the isSerializable setting and create SerializableMockitoMockProxy or DelegatingMockitoMockProxy\n-- not sure about the createMockitoMethodProxy in IMockHandler\n\n- in order to begin separation of serializable from non-serializable mocks\n-- added createMockitoMethod to IMockHandler and MockHandler (still need to ask szczepan about this??? but is only place that has settings)\n--- createMockitoMethod determines which MockitoMethod to create based on MockSettings.isSerializable.\n-- changed Invocation to take MockitoMethod instead of Method\n\n--HG--\nrename : src/org/mockito/internal/creation/MockitoMethodProxy.java => src/org/mockito/internal/creation/SerializableMockitoMethodProxy.java\nrename : src/org/mockito/internal/invocation/MockitoMethod.java => src/org/mockito/internal/invocation/SerializableMockitoMethod.java\nrename : test/org/mockito/internal/creation/MockitoMethodProxyTest.java => test/org/mockito/internal/creation/SerializableMockitoMethodProxyTest.java\nrename : test/org/mockito/internal/invocation/MockitoMethodTest.java => test/org/mockito/internal/invocation/SerializableMockitoMethodTest.java\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401655"
+        },
+        {
+            "hash": "7571d1e8a716d0f864a274255987b2203760f834",
+            "message": "testing hgsubversion hg\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401654"
+        },
+        {
+            "hash": "062db8e058d5e6715699190d2e7a8c9693a00930",
+            "message": "testing hgsubversion\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401653"
+        },
+        {
+            "hash": "5684d0b1a949a83d25ababcbfdf949b4220234c1",
+            "message": "testing hgsubversion from svn\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401652"
+        },
+        {
+            "hash": "b363ef090136806a2583bbd5e4598644ae7ace43",
+            "message": "testing hgsubversion\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401651"
+        },
+        {
+            "hash": "308d3ec5e13adaef9ba84fab13606421fe66896f",
+            "message": "test\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401650"
+        },
+        {
+            "hash": "582e709104ce317a3fde088083a208c22c3e7c3d",
+            "message": "testing svn\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401649"
+        },
+        {
+            "hash": "87a0bf10939f7b8844ecb336a467279ada2af4a1",
+            "message": "In order to be consistent about unnecessary hashcode I did it the samy way as in Invocation\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401647"
+        },
+        {
+            "hash": "6a8249016998efef3e27edb2dcb58ca1947f8239",
+            "message": "In order to add some more tests for my sanity & understanding of serialization / deserialization of mocks\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401646"
+        },
+        {
+            "hash": "7daaf900cd7f3e9d4612e7612c101316964dd53d",
+            "message": "In order to have consistent formatting made tabs = 4 spaces\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401645"
+        },
+        {
+            "hash": "f895c2420266ee9c4ba5c7b8428c3acdf73e94bf",
+            "message": "In orderIn order implement issue 110\n- moved the SerializableNoOp class to the same package as ClassImposterizer since it is the only class that uses it.\n\n--HG--\nrename : src/org/mockito/cglib/proxy/SerializableNoOp.java => src/org/mockito/internal/creation/jmock/SerializableNoOp.java\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401644"
+        },
+        {
+            "hash": "44863d7024cb97380037a52391619e9154db7fc2",
+            "message": "In orderIn order implement issue 110\n- cleaned up error messages when a method cannot be created.  It seems if either of these errors occur something has gone seriously wrong as they are security error and a method that did exists no longer exists.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401643"
+        },
+        {
+            "hash": "31fec00e6f3db5458d6dfb6266811dd498f3ada5",
+            "message": "In order implement issue 110\n- in order to correct item in the review by szczeiq\n- refactored to remove duplicate SupressWarning entries\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401642"
+        },
+        {
+            "hash": "ba4562d861c96d04c25ac686ced707a1185676c6",
+            "message": "In order to add some more tests for my sanity & understanding of serialization / deserialization of mocks\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401641"
+        },
+        {
+            "hash": "462fdfbd58ba83c2d17dd417311c6d24b226b327",
+            "message": "- in order to implement issue 110\n-- refactored to move Serializable implementation to the base interfaces so future implementation will be Serializable and get warning for missing serial version id.\n-- added annotations to ignore serial version id warnings in test classes\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401640"
+        },
+        {
+            "hash": "cbc530c6a55b947a6008dcd4e511794c93cad513",
+            "message": "- wes - implemented ability to serialize mock objects\n-- covered mock interface, mock object, partial mock, spy\n-- created MockitoMethod to handle creation of java Method which is not Serializable\n-- created MockitoMethodProxy to handle creation of cglib's MethodProxy which is not Serializable\n-- created SerializableNoOp to replace cglib's NoOp which is not Serializable\n-- made all matchers Serializable\n-- made all answers Serializable\n-- made stubbing objects Serializable\n\n- known issues\n-- any object mocked object that depends on normal initialization for Serialization could/probably will fail serialization\n-- equals after deserialization of a mock will fail\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401639"
+        },
+        {
+            "hash": "117fceb72441aa42a0dcd2f5a68942d7a20d4e19",
+            "message": "Fixed to avoid error on producing the manifest\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401638"
+        },
+        {
+            "hash": "3279522a159ca3ba4b8adf67d1e57c7a817b0283",
+            "message": "Ignored list according to IDEA default output folder\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401637"
+        },
+        {
+            "hash": "3e233ab87711c188d6cd576c9c13099fffa6bdce",
+            "message": "In order to fix issue 124 - incorrect OSGi headers. Please help testing this change.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401636"
+        },
+        {
+            "hash": "319e0de4bf35129483eb6002a7b8ca17f017fcea",
+            "message": "In order to deploy latest artifact to local repo for some testing with maven I added new ant task for it\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401635"
+        },
+        {
+            "hash": "f287295935eeb13d87d64993e3a760378d9dc1c5",
+            "message": "In order to fix issue 134. Location should never break in case there's something wrong with stack traces (for example: filter returns empty stack trace).\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401634"
+        },
+        {
+            "hash": "eb34c4f1dbdde6feabeb0d0b7162665ca42e5a12",
+            "message": "In order to avoid AssertionError I removed the assertion from code as it didn't do any difference\nFixed reopened issue 30\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401633"
+        },
+        {
+            "hash": "0786bceef663e37cd91e93781a0fbd3fe79b9d07",
+            "message": "added TODO\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401626"
+        },
+        {
+            "hash": "4ed421b6d19c1cc3a20e5e23a8b90871a2d7c84b",
+            "message": "javadoc cleaner\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401625"
+        },
+        {
+            "hash": "c4e61e5418c4bde70f1e0eb5e99817e1ac4775b9",
+            "message": "Fixed issue 123\nThere was an error related to calling real behavior when method had varargs\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401622"
+        },
+        {
+            "hash": "769eadbd9d4f572eec80950e9b2a44f63582b03b",
+            "message": "Tiny refactoring\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401621"
+        },
+        {
+            "hash": "f4d469e90d757ad9347358203c0dd8adc07e2cda",
+            "message": "Fixed issue 128\nIn order to communicate decent message when MockitoRunner does not find any test methods\n(added missing files)\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401620"
+        },
+        {
+            "hash": "abc41d7fe154b0bf95eac5cf75eb8d037acc6d0d",
+            "message": "Fixed issue 128\nIn order to communicate decent message when MockitoRunner does not find any test methods\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401619"
+        },
+        {
+            "hash": "ed099e93a33e6f205f64471c4f135c9b105b6650",
+            "message": "In order to clean up stuff I will not work on\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401618"
+        },
+        {
+            "hash": "86929f800ff4e67135859f33b9adfc84484111b1",
+            "message": "Fixed issue 122\nIn order to allow user to use single any() matcher for varargs I introduce anyVararg() matcher\nUnfortunately, it is not possible to use (Object[]) anyObject() to match any vararg due to the fact that verification picks up extra redundant invocations. Also it would have broken the backwards compatibility.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401617"
+        },
+        {
+            "hash": "454cd22e6bc98033d7e9045382118dee6820e5e3",
+            "message": "Added missing declaration. This test is still not implemented\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401616"
+        },
+        {
+            "hash": "34b4c288c8464d3380bc45571c83e72806fffa01",
+            "message": "In order to communicate potential code smell added a warning in the javadocs. Related to issue 124\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401615"
+        },
+        {
+            "hash": "cda43ebb20f40c33994fe1b923d0804916eb15a7",
+            "message": "In order to make javadocs better\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401610"
+        },
+        {
+            "hash": "649256819a09627b0a02537eb656966417603b36",
+            "message": "testing bzr\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401609"
+        },
+        {
+            "hash": "845c25cc954212a1f9bb433dcb967149f08afa84",
+            "message": "testing bzr\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401608"
+        },
+        {
+            "hash": "051e81bc0b3f622659833226a7fcf9cebdd41cbc",
+            "message": "In order to ensure only verification is working correctly for multiple mocks another test case was added.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401607"
+        },
+        {
+            "hash": "b3a759b7c78c3cb6ea53e7bc01860c45ecb872f6",
+            "message": "In order to make build green @Override was removed.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401606"
+        },
+        {
+            "hash": "c6d0c734cf659989e6a06fecedfe2aaf7e6f1a36",
+            "message": "In order to refactor the code markInvocation method was added for single invocation.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401605"
+        },
+        {
+            "hash": "280e2862201e5c00afa0d73edc9857a4e4518c9f",
+            "message": "In order to simplify use of verifyNoMoreInteractions for one method the new verification mode was introduced (see issue 105).\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401604"
+        },
+        {
+            "hash": "d800604559ef690528f9df8db89d32577cce4aa6",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401603"
+        },
+        {
+            "hash": "f03b7ce95059547c67ee5af4801e79cd66c3faff",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401602"
+        },
+        {
+            "hash": "eddbfa4ec788e85a3ba96d6c7425cb048ed1a228",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401601"
+        },
+        {
+            "hash": "5c1306b054c0101a19a061b9791ebc8ec361a820",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401600"
+        },
+        {
+            "hash": "5c3490ab2017a7ee2fd2c3e840d85d22222c4fc2",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401599"
+        },
+        {
+            "hash": "760ad4f276c4c399dc56e4f04f37edd2ea10aa8f",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring. Adding unit tests.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401598"
+        },
+        {
+            "hash": "762b2db3f76742a78d8c1647f4c61e0a4bf84a21",
+            "message": "In order to make mocks serializable started work on this feature. Refactoring.\nRemoved some dead code & made some tiny comsmetics thanks to warnings from IDEA\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401597"
+        },
+        {
+            "hash": "ffb6026a27217e2655e06b757db22091160fec9b",
+            "message": "In order to keep IDEA faster & more responsive excluded target so that it is not parsed\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401596"
+        },
+        {
+            "hash": "d7211ee8388a14c16c3fa2a985787006a4c35985",
+            "message": "Fixed test\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401595"
+        },
+        {
+            "hash": "c3b2cc2d7e50ab2b92f4846f863e64aa57f33f9e",
+            "message": "In order to have initial test for new functionality (for now, ignored)\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401594"
+        },
+        {
+            "hash": "8ce84afb0df39309cd667af2267b3cf9c55f5751",
+            "message": "In order to have functional tests around atLeast(x)\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401593"
+        },
+        {
+            "hash": "c9ea6aca0127fdd8f7fea68c47be1b751c6b0acb",
+            "message": "removed dead folder\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401592"
+        },
+        {
+            "hash": "44db467723c2440d93d673679653f91f0d8fcb64",
+            "message": "Fixed issue 111\nIn order to allow user some kind of 'optional' style of verification. It only makes sense when verifyNoMoreInteractions() is used.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401591"
+        },
+        {
+            "hash": "8f546177b314e0e4dbe0bcb282951e29388dbdbb",
+            "message": "In order to fix the build and keep PMD happy\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401590"
+        },
+        {
+            "hash": "b0dcc252f7f3502db87769d0567ac70d5485e75f",
+            "message": "Fixed issue 112.\nActually, the issue was already fixed in previous 1-2 revisons because the invalid implemntation had also different manifestations (bug 116). Wanted to add a unit tests provided by contributor.\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401589"
+        },
+        {
+            "hash": "82dc2a3727faa3e3028902b611811c3a3991c9ff",
+            "message": "Fixed issue 115.\nIn order to always keep the examples / hints in sync with latest api\nIn order to keep javadocs w/o IDEA warnings\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401588"
+        },
+        {
+            "hash": "d136f2f0ed809bdf1445d5e234af9eb02ff467ee",
+            "message": "In ordert\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401587"
+        },
+        {
+            "hash": "0313c31f60e62f51b80f435a7ff28dd298a86bf5",
+            "message": "testing bzr\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401586"
+        },
+        {
+            "hash": "c01d7d8a5bd2b72bf3c8de55af3a7c700741c48e",
+            "message": "testing bazaar\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401585"
+        },
+        {
+            "hash": "d5cad3f03535b7960ec9ef2dda0c750d67ea5321",
+            "message": "In order to be more consistent with the naming scheme\n\n--HG--\nrename : releasing/release-maven.py => releasing/release_maven.py\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401584"
+        },
+        {
+            "hash": "784e62ff90e1e1d75d903c90248bf10dc692b238",
+            "message": "updated maven metadata so that versions history is properly maintained in the metadata\n\n--HG--\nextra : convert_revision : svn%3Aaa2aecf3-ea3e-0410-9d70-716747e7c967/trunk%401581"
+        }
+    ],
+    "issues": []
+}

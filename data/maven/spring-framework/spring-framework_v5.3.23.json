@@ -1,0 +1,418 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.23",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 85,
+    "start_delay": 0.0,
+    "duration": 183.68752314814816,
+    "commits_info": [
+        {
+            "hash": "5ea8ba1b96084792a802cf7eef1ef176f53efe8d",
+            "message": "Release v5.3.23"
+        },
+        {
+            "hash": "ae8b7973b408fac8dd666cbd03486227e440e820",
+            "message": "Improve Javadoc on RequestEntity#getUrl\n\nCloses gh-28930"
+        },
+        {
+            "hash": "a7f430bda8429134cd42e894a92521a085b24f58",
+            "message": "Upgrade to Checkstyle 10.3.3, RxJava 3.1.5, SmallRye Mutiny 1.7, HtmlUnit 2.64, JsonPath 2.7"
+        },
+        {
+            "hash": "5a781eeb54889f809726e54fcda25bd285d18ee4",
+            "message": "Upgrade to RSocket 1.1.3, Netty 4.1.82, Tomcat 9.0.65, Undertow 2.2.19, Hibernate Validator 6.2.5"
+        },
+        {
+            "hash": "a879d18c9c18cfef8e13cb0adf2419f23566e574",
+            "message": "Reintroduce Caucho exclusion for 5.3.x\n\nSee gh-28876"
+        },
+        {
+            "hash": "ce49068ff92bfdc2e856038b37f5b19adcafff59",
+            "message": "Fix links in Javadoc and reference docs\n\n- Fix broken links (by using a new URL, an alternative URL, or a\n  Wayback Machine link)\n\n- Use HTTPS where possible\n\n- Remove https://issuetracker.springsource.com/browse/EBR-349: this\n  link is dead and is also mentioned in\n  https://jira.spring.io/browse/SPR-8093\n\n- Clean up nohttp allowlist.lines\n\nCloses gh-28876"
+        },
+        {
+            "hash": "62a0ab3667929e4add715e4e0cc317a5e3e3c1b2",
+            "message": "Polish contribution"
+        },
+        {
+            "hash": "92a231cf916d307aa0ab166f892cdfbf9a0d089f",
+            "message": "Fix typos in Javadoc, reference docs, and code\n\nCloses gh-28822"
+        },
+        {
+            "hash": "50dff77d0156d502641f45181812171929b84ce6",
+            "message": "Polish contribution"
+        },
+        {
+            "hash": "0f479293b17765f7077a61a6b7b130754b6176de",
+            "message": "Replace use of the <tt> HTML tag in Javadoc\n\nThe <tt> HTML tag was used in HTML 4 to define teletype text. It is not\nsupported in HTML5, and its use is discouraged.\n\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Element/tt\n\nCloses gh-28819"
+        },
+        {
+            "hash": "5f5d383eeb51c7f891dee7392c573ece1c9804da",
+            "message": "Fix Javadoc since tag for AbstractGenericWebContextLoader.createContext()\n\nSee gh-28983\nCloses gh-29154"
+        },
+        {
+            "hash": "529481c44c375c336de8b3b956aaadb13cfef6f9",
+            "message": "Polish contribution\n\nSee gh-29150"
+        },
+        {
+            "hash": "35d379f9d3882a02f0368f928b2cecb975404334",
+            "message": "Add missing @Nullable in SettableListenableFuture\n\nCloses gh-29150"
+        },
+        {
+            "hash": "c871758a51304382d043613bbcaf94512de7db27",
+            "message": "Upgrade to Reactor 2020.0.23\n\nCloses gh-29129"
+        },
+        {
+            "hash": "0d2bfc926f425c1c1219e38e5f06a5a9dca04e13",
+            "message": "Apply consistent ordering in hierarchical contexts\n\nPreviously, if `@Order` is specified on a `@Bean` method, and the\ncandidate bean is defined in a parent context, its order wasn't taken\ninto account when retrieving the bean from a child context.\n\nThis commit makes sure the metadata of a bean is taken into\nconsideration in all cases.\n\nCloses gh-29105"
+        },
+        {
+            "hash": "4e9777696927fda00c2b428b91ba579a0775e19d",
+            "message": "Polishing contribution\n\nCloses gh-28715"
+        },
+        {
+            "hash": "d42f950a366d82aae3d72728853bdc1e0dbe71d2",
+            "message": "Pass headers to STOMP receipt callbacks\n\nSee gh-28715"
+        },
+        {
+            "hash": "4eabe29b9af69d55e2b2d3aacfb7b0be9edf8e59",
+            "message": "Polishing contribution\n\nCloses gh-28785"
+        },
+        {
+            "hash": "cd10171f989b3ef0375a90efa01dfce059689a80",
+            "message": "Make WebSocketConnectionManager#isConnected public\n\nSee gh-28785"
+        },
+        {
+            "hash": "597c687da8888ef9c0cca774aeeefae615c6ffbe",
+            "message": "Fix indentation in ref docs for RestTemplate\n\nCloses gh-29014"
+        },
+        {
+            "hash": "081d70123e6bb83049729d7adddc87a7d2655786",
+            "message": "Start building against Reactor 2020.0.23 snapshots\n\nSee gh-29129"
+        },
+        {
+            "hash": "d9c2ccb4b346c071b251d78e937c5b91304cd7f8",
+            "message": "Upgrade Ubuntu version in CI image\n\nCloses gh-29106"
+        },
+        {
+            "hash": "c503f356c7436b50769d65e6253e3eb58a09ba22",
+            "message": "Merge pull request #29104 from boahc077\n\n* pr/29104:\n  Restrict permissions for GitHub action\n\nCloses gh-29104"
+        },
+        {
+            "hash": "7f9933fdb742b6eec66cfb1d79de91972bfddf74",
+            "message": "Restrict permissions for GitHub action\n\nSee gh-29104"
+        },
+        {
+            "hash": "a42551202575dceb11b2eb31924faf0bb7f4bbdd",
+            "message": "Polish\n\nSee gh-29050"
+        },
+        {
+            "hash": "298c9a6f1bda440dd8aacf2065ea58b85d062261",
+            "message": "Redirect response wrapper should commit response\n\nThis commit ensures that when using `sendRedirect`, the response wrapper\nbehaves correctly with regards to the Servlet specification:\n\n1. reset the response buffer to clear any partially written response\n2. set the expected response HTTP headers\n3. flush the buffer to commit the response\n\nCloses gh-29050"
+        },
+        {
+            "hash": "8dcb2a75fa7b07b3c781b5d8196c2a61417a8f9b",
+            "message": "Merge pull request #29048 from 1993heqiang\n\n* pr/29048:\n  Fix typo in data-access section\n\nCloses gh-29048"
+        },
+        {
+            "hash": "111a9902acbfcaa8edeb24cfbd9fc8ad0c46e3c0",
+            "message": "Fix typo in data-access section\n\nSee gh-29048"
+        },
+        {
+            "hash": "0389fcca7e0c0c8f6882a64508bbf76113681a64",
+            "message": "Fix sporadically failing SpEL test"
+        },
+        {
+            "hash": "bb3ada4a673c689b9d5c854ec021b8e96e32c447",
+            "message": "Fix Kotlin Serialization converter registration logic\n\nThis commit fixes Kotlin Serialization converter\nregistration logic in RestTemplate,\nAbstractMessageBrokerConfiguration and\nAllEncompassingFormHttpMessageConverter classes\nto be similar to the one in\nWebMvcConfigurationSupport.\n\nCloses gh-29008"
+        },
+        {
+            "hash": "6a68bd58f9089bf1becec64ca114ffc33fbd5c17",
+            "message": "Introduce AnnotationUtils.isSynthesizedAnnotation(Annotation)\n\nSince SynthesizedAnnotation will be deprecated (and potentially\ncompletely removed) in Spring Framework 6.0, this commit introduces\nAnnotationUtils.isSynthesizedAnnotation(Annotation) in 5.3.x to allow\npeople to migrate away from relying on SynthesizedAnnotation.\n\nCloses gh-29054"
+        },
+        {
+            "hash": "b1414bf15ba6cd6778cc2eacd2f1f2c0014d48fc",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f91943977cd7775dd6196d4a0f4095dc9a098837",
+            "message": "RenderingResponse must set status code on RedirectView\n\nThis commit makes sure that WebFlux's RenderingResponse sets the HTTP\nstatus code when rendering a RedirectView.\n\nCloses: gh-28839"
+        },
+        {
+            "hash": "4c0ece944aad373adea3a85874552ae982c989d7",
+            "message": "Fix race condition in PartGenerator\n\nThis commit fixes a race condition in PartGenerator, used by\nDefaultPartHttpMessageReader. The condition can occur when a\ncompletion signal comes in, and the state is changed to IdleFileState\nat the same time.\n\nCloses gh-28963"
+        },
+        {
+            "hash": "2c75eb8745dd6057c69f6c7375c44cd0141fb789",
+            "message": "Support @Nested tests in MockServerContainerContextCustomizerFactory\n\nPrior to this commit, MockServerContainerContextCustomizerFactory did\nnot find @WebAppConfiguration on an enclosing class and therefore\nfailed to create a MockServerContainerContextCustomizer for a @Nested\ntest class.\n\nThis commit addresses this by using TestContextAnnotationUtils to\ndetermine if the test class is \"annotated\" with @WebAppConfiguration.\n\nCloses gh-29037"
+        },
+        {
+            "hash": "711820ec708c866d72c92142ba17e6ffe1fa7f44",
+            "message": "Introduce createContext() factory method in AbstractWebGenericContextLoader\n\nPrior to this commit it was possible to configure the\nDefaultListableBeanFactory used by the GenericWebApplicationContext\ncreated by AbstractWebGenericContextLoader, but it was not possible to\ncompletely replace the bean factory.\n\nThis commit introduces a new createContext() factory method in\nAbstractWebGenericContextLoader which indirectly allows subclasses to\nsupply a custom DefaultListableBeanFactory implementation to the\nGenericWebApplicationContext.\n\nSee gh-25600\nCloses gh-28983"
+        },
+        {
+            "hash": "69d87f16eeddfe5974d650f91e936b82cd72fe00",
+            "message": "Reorganize internals of DefaultCacheAwareContextLoaderDelegate"
+        },
+        {
+            "hash": "38f94799f4bd53b68a1409b02152b1d960e1f838",
+            "message": "Use andExpectAll() in example in MockMvc Javadoc"
+        },
+        {
+            "hash": "4264d0becd0ef614d52dd6384ef8e47cb88fb584",
+            "message": "Fix example in MockMvc Javadoc"
+        },
+        {
+            "hash": "7e7d6b9c3a3794a075c545e507af342caecc6246",
+            "message": "Propagate Context in DataBufferUtils::write(Path)\n\nThis commit makes sure that the Reactor context is propagated in\nDataBufferUtils::write(Path).\n\nCloses gh-28933\nSee gh-27517"
+        },
+        {
+            "hash": "dfc06eda7ab6b35da822abfb86db48df1791057d",
+            "message": "Upgrade Java 8 version in CI image and .sdkmanrc"
+        },
+        {
+            "hash": "f0aa6ebed6f03e15610ddd39a1d717bfd3de1354",
+            "message": "Merge pull request #28949 from izeye\n\n* pr/28949:\n  Polish \"Add missing TreeSet to CollectionFactory.createCollection()\"\n  Add missing TreeSet to CollectionFactory.createCollection()\n\nCloses gh-28949"
+        },
+        {
+            "hash": "6806aaf162f396e89cc07735d399737c87bcd2a1",
+            "message": "Polish \"Add missing TreeSet to CollectionFactory.createCollection()\"\n\nSee gh-28949"
+        },
+        {
+            "hash": "ccec75c98daa681727f510fa8e69d9651615d59c",
+            "message": "Add missing TreeSet to CollectionFactory.createCollection()\n\nSee gh-28949"
+        },
+        {
+            "hash": "22029b4487177875e96898aa3c853e60d254a9e1",
+            "message": "Merge pull request #28944 from wilkinsona\n\n* pr/28944:\n  Correct description of @RequestParam with WebFlux\n\nCloses gh-28944"
+        },
+        {
+            "hash": "d6b60046ceef62e48420c9cb9c04f51a6339635b",
+            "message": "Correct description of @RequestParam with WebFlux\n\nSee gh-28944"
+        },
+        {
+            "hash": "6685e78c3679b8ec9f2bf06d59239e15f29b8524",
+            "message": "Deprecate NestedIOException\n\nNestedIOException has been removed in Spring Framework 6 and this commit\nmarks it as deprecated in 5.x. Users that were relying on this exception\nshould use IOException directly.\n\nCloses gh-28929"
+        },
+        {
+            "hash": "8685b2f5bf5586cc7a90fc472d7c483d62704f2e",
+            "message": "Fix broken kdoc-api links in kotlin.adoc\n\nFixes gh-28908"
+        },
+        {
+            "hash": "4af225405c47f69af4f345a96b763fb16087a83f",
+            "message": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "hash": "51e594ae81c68d8ae1a1dd11287207dbedb9d8ab",
+            "message": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "hash": "c2554b2b27b7cdcb021223cea414637dee6d425b",
+            "message": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "hash": "86a762b5ee400f17237750bb01754e0f0590d9da",
+            "message": "Upgrade Java 8 version in CI image"
+        },
+        {
+            "hash": "211241befe1c6c7f2999b94685d47dc75d5c645e",
+            "message": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "hash": "0caa2ac6964f7ac647b52d800e2a37259abdf116",
+            "message": "Customize connection in UrlResource getInputStream\n\nPrior to this commit, the `AbstractFileResolvingResource` would\nprovide a default implementation for `customizeConnection` which only\nsets the HTTP request method as \"HEAD\".\nWhile this is consistent with its usage within that class (in\n`exists()`, `contentLength()` or `lastModified()`), this is not opened\nfor general usage by sub-classes.\n\n`UrlResource` is an example of that, where its `getInputStream()` method\ndoes not call this customization method.\n\nThis not only prevents implementations from calling\n`customizeConnection` in various cases, but it also misleads developers\nas they might think that customizations will be applied automatically.\n\nThis commit ensures that `customizeConnection` is called in all relevant\nplaces and that the configuration of the HTTP method is instead done in\neach method as it is use case specific.\n\nFixes gh-28909"
+        },
+        {
+            "hash": "4eb8a5c082a9ac6c8872421bb63bc2ea2bd178a9",
+            "message": "Merge pull request #28914 from izeye\n\n* pr/28914:\n  Fix Javadoc since for new modules() and modulesToInstall()\n\nCloses gh-28914"
+        },
+        {
+            "hash": "d080b64907e12c61e7dfb053371e10d15560c625",
+            "message": "Fix Javadoc since for new modules() and modulesToInstall()\n\nSee gh-28914"
+        },
+        {
+            "hash": "5ab55dfb646af0f256f715eb1a812cf549f26066",
+            "message": "Merge pull request #28183 from luvarqpp\n\n* pr/28183:\n  Polish \"Improve documentation of Cacheable\"\n  Improve documentation of Cacheable\n\nCloses gh-28183"
+        },
+        {
+            "hash": "04209def46aa3156a8c19b0f7df9115074a2f58e",
+            "message": "Polish \"Improve documentation of Cacheable\"\n\nApply the same improvements to CacheEvict and CachePut.\n\nSee gh-28183"
+        },
+        {
+            "hash": "3a61930bd08ff85175b356ebf6e7cbed53588a98",
+            "message": "Improve documentation of Cacheable\n\nSee gh-28183"
+        },
+        {
+            "hash": "456c7889a37ae7a813f846dc7198b481b6e3d09a",
+            "message": "Merge pull request #28488 from arend-von-reinersdorff\n\n* pr/28488:\n  Polish \"Clarify docs on JNDI properties in Servlet environment\"\n  Clarify docs on JNDI properties in Servlet environment\n\nCloses gh-28488"
+        },
+        {
+            "hash": "982d8ea84ab297540fd972f9fcf2d4c86a9a8775",
+            "message": "Polish \"Clarify docs on JNDI properties in Servlet environment\"\n\nSee gh-28488"
+        },
+        {
+            "hash": "67eb2bbf194ff3ab05f66cc35092f3125c4675f3",
+            "message": "Clarify docs on JNDI properties in Servlet environment\n\nSee gh-28488"
+        },
+        {
+            "hash": "a6596e2446573c3fcb05b3c92785079de64b969d",
+            "message": "Merge pull request #28780 from vpavic\n\n* pr/28780:\n  Add missing nullability annotations to ResponseCookie\n\nCloses gh-28780"
+        },
+        {
+            "hash": "812b089f1db1626b28f18e761542b4fe6b96f2d9",
+            "message": "Add missing nullability annotations to ResponseCookie\n\nSee gh-28780"
+        },
+        {
+            "hash": "2172b99fee345f0068e9d1851bf5ed6d0ba36633",
+            "message": "Polishing contribution\n\nCloses gh-28836"
+        },
+        {
+            "hash": "b6144e5682c966759e7fd16dbac4d4948d332161",
+            "message": "Improve setting of WebSocket error status\n\nSee gh-28836"
+        },
+        {
+            "hash": "6e6f8637d135abd633a921b4fc267d4bf7e1dca0",
+            "message": "Polishing contribution\n\nCloses gh-28771"
+        },
+        {
+            "hash": "00f7f5ff0a81290a75ac82ca97a06ea894d6dcad",
+            "message": "Use MediaType.APPLICATION_FORM_URLENCODED_VALUE\n\nSee gh-28771"
+        },
+        {
+            "hash": "3d4a778b7321b7145e73a3ad9a513db4bad3944e",
+            "message": "Fix KDoc API link"
+        },
+        {
+            "hash": "446c1add4fa11c414c2793f2e9bfd923afb5e96b",
+            "message": "Merge pull request #28885 from edfeff\n\n* pr/28885:\n  Upgrade copyright year of changed file\n  Fix typo in Javadoc of AbstractEncoder\n\nCloses gh-28885"
+        },
+        {
+            "hash": "aef4b0ec5a63874710b362c05e99d1c63b098e59",
+            "message": "Upgrade copyright year of changed file\n\nSee gh-28885"
+        },
+        {
+            "hash": "675e0b94c13e4a188a8b8a793f98593c5c897765",
+            "message": "Fix typo in Javadoc of AbstractEncoder\n\nSee gh-28885"
+        },
+        {
+            "hash": "b8b54ee5242af7158b811b6049c89af5218dc2c5",
+            "message": "Ensure WebClient exceptions are serializable\n\nNot all HttpHeaders implementations are serializable. This commit\nensures that WebClientRequestException and WebClientResponseException\nare serializable, by copying any non-serializable HttpHeaders into a\nnew, serializable, instance.\n\nCloses gh-28321"
+        },
+        {
+            "hash": "97ea8a67892a20b0deedd54e6489895c7f1fea24",
+            "message": "Copy HttpHeaders to ensure serializability\n\nNot all HttpHeaders implementations are serializable. This commit\nensures that WebClientRequestException and WebClientResponseException\nare serializable, by copying any non-serializable HttpHeaders into a\nnew, serializable, instance.\n\nCloses gh-28321"
+        },
+        {
+            "hash": "95a400abfb9205a28759a1eb5453f32316bdc318",
+            "message": "Merge pull request #28867 from arvyy\n\n* pr/28867:\n  Add missing closing parenthesis\n\nCloses gh-28867"
+        },
+        {
+            "hash": "4383a673bbdb5e4dd141df112fe5909fdc1a62c2",
+            "message": "Add missing closing parenthesis\n\nSee gh-28867"
+        },
+        {
+            "hash": "f7b94fc3e8b8f1d769e0f188af36ff4df9a35a30",
+            "message": "Updated sdkmanrc"
+        },
+        {
+            "hash": "93760d1211c290522a4b084925e79992b1cdb0d5",
+            "message": "Merge pull request #28853 from marcwrobel\n\n* pr/28853:\n  Polish \"Deprecate SockJsServiceRegistration#setSupressCors\"\n  Deprecate SockJsServiceRegistration#setSupressCors\n\nCloses gh-28853"
+        },
+        {
+            "hash": "421b5cb3117efab4756247832a91802294ae3353",
+            "message": "Polish \"Deprecate SockJsServiceRegistration#setSupressCors\"\n\nSee gh-28853"
+        },
+        {
+            "hash": "1cc36e5be9bb04450f924fc91c7b388c891048c2",
+            "message": "Deprecate SockJsServiceRegistration#setSupressCors\n\nSockJsServiceRegistration#setSupressCors name contains a typo. It is\nnow deprecated in favor of a correctly spelled method, setSuppressCors.\n\nSee gh-28853"
+        },
+        {
+            "hash": "f7c32d3a0b398d96b6f161a063acfe72dd5e7aa3",
+            "message": "Merge pull request #28842 from adrianbob\n\n* pr/28842:\n  Reintroduce Javadoc links to Apache HttpClient 5.1 APIs\n\nCloses gh-28842"
+        },
+        {
+            "hash": "9c0a2eeeb2288b8e0a0057ccddd1dd48da42ede2",
+            "message": "Reintroduce Javadoc links to Apache HttpClient 5.1 APIs\n\nSee gh-28842"
+        },
+        {
+            "hash": "7fa9f1c9cfbefcc1a7445f614a08b18363b37ffa",
+            "message": "Fix broken link to rsocket protocol page\n\nCloses gh-28817"
+        },
+        {
+            "hash": "1e03b30d33e2343b94a12e30df15f3d683b2a3c7",
+            "message": "Use existing context path in DefaultServerRequestBuilder\n\nCloses gh-28820"
+        },
+        {
+            "hash": "7df149c8b8e912b7d6040deea2e642e7cfc3c5ab",
+            "message": "Next development version (v5.3.23-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28930",
+            "title": "Document when RequestEntity.getUrl() throws an UnsupportedOperationException"
+        },
+        {
+            "number": "28983",
+            "title": " Introduce createContext() factory method in AbstractGenericWebContextLoader"
+        },
+        {
+            "number": "29129",
+            "title": "Upgrade to Reactor 2020.0.23"
+        },
+        {
+            "number": "29105",
+            "title": "Ordering inconsistency with beans defined in parent context"
+        },
+        {
+            "number": "29106",
+            "title": "Upgrade Ubuntu version in CI image"
+        },
+        {
+            "number": "29008",
+            "title": "Request to improve KotlinSerializationJsonHttpMessageConverter logic in RestTemplate"
+        },
+        {
+            "number": "29054",
+            "title": "Introduce AnnotationUtils.isSynthesizedAnnotation(Annotation)"
+        },
+        {
+            "number": "28839",
+            "title": "RenderingResponse does not set status code on redirect views"
+        },
+        {
+            "number": "28963",
+            "title": "WebFlux: multipart requests hang sometimes"
+        },
+        {
+            "number": "29037",
+            "title": "MockServerContainerContextCustomizerFactory does not support @Nested tests"
+        },
+        {
+            "number": "28933",
+            "title": "DataBufferUtils.write(Publisher, Path) loses context"
+        },
+        {
+            "number": "27517",
+            "title": "DataBufferUtils.write loses context"
+        },
+        {
+            "number": "28929",
+            "title": "Deprecate NestedIOException"
+        },
+        {
+            "number": "28909",
+            "title": "connectionTimeOut and readTimeout not working on UrlResource"
+        },
+        {
+            "number": "28321",
+            "title": "Make WebClientException serializable"
+        },
+        {
+            "number": "28820",
+            "title": "Loss of context path after using ServerRequest.from"
+        }
+    ]
+}

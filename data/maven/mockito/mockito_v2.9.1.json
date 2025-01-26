@@ -1,0 +1,66 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.9.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 30.94179398148148,
+    "commits_info": [
+        {
+            "hash": "b00f7318fdf717af0ea4ba24b133d4f56d0b74dc",
+            "message": "2.9.1 release (previous 2.9.0) + release notes updated by CI build 2897\n\n[ci skip-release]"
+        },
+        {
+            "hash": "63a9bd31b39d5d1fde3fc99d28d730bd3e7ada2f",
+            "message": "Merge pull request #1158 from mockito/java-9-support\n\nAdds support for Java 9 in inline mock maker by Byte Buddy update."
+        },
+        {
+            "hash": "ec6bb1fee2b3737df3accd959355b8e49fafc19c",
+            "message": "Revert Java 9 build which does not seem to work on Travis."
+        },
+        {
+            "hash": "3279aaa206b05517d89babfe660444970eaa2b2a",
+            "message": "Update Kotlin version"
+        },
+        {
+            "hash": "0b0f993ac71386baf473250e80a620b52f534f76",
+            "message": "Fix Travis configuration."
+        },
+        {
+            "hash": "7921b71dc80ccbf09983ebb20c93d06f16519d19",
+            "message": "Enable JDK9 build on Travis."
+        },
+        {
+            "hash": "ed99107dff9bdf6883e0df5304cb178dea8b2431",
+            "message": "Adds support for Java 9 in inline mock maker by Byte Buddy update."
+        },
+        {
+            "hash": "500b5770523c93fcc7860821a798f08361779b9c",
+            "message": "Merge pull request #1184 from mockito/travis\n\nTravis"
+        },
+        {
+            "hash": "da3f20eeb4db9fc78249d1b95a2548e68e9908a4",
+            "message": "Removed build on jdk7\n\n- I have tried to get the build working with jdk7 but I couldn't get it to work. I kept getting: Exception in thread \"main\" javax.net.ssl.SSLException: java.security.ProviderException. We remember this issue from our Jdk6 build, we could not fix it and eventually we have stopped building with Jdk6.\n- We still publish with Java6 compatibility and we have animal sniffer set up to catch regressions. It should be ok to build only on Jdk8.\n- Jdk6 and jdk7 has been deprecated years ago, we need to move on."
+        },
+        {
+            "hash": "3e3d9217faacdf3d9fbc1d3b8aedecb74ee995af",
+            "message": "Updated jdk 7 name to something working\n\nMockito ticket: https://github.com/mockito/mockito/issues/1182\nTravis CI ticket: https://github.com/travis-ci/travis-ci/issues/7884"
+        },
+        {
+            "hash": "1c61f1a91a7d5d8367b3dbddb6270afdd96c8f6a",
+            "message": "Merge pull request #1181 from mockito/performance-fix\n\n#1179: Fix performance regression caused by use of method graph compiler."
+        },
+        {
+            "hash": "4cfd6ee14ddb4ad539d7a72099aed91076aceb12",
+            "message": "#1179: Fix performance regression caused by use of method graph compiler."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1179",
+            "title": "Mockito 2.9.0 is significantly slower"
+        }
+    ]
+}

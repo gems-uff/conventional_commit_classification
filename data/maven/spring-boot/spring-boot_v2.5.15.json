@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.15",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 2.8482060185185185,
+    "commits_info": [
+        {
+            "hash": "b07582512621e2d437ca69b02f820d4fd7b1dd54",
+            "message": "Release v2.5.15"
+        },
+        {
+            "hash": "d7ff379fb8bb2c33319afeb45a343116b59e0ee2",
+            "message": "Return 406 status code if welcome page is not accepted\n\nAdd `WelcomePageNotAcceptableHandlerMapping` which will return\nan HTTP 406 status if a suitable welcome page is found but\ncannot be accepted for the request.\n\nAn additional mapper is used so that we don't need to change\nthe order of the `WelcomePageHandlerMapping`. It's possible\nthat users may have additional root handler mappings\nregistered to run after the `WelcomePageHandlerMapping`\nand we still need to respect those.\n\nFixes gh-35559"
+        }
+    ],
+    "issues": [
+        {
+            "number": "35559",
+            "title": "Welcome page may return a 404 when an acceptable response cannot be produced"
+        }
+    ]
+}

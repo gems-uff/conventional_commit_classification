@@ -11,58 +11,53 @@
     "commits_info": [
         {
             "hash": "947561e70186521577656756620f2ca64c21fee4",
-            "message": "Update release notes by Travis CI build 2100 [ci skip]\n",
-            "tag_name": null
+            "message": "Update release notes by Travis CI build 2100 [ci skip]"
         },
         {
             "hash": "b7e5838a50ab6fbf2c6ba62f0888b7c03ecd368f",
-            "message": "Merge pull request #843 from mockito/mutable-rule\n\nJUnit rule strictness can be tweaked per test method",
-            "tag_name": null
+            "message": "Merge pull request #843 from mockito/mutable-rule\n\nJUnit rule strictness can be tweaked per test method"
         },
         {
             "hash": "8626cfd11efe7c286e8893fcbd0da6ae2f285579",
-            "message": "Updated the Javadocs\n",
-            "tag_name": null
+            "message": "Updated the Javadocs"
         },
         {
             "hash": "38188e096f8716db481e22b91e6f5fae344ddda8",
-            "message": "Tightened test coverage\n\n- Updated the runner code (it will not have impact on behavior but it will provide cleaner trace with JUnit runner for edge cases)\n- Added javadoc / code comments\n",
-            "tag_name": null
+            "message": "Tightened test coverage\n\n- Updated the runner code (it will not have impact on behavior but it will provide cleaner trace with JUnit runner for edge cases)\n- Added javadoc / code comments"
         },
         {
             "hash": "b43e0e848f285c7394990fc9330fd02be3ecd4dd",
-            "message": "Cleared a TODO\n\nIt was already implemented\n",
-            "tag_name": null
+            "message": "Cleared a TODO\n\nIt was already implemented"
         },
         {
             "hash": "fade8caf66f76f3b008b5480d6e8f7c4f1764c10",
-            "message": "Avoided from keeping mock instances\n\n- Keeping mock instances in the test listener after test finished event can lead to leaks. I still want to make it better.\n- Also updated the javadocs.\n",
-            "tag_name": null
+            "message": "Avoided from keeping mock instances\n\n- Keeping mock instances in the test listener after test finished event can lead to leaks. I still want to make it better.\n- Also updated the javadocs."
         },
         {
             "hash": "31bedc49e9148d91a4e79f61a406e859b804e07b",
-            "message": "Made the JUnit rule mutable\n\nUsers can now change the strictness of Mockito at the junit method level. It's not as nice as with an annotation but at least it gets the job done. See discussion at #840\n\nPending: javadoc\n",
-            "tag_name": null
+            "message": "Made the JUnit rule mutable\n\nUsers can now change the strictness of Mockito at the junit method level. It's not as nice as with an annotation but at least it gets the job done. See discussion at #840\n\nPending: javadoc"
         },
         {
             "hash": "196d0b7d835b6becc771c09201fdbc49e29c1168",
-            "message": "Added failing test\n\nIt demonstrates the need for the feature\n",
-            "tag_name": null
+            "message": "Added failing test\n\nIt demonstrates the need for the feature"
         },
         {
             "hash": "7580787a02fd913a8aae76f8120abd7848ad493f",
-            "message": "Merge pull request #850 from mockito/src-in-jar\n\nStopped publishing java source inside main jar",
-            "tag_name": null
+            "message": "Merge pull request #850 from mockito/src-in-jar\n\nStopped publishing java source inside main jar"
         },
         {
             "hash": "c4a0c8a9f5e275f50d6597a0aba5575153c3bd15",
-            "message": "Stopped publishing java source inside main jar\n\nThis feature does not make sense in modern world of declarative dependency management\n - we didn't hear from the community that keeping the sources inside jar is useful\n - modern IDEs and dependency management automatically pulls sources\n - the feature was originally needed (2008) to help users that check in jars into VCS and not use modern dependency management\n - keeping source code in main jar is very unusual and makes the jar bigger\n\nBumped minor version because the change is relatively visible\n",
-            "tag_name": null
+            "message": "Stopped publishing java source inside main jar\n\nThis feature does not make sense in modern world of declarative dependency management\n - we didn't hear from the community that keeping the sources inside jar is useful\n - modern IDEs and dependency management automatically pulls sources\n - the feature was originally needed (2008) to help users that check in jars into VCS and not use modern dependency management\n - keeping source code in main jar is very unusual and makes the jar bigger\n\nBumped minor version because the change is relatively visible"
         },
         {
             "hash": "d97e62b1433027ee1ca8c3e7157efcab2e438c82",
-            "message": "Increment version '2.4.5' -> '2.4.6' by Travis CI build 2086 [ci skip]\n",
-            "tag_name": null
+            "message": "Increment version '2.4.5' -> '2.4.6' by Travis CI build 2086 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "840",
+            "title": "Tweak JUnit rule strictness at the method level"
         }
     ]
 }

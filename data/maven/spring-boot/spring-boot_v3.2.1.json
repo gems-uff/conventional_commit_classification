@@ -1,0 +1,1022 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.2.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 151,
+    "start_delay": 0.0,
+    "duration": 27.912800925925925,
+    "commits_info": [
+        {
+            "hash": "8bb60eef026fc8787b5ac763bcb9c532f3fcb5f9",
+            "message": "Release v3.2.1"
+        },
+        {
+            "hash": "7d1982fc94c522afe06d89eece5b22d496d6e50b",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "53528d328585970f55f8b38291ec8f0d478dbfde",
+            "message": "Next development version (v3.1.8-SNAPSHOT)"
+        },
+        {
+            "hash": "3222458007b64561cb5918120b94206e3f6057b5",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38893"
+        },
+        {
+            "hash": "f31ffbf927468c953c845dcc87b258fe9de9a550",
+            "message": "Don't duplicate META-INF entries in nested directory jars\n\nUpdate `ZipContent` so that `META-INF` entries are no longer duplicated\nin nested jars created from directory entries. This aligns with the\nbehavior of the classic loader and prevents the same META-INF file from\nbeing discovered twice.\n\nFixes gh-38862"
+        },
+        {
+            "hash": "b2185282d40af03bbfa33ba3053851e029d7a6fa",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "bf7d1e4f7a06c785001fbea8d572adf10e803713",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "15dd37095f472874513d735ac0f07ae699b6513d",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38880"
+        },
+        {
+            "hash": "dd2742919559e01599f09763187552641d731985",
+            "message": "Merge pull request #38776 from SandraAhlgrimm\n\n* pr/38776:\n  Add the LangChain4J to the list of community starters\n\nCloses gh-38776"
+        },
+        {
+            "hash": "b0bc8728311a2308d82c5465ad91a64e1b56d738",
+            "message": "Add the LangChain4J to the list of community starters\n\nSee gh-38776"
+        },
+        {
+            "hash": "60ebb32e8ac1f67ad919a97477a75022efe3884c",
+            "message": "Upgrade to Reactor Bom 2023.0.1\n\nCloses gh-38695"
+        },
+        {
+            "hash": "96f1a46fefdad18213a9a85774d3997e9198cb45",
+            "message": "Upgrade to Micrometer Tracing 1.2.1\n\nCloses gh-38694"
+        },
+        {
+            "hash": "0dedccc1a1dae9bcba6e8ca09f479e92f58cbd73",
+            "message": "Upgrade to Micrometer 1.12.1\n\nCloses gh-38693"
+        },
+        {
+            "hash": "e5023ea1773405380f17011d1daeb24c28ab22de",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "a9efa96d8abe8bf20e7d8087ced4b17c38791a09",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38770"
+        },
+        {
+            "hash": "b4a4e91238663ddbd9648a89474e7442bd7faaf6",
+            "message": "Update ZipString to deal with reads that do not return all data\n\nRefine the logic in `ZipString.hash` and `ZipString.compare` to deal\nwith the fact a read operation may not return all available bytes.\n\nFixes gh-38751"
+        },
+        {
+            "hash": "afad358047c4fa9a0a9281d406e875279528a495",
+            "message": "Align reactive web security more closely with servlet web security\n\nThere are some notable differences in the behavior of Spring\nSecurity's reactive and servlet-based web security. Notably,\nServlet-based web security (`@EnableWebSecurity`) works without\nany authentication manager, rejecting requests as not authorized.\nBy contrast reactive-based web security (`@EnableWebFluxSecurity`)\nfails to start up when there's no authentication manager, either\nprovided directly as a bean or derived from a\nReactiveUserDetailsService. There are also further differences at\nruntime where empty Monos from all ReactiveAuthenticationManagers\nresults in an internal error and a 500 response whereas a similar\nsituation in the servlet implementation results in a 401.\n\nPreviously, to accommodate these differences in behavior, Spring\nBoot's auto-configuration would behave differently. In the Servlet\ncase, web security would be enabled whenever the necessary\ndependencies were on the classpath. In the reactive case, web\nsecurity would back off in the absence of an authentication manager\nto prevent a start up failure. While this difference is rooted in\nSpring Security, it is undesirable and something that we want to\navoid Spring Boot users being exposed to where possible.\nUnfortunately, the situation is more likely to occur than before\nas ReactiveUserDetailsServiceAutoConfiguration now backs off more\nreadily (gh-35338). This makes it more likely that the context will\ncontain neither a reactive authetication manager not a reactive\nuser details service.\n\nThis commit reworks the auto-configurations related to reactive\nsecurity. ReactiveSecurityAutoConfiguration will now auto-configure\nan \"empty\" reactive authentication manager that denies access through\nMono.error in the absence of a ReactiveAuthenticationManager,\nReactiveUserDetailsService, or SecurityWebFilterChain. The last of\nthese is to allow for the situation where a filter chain has been\ndefined with an authentication manager configured directly on it.\nThis configuration of an authentication manager allows\n`@EnableWebFluxSecurity` to be auto-configured more readily,\nremoving one of the differences between reactive- and Servlet-based\nsecurity.\n\nCorresponding updates to the auto-configurations for reactive OAuth2\nsupport have also been made. They no longer try to auto-configure\n`@EnableWebFluxSecurity`, relying instead upon\nReactiveSecurityAutoConfiguration, which they are ordered before, to\ndo that instead.\n\nCloses gh-38713"
+        },
+        {
+            "hash": "964ccbb000d8cd81accf1cb5bacb40db525ec836",
+            "message": "Revert \"Do not enable WebFlux security unless other configuration is active\"\n\nThis reverts commit beba1f176a93f80c179e7d0970df93ce910f8a9f.\n\nSee gh-38713"
+        },
+        {
+            "hash": "3ac9c4494285c26b7177b8077834c02b547b1744",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "2197e36d912d75e594ad96ae1d995ccbf0fc6261",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38764"
+        },
+        {
+            "hash": "c50172d5c7ef282f375a53f8fe5c59de9de58311",
+            "message": "Undeprecate 'management.metrics.tags'\n\nCloses gh-38583"
+        },
+        {
+            "hash": "35eba699960409f35de3e5bd883a9c80bcee200f",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38759"
+        },
+        {
+            "hash": "e81d1226fefa99d51acf6d87af59338a055e3ccb",
+            "message": "Prevent integer overflow when checking disk space"
+        },
+        {
+            "hash": "01f59608aca210cdbeed44cf83c8f35f4f4afbb6",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38752"
+        },
+        {
+            "hash": "612bf95b05cd5288b0e21d57fcb62b1b0d242b3a",
+            "message": "Adapt to changes in the locking model for closing an app context\n\nSee gh-38666"
+        },
+        {
+            "hash": "a242bd81e29e70c3c7bc27b849d83a4c70bf7b39",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38747"
+        },
+        {
+            "hash": "198dbb4a45554db18eaaadded81574a9a3f8378d",
+            "message": "Auto-configure observatibility beans in sliced tests\n\nIf @AutoConfigureObservability is applied to a sliced test, it\nauto-configures:\n\n- An in-memory MeterRegistry\n- A no-op Tracer\n- An ObservationRegistry\n\nCloses gh-38568"
+        },
+        {
+            "hash": "ff82b8d1c1db8020062d18bf9058a5d329669725",
+            "message": "Add auto-configuration for a no-op tracer\n\nThis auto-configuration ensures, if Micrometer Tracing is on the\nclasspath, that there is always a tracer. It backs off if there is\nalready a tracer, for example contributed by the Brave or the Otel\nauto-configurations, which are run before.\n\nSee gh-38568"
+        },
+        {
+            "hash": "ea877872796019bc137ecd86271c8d1d97fdeeb5",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38741"
+        },
+        {
+            "hash": "0fe7d78732b54de599aa6c974a105653cb058be4",
+            "message": "Restore support for custom bind converters in collections\n\nUpdate the `beansConverterService` introduced in commit f4e05c91c74e\nso that it can also handle collection based conversions.\n\nFixes gh-38734"
+        },
+        {
+            "hash": "beba1f176a93f80c179e7d0970df93ce910f8a9f",
+            "message": "Do not enable WebFlux security unless other configuration is active\n\nFollowing the changes in gh-37504, the reactive resource server\nauto-configuration could enable WebFlux security in situations where\nit was otherwise in active. This could then result in an application\nfailing to start as no authentication manager is available.\n\nThis commit updates the configurations that enable WebFlux security\nso that they fully back off unless their related configurations are\nactive. Previously, only the configuration of the\nSecurityWebFilterChain would back off. This has been expanded to\ncover `@EnableWebFluxSecurity` as well. This has required splitting\nthe configuration classes up so that the condition evaluation order\ncan be controlled more precisely. We need to ensure that the JWT\ndecoder bean or the opaque token introspector bean has been defined\nbefore evaluation of the conditions for `@EnableWebFluxSecurity`.\nWithout this control, the import through `@EnableWebFluxSecurity` in\none location where the conditions do not matchcan prevent a\nsuccessful import in another where they do.\n\nFixes gh-38713"
+        },
+        {
+            "hash": "6330190913fdde45ca18a7ded0e2b93faa8c6ce1",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38728"
+        },
+        {
+            "hash": "cc665dd529c28259caa8568f8b7f51d9f1a6867e",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38727"
+        },
+        {
+            "hash": "ad586078a7412805bd93be4dfb9c71d9164883be",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38725"
+        },
+        {
+            "hash": "e6970243eeddc13fd54bb8afd5c9c1e8bec1ad13",
+            "message": "Retry read on ClosedByInterruptException\n\nIn gh-38154, we started handling ClosedByInterruptException. The\nFileChannel was repaired by recreating it and then the exception was\nrethrown. This allowed other threads to use the channel that had been\nread by an interrupted thread while allowing that interruption to\ncontinue.\n\nThis approach has proven to be insufficient as there are scenarios\nwhere the read needs to succeed on the interrupted thread. This\ncommit updates the handling of ClosedByInterruptException so that\nthis is the case. The FileChannel is recreated as before but the\nthread's interrupted flag is now cleared before retrying the read.\nThe flag is then reinstated so that any subsequent actions that\nshould fail due to the interruption will do so.\n\nWe could clear and reinstate the interrupted flag before the first\nread, rather than catching ClosedByInterruptException. This approach\nwas rejected as it will have an impact on the performance of the\nhappy path where the thread hasn't been interrupted.\n\nFixes gh-38611"
+        },
+        {
+            "hash": "9eae176fce6f280a1ff8d96e2b912b55ef509c80",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38692"
+        },
+        {
+            "hash": "359a6cb5bb99d8b11fbe3a461a2a2ef678aed04e",
+            "message": "Use encoded version of path for jar URLs\n\nUpdate `JarUrl` so that the encoded version of the path is used.\nThis allows jars to placed in directories with `#` or `!` in the\nname.\n\nFixes gh-38660"
+        },
+        {
+            "hash": "847daf484c9833ab0af25ccf79ce8203a8006361",
+            "message": "Fix JarUrlTests\n\nFix `JarUrlTests` to use the jarFile rather than temp."
+        },
+        {
+            "hash": "fc1a5033e829d903fd2e37989918b1ea202508e4",
+            "message": "Start building against Spring Security 6.2.1 snapshots\n\nSee gh-38700"
+        },
+        {
+            "hash": "91efe9396b7e98000cf5871c2d080747eaef04ab",
+            "message": "Start building against Spring LDAP 3.2.1 snapshots\n\nSee gh-38699"
+        },
+        {
+            "hash": "da4f2a4679067b487595cfb5ff8e288124e39e02",
+            "message": "Start building against Spring Integration 6.2.1 snapshots\n\nSee gh-38698"
+        },
+        {
+            "hash": "174813c34131fe55b3750a142ea5fb93d81b9b69",
+            "message": "Start building against Spring Data Bom 2023.1.1 snapshots\n\nSee gh-38697"
+        },
+        {
+            "hash": "5e4073999708fd138f77b4d1673d60c71623a503",
+            "message": "Start building against Spring Authorization Server 1.2.1 snapshots\n\nSee gh-38696"
+        },
+        {
+            "hash": "4fc2082972740c36d29711aea25f541edbe21f5b",
+            "message": "Start building against Reactor Bom 2023.0.1 snapshots\n\nSee gh-38695"
+        },
+        {
+            "hash": "2a839788cce4a8a0497ce9ae127c2349ba5f2ec1",
+            "message": "Start building against Micrometer Tracing 1.2.1 snapshots\n\nSee gh-38694"
+        },
+        {
+            "hash": "7fb0f52d7fcf9508aa01e60c27b310d144cdb743",
+            "message": "Start building against Micrometer 1.12.1 snapshots\n\nSee gh-38693"
+        },
+        {
+            "hash": "5c0ecbaf493879909fc38380cc30e36431772c34",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "6dff3c5978158f5ddae67b3b92200a90b3b188b7",
+            "message": "Adapt to change in Framework's disconnected client detection\n\nSee gh-38666"
+        },
+        {
+            "hash": "ad5b844e1f9a11b45302b5011ee99c56b9edd5e6",
+            "message": "Fix checkstyle issues\n\nMissingParametersFailureAnalyzer looks like it has been commited by\naccident."
+        },
+        {
+            "hash": "b5de38787c6abd4fc6522aa006b3d460ae23ffc5",
+            "message": "Restore `Session.Cookie` class for binary back-compatibility\n\nFixes gh-38589"
+        },
+        {
+            "hash": "ffdd405fb1823acc0948c22945df0a4641c94bea",
+            "message": "Update NoUniqueBeanDefinitionFailureAnalyzer with parameter hints\n\nAdd addition description and action text to help point to the\nfact that the `NoUniqueBeanDefinitionException` can be thrown\ndue to a missing `-parameters` compiler setting.\n\nCloses gh-38652"
+        },
+        {
+            "hash": "ce7d384d2c0504899c19e829404a011e3b91bcfa",
+            "message": "Add MissingParametersFailureAnalyzer\n\nAdd a new failure analyzer that provides hints whenever parameter\nnames cannot be discovered.\n\nCloses gh-38603"
+        },
+        {
+            "hash": "f6090227313fd8077b00851acd31c1fc6e860974",
+            "message": "Add suppressed missing parameters exception from ValueObjectBinder\n\nUpdate `DataObjectBinder` interface and `ValueObjectBinder`\nimplementation so that suppressed exceptions are added whenever\nparameter names cannot be discovered.\n\nSee gh-38603"
+        },
+        {
+            "hash": "6b58051aad95f6484b5a1db8479aa69ca7ab63b9",
+            "message": "Polish Binder code"
+        },
+        {
+            "hash": "4fb68d4e234c0aa29d4ed453f2401387dd913fea",
+            "message": "Start building against Spring Framework 6.1.2 snapshots\n\nSee gh-38666"
+        },
+        {
+            "hash": "49990afd78926da3a2c8d00c3a1869d1cd2be8fb",
+            "message": "Polish\n\nSee gh-38592"
+        },
+        {
+            "hash": "16c2ddb02c8db61b8616a885c6becaa0f96efd83",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38665"
+        },
+        {
+            "hash": "de70b4fb4c9a35e119fd65434ff19a23cad0067f",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38661"
+        },
+        {
+            "hash": "8e3f9cbc1a32c96b1b35869f698cb8abda52c533",
+            "message": "Upgrade to Hibernate 6.4.0.Final\n\nCloses gh-38523"
+        },
+        {
+            "hash": "f9a1eb000e410378d30d642f58ec7f7bf89c7e1f",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38658"
+        },
+        {
+            "hash": "6431671a3f07ff2680806abcad20b607618bf17c",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38657"
+        },
+        {
+            "hash": "02347abefb6aab7f386b7cc629ff48e2a3437b5c",
+            "message": "Disable propagation of traces if tracing is disabled\n\nCloses gh-38641"
+        },
+        {
+            "hash": "a0fc2d48cd4e118417be05096992fcffaaf58951",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "aad3e73b5dd62c9950aec83370b21b6899f966b7",
+            "message": "Merge pull request #38632 from gavlyukovskiy\n\n* pr/38632:\n  Update documentation about jetty http2 dependency\n\nCloses gh-38632"
+        },
+        {
+            "hash": "829bec7602496bb14a4b7f0936f2201e6909e2db",
+            "message": "Update documentation about jetty http2 dependency\n\nSee gh-38632"
+        },
+        {
+            "hash": "89a0ac3018ab811edfde406e6f605d4f9084ce3f",
+            "message": "Reword documentation"
+        },
+        {
+            "hash": "4d01d95fbc075239be3111896c72fa0ac8227edb",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38627"
+        },
+        {
+            "hash": "0321a8a05b30175383ad1337ef31c1d1817438d7",
+            "message": "Configure ObservationRegistry on JmsListener\n\nPrior to this commit, we set in gh-37388 the ObservationRegistry on the\nauto-configured JmsTemplate bean. This enables observations and context\npropagation when sending JMS messages.\n\nThis commit applies the same to the `DefaultJmsListenerContainerFactory`\nand the `DefaultJmsListenerContainerFactoryConfigurer`, in order to\nenable observations on `@JmsListener` annotated methods.\n\nThis commit also refactors the support implemented in gh-37388 to avoid\nrelying on a bean post processor and instead set the observation\nregistry directly in the main auto-configuration: while Micrometer core\nis an actuator-only dependency, Micrometer Observation API is a compile\ndependnecy for spring-jms itself and there is no need to separate\nconcerns there.\n\nFixes gh-38613"
+        },
+        {
+            "hash": "d172b2206443434b8fed8b1146bb031ba953307c",
+            "message": "Escape pipe symbol in properties changelog table cells\n\nCloses gh-38515"
+        },
+        {
+            "hash": "169070ea1ba9ec41ab513f1e029eda2c42a0ff99",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "fdbd65a2f5586da1789567140da31014b3a13a53",
+            "message": "Only apply awaitTerminationPeriod if awaitTermination is set\n\nSee gh-38528"
+        },
+        {
+            "hash": "6744cc2887b986a2cffabfa423ea463a8b6b44b0",
+            "message": "Apply awaitTerminationPeriod to SimpleAsyncTaskScheduler\n\nCloses gh-38530"
+        },
+        {
+            "hash": "e454470bf9c5b7360b390545b0d4f1508bc6b12c",
+            "message": "Apply awaitTerminationPeriod to SimpleAsyncTaskExecutor\n\nCloses gh-38528"
+        },
+        {
+            "hash": "6cb9af11e8fb244823689994de0104898b0ed845",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38610"
+        },
+        {
+            "hash": "8de81cb06e7039e95989f6035565f810edeaba4b",
+            "message": "Disable bind on init for all Tomcat connectors\n\nIf a connector is bound on init, it won't be unbound when stop()\nis called. This leaves the connector running when it should have\nbeen stopped. We currently disable bind on init for the main\nconnector but not for any additional connectors. This commit\ndisables bind on it for all connectors unless it is been\nexplicitly enabled through the bindOnInit property.\n\nCloses gh-38564\n\nCo-authored-by: Moritz Halbritter <moritz.halbritter@broadcom.com>"
+        },
+        {
+            "hash": "62a6d384f66f476733397177c1392ae4cd690937",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38600"
+        },
+        {
+            "hash": "6fd691af589f1b85a492e3d6660dac5d15ba18c6",
+            "message": "Allow FileSystems to be create by splitting URLs\n\nRelax the constraint that a `NestedLocation` must have a nested entry\nname specified so that URLs can be split and rebuilt.\n\nPrior to this commit, given a URL of the following form:\n\n\tjar:nested:/myjar.jar!/nested.jar!/my/file\n\nIt was possible to create a FileSystem from\n\"jar:nested:/myjar.jar!/nested.jar\" and from that create a path to\n\"my/file\".\n\nHowever, it wasn't possible to create a FileSystem from\n\"jar:nested:/myjar.jar\", then create another file system from the path\n\"nested.jar\" and then finally create a path to \"/nested.jar\".\n\nThis was because `nested:/myjar.jar` was not considered a value URL\nbecause it didn't include a nested entry name.\n\nProjects such as `JobRunr` were relying on the ability to compose file\nsystems, so it makes sense to remove our somewhat artificial\nrestriction.\n\nFixes gh-38592"
+        },
+        {
+            "hash": "9a0f95420a85989a9bddb5c011c16094d42f0148",
+            "message": "Update NestedByteChannel.read to read all possible data when\n\nUpdate `NestedByteChannel.read` so that it loops until all\nremaining data has been read into the buffer. Prior to this\ncommit, it was possible for to read only some bytes into the\nbuffer. Although it looks like this should be OK according to\nthe API documentation, the `ZipFileSystem` relies on all\nremaining bytes being returned.\n\nFixes gh-38595"
+        },
+        {
+            "hash": "75a89556599c7a9f9f84d1cbdff5058c8bb14aff",
+            "message": "Only start management context when parent has a web server\n\nFixes gh-38554"
+        },
+        {
+            "hash": "3e4e59a8f03bc5ca5d7cad90e0e58e8bcf6a277d",
+            "message": "Restore compatibility with Liquibase 4.23\n\nCloses gh-38522"
+        },
+        {
+            "hash": "903f85cd508c8da61841ecd9493d963dd7e1cafb",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38586"
+        },
+        {
+            "hash": "c98c6b1dddddaf426e193ee29fa78a7494ac7354",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38584"
+        },
+        {
+            "hash": "34018b1982118aa66800b92b27b4042bd68433bd",
+            "message": "Reinstate testAndDevelopmentOnly in Testcontainers documentation\n\nCloses gh-38571"
+        },
+        {
+            "hash": "8c7e8778a64d254f591430ad9c2ecc9f29c1f2ab",
+            "message": "Fix NegativeArraySizeException caused by missing unsigned conversion\n\nUpdate `ZipContent` so that `eocd.totalNumberOfCentralDirectoryEntries`\nis converted from a short to an unsigned int to prevent a negative\nnumber from being used.\n\nThis commit also updates the code to consistently use `X.toUnsigned...`\nhelper methods rather than using bitwise operators.\n\nFixed gh-38572"
+        },
+        {
+            "hash": "86c2f28cb483539f4f650fde2754cf2af088c756",
+            "message": "Prevent keep alive thread from blocking the AOT processing\n\nInstead of creating the thread directly in the constructor, the thread\nis now created when the context is refreshed and stopped when the\ncontext is closed.\n\nAs AOT processing never refreshes the context, the thread is never\nstarted and can't block the AOT processing task.\n\nCloses gh-38531"
+        },
+        {
+            "hash": "0856e10443c2ca4f977b0fb0dee457415e38fe54",
+            "message": "Fix IndexOutOfBoundsException exception from parseUrl with empty spec\n\nUpdate jar `Handler` code so that the `parseUrl` method can accept an\nempty `spec`. Prior to this commit, a `classLoader.getResource(\"\")`\ncall would result in a `null` result. This breaks a number of things\nincluding `ClassPathResource` and `PathMatchingResourcePatternResolver`.\n\nFixes gh-38524"
+        },
+        {
+            "hash": "7387c1c64c1476a5807845836fe2645fe6160624",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "3fae5516c97fd735f200a64200685ec1851b28e6",
+            "message": "Next development version (v3.2.1-SNAPSHOT)"
+        },
+        {
+            "hash": "be1639fe68ab83ee8d3b4d3fa8966077b6851d19",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38879"
+        },
+        {
+            "hash": "246a0e6f2180d15bebd2c27228b0c1c92eacf142",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38878"
+        },
+        {
+            "hash": "5354ad15b31c44a0445afa7abf7b769fc89638e0",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38877"
+        },
+        {
+            "hash": "e1b1a621d130cb8619fe39ddaef03b3378b45be8",
+            "message": "Merge pull request #38847 from ilies-bel\n\n* pr/38847:\n  Hide application name placeholder when include property is false\n\nCloses gh-38847"
+        },
+        {
+            "hash": "e39d1d14ea844743affda7e4b1d08400ebf729da",
+            "message": "Hide application name placeholder when include property is false\n\nUpdate log4j configuration so that an empty value is used when\n`LOGGED_APPLICATION_NAME` is missing. Prior to this commit when\n`logging.include-application-name` was `false` the logged output\nwould include the raw `${sys:LOGGED_APPLICATION_NAME}` value.\n\nSee gh-38847"
+        },
+        {
+            "hash": "1b498dea43e2c9c7cf338e3c0fd88b8c488f8c69",
+            "message": "Drop Netty restriction"
+        },
+        {
+            "hash": "67b43baa166901e7b4b4017b26fea10c96dbcd66",
+            "message": "Upgrade to Spring WS 4.0.9\n\nCloses gh-38876"
+        },
+        {
+            "hash": "b6d855fa0beddaaefd0001772d11fd3914adef81",
+            "message": "Upgrade to Spring Pulsar 1.0.1\n\nCloses gh-38875"
+        },
+        {
+            "hash": "32d69497336cc2024c7c1eba6ec42e8556b6dcd3",
+            "message": "Upgrade to Spring Kafka 3.1.1\n\nCloses gh-38874"
+        },
+        {
+            "hash": "21116297f62c26858461e90ddd866cf446610bad",
+            "message": "Upgrade to Pulsar Reactive 0.5.1\n\nCloses gh-38873"
+        },
+        {
+            "hash": "a04a16a783203a7cab6255729cff953107ae29f8",
+            "message": "Upgrade to Netty 4.1.104.Final\n\nCloses gh-38872"
+        },
+        {
+            "hash": "31bc458a13903b1ac5b1b8894168e85c2473a5f9",
+            "message": "Upgrade to Jetty 12.0.5\n\nCloses gh-38871"
+        },
+        {
+            "hash": "cf5dc186f89b9a18cc41484925a89107deb7a9f7",
+            "message": "Upgrade to Hibernate 6.4.1.Final\n\nCloses gh-38870"
+        },
+        {
+            "hash": "bf21fa8e76fa5c1626b3bf68978b62ade99430c1",
+            "message": "Upgrade to Spring Integration 6.2.1\n\nCloses gh-38698"
+        },
+        {
+            "hash": "76c7fe3f8aee999185fa5b6947e371296025e888",
+            "message": "Upgrade to Spring Session 3.2.1\n\nCloses gh-38866"
+        },
+        {
+            "hash": "97f08da638f042ce2b5746db00a79d41269bc7bf",
+            "message": "Upgrade to Spring Authorization Server 1.2.1\n\nCloses gh-38696"
+        },
+        {
+            "hash": "6eee6e913cd32af87ad894d6e760098a53f04329",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "7a6d32c4cb64daf4b9276581335462cd2837dacc",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "bdb2cb131a26b6cf191f30a8c3271e39ea6149e1",
+            "message": "Upgrade to Spring Security 6.2.1\n\nCloses gh-38700"
+        },
+        {
+            "hash": "67458b86620bd6c375df537b3ea764df33e9514a",
+            "message": "Upgrade to Spring LDAP 3.2.1\n\nCloses gh-38699"
+        },
+        {
+            "hash": "1c210f5c1a27cfa488ac023e71cd97bffb2f7d2f",
+            "message": "Upgrade to Spring AMQP 3.1.1\n\nCloses gh-38860"
+        },
+        {
+            "hash": "c4150dff096d23c0c2ce8d500fc5fe789497f46c",
+            "message": "Fix authorization server smoke test\n\nChange from spring-projects/spring-authorization-server#1468\n\nSee gh-38696"
+        },
+        {
+            "hash": "561c7f749ba05e65cdabaf3ecd505132edab3081",
+            "message": "Don't start containers imported via @ImportTestcontainers\n\nRemove early start of containers imported via `@ImportTestcontainers`\nso that parallel startup can happen.\n\nFixes gh-38831"
+        },
+        {
+            "hash": "88429b6a663782129747b12d8983c42bb446cf45",
+            "message": "Use file urls for unpacked jars\n\nUpdate `JarFileArchive` so that unpacked jars use `file:` URLs rather\nthan `jar:file:`. This aligns with the behavior of Spring Boot 3.1 and\nallows calls to `class.getSigners()` to work again.\n\nFixes gh-38833"
+        },
+        {
+            "hash": "3d42dc7c6dfb5b8dae3574876f930d1b588e03e8",
+            "message": "Merge pull request #38839 from onobc\n\n* pr/38839:\n  Polish 'Use authParamString to configure Pulsar authentication'\n  Use authParamString to configure Pulsar authentication\n\nCloses gh-38839"
+        },
+        {
+            "hash": "2158f4cc43ce07ae6780d56f720870be44255892",
+            "message": "Polish 'Use authParamString to configure Pulsar authentication'\n\nSee gh-38839"
+        },
+        {
+            "hash": "4c0a19e8c0ef2256e2f7eb00291440f23a1b8852",
+            "message": "Use authParamString to configure Pulsar authentication\n\nUpdate `PulsarPropertiesMapper` to use JSON encoded parameters rather\nthan a `Map` since the `Map` method is deprecated in Pulsar. This\ncommit simply takes the auth params map and converts them to the\nexpected encoded JSON string of auth parameters.\n\nSee gh-38839"
+        },
+        {
+            "hash": "6ae113c18a6151972e8d462f2eba94fb6449f914",
+            "message": "Fix parallel startup of testcontainers\n\nUpdate `TestcontainersLifecycleBeanPostProcessor` so that containers\ncan actually be started in parallel.\n\nPrior to this commit, `initializeStartables` would collect beans\nand in the process trigger the `postProcessAfterInitialization` method\non each bean. This would see that  `startablesInitialized` was `true`\nand call `startableBean.start` directly. The result of this was that\nbeans were actually started sequentially and when the `start` method\nwas finally called it had nothing to do.\n\nThe updated code uses an enum rather than a boolean so that the\n`postProcessAfterInitialization` method no longer attempts to start\nbeans unless `initializeStartables` has finished.\n\nFixes gh-38831"
+        },
+        {
+            "hash": "92a4a1194d7a599cb57b5e5169ee5bbbfce637d8",
+            "message": "Polish"
+        },
+        {
+            "hash": "b08d4410219851b7fde2ff63e5f1f5e4cb3b3152",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38837"
+        },
+        {
+            "hash": "f2a74c910793dbaa7d6351236e936030d252f302",
+            "message": "Upgrade to Spring Retry 2.0.5\n\nCloses gh-38836"
+        },
+        {
+            "hash": "42830dc621ff47e5d5e6cc00b2eb5b598b5fd796",
+            "message": "Upgrade to Spring Data Bom 2023.1.1\n\nCloses gh-38697"
+        },
+        {
+            "hash": "39cbe57bbfdb5b49f9dd95056bd9ef9d7c6cf68e",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "65af35c1ac79c7e75d69ee76a4dcf5ec9f28322a",
+            "message": "Revert \"Temporarily disable failing test\"\n\nThis reverts commit bb37a868b3e5a4db003d503c58c838a5a32784a8.\n\nCloses gh-38659"
+        },
+        {
+            "hash": "26dc14031e7f05bdcbfea87a6b26222ea5ab759a",
+            "message": "Update `LoadedPemSslStore` to use lazy loading\n\nUpdate `LoadedPemSslStore` so that it loads content lazily. This\nrestores the behavior of Spring Boot 3.1 and allows bundles to be\ndefined with files that don't exist as long as they are never accessed.\n\nFixes gh-38659"
+        },
+        {
+            "hash": "bb37a868b3e5a4db003d503c58c838a5a32784a8",
+            "message": "Temporarily disable failing test\n\nSee gh-gh-38822"
+        },
+        {
+            "hash": "1d10e517555998a0f1f5ccf8e236346b1a9a16a0",
+            "message": "Adapt to upstream Spring Security changes"
+        },
+        {
+            "hash": "5915db09e6cb57274cdd6d00a77ed6dc134ce9bd",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "d7f4a8ca6a9782f70af7b4a177274add56e04e27",
+            "message": "Upgrade to UnboundID LDAPSDK 6.0.11\n\nCloses gh-38816"
+        },
+        {
+            "hash": "ee19ed7f1741d661203a5069ab0cf82f915bd1f5",
+            "message": "Upgrade to Tomcat 10.1.17\n\nCloses gh-38815"
+        },
+        {
+            "hash": "18c7e307cc771b4f2dbf3bc500aa6147409e542b",
+            "message": "Upgrade to Spring Framework 6.1.2\n\nCloses gh-38814"
+        },
+        {
+            "hash": "25b109167c6433620e632045edc821afe22593d4",
+            "message": "Upgrade to R2DBC Proxy 1.1.3.RELEASE\n\nCloses gh-38813"
+        },
+        {
+            "hash": "7f064bc4562f6dc8082c1b8fe7bc69d891fab8f2",
+            "message": "Upgrade to R2DBC Postgresql 1.0.3.RELEASE\n\nCloses gh-38812"
+        },
+        {
+            "hash": "5d3aaf98b8d5551bafc4136aeabca4f12698cf41",
+            "message": "Upgrade to Netty 4.1.102.Final\n\nCloses gh-38811"
+        },
+        {
+            "hash": "79455a79f267e274b665e602bc820872220703c9",
+            "message": "Upgrade to Maven Javadoc Plugin 3.6.3\n\nCloses gh-38810"
+        },
+        {
+            "hash": "4892024b7d7e85babe0fa411b406c11ea7df81f0",
+            "message": "Upgrade to Logback 1.4.14\n\nCloses gh-38809"
+        },
+        {
+            "hash": "d95e7a5af0d90a2f3a99f3aecb8a1d90827cbb03",
+            "message": "Upgrade to Kotlin Serialization 1.6.2\n\nCloses gh-38808"
+        },
+        {
+            "hash": "61fdaec7fa1428d9fdb4377f8b737fb1ea75614c",
+            "message": "Upgrade to Kotlin 1.9.21\n\nCloses gh-38807"
+        },
+        {
+            "hash": "3b51bcc9121a2859d0831c2ed568b83ba1f863b7",
+            "message": "Upgrade to Kafka 3.6.1\n\nCloses gh-38806"
+        },
+        {
+            "hash": "86599a5062d9f27a7cd513d189537f91a35dbaaa",
+            "message": "Upgrade to Jetty 12.0.4\n\nCloses gh-38805"
+        },
+        {
+            "hash": "853aaeb8186c467bcc9e1c2b259480e00dff323e",
+            "message": "Upgrade to Jersey 3.1.5\n\nCloses gh-38804"
+        },
+        {
+            "hash": "d2d303d5aa6de51210406e4e38a800718ca43297",
+            "message": "Upgrade to Jaybird 5.0.3.java11\n\nCloses gh-38803"
+        },
+        {
+            "hash": "da7cb2ad1b6f287c036862d2a31eb8921a0f06fa",
+            "message": "Upgrade to Janino 3.1.11\n\nCloses gh-38802"
+        },
+        {
+            "hash": "8deae8275eef11350f2dbf7365573832fb6a0fcf",
+            "message": "Upgrade to HttpCore5 5.2.4\n\nCloses gh-38801"
+        },
+        {
+            "hash": "f3201880236e8ad30aa6b0c170d7ce705599c68a",
+            "message": "Upgrade to HttpClient5 5.2.3\n\nCloses gh-38800"
+        },
+        {
+            "hash": "b20ed7c577de04ee0ab898fd5e4937d850f105e2",
+            "message": "Upgrade to Groovy 4.0.16\n\nCloses gh-38799"
+        },
+        {
+            "hash": "06068894a4bd5d4c2a6bb21ddefa44136392a213",
+            "message": "Upgrade to Dropwizard Metrics 4.2.23\n\nCloses gh-38798"
+        },
+        {
+            "hash": "2e43819e8daa36cfbca7d125a15b4c01cac3264f",
+            "message": "Upgrade to AspectJ 1.9.21\n\nCloses gh-38797"
+        },
+        {
+            "hash": "c030539315947256d55397067f01b5079fdeca88",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "b62b6d56c180cd0fba140fc7a73bfe2d691bea6c",
+            "message": "Merge branch '3.1.x'\n\nCloses gh-38794"
+        },
+        {
+            "hash": "2fd89803a247b2bf590c698ed06265278b9dbb73",
+            "message": "Merge branch '3.1.x'"
+        },
+        {
+            "hash": "e44e0c8f1ed10e0cfcd839fa382ff0483831fff4",
+            "message": "Remove ErrorAttributes.ERROR_ATTRIBUTE\n\nThis commit removes the now defunkt `ErrorAttributes.ERROR_ATTRIBUTE`\nthat was introduce to register handled errors as metrics. This has been\nreplaced since 3.0 by a direct support in Spring Framework and had no\neffect whatsoever since that release.\n\nThis also updates the documentation to point to the Framework mechanism\nthat replaced it.\n\nFixes gh-33731"
+        },
+        {
+            "hash": "8c5b7a87ae1a08d3b5157449c9f1dc0b0a5cc48a",
+            "message": "Adapt to latest changes in the locking model for context close\n\nSee gh-38666"
+        }
+    ],
+    "issues": [
+        {
+            "number": "38893",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "38862",
+            "title": "META-INF entries are duplicated under BOOT-INF/classes causing \"Conflicting persistence unit definitions\" error"
+        },
+        {
+            "number": "38880",
+            "title": "HibernateJpaAutoConfiguration should be applied before DataSourceTransactionManagerAutoConfiguration"
+        },
+        {
+            "number": "38695",
+            "title": "Upgrade to Reactor Bom 2023.0.1"
+        },
+        {
+            "number": "38694",
+            "title": "Upgrade to Micrometer Tracing 1.2.1"
+        },
+        {
+            "number": "38693",
+            "title": "Upgrade to Micrometer 1.12.1"
+        },
+        {
+            "number": "38770",
+            "title": "Zip file closed exceptions can be thrown due to StaticResourceJars closing jars from cached connections"
+        },
+        {
+            "number": "38751",
+            "title": "Multi-byte filenames in zip files can cause an endless loop in ZipString.hash"
+        },
+        {
+            "number": "35338",
+            "title": "Disable user details auto-configuration if the application has resource server, saml, or oauth2-client dependencies"
+        },
+        {
+            "number": "38713",
+            "title": "WebFlux and resource server auto-configuration may fail due to null authentication manager"
+        },
+        {
+            "number": "38764",
+            "title": "Document prerequisites for Docker Compose support"
+        },
+        {
+            "number": "38583",
+            "title": "management.metrics.tags has been deprecated without a replacement working for all metrics"
+        },
+        {
+            "number": "38759",
+            "title": "spring-boot-image-tests for native app fails when trying to test a new version with no published snapshots"
+        },
+        {
+            "number": "38752",
+            "title": "RabbitAutoConfigurationTests are slow to run"
+        },
+        {
+            "number": "38666",
+            "title": "Upgrade to Spring Framework 6.1.2"
+        },
+        {
+            "number": "38747",
+            "title": "Use idiomatic AssertJ assertions"
+        },
+        {
+            "number": "38568",
+            "title": "Migration form 3.1.5 to 3.2.0 : \"Default\" Tracer is not provided in test anymore"
+        },
+        {
+            "number": "38741",
+            "title": "Gradle task \"bootJar\" fails with \"Failed to get permissions\" when using Gradle 8.6-milestone-1"
+        },
+        {
+            "number": "38734",
+            "title": "Custom binding converters are ignored when working with collection types"
+        },
+        {
+            "number": "37504",
+            "title": "Excluding ReactiveUserDetailsServiceAutoConfiguration can cause a WebFlux app to fail to start due to a null authentication manager"
+        },
+        {
+            "number": "38728",
+            "title": "Cleanup kotlin sources"
+        },
+        {
+            "number": "38727",
+            "title": "Rename local variable in BatchAutoConfiguration"
+        },
+        {
+            "number": "38725",
+            "title": "Update Dynatrace documentation links"
+        },
+        {
+            "number": "38154",
+            "title": "Class loading may fail when JVM is stopped using SIGINT"
+        },
+        {
+            "number": "38611",
+            "title": "Class loading fails on an interrupted thread causing com.mongodb.event.ServerClosedEvent to fail to load when Mongo detects a cluster change"
+        },
+        {
+            "number": "38692",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "38660",
+            "title": "Spring Boot jar launcher does not work in folders containing certain chars"
+        },
+        {
+            "number": "38700",
+            "title": "Upgrade to Spring Security 6.2.1"
+        },
+        {
+            "number": "38699",
+            "title": "Upgrade to Spring LDAP 3.2.1"
+        },
+        {
+            "number": "38698",
+            "title": "Upgrade to Spring Integration 6.2.1"
+        },
+        {
+            "number": "38697",
+            "title": "Upgrade to Spring Data Bom 2023.1.1"
+        },
+        {
+            "number": "38696",
+            "title": "Upgrade to Spring Authorization Server 1.2.1"
+        },
+        {
+            "number": "38589",
+            "title": "NoSuchMethodError can be thrown from Session.getCookie() due to binary incompatibilty"
+        },
+        {
+            "number": "38652",
+            "title": "NoUniqueBeanDefinitionFailureAnalyzer does not account for the fact that missing '-parameters' may be the cause"
+        },
+        {
+            "number": "38603",
+            "title": "Failures due to code not being compiled with '-parameters' are hard to identify"
+        },
+        {
+            "number": "38592",
+            "title": "Nested jar URLs cannot be split and reassembled resulting in errors with projects that use this technique (such as JobRunr)"
+        },
+        {
+            "number": "38665",
+            "title": "Test Boot's Gradle plugin against Gradle 8.5"
+        },
+        {
+            "number": "38661",
+            "title": "It is unclear that Docker Compose services have not been started as one or more is already running"
+        },
+        {
+            "number": "38523",
+            "title": "Upgrade to Hibernate 6.4.0.Final"
+        },
+        {
+            "number": "38658",
+            "title": "Build against Oracle JDBC driver variant ojdbc11"
+        },
+        {
+            "number": "38657",
+            "title": "Bump actions/setup-java from 3 to 4"
+        },
+        {
+            "number": "38641",
+            "title": "Traces are propagated if tracing is disabled"
+        },
+        {
+            "number": "38627",
+            "title": "Remove mention of management.tracing.enabled from the documentation"
+        },
+        {
+            "number": "37388",
+            "title": "Auto-configure ObservationRegistry on JmsTemplate"
+        },
+        {
+            "number": "38613",
+            "title": "Missing registry auto-configuration for JMS listener observation support"
+        },
+        {
+            "number": "38515",
+            "title": "Pipe character in configuration property descriptions break the properties changelog generator"
+        },
+        {
+            "number": "38528",
+            "title": "Setting 'spring.task.execution.shutdown.await-termination-period' does not result in a call to SimpleAsyncTaskExecutor#taskTerminationTimeout"
+        },
+        {
+            "number": "38530",
+            "title": "Setting 'spring.task.scheduling.shutdown.await-termination-period' does not result in a call to SimpleAsyncTaskScheduler#taskTerminationTimeout"
+        },
+        {
+            "number": "38610",
+            "title": "Tests in MetricsIntegrationTests are non idempotent"
+        },
+        {
+            "number": "38564",
+            "title": "TomcatWebServer stop doesn't close sockets for additional connectors"
+        },
+        {
+            "number": "38600",
+            "title": "System SSL certificates are not used by the Apache HTTP Client in a RestTemplate built with RestTemplateBuilder"
+        },
+        {
+            "number": "38595",
+            "title": "ZipFileSystem throws \"java.util.zip.ZipException: read CEN tables failed\" with certain nested jars"
+        },
+        {
+            "number": "38554",
+            "title": "Port is already in use when using @SpringBootTest with a separate management port and a mock web environment"
+        },
+        {
+            "number": "38522",
+            "title": "Spring Boot 3.2 is not compatible with older versions of Liquibase"
+        },
+        {
+            "number": "38586",
+            "title": "Fix Observation Filter docs"
+        },
+        {
+            "number": "38584",
+            "title": "Bump gradle/gradle-build-action from 2.9.0 to 2.10.0"
+        },
+        {
+            "number": "38571",
+            "title": "Reinstate mention of testAndDevelopmentOnly when using Testcontainers at dev time"
+        },
+        {
+            "number": "38572",
+            "title": "NegativeArraySizeException can be thrown from org.springframework.boot.loader.zip.ZipContent$Loader"
+        },
+        {
+            "number": "38531",
+            "title": "Keep-alive property causes processAot step to never finish"
+        },
+        {
+            "number": "38524",
+            "title": "Nested URLs return null from classLoader.getResource(\"\") causing ClassPathResource failures"
+        },
+        {
+            "number": "38879",
+            "title": "Fix typo"
+        },
+        {
+            "number": "38878",
+            "title": "Ban call of URLEncoder.encode/URLDecoder.decode(String,String)"
+        },
+        {
+            "number": "38877",
+            "title": "Cleanup java sources"
+        },
+        {
+            "number": "38876",
+            "title": "Upgrade to Spring WS 4.0.9"
+        },
+        {
+            "number": "38875",
+            "title": "Upgrade to Spring Pulsar 1.0.1"
+        },
+        {
+            "number": "38874",
+            "title": "Upgrade to Spring Kafka 3.1.1"
+        },
+        {
+            "number": "38873",
+            "title": "Upgrade to Pulsar Reactive 0.5.1"
+        },
+        {
+            "number": "38872",
+            "title": "Upgrade to Netty 4.1.104.Final"
+        },
+        {
+            "number": "38871",
+            "title": "Upgrade to Jetty 12.0.5"
+        },
+        {
+            "number": "38870",
+            "title": "Upgrade to Hibernate 6.4.1.Final"
+        },
+        {
+            "number": "38866",
+            "title": "Upgrade to Spring Session 3.2.1"
+        },
+        {
+            "number": "38860",
+            "title": "Upgrade to Spring AMQP 3.1.1"
+        },
+        {
+            "number": "1468",
+            "title": "Jersey doesn't always work with Spring Boot fat jars"
+        },
+        {
+            "number": "38831",
+            "title": "TestContainers parallel initialization doesn't work properly "
+        },
+        {
+            "number": "38833",
+            "title": "getSigners() info is lost for signed jars when using the new loader implementation with requiresUnpack"
+        },
+        {
+            "number": "38837",
+            "title": "Child context created with SpringApplicationBuilder runs parents runners"
+        },
+        {
+            "number": "38836",
+            "title": "Upgrade to Spring Retry 2.0.5"
+        },
+        {
+            "number": "38659",
+            "title": "FileNotFoundException is thrown eagerly from unused SSL bundles"
+        },
+        {
+            "number": "38822",
+            "title": "Reinstate spring security tests"
+        },
+        {
+            "number": "38816",
+            "title": "Upgrade to UnboundID LDAPSDK 6.0.11"
+        },
+        {
+            "number": "38815",
+            "title": "Upgrade to Tomcat 10.1.17"
+        },
+        {
+            "number": "38814",
+            "title": "Upgrade to Spring Framework 6.1.2"
+        },
+        {
+            "number": "38813",
+            "title": "Upgrade to R2DBC Proxy 1.1.3.RELEASE"
+        },
+        {
+            "number": "38812",
+            "title": "Upgrade to R2DBC Postgresql 1.0.3.RELEASE"
+        },
+        {
+            "number": "38811",
+            "title": "Upgrade to Netty 4.1.102.Final"
+        },
+        {
+            "number": "38810",
+            "title": "Upgrade to Maven Javadoc Plugin 3.6.3"
+        },
+        {
+            "number": "38809",
+            "title": "Upgrade to Logback 1.4.14"
+        },
+        {
+            "number": "38808",
+            "title": "Upgrade to Kotlin Serialization 1.6.2"
+        },
+        {
+            "number": "38807",
+            "title": "Upgrade to Kotlin 1.9.21"
+        },
+        {
+            "number": "38806",
+            "title": "Upgrade to Kafka 3.6.1"
+        },
+        {
+            "number": "38805",
+            "title": "Upgrade to Jetty 12.0.4"
+        },
+        {
+            "number": "38804",
+            "title": "Upgrade to Jersey 3.1.5"
+        },
+        {
+            "number": "38803",
+            "title": "Upgrade to Jaybird 5.0.3.java11"
+        },
+        {
+            "number": "38802",
+            "title": "Upgrade to Janino 3.1.11"
+        },
+        {
+            "number": "38801",
+            "title": "Upgrade to HttpCore5 5.2.4"
+        },
+        {
+            "number": "38800",
+            "title": "Upgrade to HttpClient5 5.2.3"
+        },
+        {
+            "number": "38799",
+            "title": "Upgrade to Groovy 4.0.16"
+        },
+        {
+            "number": "38798",
+            "title": "Upgrade to Dropwizard Metrics 4.2.23"
+        },
+        {
+            "number": "38797",
+            "title": "Upgrade to AspectJ 1.9.21"
+        },
+        {
+            "number": "38794",
+            "title": "Prohibit upgrade to Netty 4.1.103.Final"
+        },
+        {
+            "number": "33731",
+            "title": "Controller level exceptions not getting populated in HTTP server requests metrics"
+        }
+    ]
+}

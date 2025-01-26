@@ -1,0 +1,430 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 91,
+    "start_delay": 0.0,
+    "duration": 341.82375,
+    "commits_info": [
+        {
+            "hash": "61938f4ea8ec7aa00f2640f5b3f9ead19130b2d2",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "6e7f75eb779196848e1f6d421432a3a885ec8e9a",
+            "message": "Updated copyright notices to 2018."
+        },
+        {
+            "hash": "369df91756e632b32440eb585253f7fb1ddba9d2",
+            "message": "[fixes #1554] javac9 now caches type lookups based on ‘position’ which is slapped together by a tuple based on the position (as gleaned from the JCTree object) and the source file (as gleaned from.. Log. *facepalm*). We didn’t update log when resolving for i.e. ‘val’, so the caches get all jumbled up. Fixed by setting the Log’s ‘useSource’ method."
+        },
+        {
+            "hash": "14407cedb5e061d8e7a53ebdd167dc82db779df0",
+            "message": "[fixes #1553] attriber of JDK9 checks the enclosing class’s type, which we intentionally haven’t set yet. To avoid NPEs, let’s set it."
+        },
+        {
+            "hash": "209c082530cc759d26ab30c25f970ea5f7b7ab3a",
+            "message": "Update tests for new Builder.Default handling #1547"
+        },
+        {
+            "hash": "4dd59e07dadb6f0e1bdcfd50ea03a60d9da72f17",
+            "message": "jdk9 Builder.Default works again. Fixes #1547"
+        },
+        {
+            "hash": "ad2194a3fb18fc70228bafe866964760a77258db",
+            "message": "Whitelist a JavacFileManager implementation\n\nSee bazelbuild/bazel#4393"
+        },
+        {
+            "hash": "32549e2a3a831e7640911b71fbb8d417026ac45c",
+            "message": "Update changelog: 1.16.[1]6 typo\n\n\"JDK9 support much improved since v1.16.6\" -> \"... v1.16.16\""
+        },
+        {
+            "hash": "cf5a714c1580a9a8cee5d84ae484c5b08d652db1",
+            "message": "update doc"
+        },
+        {
+            "hash": "273cb83ef31f0153b3cb91afa92dcd98c2658795",
+            "message": "build script for edge release updated"
+        },
+        {
+            "hash": "ae22bb617beaa7d0aedd68805280c7cc3b72cb69",
+            "message": "Updated to new in ivy++ scp/ssh tasks."
+        },
+        {
+            "hash": "d9031506b5e7804c277d29db060973cd17033e9a",
+            "message": "support for @Builder on methods with a generified return type. Fixes #1420"
+        },
+        {
+            "hash": "f2530ab37efecf60e9ed1df2ed232822df209e4e",
+            "message": "handle @Builder.Default on generic fields. Fixes #1527"
+        },
+        {
+            "hash": "0232d99ba646313505536a0663952e9e94340022",
+            "message": "getName call it self result in stackoverflow\n\nI think line 12 is incorrect, call \"this.getName()\" in it self will cause stackoverflow.Change to return this.name."
+        },
+        {
+            "hash": "e04e1771e112f6e968c85fcc02be4efec6fc0b70",
+            "message": "document deprecation of the config key lombok.addGeneratedAnnotation. Fixes #1532"
+        },
+        {
+            "hash": "50cb79b9ed02a1e87bd223a36c512a6857294094",
+            "message": "installer now defaults to inserting an absolute path into eclipse.ini"
+        },
+        {
+            "hash": "aaa29d16ee2efa83cc1ae2ff7313bd2dc093f2e7",
+            "message": "make incremental compilation work"
+        },
+        {
+            "hash": "a6474a69a185941b6536aa5ef42cbb8e0d24d657",
+            "message": "fix target description"
+        },
+        {
+            "hash": "be0a9ec2ed0946d372139285ba8e04349dca4ffb",
+            "message": "‘fixed’ ecj testing on JDK9 by requiring that you download the Oracle8 rt.jar. Fortunately, we already had an optional ant task to fetch this. I’ve simply made it less optional."
+        },
+        {
+            "hash": "9cf3c8f8baeaba18ca2d18ad60a6d4c3485c6988",
+            "message": "[changelog] Add a note about changing the behaviour of ConstructorProperties in this release."
+        },
+        {
+            "hash": "7176ebc6c6a2fcaaa574f2d79aac4903c99055f3",
+            "message": "errors generated during compilation by lombok weren’t being conveyed in Javac9."
+        },
+        {
+            "hash": "ab8e14736f8c3a7cb96ae7351d4bb1818131f2b2",
+            "message": "[JDK9] fixing delombok’s comment integration in JDK9."
+        },
+        {
+            "hash": "a92117574e10a7949bb0262786698d138056360b",
+            "message": "Working around newly introduced lint errors in javac9."
+        },
+        {
+            "hash": "003832670e5115fc0cd93f46f4f48482048ee078",
+            "message": "delombok no longer prints generated outer-instance constructor parameters, fixes #1521"
+        },
+        {
+            "hash": "602877e6942fd12852a7b03cd3e30e76d5440df6",
+            "message": "delombok no longer prints generated outer-instance constructor parameters, fixes #1521"
+        },
+        {
+            "hash": "0d6bfb1bbc39b7e68b200434cc7bb4fb5b50361c",
+            "message": "bugfix to the stubs for ‘Symbol’."
+        },
+        {
+            "hash": "9aac454aecafa2ea831af914161326295db5e481",
+            "message": "fixing tests to account for generation of javax.annotation.Generated and ConstructorProperties being default-off."
+        },
+        {
+            "hash": "d7c019c07c3851fa0c89b3080da6c08d021fd272",
+            "message": "for lombok v2, make generation of ConstructorProperties an optional extra, instead of default on."
+        },
+        {
+            "hash": "1deb55a480dfa70b77858ecdce2be539978d15d7",
+            "message": "download deps"
+        },
+        {
+            "hash": "4710d20e180c35674b2d934aafb0a8171ff1608e",
+            "message": "replace all fileManagers to make sure we patch the generated bytecode, fixes #1518"
+        },
+        {
+            "hash": "72561d742884e857bc11cca290be26d9d04ec937",
+            "message": "javax.annotation.Generated will no longer be applied by default (Oracle broke it with JDK9)."
+        },
+        {
+            "hash": "af8c2bf8e5770d2d5a1f74a2b4959ceefb5ed03e",
+            "message": "delombok in JDK9 now almost works. Some cases of ‘val’ don’t work yet."
+        },
+        {
+            "hash": "9be8cd4afdc2f12e6b6b26776f3ea6ccf79621c1",
+            "message": "bugfix for delomboking source that does not compile; it should just emit compiler errors, not stack traces."
+        },
+        {
+            "hash": "2d5ae0d920d1f602e15d9430f3650c946ad2cdfe",
+            "message": "some bugfixes for JDK9 support involving the Options system of javac."
+        },
+        {
+            "hash": "6bc9912d2675fa790b50fefc75027bc2f39f5d58",
+            "message": "The classpath and bootclasspath params passed to delombok did not apply javac’s built-in * unglobbing. Now they do."
+        },
+        {
+            "hash": "2cb1ef66fbb702153199a8b3270087c15162cb80",
+            "message": "bugfix: Delombok command wasn’t registered, so ‘java -jar lombok.jar delombok’ did not work."
+        },
+        {
+            "hash": "a9c1d3dd9569bc12d5f0d3096d9d1f0f3f0c2106",
+            "message": "use ASM6 instead of ASM5"
+        },
+        {
+            "hash": "1f7b8c3d2c5dc1afc59faaedee94abeefcffec3c",
+            "message": "add ant Dockerfile, use jdk major version numbers instead"
+        },
+        {
+            "hash": "192ce9bc16e7d49533ba6ce12fc570c2bcfab550",
+            "message": "Expanded stubsstubs to ensure the stubs compile correctly."
+        },
+        {
+            "hash": "14c7456fea937677b147ae5f1563c4953e551f9c",
+            "message": "updated lombok.patcher dep."
+        },
+        {
+            "hash": "15c44f54ccd7cc4502d12b79e6f91074e4e916bc",
+            "message": "JDK9 support for delombok (and thus, for running the tests under JDK9)."
+        },
+        {
+            "hash": "b1b49e062e5d64877891ecd327c1ffbd00df5636",
+            "message": "Add closing parenthesis in constructor.html"
+        },
+        {
+            "hash": "931a77855843e05f6a3da036e6c73f6c4656782b",
+            "message": "fixed the second \"equals\" as well"
+        },
+        {
+            "hash": "98b0d91d091b554cb3ab9ed9f972d358c7cae01a",
+            "message": "fix JavaDoc of callSuper in the ToString annotation"
+        },
+        {
+            "hash": "d92f508ec5998c6215ec959e9e9b22a2dc303861",
+            "message": "Fixed `ant test-ecj`"
+        },
+        {
+            "hash": "69f1b85ce0b0be6d018eb2c1f3f769b293aa36f9",
+            "message": "add changelog for #1505"
+        },
+        {
+            "hash": "045638ec1f79f68747f135061d2e026faa719642",
+            "message": "Generate correct hashCode when callSuper and no fields included. Fixes #1505"
+        },
+        {
+            "hash": "7fad34b0a6fbda12f07c62a571cbe870b550be97",
+            "message": "Fixing running of annotation processors (broken with introduction of compiling with ecj)"
+        },
+        {
+            "hash": "34e1c295d2fd2a29314ea5826dae097b806cef41",
+            "message": "Updated to ivy++ v1.22 in order to allow compiling stuff with ecj; j9 no longer supports 1.4/1.5 but we need it to continue to compile patchtargets for eclipse."
+        },
+        {
+            "hash": "975880abdbba376e75f06a5bd6bf0bb7f0a2a885",
+            "message": "use provisioning in docker to enable composition of versions"
+        },
+        {
+            "hash": "c714a3bbca015ddd639b242323e20928980724e3",
+            "message": "update Android Studio gradle file documentation"
+        },
+        {
+            "hash": "6761f6a1056542c4012fb0da6defbde9d493dd5c",
+            "message": "update docker documentation"
+        },
+        {
+            "hash": "34a256810f683e9143099e586900e7ce5eb08adc",
+            "message": "change docker documentation to markdown"
+        },
+        {
+            "hash": "8cb1d739f43a14cc5c49018a9288c00d635f7e6d",
+            "message": "add more examples to docker documentation"
+        },
+        {
+            "hash": "008397d1925a5fd03af2acb4830ccfd32b47191d",
+            "message": "download-edge link wasn’t in the htaccess yet, making /download-edge not work."
+        },
+        {
+            "hash": "b833522b2cd656e40526af593bab27561e02623b",
+            "message": "add some dockerfiles for testing against jdk9"
+        },
+        {
+            "hash": "93e06e10e190417b7c0012a88f03ce06cff3a959",
+            "message": "update changelog"
+        },
+        {
+            "hash": "eade3e0736e7e944b4df069f35fe9334819b99c8",
+            "message": "Removed flash-based video player; these days, who needs it, right?"
+        },
+        {
+            "hash": "d4740cb18ce6d844f0c03fa5df06feac42cdfa41",
+            "message": "Added an individual ‘setup’ page; hamburger menu now goes to it."
+        },
+        {
+            "hash": "ac8c72bcdbef1d139f60fc4297da6ec83153b3ba",
+            "message": "The main page now clicks through to the video."
+        },
+        {
+            "hash": "70e7bc2f952394042133b7975d0e79477ac245f1",
+            "message": "solved some bugs in our site."
+        },
+        {
+            "hash": "6fc0cd736c5def296ec7c963ba6e6ec5032d08c9",
+            "message": "website-only now available."
+        },
+        {
+            "hash": "033660088bc9f184de7afb512fa752c4ccc70f83",
+            "message": "add support for Netbeans on jdk9"
+        },
+        {
+            "hash": "949507a23a2ba6d5bc13401b97f97510aa640bd4",
+            "message": "Merge branch 'tmurakam-feture/fix-1440'"
+        },
+        {
+            "hash": "d301a18870db3e4e1a6ca32fb7ed7e5c61fc3dbf",
+            "message": "code cleanup"
+        },
+        {
+            "hash": "f7066e43d8434f374d75e87cba4fba9c40ae2215",
+            "message": "Turns out we don't need the encoding after all since all methods are overridden"
+        },
+        {
+            "hash": "4298d97be8c2a3e1034619601719a493fcf17d48",
+            "message": "LombokFileObjects: get encoding from wrappedManager."
+        },
+        {
+            "hash": "f55ebbe710f8d8065520225dc78ebf6d7ecd7616",
+            "message": "LombokFileObjects: use default charset in BaseFileManager wrapper."
+        },
+        {
+            "hash": "08e5773d0ab82ef91c925243e3192166d73be463",
+            "message": "Add my name to AUTHORS, remove TODO"
+        },
+        {
+            "hash": "d92bc59eb0323dd38d760dae4f9ff6058543b6be",
+            "message": "fix issue #1440, #1472: wrap BasedFileManager for jdk9"
+        },
+        {
+            "hash": "f5a2a79aa74eef2c1185ef0a8b6971d61298f2ec",
+            "message": "Update FieldDefaults.html"
+        },
+        {
+            "hash": "4ed3a062c08e39d21b23d88f3d2a4934bac390d7",
+            "message": "add ids to h1/h2/h3 for linking directly to them"
+        },
+        {
+            "hash": "214cff5dd2e9d04b780f3586356c43f7242c06c8",
+            "message": "Merge pull request #1479 from jb--/master\n\nfixing documentation mixup"
+        },
+        {
+            "hash": "e65f05d9d95607f9a8ead850d9eaeea499e4d3fc",
+            "message": "fixing documentation mixup"
+        },
+        {
+            "hash": "dfb301fe1895818a6003be0c78481f0c3ba22759",
+            "message": "Merge pull request #1430 from bitsal/master\n\nUpdated setup instructions for Gradle"
+        },
+        {
+            "hash": "eb928c2a3de2e6203e826b316b85f9b0fd6e735f",
+            "message": "Updated setup instructions for Gradle"
+        },
+        {
+            "hash": "438095f5874015b96deee7a869e214b99316c329",
+            "message": "Merge pull request #1311 from askoning/testsOnLinux\n\nSeveral minor fixes to make 'ant test' work more reliably on other systems"
+        },
+        {
+            "hash": "1244721734a2025d1e3268f09846f9469f10f415",
+            "message": "Rename a set of case-differing transformation tests to make them work on case-sensitive file systems."
+        },
+        {
+            "hash": "ea9fbb426f60bd1b7c3dea2b0485eae8eaafedda",
+            "message": "Use already downloaded rt-openjdk6.jar if it exists.\nThis allows builds to run without a network connection."
+        },
+        {
+            "hash": "233400eacba84ec33bfba5207481a6f5ec00aa65",
+            "message": "Make tests run if no (eclipse-generated?) bin/ folder exists"
+        },
+        {
+            "hash": "d9f66583225f265336d19198e35d47361aef35cc",
+            "message": "Merge pull request #1450 from cardamon/fix-builder-javadoc-link\n\nFix @Builder complete doc link."
+        },
+        {
+            "hash": "b2d955f46b37988b65da7d0780dabcf058ba6afe",
+            "message": "Fix @Builder complete doc link."
+        },
+        {
+            "hash": "e92e285d95e0fb08c32e7059f85806a30985084b",
+            "message": "Possible fix for issue 1440: Error-prone in IntelliJ"
+        },
+        {
+            "hash": "4fde7715e9c5441e7e9c10a46bafad5d1bbd7152",
+            "message": "Updated website to render snippets more intelligently on reasonably sized browser windows."
+        },
+        {
+            "hash": "c40990f250bd1d69c03ddecf340f11d1b822eeb0",
+            "message": "post-release version bump."
+        },
+        {
+            "hash": "49a4342088b4b7be540018fdc91aeeaeca8d1820",
+            "message": "Merge branch 'kchirls-master'"
+        },
+        {
+            "hash": "afb1fb88883d4b3707de3b97fb44253a725437b7",
+            "message": "Rename class in test file"
+        },
+        {
+            "hash": "4597e069dc926ed2f0e147fd0cdbc51e1edc7c23",
+            "message": "Merge branch 'master' of https://github.com/kchirls/lombok into kchirls-master\nFixes #869, fixes #1018"
+        },
+        {
+            "hash": "78e526690c22f1c5a1c93705076229ff32284741",
+            "message": "Updates for pull request #1284. Fix for issues #869 and #1018.\n\nAdded name to AUTHORS file. Added ECJ fix and test. Made one of the\nvariables final to also verify the final error case."
+        },
+        {
+            "hash": "d146f362682654afd1a01c477836e72eadbd9e42",
+            "message": "Merge remote-tracking branch 'rzwitserloot/master'"
+        },
+        {
+            "hash": "f765730526e061d39c3ecd44f37de6a7f7887cf0",
+            "message": "Fix for issues #869 and #1018\n\nGenerates the null check on the constructor parameter instead of the\ninstance field. Fix for issues #869 and #1018."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1554",
+            "title": "Using 'val' in JDK9 fails with classcasterrors."
+        },
+        {
+            "number": "1553",
+            "title": "Using 'val' in a method that has ternary expressions whose truepart is an instance method call, fails with NPE."
+        },
+        {
+            "number": "1547",
+            "title": "Issues with Builder.Default on jdk9"
+        },
+        {
+            "number": "1420",
+            "title": "Rawtypes warning using @Builder returning a parameterized type."
+        },
+        {
+            "number": "1527",
+            "title": "@Builder.Default: error: non-static type variable T cannot be referenced from a static context"
+        },
+        {
+            "number": "1532",
+            "title": "Properly deprecate lombok.addGeneratedAnnotation configuration property"
+        },
+        {
+            "number": "1521",
+            "title": "Plugin fails to delombok anonymous instance of inner class"
+        },
+        {
+            "number": "1518",
+            "title": "@SneakyThrows on Java 9 fails to remove reference to lombok/Lombok.sneakyThrow from bytecode"
+        },
+        {
+            "number": "1505",
+            "title": "@EqualAndHashCode problems with subclasses"
+        },
+        {
+            "number": "1440",
+            "title": "Lombok doesn't work with error-prone"
+        },
+        {
+            "number": "1472",
+            "title": "Java 9 Annotation Processing Broken"
+        },
+        {
+            "number": "869",
+            "title": "@RequiredArgsConstructor causes compile error with lombok.accessors.prefix"
+        },
+        {
+            "number": "1018",
+            "title": "NonNull generating incorrect null check in constructor "
+        }
+    ]
+}

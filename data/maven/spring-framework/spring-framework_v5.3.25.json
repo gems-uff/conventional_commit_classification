@@ -1,0 +1,274 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.25",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 45,
+    "start_delay": 0.0,
+    "duration": 56.124155092592595,
+    "commits_info": [
+        {
+            "hash": "2aeddb4fcb0fe49741e0744dbadfecbd7f3d6c54",
+            "message": "Release v5.3.25"
+        },
+        {
+            "hash": "26cd33cb2b7ac1673126a0ac30174d51c910f134",
+            "message": "Upgrade to Reactor 2020.0.27\n\nIncludes HtmlUnit 2.69, AssertJ 3.24.1, Checkstyle 10.6\n\nCloses gh-29798"
+        },
+        {
+            "hash": "2ee393ae712c8a141c919051a1479a04457fea85",
+            "message": "Upgrade to Tomcat 9.0.70, Jetty 9.4.50, Netty 4.1.86, Undertow 2.2.22, HtmlUnit 2.67, Mockito 4.9, AssertJ 3.23.1, Checkstyle 10.5"
+        },
+        {
+            "hash": "0815d29e45afc36e6843704b8a25bf4f61ce2d89",
+            "message": "Defensive check for null returned from createConnection()\n\nCloses gh-29706"
+        },
+        {
+            "hash": "777f01d7862a026d6f6a45653ed66c1c869a512f",
+            "message": "Fix path within mapping when pattern contains \".*\"\n\nPrior to this commit, extracting the path within handler mapping would\nresult in \"\" if the matching path element would be a Regex and contain\n\".*\". This could cause issues with resource handling if the handler\nmapping pattern was similar to `\"/folder/file.*.extension\"`.\n\nThis commit introduces a new `isLiteral()` method in the `PathElement`\nabstract class that expresses whether the path element can be compared\nas a String for path matching or if it requires a more elaborate\nmatching process.\n\nUsing this method for extracting the path within handler mapping avoids\nrelying on wildcard count or other properties.\n\nSee gh-29712\nFixes gh-29716"
+        },
+        {
+            "hash": "f8fea013fcad168b60fa00c4c98b755c1ea40c02",
+            "message": "Update Jakarta Mail info in ref docs\n\nCloses gh-29708"
+        },
+        {
+            "hash": "916539178b2e8fe8f5e5b037a595b1f5687d8db5",
+            "message": "Improve documentation for literals in SpEL expressions\n\nCloses gh-29701"
+        },
+        {
+            "hash": "fdf3bcc9d90f9e2e3950015c79998715697e6021",
+            "message": "Remove obsolete AttributeMethods.hasOnlyValueAttribute() method\n\nSee gh-29685"
+        },
+        {
+            "hash": "5ddc984192b6150fee98419aedd63c2fac11cb54",
+            "message": "Support repeatable annotation containers with multiple attributes\n\nPrior to this commit, there was a bug in the implementation of\nStandardRepeatableContainers.computeRepeatedAnnotationsMethod() which\nhas existed since Spring Framework 5.2 (when\nStandardRepeatableContainers was introduced). Specifically,\nStandardRepeatableContainers ignored any repeatable container\nannotation if it declared attributes other than `value()`. However,\nJava permits any number of attributes in a repeatable container\nannotation.\n\nIn addition, the changes made in conjunction with gh-20279 made the bug\nin StandardRepeatableContainers apparent when using the\ngetMergedRepeatableAnnotations() or findMergedRepeatableAnnotations()\nmethod in AnnotatedElementUtils, resulting in regressions for the\nbehavior of those two methods.\n\nThis commit fixes the regressions and bug by altering the logic in\nStandardRepeatableContainers.computeRepeatedAnnotationsMethod() so that\nit explicitly looks for the `value()` method and ignores any other\nmethods declared in a repeatable container annotation candidate.\n\nSee gh-29685\nCloses gh-29686"
+        },
+        {
+            "hash": "b2ce54e7f13bfa55ecb36dfbf83f7e532d34bcad",
+            "message": "Revise RepeatableContainersTests"
+        },
+        {
+            "hash": "937ab5f4b271670e4bce16f8054aec61de424938",
+            "message": "Polishing (aligned with main)"
+        },
+        {
+            "hash": "064c618050fb864cdea9fcd5171162a8161aadab",
+            "message": "Drop SQLExceptionSubclassFactory and unify SQLStateSQLExceptionTranslator tests"
+        },
+        {
+            "hash": "8c80ec1138da8f56548affc0f0685be15f869231",
+            "message": "Avoid NPE on BeanDescriptor access with SimpleBeanInfoFactory\n\nCloses gh-29681\n\n(cherry picked from commit d74191427eca4420d2d0d9a8e69cd0f5d25204a5)"
+        },
+        {
+            "hash": "912fa7602a068ab535b13ae6391d512437b58443",
+            "message": "Improve invalid Content-Type handling in WebFlux\n\nCloses gh-29565"
+        },
+        {
+            "hash": "525fc7a27e57505806e0860310543946a3b053ad",
+            "message": "Optimize object creation PartialMatchHelper\n\nCloses gh-29667"
+        },
+        {
+            "hash": "72285034ba0c03772fd9f14c1f04ccd522969524",
+            "message": "Support arrays in AST string representations of SpEL expressions\n\nPrior to this commit, SpEL's ConstructorReference did not provide\nsupport for arrays when generating a string representation of the\ninternal AST. For example, 'new String[3]' was represented as 'new\nString()' instead of 'new String[3]'.\n\nThis commit introduces support for standard array construction and array\nconstruction with initializers in ConstructorReference's toStringAST()\nimplementation.\n\nCloses gh-29666"
+        },
+        {
+            "hash": "933474000b6eb5e5af7c166de3d6cb36dc0aaeb8",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4e8aebcde7ec570b1f8f5421657a31604fd62d4e",
+            "message": "Fix SpEL support for quotes within String literals\n\nPrior to this commit, there were two bugs in the support for quotes\nwithin String literals in SpEL expressions.\n\n- Two double quotes (\"\") or two single quotes ('') were always replaced\n  with one double quote or one single quote, respectively, regardless\n  of which quote character was used to enclose the original String\n  literal. This resulted in the loss of one of the double quotes when\n  the String literal was enclosed in single quotes, and vice versa. For\n  example, 'x \"\" y' became 'x \" y'.\n\n- A single quote which was properly escaped in a String literal\n  enclosed within single quotes was not escaped in the AST string\n  representation of the expression. For example, 'x '' y' became 'x ' y'.\n\nThis commit fixes both of these related issues in StringLiteral and\noverhauls the structure of ParsingTests.\n\nCloses gh-29604\nCloses gh-28356"
+        },
+        {
+            "hash": "dff5b1ff8e06206fcba5a0baa1cac1d771273a1d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fa0a4a0a46749ba9682e736578940f7edcb6783f",
+            "message": "Improve Javadoc for SqlLobValue"
+        },
+        {
+            "hash": "41a6b7ec20445fba191f2e6f65169046c88c9ff4",
+            "message": "Update copyright headers for source code changed since August 2022\n\nThe changes in this commit were performed using the newly introduced\nupdate_copyright_headers.sh script."
+        },
+        {
+            "hash": "cfaa4ba89c7e2b99b9829d726a1c407cad753fc5",
+            "message": "Apply update_copyright_headers.sh to staged files as well"
+        },
+        {
+            "hash": "598e9d586b68d8000efdeb10e33b601fc0cf5f50",
+            "message": "Introduce update_copyright_headers.sh shell script\n\nIn order to automate maintenance of copyright headers in our source\ncode (especially when merging PRs from external contributors), this\ncommit introduces an update_copyright_headers.sh script (tested on\nmac OS) that will update the copyright headers of all Java, Kotlin,\nand Groovy source files that have been added or modified this year\n(or at least as far back as the git log history supports it).\n\nFor example, running this script currently outputs the following.\n\nUpdating copyright headers in Java, Kotlin, and Groovy source code for year 2022\nwarning: log for 'main' only goes back to Tue, 16 Aug 2022 16:24:55 +0200"
+        },
+        {
+            "hash": "750a8b359fdb2b95f641487b1820323a08ecc66b",
+            "message": "Stop using Mockito to spy() on JDK I/O streams\n\nWhen running on JDK 16+, we are not able to spy() on JDK types. To\naddress this, this commit stops using Mockito to spy on JDK I/O streams\n(such as ByteArrayInputStream and ByteArrayOutputStream)."
+        },
+        {
+            "hash": "c838bcff3aa1a52c854ab70f4fcd4f70bd542ff0",
+            "message": "Fix/Disable JMX & JNDI tests on JDK 16+"
+        },
+        {
+            "hash": "109b00d24d39a67a4cb4f90ef14fdf8e6ba2e2f3",
+            "message": "Avoid use of deprecated Character/Double constructors in tests"
+        },
+        {
+            "hash": "b6abf45a567c9b0226d1fa6cc4186685fee9fd7d",
+            "message": "Introduce @Suite classes for individual modules"
+        },
+        {
+            "hash": "2d94b43faa7ce90994d03cba5e36be4877d99b6c",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f7f73439abd2b12c3e39c6580b8bdbdc3efaf5bf",
+            "message": "Modify MBeanTestUtils to work on JDK 17+"
+        },
+        {
+            "hash": "5e55558a9364dd6e5d35d7f425bde40f8ecb70e0",
+            "message": "Fix SockJsServiceTests\n\nSee gh-29594"
+        },
+        {
+            "hash": "eee50d3b8ab353f41060f33f55e9a5165c8337ca",
+            "message": "Polishing"
+        },
+        {
+            "hash": "92af390ed28464975e59cf597855fbabca8db141",
+            "message": "Polish contribution\n\nSee gh-29594"
+        },
+        {
+            "hash": "332d2a36bb92021739ad5a083923467bf21be6ef",
+            "message": "Add title to SockJS iFrames for accessibility compliance\n\nCloses gh-29594"
+        },
+        {
+            "hash": "92b2b828f5e4139b5faaed4d0c20d512d62c8e0e",
+            "message": "Fix Java 17 test CI and remove Java 11 variant\n\nThis commit fixes configuration and runtime issues with the Java 17 test\nCI variant and removes the Java 11 one, now that Spring Framework 5.3.x\nis in maintenance mode."
+        },
+        {
+            "hash": "a11222f681090ecb5557907e08023c34be3884f2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7de8d81932c1a17d06f247b67110c3c9016fcc9d",
+            "message": "Explicit documentation notes on standard Java reflection\n\nSee gh-29531"
+        },
+        {
+            "hash": "0e33537d9dc2c1f5a1a7a587747d042302e3ac0b",
+            "message": "Consistent use of DefaultParameterNameResolver in tests"
+        },
+        {
+            "hash": "00da70e26b9cb5ece2a9499e7c1b449e856b4aea",
+            "message": "Fix some typos in Kotlin WebClient example code\n\nCloses gh-29542"
+        },
+        {
+            "hash": "72b44cebea31e9db6faffa5c3e62b8f0d560e19b",
+            "message": "Catch Error for SourceHttpMessageConverter in WebMvcConfigurationSupport\n\nPrior to this commit, the addDefaultHttpMessageConverters() method in\nWebMvcConfigurationSupport caught Throwable for SourceHttpMessageConverter\ninstantiation; whereas, the rest of the code base correctly catches Error\nfor SourceHttpMessageConverter instantiation (to handle errors such as\nNoClassDefFoundError).\n\nThrowable should not be caught since it can mask other categories of\nfailures (such as configuration errors).\n\nThis commit therefore switches to catching Error for SourceHttpMessageConverter\ninstantiation in WebMvcConfigurationSupport.\n\nCloses gh-29537"
+        },
+        {
+            "hash": "1ee3777ac79be7fd0fdad953ea1ec2ec9cf2f168",
+            "message": "Fix link to Bean Utils Light Library in BeanUtils Javadoc\n\nThe URL for the BULL library has changed (not sure when, probably way back).\n\nThis updates it to the correct location.\n\nCloses gh-29534, gh-29536"
+        },
+        {
+            "hash": "cad6e8756d43f0710b02cf92a30c61f6fd3dbc61",
+            "message": "Fix link to WebFlux section in reference manual\n\nCloses gh-29526"
+        },
+        {
+            "hash": "c7bd685c54df47f9a2c4809dab6e55e5f1cbe823",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4f472d2ac480c9d698e6993d6849f2bc48792aef",
+            "message": "Remove TODOs in WebFlux ref docs"
+        },
+        {
+            "hash": "a18842b72b779664bc9ae40714a86a08449958d9",
+            "message": "Fix link to WebFlux section\n\nCloses gh-29517"
+        },
+        {
+            "hash": "a41f97bc2bd547dbb635f032413fe586968912f8",
+            "message": "Next development version (v5.3.25-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29798",
+            "title": "Upgrade to Reactor 2020.0.27"
+        },
+        {
+            "number": "29706",
+            "title": "JmsTemplate.convertAndSend throws NullPointerException during shutdown"
+        },
+        {
+            "number": "29712",
+            "title": "ResourceHandlers cannot resolve static resources with certain wildcard patterns"
+        },
+        {
+            "number": "29716",
+            "title": "ResourceHandlers cannot resolve static resources with certain wildcard patterns"
+        },
+        {
+            "number": "29708",
+            "title": "Update Jakarta Mail info in ref docs"
+        },
+        {
+            "number": "29701",
+            "title": "Improve documentation for literals in SpEL expressions"
+        },
+        {
+            "number": "29685",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist in container annotation"
+        },
+        {
+            "number": "20279",
+            "title": "AnnotatedElementUtils does not find merged repeatable annotations on other repeatable annotations"
+        },
+        {
+            "number": "29686",
+            "title": "AnnotatedElementUtils.findMergedRepeatableAnnotations does not fetch results when other attributes exist for container annotation"
+        },
+        {
+            "number": "29681",
+            "title": "BeanWrapperImpl NPE in setWrappedInstance after invoking getPropertyValue"
+        },
+        {
+            "number": "29565",
+            "title": "500 error from WebFlux when parsing Content-Type leads to InvalidMediaTypeException"
+        },
+        {
+            "number": "29667",
+            "title": "Optimize object creation in RequestMappingHandlerMapping#handleNoMatch"
+        },
+        {
+            "number": "29666",
+            "title": "SpEL `ConstructorReference` does not generate AST representation of arrays"
+        },
+        {
+            "number": "29604",
+            "title": "SpEL string literal misses single quotation marks in toStringAST()"
+        },
+        {
+            "number": "28356",
+            "title": "SpEL: Two double quotes are replaced by one double quote in single quoted `String` literal (and vice versa)"
+        },
+        {
+            "number": "29542",
+            "title": "Fix some typos in Kotlin WebClient example code"
+        },
+        {
+            "number": "29537",
+            "title": "`WebMvcConfigurationSupport` should not catch `Throwable` for `SourceHttpMessageConverter`"
+        },
+        {
+            "number": "29536",
+            "title": "Fix link to Bean Utils Light Library in BeanUtils Javadoc"
+        },
+        {
+            "number": "29526",
+            "title": "Fix link to WebFlux section in reference manual"
+        },
+        {
+            "number": "29517",
+            "title": "Link to Spring WebFlux section is broken"
+        }
+    ]
+}

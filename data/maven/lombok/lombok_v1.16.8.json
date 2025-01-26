@@ -1,0 +1,298 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 59,
+    "start_delay": 0.0,
+    "duration": 355.5506365740741,
+    "commits_info": [
+        {
+            "hash": "26ad9e7f5f4de77436d3d63e4a43e8cb77621c15",
+            "message": "pre-release version bump."
+        },
+        {
+            "hash": "4daf9bf81be294860af3e680239380a6e1d7d4a8",
+            "message": "updated year to 2016 in copyrights."
+        },
+        {
+            "hash": "69d0630f6916fba0b0143523510d5eccd33c9516",
+            "message": "changelog for fixing @Helper"
+        },
+        {
+            "hash": "3378cbe65553e685afaad816c260426438aa434b",
+            "message": "@Helper is now legal in just about every place method local classes are legal. Also now no longer messes up syntax highlighting in eclipse.\n\nStill need to investigate how to improve autocomplete presence of helper methods."
+        },
+        {
+            "hash": "07b8af4cc5c844c9e085e2c4662df1d08221e710",
+            "message": "Merge pull request #1008 from nallar/master\n\nUpdate comments with 'public boolean canEqual' to 'protected boolean canEqual'"
+        },
+        {
+            "hash": "fb1cd28bdd3e462b6d51ce76efa4a57ef775d1ab",
+            "message": "Update comments with 'public boolean canEqual' to 'protected boolean canEqual'. Code was changed to use protected in 4d24542dac058fcd\n\nSigned-off-by: Ross Allan <ross@nallar.me>"
+        },
+        {
+            "hash": "dce98cc978d10eb0d54215cee9188bfe213980ca",
+            "message": "fix #986: add @Target and @Retention to @Builder.ObtainVia"
+        },
+        {
+            "hash": "34a6fd644f6036bef5c2d94d925b6cf8e20ab17d",
+            "message": "fix issue #932: `@Delegate` would not generate varargs on javac"
+        },
+        {
+            "hash": "d3c79494a32d439b6a936d24c8440e893fc2cb50",
+            "message": "use https://repo1.maven.org/maven2 instead of http://repo2.maven.org/maven2"
+        },
+        {
+            "hash": "fb6a58f93371c09d0b75bbefc3694acb81a9c0af",
+            "message": "add text to change for edge-specific features."
+        },
+        {
+            "hash": "8037350c70a1172f88cd1f050336b326adabb64d",
+            "message": "[issue #942] let `@Data` work on jdk9, first steps."
+        },
+        {
+            "hash": "50716864f684261313bd385dc20c86b7141c47d6",
+            "message": "add bug detection for the wrong usage of lombok.javac.apt.Processor"
+        },
+        {
+            "hash": "49e9b7f7ddcf9d85405f28f2f4527874028715a9",
+            "message": "rename the old Processor to make room for a bug-chase version."
+        },
+        {
+            "hash": "57578f46ec19abd1b28b2a22c65281cf4831af3d",
+            "message": "add missing method to SetGeneratedByVisitor"
+        },
+        {
+            "hash": "ac319cca87020b779722351f37cc0a9c40b12872",
+            "message": "[Fixes #945] wither methods for abstract classes now slightly less useless."
+        },
+        {
+            "hash": "5029fd041ddf0e3654c7f3d5106cf8cbb90b5243",
+            "message": "[Fixes #949] accessor prefixes messed up auto-singular generation."
+        },
+        {
+            "hash": "728ae6421dd03bc78e37c0eb5d860f932b5fff2c",
+            "message": "[Fixes #965] Adds a config key to automatically determine the behaviour of equals and hashCode generation when"
+        },
+        {
+            "hash": "b8ced807a79660eef87f1833d1ec95d774a4f4a2",
+            "message": "[Fixes #970] Eclipse would generate some internal IDE errors if using ‘val’ on invalid expressions. This fixes one such case."
+        },
+        {
+            "hash": "ba2cde332acedebb0905fb8c42bc516b07400917",
+            "message": "[Fixes #972] 1-arg lambdas with explicit typing on the argument did not pretty print correctly."
+        },
+        {
+            "hash": "e05feead3fdd912fbc9f034f922d4d28df2104e7",
+            "message": "[Fixes #974] typo in the website docs for Constructor.html"
+        },
+        {
+            "hash": "d41f1b5d3f08b663e4f75b52107d52b19ccf20e5",
+            "message": "have the generated test runtargets works well with shadowloader so we can debug"
+        },
+        {
+            "hash": "0bd688d7e624d95fef921f8b463209d70b92779a",
+            "message": "Merge branch 'builderUpdate'"
+        },
+        {
+            "hash": "5b6829b86379321be378490b895827cd6bca13f1",
+            "message": "updated changelog to reflect adding issue #937"
+        },
+        {
+            "hash": "b235bb49c57af4d925f58333d0ad631c6ccf924f",
+            "message": "[issue #937] Refactored the support for guava’s ImmutableTable."
+        },
+        {
+            "hash": "6a003350f61bbebc3a20d8b17b59df6d065ca648",
+            "message": "Merge branch 'master' of https://github.com/spacanowski/lombok into spacanowski-master\n\nConflicts:\n\ttest/transform/resource/after-delombok/BuilderSingularGuavaListsSets.java\n\ttest/transform/resource/after-ecj/BuilderSingularGuavaListsSets.java"
+        },
+        {
+            "hash": "22e1fb91d4699a0bacafcd9f74fdca6acd8b275b",
+            "message": "Fixed typo, moved imports"
+        },
+        {
+            "hash": "db8281f7f5c027c24cf9a1a8208a2aa92d06a73d",
+            "message": "Added support for builder singular for Guavas ImmutableTable"
+        },
+        {
+            "hash": "264c66b53f29c49238ada2c4b93d91b0a5bc9b41",
+            "message": "Merge pull request #936 from drusin/master\n\nModify createEclipseLaunchForTestEnvironment to generate a launch file"
+        },
+        {
+            "hash": "47f9bcbcd772228609dfa1d71fcd1bc7a4ad17b8",
+            "message": "Modify createEclipseLaunchForTestEnvironment to generate a launch file\nthat also out-of-the-box can run the ecj tests"
+        },
+        {
+            "hash": "75e4a6caf37eea6bf74a776672df68bdb9468c5b",
+            "message": "Adds the IntelliJ IDEA output directory `/out` to .gitignore"
+        },
+        {
+            "hash": "9fbc226e090b1ca1efef5e10fd1bd13c4a686cfd",
+            "message": "[Closes #928] `@Value` no longer makes uninitialized static fields final"
+        },
+        {
+            "hash": "1bc73d770345f480cee9718618e936dd68499e23",
+            "message": "Remove lombok annotation from source"
+        },
+        {
+            "hash": "74bcdd9306026aa54c88be5286155324840511c7",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "656668808f96ce3603414e3620cbdd76059cbc64",
+            "message": "Merge pull request #935 from drusin/master\n\nAdds the IntelliJ IDEA output directory `/out` to .gitignore"
+        },
+        {
+            "hash": "329202a37f1c4325117fe83eaf22368088254b60",
+            "message": "[Fixes #63] finished accept on patch request to add support for `@Builder` on instance methods by adding the changelog entry."
+        },
+        {
+            "hash": "505921f8052bc33191fd95204b127626055d6ee3",
+            "message": "Merge branch 'enriquedacostacambio-pr-builder-on-instance-methods' into builderUpdate"
+        },
+        {
+            "hash": "8508e789f9dbae84f9f5da9efb10d5fbfcca51d4",
+            "message": "Merge branch 'pr-builder-on-instance-methods' of https://github.com/enriquedacostacambio/lombok into enriquedacostacambio-pr-builder-on-instance-methods\n\nConflicts:\n\tAUTHORS\n\tsrc/core/lombok/Builder.java\n\tsrc/core/lombok/eclipse/handlers/HandleBuilder.java\n\tsrc/core/lombok/javac/handlers/HandleBuilder.java"
+        },
+        {
+            "hash": "14af3bec3b601d52c6a34710a63e22fceebf8dde",
+            "message": "Allow @Builder on instance methods"
+        },
+        {
+            "hash": "b8a222006da0a535134c5e7e94282550bfe745b6",
+            "message": "[trivial] updating a new test to account for the fact that the prettyprinter prints casts a bit different."
+        },
+        {
+            "hash": "8db179346171d47230b88cdd509954391fb49d1c",
+            "message": "Added a prettyprinter test case with some exotic java constructs, and fixed a few bugs involving these. Also removed the old pretty printer."
+        },
+        {
+            "hash": "dc5e1b9b35e853e6b503efac367999e02569108e",
+            "message": "bugfix for comments near start of nodes (it would throw off alignment in pretty printer)."
+        },
+        {
+            "hash": "3f0a13501f19b966d3cbc0476a833783e6c6117a",
+            "message": "generating fields now occurs in the right place even for enums (no impact; the pretty printer fixes this for delombok and javac doesn’t care, but, still, let’s generate the same structure as what is parsed)."
+        },
+        {
+            "hash": "cb43dab23574d9c5dae2d3edec65fbdfa21b745f",
+            "message": "Generate JCParens nodes in the appropriate places (the pretty printer picked this up for delombok and javac doesn’t care, so it technically doesn’t matter, but lets generate node structures that match what would be parsed if written out in hand)."
+        },
+        {
+            "hash": "9cfac4131ff33b247652ed3622491cbf8bf76721",
+            "message": "The bulk of the effort for a new pretty printer."
+        },
+        {
+            "hash": "ff4f995507d23c1c9172de2f5fffaf0bfb6cf1ec",
+            "message": "[#950] Changelog record for fixing issue 950."
+        },
+        {
+            "hash": "3041420ab9b4d7b70583b4e8b10d16612d00bb2a",
+            "message": "[fixes #950] A source file with just parameter @NonNull would not trigger delombok due to lack of ast.setChanged flagging"
+        },
+        {
+            "hash": "30cfbcf9e42f9f997817ad0d097b71655f9a8485",
+            "message": "Add tests for `@EqualsAndHashCode` for the attributes `of` and `exclude`"
+        },
+        {
+            "hash": "be2dfb3d9de2336657481d473bf69c275c4b7437",
+            "message": "Merge pull request #893 from yunspace/master\n\nUpdated @Value Java doc to @AllArgsConstructor"
+        },
+        {
+            "hash": "e374ad19910322ac4829877aa36e024fb612e916",
+            "message": "added yunspace to authors"
+        },
+        {
+            "hash": "1f5d1ef98d062f1ea06a3927f06a70b8567ef637",
+            "message": "updated Java doc to reflect generation of @AllArgsConstructor instead of @RequiredArgsConstructor"
+        },
+        {
+            "hash": "c9399b59113027e869e0f716b83d991755bdbd5c",
+            "message": "Belated updated to previous commit for config-key field defaults: Don’t read a config key if it has no possible impact on what we’re going to do."
+        },
+        {
+            "hash": "9d8c4e4099bef9b7854cc5d77bc996c3b3bf0e41",
+            "message": "New feature: FieldDefaults can now be configured to apply to _every_ file, regardless of annotations."
+        },
+        {
+            "hash": "b4d69f5cb8b093718bb7ffb539e5875df52ca48e",
+            "message": "Belated addendum to previous commit: The tests for `@NonNull` on parameters of default methods should be restricted to java8+"
+        },
+        {
+            "hash": "e94a5f9ee3e003c6b889168796bc010072177d14",
+            "message": "[Fixes #807] The NonNull annotation can now be used documentary style on params of abstract methods. The warning has been eliminated."
+        },
+        {
+            "hash": "bd78d0841775b1a1c91ed4eef1defc62b33e9ed5",
+            "message": "[builder] Added clearX() functionality for `@Singular` annotations for javac. Also docs and changelog."
+        },
+        {
+            "hash": "ae4035c9bf117e8f823512c5fd040bd57bc3742e",
+            "message": "[builder] Added clearX() functionality for `@Singular` annotations for ecj"
+        },
+        {
+            "hash": "0e34eec7668ee060fe65133243009dbb27e7c251",
+            "message": "Merge remote-tracking branch 'origin/master'"
+        },
+        {
+            "hash": "8a504f8beec691b64d1c08f629520c2443821847",
+            "message": "handle ignored tests correctly"
+        },
+        {
+            "hash": "9eb70cb3e2043b5262e686b4a80da36e5aa88d81",
+            "message": "add the capability to the testing framework to verify that delombok actually also handles the changed flag correctly"
+        }
+    ],
+    "issues": [
+        {
+            "number": "986",
+            "title": "@Builder.ObtainVia is missing RetentionPolicy"
+        },
+        {
+            "number": "932",
+            "title": "@Delegate doesn't work well with varargs"
+        },
+        {
+            "number": "942",
+            "title": "lombok doesn't work with errorprone in gradle"
+        },
+        {
+            "number": "945",
+            "title": "@Wither in an abstract class should declare an abstract method of that behavior"
+        },
+        {
+            "number": "949",
+            "title": "Singular ignore Accessor prefix"
+        },
+        {
+            "number": "965",
+            "title": "@EqualsAndHashCode should allow for calling superclass if superclass is not Object"
+        },
+        {
+            "number": "970",
+            "title": "Eclipse error related to lombok.val (+ code to reproduce)"
+        },
+        {
+            "number": "972",
+            "title": "Delombok fails with inline lambda"
+        },
+        {
+            "number": "974",
+            "title": "Typo in Constructor.html"
+        },
+        {
+            "number": "928",
+            "title": "`@Value` should not make uninitialized static fields final"
+        },
+        {
+            "number": "950",
+            "title": "Delombok option doesn't generate code for @Nonnull check."
+        },
+        {
+            "number": "807",
+            "title": "Allow @NonNull on the parameters of abstract/interface methods"
+        }
+    ]
+}

@@ -1,0 +1,966 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.1.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 147,
+    "start_delay": 0.0,
+    "duration": 49.69186342592592,
+    "commits_info": [
+        {
+            "hash": "b2663ab76ae151f51c411ebc6ba8a3904517a5bf",
+            "message": "Release v3.1.5"
+        },
+        {
+            "hash": "e9201f1a667ebcca42eda60de642cab28997a600",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "c16f9dda96fe5863a10240d2b6f02bb69b9e6811",
+            "message": "Next development version (v3.0.13-SNAPSHOT)"
+        },
+        {
+            "hash": "343046d30ccdd9ee3612b6915a3bc0235bef25ce",
+            "message": "Polish"
+        },
+        {
+            "hash": "fcb75b6a1e61dd1772eda2b8a5e40671314c8ff5",
+            "message": "Search implemented interfaces on superclass for @ServiceConnection\n\nRefine original fix to also search interfaces on the superclass.\n\nFixes gh-37671"
+        },
+        {
+            "hash": "5fc1d319531f64881c1ec1124653d7f870d23582",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "64cf3b0712e11d25db5671bdb4a5c676d7afac59",
+            "message": "Document how to share services with Docker Compose\n\nCloses gh-37886"
+        },
+        {
+            "hash": "dd821c719f3cd93dcb0bce7f554cac5b7def0403",
+            "message": "Upgrade to Java 21.0.1+12\n\nCloses gh-37956"
+        },
+        {
+            "hash": "6a51ef8adc533bb605316de66f61b9b2e36415f3",
+            "message": "Upgrade to Java 17.0.9+11\n\nSee gh-37955"
+        },
+        {
+            "hash": "55968ef995a5e7c35d5f73924091510a03d3362c",
+            "message": "Upgrade to Ubuntu Jammy 20231004\n\nCloses gh-37949"
+        },
+        {
+            "hash": "7d71d60c14b2e4a143bb73a4fbb8254be7baeb0f",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "a28fb1b6f50d1c286115880b3fca084f9077b9aa",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "226221073cb3efecb4ec26280b3b06780fb7d197",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37941"
+        },
+        {
+            "hash": "9219fdc63899fc0afeac976fe1e866c9f49b6b32",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37938"
+        },
+        {
+            "hash": "4b32f249d4960fee3149becc4f55948f856bf06b",
+            "message": "Upgrade to Undertow 2.3.10.Final\n\nCloses gh-37933"
+        },
+        {
+            "hash": "ae758779323b9d1b556e8d30962ecea6d82a7544",
+            "message": "Upgrade to Jetty Reactive HTTPClient 3.0.9\n\nCloses gh-37932"
+        },
+        {
+            "hash": "22eea15adfe95ed5b3503dca0fa68b89cfbcb56a",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "f5fc2761a8970b7ccdadc976089f2692ca81cd32",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "8f18b116de66888bb201349dbcc2d5535c7f4c0b",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37924"
+        },
+        {
+            "hash": "60a0b7eedb54524b0776de9cef22948596c2d339",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37920"
+        },
+        {
+            "hash": "94500f41e9a6c6678447c2e61043292535e62ba9",
+            "message": "Upgrade to Spring Integration 6.1.4\n\nCloses gh-37914"
+        },
+        {
+            "hash": "ed531606f2efb660d981324b66bbd474578182af",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "ffeed758043fc55859c2ec0d4acb7863c48a54d0",
+            "message": "Upgrade to Spring Session 3.1.3\n\nCloses gh-37702"
+        },
+        {
+            "hash": "50da5fb8c6f360c61f34b0d7f706b922c582d046",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "a9b85313c349e299007ac751cd651ba298a348d1",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37910"
+        },
+        {
+            "hash": "0c9c48d54b01034b5410f3ca382775f43deb04ff",
+            "message": "Upgrade to Spring Security 6.1.5\n\nCloses gh-37701"
+        },
+        {
+            "hash": "439c2f9f844ead6726b1b3ba05e370d3edba0e82",
+            "message": "Upgrade to Spring Kafka 3.0.12\n\nCloses gh-37797"
+        },
+        {
+            "hash": "cbb8d28e55ca34235774709bab398908d88d31d5",
+            "message": "Upgrade to Spring Authorization Server 1.1.3\n\nCloses gh-37697"
+        },
+        {
+            "hash": "1a2832a0b603dee17d537433238e7765b6de04a2",
+            "message": "Upgrade to Spring AMQP 3.0.10\n\nCloses gh-37696"
+        },
+        {
+            "hash": "0c6b7844eca47e7c8879d70f591a442ea7526229",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "1bb525402dfca2db5a9cb5be83a96ff2d90a4506",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "50d3c978b3cd8fb1b480327a14e61e45e597d64a",
+            "message": "Upgrade to Tomcat 10.1.15\n\nCloses gh-37902"
+        },
+        {
+            "hash": "52d80197fe3d845c80b686655506b5836c535cbe",
+            "message": "Upgrade to Spring Retry 2.0.4\n\nCloses gh-37700"
+        },
+        {
+            "hash": "1c8e2891d1f44bbad0a9cabc7fe9951c957d71cb",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "fea81fb50dd8081c7a00b2b28b5599a9d12ff21f",
+            "message": "Upgrade to Spring LDAP 3.1.2\n\nCloses gh-37699"
+        },
+        {
+            "hash": "43b566b98ea4780dd8516498af5888cad9119bc9",
+            "message": "Upgrade to Spring Data Bom 2023.0.5\n\nCloses gh-37698"
+        },
+        {
+            "hash": "4fde3460bc27af5698e15722ac742a2707a1f2f1",
+            "message": "Upgrade to Jackson Bom 2.15.3\n\nCloses gh-37898"
+        },
+        {
+            "hash": "2fabc49a1ed1d923487bdb1df68b494ef3ce89f8",
+            "message": "Upgrade to Dropwizard Metrics 4.2.21\n\nCloses gh-37897"
+        },
+        {
+            "hash": "6186d897bc7c5c38ce4b429b96bd30b37b996c6a",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "08df97a21d2d9134f1b82eb8eb5a5ed9b1014a92",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "ccaa54436baa110a743e1b0519715a790b562c01",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "e957c3087c011a028f58188385defbd481f1e233",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "0c1b5d1295fda8bf9ad31f73976bbafa9a7ff458",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37883"
+        },
+        {
+            "hash": "5af13d191f83f80a720a13beb8adc85bc515dc46",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37881"
+        },
+        {
+            "hash": "be082cad7d87678aa06dae38d404eebadb5a9b17",
+            "message": "Upgrade to Undertow 2.3.9.Final\n\nCloses gh-37860"
+        },
+        {
+            "hash": "23869935838434f906aa931c10625c175299b9f9",
+            "message": "Upgrade to Spring Framework 6.0.13\n\nCloses gh-37816"
+        },
+        {
+            "hash": "a291e2e2f0a5dc905f7dac0b32126ab06903a7db",
+            "message": "Upgrade to Reactor Bom 2022.0.12\n\nCloses gh-37695"
+        },
+        {
+            "hash": "af6a65c82429648955f1ddcc448f2a2e4e693cc5",
+            "message": "Upgrade to R2DBC MySQL 1.0.5\n\nCloses gh-37859"
+        },
+        {
+            "hash": "4a5e002b22358352cf31f6d5268382ab100408dd",
+            "message": "Upgrade to Netty 4.1.100.Final\n\nCloses gh-37858"
+        },
+        {
+            "hash": "a46fb519b026b95ce93eecedbcd80fc63c44717a",
+            "message": "Upgrade to Micrometer Tracing 1.1.6\n\nCloses gh-37694"
+        },
+        {
+            "hash": "e4e59e7ea748ce2ea6f95e4eb40c3c6963d45579",
+            "message": "Upgrade to Micrometer 1.11.5\n\nCloses gh-37693"
+        },
+        {
+            "hash": "eff7819df7f8f0c77e226b9f264633cf4ed34021",
+            "message": "Upgrade to jOOQ 3.18.7\n\nCloses gh-37857"
+        },
+        {
+            "hash": "8468a2cbf945f6461036bbddfce2726d517551d3",
+            "message": "Upgrade to Jetty 11.0.17\n\nCloses gh-37856"
+        },
+        {
+            "hash": "d1a94a13ef8bf71ecaec1eb98668a7e7525913e3",
+            "message": "Upgrade to Infinispan 14.0.19.Final\n\nCloses gh-37855"
+        },
+        {
+            "hash": "42f6e2ba650d2e0bffd8a920eb2ea3d83465bc54",
+            "message": "Upgrade to Hibernate 6.2.13.Final\n\nCloses gh-37854"
+        },
+        {
+            "hash": "6511b4b3cfb10270b88186e3fb580f884e252e7c",
+            "message": "Upgrade to Byte Buddy 1.14.9\n\nCloses gh-37853"
+        },
+        {
+            "hash": "55f60c6fd323ac29a093ec8cb2dca6658ef70191",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "d84489906b36a3c092f3a8e909127d750321166f",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "19b877fc1453daf525532111bacfff73066e2b7c",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37838"
+        },
+        {
+            "hash": "411586347c8fae00373028bac51dfd16e69661c5",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37829"
+        },
+        {
+            "hash": "40461488dbfa11130246d49ae18b4093c5dbf107",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37826"
+        },
+        {
+            "hash": "ac1f7ccc330d59d41a5838ea62f6b041219385b6",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37824"
+        },
+        {
+            "hash": "7506d2db871fa2af112ac97a64fc4886b7c1358c",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37821"
+        },
+        {
+            "hash": "6c5374597a0cea55df098d9b1ffa4185d0fed0dc",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "43846310256b1efb09accd5f0b33a99510eedb60",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37818"
+        },
+        {
+            "hash": "ff1a218235273400e0fcbd1ddfb0711dfaddc84e",
+            "message": "Start building against Spring Framework 6.0.13 snapshots\n\nSee gh-37816"
+        },
+        {
+            "hash": "b1de47f380b0c9388d006d8a1019135e2d4b702d",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "01128465ffd6eb517a3540edd13ba0c90558d7b8",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "1087827b9ac71456eb4313b156a28f24598186e3",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37805"
+        },
+        {
+            "hash": "86216fb4e9d17615c748e8a6e57fe70a674674e0",
+            "message": "Search implemented interfaces for @ServiceConnection fields\n\nFixes gh-37671"
+        },
+        {
+            "hash": "4271e6da6c257600e4d278c38092d4faa4a8f0a4",
+            "message": "Start building against Spring Kafka 3.0.12 snapshots\n\nSee gh-37797"
+        },
+        {
+            "hash": "0de834970669a31120030fb2a894c666a3d7c590",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "5bc0e258aa020570c5fa5de6bb641172418fa076",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37793"
+        },
+        {
+            "hash": "dfc95f9f7209b519523a2737d9d825445eec9be7",
+            "message": "Upgrade to UnboundID LDAPSDK 6.0.10\n\nCloses gh-37767"
+        },
+        {
+            "hash": "a4183792b5311af6ccb2e5afb4590abdd1a4a9cd",
+            "message": "Upgrade to RxJava3 3.1.8\n\nCloses gh-37766"
+        },
+        {
+            "hash": "a3d744833693652ed84e1a593550c1c4e0351279",
+            "message": "Upgrade to R2DBC MySQL 1.0.4\n\nCloses gh-37765"
+        },
+        {
+            "hash": "a90e16a247825c630bf6d849abc8f8b0c06904eb",
+            "message": "Upgrade to Pooled JMS 3.1.4\n\nCloses gh-37764"
+        },
+        {
+            "hash": "590bbd64ce3cd5b86a2324ec7e755990b2136609",
+            "message": "Upgrade to Netty 4.1.99.Final\n\nCloses gh-37763"
+        },
+        {
+            "hash": "ed24d84728a659525ad39bd6f8fcf4205f392287",
+            "message": "Upgrade to HttpCore5 5.2.3\n\nCloses gh-37762"
+        },
+        {
+            "hash": "b899e71cb3aa37c3b081642a2c02063a2f03359c",
+            "message": "Upgrade to Hibernate 6.2.12.Final\n\nCloses gh-37761"
+        },
+        {
+            "hash": "8dc6ceb9bf99c6ae9acc2989810a6eb1dbff6931",
+            "message": "Upgrade to Dropwizard Metrics 4.2.20\n\nCloses gh-37760"
+        },
+        {
+            "hash": "77428cf1d1908333e3e4c9760961c958059ad344",
+            "message": "Upgrade to Couchbase Client 3.4.11\n\nCloses gh-37759"
+        },
+        {
+            "hash": "8a5501c374e2c8d1281294de74abe085578d9693",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "e4b2ad3acbed6f0e332b9030541c715fca3f2de1",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "1b1c1f1b644c59c72cce9e984d408b75edc9308b",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "bf9a4add3458c77b7346280a4c3acef4878873c4",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37742"
+        },
+        {
+            "hash": "2a35667295d259c43e9ca527423b37b4734fd695",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37740"
+        },
+        {
+            "hash": "0876772887316a98fad19c26ccb223e4a61572d9",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37731"
+        },
+        {
+            "hash": "e57e730ad36e70db2828ecaa01d55b9fba7c5b0b",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37723"
+        },
+        {
+            "hash": "d3ec9e36d7e6052ec406b95b26267ff5d0d81a5e",
+            "message": "Start building against Spring Session 3.1.3 snapshots\n\nSee gh-37702"
+        },
+        {
+            "hash": "16724c09d43699c9d7fb23831dcb54ff57a07763",
+            "message": "Start building against Spring Security 6.1.5 snapshots\n\nSee gh-37701"
+        },
+        {
+            "hash": "538c1cc56b80c89db01848ff54ea778417dc8aa1",
+            "message": "Start building against Spring Retry 2.0.4 snapshots\n\nSee gh-37700"
+        },
+        {
+            "hash": "8b64bf187684e246ce92a90af6df1eba2753cfdd",
+            "message": "Start building against Spring LDAP 3.1.2 snapshots\n\nSee gh-37699"
+        },
+        {
+            "hash": "7daeb881584031e2a7aa6900b31851d5a51298bb",
+            "message": "Start building against Spring Data Bom 2023.0.5 snapshots\n\nSee gh-37698"
+        },
+        {
+            "hash": "a741a16633d63a2daa81b0a26d77b64004cce408",
+            "message": "Start building against Spring Authorization Server 1.1.3 snapshots\n\nSee gh-37697"
+        },
+        {
+            "hash": "54bf5fd7462749d6be0593797e9be3d50c9b2ab5",
+            "message": "Start building against Spring AMQP 3.0.10 snapshots\n\nSee gh-37696"
+        },
+        {
+            "hash": "2ef98fd19a67737471bb134ea0435c34ee2345bc",
+            "message": "Start building against Reactor Bom 2022.0.12 snapshots\n\nSee gh-37695"
+        },
+        {
+            "hash": "d59ea2f03870d3aad1068d39dcf308ebb400f048",
+            "message": "Start building against Micrometer Tracing 1.1.6 snapshots\n\nSee gh-37694"
+        },
+        {
+            "hash": "452d4417759b55d3b969fa74610baf140a6f375f",
+            "message": "Start building against Micrometer 1.11.5 snapshots\n\nSee gh-37693"
+        },
+        {
+            "hash": "44f2afaad0b1590a443fb84aae095b4aa4187c9f",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "a416f93eece49563cebd9cfb0faf86d352b25225",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37691"
+        },
+        {
+            "hash": "3bdfc468c8c7dccea3ca32888eb7d3ea675f152e",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37688"
+        },
+        {
+            "hash": "80beb0e719d9c330612a65e1c24c68445ca00d6d",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "f2a4336ea10884a486746950ff7935f300d66730",
+            "message": "Increase the socket timeout for remote connections to Docker daemon\n\nThe default socket timeout with HttpClient 5 is not long enough\nin some cases where Docker images are built that require the\nGraalVM native image compiler to run in a buildpack. This commit\nincreases the timeout to 30 minutes.\n\nFixes gh-37665\n\nCo-authored-by: Scott Frederick <sfrederick@vmware.com>\""
+        },
+        {
+            "hash": "8cf686d9258a6adb2b1e995d40ac2b66170f53fa",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37663"
+        },
+        {
+            "hash": "a4100e12ff28ae9f63e5a739a81b17fd5bade89e",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37661"
+        },
+        {
+            "hash": "904bd52260bd9fc57d0f627317b5b5f382536fbd",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37657"
+        },
+        {
+            "hash": "1e4deed8ce5da5e08d020fcd0da69f728be9eeef",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37635"
+        },
+        {
+            "hash": "385e6278b77ac5398c45062ed5844477189670a7",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "c4bccb242950d6dfcdf5c5ddf07342ab5808387d",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37632"
+        },
+        {
+            "hash": "6c16ff104e8a032e899a5fa33afebf0fc4a2e2ab",
+            "message": "Merge pull request #37497 from JinseongHwang\n\n* pr/37497:\n  Use consistent capitalization in MySQL and MariaDB test names\n\nCloses gh-37497"
+        },
+        {
+            "hash": "0b703f9007180bdee7aa5944185986be72a51a07",
+            "message": "Use consistent capitalization in MySQL and MariaDB test names\n\nSee gh-37497"
+        },
+        {
+            "hash": "667797f2a8f16ef6c1cecabd5066e994ec5ea905",
+            "message": "Merge pull request #37619 from jonasfugedi\n\n* pr/37619:\n  Polish \"Support IPv6 addresses when configuring RabbitMQ using properties\"\n  Support IPv6 addresses when configuring RabbitMQ using properties\n\nCloses gh-37619"
+        },
+        {
+            "hash": "fad43adf144129730733c0500e55a326f529e99d",
+            "message": "Polish \"Support IPv6 addresses when configuring RabbitMQ using properties\"\n\nSee gh-37619"
+        },
+        {
+            "hash": "c1972f6db6a4235f763bf6eed0df9daf23b452df",
+            "message": "Support IPv6 addresses when configuring RabbitMQ using properties\n\nSee gh-37619"
+        },
+        {
+            "hash": "a1947d6deb21ff50ae00465e6242230bcd99d8b1",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37615"
+        },
+        {
+            "hash": "6fb252b00c57cf7b9f3c7b59b2c1207cce3cf989",
+            "message": "Polish"
+        },
+        {
+            "hash": "4a3901149b2fed391a92df639cd82911ab496692",
+            "message": "Fix additional metadata location for spring.jmx.registration-policy\n\nCloses gh-37596"
+        },
+        {
+            "hash": "1bcd127ad047a1274bf0ececfa40a94590016a4d",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37609"
+        },
+        {
+            "hash": "0368fc5678d6fbed825e90e45a56267ab37d434d",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37600"
+        },
+        {
+            "hash": "5015327886773d4addc659839e6ff0389933531e",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37594"
+        },
+        {
+            "hash": "a57b19b2cafd3e31b63436a533f8eb142d8434a2",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37592"
+        },
+        {
+            "hash": "bfc034f9e9a5a6930c9ad0eb3bb247c63972abe2",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "5ae4ba83a752a6f009c251e03cadb275c0fba5c6",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "4f8684fd6926b233d5bbf2825808c472014fb1a3",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37588"
+        },
+        {
+            "hash": "8dac6676f4e80aa7b70926c980309124d30f5732",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37582"
+        },
+        {
+            "hash": "a31395cd15af931a57be7efc1e2c76d4f29a3dce",
+            "message": "Merge pull request #37561 from sushant1987\n\n* pr/37561:\n  Remove mockito-inline from documentation\n\nCloses gh-37561"
+        },
+        {
+            "hash": "088d9ccc32532246b3040240ebc4a28294091f90",
+            "message": "Remove mockito-inline from documentation\n\nSee gh-37561"
+        },
+        {
+            "hash": "02f71d8e951888d2de1bcf2300ba9b8929ebb361",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37570"
+        },
+        {
+            "hash": "742dae5c3f1ce476628863cae914489ed83c265d",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37555"
+        },
+        {
+            "hash": "68f99ccee0de50be8e42108fccbcbf90d8463c0d",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "c838c707d817768db32956af79ce55ff35505840",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37553"
+        },
+        {
+            "hash": "3803bd9af988d6d3ce97af903f400c763f2bb678",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37550"
+        },
+        {
+            "hash": "8080bb9cfb915780476865505a7ad1bbef37559e",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37547"
+        },
+        {
+            "hash": "e4d8b22403c69f245393ec2f02ab3120c09c4f88",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37545"
+        },
+        {
+            "hash": "9d185825b62b7b07933d191abc431f67d458d543",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37542"
+        },
+        {
+            "hash": "f29e40f105f24934a650db11e01dc346b64bfff6",
+            "message": "Merge branch '3.0.x' into 3.1.x"
+        },
+        {
+            "hash": "e3c3cb4b474fe5f3e91e3f5677073ddc0cea7d5d",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37539"
+        },
+        {
+            "hash": "059bb697053da2f7d558a1c9f8f522851b73f0e7",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37535"
+        },
+        {
+            "hash": "b5cc6f9f9227d84b3b49cc3896a810e009b9d65b",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37532"
+        },
+        {
+            "hash": "f7ec5f6b1aca503454f8a09f75bfd971aeb9f802",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37529"
+        },
+        {
+            "hash": "e98b78994d37ae501d76e2aaa71ecd70f22957a1",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37525"
+        },
+        {
+            "hash": "b5ec0c2f5d6b4b86c4ddb6c93436f525559b7baf",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37522"
+        },
+        {
+            "hash": "63a891790c355205cf65c6ebe1288e8d5b0a64fc",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37518"
+        },
+        {
+            "hash": "ddd666497d9d6ec42311bf5ea2fbde122a7f7be1",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37513"
+        },
+        {
+            "hash": "aabd6f58d5f6063d9a33517084ece5121138fd1e",
+            "message": "Merge branch '3.0.x' into 3.1.x\n\nCloses gh-37510"
+        },
+        {
+            "hash": "b1ff3b8bdcd66afc3b7b611f2c634ff9f33ab16e",
+            "message": "Next development version (v3.1.5-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "37671",
+            "title": "@ServiceConnection is not found when used in an interface implemented by a test class"
+        },
+        {
+            "number": "37886",
+            "title": "Document that 'spring.docker.compose.file' can be used to share Docker Compose configuration between applications"
+        },
+        {
+            "number": "37956",
+            "title": "Upgrade Java 21 version in CI image"
+        },
+        {
+            "number": "37955",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "37949",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "37941",
+            "title": "Constructor binding with a custom collection type does not work"
+        },
+        {
+            "number": "37938",
+            "title": "@Order does not work on (CommandLine|Application)Runner @Bean methods"
+        },
+        {
+            "number": "37933",
+            "title": "Upgrade to Undertow 2.3.10.Final"
+        },
+        {
+            "number": "37932",
+            "title": "Upgrade to Jetty Reactive HTTPClient 3.0.9"
+        },
+        {
+            "number": "37924",
+            "title": "@ComponentScan on a test class is processed when creating a test context but is not included in the context's cache key"
+        },
+        {
+            "number": "37920",
+            "title": "Restarter creates memory leak in tests"
+        },
+        {
+            "number": "37914",
+            "title": "Upgrade to Spring Integration 6.1.4"
+        },
+        {
+            "number": "37702",
+            "title": "Upgrade to Spring Session 3.1.3"
+        },
+        {
+            "number": "37910",
+            "title": "Migrate to common concourse-release-scripts"
+        },
+        {
+            "number": "37701",
+            "title": "Upgrade to Spring Security 6.1.5"
+        },
+        {
+            "number": "37797",
+            "title": "Upgrade to Spring Kafka 3.0.12"
+        },
+        {
+            "number": "37697",
+            "title": "Upgrade to Spring Authorization Server 1.1.3"
+        },
+        {
+            "number": "37696",
+            "title": "Upgrade to Spring AMQP 3.0.10"
+        },
+        {
+            "number": "37902",
+            "title": "Upgrade to Tomcat 10.1.15"
+        },
+        {
+            "number": "37700",
+            "title": "Upgrade to Spring Retry 2.0.4"
+        },
+        {
+            "number": "37699",
+            "title": "Upgrade to Spring LDAP 3.1.2"
+        },
+        {
+            "number": "37698",
+            "title": "Upgrade to Spring Data Bom 2023.0.5"
+        },
+        {
+            "number": "37898",
+            "title": "Upgrade to Jackson Bom 2.15.3"
+        },
+        {
+            "number": "37897",
+            "title": "Upgrade to Dropwizard Metrics 4.2.21"
+        },
+        {
+            "number": "37883",
+            "title": "AOT processing fails when a @WebServlet found by scanning is annotated with @MultipartConfig"
+        },
+        {
+            "number": "37881",
+            "title": "Gradle plugin uses to-be-deprecated API for getting and setting file permissions"
+        },
+        {
+            "number": "37860",
+            "title": "Upgrade to Undertow 2.3.9.Final"
+        },
+        {
+            "number": "37816",
+            "title": "Upgrade to Spring Framework 6.0.13"
+        },
+        {
+            "number": "37695",
+            "title": "Upgrade to Reactor Bom 2022.0.12"
+        },
+        {
+            "number": "37859",
+            "title": "Upgrade to R2DBC MySQL 1.0.5"
+        },
+        {
+            "number": "37858",
+            "title": "Upgrade to Netty 4.1.100.Final"
+        },
+        {
+            "number": "37694",
+            "title": "Upgrade to Micrometer Tracing 1.1.6"
+        },
+        {
+            "number": "37693",
+            "title": "Upgrade to Micrometer 1.11.5"
+        },
+        {
+            "number": "37857",
+            "title": "Upgrade to jOOQ 3.18.7"
+        },
+        {
+            "number": "37856",
+            "title": "Upgrade to Jetty 11.0.17"
+        },
+        {
+            "number": "37855",
+            "title": "Upgrade to Infinispan 14.0.19.Final"
+        },
+        {
+            "number": "37854",
+            "title": "Upgrade to Hibernate 6.2.13.Final"
+        },
+        {
+            "number": "37853",
+            "title": "Upgrade to Byte Buddy 1.14.9"
+        },
+        {
+            "number": "37838",
+            "title": "Task executor metrics are not registered when using lazy initialization"
+        },
+        {
+            "number": "37829",
+            "title": "Polish"
+        },
+        {
+            "number": "37826",
+            "title": "Gradle AOT processing tasks do not use project's Java toolchain"
+        },
+        {
+            "number": "37824",
+            "title": "Test Gradle plugin against Gradle 8.4"
+        },
+        {
+            "number": "37821",
+            "title": "Remove obsolete prohibit for Couchbase Client library"
+        },
+        {
+            "number": "37818",
+            "title": "Align versions in buildSrc with the main build"
+        },
+        {
+            "number": "37805",
+            "title": "Use `RedisSerializer.java(ClassLoader)` rather than `new JdkSerializationRedisSerializer(ClassLoader)`"
+        },
+        {
+            "number": "37793",
+            "title": "Upgrade to Neo4j Java Driver 5.13.0"
+        },
+        {
+            "number": "37767",
+            "title": "Upgrade to UnboundID LDAPSDK 6.0.10"
+        },
+        {
+            "number": "37766",
+            "title": "Upgrade to RxJava3 3.1.8"
+        },
+        {
+            "number": "37765",
+            "title": "Upgrade to R2DBC MySQL 1.0.4"
+        },
+        {
+            "number": "37764",
+            "title": "Upgrade to Pooled JMS 3.1.4"
+        },
+        {
+            "number": "37763",
+            "title": "Upgrade to Netty 4.1.99.Final"
+        },
+        {
+            "number": "37762",
+            "title": "Upgrade to HttpCore5 5.2.3"
+        },
+        {
+            "number": "37761",
+            "title": "Upgrade to Hibernate 6.2.12.Final"
+        },
+        {
+            "number": "37760",
+            "title": "Upgrade to Dropwizard Metrics 4.2.20"
+        },
+        {
+            "number": "37759",
+            "title": "Upgrade to Couchbase Client 3.4.11"
+        },
+        {
+            "number": "37742",
+            "title": "Remove CI embedmongo cache"
+        },
+        {
+            "number": "37740",
+            "title": "Cache JDK downloads for tests that use ImageFromDockerfile"
+        },
+        {
+            "number": "37731",
+            "title": "Upgrade to Gradle 7.6.3"
+        },
+        {
+            "number": "37723",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "37691",
+            "title": "Remove link to LiveReload website due to timeout"
+        },
+        {
+            "number": "37688",
+            "title": "Bump gradle/gradle-build-action from 2.8.1 to 2.9.0"
+        },
+        {
+            "number": "37665",
+            "title": "Image building can fail when using GraalVM compilation and a remote Docker daemon"
+        },
+        {
+            "number": "37663",
+            "title": "NPE from Jetty's WebSocketUpgradeFilter when testing with @SpringBootTest, @AutoConfigureMockMvc, and MockMvc"
+        },
+        {
+            "number": "37661",
+            "title": "Use AssertJ's fail, not JUnit's"
+        },
+        {
+            "number": "37657",
+            "title": "Enable LoaderIntegrationTests on aarch64"
+        },
+        {
+            "number": "37635",
+            "title": "@WebListener does not work in a native image without additional reflection hints"
+        },
+        {
+            "number": "37632",
+            "title": "AspectJ transaction management with compile-time weaving does not work with spring.main.lazy-initialization=true"
+        },
+        {
+            "number": "37615",
+            "title": "Refer to ActiveMQ as ActiveMQ \"Classic\""
+        },
+        {
+            "number": "37596",
+            "title": "Default value of spring.jmx.registration-policy is not documented"
+        },
+        {
+            "number": "37609",
+            "title": "Removal of spring.webflux.multipart.streaming is not documented"
+        },
+        {
+            "number": "37600",
+            "title": "Unwanted Logback status messages are sometimes logged during startup"
+        },
+        {
+            "number": "37594",
+            "title": "Managed types for Neo4j are not used in Neo4j Data auto configuration"
+        },
+        {
+            "number": "37592",
+            "title": "Use larger runner for PR workflow"
+        },
+        {
+            "number": "37588",
+            "title": " fileMode and dirMode are not applied to all entries in an archive produced by BootJar"
+        },
+        {
+            "number": "37582",
+            "title": "Bump gradle/gradle-build-action from 2.8.0 to 2.8.1"
+        },
+        {
+            "number": "37570",
+            "title": "Application fails to start when an optional config import cannot be resolved"
+        },
+        {
+            "number": "37555",
+            "title": "Enable Paketo Builder Tests on Java 21"
+        },
+        {
+            "number": "37553",
+            "title": "Contrary to the documentation, setting spring.jms.listener.concurrency alone configures the maximum concurrency"
+        },
+        {
+            "number": "37550",
+            "title": "Remove sourceCompatibility/targetCompatibility blocks from Gradle plugin integration tests"
+        },
+        {
+            "number": "37547",
+            "title": "Add Javadoc since for AbstractAotMojo.getSession()"
+        },
+        {
+            "number": "37545",
+            "title": "Test in ExtractCommandTests does not write files to the project directory"
+        },
+        {
+            "number": "37542",
+            "title": "Dependency management for kafka-server-common with a test classifier is missing"
+        },
+        {
+            "number": "37539",
+            "title": "Test Gradle plugin against Gradle 8.4-rc-1"
+        },
+        {
+            "number": "37535",
+            "title": "RepackageMojo doesn't support 1 digit numerical values for project.build.outputTimestamp"
+        },
+        {
+            "number": "37532",
+            "title": "Document support for Java 21"
+        },
+        {
+            "number": "37529",
+            "title": "Remove Java 20 from CI"
+        },
+        {
+            "number": "37525",
+            "title": "Switch Java 21 CI to Bellsoft Liberica and enable automatic update detection"
+        },
+        {
+            "number": "37522",
+            "title": "Use Bellsoft JDK 21 image when Java 21 is out of early access"
+        },
+        {
+            "number": "37518",
+            "title": "Use Paketo Jammy builder in Paketo system tests"
+        },
+        {
+            "number": "37513",
+            "title": "Fix resolveAllWithDataSourceWhenValueDoesNotContainPlaceholderShouldNotInteractWithDataSource()"
+        },
+        {
+            "number": "37510",
+            "title": "Use more idiomatic Kotlin in example for \"Map Health Indicators to Micrometer Metrics\""
+        }
+    ]
+}

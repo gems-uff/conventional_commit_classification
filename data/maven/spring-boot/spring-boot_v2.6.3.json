@@ -1,0 +1,594 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.6.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 92,
+    "start_delay": 0.0,
+    "duration": 29.73846064814815,
+    "commits_info": [
+        {
+            "hash": "5282d4e0f2f7acb581eae9b884c5d372cec979f5",
+            "message": "Release v2.6.3"
+        },
+        {
+            "hash": "3460c24a169659e91eb312eeb10c737e64eb4652",
+            "message": "Ignore context path when calling privilege evaluator\n\nPreviously, the error page security filter passed the request's URI\nto the privilege evaluator. This was incorrect in applications with\na custom context path as the privilege evaluator must be passed a\npath that does not include the context path and the request URI\nincludes the context path.\n\nThis commit updates the filter to use UrlPathHelper's\npathWithinApplication instead. The path within the application does\nnot include the context path. In addition, pathWithinAppliation\nalso correctly handles applications configured with a servlet\nmapping other than the default of /.\n\nCloses gh-29299\n\nCo-Authored-By: Andy Wilkinson <wilkinsona@vmware.com>"
+        },
+        {
+            "hash": "fb44e1c7c2dc05d9fbc823ad03f3dfc445fe3d46",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "5521a5d16004e6e969163455d6535b977554f157",
+            "message": "Next development version (v2.5.10-SNAPSHOT)"
+        },
+        {
+            "hash": "94c7a608451d0d74097d31992fc1ca9c4c010254",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "c488be5adcc13ffb9189e4d83256568c32ba1853",
+            "message": "Upgrade to MariaDB 2.7.5\n\nCloses gh-29498"
+        },
+        {
+            "hash": "5dbde1b29476617603c8ec8d225c3019f06e1606",
+            "message": "Upgrade to Hibernate 5.6.4.Final\n\nCloses gh-29497"
+        },
+        {
+            "hash": "5b1486cc2640596381742f4a1e230b5971417572",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "1f61c36f7a7f4b71e6a65ca1fd962798e8ecea2d",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29491"
+        },
+        {
+            "hash": "6bea2172cba73916180958d952f61485d4bea6f1",
+            "message": "Switch tests to properties that are not deprecated\n\nCloses gh-29488"
+        },
+        {
+            "hash": "ee9c399eba5cc5643e9d9d1b3f71385a2478ba83",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29485"
+        },
+        {
+            "hash": "4c422b9f3cc9025773f119c315e4f8a233dcff1b",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "52f612b3eb12107295d2bbf0b13919409606b6e2",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29480"
+        },
+        {
+            "hash": "d92939e7732fcbd4c97184fe3aa416ef13f36812",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29478"
+        },
+        {
+            "hash": "76555f31ff0eaadd49681da506f16ee3af76c9d9",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "124a3219e8a514c2319c00886b3b37902c4b6dc7",
+            "message": "Upgrade to Pooled JMS 1.2.3\n\nCloses gh-29468"
+        },
+        {
+            "hash": "60971c6fdbaa7969e21b057cce4051b98c507d47",
+            "message": "Upgrade to MySQL 8.0.28\n\nCloses gh-29467"
+        },
+        {
+            "hash": "aba3b1dc5ffb5f48ce1e5670553ca251c008b7d8",
+            "message": "Upgrade to Spring Integration 5.5.8\n\nCloses gh-29320"
+        },
+        {
+            "hash": "f6cdc27b2ab80ec15e2e25894bda740133e7850e",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "392de303903521e439270bad9cdbb5066c7cd077",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "44537d44945f474dcfceb5180995aea402a3266a",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29462"
+        },
+        {
+            "hash": "3b4409305ac3f9bfb54ebb8302775f28dc0396d4",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29459"
+        },
+        {
+            "hash": "4ee260aa8cd36ce7413d25bc8b41ebd69ea5e83b",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29454"
+        },
+        {
+            "hash": "d28942ea534a51f334f0719ce17c3a84ce11ac91",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29449"
+        },
+        {
+            "hash": "27cd1c06a64d49cb5f36f955bf5e0b4453542b0e",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29322"
+        },
+        {
+            "hash": "413fafebffa8a3f7c75d2033b866fce8e5e453b5",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "a9feb923d7af127407ecd42c8a099a819040fa09",
+            "message": "Update to Spring Kafka 2.8.2\n\nCloses gh-29319"
+        },
+        {
+            "hash": "200c05ff98d5fff1b6ce246d391a534a349a81e2",
+            "message": "Upgrade to Spring AMQP 2.4.2\n\nCloses gh-29318"
+        },
+        {
+            "hash": "6afd9b665d88ea6f3654a0747098062d4c114f0d",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "28cf6f5c590430e952605d714292b4d70adf0f9d",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29410"
+        },
+        {
+            "hash": "14fe9347b579f11e8b11c6f2413fab56447babba",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "d29a5a2f4331341a3852b85fd9e8b96f04e4c7ff",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29401"
+        },
+        {
+            "hash": "8868d34c24a904df7b44b519045312c36060f8a7",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29399"
+        },
+        {
+            "hash": "1b2fa3cec15b87c86ac718f675fdb560f4cc37f6",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "1666b1c284f46e2f5b6e273044d6395a75d6f5c3",
+            "message": "Upgrade to Neo4j Java Driver 4.4.2\n\nCloses gh-29398"
+        },
+        {
+            "hash": "c2fa4ffd7ec3053e5bf14a86c7c5fe49472c2eec",
+            "message": "Upgrade to SLF4J 1.7.33\n\nCloses gh-29397"
+        },
+        {
+            "hash": "afcba76c3c6c6a9d610b75b7af6791564d6d9f13",
+            "message": "Upgrade to R2DBC Bom Arabba-SR12\n\nCloses gh-29396"
+        },
+        {
+            "hash": "dac4888137f0549116910a46ec790b1340e06b45",
+            "message": "Upgrade to Netty tcNative 2.0.47.Final\n\nCloses gh-29395"
+        },
+        {
+            "hash": "af79829cab6312a4e6c1181cac62a349d904945f",
+            "message": "Upgrade to Spring Data 2021.1.1\n\nCloses gh-29317"
+        },
+        {
+            "hash": "1e44e4e52e6a30b3632a11398b5ed2884b6ab66b",
+            "message": "Upgrade to Spring HATEOAS 1.4.1\n\nCloses gh-29283"
+        },
+        {
+            "hash": "535254b4adb546cccc049209feb21104d7aa87b2",
+            "message": "Merge pull request #29380 from Omkar-Shetkar\n\n* pr/29380:\n  Fix duplicate \"Logging\" link\n\nCloses gh-29380"
+        },
+        {
+            "hash": "c19e192acdb02eaba420c362455f8dbfce35c995",
+            "message": "Fix duplicate \"Logging\" link\n\nSee gh-29380"
+        },
+        {
+            "hash": "83c02e4cfab6d08612d6430d927017f48f267232",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "832d8845dfdd3823bcc51ce67a11d1d7c78c7e1d",
+            "message": "Upgrade to Micrometer 1.8.2\n\nCloses gh-29316"
+        },
+        {
+            "hash": "f65d766fbe774e9ca11714f175120530a75b4c5b",
+            "message": "Upgrade to Spring Framework 5.3.15\n\nCloses gh-29327"
+        },
+        {
+            "hash": "4a87980180541ddd071fa1daac53459271109478",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "36aa085a4c6727162f463e54e664ad158c397cef",
+            "message": "Upgrade CI to Docker 20.10.12\n\nCloses gh-29358"
+        },
+        {
+            "hash": "c4c90a3e7de341cb60e5d04cfdfa9d7ee32f9787",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-29359"
+        },
+        {
+            "hash": "8384019a4101a88b1a3c06cfdd47df7a4148124d",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29377"
+        },
+        {
+            "hash": "e7fe3719277d34e4b94899620a6ab0014557593a",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "91d2b1b988c3dd42f0dc55c07567694321b3cd57",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29374"
+        },
+        {
+            "hash": "72696cdb0fac1bb848eb462fe47e81aeb522fee9",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29371"
+        },
+        {
+            "hash": "3ae7c45900dfaa4eb8334f91175d44a1fe597cb6",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29367"
+        },
+        {
+            "hash": "2cb889b8e61a22ba289189674752603d42eb7ab8",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "ee938cf822545c93e77ca6b04388394faeea704a",
+            "message": "Upgrade to Netty 4.1.73.Final\n\nCloses gh-29351"
+        },
+        {
+            "hash": "d8739c463b422f94ad5d1dd229656ab9816d11f5",
+            "message": "Upgrade to MongoDB 4.4.1\n\nCloses gh-29350"
+        },
+        {
+            "hash": "e14c13c75f6a4695c32a2261c7188be611a7f399",
+            "message": "Upgrade to Maven Jar Plugin 3.2.2\n\nCloses gh-29349"
+        },
+        {
+            "hash": "8cdccb6cb32e892857c5037e361295260f3f076d",
+            "message": "Upgrade to Logback 1.2.10\n\nCloses gh-29348"
+        },
+        {
+            "hash": "61e08e3510d520e187846d038a32e7ca26ca1460",
+            "message": "Upgrade to Lettuce 6.1.6.RELEASE\n\nCloses gh-29347"
+        },
+        {
+            "hash": "b19593ee47a42f491c4df3f765296f01c5b8f874",
+            "message": "Upgrade to JBoss Logging 3.4.3.Final\n\nCloses gh-29346"
+        },
+        {
+            "hash": "98118bc4807c211ca87e1a2dbca4bf6d74230298",
+            "message": "Upgrade to Jaybird 4.0.5.java8\n\nCloses gh-29345"
+        },
+        {
+            "hash": "838cded30892e21c9d452b342b0246f08bcec71a",
+            "message": "Upgrade to Infinispan 12.1.11.Final\n\nCloses gh-29344"
+        },
+        {
+            "hash": "4309b78f02f5808a7806079cc5d553882ea89430",
+            "message": "Upgrade to HttpCore5 5.1.3\n\nCloses gh-29343"
+        },
+        {
+            "hash": "e5a110215cfb9cf50edeab69ef38a17e7619d5a1",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29330"
+        },
+        {
+            "hash": "5744724af25ab2a3739d38eab2ff51bb3d465db0",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29329"
+        },
+        {
+            "hash": "8c6f5812a5b019d1ac12fe18077e6fbf346c9a9f",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "c32912f05f890b672fa3dcfd2b402c68ebc43229",
+            "message": "Start building against Spring Framework 5.3.15 snapshots\n\nSee gh-29327"
+        },
+        {
+            "hash": "c211aa0ac2d400818d2cbe05224f4e7b1ca4e903",
+            "message": "Start building against Spring REST Docs 2.0.6 snapshots\n\nSee gh-29322"
+        },
+        {
+            "hash": "e4bb08238eb62fc5ae25f62397f792aeea8c114b",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "b9716ca4ee2a235488c6b9178701a38b81fcea63",
+            "message": "Start building against Spring Integration 5.5.8 snapshots\n\nSee gh-29320"
+        },
+        {
+            "hash": "504421c4a5b22647f93d69106767274f7f2543f0",
+            "message": "Start building against Spring Kafka 2.8.2 snapshots\n\nSee gh-29319"
+        },
+        {
+            "hash": "ef4915ee554d2e61670cb68f762b19dac20cd44c",
+            "message": "Start building against Spring AMQP 2.4.2 snapshots\n\nSee gh-29318"
+        },
+        {
+            "hash": "b05f435b275a7b74f8dad70ae3f02088cc03180d",
+            "message": "Start building against Spring Data 2021.1.1 snapshots\n\nSee gh-29317"
+        },
+        {
+            "hash": "2da271a240ea45ed1a822f41eab5f01806a5698c",
+            "message": "Start building against Micrometer 1.8.2 snapshots\n\nSee gh-29316"
+        },
+        {
+            "hash": "17b0ac61aab2a9785c0ebd10eb15c78137e0003f",
+            "message": "Upgrade to Reactor 2020.0.15\n\nCloses gh-29315"
+        },
+        {
+            "hash": "a6d8ff46777ce7dc096f02d8f2117f22015950b7",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29268"
+        },
+        {
+            "hash": "99a683dffb255a92ccd875dbe6754c9768571e9c",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "81266ca80647fedc9dcc76ff962e04ab9e54deca",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "8e583f6f73e2ec67e9e88891ae44a927f8ee7bf3",
+            "message": "Apply exclusion rules to child contributors\n\nUpdate `IncludeExcludeGroupMemberPredicate` so that exclusion rules are\nalso applied to child contributors. The restores the behavior of Spring\nBoot 2.5.x where `management.endpoint.health.group.mygroup.exclude=db`\nwould exclude 'db/one', 'db/two' etc.\n\nFixes gh-29251"
+        },
+        {
+            "hash": "438b7553da916e327a9a7ffa85ce090831b8313b",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29259"
+        },
+        {
+            "hash": "c469c41127738ee2df473b599c9890c9a585d152",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "01c19ef444cc16c64233dba65c8ccecaf6943560",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "f54ea67ed6f835364d955065537d2ef60e868426",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29198"
+        },
+        {
+            "hash": "ec730dca628696e503d1fa57aa95d6aa553049b1",
+            "message": "Merge pull request #29187 from izeye\n\n* pr/29187:\n  Fix default value for management.info.env.enabled in metadata\n\nCloses gh-29187"
+        },
+        {
+            "hash": "d2346813482c671ae5b95a5bbfde5637408e90d1",
+            "message": "Fix default value for management.info.env.enabled in metadata\n\nSee gh-29187"
+        },
+        {
+            "hash": "4082354ecd8610b85b00aa3fb9dc0eb92b351545",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "b345dddec03fcb2b118a1184f6809dd526cf314a",
+            "message": "Upgrade to Log4j2 2.17.1\n\nCloses gh-29184"
+        },
+        {
+            "hash": "576eb50ed8033e8bb2001261127536621b9f6ada",
+            "message": "Merge pull request #29157 from izeye\n\n* pr/29157:\n  Polish\n\nCloses gh-29157"
+        },
+        {
+            "hash": "7fbb5749d15570579d251e388551e9bc02db4374",
+            "message": "Polish\n\nSee gh-29157"
+        },
+        {
+            "hash": "8ee0640cc0b7cb36b2f55d44cf26c600d1c75bb2",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-29172"
+        },
+        {
+            "hash": "b14182764175c793a64870e895a80610713f75ed",
+            "message": "Merge branch '2.5.x' into 2.6.x"
+        },
+        {
+            "hash": "2c14bd7ac499645def070d1a2d2baa585dd35dbe",
+            "message": "Next development version (v2.6.3-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29299",
+            "title": "ResponseStatusException no longer returning response body in 2.6.2 using Spring Security when application has a custom context path"
+        },
+        {
+            "number": "29498",
+            "title": "Upgrade to MariaDB 2.7.5"
+        },
+        {
+            "number": "29497",
+            "title": "Upgrade to Hibernate 5.6.4.Final"
+        },
+        {
+            "number": "29491",
+            "title": "ConventionsPluginTests resolution fails on Windows"
+        },
+        {
+            "number": "29488",
+            "title": "Move Elasticsearch repository auto-config tests away from deprecated config properties"
+        },
+        {
+            "number": "29485",
+            "title": "Move JdbcSessionDataSourceInitializerTests into src/test/java"
+        },
+        {
+            "number": "29480",
+            "title": "Refer to Maven Resolver rather than Aether"
+        },
+        {
+            "number": "29478",
+            "title": "DatabaseInitializationDependencyConfigurer should not inject the Environment"
+        },
+        {
+            "number": "29468",
+            "title": "Upgrade to Pooled JMS 1.2.3"
+        },
+        {
+            "number": "29467",
+            "title": "Upgrade to MySQL 8.0.28"
+        },
+        {
+            "number": "29320",
+            "title": "Upgrade to Spring Integration 5.5.8"
+        },
+        {
+            "number": "29462",
+            "title": "Run LoaderIntegrationTests against multiple JDKs"
+        },
+        {
+            "number": "29459",
+            "title": "'spring.config.import' placeholders can resolve from profile-specific documents when they should fail"
+        },
+        {
+            "number": "29454",
+            "title": "Warning from AprLifecycleListener when using Tomcat Native and Tomcat 9.0.55 or later"
+        },
+        {
+            "number": "29449",
+            "title": "Upgrade to Gradle Enterprise Plugin 3.8.1"
+        },
+        {
+            "number": "29322",
+            "title": "Upgrade to Spring REST Docs 2.0.6.RELEASE"
+        },
+        {
+            "number": "29319",
+            "title": "Update to Spring Kafka 2.8.2"
+        },
+        {
+            "number": "29318",
+            "title": "Upgrade to Spring AMQP 2.4.2"
+        },
+        {
+            "number": "29410",
+            "title": "ConfigurationPropertySources.attach will always reattach when called multiple times"
+        },
+        {
+            "number": "29401",
+            "title": "Clarify documentation for RestTemplate customization"
+        },
+        {
+            "number": "29399",
+            "title": "Minimize use of Embedded Mongo in our tests"
+        },
+        {
+            "number": "29398",
+            "title": "Upgrade to Neo4j Java Driver 4.4.2"
+        },
+        {
+            "number": "29397",
+            "title": "Upgrade to SLF4J 1.7.33"
+        },
+        {
+            "number": "29396",
+            "title": "Upgrade to R2DBC Bom Arabba-SR12"
+        },
+        {
+            "number": "29395",
+            "title": "Upgrade to Netty tcNative 2.0.47.Final"
+        },
+        {
+            "number": "29317",
+            "title": "Upgrade to Spring Data 2021.1.1"
+        },
+        {
+            "number": "29283",
+            "title": "Upgrade to Spring HATEOAS 1.4.1"
+        },
+        {
+            "number": "29316",
+            "title": "Upgrade to Micrometer 1.8.2"
+        },
+        {
+            "number": "29327",
+            "title": "Upgrade to Spring Framework 5.3.15"
+        },
+        {
+            "number": "29358",
+            "title": "Upgrade CI to Docker 20.10.12"
+        },
+        {
+            "number": "29359",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "29377",
+            "title": "Polish SpringBootContextLoaderTests"
+        },
+        {
+            "number": "29374",
+            "title": "@SpringBootTest does not use spring.main.web-application-type properties declared in test resource files"
+        },
+        {
+            "number": "29371",
+            "title": "Embedded launch script fails if jar is owned by an unknown user"
+        },
+        {
+            "number": "29367",
+            "title": " Upgrade to Testcontainers 1.16.2"
+        },
+        {
+            "number": "29351",
+            "title": "Upgrade to Netty 4.1.73.Final"
+        },
+        {
+            "number": "29350",
+            "title": "Upgrade to MongoDB 4.4.1"
+        },
+        {
+            "number": "29349",
+            "title": "Upgrade to Maven Jar Plugin 3.2.2"
+        },
+        {
+            "number": "29348",
+            "title": "Upgrade to Logback 1.2.10"
+        },
+        {
+            "number": "29347",
+            "title": "Upgrade to Lettuce 6.1.6.RELEASE"
+        },
+        {
+            "number": "29346",
+            "title": "Upgrade to JBoss Logging 3.4.3.Final"
+        },
+        {
+            "number": "29345",
+            "title": "Upgrade to Jaybird 4.0.5.java8"
+        },
+        {
+            "number": "29344",
+            "title": "Upgrade to Infinispan 12.1.11.Final"
+        },
+        {
+            "number": "29343",
+            "title": "Upgrade to HttpCore5 5.1.3"
+        },
+        {
+            "number": "29330",
+            "title": "Upgrade to Gradle Enterprise Gradle plugin 3.8"
+        },
+        {
+            "number": "29329",
+            "title": "Upgrade to Gradle Enterprise Conventions 0.0.9"
+        },
+        {
+            "number": "29315",
+            "title": "Upgrade to Reactor 2020.0.15"
+        },
+        {
+            "number": "29268",
+            "title": "Maven repackaging of a jar with a deeply nested package is prohibitively slow"
+        },
+        {
+            "number": "29251",
+            "title": "Health contributor exclusion rules aren't applied to child contributors"
+        },
+        {
+            "number": "29259",
+            "title": "Upgrade to Gradle 6.9.2"
+        },
+        {
+            "number": "29198",
+            "title": "Update copyrights to 2022"
+        },
+        {
+            "number": "29184",
+            "title": "Upgrade to Log4j2 2.17.1"
+        },
+        {
+            "number": "29172",
+            "title": "Test our Gradle plugin against Gradle 7.3.3"
+        }
+    ]
+}

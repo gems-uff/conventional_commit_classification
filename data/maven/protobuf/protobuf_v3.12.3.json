@@ -1,0 +1,538 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.12.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 129,
+    "start_delay": 0.0,
+    "duration": 196.89641203703704,
+    "commits_info": [
+        {
+            "hash": "31ebe2ac71400344a5db91ffc13c4ddfb7589f92",
+            "message": "Merge pull request #7590 from haberman/merge-release-branch\n\nMerge release branch"
+        },
+        {
+            "hash": "b971243fe0fc17fe63124b328bd51198c1ed6ef5",
+            "message": "Merge branch '3.12.x' into merge-release-branch"
+        },
+        {
+            "hash": "9ce8c330e736b99c2bb00bdc6a60f00ab600c283",
+            "message": "Updated version to 3.12.3 and updated CHANGES.txt. (#7580)\n\n* Updated version to 3.12.3 and updated CHANGES.txt.\r\n\r\n* Re-ran generate_descriptor_protos.sh and made it more parallel."
+        },
+        {
+            "hash": "2360bacd12f5cc3f234b4155a2b7474f26ca3c7d",
+            "message": "Tweak the union used for Extensions to support old generated code.\n\nSupport the old field name as well as the union to keep the old generated code\nbuilding.\n\nFixes #7555"
+        },
+        {
+            "hash": "0ff639994d3b3be9252ece1f1b1ac65d65f6111e",
+            "message": "Fixed Python release script to upload using twine instead of distutils. (#7571)"
+        },
+        {
+            "hash": "7cb5597013f0c4b978f02bce4330849f118aa853",
+            "message": "Overcome the `ref struct` limitation for pre-roslyn compilers by introducing GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE for generated code (#7490)\n\n* enable compatibility mode in codegen\r\n\r\n* regenerate protos\r\n\r\n* improve readability\r\n\r\n* more robust way of figuring out path to old C# compiler\r\n\r\n* add recent C# changes"
+        },
+        {
+            "hash": "c0b79c5a398f4eec51ef92784e9d940febdccc52",
+            "message": "Merge pull request #7583 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "8d93bc1826e956ae553b6f569f64c3b9906a9791",
+            "message": "Normalized formatting of macros.\n\nIt's a bit unforuntate to lose the nesting, but\nthat's what clang-format is telling us here."
+        },
+        {
+            "hash": "75e4c446a30d89b43eb043c8ef4a421c77fc1b95",
+            "message": "Added changelog entries for Piper sync."
+        },
+        {
+            "hash": "183cdec7cde985e06eaa588f442aaaab2a63f90b",
+            "message": "Sync from Piper @314226556\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "e492e5a4ef16f59010283befbde6112f1995fa0f",
+            "message": "Fix depset/list confusion in #7458.\n\nSee\nhttps://github.com/protocolbuffers/protobuf/pull/7458#issuecomment-633147682.\n\nrelease notes: no\n\nSigned-off-by: Harvey Tuch <htuch@google.com>"
+        },
+        {
+            "hash": "24fa9550be0fab7764bb712c00128852f16446e6",
+            "message": "Update rules_cc\n\nThe previous version does not mark the `toolchain_type` as public,\nmeaning that users of a CC toolchain using\n`@rules_cc//cc:toolchain_type` will get build errors along the lines of\n```\nERROR:\n.../local_config_cc_toolchains/BUILD.bazel:18:1:\nin toolchain rule\n@local_config_cc_toolchains//:cc-toolchain-armeabi-v7a: alias\n'@rules_cc//cc:toolchain_type' referring to target\n'@bazel_tools//tools/cpp:toolchain_type' is not visible from target\n'@local_config_cc_toolchains//:cc-toolchain-armeabi-v7a'. Check the\nvisibility declaration of the former target if you think the dependency\nis legitimate\n```"
+        },
+        {
+            "hash": "2cc68efd5654c37e91725d403bc9d06eda19ef8a",
+            "message": "Simplified PHP testing scripts. (#7574)\n\n* Simplified PHP testing scripts.\r\n\r\n- allow them to be run from any directory.\r\n- remove \"VERSION\" arg, we can get PHP from $PATH.\r\n\r\n* Added a few places I missed.\r\n\r\n* Removed redundant \"cd `dirname $0`\".\r\n\r\nAlso replaced all backticks with $(), for consistency."
+        },
+        {
+            "hash": "1688ea8d60aac47f0137cfa8c2160e91b3b8edbe",
+            "message": "PHP: use php-config instead of explicitly setting include paths. (#7572)"
+        },
+        {
+            "hash": "2d654e8198a0eb6f9e228f964a70f15abd97512f",
+            "message": "Merge pull request #7559 from haberman/merge-312\n\nMerge the 3.12.x branch to master"
+        },
+        {
+            "hash": "c077d949d82fdc008bcec65632e4ed007f1534d3",
+            "message": "Merge branch '3.12.x' into merge-312"
+        },
+        {
+            "hash": "15d0cd714dc24d7c460c70d469ce10a45d6c6c02",
+            "message": "Merge pull request #7551 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "66a189f6b55672742f5737b0d0b0e7204b4eb652",
+            "message": "Added Changelog entries for Google-internal changes."
+        },
+        {
+            "hash": "eee43838f34b9f142a4ccc0e50e5c72cf94ff4ac",
+            "message": "Merge branch 'sync-piper' into sync-stage\n\n# Conflicts:\n#\tjava/core/src/test/java/com/google/protobuf/TextFormatTest.java"
+        },
+        {
+            "hash": "0a737d8eb049dbfa5875a8c53f41fb6d777c1588",
+            "message": "Sync from Piper @313142438\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "6ed738305bc0770832148109057cf22a6d9ee98a",
+            "message": "Sync from Piper @311396324\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "6b5fb807c00603ff3fbb392d2a002fac2444d5c5",
+            "message": "Sync from Piper @310858019\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "2d80a70048b414a113a096aad9ca843eda12d974",
+            "message": "Sync from Piper @310457838\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "2ac29ae5d49ed1ba952b4ab89d05a48db3c21124",
+            "message": "Sync from Piper @310014675\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "204f99488ce1ef74565239cf3963111ae4c774b7",
+            "message": "Use the name from the descriptor instead of RTTI. (#7465)"
+        },
+        {
+            "hash": "7eb207c5741ccb8585acf706e9e176f4ae498d91",
+            "message": "Merge pull request #7464 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "1119531bb2e90adb9849bfe234a5883d1e24b45d",
+            "message": "Merge branch 'sync-piper' into sync-stage"
+        },
+        {
+            "hash": "c05b55880fc7cf1ed8d118b21266fa4bf9c4cbf7",
+            "message": "Sync from Piper @309848308\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "317bc83444f5454fb4903097d4a6852e832d6a5f",
+            "message": "Ignore unknown enum value when ignore_unknown specified (#7455)"
+        },
+        {
+            "hash": "ed5c874de356e27bc4da77f56f813ad18bc541c5",
+            "message": "Fix to C# support library code\n\n(This was the only use of a HasXyz property for a message type.)"
+        },
+        {
+            "hash": "9926c9504b9475cfccf5d928d395b645456d6e0d",
+            "message": "Regenerate C# code based on the previous commit\n\n(This removes the Has/Clear members for message types in proto2.)"
+        },
+        {
+            "hash": "9d74aafbe1ab9933b40c2d2db8b871f91694de03",
+            "message": "Don't generate Has/Clear members for proto2 message fields.\n\nThis is a breaking change in terms of proto2 code generation: users who were previously using these members will have to change to null checks for message fields.\nAfter toying with removing Has/Clear for proto2 oneof fields, I've left them alone in this commit, for consistency with other languages. The inconsistency between proto2 and proto3 won't come up here, because proto3 oneof fields can never be explicitly optional.\n\nFixes #7395."
+        },
+        {
+            "hash": "02f182e829c7ae51eae0b9a24a231b8e6473f3ff",
+            "message": "Clean up nortti fix based on comments from @acozzette\n\nAlso moved the macro into the only function which is using it to keep the fix local to the issue."
+        },
+        {
+            "hash": "1d461e78254cd38fec26d76d0f86a69bd252170b",
+            "message": "Fix when compiling without RTTI"
+        },
+        {
+            "hash": "a690227398d307419d45b1f352494a176873897b",
+            "message": "Merge pull request #7351 from jtattermusch/protobuf_csharp_new_parsing\n\nNew Span-based C# parsing logic"
+        },
+        {
+            "hash": "7134d25eb8752ea17692efc9524ff4b888e2402b",
+            "message": "Merge remote-tracking branch 'upstream/master' into protobuf_csharp_new_parsing"
+        },
+        {
+            "hash": "a1b9aa499e2628c443dd15877ac366813412706c",
+            "message": "get rid of extraneous ParserInternalState.codedInputStream field"
+        },
+        {
+            "hash": "eac2a6a51054f816398ad3aaa8373aa0afa8d923",
+            "message": "update C# distrib files in Makefile.am"
+        },
+        {
+            "hash": "eb38a3cdb894125d378511d2ea1fcf778428385d",
+            "message": "adjust some TODOs in ParsingPrimitives.cs"
+        },
+        {
+            "hash": "dd97af88dba44b73fac9a822263340781f80e4b7",
+            "message": "deduplicate ExtensionSet.TryMergeFieldFrom implementation, add test"
+        },
+        {
+            "hash": "cf49962c575161f92ea4402b029beb0e13ad8938",
+            "message": "actually use ParsingPrimitives.ReadBytes and ReadString"
+        },
+        {
+            "hash": "d7c1fab00b231e8d99686c7f5841574fbeb82963",
+            "message": "add benchmarks for parsing string and bytes"
+        },
+        {
+            "hash": "556cb8dc4b438c61101a8b842b7f33662b54f0ea",
+            "message": "remove unused internal method"
+        },
+        {
+            "hash": "7f42d7c65b572c1f4abaf5552d22b092e28bb341",
+            "message": "increase MapField test coverage"
+        },
+        {
+            "hash": "7c74e3901bc48ff381b9ad2f580004128424283d",
+            "message": "deduplicate MapField implementation"
+        },
+        {
+            "hash": "9ca70db2aaad944f9c3656b1fe2f3e4f647e29bc",
+            "message": "remove a few more TODOs"
+        },
+        {
+            "hash": "a171f6d6707bca8629a90bbf2c2974096608f8b8",
+            "message": "address a few TODOs"
+        },
+        {
+            "hash": "373b9eaeb20422403e6a4b0ede0b193697da7db0",
+            "message": "optimize ParseRawLittleEndian32"
+        },
+        {
+            "hash": "17ea4d932f78ef3d110f77011e575845e322e676",
+            "message": "add LegacyGeneratedCodeTest"
+        },
+        {
+            "hash": "f1d12ac7685f1d794274dd0221e417f04568e0d7",
+            "message": "also test with ParseContext in CodedInputStream test"
+        },
+        {
+            "hash": "9f00d3279bd10533a91abf53600d99bd54e6be20",
+            "message": "add missing assert to CodedInputStreamTest.AssertReadVarint"
+        },
+        {
+            "hash": "238fd35f1d282b1439c4be0aad827570c0e1b05a",
+            "message": "improve test coverage"
+        },
+        {
+            "hash": "b2d5ceb1f7ac7d3d5aa825601d6fc054566ee002",
+            "message": "speedup parsing multi-segment readOnlySequence"
+        },
+        {
+            "hash": "a980705bdbf09577d6f1bdc03610fe895083ebbe",
+            "message": "attempt to fix CompatibilityTests"
+        },
+        {
+            "hash": "638a0813b40ff8ed8f2d082053e2ac1ab0e07b15",
+            "message": "increase coverage of GeneratedMessageTest"
+        },
+        {
+            "hash": "c2925d5b93ef792b6ca45001eb2106b33bf341c5",
+            "message": "fix C# compatibility tests"
+        },
+        {
+            "hash": "0df7ddc80511c5bedd7df106b48ac77cea8c081b",
+            "message": "regenerate"
+        },
+        {
+            "hash": "92076f7007be81ec77ffa8514fff96dd5c81ed63",
+            "message": "codegen: InternalMergeFrom"
+        },
+        {
+            "hash": "d7e2c8387ad2c841137a41cfde5a9c3595106958",
+            "message": "change MergeFrom_Internal to InternalMergeFrom"
+        },
+        {
+            "hash": "393611464276b59add95771acd128cd43712fcf9",
+            "message": "remove newline"
+        },
+        {
+            "hash": "18bfd9e2e580d3dc1e0dcad607cbd2a7f9f0f952",
+            "message": "Fix net45 tests"
+        },
+        {
+            "hash": "07182a843c24ae8d349e35f41831f3652462a82f",
+            "message": "optimize initialization of ParseContext"
+        },
+        {
+            "hash": "d17b5115d289c32e362dfe7820cc6f891ceeee04",
+            "message": "faster initialization of ParserInternalState"
+        },
+        {
+            "hash": "42eff9d6408957bfe41a8ad27c951948567252e6",
+            "message": "ParseMessageBenchmark: parsing from ReadOnlySequence"
+        },
+        {
+            "hash": "5f836193c7cb858095b4149ac3170cbd9c08a6a5",
+            "message": "ParseRawPrimitivesBenchmark: compare CodedInputStream vs ParseContext"
+        },
+        {
+            "hash": "b2d291543982266644ddf46e6b016490c5aaee2a",
+            "message": "make Google.Protobuf internals visible to benchmarks"
+        },
+        {
+            "hash": "3196ef9b5ca271dfefcd1ee75345cca66917cebd",
+            "message": "regenerate C# protos"
+        },
+        {
+            "hash": "f6bdd7d479f59e37490b00d3a1c2dac5b3ef13a5",
+            "message": "codegen changes"
+        },
+        {
+            "hash": "220e7be708a84239d6ae48faa480dd1e7cf73367",
+            "message": "make things build after codegen change"
+        },
+        {
+            "hash": "6d5bc90d486d02d881a9147e8325953b10f4f3a3",
+            "message": "add ParseFrom(ReadOnlySequence) methods"
+        },
+        {
+            "hash": "ea605381e60501c848ec6bc20942d159cdd144b2",
+            "message": "make everything build"
+        },
+        {
+            "hash": "175c96565f7ed97c07a78da0698c5e929dc7ef0d",
+            "message": "bring in new files"
+        },
+        {
+            "hash": "39d730dd96c81196893734ee1e075c34567e59ae",
+            "message": "Use lexical-binding in protobuf-mode.el"
+        },
+        {
+            "hash": "ba1ce7074457218b14dbe6d9c46a36c384986213",
+            "message": "Restore binary builds of Ruby 2.3 and 2.4 (#7529)"
+        },
+        {
+            "hash": "9952e36f92cfff9ca0ec4d43a5ff146d26f64a01",
+            "message": "Merge release branch into master. (#7517)\n\n* Added background information about proto3 presence. (#7501)\r\n\r\n* Fixed bug in map key sorting for Java TextFormat. (#7508)\r\n\r\nFixes: https://github.com/protocolbuffers/protobuf/issues/7505\r\n\r\n* Update protobuf version\r\n\r\n* Added a changelog entry about the Java fix. (#7516)"
+        },
+        {
+            "hash": "63da77bc971e08c2241cc1d9e65ede4bf335c421",
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 311748964"
+        },
+        {
+            "hash": "2ae7cf0e03c3469973e592e812565e4ee2470e0b",
+            "message": "Auxillary -> Auxiliary"
+        },
+        {
+            "hash": "9482bfd22bf7d9b9b4fa047c270bfa988f7fbf88",
+            "message": "Fix depset/list confusion for ctx.attr.deps.\n\nSigned-off-by: Harvey Tuch <htuch@google.com>"
+        },
+        {
+            "hash": "7cf3f7a6494df4dec4f6ee02a789c0cca8adbfcd",
+            "message": "Fix CLI \"too long\" issues in py_proto_library.\n\nEnvoy was experiencing failed builds due to lots of duplicate -I in the\nCLI. The solution is to generally use depset() as per Starlark best\npractice for this sort of thing.\n\nMight fix other issues beyond py_proto_library, anything that depends on\nproto_gen.\n\nrelease notes: no\n\nSigned-off-by: Harvey Tuch <htuch@google.com>"
+        },
+        {
+            "hash": "6935eae45c99926a000ecbef0be20dfd3d159e71",
+            "message": "Merge pull request #7502 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "1e8d04061c30bf98b536b2238cb9d6ee380f22f2",
+            "message": "Remove includes of deleted \"no_arena\" protos from ObjC."
+        },
+        {
+            "hash": "c8fce07914cbacb45bfe36b37bef6834e06eb02d",
+            "message": "Removed \"no_arena\" variants from the build system."
+        },
+        {
+            "hash": "3dcf368c2f42b29022768fe4db99616e4bff9f74",
+            "message": "Merge branch 'sync-piper' into sync-stage"
+        },
+        {
+            "hash": "440a156e1cd5c783d8d64eef81a93b1df3d78b60",
+            "message": "Merge pull request #6904 from erikma/dev/erikmav/byteStringMemory\n\nC#: Allow readonly view of byteString's data with ByteString.Memory property"
+        },
+        {
+            "hash": "7de09eb62a32a59c4dff3d6cb9cdaa43f6248087",
+            "message": "C#: Add ByteString.Memory alongside ByteString.Span to allow calling e.g. FileStream.WriteAsync() that requires ReadOnlyMemory<byte>"
+        },
+        {
+            "hash": "f945fdf2d90ee194b30fa5418b270707998bcc9f",
+            "message": "Merge pull request #7497 from haberman/merge-312-branch\n\nMerge 3.12.x branch to master after 3.12.0-rc2"
+        },
+        {
+            "hash": "62ab8333c9192ed72ac5c6ee6325d63bc2530f11",
+            "message": "Merge branch '3.12.x' into merge-312-branch"
+        },
+        {
+            "hash": "7e7777e8a18ae6077c459699761b1ff86ed237f7",
+            "message": "Merge pull request #7495 from dsnet/master\n\nFix integration tests for Go examples"
+        },
+        {
+            "hash": "654edd8e7471580db2d8ebfeeb9c549d62d1d20f",
+            "message": "Fix integration tests for Go examples\n\nA proper integration test should be hermetic such that its operation\nis agnostic to whatever happens outside of its controlled environment.\nThe script is not so since it uses a fixed (and very old) version of Go,\nbut continues to build protoc-gen-go from head, leading to an eventual\nbreakage when protoc-gen-go at head no longer operates on such an old\nversion of Go.\n\nFix the script to pin to an older version of protoc-gen-go (i.e., v1.3.5)."
+        },
+        {
+            "hash": "acbdca9a2012524fb10a4923fb8650ea7e237f1c",
+            "message": "Merge pull request #7485 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "cb390216cf604fb4fb148322ec7270380950f5ef",
+            "message": "Fixed the Java build."
+        },
+        {
+            "hash": "086167b460ffe27c561fea35c3d1802f63de6c58",
+            "message": "Merge branch 'master' into sync-stage"
+        },
+        {
+            "hash": "976f85b5d55f10af7a01bdbd5a811ebc0e2b108f",
+            "message": "Add \"WITH_CMAKE\" define to allow cross-compiling when using the cmake build system."
+        },
+        {
+            "hash": "6bbd56dfd9600adc9b084028d99a0aed880d7622",
+            "message": "Bazel: Discontinue JDK 7 compatibility support\n\nThe primary reason to drop that compatibility is because Bazel is\nadding unconditionally -parameters option that is not compatible\nwith JDK 7. This pollutes the build log with annoying warnings:\n\n  warning: -parameters is not supported for target value 1.7. \\\n  Use 1.8 or later.\n\nSecond reason is that nobody in the wild relies on JDK 7 any more\nbecause it was discontinued years ago.\n\nAlso remove JDK9 config_setting rule that is not used any more.\n\nTest Plan:\n\nBuild :protobuf_java and confirm, that there are no warnings any more\nand that major byte version 52 is produced, that corresponds to Java 8:\n\n  $ bazel build protobuf_java\n  $ javap -v -cp bazel-bin/java/core/libcore.jar com.google.protobuf.Any | grep major\n  major version: 52"
+        },
+        {
+            "hash": "fa9ebaf807b96a5d864d4493f022573255a9351b",
+            "message": "Fixed the cpp_distcheck test"
+        },
+        {
+            "hash": "118589c565ee2aea90f73da5a2926b692685bc15",
+            "message": "Remove unnecessary call to [self descriptor] in resolveClassMethod:\n\nThis was causing problems in OCMock due to recursion when OCMock was trying\nto mock a protobuf.\n\n`_forwardStackInvocation:` was being called as part of the resolution of `descriptor`."
+        },
+        {
+            "hash": "0611563e769c5b07ac5f372052656963927e6aa9",
+            "message": "Merge pull request #7448 from jtattermusch/csharp_selfreferential_options\n\nC# Add tests for self-referential options"
+        },
+        {
+            "hash": "0757d8ee5c361404cfb3de82c017f04ca8f2d6a1",
+            "message": "update Makefile.am"
+        },
+        {
+            "hash": "dd013bdf06d36ee49fbcff1b45e332ce8740b750",
+            "message": "regenerate protos"
+        },
+        {
+            "hash": "661c0c4eb806290dc3778da4b5f8be83a0e50449",
+            "message": "add tests for selfreferential options"
+        },
+        {
+            "hash": "bf3eef94c1fc5470407c4f69bb17cbed2c75b508",
+            "message": "Merge pull request #7434 from jtattermusch/csharp_expose_options\n\nC#: Get rid of broken GetOption API and expose the \"GetOptions()\" method on descriptors instead"
+        },
+        {
+            "hash": "0688883b5264799f671377de795c1310b926e754",
+            "message": "address review comments"
+        },
+        {
+            "hash": "ff999c9d424fd76acd89c80eeacf0224a7692e3b",
+            "message": "clarify docs"
+        },
+        {
+            "hash": "673245f212e461eaa2a123bf5ebefa1fc5f96df2",
+            "message": "remove unnecessary cast"
+        },
+        {
+            "hash": "402ce8b17f7141cb47a3e32480c10384d6c6236c",
+            "message": "add back GetOption tests"
+        },
+        {
+            "hash": "062c2dc24b96986ae4162c2c09d9eb38075fdbc7",
+            "message": "add back GetOption methods, but mark them as obsolete"
+        },
+        {
+            "hash": "f4ff22026bca244fe557736d5c5c2e04c31d939b",
+            "message": "add a few more tests"
+        },
+        {
+            "hash": "9720ae41c2c25b56290fb02ed6908277d60db2be",
+            "message": "adjust CustomOptionsTest.cs"
+        },
+        {
+            "hash": "944055a68394ad589cebccedd5a234e50f749d24",
+            "message": "expose Options property on descriptors"
+        },
+        {
+            "hash": "bb3460d71b2f2cd75f10efe94d739e15561c2ccf",
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 310614231"
+        },
+        {
+            "hash": "12236c697702ea42877ba2941a606e552b0138b0",
+            "message": "Fix typo on py_proto_library"
+        },
+        {
+            "hash": "5efd1215f5e530e792f7d3cefe5bba5891cef225",
+            "message": "Update comment for GetRepeatedFieldRef\n\nUse just reflection.h in documentation instead of full path"
+        },
+        {
+            "hash": "b60d9f2d6bac4685661bb9faa83d56957125bdba",
+            "message": "Fix include path to reflection.h in documentation\n\nThere is a note in the documentation to `Reflection::GetRepeatedFieldRef()`\nabout file `net/proto2/public/reflection.h` which contains a definition of\n`RepeatedFieldRef`. Since there are few places in code with rewrite of\n`net...` path to `google/protobuf/...` it looks like the first one is a\nlegacy path and should be renamed to `google/protobuf` in documentation\nas well."
+        },
+        {
+            "hash": "6b0ff74ecf63e26c7315f6745de36aff66deb59d",
+            "message": "Implement HasPresence for C#\n\nFieldDescriptor.HasPresence returns true if both ClearValue and HasValue (on the accessor) can be expected to work. Some fields have a working ClearValue, but no HasValue; HasPresence returns false for those fields.\n\nGenerally:\n\n- Extension fields have presence if and only if they're singular\n- Repeated fields do not support presence\n- Map fields do not support presence\n- Message fields support presence\n- Oneof fields support presence (this includes synthetic oneof fields, so that covers proto3 optional singular fields)\n- Proto2 singular primitive fields support presence\n- Proto3 singular primitive fields do not support presence (unless they're in a oneof, covered above)"
+        },
+        {
+            "hash": "cac7136436a9bb9503627376414a0a808f8ed4f0",
+            "message": "Merge pull request #7477 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "c00c60eb1ccb3fa5bb7ed31701b4f1fd19c1003f",
+            "message": "Added new failures to PHP C lists also (and sorted)."
+        },
+        {
+            "hash": "dfff1ac2cff19de416190454290e18d5a55f3910",
+            "message": "Added new failing conformance test to Ruby, PHP, and C#."
+        },
+        {
+            "hash": "81c5959e6741842bd16801cc6c68729a7c17cce6",
+            "message": "Merge branch 'sync-piper' into sync-stage"
+        },
+        {
+            "hash": "c781df3d212c0d30a072ed98de00d1ba2fea22b9",
+            "message": "Updated generated code for C#. (#7476)"
+        },
+        {
+            "hash": "ed596ef68d577a707edb8e27901cf23789922890",
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 310497816"
+        },
+        {
+            "hash": "c8e682adcafb0f47b582afc0cded8ddadff60b86",
+            "message": "Added new failure to the failure lists."
+        },
+        {
+            "hash": "3f407ddedfd5e4c289056063c96a1b524155e20a",
+            "message": "Merge branch 'master' into sync-stage"
+        },
+        {
+            "hash": "f9a1f161635951b587298aca91dbd40f9a69f991",
+            "message": "Merge branch 'sync-piper' into sync-stage"
+        },
+        {
+            "hash": "79b1c3bac3581aaaafa90022fc576b5a3e469b4d",
+            "message": "Fixed JavaScript Kokoro tests by installing NodeJS. (#7504)\n\n* Fix JavaScript tests.\r\n\r\n* Added missing popd.\r\n\r\n* Added missing 'export' for $PATH.\r\n\r\n* Fixed path to include 'bin'."
+        },
+        {
+            "hash": "27ba0c5bb0e522d058fd44ff8d0bab3ed1e57520",
+            "message": "Fixed the PHP Kokoro build. (#7503)\n\n* Fixed the PHP Kokoro build.\r\n\r\n* Renamed all PHP7.4 Mac tests -> PHP7.3."
+        },
+        {
+            "hash": "30d5b7dbe4480cea6415d6a4b38e9426de820600",
+            "message": "Merge pull request #7561 from jtattermusch/csharp_project_cleanup\n\nC# project cleanup for dotnet SDK 3.1"
+        },
+        {
+            "hash": "040b2a6d078910d0ba6192097c84aad82abc6181",
+            "message": "C# project cleanup"
+        },
+        {
+            "hash": "28cc693f3d05bab5f779b6fc8d514868130e81c1",
+            "message": "Initial module docstring for python _pb2 (#7528)\n\nGenerated Python modules now have a module-level docstring."
+        },
+        {
+            "hash": "b9cf3866c5f742d7a08c99b55c701c917c9b0d70",
+            "message": "Tweak return types for GetSupportedFeatures to unit64_t."
+        }
+    ],
+    "issues": [
+        {
+            "number": "7555",
+            "title": "Incorrect source generation for GPBExtensionDescription"
+        },
+        {
+            "number": "7395",
+            "title": "Consider removing HasFoo/ClearFoo() for proto2 message fields in C#"
+        }
+    ]
+}

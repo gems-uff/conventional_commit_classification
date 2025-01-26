@@ -1,0 +1,474 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 72,
+    "start_delay": 0.0,
+    "duration": 32.085775462962964,
+    "commits_info": [
+        {
+            "hash": "8bc792fd00fd25da3d0bfa516391e432921cb8d5",
+            "message": "Release v2.5.9"
+        },
+        {
+            "hash": "6ae5bfb72854f235b14f80e157f6dae5968e62fb",
+            "message": "Upgrade to MariaDB 2.7.5\n\nCloses gh-29496"
+        },
+        {
+            "hash": "d211b0f3b3a98c58e947982cc253a91c981849e9",
+            "message": "Disable test is Docker is not available\n\nSee gh-28843"
+        },
+        {
+            "hash": "66428527e0902e505dadc6ac4550d601f21af3fa",
+            "message": "Minimize tasks run in ConventionsPluginTests\n\nUpdate `ConventionsPluginTests` so that dependency resolution is\nnot required. This provides a work-around for our currently failing\nWindows build.\n\nCloses gh-29490"
+        },
+        {
+            "hash": "1b3d088056f16ae34f8b4f5abb735a53b111e7e8",
+            "message": "Move JdbcSessionDataSourceInitializerTests into src/test/java\n\nCloses gh-29484"
+        },
+        {
+            "hash": "b60612dabb2d06f8bd56e7c1d8c65db363f75700",
+            "message": "Disable LoaderIntegrationTests when Docker's unavailable\n\nCloses gh-29385"
+        },
+        {
+            "hash": "9cb66d55d1486aeb87efae964ed8dce3c81d505d",
+            "message": "Refer to Maven Resolver rather than Aether\n\nCloses gh-29255"
+        },
+        {
+            "hash": "4eb458f7d888f8a66f8aa62e95011ab6254b2e86",
+            "message": "Prevent early resolution of factory beans\n\nThis commit updates DatabaseInitializationDependencyConfigurer so that\nit does not inject the Environment anymore. Doing so in such a low-level\ncallback can lead to early resolution of factory beans. Rather, this\ncommit uses the EnvironmentAware callback that short-circuit dependency\nresolution.\n\nCloses gh-29475"
+        },
+        {
+            "hash": "cdd479556f7345405a5995f2c5a0c70207258bf3",
+            "message": "Upgrade to Pooled JMS 1.2.3\n\nCloses gh-29466"
+        },
+        {
+            "hash": "849fb8e435ac495f577fab1f357ae4e4cab750a3",
+            "message": "Upgrade to Netty tcNative 2.0.47.Final\n\nCloses gh-29465"
+        },
+        {
+            "hash": "3a043603e8ebe04c58a8589b0d7fcbaddf94ec64",
+            "message": "Upgrade to MySQL 8.0.28\n\nCloses gh-29464"
+        },
+        {
+            "hash": "2782c3b077c98cc34f2a1055c36fae41b83af1a7",
+            "message": "Upgrade to Spring Integration 5.5.8\n\nCloses gh-29314"
+        },
+        {
+            "hash": "eca05c42fbef663c4709158ecb4762e0df61d1a3",
+            "message": "Further refine LoaderIntegrationTests for CI\n\nUpdate `LoaderIntegrationTests` to filter compatible JDKs early.\n\nSee gh-29385"
+        },
+        {
+            "hash": "de8f8c3e64df28e397ddeb035cd7c014a2ea5456",
+            "message": "Refine LoaderIntegrationTests for CI\n\nRefine `LoaderIntegrationTests` to fix failures when CI builds are\nrunning with later JDK versions.\n\nSee gh-29385"
+        },
+        {
+            "hash": "3d908079efd781c37574e59058c2ac29db0d3290",
+            "message": "Run LoaderIntegrationTests against multiple JDKs\n\nUpdate `LoaderIntegrationTests` to run against OpenJDK 8, 11 and 17 as\nwell as Oracle JDK 17.\n\nCloses gh-29385"
+        },
+        {
+            "hash": "3d46b06e8d274a92084bd0d75d9458fc5f93f7b0",
+            "message": "Fix config data placeholder resolution active document logic\n\nUpdate `ConfigDataEnvironmentContributor.isActive` so that unbound\nimports are no longer considered active. Prior to this commit, any\n`ConfigDataEnvironmentContributor` that had `null` properties was\nconsidered active. This is incorrect for `Kind.UNBOUND_IMPORT`\ncontributors since we haven't yet bound the `spring.config.*`\nproperties.\n\nThe `ConfigDataEnvironmentContributorPlaceholdersResolver` has been\nupdated to handle the refined logic. A placeholder can now be resolved\nfrom the current contributor, or from an unbound contributor by binding\nit on the fly.\n\nFixes gh-29386"
+        },
+        {
+            "hash": "1c6471ef60e7f3de7dc2ef66266895e67b382a47",
+            "message": "Register AprLifecycleListener with Server not Context\n\nFixes gh-28814"
+        },
+        {
+            "hash": "2394cbf6508dd64deba2d3ffed3dab0a7a46dc12",
+            "message": "Merge pull request #29444 from jprinet\n\n* gh-29444:\n  Upgrade to Gradle Enterprise Plugin 3.8.1\n\nCloses gh-29444"
+        },
+        {
+            "hash": "744d97748071a69d6fe9a25420d4f49c5db0efbe",
+            "message": "Upgrade to Gradle Enterprise Plugin 3.8.1\n\nSee gh-29444"
+        },
+        {
+            "hash": "75187349e80b33e68b0a241af2a141a0abd7989c",
+            "message": "Upgrade to Spring REST Docs 2.0.6.RELEASE\n\nCloses gh-29321"
+        },
+        {
+            "hash": "e545441f016dbd1e39229bd8c3d78548a0b386d2",
+            "message": "Upgrade to Spring Kafka 2.7.10\n\nCloses gh-29313"
+        },
+        {
+            "hash": "bccc9c18615566a451d995d34caf3061bfb40669",
+            "message": "Refine ConfigurationPropertySources attach logic\n\nRefine `ConfigurationPropertySources.attach` logic to endure that\nthe attached or reattached source is always first.\n\nSee gh-29409"
+        },
+        {
+            "hash": "79d9549805b27e999855c3300c80188f56784325",
+            "message": "Fix ConfigurationPropertySources attach logic\n\nFix `ConfigurationPropertySources.attach` so that repeated calls to the\nsame source no longer create a new instance.\n\nFixes gh-29409"
+        },
+        {
+            "hash": "3f7bf7d34f85dc67b71dc8626612a89fedac0174",
+            "message": "Modify SpringApplication Environment rather than setting it\n\nUpdate `SpringBootContextLoader` so that when possible the\n`SpringApplication` remains in control of creating the `Environment`\ninstance.\n\nPrior to this commit, we would always create the `Environment` in the\n`SpringBootContextLoader` and then call `setEnvironment` on the\n`SpringApplication`. This meant that the `ApplicationEnvironment`\nclasses were not used and that `isCustomEnvironment` was set to `true`\nso no conversion was applied.\n\nWith the updated code, an `ApplicationListener` is used to mutate the\n`Environment` instance and add the required test property sources.\n\nFixes gh-29169"
+        },
+        {
+            "hash": "e8cbec08368fb516aea8e9d6c14f3592de1073cd",
+            "message": "Clarify documentation of RestTemplate customization\n\nCloses gh-29394"
+        },
+        {
+            "hash": "d051146eb4451f999143733532176b7b7039acba",
+            "message": "Use Testcontainers instead on Embedded Mongo\n\nWe've seen some problems, particularly on CI, where Embedded Mongo\nhangs while trying to start the Mongo process. To limit the problem,\nthis commit replaces the use of Embedded Mongo with Testcontainers\nwhere we can, leaving Embedded Mongo in use only where we're\nspecifically testing our Embedded Mongo support.\n\nCloses gh-28843"
+        },
+        {
+            "hash": "5883b22e011c5fdde25fdc6ad11cfb06642eb9c9",
+            "message": "Upgrade to SLF4J 1.7.33\n\nCloses gh-29392"
+        },
+        {
+            "hash": "1e22504d219ba01ea5eed5b631b5ba183ec16579",
+            "message": "Upgrade to R2DBC Bom Arabba-SR12\n\nCloses gh-29391"
+        },
+        {
+            "hash": "251f4e8a3fdd72456bea453f05bc09e1d2ec55f0",
+            "message": "Upgrade to Spring AMQP 2.3.14\n\nCloses gh-29312"
+        },
+        {
+            "hash": "777361421c206fb793bcb7fdbad72bd35f0cb854",
+            "message": "Upgrade to Spring Data 2021.0.8\n\nCloses gh-29311"
+        },
+        {
+            "hash": "37a44f45a00334b2ae69324f516dd3a068e1c801",
+            "message": "Upgrade to Spring HATEOAS 1.3.7\n\nCloses gh-29352"
+        },
+        {
+            "hash": "aa0a7888008b53f0d015d7cc06f195c46b0a0f2a",
+            "message": "Upgrade to Micrometer 1.7.8\n\nCloses gh-29310"
+        },
+        {
+            "hash": "542810692587f85f2cd26fb566c2957376dd2b41",
+            "message": "Upgrade to Spring Framework 5.3.15\n\nCloses gh-29326"
+        },
+        {
+            "hash": "a96434467adfdc85d816c394ec9577b7a0a8d0fd",
+            "message": "Upgrade CI to Docker 20.10.12\n\nCloses gh-29362"
+        },
+        {
+            "hash": "6695f6604549488c04752a54134fa7128d9f116e",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-29363"
+        },
+        {
+            "hash": "a6db1b71cffb03bf6a8dbf11a059ce6bd46c5154",
+            "message": "Merge pull request #29112 from izeye\n\n* pr/29112:\n  Update copyright year of changed file\n  Polish SpringBootContextLoaderTests\n\nCloses gh-29112"
+        },
+        {
+            "hash": "5f03ace40f6e02689b82bea885ea43588dd7fa29",
+            "message": "Update copyright year of changed file\n\nSee gh-29112"
+        },
+        {
+            "hash": "74c522c74527ab79cc9093766ddc8a27d36a3607",
+            "message": "Polish SpringBootContextLoaderTests\n\nSee gh-29112"
+        },
+        {
+            "hash": "27ad0804f5b7bec15c864345f5f507bd6d498847",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "eb6b48fff03e5bce063a88a10ad4ec2b8c9510a9",
+            "message": "Use side-effect free environment with tests rather than converting\n\nRefine the logic introduced in 64270eca to use a side-effect free\nEnvironment implementation rather than converting the Environment early.\n\nEarly conversion can cause condition evaluation issues if\n`src/test/resources/application.properties` files are bound to the\n`SpringApplication`. Specifically the `spring.main.web-application-type`\nproperty can change the `Environment` type which must happen before\nconditions are evaluated.\n\nFixes gh-29169"
+        },
+        {
+            "hash": "9cf55808fb17daa9277424ecb5305c2b1516c07e",
+            "message": "Ensure run user actually exists\n\nUpdate `launch.script` so that the `run_user` variable is only set when\nthe user actually exists. Prior to this commit, if the jar file was\nowned by a non-existing user the startup script could fail.\n\nFixes gh-29370"
+        },
+        {
+            "hash": "7c16668bf31a5d7fccfa111a3c4b942007a54638",
+            "message": "Log Docker output to aid debugging\n\nAdd an SLF4J logger so that we can see real time output of the\nDocker container.\n\nSee gh-29370"
+        },
+        {
+            "hash": "827309f36f9475d01f5d4e8f37b44718e99d3a59",
+            "message": "Upgrade to Testcontainers 1.16.2\n\nCloses gh-29366"
+        },
+        {
+            "hash": "ca39780ff3baa83b73690b254a827a940469a583",
+            "message": "Upgrade to Netty 4.1.73.Final\n\nCloses gh-29341"
+        },
+        {
+            "hash": "cb1db78c37bd9b007d9897bf85c73f764d5c0159",
+            "message": "Upgrade to Maven Jar Plugin 3.2.2\n\nCloses gh-29340"
+        },
+        {
+            "hash": "db9097b0d6e082c8f6e3f1c07178a35bc74cb605",
+            "message": "Upgrade to Logback 1.2.10\n\nCloses gh-29339"
+        },
+        {
+            "hash": "d23a665bdcf819b07a2ecaa833b3e477ff45c4cf",
+            "message": "Upgrade to Lettuce 6.1.6.RELEASE\n\nCloses gh-29338"
+        },
+        {
+            "hash": "36811f9e1eb3983a538b513789f70a9144c66f17",
+            "message": "Upgrade to JBoss Logging 3.4.3.Final\n\nCloses gh-29337"
+        },
+        {
+            "hash": "7125bd377973984a782dc613463130ed88f2ca9f",
+            "message": "Upgrade to Jaybird 4.0.5.java8\n\nCloses gh-29336"
+        },
+        {
+            "hash": "404fb521ece67916ea609721c1eb8e1956af4672",
+            "message": "Upgrade to Infinispan 12.1.11.Final\n\nCloses gh-29335"
+        },
+        {
+            "hash": "33da06cff04e22d1dea05464cfe4e7f2cf319516",
+            "message": "Upgrade to HttpCore5 5.1.3\n\nCloses gh-29334"
+        },
+        {
+            "hash": "ba3842b7a6ac3e19501fcde0e949e99bb0da19ab",
+            "message": "Upgrade to Gradle Enterprise plugin 3.8\n\nCloses gh-29254"
+        },
+        {
+            "hash": "63e2ccd4896ae42521829ae24de5bb737e9e5363",
+            "message": "Upgrade to Gradle Enterprise Conventions 0.0.9\n\nCloses gh-29325"
+        },
+        {
+            "hash": "b5407e6e8e2789db4964811bc9b99c228b524f78",
+            "message": "Start building against Spring Framework 5.3.15 snapshots\n\nSee gh-29326"
+        },
+        {
+            "hash": "27eaaa94423fdf984b45153f289c3a54657edf59",
+            "message": "Start building against Spring REST Docs 2.0.6 snapshots\n\nSee gh-29321"
+        },
+        {
+            "hash": "c2925f8e842a251ced5603219e569131842644d0",
+            "message": "Start building against Spring Integration 5.5.8 snapshots\n\nSee gh-29314"
+        },
+        {
+            "hash": "116427c78e48995f39e3a4b01e7f88e01243ea34",
+            "message": "Start building against Spring Kafka 2.7.10 snapshots\n\nSee gh-29313"
+        },
+        {
+            "hash": "53fcf0971e89b21ce54d6b567fd29d343344e232",
+            "message": "Start building against Spring AMQP 2.3.14 snapshots\n\nSee gh-29312"
+        },
+        {
+            "hash": "72e72bda672c2f9a5e00c041ead7152288eb5ed7",
+            "message": "Start building against Micrometer 1.7.8 snapshots\n\nSee gh-29310"
+        },
+        {
+            "hash": "79fd0ad30a82b0db657b14a3897c6c02fee1233a",
+            "message": "Upgrade to Reactor 2020.0.15\n\nCloses gh-29309"
+        },
+        {
+            "hash": "41b01cc2899bb186984cecd737d938e952968902",
+            "message": "Only write parent entries when entry is new\n\nPreviously, when writing a repackaged jar, an attempt to write all of\nan entry's parent directories would always be made, irrespective of\nwhether or not the entry itself had already been written. This was\ninefficient as, due to the way that the jar is written, once an entry\nitself has been written, we know that all of its parent directories\nwill also have been written.\n\nThis commit updates the jar writer so that no attempt is made to\nwrite parent directory entries if the entry itself has already been\nwritten.\n\nFixes gh-29175"
+        },
+        {
+            "hash": "9a6f35cd8ef96635bcd7d7205476c2890a12a139",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "0fcdab39369e3f4308b0408ebd78fb8633bd6b2f",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "ba121afd87eb0e7dc96141502f7d47a37adf18e4",
+            "message": "Upgrade to Gradle 6.9.2\n\nCloses gh-29258"
+        },
+        {
+            "hash": "04ce0e65cdef27cac599a5850c1feaf68974f3a5",
+            "message": "Polish assertion"
+        },
+        {
+            "hash": "a0537888f5e2b80c19164a83c0f920f26e167e49",
+            "message": "Upgrade build to Log4j 2.17.1"
+        },
+        {
+            "hash": "e67daa5204bbf6081bf7b7d5f246cd4fd6caed3a",
+            "message": "Merge pull request #29195 from dreis2211\n\n* pr/29195:\n  Update copyrights to 2022\n\nCloses gh-29195"
+        },
+        {
+            "hash": "7a87d18b12a2bec8ded43d6532b194d09916bf46",
+            "message": "Update copyrights to 2022\n\nSee gh-29195"
+        },
+        {
+            "hash": "4b6aa81687c0206f7965b0c1e3e50347955d9098",
+            "message": "Upgrade to Log4j2 2.17.1\n\nCloses gh-29183"
+        },
+        {
+            "hash": "ff40f9f5399fe6265999e270bdeb2b8f90af0c59",
+            "message": "Merge pull request #29161 from izeye\n\n* pr/29161:\n  Test our Gradle plugin against Gradle 7.3.3\n\nCloses gh-29161"
+        },
+        {
+            "hash": "9a6c1c531d77a32f1d2cdbf668f0d3d4c781b915",
+            "message": "Test our Gradle plugin against Gradle 7.3.3\n\nSee gh-29161"
+        },
+        {
+            "hash": "d228721679e3ed7508e7cac851cb00fd332991f7",
+            "message": "Next development version (v2.5.9-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "29496",
+            "title": "Upgrade to MariaDB 2.7.5"
+        },
+        {
+            "number": "28843",
+            "title": "Minimize use of Embedded Mongo in our tests"
+        },
+        {
+            "number": "29490",
+            "title": "ConventionsPluginTests resolution fails on Windows"
+        },
+        {
+            "number": "29484",
+            "title": "Move JdbcSessionDataSourceInitializerTests into src/test/java"
+        },
+        {
+            "number": "29385",
+            "title": "Run LoaderIntegrationTests against multiple JDKs"
+        },
+        {
+            "number": "29255",
+            "title": "Refer to Maven Resolver rather than Aether"
+        },
+        {
+            "number": "29475",
+            "title": "DatabaseInitializationDependencyConfigurer should not inject the Environment"
+        },
+        {
+            "number": "29466",
+            "title": "Upgrade to Pooled JMS 1.2.3"
+        },
+        {
+            "number": "29465",
+            "title": "Upgrade to Netty tcNative 2.0.47.Final"
+        },
+        {
+            "number": "29464",
+            "title": "Upgrade to MySQL 8.0.28"
+        },
+        {
+            "number": "29314",
+            "title": "Upgrade to Spring Integration 5.5.8"
+        },
+        {
+            "number": "29386",
+            "title": "'spring.config.import' placeholders can resolve from profile-specific documents when they should fail"
+        },
+        {
+            "number": "28814",
+            "title": "Warning from AprLifecycleListener when using Tomcat Native and Tomcat 9.0.55 or later"
+        },
+        {
+            "number": "29321",
+            "title": "Upgrade to Spring REST Docs 2.0.6.RELEASE"
+        },
+        {
+            "number": "29313",
+            "title": "Upgrade to Spring Kafka 2.7.10"
+        },
+        {
+            "number": "29409",
+            "title": "ConfigurationPropertySources.attach will always reattach when called multiple times"
+        },
+        {
+            "number": "29169",
+            "title": "@SpringBootTest does not use spring.main.web-application-type properties declared in test resource files"
+        },
+        {
+            "number": "29394",
+            "title": "Clarify documentation for RestTemplate customization"
+        },
+        {
+            "number": "29392",
+            "title": "Upgrade to SLF4J 1.7.33"
+        },
+        {
+            "number": "29391",
+            "title": "Upgrade to R2DBC Bom Arabba-SR12"
+        },
+        {
+            "number": "29312",
+            "title": "Upgrade to Spring AMQP 2.3.14"
+        },
+        {
+            "number": "29311",
+            "title": "Upgrade to Spring Data 2021.0.8"
+        },
+        {
+            "number": "29352",
+            "title": "Upgrade to Spring HATEOAS 1.3.7"
+        },
+        {
+            "number": "29310",
+            "title": "Upgrade to Micrometer 1.7.8"
+        },
+        {
+            "number": "29326",
+            "title": "Upgrade to Spring Framework 5.3.15"
+        },
+        {
+            "number": "29362",
+            "title": "Upgrade CI to Docker 20.10.12"
+        },
+        {
+            "number": "29363",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "29370",
+            "title": "Embedded launch script fails if jar is owned by an unknown user"
+        },
+        {
+            "number": "29366",
+            "title": " Upgrade to Testcontainers 1.16.2"
+        },
+        {
+            "number": "29341",
+            "title": "Upgrade to Netty 4.1.73.Final"
+        },
+        {
+            "number": "29340",
+            "title": "Upgrade to Maven Jar Plugin 3.2.2"
+        },
+        {
+            "number": "29339",
+            "title": "Upgrade to Logback 1.2.10"
+        },
+        {
+            "number": "29338",
+            "title": "Upgrade to Lettuce 6.1.6.RELEASE"
+        },
+        {
+            "number": "29337",
+            "title": "Upgrade to JBoss Logging 3.4.3.Final"
+        },
+        {
+            "number": "29336",
+            "title": "Upgrade to Jaybird 4.0.5.java8"
+        },
+        {
+            "number": "29335",
+            "title": "Upgrade to Infinispan 12.1.11.Final"
+        },
+        {
+            "number": "29334",
+            "title": "Upgrade to HttpCore5 5.1.3"
+        },
+        {
+            "number": "29254",
+            "title": "Upgrade to Gradle Enterprise Gradle plugin 3.8"
+        },
+        {
+            "number": "29325",
+            "title": "Upgrade to Gradle Enterprise Conventions 0.0.9"
+        },
+        {
+            "number": "29309",
+            "title": "Upgrade to Reactor 2020.0.15"
+        },
+        {
+            "number": "29175",
+            "title": "Maven repackaging of a jar with a deeply nested package is prohibitively slow"
+        },
+        {
+            "number": "29258",
+            "title": "Upgrade to Gradle 6.9.2"
+        },
+        {
+            "number": "29183",
+            "title": "Upgrade to Log4j2 2.17.1"
+        }
+    ]
+}

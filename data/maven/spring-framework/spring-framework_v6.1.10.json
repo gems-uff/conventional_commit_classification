@@ -1,0 +1,134 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 19,
+    "start_delay": 0.0,
+    "duration": 6.209745370370371,
+    "commits_info": [
+        {
+            "hash": "5356a1b1ac983c1e121d809fb54c3cb43f640f9b",
+            "message": "Release v6.1.10"
+        },
+        {
+            "hash": "f7307c9e077d3cdc2228c1ace456b0014ab83278",
+            "message": "Avoid recording RestClient observations twice\n\nPrior to this commit, the fix for gh-32575 introduced cases where the\nclient observation would be stopped twice.\n\nThis commit ensures that `RestClient` observations are stopped only once\nwhen the response is closed, or before throwing an unhanlded exception.\n\nFixes gh-33068"
+        },
+        {
+            "hash": "098c4b1dd73d6cfca4332de51235240aeeb56bf7",
+            "message": "Use Sonatype S01 token in release pipeline"
+        },
+        {
+            "hash": "65dbfd09b4f298a44dd49a45e8027507e03069b0",
+            "message": "Defensive PersistenceExceptionTranslator bean retrieval on shutdown\n\nCloses gh-33067"
+        },
+        {
+            "hash": "203fa7519692a3d12a4eca73765ba6592b164fd3",
+            "message": "Support all \"connection reset\" phrases in DisconnectedClientHelper\n\nPrior to this commit, the isClientDisconnectedException() method in\nDisconnectedClientHelper checked whether the message of the ultimate\nexception in an exception chain contained one of the phrases \"broken\npipe\" or \"connection reset by peer\". However, that failed to match if\nthe exception message contained \"Connection reset\", which is the case\nfor the SocketException thrown by throwConnectionReset() in\nsun.nio.ch.SocketChannelImpl.\n\nThis commit therefore replaces the \"connection reset by peer\" phrase\nwith \"connection reset\" in order to support all exception messages\ncontaining \"connection reset\".\n\nCloses gh-33064"
+        },
+        {
+            "hash": "9a56a8877f5de1bce2da78ea7c6a4297970e8519",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e79a9a5bff15323545e21b812f7cea8585f8eddd",
+            "message": "Correct and consistent event class names in constructor javadoc\n\nCloses gh-33032"
+        },
+        {
+            "hash": "2c3c3831c179df3bf22edc6bcf6323631a32156e",
+            "message": "Consistently ignore bridge method on generated subclass for visibility purposes\n\nCloses gh-33030"
+        },
+        {
+            "hash": "c38e9896c7d51b35d5ff80ab498475b6190c77be",
+            "message": "Remove use of ServletException in ModelFactory\n\nThis commit changes the use of HttpSessionRequiredException in\nModelFactory::initModel to an IllegalStateException, because the former\nextends ServletException and cannot be used in WebFlux.\n\nCloses gh-33043"
+        },
+        {
+            "hash": "3e0849a566aa21636d2b9471968c381442fce591",
+            "message": "Fix typo\n\nCloses gh-33050"
+        },
+        {
+            "hash": "f3a605b92c2db486ca54ce5dcf4e6eb4870a025f",
+            "message": "Update Antora Spring UI to v0.4.16"
+        },
+        {
+            "hash": "6fdff201e9fe84254e60342af0c2270e0203fea9",
+            "message": "Fix property name in Container Extension Points section\n\nCloses gh-33037"
+        },
+        {
+            "hash": "c42778a05bbd3a2013613f989f0ed025e6b8f490",
+            "message": "Merge pull request #33036 from tafjwr\n\n* pr/33036:\n  Polish \"Fix typo in comment\"\n  Fix typo in comment\n\nCloses gh-33036"
+        },
+        {
+            "hash": "f140df881d267020a6143c4b18488b3df593e9fd",
+            "message": "Polish \"Fix typo in comment\"\n\nSee gh-33036"
+        },
+        {
+            "hash": "12cf654c981bc63b3454387291693a5741703aaa",
+            "message": "Fix typo in comment\n\nSee gh-33036"
+        },
+        {
+            "hash": "089e4e69f1adbbe45d3a17807e7268a57e9a5ddf",
+            "message": "Do not attempt to load pre-enhanced class for reloadable classes\n\nCloses gh-33024"
+        },
+        {
+            "hash": "77755ff2faab926d0a28da3a33be19d436f11b29",
+            "message": "Remove repo-specific code of conduct\n\nThis will allow us to inherit the org's CoC instead.\n\nCloses gh-33031"
+        },
+        {
+            "hash": "d0aa7ad524a41812bf1d2c64f013def553a1b32b",
+            "message": "Fix invalid character in Javadoc of BeanFactory"
+        },
+        {
+            "hash": "072fc80cdbf87a3ee76cacdb15825fc43786b830",
+            "message": "Next development version (v6.1.10-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32575",
+            "title": "RestClient observations are stopped before ResponseSpec calls"
+        },
+        {
+            "number": "33068",
+            "title": "Duplicate observations recorded with RestClient"
+        },
+        {
+            "number": "33067",
+            "title": "Defensive `PersistenceExceptionTranslator` bean retrieval in `PersistenceExceptionTranslationInterceptor` on shutdown"
+        },
+        {
+            "number": "33064",
+            "title": "Support all \"connection reset\" exception phrases in `DisconnectedClientHelper`"
+        },
+        {
+            "number": "33032",
+            "title": "Incorrect constructor details in the javadoc for ApplicationContextEvent"
+        },
+        {
+            "number": "33030",
+            "title": "No qualifying bean of type 'java.lang.String' in case of accidental `@Autowired` `@Bean` method with `@Value` parameter"
+        },
+        {
+            "number": "33043",
+            "title": "WebFlux validation requires Servlet API since Spring Framework 6.1.3"
+        },
+        {
+            "number": "33050",
+            "title": "Typo in Annotation-driven Listener Endpoints section of Spring Framework documentation"
+        },
+        {
+            "number": "33037",
+            "title": "Container Extension Points section of Spring Framework documentation refers to the wrong property name"
+        },
+        {
+            "number": "33024",
+            "title": "ConfigurationClassEnhancer does not use correct ClassLoader when called multiple times"
+        },
+        {
+            "number": "33031",
+            "title": "Use organization level CODE_OF_CONDUCT"
+        }
+    ]
+}

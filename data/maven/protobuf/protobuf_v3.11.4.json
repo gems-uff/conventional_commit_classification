@@ -1,0 +1,61 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.11.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 4.060428240740741,
+    "commits_info": [
+        {
+            "hash": "d0bfd5221182da1a7cc280f3337b5e41a89539cf",
+            "message": "Skip building distribution tar files for 32 bit Mac (#7214)"
+        },
+        {
+            "hash": "e9e4c687d6fdc79c3831c4b432166c67d27c7247",
+            "message": "Update CHANGES.txt to include the description of #7210 (#7212)"
+        },
+        {
+            "hash": "0e8f69e53235260f75151d145d75e01c2ad65799",
+            "message": "enforce recursion depth checking for unknown fields (#7210)"
+        },
+        {
+            "hash": "d3141015311268a2248a2443dcf7fd9b83f80464",
+            "message": "Remove protoc release for 32-bit Macs (#7209)\n\n* Remove protoc release for 32-bit Macs \r\n\r\nApple has been removing the support for 32-bit Mac apps: https://support.apple.com/en-us/HT208436\r\n\r\nOur release infrastructure no longer supports building for 32-bit architecture.\r\n\r\n* Remove protoc artifact for MacOS 32-bit"
+        },
+        {
+            "hash": "7393bf12fa74b7f4d1d9cc68bf89c6bdaa9aca30",
+            "message": "Update CHANGES.txt for 3.11.4 release (#7205)"
+        },
+        {
+            "hash": "3c020b90a772b1177ca80e24daaeba93c3eae903",
+            "message": "Update CHANGES.txt for 3.11.4 release"
+        },
+        {
+            "hash": "37fc4327eff474ebd1d5d492f872858ed1dd2f72",
+            "message": "Fix for wrappers with a zero value (#7195) (#7201)\n\n* Add failing tests for issues with wrapped values where the value is the default\r\n\r\n* Add test for wrapped values without a value set\r\n\r\n* Bugfix for wrapper types with default values.\r\n\r\nThe previous optimizations for wrapper types had a bug that prevented\r\nwrappers from registering as \"present\" if the \"value\" field was not\r\npresent on the wire.\r\n\r\nIn practice the \"value\" field will not be serialized when it is zero,\r\naccording to proto3 semantics, but due to the optimization this\r\nprevented it from creating a new object to represent the presence of the\r\nfield.\r\n\r\nThe fix is to ensure that if the wrapper message is present on the wire,\r\nwe always initialize its value to zero.\r\n\r\nCo-authored-by: Joshua Haberman <jhaberman@gmail.com>\r\nCo-authored-by: Dan Quan <dan@quan.io>"
+        },
+        {
+            "hash": "1440569231ba95796803fef914cbaf752c027df5",
+            "message": "Update the Xcode version number in Kokoro (#7202) (#7203)\n\nCurrently all of our MacOS tests are failing with the error: \"autom4te: need GNU m4 1.4 or later: /usr/bin/m4\". This is likely to be happening because Kokoro has updated their Xcode version to 11.3."
+        },
+        {
+            "hash": "537c5aa9e043865073d4e97c0d5c56f07edd5f40",
+            "message": "Aggregate Metadata Files (#7155) (#7194)\n\nInstead of calling initOnce of dependencies, initialize metadata of dependencies in the same file.\r\n\r\nNeeds to pass aggregate_metadata option to protoc to trigger, e.g.:\r\n--php_out=aggregate_metadata=foo#bar:generated_dir\r\nFor each input file, transitive dependencies (including itself), whose package name has the prefix of foo or bar, will be aggregated, in which their metadata string will be aggregated in the same internalAddGeneratedFile call. For other dependencies, initOnce is called as before.\r\n\r\nThis feature is EXPERIMENTAL. DO NOT USE!!!"
+        },
+        {
+            "hash": "fedb2beee3f959d2a80bfda0a76b2613efb8fc1c",
+            "message": "Merge pull request #6938 from ObsidianMinor/csharp/fix/6936 (#7188)\n\nFix latest ArgumentException for C# extensions\r\n\r\nCo-authored-by: Jan Tattermusch <jtattermusch@users.noreply.github.com>"
+        },
+        {
+            "hash": "c74057267d64d0b5b8a48feeab2d5b015590aca0",
+            "message": "Update protobuf version (#7206)"
+        },
+        {
+            "hash": "906e9c689751b94f1c89da047f8f093cb7b993d2",
+            "message": "Fix for JSON serialization of 0/empty-valued wrapper types (#7198) (#7204)\n\n* Fixed Ruby JSON serialization of 0/empty wrapper fields.\r\n\r\n* Removed newly-passing conformance tests from the failure list.\r\n\r\nCo-authored-by: Joshua Haberman <jhaberman@gmail.com>"
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,466 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.20",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 98,
+    "start_delay": 0.0,
+    "duration": 203.6120949074074,
+    "commits_info": [
+        {
+            "hash": "dda76a724b26f1a48ab16dab25cc2dcec477b6ed",
+            "message": "[versioning] pre-release version bump"
+        },
+        {
+            "hash": "0fb3a680ac0334eb231b47ba1b4bac94a8a34ed1",
+            "message": "[build] fix the website maker's all-versions tool"
+        },
+        {
+            "hash": "ff8af6164dfffa0827d12a342da35fc89d37c504",
+            "message": "Fixes #2803 Manual merge, hide generated code from some Eclipse refactorings"
+        },
+        {
+            "hash": "72d9bfc412f1d6f661ce3798cd97ea8821cf25a2",
+            "message": "[docker] upgrade gradle (no jdk16 support yet)"
+        },
+        {
+            "hash": "baabbd27ee2de57a586fac420fb06308f6e749a9",
+            "message": "[docker] update maven"
+        },
+        {
+            "hash": "a9adc23f1b7c276b1d352a6f5ea0f780cbbddb47",
+            "message": "[docker] upgrade ant"
+        },
+        {
+            "hash": "4637b9daf00e66f1f697613b4bb4d889951c298d",
+            "message": "[record] Print compact constructor after class name"
+        },
+        {
+            "hash": "462aedcfc3a6948d2f09659961122b8eb2e35fc7",
+            "message": "[fixes #2787] Handle right hand side of assignment first"
+        },
+        {
+            "hash": "9b3e84717d301d7a6829420f5849cf1465e73131",
+            "message": "Merge pull request #2793 from Rawi01/license\n\nAdd licenses of embedded dependencies"
+        },
+        {
+            "hash": "dc2b3c8f8d52b1885058203791e621a77e9e6c20",
+            "message": "Add licenses of embedded dependencies"
+        },
+        {
+            "hash": "30a2921e6321d20f0f925694dfd6a32d9e1f1552",
+            "message": "Merge pull request #2687 from janrieke/superBuilderConfigBuilderClassName\n\nSuperBuilder: consider lombok.builder.className for builder extends clause"
+        },
+        {
+            "hash": "a6257f27f0831ed2c9971285a3bb29f73fabbb02",
+            "message": "rename method; use null instead of empty string [eclipse]"
+        },
+        {
+            "hash": "4ba962aae0de64c4063cb5313ed15fe25928e9ca",
+            "message": "rename method; use null instead of empty string"
+        },
+        {
+            "hash": "714be613cb29bb682d99d75abb97efc944042c50",
+            "message": "[fixes #2647] consider lombok.builder.className for builder extends"
+        },
+        {
+            "hash": "52a31bc4ae2806907194d32567a820c670670357",
+            "message": "[records] [`@NonNull`] eclipse impl onfthe `@NonNull` on record components feature.\n\nAll tests passing."
+        },
+        {
+            "hash": "3d7754e269ec84604d43be97a684bb26b519c6b9",
+            "message": "[testing] wahey, ecj testing works again, and now we can test JDK16 features in it!"
+        },
+        {
+            "hash": "cc98adac012d0d18c70628eb5e6f1646ce574e8a",
+            "message": "[records] [javac] Putting `@NonNull` on a 'field' of a record now affects the compact constructors, generating one if need be."
+        },
+        {
+            "hash": "2eabd8485df6fb01e05cf7bcf797d922b9d4e012",
+            "message": "[delombok] [prettyprinter] add support for the compact record constructor"
+        },
+        {
+            "hash": "5e2a90836d0c332b75af15b8f42403cf799ec355",
+            "message": "[javac] defer removal of `import lombok.x;` nodes until delombok\n\nOur test harness setup for JDK15 and up doesn't work with annotations on record 'fields' (`record X(@RightHere String foo)`)."
+        },
+        {
+            "hash": "3400f66fa70da6664e91d98cc63d8ea959979606",
+            "message": "[deps] pushing ASM to 9.1, and ASM opcode compat levels to ASM9, as we need the support for records"
+        },
+        {
+            "hash": "bcd05a01b14705678dfd280989fa5071b627a234",
+            "message": "Merge branch 'records'\n\n# Conflicts:\n#\tsrc/core/lombok/eclipse/handlers/EclipseHandlerUtil.java\n#\tsrc/core/lombok/eclipse/handlers/HandleBuilder.java\n#\tsrc/core/lombok/eclipse/handlers/HandleData.java\n#\tsrc/core/lombok/eclipse/handlers/HandleNonNull.java\n#\tsrc/core/lombok/eclipse/handlers/HandleSuperBuilder.java\n#\tsrc/core/lombok/javac/handlers/HandleBuilder.java\n#\tsrc/core/lombok/javac/handlers/HandleNonNull.java\n#\tsrc/core/lombok/javac/handlers/HandleSuperBuilder.java\n#\ttest/core/src/lombok/RunTestsViaEcj.java"
+        },
+        {
+            "hash": "fa0b5249cf5fee28d9be13ecdf0225f651f686aa",
+            "message": "Support With(By) on records and record components\n\nThis also replaces the javac/eclipse specific code for searching the\nparent fields of an annotation by a search based on the lombok AST."
+        },
+        {
+            "hash": "0064c534273d9fb877f7e570f7a430060c88a5fb",
+            "message": "Add record support"
+        },
+        {
+            "hash": "ade900b82b8205bb439ac9d6d99dff0c3af6e10f",
+            "message": "[testing] fixed an error (I probably introduced this in the typofix earlier) in a test file."
+        },
+        {
+            "hash": "8e23c10a999e08c37b83cdd51dac5f224a1394cd",
+            "message": "Merge pull request #2725 from md-5/master\n\n[fixes #2724] Increase priority of Builder annotation removal"
+        },
+        {
+            "hash": "70951d4dd7eb82500bb8de98749ae136d9a38d78",
+            "message": "[fixes #2724] Increase priority of Builder annotation removal\n\nOtherwise they may run after `HandleDelegate`. This is problematic as\n`HandleDelegate` parses the compulation unit and `@Builder` may contain imports\n(eg `AccessLevel`) that were already removed by other processors, eg `@Getter`."
+        },
+        {
+            "hash": "c6076730de3b7b587ca0e1d6e31f5e7bd6ab6761",
+            "message": "[ecj] [bug-workarounds]\n\nThe last comment in a line is lost if the array handed to the scanner is exactly sized to the input to process."
+        },
+        {
+            "hash": "fccf57a2a531ae0fe9e7c0d1a1da54b8357131f5",
+            "message": "fix test stub dependencies for ecj"
+        },
+        {
+            "hash": "d28027310fb15533c53a82d14b7e0a67a4d5e4e3",
+            "message": "[changelog]"
+        },
+        {
+            "hash": "334167bd22cc21c59bd6f4a49dec7057a615206b",
+            "message": "[jdk16] Suddenly, Stream has a default method toList :-)"
+        },
+        {
+            "hash": "251b7541b7cd446286ce9ea4dac00f59440a62ca",
+            "message": "[build] broke the distribution."
+        },
+        {
+            "hash": "88f8cdb3a2d147f90c5a64e5cac27ec006dbf614",
+            "message": "[build] remove some errors in eclipse.\n\nThe ant task we use for streaming test reporting in the ant script needs deps we don't wanna include in eclipse, so I moved it to a src dir that we don't include in eclipse by default."
+        },
+        {
+            "hash": "937a4dfca209d30e567a4c4fcbc9fe868221680a",
+            "message": "[jdk16] fix delombok (and the test suite, which depends on it) for jdk16."
+        },
+        {
+            "hash": "5241235b99286243d02463adc7f8b0fd3d9ab5b4",
+            "message": "[testing] add a test.javac16"
+        },
+        {
+            "hash": "e69d0b143e9ebc909cc607402c1e93fd1bcd60f3",
+            "message": "[testing] fix vm-finder on macs."
+        },
+        {
+            "hash": "9498849d692040b8a57bc9f3332fa46f4b4c3665",
+            "message": "[testing] Fixing running older tests.\n\nthe new formatter is nice, but needed to be compile with 1.6, otherwise running junit on older VMs doesn't work."
+        },
+        {
+            "hash": "9b211af8be36c67212999063134bc9dfc266f7b9",
+            "message": "[jdk16] JCBindingPattern now has a field names var instead of separate fields"
+        },
+        {
+            "hash": "2ed5077cae63cb193b4c7d1f8aa1ad3e9e6c2652",
+            "message": "[jdk16] TypeSymbol.isLocal has been renamed"
+        },
+        {
+            "hash": "420d09f99de34fc1303656aafc498bb1188b52ed",
+            "message": "[testing] restore the printing of the actual/expected when tests fail."
+        },
+        {
+            "hash": "ccd6a4e8951826e51802ef5b2ebe3d23d2febe29",
+            "message": "[testing] made the test script a bit more consistent"
+        },
+        {
+            "hash": "dcb7efcc0e3da57d2a6e0b8ab6f30bc5f027ee11",
+            "message": "[testing] improve the output of `ant test`."
+        },
+        {
+            "hash": "0c6a243c8ec7ef7a1a432b17cd865a1f54a3b827",
+            "message": "[build] quality-of-life improvements for lombok dev on windows\n\nOn windows, Eclipse keeps annotation processors open, which means putting spiProcessor in 'build' is annoying, as you can't delete open files on windows. Fixed by moving it to dist"
+        },
+        {
+            "hash": "27f3917d892fcb507e3f5c5b7ecfbeb147c43c90",
+            "message": "[testing] now that we've patched lombok to work in j16, no need for the --add-opens lines anymore."
+        },
+        {
+            "hash": "6723525c4a1ba368b6f7c6a58ddd6b15fc77c3aa",
+            "message": "[testing] unbroke 'ant test.javac8'."
+        },
+        {
+            "hash": "cbf930a9b8245aab402f68e1b0acbb948cd78d8f",
+            "message": "[jdk16] forget optimization..."
+        },
+        {
+            "hash": "a5b7439516cdea9bce49f3403b637fb0b08f84a9",
+            "message": "[jdk16] delombok"
+        },
+        {
+            "hash": "76144935e2e74c98534a47a66d472de61fe1fef2",
+            "message": "[jdk16] docker\n\n[jdk16] delombok"
+        },
+        {
+            "hash": "e18ae4328e8e22e364dc8c38f75e80d17e771500",
+            "message": "[testing] fixing a typo in a test file"
+        },
+        {
+            "hash": "15a28add9dcad2896168d69018963a413ec75f1e",
+            "message": "[build] the new spi processor didn't handle inner types used as SPI targets."
+        },
+        {
+            "hash": "24c1a1ed54d06935b02893148be9b30090f2522c",
+            "message": "[typo] oh dear, I broke the build again."
+        },
+        {
+            "hash": "c04941f11c6be7f1bb0ccb58f77f85ea6c1d2ec8",
+            "message": "[build] Further adjustments to the 'ant intellij' target.\n\nAs I don't use intellij, no idea if it works. Feedback welcome!"
+        },
+        {
+            "hash": "58693486f0669de0b798fb19b82379bab8265d9d",
+            "message": "[build] Fixed the ant eclipse and ant intellij targets."
+        },
+        {
+            "hash": "9806e5cca4b449159ad0509dafde81951b8a8523",
+            "message": "[fixes #2681] [jdk16] support jdk16"
+        },
+        {
+            "hash": "476a43b970b01eafcc053eead69db57a0ab854cf",
+            "message": "[build] sped up the build considerable.\n\nWe used to use the mango SPI processor, but this had two major issues:\n* ecj wouldn't run annotation processors, requiring a separate proc:only compile run with javac\n* mangoSPI couldn't do incremental compilation, so this required a full rebuild just to generate SPI files, every time.\n\nAddressed by updating to IPP40 which does support explicit annotation processors even for ecj, and\nadding our own SPI generating annotation processor to the build which can deal with incrementals.\n\nThere are some limits; removing a `@Provides` annotation on an existing type will need a full clean to pick that up, for example.\nThese limits seem quite exotic, though."
+        },
+        {
+            "hash": "a49aec582b129687cee7d2c87b586a20bceb0c43",
+            "message": "[testing] `ant test.javac6` now passes. yay."
+        },
+        {
+            "hash": "58ff1482e3d6ac68aa76afd82995fd2ef5a17be6",
+            "message": "[testing] improve information given when position validator tests fail"
+        },
+        {
+            "hash": "fb10b185bd1c91d45967a182af22d3e070d5f038",
+            "message": "[testing] also ignore unset positions for the pretty print tester."
+        },
+        {
+            "hash": "c979ee9ddfe0e990c1527d45c8429397601e4f52",
+            "message": "[testing] now easier to identify what failed, by name of test case\n\ntest case names now include idempotent/javac/ecj/prettyprint as a prefix to the test case filename."
+        },
+        {
+            "hash": "e8cd744d3b2d986dd847b9ff6bdf2750a8dd6764",
+            "message": "[superbuilder] toBuilder + singular + javac6 was broken\n\nsuperbuilder generated the node `x.pluralName(plural == null ? Collections.emptyList() : plural)`.\njava6 is not smart enough to infer the appropriate generics for the emptyList() call.\nFixed by always specifying the needed type explicitly: Collections.<String>emptyList();"
+        },
+        {
+            "hash": "c1bf4ec3b66cf6632cfd3e554d59ad4f8ad1b3b8",
+            "message": "[trivial] just fixing line endings - no other changes"
+        },
+        {
+            "hash": "bf0de8b6789b6227d226e51b4ae5130b8ba54ae9",
+            "message": "[testing] marking down all jackson related tests as j8+ only\n\nThe jackson dep we need for testing is too new a class file to run on j6, stubbing it out too much effort.\nOdds we find a bug specifically because this stuff fails on java6/7 are low, and I'm okay with supporting\n6/7 a little less well."
+        },
+        {
+            "hash": "90ec4cb0d042bfe22b577046f0ee592a6054d341",
+            "message": "[testing] javac6 fails some of the idempotency tests because certain nodes aren't initialized with a position.\n\nThe odds that the 'check if positions of every node is set to something useful' check is not going to find any\nactual bugs in the idempotency phase, so, just turn it off entirely there."
+        },
+        {
+            "hash": "fb855503996b471f26c09a732e6a01f4ef7e3394",
+            "message": "[trivial] style and removing unused imports"
+        },
+        {
+            "hash": "a2ebb4ce3600644671c9dd9947956a1d1bfe732e",
+            "message": "[test] work in progress: Make test.javac6 pass all tests.\n\nThe `test.javac6` job causes a ton of errors because many tests use java8+ features. Marking them off as java8+ targeted only."
+        },
+        {
+            "hash": "f8c16ed8ac69d0106a845ca96573557700b6f39d",
+            "message": "[tests] fix tests on java6/7"
+        },
+        {
+            "hash": "eebc5f4e851a4ce6f2775ebaf6e74794480da0b9",
+            "message": "[javac6] replacing calls to ListBuffer add/addAll to the append variants; add/addAll do not work in j6."
+        },
+        {
+            "hash": "8cee44b3b6d39d1dd83b81358aa61aab3c655b79",
+            "message": "[changelog]"
+        },
+        {
+            "hash": "04c4a2372fca8c3f0879f341b1975fbb99a4ab6a",
+            "message": "Update currency exchange rate"
+        },
+        {
+            "hash": "42298f1e6c0d3a664e673d090ca7624e4242ef45",
+            "message": "Only accept orders for 10+ seats."
+        },
+        {
+            "hash": "a7e9e8af49c61d2e9929ef9c807f18aa0d6d6c31",
+            "message": "Merge pull request #2762 from Rawi01/utility-class-rename\n\nMark generated UtilityClass constructor as generated"
+        },
+        {
+            "hash": "4a2e117e86479c07a23efc4b81615a9e266a95d1",
+            "message": "[fixes #2756] Mark generated UtilityClass constructor as generated"
+        },
+        {
+            "hash": "ed4ced1a3bc694f9a9903b5a15b2641236ff2f92",
+            "message": "Merge pull request #2719 from Rawi01/superbuilder-initializer-npe\n\nSuperBuilder now skips initializers while gathering types"
+        },
+        {
+            "hash": "5ee6271902c05a3cad28b611be60bce94f6904a8",
+            "message": "[fixes #2716] SuperBuilder now skips initializers while gathering types"
+        },
+        {
+            "hash": "0519cb23b1ab4e572d4c6e8b2d8b9c12c19af4ad",
+            "message": "[fixes #2714] Detect turbine and fail harder than usual."
+        },
+        {
+            "hash": "d958f988a0111fd4621001adef17ef54fab37fec",
+            "message": "Merge pull request #2733 from Rawi01/checker-superbuilder\n\nAdd missing checker annotations in SuperBuilder"
+        },
+        {
+            "hash": "561c43492552a86c9843b16b79cb6984dd3a4a43",
+            "message": "[fixes #2692] Add missing checker annotations in SuperBuilder"
+        },
+        {
+            "hash": "3d3a4c322af4cf7f27679661efaa9dcd685165bb",
+            "message": "[versioning] post-release version bump"
+        },
+        {
+            "hash": "ccae25ac8c9b3a134a817eb2164d80a5b50322e8",
+            "message": "Merge pull request #2734 from Rawi01/data-equals-warning\n\nOnly show super()-warning if lombok generates a method"
+        },
+        {
+            "hash": "191a8011ef5e8ae2a4446b9b357e121272526364",
+            "message": "[fixes #1064] Only show super()-warning if lombok generates a method"
+        },
+        {
+            "hash": "011e9915f2fbfa2d0ca9fea816003f90ce59ba5f",
+            "message": "[changelog] [issue #2730] add the potential fix to the changelog"
+        },
+        {
+            "hash": "adf30952462ad8380cf92c742e208b72c572cc98",
+            "message": "[issue #2730] Javadoc generated by lombok in javac now gets its position set.\n\nThis may fix 'IllegalArgumentException' errors when using google errorprone."
+        },
+        {
+            "hash": "e959e8882c11349fb87cea3a134de263249d7b21",
+            "message": "Merge pull request #2754 from Rawi01/npe-nonStaticAccess\n\nSave problem handler state for postponed error handling"
+        },
+        {
+            "hash": "0106746e60263d8cc3fbd189cca7b2e09c3d5c06",
+            "message": "[fixes #2752] Save problem handler state for postponed error handling"
+        },
+        {
+            "hash": "bb36d95226f9432120bb12db8e22363107969c56",
+            "message": "Merge pull request #2742 from Rawi01/ecj-fixes\n\nFix compilation using ecj"
+        },
+        {
+            "hash": "dd1f481c333901f29efc150a07695db7ae7a2e6e",
+            "message": "Fix ecj classloading"
+        },
+        {
+            "hash": "a62ffaa280acd09892755897c1c97f5d06f02be5",
+            "message": "Move eclipse only code for Delegate into own class"
+        },
+        {
+            "hash": "99d108f8dc9505e324f126bbf99aa9b44a24f7d1",
+            "message": "Merge pull request #2743 from Rawi01/extension-method-chain\n\nHandle inner method invocations first"
+        },
+        {
+            "hash": "d42a6fe40eacd8aca9697adda0eed61f66ab7d6c",
+            "message": "[fixes #2741] Handle inner method invocations first"
+        },
+        {
+            "hash": "fb455f4634a673d1c28a82caed18c4a171466335",
+            "message": "[changelog] reflecting fixes #2701 and fixes #2704 in the changelog"
+        },
+        {
+            "hash": "2d2f67ea4a28097bc0dd7ece3d99ed83151923c0",
+            "message": "[trivial] [typofix]"
+        },
+        {
+            "hash": "aeaa544a55b9091b43b64cae83a348513f173e26",
+            "message": "Merge pull request #2771 from janrieke/copyMoreJacksonAnnotations\n\nAdd more Jackson annotations to the copy-to-setter list"
+        },
+        {
+            "hash": "544a0f9e692546101d0591ff7440f6e2bd5cb399",
+            "message": "[fixes #2654] add more Jackson annotations to the copy-to-setter list"
+        },
+        {
+            "hash": "e9e16a355f9f83e85291fa895ad944411606b1d6",
+            "message": "Merge pull request #2772 from janrieke/superBuilderNPEwithSingular\n\n[fixes #2701] fix NPE on customized SuperBuilder with Singular"
+        },
+        {
+            "hash": "14f861b5f1c49d9ccc2eb0cda088753e6b63d349",
+            "message": "[fixes #2701] fix NPE on customized SuperBuilder with Singular"
+        },
+        {
+            "hash": "38faf6d350d0e4749039538bdc201624cd2f1ecb",
+            "message": "Merge pull request #2770 from janrieke/superBuilderNPEinConstructorExists\n\n[fixes #2704] SuperBuilder: avoid NPE on existing constructors"
+        },
+        {
+            "hash": "26cc8af4d8b0bc7944b5a7137e9e1c77f2f3cf43",
+            "message": "[fixes #2704] SuperBuilder: avoid NPE on existing constructors"
+        },
+        {
+            "hash": "5ef5c77198acd9fc8d265f0e2fa0b0c199330868",
+            "message": "Merge pull request #2780 from md-5/delombok-16\n\n[jdk16] Add lombok opens in single location"
+        },
+        {
+            "hash": "8f6d2d142cce4c582e6a1ab442adac52b5799414",
+            "message": "[jdk16] Add lombok opens in single location\n\nFixes awhitford/lombok.maven#47"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2787",
+            "title": "[BUG] @val raises \"Type cannot be resolved\" on generic code"
+        },
+        {
+            "number": "2647",
+            "title": "[BUG] `lombok.builder.className=Builder` breaks SuperBuilder"
+        },
+        {
+            "number": "2724",
+            "title": "Commit 8be4b0ffe6b5e5f89e8bb3d94e87d0aa98dc5aeb breaks @Builder delombok [BUG] "
+        },
+        {
+            "number": "2681",
+            "title": "[FEATURE] Make Lombok compatible with JDK 16"
+        },
+        {
+            "number": "2756",
+            "title": "[BUG] Renaming class also renames @UtilityClass annotation"
+        },
+        {
+            "number": "2716",
+            "title": "[BUG] SuperBuilder with static initializer block throws NullPointerException"
+        },
+        {
+            "number": "2714",
+            "title": "[BUG] Consider making 'You aren't using a compiler supported by lombok' diagnostic an error (instead of a warning)"
+        },
+        {
+            "number": "2692",
+            "title": "[BUG] Different checker framework annotations for SuperBuilder"
+        },
+        {
+            "number": "1064",
+            "title": "Warning about not calling super in equals/hashcode, but are overriden"
+        },
+        {
+            "number": "2730",
+            "title": "[BUG] ErrorProne compiler reports \"MissingSummary\" on @SuperBuilder w/ 1.18.18"
+        },
+        {
+            "number": "2752",
+            "title": "Null Pointer Exception when lombok 1.18.18 is installed"
+        },
+        {
+            "number": "2741",
+            "title": "[BUG] Lombok tries to apply an extension method to a wrong type"
+        },
+        {
+            "number": "2701",
+            "title": "[BUG] SuperBuilder not able to customize the Builder class when there is a property with @Singular annotation present"
+        },
+        {
+            "number": "2704",
+            "title": "[BUG] NPE on @SuperBuilder HandleSuperBuilder.constructorExists(HandleSuperBuilder.java:1198)"
+        },
+        {
+            "number": "2654",
+            "title": "[BUG] @Jacksonized does not copy @JacksonXmlElementWrapper to @Builder"
+        }
+    ]
+}

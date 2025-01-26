@@ -1,0 +1,25 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.26.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 7.756875,
+    "commits_info": [
+        {
+            "hash": "3be600fbed4830602ae36c3ef38e7ae7c9ee7d57",
+            "message": "2.26.1 release (previous 2.26.0) + release notes updated by CI build 4022\n\n[ci skip-release]"
+        },
+        {
+            "hash": "f72c69f88ef9307faed710fe15b675865c7fb5f7",
+            "message": "Merge pull request #1680 from mockito/invocation-generic-void-return-type\n\nFix handling of generic Void type for doNothing()"
+        },
+        {
+            "hash": "4c3d79c7af8d42e5bb76cd582e932ff28fa84e06",
+            "message": "Fix handling of generic Void type for doNothing()\n\nWhen the return type bound to a generic type resolved to Void,\n`doNothing()` would still throw an exception. Update the `isVoid`\nimplementation to also handle generic return types."
+        }
+    ],
+    "issues": []
+}

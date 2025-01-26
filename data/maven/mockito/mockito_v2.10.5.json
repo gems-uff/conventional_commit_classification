@@ -1,0 +1,74 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.10.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 13,
+    "start_delay": 0.0,
+    "duration": 10.305532407407407,
+    "commits_info": [
+        {
+            "hash": "a3a1aaaa47e818f66561e7f5cd5045be4f73b32a",
+            "message": "2.10.5 release (previous 2.10.4) + release notes updated by CI build 2968\n\n[ci skip-release]"
+        },
+        {
+            "hash": "c59e316cd99252fe11461431db52069818d2a085",
+            "message": "Merge pull request #1203 from mockito/sf\n\nFixed documentation issue, added unit tests"
+        },
+        {
+            "hash": "795d73392534d1b43330f4a4022138dcc83a1b97",
+            "message": "Updated test\n\nPreserved current behavior based on code review feedback. Thanks!"
+        },
+        {
+            "hash": "5f2c914f4faa1ef5f176becaeee714db2d6ac206",
+            "message": "Fixed documentation issue, added unit tests\n\n- While working on new verification started listeners (#1191) I found an instance of incorrect documentation. I added unit tests and simplified the documentation.\n- Currently, we do guarantee the order in which invocation listeners get notified. Some of our users might have started to depend on this behavior. I added unit tests and fixed the Javadoc. In general, it is seems useful to guarantee the order. This way, the API is more predictable, easier to use."
+        },
+        {
+            "hash": "14c6171e7ffebf2d38a444584eae87837deb95cd",
+            "message": "Merge pull request #1202 from mockito/java9in2x\n\n[#1202] Java 9 CI build for Mockito 2.x\r\n\r\n[ci skip-release]"
+        },
+        {
+            "hash": "e6271d8eaa82d713c5e151a0ad2c8b478926414a",
+            "message": "Fix another test failing with Java 9"
+        },
+        {
+            "hash": "49c362e319ca69bacb466fa04e5eda9f73cb34d6",
+            "message": "Update JaCoCo version for better Java 9 support\n\nSample issues:\nhttps://travis-ci.org/mockito/mockito/jobs/284996316#L799-L816"
+        },
+        {
+            "hash": "29e5e6699653ab7ca99b0b5bdcd5b7507126196a",
+            "message": "Fix issue with inline mock maker and Gradle 4"
+        },
+        {
+            "hash": "b8146b99c95052f95ea7d15691c828adb33f7bdd",
+            "message": "Fix warning in Gradle 4"
+        },
+        {
+            "hash": "0ed113a754165b1230dc9d002012f6eab5c47b21",
+            "message": "Tune Javadoc generation for Java 9\n\nTo prevent:\njavadoc: error - option -top contains JavaScript.\nUse --allow-script-in-comments to allow use of JavaScript.\n\nhttps://travis-ci.org/mockito/mockito/jobs/282902794#L801-L802"
+        },
+        {
+            "hash": "50543d977cdc94af142fd60ef47741dc57f26d34",
+            "message": "Upgrade Gradle to 4.2.1 (for Java 9 build)"
+        },
+        {
+            "hash": "dba5b162dbe5accbc9d25e82b744b40c6c278030",
+            "message": "Enable Java 9 build for 2.x branch"
+        },
+        {
+            "hash": "5a5c409f561c853c04974c1542fe2f65c999c263",
+            "message": "Fixes #1189: Add stable module name (#1195)\n\nThis patch adds a stable module name to the produced JAR in order to\r\nbe forwards compatible to Java 9."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1191",
+            "title": "Ensure spring-boot can use Mockito public API"
+        },
+        {
+            "number": "1189",
+            "title": "JDK9: set a stable module name with `Automatic-Module-Name` entry in MANIFEST"
+        }
+    ]
+}

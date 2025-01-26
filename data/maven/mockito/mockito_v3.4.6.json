@@ -1,0 +1,38 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.4.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 9.097303240740741,
+    "commits_info": [
+        {
+            "hash": "019830665f97c8ba6159148e3b10086cfb894900",
+            "message": "3.4.6 release (previous 3.4.5) + release notes updated by CI build 4660\n\n[ci skip-release]"
+        },
+        {
+            "hash": "4767db122f95e5302ad6a60a6efaa69f9d7e6cb1",
+            "message": "[ci maven-central-release] Merge pull request #1989 from mockito/listener-fix\n\nDo not pass static mocks to regular listener callback."
+        },
+        {
+            "hash": "724619b544096a5bdf488053865f5cccdba2fda1",
+            "message": "Does not include static mocks in regular listener logic as it might distort existing mock collectors that do not expect scoped mocks. Fixes #1988."
+        },
+        {
+            "hash": "0c56b3a8da97fa5ccfeef2adaa0a2314db3d6bd0",
+            "message": "Fixes #1985 : update README to refer the latest documentation (#1986)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1988",
+            "title": "MockitoJUnitRunner causes NPE when using @Mock on MockedStatic fields"
+        },
+        {
+            "number": "1985",
+            "title": "README should refer the latest available documentation"
+        }
+    ]
+}

@@ -1,0 +1,249 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.5.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 59,
+    "start_delay": 0.0,
+    "duration": 37.18015046296296,
+    "commits_info": [
+        {
+            "hash": "106ffc04be1abf3ff3399f54ccf149815b287dd9",
+            "message": "Merge pull request #4073 from pherl/changelog\n\nUpdate changelog for 3.5.1"
+        },
+        {
+            "hash": "7bf1e1919ad819a1db3c7245b6a8bf854d701b89",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "62616e152268ccd8dc001b791d76862a92af7432",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "96810dea740df75e7a3ff65f11dab7f7383cef7f",
+            "message": "Merge branch '3.5.x' of github.com:google/protobuf into changelog"
+        },
+        {
+            "hash": "eff55ece0813c16d318a80ec20c89d81bac34efc",
+            "message": "Merge pull request #4074 from pherl/mapat\n\nReplace C++11 only method std::map::at"
+        },
+        {
+            "hash": "501093d778258197cb8eec10d31cc9497520e459",
+            "message": "Replace C++11 only method std::map::at"
+        },
+        {
+            "hash": "3a06fe1fc9590b534f403114a0668befba926947",
+            "message": "Fix file permission for python package.\n\n`umask 0022` makes sure the created package will be accessible by all users."
+        },
+        {
+            "hash": "c79ba5c1b6187d1a6eb1e771976483a9a7b6a434",
+            "message": "Merge pull request #4034 from TeBoring/php-timestamp-bug\n\nAvoid calling method from php extension directly"
+        },
+        {
+            "hash": "8d6f13e86d62b47570810371a6c0528cfb10b781",
+            "message": "Fix for php5.5"
+        },
+        {
+            "hash": "39159c89f1e6924c1b12a6f12478b6de199894f4",
+            "message": "Accept DatetimeInterface in fromDatetime"
+        },
+        {
+            "hash": "1a549d9a902151e980bfa76093b3d82b7589e158",
+            "message": "Avoid using php_date_get_date_ce() in case date extension is not\navailable."
+        },
+        {
+            "hash": "fffe8d39f810d147c6db65f90ae4f71f4e0f0116",
+            "message": "Call php method via function name instead of calling directly.\n\nThis changes the linking error if php extension is not statically linked\nto a runtime error. In this way, users who don't need Timestamp can\nstill use protobuf even if date extension is not statically linked in\nphp."
+        },
+        {
+            "hash": "88102eae8f86045307e9d46ad900f91158227f2b",
+            "message": "Replace private timelib_update_ts with public date_timestamp_get"
+        },
+        {
+            "hash": "9f6aceaa8ce8250d9e36225180c218035bd49fe9",
+            "message": "Add PROTOBUF_ENABLE_TIMESTAMP to let user decide whether timestamp util\ncan be used at install time."
+        },
+        {
+            "hash": "b1386e77a2f4a901a45ad906da7c8cf8a517ab0e",
+            "message": "Merge pull request #4026 from TeBoring/3.5.x\n\nMerge 3.5.0.1 to 3.5.x"
+        },
+        {
+            "hash": "fc5818b2bbe48f6720410d448c3f5e4afb6bd365",
+            "message": "Merge branch '3.5.0.1' into 3.5.x"
+        },
+        {
+            "hash": "cf7c15e31a456f634d4e3deaf4ef74a6bfad825d",
+            "message": "Fix ruby gc_test in ruby 2.4 (#4011)\n\n* Fix ruby gc_test in ruby 2.4\r\n\r\n* Initialize global variables to Qnil."
+        },
+        {
+            "hash": "0e7b58956684c7c2fc228eff9173ea2ae50de911",
+            "message": "Add discard unknown API in ruby. (#3990)\n\n* Add discard unknown API in ruby.\r\n\r\n* Add test for oneof message field.\r\n\r\n* Add TestUnknown to represent unknown field data clearly.\r\n\r\n* Only serialize the message with unknown fields itself in test.\r\n\r\n* Move discard_unknown from Message to Google.Protobuf"
+        },
+        {
+            "hash": "c370f88fb18eecc33650ec3ce06f7bdcc11d1596",
+            "message": "Recursively clear unknown fields in submessages. (#3982)\n\n* Recursively clear unknown fields in submessages.\r\n\r\n* Recursively discard unknown fields in submsg for c extension\r\n\r\n* Fix zts build\r\n\r\n* Add comment for tests\r\n\r\n* Add a TODO to add a util for encoding varint for better readability.\r\n\r\n* Add test for oneof message field."
+        },
+        {
+            "hash": "1b5b3b28395fd04773589417dd1992098c08c2bb",
+            "message": "Merge pull request #4013 from laszlocsomor/io_win32\n\nio_win32: support non-ASCII paths"
+        },
+        {
+            "hash": "a3a1c93fb4bb204fd42cb91ac1053f93bec4da7a",
+            "message": "io_win32_unittest: remove incorrect error check\n\nUnlike GetEnvironmentVariableW,\nGetCurrentDirectoryW doesn't set\nERROR_INSUFFICIENT_BUFFER."
+        },
+        {
+            "hash": "eb3bd6ec297b4dff3734c51a159713e559f5c2cf",
+            "message": "io_win32_unittest: fix condition in GetCwdAsUtf8"
+        },
+        {
+            "hash": "3f1b1a6da5f1a778ccad46b6f340e82ad4c99209",
+            "message": "io_win32_unittest: use CWD as last tempdir\n\nIf the test cannot find a temp directory by\nchecking environment variables, it will fall back\nto using the current working directory as the temp\ndirectory root.\n\nThis is what the test used to do as of commit\nhttps://github.com/google/protobuf/commit/6de51caed52d798815954646b230c5aef3e4d2fc\nand what was then changed by commit\nhttps://github.com/google/protobuf/pull/3978/commits/792d098769d8e000d8d474c8ffd201d2eabc2134"
+        },
+        {
+            "hash": "57a01c7fbe89ca540e32a02c1f46b9e0478b3a8f",
+            "message": "io_win32: add more encoding-related tests"
+        },
+        {
+            "hash": "65da9fd97f67a9499771b6294cf017248ece5661",
+            "message": "io_win32: support non-ASCII paths\n\nFixes https://github.com/google/protobuf/issues/3951"
+        },
+        {
+            "hash": "953a0253fc1bd69ae788bbcb672c4cdfe562b8cd",
+            "message": "io_win32_unittest: make //:win32_test run again\n\nDo not use \"googletest.h\", apprently that leads to\nlinking errors on Windows which I couldn't figure\nout how to solve, and decided to just go with\nplain gTest instead.\n\nSee https://github.com/google/protobuf/issues/3951"
+        },
+        {
+            "hash": "b140cb3145f697a025d7b81b53a190d1e89b17dc",
+            "message": "Fix memory leak when creating map field via array."
+        },
+        {
+            "hash": "1acacf46ccd386de8ee660335b4b1a8dffb2967d",
+            "message": "Fix memory leak when creating repeated field via array."
+        },
+        {
+            "hash": "94bb1eed17209cacfdf2571be5a1ae91b3964cff",
+            "message": "Remove duplicate typedef. (#3975)"
+        },
+        {
+            "hash": "74e7decbbf130485a5bc5d792fb4f9285143bce3",
+            "message": "Provide discardUnknonwnFields API in php (#3976)\n\n* Provide discardUnknownFields API in php implementation\r\n\r\n* Provide discardUnknownFields API in php c extension."
+        },
+        {
+            "hash": "cf65a7946fb42e941708d10adbce69924c6d1ee0",
+            "message": "Update version for 3.5.0.post1"
+        },
+        {
+            "hash": "f466709e7d3b542ea4cf98a957237c40aa0df69b",
+            "message": "Merge pull request #3941 from google/anandolee-patch-2\n\nAdd _file_desc_by_toplevel_extension back"
+        },
+        {
+            "hash": "45d99a15f369a698a7f5be790ced1fe7029e6139",
+            "message": "Add _file_desc_by_toplevel_extension back\n\nAdd _file_desc_by_toplevel_extension back for compatibility issue with 3.4.1.\r\n\r\n_file_desc_by_toplevel_extension is a temporary solution for FieldDescriptor.file.\r\nFieldDescriptor.file was added in code gen. However, we need to keep it for some time for compatibility reason (with 3.4.1 only). May try to remove it after 2 years."
+        },
+        {
+            "hash": "98836a56e616f3bc387e3c66133b1ad320f36d80",
+            "message": "Update version number for php c extension (#3896)"
+        },
+        {
+            "hash": "e99e5d093fd2cdb670c2b08b3f7d4bbb9759b7ac",
+            "message": "Merge pull request #3895 from pherl/3.5.x\n\nAdd protobuf-all in post release"
+        },
+        {
+            "hash": "1ec45f81ef2df945a07dfb9404bf4f4a0a1081f2",
+            "message": "Add protobuf-all in post release"
+        },
+        {
+            "hash": "0cd2ad11b8a114c3767aafe9912c09c89bfd0f3e",
+            "message": "Update protoc-artfacts"
+        },
+        {
+            "hash": "4041600aa17563aead04ad2abf479b5a6834b4c7",
+            "message": "Merge branch '3.5.x' of github.com:google/protobuf into 3.5.x"
+        },
+        {
+            "hash": "4493595f8c77e9d094351987111cbf4aa2246f37",
+            "message": "Update release date"
+        },
+        {
+            "hash": "857a021645e0c553886cf57816d22dc06a92f606",
+            "message": "Use fully qualifed name for DescriptorPool in Any.php to avoid name (#3886)\n\nconflict"
+        },
+        {
+            "hash": "269884a1eb7a1d19d38cf8e61fa436ee8b7849f9",
+            "message": "Merge pull request #4040 from bazurbat/3.5.x\n\nCreate containing directory before generating well_known_types_embed.cc"
+        },
+        {
+            "hash": "edcf15e7f4de104f39e5daa1909bfcc93642ad53",
+            "message": "Create containing directory before generating well_known_types_embed.cc\n\nThis fixes the following build error:\n\noldpwd=`pwd` && cd .../protobuf/src && \\\n$oldpwd/js_embed google/protobuf/compiler/js/well_known_types/any.js google/protobuf/compiler/js/well_known_types/struct.js google/protobuf/compiler/js/well_known_types/timestamp.js > $oldpwd/google/protobuf/compiler/js/well_known_types_embed.cc\n/bin/bash: line 1: .../protobuf/target/src/google/protobuf/compiler/js/well_known_types_embed.cc: No such file or directory\nMakefile:8201: recipe for target 'google/protobuf/compiler/js/well_known_types_embed.cc' failed\n\nwhich is observed during the cross-compilation since the version 3.2."
+        },
+        {
+            "hash": "d971cbfc278993ae063fc7ff455c32443672024b",
+            "message": "Merge pull request #4049 from pherl/py26\n\nRemove py2.6 support."
+        },
+        {
+            "hash": "acadade56ef2cb0950f4d324f233af5eaeaff262",
+            "message": "Remove py2.6 support."
+        },
+        {
+            "hash": "f69a5db66f170b22b8a5a0abc04ee65d11ef2621",
+            "message": "Merge pull request #4028 from TeBoring/3.5.x\n\nAdd backslach to make class explict in global namespace"
+        },
+        {
+            "hash": "3b13c3f02e476bb668a28fce3e86a1ec62f85562",
+            "message": "Add backslach to make class explict in global namespace"
+        },
+        {
+            "hash": "82724e21098fbd02893811c79db4e5e95310ba0f",
+            "message": "Merge pull request #4042 from pherl/cpp_enum\n\nUse matching enum type for IsPOD."
+        },
+        {
+            "hash": "7ef21dd81bb1841ea5fa44e9d26e2b23b1bf1468",
+            "message": "Use matching enum type for IsPOD."
+        },
+        {
+            "hash": "8521624e935925d60204ebecee319f1df7423b71",
+            "message": "Merge pull request #4043 from pherl/flush\n\nExplicitly propagate the status of Flush()."
+        },
+        {
+            "hash": "6b01e6440cdac325bc131ec6713eab9d8307414a",
+            "message": "Explicitly propagate the status of Flush().\n\nBefore the change, an implicit Flush() will be triggered in the\ndestructor of the input stream. However, the return code of Flush() is\nnot discarded. This change makes sure when Flush() fails, we will\nreturn false."
+        },
+        {
+            "hash": "9ce29bd566e24a3df16abf0c9919b40d5d14a740",
+            "message": "Merge pull request #4070 from pherl/3.5.x\n\nUpdate version number to 3.5.1"
+        },
+        {
+            "hash": "050fc9a43717193ffbccbd8ca5d19e1e5648c815",
+            "message": "Update version number to 3.5.1"
+        },
+        {
+            "hash": "7bd16064847c410c0f1e5169b8f494fee8b14c93",
+            "message": "Update changelog for 3.5.1"
+        },
+        {
+            "hash": "d69f33304f0ccac668135875a830460ca8221bca",
+            "message": "Merge pull request #4080 from pherl/arm64\n\nAdd support for Windows ARM64 build"
+        },
+        {
+            "hash": "ad8a82ee7590fb4866d6fd5a410c393fca63e247",
+            "message": "Add support for Windows ARM64 build"
+        },
+        {
+            "hash": "d106399d39a3a5719f1e3d8b5997a4437eb83af3",
+            "message": "Merge pull request #4072 from google/jieluo\n\nCherrypick for csharp, including:"
+        },
+        {
+            "hash": "b308580bb1c3f87a062ac1448a3e0bdaab9d40cf",
+            "message": "Cherrypick for csharp, including:\nAdd preserve UnknownFields\nCompare floating point values bitwise\nAdd auto-generated header to C# generated files"
+        },
+        {
+            "hash": "6c3c7f6d5d68433af01c5ca500978c2d69f15212",
+            "message": "Merge pull request #4076 from pherl/stringback\n\nFix string::back() usage in googletest.cc"
+        },
+        {
+            "hash": "19d0e9934c997b1dc46ad539c37d67ea6c6fc33f",
+            "message": "Fix string::back() usage in googletest.cc"
+        }
+    ],
+    "issues": []
+}

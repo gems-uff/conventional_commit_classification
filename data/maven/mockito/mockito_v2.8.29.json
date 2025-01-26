@@ -1,0 +1,54 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.29",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 8,
+    "start_delay": 0.0,
+    "duration": 4.320138888888889,
+    "commits_info": [
+        {
+            "hash": "76ac79c1d45db0590c999ae443e3a383bf4fdd3a",
+            "message": "Bumped version and updated release notes by CI build 2663 [ci skip-release]"
+        },
+        {
+            "hash": "b53a69e57e902395d13a883c89fd197b025f849b",
+            "message": "Merge pull request #1084 from mockito/sf\n\nBumped version of tools to pick up release automation fixes"
+        },
+        {
+            "hash": "4562de369d53be55378e605ef7cc6dec87de6c61",
+            "message": "Picked up version bumping fix for release automation\n\nBumped version of tools to pick up fix for:\nhttps://github.com/mockito/mockito-release-tools/issues/145"
+        },
+        {
+            "hash": "480a98b50054c49817c1d39c9516eca0e4a973b6",
+            "message": "Picked up release automation fix for release needed task\n\nBumped version of tools to pick up fix for:\nhttps://github.com/mockito/mockito-release-tools/issues/143"
+        },
+        {
+            "hash": "a8021c644f97c8302037fac30e0f81d034907a4f",
+            "message": "Merge pull request #1080 from mockito/sf\n\nMore concise release notes and codecov issue fix"
+        },
+        {
+            "hash": "a5e3b43cc373446bb531ff7b2406b2a3a8b9f09c",
+            "message": "Bumped version of release tools and updated release configuration\n\n1. It should fix the codecov issue\n2. Improvements to release generation workflow (incremental tasks, etc)\n3. Cleaner release notes (more compact)"
+        },
+        {
+            "hash": "bc413290c4274e56a6123cd012b945146d8649bd",
+            "message": "Fixed #1065. Add information about doNothing() method to CannotStubVo… (#1079)\n\n* Fixed #1065. Add information about doNothing() method to CannotStubVoidMethodWithReturnValue error message\r\n\r\n* Changed message according to PR review\r\n\r\n[ci skip-release]"
+        },
+        {
+            "hash": "761de40d05b4eddae8328ab1d7e5bdacd882a3be",
+            "message": "Fix validation in returnArgumentAt(int) in case of type erasure on the parameter (#1076)\n\n* Fixed #1071 / returnArgumentAt(int) The validation of the returnable\r\ntype works now for generic parameters.\r\n\r\nThe parameter type inference takes now the type of the actual instance\r\ninto account to avoid type erasure issues in case the parameter is\r\ngeneric.\r\n\r\n* Fixed very important checkstyle twhitespace & linebreak at eof issues\r\n\r\n* fixed intendation and import issues"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1065",
+            "title": "Complement error message"
+        },
+        {
+            "number": "1071",
+            "title": "Mockito AdditionalAnswers.returnsFirstArg() doesn't work with generic first arg"
+        }
+    ]
+}

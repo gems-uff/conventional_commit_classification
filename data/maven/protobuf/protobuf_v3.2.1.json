@@ -1,0 +1,110 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.2.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 22,
+    "start_delay": 0.0,
+    "duration": 81.97703703703704,
+    "commits_info": [
+        {
+            "hash": "b50c9ec1223895973d0e2fa6b6cb74ec3c8f3ce8",
+            "message": "Update version number in podspec to 3.2.1"
+        },
+        {
+            "hash": "311e7a73ebcf1a75043be3d64a197f728472541a",
+            "message": "Raise the recursion limit to 100 to match other languages."
+        },
+        {
+            "hash": "7d758c00bc55a8997d29dedbc50de7eaf4d71280",
+            "message": "Remove the use of dispatch_once that is heap backed.\n\nApple recently updated the docs on dispatch_once to point out\nthat the storage for the dispatch_once_t must be static or global,\nbut not something that was ever used before as the implementation\ndoesn't use a memory barrier.  So we drop the use and create the\nsemaphore when needed and use an atomic swap deal with any\nthreading races."
+        },
+        {
+            "hash": "4f44a0f4bb55997522e5e9574f143d5e63ec1936",
+            "message": "Merge pull request #2856 from acozzette/3.2.x\n\nIncremented gem version to 3.2.0.2"
+        },
+        {
+            "hash": "74aaca63baf68ec288fed9bb2ad778a3d8e5079e",
+            "message": "Incremented gem version to 3.2.0.2\n\nThis version is to push a fix for gems containing files that were not\nworld-readable as they should be (issue #2853)."
+        },
+        {
+            "hash": "3491ebd05ea06be229f18bb5b8437d9a35c863cd",
+            "message": "Merge pull request #2831 from acozzette/ruby-cherry-pick\n\nCherry-picked Ruby fix and incremented version number"
+        },
+        {
+            "hash": "08e4ef3c07e702234397cc1c70192dfec059e77b",
+            "message": "Incremented Ruby version number to 3.2.0.1"
+        },
+        {
+            "hash": "a7e05be8ec2e0873efa2e69c23ec8d3f67d52e2d",
+            "message": "Ruby: wrap calls to memcpy so that gem is compatible with pre-2.14 glibc\n\nThis commit adds a __wrap_memcpy function and a linker flag to use that\nin place of memcpy for our Ruby gem C extension. This allows us to\nalways use the 2.2.5 version of memcpy, making it possible to use the\ngem on distributions with pre-2.14 versions of glibc.\n\nBefore this change:\n$ objdump -T protobuf_c.so | grep memcpy\n0000000000000000      DF *UND*  0000000000000000  GLIBC_2.3.4 __memcpy_chk\n0000000000000000      DF *UND*  0000000000000000  GLIBC_2.14  memcpy\n\nAfter:\n$ objdump -T protobuf_c.so | grep memcpy\n0000000000000000      DF *UND*  0000000000000000  GLIBC_2.2.5 memcpy\n0000000000000000      DF *UND*  0000000000000000  GLIBC_2.3.4 __memcpy_chk\n0000000000042450 g    DF .text  0000000000000005  Base __wrap_memcpy\n\nThis is based on gRPC's solution to a similar problem:\nhttps://github.com/grpc/grpc/blob/5098508d2d41a116113f7e333c516cd9ef34a943/src/core/lib/support/wrap_memcpy.c\n\nThis fixes issue #2783."
+        },
+        {
+            "hash": "cc99e1293cd1d88f113d239ccf41f73cb238f307",
+            "message": "Disable static analyzer for message semaphore creation (#2748)\n\nDisable static analyzer for message semaphore creation"
+        },
+        {
+            "hash": "4020fe427cf71f616e00bc39f8155b9bed8fd47c",
+            "message": "Handing threading race resolving methods.\n\n- Don't prune the extension registry as that can lead to failures when two\n  threads are racing.\n- If adding the method fails, check and see if it already is bound to decide\n  the return result. Deals with threading races binding the methods."
+        },
+        {
+            "hash": "fa925b98937bafee6b5d7244cce5c1ad39bf9d36",
+            "message": "Improve support for plugin parameters.\n\n--[name]_opt support depended on the plugin being register, and didn't support\nworking with just --[name]_out directive (where the plugin is found via the\nusers PATH. This extends the command line handing to allow --[name]_out to\nbe all it takes for the _opt directive to also be supported.\n\nFixes https://github.com/google/protobuf/issues/2712"
+        },
+        {
+            "hash": "32886f1f853a6f77d83735d98366e865bde0b82b",
+            "message": "Merge pull request #2706 from podsvirov/cm-js-embed\n\nFix libprotoc.cmake to generate well_known_types_embed.cc"
+        },
+        {
+            "hash": "750cda35e6d2ebad05c0359d1114952f5a299928",
+            "message": "Fix libprotoc.cmake to generate well_known_types_embed.cc\n\nUnfortunate typo. Just one extra ',' symbol, has led to the hidden implicit behavior.\n\nNow everything will be fine."
+        },
+        {
+            "hash": "124a2f6dbc4741ceb7eac129864977a13f6702cc",
+            "message": "Add fixed version to phpunit used in travis (#2673)"
+        },
+        {
+            "hash": "2edf2bdebf1ede582b816a521ad6e51a802eaa46",
+            "message": "Bug fix: When encoding, negative int32 values should be padded to int64 (#2660)\n\nin order to be wire compatible."
+        },
+        {
+            "hash": "c7f4c7bc417a24eeb7d5ac10a91b85b2df8a0b41",
+            "message": "Merge pull request #2654 from TeBoring/3.2.x\n\nCherry-pick Objc changes"
+        },
+        {
+            "hash": "e3583877acf0fda7894d09aaa535e80bde3e26a7",
+            "message": "Adds nullability modifiers to resolve Xcode 8.3 warnings"
+        },
+        {
+            "hash": "4aa2e9312ebb594eb60882a7ff874310a6166717",
+            "message": "Timestamp helper fix, Duration helper cleanup.\n\n- The Timestamp proto does not allow for negative nanos fields, so the seconds\n  must be shifted and a positive nanos then applied.\n- Tweak the helpers on Duration to make it clear there is no \"base\" time\n  involved.\n- Update the unittests for duration and timestamp to cover positive and\n  negative NSTimeIntervals and what their impact is on the protos."
+        },
+        {
+            "hash": "d47fb8d69e20f5ca2d4760e59d1c7fcf4cbbca63",
+            "message": "Merge pull request #2675 from haberman/ruby24\n\nRuby: build packages for Ruby 2.4."
+        },
+        {
+            "hash": "82c7017891c54f80da7ca9be2a5eef2b49f66376",
+            "message": "Merge branch '3.2.x' into ruby24"
+        },
+        {
+            "hash": "f27647986040828ec9c3f00450232611e8819e2d",
+            "message": "Ruby: update Gemspec."
+        },
+        {
+            "hash": "5adf493bf639a805efa6c6cac331864e3429606f",
+            "message": "Ruby: build packages for Ruby 2.4."
+        }
+    ],
+    "issues": [
+        {
+            "number": "2853",
+            "title": "Ruby gem 3.2.0.1 LoadError due to file permissions"
+        },
+        {
+            "number": "2783",
+            "title": "Ruby gem 3.2.0 fails to load on Centos 6 and Debian 7 due to missing GLIBC_2.14"
+        }
+    ]
+}

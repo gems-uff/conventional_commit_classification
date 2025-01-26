@@ -1,0 +1,106 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.11.6",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 22,
+    "start_delay": 0.0,
+    "duration": 76.91001157407408,
+    "commits_info": [
+        {
+            "hash": "afaa5b3060332136f133fdc4aa32b026a7800700",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "11a07262efd3595fd59e52cf81c21c919ff3814f",
+            "message": "Added annotation for the slf4j extended logger"
+        },
+        {
+            "hash": "8a5d637af766d71d4f2b5f87eceec5360de831fa",
+            "message": "Fix for issue 408: IllegalArgumentException when generating setters in eclipse for fields with @Deprecated on them."
+        },
+        {
+            "hash": "b8e1f3bdeb622ba92b25f12a4eff35ea5f75908c",
+            "message": "added tests for lub and val (lub = finding the common supertype, for example in a ternary expression)."
+        },
+        {
+            "hash": "7bd3851f68c8aadf6fcc9cd6c37fd1b4737ff906",
+            "message": "//ignore in files now counts even if the 'ignore' comment is followed by more text (such as the explanation for why it is being ignored)."
+        },
+        {
+            "hash": "d15d7228723ae5fa99036105c4df951ca9e40f1a",
+            "message": "fix for issue #423: @ExtensionMethods failed with an NPE in the handler on javac if generated constructors are involved."
+        },
+        {
+            "hash": "cec7dfd1908a92fa29763abf7d6a4faac7bd9d98",
+            "message": "Empty statements no longer being printed to be consistent with Javac7 which seems to just remove these from the AST entirely."
+        },
+        {
+            "hash": "d2808d407a65da9fe1e290a83df0f0da107f0cf8",
+            "message": "The testrunner now uses a different mechanism to verify correctness of produced errors and warnings (i.e. we intentionally compile code with errors in them to verify that the appropriate error or warning message is emitted when lombok is active during a compilation run of either javac or ecj) - instead of string comparisons, it's a little more complex. This to enable testing of both javac6 and javac7, even if they produce (slightly) different error output.\n\nUpdated all message files in the 'expected output' directories to represent this change."
+        },
+        {
+            "hash": "2d216118986115bf309c050cd841bbe8b62b80b3",
+            "message": "Updated the setup test environment tasks in the build script to produce eclipse launch targets IF the project has been treated as eclipse project ('.project' is present)."
+        },
+        {
+            "hash": "7d78e451289533506dbdd582b532a72035a623df",
+            "message": "added previous fix to changelog."
+        },
+        {
+            "hash": "614d490ea1477079ade277a95eb0cce123526842",
+            "message": "Fix for NPEs in the eclipse log for\norg.eclipse.jdt.internal.compiler.lookup.MethodBinding.sourceMethod(MethodBinding.java:1108)"
+        },
+        {
+            "hash": "10085d5f2a01cfefd9709b4745e58d8191a924d5",
+            "message": "Typo fixes in build.xml"
+        },
+        {
+            "hash": "bde859c8532ae9cc99e1080fd9d27a945b1f68de",
+            "message": "Fixes issue 422: VerifyError when running delombok in a javac7 environment."
+        },
+        {
+            "hash": "a295c4fc12247eedfe5747b547d8ac7079f33533",
+            "message": "Ever since we do a lot more than just calling 'parse' when running delombok in our tests, the tests are in the unfortunate scenario where we always compile against a given javac (lib/build/javac6.jar), and always run the tests against a given javac, but that javac tries to use the bootclasspath of the host JRE, and if that is JRE7, you get all sorts of errors.\n\nI fixed it by still compiling against a given javac (we can only ship one lombok.jar after all), but having the test task run with a given bootclasspath and a given javac.jar.\n\nThere are 2 tasks that download both rt.jar and javac.jar for either OpenJDK6 or OpenJDK7, and it writes a properties file with those locations. The test task will use this property file, and explain what you need to do if it is not there.\n\nIncidentally, this brought to light issue 422: Delombok in java7 produces VerifyErrors."
+        },
+        {
+            "hash": "0baf73b2aaecebf75a51f3d064c6d925a52f1a6d",
+            "message": "Patches ASTNode.setSourceRange; by default it throws IllegalArgumentExceptions in certain cases, but with no message, thus making it very hard to figure out what went wrong. The patch throws the same exceptions in the same cases, but gives the exception a useful error message."
+        },
+        {
+            "hash": "a733c15082bcf4b56ebd27018c7fbfe01f03faca",
+            "message": "Updated copyright header in website feature pages."
+        },
+        {
+            "hash": "7ada401b6d613d88d72500c89f0a268eb470ace3",
+            "message": "If val errors out, now at least you see where it happened."
+        },
+        {
+            "hash": "9bc421ecdc6c23884b731543737c10458cbf016a",
+            "message": "@FieldDefaults was causing template suggestions to not appear sometimes.\nSee issue 411."
+        },
+        {
+            "hash": "70256754c2587361c9f70287f62c1e3fd2dede10",
+            "message": "If the JVM is started with -Dlombok.disable, lombok is disabled entirely for both eclipse/ecj and javac operations."
+        },
+        {
+            "hash": "672ddda8f5b27b0a97ff00413edf6d159885d636",
+            "message": "updated copyright year notices in website html"
+        },
+        {
+            "hash": "4f5f689bf2be42bc2a6e331ae83bace35c9e86e9",
+            "message": "There is now an 'override this method' alternative for\nsetting the annotation you handle for an XAnnotationHandler<T>;\ndefault behaviour still extracts the T part out of the signature."
+        },
+        {
+            "hash": "579e139c6cea831789fe28d0ecbd7e753870f456",
+            "message": "post release version bump"
+        }
+    ],
+    "issues": [
+        {
+            "number": "423",
+            "title": "Annotation attributes have no default value"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.1.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.004479166666666667,
+    "commits_info": [
+        {
+            "hash": "4e533432f2164fd45e8101e34591d7859f68e494",
+            "message": "3.1.9 release (previous 3.1.8) + release notes updated by CI build 4284\n\n[ci skip-release]"
+        },
+        {
+            "hash": "d64cbd38edaca135a1bc835cd74fc943e0897535",
+            "message": "Guard against multiple evaluations of before statement (#1821)\n\n* Guard against multiple evaluations of before statement\r\n\r\nSome rules evaluate the base statement multiple times, e.g. to execute\r\ntests repeatedly. The changes made in #1672 led to an exception in such\r\ncases because the `MockitoListener` was registered multiple times. Now,\r\nwe only add the listener the first time the statement is evaluated in\r\norder to restore the old behavior.\r\n\r\nFixes #1767.\r\n\r\n* Reset listener when removing it"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1767",
+            "title": "'MismatchReportingTestListener' has already been added and not removed using MockitoJUnitRunner"
+        }
+    ]
+}

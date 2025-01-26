@@ -1,0 +1,34 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.17.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 4.517696759259259,
+    "commits_info": [
+        {
+            "hash": "367e4691d2bc97de28b422d7461e4135d556d301",
+            "message": "Fixed memory bug: properly root repeated/map field when assigning. (#8639)\n\n* Fixed memory bug: properly root repeated/map field when assigning.\r\n\r\nPreviously the protobuf extension would not properly root\r\nmemory from a repeated field or map when assigning to a\r\nmessage field (see the attached test case).  This could cause\r\ncrashes if the repeated field is subsequently accessed.\r\n\r\n* Add accidentally-deleted Ruby test."
+        },
+        {
+            "hash": "52784ced2fa36f749781118c3d0daaf06c48bc7e",
+            "message": "Update protobuf version (#8633)"
+        },
+        {
+            "hash": "0b874755927a8852f4627a7a817d9be57d2a4537",
+            "message": "Php & Ruby Cherry Picks for 3.17.1 (#8632)\n\n* Some more updates to PHP testing infrastructure (#8576)\r\n\r\n* WIP.\r\n\r\n* Added build config for all of the tests.\r\n\r\n* Use ../src/protoc if it is available, for cases where Bazel isn't available.\r\n\r\n* Added test_php.sh.\r\n\r\n* Fix for the broken macOS tests.\r\n\r\n* Move all jobs to use php80 instead of lots of separate jobs.\r\n\r\n* Only pass -t flag if we are running in a terminal.\r\n\r\n* Updated php_all job to use new Docker stuff.\r\n\r\n* Fixed PHP memory leaks and arginfo errors (#8614)\r\n\r\n* Fixed a bunch of incorrect arginfo and a few incorrect error messages.\r\n\r\n* Passes mem check test with no leaks!\r\n\r\n* WIP.\r\n\r\n* Fix build warning that was causing Bazel build to fail.\r\n\r\n* Added compatibility code for PHP <8.0.\r\n\r\n* Added test_valgrind target and made tests Valgrind-clean.\r\n\r\n* Updated Valgrind test to fail if memory leaks are detected.\r\n\r\n* Removed intermediate shell script so commands are easier to cut, paste, and modify.\r\n\r\n* Passing all Valgrind tests!\r\n\r\n* Hoist addref into ObjCache_Get().\r\n\r\n* Removed special case of map descriptors by keying object map on upb_msgdef.\r\n\r\n* Removed all remaining RETURN_ZVAL() macros.\r\n\r\n* Removed all explicit reference add/del operations.\r\n\r\n* Added REFCOUNTING.md to Makefile.am.\r\n\r\n* Updated upb version and fixed PHP to not get unset message field. (#8621)\r\n\r\n* Updated upb version and fixed PHP to not get unset message field.\r\n\r\n* Updated changelog.\r\n\r\n* Fixed preproc test to handle old versions of Clang withot __has_attribute().\r\n\r\n* A second try at fixing __has_attribute().\r\n\r\n* Copy __has_attribute() fix to cc file also.\r\n\r\n* Updated failure list for PHP for fixed test.\r\n\r\n* Updated version of upb for Ruby (#8624)\r\n\r\n* Updated upb.\r\n\r\n* Preserve legacy behavior for unset messages.\r\n\r\n* Updated failure list.\r\n\r\n* Updated CHANGES.txt.\r\n\r\n* Added erroneously-deleted test file.\r\n\r\n* Fixed condition on compatibility code.\r\n\r\n* Re-introduced deleted file again, and fixed Rakefile to not delete it.\r\n\r\n* Fix generation of test protos."
+        },
+        {
+            "hash": "65abb64e73a989f92458ceaa112e8932a58e1c22",
+            "message": "Fixed syntax errors in bswap_64 (#8613)\n\nIt looks like some syntax errors were introduced by mistake because some\r\nleft parentheses were changed to curly braces without the right parens\r\nbeing changed accordingly. This fixes #8611."
+        }
+    ],
+    "issues": [
+        {
+            "number": "8611",
+            "title": "brackets messed up in src/google/protobuf/stubs/port.h in version 3.17.0"
+        }
+    ]
+}

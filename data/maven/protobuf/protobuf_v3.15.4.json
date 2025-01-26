@@ -1,0 +1,46 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 5.976481481481481,
+    "commits_info": [
+        {
+            "hash": "fd8aabf32d1d1ae3319e280fed07aa6eb24d150d",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "e5c067f81b0865cdd7cec9ff88568cfd5184a755",
+            "message": "Updated CHANGES.txt and PHP changelog for 3.15.4 release"
+        },
+        {
+            "hash": "aa41d9005bac1cd6a83387a95d22fdd10cc2a855",
+            "message": "read_property() handler is not supposed to return NULL\n\nNULL is never expected as a result of read_property() handler,\nit should return &EG(uninitialized_zval) if there is no such property in\nthe object"
+        },
+        {
+            "hash": "cf7d81f88cb77ff142b3ff49d6cfa882bd020748",
+            "message": "Merge pull request #8363 from haberman/ruby-nil-fix\n\nFixed SEGV when users pass nil messages. This also disallows `nil` in RepeatedField or Map."
+        },
+        {
+            "hash": "7d63b996e1b2b341f0a527d7e5ae0f153d595ce4",
+            "message": "Removed compatibility test that tries to append \"nil\" to repeated field."
+        },
+        {
+            "hash": "dfa54577d65d7570593435318bb6aadc05c6bdf3",
+            "message": "[Ruby] Fixed SEGV when users pass nil messages."
+        },
+        {
+            "hash": "1add7a7bd6db1b2c367f83864a50ebd119a04710",
+            "message": "Create a CMake option to control whether or not RTTI is enabled\n\nThis is useful for Conan recipes that build Protobuf, in which\nwhatever we want to enable has to be enabled in the initial command line.\nWithout this, the people maintaining the recipe have to patch the CMake\nsetup of Protobuf before building the binaries.\n\nCloses #5541"
+        }
+    ],
+    "issues": [
+        {
+            "number": "5541",
+            "title": "Add CMake option to define GOOGLE_PROTOBUF_NO_RTTI"
+        }
+    ]
+}

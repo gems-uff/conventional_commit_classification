@@ -1,0 +1,662 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.2.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 109,
+    "start_delay": 0.0,
+    "duration": 76.88547453703704,
+    "commits_info": [
+        {
+            "hash": "45a6c53efa3d7f9a96ebf0fb955b4ee0d554b915",
+            "message": "Release v3.2.8"
+        },
+        {
+            "hash": "f5df7e7e3048538bf825b2cdbcc61ba91af44b5c",
+            "message": "Fix documentation links in the README\n\nCloses gh-41547"
+        },
+        {
+            "hash": "07b103cc2bd28fab54979dd38bf6a83d720a21c1",
+            "message": "Prohibit upgrades to Undertow 2.3.15\n\nCloses gh-41533"
+        },
+        {
+            "hash": "4e205ede1d7c0c59db473dffc230c6c4e82ad247",
+            "message": "Upgrade to Spring Pulsar 1.0.8\n\nCloses gh-41532"
+        },
+        {
+            "hash": "0eb830de15dbcc938f549dbfd17aa8e73d238317",
+            "message": "Upgrade to Spring Integration 6.2.7\n\nCloses gh-41296"
+        },
+        {
+            "hash": "7966d11c49fad0cf2cca98aaaae60368c30f78fc",
+            "message": "Upgrade to Spring GraphQL 1.2.8\n\nCloses gh-41523"
+        },
+        {
+            "hash": "1cc7498c9a510b934062fa6b989917825ab2366e",
+            "message": "Add property for Integration's default endpoint timeout\n\nFixes gh-41477"
+        },
+        {
+            "hash": "17d6f90468190511545b941bb6daaa020fabc8e9",
+            "message": "Document types to which format properties apply\n\nCloses gh-41482"
+        },
+        {
+            "hash": "6941d0e84b14b66afe2cee46a993cb70836624c1",
+            "message": "Document that logging.file.path if logging.file.name is set\n\nCloses gh-41351"
+        },
+        {
+            "hash": "49538adbdaa94bf0a481937670c520d47116c04d",
+            "message": "Upgrade to Spring Kafka 3.1.7\n\nCloses gh-41297"
+        },
+        {
+            "hash": "d12ea2d3d217260c3c4222dc9859a912cf4a4d08",
+            "message": "Merge pull request #41507 from dependabot[bot]\n\n* pr/41507:\n  Polish \"Bump jfrog/setup-jfrog-cli from 4.1.2 to 4.1.3\"\n  Bump jfrog/setup-jfrog-cli from 4.1.2 to 4.1.3\n\nCloses gh-41507"
+        },
+        {
+            "hash": "2fce9f27fa7d2fb8f1a50eb03d7f44b54c7f3f97",
+            "message": "Polish \"Bump jfrog/setup-jfrog-cli from 4.1.2 to 4.1.3\"\n\nSee gh-41507"
+        },
+        {
+            "hash": "c2b63fd20ba98264444d8c1b6fbe9282594c9598",
+            "message": "Bump jfrog/setup-jfrog-cli from 4.1.2 to 4.1.3\n\nBumps [jfrog/setup-jfrog-cli](https://github.com/jfrog/setup-jfrog-cli) from 4.1.2 to 4.1.3.\n- [Release notes](https://github.com/jfrog/setup-jfrog-cli/releases)\n- [Commits](https://github.com/jfrog/setup-jfrog-cli/compare/7c95feb32008765e1b4e626b078dfd897c4340ad...8bab65dc312163b065ac5b03de6f6a5bdd1bec41)\n\n---\nupdated-dependencies:\n- dependency-name: jfrog/setup-jfrog-cli\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+        },
+        {
+            "hash": "0070489a8c70611d71ca6de2e952176bde89d8a7",
+            "message": "Merge pull request #41508 from dependabot[bot]\n\n* pr/41508:\n  Polish \"Bump gradle/actions from 3.4.2 to 3.5.0\"\n  Bump gradle/actions from 3.4.2 to 3.5.0\n\nCloses gh-41508"
+        },
+        {
+            "hash": "379edd4564b6f7de07702c3826d9f062b265ff84",
+            "message": "Polish \"Bump gradle/actions from 3.4.2 to 3.5.0\"\n\nSee gh-41508"
+        },
+        {
+            "hash": "58c124aa658f795d0a754047c7ad06dcd54ec530",
+            "message": "Bump gradle/actions from 3.4.2 to 3.5.0\n\nBumps [gradle/actions](https://github.com/gradle/actions) from 3.4.2 to 3.5.0.\n- [Release notes](https://github.com/gradle/actions/releases)\n- [Commits](https://github.com/gradle/actions/compare/dbbdc275be76ac10734476cc723d82dfe7ec6eda...d9c87d481d55275bb5441eef3fe0e46805f9ef70)\n\n---\nupdated-dependencies:\n- dependency-name: gradle/actions\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+        },
+        {
+            "hash": "d63e3c3b535dd261c6afd2ee7d23c80606cb6378",
+            "message": "Rethrow failure on main thread\n\nPreviously, if a failure occurred when evaluating conditions on a\nseparate thread, an NPE would occur on the main thread as the\nexpected array of outcomes was null.\n\nThis commit avoids the NPE and the lack of error reporting by\nrethrowing on the main thread any failure that occurs on the\nseparate thread that's spawned to parallelize the evaluation.\n\nCloses gh-41492"
+        },
+        {
+            "hash": "61a3b73269c1c62d3e054e62b10d77d96a267d16",
+            "message": "Upgrade to Tomcat 10.1.26\n\nCloses gh-41496"
+        },
+        {
+            "hash": "68ad8ff0a6a25e49584f05aed0b85dc39affd7fa",
+            "message": "Upgrade to SQLite JDBC 3.43.2.2\n\nCloses gh-41495"
+        },
+        {
+            "hash": "46aeb711146b8b324321757e85bd1bedbb170c96",
+            "message": "Upgrade to Spring HATEOAS 2.2.3\n\nCloses gh-41493"
+        },
+        {
+            "hash": "b49085bf8cb8077530f3adffb551824fd02ed105",
+            "message": "Upgrade to Spring Data Bom 2023.1.8\n\nCloses gh-41294"
+        },
+        {
+            "hash": "db9b62e6283a0a928ee6623df5fcf2f9c7f4b1f8",
+            "message": "Upgrade to Spring Retry 2.0.7\n\nCloses gh-41484"
+        },
+        {
+            "hash": "b76b7b7bd9138a80d14b0db3e36c214df699c7a1",
+            "message": "Upgrade to AspectJ 1.9.22.1\n\nCloses gh-41470"
+        },
+        {
+            "hash": "7398c6c2a42165875f054feaf436e4d1556246d9",
+            "message": "Fix upgrade detection when number of numeric components changes\n\nFixes gh-41471"
+        },
+        {
+            "hash": "f6cbbe79487412bbf805d708dbc2620e67d5fc54",
+            "message": "Add missing input for java distribution\n\nSee gh-41463"
+        },
+        {
+            "hash": "f4b55a6f2885d3516dc7027098359afdd7a770b5",
+            "message": "Harmonize GitHub Actions settings\n\nCloses gh-41463"
+        },
+        {
+            "hash": "f702230c12e6e77914788901a4daf54efbd38a5a",
+            "message": "Test Gradle plugin against Gradle 8.9\n\nCloses gh-41454"
+        },
+        {
+            "hash": "85070411d14a0b2e4e1971365555f23e72fff4ab",
+            "message": "Upgrade to Spring Framework 6.1.11\n\nCloses gh-41295"
+        },
+        {
+            "hash": "2b7baf57678affee5751616d5a5c90487faa8212",
+            "message": "Merge pull request #41443 from jxblum\n\n* gh-41443:\n  Polish \"Fix typos in BootstrapContext javadoc\"\n  Fix typos in BootstrapContext javadoc\n\nCloses gh-41443"
+        },
+        {
+            "hash": "8bc45a20d744969e37e4097074c25550271000a5",
+            "message": "Polish \"Fix typos in BootstrapContext javadoc\"\n\nSee gh-41443"
+        },
+        {
+            "hash": "47fc9111cbc598aec78150538c27610dd6da13dc",
+            "message": "Fix typos in BootstrapContext javadoc\n\nSee gh-41443"
+        },
+        {
+            "hash": "2f962f7aa316983c909359c539f3630c56f60b56",
+            "message": "Upgrade to Reactor Bom 2023.0.8\n\nCloses gh-41436"
+        },
+        {
+            "hash": "c05a40f180d3a6048ad2099b16039373624348eb",
+            "message": "Upgrade to Neo4j Java Driver 5.22.0\n\nCloses gh-41370"
+        },
+        {
+            "hash": "430ae41ee39fb54834dcd3d351aefc3f67ba68b7",
+            "message": "Upgrade to Micrometer Tracing 1.2.8\n\nCloses gh-41293"
+        },
+        {
+            "hash": "95f7c33f42e9345ed2bdb9e3b8a489990311f2f3",
+            "message": "Upgrade to Micrometer 1.12.8\n\nCloses gh-41292"
+        },
+        {
+            "hash": "9655e52cb1b61eaf647884cb809a652c0670b72e",
+            "message": "Upgrade to Lombok 1.18.34\n\nCloses gh-41368"
+        },
+        {
+            "hash": "a33ff8c5354c36953a247a73b02dd910fd755f3e",
+            "message": "Upgrade to JUnit Jupiter 5.10.3\n\nCloses gh-41367"
+        },
+        {
+            "hash": "d57b41436bffd60f24840ab7cc4cf61e3fedec0f",
+            "message": "Upgrade to JsonAssert 1.5.3\n\nCloses gh-41366"
+        },
+        {
+            "hash": "d79ee604ff5ddc62deec0f3a578bc4a8a04cbd82",
+            "message": "Upgrade to Jetty 12.0.11\n\nCloses gh-41365"
+        },
+        {
+            "hash": "73416ee0e3f53b98d2bc02d25541441027775bef",
+            "message": "Upgrade to HttpCore5 5.2.5\n\nCloses gh-41364"
+        },
+        {
+            "hash": "54fd4d2e9e3038a05d9a4db05eae6b24fcc742fe",
+            "message": "Upgrade to Groovy 4.0.22\n\nCloses gh-41363"
+        },
+        {
+            "hash": "1bc7e22f955c0852cfcd46f38ce325cd4f08f0be",
+            "message": "Upgrade to Dependency Management Plugin 1.1.6\n\nCloses gh-41362"
+        },
+        {
+            "hash": "f9023c113003110e18bc95f80a1070de25afc175",
+            "message": "Upgrade to Byte Buddy 1.14.18\n\nCloses gh-41361"
+        },
+        {
+            "hash": "68c5f59ab9017a88137abe9bef1922297bb904da",
+            "message": "Configure checkArchitecture tasks to depend on resource processing\n\nCloses gh-41358"
+        },
+        {
+            "hash": "7b809de0c49fe01430633cbeeaaed375a721d9b7",
+            "message": "Revert \"Upgrade to Undertow 2.3.14.Final\"\n\nThis reverts commit 71b789a2e3ab8e56cdb3dc40255ddc5266436388.\n\nSee gh-41330"
+        },
+        {
+            "hash": "35ce4ca18deb8f7617a144893bf3a4b245f47835",
+            "message": "Remove remnants of Concourse build"
+        },
+        {
+            "hash": "305ab519270f56f953a7b719f79797a1a18eb83c",
+            "message": "Upgrade to latest Develocity plugins\n\nCloses gh-41344"
+        },
+        {
+            "hash": "cb9135b7433ca4fa8c173d1f80b167fc50b6272d",
+            "message": "Align GraphQL Java version with dependency from spring-graphql\n\nCloses gh-41315"
+        },
+        {
+            "hash": "262a5c195c91e0829e5e059a7bcbda9d69694e31",
+            "message": "Upgrade to GraphQL Java 21.5\n\nCloses gh-41340"
+        },
+        {
+            "hash": "71b789a2e3ab8e56cdb3dc40255ddc5266436388",
+            "message": "Upgrade to Undertow 2.3.14.Final\n\nCloses gh-41330"
+        },
+        {
+            "hash": "c1e5d2e0c43ed718624975b24403b05a8cfb2882",
+            "message": "Start building against Spring Kafka 3.1.7 snapshots\n\nSee gh-41297"
+        },
+        {
+            "hash": "7d40df9c891b7031de37bb9354fc504ba6a67b6e",
+            "message": "Start building against Spring Integration 6.2.7 snapshots\n\nSee gh-41296"
+        },
+        {
+            "hash": "6cdfc524a81ac2026a994454f4de806074941bb1",
+            "message": "Start building against Spring Framework 6.1.11 snapshots\n\nSee gh-41295"
+        },
+        {
+            "hash": "9b1475cb406955bbe62bf44960eaf0f0ee825196",
+            "message": "Start building against Spring Data Bom 2023.1.8 snapshots\n\nSee gh-41294"
+        },
+        {
+            "hash": "a1a3cecf527d1d11aa6ef690a5fc1703fa84b8a3",
+            "message": "Start building against Micrometer Tracing 1.2.8 snapshots\n\nSee gh-41293"
+        },
+        {
+            "hash": "da7be083732db9fe54b55ba73783d7d190fbd429",
+            "message": "Start building against Micrometer 1.12.8 snapshots\n\nSee gh-41292"
+        },
+        {
+            "hash": "0898982a13613c7e7d02815e009f48cc9ec1d3e9",
+            "message": "Ignore ca-certificates deprecation warnings in Paketo system tests\n\nCloses gh-41282"
+        },
+        {
+            "hash": "d71fdd97125b852fbc66c42da4ea741a24309c73",
+            "message": "Make buildSrc's custom Gradle tasks consistently abstract\n\nCloses gh-41272"
+        },
+        {
+            "hash": "86fa2296e2a3c68f7c6ca9d5b700e33332ed859a",
+            "message": "Merge pull request #41173 from sdeleuze\n\n* pr/41173:\n  Update Kotlin DSL examples of bootBuildImage to be additive\n\nCloses gh-41173"
+        },
+        {
+            "hash": "a6f1bb9590a2126a44c7d9a08e3d6994b46fc77f",
+            "message": "Update Kotlin DSL examples of bootBuildImage to be additive\n\nSee gh-41173"
+        },
+        {
+            "hash": "365fdfee45547cf0a9fcf521e30cc3cf593f3c20",
+            "message": "Reduce scope of mavenOptional feature to only the Maven Plugin\n\nPreviously, the mavenOptional was added to every published module but it\nwas only used by spring-boot-maven-plugin. This commit reduces its scope\nso that it only affects the Maven plugin. It also reworks the\nimplementation to reuse the existing optional configuration rather than\ndeclaring a new mavenOptional configuration. Lastly, publication of\nGradle Module Metadata (GMM) has been disabled for\nspring-boot-maven-plugin. This is seen as preferable to publishing the\nmetadata – which isn't really needed as it does not contain any useful\nadditional information – and having to suppress warnings about\nincomplete mapping of GMM to pom metadata.\n\nCloses gh-41263"
+        },
+        {
+            "hash": "2ed72c6e4d4aea27f7c84354d5fd397e8e06fe55",
+            "message": "Correct syntax for plexus-utils exclusion\n\nSee 07442f836600fc346db49b8c0640f3977be18dfd\nSee gh-41248"
+        },
+        {
+            "hash": "2605f867317f249647d0782ad8329ab22b6e21ef",
+            "message": "Polish BaggagePropagationIntegrationTests"
+        },
+        {
+            "hash": "d2f74426f74333b9a27e6a3150d124b46953cfa9",
+            "message": "Work around bug in Gradle's Eclipse model\n\nThe model incorrectly marks the Gradle API and all of its\ndependencies as test dependencies, making them unavailable in Eclipse\nto code in src/main/java. We work around this by modifying the\nclasspath container to remove the test attribute from the\ndependencies that should be available to main code.\n\nSee gh-41228"
+        },
+        {
+            "hash": "3e98a932e0915ca7a5316009d69acab01216133c",
+            "message": "Polish BaggagePropagationIntegrationTests"
+        },
+        {
+            "hash": "4515c882c71c4ac86bd1ed96f5672134097c496c",
+            "message": "Merge branch 'gh-41228' into 3.2.x\n\nCloses gh-41228"
+        },
+        {
+            "hash": "654016af7f376f069a0aab5ab43a99c47d1f35eb",
+            "message": "Move Docker-related test support into a separate module\n\nSee gh-41228"
+        },
+        {
+            "hash": "fda6f19c5be885a11e662ea77c97efdb9fa3c628",
+            "message": "Update spring-boot-smoke-test-session-webflux-redis to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "5e332b87854667a4b939e1ce7142e96ccf3986f1",
+            "message": "Update spring-boot-smoke-test-session-webflux-mongo to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "2890067e3a714098aec3ac9f573b27e931bb24b1",
+            "message": "Update spring-boot-smoke-test-session-redis to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "b3f3501e2bc582802afbb29eab2199fc160c8256",
+            "message": "Update spring-boot-smoke-test-session-mongo to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "da28e03670a1ad5dd1d9fab3c9417585b9dca0cc",
+            "message": "Update spring-boot-smoke-test-pulsar to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "bc57d30a1f35769021e687980b8bbfe6d9ddad66",
+            "message": "Update spring-boot-smoke-test-kafka to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "957e73044b66103834ec550af27b420a7ced70e1",
+            "message": "Update spring-boot-smoke-test-data-redis to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "9662bec9c76ed21c167f7f834af1864d50bcaa5e",
+            "message": "Update spring-boot-smoke-test-data-r2dbc-liquibase to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "b52023966b758b994c3953237989cdbab250fbf4",
+            "message": "Update spring-boot-smoke-test-data-r2dbc-flyway to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "0d2d3e7d717a4da009eb0888adc33d3367af583f",
+            "message": "Update spring-boot-smoke-test-data-mongo to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "28396b1ff3cfe5cae07e9d6d7d12e537a01dfaef",
+            "message": "Update spring-boot-smoke-test-data-couchbase to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "a9be2e50e3ca7ff350e303831aa5411e13ef54f5",
+            "message": "Update spring-boot-smoke-test-data-cassandra to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "ccb0b2910f049f262850944fb88a037c175cd66f",
+            "message": "Update spring-boot-smoke-test-cache to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "24e797f8c20a179e8b6cfea2fc35cea3830f5ed2",
+            "message": "Update spring-boot-smoke-test-amqp to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "0579126c5f294697a48fa19b2553935688f10b48",
+            "message": "Update spring-boot-smoke-test-activemq to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "843de3adbc5a1e21fc497312c393d54a24a4e064",
+            "message": "Update spring-boot-test-autoconfigure to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "ba053dbaac3c9cf4a44838a8ced4e0e0fb8d3280",
+            "message": "Update spring-boot-actuator to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "9f166f2c851ea15c989bb7618d042db5517f427b",
+            "message": "Update spring-boot-autoconfigure to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "89a06608d2998a7d22882022ffd60dee18998530",
+            "message": "Update spring-boot-maven-plugin to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "7d5a761d511b775ed483e685f193d267caf6ade5",
+            "message": "Update spring-boot-gradle-plugin to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "7e4d60e07fbed303846a9f608eb13baf56a6d567",
+            "message": "Update spring-boot-launch-script-tests to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "6564abb12ac26733633389c35900170d937ed8ee",
+            "message": "Update spring-boot-loader-classic-tests to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "edc582800beb1b9f96ea83cc328538ff70810022",
+            "message": "Update spring-boot-loader-tests to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "d5ef5e9c9d6a109c315a5829a4d4a9574197cc27",
+            "message": "Update spring-boot-buildpack-platform to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "6fbf08fa9adbb5367ca56e5764ec7ca67d708324",
+            "message": "Update spring-boot-docker-compose to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "3f1f801461c1f2e523a32923203c5653da99edc4",
+            "message": "Update spring-boot-testcontainers to use docker-test plugin\n\nSee gh-41228"
+        },
+        {
+            "hash": "d78c7b541a8dec9abe17869eda2b7038b5699fca",
+            "message": "Introduce docker-test plugin for running tests that require Docker\n\nSee gh-41228"
+        },
+        {
+            "hash": "07442f836600fc346db49b8c0640f3977be18dfd",
+            "message": "Exclude plexus-utils in favor of Maven's build-in version\n\nCloses gh-41248"
+        },
+        {
+            "hash": "c5dfcc54de55bc2c60d7361c8c3fd8c24010e137",
+            "message": "Merge pull request #41244 from mateusscheper\n\n* gh-41244:\n  Polish \"Make conversion mechanism plural\"\n  Make conversion mechanism plural\n\nCloses gh-41244"
+        },
+        {
+            "hash": "270f364aef9b506c7ba16eb26393789095b6af76",
+            "message": "Polish \"Make conversion mechanism plural\"\n\nSee gh-41244"
+        },
+        {
+            "hash": "068b1597993bc14fe923bf56ec6ded6af15dd2a0",
+            "message": "Make conversion mechanism plural\n\nFixing typo for the \"mechanism\" word and improving readability by\nadding \".\".\n\nSee gh-41244"
+        },
+        {
+            "hash": "712d935c8e85226bb3508e43cefceb4cb7e1ef39",
+            "message": "Fix checkstyle violation\n\nSee gh-35786"
+        },
+        {
+            "hash": "eef4c3c2c057f7a2b73d5a1788411d4e64f6dd24",
+            "message": "Allow TestcontainersLifecycleBeanPostProcessor to detect scoped beans\n\nUpdate `TestcontainersLifecycleBeanPostProcessor` so that scoped beans\nare included.\n\nFixes gh-35786"
+        },
+        {
+            "hash": "8bcdb4b06bdb2a012a66b44d11a8acceee08fb5c",
+            "message": "Improve error message when spring.config.import fails to resolve\n\nUpdate `StandardConfigDataLocationResolver` to give a better error\nmessage when a location cannot be resolved. Prior to this commit, a\nlocation with a misspelling in the prefix would only give an error\nabout the file extension being not known.\n\nFixes gh-36243"
+        },
+        {
+            "hash": "85f6641a7eb963dd0d95b8a16c7e8505fc928085",
+            "message": "Allow 'npipe://' prefix in Docker host address\n\nUpdate `LocalHttpClientTransport` to support explicit `npipe://` prefix\nin the host name. This is the format used in the Docker config from\nv4.31.1 onward.\n\nFixes gh-41199"
+        },
+        {
+            "hash": "98c11bb5df377b043ab23ecc3e80a1fe5819f51b",
+            "message": "Use consistent current thread context classloader for initialization\n\nEnsure `Thread.currentThread().getContextClassLoader()` returns the same\nclassloader for all types of initialization.\n\nPrior to this commit, `JettyEmbeddedWebAppContext` would return a\ndifferent classloader when initializing Servlet and Filter classes. This\nwas due to the fact that our `deferredInitialize()` method has called\noutside of a `getContext().call(...)`.\n\nFixes gh-37649\n\nCo-authored-by: Phillip Webb <phil.webb@broadcom.com>"
+        },
+        {
+            "hash": "57f452fec19ab8bb3ce6b3c84d10cbae20bb7ad5",
+            "message": "Disable ReactorResourceFactory use of global resources in tests\n\nAdd `ContextCustomizerFactory` to automatically disable the use of\n`ReactorResourceFactory` global resources in tests.\n\nFixes gh-38199"
+        },
+        {
+            "hash": "b8927ebd9011996fc55e7315d101c13cf7e17b42",
+            "message": "Create ActiveMQConnectionFactory without using reflection\n\nFixes gh-41212"
+        },
+        {
+            "hash": "55af8a38f5572234b6e1002601994b6f45331fc7",
+            "message": "Upgrade to GitHub Changelog Generator 0.0.11\n\nCloses gh-41195"
+        },
+        {
+            "hash": "013a4dd2b75684f93372a517eb3d08864f04b94f",
+            "message": "Document tracing support for RestClient\n\nCloses gh-41182"
+        },
+        {
+            "hash": "e9eeac9028998a496d40503294452aa6de2cb774",
+            "message": "Use Spring Framework's NoOpResponseErrorHandler\n\nSee spring-projects/spring-framework#32750\n\nCloses gh-41183"
+        },
+        {
+            "hash": "962936370adcd2d3e073b2804b22e0b5202238e2",
+            "message": "Don't report already migrated properties\n\nUpdate `PropertiesMigrationReporter` so that already migrated properties\nare not reported. Prior to this commit, if a deprecated property was\nreplaced by a property that could bind with the name relaxed name it\nwould be reported. For example: `test.someproperty` being replaced with\n`test.some-property`.\n\nIn order to check the actual underlying property name, the\n`PropertySourceOrigin` class has been updated so that it is always\nreturned, even if another `Origin` is available.\n\nFixes gh-35774"
+        }
+    ],
+    "issues": [
+        {
+            "number": "41547",
+            "title": "Fix documentation links in the README"
+        },
+        {
+            "number": "41533",
+            "title": "Prohibit upgrades to Undertow 2.3.15"
+        },
+        {
+            "number": "41532",
+            "title": "Upgrade to Spring Pulsar 1.0.8"
+        },
+        {
+            "number": "41296",
+            "title": "Upgrade to Spring Integration 6.2.7"
+        },
+        {
+            "number": "41523",
+            "title": "Upgrade to Spring GraphQL 1.2.8"
+        },
+        {
+            "number": "41477",
+            "title": "No configuration property for defaultTimeout setting that was introduced in Spring Integration 6.2"
+        },
+        {
+            "number": "41482",
+            "title": "Document the types to which each spring.mvc.format and spring.webflux.format property applies"
+        },
+        {
+            "number": "41351",
+            "title": "Document that logging.file.name and logging.file.path cannot be used together"
+        },
+        {
+            "number": "41297",
+            "title": "Upgrade to Spring Kafka 3.1.7"
+        },
+        {
+            "number": "41492",
+            "title": "NPE during auto-configuration in OnClassCondition.resolveOutcomesThreaded because firstHalf is null"
+        },
+        {
+            "number": "41496",
+            "title": "Upgrade to Tomcat 10.1.26"
+        },
+        {
+            "number": "41495",
+            "title": "Upgrade to SQLite JDBC 3.43.2.2"
+        },
+        {
+            "number": "41493",
+            "title": "Upgrade to Spring HATEOAS 2.2.3"
+        },
+        {
+            "number": "41294",
+            "title": "Upgrade to Spring Data Bom 2023.1.8"
+        },
+        {
+            "number": "41484",
+            "title": "Upgrade to Spring Retry 2.0.7"
+        },
+        {
+            "number": "41470",
+            "title": "Upgrade to AspectJ 1.9.22.1"
+        },
+        {
+            "number": "41471",
+            "title": "Bomr doesn't detect upgrades when the version changes from three numeric components to four"
+        },
+        {
+            "number": "41463",
+            "title": " Harmonize GitHub Actions settings"
+        },
+        {
+            "number": "41454",
+            "title": "Test Gradle plugin against Gradle 8.9"
+        },
+        {
+            "number": "41295",
+            "title": "Upgrade to Spring Framework 6.1.11"
+        },
+        {
+            "number": "41436",
+            "title": "Upgrade to Reactor Bom 2023.0.8"
+        },
+        {
+            "number": "41370",
+            "title": "Upgrade to Neo4j Java Driver 5.22.0"
+        },
+        {
+            "number": "41293",
+            "title": "Upgrade to Micrometer Tracing 1.2.8"
+        },
+        {
+            "number": "41292",
+            "title": "Upgrade to Micrometer 1.12.8"
+        },
+        {
+            "number": "41368",
+            "title": "Upgrade to Lombok 1.18.34"
+        },
+        {
+            "number": "41367",
+            "title": "Upgrade to JUnit Jupiter 5.10.3"
+        },
+        {
+            "number": "41366",
+            "title": "Upgrade to JsonAssert 1.5.3"
+        },
+        {
+            "number": "41365",
+            "title": "Upgrade to Jetty 12.0.11"
+        },
+        {
+            "number": "41364",
+            "title": "Upgrade to HttpCore5 5.2.5"
+        },
+        {
+            "number": "41363",
+            "title": "Upgrade to Groovy 4.0.22"
+        },
+        {
+            "number": "41362",
+            "title": "Upgrade to Dependency Management Plugin 1.1.6"
+        },
+        {
+            "number": "41361",
+            "title": "Upgrade to Byte Buddy 1.14.18"
+        },
+        {
+            "number": "41358",
+            "title": "checkArchitecture tasks should declare a dependency on the source set's process resources task"
+        },
+        {
+            "number": "41330",
+            "title": "Prohibit upgrades to Undertow 2.3.14.Final"
+        },
+        {
+            "number": "41344",
+            "title": "Upgrade to latest Develocity plugins"
+        },
+        {
+            "number": "41315",
+            "title": "Align managed version of GraphQL with the version of Spring GraphQL's dependency on it"
+        },
+        {
+            "number": "41340",
+            "title": "Upgrade to GraphQL Java 21.5"
+        },
+        {
+            "number": "41282",
+            "title": "PaketoBuilderTests fail due to deprecation warning from the ca-certificates buildpack"
+        },
+        {
+            "number": "41272",
+            "title": "Make buildSrc's custom tasks consistently abstract"
+        },
+        {
+            "number": "41263",
+            "title": "Rework fix for #21992 to avoid polluting Gradle Module Metadata with mavenOptional… variants"
+        },
+        {
+            "number": "41248",
+            "title": "Exclude plexus-utils in favor of the version that's built into Maven"
+        },
+        {
+            "number": "41228",
+            "title": "Run Docker-based tests serially"
+        },
+        {
+            "number": "35786",
+            "title": "TestcontainersLifecycleBeanPostProcessor does not work correctly with scoped beans"
+        },
+        {
+            "number": "36243",
+            "title": "Error message can be misleading if spring.config.import fails to resolve"
+        },
+        {
+            "number": "41199",
+            "title": "build-image failures after docker desktop update with 'Illegal char <:> at index 5: npipe:////'"
+        },
+        {
+            "number": "37649",
+            "title": "When using Jetty, filters, listeners, and servlets are not initialized with the same thread context classloader"
+        },
+        {
+            "number": "38199",
+            "title": "DirtiesContext used with Webflux, a random port and multiple contexts causes multiple contexts to misbehave"
+        },
+        {
+            "number": "41212",
+            "title": "NoSuchMethodException on org.apache.activemq.ActiveMQConnectionFactory.<init> when using spring-boot-starter-activemq in a native image"
+        },
+        {
+            "number": "41195",
+            "title": "Upgrade to GitHub Changelog Generator 0.0.11"
+        },
+        {
+            "number": "41182",
+            "title": "Document tracing support for RestClient"
+        },
+        {
+            "number": "32750",
+            "title": "Add AOT section to Gradle Plugin"
+        },
+        {
+            "number": "41183",
+            "title": "Use Framework's NoOpResponseErrorHandler"
+        },
+        {
+            "number": "35774",
+            "title": "PropertiesMigrationListener wrongly reports property as deprecated"
+        }
+    ]
+}

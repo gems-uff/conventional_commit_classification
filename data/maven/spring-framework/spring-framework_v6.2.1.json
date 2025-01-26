@@ -1,0 +1,594 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.2.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 96,
+    "start_delay": 0.0,
+    "duration": 41.939861111111114,
+    "commits_info": [
+        {
+            "hash": "b4f10d4f1d6137a90802e1cb772d40b572adf800",
+            "message": "Release v6.2.1"
+        },
+        {
+            "hash": "0aa721cad0dc98e45dec3893343c5be29dc9288f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "63af572ce803e9f1d206195060619077239bc1a4",
+            "message": "Upgrade to Jackson 2.18.2, RxJava 3.1.10, Checkstyle 10.20.2"
+        },
+        {
+            "hash": "72c2343f631a525b145dc56f7b656040f6d9d35f",
+            "message": "Avoid deprecated ListenableFuture name for internal class"
+        },
+        {
+            "hash": "8aeced9f8060561bd20351446df452e0100912d7",
+            "message": "Support header filtering in web data binding\n\nCloses gh-34039"
+        },
+        {
+            "hash": "70c326ed30a0264ef38c59d76b3dbfa6745a4827",
+            "message": "Support headers in DataBinding via constructor args\n\nCloses gh-34073"
+        },
+        {
+            "hash": "7b4e19c69bc15d3018740d72f962c112cbd1772e",
+            "message": "Make ExtendedServletRequestDataBinder public\n\nMake it public and move it down to the annotations package alongside\nInitBinderBindingContext. This is mirrors the hierarchy in Spring MVC\nwith the ExtendedServletRequestDataBinder. The change will allow\ncustomization of the header names to include/exclude in data binding.\n\nSee gh-34039"
+        },
+        {
+            "hash": "3b95d2c449d82df9f6debc4aa4fcba71177ecb41",
+            "message": "Support Flux<ServerSentEvent<Fragment>> in WebFlux\n\nCloses gh-33975"
+        },
+        {
+            "hash": "640e5705831beed32fd5c0490ef19c194ed62a95",
+            "message": "Minor refactoring in ServerSentEvent\n\nExtract re-usable method to serialize SSE fields.\n\nSee gh-33975"
+        },
+        {
+            "hash": "66f33a82651b6cfaec8e85a5f5af9a8bc285d5ca",
+            "message": "MapMethodProcessor supportsParameter is more specific\n\nCloses gh-33160"
+        },
+        {
+            "hash": "68997d84162f9fdfccb17c23006f3c4f0620a993",
+            "message": "Avoid javadoc references to deprecated types/methods"
+        },
+        {
+            "hash": "52006b71bcd5812c868420b132b357fadf0e728e",
+            "message": "Support Servlet error message in MockMvc assertions\n\nPrior to this commit, `MockMvc` would support checking for the Servlet\nerror message as the \"response status reason\". While this error message\ncan be driven with the `@ResponseStatus` annotation, this message is not\ntechnically the HTTP status reason listed on the response status line.\n\nThis message is provided by the Servlet container in the error page when\nthe `response.sendError(int, String)` method is used.\n\nThis commit adds the missing\n`mvc.get().uri(\"/error/message\")).hasErrorMessage(\"error message\")`\nassertion to check for this Servlet error message.\n\nCloses gh-34016"
+        },
+        {
+            "hash": "41d9f21ab97b8cda9c3b740fc10b677c4d27fb50",
+            "message": "Log alias removal in DefaultListableBeanFactory\n\nPrior to this commit, information was logged when a bean definition\noverrode an existing bean definition, but nothing was logged when the\nregistration of a bean definition resulted in the removal of an alias.\n\nWith this commit, an INFO message is now logged whenever an alias is\nremoved in DefaultListableBeanFactory.\n\nCloses gh-34070"
+        },
+        {
+            "hash": "7206b282725ae766821665b08319070674c70b86",
+            "message": "Implement toString() in TestBeanOverrideHandler\n\nCloses gh-34072"
+        },
+        {
+            "hash": "0c688742e102faebcb18bed1b84fe84f635b40d6",
+            "message": "Fix custom scheduler support for @Scheduled methods\n\nThis commit fixes a regression introduced by gh-24560, when adding\nexecution metadata support for scheduled tasks. The\n`OutcomeTrackingRunnable` would delegate to the actual runnable but\ncould also hide whether it implements the `SchedulingAwareRunnable`\ncontract.\n\nThis commit ensures that `OutcomeTrackingRunnable` always implements\nthat contract and delegates to the runnable if possible, or return\ndefault values otherwise.\n\nFixes gh-34058"
+        },
+        {
+            "hash": "7de1dc826a26a15a17207248e1ea833fadeee40a",
+            "message": "Consistently handle generics in TypeDescriptor.equals\n\nProperly processes recursive types through always comparing generics via the top-level ResolvableType (rather than through nested TypeDescriptors with custom ResolvableType instances).\n\nCloses gh-33932"
+        },
+        {
+            "hash": "3e3ca7402012d4ad893958f7639579b4b3c69373",
+            "message": "Log provider setup failure at info level without stacktrace\n\nCloses gh-33979"
+        },
+        {
+            "hash": "66da5d7ab942c6d52ce73e35a1e3afccc3018da1",
+            "message": "Restore original override behavior when override allowed\n\nCloses gh-33920"
+        },
+        {
+            "hash": "68d6cb9d3567a1abf0d488355b318368ac9ae506",
+            "message": "Upgrade to Reactor 2024.0.1\n\nCloses gh-34051"
+        },
+        {
+            "hash": "6649a6e0f75cdd81487899f906f60b5feb9eb6c4",
+            "message": "Upgrade to Micrometer 1.14.2\n\nCloses gh-34050"
+        },
+        {
+            "hash": "54948a4e88e14885fdb2e22d65a71ed7195699fc",
+            "message": "Log warning when one Bean Override overrides another Bean Override\n\nIt is currently possible for one Bean Override to override another\nlogically equivalent Bean Override.\n\nFor example, a @⁠TestBean can override a @⁠MockitoBean, and vice versa.\n\nIn fact, it's also possible for a @⁠MockitoBean to override another\n@⁠MockitoBean, for a @⁠TestBean to override a @⁠TestBean, etc.\n\nHowever, there may be viable use cases for one override overriding\nanother override. For example, one may have a need to spy on a bean\ncreated by a @⁠TestBean factory method.\n\nIn light of that, we do not prohibit one Bean Override from overriding\nanother Bean Override; however, with this commit we now log a warning\nto help developers diagnose issues in case such an override is\nunintentional.\n\nFor example, given the following test class, where TestConfig registers\na single bean of type MyService named \"myService\"...\n\n@⁠SpringJUnitConfig(TestConfig.class)\nclass MyTests {\n\n  @⁠TestBean(methodName = \"example.TestUtils#createMyService\")\n  MyService testService;\n\n  @⁠MockitoBean\n  MyService mockService;\n\n  @⁠Test\n  void test() {\n    // ...\n  }\n}\n\n... running that test class results in a log message similar to the\nfollowing, which has been formatted for readability.\n\nWARN - Bean with name 'myService' was overridden by multiple handlers:\n[\n [TestBeanOverrideHandler@44b21f9f\n  field = example.MyService example.MyTests.testService,\n  beanType = example.MyService,\n  beanName = [null],\n  strategy = REPLACE_OR_CREATE\n ],\n [MockitoBeanOverrideHandler@7ee8130e\n  field = example.MyService example.MyTests.mockService,\n  beanType = example.MyService,\n  beanName = [null],\n  strategy = REPLACE_OR_CREATE,\n  reset = AFTER,\n  extraInterfaces = set[[empty]],\n  answers = RETURNS_DEFAULTS, serializable = false\n ]\n]\n\nNOTE: The last registered BeanOverrideHandler wins. In the above\nexample, that means that @⁠MockitoBean overrides @⁠TestBean, resulting\nin a Mockito mock for the MyService bean in the test's\nApplicationContext.\n\nCloses gh-34056"
+        },
+        {
+            "hash": "a00ba8dbcf003da5a996c9395d0cd9a7b28794fd",
+            "message": "Revert \"Reuse NoTransactionInContextException instances\"\n\nThis reverts commit 8e3846991d30a9a577dae9664996c036895f04cc.\n\nCloses gh-34048"
+        },
+        {
+            "hash": "4f815b00551556804bf5cdf0f3226c276eac08ae",
+            "message": "Merge pull request #33891 from youabledev\n\n* pr/33891:\n  Polish\n\nCloses gh-33891"
+        },
+        {
+            "hash": "5494d78018fb8156d1b5468d0d113dcfe3bf0eae",
+            "message": "Polish\n\nSee gh-33891"
+        },
+        {
+            "hash": "cd60a0013beb090ceda9227a1a66e59d238004a6",
+            "message": "Reject identical Bean Overrides\n\nPrior to this commit, the Bean Override feature in the Spring\nTestContext Framework (for annotations such as @⁠MockitoBean and\n@⁠TestBean) silently allowed one bean override to override another\n\"identical\" bean override; however, Spring Boot's @⁠MockBean and\n@⁠SpyBean support preemptively rejects identical overrides and throws\nan IllegalStateException to signal the configuration error to the user.\n\nTo align with the behavior of @⁠MockBean and @⁠SpyBean in Spring Boot,\nand to help developers avoid scenarios that are potentially confusing\nor difficult to debug, this commit rejects identical bean overrides in\nthe Spring TestContext Framework.\n\nNote, however, that it is still possible for a bean override to\noverride a logically equivalent bean override. For example, a\n@⁠TestBean can override a @⁠MockitoBean, and vice versa.\n\nCloses gh-34054"
+        },
+        {
+            "hash": "213775059113313931dc4cbe2de479e8fc82d3ee",
+            "message": "Improve Bean Override by-name integration tests"
+        },
+        {
+            "hash": "13df9058a48c7cd79d5f144e64564fa87e5b0d10",
+            "message": "Introduce \"unsafeAllocated\" flag in TypeHint\n\nThis metadata information is required for supporting libraries using\n`sun.misc.Unsafe#allocateInstance(Class<?>)`, even though Spring\nFramework is not using this feature.\n\nCloses gh-34055"
+        },
+        {
+            "hash": "aee52b53a1b388e994afb2eff36c142f556ce2a7",
+            "message": "Introduce MockitoAssertions"
+        },
+        {
+            "hash": "92bbaa21e0391461aba0c92d5cc7ab4b37ffa4d3",
+            "message": "Improve test coverage for @⁠MockitoSpyBean use cases"
+        },
+        {
+            "hash": "837579c2e57dcce2303e0d9120d0ce2400917613",
+            "message": "Start building against Reactor 2024.0.1 snapshots\n\nSee gh-34051"
+        },
+        {
+            "hash": "03a75cf03ae095f0ea8884ea8e4e12115afd6a94",
+            "message": "Start building against Micrometer 1.14.2 snapshots\n\nSee gh-34050"
+        },
+        {
+            "hash": "aa7b4598031b7633be68cc550da19da79e370f75",
+            "message": "Fix Phantom Read problem for Bean Overrides in the TestContext framework\n\nTo make an analogy to read phenomena for transactional databases, this\ncommit effectively fixes the \"Phantom Read\" problem for Bean Overrides.\n\nA phantom read occurs when the BeanOverrideBeanFactoryPostProcessor\nretrieves a set of bean names by-type twice and a new bean definition\nfor a compatible type has been created in the BeanFactory by a\nBeanOverrideHandler between the first and second retrieval.\n\nContinue reading for the details...\n\nPrior to this commit, the injection of test Bean Overrides (for\nexample, when using @⁠MockitoBean) could fail in certain scenarios if\noverrides were created for nonexistent beans \"by type\" without an\nexplicit name or qualifier. Specifically, if an override for a SubType\nwas created first, and subsequently an attempt was made to create an\noverride for a SuperType (where SubType extends SuperType), the\noverride for the SuperType would \"override the override\" for the\nSubType, effectively removing the override for the SubType.\nConsequently, injection of the override instance into the SubType field\nwould fail with an error message similar to the following.\n\nBeanNotOfRequiredTypeException: Bean named 'Subtype#0' is expected to\nbe of type 'Subtype' but was actually of type 'Supertype$Mock$XHb7Aspo'\n\nThis commit addresses this issue by tracking all generated bean names\n(in a generatedBeanNames set) and ensuring that a new bean override\ninstance is created for the current BeanOverrideHandler if a previous\nBeanOverrideHandler already created a bean override instance that now\nmatches the type required by the current BeanOverrideHandler.\n\nIn other words, if the generatedBeanNames set already contains the\nbeanName that we just found by-type, we cannot \"override the override\",\nbecause we would lose one of the overrides. Instead, we must create a\nnew override for the current handler. In the example given above, we\nmust end up with overrides for both SuperType and SubType.\n\nCloses gh-34025"
+        },
+        {
+            "hash": "03fe1f0df38090eff97f7ab2e292d881275e860d",
+            "message": "Improve documentation for BeanOverrideBeanFactoryPostProcessor"
+        },
+        {
+            "hash": "0d7247774272146ed3a2812f89875623bf57e851",
+            "message": "Restore user type in generated root bean definitions\n\nThis commit restores the user class in generated RootBeanDefinition\ninstances. Previously the CGLIB subclass was exposed. While this is\nimportant in regular runtime as the configuration class parser operates\non the bean definition, this is not relevant for AOT as this information\nis internal and captured in the instance supplier.\n\nCloses gh-33960"
+        },
+        {
+            "hash": "d26ee8f85206ece7bf195dd16887bdc734bd1bb6",
+            "message": "Merge pull request #34031 from ngocnhan-tran1996\n\n* pr/34031:\n  Fix link to MockMvcBuilders in reference documentation\n\nCloses gh-34031"
+        },
+        {
+            "hash": "47c66f4352555079110170a578241b11a1f47cd1",
+            "message": "Fix link to MockMvcBuilders in reference documentation\n\nSee gh-34031"
+        },
+        {
+            "hash": "b5dd0a60f82dde47d034b19c319eeec98e39e65f",
+            "message": "Restore lenient match against unresolvable wildcard\n\nCloses gh-33982"
+        },
+        {
+            "hash": "e618f922c2e2a874f9cdd660e77e0e373b710e63",
+            "message": "Resolve nested placeholders with a fallback having one\n\nThis commit fixes a regression in PlaceHolderParser where it would no\nlonger resolve nested placeholders for a case where the fallback has a\nplaceholder itself.\n\nThis is due to the Part implementations and how they are structure, and\nthis commit makes sure that nested resolution happens consistently.\n\nCloses gh-34020"
+        },
+        {
+            "hash": "81a9f3d50b9b739c1cab3bb9962f8149119612a1",
+            "message": "Restore public type for generated instance supplier of CGLIB proxy\n\nThis commit restores the signature of instance suppliers that are\nexposing a CGLIB proxy. While calling the CGLIB proxy itself, and\nmaking it available in BeanInstanceSupplier, is needed internally, such\ntype should not be exposed as it is an internal concern.\n\nThis was breaking InstanceSupplier.andThen as it expects the public\ntype of the bean to be exposed, not it's eventual CGLIB subclass.\n\nCloses gh-33998"
+        },
+        {
+            "hash": "c807fa597f8f25b2f5fbc81c27e5848d2a95dacb",
+            "message": "Remove unnecessary HandshakeHandlerRuntimeHints\n\nThose hints are not needed anymore as of Spring Framework 6.1.\n\nCloses gh-34032"
+        },
+        {
+            "hash": "576f10998789c33b5b5a0707a26fadd7f614e941",
+            "message": "Use JDK proxy for introduction interface without target\n\nCloses gh-33985"
+        },
+        {
+            "hash": "384dc2a9b812b19f5801e6b10480064efd0be1b5",
+            "message": "Consistently use singleton lock for FactoryBean processing\n\nCloses gh-33972"
+        },
+        {
+            "hash": "edf7f3cd43514cd27925c14c5425996b79627256",
+            "message": "Polishing"
+        },
+        {
+            "hash": "58c64cba2cd4eeced72b874f8bc0f384e41e24f1",
+            "message": "Consistent fallback to NoUpgradeStrategyWebSocketService\n\nCloses gh-33970"
+        },
+        {
+            "hash": "307411631df6d4e576a3d719ab4d4c6c5ea52782",
+            "message": "Ignore SQLFeatureNotSupportedException on releaseSavepoint\n\nCloses gh-33987"
+        },
+        {
+            "hash": "8d69370b95f685e653800bc626747ca22b5b33cd",
+            "message": "Consider logical equality in AdvisedSupport.MethodCacheKey#equals\n\nPrior to this commit, the equals() implementation in AdvisedSupport's\nMethodCacheKey only considered methods to be equal based on an identity\ncomparison (`==`), which led to duplicate entries in the method cache\nfor the same logical method.\n\nThis is caused by the fact that AdvisedSupport's\ngetInterceptorsAndDynamicInterceptionAdvice() method is invoked at\nvarious stages with different Method instances for the same method:\n\n1) when creating the proxy\n2) when invoking the method via the proxy\n\nThe reason the Method instances are different is due to the following.\n\n- Methods such as Class#getDeclaredMethods() and\n  Class#getDeclaredMethod() always returns \"child copies\" of the\n  underlying Method instances -- which means that `equals()` should be\n  used instead of (or in addition to) `==` whenever the compared Method\n  instances can come from different sources.\n\nWith this commit, the equals() implementation in MethodCacheKey now\nconsiders methods equal based on identity or logical equality, giving\npreference to the quicker identity check.\n\nSee gh-32586\nCloses gh-33915"
+        },
+        {
+            "hash": "d990449b0d68bf7a04154dcaa1ab8e6605a5053e",
+            "message": "Improve toString for reactive ScheduledTask\n\nPrior to this commit, the reactive Scheduled tasks would be wrapped as a\n`SubscribingRunnable` which does not implement a custom `toString`. This\nwould result in task metadata using the default Java `toString`\nrepresentation for those.\n\nThis commit ensures that the bean class name and method name are used\nfor this `toString`.\n\nCloses gh-34010"
+        },
+        {
+            "hash": "15dcc449a26333c8b1637e86aac76cd685a6ed0c",
+            "message": "Refine Reactor Netty handling of request without body\n\nCloses gh-34003"
+        },
+        {
+            "hash": "320831b18ad7e8f0d0f0e9072f287ba699e96a21",
+            "message": "Test status quo for StaticMethodMatcherPointcut#matches invocations\n\nThis commit introduces a test which verifies how many times the\nmatches() method of a StaticMethodMatcherPointcut is invoked during\nApplicationContext startup as well as during actual method invocations\nvia the advice chain, which also indirectly tests the behavior of the\nequals() implementation in AdvisedSupport.MethodCacheKey.\n\nIn addition, this commit revises BeanFactoryTransactionTests to assert\nthat a transaction is started for the setAge() method.\n\nSee gh-33915"
+        },
+        {
+            "hash": "172c8b2c3527f5bb8e2a0cb48d0d35302a42766e",
+            "message": "Polish AOP tests"
+        },
+        {
+            "hash": "51956fad89bc19abd33f5406ad246226c791435a",
+            "message": "Test MockReset strategy for @⁠MockitoSpyBean\n\nAs a follow up to commit 0088b9c7f8, this commit introduces an\nintegration test which verifies that a spy created via @⁠MockitoSpyBean\nusing the MockReset.AFTER strategy is not reset between the refresh of\nthe ApplicationContext and the first use of the spy within a @⁠Test\nmethod.\n\nSee gh-33941\nSee gh-33986"
+        },
+        {
+            "hash": "ddec8d26534bc443653fdb2bad43efb94d41ecf5",
+            "message": "Add missing `@Contract` annotation to ObjectUtils#isEmpty\n\nCloses gh-33984"
+        },
+        {
+            "hash": "1aede291bb13a07f8f47e946a778ea216eda9cc8",
+            "message": "Move Kotlin value class unboxing to InvocableHandlerMethod\n\nBefore this commit, in Spring Framework 6.2, Kotlin value class\nunboxing was done at CoroutinesUtils level, which is a good fit\nfor InvocableHandlerMethod use case, but not for other ones like\nAopUtils.\n\nThis commit moves such unboxing to InvocableHandlerMethod in\norder to keep the HTTP response body support while fixing other\nregressions.\n\nCloses gh-33943"
+        },
+        {
+            "hash": "ea3bd7ae0c6e07e6f5fe7303d757efd203c0eca9",
+            "message": "Polish BeanValidationBeanRegistrationAotProcessor[Tests]\n\nThe log message for a NoClassDefFoundError is now a DEBUG level message\nhandled like a TypeNotPresentException and similar to the following.\n\nDEBUG: Skipping validation constraint hint inference for class\norg.example.CustomConstraint due to a NoClassDefFoundError for\ncom.example.MissingType\n\nSee gh-33949"
+        },
+        {
+            "hash": "9b0253e117049c264f9ca0737eca45319f23b805",
+            "message": "Skip runtime hint registration for constraint with missing dependencies\n\nPrior to this commit, AOT processing for bean validation failed with a\nNoClassDefFoundError for constraints with missing dependencies.\n\nWith this commit, the processing no longer fails, and a warning is\nlogged instead.\n\nSee gh-33940\nCloses gh-33949\n\nCo-authored-by: Sam Brannen <sam.brannen@broadcom.com>"
+        },
+        {
+            "hash": "f3753e6d642750991742eaed36b19fd2267f853f",
+            "message": "Merge pull request #33956 from CHOICORE\n\n* pr/33956:\n  Fix log level in PathMatchingResourcePatternResolver\n\nCloses gh-33956"
+        },
+        {
+            "hash": "41421d106b571d596f178f018f7df9090fb06fff",
+            "message": "Fix log level in PathMatchingResourcePatternResolver\n\nSee gh-33956"
+        },
+        {
+            "hash": "8c0ac8e06209c4cca99e3df3d736d6fc5d1a5851",
+            "message": "Fix a typo in the filters documentation\n\nCloses gh-33959"
+        },
+        {
+            "hash": "0088b9c7f8abad2ec558b583087a2f6d96689c0b",
+            "message": "Honor MockReset strategy for @⁠MockitoBean and @⁠MockitoSpyBean\n\nCommit 6c2cba5d8a introduced a regression by inadvertently removing the\nMockReset strategy comparison when resetting @⁠MockitoBean and\n@⁠MockitoSpyBean mocks.\n\nThis commit reinstates the MockReset strategy check and introduces\ntests for this feature.\n\nCloses gh-33941"
+        },
+        {
+            "hash": "2b840ee7efc4ec81161858378348a7cee8ec4dd9",
+            "message": "Upgrade to Gradle 8.11.1\n\nCloses gh-33951"
+        },
+        {
+            "hash": "051f1dac241825159618c0397fd7966c78ece549",
+            "message": "Polish contribution\n\nSee gh-33950"
+        },
+        {
+            "hash": "5e7b3a3bedb846f01ab01e056e58c1df4d2ab3d7",
+            "message": "Avoid infinite recursion in BeanValidationBeanRegistrationAotProcessor\n\nPrior to this commit, AOT processing for bean validation failed with a\nStackOverflowError for constraints with fields having recursive generic\ntypes.\n\nWith this commit, the algorithm tracks visited classes and aborts\npreemptively when a cycle is detected.\n\nCloses gh-33950\n\nCo-authored-by: Sam Brannen <sam.brannen@broadcom.com>"
+        },
+        {
+            "hash": "1910d324057dd2b13d155be70a6517995bf4d7a0",
+            "message": "Replace TestObservationRegistryAssert.assertThat() with Assertions.assertThat()\n\nSee https://github.com/micrometer-metrics/micrometer/pull/5551\n\nCloses gh-33929"
+        },
+        {
+            "hash": "986ffc2072d820e83e64a02cad7bdd2b85c4ccf8",
+            "message": "Use full URI for URI template keyvalue with RestClient\n\nPrior to this commit, `RestClient` would not use the full URI created by\nthe uri handler as a template request attribute.\nThis means that HTTP client observations would not contain the base URI\nin recorded observations as the uri template keyvalue.\n\nCloses gh-33928"
+        },
+        {
+            "hash": "b9cf03f8f021ea4ad31d09ad463d48c4dbfa66e2",
+            "message": "Construct consistent error messages in BeanOverrideBeanFactoryPostProcessor"
+        },
+        {
+            "hash": "08a789cee9e8dd54180af269926a1b070963fd67",
+            "message": "Honor @⁠Fallback semantics for Test Bean Overrides\n\nCloses gh-33924"
+        },
+        {
+            "hash": "7a6e401d176c53226f72642532abcd1316bdb7ed",
+            "message": "Document visibility requirements for Bean Overrides\n\nThis commit makes it clear that there are no visibility requirements\nfor @⁠TestBean fields or factory methods as well as @⁠MockitoBean or\n@⁠MockitoSpyBean fields.\n\nCloses gh-33923"
+        },
+        {
+            "hash": "3569cfe9903825c57c8c53f8f5149a4328c64d9d",
+            "message": "Reject static Bean Override fields for @⁠MockitoBean, @⁠TestBean, etc.\n\nCloses gh-33922"
+        },
+        {
+            "hash": "8b66d3c79a33a22fa2b39644f6bb1738fb0caa58",
+            "message": "Upgrade Undertow-servlet/websockets to 2.3.18.Final\n\nFollow up to 35b452b4 which only upgraded undertow-core."
+        },
+        {
+            "hash": "a3c132c4426c72e1791e2a450eff1fbff505d1af",
+            "message": "Polish XmlExpectationsHelper[Tests]"
+        },
+        {
+            "hash": "91791c17568c30eb95bc48138a1679f3b747dee8",
+            "message": "Fail with full description for XML diff in XmlExpectationsHelper\n\nCloses gh-33827"
+        },
+        {
+            "hash": "dd92eac3ad6facfd41f80781f1e832aec6e4b6c9",
+            "message": "Refer to message \"receipt\" instead of \"reception\""
+        },
+        {
+            "hash": "874f0569842c82becd8c54a8cb0eec9a2a4d2739",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b77db644593e4dc96ae6b1808e715cdb16b77497",
+            "message": "Fix typos and link in Observability documentation\n\nCloses gh-33910"
+        },
+        {
+            "hash": "d597d2e1597bbbd75967325a906669f9bc455081",
+            "message": "Fix WebClientIntegrationTest#applyAttributesToNativeRequest flaky test\n\nFor Reactor Netty and Reactor Netty 2 (with Netty 5), the attributes are\nstored as an `Attribute` on the netty channel. Reactor Netty replaces\nthe channel with a static placeholder one once the request has been\nprocessed and as such, capturing the native request in the test will\nlead to asserting an attribute-less channel.\n\nThis change switches to capturing the `Attribute` itself, which is a\nvalue-holder that can be asserted later on.\n\nCloses gh-33909"
+        },
+        {
+            "hash": "f5c3f3522e1a790999f0d9078e7ff288644f324b",
+            "message": "Simplify @⁠EnumSource usage"
+        },
+        {
+            "hash": "d421f61a4ac2a323fbaa3e5b9b619a99069e09c0",
+            "message": "Polish @⁠DurationFormat Javadoc and tests"
+        },
+        {
+            "hash": "883254e1d01f8b407ccd9b2834cb72dd96f7b552",
+            "message": "Polish\n\n- Update copyright header.\n- Consistent use of \"SIMPLE\" link text for Style#SIMPLE in javadoc.\n\nCloses gh-33883"
+        },
+        {
+            "hash": "e919d0adcce45625154e73d3d54fa59ebe18fbe6",
+            "message": "Reflect well-known MediaTypes intent in Javadoc\n\nCloses gh-33754"
+        },
+        {
+            "hash": "4aafae1c33bd29a2eae2c990d72dc3d5e9c4ba76",
+            "message": "Reflect well-known HttpHeaders intent in Javadoc\n\nCloses gh-33886"
+        },
+        {
+            "hash": "afef439c1fc794919459842630f667c90ae1a39d",
+            "message": "Temporarily disable flaky integration test\n\nSee gh-33909"
+        },
+        {
+            "hash": "807e1e61266a879a5432f822a2bf5b95bf91e9ae",
+            "message": "Document support for varargs invocations in SpEL\n\nCloses gh-33332"
+        },
+        {
+            "hash": "5ac56bda87d4a104a0df2d4508888cf485d6a452",
+            "message": "Remove unnecessary workflow in maintenance branch"
+        },
+        {
+            "hash": "7196f3f5548640a29c0bcf30060d52d1dbdc03d3",
+            "message": "Polish SpEL documentation"
+        },
+        {
+            "hash": "a12d40e10b3dab11b1b5dec37d924f4ff8611a28",
+            "message": "Fix SpEL examples in reference guide\n\nCloses gh-33907"
+        },
+        {
+            "hash": "7f7819329c952a98a6e4ed81d376b5e8ca610e79",
+            "message": "Update copyright headers\n\nSee gh-33903"
+        },
+        {
+            "hash": "2494ecb47bedb9c82c2a4c906005eb1cff8d5c22",
+            "message": "Simplify utility implementations in spring-core\n\nCloses gh-33903"
+        },
+        {
+            "hash": "241b8b48f292d464e07dcfef5aa0d832b557ddf5",
+            "message": "Clarify requirements for AOP around advice regarding MethodInterceptor\n\nCloses gh-33901"
+        },
+        {
+            "hash": "173084f81aa56a2cf34efda3e449ffb40b1578bc",
+            "message": "Polish Spring AOP documentation"
+        },
+        {
+            "hash": "6544698078873867df5958f9cd1d8a569df10611",
+            "message": "Polish contribution\n\nSee gh-33902"
+        },
+        {
+            "hash": "e0e96c487f2da1c4254413e31012bae486d4da24",
+            "message": "Simplify implementation of FilteredIterator\n\nCloses gh-33902"
+        },
+        {
+            "hash": "bb32df0a066d3e8bb16adc4966599330b504037f",
+            "message": "Upgrade to Gradle 8.11\n\nCloses gh-33895"
+        },
+        {
+            "hash": "66c3aeee84ace725900d36b267f013f4800d5345",
+            "message": "Polishing"
+        },
+        {
+            "hash": "828980bd440f171e59147eb7ed36a71925de9e3e",
+            "message": "Fix workflow configuration for 6.2.x branch"
+        },
+        {
+            "hash": "fe8573c0abb6b5fda6c540bcc51829a101553e3e",
+            "message": "Upgrade to antora-ui-spring version 0.4.18\n\nCloses gh-33892"
+        },
+        {
+            "hash": "130627f6308a9cd5cf98b187dd61abbbbfe399e2",
+            "message": "Next development version (v6.2.1-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "34039",
+            "title": "Priority header causes binding exception after upgrade to Spring Framework 6.2.0"
+        },
+        {
+            "number": "34073",
+            "title": "Support binding from request headers via constructor args"
+        },
+        {
+            "number": "33975",
+            "title": "Support `Flux<ServerSentEvent<Fragment>>` in WebFlux"
+        },
+        {
+            "number": "33160",
+            "title": "`MapMethodProcessor` should only resolve arguments of type Map or the ModelMap hierarchy"
+        },
+        {
+            "number": "34016",
+            "title": "Cannot assert status reason phrase with MockMvcTester"
+        },
+        {
+            "number": "34070",
+            "title": "Log alias removal in `DefaultListableBeanFactory`"
+        },
+        {
+            "number": "34072",
+            "title": "Implement `toString()` in `TestBeanOverrideHandler`"
+        },
+        {
+            "number": "24560",
+            "title": "Add execution metadata to scheduled tasks"
+        },
+        {
+            "number": "34058",
+            "title": "Unable to configure custom scheduler for @Scheduled annotation"
+        },
+        {
+            "number": "33932",
+            "title": "`TypeDescriptor` with recursive generics triggers infinite recursion in `ResolvableType.equals/hashCode`"
+        },
+        {
+            "number": "33979",
+            "title": "OptionalValidatorFactoryBean suppresses Hibernate Validator configuration failures too much"
+        },
+        {
+            "number": "33920",
+            "title": "Regression in duplicate beans with different method names"
+        },
+        {
+            "number": "34051",
+            "title": "Upgrade to Reactor 2024.0.1"
+        },
+        {
+            "number": "34050",
+            "title": "Upgrade to Micrometer 1.14.2"
+        },
+        {
+            "number": "34056",
+            "title": "Log warning when one Bean Override overrides another Bean Override"
+        },
+        {
+            "number": "34048",
+            "title": "OOM due to NoTransactionInContextException in reactive pipeline"
+        },
+        {
+            "number": "34054",
+            "title": "Identical Bean Overrides are silently allowed"
+        },
+        {
+            "number": "34055",
+            "title": "Introduce \"unsafeAllocated\" flag in TypeHint"
+        },
+        {
+            "number": "34025",
+            "title": "`@MockitoBean` incorrectly injects supertype into subtype field"
+        },
+        {
+            "number": "33960",
+            "title": "@Value cases SpringCGLIB$$0 required a bean of type java.lang.String that could not be found in Native compile when migrating to SB 3.4"
+        },
+        {
+            "number": "33982",
+            "title": "`ApplicationListener` no longer invoked for generic `ApplicationEvent` with 6.2.0"
+        },
+        {
+            "number": "34020",
+            "title": "NestedPlaceholder are not recursively resolved if the fallback is a placeholder"
+        },
+        {
+            "number": "33998",
+            "title": "AOT no longer generates BeanInstanceSupplier signature for a CGLIB proxy with its public type"
+        },
+        {
+            "number": "34032",
+            "title": "Remove unnecessary `HandshakeHandlerRuntimeHints`"
+        },
+        {
+            "number": "33985",
+            "title": "Proxy created with `IntroductionInterceptor` but without `target` always throws an exception"
+        },
+        {
+            "number": "33972",
+            "title": "BeanCurrentlyInCreationException is thrown when multiple threads simultaneously try to create a FactoryBean"
+        },
+        {
+            "number": "33970",
+            "title": "HandshakeWebSocketService assumes jakarta websocket is present"
+        },
+        {
+            "number": "33987",
+            "title": "Nested transaction support via savepoints is broken in Oracle database"
+        },
+        {
+            "number": "32586",
+            "title": "`MethodIntrospector.selectMethods()` fails to detect bridge methods across ApplicationContexts"
+        },
+        {
+            "number": "33915",
+            "title": "`AdvisedSupport.MethodCacheKey` should check for logical equality as well as identity"
+        },
+        {
+            "number": "34010",
+            "title": "Improve toString for reactive ScheduledTask"
+        },
+        {
+            "number": "34003",
+            "title": "Optimize sending requests without a body in RestClient and WebClient with Reactor Netty"
+        },
+        {
+            "number": "33941",
+            "title": "`MockReset` strategy is no longer honored for `@MockitoBean` and `@MockitoSpyBean`"
+        },
+        {
+            "number": "33986",
+            "title": "`@MockitoSpyBean` does not see the first interaction"
+        },
+        {
+            "number": "33984",
+            "title": "Add missing `@Contract` annotation to `ObjectUtils#isEmpty`"
+        },
+        {
+            "number": "33943",
+            "title": "Move Kotlin value class unboxing to `InvocableHandlerMethod`"
+        },
+        {
+            "number": "33940",
+            "title": "AOT processing for bean validation fails with `NoClassDefFoundError`"
+        },
+        {
+            "number": "33951",
+            "title": "Upgrade to Gradle 8.11.1"
+        },
+        {
+            "number": "33924",
+            "title": "Honor `@Fallback` semantics for Test Bean Overrides"
+        },
+        {
+            "number": "33923",
+            "title": "Document visibility requirements for Bean Overrides"
+        },
+        {
+            "number": "33922",
+            "title": "Bean Overrides like `@MockitoBean` and `@TestBean` should not be allowed on `static` fields"
+        },
+        {
+            "number": "33909",
+            "title": "Refactor WebClientIntegrationTest to accommodate ReactorClientHttpRequest channel disassociation"
+        },
+        {
+            "number": "33754",
+            "title": "Reflect well-known MediaTypes intent in Javadoc"
+        },
+        {
+            "number": "33886",
+            "title": " Reflect well-known HttpHeaders intent in Javadoc"
+        },
+        {
+            "number": "33332",
+            "title": "Document support for varargs invocations in SpEL"
+        },
+        {
+            "number": "33907",
+            "title": "SpEL documentation contains syntax errors"
+        },
+        {
+            "number": "33901",
+            "title": "Improve explanation of AOP advice classes that should implement `MethodInterceptor`"
+        },
+        {
+            "number": "33895",
+            "title": "Upgrade to Gradle 8.11"
+        },
+        {
+            "number": "33892",
+            "title": "Upgrade to `antora-ui-spring` version 0.4.18"
+        }
+    ]
+}

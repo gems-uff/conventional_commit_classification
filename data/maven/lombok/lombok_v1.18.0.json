@@ -11,73 +11,93 @@
     "commits_info": [
         {
             "hash": "2c5395d4c80458d01f7a720b2ad667d165357339",
-            "message": "pre-release version bump",
-            "tag_name": null
+            "message": "pre-release version bump"
         },
         {
             "hash": "21b415df8be450d216e1305abf5da8eb4630c265",
-            "message": "Fixes #1676 at least for eclipse: You can now use java10 var in an eclipse that supports this, without lombok getting in the way.",
-            "tag_name": null
+            "message": "Fixes #1676 at least for eclipse: You can now use java10 var in an eclipse that supports this, without lombok getting in the way."
         },
         {
             "hash": "6e0f7eca3d17bfd13768a5c4d5a754b4b45c41b5",
-            "message": "Fixing the snippet for the reworked FieldNameConstants",
-            "tag_name": null
+            "message": "Fixing the snippet for the reworked FieldNameConstants"
         },
         {
             "hash": "a0b901c3c04d0377f495a9da853196a3b0433eae",
-            "message": "`@NonNull` now uses a slightly longer exception message.",
-            "tag_name": null
+            "message": "`@NonNull` now uses a slightly longer exception message."
         },
         {
             "hash": "198efc1b279060beba836663b802923b8d53b2ec",
-            "message": "Merge pull request #1698 from hubrick/feature/explicit-npe-message\n\nMake the null check exception a little bit more explicit",
-            "tag_name": null
+            "message": "Merge pull request #1698 from hubrick/feature/explicit-npe-message\n\nMake the null check exception a little bit more explicit"
         },
         {
             "hash": "72f72395c7ecfe73f8cf68a1a9e2a339dbd07866",
-            "message": "Make the null check exception a little bit more explicit\n\nCurrently it is \"NullPointerException: someFieldName\" and that is not very\ntelling as to the reasons this exception is thrown.\n",
-            "tag_name": null
+            "message": "Make the null check exception a little bit more explicit\n\nCurrently it is \"NullPointerException: someFieldName\" and that is not very\ntelling as to the reasons this exception is thrown."
         },
         {
             "hash": "a74db7c10c61c7a18e8fed774cac1e0cde534009",
-            "message": "Make `extraPrivate` opt-in instead of opt-out. Fixes #1708\n",
-            "tag_name": null
+            "message": "Make `extraPrivate` opt-in instead of opt-out. Fixes #1708"
         },
         {
             "hash": "b8e85f5dc7044e9a4bd43c41786bdda2a38f50ac",
-            "message": "FieldNameConstants now defaults to having a prefix ‘FIELD_’, which can be configured both on the annotation itself and via a config key. This totally breaks compatibility with the previous lombok release, but, hey, it’s in experimental and it’s been one week. This is better.\n",
-            "tag_name": null
+            "message": "FieldNameConstants now defaults to having a prefix ‘FIELD_’, which can be configured both on the annotation itself and via a config key. This totally breaks compatibility with the previous lombok release, but, hey, it’s in experimental and it’s been one week. This is better."
         },
         {
             "hash": "fb5a5530148614e8d0c423077d9043e2d58f453b",
-            "message": "Do not generate a private no-args constructor if:\n- The class has a parent class\n- There is an explicit XxxArgsConstructor annotation that would generate\na no-args constructor\nFixes #1703, fixes #1704, fixes #1712\n",
-            "tag_name": null
+            "message": "Do not generate a private no-args constructor if:\n- The class has a parent class\n- There is an explicit XxxArgsConstructor annotation that would generate\na no-args constructor\nFixes #1703, fixes #1704, fixes #1712"
         },
         {
             "hash": "370705e7e154309a6678b83322e243b7a32e2575",
-            "message": "Fixex #1697: google’s FluentLogger (Flogger) now available as one of lombok’s log annotations.",
-            "tag_name": null
+            "message": "Fixex #1697: google’s FluentLogger (Flogger) now available as one of lombok’s log annotations."
         },
         {
             "hash": "974e80e1deccd1be78ad9ce2c68d464baee3fb6c",
-            "message": "changelog now mentions fix for issue 1709\n",
-            "tag_name": null
+            "message": "changelog now mentions fix for issue 1709"
         },
         {
             "hash": "d7b72c41dc679ec96c1c32f7c66285f04f433536",
-            "message": "fixes #1709 – boolean properties in lombok annotations, such as onlyExplicitlyIncluded, didn’t work.\n",
-            "tag_name": null
+            "message": "fixes #1709 – boolean properties in lombok annotations, such as onlyExplicitlyIncluded, didn’t work."
         },
         {
             "hash": "6def033f13afe817fd862c05747d8eae32d5d547",
-            "message": "Remove delombok shorthand for onlyChanged, fixes #1705\n",
-            "tag_name": null
+            "message": "Remove delombok shorthand for onlyChanged, fixes #1705"
         },
         {
             "hash": "c39cf539279f4dbe2a63987376c8f7b80d892972",
-            "message": "[release] post-release version bump",
-            "tag_name": null
+            "message": "[release] post-release version bump"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1676",
+            "title": "Lombok, Eclipse and JDK10 fails when using the var keyword"
+        },
+        {
+            "number": "1708",
+            "title": "extraPrivate=true from 1.16.22 breaks Jackson creator detection"
+        },
+        {
+            "number": "1703",
+            "title": "1.16.22 - constructor ... already defined in class"
+        },
+        {
+            "number": "1704",
+            "title": "1.16.22 constructor has private access"
+        },
+        {
+            "number": "1712",
+            "title": "@Data on extended objects broken on 1.16.22"
+        },
+        {
+            "number": "1697",
+            "title": "Feature Request: Google Flogger"
+        },
+        {
+            "number": "1709",
+            "title": "onlyExplicitlyIncluded does not work neither JDK 8 nor JDK 9 (might be Gradle issue)"
+        },
+        {
+            "number": "1705",
+            "title": "Delombok broken - duplicate shorthand arg defined"
         }
     ]
 }

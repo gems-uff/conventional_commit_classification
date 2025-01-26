@@ -1,0 +1,25 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.21373842592592593,
+    "commits_info": [
+        {
+            "hash": "436bd7880e458532901c58f4d9d1ea23fa7edd52",
+            "message": "Updated version to 3.15.8 (#8463)\n\n* Update protobuf version\r\n\r\n* Updated CHANGES.txt and package.xml for 3.15.8"
+        },
+        {
+            "hash": "1ed9a8b521af5f4e23972757411a9e30c3136d13",
+            "message": "Merge pull request #8461 from haberman/ruby-arena-memory-leak\n\nFixed memory leak of Ruby arena objects."
+        },
+        {
+            "hash": "67fee915e01a35d86e73634441af256f386f60b0",
+            "message": "Fixed memory leak of Ruby arena objects.\n\nIn our free() method, we were freeing the memory from the\nupb arena but we were failing to free the memory for the\nRuby arena object. This was causing every Ruby arena object\nto leak: even though the objects were getting GC'd, the\nunderlying memory was not getting released."
+        }
+    ],
+    "issues": []
+}

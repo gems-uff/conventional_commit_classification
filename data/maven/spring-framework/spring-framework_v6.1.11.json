@@ -1,0 +1,430 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 67,
+    "start_delay": 0.0,
+    "duration": 21.66931712962963,
+    "commits_info": [
+        {
+            "hash": "9b59345547fccfe0cea02d7d8e74afa05e59f025",
+            "message": "Release v6.1.11"
+        },
+        {
+            "hash": "611d3e5551f018a6ec2ab1094250011d2c15d1cf",
+            "message": "Correct type names in docs on Validation in WebFlux\n\nCloses gh-33061"
+        },
+        {
+            "hash": "fa2a58b9dbefe3a284e1a517e11f583b46c37ec8",
+            "message": "Ensure varargs component type for MethodHandle is not null in SpEL\n\nThis commit ensures that the varargs component type for a MethodHandle\ncannot be null in ReflectionHelper's\nconvertAllMethodHandleArguments(...) method in SpEL.\n\nCloses gh-33193"
+        },
+        {
+            "hash": "83ca2c0cff43f28fc4ddba3f229636ea1f7e628e",
+            "message": "Support MethodHandle function invocation with varargs array in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) could not\ninvoke a varargs MethodHandle function with an array containing the\nvariable arguments, although that is supported for a varargs Method\nfunction. Attempting to do so resulted in the array being supplied as a\nsingle argument to the MethodHandle.\n\nThis commit addresses this by updating the\nexecuteFunctionViaMethodHandle(...) method in FunctionReference as\nfollows when the user supplies the varargs already packaged in an array.\n\n- Creates a new array large enough to hold the non-varargs arguments\n  and the unpackaged varargs arguments.\n\n- Adds the non-varargs arguments to the beginning of that array and\n  adds the unpackaged varargs arguments to the end of that array.\n\n- Invokes the MethodHandle with the new arguments array.\n\nCloses gh-33191"
+        },
+        {
+            "hash": "dc16f3cffb32ea6574f5d33c6d2c6d280b37671a",
+            "message": "Polish SpEL function invocation support"
+        },
+        {
+            "hash": "f2b3263fff2cb940a5f2ce91babb7731355d9d3b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "1d890a89523e853012acdd3d4d3d53406be6c760",
+            "message": "Make coroutines with custom AOP aspects work with `@Transactional`\n\nPrevious to this change, the transactional aspect would supersed the\nuser-defined AspectJ aspect, shortcircuiting to calling the original\nKotlin suspending function.\n\nThis change simplifies the TransactionAspectSupport way of dealing with\ntransactional coroutines, thanks to the fact that lower level support\nfor AOP has been introduced in c8169e5c.\n\nCloses gh-33095"
+        },
+        {
+            "hash": "3ccaefe38f00b5c61ce680310cc891ae30926969",
+            "message": "Polishing"
+        },
+        {
+            "hash": "300f4585be342fde19e8f4fa60aadf6246300216",
+            "message": "Update spring.jdbc.getParameterType.ignore note for 6.1.2\n\nSee gh-25679"
+        },
+        {
+            "hash": "a0f5c16627e265298739d261a6000b91c26121fe",
+            "message": "Support MethodHandle function invocation with zero varargs in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) could not\ninvoke a varargs MethodHandle function with zero variable arguments,\neven though the variable arguments are not required. Attempting to do\nso resulted in a SpelEvaluationException with an\nINCORRECT_NUMBER_OF_ARGUMENTS_TO_FUNCTION message.\n\nThis commit addresses this by updating the\nexecuteFunctionViaMethodHandle(...) method in FunctionReference so that\nit properly checks the required number of arguments for both varargs\nand non-varargs MethodHandle invocations.\n\nThis commit also improves the error message for varargs invocations\nwith too few arguments. For example, if the MethodHandle requires at\nleast 1 argument plus a variable number of additional arguments and 0\narguments were supplied, the error message now states:\n\n\"Incorrect number of arguments for function 'myFunc': 0 supplied but function takes 1 or more\"\n\nInstead of:\n\n\"Incorrect number of arguments for function 'myFunc': 0 supplied but function takes 2\"\n\nCloses gh-33190"
+        },
+        {
+            "hash": "b5a86dec92eefb43795ac0e9f6802d589fff5956",
+            "message": "Retain previous factory method in case of nested invocation with AOT\n\nThis commit harmonizes the invocation of a bean supplier with what\nSimpleInstantiationStrategy does. Previously, the current factory method\nwas set to `null` once the invocation completes. This did not take\ninto account recursive scenarios where an instance supplier triggers\nanother instance supplier.\n\nFor consistency, the thread local is removed now if we attempt to set\nthe current method to null. SimpleInstantiationStrategy itself uses\nthe shortcut to align the code as much as possible.\n\nCloses gh-33180"
+        },
+        {
+            "hash": "c55c64427c49f32472004f082402a56be056882d",
+            "message": "Support single String argument for varargs invocations in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) incorrectly\nsplit single String arguments by comma for Object... varargs method and\nconstructor invocations.\n\nThis commit addresses this by checking if the single argument type is\nalready \"assignable\" to the varargs component type instead of \"equal\"\nto the varargs component type.\n\nCloses gh-33013"
+        },
+        {
+            "hash": "a4fcd301f21c7fb38033ca7c831709a29f5d5ad8",
+            "message": "Polish SpEL's ReflectionHelper"
+        },
+        {
+            "hash": "ec4558dc148602196ae55a7bbda004d40eee109d",
+            "message": "Polish"
+        },
+        {
+            "hash": "d6c623be4058fc5b388eba7ba190d9c95b5f15d2",
+            "message": "Release from GHA\n\nThis commit adds a workflow to release the Spring Framework from GitHub\nActions.\n\nCloses gh-33179"
+        },
+        {
+            "hash": "86da45ba15e2e47b7a851fd22bd2403d006c506f",
+            "message": "Upgrade to Reactor 2023.0.8\n\nCloses gh-33169"
+        },
+        {
+            "hash": "6a602980245bd649e4ef638d77ace83ab2169078",
+            "message": "Upgrade to Micrometer 1.12.8\n\nCloses gh-33168"
+        },
+        {
+            "hash": "f8b448e9496a8181616f16b4f1e49d98dc523371",
+            "message": "Upgrade to Kotlin Serialization 1.6.3\n\nCloses gh-33175"
+        },
+        {
+            "hash": "52a0e6f900ba5dcce34801d61f37b09c7df1cac6",
+            "message": "Upgrade to Kotlin 1.9.24\n\nCloses gh-33177"
+        },
+        {
+            "hash": "3d2fb3af3dc7e977b161a7bafa1c7d05152a2a4d",
+            "message": "Add verification tests\n\nIn preparation for releasing Spring Framework from GitHub actions, this\ncommit adds a `verify` workflow that validates that the released bits\nare correct by running sample projects against them.\n\nCloses gh-33178"
+        },
+        {
+            "hash": "4f380790420ad1b2800dd04cf6a563732af2a2fc",
+            "message": "Throw proper DecodingException in Kotlin Serialization decoders\n\nCloses gh-33138"
+        },
+        {
+            "hash": "3008d97f93596b5f28dea7e9e147c6106a527e11",
+            "message": "Polishing contribution\n\nCloses gh-33150"
+        },
+        {
+            "hash": "f0c758498be0e7e3035bb9f45ab4e6ae37c79f5f",
+            "message": "Allow validation of Set method parameters\n\nSee gh-33150"
+        },
+        {
+            "hash": "bc2deef9518abe0a5cd9556c4c77b0a6c4aa9278",
+            "message": "Upgrade to JRuby 9.4.8, Rhino 1.7.15, Moneta 1.4.4, JSONassert 1.5.3"
+        },
+        {
+            "hash": "7322a0d3c5dbd5b7b4a14cbd6a1d6609c2ae58f6",
+            "message": "Upgrade to Groovy 4.0.22, Tomcat 10.1.25, Jetty 12.0.11, Undertow 2.3.14"
+        },
+        {
+            "hash": "7227c30917378b168d04f724930a5b53f132b3ef",
+            "message": "Allow tests to pass on Windows JVM (non-UTF-8 default encoding)\n\nSee gh-33071"
+        },
+        {
+            "hash": "7e7f55cb2354398dff08d67db14d58ae384f957f",
+            "message": "Merge pull request #33166 from hunhee98\n\n* pr/33166:\n  Polish contribution\n  Harmonize phrasing in URI Encoding section\n\nCloses gh-33166"
+        },
+        {
+            "hash": "84f20cd0a7a501f700e7441aec40485ff2034d35",
+            "message": "Polish contribution\n\nSee gh-33166"
+        },
+        {
+            "hash": "3d8f1fb00fe3e5af75f3fbd79b77ed0a35db827d",
+            "message": "Harmonize phrasing in URI Encoding section\n\nSee gh-33166"
+        },
+        {
+            "hash": "e06115c06f752c5379beca2a7f3af74347bf0190",
+            "message": "Merge pull request #33156 from\n\n* pr/33156:\n  Polish \"Implement DefaultErrorResponseBuilder#headers(Consumer)\"\n  Implement DefaultErrorResponseBuilder#headers(Consumer)\n\nCloses gh-33156"
+        },
+        {
+            "hash": "69850cad271d0f3e98f7961ae72edc9ca56f7b52",
+            "message": "Polish \"Implement DefaultErrorResponseBuilder#headers(Consumer)\"\n\nSee gh-33156"
+        },
+        {
+            "hash": "bbbc95f77379e2ac2aea12de4baf17456a7f0638",
+            "message": "Implement DefaultErrorResponseBuilder#headers(Consumer)\n\nSee gh-33156"
+        },
+        {
+            "hash": "83f7996c79970aab5d9fa5b63c22e7f45f30b6b6",
+            "message": "Polishing"
+        },
+        {
+            "hash": "0544dfe090f4fa61045657d6c9bd68c50039c7f2",
+            "message": "Enable building against Java 23-ea\n\nThis commit updates the CI workflow to build against Java 23-ea as\nwell, using the temurin distribution. For consistency, we're also\nbuilding against Java 22.\n\nCloses gh-32090"
+        },
+        {
+            "hash": "eacfd77d6a39351a44a54c415ce822fc2302dd27",
+            "message": "Harmonize CI configuration\n\nThis commit harmonizes our CI configuration with Spring Boot, in\nparticular the clever use of reusable custom actions that simplify\nthe workflow definition quite a bit.\n\nOne main difference compared to Spring Boot is that we can now\nspecify a different distribution for a Java version to test, in\npreparation for the support of building against 23-ea\n\nSee gh-32090"
+        },
+        {
+            "hash": "89338c91a99e552458b80cc01342cb8e384c2038",
+            "message": "Stop using using legacy locale data for Date/Time formatting tests\n\nCommit 84714fbae9f335beb059753ee7d2a08653e6bb6c introduced usage of the\n-Djava.locale.providers=COMPAT command-line argument for javac in order\nto allow our JDK 20 builds to pass by using legacy locale data.\n\nThat was done to ensure that Date/Time formats using AM/PM produced a\nstandard space (\" \") before the \"AM\" or \"PM\" instead of a narrow\nnon-breaking space (NNBSP \"\\u202F\"), which was introduced in Java 20\ndue to adoption of Unicode Common Locale Data Repository (CLDR-14032).\n\nThis commit removes usage of the -Djava.locale.providers=COMPAT\ncommand-line argument and updates all affected tests to:\n\n- Use an NNBSP before \"AM\" or \"PM\" in input text when running on Java 20\n  or higher.\n\n- Leniently match against any Unicode space character in formatted\n  values containing \"AM\" or \"PM\".\n\nSee https://jdk.java.net/20/release-notes#JDK-8284840\nSee https://unicode-org.atlassian.net/browse/CLDR-14032\nSee gh-30185\nCloses gh-33144"
+        },
+        {
+            "hash": "51641ece72682cdc49b50786559b5008178cef25",
+            "message": "Polish\n\nSee gh-33127"
+        },
+        {
+            "hash": "06d267f04eb03ef1336d0cb937ea6f4ca0d42c50",
+            "message": "Improve WebClientResponseException message in case of 1xx/2xx/3xx status\n\nWhen a response fails to be completely emitted by the remote (connection\ntermination during the transmission of the response for example), a\nWebClientResponseException can be propagated with a confusing message\nwhich mainly reflects the status code and reason phrase, leading to\nmessages like \"200 OK\" in such an exception.\n\nThis change improves the situation by appending a hint at the underlying\ncause whenever getMessage() is called on a WebClientResponseException\nwhich was created with a non-error status code.\n\nCloses gh-33127"
+        },
+        {
+            "hash": "dfa6b4bd4246edb6b237229fcc1d88d4aac9a520",
+            "message": "Upgrade to Gradle 8.8\n\nCloses gh-33146"
+        },
+        {
+            "hash": "099a97740ecb55faabe47d797464c21e9617ed38",
+            "message": "Downgrade Awaitility to 4.2.0\n\nThis is required to build against ea builds\n\nCloses gh-33143"
+        },
+        {
+            "hash": "daea3f0eaed755814c6a32e9837e59cc95893923",
+            "message": "Apply fallback resolution for non-hierarchical URIs such as \"file:.\"\n\nIncludes meaningful exception message for file system resolution.\n\nCloses gh-33124"
+        },
+        {
+            "hash": "8974da2a5aafc8abca5a9c628f407b80fd8f900f",
+            "message": "Use error handler for reactive cache aspect\n\nThis change ensures that the cache error handler is used in case of\nfuture-based or publisher-based asynchronous caching completing with an\nexception.\n\nCloses gh-33073"
+        },
+        {
+            "hash": "ab236c7741dcf8ea9da738d1407a623bcd12bf0d",
+            "message": "Re-enable async dispatches in Observation Filter\n\nPrior to this commit, the fix for gh-32730 disabled the involvment of\nthe osbervation filter for async dispatches. Instead of relying on ASYNC\ndispatches to close the observation for async requests, this is now\nusing an async listener instead: async dispatches are not guaranteed to\nhappen once the async request is handled.\n\nThis change caused another side-effect: because async dispatches are not\nconsidered anymore by this filter, the observation scope is not\nreinstated for async dispatches. For example, `ResponseBodyAdvice`\nimplementations do not have the observation scope opened during their\nexecution.\n\nThis commit re-enables async dispatches for this filter, but ensures\nthat observations are not closed during such dispatches as this will be\ndone by the async listener.\n\nFixes gh-33091"
+        },
+        {
+            "hash": "61adf2dd255b2b32ccba7f051f8b11f40b567056",
+            "message": "Formal null safety for exception message through String.valueOf\n\nSee gh-33117"
+        },
+        {
+            "hash": "61894af0bde55562662c12bb6d11e32b732dfd5e",
+            "message": "Expose FactoryBean attribute exception as BeanDefinitionStoreException\n\nCloses gh-33117"
+        },
+        {
+            "hash": "c74666a883faf88d62159a6330c9b87229513d37",
+            "message": "Polishing contribution\n\nCloses gh-33105"
+        },
+        {
+            "hash": "976b4f353387f10d8f4f406236348d8989c636ea",
+            "message": "Fix return value validation\n\nFix argument in call to applyReturnValueValidation()\nmethod in MethodValidationInterceptor.java. Method\nargument was passed instead of the return value of the\nmethod that was being validated.\n\nSee gh-33105"
+        },
+        {
+            "hash": "100da83913884510103423d54257c37f2a428792",
+            "message": "Detect ajc markers in superclasses as well (for weaving check)\n\nCloses gh-33113"
+        },
+        {
+            "hash": "e881c70a93d06f9ab60c2181210761e3fa73f97f",
+            "message": "Upgrade to JUnit 5.10.3"
+        },
+        {
+            "hash": "fea237c065c756799e5cff9d0599adc4f948ee45",
+            "message": "Lazily start and retain HttpClient once resource factory is running\n\nCloses gh-33093"
+        },
+        {
+            "hash": "8b11ee9ee2f49f0014215ff60117be82585addc2",
+            "message": "Document that ModelMap is not a supported argument type in WebFlux\n\nPrior to this commit, the \"Method Arguments\" documentation for WebFlux\nin the reference manual stated that WebFlux controller methods can\naccept arguments of type Map, Model, or ModelMap to access the model.\nHowever, ModelMap is actually not supported and results in exception\ndue to a type mismatch.\n\nThis commit updates the documentation to reflect this.\n\nIn addition, this commit updates related Javadoc and tests to avoid\nmentioning or using ModelMap in WebFlux.\n\nCloses gh-33107"
+        },
+        {
+            "hash": "1cf5264163a64b5cee67ad60cff259bc070dfbd5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c68c6faa03fde88bae2e5cb104088c2e7c631003",
+            "message": "Fix comment in Method Injection example in reference manual\n\nPrior to this commit, the comment in the XML configuration example in\nthe Method Injection section of the reference manual referred to the\nwrong bean names.\n\nCloses gh-33096"
+        },
+        {
+            "hash": "6dd5c85ed03167f80879c6f582e5e0d35b413f0c",
+            "message": "Support byte array payloads in ProtobufMessageConverter\n\nPrior to this commit, the `ProtobufMessageConverter` used in messaging\nwould try and serialize the message payload by calling \"toString()\" on\nit in order to pass it to the Protobuf JSON encoder.\nWhile this works for `String` payloads, this fails for `byte[]` types.\n\nThis commit ensures that such `byte[]` are first converted to `String`\ninstances using the given charset first.\n\nFixes gh-27408"
+        },
+        {
+            "hash": "d133ab60ee81582826af7e68dbf8a060e37d267e",
+            "message": "Improve documentation regarding encoding in FreeMarker support\n\nThis commit also introduces integration tests to test the status quo\nregarding encoding.\n\nCloses gh-33071"
+        },
+        {
+            "hash": "5d6e143ff4ec3e10a4b8755cfa971b382fcaaddb",
+            "message": "Remove invalid configuration in RequestMappingViewResolutionIntegrationTests\n\nPrior to this commit, RequestMappingViewResolutionIntegrationTests\ninvoked the following:\n\nconfigurer.setTemplateLoaderPath(\n\t\"classpath*:org/springframework/web/reactive/view/freemarker/\");\n\nHowever, that configuration is invalid since `classpath*:` is not\nsupported for a `templateLoaderPath`.\n\nDespite that, the tests still passed since FreeMarkerConfigurer already\nregisters a new ClassTemplateLoader(FreeMarkerConfigurer.class, \"\"),\nwhich automatically finds template files in the same package as\nFreeMarkerConfigurer (for the \"spring.ftl\" macro library support) and\ncoincidentally RequestMappingViewResolutionIntegrationTests as well\n(which resides in the same package).\n\nThis commit therefore removes the invalid configuration and adds a\ncomment to explain what's going on."
+        },
+        {
+            "hash": "4e2fb308f6516cc8e2617ecef195dccdbb680ed9",
+            "message": "Document contentLength() behavior for InputStreamResource and custom subclasses\n\nCloses gh-33089"
+        },
+        {
+            "hash": "5f765fc8cebb400c25f1c0e45a58e924424d5c22",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6b456b61571fbc3513f658870449c31d317ee932",
+            "message": "Upgrade to FreeMarker 2.3.33"
+        },
+        {
+            "hash": "000b563e83c827a0c8961f8cb873ef984272c598",
+            "message": "Use consistent formatting for view name in AbstractView"
+        },
+        {
+            "hash": "c571ee1f95bacde2c96f5f0807f262c87d517ad8",
+            "message": "Fix typo in comment"
+        },
+        {
+            "hash": "899f6308d9039faf8476d027dc75713d5392f258",
+            "message": "Fix name of GitHub actions bot\n\nSee gh-gh-33076"
+        },
+        {
+            "hash": "a580d6d6fc8f565dec0399c021341beab4311414",
+            "message": "Leniently ignore type mismatch for LoadTimeWeaverAware beans\n\nCloses gh-33082"
+        },
+        {
+            "hash": "66eddf99afb04387b1114e37c13c4798ea834d50",
+            "message": "Include original exception if cause is null\n\nCloses gh-33080\nSee gh-32952"
+        },
+        {
+            "hash": "e94ec80df45a27b62e7fc799cdc4dd8bf20c3b38",
+            "message": "Exclude GitHub Actions bot from changelog\n\nCloses gh-33076"
+        },
+        {
+            "hash": "2861e570fdc70af032dffd4dccb17625c13adb87",
+            "message": "Catch and log LinkageError in getTypeForFactoryMethod\n\nCloses gh-33075"
+        },
+        {
+            "hash": "ee7a1e8b7e9beb53c4e8462df799b370bc3d7bf7",
+            "message": "Next development version (v6.1.11-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33061",
+            "title": "Exception for validation failure in WebFlux does not match the documentation"
+        },
+        {
+            "number": "33193",
+            "title": "Ensure varargs component type for `MethodHandle` is not `null` in SpEL's `ReflectionHelper`"
+        },
+        {
+            "number": "33191",
+            "title": "SpEL cannot invoke varargs `MethodHandle` function with an array"
+        },
+        {
+            "number": "33095",
+            "title": "Spring coroutines AOP is not compatible with `@Transactional`"
+        },
+        {
+            "number": "25679",
+            "title": "Improve default `setNull` performance on PostgreSQL and MS SQL Server (e.g. for `NamedParameterJdbcTemplate` batch updates)"
+        },
+        {
+            "number": "33190",
+            "title": "SpEL cannot invoke varargs `MethodHandle` function with zero variable arguments"
+        },
+        {
+            "number": "33180",
+            "title": "Nested bean instance supplier invocation does not retain previous factory method"
+        },
+        {
+            "number": "33013",
+            "title": "SpEL incorrectly splits string arguments by comma for `Object...` varargs method"
+        },
+        {
+            "number": "33179",
+            "title": "Release from GitHub Actions"
+        },
+        {
+            "number": "33169",
+            "title": "Upgrade to Reactor 2023.0.8"
+        },
+        {
+            "number": "33168",
+            "title": "Upgrade to Micrometer 1.12.8"
+        },
+        {
+            "number": "33175",
+            "title": "Upgrade to Kotlin Serialization 1.6.3"
+        },
+        {
+            "number": "33177",
+            "title": "Upgrade to Kotlin 1.9.24"
+        },
+        {
+            "number": "33178",
+            "title": "Add verification tests on CI"
+        },
+        {
+            "number": "33138",
+            "title": "Web controller call with invalid body resulting in 500 instead of 400 when using kotlinx-serialization"
+        },
+        {
+            "number": "33071",
+            "title": "Improve documentation regarding encoding in FreeMarker support"
+        },
+        {
+            "number": "32090",
+            "title": "Configure JDK 23 early access CI build"
+        },
+        {
+            "number": "30185",
+            "title": "Ensure compatibility with JDK 20"
+        },
+        {
+            "number": "33144",
+            "title": "Adapt Date/Time formatting tests to accommodate narrow non-breaking spaces"
+        },
+        {
+            "number": "33127",
+            "title": "Confusing WebClient exception message in case of Reactor-Netty `PrematureCloseException` during response"
+        },
+        {
+            "number": "33146",
+            "title": "Upgrade to Gradle 8.8"
+        },
+        {
+            "number": "33143",
+            "title": "Downgrade Awaitility  to 4.2.0"
+        },
+        {
+            "number": "33124",
+            "title": "\"file:.\" cannot be resolved to `java.nio.file.Path` (and plain \".\" value resolves to classpath root)"
+        },
+        {
+            "number": "32730",
+            "title": "Observation in ServerHttpObservationFilter is never stopped for asynchronous requests"
+        },
+        {
+            "number": "33091",
+            "title": "Trace and Span IDs are no longer propagated RequestBodyAdvice beans"
+        },
+        {
+            "number": "33117",
+            "title": "Include the bean name in the exception when an invalid factoryBeanObjectType attribute is found"
+        },
+        {
+            "number": "33113",
+            "title": "Mockito mock falsely initialized as CGLIB proxy with AspectJ aspect"
+        },
+        {
+            "number": "33093",
+            "title": "ReactorClientHttpConnector creates new HttpClient for every request"
+        },
+        {
+            "number": "33107",
+            "title": "Document that `ModelMap` is not a supported argument type in WebFlux"
+        },
+        {
+            "number": "33096",
+            "title": "Example in Method Injection section of Spring Framework documentation refers to wrong bean names"
+        },
+        {
+            "number": "27408",
+            "title": "ProtobufMessageConverter fails to parse JSON payload if byte array is used"
+        },
+        {
+            "number": "33089",
+            "title": "Resource writer doesn't consider subclasses of `InputStreamResource` for content length bypass"
+        },
+        {
+            "number": "33076",
+            "title": "Exclude GitHub Actions bot from changelog"
+        },
+        {
+            "number": "33082",
+            "title": "Early `LocalContainerEntityManagerFactoryBean` initialization fails in case of null bean definition"
+        },
+        {
+            "number": "33080",
+            "title": "`ReactorNettyClientRequest.convertException` should include original exception if cause is `null`"
+        },
+        {
+            "number": "32952",
+            "title": "Exception mapping does not work as expected when plugging in ReactorNettyClientRequestFactory into RestTemplate and RestClient"
+        },
+        {
+            "number": "33075",
+            "title": "`getTypeForFactoryMethod` should catch `NoClassDefFoundError`"
+        }
+    ]
+}

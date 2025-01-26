@@ -1,0 +1,41 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.8.53",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 4.150787037037037,
+    "commits_info": [
+        {
+            "hash": "48856d8fc844d70b21c804d55f5be624d3687ac3",
+            "message": "version bumped + release notes updated by CI build 2789 [ci skip-release]"
+        },
+        {
+            "hash": "f38f28039f8f561420d0420da9df27c52baaffeb",
+            "message": "Merge pull request #1141 from mockito/shipkit\n\nBumped shipkit, simplified Travis file, removed unnecessary code"
+        },
+        {
+            "hash": "4b054499fecafcbc098684117ca967dc8558b98a",
+            "message": "Documented travis configuration file\n\nBased on code review feedback"
+        },
+        {
+            "hash": "8554b1cbe97f940743fd68ab0d9369af0411d947",
+            "message": "Bumped shipkit, simplified Travis file, removed unnecessary code\n\n- Now when the release fails Mockito CI job will fail, too. This is really useful to acknowledge problems early. Previously, the release was a part of 'after_success' Travis configuration and any failures of release build were ignored.\n- Replaced Shipkit's java plugin with Gradle's vanilla 'java' plugin. This way the build is simpler.\n- Removed Shipkit configuration that has been discontinued (\"publishAllJavaSubprojects\"). Instead, I disabled the bintrayUpload for modules we don't want to publish at this point."
+        },
+        {
+            "hash": "388196356910e36b344286976b89c82ca55e76f3",
+            "message": "Small rewording"
+        },
+        {
+            "hash": "84c21c352023ad6000d77283efc38fc18455ed4a",
+            "message": "Merge pull request #1139 from wwilk/introducing-compare-publications\n\norg.shipkit.publications-comparator plugin applied"
+        },
+        {
+            "hash": "84c7575f510f63d5b2655bac36ad13988ef96ef4",
+            "message": "Shipkit version bumped + org.shipkit.publications-comparator plugin applied in all subprojects using java-library"
+        }
+    ],
+    "issues": []
+}

@@ -1,0 +1,230 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 36,
+    "start_delay": 0.0,
+    "duration": 6.762893518518519,
+    "commits_info": [
+        {
+            "hash": "379e1f22ee421e0cb4738ec0143357b782edc850",
+            "message": "Release v6.1.1"
+        },
+        {
+            "hash": "d50b51e312e7d2ee8a7aeb560b02205b6a20bdba",
+            "message": "Fix ordering of releasing resources in JSON Encoder\n\nPrior to this commit, the Jackson 2.x encoders, in case of encoding a\nstream of data, would first release the `ByteArrayBuilder` and then the\n`JsonGenerator`. This order is inconsistent with the single value\nvariant (see `o.s.h.codec.json.AbstractJackson2Encoder#encodeValue`) and\ninvalid since the `JsonGenerator` uses internally the\n`ByteArrayBuilder`.\n\nIn case of a CSV Encoder, the codec can buffer data to write the column\nnames of the CSV file. Writing an empty Flux with this Encoder would not\nfail but still log a NullPointerException ignored by the reactive\npipeline.\n\nThis commit fixes the order and avoid such issues at runtime.\n\nFixes gh-30493"
+        },
+        {
+            "hash": "03b9edc36e0ccadcb9e805438ce59db306dc0a5f",
+            "message": "Update STOMP WebSocket transport reference docs\n\nCloses gh-31616"
+        },
+        {
+            "hash": "824bc09d1135f43351c7accc0e816e0e0e1a06bc",
+            "message": "Actual caching of null values in retrieve(key, valueLoader)\n\nSee gh-31637"
+        },
+        {
+            "hash": "441e2105338835c1d43dc176d6527c791febc8d9",
+            "message": "Treat kotlin.Unit as void in web controllers\n\nThis commit fixes a regression introduced by gh-21139\nvia the usage of Kotlin reflection to invoke HTTP\nhandler methods. It ensures that kotlin.Unit is treated\nas void by returning null.\n\nIt also polishes CoroutinesUtils to have a consistent\nhandling compared to the regular case, and adds related\ntests to prevent future regressions.\n\nCloses gh-31648"
+        },
+        {
+            "hash": "c329ed83efe58d0d2bc5876c5972e45198da242f",
+            "message": "Polish InvocableHandlerMethodKotlinTests"
+        },
+        {
+            "hash": "48f3c0839563cd8999870d90a963326099553e2f",
+            "message": "Test for mixed order across bean factory hierarchy\n\nSee gh-28374"
+        },
+        {
+            "hash": "c60926476aef34ed4fdd34b9a6416fe071e365df",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e64b81eec40ad2c0d64980f70f2f480e506f6366",
+            "message": "Revised handling of allowNullValues for asynchronous retrieval\n\nIncludes revised cacheNames javadoc and equals/hashCode for SimpleValueWrapper.\n\nSee gh-31637"
+        },
+        {
+            "hash": "5a3ad6b7c92f361b096b65324828cb373d711b66",
+            "message": "Late key generation for consistent evaluation of unless expressions\n\nIncludes removal of evict step on pipeline exception, retaining a previous cache value and avoiding an incomplete key (for consistency with non-reactive caching).\n\nCloses gh-31626"
+        },
+        {
+            "hash": "1410c466b7c18b5cba2fd349091c0ad2751d1669",
+            "message": "Support for late-determined cache misses from retrieve(key)\n\nCloses gh-31637"
+        },
+        {
+            "hash": "8ffbecc7c3b60f5a2af2d8e88feef8bb63d1e14a",
+            "message": "WebSocketMessageBrokerStats implements SmartInitializingSingleton\n\nCloses gh-26536"
+        },
+        {
+            "hash": "e6ab8a6d618b2b22edbc9a3eb8aeccc0e984c931",
+            "message": "Remove attributes from RestClient\n\nThis commit removes any references to attributes from RestClient, which\nwere left by mistake.\n\nCloses gh-31625"
+        },
+        {
+            "hash": "856740296938612af9cd9564eee72c456fec3e10",
+            "message": "Extract recurring asciidoc links to attributes, cleanup old doc files\n\nThis commit extract spring-related links and recurring external links\r\ninto asciidoctor attributes to be used by the Antora toolchain.\r\n\r\nIt notably homogenizes links to:\r\n - IETF RFCs\r\n - Java Community Process JSRs\r\n - the Java API Documentation (on the Java 17 version)\r\n - Kotlin documentations (on the Kotlinlang.org version)\r\n - the Spring Boot reference guide (on the `html` version)\r\n\r\nThis commit also reworks most link attributes to follow a\r\nProject-Category-Misc syntax. For example, `spring-boot-docs` rather\r\nthan `docs-spring-boot`.\r\n\r\nFinally, it makes an effort to clean up remainders from the previous\r\ndocumentation toolchain, namely the `docs/asciidoc` folder and \r\n`modules/ROOT/pages/attributes.adoc` file.\r\n\r\nCloses gh-26864\r\nCloses gh-31619"
+        },
+        {
+            "hash": "4cc43b4ddc859f89f6c064f327ce930d923cbbc0",
+            "message": "Refine AppCDS documentation\n\nSee gh-31497"
+        },
+        {
+            "hash": "bec385d310865331db34b1ef8f93f0b0c29eac2e",
+            "message": "Use JarURLConnection caching defaults\n\nIn order to prevent leaks of large amounts of non-heap\nmemory (and potential other efficiency and performance side\neffects), this commit updates ResourceUtils#useCachesIfNecessary\nto leave the caching flag to its JVM default value for instances\nof JarURLConnection.\n\nThe previous behavior was originally introduced via gh-9316 and\ngh-13755 to avoid I/O failure during webapp hot reloading in\nServlet containers. This is not a popular deployment mode anymore\nand we have not been able to reproduce the original issue with\na Java 17 JVM and Tomcat 10.\n\nCloses gh-30955"
+        },
+        {
+            "hash": "878b33c56fcf998f3b40df288a06cd9251bc205b",
+            "message": "Further polish LruContextCacheTests\n\nSee gh-31640"
+        },
+        {
+            "hash": "f46902869ff44a0542808c0e3ac2f0348b301eeb",
+            "message": "Polish LruContextCacheTests\n\nUse AssertJ's extracting() feature instead of ReflectionTestUtils.getField().\n\nCloses gh-31640"
+        },
+        {
+            "hash": "617ba845771f8cf6d8f7e30ba8ff66214e97bc54",
+            "message": "Remove notes about WebTestClient type inference issue in Kotlin\n\nSince gh-28144 was resolved in Spring Framework 6.0, these notes are no\nlonger relevant."
+        },
+        {
+            "hash": "3290260ef05fc6db9687e5d83d74b22eaae2dd9a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fff50657d241a2756d885f49b3d5eda1b1c4af55",
+            "message": "Polishing"
+        },
+        {
+            "hash": "695559879e5bd7936cc60fba937889b49c9c2f8e",
+            "message": "Restore outdated local/remote-slsb attributes for declaration compatibility\n\nLegacy EJB attributes are ignored since 6.0 due to being bound to a plain JndiObjectFactoryBean - but can still be declared now, e.g. when validating against the common versions of spring-jee.xsd out there.\n\nCloses gh-31627"
+        },
+        {
+            "hash": "54f87f1ff796eff3b54d61ed4992f86ef93b6483",
+            "message": "Skip buffer in StreamUtils#copy(String)"
+        },
+        {
+            "hash": "e24954068a6ead31745e4675b294eb6eff964652",
+            "message": "Polish"
+        },
+        {
+            "hash": "500b4959941ebe80ad572c1a69dcb7813d202d82",
+            "message": "Add section on AppCDS in the reference guide\n\nCloses gh-31497"
+        },
+        {
+            "hash": "4b5cb5fa2e199095cd4532ef1716150a96fd48b3",
+            "message": "Fix additional WebFlux-related links\n\nSee gh-31632"
+        },
+        {
+            "hash": "f02e231406e5e84ce81e97180c93d7e0e76a0ab7",
+            "message": "Fix link to Spring WebFlux chapter\n\nThe description is for WebFlux, but the link points to WebFlux unit\ntesting support.\n\nThis commit changes the link to point the the WebFlux chapter.\n\nCloses gh-31632"
+        },
+        {
+            "hash": "19691b4bdeb09a8370255218ebcd6aa4f8dd60ee",
+            "message": "Add basic test for reactive caching"
+        },
+        {
+            "hash": "f146d09607286909eff62e540be3e36630442ed2",
+            "message": "Handle default package with AOT processing\n\nAdding generated code in the default package is not supported as we\nintend to import it, most probably from another package, and that is\nnot supported. While this situation is hard to replicate with Java,\nKotlin is unfortunately more lenient and users can end up in that\nsituation if they forget to add a package statement.\n\nThis commit checks for the presence of a valid package, and throws\na dedicated exception if necessary.\n\nCloses gh-31628"
+        },
+        {
+            "hash": "7d2ea7e7e15afb8d3137a1d2667101e4818937ae",
+            "message": "Ensure PathResourceResolvers log warnings for non-existent resources\n\nPrior to this commit, the getResource() methods in PathResourceResolver\nimplementations allowed an exception thrown from Resource#getURL() to\npropagate instead of logging a warning about the missing resource as\nintended.\n\nThis commit modifies the getResource() methods in PathResourceResolver\nimplementations so that the log messages include the output of the\ntoString() implementations of the underlying resources instead of their\ngetURL() implementations, which may throw an exception.\n\nFurthermore, logging the toString() output of resources aligns with the\nexisting output for \"allowed locations\" in the same log message.\n\nNote that the toString() implementations could potentially also throw\nexceptions, but that is considered less likely.\n\nCloses gh-31623"
+        },
+        {
+            "hash": "8c9481d4c4e9e69606c6d8f31608e13c812b1169",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ec905cb0736344a23cb814bc0ae620dbe7e73bb7",
+            "message": "Share internal StandardExecutionContext delegates\n\nThis commit makes sure that the per-operation execution context for\ncaching and event listening does not recreate the default internal\ndelegates, but rather get initialized with a shared state.\n\nThis reduces the number of instances created per operation execution,\nreducing the GC pressure as a result. This also makes sure that any\ncache, such as the one in StandardTypeLocator, is reused.\n\nCloses gh-31617"
+        },
+        {
+            "hash": "7006d0a80e03bd5154eb73e4516bff0e11cbb563",
+            "message": "Polishing"
+        },
+        {
+            "hash": "69049a4b0fc109675479bf0d19b6560ee67bd4f0",
+            "message": "Overhaul Javadoc for PathMatchingResourcePatternResolver"
+        },
+        {
+            "hash": "194747a80cf6e7ff4ded1d71f1a0e417aee5823d",
+            "message": "Polish PathMatchingResourcePatternResolver"
+        },
+        {
+            "hash": "7b14606d92bfe36fea048137e794cfff18e9e42a",
+            "message": "Next development version (v6.1.1-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30493",
+            "title": "Jackson encoder releases resources in wrong order"
+        },
+        {
+            "number": "31616",
+            "title": "Improve STOMP WebSocket documentation for input message buffer size"
+        },
+        {
+            "number": "31637",
+            "title": "Spring Data Redis Cache implementation is not compatible with `Cache.retrieve(key)` semantics"
+        },
+        {
+            "number": "21139",
+            "title": "Support Kotlin parameter default values in HTTP handler methods"
+        },
+        {
+            "number": "31648",
+            "title": "Spring MVC: Unexpected bytes added to the HTTP response for kotlin.Unit return type in controller methods"
+        },
+        {
+            "number": "31626",
+            "title": "Non-blocking `@Cacheable` method does not support condition with `#result`"
+        },
+        {
+            "number": "26536",
+            "title": "WebSocketMessageBrokerStats has null stats for stompSubProtocolHandler since 5.3.2"
+        },
+        {
+            "number": "31625",
+            "title": "Remove leftover `RestClient` attribute methods"
+        },
+        {
+            "number": "26864",
+            "title": "Use asciidoc attributes in reference documentation"
+        },
+        {
+            "number": "31497",
+            "title": "Document support for AppCDS"
+        },
+        {
+            "number": "9316",
+            "title": "Classpath scanning fails after hot-deploy of a web-application to a container due to JarURLConnection caching [SPR-4639]"
+        },
+        {
+            "number": "13755",
+            "title": "Creating of Spring beans takes a long time when the application is deployed through webstart / jnlp with Java 6 and above [SPR-9117]"
+        },
+        {
+            "number": "30955",
+            "title": "Java 17: resource.isReadable() with concurrency leaks large amounts of non-heap memory"
+        },
+        {
+            "number": "28144",
+            "title": "Replace KotlinBodySpec with proper ResponseSpec extensions"
+        },
+        {
+            "number": "31627",
+            "title": "`<jee:local-slsb>` no longer works with a `business-interface` attribute"
+        },
+        {
+            "number": "31628",
+            "title": "GeneratedFiles#addSourceFile should not allow to add a source in the default package"
+        },
+        {
+            "number": "31623",
+            "title": "`PathResourceResolver.getResource()` does not log warning if `Resource#getURL()` throws exception"
+        },
+        {
+            "number": "31617",
+            "title": "Caching and Event Listening support do not reuse internal delegates for their evaluation contexts"
+        }
+    ]
+}

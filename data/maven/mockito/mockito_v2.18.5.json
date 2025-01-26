@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.18.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 1.0933564814814816,
+    "commits_info": [
+        {
+            "hash": "758ca3782fba18b8eaf1faed5d68084145f8802d",
+            "message": "2.18.5 release (previous 2.18.4) + release notes updated by CI build 3418\n\n[ci skip-release]"
+        },
+        {
+            "hash": "3d25d3175dfbe354e90fbbe19612b789fd290ee8",
+            "message": "Avoid circularity: If certain types a type for the first time during instrumentation while our mocking engine relies on the same types, this can cause a circularity as checking if an instance is a mock requires instances of the latter types what again returns to the latter mock checking routine what causes an endless loop. (Described in comment.) Fixes #1240. (#1378)"
+        },
+        {
+            "hash": "cb8f3d9e9906146b8c0d8f82bbcdfa677b29f475",
+            "message": "Upgrade errorprone to 2.3.1 (#1380)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1240",
+            "title": "Mockito Inline can't mock Finatra Response Class"
+        }
+    ]
+}

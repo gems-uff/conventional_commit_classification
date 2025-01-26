@@ -1,0 +1,498 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.17.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 118,
+    "start_delay": 0.0,
+    "duration": 55.79895833333333,
+    "commits_info": [
+        {
+            "hash": "909a0f36a10075c4b4bc70fdee2c7e32dd612a72",
+            "message": "Merge pull request #8701 from protocolbuffers/updateChangelogs\n\nUpdating changelog"
+        },
+        {
+            "hash": "ec645c03f49284fd8a5daf9d733428560386fabf",
+            "message": "Updating changelog"
+        },
+        {
+            "hash": "367851d1244d51ff4f4133d2499b4a16e74b052e",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "704118b2a4b5787af6158c4ac95530543a15b4de",
+            "message": "Merge pull request #8699 from deannagarcia/morePomFixes\n\nFixing kotlin duplicate class error"
+        },
+        {
+            "hash": "0717715ae91c9ad692dd0ee9b9fac510e1aabd09",
+            "message": "Removing more from the pom"
+        },
+        {
+            "hash": "5330d0d5da8a933749d0427d003edab65868954a",
+            "message": "Updating pom files"
+        },
+        {
+            "hash": "f5a0e3988b0c69b68a5c4d4c45152efccea04a91",
+            "message": "Merge branch 'master' into 3.17.x"
+        },
+        {
+            "hash": "8d8ba6acc3df2c63dfd8b7becbed02eafa1906b9",
+            "message": "Merge pull request #8637 from dschopf/fix-qnx-7.0-support\n\nFix QNX 7.0 support #8593"
+        },
+        {
+            "hash": "bbccb31e8b50a0ead02276bd5fbc94819e47c64c",
+            "message": "Fix compiler error for empty default ctor for std::atomic<int> variables"
+        },
+        {
+            "hash": "12a9feca47c1995ceb4bfbe0a0a32e7d1e8a5c85",
+            "message": "Fix compiler error with brace initializer (conflicts with #8492)"
+        },
+        {
+            "hash": "779a6adfc8b78f39f19d2ef0e50b66dacb64e445",
+            "message": "Add support for 64 bit QNX builds"
+        },
+        {
+            "hash": "bd9d47db414a8e55b48b955c99319490e903be44",
+            "message": "endian.h is not available on QNX"
+        },
+        {
+            "hash": "b2b5446af04b1ab2ee227aeeec2557692c993f10",
+            "message": "Fix compiler error due to mismatched braces (broken in f5fd897c1d)"
+        },
+        {
+            "hash": "96ccf402fe8e62649f2be48a05944d552701aa5f",
+            "message": "Remove build badges, they were consistently out of date and not very useful. (#8634)"
+        },
+        {
+            "hash": "f1fe79dd12dcb669a7bfab953c903ac6983e6436",
+            "message": "Use cfg=\"exec\" instead of cfg=\"host\" in internal rules. (#8626)\n\nBazel has switched its protobuf rules to make them use the proto\r\ncompiler in the exec configuration instead of the host configuration.\r\n\r\nHowever, if rules in protobuf still use the host configuration then\r\nmultiple copies of the compiler can end up being built.\r\n\r\ncfg=\"host\" is deprecated in any case and being replaced with cfg=\"exec\"\r\nwhere possible.\r\nhttps://docs.bazel.build/versions/master/skylark/rules.html#configurations"
+        },
+        {
+            "hash": "f71a662db4cce92f2fc53866e0fc27ae25177e9c",
+            "message": "Fix unportable test(1) operator. (#8616)"
+        },
+        {
+            "hash": "dd69a484c01291c8c844ae31dc6aff4525b4a9a2",
+            "message": "Updated version of upb for Ruby (#8624)\n\n* Updated upb.\r\n\r\n* Preserve legacy behavior for unset messages.\r\n\r\n* Updated failure list.\r\n\r\n* Updated CHANGES.txt.\r\n\r\n* Added erroneously-deleted test file.\r\n\r\n* Fixed condition on compatibility code.\r\n\r\n* Re-introduced deleted file again, and fixed Rakefile to not delete it.\r\n\r\n* Fix generation of test protos."
+        },
+        {
+            "hash": "7611164792a849a0bd7012b061cd0c0a1b271ff0",
+            "message": "Updated upb version and fixed PHP to not get unset message field. (#8621)\n\n* Updated upb version and fixed PHP to not get unset message field.\r\n\r\n* Updated changelog.\r\n\r\n* Fixed preproc test to handle old versions of Clang withot __has_attribute().\r\n\r\n* A second try at fixing __has_attribute().\r\n\r\n* Copy __has_attribute() fix to cc file also.\r\n\r\n* Updated failure list for PHP for fixed test."
+        },
+        {
+            "hash": "0710536d30be57b54f137e5d8b08240a485fdef8",
+            "message": "Merge pull request #8623 from shaod2/kotlin-gen-docs\n\nKotlin: update pom.xml to include dokka"
+        },
+        {
+            "hash": "3b5f123537b7bd2e3057bc908b79fb35f471baa7",
+            "message": "Update pom.xml"
+        },
+        {
+            "hash": "ecbdbbaaf0fa4dd92952a7a6b0eb7c85b8a03016",
+            "message": "Merge branch 'master' into kotlin-gen-docs"
+        },
+        {
+            "hash": "939569ac9c0c416fad40fbd0ae601e4a7fd1063e",
+            "message": "Add more description on unspecified directory in javascript readme (release notes: no) (#6393)\n\n* Add more description on unspecified directory\r\n\r\nIn the example code, the \"js\" folder appeared for the first time and there is no clue where the current folder is. Therefore, there should be some comments describing what the folder is. Otherwise, like me, spent a lot of time guessing what codes - some release version or the source code - should be downloaded to go to the \"js\" directory.\r\n\r\n* Add detailed description on how to run js tests\r\n\r\nThe test files are directly in the Protocol Buffer project js folder. Add more detailed instruction on how and where to run the tests.\r\n\r\n* Correct two spelling mistakes\r\n\r\nThe two spelling mistakes mentioned in your comments are corrected."
+        },
+        {
+            "hash": "24935638eac1175587ef4f8b600113ef32db7972",
+            "message": "Revert \"Merge branch 'kotlin' into master\" (#8622)\n\nThis reverts commit 716621a222756418bac2ff2d87f36c4ecc7b515a, reversing\r\nchanges made to f0da89d8b6c53654327c43c5fa003276ef73d5fa."
+        },
+        {
+            "hash": "716621a222756418bac2ff2d87f36c4ecc7b515a",
+            "message": "Merge branch 'kotlin' into master"
+        },
+        {
+            "hash": "45aca8d7a027f39e79e96e66f43b31a1f87ef777",
+            "message": "Update pom.xml for kotlin doc generateor"
+        },
+        {
+            "hash": "f0da89d8b6c53654327c43c5fa003276ef73d5fa",
+            "message": "Merge pull request #8473 from Jensaarai/ReadOnlySpan\n\nC#: Add ParseFrom/MergeFrom ReadOnlySpan<byte>"
+        },
+        {
+            "hash": "1252f3e14756b8baf5108288cbe013143ba0efff",
+            "message": "More Code Review Updates\n\n* Add more testing for ReadOnlySpan parsing\n  * Update `AssertReadFromParseContext` to also run assertions for a\n`ParseContext` initialized from a `ReadOnlySpan` of the given input.\n* Remove passing `ReadOnlySpan` parameters by ref since they are not\naltered and the type isn't large enough to benefit from performance\nimprovements for passing by `ref` or `in`\n* Update `ParseContext` `Initialize` overloads for\n`ReadOnlySpan<byte>`, going down to two (since nothing was calling the\noverload that changed the recursion limit). The first now calls the\nsecond to set the `buffer` and `state` on the context, and has\ndocumentation to note that it is used to create a `ParserInternalState`\nwith default settings."
+        },
+        {
+            "hash": "2f0e269725bb7c42e725a9e8dd2989cfb540b6c4",
+            "message": "improve readability of MessageParsingHelpers"
+        },
+        {
+            "hash": "89244fe167320b786f5f28536c12914133a4034a",
+            "message": "make public API take ReadOnlySpan<byte> without \"ref\""
+        },
+        {
+            "hash": "5095b68183125ccc3288827befe60c6f5f5a478e",
+            "message": "Code Review Feedback\n\n* Move additional `ReadOnlySpan<byte>` `ParseContext` overloads next to\nthe existing overload\n* Pass `ReadOnlySpan<byte>` parameters by `ref`\n* Update `MessageParsingHelpers` to add checks for parsing from\n`ReadOnlySpan<byte>`, remove tests from `CodedInputStreamTest`"
+        },
+        {
+            "hash": "76e3ffd9f0ff32090f36d1ca6ea1491e71024b27",
+            "message": "C#: Add ParseFrom/MergeFrom ReadOnlySpan<byte>\n\nAddress #7885"
+        },
+        {
+            "hash": "7e95c64dfbd9f725f005c83470d44140f58ce8d0",
+            "message": "[PHP] Fixed $msg->setMessage(null) to properly clear the message. (#8472)\n\n* [PHP] Fixed $msg->setMessage(null) to properly clear the message.\r\n\r\nFixes: https://github.com/protocolbuffers/protobuf/issues/8457\r\n\r\n* Changed pure PHP to throw TypeError, and added a test for null.\r\n\r\n* Added more tests and fixed null in setter for oneof."
+        },
+        {
+            "hash": "361ac449d63746d2f49cb6f3db036ed606f74e8f",
+            "message": "Merge pull request #8597 from deannagarcia/updateKotlinCompiler\n\nUpdating Kotlin compiler version and testing new functionality it allows"
+        },
+        {
+            "hash": "8fbfa353307560db115b518bf0966e83e006c621",
+            "message": "Merge branch 'master' into updateKotlinCompiler"
+        },
+        {
+            "hash": "c7d2a97879957e1018877cf703e0c0b15f33886f",
+            "message": "Sets SKIP_INSTALL to YES for the ProtocolBuffers target (#8560)"
+        },
+        {
+            "hash": "23fd8e07914d5a600294f225237bcb846db50359",
+            "message": "Use correct enum values.\n\nThe clang Xcode 12.5 seems to actually detect this long standing mistake."
+        },
+        {
+            "hash": "b0d90e3abe16de8c42a88d5575c67d98f84d728c",
+            "message": "Fixed PHP memory leaks and arginfo errors (#8614)\n\n* Fixed a bunch of incorrect arginfo and a few incorrect error messages.\r\n\r\n* Passes mem check test with no leaks!\r\n\r\n* WIP.\r\n\r\n* Fix build warning that was causing Bazel build to fail.\r\n\r\n* Added compatibility code for PHP <8.0.\r\n\r\n* Added test_valgrind target and made tests Valgrind-clean.\r\n\r\n* Updated Valgrind test to fail if memory leaks are detected.\r\n\r\n* Removed intermediate shell script so commands are easier to cut, paste, and modify.\r\n\r\n* Passing all Valgrind tests!\r\n\r\n* Hoist addref into ObjCache_Get().\r\n\r\n* Removed special case of map descriptors by keying object map on upb_msgdef.\r\n\r\n* Removed all remaining RETURN_ZVAL() macros.\r\n\r\n* Removed all explicit reference add/del operations.\r\n\r\n* Added REFCOUNTING.md to Makefile.am."
+        },
+        {
+            "hash": "63d2aca3b599455dce3719e0756a733b0e937fec",
+            "message": "Update generated_message_table_driven.h (#8571)\n\nExport SerializeInternalToArray referenced by TableSerializeToArray"
+        },
+        {
+            "hash": "9344e0b72420ab572f3e7f2439c78285566932a8",
+            "message": "Fix compile error on darwin GCC due to an unsupported attribute init_priority (#8600)"
+        },
+        {
+            "hash": "7bbfd14b7fedabbee9e85367b9ca804bf3d58133",
+            "message": "Merge pull request #8603 from acozzette/merge-3.17.x\n\nMerge 3.17.x into master"
+        },
+        {
+            "hash": "086aa97385ec939d4ad7564d27fb1c54ce604fa6",
+            "message": "Merge branch '3.17.x' into merge-3.17.x"
+        },
+        {
+            "hash": "3133828c7f16414b2655d6f3fb17b80fbbc558ed",
+            "message": "Merge branch '3.17.x' into merge-3.17.x"
+        },
+        {
+            "hash": "a84686c6626df468580a840d8d61a6f7013f772a",
+            "message": "Merge pull request #8594 from jtattermusch/csharp_mark_generated_code\n\nMark C# generated code with System.CodeDom.Compiler.GeneratedCode as well"
+        },
+        {
+            "hash": "829b201af966a0b0743602aa87b17d8794bb1d4a",
+            "message": "address review comments"
+        },
+        {
+            "hash": "77a64e7dfe03856d1ee9b998eb22fbe42706ac73",
+            "message": "regenerate protos"
+        },
+        {
+            "hash": "5ae7f692f38b12ca027aaebadc3e06f1ecdd1bb1",
+            "message": "mark generated code with System.CodeDom.Compiler.GeneratedCode as well"
+        },
+        {
+            "hash": "465acaab6651a158592b06605a38fed373512f23",
+            "message": "Use template Delete<> for invoking a dependent template (#8579)\n\nThis fixes MSVC (tested on MSVC2019 / 16.8) compilation error (line number is different, as I am working with protobuf 3.15.8:\r\n```\r\ngoogle/protobuf/map_entry_lite.h:527: error C2760: syntax error: unexpected token ')', expected 'expression'\r\n```\r\n\r\nI believe [this](https://stackoverflow.com/questions/34696351/template-dependent-typename) explains why MSVC considers this to be a dependent template."
+        },
+        {
+            "hash": "9b3b65ecfbaf9c14e1ce8b8fc619d2f8902892ee",
+            "message": "Merge pull request #8582 from acozzette/merge-3-17-x\n\nMerge 3.17.x into master"
+        },
+        {
+            "hash": "540852f4c69d1513548ad1afff694f3ef5868a7f",
+            "message": "Merge branch '3.17.x' into merge-3-17-x"
+        },
+        {
+            "hash": "80df7760aac37e8ad87c358d8a797a514701134a",
+            "message": "Merge pull request #8581 from acozzette/merge-3-16-x\n\nMerge 3.16.x into master branch"
+        },
+        {
+            "hash": "d0c4c409efea6e4aa2a1869bfac589415724aab4",
+            "message": "Merge branch '3.16.x' into merge-3-16-x"
+        },
+        {
+            "hash": "45e9707871e2e40408fa530dc6d80cf2b1a0d287",
+            "message": "Some more updates to PHP testing infrastructure (#8576)\n\n* WIP.\r\n\r\n* Added build config for all of the tests.\r\n\r\n* Use ../src/protoc if it is available, for cases where Bazel isn't available.\r\n\r\n* Added test_php.sh.\r\n\r\n* Fix for the broken macOS tests.\r\n\r\n* Move all jobs to use php80 instead of lots of separate jobs.\r\n\r\n* Only pass -t flag if we are running in a terminal.\r\n\r\n* Updated php_all job to use new Docker stuff."
+        },
+        {
+            "hash": "a36efdefa3ce58424ecf486a08d4b93d957d0419",
+            "message": "Merge branch 'master' into updateKotlinCompiler"
+        },
+        {
+            "hash": "92e504e6601e72e05e326931f2611e243a70145a",
+            "message": "Merge remote-tracking branch 'upstream/master' into updateKotlinCompiler"
+        },
+        {
+            "hash": "4a5e765fe395532a3d21ce99d99fc857b7637424",
+            "message": "Adding more repeated extension tests"
+        },
+        {
+            "hash": "cf234cf132fc75d5c082b5e71dfeeba7bbfb7e18",
+            "message": "Updating Kotlin compiler version and testing new functionality it allows"
+        },
+        {
+            "hash": "31d3098af65fdfbc907bc651040967a5f60abc76",
+            "message": "Update pom.xml\n\nAdd plugin to generate Kotlin docs"
+        },
+        {
+            "hash": "8aaf4d2a40fd1f932daed3b433d8acb0822bb7b2",
+            "message": "Build updates (#5300)\n\n* Make language instructions' documentation links clickable\r\n\r\nSee 86208c52.\r\n\r\n* Add a `git submodules` check to autogen.sh\r\n\r\nRunning `./autogen.sh && make` happens to work without initializing git\r\nsubmodules - but autogen.sh writes to what is supposed to be a git\r\nsubmodules directory, so trying to later initialize git submodules\r\nfails.\r\n\r\nThis change makes building a bit more reliable for people who miss this\r\nstep.\r\n\r\n* Revise third_party googletest logic\r\n\r\nAs discussed in PR, instead of requiring that `git submodule --init` be\r\nrun, correctly handle the case where it isn't run."
+        },
+        {
+            "hash": "c05e7ad0a8fd99b0e8fb452158442831be3bd3df",
+            "message": "Merge pull request #8690 from maxgolov/maxgolov/vs2019_16.10_constinit_broken\n\nconstinit not working as expected in Visual Studio 2019 Update 16.10"
+        },
+        {
+            "hash": "bc46fce1bd776c42c27769857eebf1382d5c74f4",
+            "message": "constinit not working as expected in Visual Studio 2019 Update 16.10"
+        },
+        {
+            "hash": "b650ea44b10133008baaea7488360c5b95c93c7b",
+            "message": "Merge pull request #8557 from yuzawa-san/osx-m1-fix\n\nprotoc maven artifacts: reuse osx-x86_64 for osx-aarch_64"
+        },
+        {
+            "hash": "55109ea3daf2343e3bbd3873a792a4bc7bd96f15",
+            "message": "protoc-java: reuse osx-x86_64 for osx-aarch_64\n\nSigned-off-by: James Yuzawa <jtyuzawa@gmail.com>"
+        },
+        {
+            "hash": "bd42fcc7a3e04504df895ce2fd0782c0e84b68a5",
+            "message": "Merge pull request #8652 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "45bb1d2feb974988cab77226af59f0e523d6f7ec",
+            "message": "Added new file to build files."
+        },
+        {
+            "hash": "f55aafc93e9490a18f20b693b4467dca2eb3404f",
+            "message": "Updated changelog."
+        },
+        {
+            "hash": "a8d8eb17df39ba3f16990e8af3528b107b07b0f0",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage"
+        },
+        {
+            "hash": "9521803d40731036e71fc663fe8299ca3ee90403",
+            "message": "Sync from Piper @375548932\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "094d18944ed565dc4459230e0554d0720fbbdfd9",
+            "message": "Sync from Piper @373871284\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "380e352b0bddd31d08250295ef6c24347ae47b54",
+            "message": "Sync from Piper @373820256\n\nPROTOBUF_SYNC_PIPER"
+        },
+        {
+            "hash": "636132bd77c4afc890a294b2a751ae7b73f58622",
+            "message": "Merge pull request #8617 from deannagarcia/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
+        },
+        {
+            "hash": "4c3d50b946eeefbb45902f51ef67ce6eb8b1f245",
+            "message": "Fixing objc tests"
+        },
+        {
+            "hash": "b67ec9f70c19cfbe0dc288f47c959a7a971e86a0",
+            "message": "Reverting last change since tests are still failing"
+        },
+        {
+            "hash": "092a14fbe72e35562c6ef941a4cb3ec02653cb9b",
+            "message": "Experimenting to get tests to pass."
+        },
+        {
+            "hash": "1b827fa114ef4ff36a802f07f3d7210ead6de2c5",
+            "message": "Run update_file_lists.sh"
+        },
+        {
+            "hash": "ff7178ddf9de6025a55caa31834d9ee5a2bc5299",
+            "message": "Merge branch 'master' into sync-stage"
+        },
+        {
+            "hash": "4793f80ad3cf9ad4333da5674110f8ee872f7de5",
+            "message": "Merge branch 'sync-stage' of https://github.com/deannagarcia/protobuf into sync-stage"
+        },
+        {
+            "hash": "d1098000cebe0e7aa4298f835f302e2e5689023a",
+            "message": "Merge branch 'master' into sync-stage"
+        },
+        {
+            "hash": "d43433d20f8a93c6685dbb26796d0115f9a0286b",
+            "message": "Updating makefile to pass the tests"
+        },
+        {
+            "hash": "879bc6f6dbcc8402defa8f99ad69727f8123c6de",
+            "message": "Get rid of merging tags"
+        },
+        {
+            "hash": "d0ea861a74092ab62f72613ed416d3247a7f1709",
+            "message": "Add another file to Makefile"
+        },
+        {
+            "hash": "f1b0d4e29fadd3d59ed094f50e1be2464a176ab7",
+            "message": "Add another header to Makefile"
+        },
+        {
+            "hash": "7a1b30166f96bcaef2e1cf8bf7221dcee50bb80f",
+            "message": "Add headerfiles to Makefile"
+        },
+        {
+            "hash": "cab253ec5e8b402e5a388e3033d097b3dd48eb55",
+            "message": "Removing python_protobuf.h/cc"
+        },
+        {
+            "hash": "6da55b2d6b6cfc1861caae0e9b1e8c531b1049d8",
+            "message": "Add changes to CHANGES.txt"
+        },
+        {
+            "hash": "f66dea481dc652387befba7f87288099f4157ec1",
+            "message": "Merge tag 'refs/tags/sync-piper' into sync-stage\n\n# Conflicts:\n#\tjava/kotlin/src/test/kotlin/com/google/protobuf/Proto2Test.kt\n#\tsrc/google/protobuf/repeated_field_unittest.cc"
+        },
+        {
+            "hash": "8d65655494e18cc46ec655bed69d8016e7fb4ac8",
+            "message": "Fix maybe uninitialized error"
+        },
+        {
+            "hash": "998d3a343a87d53e1a4a4917bb01eb87943a7999",
+            "message": "Merge pull request #8642 from JoelLinn/fix-mingw-bswap\n\nFix MinGW compilation"
+        },
+        {
+            "hash": "40ec3b2bfce5d556bb9dcd70d82b0d38dd225502",
+            "message": "Fix MinGW compilation\n\n- Fixed syntax error in platform independent bswap_64 implementation"
+        },
+        {
+            "hash": "6bdfc3bb67e37bccd9db08f7966693813231ae09",
+            "message": "Merge pull request #8638 from jtattermusch/php_aarch64_tests\n\nRun PHP aarch64 tests on the CI (with an emulator)"
+        },
+        {
+            "hash": "95f5995cce5f336ce47a7a594ec738d54124c0bf",
+            "message": "add kokoro job configs for php aarch64 linux test"
+        },
+        {
+            "hash": "2d2ebf5e9700ab11f48590f98671badc62ecabd9",
+            "message": "add php aarch64 linux emulated tests"
+        },
+        {
+            "hash": "fd896ba23e7f6f6578757501f363de22a1b79425",
+            "message": "Use modern JS tooling instead of Closure's deprecated Python scripts. (#8610)"
+        },
+        {
+            "hash": "3069f82bbcd8ee89246330586c11f7dddec22821",
+            "message": "Tweak tests to allow common protos to evolve more.\n\nDon't check field counts, instead only test based on the fields that exists (and\nlikely will never exist). This allows the protos to evolve with almost zero\nchance of the tests breaking for those other changes."
+        },
+        {
+            "hash": "0dc4ad80d19fd80ed9031d6b75b6ad4a8f93ab8e",
+            "message": "Some cpp style fixes."
+        },
+        {
+            "hash": "0b05994474f3f53bbda8fef1c24acb06f778a3bf",
+            "message": "fixed warning about missing pragma warning push (#8678)"
+        },
+        {
+            "hash": "0b8d13a1d4cd9be16ed8a2230577aa9c296aa1ca",
+            "message": "Merge pull request #8665 from jtattermusch/protobuf_fix_benchmark_script\n\nFix OSS benchmarking script"
+        },
+        {
+            "hash": "ceafbf9132e683433cce5ec148cc3107b2cc661a",
+            "message": "more cleanup"
+        },
+        {
+            "hash": "75afc88eaebbb1a0f881c9dde43944aed903234b",
+            "message": "disable php benchmark and other cleanup"
+        },
+        {
+            "hash": "6135c916a4c4bd7550d363e4703ef4309a8646d9",
+            "message": "fix benchmark run.sh script"
+        },
+        {
+            "hash": "dd247c20ad4ba324547fa88d1d0d5ab1e05d08ad",
+            "message": "Merge pull request #8673 from mrjoel/mrjoel/correct-export-order\n\nCorrect ordering of export API for DescriptorTable"
+        },
+        {
+            "hash": "11edc34d088683671f705326a2a9d9e2b287ca5c",
+            "message": "Correct ordering of export API for DescriptorTable\n\nThis resolves issues with GCC and Clang warning (as error) about\nattribute in an unallowed location, in particular when used with a\ngenerated file using a dllexport_decl value of [[gnu::visibility]].\n\nThe correct ordering is already used in the compiler in\nFileGenerator::ForwardDeclarations() for each of classes_, as well\nas for other existing local values in pregenerated files. This\nchange ensures that all usages can compile without issue."
+        },
+        {
+            "hash": "f415285c3e851e2a77d3a1704cee167849dd97b7",
+            "message": "Scope `string` usage with the namespace."
+        },
+        {
+            "hash": "8275756142942db6a710d766566da71d73d5fdef",
+            "message": "ObjC: Add stdin/stdout/stderr to reserved word list.\n\nThis will cause fields named exactly these names to get `_p` appended to them.\nThis is being done since the C89/C99/etc specs say these name should be macros,\nso in an ObjC context, trying to access the fields would result in runtime\nfailures for unknown selectors. The only way the fields were usable was to use\nKVC or via the descriptor based apis, but if someone hit that they likely would\nhave reported the general issue also."
+        },
+        {
+            "hash": "d2f6d9b7217736e64b30d1ef390f86d114731784",
+            "message": "Merge pull request #8650 from acozzette/merge-3.17.x\n\nMerge 3.17.x into master"
+        },
+        {
+            "hash": "b506c31de06638696d97a7ac9619ffa1d6f25dbc",
+            "message": "Merge branch '3.17.x' into merge-3.17.x"
+        },
+        {
+            "hash": "fa31183250230b4af6ea485e23fb36e705b3f884",
+            "message": "Add internal.bzl to EXTRA_DIST. (#8663)\n\ninternal.bzl is required to load java/core/BUILD and java/lite/BUILD, so it must be distributed."
+        },
+        {
+            "hash": "3737676d83cc5b74e88d507c58826d7d176f36d9",
+            "message": "Reserve 1109 for Glitchdot (#8662)"
+        },
+        {
+            "hash": "4e0a1119c0c5cdfe89b54b9d66cb76223f17861a",
+            "message": "Fix the Docker build for our javascript Docker image (#8661)\n\nI noticed that our JavaScript Docker image is a couple years old and\r\nseems to have an old NPM version that may be causing problems on #8610,\r\nso I went ahead and rebuilt the image. To do that successfully, I had to\r\nset some environment variables in the Dockerfile so that it can build\r\nsuccessfully without having to ask for input about timezone\r\nconfiguration. This seems to be a known issue described here:\r\nhttps://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image\r\nI also updated it to explicitly install Python since that is required\r\nfor part of our JavaScript build."
+        },
+        {
+            "hash": "b3183b54c4166471994e45a2b2d901c96d061212",
+            "message": "Use template Delete<> for invoking a dependent template (#8655)\n\nThis is a continuation of #8579"
+        },
+        {
+            "hash": "093824aa0aace2fbf6ea92bc5faed88b2ab2ef4b",
+            "message": "Merge pull request #8654 from panmingyang2009/master\n\n[Objective-C] Comment Correcting"
+        },
+        {
+            "hash": "255a28629e0df16d637bbab667fba12e848002f8",
+            "message": "Correct a comment of GPBFieldDescriptor\n\nThe comment of property 'mapKeyDataType' has a mistake.\r\nIf the field is a map, the value's type is not fieldType.\r\nInstead, it's dataType."
+        },
+        {
+            "hash": "439e6cf4035399c3dd5dbc2afe0ec6b525f273bc",
+            "message": "Merge pull request #8666 from jtattermusch/protobuf_fix_result_parser\n\nOSS benchmarks: print benchmarks JSON results to build job log"
+        },
+        {
+            "hash": "b4a06a193b4edd1aec728b57a1ea91bf0aca4683",
+            "message": "print benchmarks JSON results to build job log"
+        },
+        {
+            "hash": "7a374d4a2fb346e88670ce132de7d24295b5ca1e",
+            "message": "deps: update to Guava 30.1.1 (#8521)\n\n@eklitzke"
+        },
+        {
+            "hash": "548e01324ea811472a6f2a4ac2354c5c21a055fe",
+            "message": "Merge pull request #8689 from deannagarcia/merge3.17.2\n\nMerge 3.17.x into master"
+        },
+        {
+            "hash": "50a317556a077c6420677bf28de5ed1d90bc290a",
+            "message": "Fixing merge conflict"
+        },
+        {
+            "hash": "506f2273d114313496791afe442935cb13f4d43d",
+            "message": "Merging 3.17.x branch into master"
+        },
+        {
+            "hash": "e15d56af27783358290ef96cabe3e9c18afda5b1",
+            "message": "Merge pull request #8700 from deannagarcia/3.17.x-202106042117\n\nUpdate protobuf version"
+        }
+    ],
+    "issues": [
+        {
+            "number": "8593",
+            "title": "Build issues on QNX 7.0"
+        },
+        {
+            "number": "8492",
+            "title": "constexpr defaulted default constructor of WrappedMutex causes compile errors"
+        },
+        {
+            "number": "7885",
+            "title": "C# MergeFrom ReadOnlySpan with no allocations"
+        }
+    ]
+}

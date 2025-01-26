@@ -1,0 +1,178 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.19",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 27,
+    "start_delay": 0.0,
+    "duration": 27.926655092592593,
+    "commits_info": [
+        {
+            "hash": "91cf5ebd2da4fa962aca980ab160821f9d8daa71",
+            "message": "Release v6.0.19"
+        },
+        {
+            "hash": "402246df28048504a709b5c277dfd49116ff5df1",
+            "message": "Refine UriComponentsBuilder parsing\n\nThis commit refines the expressions for the scheme, user info, host and\nport parts of the URL in UriComponentsBuilder to better conform to\nRFC 3986.\n\nFixes gh-32617"
+        },
+        {
+            "hash": "88a68ddbd2df5c1b891980551bc522dce22d6563",
+            "message": "Upgrade to Reactor 2022.0.18\n\nCloses gh-32593"
+        },
+        {
+            "hash": "7d178c67712ae312a0ea4ce507fe943b728c0bad",
+            "message": "Detect bridge methods across ApplicationContexts in MethodIntrospector\n\nPrior to this commit, MethodIntrospector failed to properly detect\nbridge methods for subsequent invocations of selectMethods() with the\nsame targetType and MetadataLookup, if such subsequent invocations\noccurred after the ApplicationContext had been refreshed.\n\nThe reason this occurs is due to the following.\n\n- Class#getDeclaredMethods() always returns \"child copies\" of the\n  underlying Method instances -- which means that `equals()` should be\n  used instead of `==` whenever the compared Method instances can come\n  from different sources (such as the static caches mentioned below).\n\n- BridgeMethodResolver caches resolved bridge methods in a static cache\n  -- which is never cleared.\n\n- ReflectionUtils caches declared methods in a static cache\n  -- which gets cleared when an ApplicationContext is refreshed.\n\nConsequently, if you attempt to load an ApplicationContext twice in the\nsame ClassLoader, the second attempt uses the existing, populated cache\nfor bridged methods but a cleared, empty cache for declared methods.\nThis results in new invocations of Class#getDeclaredMethods(), and\nidentity checks with `==` then fail to detect equivalent bridge methods.\n\nThis commit addresses this by additionally comparing bridge methods\nusing `equals()` in MethodIntrospector.selectMethods().\n\nNote that the `==` checks remain in place as an optimization for when\n`equals()` is unnecessary.\n\nCloses gh-32586\n\n(cherry picked from commit e702733c7b787300d63c21bc473e1aab5c882991)"
+        },
+        {
+            "hash": "ba776d7201a82013733bd4d9002fd7f7921bb0f7",
+            "message": "Log column type for limited support message in getResultSetValue\n\nCloses gh-32601\n\n(cherry picked from commit c5590ae9e6a3d75feae96f3015a65462c67dbcf8)"
+        },
+        {
+            "hash": "aba5f421fcd2d5fc0ad9a1310183e0c4558b2c08",
+            "message": "Remove accidental backport of 6.1 class"
+        },
+        {
+            "hash": "2bac1629e634cd137c1b514930ca125ec551a456",
+            "message": "Upgrade to Groovy 4.0.20, Netty 4.1.108, OpenPDF 1.3.43"
+        },
+        {
+            "hash": "9412d782ce1484456939d3a7a93658cf6319c87c",
+            "message": "Revised tests for generic FactoryBean type matching (backported)\n\nSee gh-32489"
+        },
+        {
+            "hash": "a0bd13ceb1585660599a5ff6648e09c5ec5d5cbd",
+            "message": "Do not extract FactoryBean generic in case of targetType mismatch\n\nCloses gh-32489"
+        },
+        {
+            "hash": "46a082120597f8f1aba98622a07308328d4d059c",
+            "message": "Stop linking to Websphere's Javadoc\n\nCloses gh-32582"
+        },
+        {
+            "hash": "2c531344c60262ca2415ca996510cfcc1a4e37b0",
+            "message": "Upgrade to Gradle 8.7\n\nCloses gh-32567"
+        },
+        {
+            "hash": "6610ee360e09c21c4952045b2eb1283fe52a9b64",
+            "message": "Upgrade actions that use deprecated features"
+        },
+        {
+            "hash": "afde96c5406129275c701abdbe713bbd134f4035",
+            "message": "Fix link to vavr in the reference guide\n\nCloses gh-32495"
+        },
+        {
+            "hash": "da799bc5192686f5732cec6c52c80c37995233dc",
+            "message": "Wrap InvalidMimeTypeException in HttpMediaTypeNotAcceptableException\n\nThe fix for #31254 resulted in an InvalidMimeTypeException being thrown\nby MimeTypeUtils.sortBySpecificity() instead of an\nIllegalArgumentException. However, InvalidMimeTypeException extends\nIllegalArgumentException. Consequently, the change from\nIllegalArgumentException to InvalidMimeTypeException did not result in\nthe desired effect in HeaderContentNegotiationStrategy.\n\nHeaderContentNegotiationStrategy.resolveMediaTypes() still allows the\nInvalidMimeTypeException to propagate as-is without wrapping it in an\nHttpMediaTypeNotAcceptableException.\n\nTo address this issue, this commit catches InvalidMediaTypeException\nand InvalidMimeTypeException in HeaderContentNegotiationStrategy and\nwraps the exception in an HttpMediaTypeNotAcceptableException.\n\nSee gh-31254\nSee gh-31769\nCloses gh-32483\n\n(cherry picked from commit ef02f0bad87ddd4672c88f9018333e0fb9ba5cde)"
+        },
+        {
+            "hash": "755968fd2c272e69314de3633b7850384253c8e8",
+            "message": "Polishing\n\n(cherry picked from commit 836a0b3a40f281a642c122dcfb9976603d692e54)"
+        },
+        {
+            "hash": "eea00628f9fa61a669164b0d655de5897925b3a2",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8d745462b473c1fd5b0f2f75f4fffeb2142dace2",
+            "message": "Propagate JMS IllegalStateException from commit/rollbackIfNecessary\n\nCloses gh-32473\n\n(cherry picked from commit cd7ba1835cfeb37c0a28f1eba97a9956697b1623)"
+        },
+        {
+            "hash": "ed6c25fb6ecd8942a8b9e62f9db19aa52811038e",
+            "message": "Avoid unnecessary Annotation array cloning in TypeDescriptor\n\nCloses gh-32476\n\n(cherry picked from commit 42a4f2896222959d85ba4642542cfe05aff91f2c)"
+        },
+        {
+            "hash": "8460a2d285bcfd87170958147f6372877fc8f6ae",
+            "message": "Restore original toString representation (revert accidental backport)\n\nSee gh-32405"
+        },
+        {
+            "hash": "c3d186b4d0cf4b5550e1239b88802fbbfd76163a",
+            "message": "Remove superfluous @NonNull declarations"
+        },
+        {
+            "hash": "f8926d6a667a288486dc2df9ff88b2c6291faa1e",
+            "message": "Avoid cloning empty Annotation array in TypeDescriptor (backport)\n\nCloses gh-32405"
+        },
+        {
+            "hash": "19b21b15c16098aa77611412528a9b3946ece68e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "547425275ce66cfd6ac143663068512bc420549d",
+            "message": "Consistently apply TaskDecorator to ManagedExecutorService as well\n\nCloses gh-32455"
+        },
+        {
+            "hash": "658194c1557d23e83f130079745d825ef55df1d3",
+            "message": "Harmonize Concourse configuration"
+        },
+        {
+            "hash": "769f73ebf19ba9594216aeae2e0524681ce61b4b",
+            "message": "Polish \"Move CI to GitHub Actions\"\n\nSee gh-32447"
+        },
+        {
+            "hash": "80809bbc14ffe415d4c0faa95ade7a048212c329",
+            "message": "Move CI to GitHub Actions\n\nCloses gh-32447"
+        },
+        {
+            "hash": "6d323d710a35f041dafc6a5294e2ca50d759ed34",
+            "message": "Next development version (v6.0.19-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32617",
+            "title": "Refine scheme, userinfo, host and port parsing in UriComponentsBuilder"
+        },
+        {
+            "number": "32593",
+            "title": "Upgrade to Reactor 2022.0.18"
+        },
+        {
+            "number": "32586",
+            "title": "`MethodIntrospector.selectMethods()` fails to detect bridge methods across ApplicationContexts"
+        },
+        {
+            "number": "32601",
+            "title": "Log column type for limited support message in `JdbcUtils.getResultSetValue`"
+        },
+        {
+            "number": "32489",
+            "title": "Generic interface on `FactoryBean` class not autowired in case of `targetType` mismatch"
+        },
+        {
+            "number": "32582",
+            "title": "Stop building Javadoc against Websphere's Javadoc"
+        },
+        {
+            "number": "32567",
+            "title": "Upgrade to Gradle 8.7"
+        },
+        {
+            "number": "32495",
+            "title": " Fix broken link to vavr in the reference guide"
+        },
+        {
+            "number": "31254",
+            "title": "HeaderContentNegotiationStrategy.resolveMediaTypes throws unexpected IllegalArgumentException "
+        },
+        {
+            "number": "32483",
+            "title": "`HeaderContentNegotiationStrategy.resolveMediaTypes()` throws unexpected `InvalidMimeTypeException`"
+        },
+        {
+            "number": "32473",
+            "title": "JmsUtils.commitIfNecessary catches and ignores JMS IllegalStateException, losing message with ActiveMQ Artemis"
+        },
+        {
+            "number": "32476",
+            "title": "Avoid additional unnecessary `Annotation` array cloning in `TypeDescriptor`"
+        },
+        {
+            "number": "32455",
+            "title": "Consistently apply TaskDecorator to ManagedExecutorService as well"
+        },
+        {
+            "number": "32447",
+            "title": " Move CI to GitHub Actions"
+        }
+    ]
+}

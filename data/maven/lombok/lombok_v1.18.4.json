@@ -1,0 +1,698 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 154,
+    "start_delay": 0.0,
+    "duration": 154.28417824074074,
+    "commits_info": [
+        {
+            "hash": "8451c88bfa7667d4bc85fb9d1b88196ff8dc6b7c",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "e960f482a92755f87c67ae59c53bb05890ab58c1",
+            "message": "cleaning up the changelog in preparation for a release."
+        },
+        {
+            "hash": "9b0601809b221ceb9fdbd6789354ae6b1ac32180",
+            "message": "[fixes #1907] This one is hard to describe; due to builder being a bit overzealous as to what it marks as ‘generated’, if you manually write the builder class and add some elements, you’d get crazy errors on those."
+        },
+        {
+            "hash": "f5b106971a6e27b2d97cbda250b7e79d8561fab5",
+            "message": "add jdk11 to docker builds"
+        },
+        {
+            "hash": "03365378e91414a5a475cb234ca86ef2697ce9a9",
+            "message": "fixing the tests added in the previous commits by janrieke to match alternative take on how to ‘fix’ null-collections and singular/toBuilder."
+        },
+        {
+            "hash": "d8de0e3c49c97450c3cd78a7d1766a8f21150591",
+            "message": "Merge branch 'wildcardsSingularFix' of git://github.com/janrieke/lombok into janrieke-wildcardsSingularFix"
+        },
+        {
+            "hash": "e9d098a16c6b07fb39905ce154f810255a0dfc8f",
+            "message": "fixed toBuilder on Singular fields with wildcards (ecj)"
+        },
+        {
+            "hash": "80b5f8d41de3be9f93f49a3d5c2611405b2b1a6f",
+            "message": "fixed another missing type arg issue"
+        },
+        {
+            "hash": "d6057f8eb7d38994dc94645c55979f0f8a2233fa",
+            "message": "fixed toBuilder on Singular fields with wildcards (javac)"
+        },
+        {
+            "hash": "3bb6f69a5b03ac3181f5bd6a04050ba339c7642e",
+            "message": "Added instructions for the GWT/Eclipse plugin."
+        },
+        {
+            "hash": "d91ba858f2ff3fbfaa9cfa7d74bd76651f10694d",
+            "message": "[tests] all tests involving ‘var’ should not be run on j10+."
+        },
+        {
+            "hash": "2ae7b4d516e2dccb3c55e2512faef68b0afc716e",
+            "message": "Fixed: command line testing with Javac9+ would fail on all tests that are testing that the compiler emits warning/error messages."
+        },
+        {
+            "hash": "cd970993e80b57eceabc7a8d66805d48038e99ec",
+            "message": "[buildscript] addition of a test task that runs faster; don’t use it unless you know what you’re doing as it skips a few important steps."
+        },
+        {
+            "hash": "651fed920546b68fc7a6fc0c9e917edbfdd47983",
+            "message": "[buildscript] Compiling the scaffolding for the test suite was failing due to an error in the build file."
+        },
+        {
+            "hash": "aee4e76d864e01b5d453409e703ad54852fa57bb",
+            "message": "updated docs to reflect change to copyable annotations"
+        },
+        {
+            "hash": "9198551defb7dd71d872c7b86af0a3f0bf0ec545",
+            "message": "Finishing work on making lombok do sensible things with TYPE_USE annotations and for example their use on the typearg in a collection type which is being `@Singular`-ized."
+        },
+        {
+            "hash": "d7873f2d21564e8e7f22409fe03681d7dd4c8c1e",
+            "message": "Replaced the notion of ‘nullable’ and ‘nonnull’ get copied to ‘any ‘copyable’ annotations get copied’, with ‘copyable’ defined as a specific FQN-style list of well-known nullity-indicating annotations, plus whatever you configured in lombok.config.\n\nAlso some work on the notion of TYPE_USE annotations."
+        },
+        {
+            "hash": "cc8370ab2d7b3ca15023364c99e53735e62e13d7",
+            "message": "code review and fixes for the ‘copyable annotations’ setting concept."
+        },
+        {
+            "hash": "cd8434feee79c6e119de0a254e071c6c49a8938e",
+            "message": "Eclipse expected output."
+        },
+        {
+            "hash": "65fc9897b3c2183cef305a71cf6b064fb9756253",
+            "message": "Handle null annotation array correctly."
+        },
+        {
+            "hash": "c3f34a8447ee4be38193a0c98ab4d265556bd8d7",
+            "message": "Test cases for remaining features."
+        },
+        {
+            "hash": "ced71c5468310c389e23ccee66420b255278be03",
+            "message": "Fix whitespace."
+        },
+        {
+            "hash": "859cb5cf8c4b8beb7a93336b5484414c7ee42c05",
+            "message": "First attempt at adding Getter test cases."
+        },
+        {
+            "hash": "fc35839c793dfe2e3294c0f526dcc4cb5741533b",
+            "message": "Copy annotations in Eclipse HandleBuilder."
+        },
+        {
+            "hash": "79bfcc4f7ae4bcd61f7f942bfefb940c77927b71",
+            "message": "Add configuration key, handle whereever NULLABLE is handled, support Eclipse."
+        },
+        {
+            "hash": "7a575e1e5d1c78fa5be1deca7fc308bd9eb390dd",
+            "message": "Copy all field annotations to the corresponding builder parameter.\nMaybe some filtering is necessary and should be added later."
+        },
+        {
+            "hash": "2027ffc49f194da2892938e0cd5868cd286a06f6",
+            "message": "[website] force-align pre blocks to the left"
+        },
+        {
+            "hash": "910f3611afafcdff5babb7b9159f32ad01dfafef",
+            "message": "website 404 on image load"
+        },
+        {
+            "hash": "f3881e51dada4fcc9f01174821427b9a14a60b4a",
+            "message": "layout delombok page"
+        },
+        {
+            "hash": "da7c7720a68d05713d641e701114bbf474296d40",
+            "message": "update changelog"
+        },
+        {
+            "hash": "52aa55ed550d283166b837eda7b1534f4385da9a",
+            "message": "update website documentation"
+        },
+        {
+            "hash": "0c23659103c169bf42837801f961f47bf272060f",
+            "message": "[trivial]"
+        },
+        {
+            "hash": "db91eb8e9cec2686d3dc0a6e880985e070fc9430",
+            "message": "Fully integrating ‘ant edge-release’ to include updating the site, our mavenrepo on projectlombok.org, and the branch on git."
+        },
+        {
+            "hash": "7319256a37b1ca78d6ff736e3db2caaf59b55e68",
+            "message": "[website] some work on releasing edge and updating git."
+        },
+        {
+            "hash": "6a42bccb9730b7072b1219a03642074ab96fbe61",
+            "message": "toBuilder() with singular should force the typeargs on the Collections.emptyList call."
+        },
+        {
+            "hash": "8c28302705a027646c0ee0a83379b4084cb475ba",
+            "message": "Upgraded our objectweb ASM dep and moved API level up to 6, to avoid a ‘this feature requires ASM5’ error that occurs when patching recent eclipse releases."
+        },
+        {
+            "hash": "3c6513073b4aa89fc5ae2fa52528de79d07d33a6",
+            "message": "create edge-SNAPSHOT maven artifacts"
+        },
+        {
+            "hash": "b60541526c7047aff0f4b2a1aac37804913c61de",
+            "message": "running the edge-release task also sets the git tag now."
+        },
+        {
+            "hash": "a39ef3ba0cae1fd6038c4407ec7e66f9bf0f5ea2",
+            "message": "[issue #1851] Lombok needs to generate type-use annotations when copying over types from, say, a field, to getter/setter/constructor/builder/wither/etc."
+        },
+        {
+            "hash": "af55bd0a328aa05f3ffb53a57a37306d1372a478",
+            "message": "[wip] Random fixes to various tests that are failing, especially against Java7."
+        },
+        {
+            "hash": "92bc41ae6dce8e16fd9da64c08ad085822fd33ed",
+            "message": "[debugging] Improved the ecj AST printer"
+        },
+        {
+            "hash": "21df1c99391fb8e2678efa2ca11816bfcadd4725",
+            "message": "Use edge-SNAPSHOT instead of master-SNAPSHOT"
+        },
+        {
+            "hash": "f1c9909bd4e7560cc908e257a94e612ed3970f8c",
+            "message": "Add Angular IDE support in installer, fixes #1830"
+        },
+        {
+            "hash": "a29c17761c8e319f93874ada007cb3322329fba7",
+            "message": "Add link to JitPack for downloading edge releases"
+        },
+        {
+            "hash": "409614f7a2533396db1201f1a6c7d65233a87b05",
+            "message": "Jitpack run install-maven"
+        },
+        {
+            "hash": "ef90e2ec2dcea35a22959f2c1295517edf090133",
+            "message": "[fixes #1836] superbuilder didn’t play ball with field prefixes, at least in javac."
+        },
+        {
+            "hash": "572222c54bc379ac322d906c39499e8dd02a4d59",
+            "message": "Put pom.xml in build directory"
+        },
+        {
+            "hash": "381f676e9911d693233a55c53922c80c3f2d109c",
+            "message": "Generate pom in a separate target for jitpack"
+        },
+        {
+            "hash": "89c4688790e0b17ae28b41f45b0f12e8aa6604d9",
+            "message": "JitPack custom install command"
+        },
+        {
+            "hash": "e346a0447dfb87de17a5b66b32ece09b128917eb",
+            "message": "ALlow jitpack to use JDK 10 when building lombok"
+        },
+        {
+            "hash": "29db6335e6f6dd01377465cb85c737e1bad21a20",
+            "message": "Make ant install-maven also work without having to set MAVEN_HOME"
+        },
+        {
+            "hash": "f6859079045393344613de61e424316fc218241c",
+            "message": "Make ant install-maven work on mac again :-)"
+        },
+        {
+            "hash": "da5fe591546a9d56c983076562516a5970e49f68",
+            "message": "Make ant install-maven work on windows as well"
+        },
+        {
+            "hash": "f1e13793917125ec5597e9e24a6f6d4d23648aa1",
+            "message": "Update build.xml"
+        },
+        {
+            "hash": "ee64cb9488bc610e4c1ccd414afb616e0a61e770",
+            "message": "add ant task to install lombok jar into local maven repository"
+        },
+        {
+            "hash": "5aea9e9cdd0928e93e738bfb2779d52d100cd887",
+            "message": "add ant task to install lombok jar into local maven repository"
+        },
+        {
+            "hash": "ae881e5de6294ebc5fabc6f39f3ff7686d2bacb7",
+            "message": "add ant task to install lombok jar into local maven repository"
+        },
+        {
+            "hash": "ca2b8c281b6efd1ebc99b212483c9751834f570b",
+            "message": "SuperBuilder now with generics on self() method"
+        },
+        {
+            "hash": "e23cf0bcbeb2f5562adf0512048766712ac83774",
+            "message": "fixed SuperBuilder test results, now with generics on self() method"
+        },
+        {
+            "hash": "d548879e7d638fea93817bdbbc745c1370eabc42",
+            "message": "Merge branch 'janrieke-superBuilderNonNull'"
+        },
+        {
+            "hash": "0cb87873c2bc75478a5caf651af6148ed1d7e412",
+            "message": "Merge branch 'superBuilderNonNull' of https://github.com/janrieke/lombok into janrieke-superBuilderNonNull\n\n# Conflicts:\n#\tsrc/core/lombok/eclipse/handlers/HandleSuperBuilder.java\n#\tsrc/core/lombok/javac/handlers/HandleSuperBuilder.java\n#\ttest/transform/resource/after-delombok/SuperBuilderWithDefaults.java\n#\ttest/transform/resource/after-ecj/SuperBuilderWithDefaults.java"
+        },
+        {
+            "hash": "16fc34f36c77832b2bb7d383105c0b4c4dc5ddb6",
+            "message": "adapted existing tests to changed default assignment generation"
+        },
+        {
+            "hash": "76f6013b5950b64dbc776d6ddebdca439653381b",
+            "message": "do null checks after assignment so that default==null is covered; only\nassign value once so that final fields work (ecj)"
+        },
+        {
+            "hash": "31aef5219d6e6a39afe5dfa5d888bddd6e942e25",
+            "message": "only assign value once so that final fields work (javac)"
+        },
+        {
+            "hash": "46837d6d8be26cea9d0b8cf2959866ac308cbf2d",
+            "message": "do null checks after assignment so that default==null is covered"
+        },
+        {
+            "hash": "8439cb5428a7dedbfa836b7028db7c7dba61293a",
+            "message": "@SuperBuilder adapts @Builder.Default behavior from @Builder as #1347 is\nfixed now (ecj)"
+        },
+        {
+            "hash": "dbc173ba5c575eea404d3a76b3bc24d35656767c",
+            "message": "@SuperBuilder adapts @Builder.Default behavior from @Builder as #1347 is\nfixed now (javac)"
+        },
+        {
+            "hash": "c21adf7f47ed0077c53547a36041b1dba45bdcb8",
+            "message": "[website] added some ugly docs on how to interop jackson and builder. We need to make this prettier later and add the magic for how to interop Singular with Jackson later."
+        },
+        {
+            "hash": "6b84e38152be3bfe5bc06bb6061ddc95d78f65e8",
+            "message": "make access on the website to for example Builder/ also work"
+        },
+        {
+            "hash": "0038b48eeacac0389980902e65b4976dd5605c69",
+            "message": "docs for the redesigned FieldNameConstants."
+        },
+        {
+            "hash": "e964f5eec6015564d561ad45dc29964b4fc4481e",
+            "message": "[website] ’Install’ -> ‘How to use’"
+        },
+        {
+            "hash": "b9fb35cb8e81d73b9b9b650022a1564b14761885",
+            "message": "Printing missing gradle integration would print for any non-javac, non-gradle compiler. Fixed that."
+        },
+        {
+            "hash": "eeab3c0021503bca69012cf71cbbfe2505be2293",
+            "message": "A few upgrades for the printers used with @lombok.core.PrintAST."
+        },
+        {
+            "hash": "3d432c38d0cfeb36b8e7402eca56faaafcf7bac7",
+            "message": "code impl of FieldNameConstants rewrite + test updates for it"
+        },
+        {
+            "hash": "61fbd4a7f82180871e635a0ca80248e0cec02cf3",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "ecf754c87d3aaf1f788c9f00e5815ce7174f3722",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "479738da89db4cbfeea2a4b7debc855ae9e1cb95",
+            "message": "@SuperBuilder adapts @Builder.Default behavior from @Builder as #1347 is\nfixed now (ecj)"
+        },
+        {
+            "hash": "f072827630bfbdc548bc739fa979308cc2c4d3fb",
+            "message": "@SuperBuilder adapts @Builder.Default behavior from @Builder as #1347 is\nfixed now (javac)"
+        },
+        {
+            "hash": "3f4f9e65520c91df59abbb03cdd91574d75ea197",
+            "message": "Merge branch 'charphi-master'"
+        },
+        {
+            "hash": "3ffac6642456e2c7d32952c62df8a565e2d4728b",
+            "message": "Merge branch 'master' into master"
+        },
+        {
+            "hash": "769185e123dfd4a073161eafb58ce50bb79d6201",
+            "message": "[#1806] Potential fix for java 11 in regards to module system."
+        },
+        {
+            "hash": "f83488af9c3a1e1d1906601aec60a55579dd4d90",
+            "message": "[#1808] Probable fix: Using module names with dots in them was causing issues, as we only use the simple name. Actually getting the full module name is a little tricky, but this should do the job."
+        },
+        {
+            "hash": "42c96d92fd5a9b362eba0ceb75c35da906de130f",
+            "message": "remove jitpack documentation, since it's not working yet."
+        },
+        {
+            "hash": "ca35539f7cd7967bfd8518d0ad0b0015bdd40cfc",
+            "message": "[fixes #1812] `@Singular` marked collections which nevertheless somehow ended up null would cause an NPE during `toBuilder()` invocations."
+        },
+        {
+            "hash": "35fe755b87f194621b5f328e4773f1f406f8ccc9",
+            "message": "bugfix for the new ‘find the next priority’ system committed earlier; it should also find next priority for the astvisitors (only the annotation visitors were being considered)."
+        },
+        {
+            "hash": "52ffd6e1e7c7728f039d6a7121ddb7f48e07b08c",
+            "message": "added jitpack release to edge page"
+        },
+        {
+            "hash": "2c202e9c959b0350f0b5e37b06713b6b8c845e51",
+            "message": "Fix version match, and remove debug echos\njava.version contains 1.8.0_131 where ant.java.version only contains 1.8"
+        },
+        {
+            "hash": "747347793df1608b3f0f37a09fab8418535a170d",
+            "message": "Update build.xml"
+        },
+        {
+            "hash": "1f1e729e462aa74f200542109e0b11a9ec654f72",
+            "message": "Update jitpack.yml"
+        },
+        {
+            "hash": "49e81a167fc902a2ddf52e073ec638a81d37a8bf",
+            "message": "WIP - allow jitpack to build lombok using JDK 9"
+        },
+        {
+            "hash": "13dcb6914507f56edfa5d5f24352d8e7a4b25bef",
+            "message": "WIP - allow jitpack to build lombok using JDK 9"
+        },
+        {
+            "hash": "a31e9ffdac96737f5a441efa6c80a2394bba63d1",
+            "message": "use delared ast Type instead of generic one saves a lot of \"checkcasts\" in the byte code"
+        },
+        {
+            "hash": "13c1fde7a0102fc951a8a488943681f1c57ea27e",
+            "message": "[fixes #1813] erroneous message on eclipse that lombok ‘can’t get the delegate of the gradle IncrementalProcessingEnvironment’."
+        },
+        {
+            "hash": "0904b1fd3a831ca5e056921bb37f51c759e2e074",
+            "message": "[fixes #1759] ‘flag usage’ check on builder for eclipse"
+        },
+        {
+            "hash": "d2ec0e7bdd8faea3ad5553a276299573fb52ff78",
+            "message": "replace Collection<FieldAccess> by FieldAccess[] array (saves iterator instance)"
+        },
+        {
+            "hash": "8151e710fc9add7232f2828bc069077d6eb1c457",
+            "message": "FIX: omit warning \"Can't get the delegate of the gradle IncrementalProcessingEnvironment.\" in eclipse build."
+        },
+        {
+            "hash": "c157e6537b4d96987879c4ca770f1e1ddf51fe56",
+            "message": "Share the same class loader"
+        },
+        {
+            "hash": "763b384a169d3303ff82a044ec7be68be92691b1",
+            "message": "Do not use reflection to check if annotation is present"
+        },
+        {
+            "hash": "fe2117e7796e8f85b5710944bfd3efb499c87865",
+            "message": "using map.get instead of searching for entry"
+        },
+        {
+            "hash": "46377b1be44c564ea7e37f30ddd7d81faf19d45e",
+            "message": "do not scan classes from java or sun package for extensions"
+        },
+        {
+            "hash": "40570f7950dc05f90bea05396c9d23d426fe99ba",
+            "message": "optimized the to/fromQualifiedName method"
+        },
+        {
+            "hash": "100cff228d0f4d68219460aefe89b70877b726dc",
+            "message": "reduced calls of traverse invocations"
+        },
+        {
+            "hash": "2b0cd53d55d882fbc49d5f736c845353098eb34e",
+            "message": "java.util.logging.Logger does not have an error method."
+        },
+        {
+            "hash": "35c7c6bda2e71da2e6e06cec5b0fb012c348f694",
+            "message": "Add self to authors."
+        },
+        {
+            "hash": "0f23383e33bc6756f1ff3777e7dabc465c9c8c02",
+            "message": "Fix NetBeans 8.x compile-on-save issue."
+        },
+        {
+            "hash": "eca219ee6433cd964f0549a114a791ca4eb9f0fa",
+            "message": "eliminate ‘you are using private API’ warnings by streamlining all reflective access via a class that uses sun.misc.Unsafe to arrange access. From the nqzero permit-reflect library."
+        },
+        {
+            "hash": "182cb0cb9e8db6341fb4633c3849b5e90ba6d088",
+            "message": "[java-11] up dependency on lombok.patcher, including asm7"
+        },
+        {
+            "hash": "c02263a5e296d068a7e8468a5f797480d54cbcb4",
+            "message": "Merge pull request #1923 from abargnesi/fix-maven-issue-management\n\ncorrect issueManagement declaration in maven POM"
+        },
+        {
+            "hash": "742783e40e808a046386bac7969f04ce846cf05f",
+            "message": "correct issueManagement declaration in maven POM\n\nMotivation\n\nThe published maven POM for lombok refers to Google Code for issue\nmanagement. Google code is no longer active.\n\nChanges\n- replace with github issues for issue management"
+        },
+        {
+            "hash": "e40eab2e343b4c3a7eedf9493aa2a656ec299f69",
+            "message": "[fixes #1795] you can now pass arguments to delombok via file in the same way javac/java support it."
+        },
+        {
+            "hash": "89907fd11f99903d4dc8f65c628d0c63fc511a7b",
+            "message": "[Fixes #1848] Added support to delombok for properly handling jigsaw (module-info) style projects."
+        },
+        {
+            "hash": "836bd0ab573124ea6c168ef8351a7153fbfea363",
+            "message": "only call System.exit if the return code is not zero, quickfix for #1795"
+        },
+        {
+            "hash": "89294fe03c4257e13971dd9db3738511dc01e433",
+            "message": "add tests to ensure onlyExplicitlyIncluded means nothing if no fields are annotated. Fixes #1772"
+        },
+        {
+            "hash": "7ee4ebb1a5cd2a002dc522604303b1291a46bddb",
+            "message": "Don't initialize already initialized final fields. Fixes #1829."
+        },
+        {
+            "hash": "11322a489bb1428c773c6838e58dcd96c5d7422a",
+            "message": "Merge pull request #1864 from daniel-shuy/daniel-shuy-patch-1\n\nFix code example for @UtilityClass"
+        },
+        {
+            "hash": "c8873967437ae904713dc8054a0216f4e9e5f352",
+            "message": "Fix return type in UtilityClassExample_pre.jpage"
+        },
+        {
+            "hash": "d8ff9ebf74eee2f6fd9adb72e66dac5b73f6a59a",
+            "message": "Fix return type in UtilityClassExample_post.jpage"
+        },
+        {
+            "hash": "73cd46fce20a2c859a6fa9b78d921ff935642223",
+            "message": "Fix up positions of generated nodes for eclipse `@Builder`."
+        },
+        {
+            "hash": "becb12658ef60a926d420ea83251040c28eed126",
+            "message": "Remove references to suppressConstructorProperties, fixes #1873"
+        },
+        {
+            "hash": "d994839ac0255fa08d201df4e2918434f946b06f",
+            "message": "Merge branch 'master' into janrieke-superToBuilder"
+        },
+        {
+            "hash": "cbcab664805916d8a7e6ee53c1df5a454611f99e",
+            "message": "#1881 add documentation"
+        },
+        {
+            "hash": "c2f4ea47a16b38391928eaca32b23d3b1d4041fb",
+            "message": "[website] Updated documentation on how to use Lombok and GWT together."
+        },
+        {
+            "hash": "c896f242789913c907fa6dde8ee688548266d3a2",
+            "message": "[build] Fixing running tests via `ant test`, setting up the build, and a few other build-related issues."
+        },
+        {
+            "hash": "94eadb5131b32b6cf599a3f5445524a08ba0569b",
+            "message": "[fixes #1324] toBuilder with @Singular marked collections that are null no longer throws NPE."
+        },
+        {
+            "hash": "06455de367932e93da707b9d91e1a347d0c072a6",
+            "message": "Merge branch 'superToBuilder' of git://github.com/janrieke/lombok into janrieke-superToBuilder"
+        },
+        {
+            "hash": "bd494bb5ff01eea2413cfe5a4820bfff34c07261",
+            "message": "SuperBuilder: fixed ecj tests (params are now final)"
+        },
+        {
+            "hash": "80af03a3e48456e14b1b3da250047c531f460bb4",
+            "message": "SuperBuilder toBuilder documentation"
+        },
+        {
+            "hash": "afec417115abadd58c9d94a845b6c300e7e1b96f",
+            "message": "make BuilderFieldData package-private, so that SuperBuilder can use it"
+        },
+        {
+            "hash": "b5648976b6501bdf755814d8d8a096c33f6997ec",
+            "message": "Merge remote-tracking branch 'upstream/master' into superToBuilder"
+        },
+        {
+            "hash": "fd4c9d4bff6e75b30a3ee247edafaabc6888a691",
+            "message": "SuperBuilder toBuilder fix with no generics (ecj)"
+        },
+        {
+            "hash": "279ceaa72795ea7b427ab37535892e3c5cbde958",
+            "message": "SuperBuilder toBuilder with generics (ecj)"
+        },
+        {
+            "hash": "68318742ef2e4f6b680ea90a279c2c96da7c2d74",
+            "message": "SuperBuilder toBuilder with generics (javac)"
+        },
+        {
+            "hash": "63343fced581dc9f5721d5cca81265db138254a5",
+            "message": "SuperBuilder toBuilder: test with generics"
+        },
+        {
+            "hash": "790e060380f01ea113bfeee25b3138ea267ebcb4",
+            "message": "SuperBuilder toBuilder: moved static helper method to builder impl"
+        },
+        {
+            "hash": "41d8929630cedb1f310a7baebcfead616215093a",
+            "message": "SuperBuilder: removed unnecessary method params"
+        },
+        {
+            "hash": "7a287670f4bb6b22db920b980ce5dde4fcef5af5",
+            "message": "SuperBuilder toBuilder: generate static toBuilder helper method (javac)"
+        },
+        {
+            "hash": "f5fff49f73ceabb776f470a9ed346ace0ce12be6",
+            "message": "SuperBuilder toBuilder: generate static toBuilder helper method (ecj)"
+        },
+        {
+            "hash": "14fa70ae183a1d15b8cee30d10775e0da281114b",
+            "message": "SuperBuilder toBuilder: renamed generated static helper method"
+        },
+        {
+            "hash": "da0020cd48bfd321ec68adc99af7ec46e1551231",
+            "message": "Merge remote-tracking branch 'upstream/master' into superToBuilder"
+        },
+        {
+            "hash": "ddd42acb599d45c432a200313a0f403a8a2a3928",
+            "message": "adjusted toBuilder tests to cover private variables (impl not yet done)"
+        },
+        {
+            "hash": "a2b884c71194c780d37ccbd84561abd6a0f63741",
+            "message": "SuperBuilder: fixed ObtainVia"
+        },
+        {
+            "hash": "da59d2d6375afcfcf6cb43288adba61cb99a49e8",
+            "message": "SuperBuilder: generate toBuilder method (ecj)"
+        },
+        {
+            "hash": "1f3688fdba92508e091eab39b6131dbca2a8ef83",
+            "message": "SuperBuilder: generate fillValuesFrom method (ecj)"
+        },
+        {
+            "hash": "abb0d2374e0ca6cda55c5ea63f51235111701081",
+            "message": "SuperBuilder: generate fillValuesFrom method (javac)"
+        },
+        {
+            "hash": "b42ce5325afbe6202d5d5815a9c74dd64a0ce3de",
+            "message": "SuperBuilder: generate toBuilder method (javac)"
+        },
+        {
+            "hash": "849aa4fddadb40439a30967131d2847b90fb139f",
+            "message": "SuperBuilder toBuilder; test cases"
+        },
+        {
+            "hash": "4cf36b2788198e23f05a2ac218a2face755056ba",
+            "message": "Merge pull request #1917 from kkocel/master\n\nAdded Spring NonNull and Nullable annotations"
+        },
+        {
+            "hash": "1a4319e7852db6adfa2b0cfe95d19eef7dfbb562",
+            "message": "Added Spring NonNull and Nullable annotations"
+        },
+        {
+            "hash": "fb039c2837430caafbfc165bc4d5cc898e6a9c34",
+            "message": "Merge pull request #1871 from janrieke/customizableSuperBuilder\n\nCustomizable SuperBuilder"
+        },
+        {
+            "hash": "97d8094f42b16e9076ad08a35b3164f3e3ad5c87",
+            "message": "SuperBuilder: feature history"
+        },
+        {
+            "hash": "c49e7d1872bc9ead8b8998234969e7ef95c77b7a",
+            "message": "SuperBuilder: customization documentation"
+        },
+        {
+            "hash": "77adcd3ced4855efaca2a689f045e638f021847d",
+            "message": "Merge branch 'superToBuilder' into customizableSuperBuilder"
+        },
+        {
+            "hash": "a454fd74cf040b3aa4f061377478d784bd2157ff",
+            "message": "SuperBuilder: allow customization of selected methods"
+        },
+        {
+            "hash": "d8b882cf7e7078a7946e04eceba4ce18937a28f0",
+            "message": "[test] Added some posix scripts to test module-based builds. We should make these as unit tests someday."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1907",
+            "title": "@Builder annotation causes compile error with Java 11"
+        },
+        {
+            "number": "1851",
+            "title": "Type Use annotations should be copied when the type is copied."
+        },
+        {
+            "number": "1830",
+            "title": "Add installer support for Genuitec Angular IDE"
+        },
+        {
+            "number": "1836",
+            "title": "@SuperBuilder doesn't work with lombok.accessors.prefix config"
+        },
+        {
+            "number": "1347",
+            "title": "Builder.Default causes fields to be null when instantiating with new"
+        },
+        {
+            "number": "1806",
+            "title": "Error: java.lang.module.ResolutionException: Module lombok does not read a module that exports org.mapstruct.ap.spi"
+        },
+        {
+            "number": "1808",
+            "title": "Lombok does not work in Jigsaw module names containing a dot"
+        },
+        {
+            "number": "1812",
+            "title": "toBuilder throws NPE."
+        },
+        {
+            "number": "1813",
+            "title": "I got a warning message \"Can't get the delegate of the gradle IncrementalProcessingEnvironment.\" on Eclipse."
+        },
+        {
+            "number": "1759",
+            "title": "lombok.builder.flagUsage doesn't work"
+        },
+        {
+            "number": "1795",
+            "title": "How to run (de)lombok with big classpath?"
+        },
+        {
+            "number": "1848",
+            "title": "Delombok does not support -p arg for javac >= 9"
+        },
+        {
+            "number": "1772",
+            "title": "@EqualsAndHashCode/@ToString(onlyExplicitlyIncluded = true) - still takes all fields, when no fields are annotated with @...Include."
+        },
+        {
+            "number": "1829",
+            "title": "@NoArgsConstructor complains about unassignable final field in IDE"
+        },
+        {
+            "number": "1873",
+            "title": "Documentation still says that @ConstructorProperties annotations are generated"
+        },
+        {
+            "number": "1881",
+            "title": "Compiler error with lazy @Getter and Error Prone"
+        },
+        {
+            "number": "1324",
+            "title": "toBuilder throws an NPE when a @SIngular collection field is null"
+        }
+    ]
+}

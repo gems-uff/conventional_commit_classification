@@ -1,0 +1,122 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.14.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 24,
+    "start_delay": 0.0,
+    "duration": 18.642002314814814,
+    "commits_info": [
+        {
+            "hash": "01d2115b4f30db85a3c8efbb6dd1bbc8aba16f8a",
+            "message": "remarked out the work in progress on resolving file paths in eclipse; this causes ClassNotFoundErrors in ecj mode"
+        },
+        {
+            "hash": "e453c2fafab13c066a7260434f0c08f61e437c8b",
+            "message": "switched publishing model away from a googlecode download and onto a projectlombok.org hosted download."
+        },
+        {
+            "hash": "e70a2058deba939be59400e07e9fb9e13b5720c6",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "6f9666c39113c88cb4389a86a82c78200ca7262d",
+            "message": "added eclipse logging to the configsystem’s error reporter, and cleaned up the changelog slightly."
+        },
+        {
+            "hash": "33ead46639087a4e772d6535d0354f39fadc5724",
+            "message": "Merge branch 'master' into configResolutionInEclipse"
+        },
+        {
+            "hash": "68c5b016f9a2663abc9cd4aeb0cc0034949469ca",
+            "message": "[i554] Another try to prevent NPEs on IBM J9"
+        },
+        {
+            "hash": "ae57c4b3202458101f961185ef274b00dda58058",
+            "message": "addendum to previous commit; found hardcoded reference to an added field and it is safer to now use the augment class to access that field."
+        },
+        {
+            "hash": "1ce747178b8f24f29f94dd795f09f872aad9272f",
+            "message": "Finished refactor of FieldAugment; there's no longer a separate variant for boolean and references, and the code no longer blows up with a bunch of NPEs if you try to use the reference variant (which is now the only variant) with a primitive type.\n\nShould have zero effect on features or bugs, 100% refactor."
+        },
+        {
+            "hash": "f30485c91fd3f9553fbcbc02d922e6221182c26e",
+            "message": "[#688] Bugfix for eclipse: syntax highlighting would break amongst many other features if using @Setter and most other features."
+        },
+        {
+            "hash": "b37a95a6a4fa70da38f990b14a0f9517dd5ed0bc",
+            "message": "bugfixed ‘print build time as part of version number if edge release’ feature."
+        },
+        {
+            "hash": "f8b3056dc4f61251aba7adf627c942c85e8618ca",
+            "message": "Fixed up and extended Tolerate with support for constructors, and added docs."
+        },
+        {
+            "hash": "627de194c03af3afa3478149dc777d2af4e9654b",
+            "message": "fixed up ‘consequent boolean’ proposal with a different key name and documentation."
+        },
+        {
+            "hash": "fe25bb153326d657ad98d9bd55c801d8815f39b3",
+            "message": "Revert \"Remove a wrong test for copyAnnotations returning empty array.\"\n\nWhile Maaartinus' thoughts are obviously correct (far better to use an empty array to convey 'this list-like construct has 0 items in it right now', vs. a null pointer),\neclipse actually uses null-as-empty almost everywhere, and a lot of eclipse code will simply break if you don't do it right.\n\nThis reverts commit 842a4759165c5cd05aae63da3921ee11a3641a4b."
+        },
+        {
+            "hash": "6159508d40ed2a79bae98ea4a7f24edc4af36d88",
+            "message": "Fix a trivial bug in generateNullCheck."
+        },
+        {
+            "hash": "8f7c2aa7a21141097f0a076d0f93dba633a94cf5",
+            "message": "Implement Tolerate."
+        },
+        {
+            "hash": "329b2be3d9087cc7f02a68267ced5f16254c6362",
+            "message": "Create GETTER_CONSEQUENT_BOOLEAN."
+        },
+        {
+            "hash": "842a4759165c5cd05aae63da3921ee11a3641a4b",
+            "message": "Remove a wrong test for copyAnnotations returning empty array."
+        },
+        {
+            "hash": "06371ca2580dc9938e07a9ff0ab86a72ab10fa2f",
+            "message": "#682: bugfix work in progress to fix IllegalArgumentException ‘Path must include project and resource name’."
+        },
+        {
+            "hash": "48c93ecc30b8ee8d04336bf73955293d25f9eeda",
+            "message": "edge releases now include the release timestamp in the ‘full version’ name."
+        },
+        {
+            "hash": "912b96c1e55f9e400505cab2963a28ca1433b275",
+            "message": "#683: URI not absolute errors in mvn builds due to search for lombok.config being broken."
+        },
+        {
+            "hash": "2c1e300f1b171be4e06fe267097630a79a13fde0",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "7f3262b01d1fc7cc68c1283a7dcb191fe529b33e",
+            "message": "removed out of date docs that we don’t use, and updated the download link to our own server."
+        },
+        {
+            "hash": "288a2236c0d5c4c129d837330ca16bfef8e5b2e2",
+            "message": "more work on lombok.config resolution issues. Mostly turning outright showstopping errors in workarounds and logs, because we can't reproduce any of it."
+        },
+        {
+            "hash": "87f628fe2339f010734bf59f73bc334fd15133be",
+            "message": "[wip][#682][#683] Research on alternate ways to find the content of lombok.config given a CompilationUnitDeclaration (in eclipse)."
+        }
+    ],
+    "issues": [
+        {
+            "number": "688",
+            "title": "Feature Request: allow lazy getters to inherit exceptions"
+        },
+        {
+            "number": "682",
+            "title": "Review classloaderizing JNA"
+        },
+        {
+            "number": "683",
+            "title": "javac.apt's Wrapping ClassLoader NPEs due to a design mistake in j.l.ClassLoader."
+        }
+    ]
+}

@@ -1,0 +1,966 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 200,
+    "start_delay": 0.0,
+    "duration": 408.84784722222224,
+    "commits_info": [
+        {
+            "hash": "76067c78fb6931487b7eeafea048a2359b1d7a21",
+            "message": "[versioning] pre-release version bump"
+        },
+        {
+            "hash": "ac3b47d79eec82b2681c502fecce534b3b90cbfe",
+            "message": "Merge branch 'javadoc-fix' of git://github.com/Rawi01/lombok into Rawi01-javadoc-fix\n\n# Conflicts:\n#\tsrc/eclipseAgent/lombok/eclipse/agent/PatchJavadoc.java"
+        },
+        {
+            "hash": "f2698ea13d0bc57d36b3a7cd0940754d4c1935c5",
+            "message": "Add missing null check"
+        },
+        {
+            "hash": "25f91eb7b21ec0330db66ad962898d10b8da262d",
+            "message": "Merge pull request #2560 from Rawi01/extensionmethod-names\n\nDetect static method access properly"
+        },
+        {
+            "hash": "75b7a88a45f08dda24bb8dfe466acee0b10f3b40",
+            "message": "[fixes #2261] Detect static method access properly"
+        },
+        {
+            "hash": "4d2ae4ba3261ab2963c13649b3ba8f4b3881e9c3",
+            "message": "[bugfix] Fix suppressBaseMethods in ecj/eclipse"
+        },
+        {
+            "hash": "7dfbe4323c15cbd88983380b27a250d2a381d148",
+            "message": "[tests] fixed the 'ant test.javac' tests."
+        },
+        {
+            "hash": "18222922da969128bcf5a691bb08db0f150bfd1f",
+            "message": "[tests] command line 'ant test.eclipse' fixed"
+        },
+        {
+            "hash": "0cbea15caefc01c84e408a499879964f579cd150",
+            "message": "[trivial] I broke 'ant dist' earlier today"
+        },
+        {
+            "hash": "19db4be6e9654dc42849f8a294be5cb81faf5d9c",
+            "message": "[trivial] update javadoc on Builder.java"
+        },
+        {
+            "hash": "a0eb13a4783209e84f406bbf43f7d9157d0f7fba",
+            "message": "[test] bugfix for the 'dist' step"
+        },
+        {
+            "hash": "2f397d7c95424469b8d1049442765031baf7f878",
+            "message": "[tests] only add agent VM args for ECJ/Eclipse tests"
+        },
+        {
+            "hash": "c00317220523c42ae0cc459fa3526c641e37f2af",
+            "message": "[bugfix] [javac] LUB types + val\n\nUntil recently, we'd 'resolve' LUB (compound) types in val constructs by just taking the first one in the line of interfaces. The problem is, different versions of different compilers use different orderings. In an earlier commit, the eclipse impl gained a new algorithm that is more stable, e.g. by sorting on alphabet. now the javac side has the same algorithm."
+        },
+        {
+            "hash": "5175725eee22c842e3e41d2529be46f5621d047a",
+            "message": "[trivial] [tests] fixing a broken test"
+        },
+        {
+            "hash": "e6cbb7fbe66f618c8ec9b43c7995c512b25c975f",
+            "message": "[tests] [trivial] stop printing the javac version\n\n...  when running javac tests"
+        },
+        {
+            "hash": "b1f6372b358119309b26016317a6dd709b9daa13",
+            "message": "[fixes #2300] Keep method argument positions for lazy getter initializer"
+        },
+        {
+            "hash": "ce92389da76b17b2c8d9f8757d67b4ea3edc8cb5",
+            "message": "[fixes #977] Set generated flag for annotation names"
+        },
+        {
+            "hash": "4fdcdd126a4b5ce365b97eb498536d04caee3b53",
+            "message": "[test] this covers more eclipse versions"
+        },
+        {
+            "hash": "1fd2401bade3db3bb3a1bd88727823776f39be0c",
+            "message": "[test] more flexible options for limiting your tests."
+        },
+        {
+            "hash": "32e7cd18571200c41736e70daa4815893e9ea8c3",
+            "message": "[bugfix] eclipse version differences in constants for registering operator type"
+        },
+        {
+            "hash": "857a57cb1601773a9544d4eaed2f9fecc0741d46",
+            "message": "[bugfix] eclipse version differences for weird LUB types"
+        },
+        {
+            "hash": "baa3848498e8a96228e88fa0c54b9e119dba446c",
+            "message": "fix assertion error if the param.sym is null"
+        },
+        {
+            "hash": "2e08e49ed77228527f74104611fb90e5d64492d7",
+            "message": "fix typo in printing switch expressions"
+        },
+        {
+            "hash": "ab7970b259336d4e344a7bb11ee9e3d3e2acde5d",
+            "message": "Remove unnecessary list copy"
+        },
+        {
+            "hash": "586af27800309b600cf5d505a469bab66375b30d",
+            "message": "Replace JavacAst list with single object iteration to save some memory"
+        },
+        {
+            "hash": "88d4c1e54cb9a7820580fda86fc79aa0b0c54c88",
+            "message": "[build] [wip] the eclipse debug targets still aren't entirely correct."
+        },
+        {
+            "hash": "933d75c2fe1dc69e2d0b08649e26d4d5939c2a64",
+            "message": "[test] [bugfix] far too few tests were being selected for the 'javac' target."
+        },
+        {
+            "hash": "cb7e4a9ef3f02d5a543f99d013b5034f50732293",
+            "message": "[build] propagate chosen bootclasspath into eclipse test targets"
+        },
+        {
+            "hash": "88918e9eb3e65645fddd0f5f850795ce3fec25df",
+            "message": "[build] fixed a build issue (on 'ant dist') on windows.\n\napparently on windows symlinking requires admin rights because ?????\nThis can be fixed with an explicit update to group policies, which I\ncan't assume anybody working on lombok is going to actually do.\n/bin/ln in msysgit just copies (interesting choice). I could write a mechanism\nthat tries /bin/ln and if not there, try <copy> instead, either in the build scripts\nor in ivyplusplus, but that's way too much effort to avoid a 2MB copy. So,\nfor now, we just copy... if more symlinking is to be done later, we'll revisit, though.\ncopying is such a silly waste of time, slowing down the build for no reason."
+        },
+        {
+            "hash": "91f576e7e5930f3f7f730a2d3e779f26262adbf3",
+            "message": "Documentation for lombok.addSuppressWarnings"
+        },
+        {
+            "hash": "84556ebb00af1817d521bc011333a0ed02162cc4",
+            "message": "[fixes #2433] Add config key to turn off @SuppressWarnings(\"all\")"
+        },
+        {
+            "hash": "9425e99b49d1a203c692fd2001ff3fd3d1612303",
+            "message": "[fixes #2469] Support static reference as logger topic"
+        },
+        {
+            "hash": "e4ec9e664806612a5998bfdfa921837a43d58569",
+            "message": "Fix missing parameter names, annotations in following annotation processors"
+        },
+        {
+            "hash": "326955cde1e788c0038ab77d2db340666b5f568b",
+            "message": "Update changelog."
+        },
+        {
+            "hash": "f2b25550457628650213a3bfcac6a28a30648e6c",
+            "message": "Potential fix for #2412"
+        },
+        {
+            "hash": "625acfa2a4ce49863ea562dd676500b5bb7898fc",
+            "message": "Merge branch 'newbuild'"
+        },
+        {
+            "hash": "966852e410cfd99e311eca98cee36c163629949e",
+            "message": "[bugfix] building would fail\n\ndue to an invalid reference from src/utils to src/core."
+        },
+        {
+            "hash": "0f1c950b7700b476954c6e193e53d36ed34e2050",
+            "message": "[build] [mapstructBinding]"
+        },
+        {
+            "hash": "0bbedd092a1f0f506d106943b4b400c7986c5f36",
+            "message": "[build] rewriting the build system"
+        },
+        {
+            "hash": "22ac024abb3680b298bef78052f5a13239513b29",
+            "message": "[trivial] typos in javadoc"
+        },
+        {
+            "hash": "ed8ea0d8043cb8df6ae3fb962ab3a2087f4adeb6",
+            "message": "#1543: First primitives, then primitive wrappers, then other references"
+        },
+        {
+            "hash": "39d2c280fbaced63f5697481af6b37ab81891798",
+            "message": "Fixes #1543: in equals, by default first compare the primitives"
+        },
+        {
+            "hash": "c4db4e124c5081602802f88b7ebe564c8af3aac8",
+            "message": "Remove unused import"
+        },
+        {
+            "hash": "0e4cb869b9fe6337d002aec8a9e4286d1727e03b",
+            "message": "fix compiler error"
+        },
+        {
+            "hash": "db59aa442b4bfe9b048e7667c5da140cd9c19ee8",
+            "message": "Add tests classes for rank property"
+        },
+        {
+            "hash": "0fd663bb9974cb1994ea5b0339ad0343b665864d",
+            "message": "Oder equals/hashcode fields  by rank or position"
+        },
+        {
+            "hash": "a2941041d4d4b3db2a12a38212226f36c11219ab",
+            "message": "[fixes #2481] Copy constructor javadoc to builder methods"
+        },
+        {
+            "hash": "51216bed0e723598fa26677ffc3ea0c8d2c3150d",
+            "message": "[Fixes #2463] Clone type to correctly set annotated type on with methods."
+        },
+        {
+            "hash": "a8c75a64f4a8dbd0651021ebbc6197269f6fe822",
+            "message": "more Jackson annotations to copy to setters"
+        },
+        {
+            "hash": "f6738e4d81f8a0afa2dc95c48b2c380fbafa8fcf",
+            "message": "fix package name of JsonDeserialize"
+        },
+        {
+            "hash": "a2a194f32da2058e8783cd664d74799cf418d03d",
+            "message": "[fixes #2006] Delegate now excludes already implemented methods"
+        },
+        {
+            "hash": "7d08af7d856b41580fa4b913e2b0c9002a8fc341",
+            "message": "[fixes #2382] Handle generic supertypes"
+        },
+        {
+            "hash": "77ab1cf867359a2999e3d3962060acddd5565d14",
+            "message": "also copy Jackson's JsonAlias and JsonView annotations to setter/builder"
+        },
+        {
+            "hash": "b37f3cba3eb7e7babd38894b890ca5fda2f57cf4",
+            "message": "[SuperBuilder] update documentation on customizing"
+        },
+        {
+            "hash": "b767427f06b60dd236bc2c0d6ea41a0e8446fe08",
+            "message": "[SuperBuilder] don't warn on existing toBuilder method"
+        },
+        {
+            "hash": "48b1f17f7ef0e0b3d90dee74ee1b490a02cacff2",
+            "message": "[SuperBuilder] allow constructor customization"
+        },
+        {
+            "hash": "faa70bd21d2872e8354574cc98c7aa82ab996bcd",
+            "message": "[Jacksonized] copy JsonAutoDetect to builder class"
+        },
+        {
+            "hash": "ab028d70a4c178862d3792d7c0cd61710d330b4a",
+            "message": "add OpenJ9 fix to changelog"
+        },
+        {
+            "hash": "cd0af7a6370d7bf65a15bde53a78338522e53908",
+            "message": "Update Fake.class to support OpenJ9 Field Layout\n\nCurrently lombok crashes when building with OpenJ9 JDK as described in #2414\r\nIt is due to the `override` field offset from Fake.class doesn't match actual offset value for AccessibleObject.class in OpenJ9 \r\nThis change is to support the OpenJ9 Field layout algorithm."
+        },
+        {
+            "hash": "265c56d229093a307ebf231baa191663f953cf1e",
+            "message": "[fixes #1969] Enum.values() requires enumConstantsCounter to be set"
+        },
+        {
+            "hash": "8ba6d4b0ea661fd6c701fed56212ecc9c4acabb2",
+            "message": "Add more characters not to escape on Windows. Fixes #2435"
+        },
+        {
+            "hash": "d54b360af9bdd66885badb80007d6839ea9d48f8",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "ca5bd2868af828ec6b26c91b2398e8c6dbf1c24e",
+            "message": "Delombok prints the ReceiverParameter (this), fixes #2444."
+        },
+        {
+            "hash": "20cce2049de56d5a71c6dcc376d6f4088d4552bc",
+            "message": "Merge pull request #2429 from janrieke/jacksonAndSingularAnnotationCopy\n\nCopy more Jackson annotation to the builder, also to @Singular methods"
+        },
+        {
+            "hash": "dede79bc224eb16566a027f83214c04e065b575b",
+            "message": "copy more Jackson annotation to the builder, also for @Singular methods"
+        },
+        {
+            "hash": "94440a8bd73f176637a9890dc10df67d26615674",
+            "message": "[UtilityClass] [issue #2384] Added a test to confirm no issue.\n\nadded some tests to confirm that lombok makes things static if needed."
+        },
+        {
+            "hash": "3edac649118dff4a48d7218dc31a727f13537fea",
+            "message": "[fixes #2386] [checkerframework]\n\nNow generating checkerframework `@Pure` instead of `@SideEffectFree` where appropriate."
+        },
+        {
+            "hash": "6356482555e07e1cfeb7cb5a5b31f78dfc91c34b",
+            "message": "[fixes #2176] this should add support for the UI auto-finding the RedHat codeready IDE."
+        },
+        {
+            "hash": "732c7257e1db44b83b4748c93969cd74195d416f",
+            "message": "[fixes #2358] self-referential generics could cause endless loops in javac.\n\n... unfortunately eclipse's val resolver is now very slightly worse in very exotic circumstances - spent about 4 hours trying to fix it, can't figure it out, let's move on."
+        },
+        {
+            "hash": "5e1ee5cb0dc26dd9a2a064edd7700abec5aa98fa",
+            "message": "[Jacksonized] fixing the idempotent tests\n\nthey fail due to builder annotation not being removed."
+        },
+        {
+            "hash": "17e48aab62ab1d62f689fe1ffb69badf4dfe01c4",
+            "message": "documentation layout fix"
+        },
+        {
+            "hash": "a79e67713a83a7c99d4a4b0f86c1120f7713f262",
+            "message": "docker image for gradle 6.2.2, try reproducing #2336"
+        },
+        {
+            "hash": "2dc69359f024ac0c20916edd0ba43439393fb7ed",
+            "message": "[trivial] minor updates to Jacksonized docs."
+        },
+        {
+            "hash": "ed412b7e091978e1363c91ba4c05aa304c4fb7d6",
+            "message": "Merge branch 'jacksonizedSquash' of git://github.com/janrieke/lombok into janrieke-jacksonizedSquash2"
+        },
+        {
+            "hash": "3a2a61f807eaedd22eab3c6d78653b7de2ae82a4",
+            "message": "@Jacksonized: add documentation, changelog"
+        },
+        {
+            "hash": "a749bc230f4e42904dc6803841cfb928c394d3b5",
+            "message": "@Jacksonized: add flag usage configuration key"
+        },
+        {
+            "hash": "8be4b0ffe6b5e5f89e8bb3d94e87d0aa98dc5aeb",
+            "message": "@Jacksonized: modify builders that they can be used by Jackson"
+        },
+        {
+            "hash": "59aa6761115cb912d5223870be348b70e0e9fd9c",
+            "message": "[eclipse-p2] create a p2 eclipse update site"
+        },
+        {
+            "hash": "0a32c9b126253af112b61445d061a0798011702b",
+            "message": "Re-add mapstruct code to secondaryLoading"
+        },
+        {
+            "hash": "d5a06afc17dee3f13c507389dd978964eb14d642",
+            "message": "Generate more mapstruct artifacts for maven"
+        },
+        {
+            "hash": "14a7af6d858ab6963531537be88d29e7ce387df4",
+            "message": "[docs]"
+        },
+        {
+            "hash": "f129fa85ba992eacbada5858dcfc45f55b4026fd",
+            "message": "Merge pull request #2376 from Rawi01/extensionMethod\n\nSet missing argumentTypes for eclipse extension methods"
+        },
+        {
+            "hash": "cf1cffa76e00216477255c62ed5a870e7da345a7",
+            "message": "Set missing argumentTypes for eclipse extension methods"
+        },
+        {
+            "hash": "7993aa20cd20cdc030f90ee9f33c1b74c023d7ca",
+            "message": "[issue #2368] [withBy] support for ecj"
+        },
+        {
+            "hash": "a991bebe41bd5037323f682301a5fe77ea89b7b9",
+            "message": "[issue #2368] [withBy] support for javac"
+        },
+        {
+            "hash": "d08229a58007da1968aa86b4dd4a3a9a21a7b578",
+            "message": "[fixes #2369] types nested in enums/interfaces not marked static no longer cause issues in ecj."
+        },
+        {
+            "hash": "a6fb86359a53742a549235e73f633f1b85c33bb5",
+            "message": "[issue #2369] [reproduction-test] inner types not detected as static if in interface/enum."
+        },
+        {
+            "hash": "62d2d737123b7e0ffa5f89043a973f15fde0188f",
+            "message": "[fixing up 0d7540d] the jar file produced did not have a .jar file extension"
+        },
+        {
+            "hash": "72f546f9cb424932024e91b2c4431aea51909c42",
+            "message": "[trivial] improving consistency between javac vs. ecj output\n\nwasn't worth an issue on the tracker: javac and ecj handlers for static constructors would differ; ecjs would specify the return type and constructor invocation using fully qualified types, whereas the handler for javac did not."
+        },
+        {
+            "hash": "89f98da78d3ffd9e9f6f7151fcaf5e4329d2e8dd",
+            "message": "[fixes #678] `@Synchronize` an instance method on static variable no longer emits a warning."
+        },
+        {
+            "hash": "15b09ee27466baa9107ce6556e9302191f1cd7b5",
+            "message": "update changelog"
+        },
+        {
+            "hash": "0d7540db0cc0c9a2758799522925f09eddeb7420",
+            "message": "(#2125) Extract mapstruct binding to separate module."
+        },
+        {
+            "hash": "a8dd99d9f080be6839fe507ade104fccac115de4",
+            "message": "Documenting the fix for issue #2359 by @JanRieke in previous commit in changelog."
+        },
+        {
+            "hash": "39c2903c885f52cb99e36f0a0c896bcca2bc794f",
+            "message": "Merge pull request #2362 from janrieke/superBuilderNestedGenericTypes\n\nSuperBuilder javac fix for nested generic types"
+        },
+        {
+            "hash": "0ab433b41a6d2afa446d7e46204531c1efa606e2",
+            "message": "SuperBuilder javac fix for nested generic types; fixes #2359"
+        },
+        {
+            "hash": "d1c81abc13577edf95ee13a6f0c48e58bf5947bc",
+            "message": "Merge pull request #2357 from janrieke/superBuilderSetterPrefix\n\nsetter prefixes for SuperBuilder"
+        },
+        {
+            "hash": "6e2d23fdd7613de9650ffaf00c6e24a6ead0d74b",
+            "message": "setter prefixes for SuperBuilder\n\nsetter prefixes for SuperBuilder [javac]\nbetter javadoc for the SuperBuilder setterPrefix value\nsetter prefixes for SuperBuilder [ecj]\nadd test for SuperBuilder setter method customization\nfix setter method customization with setterPrefix"
+        },
+        {
+            "hash": "cf4e59662a8aac42beee50d2fc28487b7aaf9ea6",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "c4223d1dcdf27917aa07b887774ea35f218d7b1b",
+            "message": "Merge pull request #2361 from janrieke/superBuilderSetterPrefixDoc\n\nDocumentation for SuperBuilder setter prefix"
+        },
+        {
+            "hash": "042789b83927b13c240570ed7fb051097d61dd56",
+            "message": "changelog"
+        },
+        {
+            "hash": "ad4c612303201665e2362909fa9bd686847f78ba",
+            "message": "SuperBuilder setterPrefix documentation"
+        },
+        {
+            "hash": "fc04b74c67f05b1ba099275645b75e6373ac3b5a",
+            "message": "[fixes #2377] documentation about configkey lombok.noArgsConstructor.extraPrivate was incorrect"
+        },
+        {
+            "hash": "75f522749bc31f61d136dadd92731fdfe1eb796d",
+            "message": "Merge pull request #2378 from Rawi01/codeStyleFix\n\nAdd moved CodeStyleFix to patch list"
+        },
+        {
+            "hash": "0950d511040a4407d5ff05caa6dcc41f29d15f1d",
+            "message": "Add moved CodeStyleFix to patch list"
+        },
+        {
+            "hash": "013d97251f1e141a9546b4871de3f588acc0115b",
+            "message": "Merge pull request #2381 from junoyoon/customNullAnnotatationClassNameBugFix\n\nMake custom null annotation resolved in addNullAnnotations"
+        },
+        {
+            "hash": "b460d2aa685912fb1283b224506227d94edab7d2",
+            "message": "[Fix #2380] Make custom null annotation resolved in addNullAnnotations"
+        },
+        {
+            "hash": "f232e9f8b89395d6a1c596faa4f8abec4fa8f2f9",
+            "message": "[website] ecj instructions were outdated and the pom link was broken"
+        },
+        {
+            "hash": "0401f49fa6975195f81ff3252fefdbd6409dde6b",
+            "message": "Update org.eclipse dependencies, fixes #2363"
+        },
+        {
+            "hash": "635a32258e6c9a7d074c8c5b53f5cd08d6ddc9fd",
+            "message": "[eclipse-p2] the eclipse p2 site is now selfsigned."
+        },
+        {
+            "hash": "9d50e9f8ad16c463b6ff9dbb87fd7a012c68bfef",
+            "message": "Merge pull request #2427 from Rawi01/addNullCheck\n\nAdd null check in copyTypeAnns"
+        },
+        {
+            "hash": "d34fdeb3b4b44aae8c03cee0d3b1dd35a3d74e31",
+            "message": "[fixes #2246] Add null check"
+        },
+        {
+            "hash": "d4e5eb004066720d235cba7e474af088b6b9ce85",
+            "message": "Merge pull request #2426 from Rawi01/subArrayTypeSourceRange\n\n[fixes #2286] Set source range for vararg arrays"
+        },
+        {
+            "hash": "91cd859b72c89a47bbe145c00a9e7c1b20a5e657",
+            "message": "[fixes #2286] Set source range for vararg arrays"
+        },
+        {
+            "hash": "221783c1c2844783d5863218a92787f8c72facbd",
+            "message": "Merge pull request #2421 from tkalmar/master\n\nEncode partial URL. Fixes #1536"
+        },
+        {
+            "hash": "2566345e6108037c63383ec0287b773989d9ed33",
+            "message": "Encode + sign properly. Fixes #1539"
+        },
+        {
+            "hash": "c8e21dd3367876a73fba2539b7d3831a934832f9",
+            "message": "Merge pull request #2409 from janrieke/superBuilderFixAIOOBE\n\n[SuperBuilder] fix IndexOutOfBounds (fixes #2407)"
+        },
+        {
+            "hash": "736904298202bb75c27243f930c9e48bf2139be9",
+            "message": "[SuperBuilder] test qualified type references in extends clause"
+        },
+        {
+            "hash": "1b06f4aa2960ba18d26a4d0218dd486872176971",
+            "message": "[SuperBuilder] fix IndexOutOfBounds (fixes #2407)"
+        },
+        {
+            "hash": "a3d71d68473d23f5cf722d8c1bff31781d6d9c66",
+            "message": "Fix broken test cases"
+        },
+        {
+            "hash": "faa682b41620d76796a4196e51fd2e2603c349a6",
+            "message": "Do not resolve type if the name does not match"
+        },
+        {
+            "hash": "e75517d561790bf8ee01763a1c75e091d03132e9",
+            "message": "Avoid class.getSimpleName except in static initializers or error messages"
+        },
+        {
+            "hash": "3ffef5d23be17e9bffca30936d43bca852feaa93",
+            "message": "Prevent NullPointerException"
+        },
+        {
+            "hash": "2917a8c5e15d79aebfb461fa7db8d54665afd0ae",
+            "message": "Cache absolute file location"
+        },
+        {
+            "hash": "4e359da7cc079c8283f758f464b65f1bcaa78a7b",
+            "message": "Replace getSimpleName() with getName()"
+        },
+        {
+            "hash": "e964c995caa948e3b9ac3fc531a09e200124ec73",
+            "message": "Fix UtilityClass test case"
+        },
+        {
+            "hash": "1dd84581c0a0f3c843ac59d5b6bca3d5f674c7b8",
+            "message": "Merge pull request #2558 from Rawi01/extensionmethod-suppress\n\nFix suppressBaseMethods in ecj/eclipse"
+        },
+        {
+            "hash": "f43a63b1d988a703dddbc61c47076d616bb3d639",
+            "message": "Merge branch 'delegate-methods-outline' of git://github.com/Rawi01/lombok into Rawi01-delegate-methods-outline\n\n# Conflicts:\n#\tsrc/core/lombok/eclipse/EclipseAugments.java"
+        },
+        {
+            "hash": "8f14ac772282df3ef9f2ebe834d5c5a98c9eece8",
+            "message": "Add generated delegate methods to eclipse outline"
+        },
+        {
+            "hash": "730670f1f4f41f41f23da6df59c06c40f717139a",
+            "message": "Merge branch 'eclipse-javadoc' of git://github.com/Rawi01/lombok into Rawi01-eclipse-javadoc\n\n# Conflicts:\n#\tsrc/core/lombok/eclipse/handlers/EclipseHandlerUtil.java"
+        },
+        {
+            "hash": "23b80658bcf3ca0007a86d04ce6cc5f6c8db5ad4",
+            "message": "Merge branch 'master' into eclipse-javadoc\n\nConflicts:\n\tsrc/core/lombok/javac/handlers/JavacHandlerUtil.java\n\ttest/core/src/lombok/RunTestsViaEcj.java"
+        },
+        {
+            "hash": "9148294f78a8e646ee131ca182a9b692bc028fdb",
+            "message": "[testing] [eclipse] [#2413] Eclipse tests now more expansive\n\nWe now test generating a level2-DOM from our level1-AST (eclipse has 3 levels of ASTs, more or less), only if\nthat is possible, i.e. only if the full eclipse is available. This requires using a test target named `eclipse-X`, and not\none of the `ecjX` ones. This is the change that requires the massive update to the build system. About 6 tests,\nincluding a newly added one about @Delegate, now fail. These failures would usually not cause instant failure in\neclipse, but can cause errors during save actions and will likely mess with other things in weird ways, such as\nmessing up syntax highlighting.\n\nYes, this commit now makes a bunch of cases fail the unit tests, but that is representative of actual errors in lombok,\nso I'm checking it in as is (without this commit, the problem is still there, the tests are just incapable of detecting it)."
+        },
+        {
+            "hash": "7e44900cd3c22bb038ec07383d33cf5b7ae17c55",
+            "message": "[docs] confkey addConstructorProperties had wrong docs about its default value"
+        },
+        {
+            "hash": "dbcdcfbbf774fa39c53468b3669a5378226ef036",
+            "message": "[trivial]"
+        },
+        {
+            "hash": "409f0428c712207a920acd3ca7c429d97f2d13a1",
+            "message": "Merge pull request #2548 from rosti-il/master\n\n Fix tests under Windows, fix test.javac11 and test.javac14, fix issue #1745"
+        },
+        {
+            "hash": "79c3d383fd7d46ec1c6c5cf83d8b05f2238529a2",
+            "message": "Fix tests under Windows, fix test.javac11 and test.javac14, fix issue #1745\n\nThe change of the TestConfiguration.java is based on the fact that\nGit for Windows is configured with 'core.autocrlf=true' by default."
+        },
+        {
+            "hash": "7f8e15762d4f3428d38579f702e65a4a302b1dac",
+            "message": "[website] [#397] [#2371] added docs for installing in eclipse via p2"
+        },
+        {
+            "hash": "6088e6e3d60f407765a9e6936bf0d06a184282df",
+            "message": "[build] added ant website.open\n\nthis serves the site locally and opens your browser"
+        },
+        {
+            "hash": "edbfdfe8c52c17a38bf2b526d14a4f622c5402f7",
+            "message": "Issue 2552 - generate class initializer body only after field member injection"
+        },
+        {
+            "hash": "60a9799c24f182b3c7e262754b6cc2e3400a4993",
+            "message": "Revert \"changed arraylist to set\"\n\nThis reverts commit 273d8fc53ccbcf0e5e9b3a74489e8ebf8220b546."
+        },
+        {
+            "hash": "273d8fc53ccbcf0e5e9b3a74489e8ebf8220b546",
+            "message": "changed arraylist to set"
+        },
+        {
+            "hash": "9f6c2203c9fd277256ccd9012d7075e7244b7fb6",
+            "message": "trivial - Only assign variable once"
+        },
+        {
+            "hash": "eb78f5c7665833c8e7dedce75fbe102774e370ae",
+            "message": "Fix missing parameter names, annotations in following annotation processors 2"
+        },
+        {
+            "hash": "74211eb0ae63a916c6ecc7be4b92ba521e0cef34",
+            "message": "[fixes #2566] Reset constant value set during type resolution"
+        },
+        {
+            "hash": "d4bd359d21c223d6f8dc012c409f7262c4f51bb4",
+            "message": "[test] [bugfix] Compare full line instead of ignoring the last character"
+        },
+        {
+            "hash": "f44c642d406c2ad9ca6d679ca1b336e68ff28853",
+            "message": "Use enum instead of Boolean; switch to synchronized map"
+        },
+        {
+            "hash": "355ea57b8075eacca39d3e0cbcdec67585d095fe",
+            "message": "Handle each Eclipse ASTs not more than two times (diet + full)"
+        },
+        {
+            "hash": "0736f291747b1fc4d3ce3b7d9ccbaa129d15ed20",
+            "message": "Skip PostCompiler for empty byte arrays"
+        },
+        {
+            "hash": "2ac4faf14cfb4e82b771f8691704efd3c36299ea",
+            "message": "[trivial] [changelog]"
+        },
+        {
+            "hash": "613ecb091054fe0a2aad304226717be20ec2cf83",
+            "message": "[docs] typo-fixes"
+        },
+        {
+            "hash": "2b4b5c983540af4a4c08cfb7a3d4057df0b84c39",
+            "message": "Support javadoc copying in eclipse"
+        },
+        {
+            "hash": "ea1578a0a9826473e004901f8e2a88ba4e65ea4c",
+            "message": "[tests] ant-based compiling of test infra was failing.\n\nI committed some code to debug classpath issues; this code is no\nlonger needed and was using java8+ features that aren't available\nat compile time in the first place; a simple matter of removing that code\nis all that was needed."
+        },
+        {
+            "hash": "c10fe50f6a704228bf91aeaea620e2a84c017df9",
+            "message": "[tests] removed a ridiculously exotic feature that still works, but is too hard to test\n\nSpecifically, using as custom logger topic a concatenated string, like literally `\"A\" + \"B\"`. It works,\nbut depending on javac and phase of the moon that ends up as `\"A\" + \"B\"` or `\"AB\"`, and I don't\nthink it's worthwhile for lombok to try to be consistent in this and test for that."
+        },
+        {
+            "hash": "a478fd56796eebe0e6b0d49469f4380a75786290",
+            "message": "[tests] fixed a test that fails due to, of all things, a javac bug."
+        },
+        {
+            "hash": "9d45a506b1026bdf9a3c76f97c9d4ec52dc92345",
+            "message": "[build] eclipse test target for Javac8 fixed\n\njavac8 has a bizarre dependency situation: we need the stubs in src/stubs there to compile, but if they are there\nat runtime during a test run of javac8, they take precedence over the JDK's javac (because we include this\nas a separate cp entry, and thus it is not a bootclasspath item), and messes everything up.\nThe fix is to tell eclipse to compile various src/X folders to different 'bin' targets, which required\nan update to ivyplusplus as well.\n\nalso it was just broken in general, fixed that too :)"
+        },
+        {
+            "hash": "007c4e7cb2d64afedcd942ab788bc1b15191a309",
+            "message": "Merge pull request #2570 from Rawi01/eclipse-test-fixes\n\nEclipse test fixes"
+        },
+        {
+            "hash": "54ea7c1c6bea4d2e410e737ee8cc66315567e926",
+            "message": "[tests] Fix CustomLog tests"
+        },
+        {
+            "hash": "6165941f79add5d831b4b262d1058b796655dd6a",
+            "message": "[tests] Fix SuperBuilder test"
+        },
+        {
+            "hash": "9af2611dcef43cd66f4e3e0fe80bbf0330bdf961",
+            "message": "[tests] Fix Delegate tests"
+        },
+        {
+            "hash": "60d86fab3c0d7716cf78ce6cfc62193395f7b3c3",
+            "message": "Merge pull request #2413 from Rawi01/extensionmethod\n\nImprove ExtensionMethod support in Eclipse"
+        },
+        {
+            "hash": "f7f26a9c5671e9498ba56277bba5c3a5b63155fd",
+            "message": "Fix ExtensionMethod for older eclipse version"
+        },
+        {
+            "hash": "82ac8aad1d0e3e152db4ce328184c40c73700cee",
+            "message": "Merge branch 'master' into extensionmethod\n\nConflicts:\n\tbuild.xml"
+        },
+        {
+            "hash": "3d90a51163354930eeea0e26c2b0a567af8e96be",
+            "message": "Added tests for ExtensionMethod"
+        },
+        {
+            "hash": "39b733ab805f541a0834fb9cc501dc8b90567aa9",
+            "message": "Stop trying to resolve methods with broken arguments"
+        },
+        {
+            "hash": "7242b702700d0226b161eee33d4a630ccae7044d",
+            "message": "Fix missing extension method parameters names during code completion"
+        },
+        {
+            "hash": "f035e9177f437228ac5dcd0c12deccc96a34e623",
+            "message": "Add missing library to generated project"
+        },
+        {
+            "hash": "c95b473e7fc508faed72f990c85fdff65b6d090a",
+            "message": "Improve ExtensionMethod support in Eclipse\n\nAdd basic support for lambdas, add autoboxing support for varargs, code\ncompletion now works if the only matching methods are extension methods,\ncode completion no longer shows all extension methods"
+        },
+        {
+            "hash": "96d02e66b7fc911cb2e2b5973b71d673294fb36e",
+            "message": "[fixup] Fixing up the checkerframework `@CalledMethods` annotation package rename from commit 390ebcf"
+        },
+        {
+            "hash": "fd1677415411256036254b4115936128b0f199b1",
+            "message": "Merge pull request #2595 from mernst/rename-builder-to-calledmethods\n\nThe Object Construction Checker has been renamed the Called Methods Checker"
+        },
+        {
+            "hash": "0e7b8c9aeec974010be7d388a934fcc5451abc15",
+            "message": "Add Michael Ernst to AUTHORS file"
+        },
+        {
+            "hash": "390ebcf2936f37a362201430051a8132fa7d1fa2",
+            "message": "The Object Construction Checker has been renamed the Called Methods Checker"
+        },
+        {
+            "hash": "58545cec67ada261d13c454fce460ed55798cd72",
+            "message": "Merge remote-tracking branch 'origin/master'\n\n# Conflicts:\n#\tsrc/core/lombok/javac/handlers/HandleEqualsAndHashCode.java"
+        },
+        {
+            "hash": "4f763367f1092546350324f3040fa84cb0380409",
+            "message": "Rename TryWithResourcesVarRef"
+        },
+        {
+            "hash": "2ba65d105ddfce54690a64f93cbc5c55480ef364",
+            "message": "Cache hashCode:\n- Fix bug where 0 would be returned once\n- Fix Eclipse position error\n- Don't initialize field with default value 0"
+        },
+        {
+            "hash": "ee6c0ca7f2274b24571afdc8586eff9052f5eda1",
+            "message": "Remove warning for final classes"
+        },
+        {
+            "hash": "8d004c0638e4b865c38527a500c493288328eac8",
+            "message": "Allow non-final types, use Integer.MIN_VALUE\n\nAllow caching hash code for non-final classes (but will warn)\nUse Integer.MIN_VALUE to differentiate uncached and 0 cached"
+        },
+        {
+            "hash": "0808d4271a495e1b6ea4f9a636e63a1c62567133",
+            "message": "Remove CacheStrategy compilation unit for javac"
+        },
+        {
+            "hash": "32db0ef71022040cb574a96d448f4b44518f8637",
+            "message": "Generate Pure annotation for cached hashCode"
+        },
+        {
+            "hash": "c91a7dc8cac69f7324d38057206d2d027a2f22ac",
+            "message": "Undo unnecessary change, add TODO"
+        },
+        {
+            "hash": "a4866a8d23466813d30bf9102ba26cb3fecebc47",
+            "message": "Add missing set source/statement start/end\n\nCo-authored-by: Rawi01 <Rawi01@users.noreply.github.com>"
+        },
+        {
+            "hash": "a8a811b245528d74de8110dac8161c3f51bf2df5",
+            "message": "Fix using source start instead of source end\n\nCo-authored-by: Rawi01 <Rawi01@users.noreply.github.com>"
+        },
+        {
+            "hash": "04a10be919ffe89142d173cf384f23c9b9b39f73",
+            "message": "Change documentation to reflect code"
+        },
+        {
+            "hash": "b62ce8fb2fe5348e37da4025b7550f21876f6e28",
+            "message": "Fix typo"
+        },
+        {
+            "hash": "4788df3fb39a981fd7c6f055823ead221de04643",
+            "message": "Readd line removed by Eclipse"
+        },
+        {
+            "hash": "beec8309ef5c088f0e9a2738ffd087d8777cdb50",
+            "message": "Removed unused imports"
+        },
+        {
+            "hash": "2aea0cb3d2bdc1d52a90dc52e44029e9b213f1be",
+            "message": "Fix delombok tests"
+        },
+        {
+            "hash": "03d1119e08956f8940edb6fe600af16fb9f424a0",
+            "message": "Revert unnecessary changes"
+        },
+        {
+            "hash": "d00ab552e199410c283049cd8d9359a69855f1f2",
+            "message": "Finish implementation, add tests"
+        },
+        {
+            "hash": "4e0ffbc32913001082dd2387a20b480076ddd20a",
+            "message": "Eclipse impl and tests"
+        },
+        {
+            "hash": "b78a6af49cb82dd1dc03e6839b33827688fda3f6",
+            "message": "Restore some missing white spaces removed by IDEA"
+        },
+        {
+            "hash": "3019e73f965c40f0b72ad2b04553f3c9a694b3d2",
+            "message": "Attempt to implement cacheHashCode"
+        },
+        {
+            "hash": "f397c2b4825828b5ad8a29ad1bee934a23199527",
+            "message": "[fixes #2586] Add Java 15 support for delombok"
+        },
+        {
+            "hash": "14cce76805324dce66fcdfde333a63c677694d64",
+            "message": "[builder] big refactor: Fixing CheckerFramework features + all params now in an object\n\nThese handlers had methods with humongous argument lists, and they needed to grow even more in order\nto accommodate some new needs to properly implement checkerframework (where annos can be type-use\nbased, which means they were being put in the wrong place.\n\nvoid foo(com.foo.@X Bar paramName) // correct\nvoid foo(@X com.foo.Bar paramName) // wrong\n\nFor example, the CalledMethod annotation is a type-use annotation.\n\nThis commit covers both that refactor and fixing checkerframework generation."
+        },
+        {
+            "hash": "07e921d2b19a660df28e03ee1ed1d0315d5e3458",
+            "message": "[javac] Added/improved support for the 'receiver parameter' feature"
+        },
+        {
+            "hash": "1b534d17d39f687d42ebab733327a59c3466a949",
+            "message": "Untangling patches to classes that only exist in eclipse, not ecj\n\nSpecifically, Rawi01's patches to make javadoc behaviour in eclipse better,\nwhich cannot be applied to ecj as you get load errors (javadoc not a thing there).\n\nAs part of this commit, tests can be limited to ecj or eclipse, and I made cut-down\nversions of a few tests (to run on ecj, as the main one cannot be, due to javadoc issues).\n\nThe tests now marked as eclipse only don't fail on ecj, but they don't generate the same\nresult. Alternatively, we could go with a separated out after-ecj and after-eclipse dir\ninstead, but that's perhaps going overboard."
+        },
+        {
+            "hash": "eadd3b8ccea16d46249e6b01c4ac4b295c691abd",
+            "message": "[checkerframework] they seem to have renamed a lot of their newer features."
+        },
+        {
+            "hash": "1ced413ccb731ec5ccb69fc0bf01364c737c637e",
+            "message": "[deps] added some deps used during eclipse testing."
+        },
+        {
+            "hash": "fa89a5b0073177f0e16854a09d0a4cc62baec5ed",
+            "message": "[builder] [refactor] # of params was growing to ridiculous proportions.\n\nrefactored to use a single object with a bunch of fields so we can pass this object around instead."
+        },
+        {
+            "hash": "f6a6f9deb56ec0165bb383ff2608909fa60ddec5",
+            "message": "[trivial] [typo]"
+        },
+        {
+            "hash": "2666a923e634400c55b4129784af88d955fc6bfe",
+            "message": "[deps] bumped lombok.patcher dep to v0.38, which adds ASM9 support.\n\nThis makes lombok better at handling e.g. javac15."
+        },
+        {
+            "hash": "29d34186f7db17fd9ea61c9487d70aad7faefe26",
+            "message": "[fixes #2592] Find ProcessingEnvironment in InteliJ 2020.3 and Kotlin"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2261",
+            "title": "[BUG] ExtensionMethod fails in specific case in Maven, works in Eclipse"
+        },
+        {
+            "number": "2300",
+            "title": "[CRASH] When @Getter(lazy = true) has Lambda in the initialization expression."
+        },
+        {
+            "number": "977",
+            "title": "@RequiredArgsConstructor + @NonNull breaks eclipse highlighting"
+        },
+        {
+            "number": "2433",
+            "title": "[FEATURE] config key to turn off @SuppressWarnings(\"all\") on generated members"
+        },
+        {
+            "number": "2469",
+            "title": "[BUG] @Slf4j topic cannot be references to (static) fields."
+        },
+        {
+            "number": "2412",
+            "title": "[BUG] Upgrading to android tools gradle plugin 3.6.0+ breaks lombok"
+        },
+        {
+            "number": "1543",
+            "title": "[Feature request] Reordering of comparison in @EqualsAndHashCode for better performance"
+        },
+        {
+            "number": "2481",
+            "title": "[BUG] @Builder methods do not copy javadoc"
+        },
+        {
+            "number": "2463",
+            "title": "[BUG] @With - IllegalArgumentException: Not a parameterized type!"
+        },
+        {
+            "number": "2006",
+            "title": "[FEATURE] @Delegate - automatic detection of already implemented methods"
+        },
+        {
+            "number": "2382",
+            "title": "[BUG] @Delegate compilation issue"
+        },
+        {
+            "number": "2414",
+            "title": "[BUG] Lombok crashes with OpenJ9"
+        },
+        {
+            "number": "1969",
+            "title": "`FieldNameConstants` generates an enum with empty `values()`"
+        },
+        {
+            "number": "2435",
+            "title": "[BUG] lombok Eclipse Installer with special chars in Path"
+        },
+        {
+            "number": "2444",
+            "title": "[BUG] Delombok removes explicit this"
+        },
+        {
+            "number": "2384",
+            "title": "@UtilityClass does not create default no-args constructor"
+        },
+        {
+            "number": "2386",
+            "title": "[FEATURE] Configure Lombok to generate @Pure annotations for checkerframework"
+        },
+        {
+            "number": "2176",
+            "title": "[BUG] Installer not working with Redhat CodeReady Studio"
+        },
+        {
+            "number": "2358",
+            "title": "[BUG] Stack overflow in val handler"
+        },
+        {
+            "number": "2336",
+            "title": "[FEATURE] Support for gradle, update error msg for unsupported compilers."
+        },
+        {
+            "number": "2368",
+            "title": "[FEATURE] @WithBy support (with, but with lambdas)"
+        },
+        {
+            "number": "2369",
+            "title": "[BUG] Builder on a nested class inside an generic interface in Eclipse"
+        },
+        {
+            "number": "678",
+            "title": "@Synchronized uses this.FOO to access static locks instead of Self.FOO."
+        },
+        {
+            "number": "2125",
+            "title": "[BUG] Lombok module not working"
+        },
+        {
+            "number": "2359",
+            "title": "[BUG] Wrong number of type arguments; required 3"
+        },
+        {
+            "number": "2377",
+            "title": "[BUG] Incorrect Documentation for lombok.noArgsConstructor.extraPrivate"
+        },
+        {
+            "number": "2380",
+            "title": "[BUG] lombok.addNullAnnotations treats the custom annotation name in lowercase"
+        },
+        {
+            "number": "2363",
+            "title": "Fresh git clones might not build properly"
+        },
+        {
+            "number": "2246",
+            "title": "[BUG] eclipse compile error for type usage annotation with inner classes."
+        },
+        {
+            "number": "2286",
+            "title": "[BUG] Eclipse issue with @Delegate"
+        },
+        {
+            "number": "1536",
+            "title": "ClassNotFoundException: lombok.core.AnnotationProcessor"
+        },
+        {
+            "number": "1539",
+            "title": "@GetSet annotation for Jpa/Hibernate Entities"
+        },
+        {
+            "number": "2407",
+            "title": "[BUG] SuperBuilder doesn't work with Eclipse"
+        },
+        {
+            "number": "1745",
+            "title": "Delombok javadoc output doesn't work correctly under Windows"
+        },
+        {
+            "number": "397",
+            "title": "Run as eclipse plugin."
+        },
+        {
+            "number": "2566",
+            "title": "[BUG] Lombok 1.18.12 causes NullPointerException in Eclipse Java Builder"
+        },
+        {
+            "number": "2586",
+            "title": "[BUG] Maven delombok plugin fails on JDK 15"
+        },
+        {
+            "number": "2592",
+            "title": "[BUG] Lombok Does not work with IntelliJ EAP 2020.3 Build 203.4203.26"
+        }
+    ]
+}

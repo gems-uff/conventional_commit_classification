@@ -1,0 +1,506 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.5.14",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 79,
+    "start_delay": 0.0,
+    "duration": 58.77350694444444,
+    "commits_info": [
+        {
+            "hash": "93b52f7e11f3d9bf2a4a4922ba31fdb9a0b48d74",
+            "message": "Release v2.5.14"
+        },
+        {
+            "hash": "d20f94e67bd6ef1db312031eb3c61f53dd5713b8",
+            "message": "Upgrade CI to Docker 20.10.16\n\nCloses gh-31107"
+        },
+        {
+            "hash": "e82def03ca0be711ce1fa00f0adc0b082436e6c0",
+            "message": "Upgrade to Spring Security 5.5.8\n\nCloses gh-31096"
+        },
+        {
+            "hash": "7f60c67074af828d5f4cfa261c3a1a6af948061b",
+            "message": "Upgrade to Spring Batch 4.3.6\n\nCloses gh-31003"
+        },
+        {
+            "hash": "5e78bef9f8d3a3a60e588a67fbcc51dc9e941289",
+            "message": "Test security dialect auto-config without Spring Security\n\nCloses gh-31097"
+        },
+        {
+            "hash": "4eb778df43318b7836651f9ae5a2d0ff6fcac2e8",
+            "message": "Upgrade to Spring Integration 5.5.12\n\nCloses gh-31060"
+        },
+        {
+            "hash": "7d2f1bafc0b35e93fe3c52c2f1de778c5f8ab2df",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "7da42d713965f4a6db1c1ac49bdc0a17e3064186",
+            "message": "Allow tests to pass when a NAME environment variable exists\n\nUpdate `ConfigurationPropertiesTests` so that it will pass even if a\nlocal `NAME` environment variable is declared.\n\nCloses gh-31076"
+        },
+        {
+            "hash": "44c979beb0979a887c901a9b9d9742b0eb64da1c",
+            "message": "Reorder default property sources after @PropertySource processing\n\nUpdate `SpringApplication` so that the `DefaultPropertiesPropertySource`\nis moved to the end after `@PropertySource` annotations have been\nprocessed. This restores functionality that used to be handled by\nthe `ConfigFileApplicationListener` and was inadvertently dropped\nwhen the `ConfigDataEnvironmentPostProcessor` was developed.\n\nFixes gh-31068"
+        },
+        {
+            "hash": "350d27fe50d7e78edab2bd195d9a07976ac20ecb",
+            "message": "Polish code to use method references when possible"
+        },
+        {
+            "hash": "50e27333d2446d0266bd3a50badff365995a09ab",
+            "message": "Tolerate failures when recording WebClient metrics\n\nFixes gh-30978"
+        },
+        {
+            "hash": "cc2d68968d91d6edb281cca4e81cc177078c703c",
+            "message": "Upgrade to Maven Resolver 1.6.3\n\nThis commit also expands our internal dependency management for\nMaven Resolver to cover all of the modules upon which we depend.\n\nCloses gh-31083"
+        },
+        {
+            "hash": "f19d91561bbdb831dd67db248952b03082157c8b",
+            "message": "Manage version of all Artemis modules upon which the build depends\n\nCloses gh-31077"
+        },
+        {
+            "hash": "08bde72db5bca175badfdb7bba72b9877de5cfde",
+            "message": "Polish DockerHub and mirror configuration\n\nSee gh-31070"
+        },
+        {
+            "hash": "d9bca72f1e71b81d66c1d6321906977e9f4177ee",
+            "message": "Use Docker Hub mirror consistently on CI and avoid unneeded log in\n\nCloses gh-31070"
+        },
+        {
+            "hash": "fb2075d39918893d469d1083b6dce20f3abd39de",
+            "message": "Upgrade to Tomcat 9.0.63\n\nCloses gh-31069"
+        },
+        {
+            "hash": "f7f48311996a97efa50b3d8a719bc29a1be04009",
+            "message": "Upgrade to Spring Security 5.5.7\n\nCloses gh-31005"
+        },
+        {
+            "hash": "e9791e904d234623f02936a0dfde8796587025a8",
+            "message": "Upgrade to Spring Kafka 2.7.14\n\nCloses gh-31004"
+        },
+        {
+            "hash": "d479d2eeb9820b2b8f260359c1617ae46c063e18",
+            "message": "Start building against Spring Integration 5.5.12 snapshots\n\nSee gh-31060"
+        },
+        {
+            "hash": "e703acb4fda4681f3fa97a3b21398569573f5072",
+            "message": "Merge pull request #30898 from izeye\n\n* pr/30898:\n  Polish \"Add missing configuration properties for Statsd\"\n  Add missing configuration properties for Statsd\n\nCloses gh-30898"
+        },
+        {
+            "hash": "22d187a38c640e61fa2d3dfd03e52c73fe499f8e",
+            "message": "Polish \"Add missing configuration properties for Statsd\"\n\nSee gh-30898"
+        },
+        {
+            "hash": "d90ef6afb37813049154a6f0ebf46d14f3ee345e",
+            "message": "Add missing configuration properties for Statsd\n\nSee gh-30898"
+        },
+        {
+            "hash": "23aae09936f6319e7d71e795eac1bcc457580187",
+            "message": "Upgrade to Spring LDAP 2.3.8.RELEASE\n\nCloses gh-31039"
+        },
+        {
+            "hash": "ac65d35f75163f2b55de65f38ad28d86bc2793fb",
+            "message": "Improve diagnostics for 403 response to upgrade issue creation\n\nSee gh-30304"
+        },
+        {
+            "hash": "5ce39254de07fc70dc933f5efc4a3af0354d9cc6",
+            "message": "Start building against Spring Security 5.5.7 snapshots\n\nSee gh-31005"
+        },
+        {
+            "hash": "0233cf01d3dab3606f9dd2189fb75ff1d2f58729",
+            "message": "Start building against Spring Kafka 2.7.14 snapshots\n\nSee gh-31004"
+        },
+        {
+            "hash": "30bdd76bbe602fa674f863f361089289aaf977ff",
+            "message": "Start building against Spring Batch 4.3.6 snapshots\n\nSee gh-31003"
+        },
+        {
+            "hash": "6286fd791762ebf4c8c4653a7d323a0d54ed967c",
+            "message": "Upgrade to Spring Framework 5.3.20\n\nCloses gh-31002"
+        },
+        {
+            "hash": "e38cd9f9285ae28042fb252d78c79b084ee11249",
+            "message": "Upgrade to Micrometer 1.7.12\n\nCloses gh-31001"
+        },
+        {
+            "hash": "d34a1b6c0e8d9e4539193e98a88bf4f7ac69dd25",
+            "message": "Upgrade to OCI Build Task 0.10.0\n\nCloses gh-30998"
+        },
+        {
+            "hash": "4d768edb81eed13a0054dd669aa53ae905e6358d",
+            "message": "Upgrade CI to Docker 20.10.15\n\nCloses gh-30988"
+        },
+        {
+            "hash": "217335092739198fdde1a45ea6d1535a8fe105d7",
+            "message": "Merge pull request #30879 from denisw\n\n* gh-30879:\n  Polish \"Extend documentation on Datadog metrics\"\n  Extend documentation on Datadog metrics\n\nCloses gh-30879"
+        },
+        {
+            "hash": "3f6fcac683281317b2068e5a221277e404b80263",
+            "message": "Polish \"Extend documentation on Datadog metrics\"\n\nSee gh-30879"
+        },
+        {
+            "hash": "09db7e40017048fb5bc782578a6d643ad62f657e",
+            "message": "Extend documentation on Datadog metrics\n\n- Document that an application key must be set to publish metadata\n  for the exported metrics.\n\n- Point out that using a non-US Datadog site (e.g., EU) requires\n  changing the `uri` property.\n\nSee gh-30879"
+        },
+        {
+            "hash": "822aad978e4df907cac85d7ef01a04aaf01dfa97",
+            "message": "Merge pull request #30890 from luojianet\n\n* gh-30890:\n  Fix link to Upgrading From 1.x in multi-page documentation\n\nCloses gh-30890"
+        },
+        {
+            "hash": "309e54bd213b550b2f15bbd9277f21e8aca0ea59",
+            "message": "Fix link to Upgrading From 1.x in multi-page documentation\n\nSee gh-30890"
+        },
+        {
+            "hash": "e8c508a2ca6b322dc78b023478e6b21bb3a5fa5d",
+            "message": "Merge pull request #30862 from izeye\n\n* gh-30862:\n  Polish\n\nCloses gh-30862"
+        },
+        {
+            "hash": "624c41c80e77e0dd5de87f2cb18e2b0db9541ca9",
+            "message": "Polish\n\nSee gh-30862"
+        },
+        {
+            "hash": "d5f4323f53297e9cd4e5dd98d9cefc8acf50b1af",
+            "message": "Upgrade to Test Retry Gradle Plugin 1.4.0\n\nCloses gh-30989"
+        },
+        {
+            "hash": "432741f06eec2356400e4031e8cd0da2649d3b73",
+            "message": "Upgrade to Reactor Bom 2020.0.19\n\nCloses gh-30913"
+        },
+        {
+            "hash": "7157ca4fe546b915cf96dcd0171fabfe37d4bedc",
+            "message": "Upgrade to Netty tcNative 2.0.52.Final\n\nCloses gh-30912"
+        },
+        {
+            "hash": "25c320be5155b620fb1e3224f3db7f9e33607fed",
+            "message": "Upgrade to Netty 4.1.77.Final\n\nCloses gh-30911"
+        },
+        {
+            "hash": "0713f772badce98e616a9b428c6e7ee23173b971",
+            "message": "Upgrade to MySQL 8.0.29\n\nCloses gh-30910"
+        },
+        {
+            "hash": "84b1b67e6de8e5c63c01709f02bf95b89a21ce56",
+            "message": "Upgrade to Johnzon 1.2.18\n\nCloses gh-30909"
+        },
+        {
+            "hash": "705ce88f1306a8ca5821e1a10b02cfc96446886b",
+            "message": "Upgrade to Jaybird 4.0.6.java8\n\nCloses gh-30908"
+        },
+        {
+            "hash": "0c19ae52948d947b26ed36990992e02876a8e6ca",
+            "message": "Upgrade to Hazelcast 4.1.9\n\nCloses gh-30907"
+        },
+        {
+            "hash": "6938df26e08c0133f0d0565f42b34d841fd041b4",
+            "message": "Upgrade to ActiveMQ 5.16.5\n\nCloses gh-30906"
+        },
+        {
+            "hash": "cbea3c16474f9c0b16e15e1096a3222c64c0e667",
+            "message": "Merge pull request #30880 from christophejan\n\n* gh-30880:\n  Improve debug logging of requests to actuator endpoints on WebFlux\n\nCloses gh-30880"
+        },
+        {
+            "hash": "a1f3d68ead68bf0ec3ced14efeab50b7ea0c63e9",
+            "message": "Improve debug logging of requests to actuator endpoints on WebFlux\n\nSee gh-30880"
+        },
+        {
+            "hash": "0e7c3547dd1db1553d9fba3824ea0bda77076678",
+            "message": "Prohibit usage of Micrometer nullability annotations\n\nCloses gh-30881"
+        },
+        {
+            "hash": "8fe47aaebd06f9674e958720df85156d048b2321",
+            "message": "Remove smoke tests that do nothing without a server\n\nFixes gh-30875"
+        },
+        {
+            "hash": "8cd3b86e5c65297d23a2112b5c31c18b75555caa",
+            "message": "Merge pull request #30505 from terminux\n\n* gh-30505:\n  Polish \"Fix ConditionalOnProperty when used in an aliased composed annotation\"\n  Fix ConditionalOnProperty when used in an aliased composed annotation\n\nCloses gh-30505"
+        },
+        {
+            "hash": "6d4f0232ca643dcda2df06bef3a4292e7194a377",
+            "message": "Polish \"Fix ConditionalOnProperty when used in an aliased composed annotation\"\n\nSee gh-30505"
+        },
+        {
+            "hash": "dc57ad54d5ef2947cc7878d640726ebc2e9248e8",
+            "message": "Fix ConditionalOnProperty when used in an aliased composed annotation\n\nSee gh-30505"
+        },
+        {
+            "hash": "09ec409184195873baae9902adbe0e274831718a",
+            "message": "Upgrade CI images to ubuntu:focal-20220426\n\n Closes gh-30871"
+        },
+        {
+            "hash": "111dfd8911cb34786761509f3c24da2465f0f88f",
+            "message": "Merge pull request #30773 from marcwrobel\n\n* gh-30773:\n  Polish \"Fix typos\"\n  Fix typos\n\nCloses gh-30773"
+        },
+        {
+            "hash": "4fd2e0c91619dc51a69328df5e5195d86d9503ac",
+            "message": "Polish \"Fix typos\"\n\nSee gh-30773"
+        },
+        {
+            "hash": "f6d24dc1a8001b277ed52654283e3d04d68f1dcd",
+            "message": "Fix typos\n\nSee gh-30773"
+        },
+        {
+            "hash": "561526f8022a1ef8d41815d71ed8bfe00ea1fca2",
+            "message": "Merge branch 'gh-30844' into 2.5.x\n\nCloses gh-30844"
+        },
+        {
+            "hash": "798d61fcf09e7765464c338d96470850d99ba24a",
+            "message": "Polish \"Make event handling in ClassPathFileSystemWatcherTests thread-safe\"\n\nSee gh-30844"
+        },
+        {
+            "hash": "aeaad006cd926f7c6742c270da1ce96f4d3228df",
+            "message": "Make event handling in ClassPathFileSystemWatcherTests thread-safe\n\nSee gh-30844"
+        },
+        {
+            "hash": "e08483f49517fddfc488d3a6292680becd002e39",
+            "message": "Merge pull request #30705 from dugenkui03\n\n* gh-30705:\n  Polish \"Make event handling in JobExecutionExitCodeGenerator thread-safe\"\n  Make event handling in JobExecutionExitCodeGenerator thread-safe\n\nCloses gh-30705"
+        },
+        {
+            "hash": "026b9e2efee60c2f2f124b0ca4cd1e957b0dded1",
+            "message": "Polish \"Make event handling in JobExecutionExitCodeGenerator thread-safe\"\n\nSee gh-30705"
+        },
+        {
+            "hash": "c8d1dfebab902f4372a924f507b8cc00653ce55c",
+            "message": "Make event handling in JobExecutionExitCodeGenerator thread-safe\n\nSee gh-30705"
+        },
+        {
+            "hash": "7cf37cae439536f71f1849f5334f8bdc8bafc0c5",
+            "message": "Merge pull request #30824 from eddumelendez\n\n* gh-30824:\n  Polish \"Polish InfluxMetricsExportAutoConfiguration\"\n  Polish InfluxMetricsExportAutoConfiguration\n\nCloses gh-30824"
+        },
+        {
+            "hash": "f8e5a534a6fc7e49969b672693e9e588cd3d000f",
+            "message": "Polish \"Polish InfluxMetricsExportAutoConfiguration\"\n\nSee gh-30824"
+        },
+        {
+            "hash": "b0d5364efa9629688c6b6c8bd965f5f853d3c6eb",
+            "message": "Polish InfluxMetricsExportAutoConfiguration\n\nSee gh-30824"
+        },
+        {
+            "hash": "d338df513a1736cf08ca828febd44242e80ac6f2",
+            "message": "Avoid stale inputs by using sync rather than copy\n\nCloses gh-30829"
+        },
+        {
+            "hash": "b5167a46ac8d29c09031a37cd309baf702fb284d",
+            "message": "Upgrade Java 18 CI image to jdk-18.0.1+10\n\nCloses gh-30817"
+        },
+        {
+            "hash": "400dc5261c9e9da47bed05bc73d5e8b8d0d6aa26",
+            "message": "Upgrade Java 17 CI image to jdk-17.0.3+7\n\nCloses gh-30807"
+        },
+        {
+            "hash": "7bd6805bc0d8e77a9b1c1460c2c6303a4ee68fbb",
+            "message": "Upgrade Java 11 CI image to jdk-11.0.15+10\n\nCloses gh-30818"
+        },
+        {
+            "hash": "4246e4dbc4ad864afc9cf120113e0016567f3aa6",
+            "message": "Upgrade Java 8 CI image to jdk8u332-b09\n\nCloses gh-30819"
+        },
+        {
+            "hash": "8eb9ddd063c0e74f3290fc98e052e965169bb6d9",
+            "message": "Upgrade CI images to ubuntu:focal-20220415\n\nCloses gh-30811"
+        },
+        {
+            "hash": "193ef9a06dd4c32dbb921c2c69c724efb472975e",
+            "message": "Package META-INF/services/ files beneath BOOT-INF/classes/\n\nCloses gh-30413"
+        },
+        {
+            "hash": "ce788657ce89095c20e4139fc300648add5e14b7",
+            "message": "Improve diagnostics for map binding failures\n\nCloses gh-30281"
+        },
+        {
+            "hash": "ffe0ec6d4d2670a2edabe088a64dfd89dcadc9f7",
+            "message": "Use SearchStrategy in MethodValidationExcludeFilter byAnnotation\n\nCloses gh-30631"
+        },
+        {
+            "hash": "9b8b87009cbe064d577ed53e0bae519770197eee",
+            "message": "Document support for Java 18\n\nCloses gh-30548"
+        },
+        {
+            "hash": "09c7732642dc5b74e6a8ae54d136730cdfba07e2",
+            "message": "Include link to changelog when announcing release to SDKman\n\nCloses gh-30423"
+        },
+        {
+            "hash": "c73d8bfc410728690cdb2f5b9121d8464dc300f5",
+            "message": "Next development version (v2.5.14-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31107",
+            "title": "Upgrade CI to Docker 20.10.16"
+        },
+        {
+            "number": "31096",
+            "title": "Upgrade to Spring Security 5.5.8"
+        },
+        {
+            "number": "31003",
+            "title": "Upgrade to Spring Batch 4.3.6"
+        },
+        {
+            "number": "31097",
+            "title": "Test that auto-configuration of Thymeleaf's Spring Security dialect backs off without Spring Security"
+        },
+        {
+            "number": "31060",
+            "title": "Upgrade to Spring Integration 5.5.12"
+        },
+        {
+            "number": "31076",
+            "title": "Project cannot be built under WSL due to NAME environment variable"
+        },
+        {
+            "number": "31068",
+            "title": "Default properties configured on SpringApplication have higher precedence than properties configured with @PropertySource"
+        },
+        {
+            "number": "30978",
+            "title": "A failure when an instrumented WebClient records metrics causes the request to fail"
+        },
+        {
+            "number": "31083",
+            "title": "Upgrade to Maven Resolver 1.6.3"
+        },
+        {
+            "number": "31077",
+            "title": "Dependency management for Artemis is incomplete"
+        },
+        {
+            "number": "31070",
+            "title": "Update CI to consistently use the DockerHub mirror and to avoid unnecessarily logging in to DockerHub "
+        },
+        {
+            "number": "31069",
+            "title": "Upgrade to Tomcat 9.0.63"
+        },
+        {
+            "number": "31005",
+            "title": "Upgrade to Spring Security 5.5.7"
+        },
+        {
+            "number": "31004",
+            "title": "Upgrade to Spring Kafka 2.7.14"
+        },
+        {
+            "number": "31039",
+            "title": "Upgrade to Spring LDAP 2.3.8.RELEASE"
+        },
+        {
+            "number": "30304",
+            "title": "Refine wait period in bomr upgrades to avoid secondary rate limit"
+        },
+        {
+            "number": "31002",
+            "title": "Upgrade to Spring Framework 5.3.20"
+        },
+        {
+            "number": "31001",
+            "title": "Upgrade to Micrometer 1.7.12"
+        },
+        {
+            "number": "30998",
+            "title": "Upgrade to OCI build task 0.10.0"
+        },
+        {
+            "number": "30988",
+            "title": "Upgrade CI to Docker 20.10.15"
+        },
+        {
+            "number": "30989",
+            "title": "Upgrade to Test Retry Gradle Plugin 1.4.0"
+        },
+        {
+            "number": "30913",
+            "title": "Upgrade to Reactor Bom 2020.0.19"
+        },
+        {
+            "number": "30912",
+            "title": "Upgrade to Netty tcNative 2.0.52.Final"
+        },
+        {
+            "number": "30911",
+            "title": "Upgrade to Netty 4.1.77.Final"
+        },
+        {
+            "number": "30910",
+            "title": "Upgrade to MySQL 8.0.29"
+        },
+        {
+            "number": "30909",
+            "title": "Upgrade to Johnzon 1.2.18"
+        },
+        {
+            "number": "30908",
+            "title": "Upgrade to Jaybird 4.0.6.java8"
+        },
+        {
+            "number": "30907",
+            "title": "Upgrade to Hazelcast 4.1.9"
+        },
+        {
+            "number": "30906",
+            "title": "Upgrade to ActiveMQ 5.16.5"
+        },
+        {
+            "number": "30881",
+            "title": "Prohibit usage of Micrometer nullability annotations"
+        },
+        {
+            "number": "30875",
+            "title": "Remove smoke tests that do nothing without a server"
+        },
+        {
+            "number": "30871",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "30844",
+            "title": "Event handling in ClassPathFileSystemWatcherTests is not thread-safe"
+        },
+        {
+            "number": "30829",
+            "title": "Generation of the Maven plugin's descriptor may include stale inputs"
+        },
+        {
+            "number": "30817",
+            "title": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "number": "30807",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "30818",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "30819",
+            "title": "Upgrade Java 8 version in CI image"
+        },
+        {
+            "number": "30811",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "30413",
+            "title": "Hibernate service loading logs HHH000505 warnings for ServiceConfigurationError with Gradle-built jars since 2.5.10 when using Java 11 or later"
+        },
+        {
+            "number": "30281",
+            "title": "Cryptic startup failure with bare LOGGING_LEVEL environment variable"
+        },
+        {
+            "number": "30631",
+            "title": "SearchStrategy argument of MethodValidationExcludeFilter byAnnotation(Class, SearchStrategy) is not used"
+        },
+        {
+            "number": "30548",
+            "title": "Document support for Java 18"
+        },
+        {
+            "number": "30423",
+            "title": "Include link to changelog in SDKMan announcements"
+        }
+    ]
+}

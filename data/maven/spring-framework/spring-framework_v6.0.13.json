@@ -1,0 +1,370 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.13",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 56,
+    "start_delay": 0.0,
+    "duration": 28.050763888888888,
+    "commits_info": [
+        {
+            "hash": "dda5250b75c9a20636d04b9325254e25f960b7fb",
+            "message": "Release v6.0.13"
+        },
+        {
+            "hash": "4bd54dffbca8ca587251fb58ad3c0b4823e5358d",
+            "message": "Upgrade to concourse-release-scripts 0.4.0-SNAPSHOT"
+        },
+        {
+            "hash": "86650d1a39f585b22e33425c59e9d07c9db139a1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "87424cd6057049a03c9e35074c744a97469df16c",
+            "message": "Upgrade to SLF4J 2.0.9 and AspectJ 1.9.20.1"
+        },
+        {
+            "hash": "80e82cd43f1c2ec85c405bff4b8de6f36f6d6e59",
+            "message": "Do not close transactional Connection in doReleaseConnection\n\nCloses gh-28133"
+        },
+        {
+            "hash": "66ce8c9a253727c673f38e65554cefb7eb6a23fc",
+            "message": "Properly return SQLExceptionTranslator-provided exception\n\nCloses gh-31409"
+        },
+        {
+            "hash": "e9fcb21d55c586062b7b74798a23e0dd283f22d0",
+            "message": "Refine status KeyValue for HTTP server observations\n\nPrior to this commit, a cancelled exchange would always result in an\n`\"status\":\"UNKNOWN\"` KeyValue. This only applied to reactive variants,\nas cancelled exchanges are not currently detected for Servlet\nimplementations.\n\nIn some cases, exchanges can be cancelled by clients before they are\ncompleted, but the response was actually received by the client. The\nresponse status information has been set by the application and the\nresponse has been committed. For those cases, we shouldn't assume an\n\"UNKNOWN\" value.\n\nThis commit assumes that committed responses have a response status set\nby the application and that the observations should reflect that. From\nnow on, we only assume an \"UNKNOWN\" status if the response has not been\ncommited.\n\nFixes gh-31388"
+        },
+        {
+            "hash": "ee9dff30c5828bcdbf120e83333a45bbe82f728b",
+            "message": "Updated Java 17 version in sdkmanrc"
+        },
+        {
+            "hash": "21584108537c67762fa519d42c51a88a305d0934",
+            "message": "Revert \"Support Jackson's DatatypeFeature in Jackson2ObjectMapperBuilder\"\n\nThis reverts commit 5f053401e2a93cd459413cfa3dc70f47727c83cb."
+        },
+        {
+            "hash": "e0a55c2caad28a396555f8958128e91b3b837453",
+            "message": "Upgrade to Micrometer 1.10.12 and Reactor 2022.0.12\n\nIncludes Context Propagation 1.0.6, Netty 4.1.100, Jetty 11.0.17, Tomcat 10.1.14, Groovy 4.0.15, Mockito 5.6, Checkstyle 10.12.4\n\nCloses gh-31404\nCloses gh-31405"
+        },
+        {
+            "hash": "0b96da4b6dfacf4b337f606cfa8fea117215fa53",
+            "message": "Revise javadoc for LifecycleProcessor bean etc"
+        },
+        {
+            "hash": "387a16bd4e353caabf6c8521f29e0969c879fdef",
+            "message": "Revise transaction annotation recommendations\n\nCloses gh-23538"
+        },
+        {
+            "hash": "8b5d993e614ed2f07b80251fa76023f269dd451c",
+            "message": "Throw IllegalArgumentException for null SQL String\n\nCloses gh-31391"
+        },
+        {
+            "hash": "5459304a4b5e8dc6ce08ff8d9e09228ab7d72659",
+            "message": "Re-introduce support for annotation declarations with self references\n\nCloses gh-31400"
+        },
+        {
+            "hash": "00d4830e5cb834cd5343c1ae36b3a703cc7cb97a",
+            "message": "Merge pull request #31396 from wfouche\n\n* pr/31396:\n  Upgrade to gradle-versions-plugin 0.49.0\n\nCloses gh-31396"
+        },
+        {
+            "hash": "3c2e21a5780dae196b4d3a3c9d078a5ebc40e345",
+            "message": "Upgrade to gradle-versions-plugin 0.49.0\n\nSee gh-31396"
+        },
+        {
+            "hash": "5f053401e2a93cd459413cfa3dc70f47727c83cb",
+            "message": "Support Jackson's DatatypeFeature in Jackson2ObjectMapperBuilder\n\nCloses gh-31380"
+        },
+        {
+            "hash": "63770fb07483fba5a32f9a6c5123ab82bdbce6c6",
+            "message": "Document Kotlin declaration-site variance subtleties\n\nCloses gh-31370"
+        },
+        {
+            "hash": "9df4bce043773bde74a0b0f8ca6e40463147a10c",
+            "message": "Upgrade to Gradle 8.4\n\nCloses gh-31375"
+        },
+        {
+            "hash": "19fd8159b2e6d5d50f2efc70635f21447a95d99b",
+            "message": "Improve Javadoc of MethodParameter#getAnnotatedElement\n\nThis commit adds a reference to the method that can be used to get\nthe AnnotatedElement at the parameter level.\n\nCloses gh-30397"
+        },
+        {
+            "hash": "147abc91a526e7fea884e88bd375b61b9f30c6e6",
+            "message": "Polish BeanPropertyRowMapper Javadoc"
+        },
+        {
+            "hash": "e12eb9436da160478ed3ce9590058067e295c1f9",
+            "message": "Fix description of default behavior in BeanPropertyRowMapper\n\nCloses gh-29285"
+        },
+        {
+            "hash": "23162bb3060bc4166bbed8f2452e9abe44a3b3ca",
+            "message": "Undo optimization from 12fe2c that can cause regression\n\nCloses gh-31327"
+        },
+        {
+            "hash": "a2c5fed4941ec58503395f32946d3331d59917b5",
+            "message": "Make targetType in UknownContentTypeException transient\n\nCloses gh-31283"
+        },
+        {
+            "hash": "957b6b2caf5ac6ee6664a4710e1d3f5c20d45d7e",
+            "message": "Use URI String as fallback in ReactorClientHttpConnector\n\nCloses gh-31033"
+        },
+        {
+            "hash": "35f458fa5fef5ea4e91f825d26ae06e9e58cbfdb",
+            "message": "Improve diagnostics for negative repeated text count in SpEL\n\nDue to the changes in gh-31341, if the repeat count in a SpEL\nexpression (using the repeat operator '*') is negative, we throw a\nSpelEvaluationException with the MAX_REPEATED_TEXT_SIZE_EXCEEDED\nmessage which is incorrect and misleading.\n\nPrior to gh-31341, a negative repeat count resulted in an\nIllegalArgumentException being thrown by String#repeat(), which was\nacceptable in terms of diagnostics, but that did not make it\nimmediately clear to the user what the underlying cause was.\n\nIn light of the above, this commit improves diagnostics for a negative\nrepeated text count in SpEL expressions by throwing a\nSpelEvaluationException with a new NEGATIVE_REPEATED_TEXT_COUNT error\nmessage.\n\nCloses gh-31342"
+        },
+        {
+            "hash": "8e83f93bcb775536ae66edf45abdbe9bfb60c22b",
+            "message": "Improve diagnostics for repeated text size overflow in SpEL\n\nIf the resulting size of repeated text in a SpEL expression (using the\nrepeat operator '*') would exceed MAX_REPEATED_TEXT_SIZE, we currently\nthrow a SpelEvaluationException with the\nMAX_REPEATED_TEXT_SIZE_EXCEEDED message.\n\nHowever, if the calculation of the repeated text size results in\ninteger overflow, our max size check fails to detect that, and\nString#repeat(int) throws a preemptive OutOfMemoryError from which the\napplication immediately recovers.\n\nTo improve diagnostics for users, this commit ensures that we\nconsistently throw a SpelEvaluationException with the\nMAX_REPEATED_TEXT_SIZE_EXCEEDED message when integer overflow occurs.\n\nCloses gh-31341"
+        },
+        {
+            "hash": "407113945d7c70a079f6096af63fbc3dbece00b7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4cf5c7796d0b96d74f7fc3279358e229eb98244f",
+            "message": "Explicit note on local bean access within @PostConstruct method\n\nCloses gh-27876"
+        },
+        {
+            "hash": "847e8a2b23d5626395d1ae868e54ef30286bb681",
+            "message": "Restore auto-commit mode if not done by driver\n\nCloses gh-31268"
+        },
+        {
+            "hash": "9aab4a60f50510422edf4bada754acf855c4d75b",
+            "message": "Support safe navigation operator with void methods in SpEL\n\nPrior to this commit the Spring Expression Language (SpEL) was able to\nproperly parse an expression that uses the safe navigation operator\n(?.) with a method that has a `void` return type (for example,\n\"myObject?.doSomething()\"); however, SpEL was not able to evaluate or\ncompile such expressions.\n\nThis commit addresses the evaluation issue by selectively not boxing\nthe exit type descriptor (for inclusion in the generated bytecode) when\nthe method's return type is `void`.\n\nThis commit addresses the compilation issue by pushing a null object\nreference onto the stack in the generated byte code when the method's\nreturn type is `void`.\n\nCloses gh-27421"
+        },
+        {
+            "hash": "1fe2216c59695bc6279b2a98e731bd1880496441",
+            "message": "Test status quo for null-safe Void method references in SpEL"
+        },
+        {
+            "hash": "5ff9e6955ce372ccca13a93dd615348197f4249f",
+            "message": "Test status quo for void function references in SpEL"
+        },
+        {
+            "hash": "0cb4043aac8a3193b2147c0bebd6c06f8eac9037",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6030e627667da20e031d7d5283c329a33cdb8936",
+            "message": "Merge pull request #31330 from jihuayu\n\n* pr/31330:\n  Add missing `conversionService` field in doc example\n\nCloses gh-31330"
+        },
+        {
+            "hash": "867b9f61b21e9fbb71ce7108da3418383c1da7ec",
+            "message": "Add missing `conversionService` field in doc example\n\nSee gh-31330"
+        },
+        {
+            "hash": "6300fb37adf7ce81fa2fe2b23e6e8cf40ff9c3c1",
+            "message": "Include '?' for null-safe navigation in SpEL AST representations\n\nPrior to this commit, if a Spring Expression Language (SpEL) expression\ncontained property, field, or method references using the null-safe\nnavigation operator (?.), the generated AST String representation\nincorrectly omitted the '?' characters.\n\nFor example, 'myProperty?.myMethod()' had a generated AST string\nrepresentation of 'myProperty.myMethod()'.\n\nThis commit addresses this by introducing isNullSafe() in\nMethodReference and reworking the logic in\nCompoundExpression.toStringAST().\n\nCloses gh-31326"
+        },
+        {
+            "hash": "0d225694220b8880f8d1f6fa1fbc8125340e02b5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "06658c3c717dc28cfac68d901cd6312a3b318108",
+            "message": "Restore zero capacity support in ConcurrentLruCache\n\nSince the rewrite of ConcurrentLruCache in Spring Framework 6.0, an\nattempt to create a ConcurrentLruCache with zero capacity results in an\nIllegalArgumentException even though the documentation states that zero\ncapacity indicates \"no caching, always generating a new value\".\n\nThis commit restores the ability to configure a ConcurrentLruCache with\nzero capacity and introduces corresponding tests (which were first\nverified against the 5.3.x branch to ensure backward compatibility).\n\nSee gh-26320\nCloses gh-31317"
+        },
+        {
+            "hash": "a37abd5e54ff66ad6784f2ff1e6c6cae6354a547",
+            "message": "Provide best-effort toString for Lazy resolved message\n\nPreviously, MessagingMessageListenerAdapter or any adapter relying on\nthe default MessagingMessageConverter would log an incoming message\nwith a toString of the Message that does not provide any extra\ninformation. This is due to the default implementation providing a\nlazy resolution message that only attempts to extract the payload\nwhen necessary.\n\nThis commit implements a toString method that uses the raw JMS message\nif the payload is not available. If it is, the payload is used instead.\n\nCloses gh-21265"
+        },
+        {
+            "hash": "18456dec52f7c37e86c00804a2c8a7712fc6dde0",
+            "message": "Reintroduce FastClass in CGLIB class names for @⁠Configuration classes\n\nGiven a @⁠Configuration class named org.example.AppConfig which\ncontains @⁠Bean methods, in Spring Framework 5.3.x and previous\nversions, the following classes were created when generating the CGLIB\nproxy.\n\norg.example.AppConfig$$EnhancerBySpringCGLIB$$fd7e9baa\norg.example.AppConfig$$FastClassBySpringCGLIB$$3fec86e\norg.example.AppConfig$$EnhancerBySpringCGLIB$$fd7e9baa$$FastClassBySpringCGLIB$$82534900\n\nThose class names indicate that 1 class was generated for the proxy for\nthe @⁠Configuration class itself and that 2 additional FastClass\nclasses were generated to support proxying of @⁠Bean methods in\nsuperclasses.\n\nHowever, since Spring Framework 6.0, the following classes are created\nwhen generating the CGLIB proxy.\n\norg.example.AppConfig$$SpringCGLIB$$0\norg.example.AppConfig$$SpringCGLIB$$1\norg.example.AppConfig$$SpringCGLIB$$2\n\nThe above class names make it appear that 3 proxy classes are generated\nfor each @⁠Configuration class, which is misleading.\n\nTo address that and to align more closely with how such generated\nclasses were named in previous versions of the framework, this commit\nmodifies SpringNamingPolicy so that generated class names once again\ninclude \"FastClass\" when the generated class is for a CGLIB FastClass\nas opposed to the actual proxy for the @⁠Configuration class.\n\nConsequently, with this commit the following classes are created when\ngenerating the CGLIB proxy.\n\norg.example.AppConfig$$SpringCGLIB$$0\norg.example.AppConfig$$SpringCGLIB$$FastClass$$0\norg.example.AppConfig$$SpringCGLIB$$FastClass$$1\n\nCloses gh-31272"
+        },
+        {
+            "hash": "d17c75a7efe0399b2fdf12873171f963b7ec50da",
+            "message": "Test status quo for SpringNamingPolicy\n\nSee gh-31272"
+        },
+        {
+            "hash": "f547b6ad2a7ff8a61cb4682a2442aa83d8283af7",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e1bd13d3d601a3746a97fa13821dbcde1c0e8ae9",
+            "message": "Fix note on CGLIB supported method visibility\n\nCGLIB do support package-private and protected methods now so the\nnote in the reference doc should be changed accordingly.\n\nCloses gh-25001"
+        },
+        {
+            "hash": "08237da4b4e7b856e02e24f289d5b28511a739d6",
+            "message": "Simplify equals() implementation in PerTargetInstantiationModelPointcut\n\nFor equivalence, we only need to compare the preInstantiationPointcut\nfields since they include the declaredPointcut fields. In addition, we\nshould not compare the aspectInstanceFactory fields since\nLazySingletonAspectInstanceFactoryDecorator does not implement equals().\n\nSee gh-31238"
+        },
+        {
+            "hash": "f7496a393d3200c02ce4f2f30864703018675a62",
+            "message": "Expand scope of equals() in PerTargetInstantiationModelPointcut\n\nThis commit expands the scope of equality checks in the implementation\nof equals() for PerTargetInstantiationModelPointcut to include all\nfields instead of just the pointcut expression for the declared\npointcut.\n\nSee gh-31238"
+        },
+        {
+            "hash": "0f92ba166360c9a4112d0520521bb7dc19bdcc2d",
+            "message": "Fix typo in ref docs for pattern comparison\n\nCloses gh-31294"
+        },
+        {
+            "hash": "865fa33927f1ab3923cc7c7bd6b799fde877983f",
+            "message": "Cache CGLIB proxy classes properly again\n\nThe introduction of AdvisedSupport.AdvisorKeyEntry in Spring Framework\n6.0.10 resulted in a regression regarding caching of CGLIB generated\nproxy classes. Specifically, equality checks for the proxy class cache\nbecame based partially on identity rather than equivalence. For\nexample, if an ApplicationContext was configured to create a\nclass-based @Transactional proxy, a second attempt to create the\nApplicationContext resulted in a duplicate proxy class for the same\n@Transactional component.\n\nOn the JVM this went unnoticed; however, when running Spring\nintegration tests within a native image, if a test made use of\n@⁠DirtiesContext, a second attempt to create the test\nApplicationContext resulted in an exception stating, \"CGLIB runtime\nenhancement not supported on native image.\" This is because Test AOT\nprocessing only refreshes a test ApplicationContext once, and the\nduplicate CGLIB proxy classes are only requested in subsequent\nrefreshes of the same ApplicationContext which means that duplicate\nproxy classes are not tracked during AOT processing and consequently\nnot included in a native image.\n\nThis commit addresses this regression as follows.\n\n- AdvisedSupport.AdvisorKeyEntry is now based on the toString()\n  representations of the ClassFilter and MethodMatcher in the\n  corresponding Pointcut instead of the filter's and matcher's\n  identities.\n\n- Due to the above changes to AdvisorKeyEntry, ClassFilter and\n  MethodMatcher implementations are now required to implement equals(),\n  hashCode(), AND toString().\n\n- Consequently, the following now include proper equals(), hashCode(),\n  and toString() implementations.\n\n  - CacheOperationSourcePointcut\n  - TransactionAttributeSourcePointcut\n  - PerTargetInstantiationModelPointcut\n\nCloses gh-31238"
+        },
+        {
+            "hash": "9120f87897d2e3ad8f0577199c2e7d3ee0815413",
+            "message": "Consolidate AspectJ test fixtures"
+        },
+        {
+            "hash": "edd1e9134f4d5a76ca652ee6df7b5d4d1461cecd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fef3cf8e58a850cb7f6f7b3020afa120c7ed2d08",
+            "message": "Review AOT-generated code for beanClass and targetType\n\nThis commit reviews when an AOT-generated bean definition defines a\nbeanClass or targetType. Previously, a beanClass was not consistently\nset which could lead to issues.\n\nCloses gh-31242"
+        },
+        {
+            "hash": "ce0923b946aca25c0cdad297be6547b3bc864c90",
+            "message": "Remove Reactor Netty 2 from integration tests\n\nCloses gh-31243"
+        },
+        {
+            "hash": "227049824c7905048bda3d97c0a6fadd3d2fa73d",
+            "message": "Fix RuntimeHintsPredicates matching rules\n\nPrior to this commit, the `RuntimeHintsPredicates` would assume that\nregistering introspection or invocation hints for \"all declared methods\"\non a type would also include \"all public methods\". This is not true, as\nthe Java reflection API itself behaves differently.\n`getDeclaredMethods()` does not return a superset of `getMethods()`, as\nthe latter can return inherited methods, but not the former.\nSame reasoning applies to fields.\n\nThis commit fixes the hints predicates to only match if the correct hint\nhas been registered.\n\nFixes gh-31224"
+        },
+        {
+            "hash": "8f130316d20cea32631f55a0ac4c69ffb4bd7d16",
+            "message": "MultipartParser should respect read position\n\nThis commit ensures that the MultipartParser takes a buffer's read\nposition into account.\n\nCloses gh-31110"
+        },
+        {
+            "hash": "54c4f1b226c99fb7e5363058935341b4c4ae7421",
+            "message": "Reset findLoadedClassMethod in case of makeAccessible failing\n\nCloses gh-31232"
+        },
+        {
+            "hash": "062c6241e1d8446c9f7e23cf266ed4192b9faa1a",
+            "message": "Next development version (v6.0.13-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28133",
+            "title": "R2DBC Connection is closed during transaction when using TransactionAwareConnectionFactoryProxy"
+        },
+        {
+            "number": "31409",
+            "title": "`HibernateJpaDialect` and `HibernateExceptionTranslator` throw `SQLExceptionTranslator`-provided exception instead of returning it"
+        },
+        {
+            "number": "31388",
+            "title": "HTTP server exchange observations have incorrect UNKNOWN status tag if the client disconnected"
+        },
+        {
+            "number": "31404",
+            "title": "Upgrade to Micrometer 1.10.12"
+        },
+        {
+            "number": "31405",
+            "title": "Upgrade to Reactor 2022.0.12"
+        },
+        {
+            "number": "23538",
+            "title": "Clarify documentation for @Transactional on interfaces"
+        },
+        {
+            "number": "31391",
+            "title": "`NamedParameterJdbcTemplate` throws unexpected exception for `null` query"
+        },
+        {
+            "number": "31400",
+            "title": "AnnotationScanner scanning leads to StackOverflowError with recursive annotation"
+        },
+        {
+            "number": "31370",
+            "title": "Document Kotlin declaration site variance subtleties"
+        },
+        {
+            "number": "31375",
+            "title": "Upgrade to Gradle 8.4"
+        },
+        {
+            "number": "30397",
+            "title": "Improved documentation for MethodParameter#getAnnotatedElement"
+        },
+        {
+            "number": "29285",
+            "title": "Javadoc for `BeanPropertyRowMapper.getColumnValue(ResultSet, int, Class)` is inconsistent with code"
+        },
+        {
+            "number": "31327",
+            "title": "Breaking change from 6.0.11 to 6.0.12 if you expect query parameters in `@RequestBody`"
+        },
+        {
+            "number": "31283",
+            "title": "`UnknownContentTypeException` is not `Serializable`"
+        },
+        {
+            "number": "31033",
+            "title": "WebClient reports 'Host is not specified' for URI with hostname and port, but without scheme"
+        },
+        {
+            "number": "31341",
+            "title": "Improve diagnostics when repeated text size calculation results in overflow in SpEL"
+        },
+        {
+            "number": "31342",
+            "title": "Improve diagnostics for negative repeated text count in SpEL"
+        },
+        {
+            "number": "27876",
+            "title": "Referencing a @Bean method in a @Configuration class' @PostConstruct method leads to circular reference"
+        },
+        {
+            "number": "31268",
+            "title": "Using R2dbc transactional and non-transactional on a database connection pool fails for Oracle"
+        },
+        {
+            "number": "27421",
+            "title": "SpEL cannot evaluate or compile expression with null-safe `void` method invocation"
+        },
+        {
+            "number": "31326",
+            "title": "SpEL's `CompoundExpression.toStringAST()` omits `?` for null-safe navigation"
+        },
+        {
+            "number": "26320",
+            "title": "Revisit ConcurrentLruCache implementation"
+        },
+        {
+            "number": "31317",
+            "title": "`ConcurrentLruCache` no longer supports capacity = 0"
+        },
+        {
+            "number": "21265",
+            "title": "`LazyResolutionMessage` does not implement proper `toString`"
+        },
+        {
+            "number": "31272",
+            "title": "Reintroduce `FastClass` in CGLIB class names for `@Configuration` classes"
+        },
+        {
+            "number": "25001",
+            "title": "Incorrect reference information about CGLIB supported method visibility"
+        },
+        {
+            "number": "31238",
+            "title": "CGLIB proxy classes are no longer cached properly"
+        },
+        {
+            "number": "31294",
+            "title": "Clarify documentation on Spring Web MVC pattern comparison"
+        },
+        {
+            "number": "31242",
+            "title": "AOT-generated code no longer sets bean class for beans created from a `@Bean` method"
+        },
+        {
+            "number": "31243",
+            "title": "Remove Reactor Netty 2 from integration tests"
+        },
+        {
+            "number": "31224",
+            "title": "Fix RuntimeHintsPredicates matching rules for public/declared elements"
+        },
+        {
+            "number": "31110",
+            "title": "MultipartParser should respect read position"
+        },
+        {
+            "number": "31232",
+            "title": "Illegal reflective access in `ContextOverridingClassLoader.isEligibleForOverriding`"
+        }
+    ]
+}

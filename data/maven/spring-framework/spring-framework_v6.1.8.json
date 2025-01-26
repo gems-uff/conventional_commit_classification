@@ -1,0 +1,118 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 16,
+    "start_delay": 0.0,
+    "duration": 6.312141203703704,
+    "commits_info": [
+        {
+            "hash": "f85d5bd84a7e7bc810bb5a8179fc2fc130affc89",
+            "message": "Release v6.1.8"
+        },
+        {
+            "hash": "89dd247b97e1ebf24c5b76f66fa256b27b617ea8",
+            "message": "Improve docs on controller method validation\n\nCloses gh-32807"
+        },
+        {
+            "hash": "39dd1e4049bd3a74140814c9d44d9c8bf8874b32",
+            "message": "Remove outdated Javadoc links\n\nCloses gh-32872"
+        },
+        {
+            "hash": "34f4ad3b71c78af840c794fa70c07b72e336309f",
+            "message": "Modernize Antora Build\n\n- Use same playbook as docs-build\n- Use Env Variables to cause partial build (same as docs-build)\n- Use package.json so that dependencies can be updated with dependabot"
+        },
+        {
+            "hash": "ea596aa211ea17b814099a73bb5a091a9af1cadd",
+            "message": "Select most specific advice method in case of override\n\nCloses gh-32865"
+        },
+        {
+            "hash": "58da30cd30591eceeb1dd63a0afc54ae981ac9d5",
+            "message": "Upgrade to Jetty Reactive HttpClient 4.0.4"
+        },
+        {
+            "hash": "cd33b4e35a7a1e6683f1968456ea7df70b3cef64",
+            "message": "Polishing"
+        },
+        {
+            "hash": "20dea0dae2725fbf371ff720fceb82e99d5fdd41",
+            "message": "Polishing"
+        },
+        {
+            "hash": "fee17e11ba6668a5392c0db28c79d2d75be10c3d",
+            "message": "Default fallback parsing for UTC without milliseconds\n\nCloses gh-32856"
+        },
+        {
+            "hash": "65e1337d35cf7aa398798b8a7a8034518943940e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a4c2f291d986ccf988f37af5466265a7f534c16a",
+            "message": "Avoid creation of SAXParserFactory for every read operation\n\nIncludes JAXBContext locking revision (avoiding synchronization) and consistent treatment of DocumentBuilderFactory (in terms of caching as well as locking).\n\nCloses gh-32851"
+        },
+        {
+            "hash": "f26483d272d07f6f0baf5ae0a0cfbe0e99597807",
+            "message": "Detect deprecated element in generic types\n\nThis commit updates Spring AOT to suppress a deprecation warning for\na generic type that has a deprecated element. Previously we only were\nchecking for the raw class.\n\nCloses gh-32850"
+        },
+        {
+            "hash": "481d036f7a3e750d95aa87c44ea4f76839c1091e",
+            "message": "Avoid reader on empty content to be shared by multiple requests\n\nThis commit avoids several instances of MockHttpServletRequest to\nhave a common reader for empty content as closing it will have an\nunwanted side effect on the others.\n\nCloses gh-32820"
+        },
+        {
+            "hash": "2a2ef443a53b891691ff533f327be2e013861bc4",
+            "message": "Refine CDS documentation\n\nCloses gh-32843"
+        },
+        {
+            "hash": "617833bec97bdee369af01462b68f8878eb1b155",
+            "message": "Defensively catch and log pointcut parsing exceptions\n\nCloses gh-32838\nSee gh-32793"
+        },
+        {
+            "hash": "4d633c2ea8c98adb426eb148553fb350e62e5de7",
+            "message": "Next development version (v6.1.8-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32807",
+            "title": "Revisit validation documentation to better explain when method validation is invoked"
+        },
+        {
+            "number": "32872",
+            "title": "Review Javadoc links in build configuration"
+        },
+        {
+            "number": "32865",
+            "title": "Overridden aspect method runs twice"
+        },
+        {
+            "number": "32856",
+            "title": "`@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)` cannot convert UTC without milliseconds to `java.util.Date`"
+        },
+        {
+            "number": "32851",
+            "title": "Avoid creation of SAXParserFactory for every read operation in Jaxb2Marshaller and co"
+        },
+        {
+            "number": "32850",
+            "title": "Suppress deprecation warning for AOT-generated code that refers to a deprecated bean type"
+        },
+        {
+            "number": "32820",
+            "title": "MockHttpServletRequest should not use a shared reader when no content is available"
+        },
+        {
+            "number": "32843",
+            "title": "Refine CDS documentation"
+        },
+        {
+            "number": "32838",
+            "title": "Spring AOP fails against registered `@Configurable` aspect"
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        }
+    ]
+}

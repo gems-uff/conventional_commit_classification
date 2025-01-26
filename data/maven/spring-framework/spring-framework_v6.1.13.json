@@ -1,0 +1,294 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.13",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 43,
+    "start_delay": 0.0,
+    "duration": 29.001898148148147,
+    "commits_info": [
+        {
+            "hash": "f083962fd8d96a46f89d11e375e50a14ea0243fc",
+            "message": "Release v6.1.13"
+        },
+        {
+            "hash": "d86bf8b2056429edf5494456cffcb2b243331c49",
+            "message": "Align RouterFunctions resource handling\n\nCloses: gh-33434"
+        },
+        {
+            "hash": "c77de8a6fb98e6eb227c99f91345f09afedec1bf",
+            "message": "Downgrade to Tomcat 10.1.28\n\nTomcat 10.1.29 was causing failures in spring-webflux when running a\nfull build."
+        },
+        {
+            "hash": "4e49f67ec5e176ac772e0972f017756afcd1af42",
+            "message": "Upgrade to SLF4J 2.0.16, Tomcat 10.1.29, Jetty 12.0.13, Netty 4.1.113, Undertow 2.3.17, AssertJ 3.26.3, Checkstyle 10.18.1"
+        },
+        {
+            "hash": "54dbb9f52acb8ddfc665c62ebbc58b79170f4b3d",
+            "message": "Upgrade to Objenesis 3.4\n\nCloses gh-33526"
+        },
+        {
+            "hash": "34f649c3f53513e85a6bbf1a5b8aab099de9fe4a",
+            "message": "Upgrade to Reactor 2023.0.10\n\nCloses gh-33519"
+        },
+        {
+            "hash": "5b01f3138703394a721a4c760e9fe01e3a242642",
+            "message": "Upgrade to Micrometer 1.12.10\n\nCloses gh-33518"
+        },
+        {
+            "hash": "9150c81d92a4d423f9041f5ee4eba64fc6fb8533",
+            "message": "Document fixed rate scheduling with CRaC\n\nCloses gh-33490"
+        },
+        {
+            "hash": "4e1756d73875bf9b9c5e6fbdbdd4781d82e21593",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5c1ab7ecd5b05c1df208567d707338616fc293e5",
+            "message": "Polishing contribution\n\nCloses gh-33498"
+        },
+        {
+            "hash": "76553294634a6cfb071ad90fbddffdb51df2bf37",
+            "message": "Set status code on DefaultRenderingBuilder for RedirectView\n\nSee gh-33498"
+        },
+        {
+            "hash": "3d1bf28445e80ff8428d62556560143275f1e548",
+            "message": "Refine how async request state lock is obtained\n\nRather than waiting indefinitely, keep checking if the state\nchanged from ASYNC (e.g. to ERROR).\n\nCloses gh-33421"
+        },
+        {
+            "hash": "b7c7823315f4ae814d2fc0a791e9f98a81e1b5a4",
+            "message": "Add @⁠since tag for CodeWarnings.detectDeprecation(ResolvableType)\n\nSee gh-32850\nCloses gh-33493"
+        },
+        {
+            "hash": "caaa86d6cf202fc2d07e7c8e327b19a3e0800500",
+            "message": "Make AspectJ pointcut in test more robust\n\nThe previous pointcut attempted to match against a local lambda type;\nhowever, that pointcut was unreliable and failed sporadically.\n\nThis commit therefore changes the pointcut so that it specifically\ntargets the get() method of a subtype of Supplier, which seems to result\nin reliable pointcut matching."
+        },
+        {
+            "hash": "46655f367e8b3172d04a40c10069019d822dbd8a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "4b7292f43153ef68097b648005b9a54033ba770a",
+            "message": "Fix an off-by-one bug in ForwardedHeaderTransformer\n\nConsistently with what is done in ForwardedHeaderFilter.\n\nCloses gh-33465"
+        },
+        {
+            "hash": "83be0f2dac2c0a32143972a497a3b663c5b12ab5",
+            "message": "Improve documentation on reading form data\n\n`@RequestParam` should be favored over `@RequestBody`\nwhich can't always be used reliably due to how the Servlet\nAPI behaves.\n\nCloses gh-33409"
+        },
+        {
+            "hash": "3c2831030b04a7480665a19b0f2799cc9cc49b53",
+            "message": "Upgrade to Kotlin 1.9.25\n\nCloses gh-33471"
+        },
+        {
+            "hash": "1f6ab1a0c96c3da5cf57963f6a2bf95197335f16",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ce5869eeb07f02dbbcb46beec064a82b680f72a2",
+            "message": "Consistent test execution with Locale.UK"
+        },
+        {
+            "hash": "1db9faf24838b5df83238e36312e9f721f11fa80",
+            "message": "Avoid shutdown timeout in case of exception on stop\n\nCloses gh-33442"
+        },
+        {
+            "hash": "5d80d75051f395c17f6b9367e267d458585b336d",
+            "message": "Follow symlinks during root path traversal\n\nCloses gh-33424"
+        },
+        {
+            "hash": "debba6545ba5b39b0a1f485b67091b6be76ccfca",
+            "message": "Listen to multiple async operations in ServerHttpObservationFilter\n\nPrior to this commit, the `ServerHttpObservationFilter` was fixed to\nre-enable instrumentation for async dispatches. This fix involves using\nan AsyncListener to be notified of exchange completion.\n\nThis change was incomplete, as this would not work in some cases.\nIf another filter starts the async mode and initiates an ASYNC dispatch,\nbefore async handling at the controller level, the async listener is not\nregistered against subsequent async starts.\n\nThis commit not only ensures that the async listener registers\nagainst new async starts, but also ensure that the initial creation and\nregistration only happens during the initial REQUEST dispatch.\n\nFixes gh-33451"
+        },
+        {
+            "hash": "fab889009a617a63634be0754844297da4437cdb",
+            "message": "Support multiple async starts in MockHttpServletRequest\n\nCloses gh-33457"
+        },
+        {
+            "hash": "5927b70dfed48aee9dbebac9171c5453c76ce7b2",
+            "message": "Update information in SpEL Evaluation chapter in reference manual\n\nThis commit updates the Evaluation chapter to reflect the following.\n\n- SimpleEvaluationContext no longer has a create() method. Instead it\n  has forPropertyAccessors(), forReadOnlyDataBinding(), and\n  forReadWriteDataBinding() factory methods.\n\n- SpEL cannot automatically create missing array elements or grow the\n  size of an array like it can for a collection.\n\nCloses gh-33456"
+        },
+        {
+            "hash": "dca55236c48f9c3529f33a9c0e81ce6759f2af15",
+            "message": "Stop documenting use of -debug compiler flag in reference manual\n\nCloses gh-33453"
+        },
+        {
+            "hash": "61b5b1edd8d0358cb143d618691c87b9fd54f639",
+            "message": "Fix example for @⁠ImportResource in the reference manual\n\nPrior to this commit, the main() method attempted to retrieve a\nTransferService bean from the context, but no such bean had been\nconfigured in the context.\n\nThis commit addresses that by configuring a TransferService bean in the\ncontext.\n\nCloses gh-33446"
+        },
+        {
+            "hash": "22abcf9aefd2effef488e1cbe269a9e0639c505a",
+            "message": "Update examples to use Environment#matchesProfiles()"
+        },
+        {
+            "hash": "4fa27197a7cb5a6aa31ba642c038c4a6f6a473aa",
+            "message": "Fix titles for code listings and improve wording"
+        },
+        {
+            "hash": "acf82e7c6dde2e1f722475d1a87defcb773bbc71",
+            "message": "Use discrete headings instead of titled blocks in reference manual\n\nThis code switches from titled blocks to discrete headings in order to\nproperly format pseudo-section headers in the reference manual.\n\nCloses gh-33447"
+        },
+        {
+            "hash": "29fdcf56eb0d326720e4bc88e59e8bb080a3431c",
+            "message": "Polishing"
+        },
+        {
+            "hash": "186deb777f1717c9c4bef29d786c9f1f75312c53",
+            "message": "Update deprecation notices on rawStatusCode\n\nMark for removal where not marked, and set to 7.0\nconsistently as the target for removal.\n\nSee gh-33440"
+        },
+        {
+            "hash": "57cb8c7abfb4458297e3d4fa6130b43da89f28ec",
+            "message": "Restore rawStatusCode methods\n\nRevert methods removed in 7df2e2a8d2a845984cde806232181da486dcf7bd.\n\nSee gh-33440"
+        },
+        {
+            "hash": "871539ab28e73171fb4bb2f8b1376bfde3bc11b5",
+            "message": "Fix a typo in the CDS documentation\n\nCloses gh-33437"
+        },
+        {
+            "hash": "aca5db817db18b7c0fe5d1d76d84ec3cbbfad1ee",
+            "message": "Fix link to core container introduction in ref docs\n\nCloses gh-33417"
+        },
+        {
+            "hash": "b2c1f978a40046c8d279c714fa99e51ca6a329d2",
+            "message": "Stop logging result in WebAsyncManager\n\nCloses gh-33406"
+        },
+        {
+            "hash": "50be08480da50255628a38c1b8d2dbd56855bb28",
+            "message": "Open observation scope in RestClient\n\nPrior to this commit, the `RestClient` instrumentation would create and\nclose observations for HTTP requests, but would not open an observation\nscope for the lifetime of the exchange.\nThis means that custom `ClientHttpRequestInterceptor` and\n`ResponseErrorHandler` would not get access to the current observation\nscope in case of tracing, possibly leading to missing trace ids in logs.\n\nThis commit ensures that an observation scope is managed for the\nlifetime of the HTTP exchange.\n\nFixes gh-33397"
+        },
+        {
+            "hash": "0101945708a3c92609a735fb6b70f38217ff0c3f",
+            "message": "Prevent a leak in WebTestClient\n\nThis commit applies the same kind of processing for\nVoid.class element type in the ParameterizedTypeReference\nvariant of WebTestClient.ResponseSpec#returnResult than\nin the Class variant.\n\nCloses gh-33389"
+        },
+        {
+            "hash": "d41ca095abee4e8284139f239d4b5bbf09f694a5",
+            "message": "Add native support for Kotlin default values in controllers\n\nCloses gh-33384"
+        },
+        {
+            "hash": "143736e59bd6a361050e4660a0a957e8686135e8",
+            "message": "Enforce order of Javadoc tags for records\n\nCloses gh-33403"
+        },
+        {
+            "hash": "e0cb7aa0a087fdb90475140e5d3ae693a8b97755",
+            "message": "Build documentation branches only for 6.1 and later\n\nTo avoid a duplication error caused by a conflict between the\n6.0.x branch and the v6.0.23 tag.\n\nCloses gh-33398"
+        },
+        {
+            "hash": "46c29b9175ed1c7440c88262b3de8f359b7b57d9",
+            "message": "Support Boolean property in BindingReflectionHintsRegistrar\n\nCloses gh-33380"
+        },
+        {
+            "hash": "1634e63506d2940d989ad5554f64bad56df273fd",
+            "message": "Next development version (v6.1.13-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33434",
+            "title": "Updates to resource handling for functional endpoints"
+        },
+        {
+            "number": "33526",
+            "title": "Upgrade to Objenesis 3.4"
+        },
+        {
+            "number": "33519",
+            "title": "Upgrade to Reactor 2023.0.10"
+        },
+        {
+            "number": "33518",
+            "title": "Upgrade to Micrometer 1.12.10"
+        },
+        {
+            "number": "33490",
+            "title": "Document fixed rate scheduling with CRaC"
+        },
+        {
+            "number": "33421",
+            "title": "Deadlock between SseEmitter and StandardServletAsyncWebRequest when clients disconnect"
+        },
+        {
+            "number": "32850",
+            "title": "Suppress deprecation warning for AOT-generated code that refers to a deprecated bean type"
+        },
+        {
+            "number": "33465",
+            "title": "Inconsistent handling of X-Forwarded-Prefix in servlet and reactive stack"
+        },
+        {
+            "number": "33409",
+            "title": "Improve documentation on reading form data via Servlet request parameters vs `@RequestBody`"
+        },
+        {
+            "number": "33471",
+            "title": "Upgrade to Kotlin 1.9.25"
+        },
+        {
+            "number": "33442",
+            "title": "Errors thrown from SmartLifeycle#stop results in (unnecessary) waiting for the shutdown timeout"
+        },
+        {
+            "number": "33424",
+            "title": "PathMatchingResourcePatternResolver no longer follows symlinks"
+        },
+        {
+            "number": "33451",
+            "title": "ServerHttpObservationFilter does not register against new async operations"
+        },
+        {
+            "number": "33457",
+            "title": "Add multiple startAsync calls support in MockHttpServletRequest"
+        },
+        {
+            "number": "33456",
+            "title": "Update information in SpEL Evaluation chapter in reference manual"
+        },
+        {
+            "number": "33453",
+            "title": "Stop documenting use of `-debug` compiler flag in reference manual"
+        },
+        {
+            "number": "33446",
+            "title": "Fix example for `@ImportResource` in the reference manual"
+        },
+        {
+            "number": "33447",
+            "title": "Use discrete headings instead of titled blocks in reference manual"
+        },
+        {
+            "number": "33440",
+            "title": "Revert removal of deprecated rawStatusCode methods"
+        },
+        {
+            "number": "33437",
+            "title": "Fix a typo in the CDS documentation"
+        },
+        {
+            "number": "33406",
+            "title": "Stop logging `result` in `WebAsyncManager`"
+        },
+        {
+            "number": "33397",
+            "title": "RestClient doesn't open a scope for the processing of the request"
+        },
+        {
+            "number": "33389",
+            "title": "WebTestClient leaks when ParameterizedTypeReference is used"
+        },
+        {
+            "number": "33384",
+            "title": "spring native not support method handler with kotlin default value"
+        },
+        {
+            "number": "33403",
+            "title": "Enforce order of Javadoc tags for records"
+        },
+        {
+            "number": "33398",
+            "title": "Build documentation branches only for 6.1 and later"
+        },
+        {
+            "number": "33380",
+            "title": "`BindingReflectionHintsRegistrar` do not take into account the boxed type `Boolean`"
+        }
+    ]
+}

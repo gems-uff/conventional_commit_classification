@@ -1,0 +1,94 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.6.1.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 18,
+    "start_delay": 0.0,
+    "duration": 669.8063773148148,
+    "commits_info": [
+        {
+            "hash": "046e8fb7483df4e4fba028b8e85f68241a08f7f4",
+            "message": "Cherry-picked Bazel fix from PR #5085 (#5382)\n\n* use flag_values = {\"@bazel_tools//tools/cpp:compiler\": \"x\"} for compiler config_settings\r\n\r\n* Create compiler_config_setting.bzl"
+        },
+        {
+            "hash": "740ff022e2dc2ad7618380e4751dacbcb18ad4be",
+            "message": "Mark sun.misc dependency as optional (#5249)"
+        },
+        {
+            "hash": "5d38db4d514d41f8e1caceb2e20c2a6dfbc736b3",
+            "message": "Merge pull request #5048 from jozefizso/fix/4579_backport_for_3.6.x\n\nInclude version information in Windows binaries (backport #4579 for 3.6.x)"
+        },
+        {
+            "hash": "d2c35ce4cb6ff767712a879f6bfad9d50ada577d",
+            "message": "Backport the PR #4579 to 3.6.x branch\n\nImplements #3380"
+        },
+        {
+            "hash": "f2a1356966cef3889434368598ac888d131489fb",
+            "message": "Python wheel kokoro for windows (#5034)\n\n* Add kokoro config for building python wheels on windows\r\n\r\n* Move script to root\r\n\r\n* Debug\r\n\r\n* Debug\r\n\r\n* Change working directory\r\n\r\n* Add msbuild to path\r\n\r\n* Debug\r\n\r\n* Fix python dir name\r\n\r\n* Debug\r\n\r\n* Move artifacts to targeted directory\r\n\r\n* Update artifact directory\r\n\r\n* Debug\r\n\r\n* Debug\r\n\r\n* Automatic generation of version\r\n\r\n* Reduce file numbers"
+        },
+        {
+            "hash": "af3b2ab9159ab59003c539d48d8920a1d7dcd5ac",
+            "message": "Python wheel kokoro for mac (#5017)\n\n* Add config for building python wheel on mac\r\n\r\n* Specify os name\r\n\r\n* Clean up venv\r\n\r\n* Debug\r\n\r\n* Recover old path"
+        },
+        {
+            "hash": "fba5ef410ad4a851fb4200b7380e3320ee048266",
+            "message": "Python wheel kokoro dev (#5002)\n\n* Add config for building python wheel\r\n\r\n* Update submodules\r\n\r\n* Fix setup.py to use c++11\r\n\r\n* Fix syntax error\r\n\r\n* Fix syntax error\r\n\r\n* Add dir for artifact\r\n\r\n* Update artifact dirctory\r\n\r\n* Remove python 3.3\r\n\r\n* Clean up virtual env\r\n\r\n* Clean up env\r\n\r\n* Test environment\r\n\r\n* Test env variable\r\n\r\n* Automatic update version number\r\n\r\n* Remove dependency on python-wheel branch"
+        },
+        {
+            "hash": "770dde7d314e4fb06ab12244dbd1972157c648ad",
+            "message": "Update php package.xml to 3.6.1 (#5000)"
+        },
+        {
+            "hash": "199d6f6ea87974a9f80187cefe48f57201b2adf2",
+            "message": "Merge pull request #4997 from jtattermusch/backport_nuget_building\n\nBackport building C# nuget to 3.6.x branch"
+        },
+        {
+            "hash": "149e31a6c046236c2d7d2fc8e2997270ae10fc3d",
+            "message": "upgrade dotnet SDK to 2.1.3 on kokoro linux"
+        },
+        {
+            "hash": "d754a0c478db3632d1dd490f62f33542c554fe5f",
+            "message": "Revert \"overcome the global.json constraint with a hack\"\n\nThis reverts commit c02346c72aafd1826b0397dbbce4ce04bf252f50."
+        },
+        {
+            "hash": "2f6443edcc86f5f3465bf37f5a5f9348d513f0c4",
+            "message": "use SDK version available on Kokoro"
+        },
+        {
+            "hash": "937884476e8a5873af4e2a44762ed76865ffd877",
+            "message": "overcome the global.json constraint with a hack"
+        },
+        {
+            "hash": "9d0b9e4ea01fd1d895e312ee15a01866ad29085d",
+            "message": "fix build_nuget.bat"
+        },
+        {
+            "hash": "6fd12a076d213255e37c00ca8955baa5f1cb77a1",
+            "message": "add scripts for automated building of C# nuget on Kokoro"
+        },
+        {
+            "hash": "859405a62b5058c0352dc608a7fd887f29f48afe",
+            "message": "Merge pull request #5049 from nehaljwani/backport-4854\n\nBackport #4854 to 3.6.x"
+        },
+        {
+            "hash": "fd25c5617b2a1f1ee875bf6c1e7518473409a211",
+            "message": "Set LIBPROTOBUF_EXPORT on GenericTypeHandler<class google::protobuf::Message>\n\nThis should fix https://github.com/google/protobuf/issues/4717"
+        },
+        {
+            "hash": "33d41628c2d06f3d51764c08caaf7e9ecc305065",
+            "message": "Set LIBPROTOBUF_EXPORT on GzipOutputStream::Options\n\nThis fixes issue #2610.\n\nThis was originally fixed in a101fa52895fc2ad83d8b5d610243531b1608a08 , but got\nreverted by d36c0c538a545fac5d9db6ba65c525246d4efa95"
+        }
+    ],
+    "issues": [
+        {
+            "number": "3380",
+            "title": "Building with Visual Studio produces libprotobuf.dll without version information"
+        },
+        {
+            "number": "2610",
+            "title": "Missed LIBPROTOBUF_EXPORT attribute for the structure GzipOutputStream::Options "
+        }
+    ]
+}

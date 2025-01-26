@@ -1,0 +1,194 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.33",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 32,
+    "start_delay": 0.0,
+    "duration": 27.808796296296297,
+    "commits_info": [
+        {
+            "hash": "df041ba032cceb9ca5c96214fe238b91c3f94f63",
+            "message": "Release v5.3.33"
+        },
+        {
+            "hash": "297cbae2990e1413537c55845a7e0ea0ffd9f9bb",
+            "message": "Extract reusable checkSchemeAndPort method\n\nCloses gh-32440"
+        },
+        {
+            "hash": "274fba47f3b15bc12c8d81571c68987989f812e8",
+            "message": "Additional unit tests for operations on empty UriTemplate\n\nSee gh-32432\n\n(cherry picked from commit 54a6d89da78075b09e6cd5c0e55d4a67885fe24a)"
+        },
+        {
+            "hash": "5dfec09edd62be011bbdbfd4e225f89b1e750311",
+            "message": "Allow UriTemplate to be built with an empty template\n\nCloses gh-32438"
+        },
+        {
+            "hash": "5056e8cbfb2f22204a4227b335291d17f629dfcb",
+            "message": "Upgrade to Reactor 2020.0.42\n\nCloses gh-32422"
+        },
+        {
+            "hash": "4566e8685d4baa41a6df4d6815ddc5579c4db073",
+            "message": "Polishing\n\n(cherry picked from commit 723c94e5ac270188674fb6697bac942d962f4cae)"
+        },
+        {
+            "hash": "1b84f970dee1cce4c4fbf16ae8a90f17c5c6b12c",
+            "message": "Disable external Javadoc URLs not supported on JDK 8\n\nThis commit comments out (disables) 3 external Javadoc URLs, since the\njavadoc tool on JDK 8 cannot access them."
+        },
+        {
+            "hash": "41bc43b03377b33d8182a7aab30d34a29fba9471",
+            "message": "Build KDoc against 5.3.x Spring Framework Javadoc\n\nCloses gh-32414"
+        },
+        {
+            "hash": "915d5bddeaf189b9b638cc3440435291390dfabd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "dc86feaeb6571bfffd594412fc409ba305aff316",
+            "message": "Remove IOException that's not thrown from Javadoc"
+        },
+        {
+            "hash": "ff412de24795d23fead7dd4ea5db91141d6c1f97",
+            "message": "Use wrapped response in HandlerFunctionAdapter\n\nwebmvc.fn now also uses the StandardServletAsyncWebRequest wrapped response\nto enforce lifecycle rules from Servlet spec (section 2.3.3.4).\n\nSee gh-32342"
+        },
+        {
+            "hash": "5d572f649076524ee7815b29ee82638f315320fc",
+            "message": "Fix checkstyle violation"
+        },
+        {
+            "hash": "b8b1f5b6becb368814b73afb0576287e77774160",
+            "message": "Add missed merge changes from last commit\n\nSee gh-32342"
+        },
+        {
+            "hash": "99e38ecf4188ccae7a933977e08688647956a11c",
+            "message": "Backport tests for wrapping of response for async requests\n\nThis is a backport of commits 4b96cd and ef0717.\n\nCloses gh-32342"
+        },
+        {
+            "hash": "ed0c2ff37f13052cc6309b32dec664a50a53c0df",
+            "message": "Restore ability to return original method for proxy-derived method\n\nCloses gh-32365"
+        },
+        {
+            "hash": "e668e7767c5afe9f9e41d4db24744a2af3e50889",
+            "message": "Wrap PrintWriter in StandardServletAsyncWebRequest\n\nCloses gh-32342"
+        },
+        {
+            "hash": "30c75ffe8e40b608429cc62ff3cd20387d5607c0",
+            "message": "Avoid locking if not handling asynchronously\n\nAvoid the overhead of locking in the ServletOutputStream wrapper\nif it is not an asynchronous request.\n\nSee gh-32342"
+        },
+        {
+            "hash": "dd5fe6852261db533306328f40e6fbe841946fdb",
+            "message": "Dispatch again after disconnected client error\n\nDispatching was prevented for disconnected client errors after\nrecent reports like #32042 when running on Tomcat, and the\nasync request was completed from the onError notification.\nThis has the side effect of not allowing exception resolvers\nto take final action even if the response is not writeable.\n\nAfter all updates for this issue, it appears the dispatch no\nlonger causes issues. Tomcat actually does not do the dispatch,\nbut it doesn't seem to cause any issues, and on other servers\nlike Jetty where the dispatch works, applications can have a\nchance to handle the exception.\n\nThis change removes the disconnected client checks and allows\ndispatching again. After the change DisconnectedClientHelper\nis no longer needed in the 5.3.x branch.\n\nSee gh-32342"
+        },
+        {
+            "hash": "2aca714010de37ba156b1311aed21cd9eeeb1402",
+            "message": "Add locking in StandardServletAsyncWebRequest\n\nThe lock protects against race between onError/onComplete notifications\nand operations on the ServletOutputStream.\n\nSee gh-32342"
+        },
+        {
+            "hash": "3b7c435134208489205d284a08d0abe79cc85032",
+            "message": "Polishing\n\nSee gh-32342"
+        },
+        {
+            "hash": "6432b13a4c3517d1224f1fb727428f224a328bb8",
+            "message": "Add state and response wrapping to StandardServletAsyncWebRequest\n\nThe wrapped response prevents use after AsyncListener onError or completion\nto ensure compliance with Servlet Spec 2.3.3.4.\n\nSee gh-32342"
+        },
+        {
+            "hash": "3478a702e579b12d412ab17838f760422906722b",
+            "message": "Improve concurrent handling of result in WebAsyncManager\n\n1. Use state transitions\n2. Increase synchronized scope in setConcurrentResultAndDispatch\n\nSee gh-32342"
+        },
+        {
+            "hash": "b31550fd856a0ecca2be5f6c8b25fa08de8c7e62",
+            "message": "Align 5.3.x with 6.1.x\n\nIn preparation for a larger update, start by aligning with\n6.1.x, which includes changes for gh-32042 and gh-30232.\n\nSee gh-32342"
+        },
+        {
+            "hash": "701e9e410fdd3427f7416fca42f8d45d385b96a9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ce385d136d92c0c0af8d97d69ad06451be9c9f74",
+            "message": "Consistent nullability for internal field access"
+        },
+        {
+            "hash": "e44f84e8ee8ea072802b4207e635019f76e267df",
+            "message": "Restore Jetty 10 compatibility in JettyClientHttpResponse\n\nCloses gh-32337"
+        },
+        {
+            "hash": "464fa7ea0e1e46323a407819c16e5e656bfea997",
+            "message": "Do not cache Content-Type in ContentCachingResponseWrapper\n\nBased on feedback from several members of the community, we have\ndecided to revert the caching of the Content-Type header that was\nintroduced in ContentCachingResponseWrapper in 375e0e6827.\n\nThis commit therefore completely removes Content-Type caching in\nContentCachingResponseWrapper and updates the existing tests\naccordingly.\n\nTo provide guards against future regressions in this area, this commit\nalso introduces explicit tests for the 6 ways to set the content length\nin ContentCachingResponseWrapper and modifies a test in\nShallowEtagHeaderFilterTests to ensure that a Content-Type header set\ndirectly on ContentCachingResponseWrapper is propagated to the\nunderlying response even if content caching is disabled for the\nShallowEtagHeaderFilter.\n\nSee gh-32039\nSee gh-32317\nCloses gh-32322"
+        },
+        {
+            "hash": "6e1f583c065919e0e4466358fedcb98dd0577baa",
+            "message": "Polish ShallowEtagHeaderFilterTests"
+        },
+        {
+            "hash": "57646a092e7903f78203d332892f36e9c0d9734c",
+            "message": "Refine *HttpMessageConverter#getContentLength null safety\n\nCloses gh-32332"
+        },
+        {
+            "hash": "380f5d5ea470782d2025aef770c4e1c1237471dc",
+            "message": "Honor Content-[Type|Length] headers from wrapped response again\n\nCommit 375e0e6827 introduced a regression in\nContentCachingResponseWrapper (CCRW). Specifically, CCRW no longer\nhonors Content-Type and Content-Length headers that have been set in\nthe wrapped response and now incorrectly returns null for those header\nvalues if they have not been set directly in the CCRW.\n\nThis commit fixes this regression as follows.\n\n- The Content-Type and Content-Length headers set in the wrapped\n  response are honored in getContentType(), containsHeader(),\n  getHeader(), and getHeaders() unless those headers have been set\n  directly in the CCRW.\n\n- In copyBodyToResponse(), the Content-Type in the wrapped response is\n  only overridden if the Content-Type has been set directly in the CCRW.\n\nFurthermore, prior to this commit, getHeaderNames() returned duplicates\nfor the Content-Type and Content-Length headers if they were set in the\nwrapped response as well as in CCRW.\n\nThis commit fixes that by returning a unique set from getHeaderNames().\n\nThis commit also updates ContentCachingResponseWrapperTests to verify\nthe expected behavior for Content-Type and Content-Length headers that\nare set in the wrapped response as well as in CCRW.\n\nSee gh-32039\nSee gh-32317\nCloses gh-32322"
+        },
+        {
+            "hash": "1acc1c3a2737437d477a3375f9b04574be5331d5",
+            "message": "Polish ContentCachingResponseWrapper[Tests]"
+        },
+        {
+            "hash": "6ad75bdb4abdd156399595dd100f835a43f877ef",
+            "message": "Next development version (v5.3.33-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32440",
+            "title": "Extract reusable method for URI validations"
+        },
+        {
+            "number": "32438",
+            "title": " Allow UriTemplate to be built with an empty template"
+        },
+        {
+            "number": "32422",
+            "title": "Upgrade to Reactor 2020.0.42"
+        },
+        {
+            "number": "32414",
+            "title": "Build KDoc against `5.3.x` Spring Framework Javadoc"
+        },
+        {
+            "number": "32342",
+            "title": "Better protect against concurrent error handling for async requests"
+        },
+        {
+            "number": "32365",
+            "title": "AopUtils.getMostSpecificMethod does not return original method for proxy-derived method anymore"
+        },
+        {
+            "number": "32042",
+            "title": "ClientAbortException from StreamingResponseBody can cause infinite loop of dispatches"
+        },
+        {
+            "number": "30232",
+            "title": "The task in AsyncTaskExecutor throws an exception before execution, and ControllerAdvice will be called twice."
+        },
+        {
+            "number": "32337",
+            "title": "Restore Jetty 10 compatibility in JettyClientHttpResponse"
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32317",
+            "title": "ContentCachingResponseWrapper no longer honors Content-Type and Content-Length"
+        },
+        {
+            "number": "32322",
+            "title": "ContentCachingResponseWrapper no longer honors Content-Type and Content-Length"
+        },
+        {
+            "number": "32332",
+            "title": "Refine `*HttpMessageConverter#getContentLength` return value null safety"
+        }
+    ]
+}

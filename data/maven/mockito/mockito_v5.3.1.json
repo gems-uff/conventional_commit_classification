@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v5.3.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 4.280185185185185,
+    "commits_info": [
+        {
+            "hash": "baf59c48eafa7b8cc0e18fc4d6539634a41b36cc",
+            "message": "Weakens visibility constraint for spy constructors (#2983)\n\nTo resolve the issue where spying on encapsulated objects where a super type in a different package declares only a protected constructor\r\n\r\nFixes #2972"
+        },
+        {
+            "hash": "02b9634b74074dd584386c087d138ec1f5065e91",
+            "message": "Fix NPE for handling `Object` (#2976)\n\nFixes #2974\r\n\r\nCo-authored-by: Jörg von Frantzius <1823661+jfrantzius@users.noreply.github.com>"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2972",
+            "title": "Spying objects not working properly since 5.3.0"
+        },
+        {
+            "number": "2974",
+            "title": "Fix for #2958 eliminates CCE but leads to NPE"
+        }
+    ]
+}

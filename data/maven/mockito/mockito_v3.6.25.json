@@ -1,0 +1,34 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.6.25",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 3.261365740740741,
+    "commits_info": [
+        {
+            "hash": "fde5abb9f044a6b614eeb6a8c63d25fffe2df210",
+            "message": "Keep META-INF folder at top of published mockito-core jar (#2109)\n\nFixes #2108 \r\n[ci maven-central-release]"
+        },
+        {
+            "hash": "78b22fcf814c33e87585afed387cd9db0b6d36a5",
+            "message": "Merge pull request #2106 from mockito/mockitoguy-patch-3\n\nAvoid CI failures in forks [skip release]"
+        },
+        {
+            "hash": "f5419b0638b6b517a7d29991bf29639988242335",
+            "message": "Avoid CI failures in forks\n\nWhen contributors fork the repo, they get GH actions that run when they push code to their forks. This change prevents GH Action \"release\" job failures. Example failure: https://github.com/shestee/mockito/actions/runs/375185562"
+        },
+        {
+            "hash": "2e4c214bd2e6660b1047c254ab13af7560f97372",
+            "message": "Fix incorrect comment type in properties file (#2107)\n\n*.properties file uses '#' for comments, not '//' [skip release]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2108",
+            "title": "JarInputStream fails to get Manifest from published mockito-core"
+        }
+    ]
+}

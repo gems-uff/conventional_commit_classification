@@ -1,0 +1,574 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.4.12",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 91,
+    "start_delay": 0.0,
+    "duration": 29.230185185185185,
+    "commits_info": [
+        {
+            "hash": "0f0e7dd1e79bb89d32a028a59dc21249e4302fb7",
+            "message": "Release v2.4.12"
+        },
+        {
+            "hash": "60c815ad42f54be91e13b817313b3d7f23febfcf",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-28402"
+        },
+        {
+            "hash": "3abda656f0422089ec068e4a277b27b5ccfb37a5",
+            "message": "Upgrade to Spring Session 2020.0.7\n\nCloses gh-28229"
+        },
+        {
+            "hash": "91524ccc9550c08877a3ea1e446bef1a614b80d5",
+            "message": "Upgrade to Spring Framework 5.3.12\n\nCloses gh-28223"
+        },
+        {
+            "hash": "3d2091136af3cdbba420d392e34d67b7f8935799",
+            "message": "Upgrade to Nimbus JOSE JWT 8.23\n\nCloses gh-28392"
+        },
+        {
+            "hash": "3e6da7ee2bc1ed20dfa13110d3536a2ddedba28e",
+            "message": "Upgrade to MySQL 8.0.27\n\nCloses gh-28391"
+        },
+        {
+            "hash": "58652469209aa4ecfbfffbf31f38590b09c4400d",
+            "message": "Upgrade to Ehcache3 3.9.7\n\nCloses gh-28390"
+        },
+        {
+            "hash": "971bdd36fe6c3587e96b9d57f454c2d3cf10bc82",
+            "message": "Start building against Framework 5.3.12 snapshots\n\nThis reverts commit b32a38a8147ccc84cfdfe9edba3eface01fa1a04.\n\nSee gh-28223\nCloses gh-28369"
+        },
+        {
+            "hash": "6c458785416ea2821dbc219c3e826737855dc65e",
+            "message": "Merge pull request #28376 from fml2\n\n* gh-28376:\n  Polish \"Fix typos in EnvironmentPostProcessor javadoc\"\n  Fix typos in EnvironmentPostProcessor javadoc\n\nCloses gh-28376"
+        },
+        {
+            "hash": "54ce51e43c855c67e5c36ac31d05f2c876e64950",
+            "message": "Polish \"Fix typos in EnvironmentPostProcessor javadoc\"\n\nSee gh-28376"
+        },
+        {
+            "hash": "ded396b7285fc87c63b676c8c478323e167fed38",
+            "message": "Fix typos in EnvironmentPostProcessor javadoc\n\nSee gh-28376"
+        },
+        {
+            "hash": "ce8671ff37034b7828a3b6bda404724006d163c7",
+            "message": "Upgrade to Spring Security 5.4.9\n\nCloses gh-28228"
+        },
+        {
+            "hash": "669caa92f8aa3dc81b7eca56ca88ab2e6cb9fdc8",
+            "message": "Upgrade to Spring Kafka 2.6.11\n\nCloses gh-28227"
+        },
+        {
+            "hash": "5fe75f3d58167e5a6d4f9fd0fe2d000833b1c91f",
+            "message": "Improve diagnostics when no DSLContext due to R2DBC\n\nFixes gh-28378"
+        },
+        {
+            "hash": "754b52c6bcf9956bce8f7c036b9ed1c7eb4c0540",
+            "message": "Upgrade to Spring AMQP 2.3.11\n\nCloses gh-28226"
+        },
+        {
+            "hash": "a93cf64834d74c90295a1315c2a3f7a794e20672",
+            "message": "Make JMX endpoints available when lazy init is enabled\n\nCloses gh-28335"
+        },
+        {
+            "hash": "a722fe46fbf42646807c0cbcf586edb4738b7bc5",
+            "message": "Upgrade to Spring Data 2020.0.14\n\nCloses gh-28225"
+        },
+        {
+            "hash": "779439311deaa17dd6a5b406d5df52881c964125",
+            "message": "Revert \"Upgrade to Spring Data 2020.0.14\"\n\nThis reverts commit 752789d3ee72490b611830d6f68c06dc31d93a93.\n\nSee gh-28225"
+        },
+        {
+            "hash": "22e7ba6f648cb631a0b165b162709bf6fc488f8f",
+            "message": "Revert \"Start building against Spring Batch 4.3.4 snapshots\"\n\nThis reverts commit 33ffae8e74adf1bee0fe98b7333dc6d0ff030564.\n\nSee gh-28230"
+        },
+        {
+            "hash": "752789d3ee72490b611830d6f68c06dc31d93a93",
+            "message": "Upgrade to Spring Data 2020.0.14\n\nCloses gh-28225"
+        },
+        {
+            "hash": "b32a38a8147ccc84cfdfe9edba3eface01fa1a04",
+            "message": "Work around unwanted static resource warnings from WebFlux and MVC\n\nSee gh-28223"
+        },
+        {
+            "hash": "bad37f9e374305ff3e1dc6c5564696b1fdf10d7d",
+            "message": "Upgrade to Netty 4.1.69.Final\n\nCloses gh-28359"
+        },
+        {
+            "hash": "c743442a786a41666c1f1a78ca2d4f20f6da6984",
+            "message": "Upgrade to Spring HATEOAS 1.2.10\n\nCloses gh-28358"
+        },
+        {
+            "hash": "a569786b7954e80e706e8797fe3d9a114ef359a5",
+            "message": "Upgrade to Micrometer 1.6.12\n\nCloses gh-28224"
+        },
+        {
+            "hash": "7388f2b60b14c49c7f6660ef8de1f7af3dcc537d",
+            "message": "Attempt to reduce JarFileWrapper heap consumption\n\nUpdate `JarURLConnection` to use a single shared wrapper per\njar file rather than creating a new one each time. This update\nshould help to reduce GC pressure.\n\nFixes gh-28042"
+        },
+        {
+            "hash": "8e704aab48bc3d3f80cb366584c78409a0330bac",
+            "message": "Restore 'javax.xml.bind:jaxb-api' exclusion\n\nRestore the 'javax.xml.bind:jaxb-api' exclusion from `xmlunit-core`\nwhich is actually required when using Maven on Java 9+.\n\nThe `CheckClasspathForUnnecessaryExclusions` cannot deal with profile\nspecific dependencies so an exception has been hard coded.\n\nSee gh-28332"
+        },
+        {
+            "hash": "e95b0b5257a61cea2cb27bdcd8f052b703ab70da",
+            "message": "Polish"
+        },
+        {
+            "hash": "670d1672de85513f2f19b67c343b1b1673361c68",
+            "message": "Revert \"Remove unnecessary bind-api dependency from test starter\"\n\nThis reverts commit 9867651024b095760366a5e0f8282af89fca47d5.\n\nSee gh-28085"
+        },
+        {
+            "hash": "b68b3737d77fa635944cb185b56996faa5c21b04",
+            "message": "Sanitize flattened VCAP_SERVICES properties\n\nUpdate `Sanitizer` to also include flattened `vcap.services.*`\nproperties.\n\nFixes gh-28085"
+        },
+        {
+            "hash": "540468b2f0ce3729a5c5e48e56e5ebde59db4652",
+            "message": "Fix parsing of day duration meter values\n\nSwitch `MeterValue` parsing logic so that we try `Duration` before\n`double`. Prior to this commit, the value `1d` would result in `1.0`\nrather than \"1 day\".\n\nFixes gh-28302"
+        },
+        {
+            "hash": "fc2c460512fed2694e5278f0765d604b89ad6eae",
+            "message": "Merge pull request #28344 from martin-v\n\n* pr/28344:\n  Remove unnecessary bind-api dependency from test starter\n\nCloses gh-28344"
+        },
+        {
+            "hash": "9867651024b095760366a5e0f8282af89fca47d5",
+            "message": "Remove unnecessary bind-api dependency from test starter\n\nSee gh-28344"
+        },
+        {
+            "hash": "4dc5142128de46458ee7fc338d12ec03ce87d509",
+            "message": "Prevent cache from consuming too much memory\n\nChange the cache in `CachingOperationInvoker` to be a reference based\nmap and also clean stale entries when a specific threshold is met.\n\nFixes gh-28313"
+        },
+        {
+            "hash": "adb9226dec50e40ccd78abea47def87ac028990f",
+            "message": "Prohibit org.apache.geronimo.specs dependencies in our starters\n\nCloses gh-28338"
+        },
+        {
+            "hash": "ce1a1415ab3ac26b15d91b108f7277f95bd08e54",
+            "message": "Use official Jakarta Management API dependency in ActiveMQ starter\n\nFixes gh-28339"
+        },
+        {
+            "hash": "2fb8c8d27e277150c4f5bf1037f5c76e24292a42",
+            "message": "Check starters for unnecessary exclusions\n\nCloses gh-28332"
+        },
+        {
+            "hash": "26d0afc2050ee15e7147bf987904c4415223b330",
+            "message": "Upgrade to Spring Framework 5.3.11\n\nCloses gh-28223"
+        },
+        {
+            "hash": "1e601df304df8fc7f98071414e84d28138652d08",
+            "message": "Merge pull request #28308 from martin-v\n\n* gh-28308:\n  Remove unnecessary mail dependency from oauth2-client starter\n\nCloses gh-28308"
+        },
+        {
+            "hash": "a10db66b160938a126a0a92e65031da2035113c7",
+            "message": "Remove unnecessary mail dependency from oauth2-client starter\n\nSee gh-28308"
+        },
+        {
+            "hash": "9f13941c2f8672751e3c0f5fabf0ab65080c0d33",
+            "message": "Prohibit org.jboss.spec.* dependencies\n\nCloses gh-28329"
+        },
+        {
+            "hash": "0561992c2acadb9b1a362deaee4ef0d374938b94",
+            "message": "Update copyright year of changed files"
+        },
+        {
+            "hash": "9abf9e6731ea41bee399d4de7e600cfa1ebe9657",
+            "message": "Modify more tests for static resource location filtering\n\nFix `WebFluxAutoConfigurationTests` following upstream Spring Framework\nchanges. Also refine `WebMvcAutoConfigurationTests` to check the locations\nare set even if they are filtered.\n\nSee gh-28223"
+        },
+        {
+            "hash": "3d21ac7a2083ab859fbdf6898b54c7c3c5ae08b6",
+            "message": "Add required id field to Spring Data Neo4j test class\n\nFixes gh-28303"
+        },
+        {
+            "hash": "3c6e061917a3a80cf23556d106a6cdab3e13f6bb",
+            "message": "Remove unused import\n\nSee gh-28223"
+        },
+        {
+            "hash": "207b76c39e9d091b9b08374afdb12ba63fc089bc",
+            "message": "Modify tests to expect filtering of static resource locations\n\nSpring Framework will filter non-existent locations from any configured\nstatic resource handlers starting with 5.3.11. Tests that verify\nstatic resource locations should account for this change.\n\nSee gh-28223"
+        },
+        {
+            "hash": "fdf4e14f54d9835cd81f0cb85b00d98438f2801d",
+            "message": "Upgrade to Reactor 2020.0.12\n\nCloses gh-28222"
+        },
+        {
+            "hash": "e115bb5ecce5162e3ea3a84234e50652029e3b33",
+            "message": "Merge pull request #28269 from dreis2211\n\n* pr/28269:\n  Remove unused settings.xml in integration tests\n\nCloses gh-28269"
+        },
+        {
+            "hash": "ae1167e026bf464c63324908800f78d3cdaa4710",
+            "message": "Remove unused settings.xml in integration tests\n\nSee gh-28269"
+        },
+        {
+            "hash": "1662fc915e06d8d3202b5b28d43020cd84610421",
+            "message": "Upgrade to Jetty 9.4.44.v20210927\n\nCloses gh-28277"
+        },
+        {
+            "hash": "bff1ed0e2f5845afc1a2ada2998e8f96ddc95515",
+            "message": "Upgrade to Undertow 2.2.12.Final\n\nCloses gh-28276"
+        },
+        {
+            "hash": "f250ade979f73647e2aca136ce1e011c42da1fc6",
+            "message": "Upgrade to Tomcat 9.0.54\n\nCloses gh-28275"
+        },
+        {
+            "hash": "32397d7bfbb093339d32c1620625cd56f1cfb4c5",
+            "message": "Upgrade to R2DBC Bom Arabba-SR11\n\nCloses gh-28274"
+        },
+        {
+            "hash": "010713df1b0b86554620a6bc38d4fa610469658c",
+            "message": "Upgrade to Postgresql 42.2.24\n\nCloses gh-28273"
+        },
+        {
+            "hash": "1e834bfcf50ce9fc84c97f6f21e2151e2a01a280",
+            "message": "Upgrade to Netty tcNative 2.0.44.Final\n\nCloses gh-28272"
+        },
+        {
+            "hash": "3d9cc639fa64fa995556d5989a11c7851894ed09",
+            "message": "Upgrade to Lombok 1.18.22\n\nCloses gh-28271"
+        },
+        {
+            "hash": "43401239cab78801e3dde043619002290241564b",
+            "message": "Upgrade to Dropwizard Metrics 4.1.26\n\nCloses gh-28270"
+        },
+        {
+            "hash": "c5d45585d926f49459818e7f916721045f07dab8",
+            "message": "Remove unnecessary overrides of finalize\n\nCloses gh-28209"
+        },
+        {
+            "hash": "ab6c6b7f173bd99ab4af0fdb3ce1c3e43c258708",
+            "message": "Upgrade CI to Docker 20.10.9\n\nCloses gh-28218"
+        },
+        {
+            "hash": "3b1a1bd77faba539c362cb7226d8ed38fc276f10",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-28219"
+        },
+        {
+            "hash": "33ffae8e74adf1bee0fe98b7333dc6d0ff030564",
+            "message": "Start building against Spring Batch 4.3.4 snapshots\n\nSee gh-28230"
+        },
+        {
+            "hash": "092d3fa81e48ea18fd3687bcd8bd1bcde7819751",
+            "message": "Start building against Spring Session 2020.0.7 snapshots\n\nSee gh-28229"
+        },
+        {
+            "hash": "41eded4b8b604257536c938ced693e6d6763bb04",
+            "message": "Start building against Spring Security 5.4.9 snapshots\n\nSee gh-28228"
+        },
+        {
+            "hash": "f8d6d7641029b629577bb9649a02513b390e2cd2",
+            "message": "Start building against Spring Kafka 2.6.11 snapshots\n\nSee gh-28227"
+        },
+        {
+            "hash": "3cf1888cef3d286974cf54350870c48cea583313",
+            "message": "Start building against Spring AMQP 2.3.11 snapshots\n\nSee gh-28226"
+        },
+        {
+            "hash": "6c801b9db9944edab26d22f5cc4ebf8da79cd2d4",
+            "message": "Start building against Spring Data 2020.0.14 snapshots\n\nSee gh-28225"
+        },
+        {
+            "hash": "81da876964f28efcd4c4ff350387ff83cab5bc5c",
+            "message": "Start building against Micrometer 1.6.12 snapshots\n\nSee gh-28224"
+        },
+        {
+            "hash": "9f06a5fe215337047531a621fb1a1b5b9d2a2195",
+            "message": "Start building against Spring Framework 5.3.11 snapshots\n\nSee gh-28223"
+        },
+        {
+            "hash": "dd802ba5e00435823bc010e53fba71218856be33",
+            "message": "Start building against Reactor 2020.0.12 snapshots\n\nSee gh-28222"
+        },
+        {
+            "hash": "9c9fbf400e11c40cd10b883cf986a9d4a65009e4",
+            "message": "Upgrade to Spring Java Format 0.0.29\n\nCloses gh-28205"
+        },
+        {
+            "hash": "747cd9d5d1e4ddc19200605db0d37e6d9825c0dc",
+            "message": "Merge pull request #28170 from dvonsegg\n\n* pr/28170:\n  Polish \" Update configtree docs about dot notation being correctly mapped\"\n  Update configtree docs about dot notation being correctly mapped\n\nCloses gh-28170"
+        },
+        {
+            "hash": "61736e9958755ac70d804599728cd8345ec458d3",
+            "message": "Polish \" Update configtree docs about dot notation being correctly mapped\"\n\nSee gh-28170"
+        },
+        {
+            "hash": "8f91fc450dddec086c1d1df253020d9c308e9b20",
+            "message": "Update configtree docs about dot notation being correctly mapped\n\nSee gh-28170"
+        },
+        {
+            "hash": "8c3820f87ed955fb61c6d3ecd815727cecab8d8b",
+            "message": "Fix up-to-date checking of syncAppSource tasks\n\nPreviously, the project version was used while filtering the apps\nsource during syncing but it was not considered as an input to\nthe task. This could result in the syncing being skipped even though\nthe project's version had changed.\n\nThis commit introduces a new custom task to make the configuration\nmore declarative and to allow the necessary input configuration to be\ndone in a single place.\n\nCloses gh-28197"
+        },
+        {
+            "hash": "1fc52b65a3f95893ede1f9ee56c824d7e79307d6",
+            "message": "Upgrade to concourse-java-scripts 0.0.4\n\nCloses gh-23962"
+        },
+        {
+            "hash": "823ae778877c3f61f072722f0e817de554a37609",
+            "message": "Merge pull request #28189 from inomag\n\n* pr/28189:\n  Fix log4j2 file name reference in reference doc\n\nCloses gh-28189"
+        },
+        {
+            "hash": "a3423f1edf7f0b80a4e9855712c453bdb46ac183",
+            "message": "Fix log4j2 file name reference in reference doc\n\nSee gh-28189"
+        },
+        {
+            "hash": "b7a2a2d5e0dab22e142f2fcf904ca8a2ca72435c",
+            "message": "Set last access and last modified times in layertools extract\n\nCloses gh-28167"
+        },
+        {
+            "hash": "6d3e1734f69ffb368bc3ce81515e9cdcacc713c4",
+            "message": "Upgrade to GitHub Changelog Generator 0.0.7 in CI\n\nCloses gh-28185"
+        },
+        {
+            "hash": "512015c7af03df25f13d95522daeb66037c56c35",
+            "message": "Merge pull request #28168 from kandulsh\n\n* pr/28168:\n  Update ConstructorBinding javadoc with usage information\n\nCloses gh-28168"
+        },
+        {
+            "hash": "f94caed7e918c8e6a4f52ec40187393278218fe6",
+            "message": "Update ConstructorBinding javadoc with usage information\n\nSee gh-28168"
+        },
+        {
+            "hash": "35b16ea04ebb92f319d00f96389369a06bfbae14",
+            "message": "Minimize dependencies of launch script test app\n\nCloses gh-28164"
+        },
+        {
+            "hash": "a73293350aaecf50ef54f7994f94212543fd4102",
+            "message": "Fix parsing of portless IPv6 spring.rabbitmq.addresses\n\nCloses gh-28133"
+        },
+        {
+            "hash": "218bed1f8ed14cc43edf7ce6c64b69eefe3d93ad",
+            "message": "Merge pull request #28086 from polarbear567\n\n* pr/28086:\n  Polish \"Clarify use of @AutoConfigureTestEntityManager\"\n  Clarify use of @AutoConfigureTestEntityManager\n\nCloses gh-28086"
+        },
+        {
+            "hash": "bedd749e1cddcd2c302f107171ed6ae28c4c7bd5",
+            "message": "Polish \"Clarify use of @AutoConfigureTestEntityManager\"\n\nSee gh-28086"
+        },
+        {
+            "hash": "70f64f2c269a05fb20695407d79c4de01e0baa59",
+            "message": "Clarify use of @AutoConfigureTestEntityManager\n\nThis commit makes it clearer that, when using\n@AutoConfigureTestEntityManager outside of @DataJpaTest, any tests using\nthe test entity manager must be @Transactional.\n\nSee gh-28086"
+        },
+        {
+            "hash": "3824512357448f6c683dccee2cbe79e9770c6ebd",
+            "message": "Tighten up build's task interdependencies\n\nCloses gh-28103"
+        },
+        {
+            "hash": "01a39aaf6aa14655c991392a8b60cf4fec7d2633",
+            "message": "Support IPv6 addresses in spring.rabbitmq.addresses\n\nRefine parsing logic in `RabbitProperties` so that IPv6 addresses can\nbe used.\n\nFixes gh-28133"
+        },
+        {
+            "hash": "5957dfeea428a6a86997b740222f469f74655518",
+            "message": "Don't include binary jars in loader-tools source jar\n\nCloses gh-28113"
+        },
+        {
+            "hash": "46b47b80aa1dfe18b85c8349cd18541c577d49e4",
+            "message": "Upgrade to NoHTTP 0.0.10\n\nCloses gh-28112"
+        },
+        {
+            "hash": "b18a56f451b31d0c33424acc19ecc8da08e18e84",
+            "message": "Upgrade CI to github-release resource 1.5.5\n\nCloses gh-28114"
+        },
+        {
+            "hash": "ea92fced9fb542cf15199a58e7159d7f13b47003",
+            "message": "Next development version (v2.4.12-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "28402",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "28229",
+            "title": "Upgrade to Spring Session 2020.0.7"
+        },
+        {
+            "number": "28223",
+            "title": "Upgrade to Spring Framework 5.3.12"
+        },
+        {
+            "number": "28392",
+            "title": "Upgrade to Nimbus JOSE JWT 8.23"
+        },
+        {
+            "number": "28391",
+            "title": "Upgrade to MySQL 8.0.27"
+        },
+        {
+            "number": "28390",
+            "title": "Upgrade to Ehcache3 3.9.7"
+        },
+        {
+            "number": "28369",
+            "title": "Revert resource logging workaround once we're building against Framework 5.3.12"
+        },
+        {
+            "number": "28228",
+            "title": "Upgrade to Spring Security 5.4.9"
+        },
+        {
+            "number": "28227",
+            "title": "Upgrade to Spring Kafka 2.6.11"
+        },
+        {
+            "number": "28378",
+            "title": "Misleading failure analysis when jOOQ's DSLContext is unavailable due to R2DBC taking precedence over JDBC"
+        },
+        {
+            "number": "28226",
+            "title": "Upgrade to Spring AMQP 2.3.11"
+        },
+        {
+            "number": "28335",
+            "title": "When lazy initialization is enabled, JMX endpoints are not available"
+        },
+        {
+            "number": "28225",
+            "title": "Upgrade to Spring Data 2020.0.14"
+        },
+        {
+            "number": "28230",
+            "title": "Upgrade to Spring Batch 4.3.4"
+        },
+        {
+            "number": "28359",
+            "title": "Upgrade to Netty 4.1.69.Final"
+        },
+        {
+            "number": "28358",
+            "title": "Upgrade to Spring HATEOAS 1.2.10"
+        },
+        {
+            "number": "28224",
+            "title": "Upgrade to Micrometer 1.6.12"
+        },
+        {
+            "number": "28042",
+            "title": "JarFileWrapper may cause many FinalReferences causing GC pressure"
+        },
+        {
+            "number": "28332",
+            "title": "Check starters for unnecessary exclusions"
+        },
+        {
+            "number": "28085",
+            "title": "Flattened VCAP_SERVICES properties are not sanitized by default"
+        },
+        {
+            "number": "28302",
+            "title": "MeterValue with \"d\" suffix not parsed as Duration for timer"
+        },
+        {
+            "number": "28313",
+            "title": "CachingOperationInvoker cache can consume a significant amount of heap space"
+        },
+        {
+            "number": "28338",
+            "title": "Prohibit org.apache.geronimo.specs dependencies from our starters"
+        },
+        {
+            "number": "28339",
+            "title": "ActiveMQ starter depends on org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec"
+        },
+        {
+            "number": "28329",
+            "title": "Prohibit JBoss spec dependencies from our starters"
+        },
+        {
+            "number": "28303",
+            "title": "Spring Data Neo4j auto-configuration test class TestRelationshipProperties does not meet contract"
+        },
+        {
+            "number": "28222",
+            "title": "Upgrade to Reactor 2020.0.12"
+        },
+        {
+            "number": "28277",
+            "title": "Upgrade to Jetty 9.4.44.v20210927"
+        },
+        {
+            "number": "28276",
+            "title": "Upgrade to Undertow 2.2.12.Final"
+        },
+        {
+            "number": "28275",
+            "title": "Upgrade to Tomcat 9.0.54"
+        },
+        {
+            "number": "28274",
+            "title": "Upgrade to R2DBC Bom Arabba-SR11"
+        },
+        {
+            "number": "28273",
+            "title": "Upgrade to Postgresql 42.2.24"
+        },
+        {
+            "number": "28272",
+            "title": "Upgrade to Netty tcNative 2.0.44.Final"
+        },
+        {
+            "number": "28271",
+            "title": "Upgrade to Lombok 1.18.22"
+        },
+        {
+            "number": "28270",
+            "title": "Upgrade to Dropwizard Metrics 4.1.26"
+        },
+        {
+            "number": "28209",
+            "title": "Remove unnecessary finalize overrides"
+        },
+        {
+            "number": "28218",
+            "title": "Upgrade CI to Docker 20.10.9"
+        },
+        {
+            "number": "28219",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "28205",
+            "title": "Upgrade to Spring Java Format 0.0.29"
+        },
+        {
+            "number": "28197",
+            "title": "syncAppSource tasks should declare project.version as an input"
+        },
+        {
+            "number": "23962",
+            "title": "Upgrade to concourse-java-scripts 0.0.4"
+        },
+        {
+            "number": "28167",
+            "title": "Layertools extract does not preserve last modified and last access times"
+        },
+        {
+            "number": "28185",
+            "title": " Upgrade to GitHub Changelog Generator 0.0.7 in CI"
+        },
+        {
+            "number": "28164",
+            "title": "Avoid running the launch script tests unnecessarily"
+        },
+        {
+            "number": "28133",
+            "title": "NumberFormatException when configuring spring.rabbitmq.addresses with an IPv6 address"
+        },
+        {
+            "number": "28103",
+            "title": "Avoid implicit task dependencies in Gradle build"
+        },
+        {
+            "number": "28113",
+            "title": "Don't include spring-boot-loader.jar and spring-boot-jarmode-layer-tools.jar files in the source jar of spring-boot-loader-tools"
+        },
+        {
+            "number": "28112",
+            "title": "Upgrade to NoHTTP 0.0.10"
+        },
+        {
+            "number": "28114",
+            "title": "Upgrade CI to github-release resource 1.5.5"
+        }
+    ]
+}

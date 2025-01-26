@@ -1,0 +1,82 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.11.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 16,
+    "start_delay": 0.0,
+    "duration": 62.18717592592593,
+    "commits_info": [
+        {
+            "hash": "498de9f761bef56a032815ee44b6e6dbe0892cc4",
+            "message": "Changed the maven URL to use https when building dist artifacts"
+        },
+        {
+            "hash": "5f3d6599f61a01790d6682fe4e3f2c81c3ae09d9",
+            "message": "Update CHANGES.txt for 3.11.3 release (#7162)"
+        },
+        {
+            "hash": "345df38dd349ebfc4e8bfeefb8de249633f39026",
+            "message": "Update protobuf version (#7143)"
+        },
+        {
+            "hash": "bc237eb67268181bc8c152539407430e12e98557",
+            "message": "Install RubyGem bundler version specified in Gemfile.lock to fix release failure (#7144) (#7156)\n\nRef: https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"
+        },
+        {
+            "hash": "47434eb43d0e3e77f3faeb7e23efd6d1221b8481",
+            "message": "deps: update errorprone to 2.3.4 (#7125) (#7157)"
+        },
+        {
+            "hash": "c5eada8eeb88f13e7f353df7dc9c04f969ce6ba6",
+            "message": "Refactored ulong to zend_ulong for php7.4 compatibility (#7147)"
+        },
+        {
+            "hash": "85219578fad77fd7d006d4c8efe9de48791b895f",
+            "message": "Add continuous test for php7.4 on mac (#7153)"
+        },
+        {
+            "hash": "e8016753e3817d44d78806d5ab43b5482cba6efa",
+            "message": "Maven requires https connection (#7110) (#7114)"
+        },
+        {
+            "hash": "629ca244a102593ee5c5a42ab2dedc50d64e77ed",
+            "message": "Call register_class before getClass from desc (#7077)\n\n* Call register_class before getClass from desc\r\n\r\n* Remove debug code"
+        },
+        {
+            "hash": "29cd005ce1fe1a8fabf11e325cb13006a6646d59",
+            "message": "[bazel] Fix blacklisted_protos in cc_toolchain and add test (#7096)"
+        },
+        {
+            "hash": "80eca4c1cd7de569f7e17c524bc731fdcdb97fed",
+            "message": "bug: #7076 adds OUT and OPTIONAL to windows portability files (#7088)"
+        },
+        {
+            "hash": "abc5062a61ba2ac01cb6892683267bbfc4838bb6",
+            "message": "Migrate from maven_jar to jvm_maven_import_external to prepare for Bazel 2.0"
+        },
+        {
+            "hash": "77f30b686b2260215a975d6dfd42a84cd6aa90f7",
+            "message": "Blacklist .proto source files if Bazel allows us to (#7065)\n\n* Blacklist .proto source files is Bazel allows us to\r\n\r\nThis is a partial revert of https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 to unblock, e.g., https://github.com/grpc/grpc/pull/21590 or https://github.com/lyft/envoy-mobile/issues/617 until Bazel is fixed.\r\n\r\nNote: this is a forward-compatible change that automatically switches to the behavior intended by https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 when a compatible Bazel is released without requiring users to upgrade Protobuf. We will revert this change when Bazel is fixed.\r\n\r\n* Remove trailing ,\r\n\r\n* Update BUILD"
+        },
+        {
+            "hash": "63cfdafacba6141717a2df97fc123dc0c14ba7c4",
+            "message": "Fix python release breakages by set MB_PYTHON_OSX_VER (#7038)"
+        },
+        {
+            "hash": "03ba4ac171493b53d35bd0acbe81b951c8fefc95",
+            "message": "Add python3.8 in build_artifacts for linux and macos (#7019)"
+        },
+        {
+            "hash": "7faab5eeebf6aa62d89bf6b3cc1eaea711dea192",
+            "message": "add python38 (#7009)\n\n* add python38\r\n\r\n* add python3.8\r\n\r\n* fix tox"
+        }
+    ],
+    "issues": [
+        {
+            "number": "7076",
+            "title": "protoc: c++ windows #defines IN, OUT, and OPTIONAL to empty strings"
+        }
+    ]
+}

@@ -1,0 +1,298 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.29",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 49,
+    "start_delay": 0.0,
+    "duration": 28.008391203703702,
+    "commits_info": [
+        {
+            "hash": "13b31c7976491b7500efc34e9080e862165a22ab",
+            "message": "Release v5.3.29"
+        },
+        {
+            "hash": "53319381d049ccb32410a1046a6a3c58aa68ca6b",
+            "message": "Polishing\n\n(cherry picked from commit c873a597c764492b0de917cb2f41adf67b6cfc67)"
+        },
+        {
+            "hash": "e1e7fa489b756b96f40e8d9d834e611f255bf306",
+            "message": "Upgrade to Reactor 2020.0.34 (and Tomcat 9.0.78)\n\nCloses gh-30873"
+        },
+        {
+            "hash": "e1351a5cb51bf998a260e7c78824f893d50ca5e8",
+            "message": "Update OS version in CI image"
+        },
+        {
+            "hash": "ac94d2bd5481d05868a17cd2fcf38d4a463a6113",
+            "message": "Polishing\n\n(cherry picked from commit f19433f2d8235c808ef78d92afbe2716dc3b9d22)"
+        },
+        {
+            "hash": "16fd70ae35f259d8d91ef3e62ebafe51f8c30e45",
+            "message": "Avoid illegal reflective access in ContextOverridingClassLoader\n\nCloses gh-22791\n\n(cherry picked from commit 0b02a5e073dd01df34e69c304d06fee83eb24dd5)"
+        },
+        {
+            "hash": "c1bf09952b5f5f70b7f83aedf870daa18fdb9d65",
+            "message": "Improve diagnostics for LinkageError in case of ClassLoader mismatch\n\nCloses gh-25940"
+        },
+        {
+            "hash": "9e7ee0cb8e6e1eccdf3df23fb6f1c277365b3288",
+            "message": "Deprecate setAllowResultAccessAfterCompletion and document it as broken\n\nCloses gh-26557"
+        },
+        {
+            "hash": "1cd994d3a886ff2160c7a0631e794b79acf6d5ee",
+            "message": "Encapsulate full path initialization"
+        },
+        {
+            "hash": "3d28c024c5d15389ec81a40193eec7feda864bfa",
+            "message": "Handle JDBC warnings in case of a statement exception as well\n\nCloses gh-23106\n\n(cherry picked from commit 3b899fe7e256e1c46ed083d58f949f04f0846ea2)"
+        },
+        {
+            "hash": "3444892aeabd27c15249f4f09201a3a7726b255b",
+            "message": "Polishing\n\n(cherry picked from commit a17cf742b25348cc6d46f85a35aaf98b9ba25fc6)"
+        },
+        {
+            "hash": "14a7983eef574cf1d7ef550117240ad2073f4b8c",
+            "message": "Tolerate isCandidateClass call with null as annotation type\n\nCloses gh-30842\n\n(cherry picked from commit a102cd5f327108d25e0665f601222add85daf47b)"
+        },
+        {
+            "hash": "0a4f290f0fa231bed7d51b20021c2dd31c20cc2f",
+            "message": "Polish DefaultSingletonBeanRegistryTests"
+        },
+        {
+            "hash": "6ea4d3794a7542599c9c045448dc2785c7530ec6",
+            "message": "Further simplify DefaultSingletonBeanRegistry.isDependent()\n\nSee gh-30841"
+        },
+        {
+            "hash": "85eec5d344b3e90393709ef2b6e2485930be9cc3",
+            "message": "Simplify DefaultSingletonBeanRegistry.isDependent()\n\nMove `alreadySeen` handling out of for-loop.\n\nCloses gh-30841"
+        },
+        {
+            "hash": "0961bc546ac1089acb9611922b3233b36d089974",
+            "message": "Polishing\n\n(cherry picked from commit 0b7a24fc145f6bc3a0611fae9c4c39f4378a9206)"
+        },
+        {
+            "hash": "f2df10c7fe94ce4df62201596881b499d8a88676",
+            "message": "Polishing"
+        },
+        {
+            "hash": "03f1fabbdb73ee0efaad3a64063c42d7a7c2d2a5",
+            "message": "Improve assertions in DefaultConversionServiceTests\n\nSpecifically, we now check the actual type of a converted collection in\nvarious assertions to ensure that converters adhere to their contracts."
+        },
+        {
+            "hash": "2ada2b77f65ea0c98ee6cdef2fa157c8b0eaa323",
+            "message": "Update Javadoc for ObjectUtils.nullSafeConciseToString()\n\nSee gh-30811"
+        },
+        {
+            "hash": "d5380b307076997588adebca753828adec1f9b10",
+            "message": "Expand tests for array to Collection/Set/List interface\n\nSee gh-28048"
+        },
+        {
+            "hash": "a3907a64e528cc055807d02aa4e4e6132aa07a1e",
+            "message": "Support arrays, collections, & maps in ObjectUtils.nullSafeConciseToString()\n\nPrior to this commit, there was no explicit support for arrays,\ncollections, and maps in nullSafeConciseToString(). This lead to string\nrepresentations such as the following, regardless of whether the array,\ncollection, or map was empty.\n\n- char[]@1623b78d\n- java.util.ImmutableCollections$List12@74fe5c40\n- java.util.ImmutableCollections$MapN@10e31a9a\n\nThis commit introduces explicit support for arrays, collections, and\nmaps in nullSafeConciseToString(), which results in the following\nempty/non-empty string representations.\n\n- array: {} / {...}\n- collection: [] / [...]\n- map: {} / {...}\n\nThe reason a string representation of an array uses \"{}\" instead of\n\"[]\" (like in Arrays.toString(...)) is that\nObjectUtils.nullSafeToString(<array>) already follows that convention,\nand the implementation of nullSafeConciseToString() aligns with that\nfor the sake of consistency.\n\nCloses gh-30811"
+        },
+        {
+            "hash": "dd16e012bacfbd4a53e1e436992d14050d7cab47",
+            "message": "Clarify ReactiveTransactionManager exception declarations\n\nAvoid misleading \"throws TransactionException\" declarations but preserve javadoc \"@throws\" notes for specific exceptions (with reactive propagation semantics).\n\nCloses gh-30817"
+        },
+        {
+            "hash": "d4cd358c7669d7d79d67e35326bb575c3e01959b",
+            "message": "Discuss JdbcTransactionManager vs DataSourceTransactionManager\n\nCloses gh-30802"
+        },
+        {
+            "hash": "da814e01c7873dc0475efab2c5753284182a260e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "5d4c2846d962a4db32afdf8be904a8f9e5a998a1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a3daee6ad8acde63c203c57a6c00d49d3b16efbf",
+            "message": "Make File/Path tests pass on Windows\n\nSee gh-30806"
+        },
+        {
+            "hash": "5614e5bc1887d55a340b34118872b7cd859f3688",
+            "message": "Restore full representation of rejected value in FieldError.toString()\n\nWe would preferably use ObjectUtils.nullSafeConciseToString(rejectedValue) here but revert to the full nullSafeToString representation for strict backwards compatibility (programmatic toString calls as well as exception messages).\n\nCloses gh-30799\n\n(cherry picked from commit 1dc9dffc70308252a00bb56b1b37c67b52ba1ed2)"
+        },
+        {
+            "hash": "6dde13f5979591dc88c921310c7ba4dc91a5ab64",
+            "message": "Refresh cached value after unexpected mismatch (e.g. null vs non-null)\n\nIn addition to the previously addressed removal of bean definitions, this is able to deal with prototype factory methods returning non-null after null or also null after non-null. Stale cached values are getting refreshed rather than bypassed.\n\nCloses gh-30794\n\n(cherry picked from commit 0226580773dc8c8b3f4554f5e42d818d96544b25)"
+        },
+        {
+            "hash": "c057da23ec78e4a976587e5db6a7ecd55c555e87",
+            "message": "Extend supported types in ObjectUtils.nullSafeConciseToString()\n\nThis commit extends the list of explicitly supported types in\nObjectUtils.nullSafeConciseToString() with the following.\n\n- Optional\n- File\n- Path\n- InetAddress\n- Charset\n- Currency\n- TimeZone\n- ZoneId\n- Pattern\n\nCloses gh-30806"
+        },
+        {
+            "hash": "a7f07328ab3dce40d92f3cc16cb85b44a29a1492",
+            "message": "Add tests for status quo in ObjectUtils.nullSafeConciseToString()"
+        },
+        {
+            "hash": "45f747fae1524a3c2d1ad7fd6a00f6ae66e23747",
+            "message": "Clean up warnings in tests"
+        },
+        {
+            "hash": "258bd3f73ce025552455e4fc4504e17d347793b2",
+            "message": "Fix typo in Javadoc for BeanDefinitionDsl.kt\n\nCloses gh-30798"
+        },
+        {
+            "hash": "97b95d9d015790530fd7c80c3b58e94c9ba19c03",
+            "message": "Upgrade to Tomcat 9.0.76, Netty 4.1.94, Undertow 2.2.25, Checkstyle 10.12.1"
+        },
+        {
+            "hash": "69827a2f214cb599876c0ee450c2763eaa210a34",
+            "message": "Raise beforeCompletion/afterCompletion exception log level to error\n\nCloses gh-30776\n\n(cherry picked from commit f1567fb21ab7b093304063a27b11729f431b035b)"
+        },
+        {
+            "hash": "ef699b6a9e62bf95a1cab27767b0ab9c4625ce8a",
+            "message": "Align ConcurrentMapCacheManager locking behavior with CaffeineCacheManager\n\nCloses gh-30780\n\n(cherry picked from commit 60865eae4b48863e8f19884d0c2bd46d98ff85d4)"
+        },
+        {
+            "hash": "e440eb8365a33e283ab779461b4e7f85cae5dc49",
+            "message": "Consistently handle invocation exceptions in TypeProxyInvocationHandler\n\nCloses gh-30764\n\n(cherry picked from commit 3cb746c3587e626b37760a3cc713cc80aa63763d)"
+        },
+        {
+            "hash": "02cbee560d32fe63faac8e3477a4aa63ca7c46f1",
+            "message": "Polishing\n\n(cherry picked from commit 6526e79eea450e49558035fc22b1c8d11ef2c285)"
+        },
+        {
+            "hash": "14da1aca2fb4660078c71ccc7834d9fbcb378932",
+            "message": "Adapt no-arg value from interface-based InvocationHandler callback\n\nCloses gh-30756\n\n(cherry picked from commit b77d4d01c5fe30e8d8a5e40293bcd71e1841fa7b)"
+        },
+        {
+            "hash": "ce97342fee15e1bf19766a903253dbbadfb4dbd1",
+            "message": "Consistently use mutable ArrayList for modulesToInstall vs modules\n\nCloses gh-30751\n\n(cherry picked from commit 062d701ae1d29ee1a6e62ca0379a7ee9bb6f3d25)"
+        },
+        {
+            "hash": "2e51aa250e1f435242ff553e8f46d0440dff8d7e",
+            "message": "Update copyright headers"
+        },
+        {
+            "hash": "ec2957afc8bf6d63a86eb293b52f3cc7504e4d7d",
+            "message": "Test for supportsEventType mismatch with unrelated event type\n\nSee gh-30712"
+        },
+        {
+            "hash": "d3df45d8fee950a45a7e13ed51512296c731ad8f",
+            "message": "Avoid ResolvableType creation for interface/superclass check\n\nSee gh-30713\n\n(cherry picked from commit 1dfe737d0e57e8634d3bf48a9e49b001bd106cc3)"
+        },
+        {
+            "hash": "5375f62dc13f5109a320d66f96e87bb6e1ed913a",
+            "message": "Cache hasUnresolvableGenerics result for repeated checks\n\nCloses gh-30713\n\n(cherry picked from commit 93218a06baa528401f2baeeb5e02b0582ae44d43)"
+        },
+        {
+            "hash": "c7bc40d3ba323a94e8c43b1cd8f61de90b4f9e1f",
+            "message": "Ensure Spring LogFactory contains all public methods from Apache LogFactory\n\nCloses gh-30668\n\n(cherry picked from commit 20bbebb29921815ec11ec4dc289419d50a5cd319)"
+        },
+        {
+            "hash": "1071778aa96dc68dd0bfe2647e8afefa25e1101c",
+            "message": "Fall back to type-based creation if no bean of the given name exists\n\nCloses gh-30683\n\n(cherry picked from commit dff7aa4d4b6aee490c559e153a8024bc8c05ec97)"
+        },
+        {
+            "hash": "40a9ae9d14512276ddc0256bfb209795224fe103",
+            "message": "Recognize error code 2628 as data integrity violation (MSSQL 2019)\n\nCloses gh-30681\n\n(cherry picked from commit c634acd9ff8531f0e6f36dc46df1567e6ef00ac6)"
+        },
+        {
+            "hash": "e34a7baeb3287ec5210ca721e33441fe2cf025f0",
+            "message": "Remove code duplication in RootBeanDefinition"
+        },
+        {
+            "hash": "62eb9b391dcbe98eea07671795b234a635ebb265",
+            "message": "Use Docker hub credentials for CI tasks"
+        },
+        {
+            "hash": "ea89bf2c91dd1aba12e94f2006368b3043f90788",
+            "message": "Next development version (v5.3.29-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "30873",
+            "title": "Upgrade to Reactor 2020.0.34"
+        },
+        {
+            "number": "22791",
+            "title": "Avoid illegal reflective access in ContextOverridingClassLoader.isEligibleForOverriding"
+        },
+        {
+            "number": "25940",
+            "title": "Improve diagnostics for CGLIB ClassLoader issues with shared classes in parent ClassLoader"
+        },
+        {
+            "number": "26557",
+            "title": "ResultSet holdability into the View layer broken by Hibernate 5"
+        },
+        {
+            "number": "23106",
+            "title": "`JdbcTemplate` does not call `handleWarnings` in case of exception"
+        },
+        {
+            "number": "30842",
+            "title": "Tolerate `AnnotationUtils.isCandidateClass` call with `null` as annotation type"
+        },
+        {
+            "number": "30841",
+            "title": "Simplify `DefaultSingletonBeanRegistry.isDependent()`"
+        },
+        {
+            "number": "30811",
+            "title": "Provide explicit support for collections, maps, and arrays in `ObjectUtils.nullSafeConciseToString()`"
+        },
+        {
+            "number": "28048",
+            "title": "`ArrayToCollectionConverter` should default to `List` if target type is `Collection`"
+        },
+        {
+            "number": "30817",
+            "title": "Clarify `ReactiveTransactionManager` exception declarations"
+        },
+        {
+            "number": "30802",
+            "title": "Doc: `JdbcTransactionManager` vs `DataSourceTransactionManager`"
+        },
+        {
+            "number": "30806",
+            "title": "Extend list of supported types in `ObjectUtils.nullSafeConciseToString()`"
+        },
+        {
+            "number": "30799",
+            "title": "Revert changes to `toString()` in `FieldError`"
+        },
+        {
+            "number": "30794",
+            "title": "For a prototype bean, if first-time rejected value is null, subsequent value will wrongly be null always"
+        },
+        {
+            "number": "30780",
+            "title": "Align ConcurrentMapCacheManager locking behavior with CaffeineCacheManager"
+        },
+        {
+            "number": "30764",
+            "title": "SerializableTypeWrapper does not consistently catch InvocationTargetException "
+        },
+        {
+            "number": "30756",
+            "title": "NPE in MvcUriComponentsBuilder with no-arg target method on interface"
+        },
+        {
+            "number": "30751",
+            "title": "`Jackson2ObjectMapperBuilder` breaks when `modules` customizer follows `modulesToInstall`"
+        },
+        {
+            "number": "30712",
+            "title": "Generic RedisKeyExpiredEvent not delivered to @EventListener anymore in 6.0.9"
+        },
+        {
+            "number": "30713",
+            "title": "`ResolvableType.hasUnresolvableGenerics()` should cache its result"
+        },
+        {
+            "number": "30683",
+            "title": "Spring ORM SpringBeanContainer when trying to create a bean fails with not found bean definition, and fallbacks to default hibernate bean creation"
+        },
+        {
+            "number": "30681",
+            "title": "Translate SQL Exception with State S0001 and Vendor Code 2628 to a Spring Exception in MSSQL 2019"
+        }
+    ]
+}

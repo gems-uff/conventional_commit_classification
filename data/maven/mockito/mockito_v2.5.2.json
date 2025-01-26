@@ -1,0 +1,45 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.5.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 8,
+    "start_delay": 0.0,
+    "duration": 3.1109722222222222,
+    "commits_info": [
+        {
+            "hash": "a745e84cad449e165dfeb3f96dbb4d9f9f37eb25",
+            "message": "Update release notes by Travis CI build 2128 [ci skip]"
+        },
+        {
+            "hash": "ee91c6b16cf3721669078f0af82156c646f6ca1d",
+            "message": "Merge pull request #858 from mockito/listener-safeguard\n\nSafeguard for MockitoListener API"
+        },
+        {
+            "hash": "7d5775a97b775322144c9c42f18ee19cf96e250a",
+            "message": "Updated documentation\n\n- Based on feedback from Tim I updated the documentation and exception message\n- Updated @since tag"
+        },
+        {
+            "hash": "8a731fa4dbee3904082db4d0cca13110837db72e",
+            "message": "Added @since tag"
+        },
+        {
+            "hash": "6cfaaaada7fb37c330d7ce439831e295e357f0ff",
+            "message": "Added missing import"
+        },
+        {
+            "hash": "1747dc6a4f2f3c00f490071e688efafcaadd039c",
+            "message": "Safeguard for MockitoListener API\n\n- Added a safeguard that reminds users to clean up MockitoListeners via removeListener() method. The implementation is very simple, checking if the type of the listener is already added. I found out about this problem when working on strict stubbing support without JUnit runner.\n- This change makes MockitoListener API safer. It's easy to leak state which we have encountered in our own test suite.\n- If we encounter legit use cases for adding the same listener type, we can remove the safeguard or updated it"
+        },
+        {
+            "hash": "dd2b004bd2ae681aa5a80019eff0877cb362bc85",
+            "message": "Added util class for asserting exceptions"
+        },
+        {
+            "hash": "cfc6bfedf5c3407b0a79feeb292d4c67ae814032",
+            "message": "Increment version '2.5.1' -> '2.5.2' by Travis CI build 2123 [ci skip]"
+        }
+    ],
+    "issues": []
+}

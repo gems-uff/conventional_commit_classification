@@ -1,0 +1,49 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.21.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 9,
+    "start_delay": 0.0,
+    "duration": 21.40732638888889,
+    "commits_info": [
+        {
+            "hash": "4e5af652d21ef055b1e5a747e0c8b235e98692d8",
+            "message": "2.21.1 release (previous 2.21.0) + release notes updated by CI build 3572\n\n[ci skip-release]"
+        },
+        {
+            "hash": "d77b2fc8b544b7b0ca772e816fcc2ad560edaa03",
+            "message": "Merge pull request #1474 from mockito/next-inorder-timeout\n\nComprehensive coverage for timeout + inOrder"
+        },
+        {
+            "hash": "2f3b0310d315dc2af51d75dbf72d243134167cc7",
+            "message": "Comprehensive coverate for timeout + inOrder\n\nPreparing for merging major overhaul in the implementation of 'timeout' and 'after' APIs (#936)"
+        },
+        {
+            "hash": "ee175c682aca82ac25fd2d00250f5188d6a9e954",
+            "message": "Merge pull request #1465 from mockito/next-testng\n\nMoved TestNG from the main repo into separate mockito/mockito-testng repo"
+        },
+        {
+            "hash": "e736dab0b0437f09282e3b47309d0a758d09fe1f",
+            "message": "Removed TestNG from the main repo\n\nNew home for TestNG integration is: https://github.com/mockito/mockito-testng\n\nFor details and discussion, see: https://github.com/mockito/mockito/issues/962"
+        },
+        {
+            "hash": "54e02acf466c4ad3f312cd8df95b72db5996eec4",
+            "message": "Merge pull request #1462 from mockito/next-delay-tests3\n\nAdded Gradle-based retry logic for tests"
+        },
+        {
+            "hash": "e85484855f83f3bd82458ffdd2e7dedf44749ab5",
+            "message": "Added retry-test plugin\n\nMockito has concurrent API and automated tests of this API are inherently flaky (e.g. may give non-deterministic behavior at times). Those specific tests have fine-tuned timeouts and work most of the time (I've ran 1000 times on my local and they pass). For rare scenario when they fail, we have the retry plugin.\n\nThe plugin retries only once, by kicking off a completely separate 'retryTest' task."
+        },
+        {
+            "hash": "05760c885940009aa4b0c899090ee5a5a547a9af",
+            "message": "Deleted RetryRule\n\nIt does not give us visibility to test flakiness and it sometimes hides problems."
+        },
+        {
+            "hash": "ff1ff0968cb48a1bc9626b78a8f46411b0d800fc",
+            "message": "Made particular test more generous"
+        }
+    ],
+    "issues": []
+}

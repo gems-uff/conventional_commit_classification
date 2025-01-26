@@ -1,0 +1,246 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v2.6.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 57,
+    "start_delay": 0.0,
+    "duration": 55.03479166666666,
+    "commits_info": [
+        {
+            "hash": "bba83652e1be610bdb7ee1566ad18346d98b843c",
+            "message": "Update version number to 2.6.1."
+        },
+        {
+            "hash": "20e0a61ff6237709b285daec4337fd241e578dd2",
+            "message": "Don't test for sched_yield on Windows"
+        },
+        {
+            "hash": "419c94b6e07f93610e5124a0be0a7ee7140006ed",
+            "message": "Update CHANGES.txt to include a bug fix."
+        },
+        {
+            "hash": "8c12b1af76739495bce01566f69d1ea6ae8d8d50",
+            "message": "Update version number in generated files."
+        },
+        {
+            "hash": "57b86729f2564a6923dea6518f23ae1ead9b0c04",
+            "message": "Update CHANGES.txt for 2.6.1rc1."
+        },
+        {
+            "hash": "5ac39f34ae1f12c424a265984b3694c981201ab7",
+            "message": "Merge remote-tracking branch 'origin/master' into 2.6.1"
+        },
+        {
+            "hash": "5452bd6e39ca7586c33bf8760ed5dbe20a39d5cf",
+            "message": "Merge pull request #43 from abuszta/bugfix\n\nRelease objects allocated by InitializeDefaultRepeatedFields()"
+        },
+        {
+            "hash": "e670b670328561aa7b3754ee0c023085949378a8",
+            "message": "DestroyDefaultRepeatedFields is registered using OnShutdown."
+        },
+        {
+            "hash": "e83ba13a6fbb54f472ec16d486c6e3d4bbdf3adb",
+            "message": "InitializeDefaultRepeatedFields() allocates memory but does not release it."
+        },
+        {
+            "hash": "0971bb0d57aa6f2db1abee4008b365d52b402891",
+            "message": "Down-integrate from internal branch."
+        },
+        {
+            "hash": "c1d16457dbf5f1b0770db406b75b4b2063556cc3",
+            "message": "Merge pull request #35 from dsrosario/fix_warning\n\nFix \"warning C4018: '<' : signed/unsigned mismatch\""
+        },
+        {
+            "hash": "bb7d210c2a99e45f12002cb67f337de933f35e0c",
+            "message": "Fix \"warning C4018: '<' : signed/unsigned mismatch\" at wire_format_lite_inl.h"
+        },
+        {
+            "hash": "a48c08aa9a57798d0771694e127ce9e4b0c57bb2",
+            "message": "Merge pull request #31 from worr/bug/autoconf-sched-yield\n\nAdd check for sched_yield in librt"
+        },
+        {
+            "hash": "38b84946479accd07b44f9b3dd46c3d293d4bf84",
+            "message": "Add check for sched_yield in librt\n\nIn Solaris, sched_yield lives in librt, rather than libc. This patch adds a\ncheck which will link in librt if necessary."
+        },
+        {
+            "hash": "7d50120316b62499d1ec64580acc8ff32fceb147",
+            "message": "Merge pull request #30 from edmonds/branches/fix_generic_atomicops_memory_models\n\ngeneric atomicops: promote Acquire_Store() and Release_Load() to use SEQ_CST fence"
+        },
+        {
+            "hash": "cc0a047384414991009d95ada9e89b9a92aac531",
+            "message": "generic atomicops: promote Acquire_Store() and Release_Load() to use SEQ_CST fence\n\n__atomic_store_n() cannot take a memory model argument of\n__ATOMIC_ACQUIRE, and __atomic_load_n() cannot take a memory model\nargument of __ATOMIC_RELEASE, per the GCC documentation:\n\n    https://gcc.gnu.org/onlinedocs/gcc-4.9.1/gcc/_005f_005fatomic-Builtins.html\n\nOn Clang this generates a -Watomic-memory-ordering warning.\n\nPromote the fences in Acquire_Store() and Release_Load() to the stronger\n__ATOMIC_SEQ_CST memory model, which ought to be safe.\n\nNote that there are no actual uses of Acquire_Store() or Release_Load()\nin protobuf, though.\n\nThis follows the TSAN atomicops implementation, which also uses SEQ_CST\nfences for these functions.\n\n(Fixes #25.)"
+        },
+        {
+            "hash": "8d5f1e1efb6c1a99aa4997d519767d5865e06e03",
+            "message": "Merge pull request #27 from edmonds/branches/fix_generic_atomicops_non_clang\n\nFix atomicops build failure on non-Clang"
+        },
+        {
+            "hash": "7432af823a45b954a8bc6018cdc7fa4c1f8fd16f",
+            "message": "Fix atomicops build failure on non-Clang\n\nWe cannot use Clang's __has_extension macro unless we really are\ncompiling on Clang, which means we cannot use this expression:\n\n    #if (defined(__clang__) && __has_extension(c_atomic)))\n    // ...\n    #endif\n\nOn GCC, this generates the following errors:\n\n    In file included from ./google/protobuf/stubs/atomicops.h:59:0,\n                     from google/protobuf/stubs/atomicops_internals_x86_gcc.cc:36:\n    ./google/protobuf/stubs/platform_macros.h:67:41: error: missing binary operator before token \"(\"\n       (defined(__clang__) && __has_extension(c_atomic)))\n                                             ^\n    In file included from google/protobuf/stubs/atomicops_internals_x86_gcc.cc:36:0:\n    ./google/protobuf/stubs/atomicops.h:196:40: error: missing binary operator before token \"(\"\n      (defined(__clang__) && __has_extension(c_atomic))\n                                            ^\n\nInstead, we have to protect the __has_extension expression by only\nexecuting it when __clang__ is defined:\n\n    #if defined(__clang__)\n    # if __has_extension(c_atomic)\n    // ...\n    # endif\n    #endif"
+        },
+        {
+            "hash": "5c8ab2cbb3b88c67623ce1ca1c9d45eb0b47e7ab",
+            "message": "Merge pull request #21 from edmonds/branches/clang_generic_atomics\n\nExpose generic atomicops on Clang"
+        },
+        {
+            "hash": "628a23ba8d8e233815075735c4967bcfae3de342",
+            "message": "Expose generic atomicops on Clang\n\nThe generic atomicops implementation is only exposed if GCC >= 4.7 is\navailable, but Clang, where the underlying __atomic built-ins are also\navailable, typically only claims to be GCC 4.2. This causes build\nfailures when compiling protobuf or the output of protoc's C++ code\ngenerator on an architecture that needs the generic atomicops\nimplementation with Clang.\n\nClang has a \"c_atomic\" extension which can be tested for which almost\ndoes what we want:\n\n    C11 atomic operations\n\n    Use __has_feature(c_atomic) or __has_extension(c_atomic) to\n    determine if support for atomic types using _Atomic is enabled.\n    Clang also provides a set of builtins which can be used to implement\n    the <stdatomic.h> operations on _Atomic types.\n\nI'm not sure if this guarantees that the GNU atomic builtins (the ones\nwith the __atomic prefix) are also available, but in practice this\nshould guarantee that Clang is new enough.\n\nWith this change in place, Clang generates several diagnostics when\ncompiling the generic atomicops implementation. These appear to be bugs\nin the generic atomicops implementation and are not Clang-specific."
+        },
+        {
+            "hash": "d24b987c1485fedc4b8e57cb7ec7760ce598501b",
+            "message": "Remove GOOGLE_PROTOBUF_ARCH_PPC\n\nThe macro GOOGLE_PROTOBUF_ARCH_PPC is not used anywhere in the protobuf\nsource; there is no Power-specific atomics implementation, etc.\n\nFunnily enough, the macro __ppc__ is not actually defined on 32-bit\nPower on GCC/Linux, according to the following webpage:\n\n    http://nadeausoftware.com/articles/2012/02/c_c_tip_how_detect_processor_type_using_compiler_predefined_macros#POWER\n\nand verified on a 32-bit Debian sid 'powerpc' chroot:\n\n    (sid_powerpc-dchroot)edmonds@partch:~$ gcc -dM -E - < /dev/null | grep -c __ppc__\n    0\n    (sid_powerpc-dchroot)edmonds@partch:~$ gcc -dM -E - < /dev/null | grep -c __LP64__\n    0"
+        },
+        {
+            "hash": "edc5994525c79cd1919859a370837a6ff7c8e308",
+            "message": "Merge pull request #15 from google/pom_version_fix\n\nBump version for maven-bundle-plugin"
+        },
+        {
+            "hash": "ec0c9e4a03f17810a2c641e55f011a2a24603ae8",
+            "message": "Bump version for maven-bundle-plugin"
+        },
+        {
+            "hash": "9faecf7e93e30932759a28bfd9b639b0c39fb974",
+            "message": "Merge pull request #12 from huahang/patch-2\n\nremove a const qualifier in a method's return type"
+        },
+        {
+            "hash": "c871fb9384fef312ac76334ff97a83b980b57eba",
+            "message": "remove a const qualifier in a method's return type"
+        },
+        {
+            "hash": "1392f42d1b8113fbc13fa396dd526e2ddb45baa9",
+            "message": "Merge pull request #8 from huahang/patch-1\n\nfix a compile warning"
+        },
+        {
+            "hash": "27fcf9bff60afdfabf6631abc975963a558a7491",
+            "message": "fix a compile warning\n\nThis change fixes the following compiler warning:\r\n\r\nwarning: type qualifiers ignored on function return type [-Wignored-qualifiers]"
+        },
+        {
+            "hash": "6890263c89376e51998f2e1c9b0a1fa027eb9134",
+            "message": "Merge pull request #1 from dhirschfeld/vs2008-fix\n\nAdded const qualifier to iterator to enable compiling with VS2008"
+        },
+        {
+            "hash": "b7ec1a95d2ede0b6dec7ba07c6466c63ceec77eb",
+            "message": "Added const qualifier to iterator to enable compiling with VS2008"
+        },
+        {
+            "hash": "e9c00d9dd0ac75dc3d1d140207939f11abe328b5",
+            "message": "Rename COPYING.txt to LICENSE for opensource compliance and update links\nin README.txt."
+        },
+        {
+            "hash": "aa51f2a38a301f7a568fd8fd07b3b378c94ce950",
+            "message": "Rename README.txt to README.md"
+        },
+        {
+            "hash": "d36778243bb5ecd59f88aa38225a10660a061b70",
+            "message": "Merge pull request #5 from google/fix_readme\n\nRename README.txt to README.md and use markdown formatting."
+        },
+        {
+            "hash": "b168d1fd1d55f41697b0693729117b8df2feb533",
+            "message": "Fix the formating of bold text."
+        },
+        {
+            "hash": "17007a6c47fc8ac33d725e3a650979dbd6843952",
+            "message": "Update README.md to markdown format."
+        },
+        {
+            "hash": "bc72de8ea0866f578664f3c197a0c990e658aa57",
+            "message": "Rename README.txt to README.md"
+        },
+        {
+            "hash": "0068a929ed6dcc1a0e3c830c54911aa9fa86dd37",
+            "message": "Merge pull request #4 from google/fix_readme\n\nAdd instructions on how to generate the configure script."
+        },
+        {
+            "hash": "de00052be7a1eee60732fc654e12823d67a99d7f",
+            "message": "Add instructions on how to generate the configure script."
+        },
+        {
+            "hash": "7b6c5d58a86cdfccf6ad6d3239407cba0557cf2c",
+            "message": "Merge pull request #20 from edmonds/branches/no_ppc\n\nRemove GOOGLE_PROTOBUF_ARCH_PPC"
+        },
+        {
+            "hash": "dce98a8d4c662b94c4840a58f3c0263bf5c5e4c8",
+            "message": "Merge pull request #29 from edmonds/branches/undef_GOOGLE_PROTOBUF_PLATFORM_ERROR\n\nplatform_macros.h: #undef GOOGLE_PROTOBUF_PLATFORM_ERROR once it's no longer needed"
+        },
+        {
+            "hash": "0a3e36f1bf443fe201cce79d8fecb5b98b178155",
+            "message": "platform_macros.h: #undef GOOGLE_PROTOBUF_PLATFORM_ERROR once it's no longer needed"
+        },
+        {
+            "hash": "56aa52d98657a9f093e85d2d2e15c87e5e50c967",
+            "message": "Merge pull request #38 from xfxyjwf/fix17\n\nFix a bug that causes DynamicMessage.setField() to not work for repeated enum fields."
+        },
+        {
+            "hash": "725326f1eef7549349f6712322c8e073a9dd7fe9",
+            "message": "Update verification methods' names."
+        },
+        {
+            "hash": "345d49a51ee37a2b5cb953e5d1dcb872e7ffdfbf",
+            "message": "Fix a bug that causes DynamicMessage.setField() to not work for repeated\nenum fields."
+        },
+        {
+            "hash": "61477681710871dab2a5832d0d6324aa9b7d7867",
+            "message": "Merge pull request #37 from google/fix_links\n\nReplace links to code.google.com/protobuf with developers.google.com/protocol-buffers"
+        },
+        {
+            "hash": "e428862450679aaccd3675d1092f9f5253b7bd43",
+            "message": "Replace links to code.google.com/protobuf with developers.google.com/protocol-buffers"
+        },
+        {
+            "hash": "a9155b8d3c568a82e4df9402f1461c7af6aa9eb0",
+            "message": "Merge pull request #32 from worr/bug/solaris-atomicops\n\nAdd support for solaris atomicops"
+        },
+        {
+            "hash": "195f01719efd3e440db10befefd1e16d1bcaa026",
+            "message": "Update CONTRIBUTORS.txt"
+        },
+        {
+            "hash": "a27b3290840a3ff12579d5118401897699759cea",
+            "message": "Update copyright notice and remove first line"
+        },
+        {
+            "hash": "2d7786cfc3aa8f38326f97fe43b2efc092aacf6f",
+            "message": "Add support for solaris atomicops\n\nThis patch adds support for atomic operations on Solaris, on any platform.\nIt makes use of the atomic functions made available in Solaris' atomic.h\nheader."
+        },
+        {
+            "hash": "84731a111f45e5d11d0d11fe4b53c1818d936df1",
+            "message": "Down-integrate from internal branch."
+        },
+        {
+            "hash": "0dd3fef8431591637459f330db61e8c1485495a3",
+            "message": "Merge pull request #39 from xfxyjwf/fix24\n\nFix descriptor validation logic for packed enum fields."
+        },
+        {
+            "hash": "f5691a617ee2e72bac6a0eb97764497a223702d9",
+            "message": "Fix descriptor validation logic for packed enum fields."
+        },
+        {
+            "hash": "eb223ed4f72408c46696e42b9f5606241b11eff6",
+            "message": "Merge pull request #3 from dhirschfeld/pyext-fix\n\nExplicitly specify pyext/cpp_message.py in py_modules list"
+        },
+        {
+            "hash": "ef6eff20bd2c2f23c3f5c2d46b5ee84d09ea67bc",
+            "message": "Explicitly specify pyext/cpp_message.py in py_modules list"
+        },
+        {
+            "hash": "3b8dadf5814157a656d60dccadd7cb820a429050",
+            "message": "Avoid using the macro name again in macro definitions."
+        },
+        {
+            "hash": "06e6690bf2055b4361db2a6bdd21facf3f2d86d6",
+            "message": "Fix the memory leak of GetEmptyString()."
+        },
+        {
+            "hash": "d9d1da95c6a4b95339b23ab22ddbe0611b5fccad",
+            "message": "Update version number to 2.6.1rc1"
+        }
+    ],
+    "issues": [
+        {
+            "number": "25",
+            "title": "Clang generates atomic memory ordering warnings when compiling atomicops_internals_generic_gcc.h"
+        }
+    ]
+}

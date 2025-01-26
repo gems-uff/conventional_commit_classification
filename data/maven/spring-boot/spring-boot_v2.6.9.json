@@ -1,0 +1,690 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.6.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 114,
+    "start_delay": 0.0,
+    "duration": 48.22574074074074,
+    "commits_info": [
+        {
+            "hash": "89c3cdc90c42f859113d951ebaefa76aab9b3a67",
+            "message": "Release v2.6.9"
+        },
+        {
+            "hash": "6484be2aa5e7eb9308185c1e05ae8c9f182a9914",
+            "message": "Upgrade to Jetty 9.4.48.v20220622\n\nCloses gh-31507"
+        },
+        {
+            "hash": "9e98f694c7c510a19d13775c5b385288c84b18fc",
+            "message": "Merge pull request #31238 from ittays\n\n* pr/31238:\n  Polish 'Allow spring.data.cassandra.config file to override default values'\n  Allow spring.data.cassandra.config file to override default values\n\nCloses gh-31238"
+        },
+        {
+            "hash": "904feb249006cd28464e0eef7da9dad43ced20fc",
+            "message": "Polish 'Allow spring.data.cassandra.config file to override default values'\n\nSee gh-31238"
+        },
+        {
+            "hash": "1c7d99890e05201aefba6eb58d284ce0a11506a8",
+            "message": "Allow spring.data.cassandra.config file to override default values\n\nUpdate `CassandraAutoConfiguration` so that properties in a\n`spring.data.cassandra.config` file can override the default values\ndefined in `CassandraProperties`.\n\nThis commit changes two things:\n\n1. Any primitive on `CassandraProperties` are replaced with object values.\n   This allows distinguishing between defaults values and no-values. Then\n   CassandraAutoConfiguration.mapConfig() can use whenNonNull() predicate\n   to ignore those.\n\n2. `CassandraProperties` no longer populate default values on any\n   property. With that, the defaults can be applied on top of the file\n   spring.data.cassandra.config; i.e. the config file have higher\n   precedence than the defaults, but lower that any spring.data.cassandra.*\n   property.\n\nSee gh-31238"
+        },
+        {
+            "hash": "7017e103f648252ad1a79b0e6b0d178ec3cf20a1",
+            "message": "Merge pull request #31495 from terminux\n\n* pr/31495:\n  Polish CompositeHandlerExceptionResolver\n  Use ExceptionHandler when Spring MVC uses a different management port\n\nCloses gh-31495"
+        },
+        {
+            "hash": "aed4c47adb8b572d3eb5ea6ebbbcb8f1aa849249",
+            "message": "Polish CompositeHandlerExceptionResolver\n\nSee gh-31495"
+        },
+        {
+            "hash": "3592292e4bf2496b4545d14e16ede4b1780ab774",
+            "message": "Use ExceptionHandler when Spring MVC uses a different management port\n\nUpdate `CompositeHandlerExceptionResolver` to search for beans in\nall contexts. Note that `BeanFactoryUtils.beansOfTypeIncludingAncestors`\ncannot not be used since we need to pick up all beans, even if they\nhave the same name.\n\nSee gh-31495"
+        },
+        {
+            "hash": "a784156f6651585f0f0217f1006d025db059dd2f",
+            "message": "Revert \"Start building against Spring Session 2021.1.4 snapshots\"\n\nThis reverts commit 2f40c52d810932ec7d65f413dc8c66024276f9a1."
+        },
+        {
+            "hash": "17c757c600e229aef481fd9a279c249fee20b126",
+            "message": "Upgrade to Spring Integration 5.5.13\n\nCloses gh-31482"
+        },
+        {
+            "hash": "522ea0a90e369549a75ff035771587c0a971bad6",
+            "message": "Handle malformed JSON more consistently\n\nCloses gh-31301"
+        },
+        {
+            "hash": "79d3e3080f6fb62405d6a92b10c8d1b5d430b984",
+            "message": "Polish"
+        },
+        {
+            "hash": "72257ba302a0475a8cdd991b2ee48ebe2d105ccd",
+            "message": "Upgrade to Jetty 9.4.47.v20220610\n\nCloses gh-31487"
+        },
+        {
+            "hash": "e74163704ca70be42521abfa0c0ec41de421c3f8",
+            "message": "Upgrade to Dropwizard Metrics 4.2.10\n\nCloses gh-31486"
+        },
+        {
+            "hash": "09cd024817daa8cef3724ba3b0568bc2d0771b00",
+            "message": "Upgrade to Spring Kafka 2.8.7\n\nCloses gh-31350"
+        },
+        {
+            "hash": "7fc9debf2ad8b22a151ca73d79ba5f80228dba99",
+            "message": "Consider super classes when detecting nested property classes\n\nUpdate `PropertyDescriptor.isParentTheSame` to consider the candidate\nas well as all super classes.\n\nFixes gh-21626"
+        },
+        {
+            "hash": "49fd727ef078a7e876cefea392f223d65ff8a4ad",
+            "message": "Upgrade to Spring AMQP 2.4.6\n\nCloses gh-31348"
+        },
+        {
+            "hash": "b56b95d4292793db27d11ededc3320f70126d662",
+            "message": "Add Apache HttpClient WebClient support to documentation"
+        },
+        {
+            "hash": "d45e42f2e1d6ad6d3f3a3f7b463e8ac35c66b06c",
+            "message": "Upgrade to Spring Security 5.6.6\n\nCloses gh-31351"
+        },
+        {
+            "hash": "bf1beb8794552214379f5b7cd42f3ea95c43f155",
+            "message": "Merge pull request #31462 from jprinet\n\n* gh-31462:\n  Upgrade to Gradle Enterprise plugin 3.10.2\n\nCloses gh-31462"
+        },
+        {
+            "hash": "c531bd33e2a276d075f59ca0854b241f9f982576",
+            "message": "Upgrade to Gradle Enterprise plugin 3.10.2\n\nSee gh-31462"
+        },
+        {
+            "hash": "2a01473ba9af5fa2751c735e3de0d69f8cf99392",
+            "message": "Upgrade to Gradle Enterprise Conventions 0.0.10\n\nCloses gh-31470"
+        },
+        {
+            "hash": "46a5e5d9d499ce3c1d5ee5fe1c6c47d61224fcdc",
+            "message": "Upgrade to Spring Data 2021.1.5\n\nCloses gh-31349"
+        },
+        {
+            "hash": "87ecbc7073ad962c6f7df78cc4363a06223e1ba2",
+            "message": "Upgrade to Spring HATEOAS 1.4.4\n\nCloses gh-31464"
+        },
+        {
+            "hash": "0549b7591f3500bbca190c501e94f2ae8bc78dd4",
+            "message": "Align .sdkmanrc with CI's Java 8 version\n\nSee gh-31291"
+        },
+        {
+            "hash": "2376d7ced483577d244e703f1e84fc41b2d9b80d",
+            "message": "Remind ourselves to update .sdkmanrc when upgrading Java\n\nCloses gh-31445"
+        },
+        {
+            "hash": "8548f1a1cbc096be2e1f5005400d5e23f24ec174",
+            "message": "Upgrade to Undertow 2.2.18.Final\n\nCloses gh-31420"
+        },
+        {
+            "hash": "42eaa4d4f65ee5e966a0b94e692b58c4442daf6d",
+            "message": "Upgrade to Tomcat 9.0.64\n\nCloses gh-31419"
+        },
+        {
+            "hash": "0edf12c07c5105662e74bc7cd9ea52f057f9337e",
+            "message": "Upgrade to Reactive Streams 1.0.4\n\nCloses gh-31418"
+        },
+        {
+            "hash": "898cf7665adbf9d137beb5316ed2b2dd02472a3e",
+            "message": "Upgrade to Postgresql 42.3.6\n\nCloses gh-31417"
+        },
+        {
+            "hash": "854578c936b231510bdd8729884350e0d82ebf3a",
+            "message": "Upgrade to Netty tcNative 2.0.53.Final\n\nCloses gh-31416"
+        },
+        {
+            "hash": "9076e38f06a00fb805a47c2669bee0e35147eb26",
+            "message": "Upgrade to Netty 4.1.78.Final\n\nCloses gh-31415"
+        },
+        {
+            "hash": "71e5b909489356634eaa3e703e56267e686efcd0",
+            "message": "Upgrade to Neo4j Java Driver 4.4.6\n\nCloses gh-31414"
+        },
+        {
+            "hash": "3b20c67f029d005d92e2de29fb245f510916e1cb",
+            "message": "Upgrade to jOOQ 3.14.16\n\nCloses gh-31413"
+        },
+        {
+            "hash": "78d0db7ff06983283ea906efb9748bf877a76a0a",
+            "message": "Upgrade to Infinispan 12.1.12.Final\n\nCloses gh-31412"
+        },
+        {
+            "hash": "623a48fb0367c40c95f1ad0ff5e4cd49c562adb4",
+            "message": "Upgrade to Groovy 3.0.11\n\nCloses gh-31411"
+        },
+        {
+            "hash": "ae1b47c24531deca385c1ac59c794d6752ed9591",
+            "message": "Upgrade to AppEngine SDK 1.9.97\n\nCloses gh-31410"
+        },
+        {
+            "hash": "ae6311ddda58ff557894ee2987edc5b487efbea6",
+            "message": "Prevent Logback from accidentally being used in Log4J2LoggingSystemTests\n\nUpdate `Log4J2LoggingSystemTests` to exclude Logback and include\n'log4j-slf4j-impl'. The `ModifiedClassPathClassLoader` has also been\nupdated so that it no longer automatically excludes `log4j` artifacts,\ninstead we now use `@ClassPathExclusions` on the relevant tests.\n\nFixes gh-19365"
+        },
+        {
+            "hash": "252cf9433252b08d8af6dc2457dea57b99658d6b",
+            "message": "Fix requiresUnpack following Bouncy Castle upgrade\n\nSee gh-31400"
+        },
+        {
+            "hash": "e8a1a0399a0208e877056bcc7c33a42eb65c89ef",
+            "message": "Upgrade to Bouncycastle 1.71\n\nCloses gh-31400"
+        },
+        {
+            "hash": "7e6acfd2abf3ebd3137f14b2ab150c1d30014ec7",
+            "message": "Upgrade to Micrometer 1.8.7\n\nCloses gh-31347"
+        },
+        {
+            "hash": "b42f056ddbfd5041ef80d2d909dd2f5e51ec3ff0",
+            "message": "Don't close jar files early\n\nUpdate `JarFile` and related classes so that `close()` is not longer\ncalled early.\n\nPrior to this commit, we would always immediately close the underlying\njar file to prevent file locking issues with our build. This causes\nissues on certain JVMs when they attempt to verify a signed jar.\n\nThe file lock issues have now been solved by returning a custom input\nstream from `JarUrlConnection` which captures and delegates the close\nmethod.\n\nFixes gh-29356"
+        },
+        {
+            "hash": "49b71005de541180d6a9f5ae56b4860e8a85943a",
+            "message": "Upgrade to Spring Framework 5.3.21\n\nCloses gh-31318"
+        },
+        {
+            "hash": "cb4f5ed08e702915f38420d34d14a159453f68bc",
+            "message": "Upgrade to Reactor 2020.0.20\n\nCloses gh-31346"
+        },
+        {
+            "hash": "5a028e059c0af58d4d8188d499cfc1bf8612965f",
+            "message": "Align buildSrc's Kotlin version with the main build\n\nCloses gh-31387"
+        },
+        {
+            "hash": "9f8a262e6bdfb75ea8b9a123ee3b7d25d7a672d9",
+            "message": "Log a warning when a health indicator takes too long to run\n\nUpdate `HealthEndpointSupport` so that it logs a warning if a health\nindicator takes too long to respond.\n\nFixes gh-31231"
+        },
+        {
+            "hash": "2094722e5d64e116a91a31086861aa0795fda8e8",
+            "message": "Remove duplicate content from \"The Spring WebFlux Framework\"\n\nCloses gh-31378"
+        },
+        {
+            "hash": "5d7cab09b86a9128d0ada45d9abe671d52465e71",
+            "message": "Revert BindConverter changes that are now handled by Framework\n\nSee gh-28592 and spring-projects/spring-framework#28609\n\nCloses gh-31343"
+        },
+        {
+            "hash": "2f40c52d810932ec7d65f413dc8c66024276f9a1",
+            "message": "Start building against Spring Session 2021.1.4 snapshots\n\nSee gh-31352"
+        },
+        {
+            "hash": "342d01314a35510e662fecb7134cb69ae231b3f1",
+            "message": "Start building against Spring Security 5.6.6 snapshots\n\nSee gh-31351"
+        },
+        {
+            "hash": "ba572e5e16789c4572653c34cb4734e56092828c",
+            "message": "Start building against Spring Kafka 2.8.7 snapshots\n\nSee gh-31350"
+        },
+        {
+            "hash": "d22c0a22c39ce6e75e59f26d050e6c2eb89efc34",
+            "message": "Start building against Spring Data 2021.1.5 snapshots\n\nSee gh-31349"
+        },
+        {
+            "hash": "bc6d2ea16d6fe52f987a9e45caab01bdaa13d5cd",
+            "message": "Start building against Spring AMQP 2.4.6 snapshots\n\nSee gh-31348"
+        },
+        {
+            "hash": "a2f323b4ed62de62481665ad4fee3083aa873c75",
+            "message": "Start building against Micrometer 1.8.7 snapshots\n\nSee gh-31347"
+        },
+        {
+            "hash": "2c7812e50486857723e35863ce23682671d53875",
+            "message": "Start building against Reactor 2020.0.20 snapshots\n\nSee gh-31346"
+        },
+        {
+            "hash": "b3a46fc50e9e0f08cd5d98e90941afc0e462f394",
+            "message": "Document that placeholders should us the canonical property name form\n\nCloses gh-31309"
+        },
+        {
+            "hash": "5ef549768030b693c4e37297a1055df547b1d472",
+            "message": "Merge pull request #31328 from anthonyvdotbe\n\n* pr/31328:\n  Fix typos in the reference documentation\n\nCloses gh-31328"
+        },
+        {
+            "hash": "1fffdbae2afce8c29e2e3e95648fba3e11867abd",
+            "message": "Fix typos in the reference documentation\n\nSee gh-31328"
+        },
+        {
+            "hash": "fb37ce7b2ff214b45506a3f517b31877ba6039c6",
+            "message": "Merge pull request #31344 from naveensrinivasan\n\n* pr/31344:\n  Restrict permissions for GitHub action\n\nCloses gh-31344"
+        },
+        {
+            "hash": "c052a4d6a6c98e0a6b0eba13e49c3424de42109b",
+            "message": "Restrict permissions for GitHub action\n\nSee gh-31344"
+        },
+        {
+            "hash": "1dea328c04d05c185200a3256aa81d18b6c66120",
+            "message": "Merge pull request #31279 from larsgrefer\n\n* pr/31279:\n  Enable Links for the Javadoc of the Gradle Plugins\n\nCloses gh-31279"
+        },
+        {
+            "hash": "8c9557f5526129f0fdbf97536fc2c5c51fec455c",
+            "message": "Enable Links for the Javadoc of the Gradle Plugins\n\nSee gh-31279"
+        },
+        {
+            "hash": "186536e9641de30432fa89282de0b9d7194acd22",
+            "message": "Merge pull request #31276 from anthonyvdotbe\n\n* pr/31276:\n  Remove reference to outdated location\n\nCloses gh-31276"
+        },
+        {
+            "hash": "b1ccb600f3ba0b089a559a774b6247f2cc6c9d95",
+            "message": "Remove reference to outdated location\n\nSee gh-31276"
+        },
+        {
+            "hash": "3f1af9bd385b3167d198fdab0cd49f6a15aec863",
+            "message": "Merge pull request #31224 from ittays\n\n* pr/31224:\n  Restore Custom Favicon section in the reference guide\n\nCloses gh-31224"
+        },
+        {
+            "hash": "e05363f9b055bacbcaf916ccc632ede6abfa77e4",
+            "message": "Restore Custom Favicon section in the reference guide\n\nThe section about favicon was mistakenly removed in 5fceb9d and this\ncommit reinstates it.\n\nSee gh-31224"
+        },
+        {
+            "hash": "09978b35936c0575feaa39f894b5e4a99e4a9edc",
+            "message": "Merge pull request #31190 from tudormarc\n\n* pr/31190:\n  Polish contribution\n  Document that Lombok must be configured before our annotation processor\n\nCloses gh-31190"
+        },
+        {
+            "hash": "d896d995d1351f060e6bb8c7bc56d4376143a47d",
+            "message": "Polish contribution\n\nSee gh-31190"
+        },
+        {
+            "hash": "e313aa5f6c54c313dbdcc5abb02fe45b370f38e9",
+            "message": "Document that Lombok must be configured before our annotation processor\n\nSee gh-31190"
+        },
+        {
+            "hash": "d7fa384c5f37496f30fce0c00bebe2458d32a9af",
+            "message": "Merge pull request #31143 from hpoettker\n\n* pr/31143:\n  Use Lambda-based API in Spring Security examples\n\nCloses gh-31143"
+        },
+        {
+            "hash": "9fdd471adfe763cb74857542bdf07c3321a49537",
+            "message": "Use Lambda-based API in Spring Security examples\n\nSee gh-31143"
+        },
+        {
+            "hash": "d3b4cbada8fc687a4f73514f70f5f03043a3fc94",
+            "message": "Set LATEST_GA to false in CI pipeline\n\nCloses gh-31120"
+        },
+        {
+            "hash": "63fdd729f58a1591864ddb867a947f503f0c58e7",
+            "message": "Refine conversion service type check\n\nUpdate fix to account for primitive types.\n\nSee gh-28592"
+        },
+        {
+            "hash": "31b0264d94c2f5690ca18e8d2be3a8e4f75d0d15",
+            "message": "Ensure conversion service actually converts to the correct type\n\nUpdate `BindConverter` with a guard to ensure that the resulting object\nis the correct type.\n\nFixes gh-28592"
+        },
+        {
+            "hash": "e02803d341b2be03718a15339f66eda729ce0277",
+            "message": "Configure max HTTP header size when using HTTP2 with Tomcat\n\nCloses gh-31322"
+        },
+        {
+            "hash": "ed897fc92277be9e424d170775cb79bff34ef169",
+            "message": "Start building against Spring Framework 5.3.21 snapshots\n\nSee gh-31318"
+        },
+        {
+            "hash": "b02826366381c60ea2d8830fbfdfc3f85e2096ad",
+            "message": "Upgrade CI to Docker 20.10.17\n\nCloses gh-31297"
+        },
+        {
+            "hash": "f96f21c8a23ea96566b07a99407a20874aa07bc0",
+            "message": "Upgrade Java 18 version in CI image\n\nCloses gh-31294"
+        },
+        {
+            "hash": "c07623e04096a655ca41cda2252525171f0c1a52",
+            "message": "Upgrade Java 17 version in CI image\n\nCloses gh-31290"
+        },
+        {
+            "hash": "4822c9b809873da4d26dc78e2c4a88521d9f9851",
+            "message": "Upgrade Java 11 version in CI image\n\nCloses gh-31293"
+        },
+        {
+            "hash": "976f1ac355d7c6c102c9568999955d78932bce17",
+            "message": "Upgrade Java 8 version in CI image\n\nCloses gh-31291"
+        },
+        {
+            "hash": "ea85dccd613dea6de5fe995bfa2965254469eff6",
+            "message": "Upgrade Ubuntu version in CI images\n\nCloses gh-31287"
+        },
+        {
+            "hash": "a651061e2cd230364c16a043b8ccfc0bfd8da114",
+            "message": "Remove SpringApplicationHierarchyTests\n\nCloses gh-31281"
+        },
+        {
+            "hash": "4c23d2c45b429f47633358ac77d9012d3815aa60",
+            "message": "Merge pull request #31267 from vpavic\n\n* gh-31267:\n  Polish \"Update smoke tests to avoid conflicts with NAME environment variable\"\n  Update smoke tests to avoid conflicts with NAME environment variable\n\nCloses gh-31267"
+        },
+        {
+            "hash": "0834dc5b01a9a2c29599cd550587e6780e3518c5",
+            "message": "Polish \"Update smoke tests to avoid conflicts with NAME environment variable\"\n\nSee gh-31267"
+        },
+        {
+            "hash": "95e0d6c0f7acfe1c612478e8a1d5e71660dab397",
+            "message": "Update smoke tests to avoid conflicts with NAME environment variable\n\nThis commit updates several smoke tests in order to avoid conflicts\nwith NAME environment variable that is present in WSL and causes\nproject build to fail. Previous attempt to fix this in 7da42d71 was\nincomplete.\n\nSee gh-31267"
+        },
+        {
+            "hash": "bbb5966bca94fb51712713a1faa5ef691b6477f4",
+            "message": "Upgrade integration tests to Apache Maven 3.8.5\n\nCloses gh-31260"
+        },
+        {
+            "hash": "348662b15ec3e79fb76a908b8ca2b8e86aada11a",
+            "message": "Remove unused deduceFromApplicationContext and supporting code\n\nCloses gh-31218"
+        },
+        {
+            "hash": "0b6c147a8751a71aed2fcc7af8a8ec2c2d1c7ca6",
+            "message": "Polish"
+        },
+        {
+            "hash": "da8dafe1381272c3c7d657b250a40e7b74c966c7",
+            "message": "Make afterResolve hook used by bootJar and bootWar more robust\n\nPreviously, ResolvedDependencies used hasError on\nResolvedConfiguration to check that it was safe to work with all\nof the resolved configuration's artifacts and their files. This\ncheck is not sufficient as errors can still occur later on.\n\nThis commit updates ResolvedDependencies to use a lenient\nconfiguration, thereby avoiding any problems that may be caused by\nerrors that occur after the hasError check.\n\nCloses gh-30586"
+        },
+        {
+            "hash": "419ac26e0d2494da6c9d5ca597452deed8ccde0a",
+            "message": "Use conventions for source and encoding of aggregatedJavadoc\n\nCloses gh-31210"
+        },
+        {
+            "hash": "51893c4bbac9eac1dcf5f5bc7500d96f765c7aa6",
+            "message": "Merge pull request #31197 from 1993heqiang\n\n* pr/31197:\n  Upgrade copyright year of changed files\n  Polish \"Remove boxing\"\n\nCloses gh-31197"
+        },
+        {
+            "hash": "ad1214c97253aa139c98ac9efecbcc75587b1f0e",
+            "message": "Upgrade copyright year of changed files\n\nSee gh-31197"
+        },
+        {
+            "hash": "3a0ab010669d2bd574de1c566aa3ebb75688e69a",
+            "message": "Polish \"Remove boxing\"\n\nSee gh-31197"
+        },
+        {
+            "hash": "35fb4f4bd363fa6b0f25794191ee053ddc1ee2ce",
+            "message": "Merge pull request #31203 from matei-cernaianu\n\n* pr/31203:\n  Fix \"spring.factories\" typos in database initialization documentation\n\nCloses gh-31203"
+        },
+        {
+            "hash": "eb8b9e17c5c2354588ce47b58ad9024b7c679d68",
+            "message": "Fix \"spring.factories\" typos in database initialization documentation\n\nSee gh-31203"
+        },
+        {
+            "hash": "83e8c039b3e579d973e64fc094a25ad8be428ced",
+            "message": "Add application/wasm to MIME mappings\n\nCloses gh-30885"
+        },
+        {
+            "hash": "88974b54887242183029ce621bb26b69a33d91ee",
+            "message": "Merge pull request #30878 from terminux\n\n* gh-30878:\n  Polish \"Assert that sources does not contain null elements\"\n  Assert that sources does not contain null elements\n\nCloses gh-30878"
+        },
+        {
+            "hash": "56c3a5f0abf28e5359ab722a1a5846d5aa8e4705",
+            "message": "Polish \"Assert that sources does not contain null elements\"\n\nSee gh-30878"
+        },
+        {
+            "hash": "ebf276c00528b273db90719b56a655b61eaf3e3d",
+            "message": "Assert that sources does not contain null elements\n\nSee gh-30878"
+        },
+        {
+            "hash": "94c938886138631510645fd351863e4faea556df",
+            "message": "Merge pull request #31172 from dalbani\n\n* gh-31172:\n  Fix Custom Layers Configuration section title in Maven plugin docs\n\nCloses gh-31172"
+        },
+        {
+            "hash": "3f91ed037f398f8d8b393b0ae0f8768062b3fa51",
+            "message": "Fix Custom Layers Configuration section title in Maven plugin docs\n\nSee gh-31172"
+        },
+        {
+            "hash": "3d203d0215081dd4ce48466457cd264a801c5960",
+            "message": "Polish"
+        },
+        {
+            "hash": "ee45fd2fc8855e2428e23690331925d45a2d81f5",
+            "message": "Remove redundant throws declarations from internal APIs\n\nCloses gh-31176"
+        },
+        {
+            "hash": "cbf42dea1497a4f20aa02578601fbfddc5e214ad",
+            "message": "Update deprecation messages to change removal version from 2.8 to 3.0\n\nCloses gh-30903"
+        },
+        {
+            "hash": "3e7bd582a3965cb6ed3f77ba6b33707af45b01bc",
+            "message": "Upgrade to Spring Java Format 0.0.33\n\nCloses gh-31166"
+        },
+        {
+            "hash": "6ea3704bafdf6145c675e4c8260219ebf4d7c547",
+            "message": "Merge pull request #31141 from eddumelendez\n\n* gh-31141:\n  Add .sdkmanrc with latest java version\n\nCloses gh-31141"
+        },
+        {
+            "hash": "07047e7e8530b688fefa88ad9a97fb3a041f9b54",
+            "message": "Add .sdkmanrc with latest java version\n\nSee gh-31141"
+        },
+        {
+            "hash": "6183532cc151a54b0161d469f565aea1a44530a2",
+            "message": "Merge pull request #31139 from eddumelendez\n\n* gh-31139:\n  Use Bellsoft JDK in CI\n\nCloses gh-31139"
+        },
+        {
+            "hash": "5fb96076bd3f1a408441f00b65ef236096619d0c",
+            "message": "Use Bellsoft JDK in CI\n\nSee gh-31139"
+        },
+        {
+            "hash": "9fa33e5645b70f6e9b2c1eb8984f38021fcb53ba",
+            "message": "Merge branch '2.5.x' into 2.6.x\n\nCloses gh-31127"
+        },
+        {
+            "hash": "f185b0767a71c2c326769bafea5966b677d6be00",
+            "message": "Merge pull request #31126 from abel533\n\n* pr/31126:\n  Polish \"Resolve errors in layers.xsd\"\n  Resolve errors in layers.xsd\n\nCloses gh-31126"
+        },
+        {
+            "hash": "05a6447a8da579d10c7e6f436bd1149e959657b2",
+            "message": "Polish \"Resolve errors in layers.xsd\"\n\nValidate loaded `layer.xml` files against the XSD and additionally\nupdate `<layers>` sub elements to have a 'minOccurs' of 0.\n\nSee gh-31126"
+        },
+        {
+            "hash": "0d78323b600b89ffe8b5f0d55e74f49cd43539c7",
+            "message": "Resolve errors in layers.xsd\n\nUpdate `layer-*.xsd` files with following fixes:\n\n- Rename <includeProjectDependencies> to <includeModuleDependencies>\n- Rename <excludeProjectDependencies> to <excludeModuleDependencies>\n\nSee gh-31126"
+        }
+    ],
+    "issues": [
+        {
+            "number": "31507",
+            "title": "Upgrade to Jetty 9.4.48.v20220622"
+        },
+        {
+            "number": "31482",
+            "title": "Upgrade to Spring Integration 5.5.13"
+        },
+        {
+            "number": "31301",
+            "title": "Malformed json causes BasicJsonParser to throw a NullPointerException"
+        },
+        {
+            "number": "31487",
+            "title": "Upgrade to Jetty 9.4.47.v20220610"
+        },
+        {
+            "number": "31486",
+            "title": "Upgrade to Dropwizard Metrics 4.2.10"
+        },
+        {
+            "number": "31350",
+            "title": "Upgrade to Spring Kafka 2.8.7"
+        },
+        {
+            "number": "21626",
+            "title": "Metadata generated by the configuration properties annotation processor can miss inherited properties from nested classes"
+        },
+        {
+            "number": "31348",
+            "title": "Upgrade to Spring AMQP 2.4.6"
+        },
+        {
+            "number": "31351",
+            "title": "Upgrade to Spring Security 5.6.6"
+        },
+        {
+            "number": "31470",
+            "title": "Upgrade to Gradle Enterprise Conventions 0.0.10"
+        },
+        {
+            "number": "31349",
+            "title": "Upgrade to Spring Data 2021.1.5"
+        },
+        {
+            "number": "31464",
+            "title": "Upgrade to Spring HATEOAS 1.4.4"
+        },
+        {
+            "number": "31291",
+            "title": "Upgrade Java 8 version in CI image"
+        },
+        {
+            "number": "31445",
+            "title": "Remind ourselves to update .sdkmanrc file when upgrading Java versions"
+        },
+        {
+            "number": "31420",
+            "title": "Upgrade to Undertow 2.2.18.Final"
+        },
+        {
+            "number": "31419",
+            "title": "Upgrade to Tomcat 9.0.64"
+        },
+        {
+            "number": "31418",
+            "title": "Upgrade to Reactive Streams 1.0.4"
+        },
+        {
+            "number": "31417",
+            "title": "Upgrade to Postgresql 42.3.6"
+        },
+        {
+            "number": "31416",
+            "title": "Upgrade to Netty tcNative 2.0.53.Final"
+        },
+        {
+            "number": "31415",
+            "title": "Upgrade to Netty 4.1.78.Final"
+        },
+        {
+            "number": "31414",
+            "title": "Upgrade to Neo4j Java Driver 4.4.6"
+        },
+        {
+            "number": "31413",
+            "title": "Upgrade to jOOQ 3.14.16"
+        },
+        {
+            "number": "31412",
+            "title": "Upgrade to Infinispan 12.1.12.Final"
+        },
+        {
+            "number": "31411",
+            "title": "Upgrade to Groovy 3.0.11"
+        },
+        {
+            "number": "31410",
+            "title": "Upgrade to AppEngine SDK 1.9.97"
+        },
+        {
+            "number": "19365",
+            "title": "Log4J2LoggingSystemTests loggingThatUsesJulIsCaptured unintentionally uses Logback"
+        },
+        {
+            "number": "31347",
+            "title": "Upgrade to Micrometer 1.8.7"
+        },
+        {
+            "number": "29356",
+            "title": "JarFile implementation calls close early which breaks verification of signed unpacked nested jars on Oracle JDK"
+        },
+        {
+            "number": "31318",
+            "title": "Upgrade to Spring Framework 5.3.21"
+        },
+        {
+            "number": "31346",
+            "title": "Upgrade to Reactor 2020.0.20"
+        },
+        {
+            "number": "31387",
+            "title": "Align buildSrc's Kotlin version with the main build's Kotlin version"
+        },
+        {
+            "number": "31231",
+            "title": "Health indicators that take a long time to respond are difficult to diagnose"
+        },
+        {
+            "number": "31378",
+            "title": "Remove duplicate content from \"The Spring WebFlux Framework\" section"
+        },
+        {
+            "number": "28592",
+            "title": "Custom Converter annotated with @ConfigurationPropertiesBinding does not get selected if targetType has a static factory method different return type"
+        },
+        {
+            "number": "28609",
+            "title": "Upgrade to Spring HATEOAS 1.3.6"
+        },
+        {
+            "number": "31343",
+            "title": "Remove BindConverter ConversionService workaround"
+        },
+        {
+            "number": "31352",
+            "title": "Upgrade to Spring Session 2021.1.4"
+        },
+        {
+            "number": "31309",
+            "title": "Document that property placeholders should use the canonical property name form"
+        },
+        {
+            "number": "31120",
+            "title": "Set LATEST_GA to false in CI pipeline"
+        },
+        {
+            "number": "31322",
+            "title": "Tomcat server.max-http-header-size property is ignored when using HTTP/2"
+        },
+        {
+            "number": "31297",
+            "title": "Upgrade CI to Docker 20.10.17"
+        },
+        {
+            "number": "31294",
+            "title": "Upgrade Java 18 version in CI image"
+        },
+        {
+            "number": "31290",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "31293",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "31287",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "31281",
+            "title": "Remove SpringApplicationHierarchyTests"
+        },
+        {
+            "number": "31260",
+            "title": "Upgrade integration tests to Apache Maven 3.8.5"
+        },
+        {
+            "number": "31218",
+            "title": "Remove unused deduceFromApplicationContext method from WebApplicationType"
+        },
+        {
+            "number": "30586",
+            "title": "Dependency task can fail to BootJar and BootWar afterResolve hooks"
+        },
+        {
+            "number": "31210",
+            "title": "Rely on conventions to configure source and encoding of aggregated Javadoc task"
+        },
+        {
+            "number": "30885",
+            "title": "MimeMappings does not include application/wasm"
+        },
+        {
+            "number": "31176",
+            "title": "Remove redundant throws declarations from internal APIs"
+        },
+        {
+            "number": "30903",
+            "title": "Review @Deprecated for removal in 2.x"
+        },
+        {
+            "number": "31166",
+            "title": "Upgrade to Spring Java Format 0.0.33"
+        },
+        {
+            "number": "31127",
+            "title": "layers.xsd is out of sync with the documentation and implementation for including and excluding module dependencies"
+        }
+    ]
+}

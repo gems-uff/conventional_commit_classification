@@ -1,0 +1,29 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.18.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 4,
+    "start_delay": 0.0,
+    "duration": 0.09163194444444445,
+    "commits_info": [
+        {
+            "hash": "6c6b0778b70f35f93c2f0dee30e5d12ad2a83eea",
+            "message": "Tweak wording in CHANGES.txt"
+        },
+        {
+            "hash": "731fa4fd38233f8dd4b73157788809239bc3bfaf",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "00047ce654d840817333b7395d304d6999a7de60",
+            "message": "Update CHANGES.txt for 3.18.2 release"
+        },
+        {
+            "hash": "36a2fe60090a277e0e740c8498ae715e87f6b9b7",
+            "message": "Improve performance of parsing unknown fields in Java (#9371)\n\nCredit should go to @elharo for most of these Java changes--I am just\ncherry-picking them from our internal codebase. The one thing I did\nchange was to give the UTF-8 validation tests their own Bazel test\ntarget. This makes it possible to give the other tests a shorter\ntimeout, which is important for UnknownFieldSetPerformanceTest in\nparticular."
+        }
+    ],
+    "issues": []
+}

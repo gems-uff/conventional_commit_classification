@@ -1,0 +1,134 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.0.22",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 18,
+    "start_delay": 0.0,
+    "duration": 51.02423611111111,
+    "commits_info": [
+        {
+            "hash": "e69dde8291c89be1ef657c17a41f1897c6f6bd79",
+            "message": "Release v6.0.22"
+        },
+        {
+            "hash": "f285df692cd16197046edd4b32cdb79ba29214d2",
+            "message": "Upgrade to SLF4J 2.0.13, JRuby 9.4.7, Awaitility 4.2.1"
+        },
+        {
+            "hash": "b9eeee8341675c11eb0601bbf3c99c4c68423823",
+            "message": "Polishing"
+        },
+        {
+            "hash": "df1f4812aabaa2ede40e24daeb38bf9ff22a5644",
+            "message": "Upgrade to Netty 4.1.111"
+        },
+        {
+            "hash": "230848c8e5232fea3d944d6b0f3c440b553a80d4",
+            "message": "Upgrade to spring-javaformat-checkstyle 0.0.42"
+        },
+        {
+            "hash": "eda868792a61e603c4fcd7fbeaa9bf910666e7f5",
+            "message": "Upgrade to Reactor 2022.0.20\n\nCloses gh-33008"
+        },
+        {
+            "hash": "76604db8da1f4483afed7897be56a9ce54c17b44",
+            "message": "Stop observations for async requests in Servlet filter\n\nPrior to this commit, the `ServerHttpObservationFilter` would support\nasync dispatches and would do the following:\n\n1. start the observation\n2. call the filter chain\n3. if async has started, do nothing\n4. if not in async mode, stop the observation\n\nThis behavior would effectively rely on Async implementations to\ncomplete and dispatch the request back to the container for an async\ndispatch. This is what Spring web frameworks do and guarantee.\n\nSome implementations complete the async request but do not dispatch\nback; as a result, observations could leak as they are never stopped.\n\nThis commit changes the support of async requests. The filter now\nopts-out of async dispatches - the filter will not be called for those\nanymore. Instead, if the application started async mode during the\ninitial container dispatch, the filter will register an AsyncListener to\nbe notified of the outcome of the async handling.\n\nFixes gh-32986"
+        },
+        {
+            "hash": "38b7209dc5c7c78139833ac2aebdd5a1cb9362dc",
+            "message": "Polishing\n\nSee gh-32984"
+        },
+        {
+            "hash": "df0764db5d941978fdbb6f7d81bebe6427af995d",
+            "message": "Remove outdated copyright from index.adoc\n\nCloses gh-32984"
+        },
+        {
+            "hash": "1e2c4635a3bee59029ecc8378ff76b8b1b4fca02",
+            "message": "Exclude node_modules from NoHttp checks\n\nCloses gh-32981"
+        },
+        {
+            "hash": "628b0504ec64b8ac7412fc71097c490a0ca653ac",
+            "message": "Skip ajc-compiled aspects for ajc-compiled target classes\n\nIncludes defensive ignoring of incompatible aspect types.\n\nCloses gh-32970\n\n(cherry picked from commit 0ea96b48065fe2c1bbbe4b537849ded0ad821280)"
+        },
+        {
+            "hash": "8b589db0282515c24f685d0d6d0c2bdefc611a76",
+            "message": "Avoid NoSuchMethodException for annotation attribute checks\n\nCloses gh-32921\n\n(cherry picked from commit b08883b65c19cbed6e7a93990194977f5af73e0a)"
+        },
+        {
+            "hash": "aed1d5f76271dd8b4082d77a1b42e258d1ad8c86",
+            "message": "Support compilation of map indexing with primitive in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into a Map using a primitive literal\n(boolean, int, long, float, or double).\n\nThis commit adds support for compilation of such expressions by\nensuring that primitive literals are boxed into their corresponding\nwrapper types in the compiled bytecode.\n\nCloses gh-32903\n\n(cherry picked from commit e9de426eb5ca14b354073ec35f10fa0cdfeb1791)"
+        },
+        {
+            "hash": "079d53c8d69c17e58422303a9f6a80b952c27106",
+            "message": "Support compilation of array and list indexing with Integer in SpEL\n\nPrior to this commit, the Spring Expression Language (SpEL) failed to\ncompile an expression that indexed into an array or list using an\nInteger.\n\nThis commit adds support for compilation of such expressions by\nensuring that an Integer is unboxed into an int in the compiled\nbytecode.\n\nSee gh-32694\nCloses gh-32908\n\n(cherry picked from commit cda577d1aacf0f90225f13050da42506f95bd2c8)"
+        },
+        {
+            "hash": "206a89017c1a1de3ad038f4a2621ad93cbca1c07",
+            "message": "Test detection of original generic method for CGLIB bridge method\n\nSee gh-32888"
+        },
+        {
+            "hash": "8d1bf9607bca236cdfbe87182145a60a9689a3b8",
+            "message": "Polishing\n\n(cherry picked from commit 6c08d9399239f421d0a19fc838e3d9d623d7e2e0)"
+        },
+        {
+            "hash": "e12440a7af07c16d46177fc9b6290dfecaf12a04",
+            "message": "Defensive handling of incompatible advice methods\n\nThis covers AspectJ transaction and caching aspects when encountered by Spring AOP.\n\nCloses gh-32882\nSee gh-32793\n\n(cherry picked from commit 6d7cd9c7dc94dc55af9a8c4fba3171fedf5931b7)"
+        },
+        {
+            "hash": "093e6a8e8d1b0eb61dbdf022c2dc629e814b1f2c",
+            "message": "Next development version (v6.0.22-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33008",
+            "title": "Upgrade to Reactor 2022.0.20"
+        },
+        {
+            "number": "32986",
+            "title": "Observation in ServerHttpObservationFilter is never stopped for asynchronous requests"
+        },
+        {
+            "number": "32984",
+            "title": "Remove outdated copyright from index.adoc"
+        },
+        {
+            "number": "32981",
+            "title": "Exclude `node_modules` from NoHttp checks"
+        },
+        {
+            "number": "32970",
+            "title": "AspectJ CTW aspects executed twice"
+        },
+        {
+            "number": "32921",
+            "title": "AnnotationUtils performance degrades with deep stacks"
+        },
+        {
+            "number": "32903",
+            "title": "SpEL compilation fails when indexing into a `Map` with a primitive"
+        },
+        {
+            "number": "32694",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32908",
+            "title": "SpEL compilation fails when indexing into an array or list with an `Integer`"
+        },
+        {
+            "number": "32888",
+            "title": "BeanUtils.copyProperties no longer copies generic type properties from a base class that has been enhanced"
+        },
+        {
+            "number": "32882",
+            "title": "Application not starting with @EnableTransactionManagement(mode = AdviceMode.ASPECTJ) "
+        },
+        {
+            "number": "32793",
+            "title": "Accept ajc-compiled `@Aspect` classes for Spring AOP proxy usage"
+        }
+    ]
+}

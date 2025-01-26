@@ -1,0 +1,21 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.17.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.0036689814814814814,
+    "commits_info": [
+        {
+            "hash": "e4a6fd16f602d7b8939e2b9c7fef43074f14d3c9",
+            "message": "2.17.8 release (previous 2.17.7) + release notes updated by CI build 3381\n\n[ci skip-release]"
+        },
+        {
+            "hash": "52e66b453810b5bad66c8d03d839d753baa48652",
+            "message": "Use java.lang.MethodHandles.Lookup::defineClass  (#1355)\n\n* Use java.lang.MethodHandles.Lookup::defineClass if this mechanism is available on the current JVM. This might not work when interoperating with foreign modules, if those modules do not open and export their types, most prominently, the Java core modules where there are introduced issues with serialization.\r\n\r\n* Reworked conditional logic so that the code is easier to understand\r\n\r\n* Renamed the system property and env variable\r\n\r\n - made it clear that it is an internal property and not a public API (we want to keep the public API front slim)\r\n - changed the name to indicate intent. It will remind us to remove it when Gradle works with Java11\r\n\r\n* Simplified Java11 simulation configuration for test tasks\r\n\r\nNo need to create a task and the dependency\r\n\r\n* Add Javadoc\r\n\r\n* Added more documentation and refined exception."
+        }
+    ],
+    "issues": []
+}

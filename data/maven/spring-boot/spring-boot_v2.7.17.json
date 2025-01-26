@@ -1,0 +1,582 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v2.7.17",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 95,
+    "start_delay": 0.0,
+    "duration": 47.35761574074074,
+    "commits_info": [
+        {
+            "hash": "2caabd06bc52fbdf1e94a43c15016c94cc69d480",
+            "message": "Release v2.7.17"
+        },
+        {
+            "hash": "c7d6fbcb3ad04461bc8d1b672b0cc8d137773cc7",
+            "message": "Upgrade to Ubuntu Jammy 20231004\n\nSee gh-37954"
+        },
+        {
+            "hash": "b226ff40f09710d3eee87c4b9f099628c14e4512",
+            "message": "Upgrade to Java 21.0.1+12\n\nCloses gh-37948"
+        },
+        {
+            "hash": "d226ba88d94877d7c90fd8881876bd3af1927f4f",
+            "message": "Upgrade to Java 17.0.9+11\n\nCloses gh-37947"
+        },
+        {
+            "hash": "ad933869cae0fb2e83a263106e5820b860bc775d",
+            "message": "Upgrade to Java 11.0.21+10\n\nCloses gh-37946"
+        },
+        {
+            "hash": "62a074a728451889b4973236b745050674814e46",
+            "message": "Upgrade to Java 8u392+9\n\nSee gh-37950"
+        },
+        {
+            "hash": "9a4e16a2d4ce46a85623bd802d78921bbcc2b31e",
+            "message": "Upgrade to Ubuntu Jammy 20231004 in CI images #37954\n\nCloses gh-37954"
+        },
+        {
+            "hash": "817debb1ee78f2b6e1a6428823f8c0831d7b30a4",
+            "message": "Fix constructor binding with conversion to custom collection type\n\nCloses gh-37734"
+        },
+        {
+            "hash": "7d6532cac475d989b6e52c93ece1df4d6a646e63",
+            "message": "Merge pull request #37905 from ttddyy\n\n* gh-37905:\n  Polish \"Support @Order on [CommandLine|Application]Runner @Bean definitions\"\n  Support @Order on [CommandLine|Application]Runner @Bean definitions\n\nCloses gh-37905"
+        },
+        {
+            "hash": "04307aa7e02c8c10830cc59dce29a101897b0905",
+            "message": "Polish \"Support @Order on [CommandLine|Application]Runner @Bean definitions\"\n\nSee gh-37905"
+        },
+        {
+            "hash": "8ac597c245956ca6e584e2504a8b9418f876ba43",
+            "message": "Support @Order on [CommandLine|Application]Runner @Bean definitions\n\nPrior to this commit, `@Order` annotation on `@Bean` method was not\nconsidered for `CommandLineRunner` and `ApplicationRunner`.\n\nThis commit introduces a `Runner` marker interface and uses it to\nretrieve the runner beans. As a result, it enables the use of `@Order`\nannotations on `@Bean` methods for both `CommandLineRunner` and\n`ApplicationRunner`.\n\nSigned-off-by: Tadaya Tsuyukubo <tadaya@ttddyy.net>\n\nSee gh-37905"
+        },
+        {
+            "hash": "27f06ea1e0a8864f7eedf9045b4ac4d995b12af5",
+            "message": "Upgrade to Undertow 2.2.28.Final\n\nCloses gh-37929"
+        },
+        {
+            "hash": "afff56a5f97eb11d12e5bd2fcd36bb8957e93ddf",
+            "message": "Upgrade to Spring Session Bom 2021.2.3\n\nCloses gh-37928"
+        },
+        {
+            "hash": "5244bcfb5a9acd724cf7d6e8cb1117f92a65e957",
+            "message": "Upgrade to Jetty Reactive HTTPClient 1.1.15\n\nCloses gh-37927"
+        },
+        {
+            "hash": "4cc3aec5879b0dc2d52612323cddd760634c39c9",
+            "message": "Consider @ComponentScan in imports context cache key\n\nFixes gh-31577"
+        },
+        {
+            "hash": "1f0e311cb885f52fcc01a1a049f841a241db4a34",
+            "message": "Completely disable restart when running tests\n\nFixes gh-37373"
+        },
+        {
+            "hash": "c587eae831b89a15d4adabc33ecf0ab95c95ab57",
+            "message": "Migrate to common concourse-release-scripts\n\nCloses gh-32577"
+        },
+        {
+            "hash": "747cb2dac95be3ec1a6d6fb83c49c318d2383dec",
+            "message": "Upgrade to Spring AMQP 2.4.17\n\nCloses gh-37676"
+        },
+        {
+            "hash": "69fb702551ff77355d42da272d0047ae92134e4d",
+            "message": "Upgrade to Tomcat 9.0.82\n\nCloses gh-37895"
+        },
+        {
+            "hash": "60912c41a65e75a3e85da9f1f0f2f9026511ea36",
+            "message": "Upgrade to Spring Data Bom 2021.2.17\n\nCloses gh-37677"
+        },
+        {
+            "hash": "a70afe2148d4d52e42ab37ec3380a34a0cae1fb9",
+            "message": "Upgrade to Pooled JMS 1.2.5\n\nCloses gh-37894"
+        },
+        {
+            "hash": "344d1361c80771691d8154d44b661bb3d7a620fe",
+            "message": "Upgrade to Dropwizard Metrics 4.2.21\n\nCloses gh-37893"
+        },
+        {
+            "hash": "3dba0d76d22e3e82d49348366a7ae71bb082f513",
+            "message": "Polish\n\nSee gh-37878"
+        },
+        {
+            "hash": "dbc06faed8225f5646868fbbd9bbfac8e84c546b",
+            "message": "Polish\n\nSee gh-37878"
+        },
+        {
+            "hash": "42ee6b9e74e097300b7532be65d09cace24855b0",
+            "message": "Use new permissions API with Gradle 8.3+\n\nCloses gh-37878"
+        },
+        {
+            "hash": "c0eb2cb4aee5428b27829dd79ec3b927b5c03a4e",
+            "message": "Prohibit upgrades to Undertow 2.2.27.Final\n\nCloses gh-37844"
+        },
+        {
+            "hash": "e9f543c6ba32f85680798ddd190ba600f683c7e3",
+            "message": "Upgrade to Reactor Bom 2020.0.37\n\nCloses gh-37675"
+        },
+        {
+            "hash": "de6e87acf0e0eeebcfaad82d7c28ef2bbd1b962d",
+            "message": "Upgrade to Netty 4.1.100.Final\n\nCloses gh-37843"
+        },
+        {
+            "hash": "ecc017000d5d798a1c83859ff9ec4f5d4943db88",
+            "message": "Upgrade to Micrometer 1.9.16\n\nCloses gh-37674"
+        },
+        {
+            "hash": "5ce281c982e03f9fd47d8c184c8bb1a9051add52",
+            "message": "Upgrade to Jetty 9.4.53.v20231009\n\nCloses gh-37842"
+        },
+        {
+            "hash": "c6c6167fa075f7077db930e811d8b629baa85086",
+            "message": "Upgrade to Infinispan 13.0.20.Final\n\nCloses gh-37841"
+        },
+        {
+            "hash": "8832b6788d5eadf9eb6394e1944f518d764ac604",
+            "message": "Upgrade to Elasticsearch 7.17.14\n\nCloses gh-37840"
+        },
+        {
+            "hash": "11311dbf6d01e0c44d8e052b2a61ca46a24d6df5",
+            "message": "Register task executor metrics when using lazy init\n\nFixes gh-37832"
+        },
+        {
+            "hash": "1acb02d62c284f893d09e60fd27b6b924aceeb6e",
+            "message": "Merge pull request #37745 from izeye\n\n* gh-37745:\n  Polish \"Polish\"\n  Polish\n\nCloses gh-37745"
+        },
+        {
+            "hash": "5a75fae23bdcf6ee41e1e840f1e07495155cde9e",
+            "message": "Polish \"Polish\"\n\nSee gh-37745"
+        },
+        {
+            "hash": "303015ea2d336379a386baf38ab3c9cd3806b672",
+            "message": "Polish\n\nSee gh-37745"
+        },
+        {
+            "hash": "5a1abb76f78dae52ea26b16c6806eef19922e112",
+            "message": "Test the Gradle plugin against Gradle 8.4\n\nCloses gh-37811"
+        },
+        {
+            "hash": "952ce1234ae099ccc82b70ba169ee41d0ab79e9f",
+            "message": "Reinstate Download Plugin dependency"
+        },
+        {
+            "hash": "254b8fe3cba3792f0bafc1a3b2fd7ee47d7cef71",
+            "message": "Closes gh-37815"
+        },
+        {
+            "hash": "fec9804dad83ad58440b0c9326631364a1c4a5f3",
+            "message": "Don't create .gradle folder early\n\nSee gh-37450"
+        },
+        {
+            "hash": "9518035e136e67ea7999cbd8618481715e1ef0b1",
+            "message": "Fix typos\n\nSee gh-37450"
+        },
+        {
+            "hash": "f04d354c291e9db25f969ddeffe4066ff58fea6d",
+            "message": "Attempt to fix download cache on CI\n\nSee gh-37450"
+        },
+        {
+            "hash": "6df5389d76df0c16d2ebad75eb1144ae69b9845d",
+            "message": "Use RedisSeralizer.java(ClassLoader) factory method\n\nCloses gh-37800"
+        },
+        {
+            "hash": "657656e814b6d932c3b5c1c3fc10b62af746c812",
+            "message": "Upgrade to UnboundID LDAPSDK 6.0.10\n\nCloses gh-37753"
+        },
+        {
+            "hash": "21a997af1dd8389c7ead91468e4f0b6162743425",
+            "message": "Upgrade to Netty 4.1.99.Final\n\nCloses gh-37752"
+        },
+        {
+            "hash": "e24369e062d074c38856c97d5a62fb5ebdd076a1",
+            "message": "Upgrade to Dropwizard Metrics 4.2.20\n\nCloses gh-37751"
+        },
+        {
+            "hash": "c37290bc6c413d202a230e3ac1dce94436e1b027",
+            "message": "Fix Oracle JDK download URL\n\nSee gh-37450"
+        },
+        {
+            "hash": "a33ce9d405410b15893ff4b3a98c4ae0118e1f08",
+            "message": "Cache JDK downloads for tests that use ImageFromDockerfile\n\nUpdate `spring-boot-launch-script-tests` and `spring-boot-loader-tests`\nso that JDK archives are now downloaded by Gradle and cached across\nbuilds.\n\nCloses gh-37450"
+        },
+        {
+            "hash": "35c09a6fcd844eb2daea39923d24a421bfa5a6f2",
+            "message": "Upgrade to Gradle 7.6.3\n\nCloses gh-37729"
+        },
+        {
+            "hash": "385e21a44ac6a1e8cc3923f299a288e2a7fa95a1",
+            "message": "Upgrade CI images to ubuntu:jammy-20230916\n\nCloses gh-37721"
+        },
+        {
+            "hash": "7a8536ef4e471e730125e5f4bc446e8d697cc21f",
+            "message": "Merge pull request #37643 from bottlerocketjonny\n\n* pr/37643:\n  Polish \"Remove link to LiveReload website due to timeout\"\n  Remove link to LiveReload website due to timeout\n\nCloses gh-37643"
+        },
+        {
+            "hash": "63fccf43dc5c0e8d1be4729d4ad9d81ed467a924",
+            "message": "Polish \"Remove link to LiveReload website due to timeout\"\n\nSee gh-37643"
+        },
+        {
+            "hash": "88bbab374dbfe02efaae8fa7f4ce519ade816662",
+            "message": "Remove link to LiveReload website due to timeout\n\nSee gh-37643"
+        },
+        {
+            "hash": "d987627b320d522c6336d236043a8b6cd82a7c38",
+            "message": "Merge pull request #37651 from dependabot[bot]\n\n* pr/37651:\n  Update gradle/gradle-build-action to 2.9.0\n\nCloses gh-37651"
+        },
+        {
+            "hash": "2c2e22460208542fbe5410c764f0dc169e4c16e2",
+            "message": "Update gradle/gradle-build-action to 2.9.0\n\nSee gh-37651"
+        },
+        {
+            "hash": "da319841b8a14351d7804bff6910063759beccf2",
+            "message": "Start building against Spring Data Bom 2021.2.17 snapshots\n\nSee gh-37677"
+        },
+        {
+            "hash": "21661c6a1acbf124159377f9de4e31636408b54f",
+            "message": "Start building against Spring AMQP 2.4.17 snapshots\n\nSee gh-37676"
+        },
+        {
+            "hash": "026bc31c3ec2bcd60512debfc7f7cea973f5091c",
+            "message": "Start building against Reactor Bom 2020.0.37 snapshots\n\nSee gh-37675"
+        },
+        {
+            "hash": "21a618a6c4fcc50870c81ad1f0e1d3e5826fe6b7",
+            "message": "Start building against Micrometer 1.9.16 snapshots\n\nSee gh-37674"
+        },
+        {
+            "hash": "26ff1e907f6c3ebcab6c76381d188f5465e9baa1",
+            "message": "Merge pull request #37655 from izeye\n\n* gh-37655:\n  Use AssertJ's fail, not JUnit's\n\nCloses gh-37655"
+        },
+        {
+            "hash": "c9932bb73a4a6fc005daf93d5b6c67db916c732d",
+            "message": "Use AssertJ's fail, not JUnit's\n\nThis commit also updates Checkstyle to prevent use of JUnit's\nassertions from being reintroduced.\n\nSee gh-37655"
+        },
+        {
+            "hash": "ed4ab667a1bb967e3f671fb48495b46aef06bf7f",
+            "message": "Enable LoaderIntegrationTests on aarch64\n\nCloses gh-37654"
+        },
+        {
+            "hash": "0205b875a03cbd500965ac3b929698f765175fa7",
+            "message": "Polish"
+        },
+        {
+            "hash": "bfd1a29e53a8f2afe1fe569cf25921bd8c2b49c4",
+            "message": "Exclude AbstractTransactionAspect from lazy init\n\nFixes gh-37506"
+        },
+        {
+            "hash": "1cdb238577a41f86735fd002e6d80b73488be562",
+            "message": "Merge pull request #37606 from jbertram\n\n* pr/37606:\n  Clarify ActiveMQ usage in JMS docs\n\nCloses gh-37606"
+        },
+        {
+            "hash": "8a5979ee8c6a6883a4fc4a6ca58436b148118e4e",
+            "message": "Clarify ActiveMQ usage in JMS docs\n\nThe Apache ActiveMQ project has adopted the label \"Classic\" for the 5.x\nbroker in order to more easily compare and contrast it with the broker\ncode-named Artemis.\n\nSee gh-37606"
+        },
+        {
+            "hash": "071a5951e9c6ed051db9840172b593e956da421c",
+            "message": "Merge pull request #37578 from onobc\n\n* gh-37578:\n  Use larger runner for PR workflow\n\nCloses gh-37578"
+        },
+        {
+            "hash": "3f1e8d65e6282ce1bedbc7a380e6287be3a7869d",
+            "message": "Use larger runner for PR workflow\n\nSee gh-37578"
+        },
+        {
+            "hash": "aeeb5cf1f8d75cae59068a91ae9d0b055d28054f",
+            "message": "Apply Gradle fileMode and dirMode consistently in jar and war archives\n\nFixes gh-37496"
+        },
+        {
+            "hash": "fce64878b409679bc059ee57f13ef0989faab2fb",
+            "message": "Merge pull request #37577 from dependabot[bot]\n\n* gh-37577:\n  Bump gradle/gradle-build-action from 2.8.0 to 2.8.1\n\nCloses gh-37577"
+        },
+        {
+            "hash": "6b9a952278a72115314f5485c1028a1afba475bf",
+            "message": "Bump gradle/gradle-build-action from 2.8.0 to 2.8.1\n\nBumps [gradle/gradle-build-action](https://github.com/gradle/gradle-build-action) from 2.8.0 to 2.8.1.\n- [Release notes](https://github.com/gradle/gradle-build-action/releases)\n- [Commits](https://github.com/gradle/gradle-build-action/compare/ef76a971e2fa3f867b617efd72f2fbd72cf6f8bc...b5126f31dbc19dd434c3269bf8c28c315e121da2)\n\nSee gh-37577"
+        },
+        {
+            "hash": "b266ade00ccba1d89d17f67b4599d6848abaa998",
+            "message": "Prevent exception when loading optional config data locations\n\nCloses gh-35683"
+        },
+        {
+            "hash": "303a8f0825e4142644ee64f0771bfd2bba84c560",
+            "message": "Disable 'LombokGetterMayBeUsed' inspection"
+        },
+        {
+            "hash": "c45ad6ce83096454152a4f325d1fa90705c7e828",
+            "message": "Use actual Java version in build image integration tests\n\nSee gh-37453"
+        },
+        {
+            "hash": "7b0885b8b2849f9cc71be7fcb078123bb44329c6",
+            "message": "Merge pull request #37180 from vpavic\n\n* gh-37180:\n  Polish \"Fix handling of JMS listener concurrency properties\"\n  Fix handling of JMS listener concurrency properties\n\nCloses gh-37180"
+        },
+        {
+            "hash": "feae7be0a16c0d006df454a58d44e30d198bc116",
+            "message": "Polish \"Fix handling of JMS listener concurrency properties\"\n\nSee gh-37180"
+        },
+        {
+            "hash": "366607f51783866aeb6a9115ad5587bfee3997c9",
+            "message": "Fix handling of JMS listener concurrency properties\n\nUpdate JMS listener concurrency configuration to set the same minimum\nand maximum number of consumers when users specify only the minimum\nusing `spring.jms.listener.concurrency` property.\n\nPrior to this commit, when using `spring.jms.listener.concurrency` to\nset the minimum number of consumers without also specifying\n`spring.jms.listener.max-concurrency` would result in effective\nconcurrency where the actual minimum number of consumers is always 1,\nwhile the maximum number of consumers is the value of\n`spring.jms.listener.concurrency`.\n\nSee gh-37180"
+        },
+        {
+            "hash": "98bfaf0412c6d62c5ecace2e99d89276ce2933f8",
+            "message": "Remove compatibility blocks from Gradle plugin integration tests\n\nCloses gh-37453"
+        },
+        {
+            "hash": "6936d7e5f52b98f5b7e43e850ea96e752fd331a7",
+            "message": "Merge pull request #37395 from erichaagdev\n\n* gh-37395:\n  Mock working directory for extract test\n\nCloses gh-37395"
+        },
+        {
+            "hash": "a2be276dd8c04851bdad531e26a1cbe30a4417c8",
+            "message": "Mock working directory for extract test\n\nPrior to this change, this test would create files in the project\ndirectory. This can cause issues with Gradle caching and up-to-date\nchecks.\n\nTo address this, the value of the working directory is mocked to a\ntemporary directory like all the other tests.\n\nSee gh-37395"
+        },
+        {
+            "hash": "98acca9633b6f7ebc03dc18c28c3af762d164fa8",
+            "message": "Add dep management for kafka-server-common with test classifier\n\nCloses gh-37499"
+        },
+        {
+            "hash": "7bb40d50d4ccbbb5892c55f9f72f180d7b8550ec",
+            "message": "Polish"
+        },
+        {
+            "hash": "89a86e91f5ccd0bba593f52fb2aac14ce7851ba9",
+            "message": "Avoid deprecation warning with Gradle 8.4-rc-1\n\nCloses gh-37493"
+        },
+        {
+            "hash": "f6230120dc8d4e83231b6a8e0172f7fe9088401a",
+            "message": "Merge pull request #37438 from nielsbasjes\n\n* pr/37438:\n  Polish \"Use the Maven Archiver implementation for parsing outputTimestamp\"\n  Use the Maven Archiver implementation for parsing outputTimestamp\n\nCloses gh-37438"
+        },
+        {
+            "hash": "a3611ae9f3497b007ffabdd7fe281c765dbcb0a7",
+            "message": "Polish \"Use the Maven Archiver implementation for parsing outputTimestamp\"\n\nSee gh-37438"
+        },
+        {
+            "hash": "a1b08e1819cbf1342f3b6119c1cfcde5fd5223cc",
+            "message": "Use the Maven Archiver implementation for parsing outputTimestamp\n\nSee gh-37438"
+        },
+        {
+            "hash": "6be8ce948a697102ff53146f6c2694c1abf636f9",
+            "message": "Document support for Java 21\n\nCloses gh-37371"
+        },
+        {
+            "hash": "3f9a04331cc30d5c5ec917cef5cb5687824681e6",
+            "message": "Remove Java 20 from CI\n\nCloses gh-37527"
+        },
+        {
+            "hash": "a0fd4fc86b6b8704b9ec79e8d2ab9d528520c0ad",
+            "message": "Switch Java 21 CI to Bellsoft and enable update detection\n\nCloses gh-37369"
+        },
+        {
+            "hash": "f96690348f32529545f6f1244a482b1e086d5412",
+            "message": "Use Bellsoft JDK 21 in LoaderIntegrationTests\n\nCloses gh-35900"
+        },
+        {
+            "hash": "bd855135b0ea863a8849dd1ebd40955a31a5a12b",
+            "message": "Use Paketo Jammy builder in Paketo system tests\n\nCloses gh-37516"
+        },
+        {
+            "hash": "a3f51e0f6f4b8462ae00bfae8e58ab7286dd3fb2",
+            "message": "Merge pull request #37492 from izeye\n\n* pr/37492:\n  Fix wrong mocking\n\nCloses gh-37492"
+        },
+        {
+            "hash": "b95092c6211d4405e2745f717b79217b26031e91",
+            "message": "Fix wrong mocking\n\nSee gh-37492"
+        },
+        {
+            "hash": "81efbc7a7bac420560d86df2c457f10ad8026878",
+            "message": "Merge pull request #37491 from esperar\n\n* pr/37491:\n  Use more idiomatic Kotlin in doc example\n\nCloses gh-37491"
+        },
+        {
+            "hash": "45e08f321cbf37b315b4a6eaca6468c51e0dabf9",
+            "message": "Use more idiomatic Kotlin in doc example\n\nSee gh-37491"
+        }
+    ],
+    "issues": [
+        {
+            "number": "37954",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "37948",
+            "title": "Upgrade Java 21 version in CI image"
+        },
+        {
+            "number": "37947",
+            "title": "Upgrade Java 17 version in CI image"
+        },
+        {
+            "number": "37946",
+            "title": "Upgrade Java 11 version in CI image"
+        },
+        {
+            "number": "37950",
+            "title": "Upgrade Java 8 version in CI image"
+        },
+        {
+            "number": "37734",
+            "title": "Constructor binding with a custom collection type does not work"
+        },
+        {
+            "number": "37929",
+            "title": "Upgrade to Undertow 2.2.28.Final"
+        },
+        {
+            "number": "37928",
+            "title": "Upgrade to Spring Session Bom 2021.2.3"
+        },
+        {
+            "number": "37927",
+            "title": "Upgrade to Jetty Reactive HTTPClient 1.1.15"
+        },
+        {
+            "number": "31577",
+            "title": "@ComponentScan on a test class is processed when creating a test context but is not included in the context's cache key"
+        },
+        {
+            "number": "37373",
+            "title": "Restarter creates memory leak in tests"
+        },
+        {
+            "number": "32577",
+            "title": "Migrate to common concourse-release-scripts"
+        },
+        {
+            "number": "37676",
+            "title": "Upgrade to Spring AMQP 2.4.17"
+        },
+        {
+            "number": "37895",
+            "title": "Upgrade to Tomcat 9.0.82"
+        },
+        {
+            "number": "37677",
+            "title": "Upgrade to Spring Data Bom 2021.2.17"
+        },
+        {
+            "number": "37894",
+            "title": "Upgrade to Pooled JMS 1.2.5"
+        },
+        {
+            "number": "37893",
+            "title": "Upgrade to Dropwizard Metrics 4.2.21"
+        },
+        {
+            "number": "37878",
+            "title": "Gradle plugin uses to-be-deprecated API for getting and setting file permissions"
+        },
+        {
+            "number": "37844",
+            "title": "Prohibit upgrades to Undertow 2.2.27.Final"
+        },
+        {
+            "number": "37675",
+            "title": "Upgrade to Reactor Bom 2020.0.37"
+        },
+        {
+            "number": "37843",
+            "title": "Upgrade to Netty 4.1.100.Final"
+        },
+        {
+            "number": "37674",
+            "title": "Upgrade to Micrometer 1.9.16"
+        },
+        {
+            "number": "37842",
+            "title": "Upgrade to Jetty 9.4.53.v20231009"
+        },
+        {
+            "number": "37841",
+            "title": "Upgrade to Infinispan 13.0.20.Final"
+        },
+        {
+            "number": "37840",
+            "title": "Upgrade to Elasticsearch 7.17.14"
+        },
+        {
+            "number": "37832",
+            "title": "Task executor metrics are not registered when using lazy initialization"
+        },
+        {
+            "number": "37811",
+            "title": "Test Gradle plugin against Gradle 8.4"
+        },
+        {
+            "number": "37815",
+            "title": "Align versions in buildSrc with the main build"
+        },
+        {
+            "number": "37450",
+            "title": "Cache JDK downloads for tests that use ImageFromDockerfile"
+        },
+        {
+            "number": "37800",
+            "title": "Use 'RedisSerializer.java(ClassLoader)' rather than 'new JdkSerializationRedisSerializer(ClassLoader)'"
+        },
+        {
+            "number": "37753",
+            "title": "Upgrade to UnboundID LDAPSDK 6.0.10"
+        },
+        {
+            "number": "37752",
+            "title": "Upgrade to Netty 4.1.99.Final"
+        },
+        {
+            "number": "37751",
+            "title": "Upgrade to Dropwizard Metrics 4.2.20"
+        },
+        {
+            "number": "37729",
+            "title": "Upgrade to Gradle 7.6.3"
+        },
+        {
+            "number": "37721",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "37654",
+            "title": "Enable LoaderIntegrationTests on aarch64"
+        },
+        {
+            "number": "37506",
+            "title": "AspectJ transaction management with compile-time weaving does not work with spring.main.lazy-initialization=true"
+        },
+        {
+            "number": "37496",
+            "title": " fileMode and dirMode are not applied to all entries in an archive produced by BootJar"
+        },
+        {
+            "number": "35683",
+            "title": "Application fails to start when an optional config import cannot be resolved"
+        },
+        {
+            "number": "37453",
+            "title": "Remove sourceCompatibility/targetCompatibility blocks from Gradle plugin integration tests"
+        },
+        {
+            "number": "37499",
+            "title": "Dependency management for kafka-server-common with a test classifier is missing"
+        },
+        {
+            "number": "37493",
+            "title": "Gradle plugin's build info support produces a deprecation warning when using Gradle 8.4-rc-1"
+        },
+        {
+            "number": "37371",
+            "title": "Document support for Java 21"
+        },
+        {
+            "number": "37527",
+            "title": "Remove Java 20 from CI"
+        },
+        {
+            "number": "37369",
+            "title": "Switch Java 21 CI to Bellsoft Liberica and enable automatic update detection"
+        },
+        {
+            "number": "35900",
+            "title": "Use Bellsoft JDK 21 image when Java 21 is out of early access"
+        },
+        {
+            "number": "37516",
+            "title": "Use Paketo Jammy builder in Paketo system tests"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.3.9",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.004131944444444444,
+    "commits_info": [
+        {
+            "hash": "f0e79e751fc4824d8e51473612063c11b0e56df8",
+            "message": "3.3.9 release (previous 3.3.8) + release notes updated by CI build 4432\n\n[ci skip-release]"
+        },
+        {
+            "hash": "c6f23366002abcfb4e0b7ab58891c75d0e23260a",
+            "message": "Fixes #1905 : Fix Pattern matcher not matching to subregion (#1914)\n\nIssue #1905 talked about a particular pattern using Java's Pattern that\r\ncauses Mockito to not properly match the argument (provided with an\r\ninvocation) to the expected answer. It was later discovered that the\r\nPattern matcher matches to the entire region, not some subregion, by\r\nusing Java's Matcher.match(). This commit fixes that by using\r\nMatcher.find()."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1905",
+            "title": "ArgumentMatchers.matches not working"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.23.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 7,
+    "start_delay": 0.0,
+    "duration": 2.482384259259259,
+    "commits_info": [
+        {
+            "hash": "02af01d3f685a49dbc67d7eeaf477a2305522d1c",
+            "message": "2.23.8 release (previous 2.23.7) + release notes updated by CI build 3678\n\n[ci skip-release]"
+        },
+        {
+            "hash": "bf16d192f013629115e5c3b1a40bbc394ccd700e",
+            "message": "Merge pull request #1554 from tjni/ignore-junit-3.8\n\nFixes #1553: Fix error when JUnit 3 is in the classpath."
+        },
+        {
+            "hash": "f890fbb3ec5872c57e7572aee1861e31fc6bb781",
+            "message": "Simplified the code, covering more cases\n\nWe have plenty of coverage that asserts that we are creating the right exception."
+        },
+        {
+            "hash": "5e6cc2265aceb513aff1503a5413feac87e11283",
+            "message": "Fixes #1553: Fix error when JUnit 3 is in the classpath.\n\nMockito will throw VerifyError during its JUnit detection when JUnit 3\nis in the classpath, because the code only supports JUnit 4 and later.\nThis change will catch this error and pretend that JUnit is not there."
+        },
+        {
+            "hash": "613c94a69ed6e455700544419921d1c9977844ef",
+            "message": "Merge pull request #1548 from mockito/next-gradle\n\nBumped Gradle to last 4.x"
+        },
+        {
+            "hash": "1f8024f7d45da35e0b50161284890303df8bef34",
+            "message": "Let's not enable the cache just yet\n\nThere is a separate ticket to track it"
+        },
+        {
+            "hash": "abef9154aa1ee70cd871cb82f2d5a9cc7ac38cfb",
+            "message": "Bumped Gradle to last 4.x"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1553",
+            "title": "VerifyError thrown when JUnit 3 is in the classpath"
+        }
+    ]
+}

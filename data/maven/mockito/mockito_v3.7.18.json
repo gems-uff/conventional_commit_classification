@@ -1,0 +1,22 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.7.18",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 1,
+    "start_delay": 0.0,
+    "duration": 0.0,
+    "commits_info": [
+        {
+            "hash": "84774556217c23472e54ff9ffe32bc041a40426d",
+            "message": "Fixes #2204: Ignore Groovy methods annotated with Internal (#2207)\n\nStarting from Groovy 3.0, compiler-generated methods such as\r\n`getMetaClass()` are no longer marked synthetic, therefore ByteBuddy\r\nstopped automatically ignoring them. Instead they are now annotated with\r\n`@groovy.transform.Internal`. Update `isGroovyMethod()` to also check\r\nthis new annotation."
+        }
+    ],
+    "issues": [
+        {
+            "number": "2204",
+            "title": "Groovy 3.0 internal methods are not ignored as they should be"
+        }
+    ]
+}

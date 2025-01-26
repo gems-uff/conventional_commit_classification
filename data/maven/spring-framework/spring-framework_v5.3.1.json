@@ -1,0 +1,370 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.1",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 66,
+    "start_delay": 0.0,
+    "duration": 31.825497685185184,
+    "commits_info": [
+        {
+            "hash": "967637d7636204484e37c26fa25e2f4ec8b5dba9",
+            "message": "Release v5.3.1"
+        },
+        {
+            "hash": "2899652d8ea1b68b92f94ba1f13e028f76c251cb",
+            "message": "Fix checkstyle violation"
+        },
+        {
+            "hash": "560a504a83cd72b3f3283810a6664040fc905215",
+            "message": "Polishing in DefaultWebClient"
+        },
+        {
+            "hash": "79f79e9306bd7122f26f79f2dc6c956a801af18d",
+            "message": "WebClient method to populate the Reactor Context\n\nThe alternative is to use a filter but this makes it a little easier\nand also guarantees that it will be downstream from all filters\nregardless of their order, and therefore the Context will be visible\nto all of them.\n\nCloses gh-25710"
+        },
+        {
+            "hash": "bd2640a9d67ef1f8cffb8a8ed0c4a6539d5b4712",
+            "message": "Strict nullability for field assignment"
+        },
+        {
+            "hash": "6825287360e7d881066b7fbd16ab7e970985c225",
+            "message": "Polishing"
+        },
+        {
+            "hash": "737d77a739ecd586235eb983cdeba21c8a8e9bf0",
+            "message": "Fix @Transactional support on functions returning Flow\n\nCloses gh-26052"
+        },
+        {
+            "hash": "1f13516528a5884a1182649566a33f6dd0cc4e68",
+            "message": "Fix @Transactional support on suspending function\n\nWith this commit, @Transactional on suspending functions\nreturning a value now commits the transaction properly.\n\nCloses gh-25998"
+        },
+        {
+            "hash": "6bb3ad793eedd2f5eda98d5897ab207f081c87ec",
+            "message": "Add isOpen to WebSocketSession in WebFlux\n\nCloses gh-26043"
+        },
+        {
+            "hash": "c73cff8bad0094c2683da9e9bbf39ec2c2307e38",
+            "message": "Use RxJava 2/3 fromPublisher() when possible in ReactiveAdapterRegistry\n\nCloses gh-26051"
+        },
+        {
+            "hash": "e592634290a00cc2922ce90914971443fba5e445",
+            "message": "Polishing"
+        },
+        {
+            "hash": "b25637e8adcde375c129bf383b8fa0b497fab658",
+            "message": "Make setTaskScheduler and setTcpClient chaining-friendly\n\nCloses gh-26049"
+        },
+        {
+            "hash": "0c347769a25c1bbf4687a1a09c3727f8064758cc",
+            "message": "Fix wrong reference in UrlPathHelper.removeSemicolonContentInternal()\n\nThis commit also changes to short-circuit when `slashIndex` is -1."
+        },
+        {
+            "hash": "2497d4285f0ef9fd7b1c1236aba4dd8efaedf974",
+            "message": "Detect existing DispatcherServlet strategy beans in parent context as well\n\nCloses gh-25290"
+        },
+        {
+            "hash": "32238cc99624ac0f25a1347c7cd63e675e821830",
+            "message": "Add CoroutinesAnnotationTransactionInterceptorTests\n\nsuspendingValueSuccess() currently fails due to an\nunexpected rollback on transactional suspending functions\nreturning a value.\n\nSee gh-25998"
+        },
+        {
+            "hash": "d80dd50c9d3591a5dff8651745ee6fff9def0e15",
+            "message": "Add CoroutinesAnnotationTransactionInterceptorTests\n\nsuspendingValueSuccess() currently fails due to an\nunexpected rollback on transactional suspending functions\nreturning a value.\n\nSee gh-25998"
+        },
+        {
+            "hash": "bdf120f1efcafe4312bdb2e638073549c01d2084",
+            "message": "Add CoroutinesAnnotationTransactionInterceptorTests\n\nsuspendingValueSuccess() currently fails due to an\nunexpected rollback on transactional suspending functions\nreturning a value.\n\nSee gh-25998"
+        },
+        {
+            "hash": "e781d21097d4536c918b6d74387faf9c2648a6db",
+            "message": "Add CoroutinesAnnotationTransactionInterceptorTests\n\nsuspendingValueSuccess() currently fails due to an\nunexpected rollback on transactional suspending functions\nreturning a value.\n\nSee gh-25998"
+        },
+        {
+            "hash": "8cef13cc30eef69a54817cbf2931f352c7e127f1",
+            "message": "Upgrade to Kotlin Coroutines 1.4.1"
+        },
+        {
+            "hash": "2214ff8ce04ae298c01e5f6d3b7be45d7ebb209c",
+            "message": "Fix Kotlin example code which does not compile\n\nThis kotlin code does not compile:\nOverload resolution ambiguity. All these functions match.\ndefault <R> RowsFetchSpec<R> map(Function<Row, R> mappingFunction)\n<R> RowsFetchSpec<R> map(BiFunction<Row, RowMetadata, R> mappingFunction);\n\nCloses gh-26016"
+        },
+        {
+            "hash": "411539ffef01ab5559cf43db0f8118b7e4d10060",
+            "message": "Update copyright date\n\nSee gh-26044"
+        },
+        {
+            "hash": "11aa901634c7e312ceddf95e645da7c832139965",
+            "message": "Delete explicit type arguments that can be inferred\n\nCloses gh-26044"
+        },
+        {
+            "hash": "6e51370490bfda56d4ce68b1acaffb858df7af46",
+            "message": "AbstractJackson2Encoder support for MappingJacksonValue\n\nCloses gh-26035"
+        },
+        {
+            "hash": "bcd2b9a8a7d4e0b8b6615787122d5f2a2d3eb70c",
+            "message": "Further refine logging in StompErrorHandler\n\nIn 5.3.x and forward, completely avoid logging unsent CONNECT messages\nthat are most likely authentication issues before the session is even\nestablished.\n\nCloses gh-26026"
+        },
+        {
+            "hash": "17dd7785f6ae763136d1ce73e442661648be05a5",
+            "message": "Refine logging in StompErrorHandler\n\nAvoid a full stacktrace at ERROR level for a client message that could\nnot be sent to a MessageChannel.\n\nSee gh-26026"
+        },
+        {
+            "hash": "21f9d05bd92179306a74b731297fe94a19adb499",
+            "message": "Upgrade to Jetty 9.4.34, AssertJ 3.18, Mockito 3.6"
+        },
+        {
+            "hash": "19911af30ac3d688317ebdec83bca28f13d3c615",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6acb091c4e32e170eda8a0a80d8c9d1d4fd5c02a",
+            "message": "Upgrade SpelCompiler bytecode level to 1.8 and optimize for concurrent access\n\nCloses gh-26033"
+        },
+        {
+            "hash": "99ed01e3f7c14d3227898beceddfdd08ff2871ec",
+            "message": "Optimize locking in AspectJProxyFactory for concurrent aspect instantiation\n\nCloses gh-26034"
+        },
+        {
+            "hash": "26577575666412b10063ee52acdf954a099c28f4",
+            "message": "Separate assignment statements for local variable and instance field\n\nSee gh-25899"
+        },
+        {
+            "hash": "e1f51b4bf80c7284f7c6ad918385a24b680b6549",
+            "message": "Avoid multiple volatile reads/writes in a row where only one is enough"
+        },
+        {
+            "hash": "f2f84bfa7aaf822894bb20fa4699ddf5179b8629",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6d67bdf04f2c2c2ab7af8b354ae1811a42c7607a",
+            "message": "Polishing"
+        },
+        {
+            "hash": "97c8628bd6d8e86c0dd7557d79e7e40cbc9c97a9",
+            "message": "Suppress NotWritablePropertyException in case of ignoreUnknown=true\n\nCloses gh-25986"
+        },
+        {
+            "hash": "990a9c74b93b3124dae554e6246b9b75504a5d23",
+            "message": "Restore removal of trailing semicolon content\n\nSee gh-26012"
+        },
+        {
+            "hash": "b815accca99e120419d29d450f692a013221611b",
+            "message": "Upgrade to Hibernate ORM 5.4.23"
+        },
+        {
+            "hash": "4e8d6bea4dfe0aa1d7e845b5120ce7f16496071f",
+            "message": "Fix test code formatting"
+        },
+        {
+            "hash": "079ca80854ac7b98c124b9bebfcc54307a32888e",
+            "message": "SpEL supports record-style accessor methods as well\n\nCloses gh-26029"
+        },
+        {
+            "hash": "412aa06d861d5c891326827190af517c3feae603",
+            "message": "Reliably refresh metadata for dynamically changing prototype bean class\n\nCloses gh-26019"
+        },
+        {
+            "hash": "d5b3e65718a980b751ba603bdcba41c98e2c9992",
+            "message": "Add since tag\n\nSee gh-26025"
+        },
+        {
+            "hash": "a4679b87b993f69d998e8add54a98bf85c86aa02",
+            "message": "Fix Checkstyle violation and rearrange getAdvisorCount declaration\n\nSee gh-26017"
+        },
+        {
+            "hash": "fbf8e37f9451f9ba56b7afaf232570b2e886a7de",
+            "message": "Add FullyQualifiedAnnotationBeanNameGenerator.INSTANCE\n\nAdds a static INSTANCE to FullyQualifiedAnnotationBeanNameGenerator,\njust like its parent class, AnnotationBeanNameGenerator, does.\n\nThe class doesn't have any state and overriding/hiding the INSTANCE of\nthe superclass, this prevents unintended use of a regular\nAnnotationBeanNameGenerator through\nFullyQualifiedAnnotationBeanNameGenerator.INSTANCE."
+        },
+        {
+            "hash": "8c3cab7eadcb07be11ed725bc82277f046a4fe7c",
+            "message": "Improve usage of AdvisedSupport.getAdvisors()"
+        },
+        {
+            "hash": "0015fd67347b523411a7f34a119b3ffdcbbb9d1e",
+            "message": "Improve URI/query strings sanitization"
+        },
+        {
+            "hash": "b077e4cd85830efdd5679795e1baba13c903abe8",
+            "message": "Use MergedAnnotationCollectors again in TestContextAnnotationUtils\n\nSee gh-26031"
+        },
+        {
+            "hash": "0a0299693bc7d3dad05ca4c8fcb2c3459ca2e131",
+            "message": "Do not create intermediate list in MergedAnnotationCollectors.toAnnotationSet()\n\nPrior to this commit, MergedAnnotationCollectors.toAnnotationSet()\ncreated an intermediate ArrayList for storing the results prior to\ncreating a LinkedHashSet in the finishing step.\n\nSince the creation of the intermediate list is unnecessary, this commit\nsimplifies the implementation of toAnnotationSet() by using the\nCollector.of() factory method that does not accept a `finisher` argument.\nThe resulting Collector internally uses a `castingIdentity()` function\nas the `finisher`.\n\nCloses gh-26031"
+        },
+        {
+            "hash": "41bdde5d6b8c04d145061b481e398fe45d4effa1",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2e2d6621586304749372b3cd9888c6955bdf3b53",
+            "message": "Add toEntityFlux methods\n\nCloses gh-26023"
+        },
+        {
+            "hash": "68934f1b793ab8c6f01cfb091815374be2d95180",
+            "message": "Use TYPE_HIERARCHY strategy in AnnoDescr.findAllLocalMergedAnnotations()\n\nPrior to this commit, the findAllLocalMergedAnnotations() method in\nAnnotationDescriptor altered between the use of TYPE_HIERARCHY and\nTYPE_HIERARCHY_AND_ENCLOSING_CLASSES for the SearchStrategy, depending\non @NestedTestConfiguration semantics; however, when searching for\n\"local\" annotations, there is no need to search the enclosing class\nhierarchy since AnnotationDescriptor#next() handles that use case.\n\nThis commit therefore switches to using only the TYPE_HIERARCHY\nstrategy.\n\nThis commit also discontinues the use of\nMergedAnnotationCollectors.toAnnotationSet() in order to avoid the\nunnecessary creation of a temporary List when collecting synthesized\nannotations in a LinkedHashSet.\n\nCloses gh-25985"
+        },
+        {
+            "hash": "f781c459b43eeac60188cf6a71508ff0cc8c9229",
+            "message": "Simplify AbstractBeanFactory.registerCustomEditors()\n\nThis commit avoids an unnecessary non-null check in\nregisterCustomEditors().\n\nCloses gh-26022"
+        },
+        {
+            "hash": "5628c8cd63b64e7620f01dbc1269f5984906289a",
+            "message": "Polish ActiveProfilesUtils"
+        },
+        {
+            "hash": "0f6038af70434a20fc4112a79c00c411ab88e519",
+            "message": "Log can[Se]Deserialize error in Jackson codecs\n\nCloses gh-25892"
+        },
+        {
+            "hash": "3eb2c5e22f3a114b8f8c989bd7ef079590b24c4a",
+            "message": "Use static accessors in DefaultSimpUserRegistry\n\nCloses gh-26010"
+        },
+        {
+            "hash": "3f722a9c7f7f9852ba9c655f5aa8e5b6d82ec741",
+            "message": "Set DEBUG logs for release tasks in CI pipeline\n\nThis commit configures the logging level to DEBUG for the concourse\nrelease scripts tasks.\n\nThis is useful to get a clue on where those long-running tasks are at."
+        },
+        {
+            "hash": "acbbf61be878f7924e29d71fe95fe001a8d29183",
+            "message": "Preserve registration order in @ActiveProfiles\n\nWith this commit, bean definition profiles declared via @ActiveProfiles\nare once again stored in registration order, in order to support use\ncases in Spring Boot and other frameworks that depend on the\nregistration order.\n\nThis effectively reverts the changes made in conjunction with gh-25973.\n\nCloses gh-26004"
+        },
+        {
+            "hash": "154f0c71c985385e915785b0867678bd23e88004",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7be7e5beb4e7d808761f06e386b359d45a0890d8",
+            "message": "Ensure response not closed by MappingJackson2HttpMessageConverter\n\nCloses gh-25987"
+        },
+        {
+            "hash": "37504e75e95537bd740bb576e266e73077997bc3",
+            "message": "Merge pull request #25999 from izeye\n\n* pr/25999:\n  Fix a broken Asciidoctor syntax in core-resources.adoc\n\nCloses gh-25999"
+        },
+        {
+            "hash": "b89b37729c69d1d7f61153cd498e4232632f7a1b",
+            "message": "Fix a broken Asciidoctor syntax in core-resources.adoc\n\nSee gh-25999"
+        },
+        {
+            "hash": "141c79bc8f2f8cadafb90f8e1f5c3fe44ea2381c",
+            "message": "Default resolution of non-annotated Principal argument\n\nCloses gh-25981"
+        },
+        {
+            "hash": "885a5048c1bac3a8753e1419e8cefbfbb89d426a",
+            "message": "Copy default headers, cookies in WebClient builder\n\nThis commit makes copies of the default headers and cookies when a\nWebClient is built, so that subsequent changes to these do not affect\npreviously built clients.\n\nCloses: gh-25992"
+        },
+        {
+            "hash": "e981bf34b3863cb801af75911e0102c08c7ab783",
+            "message": "Removed unused sample code"
+        },
+        {
+            "hash": "44239b2d7b6026012da176339153df29aa13f305",
+            "message": "Remove rogue semicolon"
+        },
+        {
+            "hash": "a00c483927dbbdcb39f94d0f3c818fde05405aef",
+            "message": "Merge branch '5.2.x'"
+        },
+        {
+            "hash": "a9dec6a4af769851d8c4be79fc62862bd02cbbb7",
+            "message": "Next Development Version"
+        },
+        {
+            "hash": "96ffa14141971104a2c01c886b8c4402c5798c71",
+            "message": "Next development version (v5.3.1-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "25710",
+            "title": "Mechanism to access request bound objects in WebClient filter in servlet env"
+        },
+        {
+            "number": "26052",
+            "title": "Cannot be cast to class Publisher error with non suspending @Transactional functions"
+        },
+        {
+            "number": "25998",
+            "title": "@Transactional on suspending function returning a value always rollbacks"
+        },
+        {
+            "number": "26043",
+            "title": "Expose a public method \"isClosed\" to indicate whether the connection has been closed in WebSocketSession (WebFlux)"
+        },
+        {
+            "number": "26051",
+            "title": "Use RxJava 2/3 fromPublisher() when possible in ReactiveAdapterRegistry"
+        },
+        {
+            "number": "26049",
+            "title": "setTaskScheduler in StompBrokerRelayRegistration breaks chaining"
+        },
+        {
+            "number": "25290",
+            "title": "Spring MVC's locale resolver can no longer be customized in parent context"
+        },
+        {
+            "number": "26035",
+            "title": "WebFlux missing programmatic handling of MappingJacksonValue"
+        },
+        {
+            "number": "26026",
+            "title": "StompSubProtocolHandler logs failed authentication with error stack trace"
+        },
+        {
+            "number": "26033",
+            "title": "Upgrade SpelCompiler bytecode level to 1.8 and optimize for concurrent access"
+        },
+        {
+            "number": "26034",
+            "title": "Optimize locking in AspectJProxyFactory for concurrent aspect instantiation"
+        },
+        {
+            "number": "25986",
+            "title": "Inefficient request handling inside ServletRequestDataBinder"
+        },
+        {
+            "number": "26029",
+            "title": "SpEL doesn't work nicely with records"
+        },
+        {
+            "number": "26019",
+            "title": "Autowiring does not work reliably in case of dynamically changing prototype bean class"
+        },
+        {
+            "number": "26031",
+            "title": "MergedAnnotationCollectors.toAnnotationSet() should not create intermediate ArrayList"
+        },
+        {
+            "number": "26023",
+            "title": "Expose toEntityFlux methods in WebClient.ResponseSpec"
+        },
+        {
+            "number": "25985",
+            "title": "Avoid use of SearchStrategy.TYPE_HIERARCHY_AND_ENCLOSING_CLASSES in AnnotationDescriptor"
+        },
+        {
+            "number": "26010",
+            "title": "DefaultSimpUserRegistry prevents event from being published if original SimpMessageHeaderAccessor cannot be found"
+        },
+        {
+            "number": "25973",
+            "title": "@ActiveProfiles with same profiles but different order results in duplicate ApplicationContext"
+        },
+        {
+            "number": "26004",
+            "title": "Order of profiles in tests is not preserved"
+        },
+        {
+            "number": "25987",
+            "title": "SseEmitter: connection closed after first event"
+        },
+        {
+            "number": "25981",
+            "title": "@Nonnull annotation breaks ServletRequestMethodArgumentResolver for Principal"
+        },
+        {
+            "number": "25992",
+            "title": "DefaultWebClientBuilder copies references"
+        }
+    ]
+}

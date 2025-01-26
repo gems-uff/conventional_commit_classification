@@ -1,0 +1,162 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.16.10",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 33,
+    "start_delay": 0.0,
+    "duration": 119.63912037037036,
+    "commits_info": [
+        {
+            "hash": "8f0950e8048de5be559c01944ad227ed50086dd2",
+            "message": "pre-release version bump"
+        },
+        {
+            "hash": "c13e7b447a501a321a59e1006c10309c573f6276",
+            "message": "fix broken test for configuration that contained the wrong line numbers"
+        },
+        {
+            "hash": "898eb9bb7e9089f256cca4cf1ae03ef06fd03687",
+            "message": "update changelog"
+        },
+        {
+            "hash": "0a2ed8197aa0a02249371f04cce7366b5e6b27a2",
+            "message": "Potential solution for issue #913"
+        },
+        {
+            "hash": "b3ae90b273d7d926626546c367f7fbe6d25a6890",
+            "message": "Merge pull request #1138 from liudongmiao/patch-plexus-compiler-javac\n\nalways return ShadowClassLoader for older maven-compiler-plugin"
+        },
+        {
+            "hash": "2ce427e32a7c19e925e0f57baa45c13f0d221cce",
+            "message": "always return ShadowClassLoader.\n\nIt fixes `lombok` `1.16` doesn't works in `maven-compiler-plugin` `2.3.2` or old.\nhttp://stackoverflow.com/questions/34358689\n\nFurthermore, `maven-compiler-plugin` `2.4` requires `plexus-compiler-javac` `1.8.6`, which drops\n`org.codehaus.plexus.compiler.javac.IsolatedClassLoader`.\n\nI love hack, but hate such hard code to fix possible problem."
+        },
+        {
+            "hash": "ddd4e1feaee9fc4e450c7bed7e7938ff22455756",
+            "message": "Let's filter out the \\r part of ye olde DOS newline in config."
+        },
+        {
+            "hash": "cec8705c3b9fa6488d53bec5bb4eab27a6decf85",
+            "message": "#1117: add claiming annotation processor"
+        },
+        {
+            "hash": "cc36ab36d154ffab55bfa74e55a79a7b8b2fcd63",
+            "message": "don't skip empty lines in the line number count for config files"
+        },
+        {
+            "hash": "ea219cd7ce76fa1140901050cce73e58f9ddb6d1",
+            "message": "add test to verify config key callSuper=call works with Value"
+        },
+        {
+            "hash": "6cec66eb2bb0406cf2fb7436e1aa2f6f71aa8be5",
+            "message": "Fixed the HTML title tags of the experimental pages; they were inconsistent."
+        },
+        {
+            "hash": "f72af3b81f6763727510fafd4f7076bc3cb76859",
+            "message": "Remove twitter handle"
+        },
+        {
+            "hash": "8ba7750621117ecfcfa7fdfd13e28e45131a2f0c",
+            "message": "add tests for the combination of Builder and Value/Data"
+        },
+        {
+            "hash": "a8a70da6acb19722a9014adc6eda30f830770c78",
+            "message": "replace experimental.Builder by Builder in tests if possible"
+        },
+        {
+            "hash": "b1b35aacd3980da44e942afda58cf6590cb5e725",
+            "message": "add constructors to the list of targets for the Generated annotation"
+        },
+        {
+            "hash": "886feac4b5aae6933822eabac7196346ddad3e10",
+            "message": "Clarify which @Generated annotation is generated"
+        },
+        {
+            "hash": "37451226f16e20dbea9fac62a24fb843a63ede7a",
+            "message": "Merge pull request #1053 from marthagenaars/master\n\nUpdate instructions for using lombok with ecj and Maven"
+        },
+        {
+            "hash": "894bfe1c083fbe257eef78cbab6860032026d122",
+            "message": "Update instructions for using lombok with ecj and Maven"
+        },
+        {
+            "hash": "cea3a87312eb5347c9df097876cafb68841dd42e",
+            "message": "Merge pull request #1092 from DavidARussell/value_javadoc_url\n\nUpdate Javadoc URL on Value"
+        },
+        {
+            "hash": "afc0f636dc12040125aa58a07c317360cf62c006",
+            "message": "Update Javadoc URL on Value\n\nValue is no longer experimental, so (as the person who raised the issue\nsuggested) the Javadoc should no longer point to the 'experimental'\ndocumentation. Fixes #1091"
+        },
+        {
+            "hash": "f986b02ace15140cfd279175fd272e9993f99c38",
+            "message": "Merge pull request #1095 from izebit/master\n\ndelete redundant code"
+        },
+        {
+            "hash": "0aea835130ee41dfc5144fdd2eb0952092118c09",
+            "message": "delete redundant code"
+        },
+        {
+            "hash": "baef6231e4c0d71d513bb9c57c4c27acc6e6a332",
+            "message": "Merge pull request #1098 from thokrae/ValueDocuFix\n\nfixed example in @Value javadoc"
+        },
+        {
+            "hash": "5abc023285709969e6f71315f17cb40a8cc5c813",
+            "message": "fixed @Value docu"
+        },
+        {
+            "hash": "c810162bcdbea64b74350bf5764d719af17d3a12",
+            "message": "Merge pull request #1100 from arnaudruffin/master\n\nupdate gradle configuration documentation"
+        },
+        {
+            "hash": "bb0a4475a199c7170f70b8533d6ab18c6eaaf789",
+            "message": "update gradle configuration documentation"
+        },
+        {
+            "hash": "2e1bbc9b4b896f73af48aa376ec981fc74f7c87d",
+            "message": "post-release version bump"
+        },
+        {
+            "hash": "91bfd0ef5063356617c1f2b5b7f768f67eca0398",
+            "message": "Update changelog"
+        },
+        {
+            "hash": "3372b5f442110e004a3b1e1cd5116ecabf5f239e",
+            "message": "Integrate JBossLog code\n\n- fix jboss-logging.jar name\n- add copyright notice to new source files\n- add cross-references from other @Log annotations\n- update feature page"
+        },
+        {
+            "hash": "c0a2eecb2f6a647d9b9862681c0407043e515b51",
+            "message": "Added support for JBoss Logging v3.3.0-Final via @JBossLog [Issue #1103]"
+        },
+        {
+            "hash": "6d720cbf99021b71ae9d2918168561db2223b030",
+            "message": "add checkNotNull to Lombok for future usage in super constructor call"
+        },
+        {
+            "hash": "26ebe6aaa8838c3bb6d7be4836216bcc4030f2b1",
+            "message": "trivial"
+        },
+        {
+            "hash": "2a9820d8ec87e0e5e72eff19b56f1bee5f4e37e7",
+            "message": "[i913] Prevent NPE in PatchDelegate when binding.scope is null"
+        }
+    ],
+    "issues": [
+        {
+            "number": "913",
+            "title": "Lombok nullpointer in PatchDelegate in Eclipse Mars"
+        },
+        {
+            "number": "1117",
+            "title": "No processor claimed any of these annotations: lombok.Data"
+        },
+        {
+            "number": "1091",
+            "title": "Javadoc on @Value points to experimental"
+        },
+        {
+            "number": "1103",
+            "title": "Add annotation @JBossLog for JBoss Logging"
+        }
+    ]
+}

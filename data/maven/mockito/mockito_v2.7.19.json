@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.7.19",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.8974074074074074,
+    "commits_info": [
+        {
+            "hash": "07b6831dc307f772a0508c58bdc1efb43cfc6f43",
+            "message": "Update release notes by Travis CI build 2443 [ci skip]"
+        },
+        {
+            "hash": "9888504f277d525b3c3c262e234a74a5a8fc637f",
+            "message": "Fixes #976: Resolve ambiguous constructors (#980)\n\n* Fixes #976: Improve constructor choosing\r\n\r\nWith the current code (introduced in Mockito 2.7.14 by commit\r\n6a82c03), calling MockSettings#useConstructor with an argument list\r\nthat would be applicable to more than one constructor would fail with\r\nan org.mockito.internal.creation.instance.InstantiationException.\r\n\r\nThis behavior, however, is suboptimal, as described in issue #976, as\r\nit makes useConstructor less robust than the Java compiler, which is\r\nable to resolve such ambiguities.\r\nWith this patch, Mockito will attempt to match the constructor with\r\nthe most specific parameter types. A constructor X is considered more\r\nspecific than a constructor Y if:\r\n1. They are both applicable to the given argument list\r\n2. Constructor X has at least one parameter which is a further\r\n   specialization of the corresponding parameter of constructor Y\r\n   (i.e. paramX.isAssignableFrom(paramY)).\r\n3. Constructor Y has no parameter which is a further specialization\r\n   of the corresponding parameter of constructor X, as defined above.\r\n\r\nE.g., consider the following class:\r\n\r\n    public class SomeClass {\r\n        SomeClass(Object o) {}\r\n        SomeClass(String s) {}\r\n    }\r\n\r\nWithout this patch, calling\r\n\r\n    mock(SomeClass.class, withSettings().useConstructor(\"string!\"))\r\n\r\nwould fail. With this patch, such a call would invoke the\r\nSomeClass(String) constructor.\r\n\r\n* Fix Freudian slip in message regarding issue 685\r\n\r\nThe text should read \"a better JOB\", not \"a better JOIN\"."
+        },
+        {
+            "hash": "5815d4c922736e290fb9c4659f7d08c3e08e5b9f",
+            "message": "Increment version '2.7.18' -> '2.7.19' by Travis CI build 2439 [ci skip]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "976",
+            "title": "Make MockSettings.useConstructor able to choose the right constructor"
+        }
+    ]
+}

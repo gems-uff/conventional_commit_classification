@@ -1,0 +1,258 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v1.18.36",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 54,
+    "start_delay": 0.0,
+    "duration": 139.99229166666666,
+    "commits_info": [
+        {
+            "hash": "91d79ff9fbef24494039a9f37498a4fd4386459e",
+            "message": "[release] pre-release version bump"
+        },
+        {
+            "hash": "e8db33a77042dd3429b3e10f68109e45ea6251cc",
+            "message": "Merge pull request #3768 from tamila-krashtan/fix/with-html\n\nFix typo in With.html"
+        },
+        {
+            "hash": "9af596e29ecb0375d3474e4de7299cb21ecadbd6",
+            "message": "Fix typo in With.html"
+        },
+        {
+            "hash": "3394b6ef7c00b25ad4ad4b64ac5f879aa16e4db5",
+            "message": "eclipse downloader: When downloading sources, accept failure."
+        },
+        {
+            "hash": "03cd61a9ec179689830fb948308ee2a92e554011",
+            "message": "Merge branch 'eclipse-tests-fix'"
+        },
+        {
+            "hash": "7a9f3a8b7599d4be61bd32698874f6d7e4c15b89",
+            "message": "Fix resource management in the eclipse downloader:\n\n- closeQuietly is a pet peeve of mine; it is an abomination that must never be.\n- All actual resources are closed; all filters aren't because there is no need.\n- the underlying problem (of 'flushing' zips) is addressed."
+        },
+        {
+            "hash": "d21d551a4dab3ec88c968761fbd3c62bab27fb2a",
+            "message": "Close ZipOutputStream in eclipse dependency downloader"
+        },
+        {
+            "hash": "c8d615209707e4030bfe94323efbb5869853754c",
+            "message": "[infra] ant targets to test on JDK23 added and changelog updated."
+        },
+        {
+            "hash": "6454db6cec0c33080074d4be502074640459a18a",
+            "message": "Merge branch 'jdk23' of https://github.com/Rawi01/lombok into jdk23"
+        },
+        {
+            "hash": "28a7a8823a6aeca687782b9d46c5bff67b935ffa",
+            "message": "-proc:full added"
+        },
+        {
+            "hash": "ec87cfb26072468d797bb4db39bff220c5240eac",
+            "message": "Update docker integration tests"
+        },
+        {
+            "hash": "b8c0427b3d1a5dc688f496ba64b755d5c12c4581",
+            "message": "[#3722] Support new JDK23 CommentStyle"
+        },
+        {
+            "hash": "7526768ddaa7280eaad4232da0945d4cfe44ae99",
+            "message": "[deps] Update dep to patcher 0.52"
+        },
+        {
+            "hash": "1ac3950a9e8d1c2da0ff0d6400386a9b345b23a2",
+            "message": "Merge pull request #3726 from Rawi01/npe-builder-javadoc\n\nAdd null check for compilation unit"
+        },
+        {
+            "hash": "674386e49b7688ebd925216ff41de744d46668d1",
+            "message": "[fixes #3706] Add null check for compilation unit"
+        },
+        {
+            "hash": "eb4722c59ffc9e43e73bcf12fb52b2f8ad92ffef",
+            "message": "[release] post-release version bump"
+        },
+        {
+            "hash": "6d094fe771c6c20301e24d7bf1b21b955e318f30",
+            "message": "Merge pull request #3727 from Rawi01/eclipse-javadoc-bounds\n\nImprove extraction of javadoc comments"
+        },
+        {
+            "hash": "b960d0d02a7c3ec9afae493011730345dd4ba6b0",
+            "message": "Ignore javadoc copy errors for constructors\n\nLombok should not crash if it cannot copy or generate javadoc for\ngenerated code. We have already added this try...catch to all other\njavadoc copy methods."
+        },
+        {
+            "hash": "f19a7e865a0974a58e734976f1b85f3cd502cde1",
+            "message": "[fixes #3709] Improve extraction of javadoc comments"
+        },
+        {
+            "hash": "3745ccdee7325f6c969df55e9580063f3c6ae715",
+            "message": "Merge pull request #3740 from Postremus/jasperreports-maven-plugin\n\nExclude the classloader for jasperreports-maven-plugin due to a classloader conflict with ECJ"
+        },
+        {
+            "hash": "1fd5749e47943ede21b3304d4dc4d16cae8acb28",
+            "message": "Exclude the classloader for jasperreports-maven-plugin due to a classloader conflict with ECJ"
+        },
+        {
+            "hash": "9f79825a4613b578eb599372810a78408153601f",
+            "message": "Merge pull request #3732 from thunderhook/thunderhook-doc-improvement-unnecessary-import\n\n[doc] remove unnecessary import in FieldNameConstants example"
+        },
+        {
+            "hash": "5a375aee5a539a47828068e8c9ea254d5906cdc0",
+            "message": "[doc] remove unnecessary import in FieldNameConstants example"
+        },
+        {
+            "hash": "0e9b161b6f8781f77684844f9dee7a9173ff7de8",
+            "message": "[trivial]"
+        },
+        {
+            "hash": "1ac535f644d62d2a8c3151fb8e8fef8e829b0123",
+            "message": "Merge branch 'eclipse-synchronized-error' of https://github.com/Rawi01/lombok into eclipse-synchronized-error"
+        },
+        {
+            "hash": "6522b8230d938f2363bdb19810f44ff3a2746f34",
+            "message": "[fixes #3748] Patch SourceTypeConverter to avoid parsing empty strings"
+        },
+        {
+            "hash": "022ea9f5036e536cbe51fcb5e0a5bb2decb26800",
+            "message": "Merge branch 'eclipse-tests-signature'"
+        },
+        {
+            "hash": "0bc7f199007c6403d02c45d56b2e88e8f6314583",
+            "message": "[refactor] The 'copy zip files stripping signatures' code cleaned up ever so slightly; timestamps of zip entries is now preserved."
+        },
+        {
+            "hash": "cf429828dbfb7b82962845122bd27ef4385e9deb",
+            "message": "Merge branch 'eclipse-tests-signature' of https://github.com/Rawi01/lombok into foo"
+        },
+        {
+            "hash": "09ac596dd8d01b3fc6e0bc031d1a711d30480333",
+            "message": "Set ecj target version"
+        },
+        {
+            "hash": "ddf4ebce52d66432e6ed8fe88b8a04317effde10",
+            "message": "Remove deprecated inlineJsrBytecode\n\nECJ ignored this setting for Java 1.5+"
+        },
+        {
+            "hash": "6fba0cb2da05ea2a5be666154892aa557ec0c467",
+            "message": "Add eclipse 2024-09 test targets"
+        },
+        {
+            "hash": "cc3b8086d49f8e0e46383a73a0fd4e15bfa9fd99",
+            "message": "[fixes #3728] Remove signature files eclipse plugin jars"
+        },
+        {
+            "hash": "43d96ab6990b8cecdf172dff30fc16cef098ba4c",
+            "message": "Merge branch 'kanchev1-fix-lombok-mapstruct-binding-handling-multiple-processor-rounds'"
+        },
+        {
+            "hash": "dc57606f3480626a5b0940989b7c292f14c07b6d",
+            "message": "MapStruct notifier: Ensure we always report lombok will not do anything further if lombok is entirely disabled."
+        },
+        {
+            "hash": "081e8aa961994c84d193733c587996e4669bef1f",
+            "message": "[trivial] [style]"
+        },
+        {
+            "hash": "04c9755b39617a0e222a8e88ef44677b34044ab2",
+            "message": "[fixes #3116] Add multi round support for mapstruct"
+        },
+        {
+            "hash": "268b61457ecef18b75078f27d2404972af72f8e7",
+            "message": "WCAG AA improvements"
+        },
+        {
+            "hash": "f6db26f25fbdcf38df8dfbbd0fdcb748a403b084",
+            "message": "Website mobile tweaks"
+        },
+        {
+            "hash": "0449ed51d93bb7ec0943f325ab6293286b78a288",
+            "message": "Website teaks"
+        },
+        {
+            "hash": "7e188e53edde519d0de17f5bde6f68399dc2070f",
+            "message": "More website tweaks"
+        },
+        {
+            "hash": "eb29efe77bb912a9c860ef240ba218224e6f85a0",
+            "message": "Website layout"
+        },
+        {
+            "hash": "fc0028707150cea1c720935764022e445f3e50f6",
+            "message": "Update sponsor link color"
+        },
+        {
+            "hash": "72519b068c298525fe972ea7ccae71c804fb6fa4",
+            "message": "Add sponsor to website"
+        },
+        {
+            "hash": "cb8de127b0f59cc79c67ec8f574ac391885c9de1",
+            "message": "Fix sponsor logo url"
+        },
+        {
+            "hash": "a419d7aa6f9f0a399b376e00fdef7fe6fa92671f",
+            "message": "Website supporters bar stable height"
+        },
+        {
+            "hash": "d0411e94f44ad7684924f306f41b5bb86ae87813",
+            "message": "Remove website analytics"
+        },
+        {
+            "hash": "430d535fa9071647819f226e4ecfa4fa13fe2f7f",
+            "message": "Add Fern as a sponsor"
+        },
+        {
+            "hash": "7fad5661b084ded7b7d590108dade5f7fe8efc93",
+            "message": "Remove ordering licenses from our website"
+        },
+        {
+            "hash": "87bc91a95a1f399230cb0d85d3f8082d90e9a9a6",
+            "message": "Merge pull request #3764 from Rawi01/update-index\n\nUpdate annotation value index"
+        },
+        {
+            "hash": "5caea325100c2b76dee6a5d63c1328523a9da671",
+            "message": "[fixes #3761] Update annotation value index"
+        },
+        {
+            "hash": "4aa58fb21101b6643af477151b35842fffcb70cd",
+            "message": "Update ecj message line numbers"
+        },
+        {
+            "hash": "02a89cf7feb1cd5899530aa12d4de76d622e38fe",
+            "message": "Check exact message line numbers in tests"
+        },
+        {
+            "hash": "033870592900e47d9855d190924d0addecddad61",
+            "message": "Revert \"[fixes #3116] Add multi round support for mapstruct\":\n\nThis reverts commit 04c9755b39617a0e222a8e88ef44677b34044ab2.\n\nThe nature of the fix is to simply scan the TypeMirror for 'lombok shenanigans'; if it finds them, the type is not complete; if there are none, the type is.\n\nThis fundamentally does not work - lombok shenanigans may remain even if lombok is done (`@lombok.NonNull` for example), and lombok shenanigans don't just appear as annotations on the type; they can appear in many forms: Annotations on local var decls, or even method calls to `Lombok.safeDeNull` or whatnot. safeDenull is made up, but we might add it someday. `@Getter` on a field isn't though, and suffers from the same problem."
+        }
+    ],
+    "issues": [
+        {
+            "number": "3722",
+            "title": "[FEATURE] JDK 23 compatibility"
+        },
+        {
+            "number": "3706",
+            "title": "[BUG] Potential NPE in EclipseHandlerUtil.setDocComment(..)"
+        },
+        {
+            "number": "3709",
+            "title": "[BUG] `StringIndexOutOfBoundsException` in `EclipseHandlerUtil.getDocComment()`"
+        },
+        {
+            "number": "3748",
+            "title": "[BUG] @Synchronized causes error markers in Java editor with Eclipse 2024-09 (4.33.0)"
+        },
+        {
+            "number": "3728",
+            "title": "[BUG]  Test step test-eclipse (eclipse-I-build-full) broken"
+        },
+        {
+            "number": "3116",
+            "title": "[BUG] Mapstruct mappers are wrong if lombok needs to create Builders in later rounds"
+        },
+        {
+            "number": "3761",
+            "title": "[BUG] Index is not updated in getAsStringList"
+        }
+    ]
+}

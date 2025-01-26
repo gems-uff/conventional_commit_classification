@@ -1,0 +1,22 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.7.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 1,
+    "start_delay": 0.0,
+    "duration": 0.0,
+    "commits_info": [
+        {
+            "hash": "7b940bcead5240bd030bbe7acbb51c10be0a452b",
+            "message": "Fix reversed order of verify parameters (#2179)\n\nFor consistency, the parameters of the method\r\n`MockedStatic.verify(VerificationMode, Verification)`\r\nhave been swapped to\r\n`MockedStatic.verify(Verification, VerificationMode)`\r\nas this order is already used in\r\n`Mockito.verify(T, VerificationMode)`.\r\n\r\nFixes: #2173\r\n\r\n[ci maven-central-release]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "2173",
+            "title": "Feature request: Unify order of parameters"
+        }
+    ]
+}

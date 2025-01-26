@@ -1,0 +1,66 @@
+{
+    "platform": "maven",
+    "project": "protobuf",
+    "release": "v3.15.7",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 12,
+    "start_delay": 0.0,
+    "duration": 9.630868055555556,
+    "commits_info": [
+        {
+            "hash": "878be3569eaa552d45f50406b410c80da5e70447",
+            "message": "Update protobuf version"
+        },
+        {
+            "hash": "c00c2d43bb7a5c1a0f5f6837e1c084327ff21c72",
+            "message": "Updated CHANGES.txt and package.xml with changes for 3.15.7"
+        },
+        {
+            "hash": "240e54efe5b7c0f19c19ecbad76b2bcad9812133",
+            "message": "Remove references to stale benchmark data sources."
+        },
+        {
+            "hash": "f3f8707ba5635a1059d315540ac7e3826e121c62",
+            "message": "Merge pull request #8434 from haberman/ruby-message-eq\n\nFixed message equality in cases where the message type is different."
+        },
+        {
+            "hash": "38e1b592581983548eb8012e45a3a1da64b6504f",
+            "message": "Elided the TYPE() and msgdef checks by using CLASS_OF."
+        },
+        {
+            "hash": "d69f482883309840eef9108fbce6eb32d05db98f",
+            "message": "Fixed message equality in cases where the message type is different.\n\nIf the message types are different, equality comparison must return\nfalse."
+        },
+        {
+            "hash": "a38319b5c44e9637a4a4228b237bdc4710677a36",
+            "message": "Merge pull request #8429 from haberman/ruby-gc-secondarymap\n\nFix unbounded memory growth for Ruby <2.7."
+        },
+        {
+            "hash": "2fe27d87641ec599ab2bfb0b6ec997e903655f48",
+            "message": "Addressed PR comments and fixed a bug.\n\nWe now hold the mutex for both map insertions, to protect\nagainst a concurrent GC that removes from the seconary map\nbefore we can insert into the weak map."
+        },
+        {
+            "hash": "e1ac3937258ebd9d33738fbed1ee631aa34e6f95",
+            "message": "Added some more comments and refactored slightly."
+        },
+        {
+            "hash": "f0d6fcb2dadfcfd2ec073a5812baa2e3dae35c7f",
+            "message": "Wrap secondary map mutations in a mutex, to avoid mutation races."
+        },
+        {
+            "hash": "b75a49f9e02c65e8253e760cce39c41d344038e1",
+            "message": "GC secondary map periodically."
+        },
+        {
+            "hash": "25968de87aee8806885c2a9bdf8b796d1054cfef",
+            "message": "Remove the ::pb namespace (alias). (#8423)\n\nThis closes #8349, although we will probably still pursue some other name in the future."
+        }
+    ],
+    "issues": [
+        {
+            "number": "8349",
+            "title": "Unable to compile protobufs in `pb` namespace"
+        }
+    ]
+}

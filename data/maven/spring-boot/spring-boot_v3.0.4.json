@@ -1,0 +1,370 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.0.4",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 57,
+    "start_delay": 0.0,
+    "duration": 122.22210648148148,
+    "commits_info": [
+        {
+            "hash": "16218bcb5220d1bd65f2c3864e5a030b97a0134a",
+            "message": "Release v3.0.4"
+        },
+        {
+            "hash": "4370757fb23e0e5a0e506143dd112eed5f0cbc29",
+            "message": "Use Java 17 in Maven integration tests\n\nCloses gh-34472"
+        },
+        {
+            "hash": "5c43e428390f72db96cbdb56aebc6f1f8b9614db",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34470"
+        },
+        {
+            "hash": "95cd0f2435b8221876033538abaf8dcf1846b8cb",
+            "message": "Test Boot's Maven Plugin against Maven 3.9.0\n\nCloses gh-34469"
+        },
+        {
+            "hash": "ac27c3cf7d7174d3d68060a23b48fdf2032341d2",
+            "message": "Upgrade to Gradle Enterprise Gradle plugin 3.12.4\n\nCloses gh-34459"
+        },
+        {
+            "hash": "68a1dd3a76da9d989dec51949c3c97df47ce2d35",
+            "message": "Document support for Gradle 8\n\nCloses gh-34458"
+        },
+        {
+            "hash": "4f7e038f142f7c08e0a3c8c7a9221b27390d5296",
+            "message": "Test Gradle plugin against Gradle 8.0.1\n\nCloses gh-34457"
+        },
+        {
+            "hash": "d39c94f43772c8a9c3c3d808d6d31c11fab9dde8",
+            "message": "Refine ConfigurationProcessorIntegrationTests resource detection logic"
+        },
+        {
+            "hash": "69d34c96bf8ab3c1a57641982ed6b1a4dd2f2764",
+            "message": "Apply consistent timestamps to files added to a fat archive\n\nUpdate logic in `BootZipCopyAction` to align with the recent changes\nmade in the Maven plugin (commit 998d59b7). Timestamps are now\nspecified in UTC and offset against the default timezone before being\nwritten.\n\nRemoving the offset from our UTC time before calling `entry.setTime()`\nensures that we get consistent bytes in the zip file when the output\nstream reapplies the offset during write.\n\nCloses gh-21005"
+        },
+        {
+            "hash": "998d59b7ac1a75b26634e4fd2843a7833e554840",
+            "message": "Ignore system timezone when applying outputTimestamp to entries\n\nUpdate `JarWriter` so that entry times are set with the default TimeZone\noffset removed. The Javadoc for `ZipEntry.setTime` states:\n\n  The file entry is \"encoded in standard `MS-DOS date and time format`.\n  The default TimeZone is used to convert the epoch time to the MS-DOS\n  data and time.\n\nRemoving the offset from our UTC time before calling `entry.setTime()`\nensures that we get consistent bytes in the zip file when the output\nstream reapplies the offset during write.\n\nFixes gh-34424"
+        },
+        {
+            "hash": "29a16a6428fab572c00646bd8812d84bb25fd0cf",
+            "message": "Merge pull request #32943 from anandmnair\n\n* pr/32943:\n  Polish \"Add reference to Failover starter\"\n  Add reference to Failover starter\n\nCloses gh-32943"
+        },
+        {
+            "hash": "18592e8145a9b72085fed00258e4facfb5851a7a",
+            "message": "Polish \"Add reference to Failover starter\"\n\nSee gh-32943"
+        },
+        {
+            "hash": "1240864a5e1b7231429199db60b21ba82e7b61bb",
+            "message": "Add reference to Failover starter\n\nSee gh-32943"
+        },
+        {
+            "hash": "673a39a2e5738cbc5f8e489d212f22c6bc7e1f67",
+            "message": "Merge pull request #34220 from 1993heqiang\n\n* pr/34220:\n  Update logger to use GracefulShutdown.class\n\nCloses gh-34220"
+        },
+        {
+            "hash": "277784b17dbaa0440017babbc85780bf7ae92036",
+            "message": "Update logger to use GracefulShutdown.class\n\nSee gh-34220"
+        },
+        {
+            "hash": "891dc913d59461c9b3e116cefb520a9eeaba2f1f",
+            "message": "Merge pull request #34319 from izeye\n\n* pr/34319:\n  Polish \"Add missing Micrometer PropertiesConfigAdapterTests\"\n\nCloses gh-34319"
+        },
+        {
+            "hash": "956a579bc9b09045f99f668ea5c93229b2dd2717",
+            "message": "Polish \"Add missing Micrometer PropertiesConfigAdapterTests\"\n\nSee gh-34319"
+        },
+        {
+            "hash": "36a742882786e8b68fa7406af562fc87b4085766",
+            "message": "Merge pull request #34386 from jongwooo\n\n* pr/34386:\n  Fix typo in external-config.adoc\n\nCloses gh-34386"
+        },
+        {
+            "hash": "8e166595c0de8c952d8ccde698394e9e38fc85b3",
+            "message": "Fix typo in external-config.adoc\n\nSee gh-34386"
+        },
+        {
+            "hash": "81882ecca4f5c1ccba1a1893deb3b026f60e4861",
+            "message": "Apply plugins consistently in Gradle documentation examples\n\nCloses gh-34038"
+        },
+        {
+            "hash": "74946dd2928a30245c061c0d4f0b23ff98b90215",
+            "message": "Upgrade to Gradle 7.6.1\n\nCloses gh-34376"
+        },
+        {
+            "hash": "eb105572f6bc2216a4fddad4091a1f98c67e8a7d",
+            "message": "Test Gradle plugin against Gradle 6.9.4\n\nCloses gh-34368"
+        },
+        {
+            "hash": "e998303282eb6f2a6edc950c8ddadb33ecf61712",
+            "message": "Upgrade to Spring Data Bom 2022.0.3\n\nCloses gh-34439"
+        },
+        {
+            "hash": "77932d92ea8691cb57336fceab77b7459f0bc797",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34464"
+        },
+        {
+            "hash": "6a95f44f679daed47c0853cf701336541a3f0117",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34462"
+        },
+        {
+            "hash": "03dd6668186d7fb6afca44ac500213f5dd69871b",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34460"
+        },
+        {
+            "hash": "f5a8a71a10185e906da2c501151a39ac61816e5a",
+            "message": "Merge pull request #34437 from fmbenhassine\n\n* pr/34437:\n  Update Batch documentation\n\nCloses gh-34437"
+        },
+        {
+            "hash": "04bbbb4e4a5aa5746f3ebb3f8a8530e3db322d5a",
+            "message": "Update Batch documentation\n\nThis commit updates the documentation about how\nto configure Spring Batch v5 with Spring Boot v3.\n\nSee gh-34437"
+        },
+        {
+            "hash": "3ea99d0f49f2a6e26b8c5c1006d8d71f99114dd3",
+            "message": "Upgrade to Spring Kafka 3.0.4\n\nCloses gh-34441"
+        },
+        {
+            "hash": "d1f89db9a243f8f269dc8254ff52bae55fe042f4",
+            "message": "Merge branch '2.7.x' into 3.0.x"
+        },
+        {
+            "hash": "f28bb221a20e7ffec2813112f150cd451040bac7",
+            "message": "Suppress Spring Kafka deprecation warning\n\nSee gh-34441"
+        },
+        {
+            "hash": "956b9e06c9a9a15191e36680e98b722101135cfb",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34452"
+        },
+        {
+            "hash": "2d7e408a5c291d44980b964bf715d6a859e942d0",
+            "message": "Upgrade to Spring Framework 6.0.6\n\nCloses gh-34440"
+        },
+        {
+            "hash": "b9eef6af5a0448483222a3ee11e9864ee591a4e3",
+            "message": "Upgrade to Reactor Bom 2022.0.4\n\nCloses gh-34444"
+        },
+        {
+            "hash": "d4577556e0be717099d3cb499a4759c0ec135825",
+            "message": "Upgrade to Jetty 11.0.14\n\nCloses gh-34447"
+        },
+        {
+            "hash": "a56bdba2242f1cdde5bb6ade11325d44494dee21",
+            "message": "Upgrade to Dropwizard Metrics 4.2.17\n\nCloses gh-34446"
+        },
+        {
+            "hash": "ba072de3c9377ddd7381caac14694a96b2a6aaf4",
+            "message": "Start building against Spring Kafka 3.0.4 snapshots\n\nSee gh-34441"
+        },
+        {
+            "hash": "c635b5390a377b3a2a05b7a8be79bb167112da4f",
+            "message": "Start building against Reactor Bom 2022.0.4 snapshots\n\nSee gh-34444"
+        },
+        {
+            "hash": "0b504b1c3ef63a4839104851a5eef387d0d87a4a",
+            "message": "Start building against Spring Framework 6.0.6 snapshots\n\nSee gh-34440"
+        },
+        {
+            "hash": "f010c69091dc44a8303228ddf6d121bdf99eb6f2",
+            "message": "Upgrade to Couchbase Client 3.4.3\n\nCloses gh-34445"
+        },
+        {
+            "hash": "c16d0745ae6e9df44932071cd99b9ad4a83472c9",
+            "message": "Start building against Spring Data Bom 2022.0.3 snapshots\n\nSee gh-34439"
+        },
+        {
+            "hash": "f5cf821479afc418138fa9e2db1b111e800cc8eb",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34430"
+        },
+        {
+            "hash": "ecbc412c7c0dbe478717a113353b642391042b7d",
+            "message": "Add property 'management.wavefront.trace-derived-custom-tag-keys'\n\nCloses gh-34194"
+        },
+        {
+            "hash": "0fc4741ff6dec298c4a854708c13f611a9329b71",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34422"
+        },
+        {
+            "hash": "7ea56a2fdb8e25d61d46d739900db6cc1353d715",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34419"
+        },
+        {
+            "hash": "73ba797c027625ccad60140e7002f611f54ed88a",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34417"
+        },
+        {
+            "hash": "8b9779738936aa44d04eaa70fecf5db0d9397b1f",
+            "message": "Merge pull request #34398 from dalbani\n\n* pr/34398:\n  Fix typo\n\nCloses gh-34398"
+        },
+        {
+            "hash": "ea70ff7efebb7576bd45e07f1b21732b4fec5f67",
+            "message": "Fix typo\n\nSee gh-34398"
+        },
+        {
+            "hash": "e407515a0f2da91bdaafcbd15967959f2673ff04",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34414"
+        },
+        {
+            "hash": "285097d746fbff1ce18a64d7c45a297cc196e0d6",
+            "message": "Bind nested record types even if they have an existing value\n\nUpdate logic in `DefaultBindConstructorProvider` introduced in commit\n84b13f0748 so that record types are always bound.\n\nFixes gh-34407"
+        },
+        {
+            "hash": "814b77c33f40e5c6c911f591ad36b19e43c4c10f",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34391"
+        },
+        {
+            "hash": "4234ce7ae1bc614c7464876b94c284972efa584c",
+            "message": "Merge branch '2.7.x' into 3.0.x\n\nCloses gh-34377"
+        },
+        {
+            "hash": "72de4a89373b5647f3d821b8e13f5fccc04f0118",
+            "message": "Use ResourceLoader's ClassLoader to load ConfigDataLoaders\n\nFixes gh-34372"
+        },
+        {
+            "hash": "c63e21f951263c65469b1d11d8ed85b9db1ba00b",
+            "message": "Merge pull request #34216 from ttddyy\n\n* gh-34216:\n  Specify @Order to the defaultTracingObservationHandler bean definition\n\nCloses gh-34216"
+        },
+        {
+            "hash": "9854154c317c0f165fca88b73c4b40c68bee9d3d",
+            "message": "Specify @Order to the defaultTracingObservationHandler bean definition\n\nSee gh-34216\n\nSigned-off-by: Tadaya Tsuyukubo <tadaya@ttddyy.net>"
+        },
+        {
+            "hash": "06503c19fbcc5aad075edc16cc8ad180b1ca66c4",
+            "message": "Merge branch '2.7.x' into 3.0.x"
+        },
+        {
+            "hash": "1ea1997eb6ce4e87ada4428c14855eede973a5b6",
+            "message": "Next development version (v3.0.4-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "34472",
+            "title": "Maven integration tests should replace 'java.version' with 17 not 1.8"
+        },
+        {
+            "number": "34470",
+            "title": "Test our Maven Plugin against Maven 3.9"
+        },
+        {
+            "number": "34469",
+            "title": "Test our Maven Plugin against Maven 3.9"
+        },
+        {
+            "number": "34459",
+            "title": "Upgrade to Gradle Enterprise Gradle plugin 3.12.4"
+        },
+        {
+            "number": "34458",
+            "title": "Document support for Gradle 8"
+        },
+        {
+            "number": "34457",
+            "title": "Test our Gradle plugin against Gradle 8"
+        },
+        {
+            "number": "21005",
+            "title": "Apply consistent timestamps to files added to a fat archive"
+        },
+        {
+            "number": "34424",
+            "title": "Maven plugin uses timezone-local timestamps when outputTimestamp is used"
+        },
+        {
+            "number": "34038",
+            "title": "Using devtools with Reactive application results in slower restarts"
+        },
+        {
+            "number": "34376",
+            "title": "Upgrade to Gradle 7.6.1"
+        },
+        {
+            "number": "34368",
+            "title": "Test Gradle plugin against Gradle 6.9.4"
+        },
+        {
+            "number": "34439",
+            "title": "Upgrade to Spring Data Bom 2022.0.3"
+        },
+        {
+            "number": "34464",
+            "title": "Upgrade to Gradle Enterprise Gradle plugin 3.12.4"
+        },
+        {
+            "number": "34462",
+            "title": "Document support for Gradle 8"
+        },
+        {
+            "number": "34460",
+            "title": "Test our Gradle plugin against Gradle 8"
+        },
+        {
+            "number": "34441",
+            "title": "Upgrade to Spring Kafka 3.0.4"
+        },
+        {
+            "number": "34452",
+            "title": "Apply consistent timestamps to files added to a fat archive"
+        },
+        {
+            "number": "34440",
+            "title": "Upgrade to Spring Framework 6.0.6"
+        },
+        {
+            "number": "34444",
+            "title": "Upgrade to Reactor Bom 2022.0.4"
+        },
+        {
+            "number": "34447",
+            "title": "Upgrade to Jetty 11.0.14"
+        },
+        {
+            "number": "34446",
+            "title": "Upgrade to Dropwizard Metrics 4.2.17"
+        },
+        {
+            "number": "34445",
+            "title": "Upgrade to Couchbase Client 3.4.3"
+        },
+        {
+            "number": "34430",
+            "title": "Maven plugin uses timezone-local timestamps when outputTimestamp is used"
+        },
+        {
+            "number": "34194",
+            "title": "Spring Boot 3 does not provide a configuration property for configuring red metrics custom tag keys"
+        },
+        {
+            "number": "34422",
+            "title": "Add link to Failover starter"
+        },
+        {
+            "number": "34419",
+            "title": "org.springframework.boot.web.embedded.jetty.GracefulShutdown uses the wrong class to create its logger"
+        },
+        {
+            "number": "34417",
+            "title": "Polish \"Add missing Micrometer PropertiesConfigAdapterTests\""
+        },
+        {
+            "number": "34414",
+            "title": "Fix typo in Encrypting Properties"
+        },
+        {
+            "number": "34407",
+            "title": "@ConfigurationProperties with initialized nested record properties values no longer bind"
+        },
+        {
+            "number": "34391",
+            "title": "Use plugins DSL consistently in Spring Boot Gradle Plugin docs"
+        },
+        {
+            "number": "34377",
+            "title": "Upgrade to Gradle 7.6.1"
+        },
+        {
+            "number": "34372",
+            "title": "Custom ConfigDataLocationResolver/ConfigDataLoader fails in 3.0.x when combined with spring-boot-devtools"
+        }
+    ]
+}

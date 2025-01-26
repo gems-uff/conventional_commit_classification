@@ -1,0 +1,646 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v5.3.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 125,
+    "start_delay": 0.0,
+    "duration": 49.450509259259256,
+    "commits_info": [
+        {
+            "hash": "7c2a72c9b43d066ae9e71d4f39d7bab8f6d9c2ff",
+            "message": "Release v5.3.5"
+        },
+        {
+            "hash": "5476b2edffd7d5cb68972475d61bc7de1e29c5eb",
+            "message": "Polishing contribution\n\nCloses gh-26650"
+        },
+        {
+            "hash": "c0fee67c6dae586d66f17724dcef32b631d6eecf",
+            "message": "Upgrade Kotlin serialization to 1.0.1\n\nLet's wait Spring Boot 2.5 to upgrade to 1.1.x"
+        },
+        {
+            "hash": "f229fa4b723ba85522c23d5ad85aae47323c59a4",
+            "message": "Upgrade Kotlin Coroutines to 1.4.3"
+        },
+        {
+            "hash": "684939d5f831362c46e523b0e2b6a0ebcd9817be",
+            "message": "Upgrade Kotlin to 1.4.31"
+        },
+        {
+            "hash": "b8d75c3139d6b8e89498742099bac7eac99e09bc",
+            "message": "Polishing contribution\n\nCloses gh-26674"
+        },
+        {
+            "hash": "d92c74d923a43218cd0f49fdf28622a2aa6c9837",
+            "message": "Add cookies to the WebSocket HandshakeInfo\n\nSee gh-26674"
+        },
+        {
+            "hash": "4f14291e2fd6790f605ad34b499caa3696d71278",
+            "message": "Add since tag\n\nSee gh-19647"
+        },
+        {
+            "hash": "7d3f42b27bd0042f1461e3e2ef45bbd641b05fa3",
+            "message": "Expose endpoint id as listener container name (for transaction/thread name)\n\nCloses gh-26683"
+        },
+        {
+            "hash": "a8d553218c5e888c83a953cd653397520512053d",
+            "message": "Introduce Gradle Toolchain support in build\n\nPrior to this commit, the Spring Framework build would rely on\nsetting a custom Java HOME for building all sources and tests\nwith that JDK.\n\nThis approach is not flexible enough, since we would be testing\nthe source compatibility against a recent JDK, but not a common\ncase experienced by the community: compiling and running\napplication code with a recent JDK and the official, JDK8-based\nFramework artifacts.\nThis method is also limiting our choice of JDKs to the ones\ncurrently supported by Gradle itself.\n\nThis commit introduces the support of Gradle JVM Toolchains in\nthe Spring Framework build.\n\nWe can now select a specific JDK for compiling the main\nSourceSets (Java, Groovy and Kotlin) and another one for\ncompiling and running the test SourceSets:\n\n`./gradlew check -PmainToolChain=8 -PtestToolchain=15`\n\nGradle will automatically find the JDKs present on the host or\ndownload one automcatically. You can find out about the ones\ninstalled on your host using:\n\n`./gradlew -q javaToolchains`\n\nFinally, this commit also refactors the CI infrastructure to:\n\n* only have a single CI image (with all the supported JDKs)\n* use this new feature to compile with JDK8 but test it\nagainst JDK11 and JDK15.\n\nCloses gh-25787"
+        },
+        {
+            "hash": "7f422f206cbf051c1222d6536be697d54a0cd7c0",
+            "message": "Polishing\n\nCloses gh-26682"
+        },
+        {
+            "hash": "70f0895f961bc3a2babcc8fe72f0804770e4dd5a",
+            "message": "Polish HeaderWebSessionIdResolverTests\n\nSee gh-26675"
+        },
+        {
+            "hash": "2728a9b931ea52515f2d4f3c77ec102e904d69bb",
+            "message": "Polishing\n\nCloses gh-26675"
+        },
+        {
+            "hash": "bc261fd9950aa34c4fabae77a9677fd6083be428",
+            "message": "Remove duplicate word in Javadoc\n\nCloses gh-26676"
+        },
+        {
+            "hash": "0eaf6d12eb20ba98d65ac3982c2a9391f2a8a281",
+            "message": "Add support for Oracle bind marker scheme using R2DBC\n\nWe now support Oracle's bind marker scheme that identifies dynamic\r\nparameters using names that are prefixed with a colon such as\r\n`:P0_myparam`.\r\n\r\nCloses gh-26680"
+        },
+        {
+            "hash": "6e264f9bddf0948c20c9ac12c2c5c7c4a5c7839a",
+            "message": "Add test for global Consumer<ExchangeResult> in WebTestClient\n\nSee gh-26662"
+        },
+        {
+            "hash": "6214ff153fd92e9fd37c5d7dee83f2cc9c9e89ce",
+            "message": "Public method to register MessagingAdviceBean\n\nCloses gh-26636"
+        },
+        {
+            "hash": "c6b271f1b6baef09395c810021cab1cf25d3cec0",
+            "message": "Support global Consumer<ExchangeResult> in WebTestClient\n\nCloses gh-26662"
+        },
+        {
+            "hash": "8bf16ee1f4aa827cb79ce72129a43c5ceb221287",
+            "message": "Merge pull request #26678 from 1993heqiang\n\n* pr/26678:\n  Polish \"Fix Commons FileUpload URL in reference guide\"\n  Fix Commons FileUpload URL in reference guide\n\nCloses gh-26678"
+        },
+        {
+            "hash": "a3451f99082a58d7351c9d10591621e013950c5d",
+            "message": "Polish \"Fix Commons FileUpload URL in reference guide\"\n\nSee gh-26678"
+        },
+        {
+            "hash": "5c38b89f4ea3256684c8b3af6abd88ececb02988",
+            "message": "Fix Commons FileUpload URL in reference guide\n\nSee gh-26678"
+        },
+        {
+            "hash": "9c030bacb83e833e64ef76599dfe6283b7c514cc",
+            "message": "Merge pull request #26673 from Rebwon\n\n* pr/26673:\n  Update copyright year of changed files\n  Polish\n\nCloses gh-26673"
+        },
+        {
+            "hash": "12f8cdd71571449a9d583f1ecfaa16d334a566a0",
+            "message": "Update copyright year of changed files\n\nSee gh-26673"
+        },
+        {
+            "hash": "2daefedf5edad34c69fd97d65230bc57d39621ca",
+            "message": "Polish\n\nSee gh-26673"
+        },
+        {
+            "hash": "6670db9b58401bc9711da05410714d7b93592c7d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7b6cac2c935bf277134d6caa17efb0d94ef5520e",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6ffeee3e6f31eab364d9a095b92c58305a959421",
+            "message": "Basic integration tests with various listener container settings\n\nSee gh-26442"
+        },
+        {
+            "hash": "1b458aeafcc886d6461b6228855ec91bd17dd97d",
+            "message": "Upgrade to ActiveMQ 5.16.1"
+        },
+        {
+            "hash": "0503cf29376bbe85011d6ae67698628180f4d6ba",
+            "message": "Revised checks for maxMessagesPerTask and idleReceivesPerTaskLimit\n\nSee gh-26442"
+        },
+        {
+            "hash": "14c802f97980b27d3a3509064c92bfdab2c30c41",
+            "message": "Introduced 'idleReceivesPerTaskLimit': also mark task idle when idle receives per task threshold is reached\nCloses GH-26195"
+        },
+        {
+            "hash": "c1b1940dd2605dc3c91f4c76ec2a3566404d5f25",
+            "message": "Polishing"
+        },
+        {
+            "hash": "97b3aa4b1324accec5b4757eb327efa4e7750178",
+            "message": "Polishing"
+        },
+        {
+            "hash": "79b571038633721a804ffab8ddce6284790af8b6",
+            "message": "StatusAssertion value methods fail when used with custom status code"
+        },
+        {
+            "hash": "b2bcb0f93ad04a6ddc729a487f9346defa6c39d6",
+            "message": "Support multiple parsing patterns in @DateTimeFormat\n\nPrior to this commit, @DateTimeFormat only supported a single format\nfor parsing date time values via the style, iso, and pattern attributes.\n\nThis commit introduces a new fallbackPatterns attribute that can be\nused to configure multiple fallback patterns for parsing date time\nvalues. This allows applications to accept multiple input formats for\ndate time values.\n\nFor example, if you wish to use the ISO date format for parsing and\nprinting but allow for lenient parsing of user input for various\nadditional date formats, you could annotate a field or method parameter\nwith configuration similar to the following.\n\n    @DateTimeFormat(\n        iso = ISO.DATE,\n        fallbackPatterns = { \"M/d/yy\", \"dd.MM.yyyy\" }\n    )\n\nCloses gh-20292"
+        },
+        {
+            "hash": "5593e95e895006faee2fcd19816c98de987dae31",
+            "message": "Do not assert thread count in ParallelApplicationEventsIntegrationTests"
+        },
+        {
+            "hash": "6d4c0091b545e6dd4596b6856e957e90797365e5",
+            "message": "Add application/*+xml to Jaxb2XmlEncoder\n\nCloses gh-26655"
+        },
+        {
+            "hash": "55aa8e914ed2e6808a7599842414152248cbe00c",
+            "message": "Expose id from ClientHttpResponse\n\nCloses gh-26656"
+        },
+        {
+            "hash": "2b017fe540130b77b10fe57aebb6745686a9863b",
+            "message": "Apply original ClassLoader in AbstractAdvisingBeanPostProcessor as well\n\nSee gh-26601"
+        },
+        {
+            "hash": "61cdd647b6d140065a254c7924aa5177f3de4cf5",
+            "message": "Fix image name for JDK 15 build"
+        },
+        {
+            "hash": "f6d3d9d6e6ea38599b98da907ecd536487d07565",
+            "message": "Polish CI pipeline"
+        },
+        {
+            "hash": "ed71fe04601d78f1730da780c0a93a48f87b5be6",
+            "message": "Publish directly to Maven Central\n\nThis commit skips the Bintray-related tasks in our CI pipeline and\ninstead relies on Maven Central for publishing Spring Framework\nartifacts.\n\nThis commit also updates the CI pipeline to sign the artifacts directly\nwith the `artifactory-resource`.\n\nCloses gh-26654"
+        },
+        {
+            "hash": "89f70bdc46becb2629a9635eacb0365a83c67ab6",
+            "message": "Upgrade to Netty 4.1.60, RxJava 3.0.11, JsonPath 2.5"
+        },
+        {
+            "hash": "3c9bd3177e2dc3d3e6b6e581b3933e0f1c6bd969",
+            "message": "Move getListenerId method to Smart/GenericApplicationListener\n\nSee gh-26638"
+        },
+        {
+            "hash": "4b80ef21b631824851971071fde5867bec0be754",
+            "message": "Merge pull request #26651 from MichelTenVoorde\n\n* pr/26651:\n  Polish \"Update reference to deprecated CronSequenceGenerator\"\n  Update reference to deprecated CronSequenceGenerator\n\nCloses gh-26651"
+        },
+        {
+            "hash": "d308985edc4c5b42d6d2e268f1dd3a5a7e59b9f5",
+            "message": "Polish \"Update reference to deprecated CronSequenceGenerator\"\n\nSee gh-26651"
+        },
+        {
+            "hash": "5aef87f12061d0389ea1857ede1beccc109c4775",
+            "message": "Update reference to deprecated CronSequenceGenerator\n\nSee gh-26651"
+        },
+        {
+            "hash": "70c0e104b5b3170dd7ea93b98ac83e97dbf9de67",
+            "message": "Upgrade to Protobuf 3.15.5, Undertow 2.2.5, Woodstox 6.2.4"
+        },
+        {
+            "hash": "01bf1c9021c1f5c20de5acf74f6b9a5bf3f61b96",
+            "message": "Polishing"
+        },
+        {
+            "hash": "530fb0808db3e60e68d3678e4e38843d070babd5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "48688b7b0455efc74b2998288242e01ba78f3f73",
+            "message": "Pass getListenerId call on to delegate\n\nSee gh-26638"
+        },
+        {
+            "hash": "1ef8cad7bc49ec90630c19076cfe764b8765d5aa",
+            "message": "Make use of  Reactor Netty's ChannelOperationsId\n\nCloses gh-26649"
+        },
+        {
+            "hash": "86902d27b222b2d5ed11856d7cbce5a0461c46cf",
+            "message": "Expose id/getListenerId in base EventListener/ApplicationListener (pulled up from tx)\n\nIncludes removeApplicationListeners(Predicate) method in ApplicationEventMulticaster.\n\nCloses gh-26638"
+        },
+        {
+            "hash": "9877a9e6b7d299dc32a447340bbbd0ee6a1076b5",
+            "message": "Reduce memory consumption"
+        },
+        {
+            "hash": "75b6540bd8163d93a07d6be63927a68e1bfc8af1",
+            "message": "Specify 20 to the initial size of the ArrayList"
+        },
+        {
+            "hash": "21d77dd7c7784aa45d2b3851d254fc1c8acdc02e",
+            "message": "Fixed typo in ref docs"
+        },
+        {
+            "hash": "8bdc53ac5c95a85212b3d03f634259e6b968f969",
+            "message": "Fix log message\n\nSee gh-gh-26434"
+        },
+        {
+            "hash": "acb638f82880b6860ac3f336904f45b1d82c69fe",
+            "message": "WriteResultPublisher propagates cancel upstream\n\nCloses gh-26642"
+        },
+        {
+            "hash": "c7e8989f16920c7e0c8703b2abf232b18730234f",
+            "message": "Upgrade to Hibernate ORM 5.4.29, Jackson 2.12.2, Jetty 9.4.38, Jetty Reactive HttpClient 1.1.6, R2DBC Arabba-SR9, JRuby 9.2.16, SnakeYAML 1.28, Checkstyle 8.41"
+        },
+        {
+            "hash": "78f65c4ca9a2e939f86f3c45c76a29a16fa593c4",
+            "message": "Consistent handling on Servlet non-blocking error callbacks\n\nSee gh-26434"
+        },
+        {
+            "hash": "42e4ca1e2d73ac5e80b6a458f8bb0d14fc897310",
+            "message": "Improve logging for Servlet / Reactive Streams adapters\n\nSee gh-26434"
+        },
+        {
+            "hash": "d23a108e769ac30dba2afd2baf6802050f2a9b4b",
+            "message": "Consolidate AsyncListener registration\n\nPreviously we registered 3 AsyncListener's from the request, from the\nresponse, and from the Servlet adapter.\n\nAfter this change, only the Servlet adapter registers a listener and\nthe others are delegated to. This consolidates the handling of\nAsyncListener events so that it's easier to discover, trace, and\nenforce the order of handling.\n\nSee gh-26434"
+        },
+        {
+            "hash": "b9a612b6374163a1cc891f4f16e61937c3fef0bc",
+            "message": "Add RouterFunctionMapping to Javadoc for WebMvcConfigurationSupport\n\nCloses gh-26635"
+        },
+        {
+            "hash": "1ee9223348c81c903a1d53d3378032beb16c3cbe",
+            "message": "Add section of CI builds"
+        },
+        {
+            "hash": "926c4aae5256f8a39f9be8774d67322eabdb4f08",
+            "message": "Improve formatting and link to 5.3.2 build pipeline"
+        },
+        {
+            "hash": "b61643b71a04fee5bb74d6bf1b35aae4125afb9e",
+            "message": "Support UTF-16/UTF-32 in Jackson message converter\n\nThis commit makes sure that we let Jackson deal with all the encodings\nthat it supports, including UTF-16 and UTF-32.\n\nCloses gh-26627"
+        },
+        {
+            "hash": "7efb4eade64b01cfcd27984a6fc4f358069fdd63",
+            "message": "Delete unnecessary @SuppressWarnings declaration"
+        },
+        {
+            "hash": "e89cc9934fd9fa25a6cbf73291a2c51784f5d564",
+            "message": "Delete unused method"
+        },
+        {
+            "hash": "010b7375fc99f2bc9adf1cc0d21c8a62d5139d07",
+            "message": "Fix typo in Javadoc"
+        },
+        {
+            "hash": "01c2e12fef43f422b897bbf57aeac95a95c90ce8",
+            "message": "Polish contribution\n\nSee gh-26619"
+        },
+        {
+            "hash": "90de1ab6d1cb85fe9d84a0985f9e1762494ede7e",
+            "message": "Ensure local @CrossOrigin maxAge overrides global value\n\nPrior to this commit, a method-level @CrossOrigin maxAge value did not\noverride a class-level @CrossOrigin maxAge value. This contradicts the\nJavadoc for @CrossOrgin which states the following.\n\n    For those attributes where only a single value can be accepted such\n    as allowCredentials and maxAge, the local overrides the global\n    value.\n\nThis commit ensures that a method-level @CrossOrigin maxAge value\noverrides a class-level @CrossOrigin maxAge value.\n\nCloses gh-26619"
+        },
+        {
+            "hash": "5a11569790c35f81069abfb07dcbb07980fde8dc",
+            "message": "Allow ServerHttpRequest content-type mutation\n\nPrior to this commit, `ServerHttpRequest.mutate()` would not reflect\nchanges made on the \"Accept\" and \"Content-Type\" HTTP headers.\nThis was due to the fact that the instantiation of a new request based\non the mutated values would not use the writable HTTP headers used\nduring the mutation, but rather a read-only view of the headers backed\nby `ReadOnlyHttpHeaders`.\n\n`ReadOnlyHttpHeaders` caches those values for performance reasons, so\ngetting those from the new request would not reflect the changes made\nduring the mutation phase.\n\nThis commit ensures that the new request uses the mutated headers.\n\nFixes gh-26615"
+        },
+        {
+            "hash": "0087578469dd7c7b3a638a37e8fda245de3b0506",
+            "message": "Fix @EventListener example in reference manual\n\nCloses gh-26622"
+        },
+        {
+            "hash": "1a79c54b015bdd2aa253c7e3308562bc0019e405",
+            "message": "Support quoted boundary in DefaultPartHttpMessageReader\n\nThis commit makes sure that quoted boundary parameters are supported in\nthe DefaultPartHttpMessageReader.\n\nCloses gh-26616"
+        },
+        {
+            "hash": "4af7a6863b8c07e936cbf3db59dcffe4dbea4294",
+            "message": "Polishing"
+        },
+        {
+            "hash": "c084936870bbe47b4e6d403d8106265e89fbc7cc",
+            "message": "Upgrade to Jetty 9.4.37, Caffeine 2.9, Mockito 3.8, Checkstyle 8.40"
+        },
+        {
+            "hash": "48bd81341ffdee0bd510f4d4673722093c31f7b4",
+            "message": "Add javadoc for body parameter\n\nSee gh-26613"
+        },
+        {
+            "hash": "118d8133d3e8f2035a565379026eade82fedeb98",
+            "message": "Add missing nullable annotation to ResponseEntity ok convenience method"
+        },
+        {
+            "hash": "c2137a0d2fb74127b799b37bd8d41ccff44a0b3f",
+            "message": "Cancel handling onError/Timeout in ServletHttpHandlerAdapter\n\nThis commit ensures handling is cancelled in case of onError/Timeout\ncallback from the Servlet container.\n\nSeparately we detect the same in ServletServerHttpRequest and\nServletServerHttpResponse, which signal onError to the read publisher\nand cancel writing, but if the onError/Timeout arrives after reading\nis done and before writing has started (e.g. longer handling), then\nneither will reach handling.\n\nSee gh-26434, gh-26407"
+        },
+        {
+            "hash": "8c9c59eba0bf1d8efd01d4130e46f158c5bf9df0",
+            "message": "Fix typo\n\nSee gh-24539"
+        },
+        {
+            "hash": "8ed7f4703bbe371aa54b7ae5d61cce92828d53b6",
+            "message": "Improve Javadoc for responseType on RestTemplate#exchange\n\nCloses gh-26599"
+        },
+        {
+            "hash": "e04269cadd5082fdb1b422cbeb9bcaad98510a41",
+            "message": "Consistently check DispatcherType to avoid NPE in tests\n\nCloses gh-26602"
+        },
+        {
+            "hash": "aa73f6733eff571a33824674c669861acb61dff8",
+            "message": "Lenient treatment of malformed Accept header for @ExceptionHandler\n\nCloses gh-24539"
+        },
+        {
+            "hash": "b5147a034c05b85b9619b107584f0837aab86961",
+            "message": "Polishing\n\nSee gh-26574\nSee gh-26575"
+        },
+        {
+            "hash": "ebf6fff31294f4a90de776da05fb9d4adbf6eab1",
+            "message": "Fix handling of file: paths to non-existent files\n\nFor setAsText, if the text argument is a file: URL for a path that does not exist, Paths.get(text) is called where text is a file: URL, which doesn't work - the result is an InvalidPathException.\n\nTo fix this issue, also check that the resource isn't a file before calling Paths.get(). That way, resources that are files skip to the other branch."
+        },
+        {
+            "hash": "dee12db50ad689b8fbe3ffc2e2f8c27316478d90",
+            "message": "getResource can throw IllegalArgumentException\n\nClass.getResource, ClassLoader.getResource, and ClassLoader.getSystemResource will throw IllegalArgumentException if a malformed URL is provided to them.\r\n\r\nAccording to its javadoc, resolveURL should return null if not resolvable, so catch the IllegalArgumentException and return null."
+        },
+        {
+            "hash": "e53cce0778f01fcced645cd831399b876fc2579c",
+            "message": "Allow AOP proxies to be created using the original ClassLoader\n\nCloses gh-26601"
+        },
+        {
+            "hash": "8baf404893037951ac29393a41d40af4fa11775b",
+            "message": "Polish contribution\n\nSee gh-26600"
+        },
+        {
+            "hash": "a33eac3ec05952424603d1fefc627b4a3ef36449",
+            "message": "Correctly set auto-growing array's element\n\nPrior to this commit, the implementation of processKeyedProperty() in\nAbstractNestablePropertyAccessor resulted in a\n`java.lang.IllegalArgumentException: array element type mismatch` when\nthe property expression had more than one property key and the last key\nshould cause the array to grow automatically.\n\nFor example, given a property `int[][] multiArray` and property\nexpression `multiArray[1][3]`, the `processKeyedProperty()` method\ncreated a new array object and assigned it to `multiArray`; whereas,\nthe new array object should have be assigned to `multiArray[1]`.\n\nThis commit fixes this issue.\n\nCloses gh-26600"
+        },
+        {
+            "hash": "eb68e6a62ae2dd5b01e790e9cd58363f2188eb91",
+            "message": "Support SUN as minimum of range in CronExpression\n\nThis commit makes sure that SUN can be used at the beginning of a range,\n like SUN-FRI.\n\nCloses gh-26598"
+        },
+        {
+            "hash": "a9240e0bac4d71792bc22642093cbda86ed82f85",
+            "message": "Document all supported SpringProperties keys in the reference manual\n\nCloses gh-26554"
+        },
+        {
+            "hash": "262b7d7c27bec01b653155ac12904567d860b14c",
+            "message": "Polishing"
+        },
+        {
+            "hash": "31d9f31806fec88b268e1ad97cfa2db428d3f734",
+            "message": "Polish Javadoc for @DateTimeFormat"
+        },
+        {
+            "hash": "0fd774e69f6df53d929af32bd92b9da4c6964b9c",
+            "message": "Add allowedOriginPatterns to WebSocketHandlerRegistration\n\nCloses gh-26593"
+        },
+        {
+            "hash": "ec5774e748357ac969ae51f96bd0d41916bfafa0",
+            "message": "Polishing\n\nCloses gh-26577"
+        },
+        {
+            "hash": "962ec38a61302e1ace6425a7ea89aae993357905",
+            "message": "Improve Javadoc of ExchangeFunction\n\nSee gh-26577"
+        },
+        {
+            "hash": "3ec0452fed9675cac4676f05c8ca461f0d96dd30",
+            "message": "Dedicated, \"_\"-prefixed log category for request mappings\n\nCloses gh-26539"
+        },
+        {
+            "hash": "cb3af52df2aeee0830a78589562cdec4f4ef318a",
+            "message": "Add vscode folder to .gitignore\n\nCloses gh-26595"
+        },
+        {
+            "hash": "5b114b72084405961737b552a74c55088bbd4410",
+            "message": "Cross reference DataClassRowMapper from BeanPropertyRowMapper"
+        },
+        {
+            "hash": "f7cef2ab202f238ae94d90badd071313986af19f",
+            "message": "Remove section on RequiredAnnotationBeanPostProcessor in ref docs\n\nIn order to reduce the focus on the deprecated @Required support, this\ncommit removes the RequiredAnnotationBeanPostProcessor section and\nreplaces it with a TIP and an updated NOTE.\n\nSee gh-26578"
+        },
+        {
+            "hash": "77a658f51bbb257c018888b76b7149dae34c769c",
+            "message": "Fix registration of ApplicationStartupAware\n\nCloses gh-26576"
+        },
+        {
+            "hash": "cf4e77907f7056cbee60efb5842989d9266f091d",
+            "message": "Fix MockHttpServletRequest reference in Javadoc\n\nCloses gh-26592"
+        },
+        {
+            "hash": "42a223b9cd97c67703b3791252395c1df1e3a528",
+            "message": "Upgrade to Gradle 6.8.3"
+        },
+        {
+            "hash": "6d2fec383b76a70b4ebc847cb555941f24e93b02",
+            "message": "Reduce focus on RequiredAnnotationBeanPostProcessor in ref docs\n\nSee gh-26578"
+        },
+        {
+            "hash": "90ee22f2affdf6c34a640eef97839742576c2611",
+            "message": "Update reference manual regarding deprecated @Required annotation\n\nCloses gh-26578"
+        },
+        {
+            "hash": "db5be44ff43e5921150fa3cfbc522963870d61fd",
+            "message": "Polishing"
+        },
+        {
+            "hash": "a78c12b8d3f5304665fa73a76cb01b8a7c744ca8",
+            "message": "Fix Javadoc for PlaceholderConfigurerSupport"
+        },
+        {
+            "hash": "dfc84069178cbba57425e85841c9c3257242db0b",
+            "message": "Polish contribution\n\nSee gh-26462\r\nCloses gh-26586"
+        },
+        {
+            "hash": "313e754a8433d5fb9323174ef17dd6fbe48227b3",
+            "message": "Support load-time weaving for @Component classes again\n\nSince Spring Framework 5.2, the LoadTimeWeaver no longer weaves bean\nclasses annotated with @Component. This is a regression caused by the\nchanges in 40c62139ae, stemming from the fact that any class annotated\nor meta-annotated with @Component is considered to be a candidate\nconfiguration class in 'configuration lite' mode (i.e., a class without\nthe @Configuration annotation and without any @Bean methods) and\ntherefore now has its class eagerly loaded. This results in the class\nbeing loaded before the LoadTimeWeaver has a chance to weave it.\n\nThis commit fixes this regression by explicitly avoiding eager class\nloading for any 'lite' @Configuration or @Component class without @Bean\nmethods.\n\nCloses gh-26199"
+        },
+        {
+            "hash": "207ee9e307eb51fff0270c287e8a167ce00f5f89",
+            "message": "Polishing"
+        },
+        {
+            "hash": "3215880d08f70f621aff1d27a0a5881134221068",
+            "message": "Remove Javadoc link to private method"
+        },
+        {
+            "hash": "274db2f7a934c1558eee25809ceab3982ab73e1c",
+            "message": "Undo HttpServletMapping support in MockHttpServletRequest\n\nCloses gh-26555"
+        },
+        {
+            "hash": "1dd7d53de0b32813564d7b7c0627ade4d7f47b2b",
+            "message": "More precise mapping for WebSocket handshake requests\n\nCloses gh-26565"
+        },
+        {
+            "hash": "8535193df394865903d31efcfccccd06b18db50d",
+            "message": "Update copyright date for DynamicIntroductionAdvice\n\nSee gh-26568"
+        },
+        {
+            "hash": "a78701cc4b7cb66be91ebee4fa9764e753dacd68",
+            "message": "Fix Javadoc link in DynamicIntroductionAdvice\n\nCloses gh-26568"
+        },
+        {
+            "hash": "947387b4cdb5bee3fcca839693c71108a7279988",
+            "message": "Fix ResourceUrlProvider handler auto-detection\n\nPrior to this commit, `ResourceUrlProvider` would listen and consider\nall `ContextRefreshedEvent` and use the given context to detect\n`SimpleUrlHandlerMapping`.\n\nThis could lead to situations where a `ResourceUrlProvider` uses another\napplication context than its own (in a parent/child context setup) and\ndetect the wrong set of handlers.\n\nBecause `ResourceUrlProvider` locks itself once the auto-detection is\ndone, we need to ensure that it considers only events sent by its\napplication context.\n\nFixes gh-26561"
+        },
+        {
+            "hash": "49ccd7ad9c917ba11b0f5713c65b1dcff5a0595b",
+            "message": "Polish MockHttpServletResponseTests\n\nSee gh-26558"
+        },
+        {
+            "hash": "5b97c47fc4b9a4248db9cd2472f25ae78242baf4",
+            "message": "Sync changes in MockHttpServletResponse test fixture\n\nSee gh-26558"
+        },
+        {
+            "hash": "40661d62c108ed3fa9474fbbae8f466ad6fbee9b",
+            "message": "Support cookie w/ only Expires attribute in MockHttpServletResponse\n\nPrior to this commit, MockHttpServletResponse only included the Expires\nattribute in the generated Cookie header if the Max-Age attribute had\nalso been set.\n\nThis commit supports including the Expires attribute in the generated\nCookie Header even when the Max-Age attribute has not been set.\n\nCloses gh-26558"
+        },
+        {
+            "hash": "e17ca9a4e907e045daf0a7ec8e4fa99a0948d248",
+            "message": "Implement toString() in MockCookie"
+        },
+        {
+            "hash": "87761397b0d5e723504eaff092967c3896624a78",
+            "message": "Document @Value support for Resource/Resource[] injection in ref docs\n\nSee gh-26447"
+        },
+        {
+            "hash": "ac58614be8db9e0b128d77fcd230e7e167674be1",
+            "message": "Polish Resources section of the reference manual\n\nSee gh-26447"
+        },
+        {
+            "hash": "4ebd8d77b7e72b0a1339937793eacaead9dcd774",
+            "message": "Update link to AsciiDoc Tooling"
+        },
+        {
+            "hash": "7ca47cfe6bee3916de4c90f6580a71b06296bd15",
+            "message": "Fix build output dir for ref docs in CONTRIBUTING.md\n\nCloses gh-26556"
+        },
+        {
+            "hash": "fd49c8f598a9ce33f7ce14ace31c86856819776b",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ff234568d20330e79ba0d9f0149f00bee211c528",
+            "message": "Next development version (v5.3.5-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "26650",
+            "title": "Upgrade to Reactor 2020.0.5"
+        },
+        {
+            "number": "19647",
+            "title": "Common API for MockMvc tests and for real HTTP tests"
+        },
+        {
+            "number": "26683",
+            "title": "Expose @JmsListener endpoint id to annotation-derived listener container (for transaction definition name)"
+        },
+        {
+            "number": "25787",
+            "title": "Use Gradle Toolchains for JVM projects to test on unsupported JDK versions"
+        },
+        {
+            "number": "26662",
+            "title": "Add an MockMVC alwaysDo equivalent to WebTestClient "
+        },
+        {
+            "number": "26636",
+            "title": "Support global @MessageExceptionHandler via @ControllerAdvice in RSocket"
+        },
+        {
+            "number": "20292",
+            "title": "Support fallback parsing patterns in @DateTimeFormat"
+        },
+        {
+            "number": "26655",
+            "title": "Jaxb2XmlEncoder Support for Custom XML Media Types"
+        },
+        {
+            "number": "26656",
+            "title": "Ensure ClientResponse logPrefix Contains the Connection Id When Available"
+        },
+        {
+            "number": "26601",
+            "title": "Allow AOP proxies to be created using the original ClassLoader"
+        },
+        {
+            "number": "26654",
+            "title": "Publish directly to Maven Central"
+        },
+        {
+            "number": "26638",
+            "title": "@EventListener annotated bean cannot be removed from the ApplicationEventMulticaster"
+        },
+        {
+            "number": "26649",
+            "title": "Make use of Reactor Netty API for request id"
+        },
+        {
+            "number": "26434",
+            "title": "Response writing fails to complete with WebFlux on Tomcat"
+        },
+        {
+            "number": "26642",
+            "title": "WriteResultPublisher does not pass cancel signals"
+        },
+        {
+            "number": "26627",
+            "title": "Support UTF-16 and UTF-32 in Jackson HttpMessageConverters"
+        },
+        {
+            "number": "26615",
+            "title": "ServerHttpRequest content-type cannot be mutated"
+        },
+        {
+            "number": "26616",
+            "title": "Multipart boundary should strip quotes"
+        },
+        {
+            "number": "26407",
+            "title": "InMemoryWebSessionStore indirectly causing infinite loop inside tomcat-native OpenSSL under load"
+        },
+        {
+            "number": "24539",
+            "title": "Improve handling of malformed Accept header for @ExceptionHandler methods"
+        },
+        {
+            "number": "26599",
+            "title": "Improve Javadoc of RestOperations#exchange for responses without a body"
+        },
+        {
+            "number": "26602",
+            "title": "OncePerRequestFilter.isAsyncDispatch may return a NPE"
+        },
+        {
+            "number": "26598",
+            "title": "Change in behaviour for cron expression with day of the week range starting with SUN"
+        },
+        {
+            "number": "26554",
+            "title": "Document all supported SpringProperties keys in the reference manual"
+        },
+        {
+            "number": "26593",
+            "title": "WebSocketHandlerRegistration is missing option for allowedOriginPatterns"
+        },
+        {
+            "number": "26539",
+            "title": "Allow logging REST endpoint mappings independent of other log categories"
+        },
+        {
+            "number": "26576",
+            "title": "Code doesn't match between AbstractApplicationContext and ApplicationContextAwareProcessor"
+        },
+        {
+            "number": "26462",
+            "title": "Allow AbstractEnvironment subclasses to use custom ConfigurablePropertyResolver and MutablePropertySources"
+        },
+        {
+            "number": "26199",
+            "title": "LoadTimeWeaver no longer weaves bean classes annotated with @Component"
+        },
+        {
+            "number": "26555",
+            "title": "Dependency on Servlet 4.0 in spring-test makes it challenging to have Servlet 3.1 at runtime"
+        },
+        {
+            "number": "26565",
+            "title": "HandlerMapping for WebSocket Requests Only"
+        },
+        {
+            "number": "26561",
+            "title": "ResourceUrlProvider detects wrong set of handler mappings"
+        },
+        {
+            "number": "26447",
+            "title": "Improve reference documentation on Resources"
+        }
+    ]
+}

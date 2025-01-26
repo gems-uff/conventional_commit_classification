@@ -1,0 +1,590 @@
+{
+    "platform": "maven",
+    "project": "spring-boot",
+    "release": "v3.1.11",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 101,
+    "start_delay": 0.0,
+    "duration": 43.81673611111111,
+    "commits_info": [
+        {
+            "hash": "f10490337a581ec17e8b0d1eb0ed74573d1422a0",
+            "message": "Release v3.1.11"
+        },
+        {
+            "hash": "8a22108c625db3d61a2f847e673d64d5ee525d3a",
+            "message": "Use the version not the tag when creating the build name"
+        },
+        {
+            "hash": "22698ea79b6412b96826e9d0c4116f16e1ec0a79",
+            "message": "Fix references to inputs in Sync to Maven Central action"
+        },
+        {
+            "hash": "e0d00c0509c06c4aef77744387502d9006c0405b",
+            "message": "Fix version output of build-and-stage-release job"
+        },
+        {
+            "hash": "35725b4432e20dc355be8a263381e28b2ad8e453",
+            "message": "Reverse order so one checkout does not delete the other"
+        },
+        {
+            "hash": "b48cf9b5a81da45e678cb6c1e1a617bb5b6a774f",
+            "message": "Improve verify workflow's handling of secrets"
+        },
+        {
+            "hash": "3479304e1366f7f0b3aa225afe705c6b74c3d84f",
+            "message": "Disable creation time verification on Linux\n\nCloses gh-40423"
+        },
+        {
+            "hash": "20e291d8dd3b110a2f3ac046a2f8e5da568c13b8",
+            "message": "Correct the name of the Gradle Enterprise access key input\n\nSee gh-40407"
+        },
+        {
+            "hash": "1b03cf04f4982c3532420a9242bcb51b668f17ac",
+            "message": "Remove type from secrets declarations\n\nSee gh-40407"
+        },
+        {
+            "hash": "9a589ea2436b4db36632a4890e4dd92cf602c5f6",
+            "message": "Fix passing of repository username and password into verify\n\nSee gh-40407"
+        },
+        {
+            "hash": "e75c9312e0e1ba60cb10723a1acb8ef5412f106a",
+            "message": "Add workflow to release from GitHub Actions\n\nCo-Authored-By: Moritz Halbritter <moritz.halbritter@broadcom.com>\n\nCloses gh-40407"
+        },
+        {
+            "hash": "bc5777d0cc683cac5abef3b2af1ad8876e106bc0",
+            "message": "Upgrade CI images to ubuntu:jammy-20240405\n\nCloses gh-40410"
+        },
+        {
+            "hash": "acb9427ffde423eb1068cac2e0294c128132607a",
+            "message": "Pin the version of the release verification tests\n\nCloses gh-40366"
+        },
+        {
+            "hash": "e03d691db18ddc677c54d07111d99d487192e831",
+            "message": "Upgrade to SLF4J 2.0.13\n\nCloses gh-40391"
+        },
+        {
+            "hash": "c969cbbdba7d36d3fbfeeb0b90f0872392f09ecb",
+            "message": "Upgrade to R2DBC Postgresql 1.0.5.RELEASE\n\nCloses gh-40390"
+        },
+        {
+            "hash": "031bebb1447d63fa3622a431853e75ed7de6d1af",
+            "message": "Upgrade to Netty 4.1.109.Final\n\nCloses gh-40389"
+        },
+        {
+            "hash": "eb0506eaedf181ff009488d126fef8c4f059b293",
+            "message": "Upgrade to ActiveMQ 5.18.4\n\nCloses gh-40388"
+        },
+        {
+            "hash": "1d372295f12215357463f7267b462d5291bdc6b0",
+            "message": "Merge pull request #40385 from spencergibb\n\n* pr/40385:\n  Fix javadoc for correct operation annotation\n\nCloses gh-40385"
+        },
+        {
+            "hash": "6f3c30bf74489498de6db5951f4d8546475c0a6c",
+            "message": "Fix javadoc for correct operation annotation\n\nReadOperation was the text for WriteOperation and DeleteOperation.\n\nSee gh-40385"
+        },
+        {
+            "hash": "0ab7502bc9ffaced96d6d6fd483fba5981438b1e",
+            "message": "Upgrade to Docker 26.0.1\n\nCloses gh-40162"
+        },
+        {
+            "hash": "594fa88ee0cf0b19617a0a331de5181ac1b6f8b2",
+            "message": "Upgrade to Spring Security 6.1.9\n\nCloses gh-40204"
+        },
+        {
+            "hash": "d5af9a41b9111bf55b0dd74866a33e4945a78179",
+            "message": "Upgrade to Spring LDAP 3.1.5\n\nCloses gh-40203"
+        },
+        {
+            "hash": "db7059c1f7529b8e3d666f43d2c37e433ffec3fa",
+            "message": "Upgrade to Spring Kafka 3.0.16\n\nCloses gh-40375"
+        },
+        {
+            "hash": "bc79274f9ec745a3a963d012aed7283c196c8978",
+            "message": "Upgrade to Spring Integration 6.1.8\n\nCloses gh-40202"
+        },
+        {
+            "hash": "59325d162666290cdfcb4a75b7a54b4797a9f22c",
+            "message": "Upgrade to Spring HATEOAS 2.1.5\n\nCloses gh-40374"
+        },
+        {
+            "hash": "475af1f3f86d902b4819e2ae9ce775d92e8c3f1e",
+            "message": "Upgrade to Spring Framework 6.0.19\n\nCloses gh-40201"
+        },
+        {
+            "hash": "5da05e2037c0b6a20fd2df709d31ef0a46752c44",
+            "message": "Upgrade to Spring Data Bom 2023.0.11\n\nCloses gh-40200"
+        },
+        {
+            "hash": "2a1268c597cb09135bfecb9cacce8115dc719ace",
+            "message": "Upgrade to Spring Authorization Server 1.1.7\n\nCloses gh-40199"
+        },
+        {
+            "hash": "acfc5fe830add09320b5fdbc80cdf79f61baebe3",
+            "message": "Upgrade to Spring AMQP 3.0.13\n\nCloses gh-40373"
+        },
+        {
+            "hash": "bf97f6ca3cad6181e93e48a2db4b54905d51b5e4",
+            "message": "Make Homebrew available to the release verification tests\n\nCloses gh-40367"
+        },
+        {
+            "hash": "053c674302524ee98f20194bc9c890c565264c95",
+            "message": "Merge pull request #40035 from izeye\n\n* pr/40035:\n  Fix target in BindValidationFailureAnalyzer\n\nCloses gh-40035"
+        },
+        {
+            "hash": "201885a242358623e9257a4b16538536894aa913",
+            "message": "Fix target in BindValidationFailureAnalyzer\n\nSee gh-40035"
+        },
+        {
+            "hash": "3b98056bb57f5a786c4ffa47a30d1ef2a36e70a2",
+            "message": "Merge pull request #40358 from dependabot[bot]\n\n* gh-40358:\n  Polish \"Upgrade to gradle/actions 3.3.0\"\n  Upgrade to gradle/actions 3.3.0\n\nCloses gh-40358"
+        },
+        {
+            "hash": "ece2c683c6286fb046be8477c6146e55e18f5629",
+            "message": "Polish \"Upgrade to gradle/actions 3.3.0\"\n\nSee gh-40358"
+        },
+        {
+            "hash": "b3db9204d9615237977fbbb3928c8017b90e89e3",
+            "message": "Upgrade to gradle/actions 3.3.0\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-40358"
+        },
+        {
+            "hash": "a4231abb0a889f4d7749cf70bf8b20761a32689b",
+            "message": "Polish GHA input and output handling"
+        },
+        {
+            "hash": "19714c9e0876d2c635b2b38b4c194bd414cfad01",
+            "message": "Correct name of secret access key input\n\nSee gh-40353"
+        },
+        {
+            "hash": "0a2865132dd9a5f5f55e9a74d93a9d0ccb3436f6",
+            "message": "Configure shell for all run steps\n\nSee gh-40353"
+        },
+        {
+            "hash": "e4802b880db51537b0946cee017bed255c855eea",
+            "message": "Encapsulate common build steps in a composite action\n\nCloses gh-40353"
+        },
+        {
+            "hash": "590b1bded8c64a2afd686592de8470c8075fb97f",
+            "message": "Correct reference to reusable workflow"
+        },
+        {
+            "hash": "e35cc60efff951644ab7abf9de033469ff2dc086",
+            "message": "Polish"
+        },
+        {
+            "hash": "2c6006eeff8a5a65d4753cf6e78b387456acd1ce",
+            "message": "Move verification into reusable workflow\n\nCloses gh-40350"
+        },
+        {
+            "hash": "24f80154d4da6d894aee30d43f31df995fc62187",
+            "message": "Do not overwrite attributes in ClientObservationConventionAdapter\n\nPrior to this commit, the `ClientObservationConventionAdapter` would\noverwrite a request builder attribute. This would happen when the\nrequest is not fully built when the observation starts. At that point,\nthe tags are built for long task timers, but not for the actual metric.\nThis effectively overrides the correct value of the URI template in the\nbuilder.\n\nThis commit removes this builder update which was invalid in the first\nplace.\n\nFixes gh-40330"
+        },
+        {
+            "hash": "12e004f131c7b7e55c67d8e6d11ce8722122fe54",
+            "message": "Revert \"Exclude unwanted javax.inject dependency from Data Couchbase\"\n\nThis reverts commit 06f5ab162f6b049f42f15c04d3a9a8810c0c6d63. The\ndependency has been removed in Data Couchbase, making the exclude\nunnecessary.\n\nSee gh-40200"
+        },
+        {
+            "hash": "a946f66e7c6dad2668031559aa4e5b8e00bf651d",
+            "message": "Minimize pollution of Log4j2's environment\n\nCloses gh-40178"
+        },
+        {
+            "hash": "1ea6f2f51f07df0719e741e02a8d827399213960",
+            "message": "Revert \"Revert \"Exclude unwanted javax.inject dependency from Data Couchbase\"\"\n\nThis reverts commit 3b76165f4e764300c58a52df9244ea9953abcc6f.\n\nTurns out, the exclude's still needed for now? with Data Couchbase\n5.1.x.\n\nSee gh-40200"
+        },
+        {
+            "hash": "3b76165f4e764300c58a52df9244ea9953abcc6f",
+            "message": "Revert \"Exclude unwanted javax.inject dependency from Data Couchbase\"\n\nThis reverts commit 06f5ab162f6b049f42f15c04d3a9a8810c0c6d63. The\ndependency has been removed in Data Couchbase, making the exclude\nunnecessary.\n\nSee gh-40200"
+        },
+        {
+            "hash": "a417c9480594025fe5124b89069039e78f4babc1",
+            "message": "Merge pull request #39837 from mstahv\n\n* gh-39837:\n  Make includes configurable via a property\n  Polish \"Make excludes configurable via property\"\n  Make excludes configurable via property\n\nCloses gh-39837"
+        },
+        {
+            "hash": "baf5a7f13023d937a9d2bed973f297368a02a99d",
+            "message": "Make includes configurable via a property\n\nSee gh-39837"
+        },
+        {
+            "hash": "2a6293940b633f4d70d3ffa781b67d70dc53de0a",
+            "message": "Polish \"Make excludes configurable via property\"\n\nSee gh-39837"
+        },
+        {
+            "hash": "58fc8f8c018da3d39a9ef7c9b9d65b226c1689ad",
+            "message": "Make excludes configurable via property\n\nSee gh-39837"
+        },
+        {
+            "hash": "2f3cf56f0338db3a9dcf35962cebb1a9df97e52a",
+            "message": "Fix servlet component scanning in a mock web environment\n\nCloses gh-39736"
+        },
+        {
+            "hash": "b961662cf182846cdda1997fa43da46803371326",
+            "message": "Merge pull request #40235 from ppkarwasz\n\n* gh-40235:\n  Polish \"Replace custom filter with DenyAllFilter\"\n  Replace custom filter with DenyAllFilter\n\nCloses gh-40235"
+        },
+        {
+            "hash": "ef9f1b41d7c98cc1aef463713178eeef0edf07fb",
+            "message": "Polish \"Replace custom filter with DenyAllFilter\"\n\nSee gh-40235"
+        },
+        {
+            "hash": "d194b7f3c00fb16f924e583dac181ce24b4f658c",
+            "message": "Replace custom filter with DenyAllFilter\n\nSee gh-40235"
+        },
+        {
+            "hash": "3496fe03a5fa345e4138e719079400b6bc778837",
+            "message": "Upgrade to Tomcat 10.1.20\n\nCloses gh-40289"
+        },
+        {
+            "hash": "1fa7ceb6214d6cc44020ee85c0e86008cd41abab",
+            "message": "Upgrade to Spring GraphQL 1.2.6\n\nCloses gh-40288"
+        },
+        {
+            "hash": "b13b6b83eb637c6e5fa8199cf7ba96b4f06b850a",
+            "message": "Upgrade to Reactor Bom 2022.0.18\n\nCloses gh-40198"
+        },
+        {
+            "hash": "e5347e505738aa14f99cbfffde77cfd171d8ba86",
+            "message": "Upgrade to Netty 4.1.108.Final\n\nCloses gh-40287"
+        },
+        {
+            "hash": "b643ff95fc463646ce134896fed9299a51067b7f",
+            "message": "Upgrade to Micrometer Tracing 1.1.12\n\nCloses gh-40197"
+        },
+        {
+            "hash": "15cbba506a62c082f32474ced8f1fd33b97d2b5d",
+            "message": "Upgrade to Micrometer 1.11.11\n\nCloses gh-40196"
+        },
+        {
+            "hash": "e7c1d180e3556a67f715ceec2d22b82696837d79",
+            "message": "Upgrade to Lombok 1.18.32\n\nCloses gh-40286"
+        },
+        {
+            "hash": "1f77b7507d121cbc15748df2812a0c273aac3444",
+            "message": "Upgrade to jOOQ 3.18.14\n\nCloses gh-40285"
+        },
+        {
+            "hash": "d18f36ee81897ce66e2a06d6f94e2f2171715adf",
+            "message": "Upgrade to Jersey 3.1.6\n\nCloses gh-40284"
+        },
+        {
+            "hash": "500c449cab356775ae13599e6222b21619d0b43e",
+            "message": "Upgrade to Jakarta Json Bind 3.0.1\n\nCloses gh-40283"
+        },
+        {
+            "hash": "368b82b23084ae2b0770fce77039eee68aa37233",
+            "message": "Upgrade to Hibernate 6.2.24.Final\n\nCloses gh-40282"
+        },
+        {
+            "hash": "d6ace6108c0ddac97cf697b65698e49d048acfbb",
+            "message": "Upgrade to Groovy 4.0.21\n\nCloses gh-40281"
+        },
+        {
+            "hash": "93af29e5ccc9c23b296e82263a5ec395927db083",
+            "message": "Upgrade to Byte Buddy 1.14.13\n\nCloses gh-40280"
+        },
+        {
+            "hash": "2dae04a79812a77fb583a56803a05968eab3f1f5",
+            "message": "Upgrade to AspectJ 1.9.22\n\nCloses gh-40279"
+        },
+        {
+            "hash": "f02a029b21c1ad76094c1fc9bd31af50b448624f",
+            "message": "Merge pull request #40219 from dependabot[bot]\n\n* gh-40219:\n  Polish \"Upgrade to gradle/actions 3.2.1\"\n  Upgrade to gradle/actions 3.2.1\n\nCloses gh-40219"
+        },
+        {
+            "hash": "d8c57810e28cd2f34a2bb8d88c5ebea46a1c017b",
+            "message": "Polish \"Upgrade to gradle/actions 3.2.1\"\n\nSee gh-40219"
+        },
+        {
+            "hash": "513b22cac00c0a7545f8aa3431d5ee1588e0a3e1",
+            "message": "Upgrade to gradle/actions 3.2.1\n\nSee gh-40219"
+        },
+        {
+            "hash": "06f5ab162f6b049f42f15c04d3a9a8810c0c6d63",
+            "message": "Exclude unwanted javax.inject dependency from Data Couchbase\n\nSee gh-40200"
+        },
+        {
+            "hash": "35284acabcefa8e8edb8feb15f322c14af5e1d11",
+            "message": "Start building against Spring Security 6.1.9 snapshots\n\nSee gh-40204"
+        },
+        {
+            "hash": "ace64b22e70391356fde55d85990621c1bfc3443",
+            "message": "Start building against Spring LDAP 3.1.5 snapshots\n\nSee gh-40203"
+        },
+        {
+            "hash": "ca1bcaf39f418379c58e01715009fa4ed1115d55",
+            "message": "Start building against Spring Integration 6.1.8 snapshots\n\nSee gh-40202"
+        },
+        {
+            "hash": "a18a661af2036e3c15b7a2358d765409f4f53162",
+            "message": "Start building against Spring Framework 6.0.19 snapshots\n\nSee gh-40201"
+        },
+        {
+            "hash": "a4817c369a880e5749f8434a5f866ab36fafdd08",
+            "message": "Upgrade to Neo4j Java Driver 5.19.0\n\nCloses gh-40205"
+        },
+        {
+            "hash": "240f18cd6908f5ca5a5becd83a16b4bba430bedc",
+            "message": "Start building against Spring Data Bom 2023.0.11 snapshots\n\nSee gh-40200"
+        },
+        {
+            "hash": "4aa3003f22557233b325c0d3965822d0fb7a8edd",
+            "message": "Start building against Spring Authorization Server 1.1.7 snapshots\n\nSee gh-40199"
+        },
+        {
+            "hash": "175987d627fc76bedb7337d07b7274122981cef3",
+            "message": "Start building against Reactor Bom 2022.0.18 snapshots\n\nSee gh-40198"
+        },
+        {
+            "hash": "12d8e02f15b8f679c5e5fe5e3573604f1e3800e6",
+            "message": "Start building against Micrometer Tracing 1.1.12 snapshots\n\nSee gh-40197"
+        },
+        {
+            "hash": "89ffdd61252e1b1c6229c481af9a6bee4bb819ce",
+            "message": "Start building against Micrometer 1.11.11 snapshots\n\nSee gh-40196"
+        },
+        {
+            "hash": "21f5d375b7a821f8c1ba5ac4ab6c91afd2124659",
+            "message": "Polish"
+        },
+        {
+            "hash": "e2ec066fcf0c0fa19f77cd263fa903341efdc283",
+            "message": "Merge pull request #40085 from FelixDes\n\n* pr/40085:\n  Apply instanceof pattern matching\n\nCloses gh-40085"
+        },
+        {
+            "hash": "8a42935dadb7abafc2a5cd6d071363977967bc1c",
+            "message": "Apply instanceof pattern matching\n\nSee gh-40085"
+        },
+        {
+            "hash": "6825bdaf7964fe9a9e8a5114b2cfbc713574a401",
+            "message": "Upgrade to Gradle Enterprise Conventions 0.0.16\n\nCloses gh-40122"
+        },
+        {
+            "hash": "85e4b15cca20f66fc5c43913a93429ef3ca2f477",
+            "message": "Polish workflow yaml"
+        },
+        {
+            "hash": "b0476cefe533ab274c805f4606f4ab2faa49fb78",
+            "message": "Polish"
+        },
+        {
+            "hash": "aa045db1f39264909d34bfd1600309fe04b7e511",
+            "message": "Polish workflow yaml"
+        },
+        {
+            "hash": "012872b1f37c3a39fa74931e240c1eadfd9a48fa",
+            "message": "Polish GitHub action names and formatting"
+        },
+        {
+            "hash": "61fc4e88af6ad730153f4a0aa21812b74903e0b1",
+            "message": "Upgrade to 0.0.16-SNAPSHOT of Gradle Enterprise Conventions\n\nSee gh-40122"
+        },
+        {
+            "hash": "c158eb258fbb1665c4cba61f60791805c7e14923",
+            "message": "Polish GitHub action names and formatting"
+        },
+        {
+            "hash": "14fef8c100ed518b30050ee4f761dbc52ef79f17",
+            "message": "Make send notification action available to verify job"
+        },
+        {
+            "hash": "5cc45a6873c49d6780ea4851528c652438bb726c",
+            "message": "Provide a token when checking out verification tests\n\nSee gh-40119"
+        },
+        {
+            "hash": "267c65094d0a77f4519130eb9ef3e51dc5bd5d4f",
+            "message": "Verify snapshots once they have been deployed\n\nCloses gh-40119"
+        },
+        {
+            "hash": "ff66036e9082e7545ea498454b298855babd2f2e",
+            "message": "Remove redundant Regex escapes\n\nCloses gh-40116"
+        },
+        {
+            "hash": "a4d3123e5c8a272cb39e331ee877bef791b37efc",
+            "message": "Merge pull request #40106 from dependabot[bot]\n\n* pr/40106:\n  Bump gradle/wrapper-validation-action from 2.1.1 to 2.1.2\n\nCloses gh-40106"
+        },
+        {
+            "hash": "3d2eedfa1669c6c4f7653fdaadf5c256f5a97606",
+            "message": "Bump gradle/wrapper-validation-action from 2.1.1 to 2.1.2\n\nBumps [gradle/wrapper-validation-action](https://github.com/gradle/wrapper-validation-action) from 2.1.1 to 2.1.2.\n- [Release notes](https://github.com/gradle/wrapper-validation-action/releases)\n- [Commits](https://github.com/gradle/wrapper-validation-action/compare/699bb18358f12c5b78b37bb0111d3a0e2276e0e2...b231772637bb498f11fdbc86052b6e8a8dc9fc92)\n\n---\nupdated-dependencies:\n- dependency-name: gradle/wrapper-validation-action\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\n\nSee gh-40106"
+        },
+        {
+            "hash": "aee88115ea8d50a2eb1fb4068dd5d48471c00822",
+            "message": "Test Gradle plugin against Gradle 8.7\n\nThis commit includes some changes to test Gradle scripts to avoid\nGradle 8.7's new deprecation warning about URI conversion.\n\nCloses gh-40093"
+        },
+        {
+            "hash": "5c184f8802ee42189e380057717b2ed3107a2f26",
+            "message": "Next development version (v3.1.11-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "40423",
+            "title": "ExtractCommandTests fail on Linux with Java 17.0.11"
+        },
+        {
+            "number": "40407",
+            "title": "Release from GitHub Actions"
+        },
+        {
+            "number": "40410",
+            "title": "Upgrade Ubuntu version in CI images"
+        },
+        {
+            "number": "40366",
+            "title": "Pin the version of the release verification tests"
+        },
+        {
+            "number": "40391",
+            "title": "Upgrade to SLF4J 2.0.13"
+        },
+        {
+            "number": "40390",
+            "title": "Upgrade to R2DBC Postgresql 1.0.5.RELEASE"
+        },
+        {
+            "number": "40389",
+            "title": "Upgrade to Netty 4.1.109.Final"
+        },
+        {
+            "number": "40388",
+            "title": "Upgrade to ActiveMQ 5.18.4"
+        },
+        {
+            "number": "40162",
+            "title": "Upgrade CI to Docker 26.0.1"
+        },
+        {
+            "number": "40204",
+            "title": "Upgrade to Spring Security 6.1.9"
+        },
+        {
+            "number": "40203",
+            "title": "Upgrade to Spring LDAP 3.1.5"
+        },
+        {
+            "number": "40375",
+            "title": "Upgrade to Spring Kafka 3.0.16"
+        },
+        {
+            "number": "40202",
+            "title": "Upgrade to Spring Integration 6.1.8"
+        },
+        {
+            "number": "40374",
+            "title": "Upgrade to Spring HATEOAS 2.1.5"
+        },
+        {
+            "number": "40201",
+            "title": "Upgrade to Spring Framework 6.0.19"
+        },
+        {
+            "number": "40200",
+            "title": "Upgrade to Spring Data Bom 2023.0.11"
+        },
+        {
+            "number": "40199",
+            "title": "Upgrade to Spring Authorization Server 1.1.7"
+        },
+        {
+            "number": "40373",
+            "title": "Upgrade to Spring AMQP 3.0.13"
+        },
+        {
+            "number": "40367",
+            "title": "Verify the CLI's Homebrew formula"
+        },
+        {
+            "number": "40353",
+            "title": "Encapsulate common build steps in a composite action"
+        },
+        {
+            "number": "40350",
+            "title": "Move verification into a reusable workflow"
+        },
+        {
+            "number": "40330",
+            "title": "ClientObservationConventionAdapter overwrites WebClient request attributes"
+        },
+        {
+            "number": "40178",
+            "title": "Log4j2LoggingSystem pollutes Log4j2's environment with a SpringEnvironmentPropertySource that is never removed"
+        },
+        {
+            "number": "39736",
+            "title": "@ServletComponentScan does not register servlet components in a mock web environment"
+        },
+        {
+            "number": "40289",
+            "title": "Upgrade to Tomcat 10.1.20"
+        },
+        {
+            "number": "40288",
+            "title": "Upgrade to Spring GraphQL 1.2.6"
+        },
+        {
+            "number": "40198",
+            "title": "Upgrade to Reactor Bom 2022.0.18"
+        },
+        {
+            "number": "40287",
+            "title": "Upgrade to Netty 4.1.108.Final"
+        },
+        {
+            "number": "40197",
+            "title": "Upgrade to Micrometer Tracing 1.1.12"
+        },
+        {
+            "number": "40196",
+            "title": "Upgrade to Micrometer 1.11.11"
+        },
+        {
+            "number": "40286",
+            "title": "Upgrade to Lombok 1.18.32"
+        },
+        {
+            "number": "40285",
+            "title": "Upgrade to jOOQ 3.18.14"
+        },
+        {
+            "number": "40284",
+            "title": "Upgrade to Jersey 3.1.6"
+        },
+        {
+            "number": "40283",
+            "title": "Upgrade to Jakarta Json Bind 3.0.1"
+        },
+        {
+            "number": "40282",
+            "title": "Upgrade to Hibernate 6.2.24.Final"
+        },
+        {
+            "number": "40281",
+            "title": "Upgrade to Groovy 4.0.21"
+        },
+        {
+            "number": "40280",
+            "title": "Upgrade to Byte Buddy 1.14.13"
+        },
+        {
+            "number": "40279",
+            "title": "Upgrade to AspectJ 1.9.22"
+        },
+        {
+            "number": "40205",
+            "title": "Upgrade to Neo4j Java Driver 5.19.0"
+        },
+        {
+            "number": "40122",
+            "title": "Upgrade to Gradle Enterprise Conventions 0.0.16"
+        },
+        {
+            "number": "40119",
+            "title": "Verify snapshots once they have been deployed"
+        },
+        {
+            "number": "40116",
+            "title": "Remove redundant Regex escapes"
+        },
+        {
+            "number": "40093",
+            "title": "Test Gradle plugin against Gradle 8.7"
+        }
+    ]
+}

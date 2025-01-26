@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.10.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.002939814814814815,
+    "commits_info": [
+        {
+            "hash": "5a9e323ac8a518dd10946a7ee995b911d3959b62",
+            "message": "2.10.3 release (previous 2.10.2) + release notes updated by CI build 2932\n\n[ci skip-release]"
+        },
+        {
+            "hash": "f1ceb5097298872aef63725e758a80293417c5c1",
+            "message": "Fix #1155: thenThrow(Class) with invalid Throwable type (#1162)\n\n* Fix for #1155 thenThrow(Class) now fails when the given Throwable type\r\nis not declared on the stubbed method\r\n\r\n* Added tests for Mockito.thenThrow() / doThrow() and fixed stubbing state\r\nafter failure\r\n\r\n* Fixed checkstyle issues\r\n\r\n* Checkstyle issues again\r\n\r\n* Tried to fix the eof checkstyle issue\r\n\r\n* Checkstyle EOF fix\r\n\r\n* organized imports\r\n\r\n* Removed @SurpressWarnings(\"all\") in order to see unused imports.\r\nFixed some compiler warnings.\r\n\r\n* Fixed test regression\r\n\r\n* Added a test for a stubbing with an undeclared checked exception.\r\n\r\n* Added more tests"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1155",
+            "title": "thenThrow(Class) should only throw checked exceptions that match the signature of the stubbed method"
+        }
+    ]
+}

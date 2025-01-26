@@ -1,0 +1,42 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.20.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 6,
+    "start_delay": 0.0,
+    "duration": 14.753726851851852,
+    "commits_info": [
+        {
+            "hash": "276183b9b1835006e40015a2d5539f074ce3df13",
+            "message": "2.20.5 release (previous 2.20.4) + release notes updated by CI build 3521\n\n[ci skip-release]"
+        },
+        {
+            "hash": "b3242741fe202ad25461cd1816a21cb6cc958a99",
+            "message": "Merge pull request #1429 from mockito/next-delay-tests\n\nUpdated test coverage for async verification"
+        },
+        {
+            "hash": "6f14c84c026fddc084e40b374ae63ab6ff36ca78",
+            "message": "Updated tests with after() verification mode\n\n- Some existing tests for the feature did not work due to flaws in ReplyRule. Some of the tests (now ignored) consistently failed but succeeded only when used with reply rule.\n- Some existing tests had weak assertions that did not fully cover the feature.\n- Suggested simpler and cleaner way of implementing delayed execution via new 'AsyncTesting' class, instead of 'DelayedExecution'\n\nAlthough we are considering deprecating 'after()', we need good coverage for an existing feature even if it will be removed in the long run."
+        },
+        {
+            "hash": "7580aa59e5972bee56e97d29d881735a6bd5f8f8",
+            "message": "Updated exception to streamline testing\n\nThis way we can write specific assertions making the tests stronger. I need this for reworking of 'after' and 'timeout' tests."
+        },
+        {
+            "hash": "7dc87cd762ae99b4cf07980a8ee579b8412e1c9b",
+            "message": "Merge pull request #1450 from mockito/next-art-id-test\n\nAdded validation of artifact IDs"
+        },
+        {
+            "hash": "0f9429421b9e5afe68cf17db50d52276f18d53b8",
+            "message": "Added simple validation\n\nThis will prevent problems such as unintentional change to artifact ids (#1444)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1444",
+            "title": "Artifact ID changes"
+        }
+    ]
+}

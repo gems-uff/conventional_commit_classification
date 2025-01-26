@@ -1,0 +1,162 @@
+{
+    "platform": "maven",
+    "project": "lombok",
+    "release": "v0.11.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 35,
+    "start_delay": 0.0,
+    "duration": 175.06168981481483,
+    "commits_info": [
+        {
+            "hash": "2e27817ca743858c7188128f96c8c32b894ea42e",
+            "message": "bugfix in website ant buildscript for finding the Java2HtmlTask"
+        },
+        {
+            "hash": "ea47245b39c784deed8f07b33d9e828b947fc6cc",
+            "message": "prerelease version bump"
+        },
+        {
+            "hash": "350a49b4fc47b45df8cca0b74624d38fbb94c82d",
+            "message": "added temporary debug switch -Dlombok.debugAsmOnly for issue 470."
+        },
+        {
+            "hash": "fcf98722c08ede29b8fecbacbf0218309c9d42ad",
+            "message": "added support for lombok.disablePostCompiler."
+        },
+        {
+            "hash": "e353827f7b7f5196077b513e78aaf8d3eeee19d5",
+            "message": "fixed capitalization error in an inner class."
+        },
+        {
+            "hash": "4a49858b04139c5232ad1c82b2bdefd199d3ab00",
+            "message": "added link to a great external non-video based tutorial instead of our crappy way too old slideshow thingie."
+        },
+        {
+            "hash": "d8f090b2b0f660c1a24dbed3c9a88c249fb20eed",
+            "message": "Update to newer version of ivyplusplus"
+        },
+        {
+            "hash": "790c5e627ba3f3fbc1ffa6dc02bfe94d5121e6c9",
+            "message": "long overdue update of copyright year in license file"
+        },
+        {
+            "hash": "9538adc161f4d275a42a8f959f015ec30c801537",
+            "message": "updated changelog to reflect performance improvements of previous commit."
+        },
+        {
+            "hash": "9630fc96e8382d68505a4cb8ab2ae08aec48e776",
+            "message": "Massive performance improvements, and a few potentially breaking changes for other lombok plugin developers."
+        },
+        {
+            "hash": "7a50b9a6345de2826a6fc314c8d31e9bfd3fca32",
+            "message": "We used to add the platform line ending when comparing test files. This obviously doesn't work on windows; we force unix line ending now."
+        },
+        {
+            "hash": "f36deeb25f7ff4799b754482c014a413250b33a5",
+            "message": "Fixed merge conflict in changelog"
+        },
+        {
+            "hash": "66f32d5073bc726f76f958471ea93ec5a29c354b",
+            "message": "Fixed issue 459: Delombok would choke on try-with-resources."
+        },
+        {
+            "hash": "0ecc23766f18418f28d09291455777d59537ccc3",
+            "message": "Added a //version option to test files to restrict them to specific versions."
+        },
+        {
+            "hash": "5ec852b35b9f6e0f330098a302ce0d655f792ff7",
+            "message": "Some halfway work on introducing hideNulls feature to toString. Aborted because it is a lot more work than anticipated, but this code is prettier and slightly more bugfree so worth checking in."
+        },
+        {
+            "hash": "f341a00baa992e652f119164e24cf64699281e0d",
+            "message": "fixed javadoc of XAnnotationHandler; they used to be interfaces but now they are abstract classes."
+        },
+        {
+            "hash": "cb9b907839aa0c72ffa41f8a13bfab5cb1341258",
+            "message": "In delombok, we mark the AST as changed if we remove an annotation; this fixes the issue where delombok would leave lombok annotations in the file if that annotation had no actual effect (such as @Getter on a field if there is an explicit getX method for that field).\n\nissue #443: delombok would screw up @SneakyThrows on methods or constructors with empty bodies. Now we generate warnings for this."
+        },
+        {
+            "hash": "9400f39d12813740634bba233aacc6edcf62c584",
+            "message": "Fix for issue #436: In eclipse, calling i.e. `list.get(i).extensionMethod()` would fail with VerifyError when that code is executed in eclipse."
+        },
+        {
+            "hash": "c0daffdb438e1ded5f96d3425b23067c66042a1c",
+            "message": "Updated documentation to reflect support of JBoss Developer Studio"
+        },
+        {
+            "hash": "ce73a67803a357f45d1e000d4dc3d1f5004d204a",
+            "message": "Added installer support for JBoss Developer Studio which is an eclipse variant.\nAlso fixed a bug where eclipses installed in user.home weren't found automatically on windows.\nAlso fixed a bug where STS installed in C:\\Program Files (X86) wasn't found automatically."
+        },
+        {
+            "hash": "56150952c451f0d8c2018424191d4480ac5e8460",
+            "message": "Added @Log4j2 support."
+        },
+        {
+            "hash": "653eb56883a6be109ee7e767fae920cae70f569d",
+            "message": "changed the pattern for writing dependencies to the various lib/ directories\nto be organization-name.jar instead of just name.jar, in order to account for\nthe ever lovely and wonderful apache's crazy decision to call the entirely\nseparate log4j v2.0 also 'log4j'. This does mean you'll have to 'ant clean'."
+        },
+        {
+            "hash": "893b5ea69b6c584d924c5d7fb5b1a6e5355295c4",
+            "message": "startOnFirstThread is no longer necessary on modern JVMs on mac."
+        },
+        {
+            "hash": "620616bf8a73ea78863a5507aff631799b3a7a2e",
+            "message": "fixed typoed URL to onX docs in changelog"
+        },
+        {
+            "hash": "06537da4e0d1c420c6669f6ce1490ea56adc4d7d",
+            "message": "Changed @Value to no longer imply @Wither. Usually you want only\na few or no withers at all, and adding them is a lot simpler than\nremoving them. This is a breaking change, but then that's why @Value\nwas in experimental in the first place."
+        },
+        {
+            "hash": "ed61012f95cefae8d03260f506ffe34bc19bd90c",
+            "message": "whoops, belated push and fixes to the documentation of onX"
+        },
+        {
+            "hash": "1488a262bd389d0fef444bb3fd80821a2d66e6c2",
+            "message": "Bugfix for delombok mangling x++ into ++x on java7."
+        },
+        {
+            "hash": "aafd83079a3000d3deb6e40a182849da2509fbfb",
+            "message": "BIG commit:\n * re-introduction of onMethod/onConstructor/onParam\n * tests checking error/warnings rewritten to be more heuristic, in order to accomodate difference in messaging between java6 and java 7\n * Ability to eliminate java's own output of erroneous error messages (heh); i.e. those messages that are invalidated by lombok's actions. This mechanism is used for onMethod/onConstructor/onParam\n * First steps to unifying a billion setGeneratedBy calls into a single visitor traversal for eclipse' HandleGetter/Setter/Constructor/Wither\n * To simplify 'zooming in' the tests on just a few files, added an 'accept' mechanism.\n * Updated copyright headers of website to 2013."
+        },
+        {
+            "hash": "ef8769d3180b2c6de91a64f69dfa23a2e6e449b9",
+            "message": "Added all documentation for the onX feature and updated changelog.\n\nNow to actually write the feature (Well, rescue it from the onX-removal tag)."
+        },
+        {
+            "hash": "58851b4c6e96a51d1ac298c7ed85efac6ffe8335",
+            "message": "Updated the javadoc of each and every feature annotation that lombok has:\n * Removed most documentation and instead put in a link to the much more up to date and extensive documentation at http://projectlombok.org/features\n * Getting ahead of ourselves a little, added notes on onConstructor/onParam/onMethod which we are about to add in the next few commits.\n * Updated copyrights to 2012."
+        },
+        {
+            "hash": "e95bb83e06510af7e68fc3eb38163522d6f75bce",
+            "message": "Fixed two minor javadoc typos in @Getter and @Value.\n\n(With thanks to Bart Enkelaar)"
+        },
+        {
+            "hash": "7e84f8d1c2abd902dfc7a88c2f60c58717a955a1",
+            "message": "[refactor] Cleaned up static imports (always use *), and refactored out getCtcInt calls into constants as defined in Javac."
+        },
+        {
+            "hash": "8a6167f8b03b0b60e9fece01ff73c45a49b8ff9d",
+            "message": "whoops forgot to update changelog for release 0.11.6"
+        },
+        {
+            "hash": "4dd2dda762a39ba130f060453c9f3b2292678d83",
+            "message": "post-release version bump."
+        },
+        {
+            "hash": "d7776a91222c943aeb25cf61444df46fe5cdebfa",
+            "message": "Changed path in releasenotes"
+        }
+    ],
+    "issues": [
+        {
+            "number": "443",
+            "title": "Less verbose @Data inheritance"
+        },
+        {
+            "number": "436",
+            "title": "Eclipse Juno 4.2 Support"
+        }
+    ]
+}

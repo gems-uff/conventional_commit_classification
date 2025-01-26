@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.24.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.9461111111111111,
+    "commits_info": [
+        {
+            "hash": "b745b5d48e9c110fa419fd007b3159ff612b8643",
+            "message": "Fix returns mocks for final classes (#1641)\n\nThe guard for final mocking was incorrect. It should have passed it on\r\nto MockitoCore. Since we have the InlineMockMaker, we can actually mock,\r\nso this check was incorrect."
+        },
+        {
+            "hash": "1df5e49043fb032106f5c0fc0eec97ca9251241f",
+            "message": "Fixes #1638: Removes inaccessible links from javadocs in Mockito.java (#1639)\n\nThe monkeyisland.pl domain is no longer available.\r\n\r\nList of inaccessible articles:\r\nhttp://monkeyisland.pl/2009/01/13/subclass-and-override-vs-partial-mocking-vs-refactoring\r\nhttp://monkeyisland.pl/2008/07/12/should-i-worry-about-the-unexpected\r\nhttp://monkeyisland.pl/2008/04/26/asking-and-telling\r\nhttp://monkeyisland.pl/2009/01/13/subclass-and-override-vs-partial-mocking-vs-refactoring"
+        },
+        {
+            "hash": "ab569c0ca4db1d0ffd98ea5251f08c825b5b4c19",
+            "message": "2.24.7 release (previous 2.24.6) + release notes updated by CI build 3921\n\n[ci skip-release]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "1638",
+            "title": "Mockito.java contains inaccessible links to articles."
+        }
+    ]
+}

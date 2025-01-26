@@ -11,73 +11,69 @@
     "commits_info": [
         {
             "hash": "4a2aef570deb2bfb8927426558701e8bfc26f2a4",
-            "message": "Updating version.json and repo version numbers to: 25.3\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 25.3"
         },
         {
             "hash": "7c6ba838806c6e737a01173ab37d129bfc1ccb22",
-            "message": "Merge pull request #15814 from protocolbuffers/cp-ruby-3.3\n\nUpdate Ruby GHA to test against Ruby 3.3.",
-            "tag_name": null
+            "message": "Merge pull request #15814 from protocolbuffers/cp-ruby-3.3\n\nUpdate Ruby GHA to test against Ruby 3.3."
         },
         {
             "hash": "25b1e8112079e6d463196fc137cc8d1925205426",
-            "message": "Update Ruby GHA to test against Ruby 3.3.\n\nFixes #15182\n\nPiperOrigin-RevId: 593899707\n",
-            "tag_name": null
+            "message": "Update Ruby GHA to test against Ruby 3.3.\n\nFixes #15182\n\nPiperOrigin-RevId: 593899707"
         },
         {
             "hash": "70e459f9d43ef00ae1405eeb1d50d4bb61551d58",
-            "message": "Merge pull request #15802 from protocolbuffers/cp-25.x\n\nCherrypick Apple Privacy Manifest changes to make these available in 25.x",
-            "tag_name": null
+            "message": "Merge pull request #15802 from protocolbuffers/cp-25.x\n\nCherrypick Apple Privacy Manifest changes to make these available in 25.x"
         },
         {
             "hash": "17ec19db930216d59eb8efdb0bbf6d1f5355f147",
-            "message": "Bump python version to 3.9 for gcloud 460.0.0\n\nPiperOrigin-RevId: 599953322\n",
-            "tag_name": null
+            "message": "Bump python version to 3.9 for gcloud 460.0.0\n\nPiperOrigin-RevId: 599953322"
         },
         {
             "hash": "9dc736d924f6839073028a4d806a3b85f01000cf",
-            "message": "[ObjC] Use a local to avoid warnings in 32bit builds.\n\nCocoaPods fails spec validation for some warnings, so use a local\nto avoid warnings for 64->32bit implicit conversions. This comes up\nfor watchOS builds.\n\nPiperOrigin-RevId: 601849919\n",
-            "tag_name": null
+            "message": "[ObjC] Use a local to avoid warnings in 32bit builds.\n\nCocoaPods fails spec validation for some warnings, so use a local\nto avoid warnings for 64->32bit implicit conversions. This comes up\nfor watchOS builds.\n\nPiperOrigin-RevId: 601849919"
         },
         {
             "hash": "9d1bc1041be5fefa82e8c9823e79c263f6d8b2ac",
-            "message": "[CPP] Add the privacy manifest to the C++ CocoaPod.\n\nThere are no restrict calls, so the manifest asserts that.\n\nThe CocoaPods support now ensures you are using CocoaPods >= 1.12 as that\navoids all the know bugs in CocoaPods support needed to capture the\nPrivacy Manifest in a resource bundle.\n\nPiperOrigin-RevId: 602443703\n",
-            "tag_name": null
+            "message": "[CPP] Add the privacy manifest to the C++ CocoaPod.\n\nThere are no restrict calls, so the manifest asserts that.\n\nThe CocoaPods support now ensures you are using CocoaPods >= 1.12 as that\navoids all the know bugs in CocoaPods support needed to capture the\nPrivacy Manifest in a resource bundle.\n\nPiperOrigin-RevId: 602443703"
         },
         {
             "hash": "cec08dc615df059d1a93fe03c4e617bba679fa69",
-            "message": "[ObjC] Add the privacy manifest to the ObjC CocoaPod.\n\nThere are no restrict calls, so the manifest asserts that.\n\nThe CocoaPods support now ensure you are using CocoaPods >= 1.12 as that\navoids all the know bugs in CocoaPods support needed to capture the\nPrivacy Manifest in a resource bundle.\n\nPiperOrigin-RevId: 602433417\n",
-            "tag_name": null
+            "message": "[ObjC] Add the privacy manifest to the ObjC CocoaPod.\n\nThere are no restrict calls, so the manifest asserts that.\n\nThe CocoaPods support now ensure you are using CocoaPods >= 1.12 as that\navoids all the know bugs in CocoaPods support needed to capture the\nPrivacy Manifest in a resource bundle.\n\nPiperOrigin-RevId: 602433417"
         },
         {
             "hash": "cf87faa29b57a304a0cfe5af4e9b7a5c659c62b4",
-            "message": "Add PrivacyInfo.xcprivacy (#15557)\n\nissue##15029\n\nAs required by https://developer.apple.com/support/third-party-SDK-requirements/\n\nProtos does not collect data.\n\nRequired reason APIs searched for using:\n```\ngrep -ER 'NSFileCreationDate|NSFileModificationDate|fileModificationDate|NSURLContentModificationDateKey|NSURLCreationDateKey|getattrlist\\(|getattrlistbulk\\(|fgetattrlist\\(|stat\\(|fstat\\(|fstatat\\(|lstat\\(|getattrlistat\\(|systemUptime\\(|mach_absolute_time\\(|NSURLVolumeAvailableCapacityKey|NSURLVolumeAvailableCapacityForImportantUsageKey|NSURLVolumeAvailableCapacityForOpportunisticUsageKey|NSURLVolumeTotalCapacityKey|NSFileSystemFreeSize|NSFileSystemSize|statfs\\(|statvfs\\(|fstatfs\\(|fstatvfs\\(|getattrlist\\(|fgetattrlist\\(|getattrlistat\\(|activeInputModes|NSUserDefaults' .\n```\n\n```\n./third_party/utf8_range/utf8_to_utf16/main.c:    if (fstat(fd, &stat) == -1) {\n./third_party/utf8_range/main.c:    if (fstat(fd, &stat) == -1) {\n./src/google/protobuf/map.h:    s = mach_absolute_time();\n./src/google/protobuf/io/io_win32.cc:int stat(const char* path, struct _stat* buffer) {\n./src/google/protobuf/io/io_win32.cc:  return ::_wstat(wpath.c_str(), buffer);\n./src/google/protobuf/io/io_win32.cc:  return ::_stat(path, buffer);\n./src/google/protobuf/io/io_win32.h:PROTOBUF_EXPORT int stat(const char* path, struct _stat* buffer);\n./src/google/protobuf/testing/file.cc:  if (lstat(name.c_str(), &stats) != 0) return;\n./src/google/protobuf/compiler/importer.cc:    ret = stat(std::string(filename).c_str(), &sb);\n```\n\n`./third_party/utf8_range/...` - tool for utf that is not in user binaries\n`./src/google/protobuf/map.h` - resolved with pull#15554\n`./src/google/protobuf/io/io_win32.cc` - windows code\n`./src/google/protobuf/testing/file.cc` - testing code not in user binaries\n`./src/google/protobuf/compiler/importer.cc` - compiler code not in user binaries\n\nSo no required reason APIs.\n\nApple has not yet communicated how this is to be put into podspecs so saving for future commit.\n\nCloses #15557\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/15557 from dmaclach:privacy 4c4e570adf4ab7c340817eb8f098ee112ed052be\nPiperOrigin-RevId: 601362376\n",
-            "tag_name": null
+            "message": "Add PrivacyInfo.xcprivacy (#15557)\n\nissue##15029\n\nAs required by https://developer.apple.com/support/third-party-SDK-requirements/\n\nProtos does not collect data.\n\nRequired reason APIs searched for using:\n```\ngrep -ER 'NSFileCreationDate|NSFileModificationDate|fileModificationDate|NSURLContentModificationDateKey|NSURLCreationDateKey|getattrlist\\(|getattrlistbulk\\(|fgetattrlist\\(|stat\\(|fstat\\(|fstatat\\(|lstat\\(|getattrlistat\\(|systemUptime\\(|mach_absolute_time\\(|NSURLVolumeAvailableCapacityKey|NSURLVolumeAvailableCapacityForImportantUsageKey|NSURLVolumeAvailableCapacityForOpportunisticUsageKey|NSURLVolumeTotalCapacityKey|NSFileSystemFreeSize|NSFileSystemSize|statfs\\(|statvfs\\(|fstatfs\\(|fstatvfs\\(|getattrlist\\(|fgetattrlist\\(|getattrlistat\\(|activeInputModes|NSUserDefaults' .\n```\n\n```\n./third_party/utf8_range/utf8_to_utf16/main.c:    if (fstat(fd, &stat) == -1) {\n./third_party/utf8_range/main.c:    if (fstat(fd, &stat) == -1) {\n./src/google/protobuf/map.h:    s = mach_absolute_time();\n./src/google/protobuf/io/io_win32.cc:int stat(const char* path, struct _stat* buffer) {\n./src/google/protobuf/io/io_win32.cc:  return ::_wstat(wpath.c_str(), buffer);\n./src/google/protobuf/io/io_win32.cc:  return ::_stat(path, buffer);\n./src/google/protobuf/io/io_win32.h:PROTOBUF_EXPORT int stat(const char* path, struct _stat* buffer);\n./src/google/protobuf/testing/file.cc:  if (lstat(name.c_str(), &stats) != 0) return;\n./src/google/protobuf/compiler/importer.cc:    ret = stat(std::string(filename).c_str(), &sb);\n```\n\n`./third_party/utf8_range/...` - tool for utf that is not in user binaries\n`./src/google/protobuf/map.h` - resolved with pull#15554\n`./src/google/protobuf/io/io_win32.cc` - windows code\n`./src/google/protobuf/testing/file.cc` - testing code not in user binaries\n`./src/google/protobuf/compiler/importer.cc` - compiler code not in user binaries\n\nSo no required reason APIs.\n\nApple has not yet communicated how this is to be put into podspecs so saving for future commit.\n\nCloses #15557\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/15557 from dmaclach:privacy 4c4e570adf4ab7c340817eb8f098ee112ed052be\nPiperOrigin-RevId: 601362376"
         },
         {
             "hash": "76d05d4cb9200c371c8894df21f37ba4060bdc8a",
-            "message": "remove use of mach_absolute_time (#15554)\n\n`mach_absolute_time` is one of Apple's required reason APIs (https://developer.apple.com/documentation/kernel/1462446-mach_absolute_time?language=objc). Replace it with the suggested `clock_gettime_nsec_np(CLOCK_UPTIME_RAW)` so that we don't need a RRA entry in a privacy manifest.\n\nissue #15029\n\nCloses #15554\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/15554 from protocolbuffers:dmaclach-mach_absolute_time 295d83178d5567743c720e7405ac974b0bcab832\nPiperOrigin-RevId: 601370915\n",
-            "tag_name": null
+            "message": "remove use of mach_absolute_time (#15554)\n\n`mach_absolute_time` is one of Apple's required reason APIs (https://developer.apple.com/documentation/kernel/1462446-mach_absolute_time?language=objc). Replace it with the suggested `clock_gettime_nsec_np(CLOCK_UPTIME_RAW)` so that we don't need a RRA entry in a privacy manifest.\n\nissue #15029\n\nCloses #15554\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/protocolbuffers/protobuf/pull/15554 from protocolbuffers:dmaclach-mach_absolute_time 295d83178d5567743c720e7405ac974b0bcab832\nPiperOrigin-RevId: 601370915"
         },
         {
             "hash": "971fbf639b5801885150c73c3cd107f5cdde5bc6",
-            "message": "Merge pull request #15360 from protocolbuffers/backport-bundler\n\nPin bundler version to 2.4.22 for Ruby 2.7 support.",
-            "tag_name": null
+            "message": "Merge pull request #15360 from protocolbuffers/backport-bundler\n\nPin bundler version to 2.4.22 for Ruby 2.7 support."
         },
         {
             "hash": "80b4586fb42cc86c0eab9d5d8c823c0b963eee7e",
-            "message": "Pin bundler version to 2.4.22 for Ruby 2.7 support.\n\nLatest bundler 2.5.0 release results in the following error: `The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with gem install bundler -v 2.4.22 bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.3.183.`\n\nPiperOrigin-RevId: 591288515\n",
-            "tag_name": null
+            "message": "Pin bundler version to 2.4.22 for Ruby 2.7 support.\n\nLatest bundler 2.5.0 release results in the following error: `The last version of bundler (>= 0) to support your Ruby & RubyGems was 2.4.22. Try installing it with gem install bundler -v 2.4.22 bundler requires Ruby version >= 3.0.0. The current ruby version is 2.7.3.183.`\n\nPiperOrigin-RevId: 591288515"
         },
         {
             "hash": "6766d85a2bc13780ed86082510d789703783392e",
-            "message": "Merge pull request #15359 from protocolbuffers/25.x-202401092212\n\n25.x 202401092212",
-            "tag_name": null
+            "message": "Merge pull request #15359 from protocolbuffers/25.x-202401092212\n\n25.x 202401092212"
         },
         {
             "hash": "fc222b9420e19d902e0aee5a6a95274dbbc2fc06",
-            "message": "Updating version.json and repo version numbers to: 25.3-dev\n",
-            "tag_name": null
+            "message": "Updating version.json and repo version numbers to: 25.3-dev"
+        }
+    ],
+    "issues": [
+        {
+            "number": "15182",
+            "title": "Please add Ruby 3.3 support"
+        },
+        {
+            "number": "15029",
+            "title": "iOS need Privacy Manifests"
         }
     ]
 }

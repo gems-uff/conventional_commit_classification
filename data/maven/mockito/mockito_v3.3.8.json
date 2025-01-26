@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v3.3.8",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 1.8871296296296296,
+    "commits_info": [
+        {
+            "hash": "bbd19ea9108132778da1010513d1544f0c57e327",
+            "message": "3.3.8 release (previous 3.3.7) + release notes updated by CI build 4429\n\n[ci skip-release]"
+        },
+        {
+            "hash": "572505131adf20aecc1a8b6ae1f7ea7bfc08c73f",
+            "message": "Fixes #1910: update description of ArgumentMatcher javadoc (#1911)\n\nFor any(), the doc says that\r\n\"any() is an alias of: anyObject() and any(java.lang.Class).\"\r\nBut in the note, it says that\r\n\"Since mockito 2.1.0 any(Class) is not anymore an alias of this method.\"\r\nThis is confusing, so the alias in the doc should exclude any(java.lang.Class) to simply be\r\n\"any() is an alias of: anyObject()\"\r\nAlso update the same issue of anyObject()."
+        },
+        {
+            "hash": "6336378048effe01abb1cd560c8286d44f9a353f",
+            "message": "[tests] Use ArgumentMatchers instead of Matchers (#1907)\n\n`org.mockito.Matchers` are considered deprecated but our own tests still used them."
+        }
+    ],
+    "issues": [
+        {
+            "number": "1910",
+            "title": "Documentation of ArgumentMatchers any() is confusing"
+        }
+    ]
+}

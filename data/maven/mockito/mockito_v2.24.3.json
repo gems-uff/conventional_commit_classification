@@ -1,0 +1,30 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v2.24.3",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 3,
+    "start_delay": 0.0,
+    "duration": 0.6770023148148148,
+    "commits_info": [
+        {
+            "hash": "34ebca1a8cd88465dd6e8ba395f78a6593522958",
+            "message": "2.24.3 release (previous 2.24.2) + release notes updated by CI build 3877\n\n[ci skip-release]"
+        },
+        {
+            "hash": "cbedbe567d5bf902b13e8cebc4a2a2ccfef7758f",
+            "message": "Return null instead of causing a CCE (#1612)\n\nThis solves a large number of edge-cases where `null` will actually\r\nremove the runtime ClassCastException. This essentially negates the\r\nwhole MockitoCast ErrorProne check. We can still not support every use\r\ncase, but causing a NPE instead of a CCE does not seem to make this\r\nworse.\r\n\r\nI am still running internal tests within Google to see if there are any\r\nregressions, but I already saw that some of the test failures we had\r\nwith ByteBuddy were resolved with this particular patch.\r\n\r\nNote that this now fully closes #357. A previous PR resolved the same\r\nissue with ReturnsSmartNulls: #1576.\r\n\r\nFixes #357"
+        },
+        {
+            "hash": "ac9195f740280f1964382acb469b14955a08d359",
+            "message": "Automatic dependency update with Dependabot (#1600)\n\nhttp://dependabot.com/\r\n\r\n[ci skip-release]"
+        }
+    ],
+    "issues": [
+        {
+            "number": "357",
+            "title": "ClassCastExceptions with JDK9 javac"
+        }
+    ]
+}

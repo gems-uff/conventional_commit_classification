@@ -1,0 +1,26 @@
+{
+    "platform": "maven",
+    "project": "mockito",
+    "release": "v5.15.2",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 2,
+    "start_delay": 0.0,
+    "duration": 0.8139583333333333,
+    "commits_info": [
+        {
+            "hash": "e04dbbe3c83badb0d7d6d9cd700f456e227a9bb3",
+            "message": "Fix javadoc publication (#3561)\n\nThere are a couple of fixes included in this commit:\n* The destination dir was improperly set when translating from groovy DSL\n  to kotlin DSL in 590b24a7fa821750fe19b848c2ee73de2c000ca9 which\n  prevented the cache and the javadocJar to pick up the right folder.\n  This change avoids setting manually the destination dir and uses the\n  default instead.\n* Skip test-fixtures publication\n* Always publish javadoc artifact for published modules\n* In 2c184c9a5f80a46a0dff9a299874973235f48a10 nexus publish was bumped to\n2.0.1, however a task changed name. while this didn't prevent the task\nto be executed, let's use the correct name.\n* Exclude internal packages\n\nFixes #3542"
+        },
+        {
+            "hash": "567c5b95bfb98bca343a6c2a9b0c8df9bd86175a",
+            "message": "Bump org.assertj:assertj-core from 3.27.0 to 3.27.1 (#3560)\n\nBumps [org.assertj:assertj-core](https://github.com/assertj/assertj) from 3.27.0 to 3.27.1.\n- [Release notes](https://github.com/assertj/assertj/releases)\n- [Commits](https://github.com/assertj/assertj/compare/assertj-build-3.27.0...assertj-build-3.27.1)\n\n---\nupdated-dependencies:\n- dependency-name: org.assertj:assertj-core\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+        }
+    ],
+    "issues": [
+        {
+            "number": "3542",
+            "title": "The release job is failed again"
+        }
+    ]
+}

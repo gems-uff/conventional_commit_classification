@@ -1,0 +1,550 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.5",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 95,
+    "start_delay": 0.0,
+    "duration": 28.649409722222224,
+    "commits_info": [
+        {
+            "hash": "c04290e9ab0b587fe53dec0590aeb45fa55a870e",
+            "message": "Release v6.1.5"
+        },
+        {
+            "hash": "381f790329a48b74c2a49fc1384dd68ca9153501",
+            "message": "Extract reusable checkSchemeAndPort method\n\nCloses gh-32440"
+        },
+        {
+            "hash": "f5a36585357acaabbcde07d8700a51d5e1582cad",
+            "message": "Upgrade to Protobuf 3.25.3, Woodstox 6.6.1, JsonPath 2.9, QDox 2.1"
+        },
+        {
+            "hash": "54a6d89da78075b09e6cd5c0e55d4a67885fe24a",
+            "message": "Additional unit tests for operations on empty UriTemplate\n\nSee gh-32432"
+        },
+        {
+            "hash": "2922a82275239619f32084c8ceb3abe75e8621c3",
+            "message": "Merge pull request #32432 from bsgrd\n\n* pr/32432:\n  Polish \"Allow UriTemplate to be built with an empty template\"\n  Allow UriTemplate to be built with an empty template\n\nCloses gh-32432"
+        },
+        {
+            "hash": "a34ceb405c4dc64860fcb0d289630e4110bce9e5",
+            "message": "Polish \"Allow UriTemplate to be built with an empty template\"\n\nSee gh-32432"
+        },
+        {
+            "hash": "1b25a1506a4b1f2c3cf2d38dc79866c89ffc11fe",
+            "message": "Allow UriTemplate to be built with an empty template\n\nSee gh-32432"
+        },
+        {
+            "hash": "723c94e5ac270188674fb6697bac942d962f4cae",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e5a69dcfdfbf5582ce4d719ed891677132ec281e",
+            "message": "Upgrade to Reactor 2023.0.4 and Micrometer 1.12.4\n\nIncludes AspectJ 1.9.21.1, Groovy 4.0.19, Tomcat 10.1.19, Jetty 12.0.7, Jackson 2.15.4, OpenPDF 1.3.42, Mockito 5.11, Checkstyle 10.14.1\n\nCloses gh-32420\nCloses gh-32431"
+        },
+        {
+            "hash": "c2248c968ca3b3ae93fd92b311fc1bb0988b570b",
+            "message": "Update Javadoc in DefaultUserDestinationResolver\n\nCloses gh-32272"
+        },
+        {
+            "hash": "9cc74e78f85b5372cf9e1c9238488604d2bf6bbc",
+            "message": "Refine \"Redirecting to a resource\" section code sample\n\nThe commit updates the code sample to use a null element friendly list.\n\nCloses gh-32423"
+        },
+        {
+            "hash": "9910df85cd5f0f326f588928c7e3078cd38c1453",
+            "message": "Remove observation context from ClientRequest\n\nPrior to this commit, gh-31609 added the current observation context as\na request attribute for `WebClient` calls. While it was not confirmed as\nthe main cause, this feature was linked to several reports of memory\nleaks. This would indeed attach more memory to the request object graph\nat runtime - although it shouldn't prevent its collection by the GC.\n\nThis commit removes this feature and instead developers should get the\ncurrent observation from the reactor context if they wish to interact\nwith it.\n\nCloses gh-32198"
+        },
+        {
+            "hash": "88b3844d9b8fb6bceb591daf1ea9743f799e8eb2",
+            "message": "Fix default value in ReactorNettyClientRequestFactory#setExchangeTimeout\n\nCloses gh-32419"
+        },
+        {
+            "hash": "80f3be6577c47eb24e8664d3fd3821729c2908be",
+            "message": "Replace getJvmErasure by getClassifier\n\nShould be slightly faster.\n\nSee gh-32334"
+        },
+        {
+            "hash": "946082f8062cf859a30c461ace18ccc6e5dd2872",
+            "message": "Refine publisher type check in CoroutinesUtils\n\nSee gh-32390"
+        },
+        {
+            "hash": "78fb378aefc625c2da76d2f2bf34f79bdd505429",
+            "message": "Fix order of sections in Validation chapter of reference manual\n\nCloses gh-32408"
+        },
+        {
+            "hash": "b4e743614ebcb4f5a575e901e3b1fc2eb4eff39c",
+            "message": "Restore link to Jakarta Servlet issue tracker"
+        },
+        {
+            "hash": "accf7ff645c04862294cbaa8b3028f4a34096f04",
+            "message": "Merge pull request #32403 from qeeqez\n\n* pr/32403:\n  Polish \"Fix Javadoc\"\n  Fix Javadoc\n\nCloses gh-32403"
+        },
+        {
+            "hash": "4983a802a7a9c8b2bf2ecbea39733b85c0d4a5c6",
+            "message": "Polish \"Fix Javadoc\"\n\nSee gh-32403"
+        },
+        {
+            "hash": "abdccffa39d11b3f4bbdbe3a1563b321d9d6509c",
+            "message": "Fix Javadoc\n\nThis commit fixes various Javadoc issues across the code base.\n\nSee gh-32403"
+        },
+        {
+            "hash": "c1287d48e26a77162769c704b81c10e886a906f5",
+            "message": "Polishing"
+        },
+        {
+            "hash": "528029a0ba4f651e9bc9799d2cfab02b2689643e",
+            "message": "Document that SpEL expressions using array construction cannot be compiled\n\nCloses gh-32401"
+        },
+        {
+            "hash": "fea1464562289c64b1bfe858f74d50970531a8a0",
+            "message": "Ensure SpEL can compile an expression indexing into a boolean array\n\nCloses gh-32400"
+        },
+        {
+            "hash": "f6bc828569dd0c88c3cf1ca0d13bd5a07bbdf5ff",
+            "message": "Set error on observation in WebClient instrumentation\n\nPrior to this commit, error signals flowing from the client response\npublisher in `WebClient` would be set on the `Observation.Context`. This\nis enough for the observation convention to collect data about the error\nbut observation handlers are not notified of this error.\n\nThis commit sets the error instead on the observation directly to fix\nthis issue.\n\nFixes gh-32389"
+        },
+        {
+            "hash": "0e279fe66648b55bc02c657cfbaaa54cec937b8f",
+            "message": "Polishing\n\nCloses gh-32397"
+        },
+        {
+            "hash": "56a1c810b5810a4e61c68d3686e636d2c13c8246",
+            "message": "Remove IOException that's not thrown from Javadoc"
+        },
+        {
+            "hash": "dec5265354a1b7596211d3b6f3834d5c217419db",
+            "message": "Use wrapped response in HandlerFunctionAdapter\n\nwebmvc.fn now also uses the StandardServletAsyncWebRequest wrapped response\nto enforce lifecycle rules from Servlet spec (section 2.3.3.4).\n\nSee gh-32340"
+        },
+        {
+            "hash": "579dbc48d7551a1388e3038c7e9dbf280ea18fde",
+            "message": "Optimize Coroutine invocations\n\nKClass instantiation in CoroutinesUtils is suboptimal, and should be\nreplaced by KTypes#isSubtypeOf checks using pre-instantiated types for\nFlow, Mono and Publisher.\n\nThis commit impact on performances is significant since a throughput\nincrease between 2x and 3x has been measured on basic endpoints.\n\nCloses gh-32390"
+        },
+        {
+            "hash": "6d9a2eb9b855a05bc79d22e735209688cada2ac3",
+            "message": "Improve fix of duplicate upstream subscription during reactive cache put\n\nThis commit fixes an issue where a Cacheable method which returns a\nFlux (or multi-value publisher) will be invoked once, but the returned\npublisher is actually subscribed twice.\n\nThe previous fix 988f3630c would cause the cached elements to depend on\nthe first usage pattern / request pattern, which is likely to be too\nconfusing to users. This fix reintroduces the notion of exhausting the\noriginal Flux by having a second subscriber dedicated to that, but uses\n`refCount(2)` to ensure that the original `Flux` returned by the cached\nmethod is still only subscribed once.\n\nCloses gh-32370"
+        },
+        {
+            "hash": "c1d4b610ca62733094bbe6d720aac4980fe264fa",
+            "message": "Refine Kotlin inline class optimizations\n\nCloses gh-32334"
+        },
+        {
+            "hash": "5f601ceb4585fbb2e868ac9a6c50789b0e8b8263",
+            "message": "Mark response errors from @ExceptionHandler as handled\n\nAlso fix a couple of related issues:\n- add AsyncRequestNotUsableException to the list of exceptions\nthat imply response issues.\n- handle exceptions from @ExceptionHandler regardless of whether\nthrown immediately or via Publisher.\n\nCloses gh-32359"
+        },
+        {
+            "hash": "0955f541cbcff9dc45adfd696069779992f49d80",
+            "message": "Polishing"
+        },
+        {
+            "hash": "e5e61dfa3f8bbddee5512d2054b59409b9c029af",
+            "message": "Ignore scheduled task exceptions after shutdown\n\nIncludes suppression after logging, not propagating exceptions to the thread itself.\n\nCloses gh-32381\nSee gh-32298"
+        },
+        {
+            "hash": "988f3630c4e83117feb140c13e7c2fdd17dc65b2",
+            "message": "Avoid duplicate upstream subscription during reactive cache put\n\nThis commit fixes an issue where a Cacheable method which returns a\nFlux (or multi-value publisher) will be invoked once, but the returned\npublisher is actually subscribed twice.\n\nBy using the Reactor `tap` operator, we ensure that we can emit values\ndownstream AND accumulate emitted values into the List with a single\nsubscription.\n\nThe SignalListener additionally handles scenarios involving cancel,\nfor instance in case of a `take(1)` in the chain. In that case values\nemitted up until that point will have been stored into the List buffer,\nso we can still put it in the cache. In case of error, no caching occurs\nand the internal buffer is cleared. This implementation also protects\nagainst competing onComplete/onError signals and cancel signals.\n\nCloses gh-32370"
+        },
+        {
+            "hash": "a0ae8498560c0179a4e34881f4ff5849a58b4387",
+            "message": "Polishing"
+        },
+        {
+            "hash": "ef0717935b8ce483717c155c541f18794d3fc5bc",
+            "message": "Test wrapping of response for async request\n\nThe following adjustments are also made as a result:\n- Use int to check if lock is held and unlock is needed, given that\nfor non-async requests we don't need to obtain a lock.\n- Protect access methods getOutputStream and getWriter with the\nsame locking and state checks.\n\nCloses gh-32340"
+        },
+        {
+            "hash": "822e2447a01cb46a85095fadbd95f2401ea50f0b",
+            "message": "Polishing StandardServletAsyncWebRequestTests\n\nSee gh-32340"
+        },
+        {
+            "hash": "cfd0aee4dbb939c29cb4f1816e0ee63085235186",
+            "message": "Polish and add MockMvcExtensionsTests.queryParameter\n\nCloses gh-32371"
+        },
+        {
+            "hash": "132fbe228f22633915c909bcdcefa999705c3807",
+            "message": "Add query parameters to MockMvc Kotlin DSL\n\nSee gh-32371"
+        },
+        {
+            "hash": "4300fec023adb9ec12349337de6a2add77578f46",
+            "message": "Restore ability to return original method at ClassUtils level as well\n\nCloses gh-32365"
+        },
+        {
+            "hash": "e9110c072980461f17b59456dcb3bcc1fa2bf9a3",
+            "message": "Polishing"
+        },
+        {
+            "hash": "24759a75f4956b206c8566a4ec673adcbf25298b",
+            "message": "Restore ability to return original method for proxy-derived method\n\nCloses gh-32365"
+        },
+        {
+            "hash": "7493ce86b6b6014287789069d41943f5d3ac02fa",
+            "message": "Fix ServletResponseHttpHeaders#get null handling\n\nServletResponseHttpHeaders#get should be annotated with `@Nullable` and\nreturn null instead of a singleton list containing null when there is no\ncontent type header.\n\nCloses gh-32362"
+        },
+        {
+            "hash": "ce9dc19a3c6a870509105c5cedae1cd59b93917d",
+            "message": "Optimize content type parsing\n\nThis commit avoids calling HttpHeaders#getContentType multiple times in\nServletServerHttpResponse#writeHeaders.\n\nCloses gh-32361"
+        },
+        {
+            "hash": "4b96cd28c0103bf507f68b400bcaeb75ea9d2f0e",
+            "message": "Add locking in ServletResponse#flushBuffer\n\nIn addition to using the ServletOutputStream, it's also possible to call\nServletResponse#flushBuffer, so the ServletOutputStream wrapper logic needs\nto apply there as well.\n\nSee gh-32340"
+        },
+        {
+            "hash": "516a20370383e8ef4bdf09b31e290628b97b877a",
+            "message": "Support nullable Kotlin value class arguments\n\nThis commit skips the value class parameter instantiation for nullable\ntypes when a null argument is passed.\n\nCloses gh-32353"
+        },
+        {
+            "hash": "877e0b148324424ded96a369cd38c04b5a97338e",
+            "message": "Improve concurrent handling of result in WebAsyncManager\n\n1. Use state transitions\n2. Increase synchronized scope in setConcurrentResultAndDispatch\n\nSee gh-32340"
+        },
+        {
+            "hash": "379ffac508fe8c8a67c8cf4b841d3038d72a5996",
+            "message": "Add state and response wrapping to StandardServletAsyncWebRequest\n\nThe wrapped response prevents use after AsyncListener onError or completion\nto ensure compliance with Servlet Spec 2.3.3.4.\n\nThe wrapped response is applied in RequestMappingHandlerAdapter.\n\nThe wrapped response raises AsyncRequestNotUsableException that is now\nhandled in DefaultHandlerExceptionResolver.\n\nSee gh-32340"
+        },
+        {
+            "hash": "380184e85a6b4340c2553a5812e0bb464de20692",
+            "message": "Support SpEL compilation of #root or #this with non-public type\n\nPrior to this commit, if a Spring Expression Language (SpEL) expression\nreferenced the root context object via the #root or #this variable, we\ninserted a checkcast in the generated byte code that cast the object to\nits concrete type. However if the root context object's type was\nnon-public, that resulted in an IllegalAccessError when the compiled\nbyte code was executed.\n\nVariableReference.getValueInternal() already contains a solution for\nglobal variables which inserts a checkcast to Object in the generated\nbyte code instead of to the object's concrete non-public type.\n\nThis commit therefore applies the same logic to #root (or #this when\nused to reference the root context object) that is already applied to\nglobal variables.\n\nCloses gh-32356"
+        },
+        {
+            "hash": "5cba32df3253955eac7135d144ed9c0c3518d174",
+            "message": "Polish SpEL's VariableReference"
+        },
+        {
+            "hash": "11c40b5c1ca2877dd2a7f00c709de94dc4ba1ff5",
+            "message": "Restructure SpEL indexer compilation tests"
+        },
+        {
+            "hash": "227e75dae48ee84a65c466161cd648df7f2873ee",
+            "message": "Support nullable Kotlin value class arguments\n\nThis commit refines WebMVC and WebFlux argument resolution in order to\nconvert properly Kotlin value class arguments by using the type of the\nvalue instead of the type of the value class.\n\nCloses gh-32353"
+        },
+        {
+            "hash": "de828e9764ecd6bfac05df5c94db8536b2e540d9",
+            "message": "Improve documentation for @⁠Sql execution phases regarding lifecycle\n\nCloses gh-32343"
+        },
+        {
+            "hash": "85a781d5179910f97f762007568a13cd7faf9832",
+            "message": "Instantiate value class parameters with Kotlin reflection\n\nIn order to invoke the init block and to improve the maintainability.\n\nCloses gh-32324"
+        },
+        {
+            "hash": "7f916e0ee346763f70eca1d871f934bf4a6571b0",
+            "message": "Merge pull request #32349 from qeeqez\n\n* pr/32349:\n  Upgrade to com.gradle.enterprise 3.16.2\n\nCloses gh-32349"
+        },
+        {
+            "hash": "960e885f887c78123c0c73773e0ad31f27061fd5",
+            "message": "Upgrade to com.gradle.enterprise 3.16.2\n\nSee gh-32349"
+        },
+        {
+            "hash": "bf8f398c1921a16b7c31b2afa1601a8cfb9652eb",
+            "message": "Merge pull request #32318 from kilink:http-headers-getAcceptLanguageAsLocales-optimization\n\n* gh-32318:\n  Polishing external contribution\n  Optimize HttpHeaders.getAcceptLanguageAsLocales"
+        },
+        {
+            "hash": "33705516ffc546c367eba7d7c24a9bbf97f85181",
+            "message": "Polishing external contribution\n\nSee gh-32318"
+        },
+        {
+            "hash": "beb415dfa370baae5098b65fa56a76c9936d5ac9",
+            "message": "Optimize HttpHeaders.getAcceptLanguageAsLocales\n\nThe HttpHeaders.getAcceptLanguageAsLocales was incurring overhead from\nusing a Stream, as well as calling the fairly expensive\nLocale.getDisplayName method.\n\nSwitch to using an ArrayList, and skipping over wildcard ranges to avoid\nneeding to check the display name.\n\nCloses gh-32318"
+        },
+        {
+            "hash": "d45c0e6b8a1bcb3a70d9c6c640dbe0fdcfd9f403",
+            "message": "Upgrade to Undertow 2.3.12, OpenPDF 1.3.41, JRuby 9.4.6"
+        },
+        {
+            "hash": "154ca54c9fc1ae2710817498d49ac57321a9cc2d",
+            "message": "Polishing"
+        },
+        {
+            "hash": "f22a1eece49909961c730031113e5ecb0b91b793",
+            "message": "Polishing"
+        },
+        {
+            "hash": "6d9736acd010deffa2110ce5ba97ce2346391aaf",
+            "message": "Direct reference to PushBuilder API on Servlet 5.0 baseline\n\nSee gh-29435"
+        },
+        {
+            "hash": "0de3b3002919560bc19fede043049260a0c38efb",
+            "message": "Provide guidelines for using Kotlin properties with proxies\n\nA typical use case is `@Scope` and its popular `@RequestScope`\nspecialization.\n\nCloses gh-32287"
+        },
+        {
+            "hash": "45c21042f656bea904369bda82d0e71fc9542870",
+            "message": "Optimize Kotlin inline class checks\n\nThis commit fixes a performance regression caused by gh-31698,\nand more specifically by KClass#isValue invocations which are slow since\nthey load the whole module to find the class to get the descriptor.\n\nAfter discussing with the Kotlin team, it has been decided that only\nchecking for the presence of `@JvmInline` annotation is enough for\nSpring use case.\n\nAs a consequence, this commit introduces a new\nKotlinDetector#isInlineClass method that performs such check, and\nBeanUtils, CoroutinesUtils and WebMVC/WebFlux InvocableHandlerMethod\nhave been refined to leverage it.\n\nCloses gh-32334"
+        },
+        {
+            "hash": "5830aac1d43b605c5b56d1a7e52118742c84c063",
+            "message": "Omit parameter names in REST Clients section of reference docs\n\nFor consistency with other examples, this commit omits `method` parameter\nnames in the \"Migrating from RestTemplate to RestClient\" section of the\nreference docs.\n\nCloses gh-32335"
+        },
+        {
+            "hash": "0eb61c0f72d6f34efc4ff9a49e03a2599c480729",
+            "message": "Polish REST Clients section"
+        },
+        {
+            "hash": "dc1ef237806527daff36bedc81a5420f9fa83a7b",
+            "message": "Refine *HttpMessageConverter#getContentLength null safety\n\nCloses gh-32325"
+        },
+        {
+            "hash": "cca440eb8e46c14d19df22df837ed4b90dd38673",
+            "message": "Do not cache Content-Type in ContentCachingResponseWrapper\n\nBased on feedback from several members of the community, we have\ndecided to revert the caching of the Content-Type header that was\nintroduced in ContentCachingResponseWrapper in 375e0e6827.\n\nThis commit therefore completely removes Content-Type caching in\nContentCachingResponseWrapper and updates the existing tests\naccordingly.\n\nTo provide guards against future regressions in this area, this commit\nalso introduces explicit tests for the 6 ways to set the content length\nin ContentCachingResponseWrapper and modifies a test in\nShallowEtagHeaderFilterTests to ensure that a Content-Type header set\ndirectly on ContentCachingResponseWrapper is propagated to the\nunderlying response even if content caching is disabled for the\nShallowEtagHeaderFilter.\n\nSee gh-32039\nCloses gh-32317"
+        },
+        {
+            "hash": "497aa3c06967630e7b9b9a35b8798c3bf6051f88",
+            "message": "Polish ShallowEtagHeaderFilterTests"
+        },
+        {
+            "hash": "479879c53a9cd6beb3c713c7b37771220d070efb",
+            "message": "Polishing"
+        },
+        {
+            "hash": "2e57603310c2d016ace1ed26ba6120572bfa9f2c",
+            "message": "Try type conversion for unique fallback write method as well\n\nCloses gh-32329\nSee gh-32159"
+        },
+        {
+            "hash": "be45481d701581efb69a990116d190a3879d0d1e",
+            "message": "Return unique set from ContentCachingResponseWrapper.getHeaderNames()\n\nPrior to this commit, getHeaderNames() returned duplicates for the\nContent-Type and Content-Length headers if they were set in the wrapped\nresponse as well as in ContentCachingResponseWrapper.\n\nThis commit fixes that by returning a unique set from getHeaderNames().\n\nIn addition, this commit introduces a new test in\nContentCachingResponseWrapperTests to verify the expected behavior for\nContent-Type and Content-Length headers that are set in the wrapped\nresponse as well as in ContentCachingResponseWrapper.\n\nSee gh-32039\nSee gh-32317"
+        },
+        {
+            "hash": "5680d2063744380583bdc58fca0a17ac382beaa4",
+            "message": "Honor Content-[Type|Length] headers from wrapped response again\n\nCommit 375e0e6827 introduced a regression in\nContentCachingResponseWrapper (CCRW). Specifically, CCRW no longer\nhonors Content-Type and Content-Length headers that have been set on\nthe wrapped response and returns null for those header values if they\nhave not been set directly on the CCRW.\n\nThis commit fixes this regression as follows.\n\n- The Content-Type and Content-Length headers set in the wrapped\n  response are honored in getContentType(), containsHeader(),\n  getHeader(), and getHeaders() unless those headers have been set\n  directly on the CCRW.\n\n- In copyBodyToResponse(), the Content-Type in the wrapped response is\n  only overridden if the Content-Type has been set directly on the CCRW.\n\nSee gh-32039\nCloses gh-32317"
+        },
+        {
+            "hash": "87873818920a0081103c9e30bc7b6b3a248b0a16",
+            "message": "Polish ContentCachingResponseWrapper[Tests]"
+        },
+        {
+            "hash": "3cc64968b9e42466bdbf18abe9fbb9ea50f529d4",
+            "message": "Consistent nullability for internal field access"
+        },
+        {
+            "hash": "4dc3eac86478e9e398cf5ec67414e91a5be18e96",
+            "message": "Polishing"
+        },
+        {
+            "hash": "01882701382220b08e392914359f9631822b5dd1",
+            "message": "Clarify transaction metadata exposed from currentTransactionStatus()\n\nCloses gh-32310"
+        },
+        {
+            "hash": "9430b24eaf6cd8c350b760748151995c98b34af8",
+            "message": "Adapt Hibernate native support for HHH-17643\n\nThis commit adapts Hibernate native support to handle\nthe changes performed as part of HHH-17643 which impacts\nHibernate versions 6.4.3+ and 6.2.21+.\n\nIt ignores the BytecodeProvider services loaded by the\nservice loader feature in order to default to the\n\"no-op\" provider with native, and makes the substitutions\nmore lenient when a substituted field or method does not\nexist.\n\ngh-32314 is expected to remove the need for such\nsubstitutions which are not great for maintainability\nby design.\n\nCloses gh-32311"
+        },
+        {
+            "hash": "41433d445e42e9c12f136c2e725a54855ba008c9",
+            "message": "Polishing"
+        },
+        {
+            "hash": "7ffeb59b40b1ec6fc3e5fed4a6a5c8850074c118",
+            "message": "Polishing"
+        },
+        {
+            "hash": "8d4953d8d6c369862acb3ce169521dceb8f90d7f",
+            "message": "Add test for cleanup after configuration class creation failure\n\nSee gh-23343"
+        },
+        {
+            "hash": "f440d8719cdb7d67e12719aac2c7224d4bfb5fda",
+            "message": "Prepare JDK 23 early access build in CI\n\nSee gh-32090"
+        },
+        {
+            "hash": "5d6501c75efbb67320b9acc169cb30b350eafebc",
+            "message": "Revisit stored procedure detection\n\nThis commit revisits the improved detection algorithm for stored\nprocedure as, unfortunately, certain JDBC drivers do not support\nthe documented pattern for schema and procedure name.\n\nTo work around this limitation, this commit applies the escaping of\nwildcard characters to the case where multiple procedures have been\nfound for a given search.\n\nCloses gh-32295"
+        },
+        {
+            "hash": "93f0ec2fa18cf1aad0c88e1b881a5014ac59a49f",
+            "message": "Polishing"
+        },
+        {
+            "hash": "85c9279431e15f8f3d30e1dd946f76549e0d3390",
+            "message": "Consistent default error handling/logging for all scheduled tasks\n\nCloses gh-32298"
+        },
+        {
+            "hash": "06a39f166e56d2d93ba19acf043f2c604612adec",
+            "message": "Consistent handling of AssertProvider implementations"
+        },
+        {
+            "hash": "46bd133892b27be42403f0443bb098cc2287856f",
+            "message": "Upgrade CI image to Java 22+36 RC"
+        },
+        {
+            "hash": "7bb9e85723413bb0612e51f08803b2f48cee7aa5",
+            "message": "Avoid trivial static import"
+        },
+        {
+            "hash": "3aae7a66e62dbf1921b7e1c7c135ccd4f0a3f676",
+            "message": "Polishing"
+        },
+        {
+            "hash": "26ca7c49fbe34c1f007bb43b1811cdeed3f4656b",
+            "message": "Merge pull request #32281 from kilink\n\n* pr/32281:\n  Update copyright year of changed files\n  Use Spliterator of underlying collection\n\nCloses gh-32281"
+        },
+        {
+            "hash": "6b8105aef27496e28ef80470c02d6c0c5019ff74",
+            "message": "Update copyright year of changed files\n\nSee gh-32281"
+        },
+        {
+            "hash": "481283d2f1afa6926324f2fb9c736138ef05900d",
+            "message": "Use Spliterator of underlying collection\n\nDelegate to the spliterator method of the underlying collection in\nMutablePropertyValues and MutablePropertySources. In both cases, those\ncollection types have specialized Spliterator implementations.\nDelegating to these Spliterators also means the characteristics of the\nSpliterator are properly set.\n\nSee gh-32281"
+        },
+        {
+            "hash": "4230c41d97615d64739d523074a96650055fb3ac",
+            "message": "Initiate 6.1.x branch"
+        },
+        {
+            "hash": "b082348e6170eb8dfb7437cfcf6c7380661bc434",
+            "message": "Next development version (v6.1.5-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "32440",
+            "title": "Extract reusable method for URI validations"
+        },
+        {
+            "number": "32420",
+            "title": "Upgrade to Reactor 2023.0.4"
+        },
+        {
+            "number": "32431",
+            "title": "Upgrade to Micrometer 1.12.4"
+        },
+        {
+            "number": "32423",
+            "title": "Refine \"Redirecting to a resource\" section code sample"
+        },
+        {
+            "number": "31609",
+            "title": "Current Observation.Context missing from WebClient request"
+        },
+        {
+            "number": "32198",
+            "title": "Remove Observation.Context from WebClient request"
+        },
+        {
+            "number": "32419",
+            "title": "Javadoc of ReactorNettyClientRequestFactory#setExchangeTimeout methods have wrong default value"
+        },
+        {
+            "number": "32334",
+            "title": "Performance degradation due to Kotlin value class checks"
+        },
+        {
+            "number": "32390",
+            "title": "Optimize Coroutine invocations"
+        },
+        {
+            "number": "32401",
+            "title": "Document that SpEL expressions using array construction cannot be compiled"
+        },
+        {
+            "number": "32400",
+            "title": "SpEL fails to compile expression indexing into `boolean` array"
+        },
+        {
+            "number": "32389",
+            "title": "WebClient Observations are missing error"
+        },
+        {
+            "number": "32340",
+            "title": "Better protect against concurrent error handling for async requests"
+        },
+        {
+            "number": "32370",
+            "title": "WebClient request sent twice instantly when using @Cacheable"
+        },
+        {
+            "number": "32359",
+            "title": "Refine handling of disconnected client error in ExceptionHandlerExceptionResolver"
+        },
+        {
+            "number": "32381",
+            "title": "Improve exception message when Scheduled tasks that are using Virtual Threads fail on shutdown"
+        },
+        {
+            "number": "32298",
+            "title": "SimpleAsyncTaskScheduler: consistently apply default error handling"
+        },
+        {
+            "number": "32365",
+            "title": "AopUtils.getMostSpecificMethod does not return original method for proxy-derived method anymore"
+        },
+        {
+            "number": "32362",
+            "title": "Fix `ServletResponseHttpHeaders#get` null handling"
+        },
+        {
+            "number": "32361",
+            "title": "Optimize content type parsing in `ServletServerHttpResponse`"
+        },
+        {
+            "number": "32353",
+            "title": "Suspend handler methods fail on nullable `value class` parameters"
+        },
+        {
+            "number": "32356",
+            "title": "Compiled SpEL expression fails if `#root` or `#this` is a non-public type"
+        },
+        {
+            "number": "32343",
+            "title": "Improve documentation for `@Sql` execution phases regarding lifecycle"
+        },
+        {
+            "number": "32324",
+            "title": "`constructor-impl` of Kotlin `value class` is not called"
+        },
+        {
+            "number": "29435",
+            "title": "Revisit Servlet API baseline: Servlet 6.0 in the build, Servlet 5.0 compatibility at runtime  "
+        },
+        {
+            "number": "32287",
+            "title": "Provide guidelines for using Kotlin properties with proxies (`@RequestScope` and similar use cases)"
+        },
+        {
+            "number": "31698",
+            "title": "Unable to use kotlin value classes as function arguments to functions mapping web endpoints"
+        },
+        {
+            "number": "32335",
+            "title": "Omit parameter names in REST Clients section of reference docs"
+        },
+        {
+            "number": "32325",
+            "title": "Refine `*HttpMessageConverter#getContentLength` return value null safety"
+        },
+        {
+            "number": "32039",
+            "title": "Static resources caching issues with ShallowEtagHeaderFilter and Jetty caching directives"
+        },
+        {
+            "number": "32317",
+            "title": "ContentCachingResponseWrapper no longer honors Content-Type and Content-Length"
+        },
+        {
+            "number": "32329",
+            "title": "With value referenced from property file in XML configuration, setter selection can be random in case of overloaded setter methods (e.g. on SimpleClientHttpRequestFactory)"
+        },
+        {
+            "number": "32159",
+            "title": "With XML configuration, setter selection can be random in case of overloaded setter methods (e.g. on SimpleClientHttpRequestFactory in 6.1.3 from convertForProperty method)"
+        },
+        {
+            "number": "32310",
+            "title": "Different transaction name when using  `TransactionAspectSupport.currentTransactionStatus().transactionName`"
+        },
+        {
+            "number": "32314",
+            "title": "Remove Hibernate substitutions and deprecated properties usage"
+        },
+        {
+            "number": "32311",
+            "title": "Hibernate native image support broken by `HHH-17643`"
+        },
+        {
+            "number": "23343",
+            "title": "Incomplete cleanup after configuration class creation failure"
+        },
+        {
+            "number": "32090",
+            "title": "Configure JDK 23 early access CI build"
+        },
+        {
+            "number": "32295",
+            "title": "Revisit DatabaseMetadata#getProcedures to only apply fallback if original search yield more than one result"
+        }
+    ]
+}

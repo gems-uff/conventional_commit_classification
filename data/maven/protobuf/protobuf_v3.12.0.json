@@ -11,1148 +11,957 @@
     "commits_info": [
         {
             "hash": "0dd036d675508a4ecf69e61626fd0c88235a661d",
-            "message": "Added a changelog entry about the Java fix. (#7516)\n\n",
-            "tag_name": null
+            "message": "Added a changelog entry about the Java fix. (#7516)"
         },
         {
             "hash": "e90b71cdee08a31532245dc15686c779b0cb4e60",
-            "message": "Update protobuf version\n",
-            "tag_name": null
+            "message": "Update protobuf version"
         },
         {
             "hash": "7276738e79e4584ede41504e3aef15428b11ecb4",
-            "message": "Fixed bug in map key sorting for Java TextFormat. (#7508)\n\nFixes: https://github.com/protocolbuffers/protobuf/issues/7505",
-            "tag_name": null
+            "message": "Fixed bug in map key sorting for Java TextFormat. (#7508)\n\nFixes: https://github.com/protocolbuffers/protobuf/issues/7505"
         },
         {
             "hash": "4bbdffacf208480cf6333782664f5eebdb7c9c26",
-            "message": "Added background information about proto3 presence. (#7501)\n\n",
-            "tag_name": null
+            "message": "Added background information about proto3 presence. (#7501)"
         },
         {
             "hash": "805352584636a750e653ffc9be56c09d235a77cd",
-            "message": "Updated Changelog for 3.12.0-rc2.\n",
-            "tag_name": null
+            "message": "Updated Changelog for 3.12.0-rc2."
         },
         {
             "hash": "73e48b4fb00f39f9f34294a36808c60172033534",
-            "message": "Merge pull request #7494 from haberman/3.12.x-202005121247\n\nUpdate protobuf version to 3.12.0-rc2",
-            "tag_name": null
+            "message": "Merge pull request #7494 from haberman/3.12.x-202005121247\n\nUpdate protobuf version to 3.12.0-rc2"
         },
         {
             "hash": "f597a246275b69f6dbb477456d0fa401a5546438",
-            "message": "Update protobuf version\n",
-            "tag_name": null
+            "message": "Update protobuf version"
         },
         {
             "hash": "51199fcba2813749f2e58526862679283d286b27",
-            "message": "Merge pull request #7491 from haberman/cherry\n\nCherry-pick fixes onto 3.12.x branch for 3.12.0-rc2",
-            "tag_name": null
+            "message": "Merge pull request #7491 from haberman/cherry\n\nCherry-pick fixes onto 3.12.x branch for 3.12.0-rc2"
         },
         {
             "hash": "01e8c0fa348d38caddc25619d50d346a376172ff",
-            "message": "Cherry-pick the fix to #7480 from #7485.\n",
-            "tag_name": null
+            "message": "Cherry-pick the fix to #7480 from #7485."
         },
         {
             "hash": "c0b1ce00f3bcefd0047f0bcfe117510ca678bb6e",
-            "message": "Cherry-pick the fix for https://github.com/protocolbuffers/protobuf/issues/7463.\n",
-            "tag_name": null
+            "message": "Cherry-pick the fix for https://github.com/protocolbuffers/protobuf/issues/7463."
         },
         {
             "hash": "3c3646fa7821f4b22822e173bbc36620fd80ac11",
-            "message": "Implement HasPresence for C#\n\nFieldDescriptor.HasPresence returns true if both ClearValue and HasValue (on the accessor) can be expected to work. Some fields have a working ClearValue, but no HasValue; HasPresence returns false for those fields.\n\nGenerally:\n\n- Extension fields have presence if and only if they're singular\n- Repeated fields do not support presence\n- Map fields do not support presence\n- Message fields support presence\n- Oneof fields support presence (this includes synthetic oneof fields, so that covers proto3 optional singular fields)\n- Proto2 singular primitive fields support presence\n- Proto3 singular primitive fields do not support presence (unless they're in a oneof, covered above)\n",
-            "tag_name": null
+            "message": "Implement HasPresence for C#\n\nFieldDescriptor.HasPresence returns true if both ClearValue and HasValue (on the accessor) can be expected to work. Some fields have a working ClearValue, but no HasValue; HasPresence returns false for those fields.\n\nGenerally:\n\n- Extension fields have presence if and only if they're singular\n- Repeated fields do not support presence\n- Map fields do not support presence\n- Message fields support presence\n- Oneof fields support presence (this includes synthetic oneof fields, so that covers proto3 optional singular fields)\n- Proto2 singular primitive fields support presence\n- Proto3 singular primitive fields do not support presence (unless they're in a oneof, covered above)"
         },
         {
             "hash": "fc5ded36bc53d3f4657260a685e0b07eff9fe7ff",
-            "message": "Merge pull request #7434 from jtattermusch/csharp_expose_options\n\nC#: Get rid of broken GetOption API and expose the \"GetOptions()\" method on descriptors instead",
-            "tag_name": null
+            "message": "Merge pull request #7434 from jtattermusch/csharp_expose_options\n\nC#: Get rid of broken GetOption API and expose the \"GetOptions()\" method on descriptors instead"
         },
         {
             "hash": "807ea2f3527780dc14a9aadb661ca253f3fa5644",
-            "message": "Fix to C# support library code\n\n(This was the only use of a HasXyz property for a message type.)\n",
-            "tag_name": null
+            "message": "Fix to C# support library code\n\n(This was the only use of a HasXyz property for a message type.)"
         },
         {
             "hash": "13df985bff8bdab86775d9cd24bcbe1241b91a87",
-            "message": "Regenerate C# code based on the previous commit\n\n(This removes the Has/Clear members for message types in proto2.)\n",
-            "tag_name": null
+            "message": "Regenerate C# code based on the previous commit\n\n(This removes the Has/Clear members for message types in proto2.)"
         },
         {
             "hash": "6a84e31818fa1e06a83a3572b4a214023cd3bcc2",
-            "message": "Don't generate Has/Clear members for proto2 message fields.\n\nThis is a breaking change in terms of proto2 code generation: users who were previously using these members will have to change to null checks for message fields.\nAfter toying with removing Has/Clear for proto2 oneof fields, I've left them alone in this commit, for consistency with other languages. The inconsistency between proto2 and proto3 won't come up here, because proto3 oneof fields can never be explicitly optional.\n\nFixes #7395.\n",
-            "tag_name": null
+            "message": "Don't generate Has/Clear members for proto2 message fields.\n\nThis is a breaking change in terms of proto2 code generation: users who were previously using these members will have to change to null checks for message fields.\nAfter toying with removing Has/Clear for proto2 oneof fields, I've left them alone in this commit, for consistency with other languages. The inconsistency between proto2 and proto3 won't come up here, because proto3 oneof fields can never be explicitly optional.\n\nFixes #7395."
         },
         {
             "hash": "d001f8cee4c2c0ff08c14e9c4957c0490c05860e",
-            "message": "Ignore unknown enum value when ignore_unknown specified (#7455) (#7462)\n\n",
-            "tag_name": null
+            "message": "Ignore unknown enum value when ignore_unknown specified (#7455) (#7462)"
         },
         {
             "hash": "ef7cc8111676076d8c2b6f9929096477cc868dc3",
-            "message": "Added changelog entry for removing binary gems for Ruby <2.5. (#7454)\n\n",
-            "tag_name": null
+            "message": "Added changelog entry for removing binary gems for Ruby <2.5. (#7454)"
         },
         {
             "hash": "e19bfc0e280996a261aee96cd43fde208c684307",
-            "message": "Stop building binary gems for ruby <2.5. (#7453)\n\nIt is no longer possible to \"bundle install\" these versions:\r\n\r\n$ bundle install\r\nFetching gem metadata from https://rubygems.org/.................\r\nreline-0.1.3 requires ruby version >= 2.5, which is incompatible with the current version, ruby 2.4.9p362",
-            "tag_name": null
+            "message": "Stop building binary gems for ruby <2.5. (#7453)\n\nIt is no longer possible to \"bundle install\" these versions:\r\n\r\n$ bundle install\r\nFetching gem metadata from https://rubygems.org/.................\r\nreline-0.1.3 requires ruby version >= 2.5, which is incompatible with the current version, ruby 2.4.9p362"
         },
         {
             "hash": "a9f11d7d640b59157167f683fa3fb9ca28d5b64a",
-            "message": "Updated version to 3.12.0-rc1. (#7449)\n\n",
-            "tag_name": null
+            "message": "Updated version to 3.12.0-rc1. (#7449)"
         },
         {
             "hash": "26bec4b84c6f98d6879bb73360394539f6f1b423",
-            "message": "Added changelog for 3.12.x. (#7442)\n\n* Added changelog for 3.12.x.\r\n\r\n* Updated the wording of the changelog for proot3 presence.\r\n\r\nAlso removed notice for change that was rolled back for\r\nJava enums.\r\n\r\n* A bit more teaking of the wording.",
-            "tag_name": null
+            "message": "Added changelog for 3.12.x. (#7442)\n\n* Added changelog for 3.12.x.\r\n\r\n* Updated the wording of the changelog for proot3 presence.\r\n\r\nAlso removed notice for change that was rolled back for\r\nJava enums.\r\n\r\n* A bit more teaking of the wording."
         },
         {
             "hash": "2db0e9812a8774f5266370b7a6eae4e4e5a2cdd0",
-            "message": "Use the new helpers from Descriptor.\n",
-            "tag_name": null
+            "message": "Use the new helpers from Descriptor."
         },
         {
             "hash": "4b4e66743503bf927cfb0f27a267ecd077250667",
-            "message": "Merge pull request #7435 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7435 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "140e1bb70eec6c1de7ab6eb33d8f001a21e1ec93",
-            "message": "Merge branch 'sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge branch 'sync-piper' into sync-stage"
         },
         {
             "hash": "32e5deb1ac76feb4f187371c2a7f76c9009b1eff",
-            "message": "Sync from Piper @308829107\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @308829107\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "bb30225f06c36399757dc698b409d5f79738e8d1",
-            "message": "Sync from Piper @307316823\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @307316823\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "74ad62759e0a9b5a21094f3fb9bb4ebfaa0d1ab8",
-            "message": "Sync from Piper @306496510\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @306496510\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "fb32b5a343e79a93637b85f94f634ef12d226f5c",
-            "message": "Sync from Piper @305960231\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @305960231\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "3be9322e28dfcacdb669f646f76fe833fa274107",
-            "message": "Merge pull request #7368 from haberman/sync-integrate\n\nIntegrate from Piper @305505267 for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7368 from haberman/sync-integrate\n\nIntegrate from Piper @305505267 for C++, Java, and Python"
         },
         {
             "hash": "fb12ad7a7f9eee441641d5ecc40f20993c48f3ad",
-            "message": "Fixed compile errors from lack of \"override\" keyword.\n",
-            "tag_name": null
+            "message": "Fixed compile errors from lack of \"override\" keyword."
         },
         {
             "hash": "b60626477196351824d9a8be74e7e66c798f9d03",
-            "message": "Merge branch 'sync-piper' into sync-integrate\n",
-            "tag_name": null
+            "message": "Merge branch 'sync-piper' into sync-integrate"
         },
         {
             "hash": "b7742c51fdfa2f31f6a5f341f6d0b0df586b4ef1",
-            "message": "Sync from Piper @305505267\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @305505267\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "503a2116aaaa7c3b4d342e0639ae76028028f4ff",
-            "message": "Sync from Piper @305053102\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @305053102\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "cf601047ebf87cf7f443753ded41132eb689cb10",
-            "message": "Allocated option number 1086 for ADLINK EdgeSDK\n\nFixes #7339.\n",
-            "tag_name": null
+            "message": "Allocated option number 1086 for ADLINK EdgeSDK\n\nFixes #7339."
         },
         {
             "hash": "c6493970296fa5c5b4a81a37248a328579fe9662",
-            "message": "Set execute bit on files if and only if they begin with (#!). (#7347)\n\n* Set execute bit on files if and only if they begin with (#!).\r\n\r\nGit only tracks the 'x' (executable) bit on each file. Prior to this\r\nCL, our files were a random mix of executable and non-executable.\r\nThis change imposes some order by making files executable if and only\r\nif they have shebang (#!) lines at the beginning.\r\n\r\nWe don't have any executable binaries checked into the repo, so\r\nwe shouldn't need to worry about that case.\r\n\r\n* Added fix_permissions.sh script to set +x iff a file begins with (#!).",
-            "tag_name": null
+            "message": "Set execute bit on files if and only if they begin with (#!). (#7347)\n\n* Set execute bit on files if and only if they begin with (#!).\r\n\r\nGit only tracks the 'x' (executable) bit on each file. Prior to this\r\nCL, our files were a random mix of executable and non-executable.\r\nThis change imposes some order by making files executable if and only\r\nif they have shebang (#!) lines at the beginning.\r\n\r\nWe don't have any executable binaries checked into the repo, so\r\nwe shouldn't need to worry about that case.\r\n\r\n* Added fix_permissions.sh script to set +x iff a file begins with (#!)."
         },
         {
             "hash": "e667bf6eaaa2fb1ba2987c6538df81f88500d030",
-            "message": "Merge pull request #7344 from haberman/sync-integrate\n\nIntegrate from Piper @304070343 for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7344 from haberman/sync-integrate\n\nIntegrate from Piper @304070343 for C++, Java, and Python"
         },
         {
             "hash": "462b928d6302d0bb730a242ddb77e8dbdbed2730",
-            "message": "Fixed build errors on MacOS.\n",
-            "tag_name": null
+            "message": "Fixed build errors on MacOS."
         },
         {
             "hash": "243558921f9b257d8137cfb4436e9ee774ce95f9",
-            "message": "Some fixes to make the tests pass on Bazel.\n",
-            "tag_name": null
+            "message": "Some fixes to make the tests pass on Bazel."
         },
         {
             "hash": "6e229f124e309299a847aca2b49351a1eca55b34",
-            "message": "Revert mistake in the previous integration.\n",
-            "tag_name": null
+            "message": "Revert mistake in the previous integration."
         },
         {
             "hash": "9c676d83ea52992797c6b264bcc5ae25d4156eed",
-            "message": "Regenerated protos with ./generate_descriptor_proto.sh\n",
-            "tag_name": null
+            "message": "Regenerated protos with ./generate_descriptor_proto.sh"
         },
         {
             "hash": "b99994d994e399174fe688a5efbcb6d91f36952a",
-            "message": "Sync from Piper @304070343\n\nPROTOBUF_SYNC_PIPER\n",
-            "tag_name": null
+            "message": "Sync from Piper @304070343\n\nPROTOBUF_SYNC_PIPER"
         },
         {
             "hash": "dec4939439d9ca2adf2bb14edccf876c2587faf2",
-            "message": "Update README.md (#7329)\n\n",
-            "tag_name": null
+            "message": "Update README.md (#7329)"
         },
         {
             "hash": "70fc0f0275389a99b0c654778ef937f904921be0",
-            "message": "Force to use U.S. English for Win32 error messages (#4317)\n",
-            "tag_name": null
+            "message": "Force to use U.S. English for Win32 error messages (#4317)"
         },
         {
             "hash": "a015ca8cf83aa14f125b2749fbc43fabf6d2cdbf",
-            "message": "Request SummaFT extension (#7314)\n\nSummaFT develops a protoc plugin for both internal and external use that allows specific extensions to be made to extend the platform for GraphQL and OpenAPI 3.",
-            "tag_name": null
+            "message": "Request SummaFT extension (#7314)\n\nSummaFT develops a protoc plugin for both internal and external use that allows specific extensions to be made to extend the platform for GraphQL and OpenAPI 3."
         },
         {
             "hash": "ab968155e5f7da774bca1e40d90210401299f77d",
-            "message": "Add Cloudstate extensions\n",
-            "tag_name": null
+            "message": "Add Cloudstate extensions"
         },
         {
             "hash": "4567a21004db641e974200f20715a2c9ab1f2378",
-            "message": "Removed unnecessary includes of well-known types from PHP generator. (#7311)\n\n* Removed unnecessary includes of well-known types from PHP generator.\r\n\r\n* Changed some split calls to work properly with the Copybara import rewrites.",
-            "tag_name": null
+            "message": "Removed unnecessary includes of well-known types from PHP generator. (#7311)\n\n* Removed unnecessary includes of well-known types from PHP generator.\r\n\r\n* Changed some split calls to work properly with the Copybara import rewrites."
         },
         {
             "hash": "53128559ae4b3e774710e6292f529f99d34b242e",
-            "message": "Update missing/renamed kernel files (#7310)\n\n",
-            "tag_name": null
+            "message": "Update missing/renamed kernel files (#7310)"
         },
         {
             "hash": "a80775c391969bb66caef20592169aaa810216ad",
-            "message": "Allocated extension number 1079 for grpc-graphql-gateway\n\nFixes issue #7302.\n",
-            "tag_name": null
+            "message": "Allocated extension number 1079 for grpc-graphql-gateway\n\nFixes issue #7302."
         },
         {
             "hash": "da1c46401b27a96d2301bba240c5603af8bb9cb8",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 301311140\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 301311140"
         },
         {
             "hash": "422053f3bcb39cac483d2769e936c473e7c8bcdb",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300708221\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300708221"
         },
         {
             "hash": "f57ae5eac31d5322c8fcb350a6cdc13647e5ca53",
-            "message": "Merge pull request #7279 from jtattermusch/ParseRawPrimitivesBenchmark\n\nAdd benchmark for measuring raw primitive parsing speed",
-            "tag_name": null
+            "message": "Merge pull request #7279 from jtattermusch/ParseRawPrimitivesBenchmark\n\nAdd benchmark for measuring raw primitive parsing speed"
         },
         {
             "hash": "447b6bbad82375af57631060fedaca6a8e643f22",
-            "message": "address review comments\n",
-            "tag_name": null
+            "message": "address review comments"
         },
         {
             "hash": "b90d3bd8541540784335066e7f534c7fb73d7be0",
-            "message": "add benchmark for measuring raw primitive parsing speed\n",
-            "tag_name": null
+            "message": "add benchmark for measuring raw primitive parsing speed"
         },
         {
             "hash": "723a85f7975634396af1654d5ee09742316d9eec",
-            "message": "[bazel] Remove bootstrap hack from cc_proto_library and add interop with proto_library\n\nBazel had a native `cc_proto_library` for more than 2 years now.\nThis is the first step towards removing that rule from the Protobuf\nrepo.\n",
-            "tag_name": null
+            "message": "[bazel] Remove bootstrap hack from cc_proto_library and add interop with proto_library\n\nBazel had a native `cc_proto_library` for more than 2 years now.\nThis is the first step towards removing that rule from the Protobuf\nrepo."
         },
         {
             "hash": "2e51ad6344111db2e1c38e1c4b78eac5f2029d17",
-            "message": "[bazel] Update gtest and deprecate //external:{gtest,gtest_main} (#7237)\n\nThis change updates the gtest-version used by Bazel.\r\nAlso, `//external:{gtest,gtest_main}` is deprecated so we can remove some\r\nof the uses of the discouraged `bind` function.\r\n\r\nRELNOTES[bazel]: Starting with Protobuf 3.13.0, building and running\r\nProtobuf tests requires `@com_google_googletest//:{gtest,gtest_main}`\r\ninstead of `//external:{gtest,gtest_main}`. Use\r\n`--@com_google_protobuf//:incompatible_use_com_google_googletest=true`\r\nto verify your workspace is not affected by this change.",
-            "tag_name": null
+            "message": "[bazel] Update gtest and deprecate //external:{gtest,gtest_main} (#7237)\n\nThis change updates the gtest-version used by Bazel.\r\nAlso, `//external:{gtest,gtest_main}` is deprecated so we can remove some\r\nof the uses of the discouraged `bind` function.\r\n\r\nRELNOTES[bazel]: Starting with Protobuf 3.13.0, building and running\r\nProtobuf tests requires `@com_google_googletest//:{gtest,gtest_main}`\r\ninstead of `//external:{gtest,gtest_main}`. Use\r\n`--@com_google_protobuf//:incompatible_use_com_google_googletest=true`\r\nto verify your workspace is not affected by this change."
         },
         {
             "hash": "398b801355bcfb37037cbef739389fefe11883a1",
-            "message": "Merge pull request #7275 from protocolbuffers/rafi-kamal-patch-3\n\nAdd bazel to the list of acceptable mergeable tags",
-            "tag_name": null
+            "message": "Merge pull request #7275 from protocolbuffers/rafi-kamal-patch-3\n\nAdd bazel to the list of acceptable mergeable tags"
         },
         {
             "hash": "37934fe46f277a3605804eb22a5fb2b321678bd9",
-            "message": "Update mergeable.yml",
-            "tag_name": null
+            "message": "Update mergeable.yml"
         },
         {
             "hash": "154788bb4c96a366b0cc707f10c5e33ffe93402f",
-            "message": "Add bazel to the list of acceptable mergeable tags",
-            "tag_name": null
+            "message": "Add bazel to the list of acceptable mergeable tags"
         },
         {
             "hash": "64f151fa2b3872affe6e904681935c685436f03d",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 298409332\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 298409332"
         },
         {
             "hash": "4ff0fb841cfb8c6850613094d55bf51448dfd16b",
-            "message": "Merge pull request #7150 from tswast/issue4498-readthedocs\n\npython: publish sphinx docs to read the docs",
-            "tag_name": null
+            "message": "Merge pull request #7150 from tswast/issue4498-readthedocs\n\npython: publish sphinx docs to read the docs"
         },
         {
             "hash": "35a2bf9d90662e984780574f3f893cfaf68be501",
-            "message": "python: publish sphinx docs to read the docs\n\nBackground:\n\nThis is a follow-up to the PR that adds sphinx docs.\n\nRead the Docs is a hosting platform for documentation, primarily Python\ndocs. It supports builds at commit time as well as at specific git\nlabels to support versioned docs. I have claimed the\nprotobuf.readthedocs.io project and can add any Googlers who need access\nto be able to configure and trigger builds.\nhttps://readthedocs.org/projects/protobuf/builds/ It's also relatively\neasy to create a new project to test the documentation builds from a\nfork, such as https://readthedocs.org/projects/tswast-protobuf/builds/\n\nAbout this change:\n\nOnce web hooks are configured, Read the Docs will automatically build\nthe docs for the latest changes on the master branch.\n\nI needed to update `python/setup.py` to support installation from the\nroot of the repository because Read the Docs does not `cd python` before\ninstalling the protobuf package with `setup.py install`. To support\nthis, I updated the file paths to use the absolute path to files. The\n`__file__` special variable comes in handy for this, as it provides the\npath to the `setup.py` file.\n\nA banner is added to the docs when published to readthedocs. This links\nto the official documentation and the future home of the stable API\nreference on googleapis.dev.\n",
-            "tag_name": null
+            "message": "python: publish sphinx docs to read the docs\n\nBackground:\n\nThis is a follow-up to the PR that adds sphinx docs.\n\nRead the Docs is a hosting platform for documentation, primarily Python\ndocs. It supports builds at commit time as well as at specific git\nlabels to support versioned docs. I have claimed the\nprotobuf.readthedocs.io project and can add any Googlers who need access\nto be able to configure and trigger builds.\nhttps://readthedocs.org/projects/protobuf/builds/ It's also relatively\neasy to create a new project to test the documentation builds from a\nfork, such as https://readthedocs.org/projects/tswast-protobuf/builds/\n\nAbout this change:\n\nOnce web hooks are configured, Read the Docs will automatically build\nthe docs for the latest changes on the master branch.\n\nI needed to update `python/setup.py` to support installation from the\nroot of the repository because Read the Docs does not `cd python` before\ninstalling the protobuf package with `setup.py install`. To support\nthis, I updated the file paths to use the absolute path to files. The\n`__file__` special variable comes in handy for this, as it provides the\npath to the `setup.py` file.\n\nA banner is added to the docs when published to readthedocs. This links\nto the official documentation and the future home of the stable API\nreference on googleapis.dev."
         },
         {
             "hash": "ed19442270f623a60b7c7acc70d1f00cc8502254",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297743020\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297743020"
         },
         {
             "hash": "9bbc6646713a6ab22b4a792006d507f5db760d1e",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297709554\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297709554"
         },
         {
             "hash": "42903f87f0ae72479de367e007a3d7e6d2a02f9e",
-            "message": "Merge pull request #7154 from tswast/issue4498-googleapis.dev\n\npython: publish sphinx docs to googleapis.dev",
-            "tag_name": null
+            "message": "Merge pull request #7154 from tswast/issue4498-googleapis.dev\n\npython: publish sphinx docs to googleapis.dev"
         },
         {
             "hash": "d1f4e25e159d3143fedb1da5c65dc664ea3510d2",
-            "message": "python: publish sphinx docs to googleapis.dev\n\n**Background:**\n\nThis is a follow-up to the PR that adds sphinx docs.\n\nGoogleapis.dev hosts client library documentation for several languages as\nwell as documentation for core packages such as google-api-core. It is owned\nand maintained by the Cloud DevRel Core team.\n\n**About this change:**\n\nThe `kokoro/docs/publish-python.sh` script builds the docs with sphinx, then\nuses the [googleapis/docuploader](https://github.com/googleapis/docuploader)\ntool to publish to googleapis.dev. The publish script is triggered manually\nwith a Kokoro RELEASE type job. Googlers, see go link\nprotobuf-docs-python-design for additional internal references.\n",
-            "tag_name": null
+            "message": "python: publish sphinx docs to googleapis.dev\n\n**Background:**\n\nThis is a follow-up to the PR that adds sphinx docs.\n\nGoogleapis.dev hosts client library documentation for several languages as\nwell as documentation for core packages such as google-api-core. It is owned\nand maintained by the Cloud DevRel Core team.\n\n**About this change:**\n\nThe `kokoro/docs/publish-python.sh` script builds the docs with sphinx, then\nuses the [googleapis/docuploader](https://github.com/googleapis/docuploader)\ntool to publish to googleapis.dev. The publish script is triggered manually\nwith a Kokoro RELEASE type job. Googlers, see go link\nprotobuf-docs-python-design for additional internal references."
         },
         {
             "hash": "29c83baeccf4b5dc27308999e5cca65eb3774e86",
-            "message": "python: add sphinx docs (#6525)\n\n* python: generate documentation with Sphinx and Read the Docs\r\n\r\nBackground:\r\n\r\nFormerly, the Python protobuf reference documentation was built with\r\n[Epydoc](http://epydoc.sourceforge.net/). This package has not been\r\nupdated since 2008, and it has inconsistent formatting (see internal\r\nissue 131415575) with most Python documentation. Sphinx is used for the\r\nofficial docs.python.org docs as well as most other Python packages,\r\nincluding the Google client libraries and related packages, such as\r\nhttps://googleapis.dev/python/google-api-core/latest/\r\n\r\nTo build the docs with Sphinx:\r\n\r\n1. Install the needed packages (`sphinx`, `sphinxcontrib-napoleon` for\r\nGoogle-style docstring support). I've created a conda environment file\r\nto make this easier:\r\n\r\n```\r\nconda env create -f python/docs/environment.yml\r\n```\r\n\r\n2. (Optional) Generate reference docs files and regenerate index:\r\n\r\n```\r\ncd python\r\npython generate_docs.py\r\ncd ..\r\n```\r\n\r\n3. Run Sphinx.\r\n\r\n```\r\ncd python/docs\r\nmake html\r\n```\r\n\r\nAbout this change:\r\n\r\nThe script at `python/generate_docs.py` creates a ReStructured Text file\r\nfor each public module in the protobuf Python package. The script also\r\nupdates the table of contents in `python/docs/index.rst` to point to\r\nthese module references.\r\n\r\nFuture work:\r\n\r\nTesting the docs build on PRs requires contributors to actually do some\r\nsetup work to configure builds on their fork. It'd be better if CI had a\r\ndocs build session to verify that the Sphinx docs generation at least\r\nruns.\r\n\r\nThere are many warnings due to not-quite-correct docstrings in the\r\nactual Python code itself. I'm choosing to ignore these errors to keep\r\nthe PR small, but I recommend you fix these and then enable \"fail on\r\nwarnings\" in the docs build on CI.\r\n\r\n* add docs to EXTRA_DIST\r\n\r\n* add instructions to build documentation to generate_docs.py\r\n\r\n* exclude python/odcs from cpp_distcheck\r\n",
-            "tag_name": null
+            "message": "python: add sphinx docs (#6525)\n\n* python: generate documentation with Sphinx and Read the Docs\r\n\r\nBackground:\r\n\r\nFormerly, the Python protobuf reference documentation was built with\r\n[Epydoc](http://epydoc.sourceforge.net/). This package has not been\r\nupdated since 2008, and it has inconsistent formatting (see internal\r\nissue 131415575) with most Python documentation. Sphinx is used for the\r\nofficial docs.python.org docs as well as most other Python packages,\r\nincluding the Google client libraries and related packages, such as\r\nhttps://googleapis.dev/python/google-api-core/latest/\r\n\r\nTo build the docs with Sphinx:\r\n\r\n1. Install the needed packages (`sphinx`, `sphinxcontrib-napoleon` for\r\nGoogle-style docstring support). I've created a conda environment file\r\nto make this easier:\r\n\r\n```\r\nconda env create -f python/docs/environment.yml\r\n```\r\n\r\n2. (Optional) Generate reference docs files and regenerate index:\r\n\r\n```\r\ncd python\r\npython generate_docs.py\r\ncd ..\r\n```\r\n\r\n3. Run Sphinx.\r\n\r\n```\r\ncd python/docs\r\nmake html\r\n```\r\n\r\nAbout this change:\r\n\r\nThe script at `python/generate_docs.py` creates a ReStructured Text file\r\nfor each public module in the protobuf Python package. The script also\r\nupdates the table of contents in `python/docs/index.rst` to point to\r\nthese module references.\r\n\r\nFuture work:\r\n\r\nTesting the docs build on PRs requires contributors to actually do some\r\nsetup work to configure builds on their fork. It'd be better if CI had a\r\ndocs build session to verify that the Sphinx docs generation at least\r\nruns.\r\n\r\nThere are many warnings due to not-quite-correct docstrings in the\r\nactual Python code itself. I'm choosing to ignore these errors to keep\r\nthe PR small, but I recommend you fix these and then enable \"fail on\r\nwarnings\" in the docs build on CI.\r\n\r\n* add docs to EXTRA_DIST\r\n\r\n* add instructions to build documentation to generate_docs.py\r\n\r\n* exclude python/odcs from cpp_distcheck"
         },
         {
             "hash": "1a74ba4cb4c2faee902e9088281d824385ba2bc6",
-            "message": "Fix for wrappers with a zero value (#7195)\n\n* Add failing tests for issues with wrapped values where the value is the default\r\n\r\n* Add test for wrapped values without a value set\r\n\r\n* Bugfix for wrapper types with default values.\r\n\r\nThe previous optimizations for wrapper types had a bug that prevented\r\nwrappers from registering as \"present\" if the \"value\" field was not\r\npresent on the wire.\r\n\r\nIn practice the \"value\" field will not be serialized when it is zero,\r\naccording to proto3 semantics, but due to the optimization this\r\nprevented it from creating a new object to represent the presence of the\r\nfield.\r\n\r\nThe fix is to ensure that if the wrapper message is present on the wire,\r\nwe always initialize its value to zero.\r\n\r\nCo-authored-by: Dan Quan <dan@quan.io>\r\n",
-            "tag_name": null
+            "message": "Fix for wrappers with a zero value (#7195)\n\n* Add failing tests for issues with wrapped values where the value is the default\r\n\r\n* Add test for wrapped values without a value set\r\n\r\n* Bugfix for wrapper types with default values.\r\n\r\nThe previous optimizations for wrapper types had a bug that prevented\r\nwrappers from registering as \"present\" if the \"value\" field was not\r\npresent on the wire.\r\n\r\nIn practice the \"value\" field will not be serialized when it is zero,\r\naccording to proto3 semantics, but due to the optimization this\r\nprevented it from creating a new object to represent the presence of the\r\nfield.\r\n\r\nThe fix is to ensure that if the wrapper message is present on the wire,\r\nwe always initialize its value to zero.\r\n\r\nCo-authored-by: Dan Quan <dan@quan.io>"
         },
         {
             "hash": "f20be839276cfc1129c12d89924164624ef3796d",
-            "message": "enforce recursion depth checking for unknown fields\n",
-            "tag_name": null
+            "message": "enforce recursion depth checking for unknown fields"
         },
         {
             "hash": "ac70b7cfb743dfb522aeaf00232998623c1d2be9",
-            "message": "Aggregate Metadata Files (#7155)\n\nInstead of calling initOnce of dependencies, initialize metadata of dependencies in the same file.\r\n\r\nNeeds to pass aggregate_metadata option to protoc to trigger, e.g.:\r\n--php_out=aggregate_metadata=foo#bar:generated_dir\r\nFor each input file, transitive dependencies (including itself), whose package name has the prefix of foo or bar, will be aggregated, in which their metadata string will be aggregated in the same internalAddGeneratedFile call. For other dependencies, initOnce is called as before.\r\n\r\nThis feature is EXPERIMENTAL. DO NOT USE!!!\r\n",
-            "tag_name": null
+            "message": "Aggregate Metadata Files (#7155)\n\nInstead of calling initOnce of dependencies, initialize metadata of dependencies in the same file.\r\n\r\nNeeds to pass aggregate_metadata option to protoc to trigger, e.g.:\r\n--php_out=aggregate_metadata=foo#bar:generated_dir\r\nFor each input file, transitive dependencies (including itself), whose package name has the prefix of foo or bar, will be aggregated, in which their metadata string will be aggregated in the same internalAddGeneratedFile call. For other dependencies, initOnce is called as before.\r\n\r\nThis feature is EXPERIMENTAL. DO NOT USE!!!"
         },
         {
             "hash": "56c48ae59267d27cee5cfacd732b8a706993fea0",
-            "message": "Revisit how the WKTs are bundled with ObjC.\n\nThere are have been a few issues around people using case sensitive file systems\nwhat Xcode/clang does when looking at the paths. In attempts to solve one set of\nwarnings, new warnings/errors happened in different setup. So, to hopefully put\nthese problem away for got, move the WKTs to be at the same level as the other\nheaders.\n\n- Revert \"Override CocoaPods module to lowercase (#6464)\"\n  This reverts commit 479ba8226bed9c0986693f240c4d6f72dc2d0368.\n- Move WKTs to the objectivec directory and make the old headers shim back to\n  the new locations.\n- Update objectivec/generate_well_known_types.sh to check them one at a time\n  and to deal with the new locations for them.\n\nFixes #6803\n",
-            "tag_name": null
+            "message": "Revisit how the WKTs are bundled with ObjC.\n\nThere are have been a few issues around people using case sensitive file systems\nwhat Xcode/clang does when looking at the paths. In attempts to solve one set of\nwarnings, new warnings/errors happened in different setup. So, to hopefully put\nthese problem away for got, move the WKTs to be at the same level as the other\nheaders.\n\n- Revert \"Override CocoaPods module to lowercase (#6464)\"\n  This reverts commit 479ba8226bed9c0986693f240c4d6f72dc2d0368.\n- Move WKTs to the objectivec directory and make the old headers shim back to\n  the new locations.\n- Update objectivec/generate_well_known_types.sh to check them one at a time\n  and to deal with the new locations for them.\n\nFixes #6803"
         },
         {
             "hash": "7e0a081e780e9f761e91955575051f5a1516a608",
-            "message": "Add js files added in #7176 to Makefiles (#7189)\n\n",
-            "tag_name": null
+            "message": "Add js files added in #7176 to Makefiles (#7189)"
         },
         {
             "hash": "cc938ea39a9a4b79de981f87d60cdf00085239f3",
-            "message": "Project import generated by Copybara.\n\nPiperOrigin-RevId: 293139128\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara.\n\nPiperOrigin-RevId: 293139128"
         },
         {
             "hash": "4cf5bfee9546101d98754d23ff378ff718ba8438",
-            "message": "Install RubyGem bundler version specified in Gemfile.lock to fix release failure (#7144)\n\n* Update Gem version to fix Ruby release failure\r\n\r\nRef: https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html\r\n\r\n\r\n",
-            "tag_name": null
+            "message": "Install RubyGem bundler version specified in Gemfile.lock to fix release failure (#7144)\n\n* Update Gem version to fix Ruby release failure\r\n\r\nRef: https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"
         },
         {
             "hash": "302f3ea1e57fbb5f939bb93eee95efa82d1a97d9",
-            "message": "Update GOOGLE_PROTOBUF_OBJC_VERSION to 30003\n",
-            "tag_name": null
+            "message": "Update GOOGLE_PROTOBUF_OBJC_VERSION to 30003"
         },
         {
             "hash": "5e014c2ddf1e4e46305fd9c7847d8f6423f80fcf",
-            "message": "Update JUnit and Truth (#7149)\n\n",
-            "tag_name": null
+            "message": "Update JUnit and Truth (#7149)"
         },
         {
             "hash": "a62ee83401cb28052342c3833dcdb552e9c5a8ca",
-            "message": "deps: update errorprone to 2.3.4 (#7125)\n\ndeps: update errorprone to 2.3.4",
-            "tag_name": null
+            "message": "deps: update errorprone to 2.3.4 (#7125)\n\ndeps: update errorprone to 2.3.4"
         },
         {
             "hash": "f4a6b99339664ade18234b7c0774c3928f991daa",
-            "message": "Block subclassing\n\nAdd GPB_FINAL macro to block subclassing of generated ObjC classes.\n",
-            "tag_name": null
+            "message": "Block subclassing\n\nAdd GPB_FINAL macro to block subclassing of generated ObjC classes."
         },
         {
             "hash": "6f9d48814928d99c079ac2dcbd4c2a50d6e97915",
-            "message": "Move min Xcode version to 10.3\n\nXcode 10.1 has a compiler bug that breaks on generated code.\r\nXcode 10.3+ appear to be fine.",
-            "tag_name": null
+            "message": "Move min Xcode version to 10.3\n\nXcode 10.1 has a compiler bug that breaks on generated code.\r\nXcode 10.3+ appear to be fine."
         },
         {
             "hash": "effb65d4e372e14eb1569adaf75a111a3cbb0057",
-            "message": "Move a few more `size() > 0` calls over to `!empty()`.\n",
-            "tag_name": null
+            "message": "Move a few more `size() > 0` calls over to `!empty()`."
         },
         {
             "hash": "edf69e58584b9e93528972284f6cf44be606109f",
-            "message": "Make the unittest proto file generation handle additions better.\n\nDidn't really handle when a file was missing, but all the other were up to date,\nthis handles that case also.\n",
-            "tag_name": null
+            "message": "Make the unittest proto file generation handle additions better.\n\nDidn't really handle when a file was missing, but all the other were up to date,\nthis handles that case also."
         },
         {
             "hash": "e3c2af349fb023164ad7ff3d81ef4d1436f6c20a",
-            "message": "Clean up some warning messages.\n\n- size vs empty\n- unused decls\n",
-            "tag_name": null
+            "message": "Clean up some warning messages.\n\n- size vs empty\n- unused decls"
         },
         {
             "hash": "ab48ecf14086db1c138a2e2399797e43b1d10950",
-            "message": "Update pddm to work with clang-format\n\nAdd clang-format off/on directives around pddm expansions to simplify formatting other code.\n",
-            "tag_name": null
+            "message": "Update pddm to work with clang-format\n\nAdd clang-format off/on directives around pddm expansions to simplify formatting other code."
         },
         {
             "hash": "aa1d7e7c48db43a0c66fc0ca35e1238b60f29d76",
-            "message": "Change Objective C class references to using macros.\n\nAllows easy replacing of class names in generated code using #define to redefine class names at compile time.\n",
-            "tag_name": null
+            "message": "Change Objective C class references to using macros.\n\nAllows easy replacing of class names in generated code using #define to redefine class names at compile time."
         },
         {
             "hash": "39f4240856ef56fdac1a3267477afb30f85b9d76",
-            "message": "Maven requires https connection (#7110)\n\n",
-            "tag_name": null
+            "message": "Maven requires https connection (#7110)"
         },
         {
             "hash": "35febfc2e9b9c19f95294e90fc2369835b704344",
-            "message": "Correct @return in Any.unpack docblock (#7089)\n\nAs per https://docs.phpdoc.org/latest/references/phpdoc/tags/return.html, the first token after the @return tag should be the return type.",
-            "tag_name": null
+            "message": "Correct @return in Any.unpack docblock (#7089)\n\nAs per https://docs.phpdoc.org/latest/references/phpdoc/tags/return.html, the first token after the @return tag should be the return type."
         },
         {
             "hash": "158b269097eb6b8d53d83cb9417827eb2b5c992e",
-            "message": "Cleanup the RPC Implementations section\n\nRemove dead links and update the ones that were moved.\n\nUse https when possible.\n\nIsolate inactive projects (not updated in the last few years) in a subsection.\n\nrelease notes: no\n",
-            "tag_name": null
+            "message": "Cleanup the RPC Implementations section\n\nRemove dead links and update the ones that were moved.\n\nUse https when possible.\n\nIsolate inactive projects (not updated in the last few years) in a subsection.\n\nrelease notes: no"
         },
         {
             "hash": "f4b6e4a561480fa6727e9d9a4537c404c23ff5f6",
-            "message": "Clean up use of size() > 0 to !empty()",
-            "tag_name": null
+            "message": "Clean up use of size() > 0 to !empty()"
         },
         {
             "hash": "836d81a8261f135da134fa383c01173004e09e52",
-            "message": "Fix up parameter name so decl matches defn\n\nclassName -> class_name",
-            "tag_name": null
+            "message": "Fix up parameter name so decl matches defn\n\nclassName -> class_name"
         },
         {
             "hash": "74956e1c1589ef473cf229fdf81d4045953a3f38",
-            "message": "Use references to Objective C classes instead of looking classes up by name.\n\nThis should reduce binary size slightly, small performance improvement, and improve linkage by forcing references to all used classes.\n\nNote that this maintains backwards compatibility for sources generated by older protoc for the time being. If you want the benefits\nyou will need to recompile your protos with the newer protoc.\n",
-            "tag_name": null
+            "message": "Use references to Objective C classes instead of looking classes up by name.\n\nThis should reduce binary size slightly, small performance improvement, and improve linkage by forcing references to all used classes.\n\nNote that this maintains backwards compatibility for sources generated by older protoc for the time being. If you want the benefits\nyou will need to recompile your protos with the newer protoc."
         },
         {
             "hash": "948740bc9d497fb2264dcce5ec92a9c196f5d3b7",
-            "message": "[bazel] Fix blacklisted_protos in cc_toolchain and add test (#7075)\n\n",
-            "tag_name": null
+            "message": "[bazel] Fix blacklisted_protos in cc_toolchain and add test (#7075)"
         },
         {
             "hash": "2d9b1788e7a61688c79bf9361740b4fb744cb61f",
-            "message": "bug: #7076 adds OUT and OPTIONAL to windows portability files (#7087)\n\n",
-            "tag_name": null
+            "message": "bug: #7076 adds OUT and OPTIONAL to windows portability files (#7087)"
         },
         {
             "hash": "c3ffdabed533e64c535c1d7f663d0e08235bb750",
-            "message": "correcting the s390x Arch name\n",
-            "tag_name": null
+            "message": "correcting the s390x Arch name"
         },
         {
             "hash": "5a578d2a5cd3bce73b4b4a4ebd9ba40ff7fa1931",
-            "message": "deps: update guava to 28.2-android",
-            "tag_name": null
+            "message": "deps: update guava to 28.2-android"
         },
         {
             "hash": "082cc23afddeb5acb34a15c0bbf342df5737aacd",
-            "message": "Blacklist .proto source files if Bazel allows us to (#7065)\n\n* Blacklist .proto source files is Bazel allows us to\r\n\r\nThis is a partial revert of https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 to unblock, e.g., https://github.com/grpc/grpc/pull/21590 or https://github.com/lyft/envoy-mobile/issues/617 until Bazel is fixed.\r\n\r\nNote: this is a forward-compatible change that automatically switches to the behavior intended by https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 when a compatible Bazel is released without requiring users to upgrade Protobuf. We will revert this change when Bazel is fixed.\r\n\r\n* Remove trailing ,\r\n\r\n* Update BUILD\r\n",
-            "tag_name": null
+            "message": "Blacklist .proto source files if Bazel allows us to (#7065)\n\n* Blacklist .proto source files is Bazel allows us to\r\n\r\nThis is a partial revert of https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 to unblock, e.g., https://github.com/grpc/grpc/pull/21590 or https://github.com/lyft/envoy-mobile/issues/617 until Bazel is fixed.\r\n\r\nNote: this is a forward-compatible change that automatically switches to the behavior intended by https://github.com/protocolbuffers/protobuf/commit/7b28278c7d4f4175e70aef2f89d304696eb85ae3 when a compatible Bazel is released without requiring users to upgrade Protobuf. We will revert this change when Bazel is fixed.\r\n\r\n* Remove trailing ,\r\n\r\n* Update BUILD"
         },
         {
             "hash": "ed8688de7203a8e9c1832ea348b13b76e022b31a",
-            "message": "Merge pull request #7064 from rafi-kamal/3.11.x-202001071136\n\nMerge branch 3.11.x to master",
-            "tag_name": null
+            "message": "Merge pull request #7064 from rafi-kamal/3.11.x-202001071136\n\nMerge branch 3.11.x to master"
         },
         {
             "hash": "4500f31a6a93e77532ceb82e83782785e5d830cb",
-            "message": "Merge branch 3.11.x to master\n",
-            "tag_name": null
+            "message": "Merge branch 3.11.x to master"
         },
         {
             "hash": "80eadc050d5644d2e42615531aaada5579b2267c",
-            "message": "Remove the section for uploading protoc packages to the GitHub release page (#6805)\n\nCurrently this is managed by the release script. We should also possibly remove the section for \"Push artifacts to Maven Central\"",
-            "tag_name": null
+            "message": "Remove the section for uploading protoc packages to the GitHub release page (#6805)\n\nCurrently this is managed by the release script. We should also possibly remove the section for \"Push artifacts to Maven Central\""
         },
         {
             "hash": "6263268b8c1b78a8a9b65acd6f5dd5c04dd9b0e1",
-            "message": "Reserve 1076, 1077 for Wire since and until\n\nrelease notes: no\n",
-            "tag_name": null
+            "message": "Reserve 1076, 1077 for Wire since and until\n\nrelease notes: no"
         },
         {
             "hash": "04a11fc91668884d1793bff2a0f72ee6ce4f5edd",
-            "message": "Remove duplicate license header from test protos (#7011)\n\n",
-            "tag_name": null
+            "message": "Remove duplicate license header from test protos (#7011)"
         },
         {
             "hash": "8baf3a43983a4742f74bd4d6c87644519de3ca1f",
-            "message": "Add generate_descriptor_proto.sh output\n",
-            "tag_name": null
+            "message": "Add generate_descriptor_proto.sh output"
         },
         {
             "hash": "e3ebf0c7e130f09f9d76d5aeb13a8845a2d83344",
-            "message": "Add explicit cast to silence clang warning\n\nClang currently displays an error if source files generated with protoc are compiled with -Wcomma. This change fixes this as suggested by the compiler itself.",
-            "tag_name": null
+            "message": "Add explicit cast to silence clang warning\n\nClang currently displays an error if source files generated with protoc are compiled with -Wcomma. This change fixes this as suggested by the compiler itself."
         },
         {
             "hash": "065fa2f3959c1511ac0a15de96109cd6b9af0ffe",
-            "message": "Remove use of VLA.\n\nVLAs complicate static analysis and bloat stack size. Replace VLA allocation\nwith calls to malloc and free.  This will alos the code to build with -Wvla.\n",
-            "tag_name": null
+            "message": "Remove use of VLA.\n\nVLAs complicate static analysis and bloat stack size. Replace VLA allocation\nwith calls to malloc and free.  This will alos the code to build with -Wvla."
         },
         {
             "hash": "53a814a0ee9312cec6209e8b8aa36a9f3d883ec0",
-            "message": "Treat F5-FF octets as single (invalid) characters\n\nThis corresponds to the newest reading of RFC 3629, and results\nin the largest possible number of character entities by any\nvalid parser. This may result in a buffer which is oversized,\nbut never undersized.\n\nThis is after further discussion with acozzette in this PR;\nhttps://github.com/protocolbuffers/protobuf/pull/6844\n\nSigned-off-by: William A Rowe Jr wrowe@pivotal.io\nSigned-off-by: Yechiel Kalmenson ykalmenson@pivotal.io\n",
-            "tag_name": null
+            "message": "Treat F5-FF octets as single (invalid) characters\n\nThis corresponds to the newest reading of RFC 3629, and results\nin the largest possible number of character entities by any\nvalid parser. This may result in a buffer which is oversized,\nbut never undersized.\n\nThis is after further discussion with acozzette in this PR;\nhttps://github.com/protocolbuffers/protobuf/pull/6844\n\nSigned-off-by: William A Rowe Jr wrowe@pivotal.io\nSigned-off-by: Yechiel Kalmenson ykalmenson@pivotal.io"
         },
         {
             "hash": "961c0e6b86897c5d9ba9bd3b0b8a636b6b50a2f2",
-            "message": "Correct interpretation of utf-8 0xf8-0xff\n\nIn consuming this useful string utility, it was discovered\nthat the interpretation of leading byte codes 0xf8-0xff\ndid not conform to either the RFC 3629 nor ISO/IEC 10646\ndefinitions of utf-8.\n\nThe IETF RFC describes only 1-4 byte encodings (a limited\nnumber of 4 byte encodings at that), and plainly states in\nsection 1. Introduction;\n   o  The octet values C0, C1, F5 to FF never appear.\n\nAlternately, the ISO definition \"R.2 Specification of UTF-8\"\npreseented in the original IETF RFC 2279 clearly define the\nmeaning of leading byte values F5 through FD, and RFC 3629\nSection 10. Security paragraph 3 calls out this alternate\nreading (alterative to \"never appears\".) F5-F7 begin an\ninvalid (in the domain of unicode code points) 4-byte UTF-8\nsequence (similar to F0-F4), while F8-FC begin a 5-byte\nsequence, FC and FD begin a 6 byte sequence.\n\nThe curent code is wrong in that it doesn't treat the codes\nF8-FF as invalid 1-byte characters, nor does it treat the\ncodes F8-FD as the correct number of bytes. No valid parser\nwill land these lead characters 4 bytes forward. Most will\ntreat these as the 5 or 6 byte utf-32 character and may then\ntreat the resulting character as invalid, while some parsers\nmay reject all leading F5-FF characters as a single byte of\nerronious input, followed by each invalid continuation byte.\n\nWe propose the conventional reading of F8-FD as 5 and 6 byte\nsequences as originally defined, while FE-FF must be read\nas single byte invalid code points.\n\nSigned-off-by: William A Rowe Jr <wrowe@pivotal.io>\nSigned-off-by: Yechiel Kalmenson <ykalmenson@pivotal.io>\n",
-            "tag_name": null
+            "message": "Correct interpretation of utf-8 0xf8-0xff\n\nIn consuming this useful string utility, it was discovered\nthat the interpretation of leading byte codes 0xf8-0xff\ndid not conform to either the RFC 3629 nor ISO/IEC 10646\ndefinitions of utf-8.\n\nThe IETF RFC describes only 1-4 byte encodings (a limited\nnumber of 4 byte encodings at that), and plainly states in\nsection 1. Introduction;\n   o  The octet values C0, C1, F5 to FF never appear.\n\nAlternately, the ISO definition \"R.2 Specification of UTF-8\"\npreseented in the original IETF RFC 2279 clearly define the\nmeaning of leading byte values F5 through FD, and RFC 3629\nSection 10. Security paragraph 3 calls out this alternate\nreading (alterative to \"never appears\".) F5-F7 begin an\ninvalid (in the domain of unicode code points) 4-byte UTF-8\nsequence (similar to F0-F4), while F8-FC begin a 5-byte\nsequence, FC and FD begin a 6 byte sequence.\n\nThe curent code is wrong in that it doesn't treat the codes\nF8-FF as invalid 1-byte characters, nor does it treat the\ncodes F8-FD as the correct number of bytes. No valid parser\nwill land these lead characters 4 bytes forward. Most will\ntreat these as the 5 or 6 byte utf-32 character and may then\ntreat the resulting character as invalid, while some parsers\nmay reject all leading F5-FF characters as a single byte of\nerronious input, followed by each invalid continuation byte.\n\nWe propose the conventional reading of F8-FD as 5 and 6 byte\nsequences as originally defined, while FE-FF must be read\nas single byte invalid code points.\n\nSigned-off-by: William A Rowe Jr <wrowe@pivotal.io>\nSigned-off-by: Yechiel Kalmenson <ykalmenson@pivotal.io>"
         },
         {
             "hash": "6d087c256c8ab04b3a1a9832746e9c3a8d3afd79",
-            "message": "fix typos in benchmarks/README.md\n",
-            "tag_name": null
+            "message": "fix typos in benchmarks/README.md"
         },
         {
             "hash": "4447fcc16fb99c74138713aab7e7c855cdf79a1a",
-            "message": "Add --<lang>_opt flag for all built-in generators\n\nPlugins (and some built-in generators) have `--<lang>_opt` flag that\r\nallows passing parameters one-by-one instead of passing them as\r\n`--<lang>_out=<params>:<out_base>`. This PR changes protoc to\r\nallow using `--<lang>_opt` for all (built-in) generators.",
-            "tag_name": null
+            "message": "Add --<lang>_opt flag for all built-in generators\n\nPlugins (and some built-in generators) have `--<lang>_opt` flag that\r\nallows passing parameters one-by-one instead of passing them as\r\n`--<lang>_out=<params>:<out_base>`. This PR changes protoc to\r\nallow using `--<lang>_opt` for all (built-in) generators."
         },
         {
             "hash": "b4596f8e993aba1eb3082ffee437738378ca7492",
-            "message": "treat enum,bool as 32bit; shrink ReadVarint32\n",
-            "tag_name": null
+            "message": "treat enum,bool as 32bit; shrink ReadVarint32"
         },
         {
             "hash": "91ed6dcb5b3b44dbca3f468444f74b4b048bab23",
-            "message": "remove win32/64 conversion warning in generated code\n",
-            "tag_name": null
+            "message": "remove win32/64 conversion warning in generated code"
         },
         {
             "hash": "c562c93ad6e9d40d35da13bb181fd0b7f8b88b5d",
-            "message": "add `-std=c++11` to make it compile\n\nmake cpp won't compile since it requires `-std=c++11` com",
-            "tag_name": null
+            "message": "add `-std=c++11` to make it compile\n\nmake cpp won't compile since it requires `-std=c++11` com"
         },
         {
             "hash": "8eda7b7faabd6cdd4ff271f9f5817e47299bdad7",
-            "message": "fix ubsan warnings\n\nSigned-off-by: Asra Ali <asraa@google.com>\n",
-            "tag_name": null
+            "message": "fix ubsan warnings\n\nSigned-off-by: Asra Ali <asraa@google.com>"
         },
         {
             "hash": "16b0c054a162c8de7add1782a95357ebbd83e8ee",
-            "message": "Allocated a custom option number for Analyze Re Graphene\n",
-            "tag_name": null
+            "message": "Allocated a custom option number for Analyze Re Graphene"
         },
         {
             "hash": "2220670ed97fb5d52868a0316054748e6354b6aa",
-            "message": "Added 3rd party Java library (QuickBuffers)",
-            "tag_name": null
+            "message": "Added 3rd party Java library (QuickBuffers)"
         },
         {
             "hash": "4457b1f2905d0a0db9c8f85d2b375340e8adcd9f",
-            "message": "Update to 3.11.0 in docs\n\n@haberman",
-            "tag_name": null
+            "message": "Update to 3.11.0 in docs\n\n@haberman"
         },
         {
             "hash": "51d9876977d6a4878fd6ee0643061de0e4f1fefa",
-            "message": "Migrate from maven_jar to jvm_maven_import_external to prepare for Bazel 2.0\n",
-            "tag_name": null
+            "message": "Migrate from maven_jar to jvm_maven_import_external to prepare for Bazel 2.0"
         },
         {
             "hash": "20b7fab0a93f46fac0dcff55abeb2705c89454c5",
-            "message": "Merge pull request #6674 from ObsidianMinor/csharp/general-cleanup\n\nCleanup various bits of Google.Protobuf",
-            "tag_name": null
+            "message": "Merge pull request #6674 from ObsidianMinor/csharp/general-cleanup\n\nCleanup various bits of Google.Protobuf"
         },
         {
             "hash": "d5e964c8bb39a365b3d958c55cdc405049aacf29",
-            "message": "Make test comment a summary\n",
-            "tag_name": null
+            "message": "Make test comment a summary"
         },
         {
             "hash": "1a0ff9551a0720fef95a21946d9c8a1134ebda03",
-            "message": "Add comment and Assert.DoesNotThrow to RequiredFieldsNoThrow\n",
-            "tag_name": null
+            "message": "Add comment and Assert.DoesNotThrow to RequiredFieldsNoThrow"
         },
         {
             "hash": "f084d622c282db684f59d60b95f45a76d5180e49",
-            "message": "Add test for not throwing on missing required\n",
-            "tag_name": null
+            "message": "Add test for not throwing on missing required"
         },
         {
             "hash": "6f09cc3a0c6acd77f3791e003f0e3aa72b257edc",
-            "message": "Fix readability.\n",
-            "tag_name": null
+            "message": "Fix readability."
         },
         {
             "hash": "3457f8894074a3eb114250a3f2ce398628fc2cbd",
-            "message": "Fix formatting\n",
-            "tag_name": null
+            "message": "Fix formatting"
         },
         {
             "hash": "71c492da3cd51ba6f8030be06cd861af96dcf84b",
-            "message": "Add some missing null-checks\nRemove IsInitialized checks accidentally left in MessageParser\nSimplify ExtensionCollection.CrossLink\n",
-            "tag_name": null
+            "message": "Add some missing null-checks\nRemove IsInitialized checks accidentally left in MessageParser\nSimplify ExtensionCollection.CrossLink"
         },
         {
             "hash": "3cae867740e409d9b9fbc1224c35357a49ce0ce2",
-            "message": "Persistent Descriptor Pool (#6899)\n\n* Make reserve names map persistent\r\n\r\n* Add DescriptorInternal to map\r\n\r\n* Use get_msgdef_desc in encode_decode.c\r\n\r\n* Add persistent map for ce=>def and enum=>def\r\n\r\n* Replace get_ce_obj\r\n\r\n* Remove get_proto_obj\r\n\r\n* Remove obsolete fields from Descriptor and EnumDescriptor\r\n\r\n* Add cache for descriptor php values\r\n\r\n* Add cache for descriptors\r\n\r\n* Fix bug\r\n\r\n* Avoid add generated file again if it has been added\r\n\r\n* Fix the bug upb depends on null-ended str for look up.\r\n\r\n* Initialize generated pool impl\r\n\r\n* Turn down old generated pool\r\n\r\n* Add init entry flag protobuf.keep_descriptor_pool_after_request\r\n\r\nBy default, it's off. Add protobuf.keep_descriptor_pool_after_request=1 to php.ini to enable it\r\n\r\n* Fix zts build\r\n",
-            "tag_name": null
+            "message": "Persistent Descriptor Pool (#6899)\n\n* Make reserve names map persistent\r\n\r\n* Add DescriptorInternal to map\r\n\r\n* Use get_msgdef_desc in encode_decode.c\r\n\r\n* Add persistent map for ce=>def and enum=>def\r\n\r\n* Replace get_ce_obj\r\n\r\n* Remove get_proto_obj\r\n\r\n* Remove obsolete fields from Descriptor and EnumDescriptor\r\n\r\n* Add cache for descriptor php values\r\n\r\n* Add cache for descriptors\r\n\r\n* Fix bug\r\n\r\n* Avoid add generated file again if it has been added\r\n\r\n* Fix the bug upb depends on null-ended str for look up.\r\n\r\n* Initialize generated pool impl\r\n\r\n* Turn down old generated pool\r\n\r\n* Add init entry flag protobuf.keep_descriptor_pool_after_request\r\n\r\nBy default, it's off. Add protobuf.keep_descriptor_pool_after_request=1 to php.ini to enable it\r\n\r\n* Fix zts build"
         },
         {
             "hash": "3cc55d6167e086aef90710874d8de4ca68197f2f",
-            "message": "Update protobuf version (#6898)\n\n",
-            "tag_name": null
+            "message": "Update protobuf version (#6898)"
         },
         {
             "hash": "c8a56342d53d168489c95be9f97d960080d138f9",
-            "message": "Merge pull request #6938 from ObsidianMinor/csharp/fix/6936\n\nFix latest ArgumentException for C# extensions",
-            "tag_name": null
+            "message": "Merge pull request #6938 from ObsidianMinor/csharp/fix/6936\n\nFix latest ArgumentException for C# extensions"
         },
         {
             "hash": "367fd2773282a3007eecda3374056db2539b8076",
-            "message": "Rename files and revert changes to generate protos script\n",
-            "tag_name": null
+            "message": "Rename files and revert changes to generate protos script"
         },
         {
             "hash": "34f9497162583cb2ad8b1a8f8114e8ade8889438",
-            "message": "Use explicit comparer for extension identifiers\n",
-            "tag_name": null
+            "message": "Use explicit comparer for extension identifiers"
         },
         {
             "hash": "145033c05611fb51f560fc9b7326e3720ea6ed7e",
-            "message": "Adjust based on review feedback\n",
-            "tag_name": null
+            "message": "Adjust based on review feedback"
         },
         {
             "hash": "cd11d5414f0704cfbbdb187e53d5f5ed44bda4a1",
-            "message": "Improve test to make sure the extensions are actually loaded for CustomOptions\n",
-            "tag_name": null
+            "message": "Improve test to make sure the extensions are actually loaded for CustomOptions"
         },
         {
             "hash": "2b0b8385284d6ac9242b645b686b7036f7d90ec3",
-            "message": "Add tests\n",
-            "tag_name": null
+            "message": "Add tests"
         },
         {
             "hash": "3c2a32a75f15ba6a527ae267351de4160e1a1de7",
-            "message": "Use Distinct on depended extensions to filter duplicate extensions\n",
-            "tag_name": null
+            "message": "Use Distinct on depended extensions to filter duplicate extensions"
         },
         {
             "hash": "a9f390f44e3d138e1e94fd17046f865517b3b62d",
-            "message": "Merge pull request #6929 from TeBoring/php-bug-fix\n\nRemove add_proto_enumdesc and get_proto_enumdesc",
-            "tag_name": null
+            "message": "Merge pull request #6929 from TeBoring/php-bug-fix\n\nRemove add_proto_enumdesc and get_proto_enumdesc"
         },
         {
             "hash": "dbd66dddfb95dbac6b742dfa3697f791b0620dba",
-            "message": "Remove add_proto_enumdesc and get_proto_enumdesc\n",
-            "tag_name": null
+            "message": "Remove add_proto_enumdesc and get_proto_enumdesc"
         },
         {
             "hash": "6d7bb7e7143ea2b93dfaa411510c96b0b47d141c",
-            "message": "Implement lazy loading of php class for proto messages (#6911)\n\n* Implement lazy loading of php class for proto messages\r\n\r\n* Fix php 7.1\r\n\r\n* Fix encode\r\n\r\n* Fix memory leak\r\n\r\n* Fix enum descriptor\r\n",
-            "tag_name": null
+            "message": "Implement lazy loading of php class for proto messages (#6911)\n\n* Implement lazy loading of php class for proto messages\r\n\r\n* Fix php 7.1\r\n\r\n* Fix encode\r\n\r\n* Fix memory leak\r\n\r\n* Fix enum descriptor"
         },
         {
             "hash": "de75651d7a0cf6cbf0da7718cebe2ac077a8d59c",
-            "message": "Merge 3.11.0-rc1 changes to master (#6917)\n\n* Update CHANGES.txt with 3.11.0-RC1 release notes (#6909)\r\n\r\n* Revert \"Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required.\" (#6914)\r\n\r\n* Marked update_compatibility_version.py as executable (#6916)\r\n",
-            "tag_name": null
+            "message": "Merge 3.11.0-rc1 changes to master (#6917)\n\n* Update CHANGES.txt with 3.11.0-RC1 release notes (#6909)\r\n\r\n* Revert \"Make shared libraries be able to link to MSVC static runtime libraries, so that VC runtime is not required.\" (#6914)\r\n\r\n* Marked update_compatibility_version.py as executable (#6916)"
         },
         {
             "hash": "6396a47d5d3d674b4bb3b54994528ce1c6d29bc4",
-            "message": "Simplifying linkage monitor test setup (#6855)\n\n",
-            "tag_name": null
+            "message": "Simplifying linkage monitor test setup (#6855)"
         },
         {
             "hash": "ef210164aac9a2d462873ac3d31e3559b3a62889",
-            "message": "Add php 7.4 to docker image (#6971)\n\n* Add php 7.4 to docker image\r\n\r\n* Use https links\r\n",
-            "tag_name": null
+            "message": "Add php 7.4 to docker image (#6971)\n\n* Add php 7.4 to docker image\r\n\r\n* Use https links"
         },
         {
             "hash": "e6c5a3b57d20384775950c4f85310e82a4f7a69b",
-            "message": "Add a proto_lang_toolchain for javalite (#6882)\n\n* Add a proto_lang_toolchain for javalite\r\n\r\n* fix toolchain. Swap javalite example to master repo\r\n",
-            "tag_name": null
+            "message": "Add a proto_lang_toolchain for javalite (#6882)\n\n* Add a proto_lang_toolchain for javalite\r\n\r\n* fix toolchain. Swap javalite example to master repo"
         },
         {
             "hash": "058d5b0d716744054dc95788c58abf43954c266e",
-            "message": "Merge pull request #6910 from ObsidianMinor/csharp/conformance-failures\n\nFix conformance test failures for Google.Protobuf",
-            "tag_name": null
+            "message": "Merge pull request #6910 from ObsidianMinor/csharp/conformance-failures\n\nFix conformance test failures for Google.Protobuf"
         },
         {
             "hash": "77d33734cf69cb431c7f82f61141f17765d45f7c",
-            "message": "simpler fix",
-            "tag_name": null
+            "message": "simpler fix"
         },
         {
             "hash": "71ac3e5c0e8e3a706d97277f381471a3a32a4a01",
-            "message": "Fix exception message on unsupported request output format\n",
-            "tag_name": null
+            "message": "Fix exception message on unsupported request output format"
         },
         {
             "hash": "e2e70a8a421fb52d0f17a54d6476df0b8a7d2c83",
-            "message": "Fix conformance test failures for Google.Protobuf\n",
-            "tag_name": null
+            "message": "Fix conformance test failures for Google.Protobuf"
         },
         {
             "hash": "96e9ff38636e3be1163dfbf0553182dac307885e",
-            "message": "Revert \"Revert \"C# upgrade dotnet SDK (#6877)\" (#6888)\" (#6920)\n\nThis reverts commit f06800524f0fe0d2e71a2d3696ce7a5278836445.",
-            "tag_name": null
+            "message": "Revert \"Revert \"C# upgrade dotnet SDK (#6877)\" (#6888)\" (#6920)\n\nThis reverts commit f06800524f0fe0d2e71a2d3696ce7a5278836445."
         },
         {
             "hash": "a104dffcb6b1958a424f5fa6f9e6bdc0ab9b6f9e",
-            "message": "Fix typos (#7050)\n\nUses https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines to find likely typos, with https://github.com/bwignall/typochecker to help automate the checking.",
-            "tag_name": null
+            "message": "Fix typos (#7050)\n\nUses https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines to find likely typos, with https://github.com/bwignall/typochecker to help automate the checking."
         },
         {
             "hash": "3214d0b0b20f98a2e3172ceab2d2c55a8ffd344c",
-            "message": "Fix mergeable docs to be consistent with checks (#7021)\n\n",
-            "tag_name": null
+            "message": "Fix mergeable docs to be consistent with checks (#7021)"
         },
         {
             "hash": "73f3a7209b0a610b30fac16df42998199b7888a1",
-            "message": "Fix typo in Makefile.am.\n\nThis is a fix for a typo in commit 743a4322ba8332d0b78e30a699e1f3538f8b2093.\n\nThe missing newline continuation causes the re-generated Makefile to yield a parse error.\n",
-            "tag_name": null
+            "message": "Fix typo in Makefile.am.\n\nThis is a fix for a typo in commit 743a4322ba8332d0b78e30a699e1f3538f8b2093.\n\nThe missing newline continuation causes the re-generated Makefile to yield a parse error."
         },
         {
             "hash": "d2727a2ce33e9134eb7276f0e18dc97c2dbb5490",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297637283\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 297637283"
         },
         {
             "hash": "743a4322ba8332d0b78e30a699e1f3538f8b2093",
-            "message": "Fix js message pivot selection (#6813)\n\n* fix javascript setFieldIgnoringDefault_ logic\r\n\r\n* remove package-lock.json\r\n\r\n* fix build script to include new UT asset file\r\n\r\nCo-authored-by: Daniel Kurka <kurka.daniel@gmail.com>\r\n",
-            "tag_name": null
+            "message": "Fix js message pivot selection (#6813)\n\n* fix javascript setFieldIgnoringDefault_ logic\r\n\r\n* remove package-lock.json\r\n\r\n* fix build script to include new UT asset file\r\n\r\nCo-authored-by: Daniel Kurka <kurka.daniel@gmail.com>"
         },
         {
             "hash": "88579a44fb8e6283d7e55117233abf6bd10b3cb0",
-            "message": "Reserve extension for Bazel failure detail metadata\n\nThe Bazel project (https://github.com/bazelbuild/bazel) intends to\nenrich its server app's (protobuf-defined) command service's status\nmessage with a structured representation of what, if anything, went\nwrong while processing a command. We wish to use custom options to add\nmetadata to the protobuf constructs involved.\n\nrelease notes: no\n",
-            "tag_name": null
+            "message": "Reserve extension for Bazel failure detail metadata\n\nThe Bazel project (https://github.com/bazelbuild/bazel) intends to\nenrich its server app's (protobuf-defined) command service's status\nmessage with a structured representation of what, if anything, went\nwrong while processing a command. We wish to use custom options to add\nmetadata to the protobuf constructs involved.\n\nrelease notes: no"
         },
         {
             "hash": "c798ba18a99bc14a2e8712724fbc773e8127505f",
-            "message": "bug: #7076 adds ERROR to windows portability files\n",
-            "tag_name": null
+            "message": "bug: #7076 adds ERROR to windows portability files"
         },
         {
             "hash": "b96241b1b716781f5bc4dc25e1ebb0003dfaba6a",
-            "message": "Improves performance of json_stream_parser.cc by factor 1000\n\nJsonStreamParser::GetNextTokenType() uses HasPrefixString a lot on StringPiece as input. For each call two std::strings are constructed, compared and destroyed. Parsing of json-files with 50-60 MB in debug mode takes minutes.",
-            "tag_name": null
+            "message": "Improves performance of json_stream_parser.cc by factor 1000\n\nJsonStreamParser::GetNextTokenType() uses HasPrefixString a lot on StringPiece as input. For each call two std::strings are constructed, compared and destroyed. Parsing of json-files with 50-60 MB in debug mode takes minutes."
         },
         {
             "hash": "1370c7303ad0c41c71c96c0c6878767c33852f0f",
-            "message": "Merge pull request #7231 from protocolbuffers/3.11.x-202002181624\n\nMerge branch 3.11.x to master",
-            "tag_name": null
+            "message": "Merge pull request #7231 from protocolbuffers/3.11.x-202002181624\n\nMerge branch 3.11.x to master"
         },
         {
             "hash": "0eb476b6963fbc38a325794d99780f097ea249e6",
-            "message": "Merge branch 3.11.x to master\n",
-            "tag_name": null
+            "message": "Merge branch 3.11.x to master"
         },
         {
             "hash": "df2bce345d4bc8cdc3eba2a866e11e79e1fff4df",
-            "message": "Remove 32-bit Mac protoc reference from collect_all_artifacts (#7228)\n\n",
-            "tag_name": null
+            "message": "Remove 32-bit Mac protoc reference from collect_all_artifacts (#7228)"
         },
         {
             "hash": "147fd0b710083e3aaa96b65505784fff600a3c50",
-            "message": "Update Google.Protobuf.Tools.nuspec to remove 32-bit Mac protoc reference (#7227)\n\n",
-            "tag_name": null
+            "message": "Update Google.Protobuf.Tools.nuspec to remove 32-bit Mac protoc reference (#7227)"
         },
         {
             "hash": "1f2d6bf4b5f6e7cada0c3598a3c64b2966ebb28e",
-            "message": "Remove 32-bit Mac binary from csharp build tools (#7215)\n\n",
-            "tag_name": null
+            "message": "Remove 32-bit Mac binary from csharp build tools (#7215)"
         },
         {
             "hash": "83b47e4c65def035a958a4ecdb8f757185f34d79",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 294283216\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 294283216"
         },
         {
             "hash": "becf5afd34a25dc6763421045ffa1ac0060f6f0f",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 293911829\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 293911829"
         },
         {
             "hash": "46b0fd9cecb840865ed08dd4b5e65574b87dc3c4",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 293893031\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 293893031"
         },
         {
             "hash": "f0cb9cdb957e27c191d67a3154b72f383a4ad60f",
-            "message": "[bazel] Move Java runtime/toolchains into //java (#7190)\n\n* [bazel] Move Java runtime/toolchains into //java\r\n\r\nThis change moves `java_library` targets from the top-level BUILD file\r\ninto `//java/{core,lite,util}` and declares `alias` targets to point to\r\ntheir new locations (hence, this is not a breaking change).\r\n\r\nThis will allow users that don't use Java to stop depending on\r\n`@rules_java` (e.g. as requested in\r\nhttps://github.com/bazelbuild/rules_scala/pull/989#issuecomment-583405161).\r\n\r\nNote that there is no intention to deprecate + remove the top-level\r\ntargets in the foreseeable future.\r\n\r\n* Add BUILD files in //java to java_EXTRA_DIST\r\n",
-            "tag_name": null
+            "message": "[bazel] Move Java runtime/toolchains into //java (#7190)\n\n* [bazel] Move Java runtime/toolchains into //java\r\n\r\nThis change moves `java_library` targets from the top-level BUILD file\r\ninto `//java/{core,lite,util}` and declares `alias` targets to point to\r\ntheir new locations (hence, this is not a breaking change).\r\n\r\nThis will allow users that don't use Java to stop depending on\r\n`@rules_java` (e.g. as requested in\r\nhttps://github.com/bazelbuild/rules_scala/pull/989#issuecomment-583405161).\r\n\r\nNote that there is no intention to deprecate + remove the top-level\r\ntargets in the foreseeable future.\r\n\r\n* Add BUILD files in //java to java_EXTRA_DIST"
         },
         {
             "hash": "10c48c980f8a6c81ba6e117590ee7843c89d593f",
-            "message": "Intel compiler: silence noisy warning for incorrectly evaluated inlining\n",
-            "tag_name": null
+            "message": "Intel compiler: silence noisy warning for incorrectly evaluated inlining"
         },
         {
             "hash": "8312c3656783ec02cf5c76ab45b92c7e8d0acdbf",
-            "message": "Intel compiler: ifdef out an incorrectly evaluated is_pod type trait\n",
-            "tag_name": null
+            "message": "Intel compiler: ifdef out an incorrectly evaluated is_pod type trait"
         },
         {
             "hash": "06ae5d804234c764ec44387fa29688b8c8113903",
-            "message": "Use PROTOBUF_RTTI from port_def.inc macro instead of checking for absence of GOOGLE_PROTOBUF_NO_RTTI macro\n\nThese were the only 2 remaining occurences of this pattern.\n",
-            "tag_name": null
+            "message": "Use PROTOBUF_RTTI from port_def.inc macro instead of checking for absence of GOOGLE_PROTOBUF_NO_RTTI macro\n\nThese were the only 2 remaining occurences of this pattern."
         },
         {
             "hash": "82a057596ec46cf6deb4a81b1cd6a84a2f67ac1f",
-            "message": "Destruct CodedOutputStream instead of using Trim()\n",
-            "tag_name": null
+            "message": "Destruct CodedOutputStream instead of using Trim()"
         },
         {
             "hash": "f6902d6afebfbcb28a492145a75611660230810e",
-            "message": "Made protoc --descriptor_set_out deterministic.\n\nRepeatable protoc output is useful because it's sometimes\nchecked into version control, and rerunning protoc should\nnot generate unnecessary diffs.\n",
-            "tag_name": null
+            "message": "Made protoc --descriptor_set_out deterministic.\n\nRepeatable protoc output is useful because it's sometimes\nchecked into version control, and rerunning protoc should\nnot generate unnecessary diffs."
         },
         {
             "hash": "a24e594833b47f1a709c79a194d3030abb9e64b9",
-            "message": "Update the Xcode version number in Kokoro (#7202)\n\nCurrently all of our MacOS tests are failing with the error: \"autom4te: need GNU m4 1.4 or later: /usr/bin/m4\". This is likely to be happening because Kokoro has updated their Xcode version to 11.3.",
-            "tag_name": null
+            "message": "Update the Xcode version number in Kokoro (#7202)\n\nCurrently all of our MacOS tests are failing with the error: \"autom4te: need GNU m4 1.4 or later: /usr/bin/m4\". This is likely to be happening because Kokoro has updated their Xcode version to 11.3."
         },
         {
             "hash": "32caf511c87da93e7bc9981c2d647f6ce1865f39",
-            "message": "Fix GCC build with PROTOBUF_USE_DLLS enabled\n\nGCC does not allow mixing __attribute__(()) syntax alignas()\nsyntax. Re-use approach from chromium base/compiler_specific.h\n",
-            "tag_name": null
+            "message": "Fix GCC build with PROTOBUF_USE_DLLS enabled\n\nGCC does not allow mixing __attribute__(()) syntax alignas()\nsyntax. Re-use approach from chromium base/compiler_specific.h"
         },
         {
             "hash": "f2c5ee51176e967e50b1f7fb6222fe9301a75521",
-            "message": "Fix for JSON serialization of 0/empty-valued wrapper types (#7198)\n\n* Fixed Ruby JSON serialization of 0/empty wrapper fields.\r\n\r\n* Removed newly-passing conformance tests from the failure list.\r\n",
-            "tag_name": null
+            "message": "Fix for JSON serialization of 0/empty-valued wrapper types (#7198)\n\n* Fixed Ruby JSON serialization of 0/empty wrapper fields.\r\n\r\n* Removed newly-passing conformance tests from the failure list."
         },
         {
             "hash": "802e1b99b2e11fb30660d076951fbb79258e670d",
-            "message": "Attempt to mitigate \"docker pull\" failures\n\nLots of CI tests have been failing recently with error messages like\nthis from \"docker pull\":\n\n  Error response from daemon: unexpected EOF\n\nThis seems to be an issue affecting other projects as well:\nhttps://forums.docker.com/t/docker-pull-causes-error-response-from-daemon-unexpected-eof/88608\n\nThis commit tries to mitigate the problem by periodically retrying\nfailed Docker pulls.\n",
-            "tag_name": null
+            "message": "Attempt to mitigate \"docker pull\" failures\n\nLots of CI tests have been failing recently with error messages like\nthis from \"docker pull\":\n\n  Error response from daemon: unexpected EOF\n\nThis seems to be an issue affecting other projects as well:\nhttps://forums.docker.com/t/docker-pull-causes-error-response-from-daemon-unexpected-eof/88608\n\nThis commit tries to mitigate the problem by periodically retrying\nfailed Docker pulls."
         },
         {
             "hash": "94b39efdf70de21bc757dc2aceaf5ed36c6535a3",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300369497\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300369497"
         },
         {
             "hash": "a0cc0e83cbf4890a37db79584878efa24ed43ccf",
-            "message": "Remove unnecessary branch from ReadTag (#7289)\n\n* Remove unnecesary branch from ReadTag\r\n\r\n* address comments",
-            "tag_name": null
+            "message": "Remove unnecessary branch from ReadTag (#7289)\n\n* Remove unnecesary branch from ReadTag\r\n\r\n* address comments"
         },
         {
             "hash": "9bccb253c4b2b49f72f6070d957308e72d0344d6",
-            "message": "Add license header to benchmark/datasets .proto files\n",
-            "tag_name": null
+            "message": "Add license header to benchmark/datasets .proto files"
         },
         {
             "hash": "88a3193f42fcbee52afeef1ed57477b8be2e920a",
-            "message": "Remove check that C++ version is at least C++98",
-            "tag_name": null
+            "message": "Remove check that C++ version is at least C++98"
         },
         {
             "hash": "edb67ec44678fe6154d964ee66ceb08145c2f591",
-            "message": "Fix typo",
-            "tag_name": null
+            "message": "Fix typo"
         },
         {
             "hash": "8a5a24236428d1ddb5db87485171dc3128b307f5",
-            "message": "Add compile-time tests for RTTI to port_def.inc\n\nThis eliminates an ODR violation where users compile and install\r\nProtobuf's C++ runtime without RTTI but do not define\r\nGOOGLE_PROTOBUF_NO_RTTI when compiling their project with\r\nthe generated code.",
-            "tag_name": null
+            "message": "Add compile-time tests for RTTI to port_def.inc\n\nThis eliminates an ODR violation where users compile and install\r\nProtobuf's C++ runtime without RTTI but do not define\r\nGOOGLE_PROTOBUF_NO_RTTI when compiling their project with\r\nthe generated code."
         },
         {
             "hash": "6f129c123e02673736d8facd8dc046a38a4375b8",
-            "message": "Update docs so we can generate better output from Sphinx. (#7295)\n\nThis change updates docstrings and comments so that they will produce nicer\r\nformatting and cross-references from Sphinx. There are a few broad categories of\r\nchanges:\r\n\r\n- Paramter and attribute docs are updated so that types will be recognized by\r\n  Napoleon (https://sphinxcontrib-napoleon.readthedocs.io/en/latest/) This\r\n  usually just means moving a colon in the docstring, so\r\n  `name: (type) description` becomes `name (type): description`.\r\n\r\n- References to other symbols can be cross-references if they have the right\r\n  format. For example, \"attr_name\" might become \":attr:`attr_name`\".\r\n  https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects\r\n\r\n- For fenced code blocks, adding a double-colon `::` signifies a literal block.\r\n  https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#literal-blocks\r\n\r\n- Some bits of docstrings move from docstring to comments. For TODOs, this\r\n  means we won't be putting stale (or otherwise unrelated) noise into the docs.\r\n  For `Message.DESCRIPTOR`, the change means it gets appropriate documentation.\r\n\r\n- There are some wording tweaks for consistency, and some new docstrings\r\n  (especially for methods in Message).\r\n\r\nFor types, I used the convention of `list[Foo]` and `dict(foo, bar)`, which seem\r\nto be common among other Python rst docstrings. Sphinx should generally\r\nrecognize both, and cross-links them correctly (both internally and to Python\r\nlibrary documentation). Upgrading to Python3-style type annotations would allow\r\nus to use `sphinx-autodoc-typehints`; the changes in this commit are very\r\nsimilar to typing-based hints.",
-            "tag_name": null
+            "message": "Update docs so we can generate better output from Sphinx. (#7295)\n\nThis change updates docstrings and comments so that they will produce nicer\r\nformatting and cross-references from Sphinx. There are a few broad categories of\r\nchanges:\r\n\r\n- Paramter and attribute docs are updated so that types will be recognized by\r\n  Napoleon (https://sphinxcontrib-napoleon.readthedocs.io/en/latest/) This\r\n  usually just means moving a colon in the docstring, so\r\n  `name: (type) description` becomes `name (type): description`.\r\n\r\n- References to other symbols can be cross-references if they have the right\r\n  format. For example, \"attr_name\" might become \":attr:`attr_name`\".\r\n  https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects\r\n\r\n- For fenced code blocks, adding a double-colon `::` signifies a literal block.\r\n  https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#literal-blocks\r\n\r\n- Some bits of docstrings move from docstring to comments. For TODOs, this\r\n  means we won't be putting stale (or otherwise unrelated) noise into the docs.\r\n  For `Message.DESCRIPTOR`, the change means it gets appropriate documentation.\r\n\r\n- There are some wording tweaks for consistency, and some new docstrings\r\n  (especially for methods in Message).\r\n\r\nFor types, I used the convention of `list[Foo]` and `dict(foo, bar)`, which seem\r\nto be common among other Python rst docstrings. Sphinx should generally\r\nrecognize both, and cross-links them correctly (both internally and to Python\r\nlibrary documentation). Upgrading to Python3-style type annotations would allow\r\nus to use `sphinx-autodoc-typehints`; the changes in this commit are very\r\nsimilar to typing-based hints."
         },
         {
             "hash": "637d7eda30cd6945da13f4b089612d2e80c6bf33",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300117791\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 300117791"
         },
         {
             "hash": "228fbf513d7155cce3e5f6bd7c7c98f70d0f21af",
-            "message": "Change dependencies in the Conda environment.\n\nWe can remove the dependency on sphinxcontrib, since sphinx.ext.napoleon is\nalready available. This means we can drop conda-forge, which substantially\nreduces build memory usage (see: readthedocs/readthedocs.org#6742,\nconda/conda#5003, conda/conda#8650, readthedocs/readthedocs.org#6692).\n\nBump Sphinx to 2.4.0, while we're at it.\n",
-            "tag_name": null
+            "message": "Change dependencies in the Conda environment.\n\nWe can remove the dependency on sphinxcontrib, since sphinx.ext.napoleon is\nalready available. This means we can drop conda-forge, which substantially\nreduces build memory usage (see: readthedocs/readthedocs.org#6742,\nconda/conda#5003, conda/conda#8650, readthedocs/readthedocs.org#6692).\n\nBump Sphinx to 2.4.0, while we're at it."
         },
         {
             "hash": "4fa3c8e883629b7d437346c9847a003e8e24f9be",
-            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 299970447\n",
-            "tag_name": null
+            "message": "Project import generated by Copybara\n\nPiperOrigin-RevId: 299970447"
         },
         {
             "hash": "460376190bc9c7da37a7431def0f2337b4e30502",
-            "message": "cmake: extended protobuf_generate\n\nAdded an optional `PLUGIN` argument to `protobuf_generate` which\nwill be forwarded to the `--plugin=` argument of `protoc`.\n",
-            "tag_name": null
+            "message": "cmake: extended protobuf_generate\n\nAdded an optional `PLUGIN` argument to `protobuf_generate` which\nwill be forwarded to the `--plugin=` argument of `protoc`."
         },
         {
             "hash": "f130827371fc73ab6e24d44313af6577cc2f9d57",
-            "message": "Don't expect to include Python ReadTheDocs metadata in the distribution.\n",
-            "tag_name": null
+            "message": "Don't expect to include Python ReadTheDocs metadata in the distribution."
         },
         {
             "hash": "619a8262aa44a2436da9db20bb454b9407715ed5",
-            "message": "Make sure setup.py has a valid path.\n\nIn some invocation patterns, `os.path.dirname(__file__)` may not return a valid\nvalue. This change defaults to os.curdir in that case.\n",
-            "tag_name": null
+            "message": "Make sure setup.py has a valid path.\n\nIn some invocation patterns, `os.path.dirname(__file__)` may not return a valid\nvalue. This change defaults to os.curdir in that case."
         },
         {
             "hash": "c91ab40081b1916b286c6c9a4ce7fce4c1125a87",
-            "message": "Correcting import path selection for protoc\n\nWhen there are multiple proto file inputs, they are matched with the provided proto directories (-I option). These directories are tested sequentially for each input proto file and if input file is in a subdirectory of provided proto directories, this directory is considered as base for calculating output directory. This update provides same manner and removes limitations imposed by using `${CMAKE_CURRENT_SOURCE_DIR}` as main proto import directory.\r\n1- `${CMAKE_CURRENT_SOURCE_DIR}` is only added to include directories if no import directory is provided and we are not in `APPEND_PATH` mode. In addition it is added as last possible directory to decrease its priority in searching.\r\n2- Each directory is checked against `${_protobuf_include_path}` to find first possible directory which is parent directory of input proto file. If a directory is found, `${_rel_dir}` is calculated based on its value. If no suitable folder is found, an error will be generated.",
-            "tag_name": null
+            "message": "Correcting import path selection for protoc\n\nWhen there are multiple proto file inputs, they are matched with the provided proto directories (-I option). These directories are tested sequentially for each input proto file and if input file is in a subdirectory of provided proto directories, this directory is considered as base for calculating output directory. This update provides same manner and removes limitations imposed by using `${CMAKE_CURRENT_SOURCE_DIR}` as main proto import directory.\r\n1- `${CMAKE_CURRENT_SOURCE_DIR}` is only added to include directories if no import directory is provided and we are not in `APPEND_PATH` mode. In addition it is added as last possible directory to decrease its priority in searching.\r\n2- Each directory is checked against `${_protobuf_include_path}` to find first possible directory which is parent directory of input proto file. If a directory is found, `${_rel_dir}` is calculated based on its value. If no suitable folder is found, an error will be generated."
         },
         {
             "hash": "c62ffaa539a50dd306f48bed0bee294beabd00de",
-            "message": "Incorrect selection of base name\n\nprotoc just changes last extension. We need this change to support files like a.b.proto in the path.",
-            "tag_name": null
+            "message": "Incorrect selection of base name\n\nprotoc just changes last extension. We need this change to support files like a.b.proto in the path."
         },
         {
             "hash": "df6e3a2f54ca893635119e98688a47ad85ecca26",
-            "message": "Merge pull request #7361 from haberman/sync-integrate\n\nIntegrate from Piper @305053102 for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7361 from haberman/sync-integrate\n\nIntegrate from Piper @305053102 for C++, Java, and Python"
         },
         {
             "hash": "4692661ee4f45ded9991fc263f59a5a99869446a",
-            "message": "Merge branch 'sync-piper' into sync-integrate\n",
-            "tag_name": null
+            "message": "Merge branch 'sync-piper' into sync-integrate"
         },
         {
             "hash": "c558aa75a36703cc1949acc6fe6b0cf22b80433c",
-            "message": "Call \"Class#new\" over rb_class_new_instance in decoding (#7352)\n\nThis patch has almost no change in behaviour where users have not\r\npatched the implementation of new on either a specific proto object\r\nclass, or `Google::Protobuf::MessageExts::ClassMethods`. The default\r\nimplementation of `new`, and `rb_class_new_instance` have the same\r\nbehaviour.\r\n\r\nBy default when we call `new` on a class in Ruby, it goes to the `Class`\r\nclass's implementation:\r\n\r\n```ruby\r\nclass Foo\r\nend\r\n\r\n>> Foo.method(:new).owner\r\n=> Class\r\n```\r\n\r\nthe `Class` implementation of `new` is (pseudocode, it's actually in c):\r\n\r\n```ruby\r\nclass Class\r\n  def new(*args, &blk)\r\n    instance = alloc\r\n    instance.initialize(*args, &blk)\r\n    instance\r\n  end\r\nend\r\n```\r\n\r\n`rb_class_new_instance` does the same thing, it calls down to\r\n[`rb_class_s_new`](https://github.com/ruby/ruby/blob/v2_5_5/object.c#L2147),\r\nwhich calls `rb_class_alloc`, then `rb_obj_call_init`.\r\n\r\n`rb_funcall` is a variadic c function for calling a ruby method on an object,\r\nit takes:\r\n\r\n* A `VALUE` on to which the method should be called\r\n* An `ID` which should be an ID of a method, usually created with `rb_intern`,\r\n  to get an ID from a string\r\n* An integer, the number of arguments calling the  method with,\r\n* A number of `VALUE`s, to send to the method call.\r\n\r\n`rb_funcall` is the same as calling a method directly in Ruby, and will perform\r\nancestor chain respecting method lookup.\r\n\r\nThis means that in C extensions, if nobody has defined the `new` method on any\r\nclasses or modules in a class's inheritance chain calling\r\n`rb_class_new_instance` is the same as calling `rb_funcall(klass,\r\nrb_intern(\"new\"))`, *however* this removes the ability for users to define or\r\nmonkey patch their own constructors in to the objects created by the C\r\nextension.\r\n\r\nIn Ads, we define [`new`](https://git.io/JvFC9) on\r\n`Google::Protobuf::MessageExts::ClassMethods` to allow us to insert a\r\nmonkeypatch which makes it possible to assign primitive values to wrapper type\r\nfields (e.g. Google::Protobuf::StringValue). The monkeypatch we apply works for\r\nobjects that we create for the user via the `new` method. Before this commit,\r\nhowever, the patch does not work for the `decode` method, for the reasons\r\noutlined above. Before this commit, protobuf uses `rb_class_new_instance`.\r\n\r\nAfter this commit, we use `rb_funcall(klass, rb_intern(\"new\"), 0);` to construct\r\nprotobuf objects during decoding. While I haven't measured it this will have\r\na very minor performance impact for decoding (`rb_funcall` will have to go to the\r\nmethod cache, which `rb_class_new_instance` will not). This does however do\r\nthe \"more rubyish\" thing of respecting the protobuf object's inheritance chain\r\nto construct them during decoding.\r\n\r\nI have run both Ads and Cloud's test suites for Ruby libraries against this\r\npatch, as well as the protobuf Ruby gem's test suite locally.",
-            "tag_name": null
+            "message": "Call \"Class#new\" over rb_class_new_instance in decoding (#7352)\n\nThis patch has almost no change in behaviour where users have not\r\npatched the implementation of new on either a specific proto object\r\nclass, or `Google::Protobuf::MessageExts::ClassMethods`. The default\r\nimplementation of `new`, and `rb_class_new_instance` have the same\r\nbehaviour.\r\n\r\nBy default when we call `new` on a class in Ruby, it goes to the `Class`\r\nclass's implementation:\r\n\r\n```ruby\r\nclass Foo\r\nend\r\n\r\n>> Foo.method(:new).owner\r\n=> Class\r\n```\r\n\r\nthe `Class` implementation of `new` is (pseudocode, it's actually in c):\r\n\r\n```ruby\r\nclass Class\r\n  def new(*args, &blk)\r\n    instance = alloc\r\n    instance.initialize(*args, &blk)\r\n    instance\r\n  end\r\nend\r\n```\r\n\r\n`rb_class_new_instance` does the same thing, it calls down to\r\n[`rb_class_s_new`](https://github.com/ruby/ruby/blob/v2_5_5/object.c#L2147),\r\nwhich calls `rb_class_alloc`, then `rb_obj_call_init`.\r\n\r\n`rb_funcall` is a variadic c function for calling a ruby method on an object,\r\nit takes:\r\n\r\n* A `VALUE` on to which the method should be called\r\n* An `ID` which should be an ID of a method, usually created with `rb_intern`,\r\n  to get an ID from a string\r\n* An integer, the number of arguments calling the  method with,\r\n* A number of `VALUE`s, to send to the method call.\r\n\r\n`rb_funcall` is the same as calling a method directly in Ruby, and will perform\r\nancestor chain respecting method lookup.\r\n\r\nThis means that in C extensions, if nobody has defined the `new` method on any\r\nclasses or modules in a class's inheritance chain calling\r\n`rb_class_new_instance` is the same as calling `rb_funcall(klass,\r\nrb_intern(\"new\"))`, *however* this removes the ability for users to define or\r\nmonkey patch their own constructors in to the objects created by the C\r\nextension.\r\n\r\nIn Ads, we define [`new`](https://git.io/JvFC9) on\r\n`Google::Protobuf::MessageExts::ClassMethods` to allow us to insert a\r\nmonkeypatch which makes it possible to assign primitive values to wrapper type\r\nfields (e.g. Google::Protobuf::StringValue). The monkeypatch we apply works for\r\nobjects that we create for the user via the `new` method. Before this commit,\r\nhowever, the patch does not work for the `decode` method, for the reasons\r\noutlined above. Before this commit, protobuf uses `rb_class_new_instance`.\r\n\r\nAfter this commit, we use `rb_funcall(klass, rb_intern(\"new\"), 0);` to construct\r\nprotobuf objects during decoding. While I haven't measured it this will have\r\na very minor performance impact for decoding (`rb_funcall` will have to go to the\r\nmethod cache, which `rb_class_new_instance` will not). This does however do\r\nthe \"more rubyish\" thing of respecting the protobuf object's inheritance chain\r\nto construct them during decoding.\r\n\r\nI have run both Ads and Cloud's test suites for Ruby libraries against this\r\npatch, as well as the protobuf Ruby gem's test suite locally."
         },
         {
             "hash": "4059c61f27eb1b06c4ee979546a238be792df0a4",
-            "message": "Typo in 'disciplines' (#7423)\n\n",
-            "tag_name": null
+            "message": "Typo in 'disciplines' (#7423)"
         },
         {
             "hash": "dddeed298bf84505f4d123a068f911025b351661",
-            "message": "[ObjC] Typos and comment improvements.\n",
-            "tag_name": null
+            "message": "[ObjC] Typos and comment improvements."
         },
         {
             "hash": "7b6016e343741df37a7811efc239d5b1cda10575",
-            "message": "[ObjC] Add tests for proto3 optional behaviors.\n",
-            "tag_name": null
+            "message": "[ObjC] Add tests for proto3 optional behaviors."
         },
         {
             "hash": "b0e2792842d5acb07bc11e2d5afbdc9d80a9fbdb",
-            "message": "[ObjC] Generation changes around proto3 optional.\n\n- Bump the version marker in the generated code.\n- Set the flag to say clear on zero is known.\n- Set clear on zero for proto3 optional fields that aren't tagged as optional.\n- Also tweak the call from some C generated code to use different apis with\n  better validation.\n- Mark the ObjC generator as supporting the proto3 optional feature.\n- Regenerate the WKTs to get the new flags.\n",
-            "tag_name": null
+            "message": "[ObjC] Generation changes around proto3 optional.\n\n- Bump the version marker in the generated code.\n- Set the flag to say clear on zero is known.\n- Set clear on zero for proto3 optional fields that aren't tagged as optional.\n- Also tweak the call from some C generated code to use different apis with\n  better validation.\n- Mark the ObjC generator as supporting the proto3 optional feature.\n- Regenerate the WKTs to get the new flags."
         },
         {
             "hash": "3c8e959b6069e379210ee10751892c864cae2372",
-            "message": "[ObjC] Update oneof clearing internals.\n\n- Add/document an public api for clearing oneofs.\n- Move the current library internals to a new api and keep a shim for old\n  generated code.\n",
-            "tag_name": null
+            "message": "[ObjC] Update oneof clearing internals.\n\n- Add/document an public api for clearing oneofs.\n- Move the current library internals to a new api and keep a shim for old\n  generated code."
         },
         {
             "hash": "e1e5b8af7916f5a93d16b577a7c0b02ca9192f17",
-            "message": "[ObjC] Update some library internals to not pass syntax versions.\n\n- With the new flags, the syntax isn't needed, so don't pass it.\n- To keep library binary compatibility, rename the helpers since one\n  \"Internal\" method was called from generated code. Keep a shim with\n  the old signature to support those generated sources.\n",
-            "tag_name": null
+            "message": "[ObjC] Update some library internals to not pass syntax versions.\n\n- With the new flags, the syntax isn't needed, so don't pass it.\n- To keep library binary compatibility, rename the helpers since one\n  \"Internal\" method was called from generated code. Keep a shim with\n  the old signature to support those generated sources."
         },
         {
             "hash": "8d224b4c48c7821a967abf274db44ac9bd5f4db9",
-            "message": "[ObjC] Runtime support for proto3 optional.\n\n- Add a Descriptor flag to capture if the field should clear on being zeroed.\n- Update the runtime to use the new clear on zero flag.\n- Add a flag on message initialization to indicate the sources were generated\n  with/without this support so the runtime can backfill the flag for older\n  generated sources.\n",
-            "tag_name": null
+            "message": "[ObjC] Runtime support for proto3 optional.\n\n- Add a Descriptor flag to capture if the field should clear on being zeroed.\n- Update the runtime to use the new clear on zero flag.\n- Add a flag on message initialization to indicate the sources were generated\n  with/without this support so the runtime can backfill the flag for older\n  generated sources."
         },
         {
             "hash": "e9b0c9265984bec7c7bce69dc6ac2dbd015a62f9",
-            "message": "[ObjC] Update oneof generation for proto3 optional.\n\n- Don't make an OneofGenerator for synthetic oneofs.\n- Update the field calculations that determine if hasbits are needed to\n  know about synthetic oneofs and ignore them.\n",
-            "tag_name": null
+            "message": "[ObjC] Update oneof generation for proto3 optional.\n\n- Don't make an OneofGenerator for synthetic oneofs.\n- Update the field calculations that determine if hasbits are needed to\n  know about synthetic oneofs and ignore them."
         },
         {
             "hash": "59f8dd5fafe44cb2aee5dd352361b3a540880a1c",
-            "message": "[ObjC] Move over some custom logic to Descriptor provided info.\n\nFieldDescriptor::has_presence works as a replacement for the custom logic we\nhad for FieldGenerator::WantsHasProperty(), and is already proto3 optional\naware.\n",
-            "tag_name": null
+            "message": "[ObjC] Move over some custom logic to Descriptor provided info.\n\nFieldDescriptor::has_presence works as a replacement for the custom logic we\nhad for FieldGenerator::WantsHasProperty(), and is already proto3 optional\naware."
         },
         {
             "hash": "f494cb222d1b10a56273c07a3f5991b4b107958b",
-            "message": "Test in Ruby 2.7 (#7386)\n\n* Test in Ruby 2.7\r\n\r\n* Turn off GC.stress for 'require' in Ruby 2.7\r\n\r\n* Backport 2c8364b to compatibility_tests/v3.0.0",
-            "tag_name": null
+            "message": "Test in Ruby 2.7 (#7386)\n\n* Test in Ruby 2.7\r\n\r\n* Turn off GC.stress for 'require' in Ruby 2.7\r\n\r\n* Backport 2c8364b to compatibility_tests/v3.0.0"
         },
         {
             "hash": "81c9b85dee8a0b3a2714f974ff53b16b25e7caaf",
-            "message": "Add new files into Makefile.am\n",
-            "tag_name": null
+            "message": "Add new files into Makefile.am"
         },
         {
             "hash": "97737072f9f6552fd5fa2bc4ca085793a9b708dd",
-            "message": "Add reflection support for proto3 optional fields\n\nThis is more involved than might be expected because the synthetic oneofs don't generate the properties we would usually expect to see.\n",
-            "tag_name": null
+            "message": "Add reflection support for proto3 optional fields\n\nThis is more involved than might be expected because the synthetic oneofs don't generate the properties we would usually expect to see."
         },
         {
             "hash": "bad9d753ae7da7f4ca6be84b2cd3f356fe416cbc",
-            "message": "Add unit tests for proto3 optional fields\n\n(This isn't as exhaustive as it might be, but the behavior is basically the same as proto2 optional fields.)\n",
-            "tag_name": null
+            "message": "Add unit tests for proto3 optional fields\n\n(This isn't as exhaustive as it might be, but the behavior is basically the same as proto2 optional fields.)"
         },
         {
             "hash": "b0649a088a89b65f16b02428208e82afc92e808e",
-            "message": "Regenerate C# code with the new generator, adding unittest_proto3_optional.proto\n\nThe changes in the existing proto2 code are solely around presence bits. The new generator allocated presence bits more efficiently. (Previously bits were sometimes allocated but never used.)\n",
-            "tag_name": null
+            "message": "Regenerate C# code with the new generator, adding unittest_proto3_optional.proto\n\nThe changes in the existing proto2 code are solely around presence bits. The new generator allocated presence bits more efficiently. (Previously bits were sometimes allocated but never used.)"
         },
         {
             "hash": "4dcafd12cb6b059a6af3ece3409c63f0b136e6b6",
-            "message": "Support proto3 optional fields in the C# generator\n\nMost changes are:\n\n- Introducing new helpers of SupportsPresenceApi and RequiresPresenceBit. This allows calling code to be a lot clearer about what it's interested in.\n- Changing most previous IsProto2 calls to use one of the two new helper methods\n- Avoiding treating synthetic oneofs as regular ones\n- Some slight refactoring in csharp_primitive_field to avoid code duplication\n- Comments explaining what we want when, so the next maintainer doesn't need to do the detective work I did!\n\nThis change deliberately doesn't modify the API surface of any\nexisting code. The only change to previously-generated C# should be\nmaking presence bits more efficient in proto2.\n\nOnce proto3 optional fields are supported, we can consider further\nchanges to make the proto2 and proto3 generated API surface more\nconsistent (e.g. adding presence API for message fields and oneofs).\n",
-            "tag_name": null
+            "message": "Support proto3 optional fields in the C# generator\n\nMost changes are:\n\n- Introducing new helpers of SupportsPresenceApi and RequiresPresenceBit. This allows calling code to be a lot clearer about what it's interested in.\n- Changing most previous IsProto2 calls to use one of the two new helper methods\n- Avoiding treating synthetic oneofs as regular ones\n- Some slight refactoring in csharp_primitive_field to avoid code duplication\n- Comments explaining what we want when, so the next maintainer doesn't need to do the detective work I did!\n\nThis change deliberately doesn't modify the API surface of any\nexisting code. The only change to previously-generated C# should be\nmaking presence bits more efficient in proto2.\n\nOnce proto3 optional fields are supported, we can consider further\nchanges to make the proto2 and proto3 generated API surface more\nconsistent (e.g. adding presence API for message fields and oneofs)."
         },
         {
             "hash": "4c9613f226dcecd174a1233512632d41373217ef",
-            "message": "Register that the C# compiler supports proto3 presence.\n\n(It doesn't yet, but will in the next commits...)\n",
-            "tag_name": null
+            "message": "Register that the C# compiler supports proto3 presence.\n\n(It doesn't yet, but will in the next commits...)"
         },
         {
             "hash": "7eddac7877b6983cdb23a082dcbe63efe3403b95",
-            "message": "Added some info about Reflection, and a note about timeline. (#7416)\n\n* Added some info about Reflection, and a note about timeline.\r\n\r\n* Fixed heading levels.\r\n\r\n* A bit more info.",
-            "tag_name": null
+            "message": "Added some info about Reflection, and a note about timeline. (#7416)\n\n* Added some info about Reflection, and a note about timeline.\r\n\r\n* Fixed heading levels.\r\n\r\n* A bit more info."
         },
         {
             "hash": "fda8544a596dd3049ed4e826edc63a515c690bfb",
-            "message": "Howto doc for implementing proto3 presence in a code generator. (#7407)\n\n",
-            "tag_name": null
+            "message": "Howto doc for implementing proto3 presence in a code generator. (#7407)"
         },
         {
             "hash": "e48c92952d9445309ad1e566ac5557af2ee09c87",
-            "message": "Add application note for explicit presence tracking. (#7390)\n\nThis includes instructions for enabling explicit presence tracking in proto3, and also explains implicit presence. The language examples were written by inspection, and not individually tested.",
-            "tag_name": null
+            "message": "Add application note for explicit presence tracking. (#7390)\n\nThis includes instructions for enabling explicit presence tracking in proto3, and also explains implicit presence. The language examples were written by inspection, and not individually tested."
         },
         {
             "hash": "6b759688a1656e93da5776d94d018c85339c7b07",
-            "message": "Implemented proto3 presence for Ruby. (#7406)\n\n* WIP.\r\n\r\n* WIP.\r\n\r\n* Builds and runs. Tests need to be updated to test presence.\r\n\r\n* Ruby: proto3 presence is passing all tests.\r\n\r\n* Fixed a bug where empty messages has the wrong oneof count.",
-            "tag_name": null
+            "message": "Implemented proto3 presence for Ruby. (#7406)\n\n* WIP.\r\n\r\n* WIP.\r\n\r\n* Builds and runs. Tests need to be updated to test presence.\r\n\r\n* Ruby: proto3 presence is passing all tests.\r\n\r\n* Fixed a bug where empty messages has the wrong oneof count."
         },
         {
             "hash": "94afb8ab36032762210d2100b9a10f8cf1fdc856",
-            "message": "Add Ruby tests for oneof cases. (#7385)\n\nIn Ruby, the oneof case returns a symbol with the name of the field that is set. These were not previously tested.",
-            "tag_name": null
+            "message": "Add Ruby tests for oneof cases. (#7385)\n\nIn Ruby, the oneof case returns a symbol with the name of the field that is set. These were not previously tested."
         },
         {
             "hash": "c953182fa92f1633faa098d0aff514ed84454522",
-            "message": "Generate documentation for internal.container. (#7294)\n\nSince our (public) generated APIs document their use of repeated fields, we should probably document its API, too.\r\n\r\nThis includes some changes to generate_docs.py to explicitly allow named modules, since the repeated field implementation lives in the \"internal\" tree.",
-            "tag_name": null
+            "message": "Generate documentation for internal.container. (#7294)\n\nSince our (public) generated APIs document their use of repeated fields, we should probably document its API, too.\r\n\r\nThis includes some changes to generate_docs.py to explicitly allow named modules, since the repeated field implementation lives in the \"internal\" tree."
         },
         {
             "hash": "18950451c7bfb1497f1deaf1c3868e79e332d80a",
-            "message": "Ruby: assigning 'nil' to submessage should clear the field. (#7397)\n\nPreviously if you assigned 'nil' to a submessage in proto2\r\nthe field would be set to 'nil' but would still have its hasbit\r\nset. This was a clear bug so I'm fixing it outright, even though\r\nit is an observable behavior change.",
-            "tag_name": null
+            "message": "Ruby: assigning 'nil' to submessage should clear the field. (#7397)\n\nPreviously if you assigned 'nil' to a submessage in proto2\r\nthe field would be set to 'nil' but would still have its hasbit\r\nset. This was a clear bug so I'm fixing it outright, even though\r\nit is an observable behavior change."
         },
         {
             "hash": "81573b9256e748db6679b9dda089f21c16a9148c",
-            "message": "Merge pull request #7402 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7402 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "e164e15027037162f1886656742c0b12fd214c3b",
-            "message": "Merge branch 'sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge branch 'sync-piper' into sync-stage"
         },
         {
             "hash": "f15ac4091f96eb88f583eaa040ed16319104ebd2",
-            "message": "Drop 3.3, 3.4 and use single version docker images for all python tests (#7396)\n\n* Create a new docker image for python 3.6\r\n\r\nThe previous one cannot build, because python3.6 was removed from\r\nstretch.\r\n\r\n* Drop support for 3.3 and 3.4\r\n\r\nAlso update all docker file to be single version",
-            "tag_name": null
+            "message": "Drop 3.3, 3.4 and use single version docker images for all python tests (#7396)\n\n* Create a new docker image for python 3.6\r\n\r\nThe previous one cannot build, because python3.6 was removed from\r\nstretch.\r\n\r\n* Drop support for 3.3 and 3.4\r\n\r\nAlso update all docker file to be single version"
         },
         {
             "hash": "2c8364bcd199f4ce98892be10cafd7d3e537c0eb",
-            "message": "Rails2.7 segfaults (#7091)\n\n* Add a test suite for ruby 2.7\r\n\r\n* Call BigDecimal() instead of BigDecimal.new()\r\n\r\nBigDecimal.new was deprecated in ruby 2.6\r\n\r\n* Switch FrozenError expectation to a matcher\r\n\r\nThe error message for FrozenError changed to include more information\r\nabout the mutated object. Switch from an exact match to an aproximate\r\nmatch (equal => match). This does not change the prefix.\r\n\r\n* We can safely ignore newest array methods from ruby 2.7",
-            "tag_name": null
+            "message": "Rails2.7 segfaults (#7091)\n\n* Add a test suite for ruby 2.7\r\n\r\n* Call BigDecimal() instead of BigDecimal.new()\r\n\r\nBigDecimal.new was deprecated in ruby 2.6\r\n\r\n* Switch FrozenError expectation to a matcher\r\n\r\nThe error message for FrozenError changed to include more information\r\nabout the mutated object. Switch from an exact match to an aproximate\r\nmatch (equal => match). This does not change the prefix.\r\n\r\n* We can safely ignore newest array methods from ruby 2.7"
         },
         {
             "hash": "64f6c59ccb56497749e83792696e726169aa00fc",
-            "message": "Build extensions for Ruby 2.7 (#7027)\n\n* Build extensions for Ruby 2.7\r\n\r\n* Try installing bundler 2.x\r\n\r\n* Try bumping rake-compiler-dock\r\n\r\n* Use standard RCD images\r\n\r\n* Avoid 'rake cross native' with rake-compiler-dock\r\n\r\n* Use Ruby 2.5 for building Ruby <= 2.6\r\n\r\n* Use rake-compiler 1.1.0\r\n\r\n* Specify target\r\n\r\n* Don't update Ruby test image for now",
-            "tag_name": null
+            "message": "Build extensions for Ruby 2.7 (#7027)\n\n* Build extensions for Ruby 2.7\r\n\r\n* Try installing bundler 2.x\r\n\r\n* Try bumping rake-compiler-dock\r\n\r\n* Use standard RCD images\r\n\r\n* Avoid 'rake cross native' with rake-compiler-dock\r\n\r\n* Use Ruby 2.5 for building Ruby <= 2.6\r\n\r\n* Use rake-compiler 1.1.0\r\n\r\n* Specify target\r\n\r\n* Don't update Ruby test image for now"
         },
         {
             "hash": "97f5f649a419279368fd10036dca48c6d8ed0f1f",
-            "message": "docs: add python-betterproto\n\nAdds the `betterproto` Python module to the list of implementations.",
-            "tag_name": null
+            "message": "docs: add python-betterproto\n\nAdds the `betterproto` Python module to the list of implementations."
         },
         {
             "hash": "7b8a241b575b756c4dd7a5aec7f7a60854d5f711",
-            "message": "[ObjC] Improve validation on public apis.\n",
-            "tag_name": null
+            "message": "[ObjC] Improve validation on public apis."
         },
         {
             "hash": "95282469eb522d635b644fc136330f27ef627275",
-            "message": "[ObjC] Remove helper to avoid extra lookups.\n\nSkip the helper that fetches the desc again since these methods already\ncollected it.\n",
-            "tag_name": null
+            "message": "[ObjC] Remove helper to avoid extra lookups.\n\nSkip the helper that fetches the desc again since these methods already\ncollected it."
         },
         {
             "hash": "62832897c3cf14c93b91c412f7e64086cd272cb7",
-            "message": "deps: update Guava to 29.0\n\n@rafi-kamal",
-            "tag_name": null
+            "message": "deps: update Guava to 29.0\n\n@rafi-kamal"
         },
         {
             "hash": "88529f5017a3fd4a7cd4d666e541a3934e6491bd",
-            "message": "Merge pull request #7378 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python",
-            "tag_name": null
+            "message": "Merge pull request #7378 from haberman/sync-stage\n\nIntegrate from Piper for C++, Java, and Python"
         },
         {
             "hash": "83ccdfc78d27f19b764f1445a71959e85dbab6aa",
-            "message": "Merge branch 'sync-piper' into sync-stage\n",
-            "tag_name": null
+            "message": "Merge branch 'sync-piper' into sync-stage"
         },
         {
             "hash": "6f3bda22f40984eeacc2ce4602b9918dccb0fd09",
-            "message": "[ObjC] Fix some tests checking the wrong Message class.\n",
-            "tag_name": null
+            "message": "[ObjC] Fix some tests checking the wrong Message class."
         },
         {
             "hash": "24dda9e233dfdf7786e39bfb21035f2d61e8ab34",
-            "message": "Update the build/test script for newer Xcode 11 versions\n\nApple stopped really supporting the 32bit simulators, so don't try\nrunning those any more.\n",
-            "tag_name": null
+            "message": "Update the build/test script for newer Xcode 11 versions\n\nApple stopped really supporting the 32bit simulators, so don't try\nrunning those any more."
         },
         {
             "hash": "50e03cdde3ef1fc7e9674db0a98ee1dea93f6fb2",
-            "message": "Merge pull request #7360 from jtattermusch/refactor_googlebenchmark\n\nRefactor some Protobuf C# microbenchmarks",
-            "tag_name": null
+            "message": "Merge pull request #7360 from jtattermusch/refactor_googlebenchmark\n\nRefactor some Protobuf C# microbenchmarks"
         },
         {
             "hash": "c762a3bb2a8ea865df2fd3c8f832a19b67aee4c4",
-            "message": "update Makefile.am\n",
-            "tag_name": null
+            "message": "update Makefile.am"
         },
         {
             "hash": "4116e659843082e2544f83b362b0a16f1470b555",
-            "message": "improve ParseMessageBenchmark maintainability\n",
-            "tag_name": null
+            "message": "improve ParseMessageBenchmark maintainability"
         },
         {
             "hash": "79cfc73293e3c1d86af8937f3747e1ee1d015873",
-            "message": "refactor WrapperBechmark\n",
-            "tag_name": null
+            "message": "refactor WrapperBechmark"
         },
         {
             "hash": "a2cbd5a8246e7203b27cb938bc170c29e33269ec",
-            "message": "serialization benchmark improvements\n",
-            "tag_name": null
+            "message": "serialization benchmark improvements"
         },
         {
             "hash": "0d43ba41ee207f401412ef4f3f5782a893b25131",
-            "message": "Update to new upb version (#7372)\n\n",
-            "tag_name": null
+            "message": "Update to new upb version (#7372)"
         },
         {
             "hash": "a8a400da5d99abb8bddbd21b46f712c45c2b6f78",
-            "message": "Move to constexpr.\n",
-            "tag_name": null
+            "message": "Move to constexpr."
         },
         {
             "hash": "75553e9ec8a4a18df18208d44bb6e718cb94256a",
-            "message": "Update shell format in installation instructions.",
-            "tag_name": null
+            "message": "Update shell format in installation instructions."
+        }
+    ],
+    "issues": [
+        {
+            "number": "7480",
+            "title": "TextFormat and JsonFormat ignore experimental proto3 optional enums"
+        },
+        {
+            "number": "7395",
+            "title": "Consider removing HasFoo/ClearFoo() for proto2 message fields in C#"
+        },
+        {
+            "number": "7339",
+            "title": "Reserve Protobuf Global Extension Registry number for ADLINK EdgeSDK"
+        },
+        {
+            "number": "4317",
+            "title": "Unit tests seems failure on CommandLineInterfaceTest.Win32ErrorMessage"
+        },
+        {
+            "number": "7302",
+            "title": "Extension number request in my project of grpc-graphql-gateway"
+        },
+        {
+            "number": "6803",
+            "title": "'protobuf/Any.pbobjc.h' file not found"
+        },
+        {
+            "number": "7076",
+            "title": "protoc: c++ windows #defines IN, OUT, and OPTIONAL to empty strings"
+        },
+        {
+            "number": "6742",
+            "title": "JsonFormat.parseBool returns false on \"True\" and \"TRUE\""
+        },
+        {
+            "number": "5003",
+            "title": "FromDatetime does not work with timezone aware datettime objects"
         }
     ]
 }

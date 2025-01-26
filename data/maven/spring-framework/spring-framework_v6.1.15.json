@@ -1,0 +1,394 @@
+{
+    "platform": "maven",
+    "project": "spring-framework",
+    "release": "v6.1.15",
+    "previous_release": "",
+    "cycle_days": 0.0,
+    "commits": 62,
+    "start_delay": 0.0,
+    "duration": 28.226828703703703,
+    "commits_info": [
+        {
+            "hash": "c160cbadb54ca5b37c8cbb41e5864960a7b3947e",
+            "message": "Release v6.1.15"
+        },
+        {
+            "hash": "6cb41dc5e39cd1f4f1da7808c1191c94cb11f43e",
+            "message": "Upgrade to Netty 4.1.115"
+        },
+        {
+            "hash": "1e95332f627f570ac06c0822abe43848b067fec1",
+            "message": "Fix link to \"Resources\" section in reference guide\n\nCloses gh-33882"
+        },
+        {
+            "hash": "fec6ba4dfe3a3033a3ca0a8c90262b44ffeb6d92",
+            "message": "Polishing"
+        },
+        {
+            "hash": "bfde33a5143f6a59b32b9256b8332c91f062fc75",
+            "message": "Document options for Date/Time parsing & formatting issues with JDK 20+\n\nThis commit updates Javadoc and the reference guide to document options\nfor handling date/time parsing and formatting issues on JDK 20 and higher.\n\nA new \"Date and Time Formatting with JDK 20 and higher\" page has also been\nintroduced in the wiki.\n\nhttps://github.com/spring-projects/spring-framework/wiki/Date-and-Time-Formatting-with-JDK-20-and-higher\n\nCloses gh-33151"
+        },
+        {
+            "hash": "14b9865de73f2aebefbc4c63b61c5732ad3bfbfd",
+            "message": "Remove ineffective JettyByteBufferIterator from WebSocket adapter\n\nIn JettyWebSocketHandlerAdapter, JettyByteBufferIterator does not actually add extra behavior (in contrast to JettyClientHttpConnector)."
+        },
+        {
+            "hash": "62eb21f93867d4fef7570b8e1db8352845905827",
+            "message": "Add note on declaring autowired fields as ObjectProvider\n\nCloses gh-33834"
+        },
+        {
+            "hash": "01c85b1afbe18571e0144fad0c1a8fd3a4369079",
+            "message": "Add explicit note on blocking in case of concurrency limit\n\nCloses gh-33873"
+        },
+        {
+            "hash": "df376d934315e211981c1aca7743559913eb2708",
+            "message": "Upgrade to Micrometer 1.12.12 and Reactor 2023.0.12\n\nIncludes Netty 4.1.114, Jetty 12.0.15, Jetty Reactive HttpClient 4.0.8, RxJava 3.1.9, RSocket 1.1.4, Groovy 4.0.24, JRuby 9.4.9, Checkstyle 10.20.1\n\nCloses gh-33877\nCloses gh-33879"
+        },
+        {
+            "hash": "4d792d0e459ba2667dbbbcff051b7abcddc37b46",
+            "message": "Remove mentions of Joda-Time support\n\nSince Joda-Time support was removed in Spring Framework 6.0, this commit\nremoves obsolete mentions of Joda-Time in the reference guide and Javadoc.\n\nSee gh-27426\nCloses gh-33881"
+        },
+        {
+            "hash": "0a5bd89129182ed03c6e912c8c078744e210e782",
+            "message": "Align JettyByteBufferIterator implementations\n\nBoth are now static nested classes."
+        },
+        {
+            "hash": "53b9a2cb78815099d7328aa05d64e44424e2636e",
+            "message": "Fix formatting issue in validation section of reference guide\n\nCloses gh-33871"
+        },
+        {
+            "hash": "e78179b96e41a00f85d741a88f5cd8757fa757f8",
+            "message": "Decode static resource path with UriUtils\n\nCloses gh-33859"
+        },
+        {
+            "hash": "49a63e2c372a497665c1ff719d091eefdb96eca2",
+            "message": "Add tests for gh-33867\n\nCloses gh-33867"
+        },
+        {
+            "hash": "5666e363d1960776fcc39c61a41d99a378cb3edd",
+            "message": "Fix wrong uri tag for client observation convention\n\nPrior to this commit, a client sending a request to\n\"https://example.org\" would record the wrong URI tag as\n\"/https://example.org\".\n\nThis commit ensures that the scheme+host part is matched correctly in\nthe default client observation conventions.\n\nSee gh-33867"
+        },
+        {
+            "hash": "f06853a3399fa83e6d0f0e07a759918477bbc418",
+            "message": "Merge pull request #33865 from ngocnhan-tran1996\n\n* pr/33865:\n  Fix typo in reference documentation\n\nCloses gh-33865"
+        },
+        {
+            "hash": "8afd01ba2ca2baa030038d277c9a4251ce72e508",
+            "message": "Fix typo in reference documentation\n\nSee gh-33865"
+        },
+        {
+            "hash": "9724f9b9c8704ef5e49c183213d28759a7e5a07d",
+            "message": "Introduce tests for SpEL PropertyAccessor ordering\n\nCloses gh-33861"
+        },
+        {
+            "hash": "0d9033592b4baa1e5790eb2e0d2a8c007101f4b8",
+            "message": "Document that circular dependencies should be avoided in AOT mode\n\nCloses gh-33786"
+        },
+        {
+            "hash": "fc7b8ae966a1a4ecb8a2e812b23b6ef5adff1b14",
+            "message": "Fix anchor name, consistently use title case, and polish wording\n\n(cherry picked from commit 2e6c8daec639b8194bf191b9f67056cde2a18f48)"
+        },
+        {
+            "hash": "c457131f1c183e58c0b1193235eea02464267bad",
+            "message": "Fix heading level for \"Programmatic bean registration\" in AOT chapter\n\n(cherry picked from commit 9f0dbc405180ded52250d8b52c430a74c4cb00b8)"
+        },
+        {
+            "hash": "39cfe136dad76dc89ca0f52229d0aa2911b76a55",
+            "message": "Polishing"
+        },
+        {
+            "hash": "05a880e3b5a598f87887be6d78c21f4d43f2b86f",
+            "message": "Fix XML bean reference example in reference manual\n\nCloses gh-33855"
+        },
+        {
+            "hash": "c93af1f76dc77570dbe52e86a0d6c1bd025a911f",
+            "message": "Polishing: copyright header year\n\nSee gh-33823"
+        },
+        {
+            "hash": "541866fd709cbb5f62af098af38b5e68f9eaf253",
+            "message": "Merge pull request #33850 from wilkinsona\n\n* pr/33850:\n  Polish \"Prefer modified resources over the originals in TestCompiler\"\n  Prefer modified resources over the originals in TestCompiler\n\nCloses gh-33850"
+        },
+        {
+            "hash": "0219ee656f8c352c7c1852547fb708db03530887",
+            "message": "Polish \"Prefer modified resources over the originals in TestCompiler\"\n\nSee gh-33850"
+        },
+        {
+            "hash": "f6e1a5de094e6aa450a205f71644693ad59590bd",
+            "message": "Prefer modified resources over the originals in TestCompiler\n\nPreviously, when the test compiler had been seeded with a resource\nfile, any modifications to this resource performed during\ncompilation would be lost as this original content would always\nbe returned.\n\nThis commit updates the DynamicJavaFileManager to always store\nthe dynamic resource in the dynamicResourceFiles map, irrespective\nof whether it's being created afresh or from some existing resource\ncontent. This ensures that any modifications made to the resource\ncan be retrieved later on.\n\nSimilarly, DynamicClassLoader has been updated to prefer dynamic\nresource files over any original resource files. This ensures that\nthe resource that it finds reflects any modifications that have\nbeen made to it.\n\nSee gh-33850"
+        },
+        {
+            "hash": "9b3cb15389b3efe225f802aba724256bf19583c7",
+            "message": "Introduce HttpHeaders#headerSet to guarantee case-insensitive iteration\n\nThe `HttpHeaders#headerSet` method is intended as a drop-in replacement\nfor `entrySet` that guarantees a single casing for all header names\nreported during the iteration, as the cost of some overhead but with\nsupport for iterator removal and entry value-setting.\n\nThe `formatHeaders` static method is also altered to do a similar\ndeduplication of casing variants, but now additionally mentions\n\"with native header names [native name set]\" if the native name set\ncontains casing variants.\n\nCloses gh-33823"
+        },
+        {
+            "hash": "4ef2b429e02381a0f543093c4c74825a79ae7811",
+            "message": "Fix a typo in beanvalidation.adoc\n\nContraintViolation => ConstraintViolation\n\nCloses gh-33846"
+        },
+        {
+            "hash": "0beb56a58cadbe2007af94d2671779c5b39898b2",
+            "message": "Fix indentation to use tabs in Kotlin source files\n\nCloses gh-33840"
+        },
+        {
+            "hash": "6bd4687706467b3e20c8b2f93c7e102b1b77f44d",
+            "message": "Update copyright headers\n\nSee gh-33839"
+        },
+        {
+            "hash": "07b12666b46760b3c3c254bff80f559f377c9f44",
+            "message": "Fix typos in Javadoc and variable names\n\nCloses gh-33839"
+        },
+        {
+            "hash": "438d6de3c17b134e5bc4f2bb5a6d246e0d9fdde4",
+            "message": "Merge pull request #33768 from kunaljani1100\n\n* pr/33768:\n  Polish \"Add test coverage for DomUtils\"\n  Add test coverage for DomUtils\n\nCloses gh-33768"
+        },
+        {
+            "hash": "d43126705f9070c47274abafbd0baf8c8f7635b1",
+            "message": "Polish \"Add test coverage for DomUtils\"\n\nSee gh-33768"
+        },
+        {
+            "hash": "57bbf0ca0f560e5d5359c7a24f855e4d389e2afa",
+            "message": "Add test coverage for DomUtils\n\nSee gh-33768"
+        },
+        {
+            "hash": "27912b1ed13c9e453149d9c14aea06ac432559bb",
+            "message": "Prevent accidental printing to System.err in the codebase\n\nThis also revises the Checkstyle rule so that invocations such as\nSystem.out.printf() are also forbidden."
+        },
+        {
+            "hash": "8ffbafd3847e073bdb213395d7d7027331ff85fd",
+            "message": "Prevent accidental Sysouts in the codebase"
+        },
+        {
+            "hash": "022fdcd67ee4811a5e73e5495280f26149b7446f",
+            "message": "Provide removeCache method on Caffeine/ConcurrentMapCacheManager\n\nCloses gh-33813"
+        },
+        {
+            "hash": "11ebceee38f7cc1f3802769eba9c13c61c136097",
+            "message": "Call get/setRequestConfig for HttpClient 5.4 compatibility\n\nIncludes upgrade to HttpClient 5.4.1 while retaining a HttpClient 5.1 baseline.\n\nCloses gh-33806"
+        },
+        {
+            "hash": "fa21dffcf8f8500b0712a998740b63a17e14ac05",
+            "message": "Restore traditional AspectJ behavior through \"spring.aop.ajc.ignore=true\"\n\nCloses gh-33704"
+        },
+        {
+            "hash": "323de1208acf00ebd3bb022055a381907f3c2de4",
+            "message": "Document limited support for lifecycle management\n\nCloses gh-33780"
+        },
+        {
+            "hash": "94d46eba3c13d2997ce8593bfdc1682a647058db",
+            "message": "Exclusively mention CompletableFuture instead of ListenableFuture\n\nCloses gh-33805"
+        },
+        {
+            "hash": "e340e45f5a689ef622eaa48ca1541d26a83a0d05",
+            "message": "Rename aopAvailable constants in TransactionSynchronizationUtils\n\nCloses gh-33796"
+        },
+        {
+            "hash": "a06bbccf9ecccd41f1099e0462005478cc84974b",
+            "message": "HttpHeaders.writeableHttpHeaders should unwrap many times\n\nPrior to this commit, the `HttpHeaders.writeableHttpHeaders` would only\nconsider headers read-only instances that were wrapped once by\n`HttpHeaders.readOnlyHttpHeaders`. This does not work when other\n`HttpHeaders` wrappers are involved in the chain.\n\nThis commit ensures that `writeableHttpHeaders` unwraps all headers\ninstances down to the actual multivalue map and create a new headers\ninstance out of it.\n\nFixes gh-33789"
+        },
+        {
+            "hash": "bbe362c0e684292fa99426e3876a0dd93aaed940",
+            "message": "Allow null from RestClient exchange methods\n\nCloses gh-33779"
+        },
+        {
+            "hash": "4a81f2c904ef72ec80a043cb9f9b1d9ab2a390c5",
+            "message": "Remove HTTP parts workaround for Resin\n\nA workaround was added for the Resin Servlet container in gh-13937.\nThis avoids attempting to delete parts that are not named, because the\n`part.delete()` call would fail for non-file entries. This can be\nproblematic for files that are unnamed as they might not be removed by\nthe Framework.\n\nThis commit removes this workaround as Resin is not supported anymore.\n\nFixes gh-33511"
+        },
+        {
+            "hash": "fb0a108254b6634035232e29528cd9eeb1070c0c",
+            "message": "Improve Javadoc for core SpEL APIs"
+        },
+        {
+            "hash": "c98f314665a27f88dbb8168db650c1598cafad72",
+            "message": "Throw ParseException for unsupported character in SpEL expression\n\nPrior to this commit, the SpEL Tokenizer threw an IllegalStateException\nwhen an unsupported character was detected in a SpEL expression;\nhowever, the Javadoc for ExpressionParser.parseExpression() states that\nit throws a ParseException if an exception occurred during parsing.\n\nThis commit addresses that issue by throwing a SpelParseException for\nan unsupported character in a SpEL expression, using a new\nUNSUPPORTED_CHARACTER enum constant in SpelMessage.\n\nCloses gh-33767"
+        },
+        {
+            "hash": "d22924c728cdaa9d24a9d36fe87af8d21d9eceaa",
+            "message": "Fix incorrect regex rendering in MVC controller documentation\n\nThis commit fixes the issue where the regex pattern in the reference documentation\nwas not rendering correctly for the `/projects/{project:[a-z]+}/versions` mapping.\n\nCloses gh-33766"
+        },
+        {
+            "hash": "e235e661d8942e1ebdb5cf1c2de610ee99c6da62",
+            "message": "Polishing"
+        },
+        {
+            "hash": "09fe0adb40ec43d697dea86793c3456d2adacbe5",
+            "message": "Load-time weaving support for WildFly 24+\n\nCloses gh-33728"
+        },
+        {
+            "hash": "84e762b470a2838a3b0c01f776bfaebf0d6bc583",
+            "message": "Fix double accounting of JMS process observations\n\nPrior to this commit, the instrumentation of the processing of JMS\nmessages would happen a different levels of the hierarchy, accounting\nfor alli known implementations, `SimpleMessageListenerContainer` and\n`DefaultMessageListenerContainer` as well as various use cases and\n`MessageListener` variants.\n\nUnfortunately, this instrumentation could lead to observing JMS\nprocessing twice in some cases, and would not be consistent about the\nscope of what's observed.\n\nThis commit moves the instrumentation basics into the\n`AbstractMessageListenerContainer` but leaves the actual observation\ncalls to the public implementations.\n\nFixes gh-33758"
+        },
+        {
+            "hash": "e90a2da05dfa40cdb04c9f488d38f809364e5b8f",
+            "message": "Clarify defensive impact of allowEagerInit flag for type matching\n\nCloses gh-33740"
+        },
+        {
+            "hash": "d48f388c6afb234cf177d664996b18b2d154f5f4",
+            "message": "Polish Javadoc for @⁠DateTimeFormat"
+        },
+        {
+            "hash": "bbbb7c396ee5d259c0eb45c7a9480b2bf669e59d",
+            "message": "Update Date/Time formatting tests for pre/post JDK 20\n\nThis commit updates our Date/Time formatting/printing tests to\ndemonstrate that the use of fallback patterns can help mitigate\nlocale-based parsing/formatting issues beginning with JDK 20.\n\nThe documentation within the tests is intentionally rather thorough for\ntwo reasons:\n\n1. We need to understand exactly what it is we are testing and why the\n   tests are written that way.\n\n2. We may re-use parts of the documentation and examples in forthcoming\n   documentation that we will provide to users.\n\nSee gh-33151"
+        },
+        {
+            "hash": "d72c8b32b75eeb19ef51baa8a51f35caaa80044f",
+            "message": "Ignore duplicate @⁠Priority values when determining highest priority\n\nPrior to this commit, DefaultListableBeanFactory's\ndetermineHighestPriorityCandidate() method sometimes failed to\ndetermine the highest priority candidate if duplicate priority\ncandidates were detected whose priority was not the highest priority in\nthe candidate set. In addition, the bean registration order affected\nthe outcome of the algorithm: if the highest priority was detected\nbefore other duplicate priorities were detected, the algorithm\nsucceeded in determining the highest priority candidate.\n\nThis commit addresses those shortcomings by ignoring duplicate\n@⁠Priority values unless the duplication is for the highest priority\nencountered, in which case a NoUniqueBeanDefinitionException is still\nthrown to signal that multiple beans were found with the same \"highest\npriority\".\n\nCloses gh-33733"
+        },
+        {
+            "hash": "67d78eb61c1f1bc5cdc9c1acaaaecfca32af2831",
+            "message": "Avoid Servlet observations failures for invalid HTTP status\n\nPrior to this commit, the `DefaultServerRequestObservationConvention`\nfor Servlet failed when the HTTP response status was invalid (for\nexample, set to \"0\").\n\nThis commit catches `IllegalArgumentException` thrown for such invalid\nHTTP status and instead returns an unknown outcome for the observation.\n\nFixes gh-33725"
+        },
+        {
+            "hash": "73fd9133e956a2536d6fe1c706f818b983d4a431",
+            "message": "Fix Javadoc in ReactorNetty2ResourceFactory\n\nSee gh-33338\nCloses gh-33735"
+        },
+        {
+            "hash": "5e28a25a301f188563d20d503030433b3343c6b2",
+            "message": "Add a WebFlux integration test\n\nThis commit adds a WebFlux integration test with a request\nbody and a delayed response in order to test a use case\nwhere we found a regression with Undertow 2.3.18.Final.\n\nFor now, Undertow 2.3.17.Final is still used.\n\nCloses gh-33739"
+        },
+        {
+            "hash": "4c44b91cf93c42bad17d76d0a8a226b457e9cb4f",
+            "message": "Speedup WebFlux tests by reducing the interval period\n\nIn WebFlux, we have various tests using a period of 50 or 100ms.\nWe should use a smaller value like 1ms to speedup tests.\n\nCloses gh-33738"
+        },
+        {
+            "hash": "912c067e239edf70bd5d11871c2674893a4590fc",
+            "message": "Fix buffer leak in Jackson2 decoders\n\nPrior to this commit, the Jackson2 decoders (JSON, Smile, CBOR) could\nleak buffers in case the decoding operation times out or is cancelled\nand some buffers are still in flight.\n\nThis commit ensures that buffers are released on cancel signals.\n\nFixes gh-33731"
+        },
+        {
+            "hash": "a55701588e943e8189bc57f4c102acd99ad0b79c",
+            "message": "Next development version (v6.1.15-SNAPSHOT)"
+        }
+    ],
+    "issues": [
+        {
+            "number": "33882",
+            "title": "Resources link points to wrong section of reference guide"
+        },
+        {
+            "number": "33151",
+            "title": "Document options for handling Date/Time parsing and formatting issues with JDK 20+"
+        },
+        {
+            "number": "33834",
+            "title": "Numerous warnings when injecting dependencies into configuration that implements CachingConfigurer"
+        },
+        {
+            "number": "33873",
+            "title": "SimpleAsyncTaskExecutor blocks calling thread when concurrencyLimit set"
+        },
+        {
+            "number": "33877",
+            "title": "Upgrade to Micrometer 1.12.12"
+        },
+        {
+            "number": "33879",
+            "title": "Upgrade to Reactor 2023.0.12"
+        },
+        {
+            "number": "27426",
+            "title": "Remove Joda-Time support"
+        },
+        {
+            "number": "33881",
+            "title": "Remove mentions of Joda-Time support"
+        },
+        {
+            "number": "33859",
+            "title": "Use UriUtils to process static resource paths"
+        },
+        {
+            "number": "33861",
+            "title": "SpEL `PropertyAccessor` ordering for supertype and generic matches does not adhere to contract"
+        },
+        {
+            "number": "33786",
+            "title": "Document that circular dependencies should be avoided in AOT mode"
+        },
+        {
+            "number": "33855",
+            "title": "Fix XML bean reference example in reference manual"
+        },
+        {
+            "number": "33823",
+            "title": "Improve iteration methods in native headers to MultiValueMap adapters"
+        },
+        {
+            "number": "33813",
+            "title": "Deregister empty `Cache` from `CacheManager`"
+        },
+        {
+            "number": "33806",
+            "title": "HttpComponentsClientHttpRequestFactory setReadTimeout not working with httpclient 5.4"
+        },
+        {
+            "number": "33704",
+            "title": "Aspect executed twice - @AfterThrowing"
+        },
+        {
+            "number": "33780",
+            "title": "Inconsistent Lifecycle Management with Virtual Threads in Spring Boot Async Configuration"
+        },
+        {
+            "number": "33805",
+            "title": "`@Async` documentation should not suggest deprecated classes"
+        },
+        {
+            "number": "33796",
+            "title": "Rename `aopAvailable` constants in `TransactionSynchronizationUtils` for better GraalVM native image support"
+        },
+        {
+            "number": "33789",
+            "title": "HttpHeaders.writeableHttpHeaders(new HttpHeaders(readOnlyHttpHeaders)) is not writeable"
+        },
+        {
+            "number": "33779",
+            "title": "RestClient exchange methods are not nullable "
+        },
+        {
+            "number": "13937",
+            "title": "org.springframework.web.multipart.support.StandardServletMultipartResolver.cleanupMultipart causes an IOException on Resin [SPR-9299]"
+        },
+        {
+            "number": "33511",
+            "title": "parts w/o filename in `Content-Disposition` header are not cleaned from temp folder (skipped by `StandardServletMultipartResolver`)"
+        },
+        {
+            "number": "33767",
+            "title": "Throw `SpelParseException` for unsupported character in `SpelExpressionParser`"
+        },
+        {
+            "number": "33728",
+            "title": "Load-time weaving support for WildFly 24+"
+        },
+        {
+            "number": "33758",
+            "title": "DefaultMessageListenerContainer reports incorrect jms.process.message count"
+        },
+        {
+            "number": "33740",
+            "title": "Improve documentation for `allowEagerInit` parameter in `getBeanNamesForType()`"
+        },
+        {
+            "number": "33733",
+            "title": "Autowiring fails if multiple non-highest `@Priority` beans exist with same priority"
+        },
+        {
+            "number": "33725",
+            "title": "DefaultServerRequestObservationConvention throws when response status is zero"
+        },
+        {
+            "number": "33338",
+            "title": "Javadoc of ReactorResourceFactory#setConnectionProviderSupplier wrongly states it can be ignored"
+        },
+        {
+            "number": "33739",
+            "title": "Add a WebFlux integration test with a request body and delayed response"
+        },
+        {
+            "number": "33738",
+            "title": "Speed up WebFlux tests by reducing the period used in Flux interval"
+        },
+        {
+            "number": "33731",
+            "title": "Jackson2Decoder leaks on WebClient timeout"
+        }
+    ]
+}
