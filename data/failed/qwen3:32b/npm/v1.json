@@ -1,0 +1,23 @@
+[
+  {
+    "commit_hash": "70bdb88b0c9937ecb6d1adce5f02da32681782b3",
+    "input_text": "commit 70bdb88b0c9937ecb6d1adce5f02da32681782b3\nAuthor: Alan Agius <17563226+alan-agius4@users.noreply.github.com>\nDate:   Thu Mar 20 08:54:48 2025 +0000\n\n    ensure `platformBrowserTesting` includes `platformBrowser` providers (#60480)\n\nPreviously, `platformBrowserTesting` did not include any `platformBrowser` providers, causing an inconsistency with `platformBrowserDynamicTesting`.\n\nThis update resolves the issue by restructuring platform inheritance to ensure proper provider inclusion:\n\n- `pl",
+    "label": "fix",
+    "error": "Classification failed after retries",
+    "timestamp": "2025-07-03T06:03:05.247789"
+  },
+  {
+    "commit_hash": "6890eab22090138101c4f26fa3fe395302e8b5e9",
+    "input_text": "commit 6890eab22090138101c4f26fa3fe395302e8b5e9\nAuthor: Paul Gschwendtner <paulgschwendtner@gmail.com>\nDate:   Thu Mar 20 14:18:18 2025 +0000\n\n    add integration test to ensure all exported modules can be imported (#60489)\n\nThis commit adds a new integration test which will help ensure that all\nexported `@NgModule`'s of framework packages can be imported by users\nwithout any errors.\n\nThis test is generally useful, but with our upcoming changes with\nrelative imports, this is a good safety-net. R",
+    "label": "test",
+    "error": "Classification failed after retries",
+    "timestamp": "2025-07-03T06:04:13.052775"
+  },
+  {
+    "commit_hash": "4b312aeb43f085e81fd13e151ae769c32a250d56",
+    "input_text": "commit 4b312aeb43f085e81fd13e151ae769c32a250d56\nAuthor: Jessica Janiuk <jessica.janiuk@gmail.com>\nDate:   Thu Mar 20 15:00:57 2025 -0400\n\n    fix over extraction of init symbols in symbol tests (#60493)\n\nThis omits including any init_ symbols in the symbol tests that were unnecessary and causing friction.\n\nPR Close #60493 PR Close #60493\n\ndiff --git a/packages/core/test/bundling/defer/bundle.golden_symbols.json b/packages/core/test/bundling/defer/bundle.golden_symbols.json\nindex 55dd9a78b0..6a2e",
+    "label": "ci",
+    "error": "Classification failed after retries",
+    "timestamp": "2025-07-03T06:06:20.269731"
+  }
+]

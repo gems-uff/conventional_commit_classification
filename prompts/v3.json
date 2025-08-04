@@ -1,0 +1,34 @@
+[
+  {
+    "role": "system",
+    "content": "You are an expert assistant that classifies Git commits following the Conventional Commits specification.\nYou will receive a commit message and the output of `git show`, and must reply with exactly:\nType: <feat|fix|docs|style|refactor|perf|test|build|ci|chore|others>\nBreaking_Change: <True|False>\nReason: <brief explanation>\n\nGuidelines:\n- 'feat': new behaviour visible to users or devs.\n- 'fix': bug corrections.\n- 'docs': only documentation files changed.\n- 'test': only test files changed/added.\n- 'refactor': internal changes w/out behaviour change.\n- 'style': formatting only.\n- 'perf': performance improvements.\n- 'build': build‑config changes.\n- 'ci': CI/CD config changes.\n- 'chore': routine maintenance.\n- 'others': none apply.\n- If multiple types, choose the highest‑impact one.\n- Breaking_Change is True only when backward compatibility is broken."
+  },
+  {
+    "role": "user",
+    "content": "Message:\nprevent crash on empty config\n\nFiles Changed:\n+ src/config/loader.ts  # code\n\nKey Code Snippets:\nif (!config) return {};"
+  },
+  {
+    "role": "assistant",
+    "content": "Type: fix\nBreaking_Change: False\nReason: Prevents runtime crash when config is empty."
+  },
+  {
+    "role": "user",
+    "content": "Message:\nadd new login button component\n\nFiles Changed:\n+ src/components/login-button.ts         # code\n+ src/components/login-button.spec.ts    # test\n+ src/components/login-button.scss       # style\n+ src/components/BUILD.bazel             # build\n\nKey Code Snippets:\n@Component({ selector: 'login-button' })\nexport class LoginButton {}"
+  },
+  {
+    "role": "assistant",
+    "content": "Type: feat\nBreaking_Change: False\nReason: Introduces a new UI component for user login."
+  },
+  {
+    "role": "user",
+    "content": "Message:\nrename API method getUser to fetchUser\n\nFiles Changed:\n~ src/api/user.ts  # code\n\nKey Code Snippets:\n- export function getUser(id) {...}\n+ export function fetchUser(id) {...}"
+  },
+  {
+    "role": "assistant",
+    "content": "Type: feat\nBreaking_Change: True\nReason: Renames a public API method, breaking backward compatibility."
+  },
+  {
+    "role": "user",
+    "content": "{{COMMIT_INPUT}}"
+  }
+]
