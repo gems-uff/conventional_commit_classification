@@ -1,0 +1,216 @@
+# Prompt manifest for the replication package.
+#
+# Each prompt YAML file is the authoritative source for the prompt text and
+# any prompt-local metadata. This manifest is only an index that maps stable
+# prompt IDs to files and experimental stages.
+
+version: 1
+
+prompts:
+  p0_baseline:
+    file: baseline/p0_baseline.yaml
+    category: baseline
+    used_in:
+      - rq1
+      - rq2
+      - rq3_1
+    description: Baseline zero-shot prompt used as the common reference condition.
+
+  # --------------------------------------------------------------------------
+  # RQ3.1 - Input representations
+  # --------------------------------------------------------------------------
+
+  p_message_only:
+    file: rq3_1/p_message_only.yaml
+    category: input_representation
+    used_in:
+      - rq3_1
+    representation: message_only
+    description: Prompt used when the model receives only the processed commit message.
+
+  p_diff_only:
+    file: rq3_1/p_diff_only.yaml
+    category: input_representation
+    used_in:
+      - rq3_1
+    representation: diff_only
+    description: Prompt used when the model receives only the Git diff.
+
+  p_message_and_diff:
+    file: rq3_1/p_message_and_diff.yaml
+    category: input_representation
+    used_in:
+      - rq3_1
+    representation: message_and_diff
+    description: Prompt used when the model receives the processed commit message followed by the Git diff.
+
+  # The Git Show condition in RQ3.1 uses p0_baseline.
+
+  # --------------------------------------------------------------------------
+  # RQ3.2 - Definition refinement
+  # --------------------------------------------------------------------------
+
+  p1_definition_augmented:
+    file: rq3_2/definitions/p1_definition_augmented.yaml
+    category: definitions
+    used_in:
+      - rq3_2
+    description: Definition-augmented prompt evaluated during prompt refinement.
+
+  p2_angular_definition:
+    file: rq3_2/definitions/p2_angular_definition.yaml
+    category: definitions
+    used_in:
+      - rq3_2
+    description: Prompt using Angular-oriented class definitions.
+
+  p3_extensive_definition:
+    file: rq3_2/definitions/p3_extensive_definition.yaml
+    category: definitions
+    used_in:
+      - rq3_2
+    description: Prompt using more extensive class definitions.
+
+  p4_mix_definition:
+    file: rq3_2/definitions/p4_mix_definition.yaml
+    category: definitions
+    used_in:
+      - rq3_2
+    description: Mixed-definition prompt evaluated during prompt refinement.
+
+  # --------------------------------------------------------------------------
+  # RQ3.2 - Disambiguation heuristics
+  # --------------------------------------------------------------------------
+
+  p_chore_negative_and_dominant:
+    file: rq3_2/heuristics/p_chore_negative_and_dominant.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Heuristic prompt combining negative and dominant rules for chore-related ambiguity.
+
+  p_chore_rule:
+    file: rq3_2/heuristics/p_chore_rule.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Heuristic prompt containing a chore-specific rule.
+
+  p_chore_rule_and_negative:
+    file: rq3_2/heuristics/p_chore_rule_and_negative.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Heuristic prompt combining chore-specific and negative constraints.
+
+  p_code_disambiguation:
+    file: rq3_2/heuristics/p_code_disambiguation.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Code-oriented disambiguation prompt evaluated during heuristic refinement.
+
+  p_disambiguation:
+    file: rq3_2/heuristics/p_disambiguation.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: General class-disambiguation prompt.
+
+  p_file_pattern:
+    file: rq3_2/heuristics/p_file_pattern.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Heuristic prompt incorporating file-pattern evidence.
+
+  p_infra_disambiguation:
+    file: rq3_2/heuristics/p_infra_disambiguation.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Heuristic prompt targeting infrastructure-related class ambiguity.
+
+  p_negative_constraints:
+    file: rq3_2/heuristics/p_negative_constraints.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Prompt incorporating negative class constraints.
+
+  p_priority_rules:
+    file: rq3_2/heuristics/p_priority_rules.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Prompt defining priority rules for ambiguous classifications.
+
+  p_structured:
+    file: rq3_2/heuristics/p_structured.yaml
+    category: heuristics
+    used_in:
+      - rq3_2
+    description: Structured heuristic prompt evaluated during prompt refinement.
+
+  # --------------------------------------------------------------------------
+  # RQ3.2 - Chain-of-thought and few-shot variants
+  # --------------------------------------------------------------------------
+
+  p_cot_few-shot:
+    file: rq3_2/cot_and_few_shot/p_cot_few-shot.yaml
+    category: cot_and_few_shot
+    used_in:
+      - rq3_2
+    description: Prompt combining chain-of-thought-style reasoning instructions and few-shot examples.
+
+  p_few-shot:
+    file: rq3_2/cot_and_few_shot/p_few-shot.yaml
+    category: cot_and_few_shot
+    used_in:
+      - rq3_2
+    description: Few-shot prompt variant.
+
+  p_zero-shot_cot:
+    file: rq3_2/cot_and_few_shot/p_zero-shot_cot.yaml
+    category: cot_and_few_shot
+    used_in:
+      - rq3_2
+    description: Zero-shot chain-of-thought-style prompt variant.
+
+  # --------------------------------------------------------------------------
+  # RQ3.2 - Confidence / abstention variants
+  # --------------------------------------------------------------------------
+
+  p_exclude_low:
+    file: rq3_2/abstention/p_exclude_low.yaml
+    category: abstention
+    used_in:
+      - rq3_2
+    description: Confidence-aware variant used to evaluate exclusion of low-confidence predictions.
+
+  p_high_only:
+    file: rq3_2/abstention/p_high_only.yaml
+    category: abstention
+    used_in:
+      - rq3_2
+    description: Confidence-aware variant retaining only high-confidence predictions.
+
+  # --------------------------------------------------------------------------
+  # RQ4 - Artifact-specific adaptations
+  # --------------------------------------------------------------------------
+
+  p_winner_adapted_to_flaccs:
+    file: rq4/p_winner_adapted_to_flaccs.yaml
+    category: artifact_adaptation
+    used_in:
+      - rq4
+    artifact: flaccs
+    description: Winning prompt adapted to the FLACCS-compatible artifact format and taxonomy.
+
+  p_winner_adapted_to_hqcm:
+    file: rq4/p_winner_adapted_to_hqcm.yaml
+    category: artifact_adaptation
+    used_in:
+      - rq4
+    artifact: hqcm
+    description: Winning prompt adapted to the HQCM-compatible artifact format and taxonomy.
