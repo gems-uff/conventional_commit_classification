@@ -1,0 +1,28 @@
+- name: hqcm_native_8class
+  role: user
+  activate: true
+  content: |
+    A git commit can typically be classified into specific categories by examining its code changes and commit message. These categories include:
+
+    - "style": Changes that solely improve the code's formatting and appearance without affecting functionality (e.g., adjusting whitespace, fixing indentation, cleaning up code formatting).
+    - "docs": Updates or improvements to documentation, which may include inline code comments, README files, or any other type of documentation associated with the project.
+    - "test": Modifications exclusively related to test code, like the addition of new tests or the correction and improvement of existing tests.
+    - "build": Changes that affect the build system or tools (like Gulp, Broccoli, NPM) or alterations to external dependencies (e.g., library or package updates).
+    - "cicd": Tweaks to configuration files or scripts used in Continuous Integration/Continuous Deployment (CI/CD) systems, such as Travis CI or CircleCI configurations.
+    - "fix": Code amendments that focus on rectifying errors, fixing bugs, or patching security vulnerabilities.
+    - "feat": Commits that introduce new features or capabilities to the project, such as new classes, functions, or methods.
+    - "refactor": Changes that reorganize and clean up the codebase without modifying its external behavior or outputs, improving readability and maintainability.
+
+    For a given git commit, we can inspect its code difference (diff) and the associated commit message to determine its type. Below is the diff for a specific git commit:
+
+    ```
+    {{COMMIT_DIFF}}
+    ```
+
+    Accompanying this code diff is its commit message:
+
+    ```
+    {{COMMIT_MESSAGE}}
+    ```
+
+    Given this information, the git commit can be categorized as type: 

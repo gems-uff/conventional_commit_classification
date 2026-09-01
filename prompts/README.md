@@ -39,7 +39,7 @@ prompts/
 │       ├── p_infra_disambiguation.yaml
 │       ├── p_negative_constraints.yaml
 │       ├── p_priority_rules.yaml
-│       └── p_structured.yaml
+│       └── p_header_structured.yaml
 └── rq4/
     ├── p_winner_adapted_to_flaccs.yaml
     └── p_winner_adapted_to_hqcm.yaml

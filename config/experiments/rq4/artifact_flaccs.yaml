@@ -1,0 +1,47 @@
+version: 1
+id: rq4_artifact_flaccs
+research_question: rq4
+description: >
+  Compare GPT-OSS with the released FLACCS artifact on the FLACCS-compatible
+  subset, preserving the artifact's native 10-class task and 1,024-token
+  input constraint.
+
+shared:
+  dataset: data/pre_cutoff/commits.csv.gz
+  representation: message_and_diff
+  initial_seeds: [10, 20, 30]
+  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  consensus:
+    method: first_to_two
+    threshold: 2
+  metric:
+    primary: macro_f1
+    statistical_unit: project
+
+subset:
+  assignments: data/rq4/artifact_compatible/flaccs/assignments.csv
+  materializer: scripts/rq4/materialize_flaccs_artifact.py
+  label_space: [fix, feat, build, ci, docs, style, refactor, perf, test, chore]
+  context_window_tokens: 1024
+
+conditions:
+  flaccs:
+    model: 0x404/ccs-code-llama-7b
+    prompt_id: p_flaccs_native_10class
+    inference:
+      do_sample: false
+      max_new_tokens: 10
+      message_max_tokens: 64
+      context_window_tokens: 1024
+
+  gpt_oss_20b:
+    model: gpt_oss_20b
+    prompt_id: p_winner_adapted_to_flaccs
+    temperature: 0.6
+    input_constraint:
+      context_window_tokens: 1024
+
+analysis:
+  pairing: project
+  comparison: gpt_oss_20b_vs_flaccs
+  statistical_procedure: config/evaluation.yaml

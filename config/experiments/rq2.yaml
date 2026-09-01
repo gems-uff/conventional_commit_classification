@@ -1,0 +1,71 @@
+version: 1
+id: rq2_model_and_temperature
+research_question: rq2
+description: >
+  Evaluate the 13 selected LLMs under the common baseline condition and
+  analyze GPT-OSS 20B sensitivity to decoding temperature.
+
+dataset: data/post_cutoff/commits.csv.gz
+prompt_id: p0_baseline
+representation: git_show
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  threshold: 2
+
+metric:
+  primary: macro_f1
+  statistical_unit: project
+
+model_comparison:
+  temperature: 0.0
+  models:
+    - deepseek_r1_8b_0528_qwen3
+    - phi4_reasoning_plus_14b
+    - granite_3_3_8b
+    - llama_3_2_vision_11b
+    - devstral_small_24b
+    - magistral_24b
+    - aya_expanse_32b
+    - mistral_small_3_2_24b
+    - qwen3_coder_30b
+    - qwq_32b
+    - gpt_oss_20b
+    - qwen3_32b
+    - gemma_3_27b
+
+  runtime_overrides:
+    magistral_24b:
+      request_timeout_seconds: 180
+    phi4_reasoning_plus_14b:
+      request_timeout_seconds: 300
+    gpt_oss_20b:
+      request_timeout_seconds: 300
+    qwq_32b:
+      request_timeout_seconds: 360
+    llama_3_2_vision_11b:
+      request_timeout_seconds: 180
+    mistral_small_3_2_24b:
+      request_timeout_seconds: 300
+    granite_3_3_8b:
+      request_timeout_seconds: 180
+    aya_expanse_32b:
+      request_timeout_seconds: 360
+    qwen3_coder_30b:
+      request_timeout_seconds: 360
+    qwen3_32b:
+      request_timeout_seconds: 360
+    devstral_small_24b:
+      request_timeout_seconds: 240
+    gemma_3_27b:
+      request_timeout_seconds: 360
+    deepseek_r1_8b_0528_qwen3:
+      request_timeout_seconds: 300
+
+temperature_sensitivity:
+  model: gpt_oss_20b
+  temperatures: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+  request_timeout_seconds: 300
+  selected_for_subsequent_experiments: 0.6

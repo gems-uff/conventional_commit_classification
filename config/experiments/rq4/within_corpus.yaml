@@ -1,0 +1,64 @@
+version: 1
+id: rq4_within_corpus
+research_question: rq4
+description: >
+  Compare GPT-OSS, FLACCS, HQCM, TF-IDF + Linear SVM, BiLSTM, and CodeBERT
+  on the same complete 11-class task using a stratified 80/20 within-corpus
+  holdout without repository-level grouping.
+
+shared:
+  dataset: data/pre_cutoff/commits.csv.gz
+  representation: message_and_diff
+  initial_seeds: [10, 20, 30]
+  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  consensus:
+    method: first_to_two
+    threshold: 2
+  metric:
+    primary: macro_f1
+    statistical_unit: project
+
+split:
+  protocol: within_corpus_holdout
+  assignments: data/rq4/within_corpus/assignments.csv
+  train_fraction: 0.8
+  test_fraction: 0.2
+  stratify_by: target
+  random_seed: 42
+  grouping_unit: none
+
+conditions:
+  gpt_oss_20b:
+    model: gpt_oss_20b
+    prompt_id: p_code_disambiguation
+    temperature: 0.6
+    runtime_overrides:
+      request_timeout_seconds: 300
+
+  flaccs:
+    model: 0x404/ccs-code-llama-7b
+    prompt_id: p_flaccs_extended_11class
+    inference:
+      do_sample: false
+      max_new_tokens: 10
+
+  hqcm:
+    adapter: chcl_llama2_7b_len1024
+    prompt_id: p_hqcm_extended_11class
+    temperature: 0.0
+    label_normalization:
+      cicd: ci
+
+  tfidf_linear_svm:
+    training_config: config/training/svm.yaml
+
+  bilstm:
+    training_config: config/training/bilstm.yaml
+
+  codebert:
+    training_config: config/training/codebert.yaml
+
+analysis:
+  pairing: project
+  comparison: six_approaches
+  statistical_procedure: config/evaluation.yaml

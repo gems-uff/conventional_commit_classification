@@ -1,0 +1,138 @@
+# Model registry used by the replication package.
+
+version: 1
+
+runtime:
+  provider: ollama
+
+models:
+
+  deepseek_r1_8b_0528_qwen3:
+    display_name: "DeepSeek R1 8B 0528-Qwen3"
+    ollama_tag: "deepseek-r1:8b-0528-qwen3-q4_K_M"
+    parameters_billion: 8.2
+    quantization: "Q4_K_M"
+    digest: "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763"
+    modified_at: "2025-11-04T03:11:54.774388154Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  phi4_reasoning_plus_14b:
+    display_name: "Phi-4 Reasoning Plus 14B"
+    ollama_tag: "phi4-reasoning:plus"
+    parameters_billion: 14.7
+    quantization: "Q4_K_M"
+    digest: "f0ad3edce8e497d8c209d2ccb3f3ea6adf98944a5b9fd944a6c54e1786c361bd"
+    modified_at: "2025-10-20T14:47:33.650847566Z"
+    reported_cutoff: "2024-05"
+    cutoff_disclosed: true
+
+  granite_3_3_8b:
+    display_name: "Granite 3.3 8B"
+    ollama_tag: "granite3.3:8b"
+    parameters_billion: 8.2
+    quantization: "Q4_K_M"
+    digest: "fd429f23b90980ed1bef53b990894e7b0199331f6ae90c5650240a7d5b70f1f7"
+    modified_at: "2025-09-27T12:08:54.198092774Z"
+    reported_cutoff: "2024-03"
+    cutoff_disclosed: true
+
+  llama_3_2_vision_11b:
+    display_name: "Llama 3.2 Vision 11B"
+    ollama_tag: "llama3.2-vision:11b"
+    parameters_billion: 10.7
+    quantization: "Q4_K_M"
+    digest: "6f2f9757ae97e8a3f8ea33d6adb2b11d93d9a35bef277cd2c0b1b5af8e8d0b1e"
+    modified_at: "2025-09-27T02:35:23.193988988Z"
+    reported_cutoff: "2023-12"
+    cutoff_disclosed: true
+
+  devstral_small_24b:
+    display_name: "Devstral Small 24B"
+    ollama_tag: "devstral:latest"
+    parameters_billion: 23.6
+    quantization: "Q4_K_M"
+    digest: "9bd74193e93935e9d8564d88607b220a9d341c4a36b748cffcbd9ad4f47a9ca9"
+    modified_at: "2025-09-25T21:23:21.005468008Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  magistral_24b:
+    display_name: "Magistral 24B"
+    ollama_tag: "magistral:latest"
+    parameters_billion: 23.6
+    quantization: "Q4_K_M"
+    digest: "27bcbbf6d32417d3a8a12d5eb9bd55fda6e5591807e2b02aaaf4423899925afc"
+    modified_at: "2025-09-25T14:12:36.956538641Z"
+    reported_cutoff: "2025-05"
+    cutoff_disclosed: true
+
+  aya_expanse_32b:
+    display_name: "Aya Expanse 32B"
+    ollama_tag: "aya-expanse:32b"
+    parameters_billion: 32.3
+    quantization: "Q4_K_M"
+    digest: "1603440383bd5504dc7afd01c0407b425b988dde650a8dc1a737433baa3cd432"
+    modified_at: "2025-09-27T14:20:46.662039956Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  mistral_small_3_2_24b:
+    display_name: "Mistral Small 3.2 24B"
+    ollama_tag: "mistral-small3.2:24b"
+    parameters_billion: 24.0
+    quantization: "Q4_K_M"
+    digest: "5a408ab55df5c1b5cf46533c368813b30bf9e4d8fc39263bf2a3338cfa3b895b"
+    modified_at: "2025-09-13T03:58:06.491204923Z"
+    reported_cutoff: "2023-09"
+    cutoff_disclosed: true
+
+  qwen3_coder_30b:
+    display_name: "Qwen3 Coder 30B"
+    ollama_tag: "qwen3-coder:30b"
+    parameters_billion: 30.5
+    quantization: "Q4_K_M"
+    digest: "ad67f85ca2502e92936ef793bf29a312e1912ecd1e2c09c9c2963adf1debde78"
+    modified_at: "2025-09-13T03:15:44.034491948Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  qwq_32b:
+    display_name: "QwQ 32B"
+    ollama_tag: "qwq:latest"
+    parameters_billion: 32.8
+    quantization: "Q4_K_M"
+    digest: "009cb3f08d74437380f3b84194c1bd34f1cc3d95a2bb87241d89387fc22a9ddf"
+    modified_at: "2025-09-12T13:43:09.102463168Z"
+    reported_cutoff: "2024-11"
+    cutoff_disclosed: true
+
+  gpt_oss_20b:
+    display_name: "GPT-OSS 20B"
+    ollama_tag: "gpt-oss:20b"
+    parameters_billion: 20.9
+    quantization: "MXFP4"
+    digest: "aa4295ac10c3afb60e6d711289fc6896f5aef82258997b9efdaed6d0cc4cd8b8"
+    modified_at: "2025-09-11T01:33:22.88233909Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  qwen3_32b:
+    display_name: "Qwen3 32B"
+    ollama_tag: "qwen3:32b"
+    parameters_billion: 32.8
+    quantization: "Q4_K_M"
+    digest: "030ee887880fc378860c2dd35101da424377520441ae4bfe7be6deff8ade7840"
+    modified_at: "2025-07-03T03:19:30.203019205Z"
+    reported_cutoff: null
+    cutoff_disclosed: false
+
+  gemma_3_27b:
+    display_name: "Gemma 3 27B"
+    ollama_tag: "gemma3:27b"
+    parameters_billion: 27.4
+    quantization: "Q4_K_M"
+    digest: "a418f5838eaf7fe2cfe0a3046c8384b68ba43a4435542c942f9db00a5f342203"
+    modified_at: "2025-07-01T02:43:01.178293758Z"
+    reported_cutoff: "2024-08"
+    cutoff_disclosed: true

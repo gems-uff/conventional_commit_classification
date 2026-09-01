@@ -157,21 +157,21 @@ prompts:
   # --------------------------------------------------------------------------
 
   p_cot_few-shot:
-    file: rq3_2/cot_and_few_shot/p_cot_few-shot.yaml
+    file: rq3_2/cot_and_few_shot/p_cot_few_shot.yaml
     category: cot_and_few_shot
     used_in:
       - rq3_2
     description: Prompt combining chain-of-thought-style reasoning instructions and few-shot examples.
 
-  p_few-shot:
-    file: rq3_2/cot_and_few_shot/p_few-shot.yaml
+  p_few_shot:
+    file: rq3_2/cot_and_few_shot/p_few_shot.yaml
     category: cot_and_few_shot
     used_in:
       - rq3_2
     description: Few-shot prompt variant.
 
-  p_zero-shot_cot:
-    file: rq3_2/cot_and_few_shot/p_zero-shot_cot.yaml
+  p_zero_shot_cot:
+    file: rq3_2/cot_and_few_shot/p_zero_shot_cot.yaml
     category: cot_and_few_shot
     used_in:
       - rq3_2
@@ -196,8 +196,40 @@ prompts:
     description: Confidence-aware variant retaining only high-confidence predictions.
 
   # --------------------------------------------------------------------------
-  # RQ4 - Artifact-specific adaptations
+  # RQ4 - Task-specific prompts and artifact adaptations
   # --------------------------------------------------------------------------
+
+  p_flaccs_native_10class:
+    file: rq4/p_flaccs_native_10class.yaml
+    category: task_specific_native
+    used_in:
+      - rq4
+    artifact: flaccs
+    description: Original FLACCS prompt using its native 10-class taxonomy.
+
+  p_flaccs_extended_11class:
+    file: rq4/p_flaccs_extended_11class.yaml
+    category: task_specific_adaptation
+    used_in:
+      - rq4
+    artifact: flaccs
+    description: FLACCS prompt minimally extended from the native 10-class taxonomy to the common 11-class taxonomy by adding others.
+
+  p_hqcm_native_8class:
+    file: rq4/p_hqcm_native_8class.yaml
+    category: task_specific_native
+    used_in:
+      - rq4
+    artifact: hqcm
+    description: Original HQCM zero-shot prompt using its native 8-class taxonomy.
+
+  p_hqcm_extended_11class:
+    file: rq4/p_hqcm_extended_11class.yaml
+    category: task_specific_adaptation
+    used_in:
+      - rq4
+    artifact: hqcm
+    description: HQCM prompt minimally extended from the native 8-class taxonomy to the common 11-class taxonomy by adding perf, chore, and others.
 
   p_winner_adapted_to_flaccs:
     file: rq4/p_winner_adapted_to_flaccs.yaml

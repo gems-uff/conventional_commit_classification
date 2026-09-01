@@ -1,0 +1,74 @@
+version: 1
+id: rq3_2_prompt_refinement
+research_question: rq3_2
+description: >
+  Evaluate staged prompt refinement with GPT-OSS 20B using the selected
+  message-and-diff representation and temperature 0.6.
+
+dataset: data/post_cutoff/commits.csv.gz
+model: gpt_oss_20b
+representation: message_and_diff
+temperature: 0.6
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  threshold: 2
+
+runtime_overrides:
+  request_timeout_seconds: 300
+
+metric:
+  primary: macro_f1
+  statistical_unit: project
+
+stages:
+  stage_1_definitions:
+    reference_prompt: p0_baseline
+    prompts:
+      - p0_baseline
+      - p1_definition_augmented
+      - p2_angular_definition
+      - p3_extensive_definition
+      - p4_mix_definition
+
+  stage_2_heuristics:
+    reference_prompt: p2_angular_definition
+    prompts:
+      - p0_baseline
+      - p2_angular_definition
+      - p_negative_constraints
+      - p_chore_rule_and_negative
+      - p_chore_rule
+      - p_file_pattern
+      - p_priority_rules
+      - p_chore_negative_and_dominant
+      - p_header_structured
+      - p_code_disambiguation
+      - p_infra_disambiguation
+      - p_disambiguation
+
+  stage_3_cot_and_few_shot:
+    reference_prompt: p_code_disambiguation
+    prompts:
+      - p0_baseline
+      - p2_angular_definition
+      - p_code_disambiguation
+      - p_zero_shot_cot
+      - p_few_shot
+      - p_cot_few_shot
+
+  stage_4_abstention:
+    reference_prompt: p_code_disambiguation
+    prompts:
+      - p0_baseline
+      - p2_angular_definition
+      - p_code_disambiguation
+      - p_exclude_low
+      - p_high_only
+
+notes:
+  - >
+    p_structured is the canonical replication-package ID for the historical
+    condition referred to as p_header_structured in some analysis artifacts.
