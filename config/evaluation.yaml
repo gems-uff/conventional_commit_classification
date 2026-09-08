@@ -33,14 +33,7 @@ consensus:
     - 20
     - 30
 
-  adaptive_seeds:
-    - 40
-    - 50
-    - 60
-    - 70
-    - 80
-    - 90
-    - 100
+  adaptive_policy: {start: 40, step: 10}
 
   threshold: 2
 
@@ -56,8 +49,8 @@ consensus:
     order: "sequential"
     run_only_if_unresolved: true
 
-  exhaustion:
-    result: "<invalid_output>"
+  interruption:
+    result: incomplete
 
 metrics:
   primary_metric: "macro_f1"

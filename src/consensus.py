@@ -4,7 +4,28 @@ from collections import Counter
 from dataclasses import dataclass
 from typing import Iterable, Mapping, Sequence
 
-from .parsing.strict import INVALID_OUTPUT, LABEL_SET
+from .data.loader import STUDY_LABELS
+
+INVALID_OUTPUT = "<invalid_output>"
+LABEL_SET = set(STUDY_LABELS)
+
+
+@dataclass(frozen=True)
+class AdaptiveSeedPolicy:
+    start: int = 40
+    step: int = 10
+
+    def __post_init__(self):
+        if type(self.start) is not int or type(self.step) is not int or (self.start, self.step) != (40, 10):
+            raise ValueError("Adaptive policy must start at 40 with step 10; no maximum")
+
+    def contains(self, seed: int) -> bool:
+        return seed >= self.start and (seed - self.start) % self.step == 0
+
+
+def validate_base_seeds(seeds: Sequence[int]) -> None:
+    if any(type(seed) is not int for seed in seeds) or tuple(seeds) != (10, 20, 30):
+        raise ValueError("Mandatory base seeds must be exactly 10, 20, 30 in order")
 
 
 @dataclass(frozen=True)
@@ -22,21 +43,21 @@ def resolve_first_to_two(
     by_seed: Mapping[int, str],
     *,
     initial_seeds: Sequence[int],
-    adaptive_seeds: Sequence[int],
     task_labels: Iterable[str],
+    adaptive_policy: AdaptiveSeedPolicy | None = None,
     threshold: int = 2,
     invalid_terminal: bool = True,
 ) -> ConsensusResult:
-    """Resolve the frozen sequential first-to-two protocol.
+    """Mandatory base block followed by sequential votes, without exhaustion.
 
-    All initial seeds must exist before a terminal decision is evaluated. Extra
-    seeds are consumed in the supplied order only while the item is unresolved.
-    With no adaptive seeds, an unresolved initial trio exhausts to invalid.
+    Missing evidence remains incomplete; stored votes after terminality are ignored.
     """
+    validate_base_seeds(initial_seeds)
+    policy = adaptive_policy or AdaptiveSeedPolicy()
     if threshold != 2:
         raise ValueError("This study's frozen consensus threshold is 2")
     allowed = set(task_labels)
-    if not allowed.issubset(LABEL_SET):
+    if not allowed or not allowed.issubset(LABEL_SET):
         raise ValueError(f"Task labels outside study taxonomy: {sorted(allowed - LABEL_SET)}")
 
     missing_initial = [s for s in initial_seeds if s not in by_seed]
@@ -45,12 +66,19 @@ def resolve_first_to_two(
 
     used: list[int] = []
     votes: list[str] = []
-    sequence = list(initial_seeds) + list(adaptive_seeds)
+    def seeds():
+        yield from initial_seeds
+        seed = policy.start
+        while True:
+            yield seed
+            seed += policy.step
+
+    sequence = seeds()
     initial_last = initial_seeds[-1] if initial_seeds else None
 
     for seed in sequence:
         if seed not in by_seed:
-            if seed in adaptive_seeds:
+            if policy.contains(seed):
                 return ConsensusResult(None, "needs_adaptive_seed", False, seed, None, tuple(used), tuple(votes))
             raise RuntimeError(f"Unexpected missing initial seed {seed}")
         vote = str(by_seed[seed])
@@ -66,8 +94,3 @@ def resolve_first_to_two(
             return ConsensusResult(winner, "semantic", True, None, seed, tuple(used), tuple(votes))
         if invalid_terminal and sum(v == INVALID_OUTPUT for v in votes) >= threshold:
             return ConsensusResult(INVALID_OUTPUT, "terminal_invalid", True, None, seed, tuple(used), tuple(votes))
-
-    return ConsensusResult(
-        INVALID_OUTPUT, "exhausted_invalid", True, None,
-        sequence[-1] if sequence else None, tuple(used), tuple(votes),
-    )

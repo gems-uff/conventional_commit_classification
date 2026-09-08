@@ -23,6 +23,8 @@ class PromptRegistry:
             raise RuntimeError(f"{self.manifest_path}: expected top-level 'prompts' mapping")
         self._prompts = payload["prompts"]
         self.prompts_root = self.manifest_path.parent
+        self._messages: dict[str, list[dict]] = {}
+        self._source_hashes: dict[str, str] = {}
 
     def ids(self) -> tuple[str, ...]:
         return tuple(self._prompts)
@@ -43,12 +45,15 @@ class PromptRegistry:
         return path
 
     def sha256(self, prompt_id: str) -> str:
-        return hashlib.sha256(self.path(prompt_id).read_bytes()).hexdigest()
+        self.load_messages(prompt_id)
+        return self._source_hashes[prompt_id]
 
     def load_messages(self, prompt_id: str) -> list[dict]:
+        if prompt_id in self._messages:
+            return [dict(message) for message in self._messages[prompt_id]]
         path = self.path(prompt_id)
-        with path.open("r", encoding="utf-8") as f:
-            payload = yaml.safe_load(f) if path.suffix.lower() in {".yaml", ".yml"} else json.load(f)
+        source = path.read_bytes()
+        payload = yaml.safe_load(source) if path.suffix.lower() in {".yaml", ".yml"} else json.loads(source)
         if not isinstance(payload, list):
             raise RuntimeError(f"{path}: prompt must be a list of message objects")
         active = []
@@ -62,17 +67,19 @@ class PromptRegistry:
                 active.append({"role": role, "content": str(item.get("content", ""))})
         if not active:
             raise RuntimeError(f"{path}: no active prompt messages")
-        return active
+        # Freeze the exact bytes used for this registry/run. Re-reading the YAML
+        # per commit could silently change a prompt under the same fingerprint.
+        self._messages[prompt_id] = active
+        self._source_hashes[prompt_id] = hashlib.sha256(source).hexdigest()
+        return [dict(message) for message in active]
 
     @staticmethod
     def _render(template: str, variables: Mapping[str, Any]) -> str:
-        rendered = template
-        for key, value in variables.items():
-            rendered = rendered.replace("{{" + str(key) + "}}", "" if value is None else str(value))
-        unresolved = sorted(set(PLACEHOLDER_RE.findall(rendered)))
+        unresolved = sorted(set(PLACEHOLDER_RE.findall(template)) - set(variables))
         if unresolved:
             raise RuntimeError(f"Unresolved prompt placeholders: {unresolved}")
-        return rendered
+        # Substitute template placeholders once; commit text is literal data.
+        return PLACEHOLDER_RE.sub(lambda match: "" if variables[match[1]] is None else str(variables[match[1]]), template)
 
     def render_messages(self, prompt_id: str, **variables: Any) -> list[dict]:
         return [

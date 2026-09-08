@@ -5,12 +5,26 @@ import subprocess
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Collection, Mapping, Any
+from typing import Collection, Mapping, Any, Callable
 
 import tiktoken
-from ollama import chat
+from ollama import chat, list as list_models
 
-from ..parsing.strict import INVALID_OUTPUT, PredictionParse, parse_strict
+def parse_strict(*args, **kwargs):
+    from ..parsing.strict import parse_strict as canonical
+    return canonical(*args, **kwargs)
+
+
+def installed_model_identity(tag: str, expected_digest: str) -> dict:
+    response = list_models()
+    matches = [m for m in response.models if m.model == tag]
+    if len(matches) != 1:
+        raise RuntimeError(f"Installed Ollama model not found uniquely: {tag}")
+    digest = matches[0].digest
+    if not expected_digest or digest != expected_digest:
+        raise RuntimeError(f"Installed model digest mismatch for {tag}: {digest}")
+    return {"tag": tag, "digest": digest}
+
 
 
 @dataclass(frozen=True)
@@ -59,7 +73,7 @@ class OllamaRuntimeConfig:
 @dataclass(frozen=True)
 class OllamaCallResult:
     raw_response: str
-    parsed: PredictionParse
+    parsed: Any
     technical_status: str
     technical_detail: str
     processing_time_seconds: float
@@ -164,6 +178,7 @@ class OllamaBackend:
         request_timeout_seconds: float,
         task_labels: Collection[str],
         health_monitor: ModelHealthMonitor | None = None,
+        attempt_sink: Callable[[dict], None] | None = None,
     ) -> OllamaCallResult:
         input_tokens = self.count_tokens(prepared_input)
         ctx = self.num_ctx(input_tokens)
@@ -176,66 +191,62 @@ class OllamaBackend:
         last_raw = ""
         last_detail = ""
 
+        if self.config.max_attempts < 1:
+            raise ValueError("max_attempts must be positive")
         for attempt in range(1, self.config.max_attempts + 1):
+            attempt_start = time.monotonic()
+            raw, technical, detail = "", "ok", ""
+            task = asyncio.create_task(asyncio.to_thread(
+                chat, model=model, messages=messages,
+                options={"temperature": float(temperature), "seed": int(seed),
+                         "num_ctx": int(ctx), "num_predict": int(self.config.num_predict)},
+                keep_alive=self.config.keep_alive,
+            ))
+            cancelled = False
             try:
-                response = await asyncio.wait_for(
-                    asyncio.to_thread(
-                        chat,
-                        model=model,
-                        messages=messages,
-                        options={
-                            "temperature": float(temperature),
-                            "seed": int(seed),
-                            "num_ctx": int(ctx),
-                            "num_predict": int(self.config.num_predict),
-                        },
-                        keep_alive=self.config.keep_alive,
-                    ),
-                    timeout=float(request_timeout_seconds),
-                )
-                last_raw = str(response["message"]["content"])
-                if self.is_degenerate(last_raw):
-                    last_detail = "degenerate_response"
-                    if attempt < self.config.max_attempts:
-                        await asyncio.sleep(self.config.degenerate_retry_delay_seconds)
-                        continue
-                    parsed = parse_strict(
-                        last_raw,
-                        task_labels=task_labels,
-                        technical_status="degenerate_response",
-                    )
-                    await monitor.failure(timeout=False)
-                    return OllamaCallResult(
-                        last_raw, parsed, "degenerate_response", last_detail,
-                        time.monotonic() - start, input_tokens, ctx,
-                    )
-
-                monitor.success()
-                parsed = parse_strict(last_raw, task_labels=task_labels, technical_status="ok")
-                return OllamaCallResult(
-                    last_raw, parsed, "ok", "", time.monotonic() - start, input_tokens, ctx
-                )
-
-            except asyncio.TimeoutError:
-                # Historical/frozen behavior: no retry of the same timed-out request.
-                await monitor.failure(timeout=True)
-                raw = "<timeout_error>"
-                parsed = parse_strict(raw, task_labels=task_labels, technical_status="timeout")
-                return OllamaCallResult(
-                    raw, parsed, "timeout", f"request_timeout={request_timeout_seconds}",
-                    time.monotonic() - start, input_tokens, ctx,
-                )
+                response = await asyncio.wait_for(asyncio.shield(task), request_timeout_seconds)
+                raw = str(response["message"]["content"])
+                if self.is_degenerate(raw):
+                    technical, detail = "degenerate_response", "degenerate_response"
+            except (asyncio.TimeoutError, asyncio.CancelledError) as exc:
+                cancelled = isinstance(exc, asyncio.CancelledError)
+                technical = "cancelled" if cancelled else "timeout"
+                detail = f"request_timeout={request_timeout_seconds}; blocking request drained before releasing slot"
+                # A Python thread cannot be cancelled. Retain the caller's slot
+                # until it exits, even under repeated cancellation. No restart
+                # or replacement request is launched while this call is live.
+                while not task.done():
+                    try:
+                        await asyncio.shield(task)
+                    except asyncio.CancelledError:
+                        cancelled = True
+                    except Exception:
+                        break
+                try:
+                    raw = str(task.result()["message"]["content"])
+                except Exception as drained:
+                    detail += f"; {type(drained).__name__}: {drained}"
             except Exception as exc:
-                last_detail = f"{type(exc).__name__}: {exc}"
-                await monitor.failure(timeout=False)
-                if attempt < self.config.max_attempts:
-                    await asyncio.sleep(self.config.retry_delay_seconds)
-                    continue
-                raw = "<failure>"
-                parsed = parse_strict(raw, task_labels=task_labels, technical_status="failure")
-                return OllamaCallResult(
-                    raw, parsed, "failure", last_detail,
-                    time.monotonic() - start, input_tokens, ctx,
-                )
-
-        raise RuntimeError("Unreachable Ollama inference state")
+                technical, detail = "failure", f"{type(exc).__name__}: {exc}"
+            evidence = {
+                "attempt": attempt, "raw_response": raw,
+                "technical_status": technical, "technical_detail": detail,
+                "processing_time_seconds": time.monotonic() - attempt_start,
+            }
+            if attempt_sink is not None:
+                attempt_sink(evidence)
+            if cancelled:
+                raise asyncio.CancelledError
+            if technical == "ok":
+                monitor.success()
+            # Automatic model restart is unsafe with other requests in flight.
+            # Technical failures are recorded; orchestration can be resumed.
+            final = technical in {"ok", "timeout"} or attempt == self.config.max_attempts
+            if final:
+                parsed = parse_strict(raw, task_labels=task_labels, technical_status=technical)
+                return OllamaCallResult(raw, parsed, technical, detail,
+                                        time.monotonic() - start, input_tokens, ctx)
+            delay = (self.config.degenerate_retry_delay_seconds if technical == "degenerate_response"
+                     else self.config.retry_delay_seconds)
+            await asyncio.sleep(delay)
+        raise RuntimeError("Unreachable inference state")

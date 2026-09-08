@@ -40,10 +40,14 @@ import json
 import math
 import re
 import sys
-from dataclasses import dataclass, replace
+import uuid
+from dataclasses import asdict, dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import TYPE_CHECKING, Any, Mapping, Sequence
+
+if TYPE_CHECKING:
+    from src.consensus import AdaptiveSeedPolicy
 
 import pandas as pd
 
@@ -78,34 +82,6 @@ def _json_fingerprint(payload: Mapping[str, Any]) -> str:
     return _sha256_text(text)
 
 
-def _read_jsonl_gz(path: Path) -> list[dict[str, Any]]:
-    if not path.exists():
-        return []
-    rows: list[dict[str, Any]] = []
-    opener = gzip.open if path.suffix == ".gz" else open
-    with opener(path, "rt", encoding="utf-8") as handle:
-        for line_no, line in enumerate(handle, 1):
-            if not line.strip():
-                continue
-            try:
-                obj = json.loads(line)
-            except Exception as exc:
-                raise RuntimeError(f"{path}: invalid JSONL at line {line_no}: {exc}") from exc
-            if not isinstance(obj, dict):
-                raise RuntimeError(f"{path}: JSONL line {line_no} is not an object")
-            rows.append(obj)
-    return rows
-
-
-def _append_jsonl_gz(path: Path, rows: Iterable[Mapping[str, Any]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    opener = gzip.open if path.suffix == ".gz" else open
-    with opener(path, "at", encoding="utf-8") as handle:
-        for row in rows:
-            handle.write(json.dumps(dict(row), ensure_ascii=False, default=str) + "\n")
-        handle.flush()
-
-
 @dataclass(frozen=True)
 class OllamaJob:
     experiment_id: str
@@ -117,7 +93,7 @@ class OllamaJob:
     representation: str
     temperature: float
     initial_seeds: tuple[int, ...]
-    adaptive_seeds: tuple[int, ...]
+    adaptive_policy: AdaptiveSeedPolicy
     threshold: int
     task_labels: tuple[str, ...]
     request_timeout_seconds: float
@@ -126,38 +102,36 @@ class OllamaJob:
     assignment_split: str | None = None
     assignment_protocol: str | None = None
     stage_memberships: tuple[str, ...] = ()
+    expected_rows: int | None = None
+    expected_cohort_sha256: str | None = None
 
-    @property
-    def all_seeds(self) -> tuple[int, ...]:
-        return self.initial_seeds + self.adaptive_seeds
 
 
 class ConfigError(RuntimeError):
     pass
 
 
-def _consensus_from_scope(scope: Mapping[str, Any]) -> tuple[tuple[int, ...], tuple[int, ...], int]:
+def _consensus_from_scope(scope: Mapping[str, Any]):
+    from src.consensus import AdaptiveSeedPolicy, validate_base_seeds
     consensus = scope.get("consensus", {}) or {}
     if not isinstance(consensus, Mapping):
         raise ConfigError("consensus must be a mapping")
-
+    if "adaptive_seeds" in scope or "adaptive_seeds" in consensus:
+        raise ConfigError("Finite adaptive lists are unsupported; use adaptive_policy")
     initial = consensus.get("initial_seeds", scope.get("initial_seeds"))
-    adaptive = consensus.get("adaptive_seeds", scope.get("adaptive_seeds"))
-    threshold = int(consensus.get("threshold", 2))
-    method = str(consensus.get("method", "adaptive_first_to_two")).casefold()
-    if method not in {"first_to_two", "adaptive_first_to_two"}:
-        raise ConfigError(f"Unsupported consensus method: {method!r}")
-    if initial is None or adaptive is None:
-        raise ConfigError("Consensus initial_seeds/adaptive_seeds are not defined")
-    initial_t = tuple(int(x) for x in initial)
-    adaptive_t = tuple(int(x) for x in adaptive)
-    if not initial_t:
-        raise ConfigError("initial_seeds cannot be empty")
-    if len(set(initial_t + adaptive_t)) != len(initial_t + adaptive_t):
-        raise ConfigError("Duplicate consensus seed")
-    if threshold != 2:
-        raise ConfigError("The frozen study consensus threshold must be 2")
-    return initial_t, adaptive_t, threshold
+    adaptive = consensus.get("adaptive_policy", scope.get("adaptive_policy"))
+    if consensus.get("method", "first_to_two") not in {"first_to_two", "adaptive_first_to_two"}:
+        raise ConfigError("Unsupported consensus method")
+    if type(consensus.get("threshold", 2)) is not int or consensus.get("threshold", 2) != 2:
+        raise ConfigError("Consensus threshold must be 2")
+    try:
+        validate_base_seeds(initial or ())
+        if not isinstance(adaptive, Mapping) or set(adaptive) != {"start", "step"}:
+            raise ValueError("adaptive_policy requires only start and step")
+        policy = AdaptiveSeedPolicy(**adaptive)
+    except (TypeError, ValueError) as exc:
+        raise ConfigError(str(exc)) from exc
+    return tuple(initial), policy, 2
 
 
 def _timeout_from_overrides(overrides: Mapping[str, Any] | None) -> float:
@@ -166,7 +140,7 @@ def _timeout_from_overrides(overrides: Mapping[str, Any] | None) -> float:
     if value is None:
         raise ConfigError("Ollama job has no request_timeout_seconds override")
     value = float(value)
-    if value <= 0:
+    if not math.isfinite(value) or value <= 0:
         raise ConfigError("request_timeout_seconds must be > 0")
     return value
 
@@ -183,18 +157,10 @@ def _task_labels(experiment: Mapping[str, Any], default_labels: Sequence[str]) -
     return labels
 
 
-def _validate_consensus_against_evaluation(
-    initial: tuple[int, ...], adaptive: tuple[int, ...], evaluation: Mapping[str, Any]
-) -> None:
-    ref = evaluation.get("consensus", {}) or {}
-    ref_initial = tuple(int(x) for x in ref.get("initial_seeds", []))
-    ref_adaptive = tuple(int(x) for x in ref.get("adaptive_seeds", []))
-    if initial != ref_initial or adaptive != ref_adaptive:
-        raise ConfigError(
-            "Experiment consensus seeds differ from config/evaluation.yaml. "
-            f"experiment initial={initial}, adaptive={adaptive}; "
-            f"evaluation initial={ref_initial}, adaptive={ref_adaptive}"
-        )
+def _validate_consensus_against_evaluation(initial, adaptive, evaluation):
+    ref_initial, ref_policy, _ = _consensus_from_scope(evaluation)
+    if initial != ref_initial or adaptive != ref_policy:
+        raise ConfigError("Experiment consensus policy differs from evaluation config")
 
 
 def expand_jobs(
@@ -230,7 +196,7 @@ def expand_jobs(
                     representation=str(shared["representation"]),
                     temperature=float(shared["temperature"]),
                     initial_seeds=initial,
-                    adaptive_seeds=adaptive,
+                    adaptive_policy=adaptive,
                     threshold=threshold,
                     task_labels=task_labels,
                     request_timeout_seconds=_timeout_from_overrides(per_model),
@@ -348,6 +314,8 @@ def expand_jobs(
                 assignment_path=assignment_path,
                 assignment_split=assignment_split,
                 assignment_protocol=assignment_protocol,
+                expected_rows=shared.get("expected_rows"),
+                expected_cohort_sha256=shared.get("expected_cohort_sha256"),
             ))
         return jobs
 
@@ -390,10 +358,12 @@ def _prompt_variables(row: Any, *, representation: str, prepared_input: str) -> 
         prefix = processed_message + separator
         if prepared_input.startswith(prefix):
             prepared_diff = prepared_input[len(prefix):]
-        elif prepared_input == processed_message:
+        else:
+            prepared_message = prepared_input
             prepared_diff = ""
 
     return {
+        "COMMIT_INPUT": prepared_input,
         "INPUT": prepared_input,
         "INPUT_TEXT": prepared_input,
         "CONTENT": prepared_input,
@@ -403,6 +373,7 @@ def _prompt_variables(row: Any, *, representation: str, prepared_input: str) -> 
         "COMMIT_MESSAGE": prepared_message,
         "PROCESSED_MESSAGE": prepared_message,
         "ORIGINAL_MESSAGE": original_message,
+        "COMMIT_DIFF": prepared_diff,
         "DIFF": prepared_diff,
         "GIT_DIFF": prepared_diff,
         "GIT_SHOW": prepared_git_show,
@@ -413,6 +384,11 @@ def _prompt_variables(row: Any, *, representation: str, prepared_input: str) -> 
 def _existing_index(rows: Sequence[Mapping[str, Any]], run_id: str) -> dict[tuple[str, str, int], dict[str, Any]]:
     index: dict[tuple[str, str, int], dict[str, Any]] = {}
     for row in rows:
+        required_strings = ("project", "commit_hash", "target", "prediction", "raw_response",
+                            "parse_status", "technical_status", "technical_detail", "run_id")
+        if (any(not isinstance(row.get(field), str) for field in required_strings)
+                or type(row.get("seed")) is not int):
+            raise RuntimeError("Malformed raw prediction record")
         if str(row.get("run_id", "")) != run_id:
             raise RuntimeError(
                 "Existing raw prediction file contains a different run_id; "
@@ -429,15 +405,17 @@ def _existing_index(rows: Sequence[Mapping[str, Any]], run_id: str) -> dict[tupl
 
 
 def _consensus_for_row(row: Any, existing: Mapping[tuple[str, str, int], Mapping[str, Any]], job: OllamaJob, resolve_first_to_two):
-    by_seed = {
-        seed: str(existing[(str(row.project), str(row.commit_hash), seed)]["prediction"])
-        for seed in job.all_seeds
-        if (str(row.project), str(row.commit_hash), seed) in existing
-    }
+    prefix = (str(row.project), str(row.commit_hash))
+    by_seed = {seed: str(existing[(*prefix, seed)]["prediction"])
+               for seed in job.initial_seeds if (*prefix, seed) in existing}
+    seed = job.adaptive_policy.start
+    while (*prefix, seed) in existing:
+        by_seed[seed] = str(existing[(*prefix, seed)]["prediction"])
+        seed += job.adaptive_policy.step
     return resolve_first_to_two(
         by_seed,
         initial_seeds=job.initial_seeds,
-        adaptive_seeds=job.adaptive_seeds,
+        adaptive_policy=job.adaptive_policy,
         task_labels=job.task_labels,
         threshold=job.threshold,
         invalid_terminal=True,
@@ -446,6 +424,7 @@ def _consensus_for_row(row: Any, existing: Mapping[tuple[str, str, int], Mapping
 
 def _final_prediction_frame(df: pd.DataFrame, existing: Mapping[tuple[str, str, int], Mapping[str, Any]], job: OllamaJob, resolve_first_to_two) -> pd.DataFrame:
     rows = []
+    output_seeds = sorted(set(job.initial_seeds) | {key[2] for key in existing})
     for item in df.itertuples(index=False):
         result = _consensus_for_row(item, existing, job, resolve_first_to_two)
         if not result.complete:
@@ -470,7 +449,10 @@ def _final_prediction_frame(df: pd.DataFrame, existing: Mapping[tuple[str, str, 
             "fold": getattr(item, "fold", None),
             "split": str(getattr(item, "split", "")),
         }
-        for seed in job.all_seeds:
+        for field in ("protocol_record_id", "source_index", "canonical_target", "protocol_target"):
+            if hasattr(item, field):
+                out[field] = getattr(item, field)
+        for seed in output_seeds:
             rec = existing.get((str(item.project), str(item.commit_hash), seed))
             out[f"seed_{seed}"] = None if rec is None else rec["prediction"]
         rows.append(out)
@@ -488,7 +470,7 @@ def _job_payload(job: OllamaJob) -> dict[str, Any]:
         "representation": job.representation,
         "temperature": job.temperature,
         "initial_seeds": list(job.initial_seeds),
-        "adaptive_seeds": list(job.adaptive_seeds),
+        "adaptive_policy": asdict(job.adaptive_policy),
         "threshold": job.threshold,
         "task_labels": list(job.task_labels),
         "request_timeout_seconds": job.request_timeout_seconds,
@@ -497,7 +479,15 @@ def _job_payload(job: OllamaJob) -> dict[str, Any]:
         "assignment_split": job.assignment_split,
         "assignment_protocol": job.assignment_protocol,
         "stage_memberships": list(job.stage_memberships),
+        "expected_rows": job.expected_rows,
+        "expected_cohort_sha256": job.expected_cohort_sha256,
     }
+
+
+def protect_output(repo_root: Path, path: Path) -> None:
+    for root in {repo_root.resolve(), Path(__file__).resolve().parents[1]}:
+        if path.resolve().is_relative_to((root / "results").resolve()):
+            raise ConfigError(f"Output must be outside frozen results: {path}")
 
 
 def _job_output_dir(base: Path, job: OllamaJob) -> Path:
@@ -510,12 +500,30 @@ def _print_job(job: OllamaJob, index: int | None = None) -> None:
     print(
         f"{prefix}{job.condition_id}: model={job.model_id}, dataset={job.dataset}, "
         f"prompt={job.prompt_id}, representation={job.representation}, "
-        f"temperature={job.temperature:g}, seeds={list(job.initial_seeds)}+{list(job.adaptive_seeds)}, "
+        f"temperature={job.temperature:g}, seeds={list(job.initial_seeds)}+{asdict(job.adaptive_policy)}, "
         f"timeout={job.request_timeout_seconds:g}s{assignment}"
     )
 
 
-async def _run_job(
+async def _run_job(**kwargs) -> None:
+    from src.utils.journal import exclusive_run
+    repo_root, base, job = kwargs["repo_root"], kwargs["output_base"], kwargs["job"]
+    protect_output(repo_root, base)
+    directory = _job_output_dir(base, job)
+    protect_output(repo_root, directory)
+    for name in ("raw_predictions.journal.jsonl", "attempts.journal.jsonl",
+                 "raw_predictions.jsonl.gz", "predictions.csv.gz", "run_manifest.json"):
+        protect_output(repo_root, directory / name)
+    if kwargs["dry_run"]:
+        await _run_job_locked(**kwargs)
+        return
+    lock_path = base / ".locks" / (_sha256_text(str(directory.resolve())) + ".lock")
+    protect_output(repo_root, lock_path)
+    with exclusive_run(lock_path):
+        await _run_job_locked(**kwargs)
+
+
+async def _run_job_locked(
     *,
     repo_root: Path,
     job: OllamaJob,
@@ -537,18 +545,28 @@ async def _run_job(
     # has been installed into src/parsing/.
     from src.consensus import resolve_first_to_two
     from src.data.loader import (
+        validate_assignment_selection,
         cohort_sha256,
         load_assignments,
         load_canonical_dataset,
         materialize_assignments,
     )
-    from src.inference.ollama import ModelHealthMonitor, OllamaBackend, OllamaRuntimeConfig
+    from src.inference.ollama import ModelHealthMonitor, OllamaBackend, OllamaRuntimeConfig, installed_model_identity
     from src.inference.schema import GenerativePredictionRecord
-    from src.parsing.strict import PARSER_VERSION
+    from src.utils.journal import Journal, atomic_json, atomic_bytes
+    parser_path = repo_root / "src/parsing/strict_response_parser.py"
+    PARSER_VERSION = "4.1.1"
+    if parser_path.exists() or not dry_run:
+        from src.parsing.strict import PARSER_VERSION
     from src.prompts.loader import PromptRegistry
     from src.representations import add_input_text
     from src.utils.provenance import git_state, sha256_file
 
+    protect_output(repo_root, output_base)
+    output_dir = _job_output_dir(output_base, job)
+    protect_output(repo_root, output_dir)
+    if output_dir.exists() and not resume and not dry_run:
+        raise RuntimeError(f"Existing job directory: {output_dir}; use --resume")
     dataset_path = _resolve_repo_path(repo_root, job.dataset)
     dataset = load_canonical_dataset(dataset_path)
 
@@ -568,6 +586,17 @@ async def _run_job(
         dataset["fold"] = None
         dataset["split"] = ""
 
+    if job.assignment_path:
+        validate_assignment_selection(dataset, assignments)
+    if ((job.expected_rows is not None and len(dataset) != job.expected_rows)
+            or (job.expected_cohort_sha256 is not None and cohort_sha256(dataset) != job.expected_cohort_sha256)):
+        raise ConfigError(
+            f"Frozen cohort mismatch: assignments select {len(dataset)} rows; expected {job.expected_rows}. "
+            "The cohort count/hash must match frozen evidence. Reconcile assignments before execution; "
+            "no new split or model calls were made."
+        )
+    if not set(dataset["target"]).issubset(job.task_labels):
+        raise ConfigError("Selected targets outside task taxonomy")
     dataset = add_input_text(dataset, job.representation)
     if project_filter:
         dataset = dataset[dataset["project"].isin(project_filter)].copy()
@@ -585,6 +614,13 @@ async def _run_job(
     prompt_path = registry.path(job.prompt_id)
 
     runtime = OllamaRuntimeConfig.from_mapping(inference_cfg)
+    if job.experiment_id in {"rq4_artifact_flaccs", "rq4_artifact_hqcm"} and runtime.num_predict != 1024:
+        raise ConfigError("Artifact-adapted GPT-OSS requires num_predict=1024")
+    execution_cfg = inference_cfg["execution"]
+    max_concurrent = int(execution_cfg["max_concurrent_requests"] if max_concurrent_override is None else max_concurrent_override)
+    batch_size = int(execution_cfg["batch_size"])
+    if max_concurrent <= 0 or batch_size <= 0:
+        raise ConfigError("Concurrency and batch_size must be positive")
     if job.max_content_tokens is not None:
         runtime = replace(runtime, max_content_tokens=int(job.max_content_tokens))
     backend = OllamaBackend(runtime)
@@ -602,11 +638,18 @@ async def _run_job(
 
     selection_keys = dataset[["project", "commit_hash", "target"]].astype(str).to_dict(orient="records")
     selection_sha = _json_fingerprint({"rows": selection_keys})
+    installed = ({"verification": "not_checked_dry_run"} if dry_run
+                 else installed_model_identity(ollama_tag, str(model_spec.get("digest", ""))))
     core = _job_payload(job)
     core.update({
         "parser_version": PARSER_VERSION,
         "model_ollama_tag": ollama_tag,
         "model_digest": model_spec.get("digest"),
+        "installed_model": installed,
+        "parser_sha256": sha256_file(parser_path) if parser_path.exists() else None,
+        "parser_wrapper_sha256": sha256_file(repo_root / "src/parsing/strict.py") if (repo_root / "src/parsing/strict.py").exists() else None,
+        "resolved_runtime": asdict(runtime),
+        "max_concurrent_requests": max_concurrent,
         "dataset_sha256": sha256_file(dataset_path),
         "assignment_sha256": sha256_file(assignment_path) if assignment_path else None,
         "prompt_sha256": registry.sha256(job.prompt_id),
@@ -619,14 +662,16 @@ async def _run_job(
     })
     run_id = _json_fingerprint(core)[:24]
 
-    if manifest_path.exists():
+    old_manifest = None
+    if manifest_path.exists() and not dry_run:
         old_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        if old_manifest.get("run_id") != run_id:
+        if (old_manifest.get("run_id") != run_id or old_manifest.get("identity") != core
+                or old_manifest.get("version") != 2):
             raise RuntimeError(
                 f"{output_dir} already contains a different run. "
                 "Use a different --output-dir or restore the original selection/config."
             )
-    elif raw_path.exists() or final_path.exists():
+    elif not dry_run and (raw_path.exists() or final_path.exists() or (resume and output_dir.exists())):
         raise RuntimeError(f"Output files exist without run_manifest.json: {output_dir}")
 
     if raw_path.exists() and not resume and not dry_run:
@@ -643,28 +688,71 @@ async def _run_job(
     print(f"Representation:   {job.representation}")
     print(f"Temperature:      {job.temperature:g}")
     print(f"Initial seeds:    {list(job.initial_seeds)}")
-    print(f"Adaptive seeds:   {list(job.adaptive_seeds)}")
+    print(f"Adaptive seeds:   {asdict(job.adaptive_policy)}")
     print(f"Input token cap:  {runtime.max_content_tokens:,}")
     print(f"Output:           {output_dir}")
     print(f"Run ID:           {run_id}")
 
-    # Validate prompt rendering on the first selected commit even in dry-run.
-    first = dataset.iloc[0]
-    prepared_first, _ = backend.prepare_content(str(first["input_text"]))
-    registry.render_messages(
-        job.prompt_id,
-        **_prompt_variables(first, representation=job.representation, prepared_input=prepared_first),
-    )
-
+    # Render every selected input: template-like text can occur in commit data.
+    for item in dataset.itertuples(index=False):
+        prepared, _ = backend.prepare_content(str(item.input_text))
+        registry.render_messages(job.prompt_id, **_prompt_variables(
+            item, representation=job.representation, prepared_input=prepared))
     if dry_run:
-        print("DRY RUN: configuration, dataset, assignment selection, model, and prompt resolved successfully.")
+        parser_note = "v4.1.1 validated" if parser_path.exists() else "MISSING: execution blocked"
+        print(f"DRY RUN OK: config, assignments and all selected prompts validated; canonical parser {parser_note}; installed model not queried.")
         return
 
+    journal = Journal(output_dir / "raw_predictions.journal.jsonl")
+    attempts = Journal(output_dir / "attempts.journal.jsonl")
+    existing_rows, torn = journal.read()
+    if not journal.path.exists() and raw_path.exists():
+        raise RuntimeError("Snapshot without authoritative journal; cannot safely resume")
+    existing = _existing_index(existing_rows, run_id)
+    if old_manifest and len(existing) < old_manifest.get("completed_seed_calls", 0):
+        raise RuntimeError("Journal has fewer completed calls than the manifest; refusing to repeat lost evidence")
+    expected_targets = {(str(r.project), str(r.commit_hash)): str(r.target)
+                        for r in dataset.itertuples(index=False)}
+    for (project, commit_hash, seed), rec in existing.items():
+        metadata = {"model_id": job.model_id, "prompt_id": job.prompt_id,
+                    "representation": job.representation, "temperature": job.temperature,
+                    "num_predict": runtime.num_predict}
+        if any(rec.get(key) != value for key, value in metadata.items()):
+            raise RuntimeError("Raw record metadata mismatch")
+        if expected_targets.get((project, commit_hash)) != rec.get("target"):
+            raise RuntimeError("Raw record target/cohort mismatch")
+        if seed not in job.initial_seeds and not job.adaptive_policy.contains(seed):
+            raise RuntimeError("Raw record seed outside policy")
+        if rec["prediction"] not in set(job.task_labels) | {"<invalid_output>"}:
+            raise RuntimeError("Raw record prediction outside task taxonomy")
+    attempt_rows, attempt_torn = attempts.read()
+    attempt_index = {}
+    for rec in attempt_rows:
+        if (rec.get("run_id") != run_id
+            or (rec.get("project"), rec.get("commit_hash")) not in expected_targets
+            or type(rec.get("seed")) is not int
+            or type(rec.get("attempt")) is not int
+            or rec["attempt"] <= 0
+            or not isinstance(rec.get("call_id"), str)
+            or not isinstance(rec.get("raw_response"), str)
+            or not isinstance(rec.get("technical_detail"), str)):
+            raise RuntimeError("Malformed or incompatible attempt record")
+        if rec["seed"] not in job.initial_seeds and not job.adaptive_policy.contains(rec["seed"]):
+            raise RuntimeError("Attempt seed outside policy")
+        key = (rec["call_id"], rec["attempt"])
+        if key in attempt_index and attempt_index[key] != rec:
+            raise RuntimeError("Conflicting duplicate attempt record")
+        attempt_index[key] = rec
+
     output_dir.mkdir(parents=True, exist_ok=True)
-    started = _utc_now()
+    started = old_manifest["started_at_utc"] if old_manifest else _utc_now()
     manifest = {
-        "version": 1,
+        "version": 2,
         "run_id": run_id,
+        "identity": core,
+        "temperature": job.temperature,
+        "num_predict": runtime.num_predict,
+        "resume_events": list(old_manifest.get("resume_events", [])) + [{"at_utc": _utc_now(), "completed_calls": len(existing)}] if old_manifest else [],
         "status": "running",
         "started_at_utc": started,
         "completed_at_utc": None,
@@ -684,32 +772,45 @@ async def _run_job(
             "assignment": sha256_file(assignment_path) if assignment_path else None,
             "prompt_manifest": sha256_file(prompt_manifest),
             "prompt": registry.sha256(job.prompt_id),
+            "parser_source": sha256_file(parser_path),
         },
         "selection_sha256": selection_sha,
         "git": git_state(repo_root),
         "output_files": {
+            "call_journal": str(journal.path),
+            "attempt_journal": str(attempts.path),
             "raw_predictions": str(raw_path.relative_to(repo_root)) if raw_path.is_relative_to(repo_root) else str(raw_path),
             "predictions": str(final_path.relative_to(repo_root)) if final_path.is_relative_to(repo_root) else str(final_path),
         },
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+    atomic_json(manifest_path, manifest)
 
-    existing_rows = _read_jsonl_gz(raw_path)
-    existing = _existing_index(existing_rows, run_id)
+    journal.recover_tail(torn)
+    attempts.recover_tail(attempt_torn)
+    journal.initialize()
+    attempts.initialize()
+    journal.snapshot(raw_path)
     if existing:
         print(f"Resume state:     {len(existing):,} completed commit/seed calls")
 
     execution_cfg = inference_cfg["execution"]
-    max_concurrent = int(max_concurrent_override or execution_cfg["max_concurrent_requests"])
+    max_concurrent = int(execution_cfg["max_concurrent_requests"] if max_concurrent_override is None else max_concurrent_override)
     batch_size = int(execution_cfg["batch_size"])
+    if max_concurrent <= 0 or batch_size <= 0:
+        raise ConfigError("Concurrency and batch_size must be positive")
     semaphore = asyncio.Semaphore(max_concurrent)
 
     async def infer_one(item: Any, seed: int) -> dict[str, Any]:
+        call_id = uuid.uuid4().hex
         prepared_input, _ = backend.prepare_content(str(item.input_text))
         messages = registry.render_messages(
             job.prompt_id,
             **_prompt_variables(item, representation=job.representation, prepared_input=prepared_input),
         )
+        def save_attempt(evidence):
+            attempts.append({"run_id": run_id, "call_id": call_id, "project": str(item.project),
+                             "commit_hash": str(item.commit_hash), "seed": seed,
+                             "timestamp_utc": _utc_now(), **evidence})
         async with semaphore:
             result = await backend.infer(
                 model=ollama_tag,
@@ -720,6 +821,7 @@ async def _run_job(
                 request_timeout_seconds=job.request_timeout_seconds,
                 task_labels=job.task_labels,
                 health_monitor=monitor,
+                attempt_sink=save_attempt,
             )
         record = GenerativePredictionRecord(
             experiment_id=job.experiment_id,
@@ -751,11 +853,24 @@ async def _run_job(
             fold=None if pd.isna(getattr(item, "fold", None)) else int(getattr(item, "fold")),
             split=str(getattr(item, "split", "")),
         ).as_dict()
+        record["temperature"] = job.temperature
+        record["call_id"] = call_id
+        record["num_predict"] = runtime.num_predict
+        record["technical_detail"] = result.technical_detail
+        for field in ("protocol_record_id", "source_index", "canonical_target", "protocol_target"):
+            if hasattr(item, field):
+                record[field] = getattr(item, field)
         output_cfg = inference_cfg.get("output", {}) or {}
         if bool(output_cfg.get("preserve_input_text", False)):
             record["input_text"] = prepared_input
         if bool(output_cfg.get("preserve_full_prompt", False)):
             record["full_prompt"] = messages
+        key = (str(item.project), str(item.commit_hash), seed)
+        if key in existing:
+            raise RuntimeError(f"Attempt to overwrite completed call {key}")
+        # No await between inference completion and this durable commit.
+        journal.append(record)
+        existing[key] = record
         return record
 
     async def execute_seed(seed: int, selected: pd.DataFrame) -> None:
@@ -766,55 +881,71 @@ async def _run_job(
         records = list(selected.itertuples(index=False))
         for start in range(0, total, batch_size):
             batch = records[start:start + batch_size]
-            produced = await asyncio.gather(*(infer_one(item, seed) for item in batch))
-            _append_jsonl_gz(raw_path, produced)
-            for rec in produced:
-                key = (str(rec["project"]), str(rec["commit_hash"]), int(rec["seed"]))
-                existing[key] = rec
+            tasks = [asyncio.create_task(infer_one(item, seed)) for item in batch]
+            try:
+                outcomes = await asyncio.gather(*tasks, return_exceptions=True)
+                for outcome in outcomes:
+                    if isinstance(outcome, BaseException):
+                        raise outcome
+            finally:
+                # Drain siblings before releasing the job; each saves itself.
+                await asyncio.gather(*tasks, return_exceptions=True)
             done = min(start + len(batch), total)
             print(f"  seed {seed}: {done:,}/{total:,}", flush=True)
 
-    # Initial block is mandatory: execute every missing base seed for every commit.
-    for seed in job.initial_seeds:
-        missing_mask = [
-            (str(r.project), str(r.commit_hash), seed) not in existing
-            for r in dataset.itertuples(index=False)
-        ]
-        selected = dataset.loc[missing_mask].copy()
-        await execute_seed(seed, selected)
+    try:
+        # Initial block is mandatory: execute every missing base seed for every commit.
+        for seed in job.initial_seeds:
+            missing_mask = [
+                (str(r.project), str(r.commit_hash), seed) not in existing
+                for r in dataset.itertuples(index=False)
+            ]
+            selected = dataset.loc[missing_mask].copy()
+            await execute_seed(seed, selected)
 
-    # Adaptive execution: each seed is run only for commits whose consensus says
-    # that exact next seed is required.
-    for seed in job.adaptive_seeds:
-        needed_indices = []
-        for idx, item in enumerate(dataset.itertuples(index=False)):
-            result = _consensus_for_row(item, existing, job, resolve_first_to_two)
-            if not result.complete and result.missing_seed == seed:
-                needed_indices.append(idx)
-        selected = dataset.iloc[needed_indices].copy() if needed_indices else dataset.iloc[0:0].copy()
-        await execute_seed(seed, selected)
+        # Algorithmic policy: each commit supplies exactly its next missing seed.
+        while True:
+            needed = {}
+            for idx, item in enumerate(dataset.itertuples(index=False)):
+                result = _consensus_for_row(item, existing, job, resolve_first_to_two)
+                if not result.complete:
+                    needed.setdefault(result.missing_seed, []).append(idx)
+            if not needed:
+                break
+            for seed, indices in sorted(needed.items()):
+                await execute_seed(seed, dataset.iloc[indices].copy())
 
-    final = _final_prediction_frame(dataset, existing, job, resolve_first_to_two)
-    final.to_csv(final_path, index=False, compression="gzip")
+        final = _final_prediction_frame(dataset, existing, job, resolve_first_to_two)
+        atomic_bytes(final_path, gzip.compress(final.to_csv(index=False).encode("utf-8"), mtime=0))
+        journal.snapshot(raw_path)
 
-    seed_counts = {
-        str(seed): int(sum(k[2] == seed for k in existing))
-        for seed in job.all_seeds
-    }
-    invalid_count = int((final["prediction"] == "<invalid_output>").sum())
-    manifest["status"] = "completed"
-    manifest["completed_at_utc"] = _utc_now()
-    manifest["completed_seed_calls"] = len(existing)
-    manifest["seed_counts"] = seed_counts
-    manifest["final_invalid_predictions"] = invalid_count
-    manifest["model_restarts"] = monitor.total_restarts
-    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        seed_counts = {
+            str(seed): int(sum(k[2] == seed for k in existing))
+            for seed in sorted(set(job.initial_seeds) | {key[2] for key in existing})
+        }
+        invalid_count = int((final["prediction"] == "<invalid_output>").sum())
+        manifest["status"] = "completed"
+        manifest["completed_at_utc"] = _utc_now()
+        manifest["completed_seed_calls"] = len(existing)
+        manifest["seed_counts"] = seed_counts
+        manifest["final_invalid_predictions"] = invalid_count
+        manifest["model_restarts"] = monitor.total_restarts
+        atomic_json(manifest_path, manifest)
 
-    print("\nCompleted")
-    print(f"Final rows:       {len(final):,}")
-    print(f"Invalid final:    {invalid_count:,}")
-    print(f"Seed calls:       {seed_counts}")
-    print(f"Model restarts:   {monitor.total_restarts}")
+        print("\nCompleted")
+        print(f"Final rows:       {len(final):,}")
+        print(f"Invalid final:    {invalid_count:,}")
+        print(f"Seed calls:       {seed_counts}")
+        print(f"Model restarts:   {monitor.total_restarts}")
+    except BaseException as exc:
+        manifest["status"] = "incomplete"
+        manifest["interrupted_at_utc"] = _utc_now()
+        manifest["interruption"] = f"{type(exc).__name__}: {exc}"
+        manifest["completed_seed_calls"] = len(existing)
+        atomic_json(manifest_path, manifest)
+        journal.snapshot(raw_path)
+        raise
+
 
 
 def parse_args() -> argparse.Namespace:

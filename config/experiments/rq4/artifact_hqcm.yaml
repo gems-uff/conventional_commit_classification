@@ -10,7 +10,7 @@ shared:
   dataset: data/pre_cutoff/commits.csv.gz
   representation: message_and_diff
   initial_seeds: [10, 20, 30]
-  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  adaptive_policy: {start: 40, step: 10}
   consensus:
     method: first_to_two
     threshold: 2
@@ -36,6 +36,8 @@ conditions:
     model: gpt_oss_20b
     prompt_id: p_winner_adapted_to_hqcm
     temperature: 0.6
+    runtime_overrides:
+      request_timeout_seconds: 300
     input_constraint:
       context_window_tokens: 1024
 

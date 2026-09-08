@@ -13,7 +13,7 @@ temperature: 0.6
 consensus:
   method: adaptive_first_to_two
   initial_seeds: [10, 20, 30]
-  adaptive_seeds: [40, 50, 60, 70, 80, 90, 100]
+  adaptive_policy: {start: 40, step: 10}
   threshold: 2
 
 runtime_overrides:
@@ -67,8 +67,3 @@ stages:
       - p_code_disambiguation
       - p_exclude_low
       - p_high_only
-
-notes:
-  - >
-    p_structured is the canonical replication-package ID for the historical
-    condition referred to as p_header_structured in some analysis artifacts.

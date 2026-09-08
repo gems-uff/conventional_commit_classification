@@ -84,6 +84,22 @@ def load_assignments(path: str | Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(path)
     df = pd.read_csv(path, keep_default_na=False, low_memory=False)
+    artifact_columns = {"protocol", "project", "commit_hash", "canonical_target", "protocol_target"}
+    if artifact_columns.issubset(df.columns) and "target" not in df:
+        protocols = set(df["protocol"])
+        if protocols not in ({"flaccs_compatible"}, {"hqcm_compatible"}):
+            raise RuntimeError("Unknown artifact assignment protocol")
+        native = df["protocol_target"].astype(str).str.strip().str.casefold()
+        if protocols == {"hqcm_compatible"}:
+            native = native.replace({"cicd": "ci"})
+        canonical = df["canonical_target"].astype(str).str.strip().str.casefold()
+        if not native.equals(canonical):
+            raise RuntimeError("Artifact protocol target differs from canonical target")
+        df["target"] = canonical
+        # Membership manifests have no train/test partition or CV fold. These
+        # execution aliases select all members; original metadata is retained.
+        df["split"] = "test"
+        df["fold"] = 0
     missing = sorted(set(ASSIGNMENT_COLUMNS) - set(df.columns))
     if missing:
         raise RuntimeError(f"{path}: missing assignment columns {missing}")
@@ -97,7 +113,28 @@ def load_assignments(path: str | Path) -> pd.DataFrame:
     if not set(df["split"]).issubset({"train", "test"}):
         raise RuntimeError(f"{path}: unsupported split values {sorted(set(df['split']))}")
     df["_assignment_order"] = range(len(df))
+    if df.duplicated(list(ASSIGNMENT_COLUMNS[:-1])).any():
+        raise RuntimeError("Duplicate assignment rows")
+    validate_assignment_selection(None, df)
     return df
+
+
+def validate_assignment_selection(selected: pd.DataFrame | None, assignments: pd.DataFrame) -> None:
+    """Check frozen split invariants without regenerating assignments."""
+    for (_, fold), group in assignments.groupby(["protocol", "fold"]):
+        train = group[group["split"] == "train"]
+        test = group[group["split"] == "test"]
+        train_keys = set(zip(train.project, train.commit_hash))
+        if train_keys & set(zip(test.project, test.commit_hash)):
+            raise RuntimeError(f"Train/test commit leakage in fold {fold}")
+        if group["protocol"].str.contains("cross_project").any():
+            if set(train.project) & set(test.project):
+                raise RuntimeError(f"Cross-project repository leakage in fold {fold}")
+    cross_test = assignments[(assignments["split"] == "test") & assignments["protocol"].str.contains("cross_project")]
+    if not cross_test.empty and (cross_test.groupby(["protocol", "project"])["fold"].nunique() > 1).any():
+        raise RuntimeError("Cross-project repository assigned to multiple test folds")
+    if selected is not None and selected.duplicated(["project", "commit_hash"]).any():
+        raise RuntimeError("Duplicate selected commit keys")
 
 
 def materialize_assignments(

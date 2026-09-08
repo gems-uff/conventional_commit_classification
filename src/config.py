@@ -26,6 +26,20 @@ def load_inference_config(path: str | Path) -> dict[str, Any]:
     missing = sorted(required - set(cfg))
     if missing:
         raise RuntimeError(f"Inference config missing sections: {missing}")
+    if cfg["parsing"].get("parser_version") != "4.1.1":
+        raise RuntimeError("Inference requires canonical parser v4.1.1")
+    if cfg["token_estimation"].get("tokenizer") != "cl100k_base":
+        raise RuntimeError("Unsupported token estimator")
+    if cfg["input"]["truncation"].get("strategy") != "prefix" or not cfg["input"]["truncation"].get("enabled"):
+        raise RuntimeError("Only enabled prefix truncation is supported")
+    if cfg["execution"]["timeout"].get("retry_same_request") is not False:
+        raise RuntimeError("Timed-out requests must not be retried")
+    for section, key in (("generation", "num_predict"), ("execution", "max_attempts"),
+                         ("execution", "batch_size"), ("execution", "max_concurrent_requests"),
+                         ("input", "max_content_tokens")):
+        value = cfg[section].get(key)
+        if type(value) is not int or value <= 0:
+            raise RuntimeError(f"{section}.{key} must be a positive integer")
     return cfg
 
 

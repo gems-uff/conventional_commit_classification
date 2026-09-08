@@ -176,3 +176,42 @@ PYTHONPATH=. python3 tests/test_data_and_representations.py
 This archive is the shared library layer. The next package should add the thin
 `scripts/run_experiment.py` orchestrator that reads `config/experiments/*.yaml`,
 selects the backend from the condition, and writes the standardized output schema.
+
+
+### Ollama execution and resume
+
+Use `python scripts/run_ollama_experiment.py --experiment config/experiments/rq2.yaml --list-jobs`
+to inspect jobs, or replace `--list-jobs` with `--dry-run --limit 1` for a configuration smoke check.
+Dry-run never contacts Ollama. Real execution checks the installed model digest
+against `config/models.yaml`. Install the canonical parser with
+`python tools/install_canonical_parser.py --source /path/to/strict_response_parser.py`.
+
+New runs default to `runs/`; output inside `results/` is rejected. Use `--resume`
+only for an existing compatible run. The append-only call and attempt journals
+are authoritative and must be retained. Compressed raw snapshots are rebuilt
+atomically; torn journal tails are archived before repair. Each completed call
+is fsynced independently. Resume preserves the original start time and records
+separate events. Snapshot-only older runs require an explicit migration, which
+this runner does not perform.
+
+The mandatory base block is 10/20/30. Adaptive seeds start at 40 and increase by
+10 until two semantic or two invalid votes agree. No finite seed list determines
+exhaustion. Operational interruptions remain incomplete. Historical runs resolved
+before seed 80 was needed; this is an observation rather than a stopping rule.
+
+A timed-out blocking request retains its concurrency slot until it finishes.
+This prioritizes the configured in-flight limit over an immediate timeout return;
+no automatic model restart runs alongside live requests. Every returned retry
+attempt retains raw output and technical details.
+
+Install test support with `python -m pip install pytest`, then run `python -m pytest`.
+Tests use mocked inference and never need a live model. Supervised aggregation,
+training configuration, and HQCM-original statistics await the original research
+machine and are outside this execution layer.
+
+
+The within-corpus Ollama condition currently fails cohort preflight: the supplied
+assignments select 1,632 commits while frozen predictions contain 1,630, with
+substantial membership differences. Its config pins the frozen count and hash;
+reconcile the assignments from original evidence before running it. The runner
+will not silently regenerate the split or bypass this check with `--limit`.
