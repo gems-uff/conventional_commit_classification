@@ -15,6 +15,17 @@ Ollama execution mechanics (timeouts/retries/model restart/context/truncation).
 Its old response parser and its fallback-to-`others` behavior are intentionally
 not present.
 
+## Execution environment
+
+`environment.txt` (repository root) records the OS, kernel, CPU, GPU/driver/CUDA,
+RAM, and Ollama version of the machine used to run the LLM experiments. It was
+captured after the study's original execution window, so its OS/driver/CUDA
+versions reflect routine machine updates since then and may differ in patch
+level from the exact figures reported in the paper (Section 3.1: Ubuntu 24.04.3,
+kernel `6.8.0-87-generic`, NVIDIA driver 570.211.01, CUDA 12.8, "up to 5.7 GHz"
+CPU boost clock vs. the 6.0 GHz reported here, likely a BIOS/turbo setting
+change); the underlying hardware (CPU/GPU model, core count, RAM) is unchanged.
+
 ## Tree
 
 ```text
@@ -185,6 +196,26 @@ to inspect jobs, or replace `--list-jobs` with `--dry-run --limit 1` for a confi
 Dry-run never contacts Ollama. Real execution checks the installed model digest
 against `config/models.yaml`. Install the canonical parser with
 `python tools/install_canonical_parser.py --source /path/to/strict_response_parser.py`.
+
+`--experiment <path>` can be replaced with `--rq {rq1,rq2,rq3_1,rq3_2,rq4}` to select an
+experiment by research question instead of a YAML path:
+
+```bash
+python scripts/run_ollama_experiment.py --rq rq1 --list-jobs
+python scripts/run_ollama_experiment.py --rq rq3_2 --stage stage_1_definitions --dry-run
+python scripts/run_ollama_experiment.py --rq rq4 --stage cross_project --resume
+python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-experiments in sequence
+```
+
+`--stage` selects one of the four `config/experiments/rq4/*.yaml` sub-experiments
+(`cross_project`, `within_corpus`, `artifact_flaccs`, `artifact_hqcm`) when `--rq rq4`
+is used; without `--stage`, all four run one after another, each keeping its own
+run directory, manifest, and config-hash provenance. For `--rq rq3_2` (or `--experiment`
+pointed directly at `config/experiments/rq3_2.yaml`), `--stage` instead filters the
+already-expanded jobs down to one of the YAML's `stage_*` keys (e.g.
+`stage_1_definitions`, `stage_2_heuristics`, `stage_3_cot_and_few_shot`,
+`stage_4_abstention`); prompts shared across stages still run once. `--stage` is not
+accepted for `rq1`, `rq2`, or `rq3_1`, which have no sub-experiments or stages.
 
 New runs default to `runs/`; output inside `results/` is rejected. Use `--resume`
 only for an existing compatible run. The append-only call and attempt journals

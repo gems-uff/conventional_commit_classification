@@ -28,6 +28,14 @@ python scripts/run_ollama_experiment.py \
 python scripts/run_ollama_experiment.py \
   --experiment config/experiments/rq4/cross_project.yaml \
   --model gpt_oss_20b --resume
+
+--rq is an alternative to --experiment that selects a research question by
+name instead of a YAML path:
+
+python scripts/run_ollama_experiment.py --rq rq1 --dry-run
+python scripts/run_ollama_experiment.py --rq rq3_2 --stage stage_1_definitions
+python scripts/run_ollama_experiment.py --rq rq4 --stage cross_project
+python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-experiments in sequence
 """
 
 from __future__ import annotations
@@ -948,10 +956,60 @@ async def _run_job_locked(
 
 
 
+RQ4_STAGE_FILES = {
+    "cross_project": "cross_project.yaml",
+    "within_corpus": "within_corpus.yaml",
+    "artifact_flaccs": "artifact_flaccs.yaml",
+    "artifact_hqcm": "artifact_hqcm.yaml",
+}
+RQ_SINGLE_FILES = {
+    "rq1": "rq1.yaml",
+    "rq2": "rq2.yaml",
+    "rq3_1": "rq3_1.yaml",
+    "rq3_2": "rq3_2.yaml",
+}
+
+
+def resolve_experiments(repo_root: Path, args: argparse.Namespace) -> list[tuple[Path, str | None]]:
+    """Resolve --experiment/--rq/--stage into (experiment_path, stage_filter) pairs.
+
+    stage_filter is None once a stage has already selected a file (rq4) or when
+    no stage applies; otherwise it is carried to main() to filter the expanded
+    jobs of a stage-structured experiment (currently only rq3_2's `stages` map).
+    """
+    if args.experiment and args.rq:
+        raise ConfigError("Pass either --experiment or --rq, not both")
+    if not args.experiment and not args.rq:
+        raise ConfigError(f"Pass --experiment <path> or --rq {{{','.join(RQ_SINGLE_FILES) + ',rq4'}}}")
+    exp_dir = repo_root / "config/experiments"
+
+    if args.experiment:
+        return [(_resolve_repo_path(repo_root, args.experiment), args.stage)]
+
+    if args.rq == "rq4":
+        if args.stage:
+            if args.stage not in RQ4_STAGE_FILES:
+                raise ConfigError(f"Unknown --stage {args.stage!r} for --rq rq4; choices: {sorted(RQ4_STAGE_FILES)}")
+            return [(exp_dir / "rq4" / RQ4_STAGE_FILES[args.stage], None)]
+        return [(exp_dir / "rq4" / fname, None) for fname in RQ4_STAGE_FILES.values()]
+
+    if args.stage and args.rq != "rq3_2":
+        raise ConfigError(f"--stage is only supported for --rq rq3_2 or --rq rq4 (got --rq {args.rq})")
+    return [(exp_dir / RQ_SINGLE_FILES[args.rq], args.stage)]
+
+
 def parse_args() -> argparse.Namespace:
     default_root = Path(__file__).resolve().parents[1]
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--experiment", required=True, help="Experiment YAML path, relative to repository root or absolute.")
+    p.add_argument("--experiment", default=None, help="Experiment YAML path, relative to repository root or absolute. Alternative to --rq.")
+    p.add_argument("--rq", default=None, choices=sorted(RQ_SINGLE_FILES) + ["rq4"],
+                    help="Select the experiment by research question instead of --experiment. "
+                         "--rq rq4 without --stage runs all four rq4 sub-experiments in sequence.")
+    p.add_argument("--stage", default=None,
+                    help="--rq rq4: one of cross_project, within_corpus, artifact_flaccs, artifact_hqcm "
+                         "(selects one sub-experiment file). --rq rq3_2 (or --experiment pointing at it): "
+                         "one of the YAML's stage_* keys (filters jobs to that stage's prompts). "
+                         "Unsupported for rq1/rq2/rq3_1.")
     p.add_argument("--repo-root", default=str(default_root), help="Replication-package repository root.")
     p.add_argument("--output-dir", default=None, help="Base output directory. Default: <repo>/runs")
     p.add_argument("--prompt-manifest", default=None, help="Default: prompts/manifest.yaml (fallback: manifest.yaml).")
@@ -978,34 +1036,45 @@ def main() -> int:
     # useful before tools/install_canonical_parser.py is run.
     from src.config import load_evaluation_config, load_experiment, load_inference_config, load_models
 
-    experiment_path = _resolve_repo_path(repo_root, args.experiment)
     inference_path = repo_root / "config/inference.yaml"
     evaluation_path = repo_root / "config/evaluation.yaml"
     models_path = repo_root / "config/models.yaml"
 
-    experiment = load_experiment(experiment_path)
     inference_cfg = load_inference_config(inference_path)
     evaluation = load_evaluation_config(evaluation_path)
     models = load_models(models_path)
 
-    jobs = expand_jobs(experiment, model_registry=models, evaluation=evaluation)
-    if args.model:
-        wanted = set(args.model)
-        jobs = [j for j in jobs if j.model_id in wanted]
-    if args.condition:
-        wanted = set(args.condition)
-        jobs = [j for j in jobs if j.condition_id in wanted]
-    if args.prompt:
-        wanted = set(args.prompt)
-        jobs = [j for j in jobs if j.prompt_id in wanted]
-    if not jobs:
+    resolved = resolve_experiments(repo_root, args)
+    all_jobs: list[tuple[Path, OllamaJob]] = []
+    for experiment_path, stage_filter in resolved:
+        experiment = load_experiment(experiment_path)
+        jobs = expand_jobs(experiment, model_registry=models, evaluation=evaluation)
+        if stage_filter:
+            valid_stages = set(experiment.get("stages", {}) or {})
+            if not valid_stages:
+                raise ConfigError(f"--stage is not supported for {experiment_path} (no 'stages' defined)")
+            if stage_filter not in valid_stages:
+                raise ConfigError(f"Unknown --stage {stage_filter!r} for {experiment_path}; choices: {sorted(valid_stages)}")
+            jobs = [j for j in jobs if stage_filter in j.stage_memberships]
+        if args.model:
+            wanted = set(args.model)
+            jobs = [j for j in jobs if j.model_id in wanted]
+        if args.condition:
+            wanted = set(args.condition)
+            jobs = [j for j in jobs if j.condition_id in wanted]
+        if args.prompt:
+            wanted = set(args.prompt)
+            jobs = [j for j in jobs if j.prompt_id in wanted]
+        all_jobs.extend((experiment_path, job) for job in jobs)
+
+    if not all_jobs:
         raise RuntimeError(
             "No Ollama-backed jobs matched the experiment/filters. FLACCS, HQCM, "
             "SVM, BiLSTM, and CodeBERT require their dedicated runners."
         )
 
-    print(f"Expanded {len(jobs)} Ollama job(s) from {experiment_path}")
-    for i, job in enumerate(jobs, 1):
+    print(f"Expanded {len(all_jobs)} Ollama job(s) from {len(resolved)} experiment file(s)")
+    for i, (_, job) in enumerate(all_jobs, 1):
         _print_job(job, i)
     if args.list_jobs:
         return 0
@@ -1032,7 +1101,7 @@ def main() -> int:
     project_filter = set(args.project) if args.project else None
 
     async def run_all():
-        for job in jobs:
+        for experiment_path, job in all_jobs:
             await _run_job(
                 repo_root=repo_root,
                 job=job,
