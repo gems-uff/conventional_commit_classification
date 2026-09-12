@@ -3,10 +3,13 @@ from __future__ import annotations
 import random
 import re
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from typing import Any
 
 import numpy as np
 import pandas as pd
+
+from .model_selection import ValidationSplitConfig, carve_validation_split, macro_f1
 
 LABELS = ("fix", "feat", "build", "ci", "docs", "style", "refactor", "perf", "test", "chore", "others")
 LABEL2ID = {x: i for i, x in enumerate(LABELS)}; ID2LABEL = {i: x for x, i in LABEL2ID.items()}
@@ -90,3 +93,99 @@ def train_predict(train: pd.DataFrame, test: pd.DataFrame, *, seed: int, config:
     out = test.copy(); out["prediction"] = [ID2LABEL[i] for i in preds]; out["seed"] = seed
     out["correct"] = out["target"] == out["prediction"]
     return out
+
+
+def select_num_epochs(
+    train: pd.DataFrame,
+    *,
+    seed: int,
+    max_epochs: int,
+    patience: int,
+    validation: ValidationSplitConfig | None = None,
+    group_col: str | None = None,
+    base_config: BiLstmConfig | None = None,
+) -> tuple[BiLstmConfig, dict[str, Any]]:
+    """Pick a fixed epoch budget via one held-out split carved from `train`.
+
+    Runs once per fold/holdout with early stopping on dev Macro-F1 (patience in
+    epochs without improvement). The resulting epoch count is then reused, fixed,
+    for every seed's from-scratch fit in `train_predict` for that fold/holdout --
+    mirroring `select_c` in svm.py, the repeated-seed protocol varies training
+    stochasticity, not training length. This function is self-contained (it does
+    not call `train_predict`) so that function's already-validated behavior for
+    the final, fixed-epoch fit is left untouched; no model state from this
+    selection run is kept, only the chosen epoch count.
+    """
+    import torch
+    import torch.nn as nn
+    from torch.utils.data import DataLoader, Dataset
+
+    if max_epochs <= 0 or patience <= 0:
+        raise ValueError("max_epochs and patience must be positive")
+    c = base_config or BiLstmConfig()
+    train_prime, dev = carve_validation_split(train, seed=seed, config=validation, group_col=group_col)
+    set_all_seeds(seed)
+
+    counts = Counter()
+    for text in train_prime["input_text"]: counts.update(tokenize(text))
+    vocab = {PAD_TOKEN: 0, UNK_TOKEN: 1}
+    for token, _ in counts.most_common(c.max_vocab_size - 2): vocab[token] = len(vocab)
+
+    def encode(text: str):
+        ids = [vocab.get(t, 1) for t in tokenize(text)[:c.max_seq_len]]
+        return ids + [0] * (c.max_seq_len - len(ids))
+
+    class DS(Dataset):
+        def __init__(self, frame): self.frame = frame.reset_index(drop=True)
+        def __len__(self): return len(self.frame)
+        def __getitem__(self, i):
+            r = self.frame.iloc[i]
+            return torch.tensor(encode(r.input_text), dtype=torch.long), torch.tensor(LABEL2ID[r.target], dtype=torch.long)
+
+    class Model(nn.Module):
+        def __init__(self):
+            super().__init__(); self.emb = nn.Embedding(len(vocab), c.embedding_dim, padding_idx=0)
+            self.lstm = nn.LSTM(c.embedding_dim, c.hidden_dim, num_layers=c.num_layers, batch_first=True,
+                                bidirectional=True, dropout=c.dropout if c.num_layers > 1 else 0.0)
+            self.drop = nn.Dropout(c.dropout); self.fc = nn.Linear(c.hidden_dim * 2, len(LABELS))
+        def forward(self, x):
+            _, (h, _) = self.lstm(self.emb(x)); return self.fc(self.drop(torch.cat([h[-2], h[-1]], dim=1)))
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = Model().to(device)
+    class_counts = train_prime["target"].value_counts().reindex(LABELS).fillna(0).to_numpy(float)
+    if np.any(class_counts == 0): raise RuntimeError("train' split is missing one or more classes")
+    weights = torch.tensor(len(train_prime) / (len(LABELS) * class_counts), dtype=torch.float, device=device)
+    criterion = nn.CrossEntropyLoss(weight=weights)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=c.learning_rate, weight_decay=c.weight_decay)
+    gen = torch.Generator().manual_seed(seed)
+    loader = DataLoader(DS(train_prime), batch_size=c.batch_size, shuffle=True, generator=gen)
+
+    def predict(frame: pd.DataFrame) -> list[str]:
+        model.eval(); preds = []
+        with torch.no_grad():
+            for x, _ in DataLoader(DS(frame), batch_size=c.batch_size, shuffle=False):
+                preds.extend(torch.argmax(model(x.to(device)), dim=1).cpu().tolist())
+        return [ID2LABEL[i] for i in preds]
+
+    best_score, best_epoch, stalled = -1.0, 0, 0
+    dev_scores: list[float] = []
+    for epoch in range(1, max_epochs + 1):
+        model.train()
+        for x, y in loader:
+            x, y = x.to(device), y.to(device); optimizer.zero_grad(); loss = criterion(model(x), y)
+            loss.backward(); torch.nn.utils.clip_grad_norm_(model.parameters(), c.gradient_clip_norm); optimizer.step()
+        score = macro_f1(dev["target"], predict(dev))
+        dev_scores.append(score)
+        if score > best_score:
+            best_score, best_epoch, stalled = score, epoch, 0
+        else:
+            stalled += 1
+            if stalled >= patience:
+                break
+
+    diagnostics = {
+        "dev_scores": dev_scores, "selected_num_epochs": best_epoch, "best_dev_macro_f1": best_score,
+        "train_prime_rows": len(train_prime), "dev_rows": len(dev),
+    }
+    return replace(c, num_epochs=best_epoch), diagnostics

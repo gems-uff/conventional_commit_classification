@@ -7,10 +7,21 @@ description: >
   holdout without repository-level grouping.
 
 shared:
-  # Frozen GPT-OSS prediction cohort. Current assignments fail this preflight;
-  # reconcile them from original research evidence, never regenerate silently.
-  expected_rows: 1630
-  expected_cohort_sha256: caeb18013eded7c66125126767702594d7856d5b40faecfb9ad55aa405fe479c
+  # Reconciled 2026-09-12 (see TODO.md item 2): the previous expected_rows/hash
+  # (1630, caeb18013eded7c66125126767702594d7856d5b40faecfb9ad55aa405fe479c)
+  # matched a stale GPT-OSS prediction cohort computed against an older
+  # snapshot of the corpus. The value below (1632) matches the article
+  # (main.tex:663, "6,527 training commits and 1,632 test commits") and was
+  # confirmed member-for-member (not just by count) against the legacy
+  # rq4_non_cross_v2_package's own dataset/rq4_v2_from_md_11classes/
+  # within_corpus/test.csv via a matching cohort_sha256. Regenerating the
+  # stale frozen predictions in results/rq4/supplementary_benchmark/ against
+  # this cohort is still pending (TODO.md item 2) and unaffected by this
+  # config value; this only unblocks the preflight for new runs (trainable
+  # baselines and any fresh GPT-OSS/FLACCS/HQCM execution) against the
+  # correct cohort.
+  expected_rows: 1632
+  expected_cohort_sha256: cc25059fa0b2597e5f07bef599158e45ae627d49562597bdcca486c936bc8256
   dataset: data/pre_cutoff/commits.csv.gz
   representation: message_and_diff
   initial_seeds: [10, 20, 30]

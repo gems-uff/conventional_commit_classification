@@ -82,3 +82,35 @@ def load_experiment(path: str | Path) -> dict[str, Any]:
     if cfg["version"] != 1:
         raise RuntimeError("Unsupported experiment config version")
     return cfg
+
+
+def load_training_config(path: str | Path) -> dict[str, Any]:
+    """Load a config/training/*.yaml for a trainable RQ4 baseline (SVM/BiLSTM/CodeBERT).
+
+    Every such config carries a `model_selection` block describing how its one
+    tunable hyperparameter (SVM's `C`) or training length (BiLSTM/CodeBERT's
+    epoch count) is chosen once per fold/holdout from an internal validation
+    split of that fold's own training partition, never its test partition.
+    """
+    cfg = load_yaml(path)
+    if cfg.get("version") != 1:
+        raise RuntimeError("Unsupported training config version")
+    if "model" not in cfg:
+        raise RuntimeError("Training config missing 'model'")
+    selection = cfg.get("model_selection")
+    if not isinstance(selection, dict):
+        raise RuntimeError("Training config missing 'model_selection'")
+    if selection.get("method") not in {"grid_search", "early_stopping"}:
+        raise RuntimeError(f"Unsupported model_selection.method: {selection.get('method')!r}")
+    if selection.get("method") == "grid_search" and not selection.get("grid"):
+        raise RuntimeError("model_selection.method=grid_search requires a non-empty 'grid'")
+    if selection.get("method") == "early_stopping":
+        for key in ("max_epochs", "patience"):
+            value = selection.get(key)
+            if type(value) is not int or value <= 0:
+                raise RuntimeError(f"model_selection.{key} must be a positive integer")
+    validation = selection.get("validation", {})
+    fraction = validation.get("fraction")
+    if type(fraction) not in (int, float) or not 0 < fraction < 1:
+        raise RuntimeError("model_selection.validation.fraction must be in (0, 1)")
+    return cfg

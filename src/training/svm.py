@@ -1,10 +1,14 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
+from typing import Any, Sequence
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
+
+from .model_selection import ValidationSplitConfig, carve_validation_split, macro_f1
 
 
 @dataclass(frozen=True)
@@ -44,3 +48,36 @@ def train_predict(train: pd.DataFrame, test: pd.DataFrame, *, seed: int, config:
     out = test.copy(); out["prediction"] = model.predict(test["input_text"]); out["seed"] = seed
     out["correct"] = out["target"] == out["prediction"]
     return out
+
+
+def select_c(
+    train: pd.DataFrame,
+    *,
+    seed: int,
+    grid: Sequence[float],
+    validation: ValidationSplitConfig | None = None,
+    group_col: str | None = None,
+    base_config: SvmConfig | None = None,
+) -> tuple[SvmConfig, dict[str, Any]]:
+    """Pick `C` via one held-out split carved from `train` (never touches test).
+
+    Runs once per fold/holdout; the returned config is then reused, fixed, across
+    every seed's from-scratch fit in `train_predict` for that fold/holdout -- the
+    repeated-seed protocol varies training stochasticity, not the hyperparameter.
+    """
+    if not grid:
+        raise ValueError("grid must be non-empty")
+    base = base_config or SvmConfig()
+    train_prime, dev = carve_validation_split(train, seed=seed, config=validation, group_col=group_col)
+    scores: dict[float, float] = {}
+    for c in grid:
+        candidate = replace(base, C=float(c))
+        model = build_model(seed, candidate)
+        model.fit(train_prime["input_text"], train_prime["target"])
+        scores[float(c)] = macro_f1(dev["target"], model.predict(dev["input_text"]))
+    best_c = max(scores, key=scores.get)
+    diagnostics = {
+        "grid_scores": scores, "selected_C": best_c,
+        "train_prime_rows": len(train_prime), "dev_rows": len(dev),
+    }
+    return replace(base, C=best_c), diagnostics
