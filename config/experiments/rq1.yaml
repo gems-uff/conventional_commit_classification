@@ -2,7 +2,7 @@ version: 1
 id: rq1_temporal_alignment
 research_question: rq1
 description: >
-  Compare the same seven LLMs on pre-cutoff and post-cutoff commits to test
+  Compare the same eight LLMs on pre-cutoff and post-cutoff commits to test
   whether temporal alignment with the models' reported knowledge cutoffs
   systematically affects commit-classification performance.
 
@@ -21,6 +21,7 @@ shared:
 
 models:
   - gemma_3_27b
+  - gpt_oss_20b
   - granite_3_3_8b
   - llama_3_2_vision_11b
   - magistral_24b
@@ -32,6 +33,8 @@ conditions:
   pre_cutoff:
     dataset: data/pre_cutoff/commits.csv.gz
     runtime_overrides:
+      gpt_oss_20b:
+        request_timeout_seconds: 300
       granite_3_3_8b:
         request_timeout_seconds: 180
       llama_3_2_vision_11b:
@@ -50,6 +53,8 @@ conditions:
   post_cutoff:
     dataset: data/post_cutoff/commits.csv.gz
     runtime_overrides:
+      gpt_oss_20b:
+        request_timeout_seconds: 300
       granite_3_3_8b:
         request_timeout_seconds: 180
       llama_3_2_vision_11b:
