@@ -5,7 +5,13 @@ repositório. Ordenado por impacto na reprodutibilidade do RQ4 e do pacote como
 um todo. Atualizado em 2026-09-12 (runner dos baselines treináveis, correções
 motivadas pela crítica de revisor M7, reconciliação do within-corpus, e —
 mais tarde no mesmo dia — execução completa na griffin com resultados reais
-para os dois benchmarks; ver seção 5).
+para os dois benchmarks; ver seção 5). Revisado em 2026-09-24: confirmado por
+inspeção direta dos arquivos que a promoção dos artefatos da griffin pra
+`results/rq4/` e a reescrita de `main.tex` (seção 5) já tinham sido feitas,
+mas continuavam marcadas como pendentes aqui — corrigido abaixo. Também nesta
+revisão: `scripts/run_flaccs_experiment.py` (novo, item 1) fecha a lacuna do
+runner FLACCS; HQCM foi decidido como limitação aceita, não lacuna a fechar
+(ver item 1).
 
 ## 1. Faltam runners para os backends não-Ollama — baselines treináveis resolvidos; FLACCS/HQCM ainda faltam
 
@@ -28,8 +34,13 @@ CodeBERT) **agora têm runner**, criado nesta sessão.
   - **Ainda falta, e isso é trabalho de texto, não de código**: `main.tex` §3.4.2 ainda descreve "training schedules were fixed in advance"; falta a frase explícita sobre a assimetria 512×30k (CodeBERT é limite arquitetural, BiLSTM agora é escolha dimensionada pelo corpus); e o Finding 5 ("GPT-OSS significantly outperformed all five...") só pode ser reavaliado depois que a execução completa (abaixo) terminar e as métricas forem recalculadas.
   - Ver `tests/test_model_selection.py` para cobertura (parcial — item 4).
 - [x] Execução completa na griffin (`cross_project`, 5 folds, e `within_corpus`) — **terminou com sucesso**, sem `--limit`, SVM/BiLSTM/CodeBERT retreinados do zero por seed com a seleção validada. Resultados e comparação com os números antigos: ver seção 5.
-- [ ] `scripts/run_flaccs_experiment.py` (ou equivalente) para as condições FLACCS de `rq4/artifact_flaccs.yaml`.
-- [ ] `scripts/run_hqcm_experiment.py` para HQCM (`rq4/artifact_hqcm.yaml` + protocolo original de 518 commits).
+- [x] **`scripts/run_flaccs_experiment.py`** (2026-09-24) — runner dedicado à condição `flaccs` de `config/experiments/rq4/artifact_flaccs.yaml` (o artefato FLACCS liberado, `0x404/ccs-code-llama-7b`, no subconjunto de 2.573 commits compatíveis). GPT-OSS dessa mesma condição já rodava via `run_ollama_experiment.py --rq rq4 --stage artifact_flaccs`; a condição `flaccs` extended-11class de `cross_project.yaml`/`within_corpus.yaml` continua sem runner próprio porque já está congelada (item 2) — não é a mesma lacuna.
+  - Mesmo padrão de manifest/journal/`--resume`/`--dry-run`/`--list-jobs` dos outros runners; reusa `src/consensus.py` (adaptive first-to-two) e `src/parsing/strict.py` (parser canônico v4.1.1) — não a extração por regex nem o voto por maioria simples dos scripts standalone legados (`flaccs_hf_len1024_multiseed_adaptive.py`, `flaccs_test_csv_classifier.py`) que este runner substitui.
+  - O prompt (`p_flaccs_native_10class`) é resolvido via `prompts/manifest.yaml`, nunca hardcoded no script. `FlaccsBackend.build_prompt()` (novo, em `src/inference/flaccs.py`) faz o truncamento em nível de tokenizer (mensagem até `message_max_tokens=64`, diff absorvendo o restante de `context_window_tokens=1024`) a partir dos dois placeholders do template — difere um pouco do script legado `flaccs_hf_len1024_multiseed_adaptive.py`, que também cobrava alguns tokens do texto literal de wrapper ("- given commit message:") contra o teto da mensagem; a diferença é de poucos tokens em um orçamento de 1.024 e não muda quais commits precisam de truncamento (`data/rq4/artifact_compatible/flaccs/assignments.csv` já restringe a condição a commits cujo prompt original e não-truncado cabe no orçamento).
+  - `do_sample: false` (greedy determinístico, sem temperature/top_p) vem do próprio `artifact_flaccs.yaml`, batendo com o que `FlaccsBackend` já implementava antes deste runner existir.
+  - Validado nesta sessão: `--list-jobs`/`--dry-run` rodam limpos na máquina de desenvolvimento (sem `torch`/`transformers` instalados, como já documentado); `tests/test_flaccs_runner.py` (novo, 9 testes) cobre expansão de job, dry-run offline, run/resume básico, progressão de seed adaptativa, terminalidade por `<invalid_output>`, proteção de `results/`, e rejeição de identidade — tudo com um `FlaccsBackend` mockado (não precisa do modelo real). A suíte completa (`pytest`) continua 100% verde (88 passed, 1 skipped) depois da mudança.
+  - **Ainda falta, e só pode ser feito na griffin**: a execução real (baixar `0x404/ccs-code-llama-7b` do Hugging Face, rodar sem `--limit`) e a decisão de promover o `predictions.csv.gz` resultante pra dentro de `results/rq4/related_work_artifacts/flaccs/` (hoje só tem a versão congelada de uma execução anterior).
+- [x] **HQCM decidido como limitação aceita, não lacuna de código** (2026-09-24) — não haverá `scripts/run_hqcm_experiment.py`. Ao contrário do FLACCS (pesos prontos no Hugging Face, só inferência), reproduzir HQCM exigiria reconstruir a infraestrutura de fine-tuning do artefato original (`run_hqcm(1).py` legado precisa de `--hqcm-root` com um venv próprio e o adapter `chcl_llama2_7b_len1024` já treinado) — não é "rodar um modelo do Hub", é recriar o ambiente de treino. `results/rq4/related_work_artifacts/hqcm*/` e as colunas `hqcm`/`CodeFuse HQCM` de `cross_project`/`within_corpus` continuam com as predictions congeladas da execução original. Isso deve constar explicitamente na carta de resposta ao revisor (ver item já registrado abaixo sobre "FLACCS/HQCM entram com pesos de outro corpus").
 
 ## 2. RQ4 within-corpus (Ollama) com preflight quebrado — preflight corrigido; predictions do GPT-OSS/FLACCS/HQCM ainda pendentes
 
@@ -154,28 +165,48 @@ ao M7: a vantagem do GPT-OSS no cross-project não depende de baselines
 sub-treinadas, e o contra-argumento do within-corpus fica mais robusto, não
 mais frágil, depois da correção.
 
+**Reanálise estatística concluída (2026-09-14, rodada pelo Rodrigo fora desta
+sessão, seguindo a mesma regra de decisão pré-especificada dos notebooks)**:
+
+- *Cross-project (primary)*: Shapiro-Wilk rejeita normalidade só pro CodeBERT
+  (W=.919, p=.026 — quase idêntico ao já publicado W=.921, p=.029) → rota
+  Friedman, igual antes. χ²(5)=93,45, p<.001, Kendall's W=.623. Estrutura
+  pareada **idêntica** à já publicada: GPT-OSS bate os cinco outros com
+  significância; CodeBERT e FLACCS batem TF-IDF+SVM; CodeBERT vs FLACCS não
+  significativo; BiLSTM não difere de TF-IDF/CodeBERT/FLACCS; HQCM perde pra
+  todos. **O Finding 5 sobrevive intacto — nem uma comparação de significância
+  mudou**, apesar do CodeBERT/BiLSTM terem melhorado descritivamente.
+- *Within-corpus (supplementary)*: Shapiro-Wilk não rejeita normalidade em
+  nenhum → rota paramétrica (ANOVA + Greenhouse-Geisser, Mauchly rejeitou
+  esfericidade). F(3,52; 101,94)=71,78, p<.001, η²G=.544. **Achado novo**: o
+  CodeBERT agora bate **todos os outros cinco modelos com significância**,
+  incluindo o GPT-OSS (Hedges' g=0,64, médio, p_Holm=.013) — antes da correção,
+  a vantagem descritiva do CodeBERT sobre o GPT-OSS não era significativa.
+  BiLSTM e TF-IDF+SVM continuam à frente do GPT-OSS só descritivamente, sem
+  significância (como antes).
+
 Falta, antes de considerar isso fechado:
 
-- [ ] **Reanálise estatística** (ANOVA/Friedman + testes pareados com Holm,
-  como os notebooks `results/rq4/{primary_benchmark,supplementary_benchmark}/analysis/*.ipynb`
-  já fazem) rodada em cima dos `benchmark_macro_f1.csv` novos — só temos a
-  média descritiva até agora, não significância. Decide se "significantly
-  outperformed" continua válido no cross-project e se o within-corpus passa a
-  ser estatisticamente significativo com a vantagem maior do CodeBERT.
-- [ ] **Trazer os artefatos da griffin pro repositório**: as `predictions.csv.gz`
-  novas (5 folds × 3 modelos no cross-project; 1 × 3 no within-corpus, com seus
-  `run_manifest.json`) e os dois `benchmark_macro_f1.csv`. Decidir se isso
-  **substitui** `results/rq4/{primary_benchmark,supplementary_benchmark}/{predictions,metrics}/...`
-  (os congelados atuais) ou fica paralelo até promoção deliberada.
-- [ ] **Reescrever `main.tex`**: §3.4.2 (validação em vez de "fixed in
-  advance"), frase explícita de assimetria de contexto (512×10k/30k, CodeBERT
-  arquitetural vs. BiLSTM dimensionado pelo corpus), tabelas do RQ4 com os
-  números novos, Finding 5 e o parágrafo do within-corpus ajustados conforme o
-  resultado da reanálise estatística acima.
+- [x] Reanálise estatística (ANOVA/Friedman + pareados com Holm) — feita pros
+  dois benchmarks, achados acima.
+- [x] **Trazer os artefatos da griffin pro repositório** (verificado em
+  2026-09-24): `results/rq4/{primary_benchmark,supplementary_benchmark}/{predictions,metrics}/...`
+  já contêm os valores novos (conferido célula a célula contra a tabela acima:
+  CodeBERT 0,405/0,583, BiLSTM 0,377/0,517 etc.) — os congelados antigos foram
+  substituídos, não ficaram paralelos.
+- [x] **Reescrever `main.tex`** (verificado em 2026-09-24 contra `main(1).tex`,
+  2.558 linhas): §3.4.2 já descreve a validação por fold (linha 696-700, não
+  mais "fixed in advance"), a frase de assimetria 512×10k/30k está em
+  main(1).tex:700, as tabelas do RQ4 (main(1).tex:1626-1631 cross-project,
+  main(1).tex:1658 within-corpus) têm os números novos, e o Finding 5
+  (main(1).tex:1827) e o parágrafo do within-corpus (main(1).tex:1668-1670)
+  já refletem a reanálise estatística (CodeBERT bate GPT-OSS com significância
+  no within-corpus, g=.638, p_Holm=.0132).
 - [ ] **Carta de resposta ao revisor** cobrindo o que continua sem solução
   técnica (decisão consciente, não lacuna): FLACCS/HQCM entram com pesos de
   outro corpus (fora de distribuição); nenhum baseline tipo LoRA-num-7B foi
-  adicionado.
+  adicionado. (Isso é para a submissão, não faz parte do pacote de replicação
+  em si.)
 
 ## Já validado como OK
 

@@ -144,13 +144,25 @@ by `prompts/manifest.yaml`, keeping prompt provenance separate from execution co
 
 ## 6. Training backends
 
-The modules preserve the final runner settings supplied for the study:
+The modules preserve the final runner settings supplied for the study, updated
+2026-09-12 in response to reviewer M7 (fixed hyperparameters/epochs without
+validation, and the 512-token BiLSTM/CodeBERT context asymmetry):
 
 - TF-IDF + LinearSVC: 50k features, 1–2 grams, balanced LinearSVC;
-- BiLSTM: vocab 50k, seq 512, embedding/hidden 128, 10 epochs, weighted CE,
-  AdamW 1e-3, weight decay 1e-5, grad clip 1.0;
-- CodeBERT: `microsoft/codebert-base`, max length 512, fixed 3 epochs, LR 2e-5,
-  batch 8, weight decay .01, no test-time model selection.
+- BiLSTM: vocab 50k, embedding/hidden 128, weighted CE, AdamW 1e-3, weight
+  decay 1e-5, grad clip 1.0, max sequence length 10,000 tokens (raised from
+  512: the empirical p95 of the pre-cutoff corpus — 512 truncated 57.6% of it);
+- CodeBERT: `microsoft/codebert-base`, max length 512, LR 2e-5, batch 8,
+  weight decay .01. 512 remains an architectural ceiling of the checkpoint
+  (`max_position_embeddings=514`), not a config choice.
+
+`C` (SVM) and the number of epochs (BiLSTM/CodeBERT) are no longer fixed in
+advance. `src/training/model_selection.py` carves an internal train/dev split
+per fold (`carve_validation_split()` — grouped by repository in cross-project,
+class-stratified in within-corpus, never touching the test partition) and
+`select_c()`/`select_num_epochs()` pick the hyperparameter once per fold from
+that split before every seed retrains from scratch on the full outer-training
+partition. Defaults for the search live in `config/training/{svm,bilstm,codebert}.yaml`.
 
 These functions produce per-seed predictions only. Consensus is centralized.
 
@@ -165,7 +177,7 @@ This avoids legacy majority/tie-first-seed logic in older SVM/RQ4 runners.
 
 ## 8. Output contract
 
-See `OUTPUT_SCHEMA.md`. Prediction tables are intentionally compact: canonical
+Prediction tables are intentionally compact: canonical
 inputs and rendered prompts are reconstructable from the dataset, representation, and
 prompt ID, so they are not duplicated in every row. A run-level manifest freezes their
 checksums and the model/parser/runtime provenance. Development-only fields such as
@@ -184,9 +196,33 @@ PYTHONPATH=. python3 tests/test_data_and_representations.py
 
 ## Integration status
 
-This archive is the shared library layer. The next package should add the thin
-`scripts/run_experiment.py` orchestrator that reads `config/experiments/*.yaml`,
-selects the backend from the condition, and writes the standardized output schema.
+Three orchestrators now read `config/experiments/*.yaml` and write the
+standardized output schema:
+
+- `scripts/run_ollama_experiment.py` — GPT-OSS and every other generative
+  condition run through Ollama (RQ1–RQ3 and the GPT-OSS/FLACCS/HQCM columns
+  of the RQ4 cross-project/within-corpus benchmarks, plus the GPT-OSS side of
+  the artifact-compatible comparisons);
+- `scripts/run_baselines_experiment.py` — the three trainable RQ4 baselines
+  (TF-IDF+SVM, BiLSTM, CodeBERT);
+- `scripts/run_flaccs_experiment.py` — the FLACCS side of the
+  artifact-compatible comparison (`config/experiments/rq4/artifact_flaccs.yaml`),
+  running the released `0x404/ccs-code-llama-7b` artifact directly from the
+  Hugging Face Hub against its native 10-class prompt. `FlaccsBackend` (in
+  `src/inference/flaccs.py`) owns the model call and the tokenizer-level
+  prompt truncation (`build_prompt()`); the runner only orchestrates
+  manifest/journal/consensus, the same shape as the other two runners.
+
+**Accepted limitation, not a gap**: there is no `scripts/run_hqcm_experiment.py`.
+Unlike FLACCS, CodeFuse HQCM has no ready-to-use released weights — reproducing
+it means reconstructing the original artifact's LoRA fine-tuning environment
+(a dedicated Python venv under a `--hqcm-root`, plus the already-trained
+`chcl_llama2_7b_len1024` adapter), not just running inference. That was judged
+out of scope for this replication package. `results/rq4/related_work_artifacts/hqcm*/`
+and the `hqcm`/`CodeFuse HQCM` columns of the cross-project/within-corpus
+benchmarks stay frozen from the original execution; see `TODO.md` item 1 for
+the reasoning and item 4 of the reviewer-response letter for how this is
+disclosed.
 
 
 ### Ollama execution and resume
@@ -241,8 +277,50 @@ training configuration, and HQCM-original statistics await the original research
 machine and are outside this execution layer.
 
 
-The within-corpus Ollama condition currently fails cohort preflight: the supplied
-assignments select 1,632 commits while frozen predictions contain 1,630, with
-substantial membership differences. Its config pins the frozen count and hash;
-reconcile the assignments from original evidence before running it. The runner
-will not silently regenerate the split or bypass this check with `--limit`.
+### Baselines execution and resume
+
+Use `python scripts/run_baselines_experiment.py --stage cross_project --list-jobs`
+(or `--stage within_corpus`) to inspect jobs for the three trainable baselines
+(TF-IDF+SVM, BiLSTM, CodeBERT), and `--dry-run --limit 1` for a configuration
+smoke check — same manifest/journal/`--resume` conventions as the Ollama
+runner, resumable at the granularity of "seed already complete for this fold"
+(one seed = one from-scratch retrain + batch prediction, not per-commit).
+`torch` is required on the execution machine for BiLSTM/CodeBERT; the
+development checkout this README ships from does not have it installed, so
+those two backends are validated on the machine that actually runs the study
+(see `tests/test_model_selection.py` for what does run without `torch`).
+
+### FLACCS artifact-compatible execution
+
+Use `python scripts/run_flaccs_experiment.py --list-jobs` (or `--dry-run`) to
+validate config/data/prompt without loading the model — this works on a
+machine without `torch`/`transformers` installed, same as `--list-jobs`/
+`--dry-run` on the other two runners. Real execution downloads
+`0x404/ccs-code-llama-7b` from the Hugging Face Hub on first run and needs a
+GPU-capable machine; `--resume` continues an interrupted run without
+repeating completed (commit, seed) calls, and `--limit N` truncates to a
+smoke test (use a separate `--output-dir`).
+
+### within-corpus cohort preflight (resolved 2026-09-12)
+
+The within-corpus condition previously failed cohort preflight: the supplied
+assignments selected 1,632 commits while a stale config pinned the frozen
+1,630-commit cohort/hash from an older corpus snapshot. This was reconciled
+against original evidence — `config/experiments/rq4/within_corpus.yaml` now
+pins `expected_rows: 1632` and the corresponding `expected_cohort_sha256`,
+confirmed by hashing the `split=="test"` side of
+`data/rq4/within_corpus/assignments.csv` and matching it against the legacy
+package's own `within_corpus/test.csv` byte-for-byte. Both
+`--rq rq4 --stage within_corpus` (Ollama) and
+`run_baselines_experiment.py --stage within_corpus` now pass preflight.
+
+The GPT-OSS/FLACCS/HQCM predictions frozen against the old 1,630-commit cohort
+were superseded without re-running inference: because those three approaches
+don't train, a commit's prediction depends only on the commit + model +
+prompt + seed, not on which protocol (cross-project vs. within-corpus) it was
+sampled into — and `cross_project.yaml`/`within_corpus.yaml` configure those
+three conditions identically. `results/rq4/supplementary_benchmark/` now
+holds predictions/metrics cherry-picked from the cross-project execution
+(which covers the full 8,159-commit pre-cutoff partition) filtered down to
+the 1,632 commits of the current within-corpus cohort. See `TODO.md` §2 for
+the full reconciliation trail.
