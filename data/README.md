@@ -154,7 +154,7 @@ Fields such as `diff` and `git_show` are multiline. Therefore, line-oriented too
 | RQ2 model comparison and temperature analysis | `post_cutoff/commits.csv.gz` |
 | RQ3 input and prompt analyses | `post_cutoff/commits.csv.gz` |
 | RQ4 cross-project benchmark | `pre_cutoff/commits.csv.gz` + `rq4/cross_project/assignments.csv` |
-| RQ4 within-corpus supplementary benchmark | `pre_cutoff/commits.csv.gz` + `rq4/within_corpus/assignments.csv` |
+| RQ4 within-corpus benchmark | `pre_cutoff/commits.csv.gz` + `rq4/within_corpus/assignments.csv` |
 | RQ4 HQCM artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4/artifact_compatible/hqcm/assignments.csv` |
 | RQ4 FLACCS artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4/artifact_compatible/flaccs/assignments.csv` |
 

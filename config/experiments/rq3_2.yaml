@@ -2,8 +2,8 @@ version: 1
 id: rq3_2_prompt_refinement
 research_question: rq3_2
 description: >
-  Evaluate staged prompt refinement with GPT-OSS 20B using the selected
-  message-and-diff representation and temperature 0.6.
+  Evaluate prompt refinement across four factors with GPT-OSS 20B using the
+  selected message-and-diff representation and temperature 0.6.
 
 dataset: data/post_cutoff/commits.csv.gz
 model: gpt_oss_20b
@@ -23,19 +23,19 @@ metric:
   primary: macro_f1
   statistical_unit: project
 
-stages:
-  stage_1_definitions:
-    reference_prompt: p0_baseline
-    prompts:
+factors:
+  factor_1_definitions:
+    reference_treatment: p0_baseline
+    treatments:
       - p0_baseline
       - p1_definition_augmented
       - p2_angular_definition
       - p3_extensive_definition
       - p4_mix_definition
 
-  stage_2_heuristics:
-    reference_prompt: p2_angular_definition
-    prompts:
+  factor_2_heuristics:
+    reference_treatment: p2_angular_definition
+    treatments:
       - p0_baseline
       - p2_angular_definition
       - p_negative_constraints
@@ -49,9 +49,9 @@ stages:
       - p_infra_disambiguation
       - p_disambiguation
 
-  stage_3_cot_and_few_shot:
-    reference_prompt: p_code_disambiguation
-    prompts:
+  factor_3_cot_and_few_shot:
+    reference_treatment: p_code_disambiguation
+    treatments:
       - p0_baseline
       - p2_angular_definition
       - p_code_disambiguation
@@ -59,9 +59,9 @@ stages:
       - p_few_shot
       - p_cot_few_shot
 
-  stage_4_abstention:
-    reference_prompt: p_code_disambiguation
-    prompts:
+  factor_4_abstention:
+    reference_treatment: p_code_disambiguation
+    treatments:
       - p0_baseline
       - p2_angular_definition
       - p_code_disambiguation

@@ -33,7 +33,7 @@ python scripts/run_ollama_experiment.py \
 name instead of a YAML path:
 
 python scripts/run_ollama_experiment.py --rq rq1 --dry-run
-python scripts/run_ollama_experiment.py --rq rq3_2 --stage stage_1_definitions
+python scripts/run_ollama_experiment.py --rq rq3_2 --stage factor_1_definitions
 python scripts/run_ollama_experiment.py --rq rq4 --stage cross_project
 python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-experiments in sequence
 """
@@ -109,7 +109,7 @@ class OllamaJob:
     assignment_path: str | None = None
     assignment_split: str | None = None
     assignment_protocol: str | None = None
-    stage_memberships: tuple[str, ...] = ()
+    factor_memberships: tuple[str, ...] = ()
     expected_rows: int | None = None
     expected_cohort_sha256: str | None = None
 
@@ -254,20 +254,21 @@ def expand_jobs(
                 ))
         return jobs
 
-    # RQ3.2: each unique prompt is an execution condition; repeated reference
-    # prompts across stages are run only once and keep stage membership metadata.
-    if "stages" in experiment and "model" in experiment and "dataset" in experiment:
+    # RQ3.2: each unique prompt is an execution condition (a treatment);
+    # repeated reference treatments across factors are run only once and keep
+    # factor membership metadata.
+    if "factors" in experiment and "model" in experiment and "dataset" in experiment:
         initial, adaptive, threshold = _consensus_from_scope(experiment)
         _validate_consensus_against_evaluation(initial, adaptive, evaluation)
         memberships: dict[str, list[str]] = {}
         order: list[str] = []
-        for stage_id, stage in experiment["stages"].items():
-            for prompt_id in stage.get("prompts", []):
+        for factor_id, factor in experiment["factors"].items():
+            for prompt_id in factor.get("treatments", []):
                 prompt_id = str(prompt_id)
                 if prompt_id not in memberships:
                     memberships[prompt_id] = []
                     order.append(prompt_id)
-                memberships[prompt_id].append(str(stage_id))
+                memberships[prompt_id].append(str(factor_id))
         model_id = str(experiment["model"])
         if model_id in model_registry:
             for prompt_id in order:
@@ -276,7 +277,7 @@ def expand_jobs(
                     str(experiment["representation"]), float(experiment["temperature"]),
                     initial, adaptive, threshold, task_labels,
                     _timeout_from_overrides(experiment.get("runtime_overrides")),
-                    stage_memberships=tuple(memberships[prompt_id]),
+                    factor_memberships=tuple(memberships[prompt_id]),
                 ))
         return jobs
 
@@ -486,7 +487,7 @@ def _job_payload(job: OllamaJob) -> dict[str, Any]:
         "assignment_path": job.assignment_path,
         "assignment_split": job.assignment_split,
         "assignment_protocol": job.assignment_protocol,
-        "stage_memberships": list(job.stage_memberships),
+        "factor_memberships": list(job.factor_memberships),
         "expected_rows": job.expected_rows,
         "expected_cohort_sha256": job.expected_cohort_sha256,
     }
@@ -975,7 +976,7 @@ def resolve_experiments(repo_root: Path, args: argparse.Namespace) -> list[tuple
 
     stage_filter is None once a stage has already selected a file (rq4) or when
     no stage applies; otherwise it is carried to main() to filter the expanded
-    jobs of a stage-structured experiment (currently only rq3_2's `stages` map).
+    jobs of a factor-structured experiment (currently only rq3_2's `factors` map).
     """
     if args.experiment and args.rq:
         raise ConfigError("Pass either --experiment or --rq, not both")
@@ -1008,7 +1009,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--stage", default=None,
                     help="--rq rq4: one of cross_project, within_corpus, artifact_flaccs, artifact_hqcm "
                          "(selects one sub-experiment file). --rq rq3_2 (or --experiment pointing at it): "
-                         "one of the YAML's stage_* keys (filters jobs to that stage's prompts). "
+                         "one of the YAML's factor_* keys (filters jobs to that factor's treatments). "
                          "Unsupported for rq1/rq2/rq3_1.")
     p.add_argument("--repo-root", default=str(default_root), help="Replication-package repository root.")
     p.add_argument("--output-dir", default=None, help="Base output directory. Default: <repo>/runs")
@@ -1050,12 +1051,12 @@ def main() -> int:
         experiment = load_experiment(experiment_path)
         jobs = expand_jobs(experiment, model_registry=models, evaluation=evaluation)
         if stage_filter:
-            valid_stages = set(experiment.get("stages", {}) or {})
-            if not valid_stages:
-                raise ConfigError(f"--stage is not supported for {experiment_path} (no 'stages' defined)")
-            if stage_filter not in valid_stages:
-                raise ConfigError(f"Unknown --stage {stage_filter!r} for {experiment_path}; choices: {sorted(valid_stages)}")
-            jobs = [j for j in jobs if stage_filter in j.stage_memberships]
+            valid_factors = set(experiment.get("factors", {}) or {})
+            if not valid_factors:
+                raise ConfigError(f"--stage is not supported for {experiment_path} (no 'factors' defined)")
+            if stage_filter not in valid_factors:
+                raise ConfigError(f"Unknown --stage {stage_filter!r} for {experiment_path}; choices: {sorted(valid_factors)}")
+            jobs = [j for j in jobs if stage_filter in j.factor_memberships]
         if args.model:
             wanted = set(args.model)
             jobs = [j for j in jobs if j.model_id in wanted]

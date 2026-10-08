@@ -13,6 +13,27 @@ revisão: `scripts/run_flaccs_experiment.py` (novo, item 1) fecha a lacuna do
 runner FLACCS; HQCM foi decidido como limitação aceita, não lacuna a fechar
 (ver item 1).
 
+**2026-10-06 — nomenclatura RQ3.2 sincronizada com `main.tex`**: o artigo
+passou a chamar o que este pacote chamava de "stage" de **factor** (Factor 1–4)
+e o que chamava de "configuration"/prompt (o braço individual dentro de um
+stage) de **treatment**. Renomeado em todo o pacote, exceto a pasta `prompts/`
+em si (IDs de prompt como `p0_baseline` não mudam):
+`config/experiments/rq3_2.yaml` (`stages:`→`factors:`, `stage_N_*`→`factor_N_*`,
+`prompts:`→`treatments:`, `reference_prompt:`→`reference_treatment:`);
+`scripts/run_ollama_experiment.py` (expansão de jobs do RQ3.2, campo
+`stage_memberships`→`factor_memberships`; o flag `--stage` em si não mudou de
+nome — é compartilhado com o RQ4, que usa "stage" num sentido não relacionado,
+arquivo de sub-experimento, não fator estatístico); os três notebooks de
+análise de RQ3.1/RQ3.2 (`STAGES`→`FACTORS`, `CONFIGURATIONS`→`TREATMENTS`,
+coluna/variável `configuration`→`treatment`); README.md. **Não alterado**:
+as 4 CSVs `results/rq3_2/metrics/stage_N_macro_f1.csv` (nome de arquivo e a
+própria coluna interna `stage` continuam como estavam — são resultado
+congelado, não renomeados; o notebook documenta explicitamente por que o
+campo `expected_stage_value` ainda compara contra esse valor legado). Suíte
+de testes (88 passed) e reexecução real dos três notebooks (via `nbclient`,
+com `pingouin` instalado) confirmaram que os números não mudaram — é renome
+puro, sem alteração de lógica.
+
 ## 1. Faltam runners para os backends não-Ollama — baselines treináveis resolvidos; FLACCS/HQCM ainda faltam
 
 `scripts/run_ollama_experiment.py` só executa GPT-OSS e as demais condições
@@ -59,7 +80,7 @@ confirmado abaixo. `--rq rq4 --stage within_corpus` (Ollama) e
 treináveis) agora passam no preflight; verificado com `--dry-run` em ambos.
 **Isso não regenera nenhuma predição** — só para de bloquear novas execuções
 contra a coorte correta. As predictions congeladas do GPT-OSS/FLACCS/HQCM em
-`results/rq4/supplementary_benchmark/` continuam intactas (1.630, agora
+`results/rq4/within_corpus/` continuam intactas (1.630, agora
 sabidamente desatualizadas) até a ação abaixo ser feita.
 
 **Direção confirmada**: o artigo (`main (1).tex`, linha 663) diz explicitamente
@@ -67,7 +88,7 @@ sabidamente desatualizadas) até a ação abaixo ser feita.
 `rq4_non_cross_v2_package` também usa 1.632 e trata a coorte de 1.630 como
 "legacy... must not be mixed with this package". Logo, `1.632` (o que já está
 em `data/rq4/within_corpus/assignments.csv`) é o valor correto do artigo — é
-`results/rq4/supplementary_benchmark/predictions/predictions.csv.gz` (1.630)
+`results/rq4/within_corpus/predictions/within_corpus_predictions.csv.gz` (1.630)
 que está desatualizado.
 
 **Confirmado por hash (2026-09-12)**: comparado membro a membro, não só por
@@ -106,7 +127,7 @@ cherry-picking a partir de `replication_package/rq4_benchmark_audit/{gpt_oss_v2,
 (na griffin), filtrando pros 1.632 commits de `data/rq4/within_corpus/assignments.csv`.
 Rodado com sucesso — ver números na seção 5.
 
-**Isso não corrige o arquivo congelado em si**: `results/rq4/supplementary_benchmark/predictions/predictions.csv.gz`
+**Isso não corrige o arquivo congelado em si**: `results/rq4/within_corpus/predictions/within_corpus_predictions.csv.gz`
 continua com os 1.630 antigos, intacto. A tabela `benchmark_macro_f1.csv` correta
 (1.632, cherry-picked) existe hoje só em `runs/rq4_within_corpus/` na griffin —
 falta decidir se/quando promover isso pra dentro de `results/rq4/` (ver seção 5).
@@ -115,7 +136,7 @@ falta decidir se/quando promover isso pra dentro de `results/rq4/` (ver seção 
 
 ## 3. Limpeza
 
-- [ ] `scripts/rq1/` está vazia (resíduo) — remover ou preencher.
+- [x] `scripts/rq1/` — verificado em 2026-10-07: não existe mais no checkout (só `scripts/rq4/` e os três runners na raiz de `scripts/`). Item já resolvido, só não tinha sido marcado.
 - [ ] `export_rq4_revision/` (raiz do repo, já no `.gitignore` via `export*`) é uma pasta de exportação temporária criada nesta sessão — cópia autocontida dos arquivos necessários pro runner de baselines, pra levar pra griffin. Sem uso depois que a griffin tiver sua própria cópia; apagar.
 - [ ] `scripts/rq4/build_benchmark_macro_f1.py` (o script que monta os `benchmark_macro_f1.csv` a partir das predictions) só existe hoje dentro de `export_rq4_revision/scripts/rq4/` — nunca foi trazido pra `scripts/rq4/` na raiz do repo. Se a intenção é ele ser parte permanente do pacote (como os `materialize_*.py` já são), precisa copiá-lo de volta antes de apagar `export_rq4_revision/`.
 
@@ -168,7 +189,7 @@ mais frágil, depois da correção.
 **Reanálise estatística concluída (2026-09-14, rodada pelo Rodrigo fora desta
 sessão, seguindo a mesma regra de decisão pré-especificada dos notebooks)**:
 
-- *Cross-project (primary)*: Shapiro-Wilk rejeita normalidade só pro CodeBERT
+- *Cross-project*: Shapiro-Wilk rejeita normalidade só pro CodeBERT
   (W=.919, p=.026 — quase idêntico ao já publicado W=.921, p=.029) → rota
   Friedman, igual antes. χ²(5)=93,45, p<.001, Kendall's W=.623. Estrutura
   pareada **idêntica** à já publicada: GPT-OSS bate os cinco outros com
@@ -176,7 +197,7 @@ sessão, seguindo a mesma regra de decisão pré-especificada dos notebooks)**:
   significativo; BiLSTM não difere de TF-IDF/CodeBERT/FLACCS; HQCM perde pra
   todos. **O Finding 5 sobrevive intacto — nem uma comparação de significância
   mudou**, apesar do CodeBERT/BiLSTM terem melhorado descritivamente.
-- *Within-corpus (supplementary)*: Shapiro-Wilk não rejeita normalidade em
+- *Within-corpus*: Shapiro-Wilk não rejeita normalidade em
   nenhum → rota paramétrica (ANOVA + Greenhouse-Geisser, Mauchly rejeitou
   esfericidade). F(3,52; 101,94)=71,78, p<.001, η²G=.544. **Achado novo**: o
   CodeBERT agora bate **todos os outros cinco modelos com significância**,
@@ -190,7 +211,7 @@ Falta, antes de considerar isso fechado:
 - [x] Reanálise estatística (ANOVA/Friedman + pareados com Holm) — feita pros
   dois benchmarks, achados acima.
 - [x] **Trazer os artefatos da griffin pro repositório** (verificado em
-  2026-09-24): `results/rq4/{primary_benchmark,supplementary_benchmark}/{predictions,metrics}/...`
+  2026-09-24): `results/rq4/{cross_project,within_corpus}/{predictions,metrics}/...`
   já contêm os valores novos (conferido célula a célula contra a tabela acima:
   CodeBERT 0,405/0,583, BiLSTM 0,377/0,517 etc.) — os congelados antigos foram
   substituídos, não ficaram paralelos.

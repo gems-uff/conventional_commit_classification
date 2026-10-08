@@ -238,7 +238,7 @@ experiment by research question instead of a YAML path:
 
 ```bash
 python scripts/run_ollama_experiment.py --rq rq1 --list-jobs
-python scripts/run_ollama_experiment.py --rq rq3_2 --stage stage_1_definitions --dry-run
+python scripts/run_ollama_experiment.py --rq rq3_2 --stage factor_1_definitions --dry-run
 python scripts/run_ollama_experiment.py --rq rq4 --stage cross_project --resume
 python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-experiments in sequence
 ```
@@ -248,10 +248,11 @@ python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-e
 is used; without `--stage`, all four run one after another, each keeping its own
 run directory, manifest, and config-hash provenance. For `--rq rq3_2` (or `--experiment`
 pointed directly at `config/experiments/rq3_2.yaml`), `--stage` instead filters the
-already-expanded jobs down to one of the YAML's `stage_*` keys (e.g.
-`stage_1_definitions`, `stage_2_heuristics`, `stage_3_cot_and_few_shot`,
-`stage_4_abstention`); prompts shared across stages still run once. `--stage` is not
-accepted for `rq1`, `rq2`, or `rq3_1`, which have no sub-experiments or stages.
+already-expanded jobs down to one of the YAML's `factor_*` keys (e.g.
+`factor_1_definitions`, `factor_2_heuristics`, `factor_3_cot_and_few_shot`,
+`factor_4_abstention`); treatments (prompts) shared across factors still run once.
+`--stage` is not accepted for `rq1`, `rq2`, or `rq3_1`, which have no sub-experiments
+or factors.
 
 New runs default to `runs/`; output inside `results/` is rejected. Use `--resume`
 only for an existing compatible run. The append-only call and attempt journals
@@ -319,7 +320,7 @@ were superseded without re-running inference: because those three approaches
 don't train, a commit's prediction depends only on the commit + model +
 prompt + seed, not on which protocol (cross-project vs. within-corpus) it was
 sampled into — and `cross_project.yaml`/`within_corpus.yaml` configure those
-three conditions identically. `results/rq4/supplementary_benchmark/` now
+three conditions identically. `results/rq4/within_corpus/` now
 holds predictions/metrics cherry-picked from the cross-project execution
 (which covers the full 8,159-commit pre-cutoff partition) filtered down to
 the 1,632 commits of the current within-corpus cohort. See `TODO.md` §2 for

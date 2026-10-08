@@ -1,6 +1,6 @@
 # RQ4 Within-Corpus Holdout Split
 
-This directory contains the split definition used for the supplementary within-corpus evaluation in RQ4.
+This directory contains the split definition used for the within-corpus evaluation in RQ4.
 
 The protocol is based on the canonical pre-cutoff dataset:
 
