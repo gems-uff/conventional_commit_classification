@@ -34,6 +34,17 @@ de testes (88 passed) e reexecução real dos três notebooks (via `nbclient`,
 com `pingouin` instalado) confirmaram que os números não mudaram — é renome
 puro, sem alteração de lógica.
 
+**2026-10-08 — correção**: a decisão acima de não tocar os dados congelados
+(`results/rq3_2/metrics/stage_N_macro_f1.csv`) foi revertida a pedido do
+Rodrigo — ele preferiu consistência total a preservar o arquivo como
+"congelado". Os 4 CSVs foram renomeados (`stage_N_macro_f1.csv`→
+`factor_N_macro_f1.csv`, via `git mv`) e a coluna/valor interno também
+(`stage`→`factor`, `stage_1_definitions`→`factor_1_definitions` etc., nas 30
+linhas de cada arquivo). O notebook foi atualizado de volta (`paths`,
+`expected_stage_value`→`expected_factor_value`, checagem da coluna `factor`)
+e o comentário que explicava a divergência proposital foi removido, já que
+ela não existe mais. Reexecutado com `nbclient` — mesmos números de antes.
+
 ## 1. Faltam runners para os backends não-Ollama — baselines treináveis resolvidos; FLACCS/HQCM ainda faltam
 
 `scripts/run_ollama_experiment.py` só executa GPT-OSS e as demais condições
