@@ -1,6 +1,6 @@
 version: 1
 id: rq4_artifact_hqcm
-research_question: rq4
+research_question: rq4_2
 description: >
   Compare GPT-OSS with CodeFuse HQCM on the HQCM-compatible subset,
   preserving the artifact's native 8-class task, native zero-shot prompt,
@@ -19,8 +19,8 @@ shared:
     statistical_unit: project
 
 subset:
-  assignments: data/rq4/artifact_compatible/hqcm/assignments.csv
-  materializer: scripts/rq4/materialize_hqcm_artifact.py
+  assignments: data/rq4_2/artifact_compatible/hqcm/assignments.csv
+  materializer: scripts/rq4_2/materialize_hqcm_artifact.py
   label_space: [fix, feat, build, ci, docs, style, refactor, test]
   context_window_tokens: 1024
   label_normalization:

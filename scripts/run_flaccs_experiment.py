@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the FLACCS artifact-compatible RQ4 condition (``config/experiments/rq4/artifact_flaccs.yaml``).
+"""Run the FLACCS artifact-compatible RQ4.2 condition (``config/experiments/rq4_2/artifact_flaccs.yaml``).
 
 Examples
 --------
@@ -27,7 +27,7 @@ if TYPE_CHECKING:
 
 import pandas as pd
 
-DEFAULT_EXPERIMENT = "config/experiments/rq4/artifact_flaccs.yaml"
+DEFAULT_EXPERIMENT = "config/experiments/rq4_2/artifact_flaccs.yaml"
 
 
 class ConfigError(RuntimeError):

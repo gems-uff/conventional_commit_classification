@@ -206,7 +206,7 @@ standardized output schema:
 - `scripts/run_baselines_experiment.py` — the three trainable RQ4 baselines
   (TF-IDF+SVM, BiLSTM, CodeBERT);
 - `scripts/run_flaccs_experiment.py` — the FLACCS side of the
-  artifact-compatible comparison (`config/experiments/rq4/artifact_flaccs.yaml`),
+  artifact-compatible comparison (`config/experiments/rq4_2/artifact_flaccs.yaml`),
   running the released `0x404/ccs-code-llama-7b` artifact directly from the
   Hugging Face Hub against its native 10-class prompt. `FlaccsBackend` (in
   `src/inference/flaccs.py`) owns the model call and the tokenizer-level
@@ -218,7 +218,7 @@ Unlike FLACCS, CodeFuse HQCM has no ready-to-use released weights — reproducin
 it means reconstructing the original artifact's LoRA fine-tuning environment
 (a dedicated Python venv under a `--hqcm-root`, plus the already-trained
 `chcl_llama2_7b_len1024` adapter), not just running inference. That was judged
-out of scope for this replication package. `results/rq4/related_work_artifacts/hqcm*/`
+out of scope for this replication package. `results/rq4_2/related_work_artifacts/hqcm*/`
 and the `hqcm`/`CodeFuse HQCM` columns of the cross-project/within-corpus
 benchmarks stay frozen from the original execution; see `TODO.md` item 1 for
 the reasoning and item 4 of the reviewer-response letter for how this is
@@ -243,8 +243,9 @@ python scripts/run_ollama_experiment.py --rq rq4 --stage cross_project --resume
 python scripts/run_ollama_experiment.py --rq rq4 --resume   # all four rq4 sub-experiments in sequence
 ```
 
-`--stage` selects one of the four `config/experiments/rq4/*.yaml` sub-experiments
-(`cross_project`, `within_corpus`, `artifact_flaccs`, `artifact_hqcm`) when `--rq rq4`
+`--stage` selects one of the four sub-experiments (`cross_project`, `within_corpus`
+under `config/experiments/rq4_1/*.yaml`; `artifact_flaccs`, `artifact_hqcm` under
+`config/experiments/rq4_2/*.yaml`) when `--rq rq4`
 is used; without `--stage`, all four run one after another, each keeping its own
 run directory, manifest, and config-hash provenance. For `--rq rq3_2` (or `--experiment`
 pointed directly at `config/experiments/rq3_2.yaml`), `--stage` instead filters the
@@ -307,10 +308,10 @@ smoke test (use a separate `--output-dir`).
 The within-corpus condition previously failed cohort preflight: the supplied
 assignments selected 1,632 commits while a stale config pinned the frozen
 1,630-commit cohort/hash from an older corpus snapshot. This was reconciled
-against original evidence — `config/experiments/rq4/within_corpus.yaml` now
+against original evidence — `config/experiments/rq4_1/within_corpus.yaml` now
 pins `expected_rows: 1632` and the corresponding `expected_cohort_sha256`,
 confirmed by hashing the `split=="test"` side of
-`data/rq4/within_corpus/assignments.csv` and matching it against the legacy
+`data/rq4_1/within_corpus/assignments.csv` and matching it against the legacy
 package's own `within_corpus/test.csv` byte-for-byte. Both
 `--rq rq4 --stage within_corpus` (Ollama) and
 `run_baselines_experiment.py --stage within_corpus` now pass preflight.
@@ -320,7 +321,7 @@ were superseded without re-running inference: because those three approaches
 don't train, a commit's prediction depends only on the commit + model +
 prompt + seed, not on which protocol (cross-project vs. within-corpus) it was
 sampled into — and `cross_project.yaml`/`within_corpus.yaml` configure those
-three conditions identically. `results/rq4/within_corpus/` now
+three conditions identically. `results/rq4_1/within_corpus/` now
 holds predictions/metrics cherry-picked from the cross-project execution
 (which covers the full 8,159-commit pre-cutoff partition) filtered down to
 the 1,632 commits of the current within-corpus cohort. See `TODO.md` §2 for

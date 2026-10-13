@@ -7,7 +7,7 @@ motivadas pela crítica de revisor M7, reconciliação do within-corpus, e —
 mais tarde no mesmo dia — execução completa na griffin com resultados reais
 para os dois benchmarks; ver seção 5). Revisado em 2026-09-24: confirmado por
 inspeção direta dos arquivos que a promoção dos artefatos da griffin pra
-`results/rq4/` e a reescrita de `main.tex` (seção 5) já tinham sido feitas,
+`results/rq4_1/` e `results/rq4_2/` e a reescrita de `main.tex` (seção 5) já tinham sido feitas,
 mas continuavam marcadas como pendentes aqui — corrigido abaixo. Também nesta
 revisão: `scripts/run_flaccs_experiment.py` (novo, item 1) fecha a lacuna do
 runner FLACCS; HQCM foi decidido como limitação aceita, não lacuna a fechar
@@ -45,12 +45,41 @@ linhas de cada arquivo). O notebook foi atualizado de volta (`paths`,
 e o comentário que explicava a divergência proposital foi removido, já que
 ela não existe mais. Reexecutado com `nbclient` — mesmos números de antes.
 
+**2026-10-12 — RQ4 dividido em RQ4.1/RQ4.2, conforme `main.tex`**: o artigo
+passou a tratar RQ4 como duas subperguntas — RQ4.1 (os dois benchmarks:
+cross-project e within-corpus) e RQ4.2 (comparações com a literatura:
+artifact-compatible FLACCS/HQCM e o protocolo original do HQCM). Reorganizado
+em `data/`, `config/experiments/`, `scripts/`, e `results/`:
+`rq4/{cross_project,within_corpus}` → `rq4_1/{cross_project,within_corpus}`;
+`rq4/artifact_flaccs.yaml`/`artifact_hqcm.yaml` → `rq4_2/`; os quatro
+`materialize_*.py` → `scripts/rq4_1/` (cross-project, within-corpus) ou
+`scripts/rq4_2/` (flaccs, hqcm); `results/rq4/related_work_artifacts/` →
+`results/rq4_2/related_work_artifacts/`. Também: `research_question: rq4` nos
+quatro YAMLs de experimento → `rq4_1`/`rq4_2`, acompanhando a convenção já
+usada por `rq3_1.yaml`/`rq3_2.yaml`. **Não movido**: `results/rq4/overfitting/`
+— essa análise (robustez temporal do prompt refinado) está posicionada no
+`main.tex` dentro da seção de RQ3.2 (logo antes do Finding 4, antes da seção
+de RQ4 começar), não é um dos dois benchmarks nem uma comparação com a
+literatura; fica como está, fora de `rq4_1`/`rq4_2`, até confirmação em
+contrário. O flag `--rq rq4` do `run_ollama_experiment.py` também não mudou
+de nome — é um agrupador de CLI que ainda faz sentido selecionar "as quatro
+condições do RQ4 de uma vez", independente de como os arquivos estão
+organizados em disco. Validado: os três runners (`run_ollama_experiment.py
+--rq rq4 --stage {cross_project,within_corpus,artifact_flaccs,artifact_hqcm}`,
+`run_baselines_experiment.py --stage {cross_project,within_corpus}`,
+`run_flaccs_experiment.py --dry-run`) resolvem os caminhos novos corretamente;
+os quatro notebooks de análise (`rq4_cross_project`, `rq4_within_corpus`,
+`rq4_flaccs_adapted`, `rq4_hqcm_adapted`) reexecutados com `nbclient` sem
+erros (os dois `_adapted` tinham um fallback de caminho já desatualizado —
+diziam `results/rq4/adapted/...` em vez de `related_work_artifacts/...` —
+corrigido de passagem). Suíte completa: 88 passed, 1 skipped.
+
 ## 1. Faltam runners para os backends não-Ollama — baselines treináveis resolvidos; FLACCS/HQCM ainda faltam
 
 `scripts/run_ollama_experiment.py` só executa GPT-OSS e as demais condições
 generativas via Ollama. FLACCS e HQCM ainda não têm runner (módulos prontos em
 `src/inference/{flaccs,hqcm}.py`, nenhum script os orquestra a partir de
-`config/experiments/rq4/*.yaml`). Os baselines treináveis (TF-IDF+SVM, BiLSTM,
+`config/experiments/rq4_1/*.yaml` e `config/experiments/rq4_2/*.yaml`). Os baselines treináveis (TF-IDF+SVM, BiLSTM,
 CodeBERT) **agora têm runner**, criado nesta sessão.
 
 - [x] **`scripts/run_baselines_experiment.py`** (2026-09-12) — runner único para os três treináveis, cobrindo `cross_project.yaml` (5 folds) e `within_corpus.yaml` (holdout único). Decisão tomada sobre a pergunta em aberto abaixo: **um script só para os três treináveis**, separado dos runners de FLACCS/HQCM/Ollama (não um dispatcher único pra todos os backends, nem um script por modelo).
@@ -66,13 +95,13 @@ CodeBERT) **agora têm runner**, criado nesta sessão.
   - **Ainda falta, e isso é trabalho de texto, não de código**: `main.tex` §3.4.2 ainda descreve "training schedules were fixed in advance"; falta a frase explícita sobre a assimetria 512×30k (CodeBERT é limite arquitetural, BiLSTM agora é escolha dimensionada pelo corpus); e o Finding 5 ("GPT-OSS significantly outperformed all five...") só pode ser reavaliado depois que a execução completa (abaixo) terminar e as métricas forem recalculadas.
   - Ver `tests/test_model_selection.py` para cobertura (parcial — item 4).
 - [x] Execução completa na griffin (`cross_project`, 5 folds, e `within_corpus`) — **terminou com sucesso**, sem `--limit`, SVM/BiLSTM/CodeBERT retreinados do zero por seed com a seleção validada. Resultados e comparação com os números antigos: ver seção 5.
-- [x] **`scripts/run_flaccs_experiment.py`** (2026-09-24) — runner dedicado à condição `flaccs` de `config/experiments/rq4/artifact_flaccs.yaml` (o artefato FLACCS liberado, `0x404/ccs-code-llama-7b`, no subconjunto de 2.573 commits compatíveis). GPT-OSS dessa mesma condição já rodava via `run_ollama_experiment.py --rq rq4 --stage artifact_flaccs`; a condição `flaccs` extended-11class de `cross_project.yaml`/`within_corpus.yaml` continua sem runner próprio porque já está congelada (item 2) — não é a mesma lacuna.
+- [x] **`scripts/run_flaccs_experiment.py`** (2026-09-24) — runner dedicado à condição `flaccs` de `config/experiments/rq4_2/artifact_flaccs.yaml` (o artefato FLACCS liberado, `0x404/ccs-code-llama-7b`, no subconjunto de 2.573 commits compatíveis). GPT-OSS dessa mesma condição já rodava via `run_ollama_experiment.py --rq rq4 --stage artifact_flaccs`; a condição `flaccs` extended-11class de `cross_project.yaml`/`within_corpus.yaml` continua sem runner próprio porque já está congelada (item 2) — não é a mesma lacuna.
   - Mesmo padrão de manifest/journal/`--resume`/`--dry-run`/`--list-jobs` dos outros runners; reusa `src/consensus.py` (adaptive first-to-two) e `src/parsing/strict.py` (parser canônico v4.1.1) — não a extração por regex nem o voto por maioria simples dos scripts standalone legados (`flaccs_hf_len1024_multiseed_adaptive.py`, `flaccs_test_csv_classifier.py`) que este runner substitui.
-  - O prompt (`p_flaccs_native_10class`) é resolvido via `prompts/manifest.yaml`, nunca hardcoded no script. `FlaccsBackend.build_prompt()` (novo, em `src/inference/flaccs.py`) faz o truncamento em nível de tokenizer (mensagem até `message_max_tokens=64`, diff absorvendo o restante de `context_window_tokens=1024`) a partir dos dois placeholders do template — difere um pouco do script legado `flaccs_hf_len1024_multiseed_adaptive.py`, que também cobrava alguns tokens do texto literal de wrapper ("- given commit message:") contra o teto da mensagem; a diferença é de poucos tokens em um orçamento de 1.024 e não muda quais commits precisam de truncamento (`data/rq4/artifact_compatible/flaccs/assignments.csv` já restringe a condição a commits cujo prompt original e não-truncado cabe no orçamento).
+  - O prompt (`p_flaccs_native_10class`) é resolvido via `prompts/manifest.yaml`, nunca hardcoded no script. `FlaccsBackend.build_prompt()` (novo, em `src/inference/flaccs.py`) faz o truncamento em nível de tokenizer (mensagem até `message_max_tokens=64`, diff absorvendo o restante de `context_window_tokens=1024`) a partir dos dois placeholders do template — difere um pouco do script legado `flaccs_hf_len1024_multiseed_adaptive.py`, que também cobrava alguns tokens do texto literal de wrapper ("- given commit message:") contra o teto da mensagem; a diferença é de poucos tokens em um orçamento de 1.024 e não muda quais commits precisam de truncamento (`data/rq4_2/artifact_compatible/flaccs/assignments.csv` já restringe a condição a commits cujo prompt original e não-truncado cabe no orçamento).
   - `do_sample: false` (greedy determinístico, sem temperature/top_p) vem do próprio `artifact_flaccs.yaml`, batendo com o que `FlaccsBackend` já implementava antes deste runner existir.
   - Validado nesta sessão: `--list-jobs`/`--dry-run` rodam limpos na máquina de desenvolvimento (sem `torch`/`transformers` instalados, como já documentado); `tests/test_flaccs_runner.py` (novo, 9 testes) cobre expansão de job, dry-run offline, run/resume básico, progressão de seed adaptativa, terminalidade por `<invalid_output>`, proteção de `results/`, e rejeição de identidade — tudo com um `FlaccsBackend` mockado (não precisa do modelo real). A suíte completa (`pytest`) continua 100% verde (88 passed, 1 skipped) depois da mudança.
-  - **Ainda falta, e só pode ser feito na griffin**: a execução real (baixar `0x404/ccs-code-llama-7b` do Hugging Face, rodar sem `--limit`) e a decisão de promover o `predictions.csv.gz` resultante pra dentro de `results/rq4/related_work_artifacts/flaccs/` (hoje só tem a versão congelada de uma execução anterior).
-- [x] **HQCM decidido como limitação aceita, não lacuna de código** (2026-09-24) — não haverá `scripts/run_hqcm_experiment.py`. Ao contrário do FLACCS (pesos prontos no Hugging Face, só inferência), reproduzir HQCM exigiria reconstruir a infraestrutura de fine-tuning do artefato original (`run_hqcm(1).py` legado precisa de `--hqcm-root` com um venv próprio e o adapter `chcl_llama2_7b_len1024` já treinado) — não é "rodar um modelo do Hub", é recriar o ambiente de treino. `results/rq4/related_work_artifacts/hqcm*/` e as colunas `hqcm`/`CodeFuse HQCM` de `cross_project`/`within_corpus` continuam com as predictions congeladas da execução original. Isso deve constar explicitamente na carta de resposta ao revisor (ver item já registrado abaixo sobre "FLACCS/HQCM entram com pesos de outro corpus").
+  - **Ainda falta, e só pode ser feito na griffin**: a execução real (baixar `0x404/ccs-code-llama-7b` do Hugging Face, rodar sem `--limit`) e a decisão de promover o `predictions.csv.gz` resultante pra dentro de `results/rq4_2/related_work_artifacts/flaccs/` (hoje só tem a versão congelada de uma execução anterior).
+- [x] **HQCM decidido como limitação aceita, não lacuna de código** (2026-09-24) — não haverá `scripts/run_hqcm_experiment.py`. Ao contrário do FLACCS (pesos prontos no Hugging Face, só inferência), reproduzir HQCM exigiria reconstruir a infraestrutura de fine-tuning do artefato original (`run_hqcm(1).py` legado precisa de `--hqcm-root` com um venv próprio e o adapter `chcl_llama2_7b_len1024` já treinado) — não é "rodar um modelo do Hub", é recriar o ambiente de treino. `results/rq4_2/related_work_artifacts/hqcm*/` e as colunas `hqcm`/`CodeFuse HQCM` de `cross_project`/`within_corpus` continuam com as predictions congeladas da execução original. Isso deve constar explicitamente na carta de resposta ao revisor (ver item já registrado abaixo sobre "FLACCS/HQCM entram com pesos de outro corpus").
 
 ## 2. RQ4 within-corpus (Ollama) com preflight quebrado — preflight corrigido; predictions do GPT-OSS/FLACCS/HQCM ainda pendentes
 
@@ -82,7 +111,7 @@ enquanto as predictions congeladas têm 1.630, com diferenças de membership.
 da evidência original — o runner propositalmente não regenera o split nem
 ignora isso com `--limit`.
 
-**Preflight corrigido (2026-09-12)**: `config/experiments/rq4/within_corpus.yaml`
+**Preflight corrigido (2026-09-12)**: `config/experiments/rq4_1/within_corpus.yaml`
 (`shared.expected_rows`/`shared.expected_cohort_sha256`) apontava para a coorte
 antiga (1.630). Atualizado para `1632`/
 `cc25059fa0b2597e5f07bef599158e45ae627d49562597bdcca486c936bc8256` — o valor
@@ -91,20 +120,20 @@ confirmado abaixo. `--rq rq4 --stage within_corpus` (Ollama) e
 treináveis) agora passam no preflight; verificado com `--dry-run` em ambos.
 **Isso não regenera nenhuma predição** — só para de bloquear novas execuções
 contra a coorte correta. As predictions congeladas do GPT-OSS/FLACCS/HQCM em
-`results/rq4/within_corpus/` continuam intactas (1.630, agora
+`results/rq4_1/within_corpus/` continuam intactas (1.630, agora
 sabidamente desatualizadas) até a ação abaixo ser feita.
 
 **Direção confirmada**: o artigo (`main (1).tex`, linha 663) diz explicitamente
 "6,527 training commits and 1,632 test commits". O pacote legado
 `rq4_non_cross_v2_package` também usa 1.632 e trata a coorte de 1.630 como
 "legacy... must not be mixed with this package". Logo, `1.632` (o que já está
-em `data/rq4/within_corpus/assignments.csv`) é o valor correto do artigo — é
-`results/rq4/within_corpus/predictions/within_corpus_predictions.csv.gz` (1.630)
+em `data/rq4_1/within_corpus/assignments.csv`) é o valor correto do artigo — é
+`results/rq4_1/within_corpus/predictions/within_corpus_predictions.csv.gz` (1.630)
 que está desatualizado.
 
 **Confirmado por hash (2026-09-12)**: comparado membro a membro, não só por
 contagem. O `cohort_sha256` (mesmo algoritmo de `src/data/loader.py`) do lado
-`split=="test"` de `data/rq4/within_corpus/assignments.csv` bate exatamente
+`split=="test"` de `data/rq4_1/within_corpus/assignments.csv` bate exatamente
 com o de `dataset/rq4_v2_from_md_11classes/within_corpus/test.csv` do
 repositório legado (`~/nrn` de origem):
 `cc25059fa0b2597e5f07bef599158e45ae627d49562597bdcca486c936bc8256`,
@@ -135,21 +164,21 @@ re-executar nada. `scripts/rq4/build_benchmark_macro_f1.py` (só dentro de
 `export_rq4_revision/` — ver item de limpeza) ganhou
 `--other-models-source cross_project_audit` que faz exatamente esse
 cherry-picking a partir de `replication_package/rq4_benchmark_audit/{gpt_oss_v2,cross_project_hqcm_v2,cross_project_flaccs_v2}/*.csv`
-(na griffin), filtrando pros 1.632 commits de `data/rq4/within_corpus/assignments.csv`.
+(na griffin), filtrando pros 1.632 commits de `data/rq4_1/within_corpus/assignments.csv`.
 Rodado com sucesso — ver números na seção 5.
 
-**Isso não corrige o arquivo congelado em si**: `results/rq4/within_corpus/predictions/within_corpus_predictions.csv.gz`
+**Isso não corrige o arquivo congelado em si**: `results/rq4_1/within_corpus/predictions/within_corpus_predictions.csv.gz`
 continua com os 1.630 antigos, intacto. A tabela `benchmark_macro_f1.csv` correta
 (1.632, cherry-picked) existe hoje só em `runs/rq4_within_corpus/` na griffin —
-falta decidir se/quando promover isso pra dentro de `results/rq4/` (ver seção 5).
+falta decidir se/quando promover isso pra dentro de `results/rq4_1/` (ver seção 5).
 
 - [x] Reconciliação do within-corpus resolvida por cherry-picking do cross-project audit (acima) — não precisou rodar GPT-OSS/FLACCS/HQCM de novo.
 
 ## 3. Limpeza
 
-- [x] `scripts/rq1/` — verificado em 2026-10-07: não existe mais no checkout (só `scripts/rq4/` e os três runners na raiz de `scripts/`). Item já resolvido, só não tinha sido marcado.
-- [ ] `export_rq4_revision/` (raiz do repo, já no `.gitignore` via `export*`) é uma pasta de exportação temporária criada nesta sessão — cópia autocontida dos arquivos necessários pro runner de baselines, pra levar pra griffin. Sem uso depois que a griffin tiver sua própria cópia; apagar.
-- [ ] `scripts/rq4/build_benchmark_macro_f1.py` (o script que monta os `benchmark_macro_f1.csv` a partir das predictions) só existe hoje dentro de `export_rq4_revision/scripts/rq4/` — nunca foi trazido pra `scripts/rq4/` na raiz do repo. Se a intenção é ele ser parte permanente do pacote (como os `materialize_*.py` já são), precisa copiá-lo de volta antes de apagar `export_rq4_revision/`.
+- [x] `scripts/rq1/` — verificado em 2026-10-07: não existe mais no checkout (só `scripts/rq4_1/`, `scripts/rq4_2/` e os três runners na raiz de `scripts/`). Item já resolvido, só não tinha sido marcado.
+- [ ] `export_rq4_revision/` (raiz do repo, já no `.gitignore` via `export*`) é uma pasta de exportação temporária criada nesta sessão — cópia autocontida dos arquivos necessários pro runner de baselines, pra levar pra griffin. Sem uso depois que a griffin tiver sua própria cópia; apagar. **Atenção (2026-10-12)**: essa cópia ainda tem a estrutura antiga pré-RQ4.1/RQ4.2 (`config/experiments/rq4/`, `scripts/rq4/`) — se for levada pra griffin, reconciliar os caminhos manualmente primeiro, ou regenerar a partir do estado atual do repo.
+- [ ] `scripts/rq4/build_benchmark_macro_f1.py` (o script que monta os `benchmark_macro_f1.csv` a partir das predictions) só existe hoje dentro de `export_rq4_revision/scripts/rq4/` — nunca foi trazido pro repo principal. Como `scripts/rq4/` não existe mais (virou `scripts/rq4_1/`/`scripts/rq4_2/` nesta sessão), falta decidir em qual das duas esse script deveria entrar — ele consolida benchmarks que hoje vivem só em `rq4_1` (cross_project/within_corpus), então `scripts/rq4_1/` é o destino mais provável, mas precisa confirmar antes de copiá-lo de volta.
 
 ## 4. Opcional / nice-to-have
 
@@ -222,7 +251,7 @@ Falta, antes de considerar isso fechado:
 - [x] Reanálise estatística (ANOVA/Friedman + pareados com Holm) — feita pros
   dois benchmarks, achados acima.
 - [x] **Trazer os artefatos da griffin pro repositório** (verificado em
-  2026-09-24): `results/rq4/{cross_project,within_corpus}/{predictions,metrics}/...`
+  2026-09-24): `results/rq4_1/{cross_project,within_corpus}/{predictions,metrics}/...`
   já contêm os valores novos (conferido célula a célula contra a tabela acima:
   CodeBERT 0,405/0,583, BiLSTM 0,377/0,517 etc.) — os congelados antigos foram
   substituídos, não ficaram paralelos.

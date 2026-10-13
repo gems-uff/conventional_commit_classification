@@ -5,9 +5,9 @@ This is the single runner for the three closed-set, trainable RQ4 baselines
 across the two internal benchmarks that use them:
 
 * ``cross_project``  -- repository-level 5-fold cross-project protocol
-  (``config/experiments/rq4/cross_project.yaml``);
+  (``config/experiments/rq4_1/cross_project.yaml``);
 * ``within_corpus``   -- stratified 80/20 commit-level holdout
-  (``config/experiments/rq4/within_corpus.yaml``).
+  (``config/experiments/rq4_1/within_corpus.yaml``).
 
 It deliberately does not execute GPT-OSS, FLACCS, or CodeFuse HQCM; those
 backends have their own runners (``scripts/run_ollama_experiment.py`` for
@@ -51,7 +51,7 @@ python scripts/run_baselines_experiment.py \
 
 Within-corpus preflight note
 -----------------------------
-``config/experiments/rq4/within_corpus.yaml`` carries the same frozen-cohort
+``config/experiments/rq4_1/within_corpus.yaml`` carries the same frozen-cohort
 preflight (``expected_rows``/``expected_cohort_sha256``) that
 ``run_ollama_experiment.py`` enforces, and it currently fails for the same
 reason documented in ``TODO.md`` (1,632 vs. 1,630 commits). This runner does
@@ -86,8 +86,8 @@ SELECTION_SEED = 0
 
 MODEL_KEY_BY_CONDITION = {"tfidf_linear_svm": "svm", "bilstm": "bilstm", "codebert": "codebert"}
 STAGE_FILES = {
-    "cross_project": "config/experiments/rq4/cross_project.yaml",
-    "within_corpus": "config/experiments/rq4/within_corpus.yaml",
+    "cross_project": "config/experiments/rq4_1/cross_project.yaml",
+    "within_corpus": "config/experiments/rq4_1/within_corpus.yaml",
 }
 
 
@@ -598,7 +598,7 @@ def parse_args() -> argparse.Namespace:
     default_root = Path(__file__).resolve().parents[1]
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--stage", choices=sorted(STAGE_FILES), default=None,
-                   help="Select config/experiments/rq4/{cross_project,within_corpus}.yaml. Alternative to --experiment.")
+                   help="Select config/experiments/rq4_1/{cross_project,within_corpus}.yaml. Alternative to --experiment.")
     p.add_argument("--experiment", default=None, help="Experiment YAML path. Alternative to --stage.")
     p.add_argument("--repo-root", default=str(default_root))
     p.add_argument("--output-dir", default=None, help="Base output directory. Default: <repo>/runs")

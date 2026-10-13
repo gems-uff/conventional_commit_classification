@@ -70,7 +70,7 @@ class FlaccsBackend:
         """Render an artifact-compatible FLACCS prompt with tokenizer-level truncation.
 
         Used by the artifact-compatible RQ4 condition, whose ``message_max_tokens``
-        and ``context_window_tokens`` come from ``config/experiments/rq4/artifact_flaccs.yaml``.
+        and ``context_window_tokens`` come from ``config/experiments/rq4_2/artifact_flaccs.yaml``.
         The template's literal text outside the two placeholders (the system
         preamble and the short "given commit message/diff" labels) is treated as
         fixed, unconstrained overhead. Only the message and diff *content* are
@@ -83,7 +83,7 @@ class FlaccsBackend:
         wrapper prose ("- given commit message:\\n") against the message cap.
         The difference is a handful of tokens out of a 1,024-token budget and
         does not change which commits require truncation --
-        ``data/rq4/artifact_compatible/flaccs/assignments.csv`` already restricts
+        ``data/rq4_2/artifact_compatible/flaccs/assignments.csv`` already restricts
         this condition to commits whose original, untruncated prompt fits the
         budget (``fits_1024``).
         """

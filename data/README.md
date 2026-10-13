@@ -18,14 +18,15 @@ data/
 ├── post_cutoff/
 │   ├── commits.csv.gz
 │   └── commits.csv.gz.sha256
-└── rq4/
-    ├── cross_project/
-    │   ├── README.md
-    │   ├── assignments.csv
-    │   └── fold_summary.csv
-    ├── within_corpus/
-    │   ├── README.md
-    │   └── assignments.csv
+├── rq4_1/
+│   ├── cross_project/
+│   │   ├── README.md
+│   │   ├── assignments.csv
+│   │   └── fold_summary.csv
+│   └── within_corpus/
+│       ├── README.md
+│       └── assignments.csv
+└── rq4_2/
     └── artifact_compatible/
         ├── hqcm/
         │   ├── README.md
@@ -153,10 +154,10 @@ Fields such as `diff` and `git_show` are multiline. Therefore, line-oriented too
 | RQ1 temporal comparison | `pre_cutoff/commits.csv.gz` and `post_cutoff/commits.csv.gz` |
 | RQ2 model comparison and temperature analysis | `post_cutoff/commits.csv.gz` |
 | RQ3 input and prompt analyses | `post_cutoff/commits.csv.gz` |
-| RQ4 cross-project benchmark | `pre_cutoff/commits.csv.gz` + `rq4/cross_project/assignments.csv` |
-| RQ4 within-corpus benchmark | `pre_cutoff/commits.csv.gz` + `rq4/within_corpus/assignments.csv` |
-| RQ4 HQCM artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4/artifact_compatible/hqcm/assignments.csv` |
-| RQ4 FLACCS artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4/artifact_compatible/flaccs/assignments.csv` |
+| RQ4 cross-project benchmark | `pre_cutoff/commits.csv.gz` + `rq4_1/cross_project/assignments.csv` |
+| RQ4 within-corpus benchmark | `pre_cutoff/commits.csv.gz` + `rq4_1/within_corpus/assignments.csv` |
+| RQ4 HQCM artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4_2/artifact_compatible/hqcm/assignments.csv` |
+| RQ4 FLACCS artifact-compatible evaluation | `pre_cutoff/commits.csv.gz` + `rq4_2/artifact_compatible/flaccs/assignments.csv` |
 
 The separate evaluation on the **original HQCM artifact and data** is not represented as a dataset under `data/`. Its upstream provenance and retrieval instructions are available at:
 
@@ -166,29 +167,29 @@ The separate evaluation on the **original HQCM artifact and data** is not repres
 
 ### Cross-project evaluation
 
-`rq4/cross_project/assignments.csv` is the authoritative commit-level definition of the five cross-project folds.
+`rq4_1/cross_project/assignments.csv` is the authoritative commit-level definition of the five cross-project folds.
 
 Materialize the train/test files with:
 
 ```bash
-python3 scripts/rq4/materialize_cross_project_folds.py \
+python3 scripts/rq4_1/materialize_cross_project_folds.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/cross_project/assignments.csv \
-  --fold-summary data/rq4/cross_project/fold_summary.csv \
-  --output-dir data/rq4/cross_project/folds
+  --assignments data/rq4_1/cross_project/assignments.csv \
+  --fold-summary data/rq4_1/cross_project/fold_summary.csv \
+  --output-dir data/rq4_1/cross_project/folds
 ```
 
 ### Within-corpus evaluation
 
-`rq4/within_corpus/assignments.csv` defines the historical within-corpus holdout.
+`rq4_1/within_corpus/assignments.csv` defines the historical within-corpus holdout.
 
 Materialize it with:
 
 ```bash
-python3 scripts/rq4/materialize_within_corpus_split.py \
+python3 scripts/rq4_1/materialize_within_corpus_split.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/within_corpus/assignments.csv \
-  --output-dir data/rq4/within_corpus/split
+  --assignments data/rq4_1/within_corpus/assignments.csv \
+  --output-dir data/rq4_1/within_corpus/split
 ```
 
 ### HQCM artifact-compatible subset
@@ -198,11 +199,11 @@ The HQCM-compatible subset contains **2,132 commits from 30 projects**.
 Materialize it with:
 
 ```bash
-python3 scripts/rq4/materialize_hqcm_artifact.py \
+python3 scripts/rq4_2/materialize_hqcm_artifact.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/artifact_compatible/hqcm/assignments.csv \
-  --csv-output data/rq4/artifact_compatible/hqcm/materialized/our_hqcm_len1024.csv \
-  --json-output data/rq4/artifact_compatible/hqcm/materialized/our_hqcm_len1024.json
+  --assignments data/rq4_2/artifact_compatible/hqcm/assignments.csv \
+  --csv-output data/rq4_2/artifact_compatible/hqcm/materialized/our_hqcm_len1024.csv \
+  --json-output data/rq4_2/artifact_compatible/hqcm/materialized/our_hqcm_len1024.json
 ```
 
 The original HQCM artifact is external and is documented under `external/hqcm/`.
@@ -214,10 +215,10 @@ The FLACCS-compatible subset contains **2,573 commits from 30 projects**.
 Materialize it with:
 
 ```bash
-python3 scripts/rq4/materialize_flaccs_artifact.py \
+python3 scripts/rq4_2/materialize_flaccs_artifact.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/artifact_compatible/flaccs/assignments.csv \
-  --output data/rq4/artifact_compatible/flaccs/materialized/our_flaccs_10_len1024.csv
+  --assignments data/rq4_2/artifact_compatible/flaccs/assignments.csv \
+  --output data/rq4_2/artifact_compatible/flaccs/materialized/our_flaccs_10_len1024.csv
 ```
 
 ## Checksums
@@ -253,9 +254,9 @@ Materialized RQ4 files are derivative artifacts and do not need to be versioned.
 Recommended `.gitignore` entries:
 
 ```gitignore
-/data/rq4/cross_project/folds/
-/data/rq4/within_corpus/split/
-/data/rq4/artifact_compatible/hqcm/materialized/
-/data/rq4/artifact_compatible/flaccs/materialized/
+/data/rq4_1/cross_project/folds/
+/data/rq4_1/within_corpus/split/
+/data/rq4_2/artifact_compatible/hqcm/materialized/
+/data/rq4_2/artifact_compatible/flaccs/materialized/
 /external/hqcm/codefuse-hqcm/
 ```

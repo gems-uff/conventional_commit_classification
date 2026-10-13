@@ -32,7 +32,7 @@ These two settings are independent and should not be confused.
 
 The HQCM-compatible subset derived from our corpus is documented under:
 
-`data/rq4/artifact_compatible/hqcm/`
+`data/rq4_2/artifact_compatible/hqcm/`
 
 ## Retrieving the upstream artifact
 

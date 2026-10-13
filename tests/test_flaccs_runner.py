@@ -20,7 +20,7 @@ FLACCS_LABELS = tuple(l for l in STUDY_LABELS if l != "others")
 
 def _experiment(assignments_path: Path) -> dict:
     return {
-        "version": 1, "id": "rq4_artifact_flaccs_fixture", "research_question": "rq4",
+        "version": 1, "id": "rq4_artifact_flaccs_fixture", "research_question": "rq4_2",
         "shared": {
             "dataset": "unused", "representation": "message_and_diff",
             "initial_seeds": [10, 20, 30], "adaptive_policy": {"start": 40, "step": 10},

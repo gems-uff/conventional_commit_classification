@@ -56,11 +56,11 @@ The complete `fold_*_train.csv` and `fold_*_test.csv` files are not stored in th
 They can be reconstructed exactly from `commits.csv.gz` and `assignments.csv` using:
 
 ```bash
-python3 scripts/rq4/materialize_cross_project_folds.py \
+python3 scripts/rq4_1/materialize_cross_project_folds.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/cross_project/assignments.csv \
-  --fold-summary data/rq4/cross_project/fold_summary.csv \
-  --output-dir data/rq4/cross_project/folds
+  --assignments data/rq4_1/cross_project/assignments.csv \
+  --fold-summary data/rq4_1/cross_project/fold_summary.csv \
+  --output-dir data/rq4_1/cross_project/folds
 ```
 
 This produces:
@@ -104,7 +104,7 @@ The authoritative artifacts for reproducing this protocol are therefore:
 
 ```text
 data/pre_cutoff/commits.csv.gz
-data/rq4/cross_project/assignments.csv
-data/rq4/cross_project/fold_summary.csv
-scripts/rq4/materialize_cross_project_folds.py
+data/rq4_1/cross_project/assignments.csv
+data/rq4_1/cross_project/fold_summary.csv
+scripts/rq4_1/materialize_cross_project_folds.py
 ```

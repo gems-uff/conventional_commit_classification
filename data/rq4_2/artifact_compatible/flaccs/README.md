@@ -48,10 +48,10 @@ The full historical CSV is not stored as a primary data file because the commit 
 It can be reconstructed with:
 
 ```bash
-python3 scripts/rq4/materialize_flaccs_artifact.py \
+python3 scripts/rq4_2/materialize_flaccs_artifact.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/artifact_compatible/flaccs/assignments.csv \
-  --output data/rq4/artifact_compatible/flaccs/materialized/our_flaccs_10_len1024.csv
+  --assignments data/rq4_2/artifact_compatible/flaccs/assignments.csv \
+  --output data/rq4_2/artifact_compatible/flaccs/materialized/our_flaccs_10_len1024.csv
 ```
 
 The materializer restores the historical schema, including:
@@ -85,9 +85,9 @@ Before generating the artifact, the script verifies that:
 Because the file-stat fields are reconstructed from the Git diff, one development-time audit against the historical FLACCS CSV is recommended before publishing the replication package:
 
 ```bash
-python3 scripts/rq4/materialize_flaccs_artifact.py \
+python3 scripts/rq4_2/materialize_flaccs_artifact.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/artifact_compatible/flaccs/assignments.csv \
+  --assignments data/rq4_2/artifact_compatible/flaccs/assignments.csv \
   --output /tmp/our_flaccs_10_len1024.csv \
   --reference-csv /path/to/historical/our_flaccs_10_len1024.csv
 ```
@@ -102,8 +102,8 @@ The FLACCS-compatible artifact is reproducible from:
 
 ```text
 data/pre_cutoff/commits.csv.gz
-data/rq4/artifact_compatible/flaccs/assignments.csv
-scripts/rq4/materialize_flaccs_artifact.py
+data/rq4_2/artifact_compatible/flaccs/assignments.csv
+scripts/rq4_2/materialize_flaccs_artifact.py
 ```
 
 Generated files under `materialized/` are derivative artifacts and do not need to be versioned.

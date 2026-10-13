@@ -26,7 +26,7 @@ python scripts/run_ollama_experiment.py \
   --model gpt_oss_20b --condition temperature_0p6
 
 python scripts/run_ollama_experiment.py \
-  --experiment config/experiments/rq4/cross_project.yaml \
+  --experiment config/experiments/rq4_1/cross_project.yaml \
   --model gpt_oss_20b --resume
 
 --rq is an alternative to --experiment that selects a research question by
@@ -958,10 +958,10 @@ async def _run_job_locked(
 
 
 RQ4_STAGE_FILES = {
-    "cross_project": "cross_project.yaml",
-    "within_corpus": "within_corpus.yaml",
-    "artifact_flaccs": "artifact_flaccs.yaml",
-    "artifact_hqcm": "artifact_hqcm.yaml",
+    "cross_project": "rq4_1/cross_project.yaml",
+    "within_corpus": "rq4_1/within_corpus.yaml",
+    "artifact_flaccs": "rq4_2/artifact_flaccs.yaml",
+    "artifact_hqcm": "rq4_2/artifact_hqcm.yaml",
 }
 RQ_SINGLE_FILES = {
     "rq1": "rq1.yaml",
@@ -991,8 +991,8 @@ def resolve_experiments(repo_root: Path, args: argparse.Namespace) -> list[tuple
         if args.stage:
             if args.stage not in RQ4_STAGE_FILES:
                 raise ConfigError(f"Unknown --stage {args.stage!r} for --rq rq4; choices: {sorted(RQ4_STAGE_FILES)}")
-            return [(exp_dir / "rq4" / RQ4_STAGE_FILES[args.stage], None)]
-        return [(exp_dir / "rq4" / fname, None) for fname in RQ4_STAGE_FILES.values()]
+            return [(exp_dir / RQ4_STAGE_FILES[args.stage], None)]
+        return [(exp_dir / fname, None) for fname in RQ4_STAGE_FILES.values()]
 
     if args.stage and args.rq != "rq3_2":
         raise ConfigError(f"--stage is only supported for --rq rq3_2 or --rq rq4 (got --rq {args.rq})")

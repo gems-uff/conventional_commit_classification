@@ -42,7 +42,7 @@ def test_duplicate_selection():
 @pytest.mark.parametrize("name,count", [("flaccs", 2573), ("hqcm", 2132)])
 def test_packaged_artifact_schema(name, count):
     root = Path(__file__).resolve().parents[1]
-    assignments = load_assignments(root / f"data/rq4/artifact_compatible/{name}/assignments.csv")
+    assignments = load_assignments(root / f"data/rq4_2/artifact_compatible/{name}/assignments.csv")
     assert len(assignments) == count and assignments.project.nunique() == 30
     assert (assignments.target == assignments.canonical_target).all()
 

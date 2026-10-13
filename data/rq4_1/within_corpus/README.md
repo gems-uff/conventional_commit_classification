@@ -54,16 +54,16 @@ The complete historical `train.csv` and `test.csv` files are not stored in the r
 They can be reconstructed from the canonical dataset and `assignments.csv` using:
 
 ```bash
-python3 scripts/rq4/materialize_within_corpus_split.py \
+python3 scripts/rq4_1/materialize_within_corpus_split.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/within_corpus/assignments.csv \
-  --output-dir data/rq4/within_corpus/split
+  --assignments data/rq4_1/within_corpus/assignments.csv \
+  --output-dir data/rq4_1/within_corpus/split
 ```
 
 This produces:
 
 ```text
-data/rq4/within_corpus/split/
+data/rq4_1/within_corpus/split/
 ├── train.csv
 └── test.csv
 ```
@@ -104,8 +104,8 @@ The authoritative artifacts for reproducing this protocol are therefore:
 
 ```text
 data/pre_cutoff/commits.csv.gz
-data/rq4/within_corpus/assignments.csv
-scripts/rq4/materialize_within_corpus_split.py
+data/rq4_1/within_corpus/assignments.csv
+scripts/rq4_1/materialize_within_corpus_split.py
 ```
 
 ## Notes on CSV line counts

@@ -68,11 +68,11 @@ This file is the authoritative definition of the HQCM-compatible subset and its 
 The full historical CSV and JSON can be reconstructed with:
 
 ```bash
-python3 scripts/rq4/materialize_hqcm_artifact.py \
+python3 scripts/rq4_2/materialize_hqcm_artifact.py \
   --dataset data/pre_cutoff/commits.csv.gz \
-  --assignments data/rq4/artifact_compatible/hqcm/assignments.csv \
-  --csv-output data/rq4/artifact_compatible/hqcm/materialized/our_hqcm_len1024.csv \
-  --json-output data/rq4/artifact_compatible/hqcm/materialized/our_hqcm_len1024.json
+  --assignments data/rq4_2/artifact_compatible/hqcm/assignments.csv \
+  --csv-output data/rq4_2/artifact_compatible/hqcm/materialized/our_hqcm_len1024.csv \
+  --json-output data/rq4_2/artifact_compatible/hqcm/materialized/our_hqcm_len1024.json
 ```
 
 The materializer reconstructs the HQCM input representation as:
@@ -121,8 +121,8 @@ The HQCM-compatible artifact is reproducible from:
 
 ```text
 data/pre_cutoff/commits.csv.gz
-data/rq4/artifact_compatible/hqcm/assignments.csv
-scripts/rq4/materialize_hqcm_artifact.py
+data/rq4_2/artifact_compatible/hqcm/assignments.csv
+scripts/rq4_2/materialize_hqcm_artifact.py
 ```
 
 Generated files under `materialized/` are derivative artifacts and do not need to be versioned.

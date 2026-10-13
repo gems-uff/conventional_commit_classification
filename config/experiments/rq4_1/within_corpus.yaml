@@ -1,6 +1,6 @@
 version: 1
 id: rq4_within_corpus
-research_question: rq4
+research_question: rq4_1
 description: >
   Compare GPT-OSS, FLACCS, HQCM, TF-IDF + Linear SVM, BiLSTM, and CodeBERT
   on the same complete 11-class task using a stratified 80/20 within-corpus
@@ -15,7 +15,7 @@ shared:
   # confirmed member-for-member (not just by count) against the legacy
   # rq4_non_cross_v2_package's own dataset/rq4_v2_from_md_11classes/
   # within_corpus/test.csv via a matching cohort_sha256. Regenerating the
-  # stale frozen predictions in results/rq4/within_corpus/ against
+  # stale frozen predictions in results/rq4_1/within_corpus/ against
   # this cohort is still pending (TODO.md item 2) and unaffected by this
   # config value; this only unblocks the preflight for new runs (trainable
   # baselines and any fresh GPT-OSS/FLACCS/HQCM execution) against the
@@ -35,7 +35,7 @@ shared:
 
 split:
   protocol: within_corpus_holdout
-  assignments: data/rq4/within_corpus/assignments.csv
+  assignments: data/rq4_1/within_corpus/assignments.csv
   train_fraction: 0.8
   test_fraction: 0.2
   stratify_by: target
