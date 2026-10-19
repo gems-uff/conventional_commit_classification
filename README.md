@@ -116,6 +116,12 @@ normalized to `ci`. Other responses go through the canonical parser.
 
 ## 4. Ollama
 
+**New to this machine?** See [`OLLAMA_SETUP.md`](OLLAMA_SETUP.md) first —
+installing Ollama itself, which `ollama pull` tag to use for each model in
+`config/models.yaml`, the digest-mismatch check this package enforces (and
+why Ollama tags can drift), and rough RAM/VRAM sizing per model class. This
+section and "Ollama execution and resume" below assume that part is done.
+
 `src.inference.ollama` combines the useful runtime behavior from the historical
 classifier with the final protocol:
 
