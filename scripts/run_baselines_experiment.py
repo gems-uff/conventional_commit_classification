@@ -2,7 +2,7 @@
 """Run the package's trainable RQ4 baselines: TF-IDF+SVM, BiLSTM, CodeBERT.
 
 This is the single runner for the three closed-set, trainable RQ4 baselines
-across the two internal benchmarks that use them:
+across the two internal evaluations that use them:
 
 * ``cross_project``  -- repository-level 5-fold cross-project protocol
   (``config/experiments/rq4_1/cross_project.yaml``);

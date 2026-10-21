@@ -207,7 +207,7 @@ standardized output schema:
 
 - `scripts/run_ollama_experiment.py` — GPT-OSS and every other generative
   condition run through Ollama (RQ1–RQ3 and the GPT-OSS/FLACCS/HQCM columns
-  of the RQ4 cross-project/within-corpus benchmarks, plus the GPT-OSS side of
+  of the RQ4 cross-project/within-corpus evaluations, plus the GPT-OSS side of
   the artifact-compatible comparisons);
 - `scripts/run_baselines_experiment.py` — the three trainable RQ4 baselines
   (TF-IDF+SVM, BiLSTM, CodeBERT);
@@ -226,7 +226,7 @@ it means reconstructing the original artifact's LoRA fine-tuning environment
 `chcl_llama2_7b_len1024` adapter), not just running inference. That was judged
 out of scope for this replication package. `results/rq4_2/related_work_artifacts/hqcm*/`
 and the `hqcm`/`CodeFuse HQCM` columns of the cross-project/within-corpus
-benchmarks stay frozen from the original execution; see `TODO.md` item 1 for
+evaluations stay frozen from the original execution; see `TODO.md` item 1 for
 the reasoning and item 4 of the reviewer-response letter for how this is
 disclosed.
 

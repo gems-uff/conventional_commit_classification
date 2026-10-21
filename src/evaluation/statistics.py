@@ -81,7 +81,7 @@ def paired_two_condition(x, y, *, alpha: float = 0.05) -> dict:
 
 
 def related_conditions(scores: pd.DataFrame, *, alpha: float = 0.05) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Frozen >2-related-conditions route used by the final RQ4 benchmark.
+    """Frozen >2-related-conditions route used by the final RQ4 evaluation.
 
     Returns (normality, omnibus, pairwise). Pairwise tests are run only after a
     significant omnibus result and Holm-corrected over the full pairwise family.
