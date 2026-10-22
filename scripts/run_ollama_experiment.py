@@ -562,8 +562,7 @@ async def _run_job_locked(
     limit: int | None,
     max_concurrent_override: int | None,
 ) -> None:
-    # Imports are delayed so --help/--list-jobs work before the canonical parser
-    # has been installed into src/parsing/.
+    # Imports are delayed so --help/--list-jobs do not load the canonical parser.
     from src.consensus import resolve_first_to_two
     from src.data.loader import (
         validate_assignment_selection,
@@ -1048,8 +1047,7 @@ def main() -> int:
         raise FileNotFoundError(repo_root)
     sys.path.insert(0, str(repo_root))
 
-    # These imports do not require the canonical parser, so job listing remains
-    # useful before tools/install_canonical_parser.py is run.
+    # These imports do not load the canonical parser.
     from src.config import load_evaluation_config, load_experiment, load_inference_config, load_models
 
     inference_path = repo_root / "config/inference.yaml"

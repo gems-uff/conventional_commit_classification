@@ -12,7 +12,6 @@ scripts/      runners and data materialization scripts
 src/          shared implementation used by the runners
 results/      predictions, metrics, and analysis notebooks for each RQ
 tests/        test suite
-tools/        auxiliary tools
 environment.txt   hardware and Ollama version of the execution machine
 ```
 
@@ -164,3 +163,9 @@ to them; to analyze a new run, replace those files with the tables built by
 See `config/README.md`. Experiment files are under `config/experiments/`;
 prompts are referenced by ID through `prompts/manifest.yaml` (see
 `prompts/README.md`).
+
+## License and citation
+
+Code is under the MIT License and data under CC BY 4.0; commit content in
+`data/` remains under the license of each source repository (see `LICENSE`).
+To cite this package, see `CITATION.cff`.

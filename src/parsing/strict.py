@@ -11,8 +11,7 @@ try:
     )
 except ModuleNotFoundError as exc:  # pragma: no cover - setup guard
     raise RuntimeError(
-        "Canonical strict_response_parser.py is not installed in src/parsing/. "
-        "Run tools/install_canonical_parser.py first."
+        "src/parsing/strict_response_parser.py is missing; restore it from the repository."
     ) from exc
 
 EXPECTED_PARSER_VERSION = "4.1.1"
