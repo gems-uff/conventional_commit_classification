@@ -38,8 +38,8 @@ The canonical datasets are in `data/pre_cutoff/` and `data/post_cutoff/`.
 Verify them with:
 
 ```bash
-sha256sum -c data/pre_cutoff/commits.csv.gz.sha256
-sha256sum -c data/post_cutoff/commits.csv.gz.sha256
+(cd data/pre_cutoff && sha256sum -c commits.csv.gz.sha256)
+(cd data/post_cutoff && sha256sum -c commits.csv.gz.sha256)
 ```
 
 The runners read the RQ4 `assignments.csv` files directly; materializing the

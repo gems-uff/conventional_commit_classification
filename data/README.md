@@ -42,8 +42,8 @@ data/
 Verify the files:
 
 ```bash
-sha256sum -c data/pre_cutoff/commits.csv.gz.sha256
-sha256sum -c data/post_cutoff/commits.csv.gz.sha256
+(cd data/pre_cutoff && sha256sum -c commits.csv.gz.sha256)
+(cd data/post_cutoff && sha256sum -c commits.csv.gz.sha256)
 ```
 
 Columns:
