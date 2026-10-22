@@ -975,7 +975,10 @@ RQ4_STAGE_FILES = {
     "within_corpus": "rq4_1/within_corpus.yaml",
     "artifact_flaccs": "rq4_2/artifact_flaccs.yaml",
     "artifact_hqcm": "rq4_2/artifact_hqcm.yaml",
+    "hqcm_original": "rq4_2/hqcm_original.yaml",
 }
+# Stages run by --rq rq4 without --stage (hqcm_original needs the HQCM download).
+RQ4_DEFAULT_STAGES = ("cross_project", "within_corpus", "artifact_flaccs", "artifact_hqcm")
 RQ_SINGLE_FILES = {
     "rq1": "rq1.yaml",
     "rq2": "rq2.yaml",
@@ -1006,7 +1009,7 @@ def resolve_experiments(repo_root: Path, args: argparse.Namespace) -> list[tuple
             if args.stage not in RQ4_STAGE_FILES:
                 raise ConfigError(f"Unknown --stage {args.stage!r} for --rq rq4; choices: {sorted(RQ4_STAGE_FILES)}")
             return [(exp_dir / RQ4_STAGE_FILES[args.stage], None)]
-        return [(exp_dir / fname, None) for fname in RQ4_STAGE_FILES.values()]
+        return [(exp_dir / RQ4_STAGE_FILES[stage], None) for stage in RQ4_DEFAULT_STAGES]
 
     if args.stage and args.rq != "rq3_2":
         raise ConfigError(f"--stage is only supported for --rq rq3_2 or --rq rq4 (got --rq {args.rq})")
@@ -1021,8 +1024,9 @@ def parse_args() -> argparse.Namespace:
                     help="Select the experiment by research question instead of --experiment. "
                          "--rq rq4 without --stage runs all four rq4 sub-experiments in sequence.")
     p.add_argument("--stage", default=None,
-                    help="--rq rq4: one of cross_project, within_corpus, artifact_flaccs, artifact_hqcm "
-                         "(selects one sub-experiment file). --rq rq3_2 (or --experiment pointing at it): "
+                    help="--rq rq4: one of cross_project, within_corpus, artifact_flaccs, artifact_hqcm, "
+                         "hqcm_original (selects one sub-experiment file; hqcm_original is not part of the "
+                         "default --rq rq4 sequence). --rq rq3_2 (or --experiment pointing at it): "
                          "one of the YAML's factor_* keys (filters jobs to that factor's treatments). "
                          "Unsupported for rq1/rq2/rq3_1.")
     p.add_argument("--repo-root", default=str(default_root), help="Replication-package repository root.")

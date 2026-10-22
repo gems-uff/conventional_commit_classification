@@ -25,6 +25,15 @@ class CodeBertConfig:
     weight_decay: float = 0.01
 
 
+def _tokenizer_kwarg(tokenizer, trainer_cls=None) -> dict[str, Any]:
+    """Pass the tokenizer as `processing_class` (transformers >= 4.46) or `tokenizer`."""
+    import inspect
+    if trainer_cls is None:
+        from transformers import Trainer as trainer_cls
+    name = "processing_class" if "processing_class" in inspect.signature(trainer_cls.__init__).parameters else "tokenizer"
+    return {name: tokenizer}
+
+
 def set_all(seed: int) -> None:
     import torch
     from transformers import set_seed
@@ -49,7 +58,7 @@ def train_predict(train: pd.DataFrame, test: pd.DataFrame, *, seed: int, output_
         per_device_train_batch_size=c.train_batch_size, per_device_eval_batch_size=c.eval_batch_size,
         weight_decay=c.weight_decay, eval_strategy="no", save_strategy="no", load_best_model_at_end=False,
         report_to="none")
-    trainer = Trainer(model=model, args=args, train_dataset=train_ds, processing_class=tokenizer,
+    trainer = Trainer(model=model, args=args, train_dataset=train_ds, **_tokenizer_kwarg(tokenizer),
                       data_collator=DataCollatorWithPadding(tokenizer=tokenizer))
     trainer.train(); pred = trainer.predict(test_ds); ids = np.argmax(pred.predictions, axis=-1)
     out = test.copy(); out["prediction"] = [ID2LABEL[int(i)] for i in ids]; out["seed"] = seed
@@ -110,7 +119,7 @@ def select_num_epochs(
             load_best_model_at_end=True, metric_for_best_model="macro_f1", greater_is_better=True,
             save_total_limit=1, report_to="none")
         trainer = Trainer(model=model, args=args, train_dataset=train_ds, eval_dataset=dev_ds,
-                          processing_class=tokenizer, data_collator=DataCollatorWithPadding(tokenizer=tokenizer),
+                          **_tokenizer_kwarg(tokenizer), data_collator=DataCollatorWithPadding(tokenizer=tokenizer),
                           compute_metrics=compute_metrics,
                           callbacks=[EarlyStoppingCallback(early_stopping_patience=patience)])
         trainer.train()

@@ -229,3 +229,16 @@ def test_smoke_train_subset_is_class_balanced_across_projects_and_feeds_selectio
     assert list(subset.index) == sorted(subset.index, key=list(train.index).index)
     for group_col in ("project", None):
         carve_validation_split(subset, seed=0, config=ValidationSplitConfig(fraction=0.15), group_col=group_col)
+
+
+def test_codebert_passes_tokenizer_with_the_installed_trainer_signature():
+    from src.training.codebert import _tokenizer_kwarg
+
+    class NewTrainer:
+        def __init__(self, model=None, processing_class=None): ...
+
+    class OldTrainer:  # transformers < 4.46 (e.g. 4.44.2 used for the study)
+        def __init__(self, model=None, tokenizer=None): ...
+
+    assert _tokenizer_kwarg("tok", NewTrainer) == {"processing_class": "tok"}
+    assert _tokenizer_kwarg("tok", OldTrainer) == {"tokenizer": "tok"}

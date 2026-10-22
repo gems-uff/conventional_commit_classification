@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 import pandas as pd
 
-REPRESENTATIONS = ("message_only", "diff_only", "message_and_diff", "git_show")
+REPRESENTATIONS = ("message_only", "diff_only", "message_and_diff", "summary_and_diff", "git_show")
 
 
 def build_representation(row: Any, representation: str) -> str:
@@ -28,6 +28,8 @@ def build_representation(row: Any, representation: str) -> str:
         return get("diff")
     if representation == "message_and_diff":
         return f"{get('processed_message')}\n\n{get('diff')}"
+    if representation == "summary_and_diff":
+        return f"Commit summary:\n{get('processed_message')}\n\nGit diff:\n{get('diff')}"
     return get("git_show")
 
 

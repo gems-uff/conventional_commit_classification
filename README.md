@@ -17,9 +17,15 @@ environment.txt   hardware and Ollama version of the execution machine
 
 ## 1. Install
 
+Python 3.12 (3.12.3 on the execution machine, see `environment.txt`).
+
 ```bash
 python -m pip install -r requirements.txt
 ```
+
+`requirements.txt` pins the versions of the execution machine. On Linux,
+`torch==2.8.0` from PyPI includes CUDA 12.8; on other systems, install
+`torch==2.8.0` for your platform following <https://pytorch.org/get-started/locally/>.
 
 The LLM experiments run on Ollama: see [`OLLAMA_SETUP.md`](OLLAMA_SETUP.md)
 to install it and pull the models. FLACCS, BiLSTM, and CodeBERT require a
@@ -82,8 +88,9 @@ Options:
   dataset (temporal robustness); the post-cutoff conditions are the `--rq rq3_2`
   runs of `p0_baseline` and `p_code_disambiguation`.
 - `--rq rq4 --stage <name>` runs one RQ4 experiment: `cross_project`,
-  `within_corpus`, `artifact_flaccs`, or `artifact_hqcm`. Without `--stage`,
-  all four run in sequence.
+  `within_corpus`, `artifact_flaccs`, `artifact_hqcm`, or `hqcm_original`.
+  Without `--stage`, the first four run in sequence (`hqcm_original` needs the
+  HQCM test set, see `data/external/hqcm/README.md`).
 - `--model`, `--condition`, `--prompt`, and `--project` restrict the jobs.
 - `--experiment <yaml>` runs any experiment file under `config/experiments/`.
 
@@ -119,9 +126,11 @@ Output: `runs/<experiment_id>/flaccs/`.
 The CodeFuse HQCM code, fine-tuning scripts, and original dataset are not
 redistributed in this package; they are obtained from the HQCM authors'
 repository, which does not include a fine-tuned model. The model is obtained by
-running the HQCM fine-tuning scripts. See `data/external/hqcm/README.md`. The HQCM
-predictions used in the study are in `results/rq4_1/` and
-`results/rq4_2/related_work_artifacts/hqcm_original_dataset/`.
+running the HQCM fine-tuning scripts (with the changes in `changes.patch`). See
+`data/external/hqcm/README.md`, which also describes the comparison on the
+original HQCM test set (`--rq rq4 --stage hqcm_original` and
+`scripts/rq4_2/build_hqcm_original_comparison.py`). The HQCM predictions used in
+the study are in `results/rq4_1/` and `results/rq4_2/related_work_artifacts/hqcm*/`.
 
 ## 4. Analyses
 

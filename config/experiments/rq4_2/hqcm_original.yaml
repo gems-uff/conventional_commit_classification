@@ -1,0 +1,27 @@
+version: 1
+id: rq4_hqcm_original
+research_question: rq4_2
+description: >
+  GPT-OSS 20B on the original HQCM test set (518 commits, 8 classes). Requires
+  the dataset written by scripts/rq4_2/materialize_hqcm_original_testset.py.
+
+dataset: data/external/hqcm/materialized/hqcm_original_test.csv
+model: gpt_oss_20b
+temperature: 0.6
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  threshold: 2
+
+runtime_overrides:
+  request_timeout_seconds: 300
+
+subset:
+  label_space: [fix, feat, build, ci, docs, style, refactor, test]
+
+conditions:
+  gpt_oss_20b:
+    representation: summary_and_diff
+    prompt_id: p_winner_adapted_to_hqcm
