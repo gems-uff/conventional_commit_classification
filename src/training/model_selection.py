@@ -70,7 +70,7 @@ def carve_validation_split(
 
     if train_prime.empty or dev.empty:
         raise RuntimeError("Validation split produced an empty side; adjust fraction or grouping")
-    missing_classes = sorted(set(train_prime[stratify_col]) - set(train[stratify_col]))
+    missing_classes = sorted(set(train[stratify_col]) - set(train_prime[stratify_col]))
     if missing_classes:
         raise RuntimeError(f"train' is missing classes present in train: {missing_classes}")
     return train_prime, dev

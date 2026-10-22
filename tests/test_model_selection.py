@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+from src.data.loader import STUDY_LABELS
 from src.training.model_selection import ValidationSplitConfig, carve_validation_split
 from src.training.svm import select_c
 
@@ -47,6 +48,19 @@ def test_carve_validation_split_rejects_empty_train():
         carve_validation_split(pd.DataFrame(columns=["target", "project"]), seed=1)
 
 
+def test_carve_validation_split_grouped_rejects_class_confined_to_one_group():
+    # Each class lives entirely in its own group, so whichever single group the
+    # grouped split sends to dev necessarily removes that class from train'
+    # entirely -- this must be rejected regardless of the permutation seed.
+    df = pd.DataFrame(
+        [{"project": "g1", "commit_hash": f"fix-{i}", "target": "fix", "input_text": "x"} for i in range(5)]
+        + [{"project": "g2", "commit_hash": f"feat-{i}", "target": "feat", "input_text": "x"} for i in range(5)]
+    )
+    for seed in (1, 2, 3, 4, 5):
+        with pytest.raises(RuntimeError, match="missing classes"):
+            carve_validation_split(df, seed=seed, config=ValidationSplitConfig(fraction=0.5), group_col="project")
+
+
 def test_svm_select_c_picks_from_grid_and_reports_diagnostics():
     df = _synthetic_frame(n_per_class=15)
     grid = [0.01, 1.0, 100.0]
@@ -67,7 +81,7 @@ def test_bilstm_select_num_epochs_returns_positive_epoch_count_within_budget():
     pytest.importorskip("torch")
     from src.training.bilstm import BiLstmConfig, select_num_epochs
 
-    df = _synthetic_frame(n_per_class=12)
+    df = _synthetic_frame(n_per_class=12, classes=STUDY_LABELS)
     tiny = BiLstmConfig(max_vocab_size=200, max_seq_len=16, embedding_dim=8, hidden_dim=8, batch_size=8)
     config, diagnostics = select_num_epochs(
         df, seed=1, max_epochs=2, patience=1,

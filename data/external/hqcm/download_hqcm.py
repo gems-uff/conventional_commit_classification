@@ -61,7 +61,7 @@ def main() -> None:
         default=default_output,
         help=(
             "Directory where CodeFuse-HQCM will be cloned. "
-            "Default: external/hqcm/codefuse-hqcm"
+            "Default: data/external/hqcm/codefuse-hqcm"
         ),
     )
 

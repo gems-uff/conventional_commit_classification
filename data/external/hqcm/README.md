@@ -41,7 +41,7 @@ The original HQCM repository and dataset are not redistributed in this replicati
 To retrieve the exact upstream revision used in the study, run from the replication-package root:
 
 ```bash
-python3 external/hqcm/download_hqcm.py
+python3 data/external/hqcm/download_hqcm.py
 ```
 
 The script clones:
@@ -59,7 +59,7 @@ ea7e7fab1bca176d9afd77350496649d7ca4743f
 By default, the checkout is created at:
 
 ```text
-external/hqcm/codefuse-hqcm/
+data/external/hqcm/codefuse-hqcm/
 ```
 
 The downloaded upstream repository should not be committed to this replication package.
@@ -67,7 +67,7 @@ The downloaded upstream repository should not be committed to this replication p
 Recommended `.gitignore` entry:
 
 ```gitignore
-/external/hqcm/codefuse-hqcm/
+/data/external/hqcm/codefuse-hqcm/
 ```
 
 The same operation can be performed manually:

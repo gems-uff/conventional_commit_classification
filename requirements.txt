@@ -12,8 +12,10 @@ tiktoken
 
 # Neural training and Hugging Face backends
 torch
-transformers
+transformers>=4.46  # src/training/codebert.py's Trainer(processing_class=...) needs the renamed kwarg
 datasets
-accelerate
+accelerate>=1.1.0  # required by transformers.Trainer on this transformers floor
+sentencepiece  # 0x404/ccs-code-llama-7b's tokenizer.model is SentencePiece-format
+protobuf  # required by the SentencePiece extractor used to load the above tokenizer
 
 

@@ -8,7 +8,7 @@ The artifact is derived from the canonical pre-cutoff dataset:
 
 It is **not** the original HQCM dataset. The original third-party HQCM artifact is documented separately under:
 
-`external/hqcm/`
+`data/external/hqcm/`
 
 Official upstream repository:
 
@@ -107,12 +107,12 @@ This directory contains **our data adapted to the HQCM artifact**, not a copy of
 
 For the original HQCM source code and dataset used in the separate original-artifact evaluation, see:
 
-`external/hqcm/README.md`
+`data/external/hqcm/README.md`
 
 The upstream artifact can be retrieved at its pinned revision with:
 
 ```bash
-python3 external/hqcm/download_hqcm.py
+python3 data/external/hqcm/download_hqcm.py
 ```
 
 ## Authoritative inputs

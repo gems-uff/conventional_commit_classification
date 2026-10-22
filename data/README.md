@@ -161,7 +161,7 @@ Fields such as `diff` and `git_show` are multiline. Therefore, line-oriented too
 
 The separate evaluation on the **original HQCM artifact and data** is not represented as a dataset under `data/`. Its upstream provenance and retrieval instructions are available at:
 
-`external/hqcm/README.md`
+`data/external/hqcm/README.md`
 
 ## RQ4 derived data
 
@@ -206,7 +206,7 @@ python3 scripts/rq4_2/materialize_hqcm_artifact.py \
   --json-output data/rq4_2/artifact_compatible/hqcm/materialized/our_hqcm_len1024.json
 ```
 
-The original HQCM artifact is external and is documented under `external/hqcm/`.
+The original HQCM artifact is external and is documented under `data/external/hqcm/`.
 
 ### FLACCS artifact-compatible subset
 
@@ -258,5 +258,5 @@ Recommended `.gitignore` entries:
 /data/rq4_1/within_corpus/split/
 /data/rq4_2/artifact_compatible/hqcm/materialized/
 /data/rq4_2/artifact_compatible/flaccs/materialized/
-/external/hqcm/codefuse-hqcm/
+/data/external/hqcm/codefuse-hqcm/
 ```
