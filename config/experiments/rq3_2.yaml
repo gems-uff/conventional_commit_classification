@@ -1,0 +1,71 @@
+version: 1
+id: rq3_2_prompt_refinement
+research_question: rq3_2
+description: >
+  GPT-OSS 20B with the prompt treatments of four factors on the post-cutoff
+  dataset.
+
+dataset: data/post_cutoff/commits.csv.gz
+model: gpt_oss_20b
+representation: git_show
+temperature: 0.6
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  threshold: 2
+
+runtime_overrides:
+  request_timeout_seconds: 300
+
+metric:
+  primary: macro_f1
+  statistical_unit: project
+
+factors:
+  factor_1_definitions:
+    reference_treatment: p0_baseline
+    treatments:
+      - p0_baseline
+      - p1_definition_augmented
+      - p2_angular_definition
+      - p3_extensive_definition
+      - p4_mix_definition
+
+  factor_2_heuristics:
+    reference_treatment: p2_angular_definition
+    treatments:
+      - p0_baseline
+      - p2_angular_definition
+      - p_negative_constraints
+      - p_chore_rule_and_negative
+      - p_chore_rule
+      - p_file_pattern
+      - p_priority_rules
+      - p_chore_negative_and_dominant
+      - p_header_structured
+      - p_code_disambiguation
+      - p_infra_disambiguation
+      - p_disambiguation
+
+  factor_3_cot_and_few_shot:
+    reference_treatment: p_code_disambiguation
+    treatments:
+      - p0_baseline
+      - p_code_disambiguation
+      - p_zero_shot_cot
+      - p_few_shot
+      - p_cot_few_shot
+
+  factor_4_abstention:
+    reference_treatment: p_code_disambiguation
+    treatments:
+      - p0_baseline
+      - p_code_disambiguation
+      - p_exclude_low
+      - p_high_only
+    # Confidence levels counted as abstentions (two abstentions: <abstained>).
+    abstain_on:
+      p_exclude_low: [low]
+      p_high_only: [low, medium]

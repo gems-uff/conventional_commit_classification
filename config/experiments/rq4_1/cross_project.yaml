@@ -1,0 +1,61 @@
+version: 1
+id: rq4_cross_project
+research_question: rq4_1
+description: >
+  GPT-OSS, FLACCS, HQCM, TF-IDF + Linear SVM, BiLSTM, and CodeBERT on the
+  five cross-project folds of the pre-cutoff dataset (11 classes).
+
+shared:
+  dataset: data/pre_cutoff/commits.csv.gz
+  representation: message_and_diff
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  consensus:
+    method: first_to_two
+    threshold: 2
+  metric:
+    primary: macro_f1
+    statistical_unit: project
+
+split:
+  protocol: cross_project_5_fold
+  assignments: data/rq4_1/cross_project/assignments.csv
+  fold_summary: data/rq4_1/cross_project/fold_summary.csv
+  folds: 5
+  grouping_unit: project
+
+conditions:
+  gpt_oss_20b:
+    model: gpt_oss_20b
+    prompt_id: p_code_disambiguation
+    temperature: 0.6
+    runtime_overrides:
+      request_timeout_seconds: 300
+
+  flaccs:
+    model: 0x404/ccs-code-llama-7b
+    prompt_id: p_flaccs_extended_11class
+    inference:
+      do_sample: false
+      max_new_tokens: 10
+
+  hqcm:
+    adapter: chcl_llama2_7b_len1024
+    prompt_id: p_hqcm_extended_11class
+    temperature: 0.0
+    label_normalization:
+      cicd: ci
+
+  tfidf_linear_svm:
+    training_config: config/training/svm.yaml
+
+  bilstm:
+    training_config: config/training/bilstm.yaml
+
+  codebert:
+    training_config: config/training/codebert.yaml
+
+analysis:
+  pairing: project
+  comparison: six_approaches
+  statistical_procedure: config/evaluation.yaml

@@ -1,0 +1,33 @@
+version: 1
+id: rq3_2_temporal_robustness
+research_question: rq3_2
+description: >
+  GPT-OSS 20B with the baseline and final prompts on the pre-cutoff dataset.
+  The post-cutoff conditions are the p0_baseline and p_code_disambiguation
+  runs of rq3_2.yaml.
+
+dataset: data/pre_cutoff/commits.csv.gz
+model: gpt_oss_20b
+temperature: 0.6
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  threshold: 2
+
+runtime_overrides:
+  request_timeout_seconds: 300
+
+metric:
+  primary: macro_f1
+  statistical_unit: project
+
+conditions:
+  baseline_pre_cutoff:
+    representation: git_show
+    prompt_id: p0_baseline
+
+  refined_pre_cutoff:
+    representation: git_show
+    prompt_id: p_code_disambiguation

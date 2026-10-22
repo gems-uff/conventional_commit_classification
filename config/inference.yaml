@@ -1,0 +1,68 @@
+# Experiment-specific choices such as dataset, model set, prompt,
+# representation, temperature, seeds, and request timeout are defined under
+# config/experiments/.
+
+version: 1
+
+runtime:
+  provider: ollama
+
+token_estimation:
+  tokenizer: "cl100k_base"
+  implementation: "tiktoken"
+
+input:
+  max_content_tokens: 30000
+  truncation:
+    enabled: true
+    strategy: "prefix"
+    marker: "\n\n[TRUNCATED...]"
+
+context:
+  strategy: "dynamic"
+  min_num_ctx: 4096
+  generation_buffer_tokens: 1024
+  max_num_ctx: 32048
+  formula: "max(4096, min(input_tokens + 1024, 32048))"
+
+generation:
+  num_predict: 1024
+  keep_alive: "30m"
+
+  use_runtime_defaults_for:
+    - top_p
+    - top_k
+    - repeat_penalty
+    - stop
+    - mirostat
+
+execution:
+  batch_size: 50
+  max_concurrent_requests: 1
+
+  max_attempts: 3
+  retry_delay_seconds: 5
+  degenerate_response_retry_delay_seconds: 2
+
+  timeout:
+    request_timeout_seconds: null
+    retry_same_request: false
+
+  # Read but not applied: the runner does not restart models automatically.
+  model_health:
+    restart_after_consecutive_failures: 3
+    restart_delay_seconds: 3
+
+parsing:
+  during_inference: true
+  parser: "strict_response_parser"
+  parser_version: "4.1.1"
+  invalid_output: "<invalid_output>"
+
+output:
+  preserve_raw_response: true
+  preserve_parsed_prediction: true
+  preserve_parse_status: true
+  preserve_input_text: true
+  preserve_full_prompt: true
+  preserve_processing_time: true

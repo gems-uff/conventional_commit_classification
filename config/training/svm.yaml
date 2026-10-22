@@ -1,0 +1,30 @@
+version: 1
+model: tfidf_linear_svm
+
+# No input-length limit: TF-IDF is computed over the full message-and-diff text.
+tfidf:
+  max_features: 50000
+  ngram_range: [1, 2]
+  min_df: 2
+  max_df: 0.95
+  sublinear_tf: true
+  lowercase: true
+
+svm:
+  penalty: l2
+  loss: squared_hinge
+  dual: true
+  tol: 1.0e-4
+  max_iter: 5000
+  class_weight: balanced
+
+# C is chosen once per fold/holdout by grid search on an internal validation
+# split of that fold's training partition, then reused for every seed.
+model_selection:
+  method: grid_search
+  hyperparameter: C
+  grid: [0.01, 0.1, 1.0, 10.0, 100.0]
+  metric: macro_f1
+  validation:
+    fraction: 0.15
+    stratify: true

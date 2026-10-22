@@ -1,0 +1,39 @@
+version: 1
+id: rq3_1_input_representation
+research_question: rq3_1
+description: >
+  GPT-OSS 20B with four input representations on the post-cutoff dataset.
+
+dataset: data/post_cutoff/commits.csv.gz
+model: gpt_oss_20b
+temperature: 0.6
+
+consensus:
+  method: adaptive_first_to_two
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  threshold: 2
+
+runtime_overrides:
+  request_timeout_seconds: 300
+
+metric:
+  primary: macro_f1
+  statistical_unit: project
+
+conditions:
+  message_only:
+    representation: message_only
+    prompt_id: p_message_only
+
+  diff_only:
+    representation: diff_only
+    prompt_id: p_diff_only
+
+  message_and_diff:
+    representation: message_and_diff
+    prompt_id: p_message_and_diff
+
+  git_show:
+    representation: git_show
+    prompt_id: p0_baseline

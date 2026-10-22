@@ -1,0 +1,66 @@
+# Final prediction, consensus, and metric policy.
+
+version: 1
+
+taxonomy:
+  labels:
+    - fix
+    - feat
+    - build
+    - ci
+    - docs
+    - style
+    - refactor
+    - perf
+    - test
+    - chore
+    - others
+
+  invalid_output: "<invalid_output>"
+
+  semantic_others:
+    is_valid_class: true
+
+consensus:
+  method: "adaptive_first_to_two"
+
+  initial_seeds:
+    - 10
+    - 20
+    - 30
+
+  adaptive_policy: {start: 40, step: 10}
+
+  threshold: 2
+
+  terminal_conditions:
+    semantic:
+      rule: "two votes for the same valid task class"
+
+    invalid:
+      rule: "two invalid votes"
+      result: "<invalid_output>"
+
+  adaptive_execution:
+    order: "sequential"
+    run_only_if_unresolved: true
+
+  interruption:
+    result: incomplete
+
+metrics:
+  primary_metric: "macro_f1"
+  statistical_unit: "project"
+
+  project_macro_f1:
+    labels: "classes_present_in_project_ground_truth"
+    absent_ground_truth_classes: "exclude_from_macro_average"
+    present_but_never_predicted: "f1_zero"
+
+    invalid_predictions:
+      count_as_incorrect: true
+      include_as_semantic_class: false
+
+  aggregation:
+    use_consensus_predictions: true
+    average_metrics_across_seeds: false

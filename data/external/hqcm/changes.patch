@@ -1,0 +1,64 @@
+diff --git a/hqcm/gen.py b/hqcm/gen.py
+index b55ecdd..bd524c1 100644
+--- a/hqcm/gen.py
++++ b/hqcm/gen.py
+@@ -13,9 +13,11 @@ class SFTModel:
+
+     def __init__(
+         self, model_id, peft_adapter_id=None,
+-        max_response_length=512, max_prompt_length=4096,
++        max_response_length=8, max_prompt_length=1016,
+         temperature=0.8, top_k=50, top_p=0.95
+     ):
++        self.max_prompt_length = max_prompt_length
++        self.max_response_length = max_response_length
+         self.tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
+         self.model = AutoModelForCausalLM.from_pretrained(
+             model_id, device_map="auto", torch_dtype="auto",
+@@ -37,7 +39,12 @@ class SFTModel:
+             self.generation_config["top_p"] = top_p
+
+     def query(self, prompt):
+-        inp_tk = self.tokenizer(prompt, return_tensors="pt").to("cuda")
++        inp_tk = self.tokenizer(
++            prompt,
++            return_tensors="pt",
++            truncation=True,
++            max_length=self.max_prompt_length
++        ).to("cuda")
+         # TODO: What if len(inp_tk) > self.max_prompt_length?
+         oup_tk = self.model.generate(**inp_tk, **self.generation_config).to("cpu")
+         answer = self.tokenizer.batch_decode(
+@@ -105,14 +112,14 @@ if __name__ == '__main__':
+         model = SFTModel(
+             model_id=model_path,
+             peft_adapter_id=str(args.adapter.absolute()),
+-            max_prompt_length=512,
++            max_prompt_length=1016,
+             temperature=args.temperature
+         )
+     else:
+         model_path = str(args.adapter)
+         model = SFTModel(
+             model_id=model_path,
+-            max_prompt_length=512,
++            max_prompt_length=1016,
+             temperature=args.temperature
+         )
+
+diff --git a/hqcm/xdata.py b/hqcm/xdata.py
+index fcf79c3..3d58e4d 100644
+--- a/hqcm/xdata.py
++++ b/hqcm/xdata.py
+@@ -262,9 +262,9 @@ if __name__ == '__main__':
+     if args.task == 'chsum':
+         xitem_fn = xitem_chsum
+     elif args.task == 'chcl':
+-        xitem_fn = functools.partial(xitem_chcl, fewshot=args.fewshot)
++        xitem_fn = functools.partial(xitem_chcl, fewshot=args.few_shot)
+     elif args.task == 'coderef':
+-        xitem_fn = functools.partial(xitem_coderef, fewshot=args.fewshot)
++        xitem_fn = functools.partial(xitem_coderef, fewshot=args.few_shot)
+     else:
+         assert False, "Unsupported code change task: " + args.task
+ 

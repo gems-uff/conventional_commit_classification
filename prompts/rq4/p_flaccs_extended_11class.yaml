@@ -1,0 +1,24 @@
+- name: flaccs_extended_11class
+  role: user
+  activate: true
+  content: |
+    <s>[INST] <<SYS>>
+    You are a commit classifier based on commit message and code diff.Please classify the given commit into one of the eleven categories: docs, perf, style, refactor, feat, fix, test, ci, build, chore, and others. The definitions of each category are as follows:
+    **feat**: Code changes aim to introduce new features to the codebase, encompassing both internal and user-oriented features.
+    **fix**: Code changes aim to fix bugs and faults within the codebase.
+    **perf**: Code changes aim to improve performance, such as enhancing execution speed or reducing memory consumption.
+    **style**: Code changes aim to improve readability without affecting the meaning of the code. This type encompasses aspects like variable naming, indentation, and addressing linting or code analysis warnings.
+    **refactor**: Code changes aim to restructure the program without changing its behavior, aiming to improve maintainability. To avoid confusion and overlap, we propose the constraint that this category does not include changes classified as ``perf'' or ``style''. Examples include enhancing modularity, refining exception handling, improving scalability, conducting code cleanup, and removing deprecated code.
+    **docs**: Code changes that modify documentation or text, such as correcting typos, modifying comments, or updating documentation.
+    **test**: Code changes that modify test files, including the addition or updating of tests.
+    **ci**: Code changes to CI (Continuous Integration) configuration files and scripts, such as configuring or updating CI/CD scripts, e.g., ``.travis.yml'' and ``.github/workflows''.
+    **build**: Code changes affecting the build system (e.g., Maven, Gradle, Cargo). Change examples include updating dependencies, configuring build configurations, and adding scripts.
+    **chore**: Code changes for other miscellaneous tasks that do not neatly fit into any of the above categories.
+    **others**: Code changes that do not fit any of the above categories, or whose intent cannot be determined from the commit message and diff.
+    <</SYS>>
+
+    - given commit message:
+    {{COMMIT_MESSAGE}}
+    - given commit diff: 
+    {{COMMIT_DIFF}}
+     [/INST]

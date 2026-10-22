@@ -1,0 +1,74 @@
+version: 1
+id: rq1_temporal_alignment
+research_question: rq1
+description: >
+  Eight LLMs on the pre-cutoff and post-cutoff datasets.
+
+shared:
+  prompt_id: p0_baseline
+  representation: git_show
+  temperature: 0.0
+  initial_seeds: [10, 20, 30]
+  adaptive_policy: {start: 40, step: 10}
+  consensus:
+    method: first_to_two
+    threshold: 2
+  metric:
+    primary: macro_f1
+    statistical_unit: project
+
+models:
+  - gemma_3_27b
+  - gpt_oss_20b
+  - granite_3_3_8b
+  - llama_3_2_vision_11b
+  - magistral_24b
+  - mistral_small_3_2_24b
+  - phi4_reasoning_plus_14b
+  - qwq_32b
+
+conditions:
+  pre_cutoff:
+    dataset: data/pre_cutoff/commits.csv.gz
+    runtime_overrides:
+      gpt_oss_20b:
+        request_timeout_seconds: 300
+      granite_3_3_8b:
+        request_timeout_seconds: 180
+      llama_3_2_vision_11b:
+        request_timeout_seconds: 240
+      phi4_reasoning_plus_14b:
+        request_timeout_seconds: 240
+      magistral_24b:
+        request_timeout_seconds: 240
+      mistral_small_3_2_24b:
+        request_timeout_seconds: 300
+      gemma_3_27b:
+        request_timeout_seconds: 300
+      qwq_32b:
+        request_timeout_seconds: 360
+
+  post_cutoff:
+    dataset: data/post_cutoff/commits.csv.gz
+    runtime_overrides:
+      gpt_oss_20b:
+        request_timeout_seconds: 300
+      granite_3_3_8b:
+        request_timeout_seconds: 180
+      llama_3_2_vision_11b:
+        request_timeout_seconds: 180
+      phi4_reasoning_plus_14b:
+        request_timeout_seconds: 300
+      magistral_24b:
+        request_timeout_seconds: 180
+      mistral_small_3_2_24b:
+        request_timeout_seconds: 300
+      gemma_3_27b:
+        request_timeout_seconds: 360
+      qwq_32b:
+        request_timeout_seconds: 360
+
+analysis:
+  pairing: project
+  delta: post_cutoff_minus_pre_cutoff
+  multiple_testing_correction: holm

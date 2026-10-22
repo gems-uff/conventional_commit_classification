@@ -1,0 +1,23 @@
+version: 1
+model: codebert
+
+architecture:
+  model_name: microsoft/codebert-base
+  # Maximum input length of microsoft/codebert-base (max_position_embeddings=514).
+  max_length: 512
+  learning_rate: 2.0e-5
+  train_batch_size: 8
+  eval_batch_size: 8
+  weight_decay: 0.01
+
+# num_train_epochs is chosen once per fold/holdout by early stopping on an
+# internal validation split of that fold's training partition, then reused for
+# every seed.
+model_selection:
+  method: early_stopping
+  metric: macro_f1
+  max_epochs: 15
+  patience: 2
+  validation:
+    fraction: 0.15
+    stratify: true
