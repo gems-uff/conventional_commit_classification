@@ -2,24 +2,12 @@ version: 1
 id: rq4_within_corpus
 research_question: rq4_1
 description: >
-  Compare GPT-OSS, FLACCS, HQCM, TF-IDF + Linear SVM, BiLSTM, and CodeBERT
-  on the same complete 11-class task using a stratified 80/20 within-corpus
-  holdout without repository-level grouping.
+  GPT-OSS, FLACCS, HQCM, TF-IDF + Linear SVM, BiLSTM, and CodeBERT on the
+  within-corpus train/test split of the pre-cutoff dataset (11 classes).
 
 shared:
-  # Reconciled 2026-09-12 (see TODO.md item 2): the previous expected_rows/hash
-  # (1630, caeb18013eded7c66125126767702594d7856d5b40faecfb9ad55aa405fe479c) 
-  # matched a stale GPT-OSS prediction cohort computed against an older
-  # snapshot of the corpus. The value below (1632) matches the article
-  # (main.tex:663, "6,527 training commits and 1,632 test commits") and was
-  # confirmed member-for-member (not just by count) against the legacy
-  # rq4_non_cross_v2_package's own dataset/rq4_v2_from_md_11classes/
-  # within_corpus/test.csv via a matching cohort_sha256. Regenerating the
-  # stale frozen predictions in results/rq4_1/within_corpus/ against
-  # this cohort is still pending (TODO.md item 2) and unaffected by this
-  # config value; this only unblocks the preflight for new runs (trainable
-  # baselines and any fresh GPT-OSS/FLACCS/HQCM execution) against the
-  # correct cohort.
+  # Preflight: the test side of split.assignments must have exactly these
+  # rows and this cohort hash (src/data/loader.py, cohort_sha256).
   expected_rows: 1632
   expected_cohort_sha256: cc25059fa0b2597e5f07bef599158e45ae627d49562597bdcca486c936bc8256
   dataset: data/pre_cutoff/commits.csv.gz

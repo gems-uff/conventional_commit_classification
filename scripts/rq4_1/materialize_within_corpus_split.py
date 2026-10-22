@@ -73,7 +73,7 @@ def load_dataset(path: Path) -> pd.DataFrame:
 
 def load_assignments(path: Path) -> pd.DataFrame:
     """
-    Load the historical within-corpus split assignments.
+    Load the within-corpus split assignments.
     """
     if not path.exists():
         raise FileNotFoundError(f"Assignments file not found: {path}")
@@ -105,7 +105,7 @@ def load_assignments(path: Path) -> pd.DataFrame:
     df["commit_hash"] = df["commit_hash"].str.lower()
     df["fold"] = pd.to_numeric(df["fold"], errors="raise").astype(int)
 
-    # Preserve the historical assignment order so the materialized
+    # Preserve the assignment order so the materialized
     # train/test files follow assignments.csv exactly.
     df["_assignment_order"] = range(len(df))
 
@@ -353,7 +353,7 @@ def materialize_split(
             validate="one_to_one",
         )
 
-        # Preserve exact historical assignment order.
+        # Preserve exact assignments.csv order.
         materialized = materialized.sort_values(
             "_assignment_order",
             kind="stable",
@@ -427,7 +427,7 @@ def main() -> None:
         "--assignments",
         required=True,
         type=Path,
-        help="Historical within-corpus assignments.csv.",
+        help="Within-corpus assignments.csv.",
     )
 
     parser.add_argument(

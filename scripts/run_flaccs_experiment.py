@@ -103,10 +103,8 @@ def _task_labels(experiment: Mapping[str, Any], default_labels: tuple[str, ...])
 def expand_jobs(experiment: Mapping[str, Any], *, evaluation: Mapping[str, Any]) -> list[FlaccsJob]:
     """Expand an artifact_flaccs.yaml-shaped experiment into FLACCS jobs.
 
-    Only conditions carrying an ``inference`` key belong to this runner (the
-    same per-runner selector convention as ``run_baselines_experiment.py``'s
-    ``training_config`` and ``run_ollama_experiment.py``'s model-registry
-    membership); ``gpt_oss_20b`` is skipped -- it belongs to the Ollama runner.
+    Only conditions with an ``inference`` key are run here; ``gpt_oss_20b`` runs
+    with ``run_ollama_experiment.py``.
     """
     from src.consensus import AdaptiveSeedPolicy, validate_base_seeds
 

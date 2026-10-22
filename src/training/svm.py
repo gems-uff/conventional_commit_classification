@@ -62,8 +62,7 @@ def select_c(
     """Pick `C` via one held-out split carved from `train` (never touches test).
 
     Runs once per fold/holdout; the returned config is then reused, fixed, across
-    every seed's from-scratch fit in `train_predict` for that fold/holdout -- the
-    repeated-seed protocol varies training stochasticity, not the hyperparameter.
+    every seed's from-scratch fit in `train_predict` for that fold/holdout.
     """
     if not grid:
         raise ValueError("grid must be non-empty")

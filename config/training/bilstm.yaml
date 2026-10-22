@@ -3,13 +3,7 @@ model: bilstm
 
 architecture:
   max_vocab_size: 50000
-  # 10,000 tokens (~p95 of the pre-cutoff corpus's message+diff token length,
-  # under this model's own tokenizer) rather than CodeBERT's 512. Unlike
-  # CodeBERT, the LSTM architecture imposes no positional-embedding ceiling, so
-  # its input budget is sized from the corpus's own length distribution instead
-  # of being copied from a different model's architectural limit. At 512
-  # tokens, 57.6% of the pre-cutoff corpus would be truncated; at 10,000
-  # tokens, only ~5% is.
+  # Maximum input length in tokens (src/training/bilstm.py, tokenize()).
   max_seq_len: 10000
   embedding_dim: 128
   hidden_dim: 128
@@ -20,11 +14,8 @@ architecture:
   weight_decay: 1.0e-5
   gradient_clip_norm: 1.0
 
-# num_epochs was previously a fixed, unvalidated default (10), with "training
-# schedules fixed in advance" and no checkpoint selection. It is now chosen
-# once per fold/holdout via early stopping on an internal validation split
-# carved from that fold's training partition (never the test partition), and
-# reused, fixed, across every seed's from-scratch fit used for consensus.
+# num_epochs is chosen once per fold/holdout by early stopping on an internal
+# validation split of that fold's training partition, then reused for every seed.
 model_selection:
   method: early_stopping
   metric: macro_f1

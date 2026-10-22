@@ -224,7 +224,7 @@ def load_assignments(path: Path) -> pd.DataFrame:
             "the stored <=1024 compatibility condition."
         )
 
-    # Preserve manifest order, which comes from the historical source CSV.
+    # Preserve manifest order.
     df["_assignment_order"] = range(len(df))
 
     return df
@@ -232,7 +232,7 @@ def load_assignments(path: Path) -> pd.DataFrame:
 
 def parse_diff_stats(diff: str):
     """
-    Reconstruct the per-file statistics used in the historical FLACCS
+    Reconstruct the per-file statistics of the FLACCS-compatible
     artifact from the canonical unified Git diff.
 
     Insertions/deletions are counted only inside hunks, so metadata lines
@@ -402,10 +402,10 @@ def validate_reference(
     reference_path: Path,
 ) -> None:
     """
-    Optional development-time audit against the historical FLACCS CSV.
+    Optional audit against a reference FLACCS-compatible CSV.
 
-    This is strongly recommended once before publishing the package,
-    because file-stat formatting is reconstructed from the Git diff.
+    Compares logical CSV values; file-stat fields are reconstructed from the
+    Git diff.
     """
     reference = pd.read_csv(
         reference_path,
@@ -451,7 +451,7 @@ def validate_reference(
 
     if differing_columns:
         print(
-            "Columns differing from historical reference: "
+            "Columns differing from reference: "
             + ", ".join(differing_columns)
         )
 
@@ -469,7 +469,7 @@ def validate_reference(
 
         raise RuntimeError(
             "Generated FLACCS artifact does not exactly reproduce "
-            "the historical reference."
+            "the reference CSV."
         )
 
     print("Reference audit:     OK")
@@ -509,8 +509,8 @@ def main() -> None:
         type=Path,
         default=None,
         help=(
-            "Optional historical FLACCS CSV used to audit the "
-            "reconstructed artifact. Recommended before publication."
+            "Optional reference FLACCS-compatible CSV used to audit "
+            "the reconstructed artifact."
         ),
     )
 

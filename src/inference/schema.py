@@ -9,12 +9,9 @@ from typing import Any
 class GenerativePredictionRecord:
     """Compact per-seed result emitted by generative backends.
 
-    Large reproducible inputs are intentionally not duplicated in every row.
-    ``prompt_id`` + ``representation`` + the canonical commit key reconstruct the
-    request, while the run manifest freezes prompt/parser/model/config hashes.
-
-    Deliberately absent: selectable interpretation modes, mapped-vote fields,
-    legacy predictions, and development-only comparison fields.
+    Inputs are not stored per row: ``prompt_id`` + ``representation`` + the
+    commit key identify the request, and the run manifest records the
+    prompt/parser/model/config hashes.
     """
 
     experiment_id: str

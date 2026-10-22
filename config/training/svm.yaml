@@ -1,8 +1,7 @@
 version: 1
 model: tfidf_linear_svm
 
-# TF-IDF has no fixed input-length limit: unigram/bigram counts are computed over
-# the entire message-and-diff text regardless of length, unlike BiLSTM/CodeBERT.
+# No input-length limit: TF-IDF is computed over the full message-and-diff text.
 tfidf:
   max_features: 50000
   ngram_range: [1, 2]
@@ -19,10 +18,8 @@ svm:
   max_iter: 5000
   class_weight: balanced
 
-# C was previously a fixed, unvalidated default (1.0). It is now chosen once per
-# fold/holdout via a small grid search on an internal validation split carved
-# from that fold's training partition (never the test partition), and reused,
-# fixed, across every seed's from-scratch fit used for consensus.
+# C is chosen once per fold/holdout by grid search on an internal validation
+# split of that fold's training partition, then reused for every seed.
 model_selection:
   method: grid_search
   hyperparameter: C

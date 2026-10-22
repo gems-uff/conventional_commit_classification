@@ -48,6 +48,7 @@ execution:
     request_timeout_seconds: null
     retry_same_request: false
 
+  # Read but not applied: the runner does not restart models automatically.
   model_health:
     restart_after_consecutive_failures: 3
     restart_delay_seconds: 3
@@ -65,11 +66,3 @@ output:
   preserve_input_text: true
   preserve_full_prompt: true
   preserve_processing_time: true
-
-notes:
-  - "Timeouts drain the blocking request before releasing its concurrency slot; wall time may exceed the request deadline."
-  - "Model-health restart thresholds are retained as historical metadata; the runner does not automatically restart models while requests may be in flight."
-  - "Temperature is experiment-specific and is intentionally not defined here."
-  - "Request timeouts are experiment/model specific and are defined in experiment configurations."
-  - "The classifier applies the final strict parser immediately after each model response."
-  - "Raw responses are retained for audit and debugging, not because post-hoc reparsing is required to reproduce the published results."

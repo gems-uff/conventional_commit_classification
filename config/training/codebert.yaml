@@ -3,22 +3,16 @@ model: codebert
 
 architecture:
   model_name: microsoft/codebert-base
-  # 512 tokens is not a tuned choice: microsoft/codebert-base is RoBERTa-based
-  # with max_position_embeddings=514, so this is a hard architectural ceiling of
-  # the pretrained checkpoint. It cannot be raised without switching to a
-  # different pretrained model, and is therefore reported separately from the
-  # BiLSTM sequence-length choice (which is corpus-derived, not architectural).
+  # Maximum input length of microsoft/codebert-base (max_position_embeddings=514).
   max_length: 512
   learning_rate: 2.0e-5
   train_batch_size: 8
   eval_batch_size: 8
   weight_decay: 0.01
 
-# num_train_epochs was previously a fixed, unvalidated default (3), with
-# "training schedules fixed in advance" and no checkpoint selection. It is now
-# chosen once per fold/holdout via early stopping on an internal validation
-# split carved from that fold's training partition (never the test partition),
-# and reused, fixed, across every seed's from-scratch fit used for consensus.
+# num_train_epochs is chosen once per fold/holdout by early stopping on an
+# internal validation split of that fold's training partition, then reused for
+# every seed.
 model_selection:
   method: early_stopping
   metric: macro_f1

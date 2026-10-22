@@ -1,6 +1,6 @@
 # RQ3.2 Systematic Error Pattern Analysis — `p_header_structured`
 
-This is a descriptive analysis of the **final strict consensus predictions** for the structured prompt condition. It does not reparse model outputs and does not alter the RQ3.2 consensus. Its purpose is to identify recurring directional class confusions that can motivate subsequent prompt-disambiguation rules; it is not an independent validation of those rules.
+This is a descriptive analysis of the **final strict consensus predictions** for the structured prompt condition. It does not reparse model outputs and does not alter the RQ3.2 consensus.
 
 ## Scope
 
@@ -31,7 +31,7 @@ This is a descriptive analysis of the **final strict consensus predictions** for
 
 ## Systematic-confusion filter
 
-`top_systematic_confusions.csv` contains semantic directional pairs that satisfy both the configured minimum occurrence count and minimum project coverage thresholds. The complete unfiltered results remain in `directional_errors_semantic.csv`.
+`top_systematic_confusions.csv` contains semantic directional pairs that satisfy both the configured minimum occurrence count and minimum project coverage thresholds.
 
 Pairs satisfying the thresholds: **47**.
 
@@ -41,10 +41,9 @@ Pairs satisfying the thresholds: **47**.
 |---|---:|---:|
 | <invalid_output> | 36 | 18 |
 
-## Interpretation notes
+## Column definitions
 
 - `target_rate` = occurrences of target→prediction divided by all commits whose ground-truth target is that target class.
 - `share_of_target_errors` = occurrences of target→prediction divided by all errors made on that target class.
 - `project_coverage` = number of projects exhibiting the directional confusion divided by all projects represented in the structured-prompt cohort.
 - `reverse_count` compares A→B with B→A. `direction_share` is A→B / (A→B + B→A), so values near 1 indicate a strongly directional confusion.
-- The analysis is exploratory/developmental because the prompt heuristics and their evaluation are based on the same post-cutoff partition. It can justify why a heuristic was introduced, but should not be presented as independent evidence that the heuristic generalizes.

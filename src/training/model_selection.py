@@ -30,12 +30,9 @@ def carve_validation_split(
     """Split `train` into (train', dev) for internal hyperparameter/epoch selection.
 
     `group_col`, when given (e.g. "project"), keeps every group entirely on one
-    side of the split, mirroring the outer cross-project protocol's own
-    no-project-leakage guarantee, so the selection signal reflects unseen-project
-    generalization rather than an easier within-project split. When omitted, a
-    stratified per-commit split is used, matching the within-corpus protocol's
-    own commit-level design. Selection never sees the test partition of the fold
-    or holdout it runs inside.
+    side of the split (used for cross-project folds). When omitted, a stratified
+    per-commit split is used (used for the within-corpus holdout). Selection
+    never sees the test partition of the fold or holdout it runs inside.
     """
     c = config or ValidationSplitConfig()
     if not 0 < c.fraction < 1:

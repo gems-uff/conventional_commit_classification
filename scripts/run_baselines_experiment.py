@@ -1,43 +1,14 @@
 #!/usr/bin/env python3
-"""Run the package's trainable RQ4 baselines: TF-IDF+SVM, BiLSTM, CodeBERT.
+"""Run the RQ4.1 trainable baselines: TF-IDF + SVM, BiLSTM, CodeBERT.
 
-This is the single runner for the three closed-set, trainable RQ4 baselines
-across the two internal evaluations that use them:
+* ``--stage cross_project``: ``config/experiments/rq4_1/cross_project.yaml`` (folds 1-5);
+* ``--stage within_corpus``: ``config/experiments/rq4_1/within_corpus.yaml`` (fold 0).
 
-* ``cross_project``  -- repository-level 5-fold cross-project protocol
-  (``config/experiments/rq4_1/cross_project.yaml``);
-* ``within_corpus``   -- stratified 80/20 commit-level holdout
-  (``config/experiments/rq4_1/within_corpus.yaml``).
+GPT-OSS runs with ``run_ollama_experiment.py``.
 
-It deliberately does not execute GPT-OSS, FLACCS, or CodeFuse HQCM; those
-backends have their own runners (``scripts/run_ollama_experiment.py`` for
-GPT-OSS; FLACCS/HQCM runners are separate).
-
-Key properties
---------------
-* each fold (or the within-corpus holdout) is a self-contained unit: for
-  cross-project, "fold" is a held-out group of repositories; for
-  within-corpus, there is a single fold (0), the stratified holdout;
-* the previously fixed, unvalidated hyperparameter (SVM's ``C``) or training
-  length (BiLSTM/CodeBERT's epoch count) is chosen once per fold via a small
-  internal validation split carved from that fold's own training partition
-  (never its test partition -- see ``src/training/model_selection.py``), then
-  held fixed across every seed's from-scratch fit used for consensus. The
-  selection itself uses a fixed, dedicated seed (0), never one of the
-  seeds (10, 20, 30, adaptive 40, 50, ...) used to produce a prediction;
-* every seed from 10/20/30 onward retrains its model from scratch on the
-  fold's complete training partition -- this is not incremental training;
-  adaptive seeds (40, 50, ...) only score the commits still unresolved;
-* the study-wide adaptive first-to-two consensus (``src/consensus.py``) is
-  reused verbatim, exactly as ``scripts/run_ollama_experiment.py`` does;
-* no trained model checkpoint is ever persisted -- only predictions and a
-  manifest survive a run;
-* ``--resume`` never repeats an already-complete (fold, seed): if every
-  commit that seed needed to score already has a journaled prediction, that
-  seed's (expensive) retrain is skipped entirely; a crash mid-training only
-  costs the seed being trained when it happened;
-* published results under ``results/`` are never modified (default output:
-  ``runs/``).
+Output: <output-dir>/<experiment_id>/<condition>/fold_<N>/ (default output-dir:
+runs/). Writing inside results/ is refused. --resume skips seeds already
+completed for a fold. BiLSTM and CodeBERT require ``torch``.
 
 Examples
 --------
@@ -47,18 +18,14 @@ python scripts/run_baselines_experiment.py \
   --stage cross_project --model svm --dry-run
 
 python scripts/run_baselines_experiment.py \
-  --stage cross_project --model bilstm codebert --resume
+  --stage cross_project --model bilstm --model codebert --resume
 
-Within-corpus preflight note
------------------------------
-``config/experiments/rq4_1/within_corpus.yaml`` carries the same frozen-cohort
-preflight (``expected_rows``/``expected_cohort_sha256``) that
-``run_ollama_experiment.py`` enforces, and it currently fails for the same
-reason documented in ``TODO.md`` (1,632 vs. 1,630 commits). This runner does
-not regenerate the split or bypass that check; ``--stage within_corpus`` will
-fail preflight until that is reconciled from original evidence, exactly like
-the Ollama runner already does. ``--stage cross_project`` has no such
-precondition and is unaffected.
+Within-corpus preflight
+-----------------------
+``config/experiments/rq4_1/within_corpus.yaml`` sets ``expected_rows`` and
+``expected_cohort_sha256`` for the test cohort. ``--stage within_corpus`` aborts
+before training if ``assignments.csv`` does not match them; the split is never
+regenerated. ``--stage cross_project`` has no such check.
 """
 
 from __future__ import annotations
@@ -79,9 +46,7 @@ if TYPE_CHECKING:
 
 import pandas as pd
 
-# Fixed, dedicated seed for the one-time-per-fold hyperparameter/epoch
-# selection pass. Never used to produce a consensus prediction, so it can
-# never be confused with the study's seeds (10, 20, 30, 40, ...).
+# Seed for the per-fold hyperparameter/epoch selection (not a prediction seed).
 SELECTION_SEED = 0
 
 MODEL_KEY_BY_CONDITION = {"tfidf_linear_svm": "svm", "bilstm": "bilstm", "codebert": "codebert"}
@@ -205,6 +170,19 @@ def expand_jobs(experiment: Mapping[str, Any], *, evaluation: Mapping[str, Any])
                 expected_cohort_sha256=shared.get("expected_cohort_sha256"),
             ))
     return jobs
+
+
+SMOKE_TRAIN_PER_CLASS = 7
+
+
+def _smoke_train_subset(train_df: pd.DataFrame, per_class: int = SMOKE_TRAIN_PER_CLASS) -> pd.DataFrame:
+    """Training subset for --limit: up to `per_class` commits per class, taken from
+    as many different projects as possible, in the original row order."""
+    rank_in_project = train_df.groupby(["target", "project"], sort=False).cumcount()
+    order = train_df.assign(_rank=rank_in_project.values, _pos=range(len(train_df)))
+    picked = (order.sort_values(["target", "_rank", "_pos"], kind="stable")
+                   .groupby("target", sort=False).head(per_class))
+    return train_df.loc[picked.sort_values("_pos").index].copy()
 
 
 def _job_output_dir(base: Path, job: BaselineJob) -> Path:
@@ -417,13 +395,13 @@ def _run_job_locked(
     if job.expected_rows is not None and len(test_df) != job.expected_rows:
         raise ConfigError(
             f"Frozen cohort mismatch: assignments select {len(test_df)} test rows; expected {job.expected_rows}. "
-            "The cohort count/hash must match frozen evidence. Reconcile assignments before execution; "
-            "no new split or training was performed. See TODO.md item 2."
+            "The cohort must match expected_rows/expected_cohort_sha256 in the experiment YAML; "
+            "no new split or training was performed."
         )
     if job.expected_cohort_sha256 is not None and cohort_sha256(test_df) != job.expected_cohort_sha256:
         raise ConfigError(
-            "Frozen cohort mismatch: test cohort hash does not match expected evidence. "
-            "Reconcile assignments before execution. See TODO.md item 2."
+            "Frozen cohort mismatch: test cohort hash does not match expected_cohort_sha256 in the "
+            "experiment YAML; no new split or training was performed."
         )
     if not set(full_fold["target"]).issubset(job.task_labels):
         raise ConfigError("Selected targets outside task taxonomy")
@@ -433,7 +411,7 @@ def _run_job_locked(
     if limit is not None:
         if limit <= 0:
             raise ValueError("--limit must be > 0")
-        train_df = train_df.head(max(limit, 20)).copy()
+        train_df = _smoke_train_subset(train_df)
         test_df = test_df.head(limit).copy()
 
     training_config_path = _resolve_repo_path(repo_root, job.training_config_path)
@@ -606,7 +584,7 @@ def parse_args() -> argparse.Namespace:
                    help="Restrict to one or more of svm/bilstm/codebert. Repeatable.")
     p.add_argument("--fold", action="append", type=int, default=[], help="Restrict to specific fold(s). Repeatable.")
     p.add_argument("--limit", type=int, default=None,
-                   help="Truncate train/test to a small smoke test; use a separate --output-dir.")
+                   help="Smoke test: first N test commits and a small class-balanced training subset; use a separate --output-dir.")
     p.add_argument("--resume", action="store_true", help="Continue an existing matching run without repeating completed (commit, seed) records.")
     p.add_argument("--dry-run", action="store_true", help="Resolve and validate jobs/data/training config but do not train.")
     p.add_argument("--list-jobs", action="store_true", help="Print expanded jobs and exit.")

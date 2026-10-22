@@ -122,10 +122,10 @@ class ModelHealthMonitor:
 
 
 class OllamaBackend:
-    """Shared Ollama mechanics extracted from the historical classifiers.
+    """Shared Ollama mechanics.
 
-    Legacy response parsing is intentionally absent. Every returned model
-    response is evaluated immediately with strict_response_parser v4.1.1.
+    Every returned model response is evaluated immediately with
+    strict_response_parser v4.1.1.
     """
 
     def __init__(self, config: OllamaRuntimeConfig | None = None):

@@ -109,12 +109,8 @@ def select_num_epochs(
 
     Runs once per fold/holdout with early stopping on dev Macro-F1 (patience in
     epochs without improvement). The resulting epoch count is then reused, fixed,
-    for every seed's from-scratch fit in `train_predict` for that fold/holdout --
-    mirroring `select_c` in svm.py, the repeated-seed protocol varies training
-    stochasticity, not training length. This function is self-contained (it does
-    not call `train_predict`) so that function's already-validated behavior for
-    the final, fixed-epoch fit is left untouched; no model state from this
-    selection run is kept, only the chosen epoch count.
+    for every seed's from-scratch fit in `train_predict` for that fold/holdout.
+    No model state from this selection run is kept, only the chosen epoch count.
     """
     import torch
     import torch.nn as nn

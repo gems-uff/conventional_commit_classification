@@ -1,20 +1,12 @@
 #!/usr/bin/env python3
-"""Run the package's Ollama-backed experiments from declarative YAML configs.
+"""Run the Ollama experiments (RQ1, RQ2, RQ3.1, RQ3.2, and the GPT-OSS conditions of RQ4).
 
-This is the single generative runner for RQ1, RQ2, RQ3.1, RQ3.2, and the
-GPT-OSS conditions in RQ4. It deliberately does not execute FLACCS, HQCM, or
-closed-set trainable baselines; those backends have separate runners.
+FLACCS and the trainable baselines have their own runners
+(run_flaccs_experiment.py, run_baselines_experiment.py).
 
-Key properties
---------------
-* canonical datasets and authoritative RQ4 assignment manifests are reused;
-* the prompt registry resolves stable prompt IDs;
-* all mandatory initial seeds are executed before consensus is evaluated;
-* adaptive seeds are executed sequentially only for unresolved commits;
-* strict_response_parser v4.1.1 is applied during inference;
-* raw responses and parser audit fields are preserved;
-* --resume never repeats an already completed commit/seed request;
-* published results under results/ are never modified (default output: runs/).
+Output: <output-dir>/<experiment_id>/<condition>/<model>/ (default output-dir: runs/).
+Writing inside results/ is refused. --resume continues an interrupted run
+without repeating completed calls.
 
 Examples
 --------
@@ -112,6 +104,7 @@ class OllamaJob:
     factor_memberships: tuple[str, ...] = ()
     expected_rows: int | None = None
     expected_cohort_sha256: str | None = None
+    abstain_on: tuple[str, ...] = ()
 
 
 
@@ -262,7 +255,10 @@ def expand_jobs(
         _validate_consensus_against_evaluation(initial, adaptive, evaluation)
         memberships: dict[str, list[str]] = {}
         order: list[str] = []
+        abstain_on: dict[str, tuple[str, ...]] = {}
         for factor_id, factor in experiment["factors"].items():
+            for prompt_id, levels in (factor.get("abstain_on") or {}).items():
+                abstain_on[str(prompt_id)] = tuple(str(level).casefold() for level in levels)
             for prompt_id in factor.get("treatments", []):
                 prompt_id = str(prompt_id)
                 if prompt_id not in memberships:
@@ -278,6 +274,7 @@ def expand_jobs(
                     initial, adaptive, threshold, task_labels,
                     _timeout_from_overrides(experiment.get("runtime_overrides")),
                     factor_memberships=tuple(memberships[prompt_id]),
+                    abstain_on=abstain_on.get(prompt_id, ()),
                 ))
         return jobs
 
@@ -335,8 +332,8 @@ def _prompt_variables(row: Any, *, representation: str, prepared_input: str) -> 
     """Provide stable aliases used by the package's prompt templates.
 
     INPUT/INPUT_TEXT/COMMIT always refer to the exact prepared representation.
-    Representation-specific aliases are also populated to support historical
-    prompt files without leaking the target label.
+    Representation-specific aliases are also populated for prompt files that
+    use them, without exposing the target label.
     """
     def get(name: str) -> str:
         value = getattr(row, name, "")
@@ -349,7 +346,7 @@ def _prompt_variables(row: Any, *, representation: str, prepared_input: str) -> 
     diff = get("diff")
     git_show = get("git_show")
 
-    # Preserve the 30k-token cap when a historical prompt uses separate MESSAGE
+    # Preserve the 30k-token cap when a prompt uses separate MESSAGE
     # and DIFF placeholders for the message+diff representation. Message text is
     # the prefix of that canonical representation, so the clipped suffix is the
     # effective diff when the message itself fits.
@@ -415,11 +412,17 @@ def _existing_index(rows: Sequence[Mapping[str, Any]], run_id: str) -> dict[tupl
 
 def _consensus_for_row(row: Any, existing: Mapping[tuple[str, str, int], Mapping[str, Any]], job: OllamaJob, resolve_first_to_two):
     prefix = (str(row.project), str(row.commit_hash))
-    by_seed = {seed: str(existing[(*prefix, seed)]["prediction"])
+    def vote(rec: Mapping[str, Any]) -> str:
+        if not job.abstain_on:
+            return str(rec["prediction"])
+        from src.parsing.confidence import abstention_vote, parse_confidence
+        return abstention_vote(str(rec["prediction"]), parse_confidence(rec["raw_response"]), job.abstain_on)
+
+    by_seed = {seed: vote(existing[(*prefix, seed)])
                for seed in job.initial_seeds if (*prefix, seed) in existing}
     seed = job.adaptive_policy.start
     while (*prefix, seed) in existing:
-        by_seed[seed] = str(existing[(*prefix, seed)]["prediction"])
+        by_seed[seed] = vote(existing[(*prefix, seed)])
         seed += job.adaptive_policy.step
     return resolve_first_to_two(
         by_seed,
@@ -428,6 +431,7 @@ def _consensus_for_row(row: Any, existing: Mapping[tuple[str, str, int], Mapping
         task_labels=job.task_labels,
         threshold=job.threshold,
         invalid_terminal=True,
+        abstention=bool(job.abstain_on),
     )
 
 
@@ -464,6 +468,11 @@ def _final_prediction_frame(df: pd.DataFrame, existing: Mapping[tuple[str, str, 
         for seed in output_seeds:
             rec = existing.get((str(item.project), str(item.commit_hash), seed))
             out[f"seed_{seed}"] = None if rec is None else rec["prediction"]
+        if job.abstain_on:
+            from src.parsing.confidence import parse_confidence
+            for seed in output_seeds:
+                rec = existing.get((str(item.project), str(item.commit_hash), seed))
+                out[f"confidence_{seed}"] = None if rec is None else parse_confidence(rec["raw_response"])
         rows.append(out)
     return pd.DataFrame(rows)
 
@@ -490,6 +499,7 @@ def _job_payload(job: OllamaJob) -> dict[str, Any]:
         "factor_memberships": list(job.factor_memberships),
         "expected_rows": job.expected_rows,
         "expected_cohort_sha256": job.expected_cohort_sha256,
+        **({"abstain_on": list(job.abstain_on)} if job.abstain_on else {}),
     }
 
 
@@ -506,6 +516,8 @@ def _job_output_dir(base: Path, job: OllamaJob) -> Path:
 def _print_job(job: OllamaJob, index: int | None = None) -> None:
     prefix = f"[{index}] " if index is not None else ""
     assignment = f", assignments={job.assignment_path}" if job.assignment_path else ""
+    if job.abstain_on:
+        assignment += f", abstain_on={list(job.abstain_on)}"
     print(
         f"{prefix}{job.condition_id}: model={job.model_id}, dataset={job.dataset}, "
         f"prompt={job.prompt_id}, representation={job.representation}, "
@@ -601,7 +613,7 @@ async def _run_job_locked(
             or (job.expected_cohort_sha256 is not None and cohort_sha256(dataset) != job.expected_cohort_sha256)):
         raise ConfigError(
             f"Frozen cohort mismatch: assignments select {len(dataset)} rows; expected {job.expected_rows}. "
-            "The cohort count/hash must match frozen evidence. Reconcile assignments before execution; "
+            "The cohort must match expected_rows/expected_cohort_sha256 in the experiment YAML; "
             "no new split or model calls were made."
         )
     if not set(dataset["target"]).issubset(job.task_labels):
@@ -938,6 +950,8 @@ async def _run_job_locked(
         manifest["completed_seed_calls"] = len(existing)
         manifest["seed_counts"] = seed_counts
         manifest["final_invalid_predictions"] = invalid_count
+        if job.abstain_on:
+            manifest["final_abstained_predictions"] = int((final["prediction"] == "<abstained>").sum())
         manifest["model_restarts"] = monitor.total_restarts
         atomic_json(manifest_path, manifest)
 
@@ -968,6 +982,7 @@ RQ_SINGLE_FILES = {
     "rq2": "rq2.yaml",
     "rq3_1": "rq3_1.yaml",
     "rq3_2": "rq3_2.yaml",
+    "rq3_2_temporal": "rq3_2_temporal_robustness.yaml",
 }
 
 

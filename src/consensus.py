@@ -7,6 +7,7 @@ from typing import Iterable, Mapping, Sequence
 from .data.loader import STUDY_LABELS
 
 INVALID_OUTPUT = "<invalid_output>"
+ABSTAINED = "<abstained>"
 LABEL_SET = set(STUDY_LABELS)
 
 
@@ -47,10 +48,13 @@ def resolve_first_to_two(
     adaptive_policy: AdaptiveSeedPolicy | None = None,
     threshold: int = 2,
     invalid_terminal: bool = True,
+    abstention: bool = False,
 ) -> ConsensusResult:
     """Mandatory base block followed by sequential votes, without exhaustion.
 
     Missing evidence remains incomplete; stored votes after terminality are ignored.
+    With ``abstention=True``, ``ABSTAINED`` votes are kept and two of them end the
+    commit as ``ABSTAINED``.
     """
     validate_base_seeds(initial_seeds)
     policy = adaptive_policy or AdaptiveSeedPolicy()
@@ -82,7 +86,7 @@ def resolve_first_to_two(
                 return ConsensusResult(None, "needs_adaptive_seed", False, seed, None, tuple(used), tuple(votes))
             raise RuntimeError(f"Unexpected missing initial seed {seed}")
         vote = str(by_seed[seed])
-        if vote not in allowed and vote != INVALID_OUTPUT:
+        if vote not in allowed and vote != INVALID_OUTPUT and not (abstention and vote == ABSTAINED):
             vote = INVALID_OUTPUT
         used.append(seed); votes.append(vote)
 
@@ -94,3 +98,5 @@ def resolve_first_to_two(
             return ConsensusResult(winner, "semantic", True, None, seed, tuple(used), tuple(votes))
         if invalid_terminal and sum(v == INVALID_OUTPUT for v in votes) >= threshold:
             return ConsensusResult(INVALID_OUTPUT, "terminal_invalid", True, None, seed, tuple(used), tuple(votes))
+        if abstention and sum(v == ABSTAINED for v in votes) >= threshold:
+            return ConsensusResult(ABSTAINED, "terminal_abstained", True, None, seed, tuple(used), tuple(votes))

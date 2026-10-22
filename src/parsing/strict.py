@@ -38,10 +38,9 @@ def strict_prediction_from_parse(
 ) -> str:
     """Apply the final strict-taxonomy interpretation used by the package.
 
-    There is intentionally no selectable interpretation mode. The replication
-    implementation exposes only strict taxonomy. In particular, an explicit
-    external label is invalid even though the parser records its normalized
-    semantic destination for audit purposes.
+    Only the strict taxonomy is applied: an explicit external label is invalid
+    even though the parser records its normalized semantic destination for
+    audit purposes.
     """
     allowed = set(LABEL_SET if task_labels is None else task_labels)
     unknown = allowed - LABEL_SET
@@ -101,9 +100,8 @@ def parse_hqcm(
 ) -> PredictionParse:
     """HQCM native output contract plus strict parser v4.1.1.
 
-    The only model-specific exception is a complete bare scalar `cicd`, the
-    original HQCM category name. It is normalized to study label `ci`. No prose
-    scanning or generic bare-alias normalization is introduced.
+    A complete bare `cicd` answer is mapped to `ci`; every other response goes
+    through the strict parser.
     """
     allowed = set(task_labels)
     if technical_status == "ok" and _clean_complete_scalar(raw_response) == "cicd":

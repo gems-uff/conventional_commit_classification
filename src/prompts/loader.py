@@ -90,9 +90,7 @@ class PromptRegistry:
     def render_text(self, prompt_id: str, **variables: Any) -> str:
         """Render a text-generation prompt such as native FLACCS/HQCM.
 
-        Task-specific text prompts in this package are represented by one active
-        user message. Requiring exactly one avoids silently flattening chat
-        prompts into a different artifact protocol.
+        The prompt file must have exactly one active user message.
         """
         messages = self.render_messages(prompt_id, **variables)
         if len(messages) != 1 or messages[0]["role"] != "user":

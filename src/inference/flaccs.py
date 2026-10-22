@@ -77,15 +77,6 @@ class FlaccsBackend:
         capped: the message to ``message_max_tokens`` tokens, and the diff to
         whatever remains of ``context_window_tokens`` after that overhead and the
         (possibly truncated) message.
-
-        This differs slightly from the FLACCS artifact's own historical
-        preparation script, which additionally charged a handful of tokens of
-        wrapper prose ("- given commit message:\\n") against the message cap.
-        The difference is a handful of tokens out of a 1,024-token budget and
-        does not change which commits require truncation --
-        ``data/rq4_2/artifact_compatible/flaccs/assignments.csv`` already restricts
-        this condition to commits whose original, untruncated prompt fits the
-        budget (``fits_1024``).
         """
         if MESSAGE_PLACEHOLDER not in template or DIFF_PLACEHOLDER not in template:
             raise RuntimeError(f"FLACCS prompt template is missing {MESSAGE_PLACEHOLDER}/{DIFF_PLACEHOLDER}")

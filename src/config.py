@@ -86,11 +86,6 @@ def load_experiment(path: str | Path) -> dict[str, Any]:
 
 def load_training_config(path: str | Path) -> dict[str, Any]:
     """Load a config/training/*.yaml for a trainable RQ4 baseline (SVM/BiLSTM/CodeBERT).
-
-    Every such config carries a `model_selection` block describing how its one
-    tunable hyperparameter (SVM's `C`) or training length (BiLSTM/CodeBERT's
-    epoch count) is chosen once per fold/holdout from an internal validation
-    split of that fold's own training partition, never its test partition.
     """
     cfg = load_yaml(path)
     if cfg.get("version") != 1:

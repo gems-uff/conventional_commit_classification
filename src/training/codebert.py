@@ -72,9 +72,7 @@ def select_num_epochs(
 
     Runs once per fold/holdout with early stopping on dev Macro-F1. The resulting
     epoch count is then reused, fixed, for every seed's from-scratch fit in
-    `train_predict` for that fold/holdout -- mirroring `select_c` in svm.py and
-    `select_num_epochs` in bilstm.py, the repeated-seed protocol varies training
-    stochasticity, not training length. `output_dir` is used only as HF Trainer
+    `train_predict` for that fold/holdout. `output_dir` is used only as HF Trainer
     scratch space for this selection run and is removed before returning: no
     model checkpoint from selection is kept, only the chosen epoch count.
     """

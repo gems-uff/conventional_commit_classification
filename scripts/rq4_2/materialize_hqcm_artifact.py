@@ -238,8 +238,7 @@ def load_assignments(path: Path) -> pd.DataFrame:
 
 def build_input_text(commit_message: str, git_diff: str) -> str:
     """
-    Reconstruct the HQCM input format observed in the historical
-    compatible artifact.
+    Build the HQCM-compatible input text.
     """
     return (
         f"Commit summary:\n{commit_message}"
@@ -327,7 +326,7 @@ def validate_reference(
     reference_path: Path,
 ) -> None:
     """
-    Optional development-time audit against the historical source CSV.
+    Optional audit against a reference HQCM-compatible CSV.
 
     This compares logical CSV values, not raw file bytes.
     """
@@ -371,7 +370,7 @@ def validate_reference(
 
     if differing_columns:
         raise RuntimeError(
-            "Generated HQCM artifact differs from the historical "
+            "Generated HQCM artifact differs from the reference "
             f"reference in columns: {differing_columns}"
         )
 
@@ -419,7 +418,7 @@ def main() -> None:
         type=Path,
         default=None,
         help=(
-            "Optional historical HQCM CSV used to audit the "
+            "Optional reference HQCM-compatible CSV used to audit the "
             "reconstructed artifact."
         ),
     )

@@ -119,7 +119,7 @@ def load_assignments(
     path: Path,
 ) -> pd.DataFrame:
     """
-    Load the historical commit-level cross-project assignments.
+    Load the commit-level cross-project assignments.
     """
     if not path.exists():
         raise FileNotFoundError(
@@ -193,7 +193,7 @@ def load_fold_summary(
     path: Path,
 ) -> pd.DataFrame:
     """
-    Load the historical fold summary for optional validation.
+    Load the fold summary for optional validation.
     """
     if not path.exists():
         raise FileNotFoundError(
@@ -654,7 +654,7 @@ def validate_assignments(
 
 
 # ============================================================
-# Historical summary validation
+# Fold summary validation
 # ============================================================
 
 def validate_fold_summary(
@@ -760,16 +760,16 @@ def validate_fold_summary(
 
         for name, (
             actual,
-            historical,
+            expected,
         ) in checks.items():
 
-            if actual != historical:
+            if actual != expected:
                 raise RuntimeError(
                     f"Fold {fold}: "
                     f"{name} differs from "
                     f"fold_summary.csv "
                     f"(actual={actual}, "
-                    f"expected={historical})."
+                    f"expected={expected})."
                 )
 
     print("  OK")
@@ -972,7 +972,7 @@ def main():
         required=True,
         type=Path,
         help=(
-            "Historical cross-project "
+            "Cross-project "
             "assignments.csv."
         ),
     )
@@ -982,7 +982,7 @@ def main():
         type=Path,
         default=None,
         help=(
-            "Optional historical fold_summary.csv "
+            "Optional fold_summary.csv "
             "used for additional validation."
         ),
     )

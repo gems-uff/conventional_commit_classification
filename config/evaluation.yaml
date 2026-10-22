@@ -20,10 +20,6 @@ taxonomy:
 
   semantic_others:
     is_valid_class: true
-    description: >
-      'others' is a semantic class only when explicitly predicted according
-      to the task taxonomy. Invalid, malformed, ambiguous, or out-of-taxonomy
-      responses are not converted to 'others'.
 
 consensus:
   method: "adaptive_first_to_two"
@@ -68,9 +64,3 @@ metrics:
   aggregation:
     use_consensus_predictions: true
     average_metrics_across_seeds: false
-
-task_overrides:
-  description: >
-    External benchmark protocols may define a smaller closed label space.
-    A parser-valid study-wide label that is outside the task-specific label
-    space is invalid for that task.
